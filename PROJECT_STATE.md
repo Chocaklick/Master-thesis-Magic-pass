@@ -4,13 +4,15 @@
 
 Build a reproducible and scientifically defensible Business Analytics framework for Swiss ski resorts, integrating resort structure, hotel overnight stays, Magic Pass adoption, and climate/snow conditions. Later phases may estimate causal effects and support evidence-based recommendations for non-member resorts.
 
+The authoritative project mission is `prompts/main_research_prompt.md`, preserved from the user's full research instructions. It defines the end-to-end research scope, scientific constraints, six checkpoints, feasibility gates, and expected deliverables. Method selection must follow the evidence and distinguish correlation, causality, prediction, and recommendations.
+
 ## Current phase
 
-Repository initialization and data discovery. Local and GitHub infrastructure are synchronized; existing thesis datasets are not yet available.
+Main research mission adopted; awaiting existing source data for Checkpoint 1. Repository initialization and GitHub setup are complete. The project inventory was rechecked when saving the mission and still contains no thesis datasets.
 
 ## Last update
 
-2026-09-20 00:56 CEST
+2026-09-20 01:06 CEST
 
 ## Completed work
 
@@ -27,9 +29,11 @@ Repository initialization and data discovery. Local and GitHub infrastructure ar
 
 ## Work currently in progress
 
-None. Repository synchronization is complete and work remains stopped at the requested checkpoint.
+No empirical work is in progress. The full research instructions have been saved and adopted as the project mission; this session records the mission and its links for future work.
 
 ## Next actions
+
+Follow the sequence in `prompts/main_research_prompt.md`, beginning with Checkpoint 1:
 
 1. Place existing thesis datasets in `data_raw/` without modifying them.
 2. Audit each supplied dataset and update the two audit reports and metadata tables.
@@ -92,6 +96,7 @@ None.
 
 ## Important file locations
 
+- Authoritative research mission: `prompts/main_research_prompt.md`
 - Initial data audit: `reports/INITIAL_DATA_AUDIT.md`
 - Existing clustering audit: `reports/EXISTING_CLUSTER_AUDIT.md`
 - Source provenance register: `metadata/data_sources_master.csv`

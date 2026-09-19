@@ -32,3 +32,14 @@
 - **Decision:** Preserve the supplied HTTPS remote URL and continue using milestone commits without force-pushing or rewriting history.
 - **Limitations:** Existing thesis datasets remain unavailable, so data and clustering audits still contain baseline unknowns.
 - **Next step:** Add original datasets to `data_raw/` without alteration and perform the documented audits before empirical analysis.
+
+## 2026-09-20 01:06 CEST — Main research mission adopted
+
+- **Task:** Save the supplied end-to-end research instructions as `prompts/main_research_prompt.md` and adopt them as the project mission.
+- **Reason:** Make the complete research scope and requirements available across sessions.
+- **Input:** User attachment `c92bdbba-32a1-4796-ae57-79fd2b84eaf2/pasted-text.txt`.
+- **Method:** Preserved the full instruction text, linked it from README, project state, and agent session instructions, and rechecked the project file inventory.
+- **Result:** The mission is now the repository reference for research questions, provenance, data collection, causal and predictive analysis, feasibility gates, decision support, and final deliverables.
+- **Problem encountered:** No thesis source datasets are currently present; the existing data and clustering assessments remain pending.
+- **Decision:** Adopt the research mission beyond the initialization phase, retaining the existing safeguards for clustering reuse, municipality exposure mappings, provenance, and evidence-based model selection.
+- **Next step:** Obtain the existing datasets and begin the mission's Checkpoint 1 audit; complete feasibility checks before major collection or model fitting.

@@ -4,6 +4,8 @@ This repository is the reproducible technical workspace for a Master's thesis in
 
 ## Research objective
 
+The full project mission is saved in [prompts/main_research_prompt.md](prompts/main_research_prompt.md). It defines the research questions, data requirements, feasibility gates, checkpoints, and final deliverables for subsequent work.
+
 The long-term objective is to combine defensible data engineering, causal/econometric analysis, machine learning, and geospatial analysis. The repository is currently in the initialization and data-discovery phase. No treatment-effect model, opportunity score, or large-scale external collection has been started.
 
 A central methodological distinction is preserved throughout the project:
@@ -30,6 +32,7 @@ See [PROJECT_STATE.md](PROJECT_STATE.md) for the authoritative current state and
 
 ```text
 config/               Versioned configuration
+prompts/              Authoritative project mission and research instructions
 data_raw/             Existing data supplied by the researcher; immutable
 data_external/        Original versions of newly downloaded external data
 data_interim/         Reproducible intermediate transformations
@@ -104,5 +107,7 @@ Every substantive session starts by reading, in order:
 2. `README.md`
 3. `AGENTS.md`
 4. `logs/research_journal.md`
+
+Then read `prompts/main_research_prompt.md` before research work.
 
 Update the state file and journal before ending major work. The repository—not chat history—is the durable research record.

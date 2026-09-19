@@ -4,6 +4,8 @@
 
 Read, in order: `PROJECT_STATE.md`, `README.md`, this file, and `logs/research_journal.md`. Inspect relevant prior outputs before repeating work.
 
+Then read `prompts/main_research_prompt.md`, the authoritative project mission. Follow its research sequence, feasibility gates, and checkpoints alongside the latest user directions. The mission supersedes the initialization-only scope; preserve the existing clustering and the distinction between resort assignments and municipality exposure mappings.
+
 ## Core rules
 
 - Use Python as the primary language and run important scripts from the project root.
