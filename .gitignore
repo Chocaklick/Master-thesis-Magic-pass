@@ -1,0 +1,50 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Runtime logs (the versioned research journal and CSV log are unaffected)
+*.log
+
+# Raw/external source data stay local by default; metadata remains versioned
+data_raw/**
+!data_raw/.gitkeep
+data_external/**
+!data_external/.gitkeep
+
+# Reproducible transient and potentially large artifacts
+data_interim/**
+!data_interim/.gitkeep
+models/**
+!models/.gitkeep
+outputs/**
+!outputs/.gitkeep
+
+# Packaging/build artifacts
+build/
+dist/
+*.egg-info/
