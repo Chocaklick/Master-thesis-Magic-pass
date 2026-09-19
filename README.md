@@ -22,7 +22,7 @@ A resort assignment is not automatically a municipality assignment.
 - Local Python 3.12 virtual environment created in `.venv/`.
 - Baseline folder structure and provenance schemas created.
 - No thesis datasets were present at initialization; the existing-cluster audit therefore remains pending.
-- No GitHub remote is configured yet because GitHub CLI is unavailable and no repository URL was supplied.
+- GitHub synchronization is configured: `main` tracks `origin/main` at `https://github.com/Chocaklick/Master-thesis-Magic-pass.git`.
 
 See [PROJECT_STATE.md](PROJECT_STATE.md) for the authoritative current state and [logs/research_journal.md](logs/research_journal.md) for the chronological record.
 

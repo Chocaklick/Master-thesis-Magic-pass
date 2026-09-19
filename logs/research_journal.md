@@ -21,3 +21,14 @@
 - **Decision:** Stop before data collection or modelling, as requested.
 - **Limitations:** GitHub synchronization awaits an empty remote repository URL. Dataset and cluster usability remain unassessed until source files are supplied.
 - **Next step:** Create the empty GitHub repository, connect `origin`, push `main`, and then audit the supplied source data without modification.
+
+## 2026-09-20 00:56 CEST — GitHub synchronization completed
+
+- **Task:** Connect the initialized local repository to the supplied GitHub repository.
+- **Reason:** Complete the local/remote version-control setup and make GitHub the shared code and documentation reference.
+- **Input:** `https://github.com/Chocaklick/Master-thesis-Magic-pass.git` and the clean local `main` branch.
+- **Method:** Queried remote refs before mutation, confirmed that the remote contained no branches or tags, added it as `origin`, and pushed local `main` with upstream tracking.
+- **Result:** `main` now tracks `origin/main`; the initialization history is available on GitHub.
+- **Decision:** Preserve the supplied HTTPS remote URL and continue using milestone commits without force-pushing or rewriting history.
+- **Limitations:** Existing thesis datasets remain unavailable, so data and clustering audits still contain baseline unknowns.
+- **Next step:** Add original datasets to `data_raw/` without alteration and perform the documented audits before empirical analysis.
