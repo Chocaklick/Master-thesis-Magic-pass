@@ -2,7 +2,7 @@
 
 ## Collection scope
 
-Collection was initially limited to high-priority evidence needed for the treatment/outcome feasibility gates. After those gates were assessed, the project added the official HESTA hotel-capacity table and the first snow-history source. Mobility, demographic and commercial datasets remain deferred.
+Collection was initially limited to high-priority evidence needed for the treatment/outcome feasibility gates. After those gates were assessed, the project added the official HESTA hotel-capacity table, SLF snow history, and targeted MeteoSwiss temperature/precipitation. Mobility, demographic and commercial datasets remain deferred.
 
 ## Completed official collections
 
@@ -16,8 +16,9 @@ Collection was initially limited to high-priority evidence needed for the treatm
 | Magic Pass seasonal PDFs | 2017–2020 and 2022–2025 cached | Page-reviewed entry-event evidence |
 | Magic Pass 2021 main PDF | Repeated incomplete downloads | Failure retained in the collection log; smaller official follow-up used where applicable |
 | SLF IMIS documentation, stations and daily snow | Cached successfully | Daily mountain-station snow-depth history and auditable station-proxy construction |
+| MeteoSwiss SwissMetNet metadata and selected daily station files | Six metadata snapshots plus 14 historical/recent station files cached successfully | Daily temperature and precipitation, coverage-qualified monthly anomalies, and auditable regional station proxies |
 
-Every successful response has a SHA-256 metadata sidecar under the ignored immutable evidence cache. Requests, statuses, files, and failures are recorded in `logs/data_collection_log.csv`. Configuration is versioned in `config/evidence_sources.json` and `config/municipality_queries.json`.
+Every successful response has a SHA-256 metadata sidecar under the ignored immutable evidence cache. Requests, statuses, files, and failures are recorded in `logs/data_collection_log.csv`. Configuration is versioned in `config/evidence_sources.json`, `config/meteoswiss_selected_station_files.json`, and `config/municipality_queries.json`.
 
 ## Derived evidence tables
 
@@ -27,6 +28,9 @@ Every successful response has a SHA-256 metadata sidecar under the ignored immut
 - `data_processed/hotel_capacity_municipality_month.csv`: 31,248 official municipality-month supply rows; 29,274 have establishments, rooms and beds observed.
 - `data_processed/resort_snow_station_crosswalk.csv`: 271 resort listings linked to a coverage-qualified external SLF snow-station proxy with distance, elevation gap and representativeness flags.
 - `data_processed/destination_snow_month.csv`: 1,749 reviewed destination-month snow-proxy rows through 2026-03; 1,733 pass the complete station-month coverage gate.
+- `data_processed/meteoswiss_station_month.csv`: 1,113 station-month rows for seven selected stations; 1,111 pass the joint temperature/precipitation coverage gate.
+- `data_processed/resort_weather_station_crosswalk.csv`: 15 reviewed component resorts linked to the nearest of 112 current inventory-eligible SwissMetNet stations, with distance, elevation gap and non-piste representation flags.
+- `data_processed/destination_weather_month.csv`: 1,749 reviewed destination-month weather rows through 2026-03; 1,744 pass the complete station-month coverage gate.
 
 ## Collection discrepancies and gaps
 
@@ -35,5 +39,6 @@ Every successful response has a SHA-256 metadata sidecar under the ignored immut
 - The historical evidence is not yet a complete season-by-season continuity and exit audit.
 - The exact upstream version and download URL of `bahnen-winter_2056.gpkg` remain unknown.
 - SLF IMIS stations support avalanche monitoring and are not direct observations of resort pistes; the 60 low-comparability resort links remain visible and are not feature-ready.
+- SwissMetNet stations are regional weather proxies rather than piste measurements. EVO 2016-07 and INT 2013-08 fail the 80% precipitation coverage gate and remain missing; the daily precipitation window is 06:00 UTC to 06:00 UTC the following day.
 
 Full field-level provenance and plain-language source descriptions are in `metadata/data_sources_master.csv` and `reports/DATA_SOURCES.md`.

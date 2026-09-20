@@ -104,6 +104,28 @@ def test_slf_snow_proxy_preserves_coverage_and_representation_limits() -> None:
     assert not destination["snow_direct_slope_representation"].any()
 
 
+def test_meteoswiss_weather_proxy_preserves_coverage_and_representation_limits() -> None:
+    month = read("data_processed/meteoswiss_station_month.csv")
+    crosswalk = read("data_processed/resort_weather_station_crosswalk.csv")
+    destination = read("data_processed/destination_weather_month.csv")
+    assert len(month) == 7 * 159
+    assert not month.duplicated(["station_abbr", "month_date"]).any()
+    assert set(month["station_abbr"]) == {"ABO", "EVO", "GRC", "INT", "MER", "MLS", "MVE"}
+    assert int(month["month_weather_proxy_usable"].sum()) == 1_111
+    assert int(month["precipitation_coverage_share"].lt(0.80).sum()) == 2
+    assert month["temperature_mean_coverage_share"].ge(0.80).all()
+    assert (month["precipitation_total_mm"].dropna() >= 0).all()
+    assert len(crosswalk) == 15
+    assert crosswalk["resort_id"].is_unique
+    assert set(crosswalk["weather_proxy_quality"]) == {"high", "moderate"}
+    assert not crosswalk["direct_slope_representation"].any()
+    assert not crosswalk["weather_causal_covariate_approved"].any()
+    assert len(destination) == 11 * 159
+    assert int(destination["complete_weather_proxy"].sum()) == 1_744
+    assert not destination["weather_direct_slope_representation"].any()
+    assert not destination["weather_causal_covariate_approved"].any()
+
+
 def test_magic_evidence_is_not_silently_promoted_to_treatment() -> None:
     history = read("data_processed/magic_pass_membership_history.csv", dtype=str)
     assert len(history) == 93
@@ -212,6 +234,10 @@ def test_reviewed_destination_panel_aggregation_and_timing() -> None:
     assert int(panel["complete_snow_proxy"].sum()) == 1_733
     assert int((panel["complete_snow_proxy"] & panel["hotel_overnights"].notna()).sum()) == 1_565
     assert not panel["snow_direct_slope_representation"].any()
+    assert int(panel["complete_weather_proxy"].sum()) == 1_744
+    assert int((panel["complete_weather_proxy"] & panel["hotel_overnights"].notna()).sum()) == 1_576
+    assert not panel["weather_direct_slope_representation"].any()
+    assert not panel["weather_causal_covariate_approved"].any()
     assert len(events) == 19
     assert (events["treatment_ready"].str.lower() == "false").all()
 

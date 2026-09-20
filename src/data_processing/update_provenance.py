@@ -291,6 +291,126 @@ def main() -> None:
             manual_verification="schema, terms, units, station types, temporal coverage, missingness, and physical signs checked",
         ))
 
+    weather_metadata_ids = [
+        "METEOSWISS_SMN_DOCUMENTATION",
+        "METEOSWISS_SMN_COLLECTION",
+        "METEOSWISS_SMN_PARAMETERS",
+        "METEOSWISS_SMN_STATIONS",
+        "METEOSWISS_SMN_INVENTORY",
+        "METEOSWISS_SMN_ITEMS",
+    ]
+    weather_details = {
+        "METEOSWISS_SMN_DOCUMENTATION": (
+            "SwissMetNet Open Data documentation",
+            "data_structure|access|licence|aggregation_guidance",
+            "reports/07_WEATHER_PROXY.md",
+            "documentation",
+        ),
+        "METEOSWISS_SMN_COLLECTION": (
+            "SwissMetNet FSDI STAC collection metadata",
+            "collection_metadata|asset_templates|licence_links",
+            "reports/07_WEATHER_PROXY.md",
+            "collection metadata",
+        ),
+        "METEOSWISS_SMN_PARAMETERS": (
+            "SwissMetNet parameter catalogue",
+            "parameter_shortname|description|granularity|unit",
+            "data_processed/meteoswiss_station_month.csv",
+            "parameter metadata",
+        ),
+        "METEOSWISS_SMN_STATIONS": (
+            "SwissMetNet station catalogue",
+            "station_abbr|station_name|coordinates|elevation|station_type",
+            "data_processed/resort_weather_station_crosswalk.csv",
+            "point station",
+        ),
+        "METEOSWISS_SMN_INVENTORY": (
+            "SwissMetNet station-parameter inventory",
+            "station_abbr|parameter_shortname|data_since|data_till|owner",
+            "data_processed/resort_weather_station_crosswalk.csv",
+            "station-parameter inventory",
+        ),
+        "METEOSWISS_SMN_ITEMS": (
+            "SwissMetNet STAC station-item response",
+            "station_items|daily_asset_links",
+            "reports/07_WEATHER_PROXY.md",
+            "station asset catalogue snapshot",
+        ),
+    }
+    for source_id in weather_metadata_ids:
+        item = configured[source_id]
+        metadata = cached_metadata(source_id)
+        dataset_name, variables, processed, level = weather_details[source_id]
+        rows.append(blank_source(
+            source_id,
+            variable_name=variables,
+            variable_description=item["description"],
+            source_organisation=item["organisation"],
+            source_dataset_name=dataset_name,
+            source_page_url=configured["METEOSWISS_SMN_DOCUMENTATION"]["url"],
+            direct_download_url=item["url"],
+            retrieval_method="HTTP GET with immutable response and SHA-256 sidecar",
+            retrieval_date=metadata.get("retrieval_date", "") if metadata else "",
+            original_file_name=raw_name(metadata),
+            local_raw_file=metadata.get("raw_file", "") if metadata else "",
+            processed_file=processed,
+            geographic_level=level,
+            temporal_resolution="retrieval snapshot",
+            temporal_start="",
+            temporal_end="2026",
+            unit="metadata",
+            license="Swiss Open Government Data terms; source acknowledgement required",
+            access_conditions="Public static files and FSDI STAC API",
+            transformation_applied="Cached and used for parameter definitions, station eligibility, coordinates, and exact official asset discovery",
+            quality_notes=(
+                "The cached STAC item response is a discovery snapshot; exact selected asset URLs and checksums are recorded separately"
+                if source_id == "METEOSWISS_SMN_ITEMS"
+                else "Official metadata snapshot; source catalogue can be updated after retrieval"
+            ),
+            confidence_level="high for official metadata",
+            manual_verification="schema, parameter units, station coordinates/elevation, inventory dates, and asset structure checked",
+        ))
+
+    selected_weather_sources = json.loads(
+        (ROOT / "config" / "meteoswiss_selected_station_files.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    selected_weather_metadata = [
+        cached_metadata(item["source_id"]) for item in selected_weather_sources
+    ]
+    if any(metadata is None for metadata in selected_weather_metadata):
+        raise FileNotFoundError("A selected MeteoSwiss daily file is not cached")
+    weather_first = selected_weather_metadata[0]
+    rows.append(blank_source(
+        "METEOSWISS_SMN_DAILY_SELECTED",
+        variable_name="tre200d0|tre200dn|tre200dx|rre150d0",
+        variable_description="Official daily mean/minimum/maximum air temperature and 06:00-to-06:00 UTC precipitation for seven selected SwissMetNet stations",
+        source_organisation="Federal Office of Meteorology and Climatology MeteoSwiss",
+        source_dataset_name="SwissMetNet selected daily historical and recent station files",
+        source_page_url=configured["METEOSWISS_SMN_DOCUMENTATION"]["url"],
+        direct_download_url="https://data.geo.admin.ch/ch.meteoschweiz.ogd-smn/",
+        retrieval_method="HTTP GET of seven historical and seven recent static CSV files; immutable responses and SHA-256 sidecars",
+        retrieval_date=max(
+            metadata["retrieval_date"] for metadata in selected_weather_metadata
+        ),
+        original_file_name=raw_name(weather_first),
+        local_raw_file="data_external/source_evidence/METEOSWISS_SMN_DAILY_*.csv",
+        processed_file="data_processed/meteoswiss_station_month.csv|data_processed/resort_weather_station_crosswalk.csv|data_processed/destination_weather_month.csv|data_processed/destination_month_panel.csv",
+        geographic_level="SwissMetNet point station used as regional resort proxy",
+        temporal_resolution="daily source; monthly analytical aggregation",
+        temporal_start="2013-01-01 analysis window",
+        temporal_end="2026-03-31 analysis window",
+        unit="degrees Celsius; millimetres",
+        license="Swiss Open Government Data terms; source acknowledgement required",
+        access_conditions="Public static station files",
+        transformation_applied="Exact historical/recent concatenation; monthly aggregation; 80% coverage gate; station-specific 2013-2025 calendar-month normals; nearest eligible-station crosswalk; no imputation",
+        quality_notes="Two station-months fail precipitation coverage and remain missing; precipitation uses 06:00 UTC to 06:00 UTC next day; regional stations do not directly represent pistes",
+        confidence_level="high for official observations; mixed for local piste representativeness",
+        manual_verification="checksums, schema, duplicate dates, physical signs, temperature ordering, daily/monthly coverage, distance, and elevation gaps checked",
+        notes="Fourteen exact raw-file URLs, source IDs and suffixes are enumerated in config/meteoswiss_selected_station_files.json; the local_raw_file glob identifies the immutable cache files",
+    ))
+
     magic_ids = [key for key in configured if key.startswith("MAGIC_")]
     for source_id in magic_ids:
         item = configured[source_id]
@@ -476,8 +596,8 @@ def main() -> None:
     ))
     rows.append(blank_source(
         "DERIVED_REVIEWED_DESTINATION_PANEL",
-        variable_name="reviewed_destination_month_outcomes|hotel_capacity|snow_proxy|diagnostic_membership_status",
-        variable_description="Monthly destination outcomes, hotel capacity, and qualified snow proxies aggregated across reviewed scopes with diagnostic treatment coding",
+        variable_name="reviewed_destination_month_outcomes|hotel_capacity|snow_proxy|weather_proxy|diagnostic_membership_status",
+        variable_description="Monthly destination outcomes, hotel capacity, qualified snow/weather proxies, and diagnostic treatment coding aggregated across reviewed scopes",
         source_organisation="Master thesis analytical pipeline",
         source_dataset_name="Reviewed destination-month panel",
         retrieval_method="versioned Python transformation",
@@ -488,8 +608,8 @@ def main() -> None:
         temporal_end="2026-12 grid; 2026-03 latest observed outcome",
         unit="destination-month",
         license="inherits source restrictions",
-        transformation_applied="Additive municipality outcome/capacity totals; complete-case multi-station snow-proxy means; official occupancy percentages retained only for single-municipality units; entry carried forward only as a flagged diagnostic assumption",
-        quality_notes="No row is causal-ready; SLF proxies are not direct piste observations; treatment continuity, controls, and other time-varying confounders remain unresolved",
+        transformation_applied="Additive municipality outcome/capacity totals; complete-case multi-station snow/weather proxy means; official occupancy percentages retained only for single-municipality units; entry carried forward only as a flagged diagnostic assumption",
+        quality_notes="No row is causal-ready; SLF and MeteoSwiss proxies are not direct piste observations; treatment continuity, controls, and other time-varying confounders remain unresolved",
         confidence_level="high for reproducible aggregation; low for causal treatment status",
         manual_verification="automated tests plus destination review",
     ))
@@ -521,6 +641,16 @@ def main() -> None:
         ("snow_reliability_share_days_ge_30cm", "resort_snow_vulnerability", "Share of valid November-April proxy-station days with snow depth >=30 cm", "share", "float", "resort via SLF proxy station", "2013/14-2025/26", "SLF_IMIS_DAILY_SNOW", "derived", "sum station days HS>=30 / sum valid winter days across usable seasons", "snow reliability proxy", "May be shared by multiple resorts mapped to one station"),
         ("snow_depth_trend_cm_per_year", "resort_snow_vulnerability", "Linear trend in proxy-station winter mean snow depth", "centimetres per year", "float", "resort via SLF proxy station", "2013/14-2025/26", "SLF_IMIS_DAILY_SNOW", "derived", "OLS slope of winter mean HS on winter start year over usable seasons", "snow trend proxy", "Short series; descriptive only; no uncertainty model yet"),
         ("snow_vulnerability_proxy", "resort_snow_vulnerability", "Inverse of the proxy-station winter-day snow reliability share", "0-1 proxy", "float", "resort via SLF proxy station", "2013/14-2025/26", "SLF_IMIS_DAILY_SNOW", "derived", "1 - snow_reliability_share_days_ge_30cm", "strategic-need candidate", "Not a piste-level vulnerability measure and not yet approved for scoring"),
+        ("air_temperature_mean_c", "meteoswiss_station_month", "Mean of official daily mean 2 m air temperature within the month", "degrees Celsius", "float", "SwissMetNet station", "monthly", "METEOSWISS_SMN_DAILY_SELECTED", "derived", "mean daily tre200d0", "time-varying regional weather proxy", "No imputation; station is not a piste observation"),
+        ("air_temperature_anomaly_c", "meteoswiss_station_month", "Monthly mean-temperature departure from the station's calendar-month 2013-2025 analytical normal", "degrees Celsius", "float", "SwissMetNet station", "monthly", "METEOSWISS_SMN_DAILY_SELECTED", "derived", "air_temperature_mean_c - mean usable same-calendar-month temperature in 2013-2025", "time-varying regional weather proxy", "Not an official MeteoSwiss climate normal"),
+        ("precipitation_total_mm", "meteoswiss_station_month", "Sum of valid official daily precipitation totals within the month", "millimetres", "float", "SwissMetNet station", "monthly", "METEOSWISS_SMN_DAILY_SELECTED", "derived", "sum daily rre150d0 with at least one valid value", "time-varying regional weather proxy", "Daily observation window is 06:00 UTC to 06:00 UTC next day"),
+        ("precipitation_anomaly_mm", "meteoswiss_station_month", "Monthly precipitation departure from the station's calendar-month 2013-2025 analytical normal", "millimetres", "float", "SwissMetNet station", "monthly", "METEOSWISS_SMN_DAILY_SELECTED", "derived", "precipitation_total_mm - mean usable same-calendar-month precipitation in 2013-2025", "time-varying regional weather proxy", "Missing when the month fails the 80% coverage gate"),
+        ("precipitation_coverage_share", "meteoswiss_station_month", "Share of calendar days with a valid precipitation observation", "share", "float", "SwissMetNet station", "monthly", "METEOSWISS_SMN_DAILY_SELECTED", "derived", "valid rre150d0 days / calendar days", "weather data quality", "Month is usable at >=0.80 together with all temperature fields"),
+        ("month_weather_proxy_usable", "meteoswiss_station_month", "Whether mean/min/max temperature and precipitation each meet the monthly coverage gate", "boolean", "boolean", "SwissMetNet station", "monthly", "METEOSWISS_SMN_DAILY_SELECTED", "derived", "all four observation coverage shares >= 0.80", "weather data quality", "Two of 1,113 station-months fail at this checkpoint"),
+        ("weather_station_code", "resort_weather_station_crosswalk", "SwissMetNet station selected as a regional temperature/precipitation proxy", "identifier", "string", "resort-to-station link", "2013-2026 coverage window", "METEOSWISS_SMN_STATIONS", "derived linkage", "nearest current station among official inventory candidates with all four daily parameters starting by 2013", "weather linkage", "Never interpreted as direct slope representation"),
+        ("weather_station_distance_km", "resort_weather_station_crosswalk", "Great-circle distance from resort listing point to selected SwissMetNet station", "kilometres", "float", "resort-to-station link", "station metadata snapshot", "METEOSWISS_SMN_STATIONS", "derived geospatial distance", "haversine distance between supplied resort coordinate and station coordinate", "weather proxy quality", "Does not capture terrain barriers or local gradients"),
+        ("weather_station_elevation_gap_to_resort_top_m", "resort_weather_station_crosswalk", "Absolute elevation difference between SwissMetNet station and published resort-top altitude", "metres", "float", "resort-to-station link", "snapshot", "DERIVED_MULTI_SOURCE", "derived", "abs(station elevation - Bergfex resort top altitude)", "weather proxy quality", "Regional anomalies are emphasised because gaps can be large"),
+        ("weather_proxy_quality", "resort_weather_station_crosswalk", "Rule-based horizontal-distance comparability class for regional weather anomalies", "category", "string", "resort-to-station link", "snapshot", "DERIVED_MULTI_SOURCE", "derived", "high if <=10 km; moderate if <=20 km; otherwise low", "weather data quality", "Elevation gap is retained separately; class is not measurement accuracy"),
         ("resort_id", "resort_master", "Stable ID retained from existing normalised listing table", "identifier", "string", "resort listing", "snapshot", "DERIVED_MULTI_SOURCE", "existing identifier", "retained without fuzzy merging", "identifier", "Does not yet prove independent resort-domain status"),
         ("cluster_id", "resort_master", "Existing lift-cluster assignment", "identifier", "string", "lift cluster", "snapshot", "DERIVED_MULTI_SOURCE", "existing identifier", "preserved existing assignment", "group identifier", "Clustering was validated, not rebuilt"),
         ("altitude_top_m", "resort_master", "Published maximum resort altitude", "metres", "numeric", "resort listing", "snapshot", "BERGFEX_RESORT_DIRECTORY", "cleaned source", "unique URL join", "candidate pre-treatment feature", "Observation date unknown"),
@@ -553,6 +683,12 @@ def main() -> None:
         ("snow_depth_mean_cm", "destination_month_panel", "Unweighted mean monthly snow depth across unique assigned SLF proxy stations", "centimetres", "float", "reviewed destination via station proxy", "monthly", "SLF_IMIS_DAILY_SNOW", "derived", "mean station-month snow_depth_mean_cm only when every assigned station month has >=80% daily coverage", "time-varying snow proxy", "Not direct slope snow; missing months are not imputed"),
         ("complete_snow_proxy", "destination_month_panel", "Whether every assigned SLF station-month passes the daily observation coverage gate", "boolean", "boolean", "reviewed destination via station proxy", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "all assigned station months have >=80% valid daily HS coverage", "snow data quality", "False for future/unavailable months"),
         ("destination_snow_proxy_quality", "destination_month_panel", "Worst resort-to-station comparability class among destination components", "category", "string", "reviewed destination via station proxy", "snapshot", "DERIVED_MULTI_SOURCE", "derived", "worst of high/moderate/low component links", "snow data quality", "Comparability class, not accuracy"),
+        ("air_temperature_mean_c", "destination_month_panel", "Unweighted mean monthly temperature across unique assigned SwissMetNet proxy stations", "degrees Celsius", "float", "reviewed destination via station proxy", "monthly", "METEOSWISS_SMN_DAILY_SELECTED", "derived", "mean station-month air_temperature_mean_c only when every assigned station month passes the 80% gate", "time-varying regional weather proxy", "Not piste microclimate; missing months are not imputed"),
+        ("air_temperature_anomaly_c", "destination_month_panel", "Unweighted mean station-specific temperature anomaly across unique assigned stations", "degrees Celsius", "float", "reviewed destination via station proxy", "monthly", "METEOSWISS_SMN_DAILY_SELECTED", "derived", "mean station-month anomaly relative to each station's 2013-2025 same-month analytical normal", "time-varying regional weather proxy", "Not an official climate-normal anomaly"),
+        ("precipitation_total_mm_mean_across_stations", "destination_month_panel", "Unweighted mean monthly precipitation total across unique assigned SwissMetNet stations", "millimetres", "float", "reviewed destination via station proxy", "monthly", "METEOSWISS_SMN_DAILY_SELECTED", "derived", "mean station-month precipitation_total_mm only when every assigned station month passes the 80% gate", "time-varying regional weather proxy", "Not summed across stations; 06:00-to-06:00 UTC daily window"),
+        ("complete_weather_proxy", "destination_month_panel", "Whether every assigned SwissMetNet station-month passes the four-parameter coverage gate", "boolean", "boolean", "reviewed destination via station proxy", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "all assigned station months have >=80% coverage for mean/min/max temperature and precipitation", "weather data quality", "False for unavailable future months and five in-window destination-months"),
+        ("destination_weather_proxy_quality", "destination_month_panel", "Worst horizontal-distance comparability class among destination components", "category", "string", "reviewed destination via station proxy", "snapshot", "DERIVED_MULTI_SOURCE", "derived", "worst of high/moderate/low component links", "weather data quality", "Comparability class, not accuracy"),
+        ("weather_causal_covariate_approved", "destination_month_panel", "Whether the regional weather proxy has passed all causal-use validation gates", "boolean", "boolean", "reviewed destination via station proxy", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "always false at this checkpoint", "quality gate", "Station choice and gridded-data sensitivity remain pending"),
         ("assumed_active_component_count", "destination_month_panel", "Diagnostic count of entered components carried forward until a documented exit", "count", "integer", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "cumulative documented component entries with documented exit override", "treatment intensity candidate", "Continuity is an unverified assumption"),
         ("event_time_months", "destination_month_panel", "Months relative to the first analytical membership anchor", "months", "integer", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "calendar month difference from first_analysis_anchor", "event-time index", "Not sufficient for causal event-study identification"),
         ("causal_ready", "destination_month_panel", "Whether the destination-month row passes all causal evidence gates", "boolean", "boolean", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "always false at this checkpoint", "quality gate", "Continuity, confounding, spillovers, and controls remain unresolved"),
@@ -572,6 +708,9 @@ def main() -> None:
         "slf_snow_station_winter": ROOT / "data_processed" / "slf_snow_station_winter.csv",
         "resort_snow_station_crosswalk": ROOT / "data_processed" / "resort_snow_station_crosswalk.csv",
         "resort_snow_vulnerability": ROOT / "data_processed" / "resort_snow_vulnerability.csv",
+        "meteoswiss_station_month": ROOT / "data_processed" / "meteoswiss_station_month.csv",
+        "resort_weather_station_crosswalk": ROOT / "data_processed" / "resort_weather_station_crosswalk.csv",
+        "destination_weather_month": ROOT / "data_processed" / "destination_weather_month.csv",
         "resort_master": ROOT / "data_processed" / "resort_master.csv",
         "resort_point_municipality": ROOT / "data_processed" / "resort_point_municipality.csv",
         "magic_pass_membership_history": ROOT / "data_processed" / "magic_pass_membership_history.csv",

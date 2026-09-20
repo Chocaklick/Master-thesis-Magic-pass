@@ -88,14 +88,14 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 
 ## DERIVED_REVIEWED_DESTINATION_PANEL — Reviewed destination-month panel
 
-- **Contents and relevance:** Monthly destination outcomes, hotel capacity, and qualified snow proxies aggregated across reviewed scopes with diagnostic treatment coding
+- **Contents and relevance:** Monthly destination outcomes, hotel capacity, qualified snow/weather proxies, and diagnostic treatment coding aggregated across reviewed scopes
 - **Producer:** Master thesis analytical pipeline
 - **Exact URL:** Not documented.
 - **Access and retrieval date:** versioned Python transformation; unknown date.
-- **Variables:** reviewed_destination_month_outcomes|hotel_capacity|snow_proxy|diagnostic_membership_status
-- **Transformations:** Additive municipality outcome/capacity totals; complete-case multi-station snow-proxy means; official occupancy percentages retained only for single-municipality units; entry carried forward only as a flagged diagnostic assumption
+- **Variables:** reviewed_destination_month_outcomes|hotel_capacity|snow_proxy|weather_proxy|diagnostic_membership_status
+- **Transformations:** Additive municipality outcome/capacity totals; complete-case multi-station snow/weather proxy means; official occupancy percentages retained only for single-municipality units; entry carried forward only as a flagged diagnostic assumption
 - **Coverage:** reviewed destination unit; monthly; 2013-01 to 2026-12 grid; 2026-03 latest observed outcome.
-- **Limitations:** No row is causal-ready; SLF proxies are not direct piste observations; treatment continuity, controls, and other time-varying confounders remain unresolved
+- **Limitations:** No row is causal-ready; SLF and MeteoSwiss proxies are not direct piste observations; treatment continuity, controls, and other time-varying confounders remain unresolved
 - **Local raw file:** `not cached / not applicable`.
 
 ## DESTINATION_SCOPE_OFFICIAL_SET — Destination scope evidence set
@@ -481,6 +481,90 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/MEIRINGEN_HASLIBERG_SCOPE_OFFICIAL_20260920T005550Z.html`.
+
+## METEOSWISS_SMN_COLLECTION — SwissMetNet FSDI STAC collection metadata
+
+- **Contents and relevance:** Official FSDI STAC collection metadata and asset links for SwissMetNet
+- **Producer:** Federal Office of Meteorology and Climatology MeteoSwiss
+- **Exact URL:** https://opendatadocs.meteoswiss.ch/a-data-groundbased/a1-automatic-weather-stations
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T09:14:30.310962+00:00.
+- **Variables:** collection_metadata|asset_templates|licence_links
+- **Transformations:** Cached and used for parameter definitions, station eligibility, coordinates, and exact official asset discovery
+- **Coverage:** collection metadata; retrieval snapshot; ? to 2026.
+- **Limitations:** Official metadata snapshot; source catalogue can be updated after retrieval
+- **Local raw file:** `data_external/source_evidence/METEOSWISS_SMN_COLLECTION_20260920T091430Z.json`.
+
+## METEOSWISS_SMN_DAILY_SELECTED — SwissMetNet selected daily historical and recent station files
+
+- **Contents and relevance:** Official daily mean/minimum/maximum air temperature and 06:00-to-06:00 UTC precipitation for seven selected SwissMetNet stations
+- **Producer:** Federal Office of Meteorology and Climatology MeteoSwiss
+- **Exact URL:** https://opendatadocs.meteoswiss.ch/a-data-groundbased/a1-automatic-weather-stations
+- **Access and retrieval date:** HTTP GET of seven historical and seven recent static CSV files; immutable responses and SHA-256 sidecars; 2026-09-20T09:19:30.969388+00:00.
+- **Variables:** tre200d0|tre200dn|tre200dx|rre150d0
+- **Transformations:** Exact historical/recent concatenation; monthly aggregation; 80% coverage gate; station-specific 2013-2025 calendar-month normals; nearest eligible-station crosswalk; no imputation
+- **Coverage:** SwissMetNet point station used as regional resort proxy; daily source; monthly analytical aggregation; 2013-01-01 analysis window to 2026-03-31 analysis window.
+- **Limitations:** Two station-months fail precipitation coverage and remain missing; precipitation uses 06:00 UTC to 06:00 UTC next day; regional stations do not directly represent pistes
+- **Local raw file:** `data_external/source_evidence/METEOSWISS_SMN_DAILY_*.csv`.
+
+## METEOSWISS_SMN_DOCUMENTATION — SwissMetNet Open Data documentation
+
+- **Contents and relevance:** Official SwissMetNet data structure, access, parameter, station and licence documentation
+- **Producer:** Federal Office of Meteorology and Climatology MeteoSwiss
+- **Exact URL:** https://opendatadocs.meteoswiss.ch/a-data-groundbased/a1-automatic-weather-stations
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T09:14:28.151525+00:00.
+- **Variables:** data_structure|access|licence|aggregation_guidance
+- **Transformations:** Cached and used for parameter definitions, station eligibility, coordinates, and exact official asset discovery
+- **Coverage:** documentation; retrieval snapshot; ? to 2026.
+- **Limitations:** Official metadata snapshot; source catalogue can be updated after retrieval
+- **Local raw file:** `data_external/source_evidence/METEOSWISS_SMN_DOCUMENTATION_20260920T091428Z.html`.
+
+## METEOSWISS_SMN_INVENTORY — SwissMetNet station-parameter inventory
+
+- **Contents and relevance:** Official SwissMetNet station-parameter measurement start and end inventory
+- **Producer:** Federal Office of Meteorology and Climatology MeteoSwiss
+- **Exact URL:** https://opendatadocs.meteoswiss.ch/a-data-groundbased/a1-automatic-weather-stations
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T09:14:34.206029+00:00.
+- **Variables:** station_abbr|parameter_shortname|data_since|data_till|owner
+- **Transformations:** Cached and used for parameter definitions, station eligibility, coordinates, and exact official asset discovery
+- **Coverage:** station-parameter inventory; retrieval snapshot; ? to 2026.
+- **Limitations:** Official metadata snapshot; source catalogue can be updated after retrieval
+- **Local raw file:** `data_external/source_evidence/METEOSWISS_SMN_INVENTORY_20260920T091434Z.csv`.
+
+## METEOSWISS_SMN_ITEMS — SwissMetNet STAC station-item response
+
+- **Contents and relevance:** Official SwissMetNet STAC station items and downloadable data assets
+- **Producer:** Federal Office of Meteorology and Climatology MeteoSwiss
+- **Exact URL:** https://opendatadocs.meteoswiss.ch/a-data-groundbased/a1-automatic-weather-stations
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T09:15:57.136217+00:00.
+- **Variables:** station_items|daily_asset_links
+- **Transformations:** Cached and used for parameter definitions, station eligibility, coordinates, and exact official asset discovery
+- **Coverage:** station asset catalogue snapshot; retrieval snapshot; ? to 2026.
+- **Limitations:** The cached STAC item response is a discovery snapshot; exact selected asset URLs and checksums are recorded separately
+- **Local raw file:** `data_external/source_evidence/METEOSWISS_SMN_ITEMS_20260920T091557Z.json`.
+
+## METEOSWISS_SMN_PARAMETERS — SwissMetNet parameter catalogue
+
+- **Contents and relevance:** Official SwissMetNet parameter identifiers, definitions, aggregation intervals and units
+- **Producer:** Federal Office of Meteorology and Climatology MeteoSwiss
+- **Exact URL:** https://opendatadocs.meteoswiss.ch/a-data-groundbased/a1-automatic-weather-stations
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T09:14:31.705550+00:00.
+- **Variables:** parameter_shortname|description|granularity|unit
+- **Transformations:** Cached and used for parameter definitions, station eligibility, coordinates, and exact official asset discovery
+- **Coverage:** parameter metadata; retrieval snapshot; ? to 2026.
+- **Limitations:** Official metadata snapshot; source catalogue can be updated after retrieval
+- **Local raw file:** `data_external/source_evidence/METEOSWISS_SMN_PARAMETERS_20260920T091431Z.csv`.
+
+## METEOSWISS_SMN_STATIONS — SwissMetNet station catalogue
+
+- **Contents and relevance:** Official SwissMetNet station identifiers, coordinates, elevations and metadata
+- **Producer:** Federal Office of Meteorology and Climatology MeteoSwiss
+- **Exact URL:** https://opendatadocs.meteoswiss.ch/a-data-groundbased/a1-automatic-weather-stations
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T09:14:32.959152+00:00.
+- **Variables:** station_abbr|station_name|coordinates|elevation|station_type
+- **Transformations:** Cached and used for parameter definitions, station eligibility, coordinates, and exact official asset discovery
+- **Coverage:** point station; retrieval snapshot; ? to 2026.
+- **Limitations:** Official metadata snapshot; source catalogue can be updated after retrieval
+- **Local raw file:** `data_external/source_evidence/METEOSWISS_SMN_STATIONS_20260920T091432Z.csv`.
 
 ## REICHENBACH_SCOPE_OFFICIAL — Official destination or municipal scope page
 

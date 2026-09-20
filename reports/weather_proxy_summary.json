@@ -1,0 +1,32 @@
+{
+  "selected_raw_daily_rows_all_dates": 265838,
+  "analysis_daily_rows": 33866,
+  "analysis_start": "2013-01-01",
+  "analysis_end": "2026-03-31",
+  "eligible_candidate_stations_with_core_parameters_since_2013": 112,
+  "selected_station_count": 7,
+  "selected_station_codes": [
+    "ABO",
+    "EVO",
+    "GRC",
+    "INT",
+    "MER",
+    "MLS",
+    "MVE"
+  ],
+  "invalid_negative_precipitation_values": 0,
+  "temperature_ordering_violations": 0,
+  "station_month_rows": 1113,
+  "station_month_usable_rows": 1111,
+  "station_month_incomplete_precipitation_rows": 2,
+  "reviewed_component_resort_crosswalk_rows": 15,
+  "weather_proxy_quality_counts": {
+    "high": 9,
+    "moderate": 6
+  },
+  "destination_units": 11,
+  "destination_month_rows": 1749,
+  "destination_month_complete_weather_proxy_rows": 1744,
+  "causal_covariates_approved": 0,
+  "no_imputation": true
+}

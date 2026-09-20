@@ -18,6 +18,7 @@ The supplied files are structurally stronger than their filenames initially sugg
 | Magic Pass event evidence | Official sources, but incomplete continuity/exit coverage and 29 unresolved event links |
 | Treatment readiness | Zero approved treatment units at this checkpoint |
 | Snow/climate | Daily SLF snow proxy integrated; 211/271 listings have high/moderate proxy comparability and ≥10 usable winters; not direct piste measurement |
+| Temperature/precipitation | Seven official SwissMetNet stations cover the 15 reviewed treatment components; 1,744/1,749 destination-months complete; regional proxy only |
 | Accessibility | Missing |
 
 ## Resort-level assessment
@@ -32,7 +33,7 @@ This is an evidence-completeness score, not a resort ranking, opportunity score,
 2. Resolve the 26 unmatched official base-entry labels and independently validate destination domains outside the reviewed treatment units.
 3. Establish tourism-exposure/accommodation markets and audit spillovers without double-counting.
 4. Audit historical BFS municipality changes before panel estimation.
-5. Add official temperature/precipitation and test sensitivity to alternative snow stations or a gridded source.
+5. Test temperature/precipitation and snow sensitivity to alternative stations or a gridded source.
 6. Collect accessibility, investment, local-control and competing-pass variables only where they materially improve the selected design.
 
 The current modelling decision is documented in `reports/model_feasibility_report.md`.

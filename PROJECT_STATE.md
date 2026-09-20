@@ -2,15 +2,15 @@
 
 ## Project objective
 
-Build a reproducible and scientifically defensible Business Analytics framework for Swiss ski destinations, integrating resort structure, hotel overnight stays, Magic Pass adoption, and later climate/snow information. The authoritative mission is `prompts/main_research_prompt.md`.
+Build a reproducible and scientifically defensible Business Analytics framework for Swiss ski destinations, integrating resort structure, hotel overnight stays, Magic Pass adoption, and climate/snow information. The authoritative mission is `prompts/main_research_prompt.md`.
 
 ## Current phase
 
-Checkpoints 1–3, the first treatment-unit review, and initial capacity/snow integrations are complete: existing data have been audited, official treatment evidence collected, candidate destination/municipality scopes reviewed, membership continuity audited season by season, donor contamination mechanically screened, official monthly hotel capacity added, and a qualified SLF mountain-station snow proxy built. Checkpoints 4–5 still fail for causal and heterogeneous-effect modelling. The evidence supports Path C (exploratory segmentation/analogue decision support) unless membership continuity, remaining confounders, spillovers, and controls are materially improved.
+Checkpoints 1–3, the first treatment-unit review, and initial capacity/climate integrations are complete: existing data have been audited, official treatment evidence collected, candidate destination/municipality scopes reviewed, membership continuity audited season by season, donor contamination mechanically screened, official monthly hotel capacity added, and qualified SLF snow plus MeteoSwiss temperature/precipitation proxies built. Checkpoints 4–5 still fail for causal and heterogeneous-effect modelling. The evidence supports Path C (exploratory segmentation/analogue decision support) unless membership continuity, remaining confounders, spillovers, and controls are materially improved.
 
 ## Last update
 
-2026-09-20 11:08 CEST
+2026-09-20 11:35 CEST
 
 ## Completed work
 
@@ -31,10 +31,13 @@ Checkpoints 1–3, the first treatment-unit review, and initial capacity/snow in
 - Compared official/scientific snow sources and selected the SLF historical IMIS archive for the first proxy. The cached file contains 1,212,878 daily rows from 1992-10 through 2026-09; 166 snow stations have data and 115 pass the predeclared 80% winter-coverage gate for 2013/14–2025/26.
 - Built a 271-row resort-to-SLF-station crosswalk retaining distance, station elevation, gap to resort-top altitude, coverage and proxy quality. 112 links are high, 99 moderate and 60 low quality; every row states that the external station is not a direct piste observation.
 - Built station-month, station-winter, resort vulnerability and reviewed destination-month snow tables. The 1,848-row destination panel contains 1,733 complete snow-proxy months and 1,565 rows with both an observed hotel outcome and complete snow proxy; no snow field is approved for causal use.
+- Cached six official SwissMetNet metadata/catalogue responses and 14 checksum-verified historical/current-year files for the seven nearest required stations. The raw selected files contain 265,838 daily rows across their full histories; the aligned 2013-01 to 2026-03 window contains 33,866 rows with complete temperatures and only 27 missing precipitation values.
+- Screened the official inventory for current stations with daily mean/minimum/maximum temperature and precipitation starting by 2013. Of 112 eligible candidates, nearest assignment for the 15 reviewed resort components requires seven stations; nine links are high and six moderate on horizontal-distance comparability, with distance and elevation gaps retained.
+- Built a 1,113-row SwissMetNet station-month panel with station-specific 2013–2025 calendar-month anomalies. Two station-months fail the 80% precipitation gate. The reviewed destination weather panel contains 1,744 complete rows out of 1,749 through 2026-03; the 1,848-row outcome panel contains 1,576 rows with both observed hotel nights and complete weather, and 1,560 with observed hotel nights plus complete snow and weather.
 - Audited annual membership evidence without filling gaps: 4 of 14 reviewed units have every active season documented, only 3 of those enter the outcome panel, and none of the 3 has both 24 observed pre and 24 observed active-post months.
 - Screened 814 treatment-donor pairs across 74 resort-linked hotel municipalities. Fifty-seven municipalities remain an upper-bound control pool after resolved Magic links; 438 pairs pass a mechanical 30 km / 36-pre / 24-post screen, but zero controls are approved.
-- Generated normalized provenance (48 source records), a 359-row data dictionary, source report, destination/capacity/snow reviews, continuity/control audits, a resort-level evidence-quality table, and an updated model-feasibility report.
-- Added a reproducible checkpoint runner and 14 passing automated tests.
+- Generated normalized provenance (55 source records), a 375-row data dictionary, source report, destination/capacity/snow/weather reviews, continuity/control audits, a resort-level evidence-quality table, and an updated model-feasibility report.
+- Added a reproducible checkpoint runner and 15 passing automated tests.
 
 ## Main empirical counts
 
@@ -58,6 +61,9 @@ Checkpoints 1–3, the first treatment-unit review, and initial capacity/snow in
 | SLF snow stations passing longitudinal gate | 115 | External mountain-station proxies, not pistes |
 | Resort listings with feature-ready snow proxy | 211 | High/moderate comparability and ≥10 usable winters |
 | Destination-months with complete snow proxy | 1,733 | 1,565 also have observed hotel nights |
+| SwissMetNet stations eligible from inventory | 112 | All four daily parameters start by 2013 and have no recorded end date |
+| SwissMetNet stations selected | 7 | Nearest stations for 15 reviewed resort components |
+| Destination-months with complete weather proxy | 1,744 | 1,576 also have observed hotel nights |
 | Units with 24 pre and 24 post months under continuity assumption | 7 | Coverage only; not identification |
 | Panel units with fully documented active-season continuity | 3 | Crans-Montana, Schwanden, Meiringen-Hasliberg |
 | Fully documented panel units with 24 pre and 24 post months | 0 | Decisive causal feasibility failure |
@@ -87,6 +93,7 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 - Crans-Montana's documented 2020-04-30 base-pass exit proves treatment cannot be assumed absorbing.
 - Suppressed hotel values are missing, not zero, and are not imputed.
 - Physically negative SLF snow-depth values are retained in raw evidence but set missing in derived metrics. Station proxies preserve distance/elevation diagnostics and never claim direct slope representation.
+- SwissMetNet precipitation retains its official 06:00-to-06:00 UTC daily window. Weather anomalies use project-calculated 2013–2025 station/month references, not official climatological normals. Regional station proxies remain non-piste and causal-not-approved.
 - Validation must remain grouped by destination/municipality and time.
 
 ## Known blockers and data gaps
@@ -96,14 +103,14 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 3. Twenty-six official base-entry labels remain unresolved to supplied listings.
 4. Core-municipality proxies do not establish full tourism catchments, and spillovers remain unresolved.
 5. No historical municipality-boundary harmonization has been implemented.
-6. Hotel capacity and a qualified snow-depth proxy are integrated, but temperature/precipitation, snowmaking, accessibility, population, tourism dependence, simultaneous investment, and competition/network controls are missing.
-7. Sixty resort-to-snow-station links have low spatial/elevation comparability; station-choice and gridded-data sensitivity tests remain pending.
+6. Hotel capacity and qualified snow/temperature/precipitation proxies are integrated, but snowmaking, accessibility, population, tourism dependence, simultaneous investment, and competition/network controls are missing.
+7. Sixty resort-to-snow-station links have low spatial/elevation comparability; alternative-station and gridded-data sensitivity tests remain pending for both snow and regional weather.
 8. The 57-municipality apparent control pool and 438 provisional donor pairs remain upper bounds, not approved controls.
 9. The exact upstream source/version of the lift GPKG and retrieval dates of legacy extracts remain unknown.
 
 ## Immediate next action
 
-Fill the remaining 25 unverified active unit-seasons, resolve the 26 unmatched base-entry labels, and collect MeteoSwiss temperature/precipitation. Test alternative-station or ERA5-Land sensitivity for snow, and replace the mechanical donor screen with a documented membership/spillover review before reassessing Checkpoints 4–5. Do not fit causal or complex ML models before the gate changes.
+Fill the remaining 25 unverified active unit-seasons and resolve the 26 unmatched base-entry labels. Test alternative-station or gridded sensitivity for snow and weather, then replace the mechanical donor screen with a documented membership/spillover review before reassessing Checkpoints 4–5. Do not fit causal or complex ML models before the gate changes.
 
 ## Key files
 
@@ -121,6 +128,7 @@ Fill the remaining 25 unverified active unit-seasons, resolve the 26 unmatched b
 - Destination review: `reports/04_DESTINATION_UNIT_REVIEW.md`
 - Hotel capacity: `reports/05_HOTEL_CAPACITY.md` and `reports/hotel_capacity_treatment_diagnostics.csv`
 - Snow proxy: `reports/06_SNOW_SOURCE_AND_PROXY.md`, `data_processed/resort_snow_station_crosswalk.csv`, and `data_processed/resort_snow_vulnerability.csv`
+- Weather proxy: `reports/07_WEATHER_PROXY.md`, `data_processed/resort_weather_station_crosswalk.csv`, and `data_processed/destination_weather_month.csv`
 - Membership continuity: `reports/membership_continuity_audit.csv`
 - Control screen: `reports/control_candidates_by_treatment.csv`
 - Research log: `logs/research_journal.md`

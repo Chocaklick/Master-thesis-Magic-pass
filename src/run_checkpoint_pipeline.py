@@ -32,11 +32,17 @@ def main() -> None:
     run("src/geospatial/prepare_municipality_queries.py")
     if args.with_collection:
         run("src/data_collection/collect_evidence.py", "--config", "config/evidence_sources.json")
+        run(
+            "src/data_collection/collect_evidence.py",
+            "--config",
+            "config/meteoswiss_selected_station_files.json",
+        )
         run("src/data_collection/collect_bfs_hotel_capacity.py")
         run("src/data_collection/collect_evidence.py", "--config", "config/municipality_queries.json")
         run("src/data_collection/extract_press_text.py")
     run("src/data_processing/build_hotel_capacity_panel.py")
     run("src/data_processing/build_snow_proxy_panel.py")
+    run("src/data_processing/build_weather_proxy_panel.py")
     run("src/geospatial/build_point_municipality_crosswalk.py")
     run("src/entity_resolution/build_magic_membership_history.py")
     run("src/entity_resolution/extract_current_magic_destinations.py")

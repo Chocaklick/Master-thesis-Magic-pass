@@ -20,6 +20,7 @@ CONTINUITY_AUDIT = ROOT / "reports" / "membership_continuity_audit.csv"
 CONTROL_SUMMARY = ROOT / "reports" / "control_audit_summary.json"
 CAPACITY_SUMMARY = ROOT / "reports" / "hotel_capacity_summary.json"
 SNOW_SUMMARY = ROOT / "reports" / "snow_proxy_summary.json"
+WEATHER_SUMMARY = ROOT / "reports" / "weather_proxy_summary.json"
 CLUSTERS = ROOT / "data_raw" / "stations_ski_clusters_resume_gps_bergfex.csv"
 WINDOW_OUTPUT = ROOT / "reports" / "provisional_treatment_window_coverage.csv"
 COUNT_OUTPUT = ROOT / "reports" / "feasibility_counts.csv"
@@ -52,6 +53,7 @@ def main() -> None:
     control_summary = json.loads(CONTROL_SUMMARY.read_text(encoding="utf-8"))
     capacity_summary = json.loads(CAPACITY_SUMMARY.read_text(encoding="utf-8"))
     snow_summary = json.loads(SNOW_SUMMARY.read_text(encoding="utf-8"))
+    weather_summary = json.loads(WEATHER_SUMMARY.read_text(encoding="utf-8"))
     clusters = pd.read_csv(CLUSTERS, sep=";", dtype="string")
     hotel["date"] = pd.to_datetime(hotel["date"], errors="raise")
 
@@ -255,6 +257,23 @@ def main() -> None:
                 & reviewed_panel["complete_snow_proxy"]
             ).sum()
         ),
+        "meteoswiss_candidate_stations_with_core_parameters_since_2013": int(
+            weather_summary[
+                "eligible_candidate_stations_with_core_parameters_since_2013"
+            ]
+        ),
+        "meteoswiss_selected_weather_stations": int(
+            weather_summary["selected_station_count"]
+        ),
+        "reviewed_destination_months_complete_weather_proxy": int(
+            reviewed_panel["complete_weather_proxy"].sum()
+        ),
+        "observed_outcome_rows_with_complete_weather_proxy": int(
+            (
+                reviewed_panel["hotel_overnights"].notna()
+                & reviewed_panel["complete_weather_proxy"]
+            ).sum()
+        ),
         "reviewed_units_with_24_pre_and_post_months_assumption": int(
             (
                 as_bool(reviewed_units["eligible_for_reviewed_outcome_panel"])
@@ -309,7 +328,7 @@ def main() -> None:
     )
 
     model_rows = [
-        ("Municipality fixed-effects panel", "Diagnostic-ready only", "Eleven reviewed outcome units, monthly hotel capacity, and SLF mountain-station snow proxies can be represented, but membership continuity, remaining confounding, spillovers, and controls remain unresolved."),
+        ("Municipality fixed-effects panel", "Diagnostic-ready only", "Eleven reviewed outcome units, monthly hotel capacity, SLF snow proxies, and MeteoSwiss temperature/precipitation proxies can be represented, but membership continuity, remaining confounding, spillovers, and controls remain unresolved."),
         ("Staggered Difference-in-Differences", "Not credible yet", "Destination scope is improved, but continuity assumptions and untreated-control status are not validated."),
         ("Matching", "Descriptive only", "May help select analogues after pre-treatment covariates and membership status are completed; it is not yet causal."),
         ("Synthetic control / synthetic DiD", "Case-study candidate", "Could be assessed for a few clearly mapped municipalities with uncontaminated donors; no donor pool is approved yet."),
@@ -329,7 +348,7 @@ Generated reproducibly by `src/data_processing/build_feasibility_report.py`.
 
 ## Executive verdict
 
-The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. Destination scope, monthly hotel capacity, and an explicitly qualified SLF snow proxy have now been integrated, but a move to Path B still requires complete season-by-season membership and exit histories, the remaining confounders, and an uncontaminated control audit.
+The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. Destination scope, monthly hotel capacity, a qualified SLF snow proxy, and qualified MeteoSwiss temperature/precipitation proxies have now been integrated, but a move to Path B still requires complete season-by-season membership and exit histories, the remaining confounders, and an uncontaminated control audit.
 
 No causal model, treatment-effect learner, opportunity score, or neural network should be fitted at this checkpoint.
 
@@ -382,6 +401,12 @@ The official SLF historical archive contains daily observations for **{metrics['
 
 The reviewed panel contains **{metrics['reviewed_destination_months_complete_snow_proxy']:,} complete station-proxy months**; **{metrics['observed_outcome_rows_with_complete_snow_proxy']:,} rows** also have an observed hotel-night outcome. These fields support descriptive climate adjustment and future robustness checks only. IMIS stations serve avalanche monitoring and can differ materially from pistes in terrain, aspect, wind, elevation, grooming, and snowmaking. No snow field is yet an approved causal covariate.
 
+## Temperature and precipitation proxy coverage
+
+Official MeteoSwiss inventory metadata identifies **{metrics['meteoswiss_candidate_stations_with_core_parameters_since_2013']} current SwissMetNet stations** whose daily mean/minimum/maximum temperature and 06:00-to-06:00 UTC precipitation series start by the analysis date and have no recorded end. Nearest-station assignment for the reviewed resort components requires **{metrics['meteoswiss_selected_weather_stations']} stations**.
+
+The reviewed panel contains **{metrics['reviewed_destination_months_complete_weather_proxy']:,} complete weather-proxy months**; **{metrics['observed_outcome_rows_with_complete_weather_proxy']:,} rows** also have an observed hotel-night outcome. Station-specific calendar-month anomalies use 2013–2025 usable observations. Two station-months fail the 80% precipitation coverage gate and remain missing. These are regional station proxies, not piste microclimate or snowfall-phase measures, and no weather field is yet approved as a causal covariate.
+
 ## Membership-continuity audit
 
 Entry events, full official rosters, named continuation statements, and the documented Crans-Montana exit were checked season by season. Missing annual evidence remains unverified rather than being filled as active or inactive.
@@ -412,11 +437,11 @@ See `reports/control_contamination_audit.csv` and `reports/control_candidates_by
 4. Crans-Montana proves that treatment is not universally absorbing.
 5. COVID overlaps the post-period of early entrants and the entry period of later ones.
 6. Spillovers may contaminate nearby nominal controls.
-7. Hotel capacity and a qualified mountain-station snow proxy are integrated, but temperature/precipitation, snowmaking, accessibility, investment, local economic conditions, and competing-network changes remain unmeasured.
+7. Hotel capacity, mountain-station snow, and regional temperature/precipitation proxies are integrated, but snowmaking, accessibility, investment, local economic conditions, and competing-network changes remain unmeasured.
 
 ## Next evidence gate
 
-Fill the remaining unverified unit-seasons, resolve the unmatched official entry labels, add MeteoSwiss temperature/precipitation and the remaining time-varying confounders, validate snow-proxy sensitivity, and replace the mechanical donor screen with a documented membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+Fill the remaining unverified unit-seasons, resolve the unmatched official entry labels, add the remaining time-varying confounders, validate weather/snow proxy sensitivity, and replace the mechanical donor screen with a documented membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

@@ -27,6 +27,7 @@ POINTS = ROOT / "data_processed" / "resort_point_municipality.csv"
 HISTORY = ROOT / "data_processed" / "magic_pass_membership_history.csv"
 HOTEL = ROOT / "data_processed" / "hotel_municipality_month_enriched.csv"
 SNOW = ROOT / "data_processed" / "destination_snow_month.csv"
+WEATHER = ROOT / "data_processed" / "destination_weather_month.csv"
 EVIDENCE_DIR = ROOT / "data_external" / "source_evidence"
 
 RESORT_CROSSWALK_OUT = ROOT / "data_processed" / "resort_municipality_crosswalk.csv"
@@ -93,6 +94,8 @@ def main() -> None:
     hotel["date"] = pd.to_datetime(hotel["date"], errors="raise")
     snow = pd.read_csv(SNOW)
     snow["date"] = pd.to_datetime(snow["date"], errors="raise")
+    weather = pd.read_csv(WEATHER)
+    weather["date"] = pd.to_datetime(weather["date"], errors="raise")
     bfs_hotels = load_bfs_hotel_universe()
 
     unit_ids = [unit["destination_unit_id"] for unit in units]
@@ -472,6 +475,40 @@ def main() -> None:
     panel["snow_direct_slope_representation"] = panel[
         "snow_direct_slope_representation"
     ].eq(True)
+    weather_expected = weather.groupby("destination_unit_id", observed=True)[
+        "weather_station_count_expected"
+    ].first()
+    weather_quality = weather.groupby("destination_unit_id", observed=True)[
+        "destination_weather_proxy_quality"
+    ].first()
+    panel = panel.merge(
+        weather.drop(columns="destination_name"),
+        on=["destination_unit_id", "date"],
+        how="left",
+        validate="one_to_one",
+    )
+    panel["weather_station_count_expected"] = panel[
+        "weather_station_count_expected"
+    ].fillna(panel["destination_unit_id"].map(weather_expected)).astype("Int64")
+    panel["weather_station_months_usable"] = panel[
+        "weather_station_months_usable"
+    ].fillna(0).astype("Int64")
+    panel["complete_weather_proxy"] = panel["complete_weather_proxy"].eq(True)
+    panel["destination_weather_proxy_quality"] = panel[
+        "destination_weather_proxy_quality"
+    ].fillna(panel["destination_unit_id"].map(weather_quality))
+    panel["weather_source_id"] = panel["weather_source_id"].fillna(
+        "METEOSWISS_SMN_DAILY_SELECTED"
+    )
+    panel["weather_direct_slope_representation"] = panel[
+        "weather_direct_slope_representation"
+    ].eq(True)
+    panel["weather_causal_covariate_approved"] = panel[
+        "weather_causal_covariate_approved"
+    ].eq(True)
+    panel["precipitation_observation_window"] = panel[
+        "precipitation_observation_window"
+    ].fillna("06:00_UTC_to_06:00_UTC_next_day")
     panel["source_id"] = "DERIVED_REVIEWED_DESTINATION_PANEL"
     panel["capacity_source_id"] = "BFS_HOTEL_CAPACITY_DATA"
     panel = panel.sort_values(["destination_unit_id", "date"]).reset_index(drop=True)
@@ -558,6 +595,12 @@ def main() -> None:
         "observed_outcome_rows_with_complete_snow_proxy": int(
             (panel["hotel_overnights"].notna() & panel["complete_snow_proxy"]).sum()
         ),
+        "complete_destination_month_weather_proxy_rows": int(
+            panel["complete_weather_proxy"].sum()
+        ),
+        "observed_outcome_rows_with_complete_weather_proxy": int(
+            (panel["hotel_overnights"].notna() & panel["complete_weather_proxy"]).sum()
+        ),
         "units_with_24_pre_and_24_active_post_months_assumption": int(usable_24.sum()),
         "units_with_36_pre_and_36_active_post_months_assumption": int(usable_36.sum()),
         "causal_treatment_units_approved": 0,
@@ -616,6 +659,7 @@ This review approves an outcome aggregation, not a causal exposure. Every destin
 - Establishments, rooms and beds are summed across the reviewed municipal scope only when every municipality is observed. `hotel_overnights_per_available_bed_month` uses the contemporaneous demand and bed capacity from the same live HESTA table.
 - Official occupancy percentages are retained for single-municipality destinations only. They are not averaged across multi-municipality destinations because the required open-bed-day denominator is unavailable.
 - Snow fields are external mountain-station proxies from the nearest longitudinally complete SLF IMIS station(s), not direct observations on the pistes. Distance, elevation gap, station coverage and proxy quality are retained in separate crosswalks; missing station months are not imputed.
+- Temperature and precipitation fields are regional SwissMetNet station proxies. The nearest station with the four required daily parameters since 2013 is used for each component resort; duplicate stations within a destination are counted once. Missing or sub-80%-coverage months are not imputed, and the 06:00-to-06:00 UTC precipitation window remains explicit.
 - Anniviers and Espace Dent Blanche collapse multiple same-season resort labels to one municipal outcome. Reichenbach im Kandertal has one municipal outcome with a later treatment-intensity increment when Kiental enters.
 - Meiringen-Hasliberg sums Hasliberg and Meiringen. Villars-Gryon-Les Diablerets, Sainte-Croix / Les Rasses, and Bergbahnen Destination Gstaad are excluded because the hotel panel only observes part of their reviewed composite scope.
 
