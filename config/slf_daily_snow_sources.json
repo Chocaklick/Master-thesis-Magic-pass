@@ -1,0 +1,9 @@
+[
+  {
+    "source_id": "SLF_IMIS_DAILY_SNOW",
+    "url": "https://measurement-data.slf.ch/imis/data/daily_snow_values/daily_snow.csv",
+    "suffix": "csv",
+    "organisation": "WSL Institute for Snow and Avalanche Research SLF",
+    "description": "Official historical daily IMIS snow-depth and modelled new-snow observations"
+  }
+]

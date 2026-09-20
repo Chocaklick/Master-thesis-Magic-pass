@@ -1,0 +1,30 @@
+[
+  {
+    "source_id": "SLF_DATA_SERVICE",
+    "url": "https://www.slf.ch/en/services-and-products/slf-data-service/",
+    "suffix": "html",
+    "organisation": "WSL Institute for Snow and Avalanche Research SLF",
+    "description": "Official scope, access, licence, attribution, and quality conditions for SLF snow data"
+  },
+  {
+    "source_id": "SLF_IMIS_README",
+    "url": "https://measurement-data.slf.ch/README.md",
+    "suffix": "md",
+    "organisation": "WSL Institute for Snow and Avalanche Research SLF",
+    "description": "Official documentation for the historical SLF measurement-data archive"
+  },
+  {
+    "source_id": "SLF_IMIS_STATIONS",
+    "url": "https://measurement-data.slf.ch/imis/stations.csv",
+    "suffix": "csv",
+    "organisation": "WSL Institute for Snow and Avalanche Research SLF",
+    "description": "Official IMIS station catalogue with location and elevation metadata"
+  },
+  {
+    "source_id": "SLF_IMIS_DAILY_INDEX",
+    "url": "https://measurement-data.slf.ch/imis/data/daily_snow_values/daily_snow_by_station/",
+    "suffix": "html",
+    "organisation": "WSL Institute for Snow and Avalanche Research SLF",
+    "description": "Official directory of station-level daily snow CSV files"
+  }
+]

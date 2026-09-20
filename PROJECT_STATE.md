@@ -6,11 +6,11 @@ Build a reproducible and scientifically defensible Business Analytics framework 
 
 ## Current phase
 
-Checkpoints 1–3, the first treatment-unit review, and the first time-varying confounder integration are complete: existing data have been audited, official treatment evidence collected, candidate destination/municipality scopes reviewed, membership continuity audited season by season, donor contamination mechanically screened, and official monthly hotel capacity added. Checkpoints 4–5 still fail for causal and heterogeneous-effect modelling. The evidence supports Path C (exploratory segmentation/analogue decision support) unless membership continuity, remaining confounders, spillovers, and controls are materially improved.
+Checkpoints 1–3, the first treatment-unit review, and initial capacity/snow integrations are complete: existing data have been audited, official treatment evidence collected, candidate destination/municipality scopes reviewed, membership continuity audited season by season, donor contamination mechanically screened, official monthly hotel capacity added, and a qualified SLF mountain-station snow proxy built. Checkpoints 4–5 still fail for causal and heterogeneous-effect modelling. The evidence supports Path C (exploratory segmentation/analogue decision support) unless membership continuity, remaining confounders, spillovers, and controls are materially improved.
 
 ## Last update
 
-2026-09-20 10:51 CEST
+2026-09-20 11:08 CEST
 
 ## Completed work
 
@@ -28,10 +28,13 @@ Checkpoints 1–3, the first treatment-unit review, and the first time-varying c
 - Collapsed the 18 candidate entry/outcome links into 14 reviewed destination units. Eleven units have an explicit municipality outcome scope; Villars-Gryon-Les Diablerets, Sainte-Croix / Les Rasses, and Bergbahnen Destination Gstaad are excluded because their composite geography is only partly covered by the hotel panel.
 - Built a 1,848-row reviewed destination-month panel with 1,581 complete aggregated hotel-night outcomes and 1,637 complete aggregated capacity rows. Counts are summed with weight 1 and are missing unless every municipality in scope is observed; official occupancy rates are not averaged across multi-municipality units.
 - Produced a non-causal 24-month capacity diagnostic separating changes in overnight stays, available beds, and overnight stays per bed. Eight panel units have complete adjacent 24-month capacity windows, but continuity, seasonality, trends, COVID, weather, and donor adjustment remain unresolved.
+- Compared official/scientific snow sources and selected the SLF historical IMIS archive for the first proxy. The cached file contains 1,212,878 daily rows from 1992-10 through 2026-09; 166 snow stations have data and 115 pass the predeclared 80% winter-coverage gate for 2013/14–2025/26.
+- Built a 271-row resort-to-SLF-station crosswalk retaining distance, station elevation, gap to resort-top altitude, coverage and proxy quality. 112 links are high, 99 moderate and 60 low quality; every row states that the external station is not a direct piste observation.
+- Built station-month, station-winter, resort vulnerability and reviewed destination-month snow tables. The 1,848-row destination panel contains 1,733 complete snow-proxy months and 1,565 rows with both an observed hotel outcome and complete snow proxy; no snow field is approved for causal use.
 - Audited annual membership evidence without filling gaps: 4 of 14 reviewed units have every active season documented, only 3 of those enter the outcome panel, and none of the 3 has both 24 observed pre and 24 observed active-post months.
 - Screened 814 treatment-donor pairs across 74 resort-linked hotel municipalities. Fifty-seven municipalities remain an upper-bound control pool after resolved Magic links; 438 pairs pass a mechanical 30 km / 36-pre / 24-post screen, but zero controls are approved.
-- Generated normalized provenance (43 source records), a 345-row data dictionary, source report, destination/capacity reviews, continuity/control audits, a resort-level evidence-quality table, and an updated model-feasibility report.
-- Added a reproducible checkpoint runner and 13 passing automated tests.
+- Generated normalized provenance (48 source records), a 359-row data dictionary, source report, destination/capacity/snow reviews, continuity/control audits, a resort-level evidence-quality table, and an updated model-feasibility report.
+- Added a reproducible checkpoint runner and 14 passing automated tests.
 
 ## Main empirical counts
 
@@ -52,6 +55,9 @@ Checkpoints 1–3, the first treatment-unit review, and the first time-varying c
 | Reviewed destination-month rows | 1,848 | 1,581 complete hotel-night outcomes |
 | Reviewed destination-months with complete capacity | 1,637 | Capacity covariate coverage, not causal identification |
 | Units with complete 24-month pre/post capacity windows | 8 | Descriptive adjacent-window diagnostic only |
+| SLF snow stations passing longitudinal gate | 115 | External mountain-station proxies, not pistes |
+| Resort listings with feature-ready snow proxy | 211 | High/moderate comparability and ≥10 usable winters |
+| Destination-months with complete snow proxy | 1,733 | 1,565 also have observed hotel nights |
 | Units with 24 pre and 24 post months under continuity assumption | 7 | Coverage only; not identification |
 | Panel units with fully documented active-season continuity | 3 | Crans-Montana, Schwanden, Meiringen-Hasliberg |
 | Fully documented panel units with 24 pre and 24 post months | 0 | Decisive causal feasibility failure |
@@ -80,6 +86,7 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 - Membership events and destination-month rows remain causal-not-ready until continuity/exits, confounding, spillovers, and controls are approved.
 - Crans-Montana's documented 2020-04-30 base-pass exit proves treatment cannot be assumed absorbing.
 - Suppressed hotel values are missing, not zero, and are not imputed.
+- Physically negative SLF snow-depth values are retained in raw evidence but set missing in derived metrics. Station proxies preserve distance/elevation diagnostics and never claim direct slope representation.
 - Validation must remain grouped by destination/municipality and time.
 
 ## Known blockers and data gaps
@@ -89,13 +96,14 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 3. Twenty-six official base-entry labels remain unresolved to supplied listings.
 4. Core-municipality proxies do not establish full tourism catchments, and spillovers remain unresolved.
 5. No historical municipality-boundary harmonization has been implemented.
-6. Hotel capacity is integrated, but snow/climate, accessibility, population, tourism dependence, simultaneous investment, and competition/network controls are missing.
-7. The 57-municipality apparent control pool and 438 provisional donor pairs remain upper bounds, not approved controls.
-8. The exact upstream source/version of the lift GPKG and retrieval dates of legacy extracts remain unknown.
+6. Hotel capacity and a qualified snow-depth proxy are integrated, but temperature/precipitation, snowmaking, accessibility, population, tourism dependence, simultaneous investment, and competition/network controls are missing.
+7. Sixty resort-to-snow-station links have low spatial/elevation comparability; station-choice and gridded-data sensitivity tests remain pending.
+8. The 57-municipality apparent control pool and 438 provisional donor pairs remain upper bounds, not approved controls.
+9. The exact upstream source/version of the lift GPKG and retrieval dates of legacy extracts remain unknown.
 
 ## Immediate next action
 
-Fill the remaining 25 unverified active unit-seasons, resolve the 26 unmatched base-entry labels, and collect the next time-varying confounder: snow/weather. Replace the mechanical donor screen with a documented membership/spillover review before reassessing Checkpoints 4–5. Do not fit causal or complex ML models before the gate changes.
+Fill the remaining 25 unverified active unit-seasons, resolve the 26 unmatched base-entry labels, and collect MeteoSwiss temperature/precipitation. Test alternative-station or ERA5-Land sensitivity for snow, and replace the mechanical donor screen with a documented membership/spillover review before reassessing Checkpoints 4–5. Do not fit causal or complex ML models before the gate changes.
 
 ## Key files
 
@@ -112,6 +120,7 @@ Fill the remaining 25 unverified active unit-seasons, resolve the 26 unmatched b
 - Reviewed destination panel: `data_processed/destination_month_panel.csv`
 - Destination review: `reports/04_DESTINATION_UNIT_REVIEW.md`
 - Hotel capacity: `reports/05_HOTEL_CAPACITY.md` and `reports/hotel_capacity_treatment_diagnostics.csv`
+- Snow proxy: `reports/06_SNOW_SOURCE_AND_PROXY.md`, `data_processed/resort_snow_station_crosswalk.csv`, and `data_processed/resort_snow_vulnerability.csv`
 - Membership continuity: `reports/membership_continuity_audit.csv`
 - Control screen: `reports/control_candidates_by_treatment.csv`
 - Research log: `logs/research_journal.md`

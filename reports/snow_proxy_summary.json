@@ -1,0 +1,22 @@
+{
+  "raw_daily_rows": 1212878,
+  "raw_daily_start": "1992-10-01 00:00:00+00:00",
+  "raw_daily_end": "2026-09-13 00:00:00+00:00",
+  "snow_stations_with_daily_data": 166,
+  "stations_passing_80pct_winter_coverage_gate": 115,
+  "negative_snow_depth_values_treated_as_invalid": 2295,
+  "station_month_rows": 26394,
+  "station_winter_rows": 2158,
+  "resort_crosswalk_rows": 271,
+  "resort_proxy_quality_counts": {
+    "high": 112,
+    "moderate": 99,
+    "low": 60
+  },
+  "resorts_with_snow_climate_feature_ready": 211,
+  "destination_month_rows": 1749,
+  "destination_month_complete_snow_proxy_rows": 1733,
+  "destination_units": 11,
+  "causal_covariates_approved": 0,
+  "no_imputation": true
+}

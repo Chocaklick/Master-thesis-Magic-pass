@@ -19,6 +19,7 @@ def main() -> None:
     points = pd.read_csv(ROOT / "data_processed" / "resort_point_municipality.csv", dtype="string")
     history = pd.read_csv(ROOT / "data_processed" / "magic_pass_membership_history.csv", dtype="string")
     current = pd.read_csv(ROOT / "data_processed" / "magic_pass_current_destinations.csv", dtype="string")
+    snow = pd.read_csv(ROOT / "data_processed" / "resort_snow_vulnerability.csv", dtype="string")
 
     quality = resorts.merge(
         points[
@@ -45,6 +46,22 @@ def main() -> None:
         .rename("current_official_destination_candidates")
     )
     quality = quality.join(event_counts, on="resort_id").join(current_flag, on="resort_id")
+    quality = quality.merge(
+        snow[
+            [
+                "resort_id",
+                "snow_station_code",
+                "snow_station_distance_km",
+                "snow_station_elevation_gap_to_resort_top_m",
+                "usable_winter_seasons",
+                "snow_proxy_quality",
+                "snow_climate_feature_ready",
+            ]
+        ],
+        on="resort_id",
+        how="left",
+        validate="one_to_one",
+    )
     for column in ["documented_membership_events", "membership_source_count", "current_official_destination_candidates"]:
         quality[column] = quality[column].fillna(0).astype(int)
 
@@ -61,7 +78,14 @@ def main() -> None:
     ).astype(float) * 0.5
     feature_columns = ["altitude_top_m", "ski_area_km", "number_lifts"]
     quality["infrastructure_feature_score"] = quality[feature_columns].notna().mean(axis=1)
-    quality["snow_climate_score"] = 0.0
+    quality["snow_climate_score"] = quality["snow_proxy_quality"].map(
+        {"high": 1.0, "moderate": 0.75, "low": 0.25}
+    ).fillna(0.0)
+    quality.loc[~bool_series(quality["snow_climate_feature_ready"]), "snow_climate_score"] = (
+        quality.loc[
+            ~bool_series(quality["snow_climate_feature_ready"]), "snow_climate_score"
+        ].clip(upper=0.25)
+    )
     component_columns = [
         "identity_scope_score",
         "lift_assignment_score",
@@ -76,7 +100,11 @@ def main() -> None:
     quality["causal_ready"] = False
 
     def warnings(row: pd.Series) -> str:
-        messages = ["independent_destination_scope_unverified", "tourism_exposure_unverified", "snow_data_missing"]
+        messages = [
+            "independent_destination_scope_unverified",
+            "tourism_exposure_unverified",
+            "snow_proxy_not_direct_slope_measurement",
+        ]
         if row["lift_assignment_score"] < 1:
             messages.append("lift_assignment_review")
         if row["geolocation_score"] == 0:
@@ -85,12 +113,19 @@ def main() -> None:
             messages.append("no_hotel_outcome_at_point_municipality")
         if row["membership_history_score"] == 0:
             messages.append("membership_history_unverified")
+        if row["snow_climate_score"] == 0:
+            messages.append("snow_proxy_unavailable")
+        elif row["snow_proxy_quality"] == "low":
+            messages.append("snow_proxy_low_spatial_elevation_comparability")
         return "|".join(messages)
 
     quality["data_quality_warnings"] = quality.apply(warnings, axis=1)
     output_columns = [
         "resort_id", "resort_name_canonical", "cluster_id", "point_municipality_bfs_id",
-        "documented_membership_events", "current_official_destination_candidates", *component_columns,
+        "documented_membership_events", "current_official_destination_candidates",
+        "snow_station_code", "snow_station_distance_km",
+        "snow_station_elevation_gap_to_resort_top_m", "usable_winter_seasons",
+        "snow_proxy_quality", *component_columns,
         "data_quality_score", "causal_ready", "data_quality_warnings",
     ]
     output = quality[output_columns].sort_values(["data_quality_score", "resort_id"], ascending=[False, True])

@@ -88,14 +88,14 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 
 ## DERIVED_REVIEWED_DESTINATION_PANEL — Reviewed destination-month panel
 
-- **Contents and relevance:** Monthly destination outcomes and hotel capacity aggregated across reviewed municipality scopes with diagnostic treatment coding
+- **Contents and relevance:** Monthly destination outcomes, hotel capacity, and qualified snow proxies aggregated across reviewed scopes with diagnostic treatment coding
 - **Producer:** Master thesis analytical pipeline
 - **Exact URL:** Not documented.
 - **Access and retrieval date:** versioned Python transformation; unknown date.
-- **Variables:** reviewed_destination_month_outcomes|hotel_capacity|diagnostic_membership_status
-- **Transformations:** Additive municipality outcome and capacity totals; missing unless every municipality is observed; official occupancy percentages retained only for single-municipality units; entry carried forward only as a flagged diagnostic assumption
+- **Variables:** reviewed_destination_month_outcomes|hotel_capacity|snow_proxy|diagnostic_membership_status
+- **Transformations:** Additive municipality outcome/capacity totals; complete-case multi-station snow-proxy means; official occupancy percentages retained only for single-municipality units; entry carried forward only as a flagged diagnostic assumption
 - **Coverage:** reviewed destination unit; monthly; 2013-01 to 2026-12 grid; 2026-03 latest observed outcome.
-- **Limitations:** No row is causal-ready; treatment continuity and controls remain unresolved and other time-varying confounders are pending
+- **Limitations:** No row is causal-ready; SLF proxies are not direct piste observations; treatment continuity, controls, and other time-varying confounders remain unresolved
 - **Local raw file:** `not cached / not applicable`.
 
 ## DESTINATION_SCOPE_OFFICIAL_SET — Destination scope evidence set
@@ -505,6 +505,66 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/SAINTE_CROIX_SCOPE_OFFICIAL_20260920T005539Z.html`.
+
+## SLF_DATA_SERVICE — SLF data service terms and access documentation
+
+- **Contents and relevance:** Official scope, access, licence, attribution, and quality conditions for SLF snow data
+- **Producer:** WSL Institute for Snow and Avalanche Research SLF
+- **Exact URL:** https://www.slf.ch/en/services-and-products/slf-data-service/
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T08:55:53.205098+00:00.
+- **Variables:** licence|attribution|data_quality_conditions
+- **Transformations:** Cached and used for documentation or exact station metadata
+- **Coverage:** documentation; retrieval snapshot; ? to 2026.
+- **Limitations:** CC BY 4.0; SLF attribution and DOI are required; some source data are raw and not regularly corrected
+- **Local raw file:** `data_external/source_evidence/SLF_DATA_SERVICE_20260920T085553Z.html`.
+
+## SLF_IMIS_DAILY_INDEX — SLF station-level daily snow file directory
+
+- **Contents and relevance:** Official directory of station-level daily snow CSV files
+- **Producer:** WSL Institute for Snow and Avalanche Research SLF
+- **Exact URL:** https://www.slf.ch/en/services-and-products/slf-data-service/
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T08:55:57.098632+00:00.
+- **Variables:** station_file_inventory
+- **Transformations:** Cached and used for documentation or exact station metadata
+- **Coverage:** file inventory; retrieval snapshot; ? to 2026.
+- **Limitations:** Directory snapshot supports file-level audit; consolidated file is used for processing
+- **Local raw file:** `data_external/source_evidence/SLF_IMIS_DAILY_INDEX_20260920T085557Z.html`.
+
+## SLF_IMIS_DAILY_SNOW — SLF IMIS historical daily snow values
+
+- **Contents and relevance:** Official historical daily IMIS snow-depth and modelled new-snow observations
+- **Producer:** WSL Institute for Snow and Avalanche Research SLF
+- **Exact URL:** https://www.slf.ch/en/services-and-products/slf-data-service/
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T08:57:32.484947+00:00.
+- **Variables:** snow_depth_cm|modeled_new_snow_cm
+- **Transformations:** Physical nonnegative validation; monthly and November-April aggregation; 80% coverage gates; nearest eligible-station proxy with distance/elevation diagnostics
+- **Coverage:** mountain weather station; daily; 1992-10-01 to 2026-09-13.
+- **Limitations:** Negative snow depths are physically invalid and remain raw but missing in derived values; no imputation; station proxies are not direct piste measurements
+- **Local raw file:** `data_external/source_evidence/SLF_IMIS_DAILY_SNOW_20260920T085732Z.csv`.
+
+## SLF_IMIS_README — SLF historical measurement-data documentation
+
+- **Contents and relevance:** Official documentation for the historical SLF measurement-data archive
+- **Producer:** WSL Institute for Snow and Avalanche Research SLF
+- **Exact URL:** https://www.slf.ch/en/services-and-products/slf-data-service/
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T08:55:54.645354+00:00.
+- **Variables:** HS_definition|HN_1D_definition|units|aggregation_time
+- **Transformations:** Cached and used for documentation or exact station metadata
+- **Coverage:** station measurement documentation; archive documentation snapshot; ? to 2026.
+- **Limitations:** Daily HS is the 24-hour median at 06:00 UTC; HN_1D is modelled by SNOWPACK
+- **Local raw file:** `data_external/source_evidence/SLF_IMIS_README_20260920T085554Z.md`.
+
+## SLF_IMIS_STATIONS — SLF IMIS station catalogue
+
+- **Contents and relevance:** Official IMIS station catalogue with location and elevation metadata
+- **Producer:** WSL Institute for Snow and Avalanche Research SLF
+- **Exact URL:** https://www.slf.ch/en/services-and-products/slf-data-service/
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T08:55:55.917544+00:00.
+- **Variables:** station_code|label|longitude|latitude|elevation|station_type|active
+- **Transformations:** Cached and used for documentation or exact station metadata
+- **Coverage:** point station; station metadata snapshot; ? to 2026.
+- **Limitations:** Station locations are avalanche-monitoring sites and not ski-slope observations
+- **Local raw file:** `data_external/source_evidence/SLF_IMIS_STATIONS_20260920T085555Z.csv`.
 
 ## VILLARS_GRYON_SCOPE_OFFICIAL — Official destination or municipal scope page
 

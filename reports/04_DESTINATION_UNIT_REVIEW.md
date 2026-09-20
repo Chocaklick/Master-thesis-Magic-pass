@@ -34,6 +34,7 @@ This review approves an outcome aggregation, not a causal exposure. Every destin
 - A destination-month aggregate is missing unless every municipality in its approved scope has an observed value.
 - Establishments, rooms and beds are summed across the reviewed municipal scope only when every municipality is observed. `hotel_overnights_per_available_bed_month` uses the contemporaneous demand and bed capacity from the same live HESTA table.
 - Official occupancy percentages are retained for single-municipality destinations only. They are not averaged across multi-municipality destinations because the required open-bed-day denominator is unavailable.
+- Snow fields are external mountain-station proxies from the nearest longitudinally complete SLF IMIS station(s), not direct observations on the pistes. Distance, elevation gap, station coverage and proxy quality are retained in separate crosswalks; missing station months are not imputed.
 - Anniviers and Espace Dent Blanche collapse multiple same-season resort labels to one municipal outcome. Reichenbach im Kandertal has one municipal outcome with a later treatment-intensity increment when Kiental enters.
 - Meiringen-Hasliberg sums Hasliberg and Meiringen. Villars-Gryon-Les Diablerets, Sainte-Croix / Les Rasses, and Bergbahnen Destination Gstaad are excluded because the hotel panel only observes part of their reviewed composite scope.
 

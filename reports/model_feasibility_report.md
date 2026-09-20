@@ -4,7 +4,7 @@ Generated reproducibly by `src/data_processing/build_feasibility_report.py`.
 
 ## Executive verdict
 
-The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. Destination scope and monthly hotel capacity have now been integrated, but a move to Path B still requires complete season-by-season membership and exit histories, the remaining confounders, and an uncontaminated control audit.
+The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. Destination scope, monthly hotel capacity, and an explicitly qualified SLF snow proxy have now been integrated, but a move to Path B still requires complete season-by-season membership and exit histories, the remaining confounders, and an uncontaminated control audit.
 
 No causal model, treatment-effect learner, opportunity score, or neural network should be fitted at this checkpoint.
 
@@ -51,6 +51,12 @@ For each destination, `reports/hotel_capacity_treatment_diagnostics.csv` compare
 
 This is a descriptive diagnostic only. The adjacent windows are not seasonally or trend adjusted, early post-periods can overlap COVID, and membership continuity remains assumed. Capacity integration therefore helps distinguish demand changes from contemporaneous supply changes but does not identify a Magic Pass effect.
 
+## Snow proxy coverage
+
+The official SLF historical archive contains daily observations for **166 snow stations**. The project predeclares an 80% November–April coverage gate over 2013/14–2025/26; **115 stations** pass. Every resort listing is mapped to the geographically nearest passing station, while distance and the elevation gap to the published resort top remain visible. **211 of 271 listings** have high/moderate proxy comparability and at least ten usable winters.
+
+The reviewed panel contains **1,733 complete station-proxy months**; **1,565 rows** also have an observed hotel-night outcome. These fields support descriptive climate adjustment and future robustness checks only. IMIS stations serve avalanche monitoring and can differ materially from pistes in terrain, aspect, wind, elevation, grooming, and snowmaking. No snow field is yet an approved causal covariate.
+
 ## Membership-continuity audit
 
 Entry events, full official rosters, named continuation statements, and the documented Crans-Montana exit were checked season by season. Missing annual evidence remains unverified rather than being filled as active or inactive.
@@ -71,7 +77,7 @@ See `reports/control_contamination_audit.csv` and `reports/control_candidates_by
 
 | Model family | Current decision | Evidence-based reason |
 |---|---|---|
-| Municipality fixed-effects panel | Diagnostic-ready only | Eleven reviewed outcome units and monthly hotel capacity can be represented, but membership continuity, remaining confounding, spillovers, and controls remain unresolved. |
+| Municipality fixed-effects panel | Diagnostic-ready only | Eleven reviewed outcome units, monthly hotel capacity, and SLF mountain-station snow proxies can be represented, but membership continuity, remaining confounding, spillovers, and controls remain unresolved. |
 | Staggered Difference-in-Differences | Not credible yet | Destination scope is improved, but continuity assumptions and untreated-control status are not validated. |
 | Matching | Descriptive only | May help select analogues after pre-treatment covariates and membership status are completed; it is not yet causal. |
 | Synthetic control / synthetic DiD | Case-study candidate | Could be assessed for a few clearly mapped municipalities with uncontaminated donors; no donor pool is approved yet. |
@@ -90,8 +96,8 @@ See `reports/control_contamination_audit.csv` and `reports/control_candidates_by
 4. Crans-Montana proves that treatment is not universally absorbing.
 5. COVID overlaps the post-period of early entrants and the entry period of later ones.
 6. Spillovers may contaminate nearby nominal controls.
-7. Hotel capacity is integrated, but snow, weather, accessibility, investment, local economic conditions, and competing-network changes remain unmeasured.
+7. Hotel capacity and a qualified mountain-station snow proxy are integrated, but temperature/precipitation, snowmaking, accessibility, investment, local economic conditions, and competing-network changes remain unmeasured.
 
 ## Next evidence gate
 
-Fill the remaining unverified unit-seasons, resolve the unmatched official entry labels, add snow/weather and the remaining time-varying confounders, and replace the mechanical donor screen with a documented membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+Fill the remaining unverified unit-seasons, resolve the unmatched official entry labels, add MeteoSwiss temperature/precipitation and the remaining time-varying confounders, validate snow-proxy sensitivity, and replace the mechanical donor screen with a documented membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.

@@ -26,6 +26,7 @@ RESORTS = ROOT / "data_processed" / "resort_master.csv"
 POINTS = ROOT / "data_processed" / "resort_point_municipality.csv"
 HISTORY = ROOT / "data_processed" / "magic_pass_membership_history.csv"
 HOTEL = ROOT / "data_processed" / "hotel_municipality_month_enriched.csv"
+SNOW = ROOT / "data_processed" / "destination_snow_month.csv"
 EVIDENCE_DIR = ROOT / "data_external" / "source_evidence"
 
 RESORT_CROSSWALK_OUT = ROOT / "data_processed" / "resort_municipality_crosswalk.csv"
@@ -90,6 +91,8 @@ def main() -> None:
     history = pd.read_csv(HISTORY, dtype="string", keep_default_na=False)
     hotel = pd.read_csv(HOTEL)
     hotel["date"] = pd.to_datetime(hotel["date"], errors="raise")
+    snow = pd.read_csv(SNOW)
+    snow["date"] = pd.to_datetime(snow["date"], errors="raise")
     bfs_hotels = load_bfs_hotel_universe()
 
     unit_ids = [unit["destination_unit_id"] for unit in units]
@@ -443,6 +446,32 @@ def main() -> None:
     panel["outcome_scope_status"] = panel["destination_unit_id"].map(
         {unit["destination_unit_id"]: unit["scope_review_status"] for unit in units}
     )
+    snow_expected = snow.groupby("destination_unit_id", observed=True)[
+        "snow_station_count_expected"
+    ].first()
+    snow_quality = snow.groupby("destination_unit_id", observed=True)[
+        "destination_snow_proxy_quality"
+    ].first()
+    panel = panel.merge(
+        snow.drop(columns="destination_name"),
+        on=["destination_unit_id", "date"],
+        how="left",
+        validate="one_to_one",
+    )
+    panel["snow_station_count_expected"] = panel["snow_station_count_expected"].fillna(
+        panel["destination_unit_id"].map(snow_expected)
+    ).astype("Int64")
+    panel["snow_station_months_usable"] = panel[
+        "snow_station_months_usable"
+    ].fillna(0).astype("Int64")
+    panel["complete_snow_proxy"] = panel["complete_snow_proxy"].eq(True)
+    panel["destination_snow_proxy_quality"] = panel[
+        "destination_snow_proxy_quality"
+    ].fillna(panel["destination_unit_id"].map(snow_quality))
+    panel["snow_source_id"] = panel["snow_source_id"].fillna("SLF_IMIS_DAILY_SNOW")
+    panel["snow_direct_slope_representation"] = panel[
+        "snow_direct_slope_representation"
+    ].eq(True)
     panel["source_id"] = "DERIVED_REVIEWED_DESTINATION_PANEL"
     panel["capacity_source_id"] = "BFS_HOTEL_CAPACITY_DATA"
     panel = panel.sort_values(["destination_unit_id", "date"]).reset_index(drop=True)
@@ -523,6 +552,12 @@ def main() -> None:
         "destination_month_rows_with_observed_bed_capacity": int(
             panel["hotel_beds_available"].notna().sum()
         ),
+        "complete_destination_month_snow_proxy_rows": int(
+            panel["complete_snow_proxy"].sum()
+        ),
+        "observed_outcome_rows_with_complete_snow_proxy": int(
+            (panel["hotel_overnights"].notna() & panel["complete_snow_proxy"]).sum()
+        ),
         "units_with_24_pre_and_24_active_post_months_assumption": int(usable_24.sum()),
         "units_with_36_pre_and_36_active_post_months_assumption": int(usable_36.sum()),
         "causal_treatment_units_approved": 0,
@@ -580,6 +615,7 @@ This review approves an outcome aggregation, not a causal exposure. Every destin
 - A destination-month aggregate is missing unless every municipality in its approved scope has an observed value.
 - Establishments, rooms and beds are summed across the reviewed municipal scope only when every municipality is observed. `hotel_overnights_per_available_bed_month` uses the contemporaneous demand and bed capacity from the same live HESTA table.
 - Official occupancy percentages are retained for single-municipality destinations only. They are not averaged across multi-municipality destinations because the required open-bed-day denominator is unavailable.
+- Snow fields are external mountain-station proxies from the nearest longitudinally complete SLF IMIS station(s), not direct observations on the pistes. Distance, elevation gap, station coverage and proxy quality are retained in separate crosswalks; missing station months are not imputed.
 - Anniviers and Espace Dent Blanche collapse multiple same-season resort labels to one municipal outcome. Reichenbach im Kandertal has one municipal outcome with a later treatment-intensity increment when Kiental enters.
 - Meiringen-Hasliberg sums Hasliberg and Meiringen. Villars-Gryon-Les Diablerets, Sainte-Croix / Les Rasses, and Bergbahnen Destination Gstaad are excluded because the hotel panel only observes part of their reviewed composite scope.
 

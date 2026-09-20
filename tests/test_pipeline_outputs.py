@@ -82,6 +82,28 @@ def test_hotel_capacity_panel_is_complete_at_grid_level_and_not_imputed() -> Non
     assert int(reconciliation["mismatches"].sum()) == 6
 
 
+def test_slf_snow_proxy_preserves_coverage_and_representation_limits() -> None:
+    month = read("data_processed/slf_snow_station_month.csv")
+    winter = read("data_processed/slf_snow_station_winter.csv")
+    crosswalk = read("data_processed/resort_snow_station_crosswalk.csv")
+    vulnerability = read("data_processed/resort_snow_vulnerability.csv")
+    destination = read("data_processed/destination_snow_month.csv")
+    assert len(month) == 166 * 159
+    assert len(winter) == 166 * 13
+    assert not month.duplicated(["station_code", "date"]).any()
+    assert not winter.duplicated(["station_code", "winter_season"]).any()
+    assert len(crosswalk) == len(vulnerability) == 271
+    assert crosswalk["resort_id"].is_unique
+    assert crosswalk["snow_station_winter_coverage_share_2013_2025"].ge(0.80).all()
+    assert set(crosswalk["snow_proxy_quality"]) == {"high", "moderate", "low"}
+    assert not crosswalk["direct_slope_representation"].any()
+    assert int(vulnerability["snow_climate_feature_ready"].sum()) == 211
+    assert not vulnerability["causal_covariate_approved"].any()
+    assert len(destination) == 11 * 159
+    assert int(destination["complete_snow_proxy"].sum()) == 1_733
+    assert not destination["snow_direct_slope_representation"].any()
+
+
 def test_magic_evidence_is_not_silently_promoted_to_treatment() -> None:
     history = read("data_processed/magic_pass_membership_history.csv", dtype=str)
     assert len(history) == 93
@@ -187,6 +209,9 @@ def test_reviewed_destination_panel_aggregation_and_timing() -> None:
     assert panel["destination_unit_id"].nunique() == 11
     assert not panel.duplicated(["destination_unit_id", "date"]).any()
     assert not panel["causal_ready"].any()
+    assert int(panel["complete_snow_proxy"].sum()) == 1_733
+    assert int((panel["complete_snow_proxy"] & panel["hotel_overnights"].notna()).sum()) == 1_565
+    assert not panel["snow_direct_slope_representation"].any()
     assert len(events) == 19
     assert (events["treatment_ready"].str.lower() == "false").all()
 

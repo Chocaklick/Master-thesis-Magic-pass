@@ -194,6 +194,102 @@ def main() -> None:
         manual_verification="schema, checksums, grain, value bounds, and demand reconciliation checked",
         notes="Fourteen raw annual response files are listed in the master metadata sidecar; local_raw_file points to the first chunk",
     ))
+    slf_metadata = {
+        source_id: cached_metadata(source_id)
+        for source_id in [
+            "SLF_DATA_SERVICE",
+            "SLF_IMIS_README",
+            "SLF_IMIS_STATIONS",
+            "SLF_IMIS_DAILY_INDEX",
+            "SLF_IMIS_DAILY_SNOW",
+        ]
+    }
+    for source_id, dataset_name, variables, processed, level, temporal, notes in [
+        (
+            "SLF_DATA_SERVICE",
+            "SLF data service terms and access documentation",
+            "licence|attribution|data_quality_conditions",
+            "reports/06_SNOW_SOURCE_AND_PROXY.md",
+            "documentation",
+            "retrieval snapshot",
+            "CC BY 4.0; SLF attribution and DOI are required; some source data are raw and not regularly corrected",
+        ),
+        (
+            "SLF_IMIS_README",
+            "SLF historical measurement-data documentation",
+            "HS_definition|HN_1D_definition|units|aggregation_time",
+            "data_processed/slf_snow_station_month.csv|data_processed/slf_snow_station_winter.csv",
+            "station measurement documentation",
+            "archive documentation snapshot",
+            "Daily HS is the 24-hour median at 06:00 UTC; HN_1D is modelled by SNOWPACK",
+        ),
+        (
+            "SLF_IMIS_STATIONS",
+            "SLF IMIS station catalogue",
+            "station_code|label|longitude|latitude|elevation|station_type|active",
+            "data_processed/resort_snow_station_crosswalk.csv",
+            "point station",
+            "station metadata snapshot",
+            "Station locations are avalanche-monitoring sites and not ski-slope observations",
+        ),
+        (
+            "SLF_IMIS_DAILY_INDEX",
+            "SLF station-level daily snow file directory",
+            "station_file_inventory",
+            "reports/06_SNOW_SOURCE_AND_PROXY.md",
+            "file inventory",
+            "retrieval snapshot",
+            "Directory snapshot supports file-level audit; consolidated file is used for processing",
+        ),
+        (
+            "SLF_IMIS_DAILY_SNOW",
+            "SLF IMIS historical daily snow values",
+            "snow_depth_cm|modeled_new_snow_cm",
+            "data_processed/slf_snow_station_month.csv|data_processed/slf_snow_station_winter.csv|data_processed/resort_snow_vulnerability.csv|data_processed/destination_snow_month.csv",
+            "mountain weather station",
+            "daily",
+            "Negative snow depths are physically invalid and remain raw but missing in derived values; no imputation; station proxies are not direct piste measurements",
+        ),
+    ]:
+        item = configured[source_id]
+        metadata = slf_metadata[source_id]
+        rows.append(blank_source(
+            source_id,
+            variable_name=variables,
+            variable_description=item["description"],
+            source_organisation=item["organisation"],
+            source_dataset_name=dataset_name,
+            source_page_url=(
+                configured["SLF_DATA_SERVICE"]["url"]
+                if source_id != "SLF_DATA_SERVICE"
+                else item["url"]
+            ),
+            direct_download_url=item["url"],
+            retrieval_method="HTTP GET with immutable response and SHA-256 sidecar",
+            retrieval_date=metadata.get("retrieval_date", "") if metadata else "",
+            original_file_name=raw_name(metadata),
+            local_raw_file=metadata.get("raw_file", "") if metadata else "",
+            processed_file=processed,
+            geographic_level=level,
+            temporal_resolution=temporal,
+            temporal_start=("1992-10-01" if source_id == "SLF_IMIS_DAILY_SNOW" else ""),
+            temporal_end=("2026-09-13" if source_id == "SLF_IMIS_DAILY_SNOW" else "2026"),
+            unit=("centimetres" if source_id == "SLF_IMIS_DAILY_SNOW" else "metadata"),
+            license="CC BY 4.0",
+            access_conditions="Public static archive; cite SLF and DOI 10.16904/envidat.406 when IMIS data are used scientifically",
+            transformation_applied=(
+                "Physical nonnegative validation; monthly and November-April aggregation; 80% coverage gates; nearest eligible-station proxy with distance/elevation diagnostics"
+                if source_id == "SLF_IMIS_DAILY_SNOW"
+                else "Cached and used for documentation or exact station metadata"
+            ),
+            quality_notes=notes,
+            confidence_level=(
+                "high for source authenticity; mixed for resort-slope representativeness"
+                if source_id in {"SLF_IMIS_STATIONS", "SLF_IMIS_DAILY_SNOW"}
+                else "high for official documentation"
+            ),
+            manual_verification="schema, terms, units, station types, temporal coverage, missingness, and physical signs checked",
+        ))
 
     magic_ids = [key for key in configured if key.startswith("MAGIC_")]
     for source_id in magic_ids:
@@ -380,8 +476,8 @@ def main() -> None:
     ))
     rows.append(blank_source(
         "DERIVED_REVIEWED_DESTINATION_PANEL",
-        variable_name="reviewed_destination_month_outcomes|hotel_capacity|diagnostic_membership_status",
-        variable_description="Monthly destination outcomes and hotel capacity aggregated across reviewed municipality scopes with diagnostic treatment coding",
+        variable_name="reviewed_destination_month_outcomes|hotel_capacity|snow_proxy|diagnostic_membership_status",
+        variable_description="Monthly destination outcomes, hotel capacity, and qualified snow proxies aggregated across reviewed scopes with diagnostic treatment coding",
         source_organisation="Master thesis analytical pipeline",
         source_dataset_name="Reviewed destination-month panel",
         retrieval_method="versioned Python transformation",
@@ -392,8 +488,8 @@ def main() -> None:
         temporal_end="2026-12 grid; 2026-03 latest observed outcome",
         unit="destination-month",
         license="inherits source restrictions",
-        transformation_applied="Additive municipality outcome and capacity totals; missing unless every municipality is observed; official occupancy percentages retained only for single-municipality units; entry carried forward only as a flagged diagnostic assumption",
-        quality_notes="No row is causal-ready; treatment continuity and controls remain unresolved and other time-varying confounders are pending",
+        transformation_applied="Additive municipality outcome/capacity totals; complete-case multi-station snow-proxy means; official occupancy percentages retained only for single-municipality units; entry carried forward only as a flagged diagnostic assumption",
+        quality_notes="No row is causal-ready; SLF proxies are not direct piste observations; treatment continuity, controls, and other time-varying confounders remain unresolved",
         confidence_level="high for reproducible aggregation; low for causal treatment status",
         manual_verification="automated tests plus destination review",
     ))
@@ -414,6 +510,17 @@ def main() -> None:
         ("hotel_bed_occupancy_rate_pct", "hotel_capacity_municipality_month", "Official bed occupancy rate", "percent", "Float64", "municipality", "monthly", "BFS_HOTEL_CAPACITY_DATA", "cleaned source", "Official published value parsed without adjustment", "descriptive capacity utilisation", "59 source values exceed 100 and remain unchanged"),
         ("complete_capacity_supply", "hotel_capacity_municipality_month", "Whether establishments, rooms, and beds are all observed", "boolean", "boolean", "municipality", "monthly", "BFS_HOTEL_CAPACITY_DATA", "derived", "all three supply values are numeric source observations", "capacity quality", "False rows remain missing; no imputation"),
         ("hotel_overnights_per_available_bed_month", "hotel_municipality_month_enriched", "Monthly overnight stays per contemporaneous available bed", "overnight stays per bed-month", "float", "municipality", "monthly", "BFS_HOTEL_CAPACITY_DATA", "derived", "live-table hotel_overnights_capacity_table / hotel_beds_available when beds > 0", "descriptive capacity-adjusted demand", "Not the official occupancy rate"),
+        ("snow_depth_mean_cm", "slf_snow_station_month", "Mean of valid daily SLF total snowpack depth within the month", "centimetres", "float", "SLF IMIS station", "monthly", "SLF_IMIS_DAILY_SNOW", "derived", "mean daily HS after negative values are marked invalid", "time-varying snow proxy", "No imputation; station is not a piste observation"),
+        ("days_snow_depth_ge_30cm", "slf_snow_station_month", "Observed days with total snowpack depth at least 30 cm", "days", "integer", "SLF IMIS station", "monthly", "SLF_IMIS_DAILY_SNOW", "derived", "count(valid HS >= 30 cm)", "snow reliability proxy", "Interpret with observation coverage"),
+        ("snow_depth_observation_coverage_share", "slf_snow_station_month", "Share of calendar days with a physically valid snow-depth observation", "share", "float", "SLF IMIS station", "monthly", "SLF_IMIS_DAILY_SNOW", "derived", "valid HS days / calendar days", "snow data quality", "Month is usable at >=0.80"),
+        ("winter_mean_snow_depth_cm", "slf_snow_station_winter", "Mean valid daily snowpack depth from November through April", "centimetres", "float", "SLF IMIS station", "winter season", "SLF_IMIS_DAILY_SNOW", "derived", "mean daily HS over November-April", "snow vulnerability feature", "Season is usable at >=0.80 observation coverage"),
+        ("snow_station_code", "resort_snow_station_crosswalk", "SLF station selected as an external mountain snow proxy", "identifier", "string", "resort-to-station link", "2013/14-2025/26 coverage gate", "SLF_IMIS_STATIONS", "derived linkage", "geographically nearest snow station among stations with >=80% longitudinal winter coverage", "snow linkage", "Never interpreted as direct slope representation"),
+        ("snow_station_distance_km", "resort_snow_station_crosswalk", "Great-circle distance from resort listing point to selected SLF station", "kilometres", "float", "resort-to-station link", "station metadata snapshot", "SLF_IMIS_STATIONS", "derived geospatial distance", "haversine distance between supplied resort coordinate and station coordinate", "snow proxy quality", "Does not capture terrain barriers or aspect"),
+        ("snow_station_elevation_gap_to_resort_top_m", "resort_snow_station_crosswalk", "Absolute elevation difference between the SLF station and published resort-top altitude", "metres", "float", "resort-to-station link", "snapshot", "DERIVED_MULTI_SOURCE", "derived", "abs(station elevation - Bergfex resort top altitude)", "snow proxy quality", "Resort base/mid elevations are unavailable"),
+        ("snow_proxy_quality", "resort_snow_station_crosswalk", "Rule-based spatial/elevation comparability class", "category", "string", "resort-to-station link", "snapshot", "DERIVED_MULTI_SOURCE", "derived", "high if <=10 km and <=500 m gap; moderate if <=25 km and <=1000 m; otherwise low", "snow data quality", "Comparability class, not measurement accuracy"),
+        ("snow_reliability_share_days_ge_30cm", "resort_snow_vulnerability", "Share of valid November-April proxy-station days with snow depth >=30 cm", "share", "float", "resort via SLF proxy station", "2013/14-2025/26", "SLF_IMIS_DAILY_SNOW", "derived", "sum station days HS>=30 / sum valid winter days across usable seasons", "snow reliability proxy", "May be shared by multiple resorts mapped to one station"),
+        ("snow_depth_trend_cm_per_year", "resort_snow_vulnerability", "Linear trend in proxy-station winter mean snow depth", "centimetres per year", "float", "resort via SLF proxy station", "2013/14-2025/26", "SLF_IMIS_DAILY_SNOW", "derived", "OLS slope of winter mean HS on winter start year over usable seasons", "snow trend proxy", "Short series; descriptive only; no uncertainty model yet"),
+        ("snow_vulnerability_proxy", "resort_snow_vulnerability", "Inverse of the proxy-station winter-day snow reliability share", "0-1 proxy", "float", "resort via SLF proxy station", "2013/14-2025/26", "SLF_IMIS_DAILY_SNOW", "derived", "1 - snow_reliability_share_days_ge_30cm", "strategic-need candidate", "Not a piste-level vulnerability measure and not yet approved for scoring"),
         ("resort_id", "resort_master", "Stable ID retained from existing normalised listing table", "identifier", "string", "resort listing", "snapshot", "DERIVED_MULTI_SOURCE", "existing identifier", "retained without fuzzy merging", "identifier", "Does not yet prove independent resort-domain status"),
         ("cluster_id", "resort_master", "Existing lift-cluster assignment", "identifier", "string", "lift cluster", "snapshot", "DERIVED_MULTI_SOURCE", "existing identifier", "preserved existing assignment", "group identifier", "Clustering was validated, not rebuilt"),
         ("altitude_top_m", "resort_master", "Published maximum resort altitude", "metres", "numeric", "resort listing", "snapshot", "BERGFEX_RESORT_DIRECTORY", "cleaned source", "unique URL join", "candidate pre-treatment feature", "Observation date unknown"),
@@ -443,6 +550,9 @@ def main() -> None:
         ("complete_capacity_scope", "destination_month_panel", "Whether supply is observed for every municipality in the reviewed scope", "boolean", "boolean", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "establishments, rooms, and beds observed for all scoped municipalities", "capacity quality", "False rows retain missing capacity aggregates"),
         ("hotel_overnights_per_available_bed_month", "destination_month_panel", "Monthly live-table overnight stays per summed available bed", "overnight stays per bed-month", "float", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "summed live-table overnight stays / summed beds when beds > 0", "descriptive capacity-adjusted demand", "Not the official occupancy rate"),
         ("hotel_bed_occupancy_rate_pct", "destination_month_panel", "Official bed occupancy rate for single-municipality destination units", "percent", "float", "reviewed destination", "monthly", "BFS_HOTEL_CAPACITY_DATA", "cleaned source", "retained only when destination scope has exactly one municipality", "descriptive capacity utilisation", "Not aggregated for Meiringen-Hasliberg"),
+        ("snow_depth_mean_cm", "destination_month_panel", "Unweighted mean monthly snow depth across unique assigned SLF proxy stations", "centimetres", "float", "reviewed destination via station proxy", "monthly", "SLF_IMIS_DAILY_SNOW", "derived", "mean station-month snow_depth_mean_cm only when every assigned station month has >=80% daily coverage", "time-varying snow proxy", "Not direct slope snow; missing months are not imputed"),
+        ("complete_snow_proxy", "destination_month_panel", "Whether every assigned SLF station-month passes the daily observation coverage gate", "boolean", "boolean", "reviewed destination via station proxy", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "all assigned station months have >=80% valid daily HS coverage", "snow data quality", "False for future/unavailable months"),
+        ("destination_snow_proxy_quality", "destination_month_panel", "Worst resort-to-station comparability class among destination components", "category", "string", "reviewed destination via station proxy", "snapshot", "DERIVED_MULTI_SOURCE", "derived", "worst of high/moderate/low component links", "snow data quality", "Comparability class, not accuracy"),
         ("assumed_active_component_count", "destination_month_panel", "Diagnostic count of entered components carried forward until a documented exit", "count", "integer", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "cumulative documented component entries with documented exit override", "treatment intensity candidate", "Continuity is an unverified assumption"),
         ("event_time_months", "destination_month_panel", "Months relative to the first analytical membership anchor", "months", "integer", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "calendar month difference from first_analysis_anchor", "event-time index", "Not sufficient for causal event-study identification"),
         ("causal_ready", "destination_month_panel", "Whether the destination-month row passes all causal evidence gates", "boolean", "boolean", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "always false at this checkpoint", "quality gate", "Continuity, confounding, spillovers, and controls remain unresolved"),
@@ -458,6 +568,10 @@ def main() -> None:
         "hotel_municipality_month": ROOT / "data_processed" / "hotel_municipality_month.csv",
         "hotel_capacity_municipality_month": ROOT / "data_processed" / "hotel_capacity_municipality_month.csv",
         "hotel_municipality_month_enriched": ROOT / "data_processed" / "hotel_municipality_month_enriched.csv",
+        "slf_snow_station_month": ROOT / "data_processed" / "slf_snow_station_month.csv",
+        "slf_snow_station_winter": ROOT / "data_processed" / "slf_snow_station_winter.csv",
+        "resort_snow_station_crosswalk": ROOT / "data_processed" / "resort_snow_station_crosswalk.csv",
+        "resort_snow_vulnerability": ROOT / "data_processed" / "resort_snow_vulnerability.csv",
         "resort_master": ROOT / "data_processed" / "resort_master.csv",
         "resort_point_municipality": ROOT / "data_processed" / "resort_point_municipality.csv",
         "magic_pass_membership_history": ROOT / "data_processed" / "magic_pass_membership_history.csv",
