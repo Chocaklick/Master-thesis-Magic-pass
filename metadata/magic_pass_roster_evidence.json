@@ -5,6 +5,53 @@
   "interpretation": "Only explicit positive roster or continuation evidence is encoded. Absence from a non-exhaustive press release is never treated as non-membership.",
   "observations": [
     {
+      "season": "2021/2022",
+      "source_id": "MAGIC_PLEIADES_2021_TARIFF",
+      "source_page": "1",
+      "evidence_type": "operator_seasonal_validity",
+      "active_destination_unit_ids": ["les_pleiades"],
+      "note": "Visual review of operator tariff dated 2021-11-04: Magic Pass valid on all lifts for winter 2021/2022 (2021-12-18 to 2022-03-13), with train access limited to skiers/snowboarders. Seasonal membership evidence, not a claim of continuous operation."
+    },
+    {
+      "season": "2021/2022",
+      "source_id": "MAGIC_FRIBOURG_2021_WINTER",
+      "source_page": "1",
+      "evidence_type": "official_tourism_named_continuation",
+      "active_destination_unit_ids": ["moleson"],
+      "note": "Visual review of Fribourg Region winter release dated 2021-12-01: final paragraph names Moleson-sur-Gruyeres among seven ski stations and explicitly states that all participate in the annual Magic Pass. Applies to forthcoming winter 2021/2022."
+    },
+    {
+      "season": "2019/2020",
+      "source_id": "MAGIC_2019_APRIL",
+      "source_page": "2",
+      "evidence_type": "full_base_roster",
+      "active_destination_unit_ids": [
+        "crans_montana", "anniviers_magic_portfolio", "moleson",
+        "villars_gryon_les_diablerets", "espace_dent_blanche", "les_pleiades", "saas_fee"
+      ],
+      "note": "Visual review of page 2: boxed roster explicitly applies to 2019/2020 and names both Anniviers components, all three Espace Dent Blanche components, Riviera (including Les Pleiades), and Villars-Gryon-Les Diablerets. This is a dated PDF roster, not the live website navigation."
+    },
+    {
+      "season": "2020/2021",
+      "source_id": "MAGIC_PLEIADES_2020_TARIFF",
+      "source_page": "1",
+      "evidence_type": "operator_seasonal_validity",
+      "active_destination_unit_ids": ["les_pleiades"],
+      "note": "Operator tariff dated 2020-11-01 explicitly accepts Magic Pass on all lifts for winter 2020/2021 (2020-12-12 to 2021-03-14), with restricted ski/snowboard access to the train. Evidence establishes winter membership, not continuous operation or unrestricted year-round rail validity."
+    },
+    {
+      "season": "2024/2025",
+      "source_id": "MAGIC_2024_MAP",
+      "source_page": "1",
+      "evidence_type": "dated_partner_hosted_base_map",
+      "active_destination_unit_ids": [
+        "anniviers_magic_portfolio", "moleson", "villars_gryon_les_diablerets",
+        "espace_dent_blanche", "les_pleiades", "saas_fee", "axalp",
+        "reichenbach_magic_portfolio", "bumbach", "sainte_croix_les_rasses", "schwanden"
+      ],
+      "note": "Magic Pass branded map hosted by Raiffeisen, with printed validity 2024-05-01 to 2025-04-30. Visual review verifies winter/summer-winter symbols beside each named component (including Faltschen and Kiental); baths are distinct. Map absence is not coded as non-membership."
+    },
+    {
       "season": "2018/2019",
       "source_id": "MAGIC_2018",
       "source_page": "2",

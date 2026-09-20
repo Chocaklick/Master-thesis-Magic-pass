@@ -67,11 +67,11 @@ The reviewed panel contains **1,744 complete weather-proxy months**; **1,576 row
 
 Entry events, full official rosters, named continuation statements, and the documented Crans-Montana exit were checked season by season. Missing annual evidence remains unverified rather than being filled as active or inactive.
 
-- Reviewed units with every active season explicitly documented: **4**
-- Such units that also enter the outcome panel: **3**
-- Such panel units with both 24 observed pre months and 24 observed active-post months: **0**
+- Reviewed units with every active season explicitly documented: **10**
+- Such units that also enter the outcome panel: **8**
+- Such panel units with both 24 observed pre months and 24 observed active-post months: **4**
 
-The detailed audit is in `reports/membership_continuity_audit.csv`. Its zero in the final line is the decisive reason not to estimate a multi-unit causal effect yet.
+The detailed audit is in `reports/membership_continuity_audit.csv`. The final count is an evidence/coverage screen, not a count of identified effects. Seasonal documentation does not establish identical summer access, precise treatment intensity, absence of confounding, or a valid counterfactual. Zero controls and zero treatment units are approved for causal estimation. The additional dated rosters and operator/tourism documents are reviewed in `reports/08_MEMBERSHIP_EVIDENCE_REVIEW.md`.
 
 ## Donor/control contamination screen
 

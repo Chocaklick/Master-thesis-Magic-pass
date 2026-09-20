@@ -411,47 +411,58 @@ def main() -> None:
         notes="Fourteen exact raw-file URLs, source IDs and suffixes are enumerated in config/meteoswiss_selected_station_files.json; the local_raw_file glob identifies the immutable cache files",
     ))
 
+    roster_observations = json.loads(
+        (ROOT / "metadata/magic_pass_roster_evidence.json").read_text(encoding="utf-8")
+    )["observations"]
+    roster_by_source = {}
+    for observation in roster_observations:
+        roster_by_source.setdefault(observation["source_id"], []).append(observation)
     magic_ids = [key for key in configured if key.startswith("MAGIC_")]
     for source_id in magic_ids:
         item = configured[source_id]
         metadata = cached_metadata(source_id)
         is_archive = source_id == "MAGIC_PRESS_ARCHIVE"
         is_map = source_id == "MAGIC_CURRENT_MAP"
+        roster_records = roster_by_source.get(source_id, [])
+        is_supplemental = source_id in {
+            "MAGIC_2019_APRIL", "MAGIC_2024_MAP", "MAGIC_PLEIADES_2020_TARIFF",
+            "MAGIC_PLEIADES_2021_TARIFF", "MAGIC_FRIBOURG_2021_WINTER",
+        }
         rows.append(blank_source(
             source_id,
             variable_name=("current_magic_destination" if is_map else "membership_event_evidence"),
             variable_description=item["description"],
             source_organisation=item["organisation"],
-            source_dataset_name=("Official current destination map" if is_map else "Official Magic Pass press material"),
-            source_page_url=(item["url"] if is_archive or is_map else configured["MAGIC_PRESS_ARCHIVE"]["url"]),
+            source_dataset_name=(item["description"] if is_supplemental else "Official current destination map" if is_map else "Official Magic Pass press material"),
+            source_page_url=(item["url"] if is_archive or is_map or is_supplemental else configured["MAGIC_PRESS_ARCHIVE"]["url"]),
             direct_download_url=item["url"] if not is_archive and not is_map else "",
             retrieval_method="HTTP GET with immutable response and SHA-256 sidecar" if metadata else "attempted HTTP GET; see collection log",
             retrieval_date=metadata.get("retrieval_date", "") if metadata else "",
             original_file_name=raw_name(metadata),
             local_raw_file=metadata.get("raw_file", "") if metadata else "",
-            processed_file=("data_processed/magic_pass_current_destinations.csv" if is_map else "data_processed/magic_pass_membership_history.csv"),
+            processed_file=("data_processed/magic_pass_current_destinations.csv" if is_map else "data_processed/magic_pass_membership_status_by_season.csv|reports/membership_continuity_audit.csv" if is_supplemental else "data_processed/magic_pass_membership_history.csv"),
             geographic_level="official ski destination",
             temporal_resolution=("retrieval-date snapshot" if is_map else "dated announcement / season"),
-            temporal_start=("2017" if is_archive else source_id.removeprefix("MAGIC_") if source_id.removeprefix("MAGIC_").isdigit() else ""),
-            temporal_end=("2026" if is_archive or is_map else ""),
+            temporal_start=(min(r["season"] for r in roster_records) if roster_records else "2017" if is_archive else source_id.removeprefix("MAGIC_") if source_id.removeprefix("MAGIC_").isdigit() else ""),
+            temporal_end=(max(r["season"] for r in roster_records) if roster_records else "2026" if is_archive or is_map else ""),
             unit="destination membership event",
             license="UNKNOWN; preserve citation and original URL",
-            access_conditions="Public official website; automated retrieval respects robots.txt",
-            transformation_applied="Page-numbered text extraction and manually reviewed event transcription" if not is_map else "Embedded official destination JSON extracted from cached HTML",
-            quality_notes=("Current snapshot is not historical evidence" if is_map else "Destination/operator scope may differ from Bergfex listing scope"),
+            access_conditions="Public source document; automated retrieval respects robots.txt; distributor retained explicitly where not publisher-hosted",
+            transformation_applied="Page-numbered visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only" if is_supplemental else "Page-numbered text extraction and manually reviewed event transcription" if not is_map else "Embedded official destination JSON extracted from cached HTML",
+            quality_notes=("Magic Pass branded dated map distributed by Raiffeisen; not publisher-hosted; visible symbols and printed validity reviewed; absence not evidence of non-membership" if source_id == "MAGIC_2024_MAP" else "Current snapshot is not historical evidence" if is_map else "Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access"),
             confidence_level=("high for source authenticity; event/entity confidence stored per row" if metadata else "official URL verified; local retrieval pending"),
-            manual_verification="reviewed" if source_id in {"MAGIC_2017", "MAGIC_2018", "MAGIC_2019", "MAGIC_2020", "MAGIC_2021_APRIL", "MAGIC_2022", "MAGIC_2022_DOSSIER", "MAGIC_2023", "MAGIC_2024", "MAGIC_2025"} else "pending or page-level",
+            manual_verification="reviewed; pages " + ";".join(sorted({r["source_page"] for r in roster_records})) if roster_records else "reviewed" if source_id in {"MAGIC_2017", "MAGIC_2018", "MAGIC_2019", "MAGIC_2020", "MAGIC_2021_APRIL", "MAGIC_2022", "MAGIC_2022_DOSSIER", "MAGIC_2023", "MAGIC_2024", "MAGIC_2025"} else "pending or page-level",
             notes="Not used as extracted evidence because download did not complete" if not metadata else "",
         ))
     rows.append(blank_source(
         "MAGIC_OFFICIAL_EVIDENCE_SET",
-        variable_name="membership_event_history",
-        variable_description="Union of official Magic Pass seasonal press evidence and dated archive notices",
-        source_organisation="Magic Mountains Cooperation",
-        source_dataset_name="Official Magic Pass evidence set",
+        variable_name="membership_event_history|seasonal_membership_evidence",
+        variable_description="Union of dated Magic Pass documents, archive notices, operator tariffs and official tourism confirmation; seasonal map distributor recorded separately",
+        source_organisation="Magic Mountains Cooperation; named ski operators and official tourism organisations",
+        source_dataset_name="Documented Magic Pass event and seasonal evidence set",
         source_page_url=configured["MAGIC_PRESS_ARCHIVE"]["url"],
-        retrieval_method="Derived only from source rows MAGIC_2017 through MAGIC_2025 and MAGIC_PRESS_ARCHIVE",
-        processed_file="data_processed/magic_pass_membership_history.csv",
+        retrieval_method="Event sources in metadata/magic_pass_entry_evidence.json; seasonal source IDs and exact pages in metadata/magic_pass_roster_evidence.json",
+        processed_file="data_processed/magic_pass_membership_history.csv|data_processed/magic_pass_membership_status_by_season.csv",
         geographic_level="official ski destination with candidate resort link",
         temporal_resolution="season/event",
         temporal_start="2017/2018",
@@ -693,7 +704,7 @@ def main() -> None:
         ("event_time_months", "destination_month_panel", "Months relative to the first analytical membership anchor", "months", "integer", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "calendar month difference from first_analysis_anchor", "event-time index", "Not sufficient for causal event-study identification"),
         ("causal_ready", "destination_month_panel", "Whether the destination-month row passes all causal evidence gates", "boolean", "boolean", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "always false at this checkpoint", "quality gate", "Continuity, confounding, spillovers, and controls remain unresolved"),
         ("membership_status", "magic_pass_membership_status_by_season", "Evidence status for a reviewed destination in each annual Magic Pass season", "category", "string", "reviewed destination", "annual pass season", "MAGIC_OFFICIAL_EVIDENCE_SET", "manual evidence audit", "documented active, unverified active continuity, not yet entered, or documented inactive after exit", "treatment history", "Missing annual evidence is never silently filled"),
-        ("documented_active", "magic_pass_membership_status_by_season", "Whether explicit official evidence documents active base membership in the season", "boolean", "boolean", "reviewed destination", "annual pass season", "MAGIC_OFFICIAL_EVIDENCE_SET", "derived evidence flag", "true only for entry, full-roster, named-continuation, or last-active exit evidence", "treatment history quality", "False can mean unverified and must not be read as documented non-membership"),
+        ("documented_active", "magic_pass_membership_status_by_season", "Whether explicit dated evidence documents active base membership in the season", "boolean", "boolean", "reviewed destination", "annual pass season", "MAGIC_OFFICIAL_EVIDENCE_SET", "derived evidence flag", "true only for entry, roster/map, operator/tourism continuation, or last-active exit evidence", "treatment history quality", "False can mean unverified, not documented non-membership; true does not establish identical summer access or daily operation"),
         ("continuity_fully_documented", "membership_continuity_audit", "Whether every active season from first entry through exit or 2025/2026 has explicit evidence", "boolean", "boolean", "reviewed destination", "2017/2018-2025/2026", "MAGIC_OFFICIAL_EVIDENCE_SET", "derived audit", "no unverified_active_continuity season in the required active window", "quality gate", "Does not resolve confounding, spillovers, or controls"),
         ("known_magic_exposure_from_resolved_links", "control_contamination_audit", "Whether any resort point in the municipality has a resolved historical or current Magic Pass link", "boolean", "boolean", "municipality reached by resort point", "historical plus current snapshot", "DERIVED_MULTI_SOURCE", "derived screen", "any linked resort_id appears in a base-entry event or current official-map candidate link", "control contamination", "False is only an upper-bound candidate because unresolved official labels remain"),
         ("minimum_resort_point_distance_km", "treatment_control_candidate_matrix", "Minimum great-circle distance between a donor-municipality resort point and a treated destination component point", "kilometres", "float", "treatment-donor pair", "review snapshot", "GEOADMIN_MUNICIPALITY_IDENTIFY", "derived geospatial screen", "minimum haversine distance across supplied resort points", "spillover screen", "Point distance does not prove absence of tourism spillovers"),

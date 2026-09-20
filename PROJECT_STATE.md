@@ -10,7 +10,7 @@ Checkpoints 1–3, the first treatment-unit review, and initial capacity/climate
 
 ## Last update
 
-2026-09-20 11:35 CEST
+2026-09-20 19:45 CEST
 
 ## Completed work
 
@@ -34,10 +34,10 @@ Checkpoints 1–3, the first treatment-unit review, and initial capacity/climate
 - Cached six official SwissMetNet metadata/catalogue responses and 14 checksum-verified historical/current-year files for the seven nearest required stations. The raw selected files contain 265,838 daily rows across their full histories; the aligned 2013-01 to 2026-03 window contains 33,866 rows with complete temperatures and only 27 missing precipitation values.
 - Screened the official inventory for current stations with daily mean/minimum/maximum temperature and precipitation starting by 2013. Of 112 eligible candidates, nearest assignment for the 15 reviewed resort components requires seven stations; nine links are high and six moderate on horizontal-distance comparability, with distance and elevation gaps retained.
 - Built a 1,113-row SwissMetNet station-month panel with station-specific 2013–2025 calendar-month anomalies. Two station-months fail the 80% precipitation gate. The reviewed destination weather panel contains 1,744 complete rows out of 1,749 through 2026-03; the 1,848-row outcome panel contains 1,576 rows with both observed hotel nights and complete weather, and 1,560 with observed hotel nights plus complete snow and weather.
-- Audited annual membership evidence without filling gaps: 4 of 14 reviewed units have every active season documented, only 3 of those enter the outcome panel, and none of the 3 has both 24 observed pre and 24 observed active-post months.
+- Added five dated membership documents after visual PDF review, resolving 18 of 25 missing unit-seasons. Ten of 14 reviewed units have every active season documented, eight enter the outcome panel, and four have both 24 observed pre and 24 observed active-post months (Axalp, Bumbach, Reichenbach portfolio, Saas-Fee). No causal treatment/control approval follows from this coverage screen.
 - Screened 814 treatment-donor pairs across 74 resort-linked hotel municipalities. Fifty-seven municipalities remain an upper-bound control pool after resolved Magic links; 438 pairs pass a mechanical 30 km / 36-pre / 24-post screen, but zero controls are approved.
-- Generated normalized provenance (55 source records), a 375-row data dictionary, source report, destination/capacity/snow/weather reviews, continuity/control audits, a resort-level evidence-quality table, and an updated model-feasibility report.
-- Added a reproducible checkpoint runner and 15 passing automated tests.
+- Generated normalized provenance (60 source records), a 375-row data dictionary, source report, destination/capacity/snow/weather/membership reviews, continuity/control audits, a resort-level evidence-quality table, and an updated model-feasibility report.
+- Reran the complete offline checkpoint pipeline successfully; all 16 automated tests pass, including cached seasonal-document checksum, page-reference and output-link validation.
 
 ## Main empirical counts
 
@@ -65,8 +65,8 @@ Checkpoints 1–3, the first treatment-unit review, and initial capacity/climate
 | SwissMetNet stations selected | 7 | Nearest stations for 15 reviewed resort components |
 | Destination-months with complete weather proxy | 1,744 | 1,576 also have observed hotel nights |
 | Units with 24 pre and 24 post months under continuity assumption | 7 | Coverage only; not identification |
-| Panel units with fully documented active-season continuity | 3 | Crans-Montana, Schwanden, Meiringen-Hasliberg |
-| Fully documented panel units with 24 pre and 24 post months | 0 | Decisive causal feasibility failure |
+| Panel units with fully documented active-season continuity | 8 | Seasonal evidence, not identical summer access or daily operation |
+| Fully documented panel units with 24 pre and 24 post months | 4 | Axalp, Bumbach, Reichenbach portfolio, Saas-Fee; no approved controls |
 | Provisional donor pairs passing mechanical screen | 438 | None approved as causal controls |
 | Approved causal treatment units | 0 | Exposure/continuity gates not passed |
 | Approved controls | 0 | Historical status and spillovers not audited |
@@ -99,7 +99,7 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 ## Known blockers and data gaps
 
 1. Independent destination/domain definitions remain unresolved outside the 14 reviewed candidate units.
-2. Twenty-five active destination-seasons remain unverified; the main 2021 dossier still fails to download completely, although a smaller official 2021 follow-up is cached.
+2. Seven active destination-seasons remain unverified: Anniviers, Espace Dent Blanche and excluded Villars-Gryon-Les Diablerets in 2020/2021 and 2021/2022, plus Moleson in 2020/2021. The main French 2021 dossier still fails to download completely; smaller operator/tourism sources now cover Les Pleiades and Moleson in 2021/2022.
 3. Twenty-six official base-entry labels remain unresolved to supplied listings.
 4. Core-municipality proxies do not establish full tourism catchments, and spillovers remain unresolved.
 5. No historical municipality-boundary harmonization has been implemented.
@@ -110,7 +110,7 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 
 ## Immediate next action
 
-Fill the remaining 25 unverified active unit-seasons and resolve the 26 unmatched base-entry labels. Test alternative-station or gridded sensitivity for snow and weather, then replace the mechanical donor screen with a documented membership/spillover review before reassessing Checkpoints 4–5. Do not fit causal or complex ML models before the gate changes.
+Resolve the remaining seven active unit-season gaps and 26 unmatched base-entry labels. Prioritise a documented historical membership/spillover donor review for Axalp, Bumbach, Reichenbach and Saas-Fee, which now pass continuity plus 24/24 coverage. Validate timing/intensity, COVID overlap and regional outcome scope; test alternative-station or gridded climate sensitivity before reassessing Checkpoints 4–5. Do not fit causal or complex ML models before approval gates change. See `reports/08_MEMBERSHIP_EVIDENCE_REVIEW.md` for source-selection decisions and remaining leads.
 
 ## Key files
 
@@ -130,5 +130,6 @@ Fill the remaining 25 unverified active unit-seasons and resolve the 26 unmatche
 - Snow proxy: `reports/06_SNOW_SOURCE_AND_PROXY.md`, `data_processed/resort_snow_station_crosswalk.csv`, and `data_processed/resort_snow_vulnerability.csv`
 - Weather proxy: `reports/07_WEATHER_PROXY.md`, `data_processed/resort_weather_station_crosswalk.csv`, and `data_processed/destination_weather_month.csv`
 - Membership continuity: `reports/membership_continuity_audit.csv`
+- Additional historical evidence: `reports/08_MEMBERSHIP_EVIDENCE_REVIEW.md`
 - Control screen: `reports/control_candidates_by_treatment.csv`
 - Research log: `logs/research_journal.md`

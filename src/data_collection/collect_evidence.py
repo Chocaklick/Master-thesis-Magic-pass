@@ -65,8 +65,15 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="config/evidence_sources.json")
     parser.add_argument("--limit", type=int)
+    parser.add_argument("--source-id", action="append", help="Collect only these exact source IDs; repeatable")
     args = parser.parse_args()
     sources = json.loads((ROOT / args.config).read_text(encoding="utf-8"))
+    if args.source_id:
+        requested = set(args.source_id)
+        unknown = requested - {source["source_id"] for source in sources}
+        if unknown:
+            parser.error(f"Unknown source IDs: {sorted(unknown)}")
+        sources = [source for source in sources if source["source_id"] in requested]
     if args.limit is not None:
         sources = sources[:args.limit]
     folder = ROOT / "data_external/source_evidence"

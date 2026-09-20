@@ -29,7 +29,7 @@ This is an evidence-completeness score, not a resort ranking, opportunity score,
 
 ## Highest-priority corrections
 
-1. Complete membership status for the 25 remaining unverified active unit-seasons, including exits and operator-group scope.
+1. Complete membership status for the seven remaining unverified active unit-seasons, including exits and operator-group scope. The additional review resolves 18 gaps; four panel units now pass continuity plus 24/24 observed-month coverage, but no causal treatment or control is approved (see `08_MEMBERSHIP_EVIDENCE_REVIEW.md`).
 2. Resolve the 26 unmatched official base-entry labels and independently validate destination domains outside the reviewed treatment units.
 3. Establish tourism-exposure/accommodation markets and audit spillovers without double-counting.
 4. Audit historical BFS municipality changes before panel estimation.

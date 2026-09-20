@@ -22,6 +22,8 @@ Every successful response has a SHA-256 metadata sidecar under the ignored immut
 
 ## Derived evidence tables
 
+The additional membership review cached five dated documents: the official April 2019 roster, the Magic Pass 2024/2025 map distributed by Raiffeisen, operator tariffs for Les Pleiades in 2020/2021 and 2021/2022, and Fribourg Region's December 2021 winter release. These resolve 18 of 25 previously missing unit-seasons. Seven remain; exact pages and selection limits are recorded in `08_MEMBERSHIP_EVIDENCE_REVIEW.md`. Selective collection now supports repeated `--source-id` arguments so completed/failed unrelated requests need not be repeated.
+
 - `data_processed/resort_point_municipality.csv`: 268 Swiss current point containers and three points outside the current Swiss municipality layer. This is explicitly not a tourism-exposure crosswalk.
 - `data_processed/magic_pass_membership_history.csv`: 93 official events, including 88 base-pass entries, one exit, and separately coded supplement/inclusion cases.
 - `data_processed/magic_pass_current_destinations.csv`: 95 destinations embedded in the cached current map; 68 have a candidate link to a supplied listing.

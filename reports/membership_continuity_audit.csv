@@ -1,15 +1,15 @@
 destination_unit_id,destination_name,first_entry_season,documented_exit_date,active_seasons_requiring_evidence,active_seasons_documented,active_seasons_unverified,unverified_seasons,continuity_fully_documented,outcome_panel_eligible,causal_treatment_status_approved
-anniviers_magic_portfolio,Anniviers Magic Pass portfolio,2017/2018,,9,5,4,2019/2020|2020/2021|2021/2022|2024/2025,False,True,False
-axalp,Axalp,2022/2023,,4,3,1,2024/2025,False,True,False
-bumbach,Bumbach,2023/2024,,3,2,1,2024/2025,False,True,False
+anniviers_magic_portfolio,Anniviers Magic Pass portfolio,2017/2018,,9,7,2,2020/2021|2021/2022,False,True,False
+axalp,Axalp,2022/2023,,4,4,0,,True,True,False
+bumbach,Bumbach,2023/2024,,3,3,0,,True,True,False
 crans_montana,Crans-Montana,2017/2018,2020-04-30,3,3,0,,True,True,False
-espace_dent_blanche,Espace Dent Blanche,2018/2019,,8,4,4,2019/2020|2020/2021|2021/2022|2024/2025,False,True,False
+espace_dent_blanche,Espace Dent Blanche,2018/2019,,8,6,2,2020/2021|2021/2022,False,True,False
 gstaad_operator_domain,Bergbahnen Destination Gstaad,2025/2026,,1,1,0,,True,False,False
-les_pleiades,Les Pléiades,2018/2019,,8,4,4,2019/2020|2020/2021|2021/2022|2024/2025,False,True,False
+les_pleiades,Les Pléiades,2018/2019,,8,8,0,,True,True,False
 meiringen_hasliberg,Meiringen-Hasliberg,2025/2026,,1,1,0,,True,True,False
-moleson,Moléson,2017/2018,,9,5,4,2019/2020|2020/2021|2021/2022|2024/2025,False,True,False
-reichenbach_magic_portfolio,Reichenbach im Kandertal Magic Pass portfolio,2022/2023,,4,3,1,2024/2025,False,True,False
-saas_fee,Saas-Fee,2019/2020,,7,6,1,2024/2025,False,True,False
-sainte_croix_les_rasses,Sainte-Croix / Les Rasses,2023/2024,,3,2,1,2024/2025,False,False,False
+moleson,Moléson,2017/2018,,9,8,1,2020/2021,False,True,False
+reichenbach_magic_portfolio,Reichenbach im Kandertal Magic Pass portfolio,2022/2023,,4,4,0,,True,True,False
+saas_fee,Saas-Fee,2019/2020,,7,7,0,,True,True,False
+sainte_croix_les_rasses,Sainte-Croix / Les Rasses,2023/2024,,3,3,0,,True,False,False
 schwanden,Schwanden,2024/2025,,2,2,0,,True,True,False
-villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,2017/2018,,9,5,4,2019/2020|2020/2021|2021/2022|2024/2025,False,False,False
+villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,2017/2018,,9,7,2,2020/2021|2021/2022,False,False,False

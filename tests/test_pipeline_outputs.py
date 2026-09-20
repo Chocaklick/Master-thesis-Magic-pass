@@ -192,9 +192,9 @@ def test_checkpoint_metrics_remain_conservative() -> None:
     assert int(metrics["reviewed_destination_units_in_outcome_panel"]) == 11
     assert int(metrics["reviewed_units_with_24_pre_and_post_months_assumption"]) == 7
     assert int(metrics["reviewed_units_with_36_pre_and_post_months_assumption"]) == 6
-    assert int(metrics["reviewed_units_with_fully_documented_membership_continuity"]) == 4
-    assert int(metrics["panel_units_with_fully_documented_membership_continuity"]) == 3
-    assert int(metrics["fully_documented_panel_units_with_24_pre_and_post_months"]) == 0
+    assert int(metrics["reviewed_units_with_fully_documented_membership_continuity"]) == 10
+    assert int(metrics["panel_units_with_fully_documented_membership_continuity"]) == 8
+    assert int(metrics["fully_documented_panel_units_with_24_pre_and_post_months"]) == 4
     assert int(metrics["control_municipalities_upper_bound_after_resolved_magic_links"]) == 57
     assert int(metrics["treatment_donor_pairs_screened"]) == 814
     assert int(metrics["provisional_donor_pairs_30km_36pre"]) == 438
@@ -290,19 +290,46 @@ def test_membership_continuity_gaps_are_not_silently_filled() -> None:
     assert len(status) == 14 * 9
     assert not status.duplicated(["destination_unit_id", "season"]).any()
     assert (status["causal_treatment_status_approved"].str.lower() == "false").all()
-    assert (status["membership_status"] == "unverified_active_continuity").sum() == 25
+    assert (status["membership_status"] == "unverified_active_continuity").sum() == 7
     complete = audit["continuity_fully_documented"].str.lower().eq("true")
     assert set(audit.loc[complete, "destination_unit_id"]) == {
         "crans_montana",
         "gstaad_operator_domain",
         "meiringen_hasliberg",
         "schwanden",
+        "axalp", "bumbach", "les_pleiades", "reichenbach_magic_portfolio",
+        "saas_fee", "sainte_croix_les_rasses",
     }
     anniviers_2019 = status[
         status["destination_unit_id"].eq("anniviers_magic_portfolio")
         & status["season"].eq("2019/2020")
     ].iloc[0]
-    assert anniviers_2019["membership_status"] == "unverified_active_continuity"
+    assert anniviers_2019["membership_status"] == "documented_active"
+    assert "MAGIC_2019_APRIL" in anniviers_2019["source_ids"]
+    anniviers_2020 = status[
+        status["destination_unit_id"].eq("anniviers_magic_portfolio")
+        & status["season"].eq("2020/2021")
+    ].iloc[0]
+    assert anniviers_2020["membership_status"] == "unverified_active_continuity"
+
+
+def test_seasonal_roster_sources_are_cached_and_page_referenced() -> None:
+    from pypdf import PdfReader
+
+    observations = json.loads((ROOT / "metadata/magic_pass_roster_evidence.json").read_text(encoding="utf-8"))["observations"]
+    sources = read("metadata/data_sources_master.csv", dtype=str).set_index("source_id")
+    status = read("data_processed/magic_pass_membership_status_by_season.csv", dtype=str).set_index(["destination_unit_id", "season"])
+    for observation in observations:
+        source_id = observation["source_id"]
+        raw = ROOT / sources.loc[source_id, "local_raw_file"]
+        metadata = json.loads(raw.with_suffix(".metadata.json").read_text(encoding="utf-8"))
+        assert metadata["source_id"] == source_id
+        assert hashlib.sha256(raw.read_bytes()).hexdigest() == metadata["sha256"]
+        assert 1 <= int(observation["source_page"]) <= len(PdfReader(raw).pages)
+        for unit in observation["active_destination_unit_ids"]:
+            row = status.loc[(unit, observation["season"])]
+            assert row["membership_status"] == "documented_active"
+            assert source_id in row["source_ids"].split("|")
 
 
 def test_control_audit_never_promotes_screened_donors() -> None:

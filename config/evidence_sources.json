@@ -154,5 +154,40 @@
     "suffix": "pdf",
     "organisation": "Magic Mountains Cooperation",
     "description": "Official full press dossier for the 2022/2023 pass"
+  },
+  {
+    "source_id": "MAGIC_2019_APRIL",
+    "url": "https://www.magicpass.ch/media/document/0/mp-cp-24avril-2019-fr-25.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official April 2019 release with explicit 2019/2020 partner roster"
+  },
+  {
+    "source_id": "MAGIC_2024_MAP",
+    "url": "https://www.raiffeisen.ch/content/dam/www/rch/pdf/produkte/mitglieder/de/magic-pass-de.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation; map distributed by Raiffeisen",
+    "description": "Magic Pass branded seasonal map explicitly valid 2024-05-01 to 2025-04-30; partner-hosted original document"
+  },
+  {
+    "source_id": "MAGIC_PLEIADES_2020_TARIFF",
+    "url": "https://lespleiades.ch/documents/CP21_tarifs_MP_20-21.pdf",
+    "suffix": "pdf",
+    "organisation": "Cooperative des Pleiades",
+    "description": "Official operator winter 2020/2021 tariff explicitly confirming Magic Pass validity at Les Pleiades"
+  },
+  {
+    "source_id": "MAGIC_PLEIADES_2021_TARIFF",
+    "url": "https://lespleiades.ch/documents/CP22_tarifs_MP_21-22.pdf",
+    "suffix": "pdf",
+    "organisation": "Cooperative des Pleiades",
+    "description": "Official operator winter 2021/2022 tariff explicitly confirming Magic Pass validity at Les Pleiades"
+  },
+  {
+    "source_id": "MAGIC_FRIBOURG_2021_WINTER",
+    "url": "https://fribourg.ch/wp-content/uploads/2021/12/20211201_Fribourg-Region_hiver-2021-22_CP.pdf",
+    "suffix": "pdf",
+    "organisation": "Fribourg Region",
+    "description": "Official tourism release dated 2021-12-01 confirming the seven named Fribourg ski stations participate in Magic Pass for winter 2021/2022"
   }
 ]

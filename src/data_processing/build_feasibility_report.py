@@ -415,7 +415,7 @@ Entry events, full official rosters, named continuation statements, and the docu
 - Such units that also enter the outcome panel: **{metrics['panel_units_with_fully_documented_membership_continuity']}**
 - Such panel units with both 24 observed pre months and 24 observed active-post months: **{metrics['fully_documented_panel_units_with_24_pre_and_post_months']}**
 
-The detailed audit is in `reports/membership_continuity_audit.csv`. Its zero in the final line is the decisive reason not to estimate a multi-unit causal effect yet.
+The detailed audit is in `reports/membership_continuity_audit.csv`. The final count is an evidence/coverage screen, not a count of identified effects. Seasonal documentation does not establish identical summer access, precise treatment intensity, absence of confounding, or a valid counterfactual. Zero controls and zero treatment units are approved for causal estimation. The additional dated rosters and operator/tourism documents are reviewed in `reports/08_MEMBERSHIP_EVIDENCE_REVIEW.md`.
 
 ## Donor/control contamination screen
 

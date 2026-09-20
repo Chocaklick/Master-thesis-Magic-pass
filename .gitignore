@@ -43,6 +43,7 @@ models/**
 !models/.gitkeep
 outputs/**
 !outputs/.gitkeep
+tmp/
 
 # Packaging/build artifacts
 build/

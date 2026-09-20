@@ -287,7 +287,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
 - **Coverage:** official ski destination; dated announcement / season; 2017 to ?.
-- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2017_20260919T232136Z.pdf`.
 
 ## MAGIC_2018 — Official Magic Pass press material
@@ -298,8 +298,8 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-19T23:21:46.699377+00:00.
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
-- **Coverage:** official ski destination; dated announcement / season; 2018 to ?.
-- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Coverage:** official ski destination; dated announcement / season; 2018/2019 to 2018/2019.
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2018_20260919T232146Z.pdf`.
 
 ## MAGIC_2019 — Official Magic Pass press material
@@ -311,8 +311,20 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
 - **Coverage:** official ski destination; dated announcement / season; 2019 to ?.
-- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2019_20260919T232156Z.pdf`.
+
+## MAGIC_2019_APRIL — Official April 2019 release with explicit 2019/2020 partner roster
+
+- **Contents and relevance:** Official April 2019 release with explicit 2019/2020 partner roster
+- **Producer:** Magic Mountains Cooperation
+- **Exact URL:** https://www.magicpass.ch/media/document/0/mp-cp-24avril-2019-fr-25.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T17:32:53.161428+00:00.
+- **Variables:** membership_event_evidence
+- **Transformations:** Page-numbered visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
+- **Coverage:** official ski destination; dated announcement / season; 2019/2020 to 2019/2020.
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
+- **Local raw file:** `data_external/source_evidence/MAGIC_2019_APRIL_20260920T173253Z.pdf`.
 
 ## MAGIC_2020 — Official Magic Pass press material
 
@@ -322,8 +334,8 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-19T23:23:50.233825+00:00.
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
-- **Coverage:** official ski destination; dated announcement / season; 2020 to ?.
-- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Coverage:** official ski destination; dated announcement / season; 2020/2021 to 2020/2021.
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2020_20260919T232350Z.pdf`.
 
 ## MAGIC_2021 — Official Magic Pass press material
@@ -335,7 +347,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
 - **Coverage:** official ski destination; dated announcement / season; 2021 to ?.
-- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `not cached / not applicable`.
 
 ## MAGIC_2021_APRIL — Official Magic Pass press material
@@ -346,8 +358,8 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T01:15:19.337900+00:00.
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
-- **Coverage:** official ski destination; dated announcement / season; ? to ?.
-- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Coverage:** official ski destination; dated announcement / season; 2021/2022 to 2021/2022.
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2021_APRIL_20260920T011519Z.pdf`.
 
 ## MAGIC_2022 — Official Magic Pass press material
@@ -359,7 +371,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
 - **Coverage:** official ski destination; dated announcement / season; 2022 to ?.
-- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2022_20260919T232227Z.pdf`.
 
 ## MAGIC_2022_DOSSIER — Official Magic Pass press material
@@ -370,8 +382,8 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T01:16:51.624040+00:00.
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
-- **Coverage:** official ski destination; dated announcement / season; ? to ?.
-- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Coverage:** official ski destination; dated announcement / season; 2022/2023 to 2022/2023.
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2022_DOSSIER_20260920T011651Z.pdf`.
 
 ## MAGIC_2023 — Official Magic Pass press material
@@ -382,8 +394,8 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-19T23:22:38.145606+00:00.
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
-- **Coverage:** official ski destination; dated announcement / season; 2023 to ?.
-- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Coverage:** official ski destination; dated announcement / season; 2023/2024 to 2023/2024.
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2023_20260919T232238Z.pdf`.
 
 ## MAGIC_2024 — Official Magic Pass press material
@@ -395,8 +407,20 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
 - **Coverage:** official ski destination; dated announcement / season; 2024 to ?.
-- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2024_20260919T232411Z.pdf`.
+
+## MAGIC_2024_MAP — Magic Pass branded seasonal map explicitly valid 2024-05-01 to 2025-04-30; partner-hosted original document
+
+- **Contents and relevance:** Magic Pass branded seasonal map explicitly valid 2024-05-01 to 2025-04-30; partner-hosted original document
+- **Producer:** Magic Mountains Cooperation; map distributed by Raiffeisen
+- **Exact URL:** https://www.raiffeisen.ch/content/dam/www/rch/pdf/produkte/mitglieder/de/magic-pass-de.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T17:33:03.755072+00:00.
+- **Variables:** membership_event_evidence
+- **Transformations:** Page-numbered visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
+- **Coverage:** official ski destination; dated announcement / season; 2024/2025 to 2024/2025.
+- **Limitations:** Magic Pass branded dated map distributed by Raiffeisen; not publisher-hosted; visible symbols and printed validity reviewed; absence not evidence of non-membership
+- **Local raw file:** `data_external/source_evidence/MAGIC_2024_MAP_20260920T173303Z.pdf`.
 
 ## MAGIC_2025 — Official Magic Pass press material
 
@@ -406,8 +430,8 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-19T23:22:58.692358+00:00.
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
-- **Coverage:** official ski destination; dated announcement / season; 2025 to ?.
-- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Coverage:** official ski destination; dated announcement / season; 2025/2026 to 2025/2026.
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2025_20260919T232258Z.pdf`.
 
 ## MAGIC_2026 — Official Magic Pass press material
@@ -419,7 +443,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
 - **Coverage:** official ski destination; dated announcement / season; 2026 to ?.
-- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2026_20260920T005613Z.pdf`.
 
 ## MAGIC_CURRENT_MAP — Official current destination map
@@ -434,17 +458,53 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current snapshot is not historical evidence
 - **Local raw file:** `data_external/source_evidence/MAGIC_CURRENT_MAP_20260919T231726Z.html`.
 
-## MAGIC_OFFICIAL_EVIDENCE_SET — Official Magic Pass evidence set
+## MAGIC_FRIBOURG_2021_WINTER — Official tourism release dated 2021-12-01 confirming the seven named Fribourg ski stations participate in Magic Pass for winter 2021/2022
 
-- **Contents and relevance:** Union of official Magic Pass seasonal press evidence and dated archive notices
-- **Producer:** Magic Mountains Cooperation
+- **Contents and relevance:** Official tourism release dated 2021-12-01 confirming the seven named Fribourg ski stations participate in Magic Pass for winter 2021/2022
+- **Producer:** Fribourg Region
+- **Exact URL:** https://fribourg.ch/wp-content/uploads/2021/12/20211201_Fribourg-Region_hiver-2021-22_CP.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T17:34:44.091464+00:00.
+- **Variables:** membership_event_evidence
+- **Transformations:** Page-numbered visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
+- **Coverage:** official ski destination; dated announcement / season; 2021/2022 to 2021/2022.
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
+- **Local raw file:** `data_external/source_evidence/MAGIC_FRIBOURG_2021_WINTER_20260920T173444Z.pdf`.
+
+## MAGIC_OFFICIAL_EVIDENCE_SET — Documented Magic Pass event and seasonal evidence set
+
+- **Contents and relevance:** Union of dated Magic Pass documents, archive notices, operator tariffs and official tourism confirmation; seasonal map distributor recorded separately
+- **Producer:** Magic Mountains Cooperation; named ski operators and official tourism organisations
 - **Exact URL:** https://www.magicpass.ch/fr/presse
-- **Access and retrieval date:** Derived only from source rows MAGIC_2017 through MAGIC_2025 and MAGIC_PRESS_ARCHIVE; unknown date.
-- **Variables:** membership_event_history
+- **Access and retrieval date:** Event sources in metadata/magic_pass_entry_evidence.json; seasonal source IDs and exact pages in metadata/magic_pass_roster_evidence.json; unknown date.
+- **Variables:** membership_event_history|seasonal_membership_evidence
 - **Transformations:** Manual event transcription; reviewed aliases and unique normalised labels create candidate links
 - **Coverage:** official ski destination with candidate resort link; season/event; 2017/2018 to 2025/2026.
 - **Limitations:** Incomplete continuity/exit audit; unresolved destinations retained
 - **Local raw file:** `not cached / not applicable`.
+
+## MAGIC_PLEIADES_2020_TARIFF — Official operator winter 2020/2021 tariff explicitly confirming Magic Pass validity at Les Pleiades
+
+- **Contents and relevance:** Official operator winter 2020/2021 tariff explicitly confirming Magic Pass validity at Les Pleiades
+- **Producer:** Cooperative des Pleiades
+- **Exact URL:** https://lespleiades.ch/documents/CP21_tarifs_MP_20-21.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T17:33:05.072337+00:00.
+- **Variables:** membership_event_evidence
+- **Transformations:** Page-numbered visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
+- **Coverage:** official ski destination; dated announcement / season; 2020/2021 to 2020/2021.
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
+- **Local raw file:** `data_external/source_evidence/MAGIC_PLEIADES_2020_TARIFF_20260920T173305Z.pdf`.
+
+## MAGIC_PLEIADES_2021_TARIFF — Official operator winter 2021/2022 tariff explicitly confirming Magic Pass validity at Les Pleiades
+
+- **Contents and relevance:** Official operator winter 2021/2022 tariff explicitly confirming Magic Pass validity at Les Pleiades
+- **Producer:** Cooperative des Pleiades
+- **Exact URL:** https://lespleiades.ch/documents/CP22_tarifs_MP_21-22.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T17:34:33.826817+00:00.
+- **Variables:** membership_event_evidence
+- **Transformations:** Page-numbered visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
+- **Coverage:** official ski destination; dated announcement / season; 2021/2022 to 2021/2022.
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
+- **Local raw file:** `data_external/source_evidence/MAGIC_PLEIADES_2021_TARIFF_20260920T173433Z.pdf`.
 
 ## MAGIC_PRESS_ARCHIVE — Official Magic Pass press material
 
@@ -455,7 +515,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
 - **Coverage:** official ski destination; dated announcement / season; 2017 to 2026.
-- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_PRESS_ARCHIVE_20260919T231715Z.html`.
 
 ## MEIRINGEN_HASLIBERG_MAGIC_OFFICIAL — Official destination or municipal scope page
