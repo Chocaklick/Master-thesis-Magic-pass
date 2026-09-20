@@ -1,47 +1,53 @@
-# Existing Ski-Lift Cluster Audit
-
-## Status
-
-Pending source data. This report intentionally does not reconstruct clusters or invent counts.
-
-## Intended object of the audit
-
-The prior workflow is understood conceptually as:
-
-```text
-individual ski lifts -> geographic lift clusters -> assigned ski-resort name -> resort identity
-```
-
-The expected files are `clusters_stations_final_clean.csv` and `assignations_stations_final_clean.csv`. The latter reportedly associates lift clusters with ski resorts. Neither file was present during initialization, so their actual schemas and methodology could not be inspected.
-
-## Baseline findings
-
-| Question | Finding |
-|---|---|
-| Number of clusters | Unknown; source file absent |
-| Number assigned to resorts | Unknown; source file absent |
-| Unassigned clusters | Unknown |
-| Duplicate cluster identifiers | Not testable |
-| Conflicting resort assignments | Not testable |
-| Ambiguous cases | Not identifiable yet |
-| Geographic plausibility | Not testable |
-| Preliminary usability | Undetermined pending audit |
-
-## Validation plan once files are supplied
-
-1. Preserve the originals under `data_raw/` and record checksums and provenance.
-2. Identify the row grain and all candidate identifiers in both files.
-3. Count unique lift, cluster, and resort identifiers; distinguish missing assignments from intentionally unassigned clusters.
-4. Test identifier uniqueness, orphaned keys, one-to-many/many-to-many assignments, duplicate rows, and conflicting labels.
-5. Compare cluster-level summaries with assignment-level records without altering either source.
-6. Flag implausible coordinate ranges, coordinate reference-system ambiguity, disconnected geometries, extreme geographic extents, and naming inconsistencies.
-7. Geographically verify a documented, reproducible sample including large clusters, small clusters, border cases, duplicate names, and suspicious assignments.
-8. Classify issues into harmless label differences, resolvable corrections, and cases requiring domain review.
-
-## Methodological boundary
-
-Even a valid lift-cluster-to-resort mapping does not establish which municipality or municipalities should receive a resort's hotel overnight stays. The later chain may be resort to tourism destination to one or more municipalities. This separate crosswalk must have its own evidence and uncertainty.
+# Existing ski-lift cluster audit
 
 ## Reuse decision
 
-No reuse decision is possible before the files and any methodology notes are available. The default is to preserve and audit the existing clustering, not rebuild it. Limited corrections, if eventually justified, must be expressed in a separate versioned correction table so the original assignments remain recoverable.
+The existing clustering is preserved and reusable as a **provisional lift-cluster reference layer**. It was validated rather than rebuilt. It is not yet an approved table of independent ski destinations and does not solve the separate tourism-municipality exposure problem.
+
+## Structural results
+
+| Check | Result |
+|---|---:|
+| Lift geometries in GPKG | 1,805 |
+| Existing clusters | 242 |
+| Clusters linked to at least one resort listing | 162 |
+| Unnamed clusters | 80 |
+| Clusters with multiple listings | 53 |
+| Unique lift FIDs across cluster memberships | 1,805 |
+| Duplicate lift memberships | 0 |
+| Count mismatches among assignment, summary, and GeoJSON | 0 |
+| Invalid lift geometries | 0 |
+
+## Geographic validation
+
+The validation script decoded the GPKG geometries directly and compared each resort point with the preserved cluster geometries.
+
+- Recomputed distances agree with stored assignment distances to within 0.26 metres.
+- Every one of the 271 resort listings was assigned to the nearest preserved cluster geometry.
+- Assignment labels comprise 257 `confident`, 7 `warning`, and 7 `review` cases.
+- Cluster labels comprise 197 `confident` and 45 `warning` cases.
+
+These results support internal reproducibility. They do not prove that the cluster thresholds or destination boundaries are substantively ideal. Large multi-station domains and close neighbouring clusters remain domain-review cases.
+
+## Outputs
+
+- `reports/cluster_geometry_validation.csv`: listing-level distance validation.
+- `reports/assignment_review_queue.csv`: all non-confident assignments.
+- `reports/multiple_resorts_per_cluster.csv`: clusters carrying multiple listings.
+- `figures/existing_assignment_flags.png`: spatial distribution of preserved assignment quality.
+
+## Methodological boundary
+
+The validated relationship is:
+
+```text
+lift geometry -> existing lift cluster -> provisional resort listing
+```
+
+It is not:
+
+```text
+ski destination -> accommodation market -> hotel overnight stays
+```
+
+No municipality exposure is inferred from cluster validity alone.

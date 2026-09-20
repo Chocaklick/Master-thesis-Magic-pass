@@ -2,117 +2,93 @@
 
 ## Project objective
 
-Build a reproducible and scientifically defensible Business Analytics framework for Swiss ski resorts, integrating resort structure, hotel overnight stays, Magic Pass adoption, and climate/snow conditions. Later phases may estimate causal effects and support evidence-based recommendations for non-member resorts.
-
-The authoritative project mission is `prompts/main_research_prompt.md`, preserved from the user's full research instructions. It defines the end-to-end research scope, scientific constraints, six checkpoints, feasibility gates, and expected deliverables. Method selection must follow the evidence and distinguish correlation, causality, prediction, and recommendations.
+Build a reproducible and scientifically defensible Business Analytics framework for Swiss ski destinations, integrating resort structure, hotel overnight stays, Magic Pass adoption, and later climate/snow information. The authoritative mission is `prompts/main_research_prompt.md`.
 
 ## Current phase
 
-Main research mission adopted; awaiting existing source data for Checkpoint 1. Repository initialization and GitHub setup are complete. The project inventory was rechecked when saving the mission and still contains no thesis datasets.
+Checkpoints 1–3 have been investigated: the existing data audit is complete, initial official treatment evidence has been collected, and panel coverage has been quantified. Checkpoints 4–5 currently fail for causal and heterogeneous-effect modelling. The evidence supports Path C (exploratory segmentation/analogue decision support) unless destination scope, membership continuity, exposure mapping, and controls are materially improved.
 
 ## Last update
 
-2026-09-20 01:06 CEST
+2026-09-20 01:58 CEST
 
 ## Completed work
 
-- Inspected the initial workspace, operating system, Git, GitHub CLI availability, Python installations, virtual environments, and file inventory.
-- Confirmed that the workspace was empty and was not a Git repository.
-- Created the agreed directory structure without overwriting existing work.
-- Created a local `.venv` with Python 3.12.7.
-- Added initial dependency, ignore, provenance, documentation, and logging files.
-- Created baseline initial-data and existing-cluster audit reports.
-- Initialized a local Git repository on `main` and created the initial project commit.
-- Verified the required 22 directories and 12 core files, CSV header schemas, TOML syntax, virtual environment, clean Git worktree, and repository integrity.
-- Added this exact repository to the Windows user's Git `safe.directory` list so normal local Git commands work despite sandbox-created metadata ownership.
-- Verified that the supplied GitHub repository was empty, configured it as `origin`, pushed `main`, and established upstream tracking to `origin/main`.
+- Preserved and SHA-256 hashed all 11 supplied raw files.
+- Audited nine tabular/geospatial datasets plus two legacy HTML maps.
+- Retained and validated the existing clustering without rebuilding it: 1,805 valid lift geometries, 242 clusters, 162 assigned clusters, no duplicate lift membership, no count mismatch, and all 271 listing assignments nearest their stored cluster.
+- Built `data_processed/resort_master.csv` with 271 provisional resort listings and stable IDs.
+- Built a 31,248-row municipality-month hotel table for 186 municipalities. It contains 28,455 observed total-night values from 2013-01 through 2026-03; 2,793 suppressed monthly total-night cells remain missing.
+- Cached official OFS table metadata, the official Magic Pass press archive/current map, eight seasonal Magic Pass PDFs, and 271 geo.admin.ch point-identify responses with checksums and retrieval logs.
+- Built a point-container crosswalk: 268 coordinates resolve to a current Swiss municipality, 103 listings fall in 74 municipalities present in the OFS hotel universe, and three coordinates lie outside the Swiss current-municipality layer.
+- Built 93 official Magic Pass evidence events: 88 base-pass entries plus separately coded exit/supplement/inclusion events. Sixty-four events have candidate listing links; 29 remain unresolved.
+- Extracted 95 destinations from the cached current official map, with 68 candidate listing links. The embedded count conflicts with the official page's “more than 100” headline and is retained as a discrepancy.
+- Generated normalized provenance (29 source records), a 313-row data dictionary, source report, initial checkpoint reports, a resort-level evidence-quality table, and a model-feasibility report.
+- Added a reproducible checkpoint runner and 8 passing automated tests.
 
-## Work currently in progress
+## Main empirical counts
 
-No empirical work is in progress. The full research instructions have been saved and adopted as the project mission; this session records the mission and its links for future work.
+| Quantity | Current value | Interpretation |
+|---|---:|---|
+| Resort listings | 271 | Not independent destinations |
+| Existing lift clusters | 242 | Preserved geographic clusters |
+| Clusters linked to listings | 162 | Listing-to-cluster assignments |
+| Hotel municipalities | 186 | OFS outcome universe |
+| Observed hotel municipality-months | 28,455 | Repeated outcomes, not independent resorts |
+| Official base-entry events | 88 | Destination labels from official evidence |
+| Candidate-linked base entries | 62 | Scope still provisional |
+| Candidate-linked base entries with hotel outcome | 18 | Upper-bound event count |
+| Distinct provisional treated municipalities | 14 | Upper bound for treatment heterogeneity |
+| Approved causal treatment units | 0 | Exposure/continuity gates not passed |
+| Approved controls | 0 | Historical status and spillovers not audited |
 
-## Next actions
+## Current model decision
 
-Follow the sequence in `prompts/main_research_prompt.md`, beginning with Checkpoint 1:
+- Municipality fixed effects: data dimension exists, but treatment/exposure not ready.
+- Staggered DiD/event study: not credible yet.
+- Matching: descriptive analogue selection only at present.
+- Synthetic control: possible future case-study design after donor audit.
+- Causal forest, X-Learner, DR-Learner: unsupported by the effective treated sample.
+- Gradient boosting/random forest: deferred as grouped predictive benchmarks until features and independent units are ready.
+- Neural network: rejected; monthly repetition does not create independent resorts.
 
-1. Place existing thesis datasets in `data_raw/` without modifying them.
-2. Audit each supplied dataset and update the two audit reports and metadata tables.
-3. Commit and push the resulting verified audit milestone.
+No causal estimate, CATE, uplift prediction, opportunity score, or business recommendation has been produced.
 
 ## Important methodological decisions
 
-- Python is the primary language; the initialized target is Python 3.12.
-- Raw and externally downloaded source files are immutable.
-- Resort assignment and municipality assignment are separate methodological problems.
-- Existing lift clustering will be inspected and validated, not automatically rebuilt.
-- No source definitions, missing values, membership histories, or causal interpretations will be fabricated.
-- Later predictive features should use pre-treatment information unless explicitly and defensibly justified.
-- Validation must respect resort grouping and time; monthly rows are not independent resorts.
+- Python remains the primary language; raw and external source responses are immutable.
+- The existing lift clustering is a provisional reference layer and was not reconstructed.
+- Resort listings, lift clusters, official Magic Pass destinations, tourism destinations, and municipalities remain distinct units.
+- A point's containing municipality is recorded only as `coordinate_container_only`; it is never promoted to tourism exposure.
+- Membership events are `treatment_ready = false` until scope, continuity/exits, exact timing, exposure, and controls are reviewed.
+- Crans-Montana's documented 2020-04-30 base-pass exit proves treatment cannot be assumed absorbing.
+- Suppressed hotel values are missing, not zero, and are not imputed.
+- Validation must remain grouped by destination/municipality and time.
 
-## Existing datasets
+## Known blockers and data gaps
 
-No data files were present in the project at initialization. The specifically expected CSV and WMS capabilities files were not found. See `reports/INITIAL_DATA_AUDIT.md`.
-
-## External datasets collected
-
-None.
-
-## Main analytical datasets
-
-None.
-
-## Known data problems
-
-- Existing thesis data have not yet been supplied to this repository.
-- Variable definitions, encodings, delimiters, identifier integrity, missingness, duplicates, geographic levels, and temporal levels cannot yet be assessed.
-- Magic Pass historical membership coverage is unknown.
-- The station/resort-to-tourism-municipality crosswalk does not yet exist.
-
-## Ambiguous cases requiring manual review
-
-None identified because no data were available. Existing cluster assignments must be sampled geographically when the files arrive.
-
-## Current sample size
-
-Unknown; no analytical observations are available.
-
-## Current Magic Pass treatment coverage
-
-Unknown; no membership-history dataset has been collected or supplied.
-
-## Current modelling feasibility
-
-Not assessable. Modelling is intentionally deferred until the data inventory, identifiers, provenance, treatment history, and observational structure are validated.
-
-## Models already tested
-
-None.
-
-## Rejected approaches and reasons
-
-- Premature modelling: rejected because the source data and treatment history are not yet audited.
-- Automatic reconstruction of ski-lift clusters: rejected because existing work should be understood and validated first.
-- Inferring overnight-stay municipalities from a single resort/lift coordinate: rejected because tourism destinations may span one or more municipalities.
-
-## Important file locations
-
-- Authoritative research mission: `prompts/main_research_prompt.md`
-- Initial data audit: `reports/INITIAL_DATA_AUDIT.md`
-- Existing clustering audit: `reports/EXISTING_CLUSTER_AUDIT.md`
-- Source provenance register: `metadata/data_sources_master.csv`
-- Data dictionary: `metadata/data_dictionary.csv`
-- Variable causal-role register: `metadata/variable_causal_role.csv`
-- Research journal: `logs/research_journal.md`
-- Data collection log: `logs/data_collection_log.csv`
-
-## Open research questions
-
-- What are the exact definitions and construction histories of the existing datasets?
-- Can the existing lift-cluster assignments serve as a stable resort reference layer?
-- What stable identifiers link resorts, destinations, municipalities, and overnight-stay observations?
-- What is the historically correct Magic Pass membership timeline?
-- Which climate/snow measures are available at defensible spatial and temporal resolutions?
+1. Independent destination/domain definitions are not approved.
+2. Season-by-season membership continuity and exit history are incomplete.
+3. Twenty-nine official membership events remain unresolved to supplied listings.
+4. Destination-to-accommodation-market weights do not exist; shared municipalities and spillovers are unresolved.
+5. No historical municipality-boundary harmonization has been implemented.
+6. Hotel capacity, snow/climate, accessibility, population, tourism dependence, simultaneous investment, and competition/network controls are missing.
+7. The exact upstream source/version of the lift GPKG and retrieval dates of legacy extracts remain unknown.
 
 ## Immediate next action
 
-Obtain the existing thesis data files, preserve them under `data_raw/`, and perform a non-destructive dataset audit before any collection or modelling.
+Manually review the 18 candidate entry/outcome links, beginning with shared municipalities (Anniviers, Evolène, and Reichenbach im Kandertal); define independent destination units; complete membership continuity/exits; and construct explicit municipality exposure weights. Reassess Checkpoints 4–5 only after those decisions. Do not fit causal or complex ML models before the gate changes.
+
+## Key files
+
+- Mission: `prompts/main_research_prompt.md`
+- Reproducible runner: `src/run_checkpoint_pipeline.py`
+- Audit: `reports/01_DATA_AUDIT.md`
+- Collection: `reports/02_DATA_COLLECTION.md`
+- Quality: `reports/03_DATA_QUALITY.md`
+- Feasibility: `reports/model_feasibility_report.md`
+- Provenance: `metadata/data_sources_master.csv` and `reports/DATA_SOURCES.md`
+- Data dictionary: `metadata/data_dictionary.csv`
+- Treatment evidence: `data_processed/magic_pass_membership_history.csv`
+- Point municipality mapping: `data_processed/resort_point_municipality.csv`
+- Research log: `logs/research_journal.md`

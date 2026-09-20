@@ -1,0 +1,41 @@
+{
+  "resort_listings": 271,
+  "clusters": 242,
+  "assigned_clusters": 162,
+  "unnamed_clusters": 80,
+  "multi_listing_clusters": 53,
+  "assignment_quality": {
+    "confident": 257,
+    "review": 7,
+    "warning": 7
+  },
+  "cluster_quality": {
+    "confident": 197,
+    "warning": 45
+  },
+  "count_mismatches": [],
+  "lift_fid_memberships": 1805,
+  "unique_lift_fids": 1805,
+  "duplicate_lift_memberships": [],
+  "hotel_raw_rows": 33852,
+  "hotel_columns": 149,
+  "municipality_labels": 186,
+  "monthly_grid_rows": 31248,
+  "annual_rows_excluded": 2604,
+  "observed_monthly_outcomes": 28455,
+  "observed_municipalities": 186,
+  "observed_date_min": "2013-01-01",
+  "observed_date_max": "2026-03-01",
+  "nonnumeric_tokens_all_hotel_measures": {
+    "...": 624654,
+    "a": 1,
+    "-3": 2
+  },
+  "nonnumeric_tokens_monthly_total_nights": {
+    "...": 2793
+  },
+  "annual_reconciliation_discrepancies": 0,
+  "legacy_municipality_overlap_count": 69,
+  "all_resort_municipality_fields_empty": true,
+  "source_hashes_verified": true
+}

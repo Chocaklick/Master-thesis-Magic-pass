@@ -1,0 +1,4568 @@
+{
+  "data_raw/bahnen-winter_2056.gpkg": {
+    "transport_winter_2056": {
+      "n_rows": 1805,
+      "n_columns": 5,
+      "duplicate_rows": 0,
+      "columns": [
+        {
+          "variable": "fid",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1805,
+          "examples": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "geom",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1805,
+          "examples": [
+            "496f669ba1b38e32e2ada06170ca3a0926452ea19937af9551271ce98251ad39",
+            "663ded2f48786725bd9abc3f48504dca28dc1aabedf878e99c6d53557afc27aa",
+            "2144c78c11e2b45180adffd4b10fa74b7eee95765080c5a36a56b3de9e465d4a",
+            "8c405981c3bc104f9059a2a508bc14934296257ff778820bc58aa70ad9e82589",
+            "f97f3d6ff5359f20d7d57b6b79731a654624c7b28f2c8f529bda5e49b57c822e"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "name",
+          "inferred_type": "string",
+          "missing_count": 379,
+          "missing_share": 0.20997229916897506,
+          "n_unique_nonmissing": 1379,
+          "examples": [
+            "Heiden",
+            "Champatsch",
+            "Salaniva",
+            "Clünas",
+            "Naluns"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "tlm_uuid",
+          "inferred_type": "string",
+          "missing_count": 363,
+          "missing_share": 0.20110803324099724,
+          "n_unique_nonmissing": 1441,
+          "examples": [
+            "{BDBCA08D-A6E8-4B9B-AAB4-21375E54BB70}",
+            "{D2F757CD-30D1-450F-9521-6FA38E6F12EA}",
+            "{BA8C579D-C537-4E53-9A67-D493E74D65F0}",
+            "{E2CE948C-8799-463B-9E10-1520B78D5CD3}",
+            "{B9059852-AA9D-4569-8A22-854FEA9E1390}"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "type",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 6,
+          "examples": [
+            "skilift",
+            "chairlift",
+            "cable_car",
+            "aerial_cableway",
+            "other_transport_type"
+          ],
+          "nonnumeric_tokens": {}
+        }
+      ]
+    }
+  },
+  "data_raw/bergfex_stations_ski_suisse_par_region.csv": {
+    "bergfex_stations_ski_suisse_par_region": {
+      "n_rows": 271,
+      "n_columns": 12,
+      "duplicate_rows": 0,
+      "columns": [
+        {
+          "variable": "region",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 13,
+          "examples": [
+            "Argovie - Soleure",
+            "Berne et région",
+            "Bâle et région",
+            "Fribourg",
+            "Grisons"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "region_bergfex",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 13,
+          "examples": [
+            "Aargau - Solothurn",
+            "Bern & Region Bern",
+            "Basel Region",
+            "Freiburg Region",
+            "Graubünden"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "url_region",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 13,
+          "examples": [
+            "https://www.bergfex.ch/aargau-solothurn/",
+            "https://www.bergfex.ch/bern-region/",
+            "https://www.bergfex.ch/basel-region/",
+            "https://www.bergfex.ch/freiburg-region/",
+            "https://www.bergfex.ch/graubuenden/"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "station",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "Balmberg Balmberg",
+            "Hohe Winde Hohe Winde / Beinwil",
+            "Bumbach Bumbach - Schangnau",
+            "Chuderhüsi Chuderhüsi",
+            "Gantrisch Gantrisch - Gurnigel"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "altitude_max_m",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 194,
+          "examples": [
+            "1200",
+            "1073",
+            "1365",
+            "1100",
+            "1670"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "pistes_km",
+          "inferred_type": "numeric",
+          "missing_count": 12,
+          "missing_share": 0.04428044280442804,
+          "n_unique_nonmissing": 88,
+          "examples": [
+            "5",
+            "4",
+            "9",
+            "1",
+            "6"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "lifts_open",
+          "inferred_type": "numeric",
+          "missing_count": 2,
+          "missing_share": 0.007380073800738007,
+          "n_unique_nonmissing": 2,
+          "examples": [
+            "0",
+            "1"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "lifts_total",
+          "inferred_type": "numeric",
+          "missing_count": 2,
+          "missing_share": 0.007380073800738007,
+          "n_unique_nonmissing": 36,
+          "examples": [
+            "3",
+            "2",
+            "4",
+            "1",
+            "7"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "snow",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 15,
+          "examples": [
+            "-",
+            "50 cm",
+            "30 cm",
+            "74 cm",
+            "41 cm"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "price_raw",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 69,
+          "examples": [
+            "CHF 32,00",
+            "-",
+            "CHF 39,00",
+            "CHF 44,00",
+            "CHF 31,00"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "price_chf",
+          "inferred_type": "numeric",
+          "missing_count": 112,
+          "missing_share": 0.4132841328413284,
+          "n_unique_nonmissing": 61,
+          "examples": [
+            "32",
+            "39",
+            "44",
+            "31",
+            "40"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "url_station",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "https://www.bergfex.ch/balmberg/",
+            "https://www.bergfex.ch/hohe-winde-beinwil/",
+            "https://www.bergfex.ch/bumbach-schangnau/",
+            "https://www.bergfex.ch/chuderhuesi/",
+            "https://www.bergfex.ch/gantrisch-gurnigel/"
+          ],
+          "nonnumeric_tokens": {}
+        }
+      ]
+    }
+  },
+  "data_raw/carte_communes_nuitees_croisees_provisoir_avec_stations_gps_bergfex.html": {},
+  "data_raw/carte_stations_ski_clusters_assignations_gps_bergfex.html": {},
+  "data_raw/nuitée_commune_final.csv": {
+    "nuitée_commune_final": {
+      "n_rows": 33852,
+      "n_columns": 149,
+      "duplicate_rows": 0,
+      "columns": [
+        {
+          "variable": "Année",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 14,
+          "examples": [
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "Mois",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 13,
+          "examples": [
+            "Total de l'année",
+            "Janvier",
+            "Février",
+            "Mars",
+            "Avril"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "Commune",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 186,
+          "examples": [
+            "Kloten",
+            "Opfikon",
+            "Dübendorf",
+            "Uster",
+            "Winterthur"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "Pays de provenance - total Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 12707,
+          "examples": [
+            "177829",
+            "12826",
+            "12311",
+            "14346",
+            "12914"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3065
+          }
+        },
+        {
+          "variable": "Pays de provenance - total Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 16762,
+          "examples": [
+            "a",
+            "16822",
+            "16823",
+            "18973",
+            "17878"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3065,
+            "a": 1
+          }
+        },
+        {
+          "variable": "Suisse Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 10199,
+          "examples": [
+            "59437",
+            "4194",
+            "4161",
+            "4653",
+            "4235"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3065
+          }
+        },
+        {
+          "variable": "Suisse Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 13549,
+          "examples": [
+            "70932",
+            "5090",
+            "5069",
+            "5479",
+            "4917"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3065
+          }
+        },
+        {
+          "variable": "Allemagne Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 4112,
+          "examples": [
+            "14447",
+            "1302",
+            "1051",
+            "1304",
+            "1265"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3078
+          }
+        },
+        {
+          "variable": "Allemagne Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 6262,
+          "examples": [
+            "21688",
+            "2038",
+            "1638",
+            "1902",
+            "1929"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3078
+          }
+        },
+        {
+          "variable": "France Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2720,
+          "examples": [
+            "3941",
+            "289",
+            "326",
+            "352",
+            "319"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3151
+          }
+        },
+        {
+          "variable": "France Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3658,
+          "examples": [
+            "5858",
+            "398",
+            "490",
+            "467",
+            "452"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3151
+          }
+        },
+        {
+          "variable": "Italie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2292,
+          "examples": [
+            "3161",
+            "238",
+            "224",
+            "242",
+            "249"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3177
+          }
+        },
+        {
+          "variable": "Italie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3101,
+          "examples": [
+            "4801",
+            "327",
+            "329",
+            "294",
+            "386"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3177
+          }
+        },
+        {
+          "variable": "Autriche Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1229,
+          "examples": [
+            "2401",
+            "151",
+            "166",
+            "185",
+            "183"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3330
+          }
+        },
+        {
+          "variable": "Autriche Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1875,
+          "examples": [
+            "3164",
+            "211",
+            "221",
+            "232",
+            "268"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3330
+          }
+        },
+        {
+          "variable": "Royaume-Uni Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2746,
+          "examples": [
+            "10635",
+            "937",
+            "1207",
+            "993",
+            "922"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3285
+          }
+        },
+        {
+          "variable": "Royaume-Uni Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 4096,
+          "examples": [
+            "14443",
+            "1213",
+            "1586",
+            "1377",
+            "1259"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3285
+          }
+        },
+        {
+          "variable": "Irlande Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 667,
+          "examples": [
+            "888",
+            "79",
+            "75",
+            "115",
+            "94"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4082
+          }
+        },
+        {
+          "variable": "Irlande Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1016,
+          "examples": [
+            "1221",
+            "102",
+            "79",
+            "155",
+            "116"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4082
+          }
+        },
+        {
+          "variable": "Pays-Bas Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1775,
+          "examples": [
+            "1952",
+            "165",
+            "204",
+            "182",
+            "132"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3276
+          }
+        },
+        {
+          "variable": "Pays-Bas Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2818,
+          "examples": [
+            "2968",
+            "266",
+            "347",
+            "256",
+            "204"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3276
+          }
+        },
+        {
+          "variable": "Belgique Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1471,
+          "examples": [
+            "1162",
+            "98",
+            "95",
+            "110",
+            "108"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3387
+          }
+        },
+        {
+          "variable": "Belgique Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2460,
+          "examples": [
+            "1632",
+            "116",
+            "144",
+            "141",
+            "193"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3387
+          }
+        },
+        {
+          "variable": "Luxembourg Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 624,
+          "examples": [
+            "304",
+            "24",
+            "42",
+            "25",
+            "23"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3851
+          }
+        },
+        {
+          "variable": "Luxembourg Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1102,
+          "examples": [
+            "382",
+            "32",
+            "45",
+            "31",
+            "28"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3851
+          }
+        },
+        {
+          "variable": "Danemark Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 737,
+          "examples": [
+            "1296",
+            "110",
+            "100",
+            "108",
+            "95"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3863
+          }
+        },
+        {
+          "variable": "Danemark Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1172,
+          "examples": [
+            "1694",
+            "158",
+            "127",
+            "143",
+            "164"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3863
+          }
+        },
+        {
+          "variable": "Suède Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 913,
+          "examples": [
+            "2953",
+            "234",
+            "365",
+            "462",
+            "243"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3852
+          }
+        },
+        {
+          "variable": "Suède Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1445,
+          "examples": [
+            "3695",
+            "277",
+            "431",
+            "500",
+            "292"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3852
+          }
+        },
+        {
+          "variable": "Norvège Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 695,
+          "examples": [
+            "1570",
+            "125",
+            "216",
+            "264",
+            "90"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4196
+          }
+        },
+        {
+          "variable": "Norvège Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1047,
+          "examples": [
+            "1843",
+            "145",
+            "237",
+            "292",
+            "121"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4196
+          }
+        },
+        {
+          "variable": "Finlande Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 599,
+          "examples": [
+            "683",
+            "33",
+            "124",
+            "85",
+            "54"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4226
+          }
+        },
+        {
+          "variable": "Finlande Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 949,
+          "examples": [
+            "952",
+            "40",
+            "149",
+            "99",
+            "70"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4226
+          }
+        },
+        {
+          "variable": "Espagne Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1589,
+          "examples": [
+            "2637",
+            "207",
+            "233",
+            "295",
+            "192"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3447
+          }
+        },
+        {
+          "variable": "Espagne Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2178,
+          "examples": [
+            "3756",
+            "243",
+            "404",
+            "388",
+            "240"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3447
+          }
+        },
+        {
+          "variable": "Portugal Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 827,
+          "examples": [
+            "580",
+            "43",
+            "38",
+            "47",
+            "41"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3846
+          }
+        },
+        {
+          "variable": "Portugal Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1224,
+          "examples": [
+            "1005",
+            "57",
+            "59",
+            "74",
+            "78"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3846
+          }
+        },
+        {
+          "variable": "Grèce Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 664,
+          "examples": [
+            "522",
+            "38",
+            "32",
+            "35",
+            "46"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4300
+          }
+        },
+        {
+          "variable": "Grèce Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1069,
+          "examples": [
+            "832",
+            "48",
+            "40",
+            "60",
+            "56"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4300
+          }
+        },
+        {
+          "variable": "Turquie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 819,
+          "examples": [
+            "624",
+            "44",
+            "95",
+            "59",
+            "68"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4048
+          }
+        },
+        {
+          "variable": "Turquie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1144,
+          "examples": [
+            "934",
+            "59",
+            "122",
+            "78",
+            "121"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4048
+          }
+        },
+        {
+          "variable": "Autres Europe Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 725,
+          "examples": [
+            "337",
+            "22",
+            "24",
+            "36",
+            "34"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4077
+          }
+        },
+        {
+          "variable": "Autres Europe Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1090,
+          "examples": [
+            "460",
+            "26",
+            "29",
+            "43",
+            "58"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4077
+          }
+        },
+        {
+          "variable": "Liechtenstein Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 371,
+          "examples": [
+            "336",
+            "28",
+            "18",
+            "35",
+            "30"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4364
+          }
+        },
+        {
+          "variable": "Liechtenstein Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 523,
+          "examples": [
+            "348",
+            "28",
+            "18",
+            "35",
+            "34"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4364
+          }
+        },
+        {
+          "variable": "Islande Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 223,
+          "examples": [
+            "86",
+            "3",
+            "1",
+            "14",
+            "8"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5222
+          }
+        },
+        {
+          "variable": "Islande Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 367,
+          "examples": [
+            "127",
+            "4",
+            "1",
+            "19",
+            "9"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5222
+          }
+        },
+        {
+          "variable": "Pologne Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 850,
+          "examples": [
+            "1130",
+            "84",
+            "89",
+            "95",
+            "111"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3579
+          }
+        },
+        {
+          "variable": "Pologne Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1404,
+          "examples": [
+            "3236",
+            "147",
+            "159",
+            "453",
+            "260"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3579
+          }
+        },
+        {
+          "variable": "Hongrie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 544,
+          "examples": [
+            "463",
+            "29",
+            "37",
+            "44",
+            "47"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4033
+          }
+        },
+        {
+          "variable": "Hongrie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 882,
+          "examples": [
+            "939",
+            "36",
+            "66",
+            "87",
+            "187"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4033
+          }
+        },
+        {
+          "variable": "Bélarus Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 219,
+          "examples": [
+            "68",
+            "10",
+            "7",
+            "14",
+            "5"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5335
+          }
+        },
+        {
+          "variable": "Bélarus Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 367,
+          "examples": [
+            "84",
+            "14",
+            "8",
+            "0",
+            "1"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5335
+          }
+        },
+        {
+          "variable": "Bulgarie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 379,
+          "examples": [
+            "274",
+            "20",
+            "17",
+            "32",
+            "38"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4557
+          }
+        },
+        {
+          "variable": "Bulgarie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 645,
+          "examples": [
+            "444",
+            "35",
+            "41",
+            "74",
+            "52"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4557
+          }
+        },
+        {
+          "variable": "Malte Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 258,
+          "examples": [
+            "75",
+            "15",
+            "3",
+            "5",
+            "6"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5051
+          }
+        },
+        {
+          "variable": "Malte Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 435,
+          "examples": [
+            "149",
+            "24",
+            "3",
+            "23",
+            "6"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5051
+          }
+        },
+        {
+          "variable": "Chypre Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 288,
+          "examples": [
+            "121",
+            "8",
+            "10",
+            "28",
+            "12"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5049
+          }
+        },
+        {
+          "variable": "Chypre Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 496,
+          "examples": [
+            "161",
+            "8",
+            "10",
+            "34",
+            "17"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5049
+          }
+        },
+        {
+          "variable": "Chili Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 301,
+          "examples": [
+            "127",
+            "4",
+            "13",
+            "18",
+            "5"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5034
+          }
+        },
+        {
+          "variable": "Chili Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 466,
+          "examples": [
+            "198",
+            "6",
+            "30",
+            "23",
+            "9"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5034
+          }
+        },
+        {
+          "variable": "États-Unis Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3149,
+          "examples": [
+            "23348",
+            "1699",
+            "1376",
+            "1875",
+            "1429"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3275
+          }
+        },
+        {
+          "variable": "États-Unis Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 4224,
+          "examples": [
+            "30962",
+            "2134",
+            "2068",
+            "2408",
+            "2133"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3275
+          }
+        },
+        {
+          "variable": "Canada Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1190,
+          "examples": [
+            "3786",
+            "281",
+            "186",
+            "343",
+            "251"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3831
+          }
+        },
+        {
+          "variable": "Canada Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1759,
+          "examples": [
+            "5161",
+            "329",
+            "274",
+            "421",
+            "324"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3831
+          }
+        },
+        {
+          "variable": "Mexique Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 682,
+          "examples": [
+            "397",
+            "25",
+            "28",
+            "50",
+            "32"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4455
+          }
+        },
+        {
+          "variable": "Mexique Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 968,
+          "examples": [
+            "735",
+            "35",
+            "39",
+            "141",
+            "61"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4455
+          }
+        },
+        {
+          "variable": "Brésil Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1125,
+          "examples": [
+            "1028",
+            "97",
+            "60",
+            "84",
+            "77"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4070
+          }
+        },
+        {
+          "variable": "Brésil Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1694,
+          "examples": [
+            "1570",
+            "110",
+            "92",
+            "122",
+            "128"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4070
+          }
+        },
+        {
+          "variable": "Argentine Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 500,
+          "examples": [
+            "218",
+            "11",
+            "13",
+            "23",
+            "16"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4759
+          }
+        },
+        {
+          "variable": "Argentine Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 769,
+          "examples": [
+            "389",
+            "16",
+            "20",
+            "25",
+            "29"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4759
+          }
+        },
+        {
+          "variable": "Autres Amérique du Sud Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 612,
+          "examples": [
+            "526",
+            "59",
+            "35",
+            "43",
+            "53"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4436
+          }
+        },
+        {
+          "variable": "Autres Amérique du Sud Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 911,
+          "examples": [
+            "939",
+            "77",
+            "85",
+            "57",
+            "75"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4436
+          }
+        },
+        {
+          "variable": "Autres Amérique centrale, Caraïbes Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 592,
+          "examples": [
+            "518",
+            "38",
+            "27",
+            "46",
+            "40"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4493
+          }
+        },
+        {
+          "variable": "Autres Amérique centrale, Caraïbes Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 875,
+          "examples": [
+            "713",
+            "50",
+            "41",
+            "68",
+            "75"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4493
+          }
+        },
+        {
+          "variable": "Égypte Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 379,
+          "examples": [
+            "492",
+            "39",
+            "36",
+            "29",
+            "46"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5065
+          }
+        },
+        {
+          "variable": "Égypte Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 637,
+          "examples": [
+            "733",
+            "54",
+            "60",
+            "45",
+            "82"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5065
+          }
+        },
+        {
+          "variable": "Autres Afrique du Nord Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 453,
+          "examples": [
+            "186",
+            "6",
+            "13",
+            "23",
+            "11"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4756
+          }
+        },
+        {
+          "variable": "Autres Afrique du Nord Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 730,
+          "examples": [
+            "380",
+            "8",
+            "28",
+            "11",
+            "39"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4756
+          }
+        },
+        {
+          "variable": "Afrique du Sud Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 489,
+          "examples": [
+            "596",
+            "90",
+            "41",
+            "31",
+            "35"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4761
+          }
+        },
+        {
+          "variable": "Afrique du Sud Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 821,
+          "examples": [
+            "1219",
+            "151",
+            "74",
+            "71",
+            "83"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4761
+          }
+        },
+        {
+          "variable": "Autres Afrique Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 618,
+          "examples": [
+            "880",
+            "65",
+            "55",
+            "75",
+            "84"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4469
+          }
+        },
+        {
+          "variable": "Autres Afrique Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1081,
+          "examples": [
+            "1301",
+            "70",
+            "59",
+            "120",
+            "98"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4469
+          }
+        },
+        {
+          "variable": "Bahreïn Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 269,
+          "examples": [
+            "49",
+            "1",
+            "3",
+            "5",
+            "4"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5457
+          }
+        },
+        {
+          "variable": "Bahreïn Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 497,
+          "examples": [
+            "86",
+            "1",
+            "10",
+            "3",
+            "13"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5457
+          }
+        },
+        {
+          "variable": "Israël Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 933,
+          "examples": [
+            "1773",
+            "68",
+            "114",
+            "173",
+            "81"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4072
+          }
+        },
+        {
+          "variable": "Israël Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1444,
+          "examples": [
+            "2227",
+            "79",
+            "141",
+            "200",
+            "140"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4072
+          }
+        },
+        {
+          "variable": "Inde Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1670,
+          "examples": [
+            "3116",
+            "107",
+            "74",
+            "137",
+            "200"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4091
+          }
+        },
+        {
+          "variable": "Inde Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2375,
+          "examples": [
+            "4923",
+            "138",
+            "113",
+            "203",
+            "343"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4091
+          }
+        },
+        {
+          "variable": "Japon Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1392,
+          "examples": [
+            "5688",
+            "245",
+            "169",
+            "219",
+            "276"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4211
+          }
+        },
+        {
+          "variable": "Japon Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1791,
+          "examples": [
+            "6938",
+            "334",
+            "226",
+            "389",
+            "257"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4211
+          }
+        },
+        {
+          "variable": "Autres Asie de l'Est Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 915,
+          "examples": [
+            "567",
+            "47",
+            "23",
+            "28",
+            "46"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4335
+          }
+        },
+        {
+          "variable": "Autres Asie de l'Est Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1235,
+          "examples": [
+            "1000",
+            "96",
+            "40",
+            "57",
+            "91"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4335
+          }
+        },
+        {
+          "variable": "Qatar Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 611,
+          "examples": [
+            "81",
+            "2",
+            "4",
+            "5",
+            "8"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5183
+          }
+        },
+        {
+          "variable": "Qatar Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 996,
+          "examples": [
+            "111",
+            "2",
+            "11",
+            "6",
+            "10"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5183
+          }
+        },
+        {
+          "variable": "Koweït Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 620,
+          "examples": [
+            "135",
+            "2",
+            "0",
+            "4",
+            "21"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5086
+          }
+        },
+        {
+          "variable": "Koweït Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1006,
+          "examples": [
+            "227",
+            "2",
+            "6",
+            "0",
+            "10"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5086
+          }
+        },
+        {
+          "variable": "Australie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1293,
+          "examples": [
+            "2394",
+            "273",
+            "94",
+            "114",
+            "95"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3923
+          }
+        },
+        {
+          "variable": "Australie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1848,
+          "examples": [
+            "3126",
+            "317",
+            "155",
+            "152",
+            "117"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3923
+          }
+        },
+        {
+          "variable": "Chine Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2733,
+          "examples": [
+            "6279",
+            "67",
+            "209",
+            "222",
+            "511"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3796
+          }
+        },
+        {
+          "variable": "Chine Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3088,
+          "examples": [
+            "7066",
+            "100",
+            "238",
+            "291",
+            "575"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3796
+          }
+        },
+        {
+          "variable": "Hong Kong Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 966,
+          "examples": [
+            "376",
+            "26",
+            "28",
+            "29",
+            "23"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4631
+          }
+        },
+        {
+          "variable": "Hong Kong Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1244,
+          "examples": [
+            "562",
+            "36",
+            "40",
+            "48",
+            "37"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4631
+          }
+        },
+        {
+          "variable": "Indonésie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 786,
+          "examples": [
+            "1289",
+            "36",
+            "30",
+            "20",
+            "92"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4928
+          }
+        },
+        {
+          "variable": "Indonésie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1062,
+          "examples": [
+            "1910",
+            "70",
+            "52",
+            "24",
+            "116"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4928
+          }
+        },
+        {
+          "variable": "Corée (Sud) Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1589,
+          "examples": [
+            "1196",
+            "47",
+            "33",
+            "42",
+            "62"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4483
+          }
+        },
+        {
+          "variable": "Corée (Sud) Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1872,
+          "examples": [
+            "1458",
+            "57",
+            "45",
+            "55",
+            "100"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4483
+          }
+        },
+        {
+          "variable": "Malaisie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 784,
+          "examples": [
+            "408",
+            "19",
+            "25",
+            "22",
+            "41"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4700
+          }
+        },
+        {
+          "variable": "Malaisie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1076,
+          "examples": [
+            "833",
+            "23",
+            "26",
+            "30",
+            "91"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4700
+          }
+        },
+        {
+          "variable": "Philippines Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 495,
+          "examples": [
+            "89",
+            "6",
+            "3",
+            "14",
+            "9"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4978
+          }
+        },
+        {
+          "variable": "Philippines Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 758,
+          "examples": [
+            "204",
+            "19",
+            "22",
+            "31",
+            "34"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4978
+          }
+        },
+        {
+          "variable": "Nouvelle Zélande, Océanie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 485,
+          "examples": [
+            "355",
+            "35",
+            "10",
+            "24",
+            "40"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4618
+          }
+        },
+        {
+          "variable": "Nouvelle Zélande, Océanie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 726,
+          "examples": [
+            "562",
+            "88",
+            "27",
+            "28",
+            "56"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4618
+          }
+        },
+        {
+          "variable": "Singapour Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1027,
+          "examples": [
+            "1812",
+            "128",
+            "104",
+            "105",
+            "97"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4402
+          }
+        },
+        {
+          "variable": "Singapour Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1441,
+          "examples": [
+            "2731",
+            "156",
+            "165",
+            "134",
+            "207"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4402
+          }
+        },
+        {
+          "variable": "Oman Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 331,
+          "examples": [
+            "115",
+            "4",
+            "1",
+            "13",
+            "3"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5315
+          }
+        },
+        {
+          "variable": "Oman Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 549,
+          "examples": [
+            "184",
+            "8",
+            "1",
+            "18",
+            "3"
+          ],
+          "nonnumeric_tokens": {
+            "...": 5315
+          }
+        },
+        {
+          "variable": "Taïwan (Taipei chinois) Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1153,
+          "examples": [
+            "143",
+            "3",
+            "7",
+            "5",
+            "23"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4653
+          }
+        },
+        {
+          "variable": "Taïwan (Taipei chinois) Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1335,
+          "examples": [
+            "185",
+            "5",
+            "8",
+            "7",
+            "24"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4653
+          }
+        },
+        {
+          "variable": "Thaïlande Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1173,
+          "examples": [
+            "614",
+            "16",
+            "23",
+            "32",
+            "118"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4495
+          }
+        },
+        {
+          "variable": "Thaïlande Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1455,
+          "examples": [
+            "911",
+            "31",
+            "41",
+            "40",
+            "205"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4495
+          }
+        },
+        {
+          "variable": "Autres Asie de l'Ouest Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 624,
+          "examples": [
+            "231",
+            "10",
+            "13",
+            "14",
+            "28"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4477
+          }
+        },
+        {
+          "variable": "Autres Asie de l'Ouest Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 974,
+          "examples": [
+            "499",
+            "12",
+            "24",
+            "15",
+            "63"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4477
+          }
+        },
+        {
+          "variable": "Estonie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 276,
+          "examples": [
+            "71",
+            "6",
+            "8",
+            "2",
+            "10"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4927
+          }
+        },
+        {
+          "variable": "Estonie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 473,
+          "examples": [
+            "86",
+            "6",
+            "10",
+            "11",
+            "2"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4927
+          }
+        },
+        {
+          "variable": "Lettonie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 257,
+          "examples": [
+            "82",
+            "5",
+            "9",
+            "11",
+            "4"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4829
+          }
+        },
+        {
+          "variable": "Lettonie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 426,
+          "examples": [
+            "135",
+            "6",
+            "9",
+            "20",
+            "11"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4829
+          }
+        },
+        {
+          "variable": "Lituanie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 268,
+          "examples": [
+            "143",
+            "23",
+            "20",
+            "31",
+            "12"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4657
+          }
+        },
+        {
+          "variable": "Lituanie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 462,
+          "examples": [
+            "178",
+            "23",
+            "26",
+            "41",
+            "12"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4657
+          }
+        },
+        {
+          "variable": "Arabie saoudite Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1135,
+          "examples": [
+            "339",
+            "20",
+            "9",
+            "18",
+            "23"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4462
+          }
+        },
+        {
+          "variable": "Arabie saoudite Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1784,
+          "examples": [
+            "630",
+            "43",
+            "19",
+            "24",
+            "28"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4462
+          }
+        },
+        {
+          "variable": "Émirats arabes unis Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1198,
+          "examples": [
+            "648",
+            "27",
+            "44",
+            "57",
+            "62"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4277
+          }
+        },
+        {
+          "variable": "Émirats arabes unis Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1830,
+          "examples": [
+            "1248",
+            "68",
+            "92",
+            "120",
+            "154"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4277
+          }
+        },
+        {
+          "variable": "Croatie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 329,
+          "examples": [
+            "209",
+            "12",
+            "10",
+            "17",
+            "8"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4440
+          }
+        },
+        {
+          "variable": "Croatie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 513,
+          "examples": [
+            "279",
+            "13",
+            "15",
+            "23",
+            "8"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4440
+          }
+        },
+        {
+          "variable": "Roumanie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 645,
+          "examples": [
+            "392",
+            "42",
+            "31",
+            "35",
+            "30"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3961
+          }
+        },
+        {
+          "variable": "Roumanie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1043,
+          "examples": [
+            "661",
+            "67",
+            "68",
+            "49",
+            "42"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3961
+          }
+        },
+        {
+          "variable": "Russie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1079,
+          "examples": [
+            "2870",
+            "428",
+            "217",
+            "331",
+            "220"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4324
+          }
+        },
+        {
+          "variable": "Russie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1777,
+          "examples": [
+            "3725",
+            "563",
+            "267",
+            "424",
+            "283"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4324
+          }
+        },
+        {
+          "variable": "Slovaquie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 354,
+          "examples": [
+            "197",
+            "20",
+            "15",
+            "29",
+            "12"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4336
+          }
+        },
+        {
+          "variable": "Slovaquie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 590,
+          "examples": [
+            "286",
+            "32",
+            "16",
+            "43",
+            "15"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4336
+          }
+        },
+        {
+          "variable": "Slovénie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 297,
+          "examples": [
+            "181",
+            "13",
+            "7",
+            "11",
+            "9"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4523
+          }
+        },
+        {
+          "variable": "Slovénie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 455,
+          "examples": [
+            "249",
+            "21",
+            "7",
+            "19",
+            "12"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4523
+          }
+        },
+        {
+          "variable": "Tchéquie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 645,
+          "examples": [
+            "653",
+            "42",
+            "65",
+            "30",
+            "59"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3764
+          }
+        },
+        {
+          "variable": "Tchéquie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1046,
+          "examples": [
+            "1047",
+            "91",
+            "112",
+            "46",
+            "76"
+          ],
+          "nonnumeric_tokens": {
+            "...": 3764
+          }
+        },
+        {
+          "variable": "Ukraine Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 571,
+          "examples": [
+            "514",
+            "81",
+            "29",
+            "60",
+            "33"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4126
+          }
+        },
+        {
+          "variable": "Ukraine Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 921,
+          "examples": [
+            "781",
+            "108",
+            "36",
+            "89",
+            "41"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4126
+          }
+        },
+        {
+          "variable": "Serbie Arrivées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 335,
+          "examples": [
+            "635",
+            "21",
+            "34",
+            "61",
+            "27"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4671
+          }
+        },
+        {
+          "variable": "Serbie Nuitées",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 526,
+          "examples": [
+            "902",
+            "25",
+            "37",
+            "70",
+            "36"
+          ],
+          "nonnumeric_tokens": {
+            "...": 4671
+          }
+        }
+      ]
+    }
+  },
+  "data_raw/position_gps_stations_ski.csv": {
+    "position_gps_stations_ski": {
+      "n_rows": 271,
+      "n_columns": 5,
+      "duplicate_rows": 0,
+      "columns": [
+        {
+          "variable": "station",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "Balmberg",
+            "Hohe Winde Beinwil",
+            "Bumbach - Schangnau",
+            "Chuderhüsi",
+            "Gantrisch - Gurnigel"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "latitude",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "47.261175",
+            "47.346791",
+            "46.806787",
+            "46.874583",
+            "46.724344"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "longitude",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "7.539282",
+            "7.594085",
+            "7.887497",
+            "7.720900",
+            "7.453280"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "position_trouvee",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "oui"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "certitude",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "certain"
+          ],
+          "nonnumeric_tokens": {}
+        }
+      ]
+    }
+  },
+  "data_raw/stations_ski_assignations_clusters_gps_bergfex.csv": {
+    "stations_ski_assignations_clusters_gps_bergfex": {
+      "n_rows": 271,
+      "n_columns": 25,
+      "duplicate_rows": 0,
+      "columns": [
+        {
+          "variable": "ski_id",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "balmberg",
+            "hohe_winde_beinwil",
+            "bumbach_schangnau",
+            "chuderhusi",
+            "gantrisch_gurnigel"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "ski_name",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "Balmberg",
+            "Hohe Winde Beinwil",
+            "Bumbach - Schangnau",
+            "Chuderhüsi",
+            "Gantrisch - Gurnigel"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "commune",
+          "inferred_type": "unknown",
+          "missing_count": 271,
+          "missing_share": 1.0,
+          "n_unique_nonmissing": 0,
+          "examples": [],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "region",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 13,
+          "examples": [
+            "Argovie - Soleure",
+            "Berne et région",
+            "Bâle et région",
+            "Fribourg",
+            "Grisons"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "region_bergfex",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 13,
+          "examples": [
+            "Aargau - Solothurn",
+            "Bern & Region Bern",
+            "Basel Region",
+            "Freiburg Region",
+            "Graubünden"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "lat",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "47.261175",
+            "47.346791",
+            "46.806787",
+            "46.874583",
+            "46.724344"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "lon",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "7.539282",
+            "7.594085",
+            "7.887497",
+            "7.7209",
+            "7.45328"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_id",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 162,
+          "examples": [
+            "SKI_CLUSTER_108",
+            "SKI_CLUSTER_179",
+            "SKI_CLUSTER_074",
+            "SKI_CLUSTER_183",
+            "SKI_CLUSTER_051"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_display_name",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 162,
+          "examples": [
+            "Balmberg",
+            "Hohe Winde Beinwil",
+            "Bumbach - Schangnau / Marchbachegg Marbach - Marbachegg",
+            "Chuderhüsi",
+            "Schwarzenbühl Selital / Gantrisch - Gurnigel / Ottenleuebad +3"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "distance_m",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 250,
+          "examples": [
+            "228.5",
+            "15.2",
+            "23.1",
+            "14.1",
+            "26.2"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "second_cluster_id",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 149,
+          "examples": [
+            "SKI_CLUSTER_180",
+            "SKI_CLUSTER_138",
+            "SKI_CLUSTER_184",
+            "SKI_CLUSTER_178",
+            "SKI_CLUSTER_109"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "second_distance_m",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "7209.5",
+            "8086.9",
+            "5419.8",
+            "3614.9",
+            "4346.7"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "name_match_score",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 8,
+          "examples": [
+            "0.0",
+            "0.5",
+            "1.0",
+            "0.667",
+            "0.333"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "second_name_match_score",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3,
+          "examples": [
+            "0.0",
+            "0.5",
+            "0.333"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "expected_lifts_total",
+          "inferred_type": "numeric",
+          "missing_count": 2,
+          "missing_share": 0.007380073800738007,
+          "n_unique_nonmissing": 36,
+          "examples": [
+            "3.0",
+            "2.0",
+            "4.0",
+            "1.0",
+            "7.0"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_lift_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 35,
+          "examples": [
+            "3",
+            "1",
+            "5",
+            "8",
+            "2"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_quality",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3,
+          "examples": [
+            "confident",
+            "review",
+            "warning"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_uncertain",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2,
+          "examples": [
+            "False",
+            "True"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_uncertainty_reasons",
+          "inferred_type": "string",
+          "missing_count": 257,
+          "missing_share": 0.948339483394834,
+          "n_unique_nonmissing": 6,
+          "examples": [
+            "very_far_from_cluster|low_distance_ratio",
+            "far_from_cluster",
+            "cluster_has_fewer_lifts_than_bergfex",
+            "very_far_from_cluster",
+            "very_far_from_cluster|nearby_second_cluster"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_review_reasons",
+          "inferred_type": "string",
+          "missing_count": 264,
+          "missing_share": 0.974169741697417,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "very_far_from_cluster"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_warning_reasons",
+          "inferred_type": "string",
+          "missing_count": 259,
+          "missing_share": 0.955719557195572,
+          "n_unique_nonmissing": 5,
+          "examples": [
+            "low_distance_ratio",
+            "far_from_cluster",
+            "cluster_has_fewer_lifts_than_bergfex",
+            "nearby_second_cluster",
+            "far_from_cluster|nearby_second_cluster"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_info_flags",
+          "inferred_type": "string",
+          "missing_count": 67,
+          "missing_share": 0.24723247232472326,
+          "n_unique_nonmissing": 5,
+          "examples": [
+            "lift_name_support",
+            "lift_name_support|strong_lift_name_support",
+            "lift_count_support",
+            "lift_name_support|strong_lift_name_support|lift_count_support",
+            "lift_name_support|lift_count_support"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "geocode_status",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "ok_strict"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "needs_manual_check",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "FAUX"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "url_station",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "https://www.bergfex.ch/balmberg/",
+            "https://www.bergfex.ch/hohe-winde-beinwil/",
+            "https://www.bergfex.ch/bumbach-schangnau/",
+            "https://www.bergfex.ch/chuderhuesi/",
+            "https://www.bergfex.ch/gantrisch-gurnigel/"
+          ],
+          "nonnumeric_tokens": {}
+        }
+      ]
+    }
+  },
+  "data_raw/stations_ski_clusters_calibration_seuils_gps_bergfex.csv": {
+    "stations_ski_clusters_calibration_seuils_gps_bergfex": {
+      "n_rows": 4,
+      "n_columns": 12,
+      "duplicate_rows": 0,
+      "columns": [
+        {
+          "variable": "threshold_m",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 4,
+          "examples": [
+            "1500.0",
+            "2000.0",
+            "2500.0",
+            "3000.0"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "score",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 4,
+          "examples": [
+            "255.3",
+            "226.35",
+            "178.45",
+            "153.5"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 4,
+          "examples": [
+            "340",
+            "310",
+            "269",
+            "242"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "named_cluster_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 4,
+          "examples": [
+            "218",
+            "201",
+            "176",
+            "162"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "unnamed_cluster_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 4,
+          "examples": [
+            "122",
+            "109",
+            "93",
+            "80"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "many_name_cluster_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 4,
+          "examples": [
+            "2",
+            "4",
+            "7",
+            "9"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_confident_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 4,
+          "examples": [
+            "226",
+            "214",
+            "206",
+            "197"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_warning_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 4,
+          "examples": [
+            "114",
+            "96",
+            "63",
+            "45"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_review_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "0"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_confident_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3,
+          "examples": [
+            "254",
+            "256",
+            "257"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_warning_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3,
+          "examples": [
+            "10",
+            "8",
+            "7"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_review_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "7"
+          ],
+          "nonnumeric_tokens": {}
+        }
+      ]
+    }
+  },
+  "data_raw/stations_ski_clusters_gps_bergfex.geojson": {
+    "stations_ski_clusters_gps_bergfex": {
+      "n_rows": 242,
+      "n_columns": 31,
+      "duplicate_rows": 0,
+      "columns": [
+        {
+          "variable": "cluster_id",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 242,
+          "examples": [
+            "SKI_CLUSTER_001",
+            "SKI_CLUSTER_002",
+            "SKI_CLUSTER_003",
+            "SKI_CLUSTER_004",
+            "SKI_CLUSTER_005"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "display_name",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 242,
+          "examples": [
+            "Avoriaz 1800 Portes du Soleil / Châtel Portes du Soleil / Chapelle Abondance La Chapelle d'Abondance / Portes du Soleil +2",
+            "Veysonnaz 4 Vallées / Verbier 4 Vallées / La Tzoumaz - Mayens de Riddes +3",
+            "Gitschenen Skilift Gitschenen / Klewenalp - Stockhütte / Engelberg Titlis +2",
+            "SKI_CLUSTER_004 sans nom",
+            "Zermatt"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "station_names",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 163,
+          "examples": [
+            "[\"Avoriaz 1800 Portes du Soleil\", \"Châtel Portes du Soleil\", \"Chapelle Abondance La Chapelle d'Abondance / Portes du Soleil\", \"Torgon Portes du Soleil\", \"Champéry - Les Crosets - Champoussin - Morgins Portes du Soleil\"]",
+            "[\"Veysonnaz 4 Vallées\", \"Verbier 4 Vallées\", \"La Tzoumaz - Mayens de Riddes\", \"Thyon 4 Vallées\", \"Bruson - Verbier\", \"Nendaz 4 Vallées\"]",
+            "[\"Gitschenen Skilift Gitschenen\", \"Klewenalp - Stockhütte\", \"Engelberg Titlis\", \"Brunni Brunni - Bahnen Engelberg\", \"Dallenwil - Wirzweli\"]",
+            "[]",
+            "[\"Zermatt\"]"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "station_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 8,
+          "examples": [
+            "5",
+            "6",
+            "0",
+            "1",
+            "3"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "lift_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 38,
+          "examples": [
+            "115",
+            "62",
+            "53",
+            "50",
+            "48"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "lift_fids",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 242,
+          "examples": [
+            "[246, 247, 248, 249, 274, 275, 276, 277, 333, 337, 348, 1159, 1160, 1177, 1178, 1179, 1180, 1181, 1182, 1183, 1184, 1185, 1186, 1187, 1188, 1189, 1190, 1191, 1192, 1193, 1194, 1195, 1196, 1197, 1198, 1199, 1200, 1201, 1202, 1203, 1206, 1207, 1208, 1209, 1210, 1211, 1212, 1213, 1254, 1255, 1299, 1300, 1321, 1334, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416, 1471, 1474, 1520, 1521, 1522, 1525, 1526, 1527, 1528, 1529, 1530, 1531, 1532, 1533, 1534, 1535, 1539, 1578, 1586, 1587, 1588, 1645, 1646, 1647, 1648, 1649, 1650, 1651, 1652, 1653, 1654, 1688, 1689, 1701, 1771, 1772, 1773, 1774, 1782]",
+            "[218, 224, 278, 279, 280, 305, 324, 325, 335, 1071, 1072, 1073, 1077, 1078, 1079, 1080, 1081, 1082, 1083, 1084, 1085, 1086, 1087, 1088, 1116, 1117, 1118, 1119, 1120, 1121, 1122, 1123, 1124, 1125, 1126, 1127, 1128, 1129, 1130, 1131, 1135, 1136, 1137, 1142, 1143, 1144, 1257, 1258, 1297, 1298, 1331, 1748, 1749, 1751, 1752, 1753, 1754, 1765, 1766, 1790, 1794, 1798]",
+            "[75, 76, 77, 138, 139, 291, 349, 438, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, 512, 513, 514, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 677, 678, 679, 680, 682, 683, 684, 685, 686, 723, 724, 729, 1279, 1280, 1281, 1308, 1322, 1704]",
+            "[1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366, 1385, 1386, 1387, 1388, 1389, 1472, 1510, 1511, 1512, 1513, 1514, 1515, 1516, 1517, 1571, 1572, 1582, 1600, 1601, 1602, 1603, 1604, 1605, 1606, 1607, 1623, 1624, 1625, 1626, 1627, 1628, 1629, 1630, 1631, 1632, 1633, 1634, 1635, 1636, 1637, 1638, 1687, 1775]",
+            "[210, 211, 212, 213, 214, 215, 216, 217, 267, 268, 299, 317, 355, 356, 367, 1057, 1058, 1059, 1060, 1061, 1062, 1063, 1239, 1240, 1293, 1316, 1328, 1356, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384, 1473, 1508, 1509, 1619, 1620, 1621, 1622, 1746, 1747, 1779, 1787]"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "lift_names_sample",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 216,
+          "examples": [
+            "[\"Chavanette\", \"Champeys\", \"Grande Conche\", \"Ecotis\", \"Coqs - 1\", \"Sépaya 2\", \"Ripaille 1\", \"Champéry\", \"Géant Ecole\", \"Gueilly\", \"Fignard\", \"Conche 2000\"]",
+            "[\"Mont - Gelé\", \"La Dent\", \"Greppon Blanc 1\", \"Savoleyres Nord\", \"La Chaux Express\", \"Le Châble-Les Mayens de Bruson\", \"La Chaux 2\", \"Piste de l'Ours\", \"Greppon Blanc 2\", \"Tortin\", \"Jumbo\", \"Tortin - Gentianes\"]",
+            "[\"Klewenboden\", \"Chrüzhütte-Nätschboden\", \"Urnerstaffel-Nätschboden\", \"Engelberg-Ristis\", \"Gerschnialp\", \"Junior 2\", \"Engstlensee-Jochpass\", \"Ristis - Brunnihütte\", \"Vordere Bärchi-Obere Bärchi\", \"Beckenried-Klewenalp\", \"Waldi-Kalthütten\", \"Emmetten-Stockhütte\"]",
+            "[\"Tête de Balme\"]",
+            "[\"Furi-Trockener Steg\", \"Sunnegga-Blauherd\", \"Rote Nase\", \"Testa\", \"Plateau Breithorn\", \"Gifthittli\", \"Furggsattel\", \"Laghi Cime Bianche Plateau Rosà\", \"Furgg-Sandiger Boden\", \"Furi-Riffelberg\", \"Bontadini\", \"Hörnli\"]"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "lift_types",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 105,
+          "examples": [
+            "{\"aerial_cableway\": 1, \"chairlift\": 19, \"funicular\": 37, \"skilift\": 58}",
+            "{\"aerial_cableway\": 5, \"cable_car\": 15, \"chairlift\": 18, \"skilift\": 24}",
+            "{\"aerial_cableway\": 30, \"cable_car\": 3, \"chairlift\": 11, \"skilift\": 18}",
+            "{\"chairlift\": 1, \"funicular\": 41, \"skilift\": 11}",
+            "{\"aerial_cableway\": 7, \"cable_car\": 9, \"chairlift\": 9, \"funicular\": 16, \"other_transport_type\": 1, \"skilift\": 8}"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_distance_threshold_m",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "3000.0"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "centroid_lat",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 242,
+          "examples": [
+            "46.2266656",
+            "46.1298439",
+            "46.8652407",
+            "45.9267047",
+            "45.9787206"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "centroid_lon",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 242,
+          "examples": [
+            "6.8344286",
+            "7.28699",
+            "8.4336388",
+            "6.9213165",
+            "7.7325984"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "bbox_diag_m",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 241,
+          "examples": [
+            "21981.9",
+            "23736.5",
+            "28496.8",
+            "31957.8",
+            "21953.1"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "nearest_cluster_m",
+          "inferred_type": "numeric",
+          "missing_count": 62,
+          "missing_share": 0.256198347107438,
+          "n_unique_nonmissing": 125,
+          "examples": [
+            "5869.5",
+            "3181.4",
+            "3481.5",
+            "3063.9",
+            "3093.4"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "nearest_cluster_id",
+          "inferred_type": "string",
+          "missing_count": 62,
+          "missing_share": 0.256198347107438,
+          "n_unique_nonmissing": 129,
+          "examples": [
+            "SKI_CLUSTER_127",
+            "SKI_CLUSTER_171",
+            "SKI_CLUSTER_013",
+            "SKI_CLUSTER_062",
+            "SKI_CLUSTER_098"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "naming_status",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3,
+          "examples": [
+            "multiple_names",
+            "unnamed",
+            "single_name"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "expected_lifts_total",
+          "inferred_type": "numeric",
+          "missing_count": 81,
+          "missing_share": 0.3347107438016529,
+          "n_unique_nonmissing": 39,
+          "examples": [
+            "150.0",
+            "332.0",
+            "51.0",
+            "54.0",
+            "50.0"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "quality_label",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3,
+          "examples": [
+            "À surveiller",
+            "Confiant",
+            "À revoir"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_quality",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2,
+          "examples": [
+            "warning",
+            "confident"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_uncertain",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2,
+          "examples": [
+            "True",
+            "False"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_review_reasons",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "[]"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_warning_reasons",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 10,
+          "examples": [
+            "[\"many_station_names_on_large_domain\"]",
+            "[\"very_large_multi_station_domain\", \"cluster_lift_count_below_bergfex_total\", \"many_station_names_on_large_domain\"]",
+            "[\"close_to_named_cluster\", \"very_large_multi_station_domain\", \"many_station_names_on_large_domain\"]",
+            "[]",
+            "[\"very_large_multi_station_domain\", \"many_station_names_on_large_domain\"]"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_info_flags",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 12,
+          "examples": [
+            "[\"large_spatial_extent\", \"cluster_lift_count_supported_by_bergfex\"]",
+            "[\"close_to_unnamed_cluster\"]",
+            "[\"cluster_lift_count_supported_by_bergfex\"]",
+            "[\"large_spatial_extent\", \"no_name_assigned\"]",
+            "[\"close_to_unnamed_cluster\", \"cluster_lift_count_supported_by_bergfex\"]"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_uncertainty_reasons",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 10,
+          "examples": [
+            "[\"many_station_names_on_large_domain\"]",
+            "[\"very_large_multi_station_domain\", \"cluster_lift_count_below_bergfex_total\", \"many_station_names_on_large_domain\"]",
+            "[\"close_to_named_cluster\", \"very_large_multi_station_domain\", \"many_station_names_on_large_domain\"]",
+            "[]",
+            "[\"very_large_multi_station_domain\", \"many_station_names_on_large_domain\"]"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_quality",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3,
+          "examples": [
+            "confident",
+            "review",
+            "warning"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_uncertain",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2,
+          "examples": [
+            "False",
+            "True"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_uncertain_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3,
+          "examples": [
+            "0",
+            "1",
+            "3"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_warning_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2,
+          "examples": [
+            "0",
+            "1"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_review_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 4,
+          "examples": [
+            "0",
+            "1",
+            "3",
+            "2"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "map_quality",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3,
+          "examples": [
+            "warning",
+            "confident",
+            "review"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "max_assignment_distance_m",
+          "inferred_type": "numeric",
+          "missing_count": 80,
+          "missing_share": 0.3305785123966942,
+          "n_unique_nonmissing": 157,
+          "examples": [
+            "186.2",
+            "428.9",
+            "314.5",
+            "29.2",
+            "170.0"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignments",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 163,
+          "examples": [
+            "[{\"assignment_info_flags\": \"lift_count_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 115, \"commune\": \"\", \"distance_m\": 4.2, \"expected_lifts_total\": 34.0, \"name_match_score\": 0.0, \"region\": \"Valais\", \"ski_id\": \"avoriaz_1800_portes_du_soleil\", \"ski_name\": \"Avoriaz 1800 Portes du Soleil\", \"url_station\": \"https://www.bergfex.ch/avoriaz/\"}, {\"assignment_info_flags\": \"lift_count_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 115, \"commune\": \"\", \"distance_m\": 33.4, \"expected_lifts_total\": 39.0, \"name_match_score\": 0.0, \"region\": \"Valais\", \"ski_id\": \"chatel_portes_du_soleil\", \"ski_name\": \"Châtel Portes du Soleil\", \"url_station\": \"https://www.bergfex.ch/chatel/\"}, {\"assignment_info_flags\": \"lift_count_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 115, \"commune\": \"\", \"distance_m\": 41.9, \"expected_lifts_total\": 10.0, \"name_match_score\": 0.0, \"region\": \"Valais\", \"ski_id\": \"chapelle_abondance_la_chapelle_d_abondance_portes_du_soleil\", \"ski_name\": \"Chapelle Abondance La Chapelle d'Abondance / Portes du Soleil\", \"url_station\": \"https://www.bergfex.ch/la-chapelle-dabondance/\"}, {\"assignment_info_flags\": \"lift_count_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 115, \"commune\": \"\", \"distance_m\": 78.0, \"expected_lifts_total\": 32.0, \"name_match_score\": 0.0, \"region\": \"Valais\", \"ski_id\": \"torgon_portes_du_soleil\", \"ski_name\": \"Torgon Portes du Soleil\", \"url_station\": \"https://www.bergfex.ch/torgon/\"}, {\"assignment_info_flags\": \"lift_name_support|lift_count_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 115, \"commune\": \"\", \"distance_m\": 186.2, \"expected_lifts_total\": 35.0, \"name_match_score\": 0.333, \"region\": \"Valais\", \"ski_id\": \"champery_les_crosets_champoussin_morgins_portes_du_soleil\", \"ski_name\": \"Champéry - Les Crosets - Champoussin - Morgins Portes du Soleil\", \"url_station\": \"https://www.bergfex.ch/champery/\"}]",
+            "[{\"assignment_info_flags\": \"lift_name_support|lift_count_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 62, \"commune\": \"\", \"distance_m\": 2.4, \"expected_lifts_total\": 78.0, \"name_match_score\": 0.5, \"region\": \"Valais\", \"ski_id\": \"veysonnaz_4_vallees\", \"ski_name\": \"Veysonnaz 4 Vallées\", \"url_station\": \"https://www.bergfex.ch/veysonnaz-4-vallees/\"}, {\"assignment_info_flags\": \"lift_name_support|lift_count_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 62, \"commune\": \"\", \"distance_m\": 4.6, \"expected_lifts_total\": 78.0, \"name_match_score\": 0.5, \"region\": \"Valais\", \"ski_id\": \"verbier_4_vallees\", \"ski_name\": \"Verbier 4 Vallées\", \"url_station\": \"https://www.bergfex.ch/verbier/\"}, {\"assignment_info_flags\": \"lift_name_support|strong_lift_name_support|lift_count_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 62, \"commune\": \"\", \"distance_m\": 39.5, \"expected_lifts_total\": 16.0, \"name_match_score\": 1.0, \"region\": \"Valais\", \"ski_id\": \"la_tzoumaz_mayens_de_riddes\", \"ski_name\": \"La Tzoumaz - Mayens de Riddes\", \"url_station\": \"https://www.bergfex.ch/latzoumaz/\"}, {\"assignment_info_flags\": \"lift_name_support|lift_count_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 62, \"commune\": \"\", \"distance_m\": 128.9, \"expected_lifts_total\": 78.0, \"name_match_score\": 0.5, \"region\": \"Valais\", \"ski_id\": \"thyon_4_vallees\", \"ski_name\": \"Thyon 4 Vallées\", \"url_station\": \"https://www.bergfex.ch/thyon-4-vallees/\"}, {\"assignment_info_flags\": \"lift_name_support|strong_lift_name_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 62, \"commune\": \"\", \"distance_m\": 159.9, \"expected_lifts_total\": 4.0, \"name_match_score\": 1.0, \"region\": \"Valais\", \"ski_id\": \"bruson_verbier\", \"ski_name\": \"Bruson - Verbier\", \"url_station\": \"https://www.bergfex.ch/bruson/\"}, {\"assignment_info_flags\": \"lift_count_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 62, \"commune\": \"\", \"distance_m\": 428.9, \"expected_lifts_total\": 78.0, \"name_match_score\": 0.0, \"region\": \"Valais\", \"ski_id\": \"nendaz_4_vallees\", \"ski_name\": \"Nendaz 4 Vallées\", \"url_station\": \"https://www.bergfex.ch/nendaz-4-vallees/\"}]",
+            "[{\"assignment_info_flags\": \"lift_name_support|strong_lift_name_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 62, \"commune\": \"\", \"distance_m\": 9.9, \"expected_lifts_total\": 2.0, \"name_match_score\": 1.0, \"region\": \"Lucerne - Lac des Quatre-Cantons\", \"ski_id\": \"gitschenen_skilift_gitschenen\", \"ski_name\": \"Gitschenen Skilift Gitschenen\", \"url_station\": \"https://www.bergfex.ch/gitschenen/\"}, {\"assignment_info_flags\": \"lift_name_support|strong_lift_name_support|lift_count_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 62, \"commune\": \"\", \"distance_m\": 35.2, \"expected_lifts_total\": 14.0, \"name_match_score\": 1.0, \"region\": \"Lucerne - Lac des Quatre-Cantons\", \"ski_id\": \"klewenalp_stockhutte\", \"ski_name\": \"Klewenalp - Stockhütte\", \"url_station\": \"https://www.bergfex.ch/klewenalp/\"}, {\"assignment_info_flags\": \"lift_name_support|strong_lift_name_support|lift_count_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 62, \"commune\": \"\", \"distance_m\": 81.9, \"expected_lifts_total\": 24.0, \"name_match_score\": 1.0, \"region\": \"Lucerne - Lac des Quatre-Cantons\", \"ski_id\": \"engelberg_titlis\", \"ski_name\": \"Engelberg Titlis\", \"url_station\": \"https://www.bergfex.ch/engelberg/\"}, {\"assignment_info_flags\": \"lift_name_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 62, \"commune\": \"\", \"distance_m\": 145.0, \"expected_lifts_total\": 7.0, \"name_match_score\": 0.5, \"region\": \"Lucerne - Lac des Quatre-Cantons\", \"ski_id\": \"brunni_brunni_bahnen_engelberg\", \"ski_name\": \"Brunni Brunni - Bahnen Engelberg\", \"url_station\": \"https://www.bergfex.ch/brunni-engelberg/\"}, {\"assignment_info_flags\": \"lift_name_support|strong_lift_name_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 62, \"commune\": \"\", \"distance_m\": 314.5, \"expected_lifts_total\": 4.0, \"name_match_score\": 1.0, \"region\": \"Lucerne - Lac des Quatre-Cantons\", \"ski_id\": \"dallenwil_wirzweli\", \"ski_name\": \"Dallenwil - Wirzweli\", \"url_station\": \"https://www.bergfex.ch/dallenwil/\"}]",
+            "[]",
+            "[{\"assignment_info_flags\": \"lift_name_support|strong_lift_name_support|lift_count_support\", \"assignment_quality\": \"confident\", \"assignment_review_reasons\": \"\", \"assignment_uncertain\": false, \"assignment_uncertainty_reasons\": \"\", \"assignment_warning_reasons\": \"\", \"cluster_lift_count\": 50, \"commune\": \"\", \"distance_m\": 29.2, \"expected_lifts_total\": 54.0, \"name_match_score\": 1.0, \"region\": \"Valais\", \"ski_id\": \"zermatt\", \"ski_name\": \"Zermatt\", \"url_station\": \"https://www.bergfex.ch/zermatt/\"}]"
+          ],
+          "nonnumeric_tokens": {}
+        }
+      ]
+    }
+  },
+  "data_raw/stations_ski_clusters_resume_gps_bergfex.csv": {
+    "stations_ski_clusters_resume_gps_bergfex": {
+      "n_rows": 242,
+      "n_columns": 24,
+      "duplicate_rows": 0,
+      "columns": [
+        {
+          "variable": "cluster_id",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 242,
+          "examples": [
+            "SKI_CLUSTER_001",
+            "SKI_CLUSTER_002",
+            "SKI_CLUSTER_003",
+            "SKI_CLUSTER_004",
+            "SKI_CLUSTER_005"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "display_name",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 242,
+          "examples": [
+            "Avoriaz 1800 Portes du Soleil / Châtel Portes du Soleil / Chapelle Abondance La Chapelle d'Abondance / Portes du Soleil +2",
+            "Veysonnaz 4 Vallées / Verbier 4 Vallées / La Tzoumaz - Mayens de Riddes +3",
+            "Gitschenen Skilift Gitschenen / Klewenalp - Stockhütte / Engelberg Titlis +2",
+            "SKI_CLUSTER_004 sans nom",
+            "Zermatt"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_quality",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2,
+          "examples": [
+            "warning",
+            "confident"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_quality",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3,
+          "examples": [
+            "confident",
+            "review",
+            "warning"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "map_quality",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3,
+          "examples": [
+            "warning",
+            "confident",
+            "review"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "naming_status",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3,
+          "examples": [
+            "multiple_names",
+            "unnamed",
+            "single_name"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "station_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 8,
+          "examples": [
+            "5",
+            "6",
+            "0",
+            "1",
+            "3"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "station_names",
+          "inferred_type": "string",
+          "missing_count": 80,
+          "missing_share": 0.3305785123966942,
+          "n_unique_nonmissing": 162,
+          "examples": [
+            "Avoriaz 1800 Portes du Soleil | Châtel Portes du Soleil | Chapelle Abondance La Chapelle d'Abondance / Portes du Soleil | Torgon Portes du Soleil | Champéry - Les Crosets - Champoussin - Morgins Portes du Soleil",
+            "Veysonnaz 4 Vallées | Verbier 4 Vallées | La Tzoumaz - Mayens de Riddes | Thyon 4 Vallées | Bruson - Verbier | Nendaz 4 Vallées",
+            "Gitschenen Skilift Gitschenen | Klewenalp - Stockhütte | Engelberg Titlis | Brunni Brunni - Bahnen Engelberg | Dallenwil - Wirzweli",
+            "Zermatt",
+            "Madrisa Klosters Madrisa | Parsenn Davos Klosters Parsenn | Schatzalp Davos Schatzalp - Strela | Rinerhorn Davos Rinerhorn | Jakobshorn Davos Jakobshorn"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "lift_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 38,
+          "examples": [
+            "115",
+            "62",
+            "53",
+            "50",
+            "48"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "expected_lifts_total",
+          "inferred_type": "numeric",
+          "missing_count": 81,
+          "missing_share": 0.3347107438016529,
+          "n_unique_nonmissing": 39,
+          "examples": [
+            "150.0",
+            "332.0",
+            "51.0",
+            "54.0",
+            "50.0"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_uncertain",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2,
+          "examples": [
+            "True",
+            "False"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_uncertainty_reasons",
+          "inferred_type": "string",
+          "missing_count": 197,
+          "missing_share": 0.8140495867768595,
+          "n_unique_nonmissing": 9,
+          "examples": [
+            "many_station_names_on_large_domain",
+            "very_large_multi_station_domain|cluster_lift_count_below_bergfex_total|many_station_names_on_large_domain",
+            "close_to_named_cluster|very_large_multi_station_domain|many_station_names_on_large_domain",
+            "very_large_multi_station_domain|many_station_names_on_large_domain",
+            "close_to_named_cluster"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_review_reasons",
+          "inferred_type": "unknown",
+          "missing_count": 242,
+          "missing_share": 1.0,
+          "n_unique_nonmissing": 0,
+          "examples": [],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_warning_reasons",
+          "inferred_type": "string",
+          "missing_count": 197,
+          "missing_share": 0.8140495867768595,
+          "n_unique_nonmissing": 9,
+          "examples": [
+            "many_station_names_on_large_domain",
+            "very_large_multi_station_domain|cluster_lift_count_below_bergfex_total|many_station_names_on_large_domain",
+            "close_to_named_cluster|very_large_multi_station_domain|many_station_names_on_large_domain",
+            "very_large_multi_station_domain|many_station_names_on_large_domain",
+            "close_to_named_cluster"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_info_flags",
+          "inferred_type": "string",
+          "missing_count": 27,
+          "missing_share": 0.1115702479338843,
+          "n_unique_nonmissing": 11,
+          "examples": [
+            "large_spatial_extent|cluster_lift_count_supported_by_bergfex",
+            "close_to_unnamed_cluster",
+            "cluster_lift_count_supported_by_bergfex",
+            "large_spatial_extent|no_name_assigned",
+            "close_to_unnamed_cluster|cluster_lift_count_supported_by_bergfex"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_uncertain",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2,
+          "examples": [
+            "False",
+            "True"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_uncertain_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 3,
+          "examples": [
+            "0",
+            "1",
+            "3"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_warning_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 2,
+          "examples": [
+            "0",
+            "1"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "assignment_review_count",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 4,
+          "examples": [
+            "0",
+            "1",
+            "3",
+            "2"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "max_assignment_distance_m",
+          "inferred_type": "numeric",
+          "missing_count": 80,
+          "missing_share": 0.3305785123966942,
+          "n_unique_nonmissing": 157,
+          "examples": [
+            "186.2",
+            "428.9",
+            "314.5",
+            "29.2",
+            "170.0"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "nearest_cluster_id",
+          "inferred_type": "string",
+          "missing_count": 62,
+          "missing_share": 0.256198347107438,
+          "n_unique_nonmissing": 129,
+          "examples": [
+            "SKI_CLUSTER_127",
+            "SKI_CLUSTER_171",
+            "SKI_CLUSTER_013",
+            "SKI_CLUSTER_062",
+            "SKI_CLUSTER_098"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "nearest_cluster_m",
+          "inferred_type": "numeric",
+          "missing_count": 62,
+          "missing_share": 0.256198347107438,
+          "n_unique_nonmissing": 125,
+          "examples": [
+            "5869.5",
+            "3181.4",
+            "3481.5",
+            "3063.9",
+            "3093.4"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "bbox_diag_m",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 241,
+          "examples": [
+            "21981.9",
+            "23736.5",
+            "28496.8",
+            "31957.8",
+            "21953.1"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "cluster_distance_threshold_m",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "3000.0"
+          ],
+          "nonnumeric_tokens": {}
+        }
+      ]
+    }
+  },
+  "data_raw/stations_ski_gps_bergfex_normalise.csv": {
+    "stations_ski_gps_bergfex_normalise": {
+      "n_rows": 271,
+      "n_columns": 31,
+      "duplicate_rows": 0,
+      "columns": [
+        {
+          "variable": "ski_id",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "balmberg",
+            "hohe_winde_beinwil",
+            "bumbach_schangnau",
+            "chuderhusi",
+            "gantrisch_gurnigel"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "ski_name",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "Balmberg",
+            "Hohe Winde Beinwil",
+            "Bumbach - Schangnau",
+            "Chuderhüsi",
+            "Gantrisch - Gurnigel"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "original_station_name",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "Balmberg Balmberg",
+            "Hohe Winde Hohe Winde / Beinwil",
+            "Bumbach Bumbach - Schangnau",
+            "Chuderhüsi Chuderhüsi",
+            "Gantrisch Gantrisch - Gurnigel"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "commune",
+          "inferred_type": "unknown",
+          "missing_count": 271,
+          "missing_share": 1.0,
+          "n_unique_nonmissing": 0,
+          "examples": [],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "region",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 13,
+          "examples": [
+            "Argovie - Soleure",
+            "Berne et région",
+            "Bâle et région",
+            "Fribourg",
+            "Grisons"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "region_bergfex",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 13,
+          "examples": [
+            "Aargau - Solothurn",
+            "Bern & Region Bern",
+            "Basel Region",
+            "Freiburg Region",
+            "Graubünden"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "lat",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "47.261175",
+            "47.346791",
+            "46.806787",
+            "46.874583",
+            "46.724344"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "lon",
+          "inferred_type": "numeric",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "7.539282",
+            "7.594085",
+            "7.887497",
+            "7.720900",
+            "7.453280"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "geo_label",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "Balmberg",
+            "Hohe Winde Beinwil",
+            "Bumbach - Schangnau",
+            "Chuderhüsi",
+            "Gantrisch - Gurnigel"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "geo_detail",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "position_gps_stations_ski.csv"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "geo_origin",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "gps_bergfex"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "geo_rank",
+          "inferred_type": "unknown",
+          "missing_count": 271,
+          "missing_share": 1.0,
+          "n_unique_nonmissing": 0,
+          "examples": [],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "geo_weight",
+          "inferred_type": "unknown",
+          "missing_count": 271,
+          "missing_share": 1.0,
+          "n_unique_nonmissing": 0,
+          "examples": [],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "geo_objectclass",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "gps_station"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "geo_lang",
+          "inferred_type": "unknown",
+          "missing_count": 271,
+          "missing_share": 1.0,
+          "n_unique_nonmissing": 0,
+          "examples": [],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "geocode_query",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "Balmberg",
+            "Hohe Winde Beinwil",
+            "Bumbach - Schangnau",
+            "Chuderhüsi",
+            "Gantrisch - Gurnigel"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "geocode_query_ok",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "VRAI"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "corrigé_main",
+          "inferred_type": "unknown",
+          "missing_count": 271,
+          "missing_share": 1.0,
+          "n_unique_nonmissing": 0,
+          "examples": [],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "token_overlap",
+          "inferred_type": "unknown",
+          "missing_count": 271,
+          "missing_share": 1.0,
+          "n_unique_nonmissing": 0,
+          "examples": [],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "score_v3",
+          "inferred_type": "unknown",
+          "missing_count": 271,
+          "missing_share": 1.0,
+          "n_unique_nonmissing": 0,
+          "examples": [],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "coord_duplicate_count",
+          "inferred_type": "unknown",
+          "missing_count": 271,
+          "missing_share": 1.0,
+          "n_unique_nonmissing": 0,
+          "examples": [],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "coord_in_switzerland_bbox",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "VRAI"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "label_broad_suspect",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "FAUX"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "origin_suspect",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "FAUX"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "fuzzy_suspect",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "FAUX"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "token_suspect",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "FAUX"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "dupcoord_suspect",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "FAUX"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "needs_manual_check",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "FAUX"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "geocode_status",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 1,
+          "examples": [
+            "ok_strict"
+          ],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "reject_reason",
+          "inferred_type": "unknown",
+          "missing_count": 271,
+          "missing_share": 1.0,
+          "n_unique_nonmissing": 0,
+          "examples": [],
+          "nonnumeric_tokens": {}
+        },
+        {
+          "variable": "url_station",
+          "inferred_type": "string",
+          "missing_count": 0,
+          "missing_share": 0.0,
+          "n_unique_nonmissing": 271,
+          "examples": [
+            "https://www.bergfex.ch/balmberg/",
+            "https://www.bergfex.ch/hohe-winde-beinwil/",
+            "https://www.bergfex.ch/bumbach-schangnau/",
+            "https://www.bergfex.ch/chuderhuesi/",
+            "https://www.bergfex.ch/gantrisch-gurnigel/"
+          ],
+          "nonnumeric_tokens": {}
+        }
+      ]
+    }
+  }
+}

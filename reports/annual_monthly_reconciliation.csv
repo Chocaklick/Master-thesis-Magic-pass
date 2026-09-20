@@ -1,0 +1,2605 @@
+Commune,year,annual_nights,municipality_name_source,sum,count,difference_when_complete
+Kloten,2013,NA,Kloten,237998,12,NA
+Kloten,2014,241506,Kloten,241506,12,0
+Kloten,2015,258402,Kloten,258402,12,0
+Kloten,2016,264839,Kloten,264839,12,0
+Kloten,2017,265994,Kloten,265994,12,0
+Kloten,2018,263865,Kloten,263865,12,0
+Kloten,2019,266637,Kloten,266637,12,0
+Kloten,2020,87892,Kloten,83110,9,NA
+Kloten,2021,135607,Kloten,135607,12,0
+Kloten,2022,367999,Kloten,367999,12,0
+Kloten,2023,464684,Kloten,464684,12,0
+Kloten,2024,486772,Kloten,486772,12,0
+Kloten,2025,503416,Kloten,503416,12,0
+Kloten,2026,NA,Kloten,112066,3,NA
+Opfikon,2013,539053,Opfikon,539053,12,0
+Opfikon,2014,558077,Opfikon,558077,12,0
+Opfikon,2015,688863,Opfikon,688863,12,0
+Opfikon,2016,720478,Opfikon,720478,12,0
+Opfikon,2017,749186,Opfikon,749186,12,0
+Opfikon,2018,773668,Opfikon,773668,12,0
+Opfikon,2019,742074,Opfikon,742074,12,0
+Opfikon,2020,199904,Opfikon,199904,12,0
+Opfikon,2021,255084,Opfikon,255084,12,0
+Opfikon,2022,609612,Opfikon,609612,12,0
+Opfikon,2023,742327,Opfikon,742327,12,0
+Opfikon,2024,800863,Opfikon,800863,12,0
+Opfikon,2025,848207,Opfikon,848207,12,0
+Opfikon,2026,NA,Opfikon,150587,3,NA
+Dübendorf,2013,44662,Dübendorf,44662,12,0
+Dübendorf,2014,44883,Dübendorf,44883,12,0
+Dübendorf,2015,40540,Dübendorf,40540,12,0
+Dübendorf,2016,44760,Dübendorf,44760,12,0
+Dübendorf,2017,47014,Dübendorf,47014,12,0
+Dübendorf,2018,45473,Dübendorf,45473,12,0
+Dübendorf,2019,44181,Dübendorf,44181,12,0
+Dübendorf,2020,19165,Dübendorf,19165,12,0
+Dübendorf,2021,24825,Dübendorf,24825,12,0
+Dübendorf,2022,37532,Dübendorf,37532,12,0
+Dübendorf,2023,46349,Dübendorf,46349,12,0
+Dübendorf,2024,43093,Dübendorf,43093,12,0
+Dübendorf,2025,49995,Dübendorf,49995,12,0
+Dübendorf,2026,NA,Dübendorf,11001,3,NA
+Uster,2013,32834,Uster,32834,12,0
+Uster,2014,33733,Uster,33733,12,0
+Uster,2015,32831,Uster,32831,12,0
+Uster,2016,27321,Uster,27321,12,0
+Uster,2017,33506,Uster,33506,12,0
+Uster,2018,38042,Uster,38042,12,0
+Uster,2019,36538,Uster,36538,12,0
+Uster,2020,19473,Uster,19473,12,0
+Uster,2021,26826,Uster,26826,12,0
+Uster,2022,37917,Uster,37917,12,0
+Uster,2023,45873,Uster,45873,12,0
+Uster,2024,46596,Uster,46596,12,0
+Uster,2025,42590,Uster,42590,12,0
+Uster,2026,NA,Uster,8820,3,NA
+Winterthur,2013,184058,Winterthur,184058,12,0
+Winterthur,2014,180074,Winterthur,180074,12,0
+Winterthur,2015,177904,Winterthur,177904,12,0
+Winterthur,2016,196806,Winterthur,196806,12,0
+Winterthur,2017,202195,Winterthur,202195,12,0
+Winterthur,2018,208020,Winterthur,208020,12,0
+Winterthur,2019,216757,Winterthur,216757,12,0
+Winterthur,2020,97314,Winterthur,97314,12,0
+Winterthur,2021,109726,Winterthur,109726,12,0
+Winterthur,2022,165803,Winterthur,165803,12,0
+Winterthur,2023,196959,Winterthur,196959,12,0
+Winterthur,2024,221329,Winterthur,221329,12,0
+Winterthur,2025,224226,Winterthur,224226,12,0
+Winterthur,2026,NA,Winterthur,46146,3,NA
+Zürich,2013,2830003,Zürich,2830003,12,0
+Zürich,2014,2916220,Zürich,2916220,12,0
+Zürich,2015,2947756,Zürich,2947756,12,0
+Zürich,2016,2956669,Zürich,2956669,12,0
+Zürich,2017,3194598,Zürich,3194598,12,0
+Zürich,2018,3447702,Zürich,3447702,12,0
+Zürich,2019,3626086,Zürich,3626086,12,0
+Zürich,2020,1117197,Zürich,1117197,12,0
+Zürich,2021,1650531,Zürich,1650531,12,0
+Zürich,2022,3284911,Zürich,3284911,12,0
+Zürich,2023,3831641,Zürich,3831641,12,0
+Zürich,2024,4045928,Zürich,4045928,12,0
+Zürich,2025,4179908,Zürich,4179908,12,0
+Zürich,2026,NA,Zürich,809217,3,NA
+Wädenswil,2013,NA,Wädenswil,0,0,NA
+Wädenswil,2014,NA,Wädenswil,0,0,NA
+Wädenswil,2015,NA,Wädenswil,0,0,NA
+Wädenswil,2016,NA,Wädenswil,0,0,NA
+Wädenswil,2017,NA,Wädenswil,0,0,NA
+Wädenswil,2018,NA,Wädenswil,0,0,NA
+Wädenswil,2019,18702,Wädenswil,18702,12,0
+Wädenswil,2020,8126,Wädenswil,7874,10,NA
+Wädenswil,2021,13605,Wädenswil,13605,12,0
+Wädenswil,2022,12961,Wädenswil,12961,12,0
+Wädenswil,2023,12367,Wädenswil,12367,12,0
+Wädenswil,2024,15775,Wädenswil,15775,12,0
+Wädenswil,2025,7901,Wädenswil,7901,12,0
+Wädenswil,2026,NA,Wädenswil,1585,3,NA
+Horgen,2013,NA,Horgen,0,0,NA
+Horgen,2014,NA,Horgen,0,0,NA
+Horgen,2015,NA,Horgen,0,0,NA
+Horgen,2016,NA,Horgen,0,0,NA
+Horgen,2017,NA,Horgen,0,0,NA
+Horgen,2018,51376,Horgen,51376,12,0
+Horgen,2019,36444,Horgen,36444,12,0
+Horgen,2020,11885,Horgen,11885,12,0
+Horgen,2021,10250,Horgen,10250,12,0
+Horgen,2022,14161,Horgen,14161,12,0
+Horgen,2023,14436,Horgen,14436,12,0
+Horgen,2024,29804,Horgen,29804,12,0
+Horgen,2025,40931,Horgen,40931,12,0
+Horgen,2026,NA,Horgen,7696,3,NA
+Langenthal,2013,20159,Langenthal,20159,12,0
+Langenthal,2014,19833,Langenthal,19833,12,0
+Langenthal,2015,19231,Langenthal,19231,12,0
+Langenthal,2016,20765,Langenthal,20765,12,0
+Langenthal,2017,22046,Langenthal,22046,12,0
+Langenthal,2018,22488,Langenthal,22488,12,0
+Langenthal,2019,25366,Langenthal,25366,12,0
+Langenthal,2020,17301,Langenthal,17301,12,0
+Langenthal,2021,25915,Langenthal,25915,12,0
+Langenthal,2022,31944,Langenthal,31944,12,0
+Langenthal,2023,34649,Langenthal,34649,12,0
+Langenthal,2024,35349,Langenthal,35349,12,0
+Langenthal,2025,34794,Langenthal,34794,12,0
+Langenthal,2026,NA,Langenthal,7898,3,NA
+Bern,2013,711828,Bern,711828,12,0
+Bern,2014,719596,Bern,719596,12,0
+Bern,2015,715286,Bern,715286,12,0
+Bern,2016,717315,Bern,717315,12,0
+Bern,2017,753910,Bern,753910,12,0
+Bern,2018,833025,Bern,833025,12,0
+Bern,2019,829306,Bern,829306,12,0
+Bern,2020,356038,Bern,356038,12,0
+Bern,2021,511474,Bern,511474,12,0
+Bern,2022,820916,Bern,820916,12,0
+Bern,2023,1044046,Bern,1044046,12,0
+Bern,2024,1100930,Bern,1100930,12,0
+Bern,2025,1080646,Bern,1080646,12,0
+Bern,2026,NA,Bern,177994,3,NA
+Köniz,2013,11632,Köniz,11632,12,0
+Köniz,2014,13624,Köniz,13624,12,0
+Köniz,2015,11780,Köniz,11780,12,0
+Köniz,2016,15117,Köniz,15117,12,0
+Köniz,2017,15188,Köniz,15188,12,0
+Köniz,2018,16335,Köniz,16335,12,0
+Köniz,2019,16364,Köniz,16364,12,0
+Köniz,2020,6793,Köniz,6610,10,NA
+Köniz,2021,9820,Köniz,9820,12,0
+Köniz,2022,17552,Köniz,17552,12,0
+Köniz,2023,20437,Köniz,20437,12,0
+Köniz,2024,18495,Köniz,18495,12,0
+Köniz,2025,18358,Köniz,18358,12,0
+Köniz,2026,NA,Köniz,2786,3,NA
+Biel/Bienne,2013,96759,Biel/Bienne,96759,12,0
+Biel/Bienne,2014,97055,Biel/Bienne,97055,12,0
+Biel/Bienne,2015,85889,Biel/Bienne,85889,12,0
+Biel/Bienne,2016,87937,Biel/Bienne,87937,12,0
+Biel/Bienne,2017,92901,Biel/Bienne,92901,12,0
+Biel/Bienne,2018,98957,Biel/Bienne,98957,12,0
+Biel/Bienne,2019,100930,Biel/Bienne,100930,12,0
+Biel/Bienne,2020,48771,Biel/Bienne,48771,12,0
+Biel/Bienne,2021,70864,Biel/Bienne,70864,12,0
+Biel/Bienne,2022,87405,Biel/Bienne,87405,12,0
+Biel/Bienne,2023,99209,Biel/Bienne,99209,12,0
+Biel/Bienne,2024,116323,Biel/Bienne,116323,12,0
+Biel/Bienne,2025,125051,Biel/Bienne,125051,12,0
+Biel/Bienne,2026,NA,Biel/Bienne,24110,3,NA
+Burgdorf,2013,17669,Burgdorf,17669,12,0
+Burgdorf,2014,18028,Burgdorf,18028,12,0
+Burgdorf,2015,15088,Burgdorf,15088,12,0
+Burgdorf,2016,19070,Burgdorf,19070,12,0
+Burgdorf,2017,19729,Burgdorf,19729,12,0
+Burgdorf,2018,20725,Burgdorf,20725,12,0
+Burgdorf,2019,20854,Burgdorf,20854,12,0
+Burgdorf,2020,22325,Burgdorf,21753,10,NA
+Burgdorf,2021,32404,Burgdorf,32404,12,0
+Burgdorf,2022,34196,Burgdorf,34196,12,0
+Burgdorf,2023,35164,Burgdorf,35164,12,0
+Burgdorf,2024,32345,Burgdorf,32345,12,0
+Burgdorf,2025,34882,Burgdorf,34882,12,0
+Burgdorf,2026,NA,Burgdorf,4796,3,NA
+Adelboden,2013,182605,Adelboden,182605,12,0
+Adelboden,2014,184542,Adelboden,184542,12,0
+Adelboden,2015,173966,Adelboden,173966,12,0
+Adelboden,2016,174625,Adelboden,174625,12,0
+Adelboden,2017,192736,Adelboden,192736,12,0
+Adelboden,2018,200763,Adelboden,200763,12,0
+Adelboden,2019,205975,Adelboden,205975,12,0
+Adelboden,2020,180612,Adelboden,180612,12,0
+Adelboden,2021,192155,Adelboden,192155,12,0
+Adelboden,2022,202890,Adelboden,202890,12,0
+Adelboden,2023,220370,Adelboden,220370,12,0
+Adelboden,2024,203384,Adelboden,203384,12,0
+Adelboden,2025,210465,Adelboden,210465,12,0
+Adelboden,2026,NA,Adelboden,67478,3,NA
+Aeschi bei Spiez,2013,41081,Aeschi bei Spiez,41081,12,0
+Aeschi bei Spiez,2014,39026,Aeschi bei Spiez,39026,12,0
+Aeschi bei Spiez,2015,31468,Aeschi bei Spiez,31468,12,0
+Aeschi bei Spiez,2016,29379,Aeschi bei Spiez,29379,12,0
+Aeschi bei Spiez,2017,29635,Aeschi bei Spiez,29635,12,0
+Aeschi bei Spiez,2018,33486,Aeschi bei Spiez,33486,12,0
+Aeschi bei Spiez,2019,29542,Aeschi bei Spiez,29542,12,0
+Aeschi bei Spiez,2020,15051,Aeschi bei Spiez,15051,12,0
+Aeschi bei Spiez,2021,18821,Aeschi bei Spiez,18821,12,0
+Aeschi bei Spiez,2022,18911,Aeschi bei Spiez,18911,12,0
+Aeschi bei Spiez,2023,27978,Aeschi bei Spiez,27978,12,0
+Aeschi bei Spiez,2024,24732,Aeschi bei Spiez,24732,12,0
+Aeschi bei Spiez,2025,30608,Aeschi bei Spiez,30608,12,0
+Aeschi bei Spiez,2026,NA,Aeschi bei Spiez,2789,3,NA
+Kandersteg,2013,102010,Kandersteg,102010,12,0
+Kandersteg,2014,96699,Kandersteg,96699,12,0
+Kandersteg,2015,91960,Kandersteg,91960,12,0
+Kandersteg,2016,87109,Kandersteg,87109,12,0
+Kandersteg,2017,92157,Kandersteg,92157,12,0
+Kandersteg,2018,99225,Kandersteg,99225,12,0
+Kandersteg,2019,101453,Kandersteg,101453,12,0
+Kandersteg,2020,92595,Kandersteg,92595,12,0
+Kandersteg,2021,106773,Kandersteg,106773,12,0
+Kandersteg,2022,118202,Kandersteg,118202,12,0
+Kandersteg,2023,122335,Kandersteg,122335,12,0
+Kandersteg,2024,125652,Kandersteg,125652,12,0
+Kandersteg,2025,121421,Kandersteg,121421,12,0
+Kandersteg,2026,NA,Kandersteg,22764,3,NA
+Reichenbach im Kandertal,2013,26495,Reichenbach im Kandertal,26495,12,0
+Reichenbach im Kandertal,2014,27015,Reichenbach im Kandertal,27015,12,0
+Reichenbach im Kandertal,2015,29119,Reichenbach im Kandertal,29119,12,0
+Reichenbach im Kandertal,2016,27178,Reichenbach im Kandertal,27178,12,0
+Reichenbach im Kandertal,2017,30144,Reichenbach im Kandertal,30144,12,0
+Reichenbach im Kandertal,2018,34438,Reichenbach im Kandertal,34438,12,0
+Reichenbach im Kandertal,2019,32319,Reichenbach im Kandertal,32319,12,0
+Reichenbach im Kandertal,2020,27710,Reichenbach im Kandertal,26842,10,NA
+Reichenbach im Kandertal,2021,33485,Reichenbach im Kandertal,33485,12,0
+Reichenbach im Kandertal,2022,42060,Reichenbach im Kandertal,42060,12,0
+Reichenbach im Kandertal,2023,38423,Reichenbach im Kandertal,38423,12,0
+Reichenbach im Kandertal,2024,39238,Reichenbach im Kandertal,39238,12,0
+Reichenbach im Kandertal,2025,36057,Reichenbach im Kandertal,36057,12,0
+Reichenbach im Kandertal,2026,NA,Reichenbach im Kandertal,6500,3,NA
+Beatenberg,2013,96072,Beatenberg,96072,12,0
+Beatenberg,2014,104622,Beatenberg,104622,12,0
+Beatenberg,2015,117082,Beatenberg,117082,12,0
+Beatenberg,2016,120656,Beatenberg,120656,12,0
+Beatenberg,2017,130640,Beatenberg,130640,12,0
+Beatenberg,2018,134196,Beatenberg,134196,12,0
+Beatenberg,2019,134992,Beatenberg,134992,12,0
+Beatenberg,2020,84170,Beatenberg,84170,12,0
+Beatenberg,2021,99645,Beatenberg,99645,12,0
+Beatenberg,2022,136384,Beatenberg,136384,12,0
+Beatenberg,2023,141394,Beatenberg,141394,12,0
+Beatenberg,2024,142409,Beatenberg,142409,12,0
+Beatenberg,2025,123488,Beatenberg,123488,12,0
+Beatenberg,2026,NA,Beatenberg,19004,3,NA
+Brienz (BE),2013,71230,Brienz (BE),71230,12,0
+Brienz (BE),2014,69596,Brienz (BE),69596,12,0
+Brienz (BE),2015,75512,Brienz (BE),75512,12,0
+Brienz (BE),2016,70864,Brienz (BE),70864,12,0
+Brienz (BE),2017,77770,Brienz (BE),77770,12,0
+Brienz (BE),2018,82515,Brienz (BE),82515,12,0
+Brienz (BE),2019,80265,Brienz (BE),80265,12,0
+Brienz (BE),2020,68815,Brienz (BE),68815,12,0
+Brienz (BE),2021,85784,Brienz (BE),85784,12,0
+Brienz (BE),2022,94942,Brienz (BE),94942,12,0
+Brienz (BE),2023,112778,Brienz (BE),112778,12,0
+Brienz (BE),2024,116470,Brienz (BE),116470,12,0
+Brienz (BE),2025,114423,Brienz (BE),114423,12,0
+Brienz (BE),2026,NA,Brienz (BE),12984,3,NA
+Grindelwald,2013,513984,Grindelwald,513984,12,0
+Grindelwald,2014,518853,Grindelwald,518853,12,0
+Grindelwald,2015,539558,Grindelwald,539558,12,0
+Grindelwald,2016,516723,Grindelwald,516723,12,0
+Grindelwald,2017,570542,Grindelwald,570542,12,0
+Grindelwald,2018,609457,Grindelwald,609457,12,0
+Grindelwald,2019,657603,Grindelwald,657603,12,0
+Grindelwald,2020,404389,Grindelwald,404389,12,0
+Grindelwald,2021,481566,Grindelwald,481566,12,0
+Grindelwald,2022,709503,Grindelwald,709503,12,0
+Grindelwald,2023,830170,Grindelwald,830170,12,0
+Grindelwald,2024,826466,Grindelwald,826466,12,0
+Grindelwald,2025,762611,Grindelwald,762611,12,0
+Grindelwald,2026,NA,Grindelwald,174064,3,NA
+Interlaken,2013,697584,Interlaken,697584,12,0
+Interlaken,2014,704823,Interlaken,704823,12,0
+Interlaken,2015,710116,Interlaken,710116,12,0
+Interlaken,2016,704320,Interlaken,704320,12,0
+Interlaken,2017,791244,Interlaken,791244,12,0
+Interlaken,2018,791924,Interlaken,791924,12,0
+Interlaken,2019,781007,Interlaken,781007,12,0
+Interlaken,2020,309615,Interlaken,309615,12,0
+Interlaken,2021,374682,Interlaken,374682,12,0
+Interlaken,2022,657435,Interlaken,657435,12,0
+Interlaken,2023,804544,Interlaken,804544,12,0
+Interlaken,2024,867786,Interlaken,867786,12,0
+Interlaken,2025,882850,Interlaken,882850,12,0
+Interlaken,2026,NA,Interlaken,140864,3,NA
+Lauterbrunnen,2013,448969,Lauterbrunnen,448969,12,0
+Lauterbrunnen,2014,448642,Lauterbrunnen,448642,12,0
+Lauterbrunnen,2015,447136,Lauterbrunnen,447136,12,0
+Lauterbrunnen,2016,434178,Lauterbrunnen,434178,12,0
+Lauterbrunnen,2017,507181,Lauterbrunnen,507181,12,0
+Lauterbrunnen,2018,543003,Lauterbrunnen,543003,12,0
+Lauterbrunnen,2019,548751,Lauterbrunnen,548751,12,0
+Lauterbrunnen,2020,303786,Lauterbrunnen,303786,12,0
+Lauterbrunnen,2021,259940,Lauterbrunnen,259940,12,0
+Lauterbrunnen,2022,473170,Lauterbrunnen,473170,12,0
+Lauterbrunnen,2023,498608,Lauterbrunnen,498608,12,0
+Lauterbrunnen,2024,500405,Lauterbrunnen,500405,12,0
+Lauterbrunnen,2025,560149,Lauterbrunnen,560149,12,0
+Lauterbrunnen,2026,NA,Lauterbrunnen,141098,3,NA
+Matten bei Interlaken,2013,59997,Matten bei Interlaken,59997,12,0
+Matten bei Interlaken,2014,65499,Matten bei Interlaken,65499,12,0
+Matten bei Interlaken,2015,66193,Matten bei Interlaken,66193,12,0
+Matten bei Interlaken,2016,61592,Matten bei Interlaken,61592,12,0
+Matten bei Interlaken,2017,65642,Matten bei Interlaken,65642,12,0
+Matten bei Interlaken,2018,65629,Matten bei Interlaken,65629,12,0
+Matten bei Interlaken,2019,72124,Matten bei Interlaken,72124,12,0
+Matten bei Interlaken,2020,33979,Matten bei Interlaken,33979,12,0
+Matten bei Interlaken,2021,42146,Matten bei Interlaken,42146,12,0
+Matten bei Interlaken,2022,51929,Matten bei Interlaken,51929,12,0
+Matten bei Interlaken,2023,61685,Matten bei Interlaken,61685,12,0
+Matten bei Interlaken,2024,61388,Matten bei Interlaken,61388,12,0
+Matten bei Interlaken,2025,60667,Matten bei Interlaken,60667,12,0
+Matten bei Interlaken,2026,NA,Matten bei Interlaken,6430,3,NA
+Unterseen,2013,125681,Unterseen,125681,12,0
+Unterseen,2014,130404,Unterseen,130404,12,0
+Unterseen,2015,135167,Unterseen,135167,12,0
+Unterseen,2016,128329,Unterseen,128329,12,0
+Unterseen,2017,131844,Unterseen,131844,12,0
+Unterseen,2018,139408,Unterseen,139408,12,0
+Unterseen,2019,144697,Unterseen,144697,12,0
+Unterseen,2020,57270,Unterseen,57270,12,0
+Unterseen,2021,77836,Unterseen,77836,12,0
+Unterseen,2022,130480,Unterseen,130480,12,0
+Unterseen,2023,173959,Unterseen,173959,12,0
+Unterseen,2024,191477,Unterseen,191477,12,0
+Unterseen,2025,188989,Unterseen,188989,12,0
+Unterseen,2026,NA,Unterseen,23065,3,NA
+Wilderswil,2013,100791,Wilderswil,100791,12,0
+Wilderswil,2014,105754,Wilderswil,105754,12,0
+Wilderswil,2015,128047,Wilderswil,128047,12,0
+Wilderswil,2016,126552,Wilderswil,126552,12,0
+Wilderswil,2017,119933,Wilderswil,119933,12,0
+Wilderswil,2018,131246,Wilderswil,131246,12,0
+Wilderswil,2019,121489,Wilderswil,121489,12,0
+Wilderswil,2020,57367,Wilderswil,57367,12,0
+Wilderswil,2021,54418,Wilderswil,54418,12,0
+Wilderswil,2022,105497,Wilderswil,105497,12,0
+Wilderswil,2023,128554,Wilderswil,128554,12,0
+Wilderswil,2024,124719,Wilderswil,124719,12,0
+Wilderswil,2025,123048,Wilderswil,123048,12,0
+Wilderswil,2026,NA,Wilderswil,19563,3,NA
+Moutier (BE),2013,6462,Moutier (BE),6462,12,0
+Moutier (BE),2014,7089,Moutier (BE),7089,12,0
+Moutier (BE),2015,4359,Moutier (BE),4359,12,0
+Moutier (BE),2016,3625,Moutier (BE),3625,12,0
+Moutier (BE),2017,3531,Moutier (BE),3531,12,0
+Moutier (BE),2018,3978,Moutier (BE),3978,12,0
+Moutier (BE),2019,3747,Moutier (BE),3747,12,0
+Moutier (BE),2020,2231,Moutier (BE),2089,10,NA
+Moutier (BE),2021,2878,Moutier (BE),2878,12,0
+Moutier (BE),2022,3508,Moutier (BE),3508,12,0
+Moutier (BE),2023,3483,Moutier (BE),3483,12,0
+Moutier (BE),2024,3176,Moutier (BE),3176,12,0
+Moutier (BE),2025,2946,Moutier (BE),2946,12,0
+Moutier (BE),2026,NA,Moutier (BE),0,0,NA
+Diemtigen,2013,6672,Diemtigen,6672,12,0
+Diemtigen,2014,4909,Diemtigen,4909,12,0
+Diemtigen,2015,5345,Diemtigen,5345,12,0
+Diemtigen,2016,5076,Diemtigen,5076,12,0
+Diemtigen,2017,11718,Diemtigen,11718,12,0
+Diemtigen,2018,10888,Diemtigen,10888,12,0
+Diemtigen,2019,10983,Diemtigen,10983,12,0
+Diemtigen,2020,8870,Diemtigen,8870,11,NA
+Diemtigen,2021,11699,Diemtigen,11699,12,0
+Diemtigen,2022,11936,Diemtigen,11936,12,0
+Diemtigen,2023,11801,Diemtigen,11801,12,0
+Diemtigen,2024,10192,Diemtigen,10192,12,0
+Diemtigen,2025,12183,Diemtigen,12183,12,0
+Diemtigen,2026,NA,Diemtigen,2492,3,NA
+Spiez,2013,73469,Spiez,73469,12,0
+Spiez,2014,70330,Spiez,70330,12,0
+Spiez,2015,72714,Spiez,72714,12,0
+Spiez,2016,79891,Spiez,79891,12,0
+Spiez,2017,93002,Spiez,93002,12,0
+Spiez,2018,110798,Spiez,110798,12,0
+Spiez,2019,114961,Spiez,114961,12,0
+Spiez,2020,92759,Spiez,92759,12,0
+Spiez,2021,139036,Spiez,139036,12,0
+Spiez,2022,137930,Spiez,137930,12,0
+Spiez,2023,144834,Spiez,144834,12,0
+Spiez,2024,147878,Spiez,147878,12,0
+Spiez,2025,145111,Spiez,145111,12,0
+Spiez,2026,NA,Spiez,19456,3,NA
+Hasliberg,2013,107965,Hasliberg,107965,12,0
+Hasliberg,2014,96356,Hasliberg,96356,12,0
+Hasliberg,2015,89646,Hasliberg,89646,12,0
+Hasliberg,2016,89238,Hasliberg,89238,12,0
+Hasliberg,2017,94568,Hasliberg,94568,12,0
+Hasliberg,2018,95783,Hasliberg,95783,12,0
+Hasliberg,2019,94640,Hasliberg,94640,12,0
+Hasliberg,2020,65698,Hasliberg,64480,10,NA
+Hasliberg,2021,72339,Hasliberg,72339,12,0
+Hasliberg,2022,75985,Hasliberg,75985,12,0
+Hasliberg,2023,94259,Hasliberg,94259,12,0
+Hasliberg,2024,88768,Hasliberg,88768,12,0
+Hasliberg,2025,82725,Hasliberg,82725,12,0
+Hasliberg,2026,NA,Hasliberg,25047,3,NA
+Innertkirchen,2013,17411,Innertkirchen,17411,12,0
+Innertkirchen,2014,23182,Innertkirchen,23182,12,0
+Innertkirchen,2015,23097,Innertkirchen,23097,12,0
+Innertkirchen,2016,19181,Innertkirchen,19181,12,0
+Innertkirchen,2017,19764,Innertkirchen,19764,12,0
+Innertkirchen,2018,20588,Innertkirchen,20588,12,0
+Innertkirchen,2019,21018,Innertkirchen,21018,12,0
+Innertkirchen,2020,20628,Innertkirchen,19964,10,NA
+Innertkirchen,2021,23538,Innertkirchen,23538,12,0
+Innertkirchen,2022,27413,Innertkirchen,27413,12,0
+Innertkirchen,2023,28555,Innertkirchen,28555,12,0
+Innertkirchen,2024,27430,Innertkirchen,27430,12,0
+Innertkirchen,2025,27732,Innertkirchen,27732,12,0
+Innertkirchen,2026,NA,Innertkirchen,992,3,NA
+Meiringen,2013,87479,Meiringen,87479,12,0
+Meiringen,2014,86959,Meiringen,86959,12,0
+Meiringen,2015,92541,Meiringen,92541,12,0
+Meiringen,2016,79768,Meiringen,79768,12,0
+Meiringen,2017,90192,Meiringen,90192,12,0
+Meiringen,2018,91309,Meiringen,91309,12,0
+Meiringen,2019,84214,Meiringen,84214,12,0
+Meiringen,2020,40300,Meiringen,40300,12,0
+Meiringen,2021,43471,Meiringen,43471,12,0
+Meiringen,2022,50384,Meiringen,50384,12,0
+Meiringen,2023,62711,Meiringen,62711,12,0
+Meiringen,2024,84269,Meiringen,84269,12,0
+Meiringen,2025,86332,Meiringen,86332,12,0
+Meiringen,2026,NA,Meiringen,16551,3,NA
+Lenk,2013,102969,Lenk,102969,12,0
+Lenk,2014,104799,Lenk,104799,12,0
+Lenk,2015,105809,Lenk,105809,12,0
+Lenk,2016,108948,Lenk,108948,12,0
+Lenk,2017,106511,Lenk,106511,12,0
+Lenk,2018,111525,Lenk,111525,12,0
+Lenk,2019,121140,Lenk,121140,12,0
+Lenk,2020,115300,Lenk,115300,12,0
+Lenk,2021,124946,Lenk,124946,12,0
+Lenk,2022,122917,Lenk,122917,12,0
+Lenk,2023,118604,Lenk,118604,12,0
+Lenk,2024,124090,Lenk,124090,12,0
+Lenk,2025,118037,Lenk,118037,12,0
+Lenk,2026,NA,Lenk,42351,3,NA
+Saanen,2013,301313,Saanen,301313,12,0
+Saanen,2014,312634,Saanen,312634,12,0
+Saanen,2015,311365,Saanen,311365,12,0
+Saanen,2016,294780,Saanen,294780,12,0
+Saanen,2017,321792,Saanen,321792,12,0
+Saanen,2018,337592,Saanen,337592,12,0
+Saanen,2019,362566,Saanen,362566,12,0
+Saanen,2020,332657,Saanen,332657,12,0
+Saanen,2021,388040,Saanen,388040,12,0
+Saanen,2022,368675,Saanen,368675,12,0
+Saanen,2023,362602,Saanen,362602,12,0
+Saanen,2024,339100,Saanen,339100,12,0
+Saanen,2025,347550,Saanen,347550,12,0
+Saanen,2026,NA,Saanen,122263,3,NA
+Langnau im Emmental,2013,10296,Langnau im Emmental,10296,12,0
+Langnau im Emmental,2014,9821,Langnau im Emmental,9821,12,0
+Langnau im Emmental,2015,10003,Langnau im Emmental,10003,12,0
+Langnau im Emmental,2016,10307,Langnau im Emmental,10307,12,0
+Langnau im Emmental,2017,9686,Langnau im Emmental,9686,12,0
+Langnau im Emmental,2018,10479,Langnau im Emmental,10479,12,0
+Langnau im Emmental,2019,9366,Langnau im Emmental,9366,12,0
+Langnau im Emmental,2020,7296,Langnau im Emmental,7296,12,0
+Langnau im Emmental,2021,9150,Langnau im Emmental,9150,12,0
+Langnau im Emmental,2022,10193,Langnau im Emmental,10193,12,0
+Langnau im Emmental,2023,10753,Langnau im Emmental,10753,12,0
+Langnau im Emmental,2024,10851,Langnau im Emmental,10851,12,0
+Langnau im Emmental,2025,11115,Langnau im Emmental,11115,12,0
+Langnau im Emmental,2026,NA,Langnau im Emmental,1853,3,NA
+Schangnau,2013,13715,Schangnau,13715,12,0
+Schangnau,2014,14018,Schangnau,14018,12,0
+Schangnau,2015,14406,Schangnau,14406,12,0
+Schangnau,2016,15585,Schangnau,15585,12,0
+Schangnau,2017,16298,Schangnau,16298,12,0
+Schangnau,2018,15752,Schangnau,15752,12,0
+Schangnau,2019,16364,Schangnau,16364,12,0
+Schangnau,2020,16805,Schangnau,15708,10,NA
+Schangnau,2021,18049,Schangnau,18049,12,0
+Schangnau,2022,9367,Schangnau,9367,12,0
+Schangnau,2023,10552,Schangnau,10552,12,0
+Schangnau,2024,15526,Schangnau,15526,12,0
+Schangnau,2025,15604,Schangnau,15604,12,0
+Schangnau,2026,NA,Schangnau,3505,3,NA
+Sigriswil,2013,142423,Sigriswil,142423,12,0
+Sigriswil,2014,142886,Sigriswil,142886,12,0
+Sigriswil,2015,136464,Sigriswil,136464,12,0
+Sigriswil,2016,136141,Sigriswil,136141,12,0
+Sigriswil,2017,135681,Sigriswil,135681,12,0
+Sigriswil,2018,141935,Sigriswil,141935,12,0
+Sigriswil,2019,150262,Sigriswil,150262,12,0
+Sigriswil,2020,130755,Sigriswil,130755,12,0
+Sigriswil,2021,166768,Sigriswil,166768,12,0
+Sigriswil,2022,157023,Sigriswil,157023,12,0
+Sigriswil,2023,119368,Sigriswil,119368,12,0
+Sigriswil,2024,113031,Sigriswil,113031,12,0
+Sigriswil,2025,103124,Sigriswil,103124,12,0
+Sigriswil,2026,NA,Sigriswil,18211,3,NA
+Thun,2013,105596,Thun,105596,12,0
+Thun,2014,103012,Thun,103012,12,0
+Thun,2015,103446,Thun,103446,12,0
+Thun,2016,106887,Thun,106887,12,0
+Thun,2017,110310,Thun,110310,12,0
+Thun,2018,116917,Thun,116917,12,0
+Thun,2019,124973,Thun,124973,12,0
+Thun,2020,84863,Thun,84863,12,0
+Thun,2021,106736,Thun,106736,12,0
+Thun,2022,126800,Thun,126800,12,0
+Thun,2023,149745,Thun,149745,12,0
+Thun,2024,174100,Thun,174100,12,0
+Thun,2025,169409,Thun,169409,12,0
+Thun,2026,NA,Thun,24395,3,NA
+Herzogenbuchsee,2013,4543,Herzogenbuchsee,4543,12,0
+Herzogenbuchsee,2014,5916,Herzogenbuchsee,5916,12,0
+Herzogenbuchsee,2015,6726,Herzogenbuchsee,6726,12,0
+Herzogenbuchsee,2016,7298,Herzogenbuchsee,7298,12,0
+Herzogenbuchsee,2017,7283,Herzogenbuchsee,7283,12,0
+Herzogenbuchsee,2018,8487,Herzogenbuchsee,8487,12,0
+Herzogenbuchsee,2019,7196,Herzogenbuchsee,7196,12,0
+Herzogenbuchsee,2020,5810,Herzogenbuchsee,5810,12,0
+Herzogenbuchsee,2021,5741,Herzogenbuchsee,5741,12,0
+Herzogenbuchsee,2022,4063,Herzogenbuchsee,4063,12,0
+Herzogenbuchsee,2023,5276,Herzogenbuchsee,5276,12,0
+Herzogenbuchsee,2024,5381,Herzogenbuchsee,5381,12,0
+Herzogenbuchsee,2025,5933,Herzogenbuchsee,5933,12,0
+Herzogenbuchsee,2026,NA,Herzogenbuchsee,819,3,NA
+Emmen,2013,32630,Emmen,32630,12,0
+Emmen,2014,35759,Emmen,35759,12,0
+Emmen,2015,32894,Emmen,32894,12,0
+Emmen,2016,34750,Emmen,34750,12,0
+Emmen,2017,34341,Emmen,34341,12,0
+Emmen,2018,30582,Emmen,30582,12,0
+Emmen,2019,31523,Emmen,31523,12,0
+Emmen,2020,20547,Emmen,20547,12,0
+Emmen,2021,20578,Emmen,20578,12,0
+Emmen,2022,33225,Emmen,33225,12,0
+Emmen,2023,34236,Emmen,34236,12,0
+Emmen,2024,35073,Emmen,35073,12,0
+Emmen,2025,35968,Emmen,35968,12,0
+Emmen,2026,NA,Emmen,5799,3,NA
+Kriens,2013,55587,Kriens,55587,12,0
+Kriens,2014,62049,Kriens,62049,12,0
+Kriens,2015,58632,Kriens,58632,12,0
+Kriens,2016,57003,Kriens,57003,12,0
+Kriens,2017,54715,Kriens,54715,12,0
+Kriens,2018,55280,Kriens,55280,12,0
+Kriens,2019,100601,Kriens,100601,12,0
+Kriens,2020,45658,Kriens,45474,10,NA
+Kriens,2021,61540,Kriens,61540,12,0
+Kriens,2022,118075,Kriens,118075,12,0
+Kriens,2023,142288,Kriens,142288,12,0
+Kriens,2024,137113,Kriens,137113,12,0
+Kriens,2025,136580,Kriens,136580,12,0
+Kriens,2026,NA,Kriens,21709,3,NA
+Luzern,2013,1175670,Luzern,1175670,12,0
+Luzern,2014,1218169,Luzern,1218169,12,0
+Luzern,2015,1279825,Luzern,1279825,12,0
+Luzern,2016,1269774,Luzern,1269774,12,0
+Luzern,2017,1343229,Luzern,1343229,12,0
+Luzern,2018,1399288,Luzern,1399288,12,0
+Luzern,2019,1382980,Luzern,1382980,12,0
+Luzern,2020,484891,Luzern,484891,12,0
+Luzern,2021,619486,Luzern,619486,12,0
+Luzern,2022,1099435,Luzern,1099435,12,0
+Luzern,2023,1328369,Luzern,1328369,12,0
+Luzern,2024,1412735,Luzern,1412735,12,0
+Luzern,2025,1484648,Luzern,1484648,12,0
+Luzern,2026,NA,Luzern,234234,3,NA
+Meggen,2013,15282,Meggen,15282,12,0
+Meggen,2014,14945,Meggen,14945,12,0
+Meggen,2015,15276,Meggen,15276,12,0
+Meggen,2016,15300,Meggen,15300,12,0
+Meggen,2017,15210,Meggen,15210,12,0
+Meggen,2018,16121,Meggen,16121,12,0
+Meggen,2019,14961,Meggen,14961,12,0
+Meggen,2020,6789,Meggen,6789,12,0
+Meggen,2021,9749,Meggen,9749,12,0
+Meggen,2022,13285,Meggen,13285,12,0
+Meggen,2023,15675,Meggen,15675,12,0
+Meggen,2024,15751,Meggen,15751,12,0
+Meggen,2025,16297,Meggen,16297,12,0
+Meggen,2026,NA,Meggen,1692,3,NA
+Vitznau,2013,49414,Vitznau,49414,12,0
+Vitznau,2014,57237,Vitznau,57237,12,0
+Vitznau,2015,58230,Vitznau,58230,12,0
+Vitznau,2016,57739,Vitznau,57739,12,0
+Vitznau,2017,61211,Vitznau,61211,12,0
+Vitznau,2018,66266,Vitznau,66266,12,0
+Vitznau,2019,68435,Vitznau,68435,12,0
+Vitznau,2020,58126,Vitznau,58126,12,0
+Vitznau,2021,70820,Vitznau,70820,12,0
+Vitznau,2022,83587,Vitznau,83587,12,0
+Vitznau,2023,87486,Vitznau,87486,12,0
+Vitznau,2024,89562,Vitznau,89562,12,0
+Vitznau,2025,86841,Vitznau,86841,12,0
+Vitznau,2026,NA,Vitznau,4960,3,NA
+Weggis,2013,170288,Weggis,170288,12,0
+Weggis,2014,193543,Weggis,193543,12,0
+Weggis,2015,219771,Weggis,219771,12,0
+Weggis,2016,233486,Weggis,233486,12,0
+Weggis,2017,236998,Weggis,236998,12,0
+Weggis,2018,229245,Weggis,229245,12,0
+Weggis,2019,220235,Weggis,220235,12,0
+Weggis,2020,160549,Weggis,160549,12,0
+Weggis,2021,228893,Weggis,228893,12,0
+Weggis,2022,214817,Weggis,214817,12,0
+Weggis,2023,212252,Weggis,212252,12,0
+Weggis,2024,200213,Weggis,200213,12,0
+Weggis,2025,198583,Weggis,198583,12,0
+Weggis,2026,NA,Weggis,31854,3,NA
+Sursee,2013,19678,Sursee,19678,12,0
+Sursee,2014,18483,Sursee,18483,12,0
+Sursee,2015,19201,Sursee,19201,12,0
+Sursee,2016,20562,Sursee,20562,12,0
+Sursee,2017,18810,Sursee,18810,12,0
+Sursee,2018,17278,Sursee,17278,12,0
+Sursee,2019,31554,Sursee,31554,12,0
+Sursee,2020,20765,Sursee,20765,12,0
+Sursee,2021,27628,Sursee,27628,12,0
+Sursee,2022,36400,Sursee,36400,12,0
+Sursee,2023,44472,Sursee,44472,12,0
+Sursee,2024,45337,Sursee,45337,12,0
+Sursee,2025,45307,Sursee,45307,12,0
+Sursee,2026,NA,Sursee,6992,3,NA
+Andermatt,2013,62174,Andermatt,62174,12,0
+Andermatt,2014,83027,Andermatt,83027,12,0
+Andermatt,2015,80709,Andermatt,80709,12,0
+Andermatt,2016,87478,Andermatt,87478,12,0
+Andermatt,2017,97020,Andermatt,97020,12,0
+Andermatt,2018,101877,Andermatt,101877,12,0
+Andermatt,2019,156613,Andermatt,156613,12,0
+Andermatt,2020,155814,Andermatt,155814,12,0
+Andermatt,2021,185142,Andermatt,185142,12,0
+Andermatt,2022,183243,Andermatt,183243,12,0
+Andermatt,2023,152220,Andermatt,152220,12,0
+Andermatt,2024,141591,Andermatt,141591,12,0
+Andermatt,2025,144668,Andermatt,144668,12,0
+Andermatt,2026,NA,Andermatt,47152,3,NA
+Gurtnellen,2013,4624,Gurtnellen,4624,12,0
+Gurtnellen,2014,3832,Gurtnellen,3832,12,0
+Gurtnellen,2015,3871,Gurtnellen,3871,12,0
+Gurtnellen,2016,4977,Gurtnellen,4977,12,0
+Gurtnellen,2017,5092,Gurtnellen,5092,12,0
+Gurtnellen,2018,5715,Gurtnellen,5715,12,0
+Gurtnellen,2019,5905,Gurtnellen,5905,12,0
+Gurtnellen,2020,4059,Gurtnellen,4059,11,NA
+Gurtnellen,2021,5502,Gurtnellen,5502,12,0
+Gurtnellen,2022,5992,Gurtnellen,5992,12,0
+Gurtnellen,2023,7520,Gurtnellen,7520,12,0
+Gurtnellen,2024,7910,Gurtnellen,7910,12,0
+Gurtnellen,2025,6256,Gurtnellen,6256,12,0
+Gurtnellen,2026,NA,Gurtnellen,1246,3,NA
+Einsiedeln,2013,61374,Einsiedeln,61374,12,0
+Einsiedeln,2014,58509,Einsiedeln,58509,12,0
+Einsiedeln,2015,60211,Einsiedeln,60211,12,0
+Einsiedeln,2016,55090,Einsiedeln,55090,12,0
+Einsiedeln,2017,57462,Einsiedeln,57462,12,0
+Einsiedeln,2018,57977,Einsiedeln,57977,12,0
+Einsiedeln,2019,55873,Einsiedeln,55873,12,0
+Einsiedeln,2020,32340,Einsiedeln,32340,12,0
+Einsiedeln,2021,42900,Einsiedeln,42900,12,0
+Einsiedeln,2022,57217,Einsiedeln,57217,12,0
+Einsiedeln,2023,56070,Einsiedeln,56070,12,0
+Einsiedeln,2024,59757,Einsiedeln,59757,12,0
+Einsiedeln,2025,56057,Einsiedeln,56057,12,0
+Einsiedeln,2026,NA,Einsiedeln,9478,3,NA
+Feusisberg,2013,54286,Feusisberg,54286,12,0
+Feusisberg,2014,54057,Feusisberg,54057,12,0
+Feusisberg,2015,50802,Feusisberg,50802,12,0
+Feusisberg,2016,44475,Feusisberg,44475,12,0
+Feusisberg,2017,47090,Feusisberg,47090,12,0
+Feusisberg,2018,50237,Feusisberg,50237,12,0
+Feusisberg,2019,50177,Feusisberg,50177,12,0
+Feusisberg,2020,26869,Feusisberg,26869,12,0
+Feusisberg,2021,46246,Feusisberg,46246,12,0
+Feusisberg,2022,50578,Feusisberg,50578,12,0
+Feusisberg,2023,47499,Feusisberg,47499,12,0
+Feusisberg,2024,59848,Feusisberg,59848,12,0
+Feusisberg,2025,57697,Feusisberg,57697,12,0
+Feusisberg,2026,NA,Feusisberg,9999,3,NA
+Freienbach,2013,53578,Freienbach,53578,12,0
+Freienbach,2014,54476,Freienbach,54476,12,0
+Freienbach,2015,59998,Freienbach,59998,12,0
+Freienbach,2016,53582,Freienbach,53582,12,0
+Freienbach,2017,57576,Freienbach,57576,12,0
+Freienbach,2018,59264,Freienbach,59264,12,0
+Freienbach,2019,59305,Freienbach,59305,12,0
+Freienbach,2020,26643,Freienbach,26643,12,0
+Freienbach,2021,38413,Freienbach,38413,12,0
+Freienbach,2022,51143,Freienbach,51143,12,0
+Freienbach,2023,56914,Freienbach,56914,12,0
+Freienbach,2024,56594,Freienbach,56594,12,0
+Freienbach,2025,50165,Freienbach,50165,12,0
+Freienbach,2026,NA,Freienbach,7196,3,NA
+Küssnacht (SZ),2013,59540,Küssnacht (SZ),59540,12,0
+Küssnacht (SZ),2014,62997,Küssnacht (SZ),62997,12,0
+Küssnacht (SZ),2015,61077,Küssnacht (SZ),61077,12,0
+Küssnacht (SZ),2016,58750,Küssnacht (SZ),58750,12,0
+Küssnacht (SZ),2017,44953,Küssnacht (SZ),44953,12,0
+Küssnacht (SZ),2018,42097,Küssnacht (SZ),42097,12,0
+Küssnacht (SZ),2019,41593,Küssnacht (SZ),41593,12,0
+Küssnacht (SZ),2020,19431,Küssnacht (SZ),19431,12,0
+Küssnacht (SZ),2021,27360,Küssnacht (SZ),27360,12,0
+Küssnacht (SZ),2022,33516,Küssnacht (SZ),33516,12,0
+Küssnacht (SZ),2023,38820,Küssnacht (SZ),38820,12,0
+Küssnacht (SZ),2024,40918,Küssnacht (SZ),40918,12,0
+Küssnacht (SZ),2025,39759,Küssnacht (SZ),39759,12,0
+Küssnacht (SZ),2026,NA,Küssnacht (SZ),4664,3,NA
+Ingenbohl,2013,84371,Ingenbohl,84371,12,0
+Ingenbohl,2014,73834,Ingenbohl,73834,12,0
+Ingenbohl,2015,80753,Ingenbohl,80753,12,0
+Ingenbohl,2016,66487,Ingenbohl,66487,12,0
+Ingenbohl,2017,59923,Ingenbohl,59923,12,0
+Ingenbohl,2018,64063,Ingenbohl,64063,12,0
+Ingenbohl,2019,65150,Ingenbohl,65150,12,0
+Ingenbohl,2020,47621,Ingenbohl,47621,12,0
+Ingenbohl,2021,66408,Ingenbohl,66408,12,0
+Ingenbohl,2022,62017,Ingenbohl,62017,12,0
+Ingenbohl,2023,59769,Ingenbohl,59769,12,0
+Ingenbohl,2024,58658,Ingenbohl,58658,12,0
+Ingenbohl,2025,52516,Ingenbohl,52516,12,0
+Ingenbohl,2026,NA,Ingenbohl,7105,3,NA
+Morschach,2013,198080,Morschach,198080,12,0
+Morschach,2014,196720,Morschach,196720,12,0
+Morschach,2015,190769,Morschach,190769,12,0
+Morschach,2016,196101,Morschach,196101,12,0
+Morschach,2017,194177,Morschach,194177,12,0
+Morschach,2018,204840,Morschach,204840,12,0
+Morschach,2019,199213,Morschach,199213,12,0
+Morschach,2020,188466,Morschach,188466,12,0
+Morschach,2021,269702,Morschach,269702,12,0
+Morschach,2022,234655,Morschach,234655,12,0
+Morschach,2023,266958,Morschach,266958,12,0
+Morschach,2024,272628,Morschach,272628,12,0
+Morschach,2025,277256,Morschach,277256,12,0
+Morschach,2026,NA,Morschach,67689,3,NA
+Schwyz,2013,16745,Schwyz,16745,12,0
+Schwyz,2014,20823,Schwyz,20823,12,0
+Schwyz,2015,18543,Schwyz,18543,12,0
+Schwyz,2016,19938,Schwyz,19938,12,0
+Schwyz,2017,16234,Schwyz,16234,12,0
+Schwyz,2018,17112,Schwyz,17112,12,0
+Schwyz,2019,21135,Schwyz,21135,12,0
+Schwyz,2020,15758,Schwyz,15758,12,0
+Schwyz,2021,12666,Schwyz,12666,12,0
+Schwyz,2022,16978,Schwyz,16978,12,0
+Schwyz,2023,20443,Schwyz,20443,12,0
+Schwyz,2024,21107,Schwyz,21107,12,0
+Schwyz,2025,17242,Schwyz,17242,12,0
+Schwyz,2026,NA,Schwyz,3418,3,NA
+Engelberg,2013,316063,Engelberg,316063,12,0
+Engelberg,2014,325679,Engelberg,325679,12,0
+Engelberg,2015,354960,Engelberg,354960,12,0
+Engelberg,2016,331656,Engelberg,331656,12,0
+Engelberg,2017,362248,Engelberg,362248,12,0
+Engelberg,2018,383405,Engelberg,383405,12,0
+Engelberg,2019,358572,Engelberg,358572,12,0
+Engelberg,2020,158528,Engelberg,158528,12,0
+Engelberg,2021,162531,Engelberg,162531,12,0
+Engelberg,2022,254663,Engelberg,254663,12,0
+Engelberg,2023,324371,Engelberg,324371,12,0
+Engelberg,2024,328506,Engelberg,328506,12,0
+Engelberg,2025,328002,Engelberg,328002,12,0
+Engelberg,2026,NA,Engelberg,86267,3,NA
+Sachseln,2013,78079,Sachseln,78079,12,0
+Sachseln,2014,85837,Sachseln,85837,12,0
+Sachseln,2015,86447,Sachseln,86447,12,0
+Sachseln,2016,78733,Sachseln,78733,12,0
+Sachseln,2017,77139,Sachseln,77139,12,0
+Sachseln,2018,67975,Sachseln,67975,12,0
+Sachseln,2019,74457,Sachseln,74457,12,0
+Sachseln,2020,37614,Sachseln,37614,12,0
+Sachseln,2021,48370,Sachseln,48370,12,0
+Sachseln,2022,58306,Sachseln,58306,12,0
+Sachseln,2023,62966,Sachseln,62966,12,0
+Sachseln,2024,66463,Sachseln,66463,12,0
+Sachseln,2025,63762,Sachseln,63762,12,0
+Sachseln,2026,NA,Sachseln,7681,3,NA
+Sarnen,2013,52526,Sarnen,52526,12,0
+Sarnen,2014,53822,Sarnen,53822,12,0
+Sarnen,2015,57837,Sarnen,57837,12,0
+Sarnen,2016,52613,Sarnen,52613,12,0
+Sarnen,2017,54459,Sarnen,54459,12,0
+Sarnen,2018,57752,Sarnen,57752,12,0
+Sarnen,2019,57446,Sarnen,57446,12,0
+Sarnen,2020,43299,Sarnen,43299,12,0
+Sarnen,2021,54921,Sarnen,54921,12,0
+Sarnen,2022,57195,Sarnen,57195,12,0
+Sarnen,2023,59361,Sarnen,59361,12,0
+Sarnen,2024,54880,Sarnen,54880,12,0
+Sarnen,2025,63024,Sarnen,63024,12,0
+Sarnen,2026,NA,Sarnen,11421,3,NA
+Beckenried,2013,22205,Beckenried,22205,12,0
+Beckenried,2014,24379,Beckenried,24379,12,0
+Beckenried,2015,27293,Beckenried,27293,12,0
+Beckenried,2016,35625,Beckenried,35625,12,0
+Beckenried,2017,36192,Beckenried,36192,12,0
+Beckenried,2018,38313,Beckenried,38313,12,0
+Beckenried,2019,38827,Beckenried,38827,12,0
+Beckenried,2020,31365,Beckenried,30071,10,NA
+Beckenried,2021,37023,Beckenried,37023,12,0
+Beckenried,2022,38180,Beckenried,38180,12,0
+Beckenried,2023,41618,Beckenried,41618,12,0
+Beckenried,2024,42020,Beckenried,42020,12,0
+Beckenried,2025,41316,Beckenried,41316,12,0
+Beckenried,2026,NA,Beckenried,7175,3,NA
+Emmetten,2013,42192,Emmetten,42192,12,0
+Emmetten,2014,45776,Emmetten,45776,12,0
+Emmetten,2015,44385,Emmetten,44385,12,0
+Emmetten,2016,40563,Emmetten,40563,12,0
+Emmetten,2017,41062,Emmetten,41062,12,0
+Emmetten,2018,38389,Emmetten,38389,12,0
+Emmetten,2019,31486,Emmetten,31486,12,0
+Emmetten,2020,17504,Emmetten,16991,10,NA
+Emmetten,2021,27375,Emmetten,27375,12,0
+Emmetten,2022,36168,Emmetten,36168,12,0
+Emmetten,2023,34619,Emmetten,34619,12,0
+Emmetten,2024,40417,Emmetten,40417,12,0
+Emmetten,2025,46089,Emmetten,46089,12,0
+Emmetten,2026,NA,Emmetten,9279,3,NA
+Glarus Nord,2013,61709,Glarus Nord,61709,12,0
+Glarus Nord,2014,63398,Glarus Nord,63398,12,0
+Glarus Nord,2015,60292,Glarus Nord,60292,12,0
+Glarus Nord,2016,61504,Glarus Nord,61504,12,0
+Glarus Nord,2017,61208,Glarus Nord,61208,12,0
+Glarus Nord,2018,59976,Glarus Nord,59976,12,0
+Glarus Nord,2019,55309,Glarus Nord,55309,12,0
+Glarus Nord,2020,29027,Glarus Nord,29027,12,0
+Glarus Nord,2021,34621,Glarus Nord,34621,12,0
+Glarus Nord,2022,58014,Glarus Nord,58014,12,0
+Glarus Nord,2023,71483,Glarus Nord,71483,12,0
+Glarus Nord,2024,76054,Glarus Nord,76054,12,0
+Glarus Nord,2025,69871,Glarus Nord,69871,12,0
+Glarus Nord,2026,NA,Glarus Nord,12253,3,NA
+Glarus Süd,2013,53806,Glarus Süd,53806,12,0
+Glarus Süd,2014,53207,Glarus Süd,53207,12,0
+Glarus Süd,2015,54469,Glarus Süd,54469,12,0
+Glarus Süd,2016,52422,Glarus Süd,52422,12,0
+Glarus Süd,2017,55386,Glarus Süd,55386,12,0
+Glarus Süd,2018,60831,Glarus Süd,60831,12,0
+Glarus Süd,2019,64293,Glarus Süd,64293,12,0
+Glarus Süd,2020,64460,Glarus Süd,64460,12,0
+Glarus Süd,2021,69721,Glarus Süd,69721,12,0
+Glarus Süd,2022,67998,Glarus Süd,67998,12,0
+Glarus Süd,2023,64051,Glarus Süd,64051,12,0
+Glarus Süd,2024,60499,Glarus Süd,60499,12,0
+Glarus Süd,2025,68041,Glarus Süd,68041,12,0
+Glarus Süd,2026,NA,Glarus Süd,18136,3,NA
+Unterägeri,2013,35020,Unterägeri,35020,12,0
+Unterägeri,2014,36744,Unterägeri,36744,12,0
+Unterägeri,2015,26171,Unterägeri,26171,12,0
+Unterägeri,2016,21826,Unterägeri,21826,12,0
+Unterägeri,2017,26527,Unterägeri,26527,12,0
+Unterägeri,2018,25271,Unterägeri,25271,12,0
+Unterägeri,2019,26070,Unterägeri,26070,12,0
+Unterägeri,2020,10418,Unterägeri,10418,12,0
+Unterägeri,2021,15267,Unterägeri,15267,12,0
+Unterägeri,2022,17265,Unterägeri,17265,12,0
+Unterägeri,2023,25084,Unterägeri,25084,12,0
+Unterägeri,2024,23900,Unterägeri,23900,12,0
+Unterägeri,2025,15478,Unterägeri,15478,12,0
+Unterägeri,2026,NA,Unterägeri,2352,3,NA
+Zug,2013,120555,Zug,120555,12,0
+Zug,2014,124529,Zug,124529,12,0
+Zug,2015,136156,Zug,136156,12,0
+Zug,2016,126110,Zug,126110,12,0
+Zug,2017,122478,Zug,122478,12,0
+Zug,2018,121949,Zug,121949,12,0
+Zug,2019,114162,Zug,114162,12,0
+Zug,2020,58793,Zug,58793,12,0
+Zug,2021,77524,Zug,77524,12,0
+Zug,2022,109873,Zug,109873,12,0
+Zug,2023,109693,Zug,109693,12,0
+Zug,2024,113242,Zug,113242,12,0
+Zug,2025,139860,Zug,139860,12,0
+Zug,2026,NA,Zug,30513,3,NA
+Haut-Intyamon,2013,5427,Haut-Intyamon,5427,12,0
+Haut-Intyamon,2014,5222,Haut-Intyamon,5222,12,0
+Haut-Intyamon,2015,4385,Haut-Intyamon,4385,12,0
+Haut-Intyamon,2016,3032,Haut-Intyamon,3032,12,0
+Haut-Intyamon,2017,3104,Haut-Intyamon,3104,12,0
+Haut-Intyamon,2018,3157,Haut-Intyamon,3157,12,0
+Haut-Intyamon,2019,3748,Haut-Intyamon,3748,12,0
+Haut-Intyamon,2020,3273,Haut-Intyamon,3273,12,0
+Haut-Intyamon,2021,2082,Haut-Intyamon,2082,12,0
+Haut-Intyamon,2022,2900,Haut-Intyamon,2900,12,0
+Haut-Intyamon,2023,3962,Haut-Intyamon,3962,12,0
+Haut-Intyamon,2024,4248,Haut-Intyamon,4248,12,0
+Haut-Intyamon,2025,3440,Haut-Intyamon,3440,12,0
+Haut-Intyamon,2026,NA,Haut-Intyamon,689,3,NA
+Bulle,2013,58977,Bulle,58977,12,0
+Bulle,2014,58434,Bulle,58434,12,0
+Bulle,2015,55748,Bulle,55748,12,0
+Bulle,2016,55813,Bulle,55813,12,0
+Bulle,2017,54426,Bulle,54426,12,0
+Bulle,2018,48671,Bulle,48671,12,0
+Bulle,2019,46562,Bulle,46562,12,0
+Bulle,2020,27630,Bulle,26927,10,NA
+Bulle,2021,37771,Bulle,37771,12,0
+Bulle,2022,61337,Bulle,61337,12,0
+Bulle,2023,69291,Bulle,69291,12,0
+Bulle,2024,76731,Bulle,76731,12,0
+Bulle,2025,79700,Bulle,79700,12,0
+Bulle,2026,NA,Bulle,15749,3,NA
+Gruyères,2013,21284,Gruyères,21284,12,0
+Gruyères,2014,20955,Gruyères,20955,12,0
+Gruyères,2015,21086,Gruyères,21086,12,0
+Gruyères,2016,19461,Gruyères,19461,12,0
+Gruyères,2017,25787,Gruyères,25787,12,0
+Gruyères,2018,19749,Gruyères,19749,12,0
+Gruyères,2019,23207,Gruyères,23207,12,0
+Gruyères,2020,16958,Gruyères,16239,10,NA
+Gruyères,2021,22184,Gruyères,22184,12,0
+Gruyères,2022,29208,Gruyères,29208,12,0
+Gruyères,2023,28122,Gruyères,28122,12,0
+Gruyères,2024,28333,Gruyères,28333,12,0
+Gruyères,2025,27078,Gruyères,27078,12,0
+Gruyères,2026,NA,Gruyères,3983,3,NA
+Fribourg,2013,114509,Fribourg,114509,12,0
+Fribourg,2014,123644,Fribourg,123644,12,0
+Fribourg,2015,118334,Fribourg,118334,12,0
+Fribourg,2016,124024,Fribourg,124024,12,0
+Fribourg,2017,125776,Fribourg,125776,12,0
+Fribourg,2018,125673,Fribourg,125673,12,0
+Fribourg,2019,124820,Fribourg,124820,12,0
+Fribourg,2020,57669,Fribourg,57669,12,0
+Fribourg,2021,64161,Fribourg,64161,12,0
+Fribourg,2022,72053,Fribourg,72053,12,0
+Fribourg,2023,74739,Fribourg,74739,12,0
+Fribourg,2024,70473,Fribourg,70473,12,0
+Fribourg,2025,75133,Fribourg,75133,12,0
+Fribourg,2026,NA,Fribourg,14666,3,NA
+Murten,2013,38787,Murten,38787,12,0
+Murten,2014,39847,Murten,39847,12,0
+Murten,2015,39758,Murten,39758,12,0
+Murten,2016,41048,Murten,41048,12,0
+Murten,2017,38473,Murten,38473,12,0
+Murten,2018,38592,Murten,38592,12,0
+Murten,2019,36972,Murten,36972,12,0
+Murten,2020,32461,Murten,32461,12,0
+Murten,2021,45409,Murten,45409,12,0
+Murten,2022,38139,Murten,38139,12,0
+Murten,2023,34722,Murten,34722,12,0
+Murten,2024,29664,Murten,29664,12,0
+Murten,2025,31402,Murten,31402,12,0
+Murten,2026,NA,Murten,5484,3,NA
+Plaffeien,2013,19503,Plaffeien,19503,12,0
+Plaffeien,2014,18974,Plaffeien,18974,12,0
+Plaffeien,2015,18465,Plaffeien,18465,12,0
+Plaffeien,2016,18671,Plaffeien,18671,12,0
+Plaffeien,2017,18045,Plaffeien,18045,12,0
+Plaffeien,2018,17416,Plaffeien,17416,12,0
+Plaffeien,2019,22332,Plaffeien,22332,12,0
+Plaffeien,2020,20542,Plaffeien,19307,10,NA
+Plaffeien,2021,33430,Plaffeien,33430,12,0
+Plaffeien,2022,29462,Plaffeien,29462,12,0
+Plaffeien,2023,29837,Plaffeien,29837,12,0
+Plaffeien,2024,27558,Plaffeien,27558,12,0
+Plaffeien,2025,26107,Plaffeien,26107,12,0
+Plaffeien,2026,NA,Plaffeien,4811,3,NA
+Egerkingen,2013,70734,Egerkingen,70734,12,0
+Egerkingen,2014,65349,Egerkingen,65349,12,0
+Egerkingen,2015,69567,Egerkingen,69567,12,0
+Egerkingen,2016,62620,Egerkingen,62620,12,0
+Egerkingen,2017,62455,Egerkingen,62455,12,0
+Egerkingen,2018,72324,Egerkingen,72324,12,0
+Egerkingen,2019,71164,Egerkingen,71164,12,0
+Egerkingen,2020,38626,Egerkingen,38626,12,0
+Egerkingen,2021,34903,Egerkingen,34903,12,0
+Egerkingen,2022,49154,Egerkingen,49154,12,0
+Egerkingen,2023,71916,Egerkingen,71916,12,0
+Egerkingen,2024,75921,Egerkingen,75921,12,0
+Egerkingen,2025,80761,Egerkingen,80761,12,0
+Egerkingen,2026,NA,Egerkingen,9867,3,NA
+Grenchen,2013,16842,Grenchen,16842,12,0
+Grenchen,2014,16935,Grenchen,16935,12,0
+Grenchen,2015,19551,Grenchen,19551,12,0
+Grenchen,2016,16695,Grenchen,16695,12,0
+Grenchen,2017,15560,Grenchen,15560,12,0
+Grenchen,2018,15776,Grenchen,15776,12,0
+Grenchen,2019,15046,Grenchen,15046,12,0
+Grenchen,2020,12576,Grenchen,12576,12,0
+Grenchen,2021,15320,Grenchen,15320,12,0
+Grenchen,2022,18012,Grenchen,18012,12,0
+Grenchen,2023,18738,Grenchen,18738,12,0
+Grenchen,2024,17707,Grenchen,17707,12,0
+Grenchen,2025,24573,Grenchen,24573,12,0
+Grenchen,2026,NA,Grenchen,4779,3,NA
+Olten,2013,57526,Olten,57526,12,0
+Olten,2014,59012,Olten,59012,12,0
+Olten,2015,68774,Olten,68774,12,0
+Olten,2016,72296,Olten,72296,12,0
+Olten,2017,72637,Olten,72637,12,0
+Olten,2018,76881,Olten,76881,12,0
+Olten,2019,76493,Olten,76493,12,0
+Olten,2020,48077,Olten,48077,12,0
+Olten,2021,57850,Olten,57850,12,0
+Olten,2022,72902,Olten,72902,12,0
+Olten,2023,78083,Olten,78083,12,0
+Olten,2024,74237,Olten,74237,12,0
+Olten,2025,79629,Olten,79629,12,0
+Olten,2026,NA,Olten,16108,3,NA
+Solothurn,2013,85609,Solothurn,85609,12,0
+Solothurn,2014,87718,Solothurn,87718,12,0
+Solothurn,2015,84228,Solothurn,84228,12,0
+Solothurn,2016,87261,Solothurn,87261,12,0
+Solothurn,2017,92648,Solothurn,92648,12,0
+Solothurn,2018,100839,Solothurn,100839,12,0
+Solothurn,2019,104867,Solothurn,104867,12,0
+Solothurn,2020,72374,Solothurn,72374,12,0
+Solothurn,2021,89009,Solothurn,89009,12,0
+Solothurn,2022,95393,Solothurn,95393,12,0
+Solothurn,2023,97637,Solothurn,97637,12,0
+Solothurn,2024,97634,Solothurn,97634,12,0
+Solothurn,2025,90793,Solothurn,90793,12,0
+Solothurn,2026,NA,Solothurn,15380,3,NA
+Basel,2013,1093573,Basel,1093573,12,0
+Basel,2014,1149411,Basel,1149411,12,0
+Basel,2015,1189658,Basel,1189658,12,0
+Basel,2016,1205790,Basel,1205790,12,0
+Basel,2017,1317865,Basel,1317865,12,0
+Basel,2018,1374739,Basel,1374739,12,0
+Basel,2019,1410355,Basel,1410355,12,0
+Basel,2020,539890,Basel,539890,12,0
+Basel,2021,776773,Basel,776773,12,0
+Basel,2022,1289536,Basel,1289536,12,0
+Basel,2023,1463684,Basel,1463684,12,0
+Basel,2024,1543941,Basel,1543941,12,0
+Basel,2025,1670768,Basel,1670768,12,0
+Basel,2026,NA,Basel,306845,3,NA
+Liestal,2013,32286,Liestal,32286,12,0
+Liestal,2014,32226,Liestal,32226,12,0
+Liestal,2015,29370,Liestal,29370,12,0
+Liestal,2016,28657,Liestal,28657,12,0
+Liestal,2017,27532,Liestal,27532,12,0
+Liestal,2018,25317,Liestal,25317,12,0
+Liestal,2019,27405,Liestal,27405,12,0
+Liestal,2020,16469,Liestal,16469,12,0
+Liestal,2021,22353,Liestal,22353,12,0
+Liestal,2022,27231,Liestal,27231,12,0
+Liestal,2023,27365,Liestal,27365,12,0
+Liestal,2024,25575,Liestal,25575,12,0
+Liestal,2025,24054,Liestal,24054,12,0
+Liestal,2026,NA,Liestal,5128,3,NA
+Pratteln,2013,90946,Pratteln,90946,12,0
+Pratteln,2014,92040,Pratteln,92040,12,0
+Pratteln,2015,89732,Pratteln,89732,12,0
+Pratteln,2016,85137,Pratteln,85137,12,0
+Pratteln,2017,97941,Pratteln,97941,12,0
+Pratteln,2018,97468,Pratteln,97468,12,0
+Pratteln,2019,102000,Pratteln,102000,12,0
+Pratteln,2020,46442,Pratteln,45947,10,NA
+Pratteln,2021,53275,Pratteln,53275,12,0
+Pratteln,2022,78733,Pratteln,78733,12,0
+Pratteln,2023,82332,Pratteln,82332,12,0
+Pratteln,2024,90016,Pratteln,90016,12,0
+Pratteln,2025,87371,Pratteln,87371,12,0
+Pratteln,2026,NA,Pratteln,16112,3,NA
+Schaffhausen,2013,69627,Schaffhausen,69627,12,0
+Schaffhausen,2014,81079,Schaffhausen,81079,12,0
+Schaffhausen,2015,102537,Schaffhausen,102537,12,0
+Schaffhausen,2016,113370,Schaffhausen,113370,12,0
+Schaffhausen,2017,110761,Schaffhausen,110761,12,0
+Schaffhausen,2018,110689,Schaffhausen,110689,12,0
+Schaffhausen,2019,110242,Schaffhausen,110242,12,0
+Schaffhausen,2020,65974,Schaffhausen,65974,12,0
+Schaffhausen,2021,88194,Schaffhausen,88194,12,0
+Schaffhausen,2022,102166,Schaffhausen,102166,12,0
+Schaffhausen,2023,107560,Schaffhausen,107560,12,0
+Schaffhausen,2024,111361,Schaffhausen,111361,12,0
+Schaffhausen,2025,111908,Schaffhausen,111908,12,0
+Schaffhausen,2026,NA,Schaffhausen,19204,3,NA
+Hundwil,2013,8284,Hundwil,8284,12,0
+Hundwil,2014,8721,Hundwil,8721,12,0
+Hundwil,2015,8315,Hundwil,8315,12,0
+Hundwil,2016,20632,Hundwil,20632,12,0
+Hundwil,2017,22625,Hundwil,22625,12,0
+Hundwil,2018,23819,Hundwil,23819,12,0
+Hundwil,2019,19489,Hundwil,19489,12,0
+Hundwil,2020,20698,Hundwil,20029,10,NA
+Hundwil,2021,28868,Hundwil,28868,12,0
+Hundwil,2022,28874,Hundwil,28874,12,0
+Hundwil,2023,26528,Hundwil,26528,12,0
+Hundwil,2024,23848,Hundwil,23848,12,0
+Hundwil,2025,24077,Hundwil,24077,12,0
+Hundwil,2026,NA,Hundwil,5815,3,NA
+Gais,2013,16092,Gais,16092,12,0
+Gais,2014,15622,Gais,15622,12,0
+Gais,2015,14055,Gais,14055,12,0
+Gais,2016,14232,Gais,14232,12,0
+Gais,2017,13382,Gais,13382,12,0
+Gais,2018,13217,Gais,13217,12,0
+Gais,2019,12456,Gais,12456,12,0
+Gais,2020,9989,Gais,9989,12,0
+Gais,2021,11010,Gais,11010,12,0
+Gais,2022,11278,Gais,11278,12,0
+Gais,2023,13164,Gais,13164,12,0
+Gais,2024,11530,Gais,11530,12,0
+Gais,2025,11504,Gais,11504,12,0
+Gais,2026,NA,Gais,1798,3,NA
+Teufen (AR),2013,14965,Teufen (AR),14965,12,0
+Teufen (AR),2014,14702,Teufen (AR),14702,12,0
+Teufen (AR),2015,15102,Teufen (AR),15102,12,0
+Teufen (AR),2016,14565,Teufen (AR),14565,12,0
+Teufen (AR),2017,12526,Teufen (AR),12526,12,0
+Teufen (AR),2018,11138,Teufen (AR),11138,12,0
+Teufen (AR),2019,11220,Teufen (AR),11220,12,0
+Teufen (AR),2020,8256,Teufen (AR),8256,12,0
+Teufen (AR),2021,8807,Teufen (AR),8807,12,0
+Teufen (AR),2022,8362,Teufen (AR),8362,12,0
+Teufen (AR),2023,7589,Teufen (AR),7589,12,0
+Teufen (AR),2024,8857,Teufen (AR),8857,12,0
+Teufen (AR),2025,8008,Teufen (AR),8008,12,0
+Teufen (AR),2026,NA,Teufen (AR),1276,3,NA
+Heiden,2013,26192,Heiden,26192,12,0
+Heiden,2014,25719,Heiden,25719,12,0
+Heiden,2015,23728,Heiden,23728,12,0
+Heiden,2016,23451,Heiden,23451,12,0
+Heiden,2017,21163,Heiden,21163,12,0
+Heiden,2018,25678,Heiden,25678,12,0
+Heiden,2019,25898,Heiden,25898,12,0
+Heiden,2020,23907,Heiden,23907,11,NA
+Heiden,2021,35218,Heiden,35218,12,0
+Heiden,2022,21992,Heiden,21992,12,0
+Heiden,2023,29234,Heiden,29234,12,0
+Heiden,2024,29193,Heiden,29193,12,0
+Heiden,2025,28898,Heiden,28898,12,0
+Heiden,2026,NA,Heiden,5356,3,NA
+Appenzell,2013,49490,Appenzell,49490,12,0
+Appenzell,2014,54892,Appenzell,54892,12,0
+Appenzell,2015,48754,Appenzell,48754,12,0
+Appenzell,2016,49507,Appenzell,49507,12,0
+Appenzell,2017,49615,Appenzell,49615,12,0
+Appenzell,2018,50741,Appenzell,50741,12,0
+Appenzell,2019,50693,Appenzell,50693,12,0
+Appenzell,2020,51702,Appenzell,51702,12,0
+Appenzell,2021,53549,Appenzell,53549,12,0
+Appenzell,2022,50425,Appenzell,50425,12,0
+Appenzell,2023,49049,Appenzell,49049,12,0
+Appenzell,2024,49013,Appenzell,49013,12,0
+Appenzell,2025,48011,Appenzell,48011,12,0
+Appenzell,2026,NA,Appenzell,4545,3,NA
+Gonten,2013,11684,Gonten,11684,12,0
+Gonten,2014,10316,Gonten,10316,12,0
+Gonten,2015,10677,Gonten,10677,12,0
+Gonten,2016,12080,Gonten,12080,12,0
+Gonten,2017,11074,Gonten,11074,12,0
+Gonten,2018,10483,Gonten,10483,12,0
+Gonten,2019,11954,Gonten,11954,12,0
+Gonten,2020,15879,Gonten,15879,12,0
+Gonten,2021,19084,Gonten,19084,12,0
+Gonten,2022,19739,Gonten,19739,12,0
+Gonten,2023,20267,Gonten,20267,12,0
+Gonten,2024,23532,Gonten,23532,12,0
+Gonten,2025,22426,Gonten,22426,12,0
+Gonten,2026,NA,Gonten,5985,3,NA
+St. Gallen,2013,186108,St. Gallen,186108,12,0
+St. Gallen,2014,196323,St. Gallen,196323,12,0
+St. Gallen,2015,190616,St. Gallen,190616,12,0
+St. Gallen,2016,217180,St. Gallen,217180,12,0
+St. Gallen,2017,246559,St. Gallen,246559,12,0
+St. Gallen,2018,247478,St. Gallen,247478,12,0
+St. Gallen,2019,244035,St. Gallen,244035,12,0
+St. Gallen,2020,145369,St. Gallen,145369,12,0
+St. Gallen,2021,187058,St. Gallen,187058,12,0
+St. Gallen,2022,265651,St. Gallen,265651,12,0
+St. Gallen,2023,293745,St. Gallen,293745,12,0
+St. Gallen,2024,304036,St. Gallen,304036,12,0
+St. Gallen,2025,310568,St. Gallen,310568,12,0
+St. Gallen,2026,NA,St. Gallen,64628,3,NA
+Rorschacherberg,2013,26729,Rorschacherberg,26729,12,0
+Rorschacherberg,2014,30491,Rorschacherberg,30491,12,0
+Rorschacherberg,2015,29751,Rorschacherberg,29751,12,0
+Rorschacherberg,2016,28448,Rorschacherberg,28448,12,0
+Rorschacherberg,2017,26152,Rorschacherberg,26152,12,0
+Rorschacherberg,2018,29840,Rorschacherberg,29840,12,0
+Rorschacherberg,2019,29123,Rorschacherberg,29123,12,0
+Rorschacherberg,2020,27191,Rorschacherberg,27191,12,0
+Rorschacherberg,2021,33157,Rorschacherberg,33157,12,0
+Rorschacherberg,2022,31280,Rorschacherberg,31280,12,0
+Rorschacherberg,2023,30405,Rorschacherberg,30405,12,0
+Rorschacherberg,2024,29073,Rorschacherberg,29073,12,0
+Rorschacherberg,2025,30145,Rorschacherberg,30145,12,0
+Rorschacherberg,2026,NA,Rorschacherberg,4649,3,NA
+Altstätten,2013,17139,Altstätten,17139,12,0
+Altstätten,2014,15912,Altstätten,15912,12,0
+Altstätten,2015,11375,Altstätten,11375,12,0
+Altstätten,2016,12546,Altstätten,12546,12,0
+Altstätten,2017,10976,Altstätten,10976,12,0
+Altstätten,2018,11255,Altstätten,11255,12,0
+Altstätten,2019,9952,Altstätten,9952,12,0
+Altstätten,2020,5491,Altstätten,5491,12,0
+Altstätten,2021,6160,Altstätten,6160,12,0
+Altstätten,2022,11619,Altstätten,11619,12,0
+Altstätten,2023,14483,Altstätten,14483,12,0
+Altstätten,2024,11259,Altstätten,11259,12,0
+Altstätten,2025,14020,Altstätten,14020,12,0
+Altstätten,2026,NA,Altstätten,2956,3,NA
+Buchs (SG),2013,20163,Buchs (SG),20163,12,0
+Buchs (SG),2014,20931,Buchs (SG),20931,12,0
+Buchs (SG),2015,19270,Buchs (SG),19270,12,0
+Buchs (SG),2016,18809,Buchs (SG),18809,12,0
+Buchs (SG),2017,18841,Buchs (SG),18841,12,0
+Buchs (SG),2018,19549,Buchs (SG),19549,12,0
+Buchs (SG),2019,22195,Buchs (SG),22195,12,0
+Buchs (SG),2020,11364,Buchs (SG),11364,12,0
+Buchs (SG),2021,31894,Buchs (SG),31894,12,0
+Buchs (SG),2022,34605,Buchs (SG),34605,12,0
+Buchs (SG),2023,32877,Buchs (SG),32877,12,0
+Buchs (SG),2024,32716,Buchs (SG),32716,12,0
+Buchs (SG),2025,39313,Buchs (SG),39313,12,0
+Buchs (SG),2026,NA,Buchs (SG),8766,3,NA
+Bad Ragaz,2013,170536,Bad Ragaz,170536,12,0
+Bad Ragaz,2014,168931,Bad Ragaz,168931,12,0
+Bad Ragaz,2015,158524,Bad Ragaz,158524,12,0
+Bad Ragaz,2016,154036,Bad Ragaz,154036,12,0
+Bad Ragaz,2017,150029,Bad Ragaz,150029,12,0
+Bad Ragaz,2018,152497,Bad Ragaz,152497,12,0
+Bad Ragaz,2019,141626,Bad Ragaz,141626,12,0
+Bad Ragaz,2020,123354,Bad Ragaz,123354,12,0
+Bad Ragaz,2021,154289,Bad Ragaz,154289,12,0
+Bad Ragaz,2022,158596,Bad Ragaz,158596,12,0
+Bad Ragaz,2023,156942,Bad Ragaz,156942,12,0
+Bad Ragaz,2024,147321,Bad Ragaz,147321,12,0
+Bad Ragaz,2025,152288,Bad Ragaz,152288,12,0
+Bad Ragaz,2026,NA,Bad Ragaz,34523,3,NA
+Flums,2013,40037,Flums,40037,12,0
+Flums,2014,31376,Flums,31376,12,0
+Flums,2015,27603,Flums,27603,12,0
+Flums,2016,25380,Flums,25380,12,0
+Flums,2017,23288,Flums,23288,12,0
+Flums,2018,25582,Flums,25582,12,0
+Flums,2019,20681,Flums,20681,12,0
+Flums,2020,14865,Flums,14865,12,0
+Flums,2021,16678,Flums,16678,12,0
+Flums,2022,18682,Flums,18682,12,0
+Flums,2023,21159,Flums,21159,12,0
+Flums,2024,21295,Flums,21295,12,0
+Flums,2025,21792,Flums,21792,12,0
+Flums,2026,NA,Flums,9328,3,NA
+Quarten,2013,91042,Quarten,91042,12,0
+Quarten,2014,82505,Quarten,82505,12,0
+Quarten,2015,77024,Quarten,77024,12,0
+Quarten,2016,55450,Quarten,55450,12,0
+Quarten,2017,39057,Quarten,39057,12,0
+Quarten,2018,31834,Quarten,31834,12,0
+Quarten,2019,38141,Quarten,38141,12,0
+Quarten,2020,31772,Quarten,31772,12,0
+Quarten,2021,45089,Quarten,45089,12,0
+Quarten,2022,59260,Quarten,59260,12,0
+Quarten,2023,58559,Quarten,58559,12,0
+Quarten,2024,61001,Quarten,61001,12,0
+Quarten,2025,58852,Quarten,58852,12,0
+Quarten,2026,NA,Quarten,15576,3,NA
+Walenstadt,2013,14195,Walenstadt,14195,12,0
+Walenstadt,2014,14978,Walenstadt,14978,12,0
+Walenstadt,2015,13196,Walenstadt,13196,12,0
+Walenstadt,2016,10560,Walenstadt,10560,12,0
+Walenstadt,2017,15281,Walenstadt,15281,12,0
+Walenstadt,2018,16486,Walenstadt,16486,12,0
+Walenstadt,2019,12429,Walenstadt,12429,12,0
+Walenstadt,2020,9150,Walenstadt,9150,12,0
+Walenstadt,2021,11151,Walenstadt,11151,12,0
+Walenstadt,2022,11835,Walenstadt,11835,12,0
+Walenstadt,2023,9876,Walenstadt,9876,12,0
+Walenstadt,2024,11705,Walenstadt,11705,12,0
+Walenstadt,2025,10186,Walenstadt,10186,12,0
+Walenstadt,2026,NA,Walenstadt,1758,3,NA
+Amden,2013,21076,Amden,21076,12,0
+Amden,2014,20701,Amden,20701,12,0
+Amden,2015,17858,Amden,17858,12,0
+Amden,2016,13917,Amden,13917,12,0
+Amden,2017,16885,Amden,16885,12,0
+Amden,2018,17119,Amden,17119,12,0
+Amden,2019,18783,Amden,18783,12,0
+Amden,2020,15363,Amden,15363,12,0
+Amden,2021,16826,Amden,16826,12,0
+Amden,2022,19740,Amden,19740,12,0
+Amden,2023,18991,Amden,18991,12,0
+Amden,2024,20354,Amden,20354,12,0
+Amden,2025,19925,Amden,19925,12,0
+Amden,2026,NA,Amden,3079,3,NA
+Rapperswil-Jona,2013,38370,Rapperswil-Jona,38370,12,0
+Rapperswil-Jona,2014,39460,Rapperswil-Jona,39460,12,0
+Rapperswil-Jona,2015,36265,Rapperswil-Jona,36265,12,0
+Rapperswil-Jona,2016,36135,Rapperswil-Jona,36135,12,0
+Rapperswil-Jona,2017,29264,Rapperswil-Jona,29264,12,0
+Rapperswil-Jona,2018,26607,Rapperswil-Jona,26607,12,0
+Rapperswil-Jona,2019,26003,Rapperswil-Jona,26003,12,0
+Rapperswil-Jona,2020,14110,Rapperswil-Jona,13732,10,NA
+Rapperswil-Jona,2021,16655,Rapperswil-Jona,16655,12,0
+Rapperswil-Jona,2022,37288,Rapperswil-Jona,37288,12,0
+Rapperswil-Jona,2023,40656,Rapperswil-Jona,40656,12,0
+Rapperswil-Jona,2024,41636,Rapperswil-Jona,41636,12,0
+Rapperswil-Jona,2025,40357,Rapperswil-Jona,40357,12,0
+Rapperswil-Jona,2026,NA,Rapperswil-Jona,9064,3,NA
+Eschenbach (SG),2013,3605,Eschenbach (SG),3605,12,0
+Eschenbach (SG),2014,2735,Eschenbach (SG),2735,12,0
+Eschenbach (SG),2015,2050,Eschenbach (SG),2050,12,0
+Eschenbach (SG),2016,1814,Eschenbach (SG),1814,12,0
+Eschenbach (SG),2017,1640,Eschenbach (SG),1640,12,0
+Eschenbach (SG),2018,2484,Eschenbach (SG),2484,12,0
+Eschenbach (SG),2019,2646,Eschenbach (SG),2646,12,0
+Eschenbach (SG),2020,1720,Eschenbach (SG),1720,12,0
+Eschenbach (SG),2021,2365,Eschenbach (SG),2365,12,0
+Eschenbach (SG),2022,2575,Eschenbach (SG),2575,12,0
+Eschenbach (SG),2023,2310,Eschenbach (SG),2310,12,0
+Eschenbach (SG),2024,1949,Eschenbach (SG),1949,12,0
+Eschenbach (SG),2025,2070,Eschenbach (SG),2070,12,0
+Eschenbach (SG),2026,NA,Eschenbach (SG),483,3,NA
+Wildhaus-Alt St. Johann,2013,98919,Wildhaus-Alt St. Johann,98919,12,0
+Wildhaus-Alt St. Johann,2014,98645,Wildhaus-Alt St. Johann,98645,12,0
+Wildhaus-Alt St. Johann,2015,88852,Wildhaus-Alt St. Johann,88852,12,0
+Wildhaus-Alt St. Johann,2016,89086,Wildhaus-Alt St. Johann,89086,12,0
+Wildhaus-Alt St. Johann,2017,81811,Wildhaus-Alt St. Johann,81811,12,0
+Wildhaus-Alt St. Johann,2018,85965,Wildhaus-Alt St. Johann,85965,12,0
+Wildhaus-Alt St. Johann,2019,86823,Wildhaus-Alt St. Johann,86823,12,0
+Wildhaus-Alt St. Johann,2020,74070,Wildhaus-Alt St. Johann,74070,12,0
+Wildhaus-Alt St. Johann,2021,81555,Wildhaus-Alt St. Johann,81555,12,0
+Wildhaus-Alt St. Johann,2022,88190,Wildhaus-Alt St. Johann,88190,12,0
+Wildhaus-Alt St. Johann,2023,96343,Wildhaus-Alt St. Johann,96343,12,0
+Wildhaus-Alt St. Johann,2024,93468,Wildhaus-Alt St. Johann,93468,12,0
+Wildhaus-Alt St. Johann,2025,89077,Wildhaus-Alt St. Johann,89077,12,0
+Wildhaus-Alt St. Johann,2026,NA,Wildhaus-Alt St. Johann,27900,3,NA
+Neckertal,2013,NA,Neckertal,0,0,NA
+Neckertal,2014,NA,Neckertal,0,0,NA
+Neckertal,2015,NA,Neckertal,0,0,NA
+Neckertal,2016,NA,Neckertal,0,0,NA
+Neckertal,2017,NA,Neckertal,0,0,NA
+Neckertal,2018,NA,Neckertal,0,0,NA
+Neckertal,2019,NA,Neckertal,0,0,NA
+Neckertal,2020,NA,Neckertal,0,0,NA
+Neckertal,2021,NA,Neckertal,0,0,NA
+Neckertal,2022,NA,Neckertal,0,0,NA
+Neckertal,2023,16163,Neckertal,16163,12,0
+Neckertal,2024,19971,Neckertal,19971,12,0
+Neckertal,2025,20723,Neckertal,20723,12,0
+Neckertal,2026,NA,Neckertal,3035,3,NA
+Uzwil,2013,41021,Uzwil,41021,12,0
+Uzwil,2014,45813,Uzwil,45813,12,0
+Uzwil,2015,44400,Uzwil,44400,12,0
+Uzwil,2016,45870,Uzwil,45870,12,0
+Uzwil,2017,43829,Uzwil,43829,12,0
+Uzwil,2018,46460,Uzwil,46460,12,0
+Uzwil,2019,43844,Uzwil,43844,12,0
+Uzwil,2020,25167,Uzwil,25167,12,0
+Uzwil,2021,28283,Uzwil,28283,12,0
+Uzwil,2022,38865,Uzwil,38865,12,0
+Uzwil,2023,37719,Uzwil,37719,12,0
+Uzwil,2024,38835,Uzwil,38835,12,0
+Uzwil,2025,42767,Uzwil,42767,12,0
+Uzwil,2026,NA,Uzwil,9316,3,NA
+Wil (SG),2013,15266,Wil (SG),15266,12,0
+Wil (SG),2014,18391,Wil (SG),18391,12,0
+Wil (SG),2015,19569,Wil (SG),19569,12,0
+Wil (SG),2016,19675,Wil (SG),19675,12,0
+Wil (SG),2017,17786,Wil (SG),17786,12,0
+Wil (SG),2018,16053,Wil (SG),16053,12,0
+Wil (SG),2019,13659,Wil (SG),13659,12,0
+Wil (SG),2020,16191,Wil (SG),16191,12,0
+Wil (SG),2021,28078,Wil (SG),28078,12,0
+Wil (SG),2022,29528,Wil (SG),29528,12,0
+Wil (SG),2023,34256,Wil (SG),34256,12,0
+Wil (SG),2024,34450,Wil (SG),34450,12,0
+Wil (SG),2025,35802,Wil (SG),35802,12,0
+Wil (SG),2026,NA,Wil (SG),8456,3,NA
+Vaz/Obervaz,2013,211821,Vaz/Obervaz,211821,12,0
+Vaz/Obervaz,2014,210005,Vaz/Obervaz,210005,12,0
+Vaz/Obervaz,2015,202847,Vaz/Obervaz,202847,12,0
+Vaz/Obervaz,2016,208524,Vaz/Obervaz,208524,12,0
+Vaz/Obervaz,2017,225137,Vaz/Obervaz,225137,12,0
+Vaz/Obervaz,2018,255975,Vaz/Obervaz,255975,12,0
+Vaz/Obervaz,2019,258566,Vaz/Obervaz,258566,12,0
+Vaz/Obervaz,2020,286260,Vaz/Obervaz,281083,10,NA
+Vaz/Obervaz,2021,300977,Vaz/Obervaz,300977,12,0
+Vaz/Obervaz,2022,269326,Vaz/Obervaz,269326,12,0
+Vaz/Obervaz,2023,255532,Vaz/Obervaz,255532,12,0
+Vaz/Obervaz,2024,263555,Vaz/Obervaz,263555,12,0
+Vaz/Obervaz,2025,248878,Vaz/Obervaz,248878,12,0
+Vaz/Obervaz,2026,NA,Vaz/Obervaz,95488,3,NA
+Surses,2013,NA,Surses,0,0,NA
+Surses,2014,NA,Surses,0,0,NA
+Surses,2015,NA,Surses,0,0,NA
+Surses,2016,61995,Surses,61995,12,0
+Surses,2017,61987,Surses,61987,12,0
+Surses,2018,65446,Surses,65446,12,0
+Surses,2019,56394,Surses,56394,12,0
+Surses,2020,44216,Surses,44216,12,0
+Surses,2021,51783,Surses,51783,12,0
+Surses,2022,69211,Surses,69211,12,0
+Surses,2023,62027,Surses,62027,12,0
+Surses,2024,69864,Surses,69864,12,0
+Surses,2025,74406,Surses,74406,12,0
+Surses,2026,NA,Surses,32863,3,NA
+Poschiavo,2013,47497,Poschiavo,47497,12,0
+Poschiavo,2014,48151,Poschiavo,48151,12,0
+Poschiavo,2015,43688,Poschiavo,43688,12,0
+Poschiavo,2016,45976,Poschiavo,45976,12,0
+Poschiavo,2017,44428,Poschiavo,44428,12,0
+Poschiavo,2018,51016,Poschiavo,51016,12,0
+Poschiavo,2019,55836,Poschiavo,55836,12,0
+Poschiavo,2020,57418,Poschiavo,57418,12,0
+Poschiavo,2021,75672,Poschiavo,75672,12,0
+Poschiavo,2022,71400,Poschiavo,71400,12,0
+Poschiavo,2023,76211,Poschiavo,76211,12,0
+Poschiavo,2024,71680,Poschiavo,71680,12,0
+Poschiavo,2025,77245,Poschiavo,77245,12,0
+Poschiavo,2026,NA,Poschiavo,18248,3,NA
+Laax,2013,187365,Laax,187365,12,0
+Laax,2014,178797,Laax,178797,12,0
+Laax,2015,165112,Laax,165112,12,0
+Laax,2016,162325,Laax,162325,12,0
+Laax,2017,181643,Laax,181643,12,0
+Laax,2018,187911,Laax,187911,12,0
+Laax,2019,192346,Laax,192346,12,0
+Laax,2020,198852,Laax,198852,12,0
+Laax,2021,297584,Laax,297584,12,0
+Laax,2022,278037,Laax,278037,12,0
+Laax,2023,246745,Laax,246745,12,0
+Laax,2024,254402,Laax,254402,12,0
+Laax,2025,275818,Laax,275818,12,0
+Laax,2026,NA,Laax,132095,3,NA
+Vals,2013,74441,Vals,74441,12,0
+Vals,2014,61028,Vals,61028,12,0
+Vals,2015,50963,Vals,50963,12,0
+Vals,2016,44924,Vals,44924,12,0
+Vals,2017,49464,Vals,49464,12,0
+Vals,2018,62856,Vals,62856,12,0
+Vals,2019,66315,Vals,66315,12,0
+Vals,2020,70637,Vals,70637,12,0
+Vals,2021,86132,Vals,86132,12,0
+Vals,2022,74108,Vals,74108,12,0
+Vals,2023,67815,Vals,67815,12,0
+Vals,2024,65426,Vals,65426,12,0
+Vals,2025,64148,Vals,64148,12,0
+Vals,2026,NA,Vals,19393,3,NA
+Lumnezia,2013,8018,Lumnezia,8018,12,0
+Lumnezia,2014,7484,Lumnezia,7484,12,0
+Lumnezia,2015,6506,Lumnezia,6506,12,0
+Lumnezia,2016,7204,Lumnezia,7204,12,0
+Lumnezia,2017,7538,Lumnezia,7538,12,0
+Lumnezia,2018,8378,Lumnezia,8378,12,0
+Lumnezia,2019,9874,Lumnezia,9874,12,0
+Lumnezia,2020,11966,Lumnezia,11714,10,NA
+Lumnezia,2021,14419,Lumnezia,14419,12,0
+Lumnezia,2022,13215,Lumnezia,13215,12,0
+Lumnezia,2023,10619,Lumnezia,10619,12,0
+Lumnezia,2024,12150,Lumnezia,12150,12,0
+Lumnezia,2025,9463,Lumnezia,9463,12,0
+Lumnezia,2026,NA,Lumnezia,3483,3,NA
+Ilanz/Glion,2013,NA,Ilanz/Glion,0,0,NA
+Ilanz/Glion,2014,10977,Ilanz/Glion,10977,12,0
+Ilanz/Glion,2015,11748,Ilanz/Glion,11748,12,0
+Ilanz/Glion,2016,22269,Ilanz/Glion,22269,12,0
+Ilanz/Glion,2017,20574,Ilanz/Glion,20574,12,0
+Ilanz/Glion,2018,21418,Ilanz/Glion,21418,12,0
+Ilanz/Glion,2019,24502,Ilanz/Glion,24502,12,0
+Ilanz/Glion,2020,19793,Ilanz/Glion,19793,12,0
+Ilanz/Glion,2021,19740,Ilanz/Glion,19740,12,0
+Ilanz/Glion,2022,23629,Ilanz/Glion,23629,12,0
+Ilanz/Glion,2023,24053,Ilanz/Glion,24053,12,0
+Ilanz/Glion,2024,22667,Ilanz/Glion,22667,12,0
+Ilanz/Glion,2025,25881,Ilanz/Glion,25881,12,0
+Ilanz/Glion,2026,NA,Ilanz/Glion,7517,3,NA
+Rheinwald,2013,NA,Rheinwald,0,0,NA
+Rheinwald,2014,NA,Rheinwald,0,0,NA
+Rheinwald,2015,NA,Rheinwald,0,0,NA
+Rheinwald,2016,NA,Rheinwald,0,0,NA
+Rheinwald,2017,NA,Rheinwald,0,0,NA
+Rheinwald,2018,NA,Rheinwald,0,0,NA
+Rheinwald,2019,20801,Rheinwald,20801,12,0
+Rheinwald,2020,18089,Rheinwald,17729,10,NA
+Rheinwald,2021,21501,Rheinwald,21501,12,0
+Rheinwald,2022,19409,Rheinwald,19409,12,0
+Rheinwald,2023,18584,Rheinwald,18584,12,0
+Rheinwald,2024,19189,Rheinwald,19189,12,0
+Rheinwald,2025,17413,Rheinwald,17413,12,0
+Rheinwald,2026,NA,Rheinwald,5830,3,NA
+Flims,2013,177239,Flims,177239,12,0
+Flims,2014,176186,Flims,176186,12,0
+Flims,2015,160589,Flims,160589,12,0
+Flims,2016,148779,Flims,148779,12,0
+Flims,2017,153374,Flims,153374,12,0
+Flims,2018,170950,Flims,170950,12,0
+Flims,2019,199743,Flims,199743,12,0
+Flims,2020,231749,Flims,231749,12,0
+Flims,2021,243033,Flims,243033,12,0
+Flims,2022,239623,Flims,239623,12,0
+Flims,2023,204078,Flims,204078,12,0
+Flims,2024,194020,Flims,194020,12,0
+Flims,2025,194963,Flims,194963,12,0
+Flims,2026,NA,Flims,71360,3,NA
+Zernez,2013,63417,Zernez,63417,12,0
+Zernez,2014,72792,Zernez,72792,12,0
+Zernez,2015,66782,Zernez,66782,12,0
+Zernez,2016,72158,Zernez,72158,12,0
+Zernez,2017,64264,Zernez,64264,12,0
+Zernez,2018,64800,Zernez,64800,12,0
+Zernez,2019,66809,Zernez,66809,12,0
+Zernez,2020,71004,Zernez,71004,12,0
+Zernez,2021,75172,Zernez,75172,12,0
+Zernez,2022,67747,Zernez,67747,12,0
+Zernez,2023,69210,Zernez,69210,12,0
+Zernez,2024,69849,Zernez,69849,12,0
+Zernez,2025,74289,Zernez,74289,12,0
+Zernez,2026,NA,Zernez,16133,3,NA
+Samnaun,2013,165285,Samnaun,165285,12,0
+Samnaun,2014,161515,Samnaun,161515,12,0
+Samnaun,2015,164316,Samnaun,164316,12,0
+Samnaun,2016,160653,Samnaun,160653,12,0
+Samnaun,2017,160225,Samnaun,160225,12,0
+Samnaun,2018,165680,Samnaun,165680,12,0
+Samnaun,2019,163144,Samnaun,163144,12,0
+Samnaun,2020,145263,Samnaun,145263,12,0
+Samnaun,2021,166225,Samnaun,166225,12,0
+Samnaun,2022,155643,Samnaun,155643,12,0
+Samnaun,2023,154911,Samnaun,154911,12,0
+Samnaun,2024,157719,Samnaun,157719,12,0
+Samnaun,2025,158348,Samnaun,158348,12,0
+Samnaun,2026,NA,Samnaun,74956,3,NA
+Scuol,2013,175988,Scuol,175988,12,0
+Scuol,2014,174210,Scuol,174210,12,0
+Scuol,2015,279919,Scuol,279919,12,0
+Scuol,2016,249061,Scuol,249061,12,0
+Scuol,2017,250701,Scuol,250701,12,0
+Scuol,2018,245907,Scuol,245907,12,0
+Scuol,2019,249152,Scuol,249152,12,0
+Scuol,2020,263927,Scuol,263927,12,0
+Scuol,2021,271306,Scuol,271306,12,0
+Scuol,2022,263553,Scuol,263553,12,0
+Scuol,2023,250306,Scuol,250306,12,0
+Scuol,2024,260041,Scuol,260041,12,0
+Scuol,2025,266633,Scuol,266633,12,0
+Scuol,2026,NA,Scuol,90172,3,NA
+Celerina/Schlarigna,2013,122737,Celerina/Schlarigna,122737,12,0
+Celerina/Schlarigna,2014,119408,Celerina/Schlarigna,119408,12,0
+Celerina/Schlarigna,2015,106331,Celerina/Schlarigna,106331,12,0
+Celerina/Schlarigna,2016,107797,Celerina/Schlarigna,107797,12,0
+Celerina/Schlarigna,2017,105176,Celerina/Schlarigna,105176,12,0
+Celerina/Schlarigna,2018,101393,Celerina/Schlarigna,101393,12,0
+Celerina/Schlarigna,2019,104541,Celerina/Schlarigna,104541,12,0
+Celerina/Schlarigna,2020,108170,Celerina/Schlarigna,108170,12,0
+Celerina/Schlarigna,2021,109548,Celerina/Schlarigna,109548,12,0
+Celerina/Schlarigna,2022,104839,Celerina/Schlarigna,104839,12,0
+Celerina/Schlarigna,2023,113869,Celerina/Schlarigna,113869,12,0
+Celerina/Schlarigna,2024,119055,Celerina/Schlarigna,119055,12,0
+Celerina/Schlarigna,2025,119197,Celerina/Schlarigna,119197,12,0
+Celerina/Schlarigna,2026,NA,Celerina/Schlarigna,41519,3,NA
+Pontresina,2013,321945,Pontresina,321945,12,0
+Pontresina,2014,329839,Pontresina,329839,12,0
+Pontresina,2015,322175,Pontresina,322175,12,0
+Pontresina,2016,295056,Pontresina,295056,12,0
+Pontresina,2017,297985,Pontresina,297985,12,0
+Pontresina,2018,328113,Pontresina,328113,12,0
+Pontresina,2019,304202,Pontresina,304202,12,0
+Pontresina,2020,304733,Pontresina,302809,10,NA
+Pontresina,2021,332983,Pontresina,332983,12,0
+Pontresina,2022,341247,Pontresina,341247,12,0
+Pontresina,2023,347049,Pontresina,347049,12,0
+Pontresina,2024,381487,Pontresina,381487,12,0
+Pontresina,2025,403332,Pontresina,403332,12,0
+Pontresina,2026,NA,Pontresina,141025,3,NA
+Samedan,2013,52767,Samedan,52767,12,0
+Samedan,2014,49817,Samedan,49817,12,0
+Samedan,2015,43094,Samedan,43094,12,0
+Samedan,2016,47005,Samedan,47005,12,0
+Samedan,2017,51651,Samedan,51651,12,0
+Samedan,2018,53480,Samedan,53480,12,0
+Samedan,2019,52603,Samedan,52603,12,0
+Samedan,2020,44965,Samedan,44965,12,0
+Samedan,2021,43396,Samedan,43396,12,0
+Samedan,2022,51652,Samedan,51652,12,0
+Samedan,2023,45084,Samedan,45084,12,0
+Samedan,2024,42880,Samedan,42880,12,0
+Samedan,2025,52632,Samedan,52632,12,0
+Samedan,2026,NA,Samedan,13312,3,NA
+St. Moritz,2013,679060,St. Moritz,679060,12,0
+St. Moritz,2014,669244,St. Moritz,669244,12,0
+St. Moritz,2015,599734,St. Moritz,599734,12,0
+St. Moritz,2016,610740,St. Moritz,610740,12,0
+St. Moritz,2017,666054,St. Moritz,666054,12,0
+St. Moritz,2018,712844,St. Moritz,712844,12,0
+St. Moritz,2019,752409,St. Moritz,752409,12,0
+St. Moritz,2020,574003,St. Moritz,574003,12,0
+St. Moritz,2021,586198,St. Moritz,586198,12,0
+St. Moritz,2022,788114,St. Moritz,788114,12,0
+St. Moritz,2023,783253,St. Moritz,783253,12,0
+St. Moritz,2024,768053,St. Moritz,768053,12,0
+St. Moritz,2025,799655,St. Moritz,799655,12,0
+St. Moritz,2026,NA,St. Moritz,321918,3,NA
+Bregaglia,2013,36615,Bregaglia,36615,12,0
+Bregaglia,2014,40062,Bregaglia,40062,12,0
+Bregaglia,2015,41439,Bregaglia,41439,12,0
+Bregaglia,2016,41504,Bregaglia,41504,12,0
+Bregaglia,2017,43606,Bregaglia,43606,12,0
+Bregaglia,2018,42386,Bregaglia,42386,12,0
+Bregaglia,2019,42157,Bregaglia,42157,12,0
+Bregaglia,2020,53903,Bregaglia,53903,12,0
+Bregaglia,2021,61249,Bregaglia,61249,12,0
+Bregaglia,2022,59814,Bregaglia,59814,12,0
+Bregaglia,2023,52624,Bregaglia,52624,12,0
+Bregaglia,2024,54029,Bregaglia,54029,12,0
+Bregaglia,2025,55546,Bregaglia,55546,12,0
+Bregaglia,2026,NA,Bregaglia,15770,3,NA
+Val Müstair,2013,49470,Val Müstair,49470,12,0
+Val Müstair,2014,49333,Val Müstair,49333,12,0
+Val Müstair,2015,44304,Val Müstair,44304,12,0
+Val Müstair,2016,40378,Val Müstair,40378,12,0
+Val Müstair,2017,41305,Val Müstair,41305,12,0
+Val Müstair,2018,44259,Val Müstair,44259,12,0
+Val Müstair,2019,47833,Val Müstair,47833,12,0
+Val Müstair,2020,56882,Val Müstair,56882,12,0
+Val Müstair,2021,65298,Val Müstair,65298,12,0
+Val Müstair,2022,54721,Val Müstair,54721,12,0
+Val Müstair,2023,54774,Val Müstair,54774,12,0
+Val Müstair,2024,54202,Val Müstair,54202,12,0
+Val Müstair,2025,56076,Val Müstair,56076,12,0
+Val Müstair,2026,NA,Val Müstair,12452,3,NA
+Davos,2013,825545,Davos,825545,12,0
+Davos,2014,831360,Davos,831360,12,0
+Davos,2015,797348,Davos,797348,12,0
+Davos,2016,798062,Davos,798062,12,0
+Davos,2017,882048,Davos,882048,12,0
+Davos,2018,907363,Davos,907363,12,0
+Davos,2019,915180,Davos,915180,12,0
+Davos,2020,670995,Davos,670995,12,0
+Davos,2021,706743,Davos,706743,12,0
+Davos,2022,830116,Davos,830116,12,0
+Davos,2023,810299,Davos,810299,12,0
+Davos,2024,820728,Davos,820728,12,0
+Davos,2025,811462,Davos,811462,12,0
+Davos,2026,NA,Davos,295436,3,NA
+Klosters,2013,162416,Klosters,162416,12,0
+Klosters,2014,144490,Klosters,144490,12,0
+Klosters,2015,128053,Klosters,128053,12,0
+Klosters,2016,119646,Klosters,119646,12,0
+Klosters,2017,130716,Klosters,130716,12,0
+Klosters,2018,139951,Klosters,139951,12,0
+Klosters,2019,140465,Klosters,140465,12,0
+Klosters,2020,119049,Klosters,119049,12,0
+Klosters,2021,129878,Klosters,129878,12,0
+Klosters,2022,150036,Klosters,150036,12,0
+Klosters,2023,140162,Klosters,140162,12,0
+Klosters,2024,150865,Klosters,150865,12,0
+Klosters,2025,169081,Klosters,169081,12,0
+Klosters,2026,NA,Klosters,55283,3,NA
+Chur,2013,164638,Chur,164638,12,0
+Chur,2014,164389,Chur,164389,12,0
+Chur,2015,152629,Chur,152629,12,0
+Chur,2016,155280,Chur,155280,12,0
+Chur,2017,169666,Chur,169666,12,0
+Chur,2018,178449,Chur,178449,12,0
+Chur,2019,194257,Chur,194257,12,0
+Chur,2020,108082,Chur,108082,12,0
+Chur,2021,130793,Chur,130793,12,0
+Chur,2022,191798,Chur,191798,12,0
+Chur,2023,212188,Chur,212188,12,0
+Chur,2024,231708,Chur,231708,12,0
+Chur,2025,256175,Chur,256175,12,0
+Chur,2026,NA,Chur,62440,3,NA
+Arosa,2013,422588,Arosa,422588,12,0
+Arosa,2014,410801,Arosa,410801,12,0
+Arosa,2015,371894,Arosa,371894,12,0
+Arosa,2016,362761,Arosa,362761,12,0
+Arosa,2017,349973,Arosa,349973,12,0
+Arosa,2018,371777,Arosa,371777,12,0
+Arosa,2019,384017,Arosa,384017,12,0
+Arosa,2020,369506,Arosa,369506,12,0
+Arosa,2021,359914,Arosa,359914,12,0
+Arosa,2022,402592,Arosa,402592,12,0
+Arosa,2023,403516,Arosa,403516,12,0
+Arosa,2024,430599,Arosa,430599,12,0
+Arosa,2025,418711,Arosa,418711,12,0
+Arosa,2026,NA,Arosa,203756,3,NA
+Maienfeld,2013,26629,Maienfeld,26629,12,0
+Maienfeld,2014,24588,Maienfeld,24588,12,0
+Maienfeld,2015,28619,Maienfeld,28619,12,0
+Maienfeld,2016,28806,Maienfeld,28806,12,0
+Maienfeld,2017,33341,Maienfeld,33341,12,0
+Maienfeld,2018,37522,Maienfeld,37522,12,0
+Maienfeld,2019,35358,Maienfeld,35358,12,0
+Maienfeld,2020,22020,Maienfeld,22020,12,0
+Maienfeld,2021,23868,Maienfeld,23868,12,0
+Maienfeld,2022,30691,Maienfeld,30691,12,0
+Maienfeld,2023,32835,Maienfeld,32835,12,0
+Maienfeld,2024,38078,Maienfeld,38078,12,0
+Maienfeld,2025,37671,Maienfeld,37671,12,0
+Maienfeld,2026,NA,Maienfeld,7359,3,NA
+Breil/Brigels,2013,36046,Breil/Brigels,36046,12,0
+Breil/Brigels,2014,31549,Breil/Brigels,31549,12,0
+Breil/Brigels,2015,28274,Breil/Brigels,28274,12,0
+Breil/Brigels,2016,23587,Breil/Brigels,23587,12,0
+Breil/Brigels,2017,24686,Breil/Brigels,24686,12,0
+Breil/Brigels,2018,40638,Breil/Brigels,40638,12,0
+Breil/Brigels,2019,45539,Breil/Brigels,45539,12,0
+Breil/Brigels,2020,50592,Breil/Brigels,50592,12,0
+Breil/Brigels,2021,54247,Breil/Brigels,54247,12,0
+Breil/Brigels,2022,44183,Breil/Brigels,44183,12,0
+Breil/Brigels,2023,39119,Breil/Brigels,39119,12,0
+Breil/Brigels,2024,36727,Breil/Brigels,36727,12,0
+Breil/Brigels,2025,44028,Breil/Brigels,44028,12,0
+Breil/Brigels,2026,NA,Breil/Brigels,13867,3,NA
+Tujetsch,2013,50254,Tujetsch,50254,12,0
+Tujetsch,2014,51354,Tujetsch,51354,12,0
+Tujetsch,2015,49633,Tujetsch,49633,12,0
+Tujetsch,2016,55195,Tujetsch,55195,12,0
+Tujetsch,2017,53024,Tujetsch,53024,12,0
+Tujetsch,2018,59620,Tujetsch,59620,12,0
+Tujetsch,2019,60899,Tujetsch,60899,12,0
+Tujetsch,2020,52192,Tujetsch,52192,12,0
+Tujetsch,2021,41393,Tujetsch,41393,12,0
+Tujetsch,2022,54559,Tujetsch,54559,12,0
+Tujetsch,2023,49968,Tujetsch,49968,12,0
+Tujetsch,2024,49058,Tujetsch,49058,12,0
+Tujetsch,2025,42718,Tujetsch,42718,12,0
+Tujetsch,2026,NA,Tujetsch,15405,3,NA
+Aarau,2013,39076,Aarau,39076,12,0
+Aarau,2014,37076,Aarau,37076,12,0
+Aarau,2015,39485,Aarau,39485,12,0
+Aarau,2016,38591,Aarau,38591,12,0
+Aarau,2017,41835,Aarau,41835,12,0
+Aarau,2018,41089,Aarau,41089,12,0
+Aarau,2019,37810,Aarau,37810,12,0
+Aarau,2020,15378,Aarau,15378,12,0
+Aarau,2021,18197,Aarau,18197,12,0
+Aarau,2022,28423,Aarau,28423,12,0
+Aarau,2023,33663,Aarau,33663,12,0
+Aarau,2024,31404,Aarau,31404,12,0
+Aarau,2025,35593,Aarau,35593,12,0
+Aarau,2026,NA,Aarau,8206,3,NA
+Baden,2013,70345,Baden,70345,12,0
+Baden,2014,69582,Baden,69582,12,0
+Baden,2015,87062,Baden,87062,12,0
+Baden,2016,94253,Baden,94253,12,0
+Baden,2017,99566,Baden,99566,12,0
+Baden,2018,110460,Baden,110460,12,0
+Baden,2019,115675,Baden,115675,12,0
+Baden,2020,46786,Baden,46786,12,0
+Baden,2021,62741,Baden,62741,12,0
+Baden,2022,106623,Baden,106623,12,0
+Baden,2023,128786,Baden,128786,12,0
+Baden,2024,124580,Baden,124580,12,0
+Baden,2025,123561,Baden,123561,12,0
+Baden,2026,NA,Baden,24636,3,NA
+Lenzburg,2013,28935,Lenzburg,28935,12,0
+Lenzburg,2014,29918,Lenzburg,29918,12,0
+Lenzburg,2015,29480,Lenzburg,29480,12,0
+Lenzburg,2016,33598,Lenzburg,33598,12,0
+Lenzburg,2017,34986,Lenzburg,34986,12,0
+Lenzburg,2018,37596,Lenzburg,37596,12,0
+Lenzburg,2019,42155,Lenzburg,42155,12,0
+Lenzburg,2020,20676,Lenzburg,18778,10,NA
+Lenzburg,2021,22466,Lenzburg,22466,12,0
+Lenzburg,2022,26748,Lenzburg,26748,12,0
+Lenzburg,2023,28176,Lenzburg,28176,12,0
+Lenzburg,2024,29879,Lenzburg,29879,12,0
+Lenzburg,2025,32269,Lenzburg,32269,12,0
+Lenzburg,2026,NA,Lenzburg,6478,3,NA
+Rheinfelden,2013,35650,Rheinfelden,35650,12,0
+Rheinfelden,2014,33200,Rheinfelden,33200,12,0
+Rheinfelden,2015,31101,Rheinfelden,31101,12,0
+Rheinfelden,2016,30910,Rheinfelden,30910,12,0
+Rheinfelden,2017,29872,Rheinfelden,29872,12,0
+Rheinfelden,2018,32910,Rheinfelden,32910,12,0
+Rheinfelden,2019,23669,Rheinfelden,23669,12,0
+Rheinfelden,2020,9618,Rheinfelden,9618,12,0
+Rheinfelden,2021,15343,Rheinfelden,15343,12,0
+Rheinfelden,2022,17920,Rheinfelden,17920,12,0
+Rheinfelden,2023,23390,Rheinfelden,23390,12,0
+Rheinfelden,2024,25136,Rheinfelden,25136,12,0
+Rheinfelden,2025,32993,Rheinfelden,32993,12,0
+Rheinfelden,2026,NA,Rheinfelden,6551,3,NA
+Zofingen,2013,21036,Zofingen,21036,12,0
+Zofingen,2014,20197,Zofingen,20197,12,0
+Zofingen,2015,21344,Zofingen,21344,12,0
+Zofingen,2016,19387,Zofingen,19387,12,0
+Zofingen,2017,19500,Zofingen,19500,12,0
+Zofingen,2018,18551,Zofingen,18551,12,0
+Zofingen,2019,17618,Zofingen,17618,12,0
+Zofingen,2020,8727,Zofingen,8727,12,0
+Zofingen,2021,13073,Zofingen,13073,12,0
+Zofingen,2022,17523,Zofingen,17523,12,0
+Zofingen,2023,18838,Zofingen,18838,12,0
+Zofingen,2024,23348,Zofingen,23348,12,0
+Zofingen,2025,24397,Zofingen,24397,12,0
+Zofingen,2026,NA,Zofingen,4621,3,NA
+Arbon,2013,36848,Arbon,36848,12,0
+Arbon,2014,34029,Arbon,34029,12,0
+Arbon,2015,32879,Arbon,32879,12,0
+Arbon,2016,32066,Arbon,32066,12,0
+Arbon,2017,24224,Arbon,24224,12,0
+Arbon,2018,27500,Arbon,27500,12,0
+Arbon,2019,26431,Arbon,26431,12,0
+Arbon,2020,21624,Arbon,21624,12,0
+Arbon,2021,29044,Arbon,29044,12,0
+Arbon,2022,33647,Arbon,33647,12,0
+Arbon,2023,34873,Arbon,34873,12,0
+Arbon,2024,42836,Arbon,42836,12,0
+Arbon,2025,41453,Arbon,41453,12,0
+Arbon,2026,NA,Arbon,6978,3,NA
+Frauenfeld,2013,29900,Frauenfeld,29900,12,0
+Frauenfeld,2014,31054,Frauenfeld,31054,12,0
+Frauenfeld,2015,36566,Frauenfeld,36566,12,0
+Frauenfeld,2016,37994,Frauenfeld,37994,12,0
+Frauenfeld,2017,33471,Frauenfeld,33471,12,0
+Frauenfeld,2018,37948,Frauenfeld,37948,12,0
+Frauenfeld,2019,41462,Frauenfeld,41462,12,0
+Frauenfeld,2020,30640,Frauenfeld,30640,12,0
+Frauenfeld,2021,33373,Frauenfeld,33373,12,0
+Frauenfeld,2022,33411,Frauenfeld,33411,12,0
+Frauenfeld,2023,36221,Frauenfeld,36221,12,0
+Frauenfeld,2024,31924,Frauenfeld,31924,12,0
+Frauenfeld,2025,32775,Frauenfeld,32775,12,0
+Frauenfeld,2026,NA,Frauenfeld,7633,3,NA
+Kreuzlingen,2013,44653,Kreuzlingen,44653,12,0
+Kreuzlingen,2014,47946,Kreuzlingen,47946,12,0
+Kreuzlingen,2015,46152,Kreuzlingen,46152,12,0
+Kreuzlingen,2016,47818,Kreuzlingen,47818,12,0
+Kreuzlingen,2017,52526,Kreuzlingen,52526,12,0
+Kreuzlingen,2018,54789,Kreuzlingen,54789,12,0
+Kreuzlingen,2019,50163,Kreuzlingen,50163,12,0
+Kreuzlingen,2020,34327,Kreuzlingen,34327,12,0
+Kreuzlingen,2021,35281,Kreuzlingen,35281,12,0
+Kreuzlingen,2022,42645,Kreuzlingen,42645,12,0
+Kreuzlingen,2023,44430,Kreuzlingen,44430,12,0
+Kreuzlingen,2024,41629,Kreuzlingen,41629,12,0
+Kreuzlingen,2025,40377,Kreuzlingen,40377,12,0
+Kreuzlingen,2026,NA,Kreuzlingen,4849,3,NA
+Bellinzona,2013,59370,Bellinzona,59370,12,0
+Bellinzona,2014,60978,Bellinzona,60978,12,0
+Bellinzona,2015,55734,Bellinzona,55734,12,0
+Bellinzona,2016,56107,Bellinzona,56107,12,0
+Bellinzona,2017,96884,Bellinzona,96884,12,0
+Bellinzona,2018,93868,Bellinzona,93868,12,0
+Bellinzona,2019,96953,Bellinzona,96953,12,0
+Bellinzona,2020,75895,Bellinzona,75895,12,0
+Bellinzona,2021,110081,Bellinzona,110081,12,0
+Bellinzona,2022,99223,Bellinzona,99223,12,0
+Bellinzona,2023,99198,Bellinzona,99198,12,0
+Bellinzona,2024,89486,Bellinzona,89486,12,0
+Bellinzona,2025,87045,Bellinzona,87045,12,0
+Bellinzona,2026,NA,Bellinzona,14369,3,NA
+Ascona,2013,397680,Ascona,397680,12,0
+Ascona,2014,370205,Ascona,370205,12,0
+Ascona,2015,343703,Ascona,343703,12,0
+Ascona,2016,386527,Ascona,386527,12,0
+Ascona,2017,424037,Ascona,424037,12,0
+Ascona,2018,398475,Ascona,398475,12,0
+Ascona,2019,408053,Ascona,408053,12,0
+Ascona,2020,363939,Ascona,363939,12,0
+Ascona,2021,549045,Ascona,549045,12,0
+Ascona,2022,449046,Ascona,449046,12,0
+Ascona,2023,420261,Ascona,420261,12,0
+Ascona,2024,421254,Ascona,421254,12,0
+Ascona,2025,421815,Ascona,421815,12,0
+Ascona,2026,NA,Ascona,32326,3,NA
+Locarno,2013,265126,Locarno,265126,12,0
+Locarno,2014,251397,Locarno,251397,12,0
+Locarno,2015,253849,Locarno,253849,12,0
+Locarno,2016,267701,Locarno,267701,12,0
+Locarno,2017,325511,Locarno,325511,12,0
+Locarno,2018,295427,Locarno,295427,12,0
+Locarno,2019,305413,Locarno,305413,12,0
+Locarno,2020,267108,Locarno,267108,12,0
+Locarno,2021,378627,Locarno,378627,12,0
+Locarno,2022,298849,Locarno,298849,12,0
+Locarno,2023,275214,Locarno,275214,12,0
+Locarno,2024,275713,Locarno,275713,12,0
+Locarno,2025,314193,Locarno,314193,12,0
+Locarno,2026,NA,Locarno,42791,3,NA
+Muralto,2013,120180,Muralto,120180,12,0
+Muralto,2014,101515,Muralto,101515,12,0
+Muralto,2015,93585,Muralto,93585,12,0
+Muralto,2016,95068,Muralto,95068,12,0
+Muralto,2017,87876,Muralto,87876,12,0
+Muralto,2018,83521,Muralto,83521,12,0
+Muralto,2019,96244,Muralto,96244,12,0
+Muralto,2020,88951,Muralto,88951,12,0
+Muralto,2021,139685,Muralto,139685,12,0
+Muralto,2022,126550,Muralto,126550,12,0
+Muralto,2023,130386,Muralto,130386,12,0
+Muralto,2024,136229,Muralto,136229,12,0
+Muralto,2025,140214,Muralto,140214,12,0
+Muralto,2026,NA,Muralto,18484,3,NA
+Lugano,2013,513281,Lugano,513281,12,0
+Lugano,2014,514483,Lugano,514483,12,0
+Lugano,2015,490887,Lugano,490887,12,0
+Lugano,2016,519469,Lugano,519469,12,0
+Lugano,2017,526382,Lugano,526382,12,0
+Lugano,2018,500448,Lugano,500448,12,0
+Lugano,2019,509355,Lugano,509355,12,0
+Lugano,2020,367102,Lugano,367102,12,0
+Lugano,2021,587979,Lugano,587979,12,0
+Lugano,2022,563584,Lugano,563584,12,0
+Lugano,2023,561421,Lugano,561421,12,0
+Lugano,2024,549241,Lugano,549241,12,0
+Lugano,2025,564862,Lugano,564862,12,0
+Lugano,2026,NA,Lugano,69375,3,NA
+Paradiso,2013,237159,Paradiso,237159,12,0
+Paradiso,2014,230939,Paradiso,230939,12,0
+Paradiso,2015,219896,Paradiso,219896,12,0
+Paradiso,2016,207452,Paradiso,207452,12,0
+Paradiso,2017,207462,Paradiso,207462,12,0
+Paradiso,2018,193316,Paradiso,193316,12,0
+Paradiso,2019,189639,Paradiso,189639,12,0
+Paradiso,2020,144014,Paradiso,144014,12,0
+Paradiso,2021,209359,Paradiso,209359,12,0
+Paradiso,2022,195031,Paradiso,195031,12,0
+Paradiso,2023,193859,Paradiso,193859,12,0
+Paradiso,2024,192741,Paradiso,192741,12,0
+Paradiso,2025,205383,Paradiso,205383,12,0
+Paradiso,2026,NA,Paradiso,33137,3,NA
+Collina d'Oro,2013,9099,Collina d'Oro,9099,12,0
+Collina d'Oro,2014,12049,Collina d'Oro,12049,12,0
+Collina d'Oro,2015,15307,Collina d'Oro,15307,12,0
+Collina d'Oro,2016,16300,Collina d'Oro,16300,12,0
+Collina d'Oro,2017,34810,Collina d'Oro,34810,12,0
+Collina d'Oro,2018,32077,Collina d'Oro,32077,12,0
+Collina d'Oro,2019,30385,Collina d'Oro,30385,12,0
+Collina d'Oro,2020,25638,Collina d'Oro,23356,10,NA
+Collina d'Oro,2021,32789,Collina d'Oro,32789,12,0
+Collina d'Oro,2022,19076,Collina d'Oro,19076,12,0
+Collina d'Oro,2023,16168,Collina d'Oro,16168,12,0
+Collina d'Oro,2024,10580,Collina d'Oro,10580,12,0
+Collina d'Oro,2025,13969,Collina d'Oro,13969,12,0
+Collina d'Oro,2026,NA,Collina d'Oro,2765,3,NA
+Monteceneri,2013,3604,Monteceneri,3604,12,0
+Monteceneri,2014,3666,Monteceneri,3666,12,0
+Monteceneri,2015,3416,Monteceneri,3416,12,0
+Monteceneri,2016,3524,Monteceneri,3524,12,0
+Monteceneri,2017,4179,Monteceneri,4179,12,0
+Monteceneri,2018,3873,Monteceneri,3873,12,0
+Monteceneri,2019,3362,Monteceneri,3362,12,0
+Monteceneri,2020,3080,Monteceneri,3080,11,NA
+Monteceneri,2021,4669,Monteceneri,4669,12,0
+Monteceneri,2022,4271,Monteceneri,4271,12,0
+Monteceneri,2023,4535,Monteceneri,4535,12,0
+Monteceneri,2024,2913,Monteceneri,2913,12,0
+Monteceneri,2025,2893,Monteceneri,2893,12,0
+Monteceneri,2026,NA,Monteceneri,900,3,NA
+Chiasso,2013,29645,Chiasso,29645,12,0
+Chiasso,2014,28217,Chiasso,28217,12,0
+Chiasso,2015,29228,Chiasso,29228,12,0
+Chiasso,2016,26383,Chiasso,26383,12,0
+Chiasso,2017,25706,Chiasso,25706,12,0
+Chiasso,2018,23995,Chiasso,23995,12,0
+Chiasso,2019,26784,Chiasso,26784,12,0
+Chiasso,2020,15411,Chiasso,14093,10,NA
+Chiasso,2021,22618,Chiasso,22618,12,0
+Chiasso,2022,28681,Chiasso,28681,12,0
+Chiasso,2023,30233,Chiasso,30233,12,0
+Chiasso,2024,29938,Chiasso,29938,12,0
+Chiasso,2025,29981,Chiasso,29981,12,0
+Chiasso,2026,NA,Chiasso,6005,3,NA
+Mendrisio,2013,29767,Mendrisio,29767,12,0
+Mendrisio,2014,30906,Mendrisio,30906,12,0
+Mendrisio,2015,28352,Mendrisio,28352,12,0
+Mendrisio,2016,25600,Mendrisio,25600,12,0
+Mendrisio,2017,28446,Mendrisio,28446,12,0
+Mendrisio,2018,25022,Mendrisio,25022,12,0
+Mendrisio,2019,24443,Mendrisio,24443,12,0
+Mendrisio,2020,20325,Mendrisio,20325,12,0
+Mendrisio,2021,37338,Mendrisio,37338,12,0
+Mendrisio,2022,45223,Mendrisio,45223,12,0
+Mendrisio,2023,50403,Mendrisio,50403,12,0
+Mendrisio,2024,49920,Mendrisio,49920,12,0
+Mendrisio,2025,50652,Mendrisio,50652,12,0
+Mendrisio,2026,NA,Mendrisio,6958,3,NA
+Leysin,2013,141268,Leysin,141268,12,0
+Leysin,2014,150530,Leysin,150530,12,0
+Leysin,2015,167075,Leysin,167075,12,0
+Leysin,2016,154131,Leysin,154131,12,0
+Leysin,2017,160659,Leysin,160659,12,0
+Leysin,2018,176822,Leysin,176822,12,0
+Leysin,2019,215051,Leysin,215051,12,0
+Leysin,2020,129325,Leysin,129214,10,NA
+Leysin,2021,130184,Leysin,130184,12,0
+Leysin,2022,176351,Leysin,176351,12,0
+Leysin,2023,194065,Leysin,194065,12,0
+Leysin,2024,185262,Leysin,185262,12,0
+Leysin,2025,183813,Leysin,183813,12,0
+Leysin,2026,NA,Leysin,61187,3,NA
+Ollon,2013,174564,Ollon,174564,12,0
+Ollon,2014,169661,Ollon,169661,12,0
+Ollon,2015,160899,Ollon,160899,12,0
+Ollon,2016,144414,Ollon,144414,12,0
+Ollon,2017,134101,Ollon,134101,12,0
+Ollon,2018,132640,Ollon,132640,12,0
+Ollon,2019,83906,Ollon,83906,12,0
+Ollon,2020,59664,Ollon,58842,10,NA
+Ollon,2021,83489,Ollon,83489,12,0
+Ollon,2022,104951,Ollon,104951,12,0
+Ollon,2023,106814,Ollon,106814,12,0
+Ollon,2024,104836,Ollon,104836,12,0
+Ollon,2025,119617,Ollon,119617,12,0
+Ollon,2026,NA,Ollon,47276,3,NA
+Ormont-Dessus,2013,55517,Ormont-Dessus,55517,12,0
+Ormont-Dessus,2014,49829,Ormont-Dessus,49829,12,0
+Ormont-Dessus,2015,49807,Ormont-Dessus,49807,12,0
+Ormont-Dessus,2016,54218,Ormont-Dessus,54218,12,0
+Ormont-Dessus,2017,52154,Ormont-Dessus,52154,12,0
+Ormont-Dessus,2018,53258,Ormont-Dessus,53258,12,0
+Ormont-Dessus,2019,51531,Ormont-Dessus,51531,12,0
+Ormont-Dessus,2020,32444,Ormont-Dessus,32158,10,NA
+Ormont-Dessus,2021,38349,Ormont-Dessus,38349,12,0
+Ormont-Dessus,2022,59304,Ormont-Dessus,59304,12,0
+Ormont-Dessus,2023,54514,Ormont-Dessus,54514,12,0
+Ormont-Dessus,2024,51634,Ormont-Dessus,51634,12,0
+Ormont-Dessus,2025,55008,Ormont-Dessus,55008,12,0
+Ormont-Dessus,2026,NA,Ormont-Dessus,18867,3,NA
+Bullet,2013,16378,Bullet,16378,12,0
+Bullet,2014,21965,Bullet,21965,12,0
+Bullet,2015,18389,Bullet,18389,12,0
+Bullet,2016,17287,Bullet,17287,12,0
+Bullet,2017,18291,Bullet,18291,12,0
+Bullet,2018,18998,Bullet,18998,12,0
+Bullet,2019,20947,Bullet,20947,12,0
+Bullet,2020,21781,Bullet,20358,10,NA
+Bullet,2021,27366,Bullet,27366,12,0
+Bullet,2022,22641,Bullet,22641,12,0
+Bullet,2023,21974,Bullet,21974,12,0
+Bullet,2024,20425,Bullet,20425,12,0
+Bullet,2025,20447,Bullet,20447,12,0
+Bullet,2026,NA,Bullet,4243,3,NA
+Lausanne,2013,751329,Lausanne,751329,12,0
+Lausanne,2014,755512,Lausanne,755512,12,0
+Lausanne,2015,762463,Lausanne,762463,12,0
+Lausanne,2016,830758,Lausanne,830758,12,0
+Lausanne,2017,921777,Lausanne,921777,12,0
+Lausanne,2018,957041,Lausanne,957041,12,0
+Lausanne,2019,989353,Lausanne,989353,12,0
+Lausanne,2020,443045,Lausanne,443045,12,0
+Lausanne,2021,597123,Lausanne,597123,12,0
+Lausanne,2022,857058,Lausanne,857058,12,0
+Lausanne,2023,930443,Lausanne,930443,12,0
+Lausanne,2024,971781,Lausanne,971781,12,0
+Lausanne,2025,1012842,Lausanne,1012842,12,0
+Lausanne,2026,NA,Lausanne,178886,3,NA
+Bourg-en-Lavaux,2013,27441,Bourg-en-Lavaux,27441,12,0
+Bourg-en-Lavaux,2014,28140,Bourg-en-Lavaux,28140,12,0
+Bourg-en-Lavaux,2015,27479,Bourg-en-Lavaux,27479,12,0
+Bourg-en-Lavaux,2016,31659,Bourg-en-Lavaux,31659,12,0
+Bourg-en-Lavaux,2017,31504,Bourg-en-Lavaux,31504,12,0
+Bourg-en-Lavaux,2018,29905,Bourg-en-Lavaux,29905,12,0
+Bourg-en-Lavaux,2019,31522,Bourg-en-Lavaux,31522,12,0
+Bourg-en-Lavaux,2020,20343,Bourg-en-Lavaux,20343,12,0
+Bourg-en-Lavaux,2021,30569,Bourg-en-Lavaux,30569,12,0
+Bourg-en-Lavaux,2022,29448,Bourg-en-Lavaux,29448,12,0
+Bourg-en-Lavaux,2023,33213,Bourg-en-Lavaux,33213,12,0
+Bourg-en-Lavaux,2024,31790,Bourg-en-Lavaux,31790,12,0
+Bourg-en-Lavaux,2025,32325,Bourg-en-Lavaux,32325,12,0
+Bourg-en-Lavaux,2026,NA,Bourg-en-Lavaux,3839,3,NA
+Morges,2013,54042,Morges,54042,12,0
+Morges,2014,59900,Morges,59900,12,0
+Morges,2015,56563,Morges,56563,12,0
+Morges,2016,63807,Morges,63807,12,0
+Morges,2017,59067,Morges,59067,12,0
+Morges,2018,57452,Morges,57452,12,0
+Morges,2019,59018,Morges,59018,12,0
+Morges,2020,26288,Morges,24880,10,NA
+Morges,2021,41672,Morges,41672,12,0
+Morges,2022,51860,Morges,51860,12,0
+Morges,2023,67287,Morges,67287,12,0
+Morges,2024,64932,Morges,64932,12,0
+Morges,2025,60769,Morges,60769,12,0
+Morges,2026,NA,Morges,12215,3,NA
+Nyon,2013,43777,Nyon,43777,12,0
+Nyon,2014,42163,Nyon,42163,12,0
+Nyon,2015,37533,Nyon,37533,12,0
+Nyon,2016,51374,Nyon,51374,12,0
+Nyon,2017,48335,Nyon,48335,12,0
+Nyon,2018,50721,Nyon,50721,12,0
+Nyon,2019,53905,Nyon,53905,12,0
+Nyon,2020,23652,Nyon,23652,12,0
+Nyon,2021,32416,Nyon,32416,12,0
+Nyon,2022,59661,Nyon,59661,12,0
+Nyon,2023,85536,Nyon,85536,12,0
+Nyon,2024,82498,Nyon,82498,12,0
+Nyon,2025,81314,Nyon,81314,12,0
+Nyon,2026,NA,Nyon,15538,3,NA
+Château-d'Oex,2013,13392,Château-d'Oex,13392,12,0
+Château-d'Oex,2014,18212,Château-d'Oex,18212,12,0
+Château-d'Oex,2015,18411,Château-d'Oex,18411,12,0
+Château-d'Oex,2016,18366,Château-d'Oex,18366,12,0
+Château-d'Oex,2017,17498,Château-d'Oex,17498,12,0
+Château-d'Oex,2018,18721,Château-d'Oex,18721,12,0
+Château-d'Oex,2019,17600,Château-d'Oex,17600,12,0
+Château-d'Oex,2020,12599,Château-d'Oex,12183,10,NA
+Château-d'Oex,2021,15941,Château-d'Oex,15941,12,0
+Château-d'Oex,2022,19420,Château-d'Oex,19420,12,0
+Château-d'Oex,2023,21012,Château-d'Oex,21012,12,0
+Château-d'Oex,2024,21514,Château-d'Oex,21514,12,0
+Château-d'Oex,2025,24679,Château-d'Oex,24679,12,0
+Château-d'Oex,2026,NA,Château-d'Oex,6241,3,NA
+Le Chenit,2013,19316,Le Chenit,19316,12,0
+Le Chenit,2014,18239,Le Chenit,18239,12,0
+Le Chenit,2015,17644,Le Chenit,17644,12,0
+Le Chenit,2016,14697,Le Chenit,14697,12,0
+Le Chenit,2017,12786,Le Chenit,12786,12,0
+Le Chenit,2018,15060,Le Chenit,15060,12,0
+Le Chenit,2019,15581,Le Chenit,15581,12,0
+Le Chenit,2020,12987,Le Chenit,12987,12,0
+Le Chenit,2021,16008,Le Chenit,16008,12,0
+Le Chenit,2022,24513,Le Chenit,24513,12,0
+Le Chenit,2023,28834,Le Chenit,28834,12,0
+Le Chenit,2024,26669,Le Chenit,26669,12,0
+Le Chenit,2025,28101,Le Chenit,28101,12,0
+Le Chenit,2026,NA,Le Chenit,4735,3,NA
+Montreux,2013,449206,Montreux,449206,12,0
+Montreux,2014,461994,Montreux,461994,12,0
+Montreux,2015,460289,Montreux,460289,12,0
+Montreux,2016,467404,Montreux,467404,12,0
+Montreux,2017,488412,Montreux,488412,12,0
+Montreux,2018,477135,Montreux,477135,12,0
+Montreux,2019,489171,Montreux,489171,12,0
+Montreux,2020,219574,Montreux,219574,12,0
+Montreux,2021,329292,Montreux,329292,12,0
+Montreux,2022,427276,Montreux,427276,12,0
+Montreux,2023,437085,Montreux,437085,12,0
+Montreux,2024,446412,Montreux,446412,12,0
+Montreux,2025,496571,Montreux,496571,12,0
+Montreux,2026,NA,Montreux,60488,3,NA
+Vevey,2013,102787,Vevey,102787,12,0
+Vevey,2014,102447,Vevey,102447,12,0
+Vevey,2015,100265,Vevey,100265,12,0
+Vevey,2016,105709,Vevey,105709,12,0
+Vevey,2017,100916,Vevey,100916,12,0
+Vevey,2018,95242,Vevey,95242,12,0
+Vevey,2019,102193,Vevey,102193,12,0
+Vevey,2020,50548,Vevey,50548,12,0
+Vevey,2021,70531,Vevey,70531,12,0
+Vevey,2022,91132,Vevey,91132,12,0
+Vevey,2023,103719,Vevey,103719,12,0
+Vevey,2024,103668,Vevey,103668,12,0
+Vevey,2025,105747,Vevey,105747,12,0
+Vevey,2026,NA,Vevey,17933,3,NA
+Blonay - Saint-Légier,2013,NA,Blonay - Saint-Légier,0,0,NA
+Blonay - Saint-Légier,2014,NA,Blonay - Saint-Légier,0,0,NA
+Blonay - Saint-Légier,2015,NA,Blonay - Saint-Légier,0,0,NA
+Blonay - Saint-Légier,2016,NA,Blonay - Saint-Légier,0,0,NA
+Blonay - Saint-Légier,2017,NA,Blonay - Saint-Légier,0,0,NA
+Blonay - Saint-Légier,2018,NA,Blonay - Saint-Légier,0,0,NA
+Blonay - Saint-Légier,2019,NA,Blonay - Saint-Légier,0,0,NA
+Blonay - Saint-Légier,2020,NA,Blonay - Saint-Légier,0,0,NA
+Blonay - Saint-Légier,2021,NA,Blonay - Saint-Légier,0,0,NA
+Blonay - Saint-Légier,2022,29901,Blonay - Saint-Légier,29901,12,0
+Blonay - Saint-Légier,2023,42075,Blonay - Saint-Légier,42075,12,0
+Blonay - Saint-Légier,2024,39405,Blonay - Saint-Légier,39405,12,0
+Blonay - Saint-Légier,2025,41982,Blonay - Saint-Légier,41982,12,0
+Blonay - Saint-Légier,2026,NA,Blonay - Saint-Légier,6423,3,NA
+Yverdon-les-Bains,2013,41575,Yverdon-les-Bains,41575,12,0
+Yverdon-les-Bains,2014,46864,Yverdon-les-Bains,46864,12,0
+Yverdon-les-Bains,2015,64978,Yverdon-les-Bains,64978,12,0
+Yverdon-les-Bains,2016,58379,Yverdon-les-Bains,58379,12,0
+Yverdon-les-Bains,2017,55359,Yverdon-les-Bains,55359,12,0
+Yverdon-les-Bains,2018,63869,Yverdon-les-Bains,63869,12,0
+Yverdon-les-Bains,2019,64997,Yverdon-les-Bains,64997,12,0
+Yverdon-les-Bains,2020,50247,Yverdon-les-Bains,48325,10,NA
+Yverdon-les-Bains,2021,72375,Yverdon-les-Bains,72375,12,0
+Yverdon-les-Bains,2022,75233,Yverdon-les-Bains,75233,12,0
+Yverdon-les-Bains,2023,74201,Yverdon-les-Bains,74201,12,0
+Yverdon-les-Bains,2024,67259,Yverdon-les-Bains,67259,12,0
+Yverdon-les-Bains,2025,67054,Yverdon-les-Bains,67054,12,0
+Yverdon-les-Bains,2026,NA,Yverdon-les-Bains,12555,3,NA
+Brig-Glis,2013,144505,Brig-Glis,144505,12,0
+Brig-Glis,2014,140523,Brig-Glis,140523,12,0
+Brig-Glis,2015,137078,Brig-Glis,137078,12,0
+Brig-Glis,2016,137838,Brig-Glis,137838,12,0
+Brig-Glis,2017,136660,Brig-Glis,136660,12,0
+Brig-Glis,2018,145648,Brig-Glis,145648,12,0
+Brig-Glis,2019,159746,Brig-Glis,159746,12,0
+Brig-Glis,2020,131104,Brig-Glis,131104,12,0
+Brig-Glis,2021,145521,Brig-Glis,145521,12,0
+Brig-Glis,2022,192756,Brig-Glis,192756,12,0
+Brig-Glis,2023,213261,Brig-Glis,213261,12,0
+Brig-Glis,2024,200751,Brig-Glis,200751,12,0
+Brig-Glis,2025,203884,Brig-Glis,203884,12,0
+Brig-Glis,2026,NA,Brig-Glis,41826,3,NA
+Nendaz,2013,19016,Nendaz,19016,12,0
+Nendaz,2014,22637,Nendaz,22637,12,0
+Nendaz,2015,23507,Nendaz,23507,12,0
+Nendaz,2016,22359,Nendaz,22359,12,0
+Nendaz,2017,25187,Nendaz,25187,12,0
+Nendaz,2018,28375,Nendaz,28375,12,0
+Nendaz,2019,33114,Nendaz,33114,12,0
+Nendaz,2020,28122,Nendaz,28122,12,0
+Nendaz,2021,37426,Nendaz,37426,12,0
+Nendaz,2022,32958,Nendaz,32958,12,0
+Nendaz,2023,39436,Nendaz,39436,12,0
+Nendaz,2024,39434,Nendaz,39434,12,0
+Nendaz,2025,40655,Nendaz,40655,12,0
+Nendaz,2026,NA,Nendaz,14955,3,NA
+Orsières,2013,40750,Orsières,40750,12,0
+Orsières,2014,44056,Orsières,44056,12,0
+Orsières,2015,43480,Orsières,43480,12,0
+Orsières,2016,46783,Orsières,46783,12,0
+Orsières,2017,48905,Orsières,48905,12,0
+Orsières,2018,48603,Orsières,48603,12,0
+Orsières,2019,50401,Orsières,50401,12,0
+Orsières,2020,29745,Orsières,29745,12,0
+Orsières,2021,43694,Orsières,43694,12,0
+Orsières,2022,55327,Orsières,55327,12,0
+Orsières,2023,59853,Orsières,59853,12,0
+Orsières,2024,63863,Orsières,63863,12,0
+Orsières,2025,55811,Orsières,55811,12,0
+Orsières,2026,NA,Orsières,7482,3,NA
+Val de Bagnes,2013,NA,Val de Bagnes,0,0,NA
+Val de Bagnes,2014,NA,Val de Bagnes,0,0,NA
+Val de Bagnes,2015,NA,Val de Bagnes,0,0,NA
+Val de Bagnes,2016,NA,Val de Bagnes,0,0,NA
+Val de Bagnes,2017,NA,Val de Bagnes,0,0,NA
+Val de Bagnes,2018,NA,Val de Bagnes,0,0,NA
+Val de Bagnes,2019,NA,Val de Bagnes,0,0,NA
+Val de Bagnes,2020,NA,Val de Bagnes,0,0,NA
+Val de Bagnes,2021,132633,Val de Bagnes,132633,12,0
+Val de Bagnes,2022,183635,Val de Bagnes,183635,12,0
+Val de Bagnes,2023,173995,Val de Bagnes,173995,12,0
+Val de Bagnes,2024,166817,Val de Bagnes,166817,12,0
+Val de Bagnes,2025,168053,Val de Bagnes,168053,12,0
+Val de Bagnes,2026,NA,Val de Bagnes,77388,3,NA
+Goms,2013,NA,Goms,0,0,NA
+Goms,2014,NA,Goms,0,0,NA
+Goms,2015,NA,Goms,0,0,NA
+Goms,2016,NA,Goms,0,0,NA
+Goms,2017,39344,Goms,39344,12,0
+Goms,2018,42408,Goms,42408,12,0
+Goms,2019,44800,Goms,44800,12,0
+Goms,2020,52532,Goms,51690,10,NA
+Goms,2021,58217,Goms,58217,12,0
+Goms,2022,58853,Goms,58853,12,0
+Goms,2023,50755,Goms,50755,12,0
+Goms,2024,52669,Goms,52669,12,0
+Goms,2025,52438,Goms,52438,12,0
+Goms,2026,NA,Goms,19393,3,NA
+Evolène,2013,34870,Evolène,34870,12,0
+Evolène,2014,32268,Evolène,32268,12,0
+Evolène,2015,27848,Evolène,27848,12,0
+Evolène,2016,31007,Evolène,31007,12,0
+Evolène,2017,26027,Evolène,26027,12,0
+Evolène,2018,33388,Evolène,33388,12,0
+Evolène,2019,29859,Evolène,29859,12,0
+Evolène,2020,29489,Evolène,28597,10,NA
+Evolène,2021,28279,Evolène,28279,12,0
+Evolène,2022,35562,Evolène,35562,12,0
+Evolène,2023,38444,Evolène,38444,12,0
+Evolène,2024,39143,Evolène,39143,12,0
+Evolène,2025,39284,Evolène,39284,12,0
+Evolène,2026,NA,Evolène,11098,3,NA
+Leukerbad,2013,248817,Leukerbad,248817,12,0
+Leukerbad,2014,249269,Leukerbad,249269,12,0
+Leukerbad,2015,231939,Leukerbad,231939,12,0
+Leukerbad,2016,226838,Leukerbad,226838,12,0
+Leukerbad,2017,212958,Leukerbad,212958,12,0
+Leukerbad,2018,216336,Leukerbad,216336,12,0
+Leukerbad,2019,223796,Leukerbad,223796,12,0
+Leukerbad,2020,190841,Leukerbad,190841,12,0
+Leukerbad,2021,226974,Leukerbad,226974,12,0
+Leukerbad,2022,214484,Leukerbad,214484,12,0
+Leukerbad,2023,209030,Leukerbad,209030,12,0
+Leukerbad,2024,205990,Leukerbad,205990,12,0
+Leukerbad,2025,212755,Leukerbad,212755,12,0
+Leukerbad,2026,NA,Leukerbad,68247,3,NA
+Martigny,2013,77618,Martigny,77618,12,0
+Martigny,2014,78047,Martigny,78047,12,0
+Martigny,2015,73867,Martigny,73867,12,0
+Martigny,2016,79724,Martigny,79724,12,0
+Martigny,2017,84673,Martigny,84673,12,0
+Martigny,2018,95032,Martigny,95032,12,0
+Martigny,2019,90045,Martigny,90045,12,0
+Martigny,2020,50898,Martigny,50898,12,0
+Martigny,2021,73700,Martigny,73700,12,0
+Martigny,2022,91705,Martigny,91705,12,0
+Martigny,2023,90792,Martigny,90792,12,0
+Martigny,2024,94716,Martigny,94716,12,0
+Martigny,2025,101682,Martigny,101682,12,0
+Martigny,2026,NA,Martigny,23059,3,NA
+Champéry,2013,49247,Champéry,49247,12,0
+Champéry,2014,51065,Champéry,51065,12,0
+Champéry,2015,52521,Champéry,52521,12,0
+Champéry,2016,51879,Champéry,51879,12,0
+Champéry,2017,56907,Champéry,56907,12,0
+Champéry,2018,62968,Champéry,62968,12,0
+Champéry,2019,60159,Champéry,60159,12,0
+Champéry,2020,46996,Champéry,46210,10,NA
+Champéry,2021,51188,Champéry,51188,12,0
+Champéry,2022,70231,Champéry,70231,12,0
+Champéry,2023,69499,Champéry,69499,12,0
+Champéry,2024,70319,Champéry,70319,12,0
+Champéry,2025,73353,Champéry,73353,12,0
+Champéry,2026,NA,Champéry,30136,3,NA
+Saint-Maurice,2013,17611,Saint-Maurice,17611,12,0
+Saint-Maurice,2014,16557,Saint-Maurice,16557,12,0
+Saint-Maurice,2015,17958,Saint-Maurice,17958,12,0
+Saint-Maurice,2016,18075,Saint-Maurice,18075,12,0
+Saint-Maurice,2017,19951,Saint-Maurice,19951,12,0
+Saint-Maurice,2018,20438,Saint-Maurice,20438,12,0
+Saint-Maurice,2019,20057,Saint-Maurice,20057,12,0
+Saint-Maurice,2020,12996,Saint-Maurice,12996,12,0
+Saint-Maurice,2021,18245,Saint-Maurice,18245,12,0
+Saint-Maurice,2022,21800,Saint-Maurice,21800,12,0
+Saint-Maurice,2023,22432,Saint-Maurice,22432,12,0
+Saint-Maurice,2024,20359,Saint-Maurice,20359,12,0
+Saint-Maurice,2025,21857,Saint-Maurice,21857,12,0
+Saint-Maurice,2026,NA,Saint-Maurice,4102,3,NA
+Sierre,2013,21307,Sierre,21307,12,0
+Sierre,2014,22884,Sierre,22884,12,0
+Sierre,2015,18822,Sierre,18822,12,0
+Sierre,2016,16073,Sierre,16073,12,0
+Sierre,2017,15915,Sierre,15915,12,0
+Sierre,2018,15830,Sierre,15830,12,0
+Sierre,2019,18338,Sierre,18338,12,0
+Sierre,2020,22413,Sierre,22413,11,NA
+Sierre,2021,31120,Sierre,31120,12,0
+Sierre,2022,33990,Sierre,33990,12,0
+Sierre,2023,29984,Sierre,29984,12,0
+Sierre,2024,25218,Sierre,25218,12,0
+Sierre,2025,14760,Sierre,14760,12,0
+Sierre,2026,NA,Sierre,2661,3,NA
+Anniviers,2013,151941,Anniviers,151941,12,0
+Anniviers,2014,142622,Anniviers,142622,12,0
+Anniviers,2015,134421,Anniviers,134421,12,0
+Anniviers,2016,133293,Anniviers,133293,12,0
+Anniviers,2017,139134,Anniviers,139134,12,0
+Anniviers,2018,157447,Anniviers,157447,12,0
+Anniviers,2019,161697,Anniviers,161697,12,0
+Anniviers,2020,114862,Anniviers,114160,10,NA
+Anniviers,2021,115156,Anniviers,115156,12,0
+Anniviers,2022,152059,Anniviers,152059,12,0
+Anniviers,2023,171902,Anniviers,171902,12,0
+Anniviers,2024,170739,Anniviers,170739,12,0
+Anniviers,2025,164678,Anniviers,164678,12,0
+Anniviers,2026,NA,Anniviers,67043,3,NA
+Crans-Montana,2013,NA,Crans-Montana,0,0,NA
+Crans-Montana,2014,NA,Crans-Montana,0,0,NA
+Crans-Montana,2015,NA,Crans-Montana,0,0,NA
+Crans-Montana,2016,NA,Crans-Montana,0,0,NA
+Crans-Montana,2017,197931,Crans-Montana,197931,12,0
+Crans-Montana,2018,228796,Crans-Montana,228796,12,0
+Crans-Montana,2019,231024,Crans-Montana,231024,12,0
+Crans-Montana,2020,188323,Crans-Montana,188323,12,0
+Crans-Montana,2021,205323,Crans-Montana,205323,12,0
+Crans-Montana,2022,221562,Crans-Montana,221562,12,0
+Crans-Montana,2023,227543,Crans-Montana,227543,12,0
+Crans-Montana,2024,206972,Crans-Montana,206972,12,0
+Crans-Montana,2025,196927,Crans-Montana,196927,12,0
+Crans-Montana,2026,NA,Crans-Montana,66189,3,NA
+Sion,2013,60093,Sion,60093,12,0
+Sion,2014,62435,Sion,62435,12,0
+Sion,2015,61402,Sion,61402,12,0
+Sion,2016,67153,Sion,67153,12,0
+Sion,2017,62168,Sion,62168,12,0
+Sion,2018,65397,Sion,65397,12,0
+Sion,2019,70899,Sion,70899,12,0
+Sion,2020,49297,Sion,47531,10,NA
+Sion,2021,63694,Sion,63694,12,0
+Sion,2022,96331,Sion,96331,12,0
+Sion,2023,120067,Sion,120067,12,0
+Sion,2024,115054,Sion,115054,12,0
+Sion,2025,106886,Sion,106886,12,0
+Sion,2026,NA,Sion,24709,3,NA
+Saas-Fee,2013,314573,Saas-Fee,314573,12,0
+Saas-Fee,2014,302076,Saas-Fee,302076,12,0
+Saas-Fee,2015,274232,Saas-Fee,274232,12,0
+Saas-Fee,2016,261671,Saas-Fee,261671,12,0
+Saas-Fee,2017,330347,Saas-Fee,330347,12,0
+Saas-Fee,2018,321276,Saas-Fee,321276,12,0
+Saas-Fee,2019,319971,Saas-Fee,319971,12,0
+Saas-Fee,2020,274409,Saas-Fee,274409,12,0
+Saas-Fee,2021,288024,Saas-Fee,288024,12,0
+Saas-Fee,2022,262675,Saas-Fee,262675,12,0
+Saas-Fee,2023,251484,Saas-Fee,251484,12,0
+Saas-Fee,2024,236162,Saas-Fee,236162,12,0
+Saas-Fee,2025,271313,Saas-Fee,271313,12,0
+Saas-Fee,2026,NA,Saas-Fee,104901,3,NA
+Saas-Grund,2013,48881,Saas-Grund,48881,12,0
+Saas-Grund,2014,54652,Saas-Grund,54652,12,0
+Saas-Grund,2015,59774,Saas-Grund,59774,12,0
+Saas-Grund,2016,47991,Saas-Grund,47991,12,0
+Saas-Grund,2017,57089,Saas-Grund,57089,12,0
+Saas-Grund,2018,57713,Saas-Grund,57713,12,0
+Saas-Grund,2019,57121,Saas-Grund,57121,12,0
+Saas-Grund,2020,50548,Saas-Grund,50548,12,0
+Saas-Grund,2021,52391,Saas-Grund,52391,12,0
+Saas-Grund,2022,64407,Saas-Grund,64407,12,0
+Saas-Grund,2023,64340,Saas-Grund,64340,12,0
+Saas-Grund,2024,55321,Saas-Grund,55321,12,0
+Saas-Grund,2025,52690,Saas-Grund,52690,12,0
+Saas-Grund,2026,NA,Saas-Grund,21408,3,NA
+Visp,2013,29505,Visp,29505,12,0
+Visp,2014,28987,Visp,28987,12,0
+Visp,2015,29779,Visp,29779,12,0
+Visp,2016,28150,Visp,28150,12,0
+Visp,2017,30134,Visp,30134,12,0
+Visp,2018,35065,Visp,35065,12,0
+Visp,2019,38900,Visp,38900,12,0
+Visp,2020,31917,Visp,31917,12,0
+Visp,2021,36030,Visp,36030,12,0
+Visp,2022,41009,Visp,41009,12,0
+Visp,2023,44412,Visp,44412,12,0
+Visp,2024,46101,Visp,46101,12,0
+Visp,2025,45543,Visp,45543,12,0
+Visp,2026,NA,Visp,9905,3,NA
+Zermatt,2013,1256511,Zermatt,1256511,12,0
+Zermatt,2014,1274181,Zermatt,1274181,12,0
+Zermatt,2015,1254229,Zermatt,1254229,12,0
+Zermatt,2016,1247852,Zermatt,1247852,12,0
+Zermatt,2017,1364517,Zermatt,1364517,12,0
+Zermatt,2018,1425442,Zermatt,1425442,12,0
+Zermatt,2019,1513957,Zermatt,1513957,12,0
+Zermatt,2020,997094,Zermatt,997094,12,0
+Zermatt,2021,1064727,Zermatt,1064727,12,0
+Zermatt,2022,1481092,Zermatt,1481092,12,0
+Zermatt,2023,1632630,Zermatt,1632630,12,0
+Zermatt,2024,1640200,Zermatt,1640200,12,0
+Zermatt,2025,1700264,Zermatt,1700264,12,0
+Zermatt,2026,NA,Zermatt,567983,3,NA
+La Grande Béroche,2013,NA,La Grande Béroche,0,0,NA
+La Grande Béroche,2014,NA,La Grande Béroche,0,0,NA
+La Grande Béroche,2015,NA,La Grande Béroche,0,0,NA
+La Grande Béroche,2016,NA,La Grande Béroche,0,0,NA
+La Grande Béroche,2017,NA,La Grande Béroche,0,0,NA
+La Grande Béroche,2018,3359,La Grande Béroche,3359,12,0
+La Grande Béroche,2019,4071,La Grande Béroche,4071,12,0
+La Grande Béroche,2020,3411,La Grande Béroche,3411,12,0
+La Grande Béroche,2021,7456,La Grande Béroche,7456,12,0
+La Grande Béroche,2022,12583,La Grande Béroche,12583,12,0
+La Grande Béroche,2023,13201,La Grande Béroche,13201,12,0
+La Grande Béroche,2024,11944,La Grande Béroche,11944,12,0
+La Grande Béroche,2025,10221,La Grande Béroche,10221,12,0
+La Grande Béroche,2026,NA,La Grande Béroche,233,3,NA
+La Chaux-de-Fonds,2013,32806,La Chaux-de-Fonds,32806,12,0
+La Chaux-de-Fonds,2014,36011,La Chaux-de-Fonds,36011,12,0
+La Chaux-de-Fonds,2015,35117,La Chaux-de-Fonds,35117,12,0
+La Chaux-de-Fonds,2016,35509,La Chaux-de-Fonds,35509,12,0
+La Chaux-de-Fonds,2017,35133,La Chaux-de-Fonds,35133,12,0
+La Chaux-de-Fonds,2018,31630,La Chaux-de-Fonds,31630,12,0
+La Chaux-de-Fonds,2019,32375,La Chaux-de-Fonds,32375,12,0
+La Chaux-de-Fonds,2020,19485,La Chaux-de-Fonds,19485,12,0
+La Chaux-de-Fonds,2021,30865,La Chaux-de-Fonds,30865,12,0
+La Chaux-de-Fonds,2022,27714,La Chaux-de-Fonds,27714,12,0
+La Chaux-de-Fonds,2023,29221,La Chaux-de-Fonds,29221,12,0
+La Chaux-de-Fonds,2024,31897,La Chaux-de-Fonds,31897,12,0
+La Chaux-de-Fonds,2025,31090,La Chaux-de-Fonds,31090,12,0
+La Chaux-de-Fonds,2026,NA,La Chaux-de-Fonds,6325,3,NA
+Neuchâtel,2013,115902,Neuchâtel,115902,12,0
+Neuchâtel,2014,115890,Neuchâtel,115890,12,0
+Neuchâtel,2015,108612,Neuchâtel,108612,12,0
+Neuchâtel,2016,123263,Neuchâtel,123263,12,0
+Neuchâtel,2017,125754,Neuchâtel,125754,12,0
+Neuchâtel,2018,124364,Neuchâtel,124364,12,0
+Neuchâtel,2019,125469,Neuchâtel,125469,12,0
+Neuchâtel,2020,91324,Neuchâtel,91324,12,0
+Neuchâtel,2021,135451,Neuchâtel,135451,12,0
+Neuchâtel,2022,156230,Neuchâtel,156230,12,0
+Neuchâtel,2023,158176,Neuchâtel,158176,12,0
+Neuchâtel,2024,154511,Neuchâtel,154511,12,0
+Neuchâtel,2025,170168,Neuchâtel,170168,12,0
+Neuchâtel,2026,NA,Neuchâtel,26118,3,NA
+Laténa,2013,NA,Laténa,0,0,NA
+Laténa,2014,NA,Laténa,0,0,NA
+Laténa,2015,NA,Laténa,0,0,NA
+Laténa,2016,NA,Laténa,0,0,NA
+Laténa,2017,NA,Laténa,0,0,NA
+Laténa,2018,NA,Laténa,0,0,NA
+Laténa,2019,NA,Laténa,0,0,NA
+Laténa,2020,NA,Laténa,0,0,NA
+Laténa,2021,NA,Laténa,0,0,NA
+Laténa,2022,NA,Laténa,0,0,NA
+Laténa,2023,NA,Laténa,0,0,NA
+Laténa,2024,NA,Laténa,0,0,NA
+Laténa,2025,30796,Laténa,30796,12,0
+Laténa,2026,NA,Laténa,3787,3,NA
+Genève,2013,2046435,Genève,2046435,12,0
+Genève,2014,2051975,Genève,2051975,12,0
+Genève,2015,2037896,Genève,2037896,12,0
+Genève,2016,2040594,Genève,2040594,12,0
+Genève,2017,2114793,Genève,2114793,12,0
+Genève,2018,2158493,Genève,2158493,12,0
+Genève,2019,2182411,Genève,2182411,12,0
+Genève,2020,708755,Genève,708755,12,0
+Genève,2021,1102356,Genève,1102356,12,0
+Genève,2022,2006611,Genève,2006611,12,0
+Genève,2023,2252671,Genève,2252671,12,0
+Genève,2024,2339075,Genève,2339075,12,0
+Genève,2025,2371458,Genève,2371458,12,0
+Genève,2026,NA,Genève,510301,3,NA
+Lancy,2013,127037,Lancy,127037,12,0
+Lancy,2014,140889,Lancy,140889,12,0
+Lancy,2015,136655,Lancy,136655,12,0
+Lancy,2016,133845,Lancy,133845,12,0
+Lancy,2017,136032,Lancy,136032,12,0
+Lancy,2018,136811,Lancy,136811,12,0
+Lancy,2019,139689,Lancy,139689,12,0
+Lancy,2020,45125,Lancy,41600,10,NA
+Lancy,2021,54958,Lancy,54958,12,0
+Lancy,2022,93685,Lancy,93685,12,0
+Lancy,2023,107751,Lancy,107751,12,0
+Lancy,2024,110498,Lancy,110498,12,0
+Lancy,2025,115793,Lancy,115793,12,0
+Lancy,2026,NA,Lancy,21551,3,NA
+Meyrin,2013,410714,Meyrin,410714,12,0
+Meyrin,2014,443184,Meyrin,443184,12,0
+Meyrin,2015,451338,Meyrin,451338,12,0
+Meyrin,2016,428372,Meyrin,428372,12,0
+Meyrin,2017,454511,Meyrin,454511,12,0
+Meyrin,2018,482163,Meyrin,482163,12,0
+Meyrin,2019,420897,Meyrin,420897,12,0
+Meyrin,2020,140337,Meyrin,140337,12,0
+Meyrin,2021,139033,Meyrin,139033,12,0
+Meyrin,2022,459373,Meyrin,459373,12,0
+Meyrin,2023,667886,Meyrin,667886,12,0
+Meyrin,2024,701707,Meyrin,701707,12,0
+Meyrin,2025,703536,Meyrin,703536,12,0
+Meyrin,2026,NA,Meyrin,163126,3,NA
+Vernier,2013,113628,Vernier,113628,12,0
+Vernier,2014,120338,Vernier,120338,12,0
+Vernier,2015,124699,Vernier,124699,12,0
+Vernier,2016,124520,Vernier,124520,12,0
+Vernier,2017,127939,Vernier,127939,12,0
+Vernier,2018,122321,Vernier,122321,12,0
+Vernier,2019,124877,Vernier,124877,12,0
+Vernier,2020,38479,Vernier,38479,12,0
+Vernier,2021,47396,Vernier,47396,12,0
+Vernier,2022,84364,Vernier,84364,12,0
+Vernier,2023,195324,Vernier,195324,12,0
+Vernier,2024,315474,Vernier,315474,12,0
+Vernier,2025,361098,Vernier,361098,12,0
+Vernier,2026,NA,Vernier,77943,3,NA
+Delémont,2013,35998,Delémont,35998,12,0
+Delémont,2014,37520,Delémont,37520,12,0
+Delémont,2015,39214,Delémont,39214,12,0
+Delémont,2016,38943,Delémont,38943,12,0
+Delémont,2017,36913,Delémont,36913,12,0
+Delémont,2018,36174,Delémont,36174,12,0
+Delémont,2019,36115,Delémont,36115,12,0
+Delémont,2020,26403,Delémont,26403,12,0
+Delémont,2021,31824,Delémont,31824,12,0
+Delémont,2022,38700,Delémont,38700,12,0
+Delémont,2023,43673,Delémont,43673,12,0
+Delémont,2024,41028,Delémont,41028,12,0
+Delémont,2025,39762,Delémont,39762,12,0
+Delémont,2026,NA,Delémont,6697,3,NA
+Saignelégier,2013,20100,Saignelégier,20100,12,0
+Saignelégier,2014,21691,Saignelégier,21691,12,0
+Saignelégier,2015,20294,Saignelégier,20294,12,0
+Saignelégier,2016,20604,Saignelégier,20604,12,0
+Saignelégier,2017,20187,Saignelégier,20187,12,0
+Saignelégier,2018,20436,Saignelégier,20436,12,0
+Saignelégier,2019,21538,Saignelégier,21538,12,0
+Saignelégier,2020,21988,Saignelégier,20502,10,NA
+Saignelégier,2021,27636,Saignelégier,27636,12,0
+Saignelégier,2022,23247,Saignelégier,23247,12,0
+Saignelégier,2023,25232,Saignelégier,25232,12,0
+Saignelégier,2024,22025,Saignelégier,22025,12,0
+Saignelégier,2025,20655,Saignelégier,20655,12,0
+Saignelégier,2026,NA,Saignelégier,1899,3,NA
+Porrentruy,2013,11058,Porrentruy,11058,12,0
+Porrentruy,2014,11372,Porrentruy,11372,12,0
+Porrentruy,2015,10358,Porrentruy,10358,12,0
+Porrentruy,2016,10811,Porrentruy,10811,12,0
+Porrentruy,2017,11710,Porrentruy,11710,12,0
+Porrentruy,2018,12145,Porrentruy,12145,12,0
+Porrentruy,2019,13934,Porrentruy,13934,12,0
+Porrentruy,2020,11365,Porrentruy,11365,12,0
+Porrentruy,2021,17222,Porrentruy,17222,12,0
+Porrentruy,2022,14453,Porrentruy,14453,12,0
+Porrentruy,2023,13293,Porrentruy,13293,12,0
+Porrentruy,2024,14801,Porrentruy,14801,12,0
+Porrentruy,2025,15475,Porrentruy,15475,12,0
+Porrentruy,2026,NA,Porrentruy,2894,3,NA
+Clos du Doubs,2013,8637,Clos du Doubs,8637,12,0
+Clos du Doubs,2014,6112,Clos du Doubs,6112,12,0
+Clos du Doubs,2015,9306,Clos du Doubs,9306,12,0
+Clos du Doubs,2016,10454,Clos du Doubs,10454,12,0
+Clos du Doubs,2017,9302,Clos du Doubs,9302,12,0
+Clos du Doubs,2018,9431,Clos du Doubs,9431,12,0
+Clos du Doubs,2019,9338,Clos du Doubs,9338,12,0
+Clos du Doubs,2020,9271,Clos du Doubs,9271,12,0
+Clos du Doubs,2021,11612,Clos du Doubs,11612,12,0
+Clos du Doubs,2022,10427,Clos du Doubs,10427,12,0
+Clos du Doubs,2023,10570,Clos du Doubs,10570,12,0
+Clos du Doubs,2024,13236,Clos du Doubs,13236,12,0
+Clos du Doubs,2025,11806,Clos du Doubs,11806,12,0
+Clos du Doubs,2026,NA,Clos du Doubs,386,3,NA
+Moutier (JU),2013,NA,Moutier (JU),0,0,NA
+Moutier (JU),2014,NA,Moutier (JU),0,0,NA
+Moutier (JU),2015,NA,Moutier (JU),0,0,NA
+Moutier (JU),2016,NA,Moutier (JU),0,0,NA
+Moutier (JU),2017,NA,Moutier (JU),0,0,NA
+Moutier (JU),2018,NA,Moutier (JU),0,0,NA
+Moutier (JU),2019,NA,Moutier (JU),0,0,NA
+Moutier (JU),2020,NA,Moutier (JU),0,0,NA
+Moutier (JU),2021,NA,Moutier (JU),0,0,NA
+Moutier (JU),2022,NA,Moutier (JU),0,0,NA
+Moutier (JU),2023,NA,Moutier (JU),0,0,NA
+Moutier (JU),2024,NA,Moutier (JU),0,0,NA
+Moutier (JU),2025,NA,Moutier (JU),0,0,NA
+Moutier (JU),2026,NA,Moutier (JU),696,3,NA

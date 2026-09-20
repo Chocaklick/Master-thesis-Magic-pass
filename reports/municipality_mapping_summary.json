@@ -1,0 +1,15 @@
+{
+  "resort_listings": 271,
+  "point_municipality_resolved": 268,
+  "point_municipality_unresolved": 3,
+  "unique_resolved_municipalities": 219,
+  "resort_listings_in_bfs_hotel_universe": 103,
+  "unique_bfs_hotel_municipalities_reached": 74,
+  "descriptive_point_merges_available": 103,
+  "causal_exposure_units_approved": 0,
+  "causal_exposure_blocker": "Point containment does not establish which municipality or municipalities receive tourism exposure from a ski domain; destination-level entity resolution and explicit weights remain required.",
+  "selection_status_counts": {
+    "unique_current_polygon": 268,
+    "outside_swiss_current_municipality_layer": 3
+  }
+}

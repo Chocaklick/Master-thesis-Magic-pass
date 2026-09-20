@@ -1,0 +1,76 @@
+[
+  {"source_id":"BFS_HOTEL_METADATA","url":"https://www.pxweb.bfs.admin.ch/api/v1/fr/px-x-1003020000_101/px-x-1003020000_101.px","suffix":"json","organisation":"Swiss Federal Statistical Office","description":"Hotel table metadata and municipality codes"},
+  {"source_id":"MAGIC_PRESS_ARCHIVE","url":"https://www.magicpass.ch/fr/presse","suffix":"html","organisation":"Magic Mountains Cooperation","description":"Official dated membership announcements and exit notices"},
+  {"source_id":"MAGIC_CURRENT_MAP","url":"https://www.magicpass.ch/fr/stations/map","suffix":"html","organisation":"Magic Mountains Cooperation","description":"Current destination list; not historical entry evidence"}
+,
+  {
+    "source_id": "MAGIC_2017",
+    "url": "https://www.magicpass.ch/media/document/0/dossier-de-presse_11_4-1.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official seasonal press evidence; membership extraction requires page verification"
+  },
+  {
+    "source_id": "MAGIC_2018",
+    "url": "https://www.magicpass.ch/media/document/0/mp-communique-presse-07_03_18-fr.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official seasonal press evidence; membership extraction requires page verification"
+  },
+  {
+    "source_id": "MAGIC_2019",
+    "url": "https://www.magicpass.ch/media/document/0/mp-cp-13mars-2019-fr-2_prix.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official seasonal press evidence; membership extraction requires page verification"
+  },
+  {
+    "source_id": "MAGIC_2020",
+    "url": "https://www.magicpass.ch/media/document/0/magic_pass_20-21_communique_lancement-1.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official seasonal press evidence; membership extraction requires page verification"
+  },
+  {
+    "source_id": "MAGIC_2021",
+    "url": "https://www.magicpass.ch/media/document/0/210316_magicpass-dossier-de-presse-final.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official seasonal press evidence; membership extraction requires page verification"
+  },
+  {
+    "source_id": "MAGIC_2022",
+    "url": "https://www.magicpass.ch/media/document/0/magicpass-commpresse-fr-15mar22.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official seasonal press evidence; membership extraction requires page verification"
+  },
+  {
+    "source_id": "MAGIC_2023",
+    "url": "https://www.magicpass.ch/media/document/0/mp-cp-23-dossier-presse-no-embargo-fr-avec-compression.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official seasonal press evidence; membership extraction requires page verification"
+  },
+  {
+    "source_id": "MAGIC_2024",
+    "url": "https://www.magicpass.ch/media/document/0/mp-cp-24-dossier-presse-fr-1-2.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official seasonal press evidence; membership extraction requires page verification"
+  },
+  {
+    "source_id": "MAGIC_2025",
+    "url": "https://www.magicpass.ch/media/document/0/dossier-de-presse-2025-ch-fr-avec-compression.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official seasonal press evidence; membership extraction requires page verification"
+  },
+  {
+    "source_id": "MAGIC_2026",
+    "url": "https://www.magicpass.ch/media/document/0/magicpass-2026-dossier-de-presse-chfr-avec-compression.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official seasonal press evidence; membership extraction requires page verification"
+  }
+]

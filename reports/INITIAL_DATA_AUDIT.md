@@ -1,55 +1,41 @@
-# Initial Data Audit
+# Initial data audit — completed Checkpoint 1
 
-## Audit scope
+The original initialization found no datasets. The researcher subsequently supplied 11 immutable files in `data_raw/`; this report now reflects the reproducible content audit. Exact schemas, column profiles, missing counts, examples, suspicious tokens, and SHA-256 hashes are in `reports/data_audit_details.json`, `reports/data_audit.csv`, and `metadata/raw_file_manifest.csv`.
 
-This is the non-destructive baseline inspection performed during repository initialization on 2026-09-20. The working directory was inspected before project files were created. It contained no files or subdirectories and was not a Git repository.
+## Inventory summary
 
-## Environment findings
+| Data family | Files / rows | Main grain | Main finding |
+|---|---:|---|---|
+| Winter lift geometry | 1 GPKG / 1,805 lifts | lift geometry | All geometries valid; stable `fid` and `tlm_uuid` fields present |
+| Resort directory and normalised listings | 3 CSVs / 271 listings each where applicable | resort listing | Stable `ski_id` retained as `resort_id`; listings are not yet validated independent domains |
+| Existing cluster products | 3 tabular/GeoJSON files / 242 clusters | lift cluster | 1,805 lift memberships are unique; 162 clusters receive a listing assignment |
+| Hotel statistics | 1 CSV / 33,852 rows / 149 columns | municipality × year × annual/month × origin × measure (wide) | 186 municipality labels, 2013–2026 grid, monthly and annual totals |
+| Legacy HTML maps | 2 files | embedded research outputs | Useful as legacy evidence only; not authoritative source data |
 
-| Item | Finding |
-|---|---|
-| Operating system | Microsoft Windows NT 10.0.22621.0 |
-| Shell | PowerShell |
-| Git | 2.53.0.windows.2; installed and user name/email configured |
-| Git repository at start | No |
-| GitHub remote at start | No |
-| GitHub CLI | Not installed or not on `PATH`; authentication could not be checked |
-| `python` / `py` on `PATH` | No |
-| Python installation found | Anaconda Python 3.12.7 at `C:\Users\Thibaud\anaconda3\python.exe` |
-| Existing virtual environment | None |
-| Created virtual environment | `.venv/`, Python 3.12.7, pip 24.2 |
+## Hotel outcome audit
 
-## Data inventory
+- The official table definition is hotel arrivals and overnight stays in open establishments, by municipality, month, origin, and indicator.
+- The source contains 31,248 monthly grid rows and 2,604 annual rows. Annual rows are excluded from the analytical monthly table.
+- There are 28,455 observed monthly total-night values. Observations run from January 2013 through March 2026; later 2026 grid months are unavailable rather than observed zeros.
+- The total-night field contains 2,793 literal `...` cells. They remain missing; no zero fill or imputation is applied.
+- Across all 146 measure columns, the non-numeric tokens are `...` (624,654 cells), `a` (one cell), and `-3` (two cells). These are preserved in raw source-token columns or the immutable source.
+- Annual totals agree with the sum of the twelve monthly values in every complete municipality-year.
+- The source has municipality labels but the existing extract does not retain BFS IDs. Current code-label pairs are taken from separately cached official OFS metadata.
 
-No CSV, XML, spreadsheet, geospatial, notebook, script, or other thesis data file was present in the project directory at the time of the baseline inspection.
+## Resort and join-key audit
 
-### Expected files not found
+- `resort_id`/`ski_id`, `cluster_id`, source URLs, coordinates, and lift `fid` are the strongest current keys.
+- Resort-directory URLs are unique, and the 271 normalised listings join one-to-one to the assignment table.
+- Fifty-three clusters contain more than one resort listing; 80 clusters are unnamed. A listing therefore cannot be treated automatically as an independent destination.
+- All original resort `commune` fields are empty. The legacy overnight-stay map contains 69 name overlaps but no defensible resort-to-municipality exposure weights.
 
-- `nuitée_commune_final.csv`
-- `bergfex_stations_ski_suisse_par_region.csv`
-- `assignations_stations_final_clean.csv`
-- `clusters_stations_final_clean.csv`
-- `stations_ski_geocoded_a_verifier_complet.csv`
-- `wms_layers_importants_these_ski.csv`
-- WMS capabilities XML files from geo.admin.ch
+## Missing information after Checkpoint 1
 
-Absence here means only that the files were not in this project directory; it does not assert that they do not exist elsewhere.
+1. A reviewed independent destination/domain definition.
+2. A complete historical Magic Pass membership and exit audit.
+3. A tourism-exposure crosswalk from destinations to one or more municipalities, including weights and shared-market rules.
+4. Historical municipality-boundary handling for the hotel panel.
+5. Hotel capacity, snow/climate, accessibility, population, tourism-dependence, investment, and network variables.
+6. Upstream retrieval dates for the supplied Bergfex and hotel extracts and the precise original source/version of the lift GPKG.
 
-## Inspection results
-
-Because no datasets were available, row counts, columns, geographic and temporal levels, identifiers, missingness, duplicates, inconsistencies, and cross-dataset relationships could not be evaluated. No classification as raw, manually constructed, intermediate, or final has been inferred from filenames alone.
-
-## Data-quality concerns to test when files arrive
-
-1. Encoding and delimiter consistency, especially for accented French/German/Italian place names.
-2. Stable identifiers versus name-only joins and spelling variants.
-3. Duplicate keys at the claimed geographic and temporal grain.
-4. Missing-value encodings and undocumented sentinel values.
-5. Municipality mergers and historically changing BFS identifiers.
-6. Resort, tourism-destination, and municipality many-to-many relationships.
-7. Construction date and provenance of manually cleaned or “final” datasets.
-8. Coordinate reference systems, coordinate precision, and geographic plausibility.
-
-## Required next audit
-
-Place original files in `data_raw/` without editing them. For each file, record a checksum and provenance, then inspect schema, row count, key candidates, missingness, duplicates, value ranges, geographic/temporal grain, and relationships. Update `metadata/data_sources_master.csv`, `metadata/data_dictionary.csv`, this report, and `PROJECT_STATE.md` without replacing source files.
+Checkpoint 1 is complete as an audit. It does not authorize causal modelling.

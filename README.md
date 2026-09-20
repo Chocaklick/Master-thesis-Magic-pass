@@ -6,7 +6,7 @@ This repository is the reproducible technical workspace for a Master's thesis in
 
 The full project mission is saved in [prompts/main_research_prompt.md](prompts/main_research_prompt.md). It defines the research questions, data requirements, feasibility gates, checkpoints, and final deliverables for subsequent work.
 
-The long-term objective is to combine defensible data engineering, causal/econometric analysis, machine learning, and geospatial analysis. The repository is currently in the initialization and data-discovery phase. No treatment-effect model, opportunity score, or large-scale external collection has been started.
+The long-term objective is to combine defensible data engineering, causal/econometric analysis, machine learning, and geospatial analysis. Checkpoint 1 and the initial treatment/panel feasibility gates are complete. No treatment-effect model or opportunity score has been fitted because the current evidence does not yet support causal treatment coding.
 
 A central methodological distinction is preserved throughout the project:
 
@@ -22,8 +22,10 @@ A resort assignment is not automatically a municipality assignment.
 
 - Local Git repository initialized on `main`.
 - Local Python 3.12 virtual environment created in `.venv/`.
-- Baseline folder structure and provenance schemas created.
-- No thesis datasets were present at initialization; the existing-cluster audit therefore remains pending.
+- Eleven supplied raw files are hashed, profiled, and preserved as immutable inputs.
+- The existing 242-cluster/1,805-lift layer has been validated without reclustering.
+- A 31,248-row municipality-month hotel panel, current point-municipality crosswalk, official Magic Pass evidence table, and resort-level data-quality table are reproducibly generated.
+- The current feasibility decision is Path C: exploratory segmentation/analogue decision support. Causal modelling remains gated by destination scope, membership continuity, exposure mapping, and control contamination.
 - GitHub synchronization is configured: `main` tracks `origin/main` at `https://github.com/Chocaklick/Master-thesis-Magic-pass.git`.
 
 See [PROJECT_STATE.md](PROJECT_STATE.md) for the authoritative current state and [logs/research_journal.md](logs/research_journal.md) for the chronological record.
@@ -50,15 +52,15 @@ outputs/              Generated exports (ignored by default)
 
 ## Python setup
 
-The initialized interpreter is Python 3.12.7. Python was found at `C:\Users\Thibaud\anaconda3\python.exe`, although it is not currently on `PATH`.
+The initialized interpreter is Python 3.12.7. Use any local Python 3.12 interpreter to create the environment.
 
 From PowerShell in the project root:
 
 ```powershell
-C:\Users\Thibaud\anaconda3\python.exe -m venv .venv
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-python -m pip install -e ".[dev]"
+python -m pip install -e ".[dev,audit]"
 ```
 
 On macOS or Linux with Python 3.12:
@@ -67,24 +69,22 @@ On macOS or Linux with Python 3.12:
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install -e '.[dev]'
+python -m pip install -e '.[dev,audit]'
 ```
 
-The initial dependency set is deliberately small. Add statistical, causal, geospatial, or machine-learning libraries only when a documented task requires them.
+The core dependency set remains small. Install `.[dev,audit]` to reproduce the geospatial/PDF audit tools; statistical, causal, and machine-learning libraries should be added only when a feasibility gate justifies them.
 
-## Reproducing the initialization audits
+## Reproducing the checkpoint pipeline
 
-The current audits describe an empty initial data inventory. To reproduce the baseline from the project root:
+With the original files available under ignored `data_raw/` and the previously cached official responses under ignored `data_external/`, run from the project root:
 
 ```powershell
-git status
-git remote -v
-git branch --show-current
-rg --files -g '!**/.git/**' -g '!**/.venv/**'
-.\.venv\Scripts\python.exe --version
+.\.venv\Scripts\python.exe src\run_checkpoint_pipeline.py
 ```
 
-When thesis datasets are added, preserve originals under `data_raw/`, record provenance in `metadata/data_sources_master.csv`, and rerun a documented audit before transformations. The cluster audit must be updated only after the existing clustering files are available; the clustering must not be rebuilt as part of that audit.
+To check or collect configured official evidence before rebuilding, add `--with-collection`. The collector reuses checksum-verified cached responses and logs every success or failure. The default pipeline performs no network access.
+
+The run ends with the automated test suite. Main checkpoint reports are `reports/01_DATA_AUDIT.md`, `reports/02_DATA_COLLECTION.md`, `reports/03_DATA_QUALITY.md`, and `reports/model_feasibility_report.md`.
 
 ## Data conventions
 

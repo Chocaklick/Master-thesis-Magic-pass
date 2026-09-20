@@ -1,0 +1,35 @@
+{
+  "documented_events": 93,
+  "documented_source_labels": 89,
+  "candidate_resolved_events": 64,
+  "unresolved_events": 29,
+  "base_pass_entry_events": 88,
+  "candidate_resolved_base_entry_events": 62,
+  "candidate_resolved_events_in_bfs_hotel_universe": 20,
+  "candidate_resolved_base_entries_in_bfs_hotel_universe": 18,
+  "candidate_resort_listings_with_any_event": 62,
+  "candidate_clusters_with_any_event": 45,
+  "events_by_type": {
+    "base_pass_entry": 88,
+    "paid_supplement": 1,
+    "base_pass_exit": 1,
+    "included_winter_offer": 1,
+    "paid_pass100_option": 1,
+    "permanent_base_pass_inclusion": 1
+  },
+  "events_by_source": {
+    "MAGIC_2017": 26,
+    "MAGIC_2018": 8,
+    "MAGIC_2019": 3,
+    "MAGIC_2020": 1,
+    "MAGIC_2022": 14,
+    "MAGIC_2023": 16,
+    "MAGIC_2024": 11,
+    "MAGIC_2025": 12,
+    "MAGIC_PRESS_ARCHIVE": 2
+  },
+  "treatment_ready_events": 0,
+  "causal_readiness": "blocked_pending_scope_continuity_and_exposure_review",
+  "known_non_absorbing_case": "Crans-Montana base membership ends 2020-04-30",
+  "coverage_gap": "The evidence inventory contains announced entry events, but not a complete season-by-season membership and exit audit for every destination."
+}

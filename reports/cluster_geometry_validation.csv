@@ -1,0 +1,272 @@
+resort_id,resort_name,cluster_id,stored_distance_m,recomputed_distance_m,distance_difference_m,nearest_cluster_recomputed,assigned_is_nearest,assignment_quality,latitude,longitude
+balmberg,Balmberg,SKI_CLUSTER_108,228.5,228.55,0.05,SKI_CLUSTER_108,True,confident,47.261175,7.539282
+hohe_winde_beinwil,Hohe Winde Beinwil,SKI_CLUSTER_179,15.2,15.105,-0.095,SKI_CLUSTER_179,True,confident,47.346791,7.594085
+bumbach_schangnau,Bumbach - Schangnau,SKI_CLUSTER_074,23.1,23.127,0.027,SKI_CLUSTER_074,True,confident,46.806787,7.887497
+chuderhusi,Chuderhüsi,SKI_CLUSTER_183,14.1,14.16,0.06,SKI_CLUSTER_183,True,confident,46.874583,7.7209
+gantrisch_gurnigel,Gantrisch - Gurnigel,SKI_CLUSTER_051,26.2,26.258,0.058,SKI_CLUSTER_051,True,confident,46.724344,7.45328
+gurten_bern,Gurten Bern,SKI_CLUSTER_051,17678.6,17678.62,0.02,SKI_CLUSTER_051,True,review,46.918543,7.440187
+heimenschwand_buchholterberg,Heimenschwand Buchholterberg,SKI_CLUSTER_109,14.2,14.236,0.036,SKI_CLUSTER_109,True,confident,46.825759,7.681117
+homberg_skilift_dreiligass_winteregg,Homberg Skilift Dreiligass - Winteregg,SKI_CLUSTER_136,6.7,6.685,-0.015,SKI_CLUSTER_136,True,confident,46.770492,7.677759
+linden_skilift_linden,Linden Skilift Linden,SKI_CLUSTER_109,21.7,21.684,-0.016,SKI_CLUSTER_109,True,confident,46.838971,7.677598
+ottenleuebad,Ottenleuebad,SKI_CLUSTER_051,250.1,250.16,0.06,SKI_CLUSTER_051,True,confident,46.730566,7.367363
+ruschegg_eywald,Rüschegg - Eywald,SKI_CLUSTER_051,375.6,375.58,-0.02,SKI_CLUSTER_051,True,confident,46.761737,7.415943
+schwarzenbuhl_selital,Schwarzenbühl Selital,SKI_CLUSTER_051,3.4,3.41,0.01,SKI_CLUSTER_051,True,confident,46.744577,7.389829
+langenbruck,Langenbruck,SKI_CLUSTER_111,50.5,50.554,0.054,SKI_CLUSTER_111,True,confident,47.34501,7.763203
+bulle_la_chia,Bulle - La Chia,SKI_CLUSTER_023,3413.8,3413.81,0.01,SKI_CLUSTER_023,True,confident,46.618141,7.055197
+charmey,Charmey,SKI_CLUSTER_091,32.5,32.454,-0.046,SKI_CLUSTER_091,True,confident,46.626158,7.206259
+hapfere_plaffeien,Hapfere Plaffeien,SKI_CLUSTER_173,0.4,0.381,-0.019,SKI_CLUSTER_173,True,confident,46.730875,7.280062
+jaun_gastlosen,Jaun Gastlosen,SKI_CLUSTER_092,513.9,513.917,0.017,SKI_CLUSTER_092,True,confident,46.610653,7.276211
+la_berra_la_roche,La Berra - La Roche,SKI_CLUSTER_069,256.2,256.225,0.025,SKI_CLUSTER_069,True,confident,46.676091,7.175961
+les_paccots_chatel_saint_denis,Les Paccots - Châtel Saint Denis,SKI_CLUSTER_023,263.3,263.243,-0.057,SKI_CLUSTER_023,True,confident,46.521312,6.947823
+moleson_la_gruyere,Moléson - La Gruyère,SKI_CLUSTER_023,13.3,13.331,0.031,SKI_CLUSTER_023,True,confident,46.550568,7.0205
+mont_gibloux,Mont Gibloux,SKI_CLUSTER_163,35.0,34.951,-0.049,SKI_CLUSTER_163,True,confident,46.686425,7.037687
+rathvel,Rathvel,SKI_CLUSTER_023,268.2,268.16,-0.04,SKI_CLUSTER_023,True,confident,46.545639,6.979065
+schwarzsee_kaiseregg_bahnen,Schwarzsee Kaiseregg Bahnen,SKI_CLUSTER_093,28.1,28.156,0.056,SKI_CLUSTER_093,True,confident,46.664635,7.291059
+aela_maloja,Aela Maloja,SKI_CLUSTER_120,68.9,68.768,-0.132,SKI_CLUSTER_120,True,confident,46.396348,9.704447
+andermatt_oberalp_sedrun,Andermatt - Oberalp - Sedrun,SKI_CLUSTER_017,142.5,142.461,-0.039,SKI_CLUSTER_017,True,confident,46.667286,8.711815
+arosa_lenzerheide,Arosa Lenzerheide,SKI_CLUSTER_007,177.2,177.135,-0.065,SKI_CLUSTER_007,True,confident,46.764619,9.607973
+avers,Avers,SKI_CLUSTER_118,31.2,31.216,0.016,SKI_CLUSTER_118,True,confident,46.445427,9.539695
+bergun_filisur_bergun_filisur_darlux,Bergün - Filisur Bergün - Filisur / Darlux,SKI_CLUSTER_086,34.3,34.306,0.006,SKI_CLUSTER_086,True,confident,46.623299,9.771051
+bivio,Bivio,SKI_CLUSTER_119,155.5,155.548,0.048,SKI_CLUSTER_119,True,confident,46.46902,9.650717
+brambruesch_chur_brambruesch,Brambrüesch Chur - Brambrüesch,SKI_CLUSTER_007,9.0,8.968,-0.032,SKI_CLUSTER_007,True,confident,46.82937,9.516478
+brigels_waltensburg_andiast,Brigels Waltensburg Andiast,SKI_CLUSTER_027,132.9,132.811,-0.089,SKI_CLUSTER_027,True,confident,46.795006,9.075394
+bugls_s_chanf,Bügls - S - chanf,SKI_CLUSTER_087,3451.4,3451.377,-0.023,SKI_CLUSTER_087,True,confident,46.613038,9.997939
+corvatsch_furtschellas,Corvatsch - Furtschellas,SKI_CLUSTER_033,43.3,43.309,0.009,SKI_CLUSTER_033,True,confident,46.432119,9.823236
+corviglia_st_moritz,Corviglia St. Moritz,SKI_CLUSTER_022,28.8,28.755,-0.045,SKI_CLUSTER_022,True,confident,46.513102,9.818344
+diavolezza_lagalb,Diavolezza - Lagalb,SKI_CLUSTER_099,14.0,13.919,-0.081,SKI_CLUSTER_099,True,confident,46.413612,9.966389
+disentis,Disentis,SKI_CLUSTER_017,109.4,109.294,-0.106,SKI_CLUSTER_017,True,confident,46.704321,8.814468
+feldis,Feldis,SKI_CLUSTER_149,181.8,181.87,0.07,SKI_CLUSTER_149,True,confident,46.79386,9.441891
+grusch_danusa,Grüsch Danusa,SKI_CLUSTER_056,66.3,66.44,0.14,SKI_CLUSTER_056,True,confident,46.961045,9.634493
+heuberge_fideriser_heuberge,Heuberge Fideriser Heuberge,SKI_CLUSTER_121,5.5,5.389,-0.111,SKI_CLUSTER_121,True,confident,46.866294,9.724874
+hochwang,Hochwang,SKI_CLUSTER_151,338.3,338.267,-0.033,SKI_CLUSTER_151,True,confident,46.840557,9.648889
+jakobshorn_davos_jakobshorn,Jakobshorn Davos Jakobshorn,SKI_CLUSTER_006,170.0,169.994,-0.006,SKI_CLUSTER_006,True,confident,46.774495,9.83654
+junker_st_antonien,Junker - St. Antönien,SKI_CLUSTER_240,31.4,31.517,0.117,SKI_CLUSTER_240,True,confident,46.971446,9.803253
+laax_flims_laax_falera,Laax Flims Laax Falera,SKI_CLUSTER_019,506.8,506.687,-0.113,SKI_CLUSTER_019,True,confident,46.847979,9.217186
+languard_pontresina,Languard Pontresina,SKI_CLUSTER_022,52.8,52.852,0.052,SKI_CLUSTER_022,True,confident,46.491566,9.907554
+madrisa_klosters_madrisa,Madrisa Klosters Madrisa,SKI_CLUSTER_006,47.2,47.333,0.133,SKI_CLUSTER_006,True,confident,46.897446,9.867868
+mastrils_skilift_mastrils,Mastrils Skilift Mastrils,SKI_CLUSTER_038,44.9,44.934,0.034,SKI_CLUSTER_038,True,confident,46.967238,9.538779
+minschuns_val_mustair,Minschuns - Val Müstair,SKI_CLUSTER_122,321.7,321.879,0.179,SKI_CLUSTER_122,True,confident,46.647256,10.332212
+motta_naluns_scuol_motta_naluns,Motta Naluns Scuol Motta Naluns,SKI_CLUSTER_044,68.4,68.392,-0.008,SKI_CLUSTER_044,True,confident,46.818447,10.261745
+muottas_muragl,Muottas Muragl,SKI_CLUSTER_022,61.2,61.15,-0.05,SKI_CLUSTER_022,True,confident,46.518654,9.89705
+musella_la_punt_musella,Müsella La Punt - Müsella,SKI_CLUSTER_087,2.0,2.015,0.015,SKI_CLUSTER_087,True,confident,46.571481,9.930184
+obermutten_mutten_obermutten,Obermutten Mutten - Obermutten,SKI_CLUSTER_236,26.5,26.45,-0.05,SKI_CLUSTER_236,True,confident,46.672336,9.487853
+obersaxen_mundaun,Obersaxen Mundaun,SKI_CLUSTER_027,173.2,173.226,0.026,SKI_CLUSTER_027,True,confident,46.736331,9.119854
+pany,Pany,SKI_CLUSTER_239,12.9,12.844,-0.056,SKI_CLUSTER_239,True,confident,46.933802,9.760868
+parsenn_davos_klosters_parsenn,Parsenn Davos Klosters Parsenn,SKI_CLUSTER_006,64.8,64.753,-0.047,SKI_CLUSTER_006,True,confident,46.847571,9.820662
+pian_cales_san_bernardino,Pian Cales San Bernardino,SKI_CLUSTER_067,2.0,2.085,0.085,SKI_CLUSTER_067,True,confident,46.462443,9.196994
+pischa_davos_pischa,Pischa Davos Pischa,SKI_CLUSTER_241,2.7,2.69,-0.01,SKI_CLUSTER_241,True,confident,46.807873,9.913616
+pradaschier_churwalden,Pradaschier - Churwalden,SKI_CLUSTER_007,39.2,39.364,0.164,SKI_CLUSTER_007,True,confident,46.782678,9.520105
+rinerhorn_davos_rinerhorn,Rinerhorn Davos Rinerhorn,SKI_CLUSTER_006,117.6,117.532,-0.068,SKI_CLUSTER_006,True,confident,46.745978,9.800406
+rossa,Rossa,SKI_CLUSTER_147,5785.8,5785.965,0.165,SKI_CLUSTER_147,True,warning,46.372306,9.128048
+samnaun_silvretta_arena_samnaun_ischgl,Samnaun Silvretta Arena Samnaun / Ischgl,SKI_CLUSTER_011,71.3,71.072,-0.228,SKI_CLUSTER_011,True,confident,46.981189,10.374098
+sarn_heinzenberg,Sarn - Heinzenberg,SKI_CLUSTER_060,73.6,73.434,-0.166,SKI_CLUSTER_060,True,confident,46.722506,9.395306
+savognin,Savognin,SKI_CLUSTER_043,33.5,33.552,0.052,SKI_CLUSTER_043,True,confident,46.5873,9.555016
+schatzalp_davos_schatzalp_strela,Schatzalp Davos Schatzalp - Strela,SKI_CLUSTER_006,81.5,81.481,-0.019,SKI_CLUSTER_006,True,confident,46.801235,9.814396
+splugen_rheinwald,Splügen Rheinwald,SKI_CLUSTER_084,2.2,2.148,-0.052,SKI_CLUSTER_084,True,confident,46.530701,9.314003
+survih_samedan,Survih - Samedan,SKI_CLUSTER_022,604.2,604.162,-0.038,SKI_CLUSTER_022,True,confident,46.528848,9.862564
+tenna,Tenna,SKI_CLUSTER_060,11.3,11.391,0.091,SKI_CLUSTER_060,True,confident,46.751383,9.341305
+tschappina_tschappina_urmein_heinzenberg,Tschappina Tschappina - Urmein - Heinzenberg,SKI_CLUSTER_060,300.9,301.003,0.103,SKI_CLUSTER_060,True,confident,46.694844,9.362669
+tschiertschen,Tschiertschen,SKI_CLUSTER_098,164.5,164.52,0.02,SKI_CLUSTER_098,True,confident,46.803827,9.589434
+vals,Vals,SKI_CLUSTER_097,31.6,31.46,-0.14,SKI_CLUSTER_097,True,confident,46.605229,9.144316
+valtgeva_druni_kidsarena_sedrun,Valtgeva Druni KidsArena Sedrun,SKI_CLUSTER_017,121.7,121.751,0.051,SKI_CLUSTER_017,True,confident,46.681679,8.766299
+zuoz,Zuoz,SKI_CLUSTER_087,58.2,58.233,0.033,SKI_CLUSTER_087,True,confident,46.611125,9.949408
+brot_plamboz,Brot - Plamboz,SKI_CLUSTER_157,6260.7,6260.702,0.002,SKI_CLUSTER_157,True,warning,46.971794,6.742194
+chapeau_rable_la_chaux_de_fonds,Chapeau Rablé La Chaux - de - Fonds,SKI_CLUSTER_159,27.4,27.317,-0.083,SKI_CLUSTER_159,True,confident,47.099517,6.803112
+cret_meuron,Crêt - Meuron,SKI_CLUSTER_126,422.5,422.57,0.07,SKI_CLUSTER_126,True,confident,47.067509,6.859999
+cote_aux_fees_la_cote_aux_fees,Côte - aux - Fées La Côte - aux - Fées,SKI_CLUSTER_156,6.6,6.585,-0.015,SKI_CLUSTER_156,True,confident,46.865496,6.499678
+la_brevine,La Brévine,SKI_CLUSTER_102,11064.6,11064.615,0.015,SKI_CLUSTER_102,True,review,46.978921,6.604262
+la_corbatiere_la_roche_des_crocs,La Corbatière - La Roche - des - Crocs,SKI_CLUSTER_126,9.2,9.215,0.015,SKI_CLUSTER_126,True,confident,47.069157,6.842594
+la_robella,La Robella,SKI_CLUSTER_102,104.3,104.336,0.036,SKI_CLUSTER_102,True,confident,46.874891,6.548667
+le_chaluet,Le Chaluet,SKI_CLUSTER_133,2055.4,2055.339,-0.061,SKI_CLUSTER_133,True,confident,47.24311,7.388745
+le_paquier_cret_du_puy,Le Pâquier Crêt - du - Puy,SKI_CLUSTER_042,6.9,6.909,0.009,SKI_CLUSTER_042,True,confident,47.091784,6.987315
+les_breuleux,Les Breuleux,SKI_CLUSTER_162,28.3,28.291,-0.009,SKI_CLUSTER_162,True,confident,47.194437,7.015157
+les_bugnenets_savagnieres,Les Bugnenets - Savagnières,SKI_CLUSTER_042,139.7,139.668,-0.032,SKI_CLUSTER_042,True,confident,47.124286,7.018976
+les_genevez,Les Genevez,SKI_CLUSTER_168,35.3,35.293,-0.007,SKI_CLUSTER_168,True,confident,47.248737,7.136436
+les_loges,Les Loges,SKI_CLUSTER_126,1319.7,1319.754,0.054,SKI_CLUSTER_126,True,confident,47.070038,6.871577
+les_verrieres,Les Verrières,SKI_CLUSTER_155,0.1,0.022,-0.078,SKI_CLUSTER_155,True,confident,46.899539,6.477439
+nods_chasseral,Nods - Chasseral,SKI_CLUSTER_166,6.6,6.54,-0.06,SKI_CLUSTER_166,True,confident,47.118433,7.07693
+pres_d_orvin_les_pres_d_orvin,Prés - d'Orvin Les Prés - d'Orvin,SKI_CLUSTER_130,40.5,40.474,-0.026,SKI_CLUSTER_130,True,confident,47.145226,7.170349
+saint_imier_mont_soleil,Saint - Imier - Mont Soleil,SKI_CLUSTER_161,78.8,78.884,0.084,SKI_CLUSTER_161,True,warning,47.154704,6.994514
+sommartel_le_locle,Sommartel Le Locle,SKI_CLUSTER_157,24.3,24.254,-0.046,SKI_CLUSTER_157,True,confident,47.033046,6.745563
+sous_le_mont,Sous le Mont,SKI_CLUSTER_170,27.9,27.969,0.069,SKI_CLUSTER_170,True,confident,47.21631,7.217651
+tramelan,Tramelan,SKI_CLUSTER_128,80.3,80.338,0.038,SKI_CLUSTER_128,True,confident,47.20954,7.085334
+attinghausen_brusti_attinghausen,Attinghausen Brüsti - Attinghausen,SKI_CLUSTER_021,4.7,4.712,0.012,SKI_CLUSTER_021,True,confident,46.857234,8.622749
+bennau_einsiedeln,Bennau Einsiedeln,SKI_CLUSTER_079,4.4,4.373,-0.027,SKI_CLUSTER_079,True,confident,47.143675,8.731658
+biel_kinzig,Biel - Kinzig,SKI_CLUSTER_021,177.8,177.714,-0.086,SKI_CLUSTER_021,True,confident,46.901693,8.710227
+brunni_haggenegg,Brunni - Haggenegg,SKI_CLUSTER_013,33.8,33.852,0.052,SKI_CLUSTER_013,True,confident,47.041001,8.705914
+brunni_brunni_bahnen_engelberg,Brunni Brunni - Bahnen Engelberg,SKI_CLUSTER_003,145.0,145.049,0.049,SKI_CLUSTER_003,True,confident,46.831895,8.409519
+brunni_skilift_brunni,Brunni Skilift Brunni,SKI_CLUSTER_013,7.0,6.911,-0.089,SKI_CLUSTER_013,True,confident,47.031408,8.699369
+dallenwil_wirzweli,Dallenwil - Wirzweli,SKI_CLUSTER_003,314.5,314.512,0.012,SKI_CLUSTER_003,True,confident,46.914393,8.363085
+engelberg_titlis,Engelberg Titlis,SKI_CLUSTER_003,81.9,81.983,0.083,SKI_CLUSTER_003,True,confident,46.787191,8.410892
+fluelen_eggberge_fluelen,Flüelen Eggberge / Flüelen,SKI_CLUSTER_021,21.3,21.203,-0.097,SKI_CLUSTER_021,True,confident,46.902848,8.65191
+friherrenberg_einsiedeln,Friherrenberg Einsiedeln,SKI_CLUSTER_079,4.7,4.725,0.025,SKI_CLUSTER_079,True,confident,47.12733,8.76194
+gemsstock_andermatt_gemsstock,Gemsstock Andermatt - Gemsstock,SKI_CLUSTER_017,159.8,159.927,0.127,SKI_CLUSTER_017,True,confident,46.612422,8.605814
+gfellen_entlebuch_finsterwald,Gfellen Entlebuch - Finsterwald,SKI_CLUSTER_193,20.2,20.17,-0.03,SKI_CLUSTER_193,True,confident,46.956442,8.127464
+gitschenen_skilift_gitschenen,Gitschenen Skilift Gitschenen,SKI_CLUSTER_003,9.9,9.926,0.026,SKI_CLUSTER_003,True,confident,46.900566,8.502581
+hoch_ybrig,Hoch - Ybrig,SKI_CLUSTER_013,63.0,62.939,-0.061,SKI_CLUSTER_013,True,confident,47.011221,8.784342
+hochstuckli_sattel_hochstuckli,Hochstuckli Sattel Hochstuckli,SKI_CLUSTER_013,172.6,172.482,-0.118,SKI_CLUSTER_013,True,confident,47.064568,8.653793
+ibergeregg_skilifte_ibergeregg,Ibergeregg Skilifte Ibergeregg,SKI_CLUSTER_013,100.4,100.335,-0.065,SKI_CLUSTER_013,True,confident,47.022003,8.728863
+kellerberg_skilift_kellerberg_haldi,Kellerberg Skilift Kellerberg / Haldi,SKI_CLUSTER_021,14.5,14.388,-0.112,SKI_CLUSTER_021,True,confident,46.853117,8.688415
+klewenalp_stockhutte,Klewenalp - Stockhütte,SKI_CLUSTER_003,35.2,35.205,0.005,SKI_CLUSTER_003,True,confident,46.939305,8.479385
+langis_glaubenberg,Langis Glaubenberg,SKI_CLUSTER_191,316.2,316.214,0.014,SKI_CLUSTER_191,True,confident,46.895185,8.118768
+lungern_turren_lungern_schonbuel,Lungern - Turren Lungern - Schönbüel,SKI_CLUSTER_194,69.2,69.204,0.004,SKI_CLUSTER_194,True,confident,46.788748,8.129403
+marchbachegg_marbach_marbachegg,Marchbachegg Marbach - Marbachegg,SKI_CLUSTER_074,193.1,193.084,-0.016,SKI_CLUSTER_074,True,confident,46.840233,7.899685
+melchsee_frutt,Melchsee - Frutt,SKI_CLUSTER_024,507.7,507.687,-0.013,SKI_CLUSTER_024,True,confident,46.775788,8.278284
+mythenregion,Mythenregion,SKI_CLUSTER_013,178.7,178.652,-0.048,SKI_CLUSTER_013,True,confident,47.022968,8.710206
+morlialp,Mörlialp,SKI_CLUSTER_075,1.9,1.907,0.007,SKI_CLUSTER_075,True,confident,46.824379,8.108318
+neusell,Neusell,SKI_CLUSTER_013,4.8,4.868,0.068,SKI_CLUSTER_013,True,confident,47.091978,8.673921
+nollen_unterageri,Nollen - Unterägeri,SKI_CLUSTER_141,97.1,97.19,0.09,SKI_CLUSTER_141,True,confident,47.125504,8.557481
+oberiberg,Oberiberg,SKI_CLUSTER_013,31.6,31.575,-0.025,SKI_CLUSTER_013,True,confident,47.038439,8.782257
+ratzi_spiringen,Ratzi Spiringen,SKI_CLUSTER_021,20.7,20.716,0.016,SKI_CLUSTER_021,True,confident,46.88788,8.731985
+realp,Realp,SKI_CLUSTER_202,385.2,385.253,0.053,SKI_CLUSTER_202,True,confident,46.602162,8.497581
+rigi,Rigi,SKI_CLUSTER_040,1189.5,1189.498,-0.002,SKI_CLUSTER_040,True,confident,47.044393,8.499298
+sattelegg_einsiedeln,Sattelegg Einsiedeln,SKI_CLUSTER_144,20.0,19.957,-0.043,SKI_CLUSTER_144,True,confident,47.125487,8.84849
+schnabelsberg_einsiedeln,Schnabelsberg Einsiedeln,SKI_CLUSTER_079,17.0,16.928,-0.072,SKI_CLUSTER_079,True,confident,47.141387,8.738143
+schratten_fluhli,Schratten Flühli,SKI_CLUSTER_190,35.6,35.576,-0.024,SKI_CLUSTER_190,True,confident,46.873193,8.007549
+seebodenalp_kussnacht_am_rigi,Seebodenalp - Küssnacht am Rigi,SKI_CLUSTER_040,197.7,197.613,-0.087,SKI_CLUSTER_040,True,confident,47.06847,8.468099
+stoos,Stoos,SKI_CLUSTER_013,29.7,29.618,-0.082,SKI_CLUSTER_013,True,confident,46.977851,8.658514
+sorenberg,Sörenberg,SKI_CLUSTER_031,31.5,31.534,0.034,SKI_CLUSTER_031,True,confident,46.809812,8.030405
+wagital_vorderthal,Wägital - Vorderthal,SKI_CLUSTER_144,19.6,19.701,0.101,SKI_CLUSTER_144,True,confident,47.124317,8.893122
+adelboden,Adelboden,SKI_CLUSTER_014,30.8,30.777,-0.023,SKI_CLUSTER_014,True,confident,46.493616,7.55692
+aeschi,Aeschi,SKI_CLUSTER_110,394.2,394.132,-0.068,SKI_CLUSTER_110,True,confident,46.646991,7.727723
+axalp_brienz,Axalp Brienz,SKI_CLUSTER_095,129.4,129.443,0.043,SKI_CLUSTER_095,True,confident,46.712855,8.042511
+beatenberg_niederhorn,Beatenberg - Niederhorn,SKI_CLUSTER_046,72.0,71.986,-0.014,SKI_CLUSTER_046,True,confident,46.703379,7.772655
+eggiwil,Eggiwil,SKI_CLUSTER_184,15.3,15.305,0.005,SKI_CLUSTER_184,True,confident,46.891772,7.77479
+elsigenalp_metschalp_frutigen,Elsigenalp - Metschalp Frutigen,SKI_CLUSTER_053,71.1,71.137,0.037,SKI_CLUSTER_053,True,confident,46.522139,7.623138
+engstligenalp_adelboden,Engstligenalp - Adelboden,SKI_CLUSTER_014,83.4,83.446,0.046,SKI_CLUSTER_014,True,confident,46.437739,7.570224
+eriz,Eriz,SKI_CLUSTER_138,56.6,56.536,-0.064,SKI_CLUSTER_138,True,warning,46.781343,7.825141
+faltschen_reichenbach_im_kandertal,Faltschen - Reichenbach im Kandertal,SKI_CLUSTER_110,29.6,29.604,0.004,SKI_CLUSTER_110,True,confident,46.630739,7.719454
+gadmen,Gadmen,SKI_CLUSTER_198,1.0,0.937,-0.063,SKI_CLUSTER_198,True,confident,46.738742,8.35102
+grimmialp_diemtigtal,Grimmialp Diemtigtal,SKI_CLUSTER_107,339.8,339.778,-0.022,SKI_CLUSTER_107,True,confident,46.561575,7.481089
+gstaad,Gstaad,SKI_CLUSTER_016,77.0,77.015,0.015,SKI_CLUSTER_016,True,confident,46.491597,7.318869
+habkern,Habkern,SKI_CLUSTER_046,555.9,555.871,-0.029,SKI_CLUSTER_046,True,confident,46.727154,7.863808
+heiligenschwendi_hubelweid,Heiligenschwendi - Hubelweid,SKI_CLUSTER_136,1.5,1.485,-0.015,SKI_CLUSTER_136,True,confident,46.751028,7.684973
+jaunpass,Jaunpass,SKI_CLUSTER_132,89.4,89.403,0.003,SKI_CLUSTER_132,True,confident,46.592276,7.338685
+kiental,Kiental,SKI_CLUSTER_137,4.6,4.658,0.058,SKI_CLUSTER_137,True,confident,46.580575,7.710857
+lenk,Lenk,SKI_CLUSTER_014,44.9,44.863,-0.037,SKI_CLUSTER_014,True,confident,46.446255,7.431993
+meiringen_hasliberg,Meiringen - Hasliberg,SKI_CLUSTER_024,53.8,53.85,0.05,SKI_CLUSTER_024,True,confident,46.747918,8.230219
+riffenmatt,Riffenmatt,SKI_CLUSTER_051,2871.1,2871.08,-0.02,SKI_CLUSTER_051,True,confident,46.76325,7.355116
+rossberg_oberwil,Rossberg - Oberwil,SKI_CLUSTER_176,312.4,312.404,0.004,SKI_CLUSTER_176,True,confident,46.639537,7.44195
+schilthorn_jungfrau_ski_region_murren_schilthorn,Schilthorn Jungfrau Ski Region Mürren - Schilthorn,SKI_CLUSTER_010,30.7,30.734,0.034,SKI_CLUSTER_010,True,confident,46.561752,7.856255
+schwanden_sigriswil_thunersee,Schwanden - Sigriswil Thunersee,SKI_CLUSTER_046,54.9,54.942,0.042,SKI_CLUSTER_046,True,confident,46.731449,7.744246
+springenboden_diemtigtal,Springenboden Diemtigtal,SKI_CLUSTER_063,1.9,1.897,-0.003,SKI_CLUSTER_063,True,confident,46.617905,7.572842
+wengen_jungfrau_ski_region_grindelwald_wengen,Wengen Jungfrau Ski Region Grindelwald - Wengen,SKI_CLUSTER_010,74.8,74.817,0.017,SKI_CLUSTER_010,True,confident,46.612658,7.942171
+wiriehorn_diemtigtal,Wiriehorn Diemtigtal,SKI_CLUSTER_063,4.3,4.309,0.009,SKI_CLUSTER_063,True,confident,46.594923,7.530742
+alpsteinblick_gonten,Alpsteinblick Gonten,SKI_CLUSTER_083,13.1,12.984,-0.116,SKI_CLUSTER_083,True,confident,47.317325,9.343958
+amden,Amden,SKI_CLUSTER_082,19.8,19.711,-0.089,SKI_CLUSTER_082,True,confident,47.159431,9.146032
+atzmannig,Atzmännig,SKI_CLUSTER_066,23.4,23.413,0.013,SKI_CLUSTER_066,True,confident,47.281732,9.003813
+bildhaus_am_ricken,Bildhaus am Ricken,SKI_CLUSTER_216,0.5,0.492,-0.008,SKI_CLUSTER_216,True,confident,47.24931,9.034485
+braunwald,Braunwald,SKI_CLUSTER_047,163.7,163.725,0.025,SKI_CLUSTER_047,True,confident,46.951258,8.990593
+brulisau_brulisau_leugangen,Brülisau Brülisau - Leugangen,SKI_CLUSTER_055,14.7,14.804,0.104,SKI_CLUSTER_055,True,confident,47.296306,9.454561
+buchserberg_skilift_buchserberg_malbun,Buchserberg Skilift Buchserberg - Malbun,SKI_CLUSTER_234,18.4,18.258,-0.142,SKI_CLUSTER_234,True,confident,47.146309,9.430776
+degersheim,Degersheim,SKI_CLUSTER_116,105.3,105.267,-0.033,SKI_CLUSTER_116,True,confident,47.368843,9.197
+ebenalp_horn,Ebenalp - Horn,SKI_CLUSTER_055,1.2,1.049,-0.151,SKI_CLUSTER_055,True,confident,47.284877,9.413481
+egg_hallau,Egg Hallau,SKI_CLUSTER_200,24812.5,24812.507,0.007,SKI_CLUSTER_200,True,review,47.699047,8.438873
+elm,Elm,SKI_CLUSTER_081,14.2,14.285,0.085,SKI_CLUSTER_081,True,confident,46.920329,9.15689
+flumserberg,Flumserberg,SKI_CLUSTER_029,183.9,183.87,-0.03,SKI_CLUSTER_029,True,confident,47.078072,9.266882
+grub_kaien,Grub Kaien,SKI_CLUSTER_117,50.4,50.403,0.003,SKI_CLUSTER_117,True,confident,47.441069,9.503018
+hamberg_gahwil,Hamberg - Gähwil,SKI_CLUSTER_145,16.0,16.011,0.011,SKI_CLUSTER_145,True,confident,47.39527,9.001708
+heiden_bischofsberg,Heiden Bischofsberg,SKI_CLUSTER_117,9.4,9.379,-0.021,SKI_CLUSTER_117,True,confident,47.433732,9.533338
+hemberg,Hemberg,SKI_CLUSTER_228,81.7,81.758,0.058,SKI_CLUSTER_228,True,confident,47.281835,9.173477
+hornli_schonengrund,Hörnli - Schönengrund,SKI_CLUSTER_230,4.1,4.057,-0.043,SKI_CLUSTER_230,True,confident,47.311824,9.21129
+jakobsbad_kronberg,Jakobsbad - Kronberg,SKI_CLUSTER_083,507.1,507.182,0.082,SKI_CLUSTER_083,True,confident,47.320672,9.321728
+kerenzerberg,Kerenzerberg,SKI_CLUSTER_226,49.0,48.933,-0.067,SKI_CLUSTER_226,True,confident,47.105537,9.125776
+klausenbohl_gais_klausenbohl,Klausenböhl Gais / Klausenböhl,SKI_CLUSTER_235,2.6,2.763,0.163,SKI_CLUSTER_235,True,confident,47.365886,9.459887
+oberegg_st_anton,Oberegg St. Anton,SKI_CLUSTER_117,3.2,3.298,0.098,SKI_CLUSTER_117,True,confident,47.416692,9.550193
+oberhelfenschwil,Oberhelfenschwil,SKI_CLUSTER_225,2.2,2.29,0.09,SKI_CLUSTER_225,True,confident,47.353619,9.114499
+opfershofen_skilift_stich_opfertshofen,Opfershofen Skilift Stich / Opfertshofen,SKI_CLUSTER_200,37204.2,37204.011,-0.189,SKI_CLUSTER_200,True,review,47.773517,8.657243
+osteregg_urnasch_osteregg,Osteregg Urnäsch / Osteregg,SKI_CLUSTER_083,2.3,2.401,0.101,SKI_CLUSTER_083,True,confident,47.310331,9.285523
+pizol_bad_ragaz_wangs,Pizol - Bad Ragaz - Wangs,SKI_CLUSTER_038,539.3,539.401,0.101,SKI_CLUSTER_038,True,confident,46.985464,9.437256
+schilt_mollis,Schilt Mollis,SKI_CLUSTER_146,29.2,29.24,0.04,SKI_CLUSTER_146,True,confident,47.078625,9.093751
+schwellbrunn,Schwellbrunn,SKI_CLUSTER_116,1.9,2.106,0.206,SKI_CLUSTER_116,True,confident,47.344767,9.227399
+tannenberg_skiarena_tannenberg_waldkirch,Tannenberg Skiarena Tannenberg / Waldkirch,SKI_CLUSTER_232,7318.9,7319.103,0.203,SKI_CLUSTER_232,True,warning,47.453682,9.302073
+tanzboden_ebnat_kappel,Tanzboden Ebnat - Kappel,SKI_CLUSTER_224,61.4,61.352,-0.048,SKI_CLUSTER_224,True,confident,47.24695,9.109672
+toggenburg_chaserrugg_alt_st_johann_unterwasser,Toggenburg - Chäserrugg Alt St. Johann Unterwasser,SKI_CLUSTER_030,18.2,18.247,0.047,SKI_CLUSTER_030,True,confident,47.176269,9.311752
+toggenburg_wildhaus,Toggenburg Wildhaus,SKI_CLUSTER_030,19.6,19.589,-0.011,SKI_CLUSTER_030,True,confident,47.179207,9.341204
+tristeli_st_margarethenberg,Tristeli St. Margarethenberg,SKI_CLUSTER_038,2.7,2.682,-0.018,SKI_CLUSTER_038,True,confident,46.980926,9.507916
+vogelinsegg_speicher,Vögelinsegg Speicher,SKI_CLUSTER_233,1.3,1.39,0.09,SKI_CLUSTER_233,True,confident,47.415607,9.43485
+wolzenalp_krummenau,Wolzenalp Krummenau,SKI_CLUSTER_115,179.3,179.181,-0.119,SKI_CLUSTER_115,True,confident,47.234402,9.161954
+airolo_luina,Airolo - Lüina,SKI_CLUSTER_059,500.2,500.105,-0.095,SKI_CLUSTER_059,True,confident,46.531174,8.607874
+airolo_pescium_airolo_pescium,Airolo - Pesciüm Airolo - Pesciüm,SKI_CLUSTER_059,102.8,102.955,0.155,SKI_CLUSTER_059,True,confident,46.523792,8.60384
+alpe_di_neggia,Alpe di Neggia,SKI_CLUSTER_208,127.0,126.75,-0.25,SKI_CLUSTER_208,True,confident,46.111627,8.838201
+bedea_novaggio,Bedea Novaggio,SKI_CLUSTER_209,12.2,11.94,-0.26,SKI_CLUSTER_209,True,confident,46.009597,8.862062
+bedrina_dalpe,Bedrina Dalpe,SKI_CLUSTER_206,994.0,994.09,0.09,SKI_CLUSTER_206,True,confident,46.471723,8.775826
+bosco_gurin,Bosco Gurin,SKI_CLUSTER_077,16.1,16.205,0.105,SKI_CLUSTER_077,True,confident,46.316644,8.467541
+campo_blenio_ghirone,Campo Blenio - Ghirone,SKI_CLUSTER_114,229.8,229.665,-0.135,SKI_CLUSTER_114,True,confident,46.556234,8.936605
+cardada_cimetta_locarno,Cardada Cimetta Locarno,SKI_CLUSTER_142,104.8,104.948,0.148,SKI_CLUSTER_142,True,confident,46.196795,8.788161
+cari,Carì,SKI_CLUSTER_143,19.4,19.496,0.096,SKI_CLUSTER_143,True,confident,46.503709,8.818052
+cioss_prato_bedretto,Cioss Prato Bedretto,SKI_CLUSTER_201,30.9,31.049,0.149,SKI_CLUSTER_201,True,confident,46.491341,8.484889
+mogno,Mogno,SKI_CLUSTER_205,13.4,13.528,0.128,SKI_CLUSTER_205,True,confident,46.428061,8.661765
+nara_leontica_cancori,Nara Leontica - Cancorì,SKI_CLUSTER_080,2.7,2.781,0.081,SKI_CLUSTER_080,True,confident,46.460122,8.898282
+piano_di_peccia,Piano di Peccia,SKI_CLUSTER_205,4325.7,4325.546,-0.154,SKI_CLUSTER_205,True,warning,46.410422,8.610607
+prato_leventina,Prato Leventina,SKI_CLUSTER_206,0.6,0.428,-0.172,SKI_CLUSTER_206,True,confident,46.481156,8.757745
+aletsch_arena_riederalp_bettmeralp_fiesch_eggishorn,Aletsch Arena Riederalp - Bettmeralp - Fiesch - Eggishorn,SKI_CLUSTER_009,47.9,47.981,0.081,SKI_CLUSTER_009,True,confident,46.416381,8.099413
+anzere,Anzère,SKI_CLUSTER_020,265.3,265.233,-0.067,SKI_CLUSTER_020,True,confident,46.312909,7.39749
+arolla,Arolla,SKI_CLUSTER_070,810.2,810.207,0.007,SKI_CLUSTER_070,True,confident,46.027482,7.469587
+avoriaz_1800_portes_du_soleil,Avoriaz 1800 Portes du Soleil,SKI_CLUSTER_001,4.2,4.284,0.084,SKI_CLUSTER_001,True,confident,46.178671,6.778607
+belalp,Belalp,SKI_CLUSTER_009,10.7,10.574,-0.126,SKI_CLUSTER_009,True,confident,46.379149,7.977705
+bellwald,Bellwald,SKI_CLUSTER_009,0.3,0.384,0.084,SKI_CLUSTER_009,True,confident,46.441347,8.16679
+bruson_verbier,Bruson - Verbier,SKI_CLUSTER_002,159.9,160.046,0.146,SKI_CLUSTER_002,True,confident,46.059832,7.199478
+champex_lac,Champex - Lac,SKI_CLUSTER_090,22.7,22.755,0.055,SKI_CLUSTER_090,True,confident,46.027661,7.104979
+champery_les_crosets_champoussin_morgins_portes_du_soleil,Champéry - Les Crosets - Champoussin - Morgins Portes du Soleil,SKI_CLUSTER_001,186.2,186.183,-0.017,SKI_CLUSTER_001,True,confident,46.206567,6.849031
+chapelle_abondance_la_chapelle_d_abondance_portes_du_soleil,Chapelle Abondance La Chapelle d'Abondance / Portes du Soleil,SKI_CLUSTER_001,41.9,41.785,-0.115,SKI_CLUSTER_001,True,confident,46.284582,6.776779
+chatel_portes_du_soleil,Châtel Portes du Soleil,SKI_CLUSTER_001,33.4,33.492,0.092,SKI_CLUSTER_001,True,confident,46.267685,6.858344
+crans_montana_crans_montana,Crans - Montana Crans - Montana,SKI_CLUSTER_020,34.3,34.352,0.052,SKI_CLUSTER_020,True,confident,46.336084,7.479029
+eischoll_sportbahnen_eischoll,Eischoll Sportbahnen Eischoll,SKI_CLUSTER_012,491.3,491.349,0.049,SKI_CLUSTER_012,True,confident,46.277,7.767677
+evolene,Evolène,SKI_CLUSTER_106,50.3,50.225,-0.075,SKI_CLUSTER_106,True,confident,46.121738,7.465553
+gampel_jeizinen_jeizinen_feselalpe_gampel,Gampel - Jeizinen Jeizinen - Feselalpe / Gampel,SKI_CLUSTER_072,172.6,172.703,0.103,SKI_CLUSTER_072,True,confident,46.328142,7.722965
+grimentz_zinal_grimentz_zinal,Grimentz/Zinal Grimentz - Zinal,SKI_CLUSTER_028,91.2,91.231,0.031,SKI_CLUSTER_028,True,confident,46.180841,7.556791
+grachen,Grächen,SKI_CLUSTER_012,660.9,661.008,0.108,SKI_CLUSTER_012,True,confident,46.193973,7.852221
+hohsaas_saas_grund_hohsaas,Hohsaas Saas Grund - Hohsaas,SKI_CLUSTER_015,3.4,3.362,-0.038,SKI_CLUSTER_015,True,confident,46.138512,7.965088
+la_forclaz,La Forclaz,SKI_CLUSTER_134,171.5,171.584,0.084,SKI_CLUSTER_134,True,confident,46.091229,7.52618
+la_lorette_bourg_saint_pierre,La Lorette Bourg - Saint - Pierre,SKI_CLUSTER_169,550.0,550.12,0.12,SKI_CLUSTER_169,True,confident,45.954811,7.206459
+la_tzoumaz_mayens_de_riddes,La Tzoumaz - Mayens de Riddes,SKI_CLUSTER_002,39.5,39.542,0.042,SKI_CLUSTER_002,True,confident,46.130363,7.224455
+lauchernalp_lotschental,Lauchernalp - Lötschental,SKI_CLUSTER_073,238.7,238.758,0.058,SKI_CLUSTER_073,True,confident,46.416677,7.770939
+les_marecottes,Les Marécottes,SKI_CLUSTER_103,70.7,70.835,0.135,SKI_CLUSTER_103,True,confident,46.111683,7.004299
+leukerbad,Leukerbad,SKI_CLUSTER_045,61.8,61.809,0.009,SKI_CLUSTER_045,True,confident,46.368653,7.649295
+mont_noble_nax,Mont - Noble Nax,SKI_CLUSTER_071,206.2,206.264,0.064,SKI_CLUSTER_071,True,confident,46.211817,7.474308
+moosalpregion,Moosalpregion,SKI_CLUSTER_012,204.5,204.559,0.059,SKI_CLUSTER_012,True,confident,46.251225,7.826857
+nendaz_4_vallees,Nendaz 4 Vallées,SKI_CLUSTER_002,428.9,428.997,0.097,SKI_CLUSTER_002,True,confident,46.132848,7.308655
+obergoms_goms,Obergoms Goms,SKI_CLUSTER_140,62.8,62.911,0.111,SKI_CLUSTER_140,True,confident,46.49144,8.267781
+ovronnaz,Ovronnaz,SKI_CLUSTER_057,95.5,95.538,0.038,SKI_CLUSTER_057,True,confident,46.203537,7.139568
+rosswald,Rosswald,SKI_CLUSTER_058,33.1,33.081,-0.019,SKI_CLUSTER_058,True,confident,46.30449,8.043537
+rothwald_wasenalp_am_simplon,Rothwald - Wasenalp am Simplon,SKI_CLUSTER_058,9.5,9.542,0.042,SKI_CLUSTER_058,True,confident,46.279877,8.03813
+saas_almagell,Saas Almagell,SKI_CLUSTER_015,4.2,4.125,-0.075,SKI_CLUSTER_015,True,confident,46.092244,7.957824
+saas_fee,Saas - Fee,SKI_CLUSTER_015,39.8,39.981,0.181,SKI_CLUSTER_015,True,confident,46.089067,7.919168
+st_luc_chandolin,St - Luc Chandolin,SKI_CLUSTER_036,112.5,112.379,-0.121,SKI_CLUSTER_036,True,confident,46.237981,7.614641
+staldenried_gspon,Staldenried - Gspon,SKI_CLUSTER_012,149.7,149.661,-0.039,SKI_CLUSTER_012,True,confident,46.229491,7.889643
+thyon_4_vallees,Thyon 4 Vallées,SKI_CLUSTER_002,128.9,129.023,0.123,SKI_CLUSTER_002,True,confident,46.177914,7.379164
+torgon_portes_du_soleil,Torgon Portes du Soleil,SKI_CLUSTER_001,78.0,78.031,0.031,SKI_CLUSTER_001,True,confident,46.313146,6.866755
+unterbach_brandalp,Unterbäch - Brandalp,SKI_CLUSTER_012,93.3,93.169,-0.131,SKI_CLUSTER_012,True,confident,46.26997,7.78759
+val_ferret_la_fouly,Val Ferret - La Fouly,SKI_CLUSTER_104,7.2,7.372,0.172,SKI_CLUSTER_104,True,confident,45.930617,7.103475
+verbier_4_vallees,Verbier 4 Vallées,SKI_CLUSTER_002,4.6,4.699,0.099,SKI_CLUSTER_002,True,confident,46.09746,7.274752
+vercorin,Vercorin,SKI_CLUSTER_052,128.5,128.485,-0.015,SKI_CLUSTER_052,True,confident,46.238277,7.528897
+veysonnaz_4_vallees,Veysonnaz 4 Vallées,SKI_CLUSTER_002,2.4,2.39,-0.01,SKI_CLUSTER_002,True,confident,46.188209,7.354145
+vicheres_liddes_vicheres,Vichères Liddes - Vichères,SKI_CLUSTER_105,164.1,164.015,-0.085,SKI_CLUSTER_105,True,confident,45.989445,7.155556
+visperterminen,Visperterminen,SKI_CLUSTER_012,160.1,160.034,-0.066,SKI_CLUSTER_012,True,confident,46.259111,7.902603
+zermatt,Zermatt,SKI_CLUSTER_005,29.2,29.336,0.136,SKI_CLUSTER_005,True,confident,46.017112,7.770081
+glacier_3000_les_diablerets,Glacier 3000 - Les Diablerets,SKI_CLUSTER_039,56.2,56.236,0.036,SKI_CLUSTER_039,True,confident,46.318303,7.212782
+la_dole_jura_sur_leman,La Dôle Jura sur Léman,SKI_CLUSTER_041,263.7,263.682,-0.018,SKI_CLUSTER_041,True,confident,46.43348,6.093979
+les_diablerets_glacier_3000,Les Diablerets - Glacier 3000,SKI_CLUSTER_008,389.2,389.231,0.031,SKI_CLUSTER_008,True,confident,46.341773,7.14017
+les_pleiades,Les Pléiades,SKI_CLUSTER_023,55.4,55.402,0.002,SKI_CLUSTER_023,True,confident,46.495024,6.915979
+les_prevondes,Les Prévondes,SKI_CLUSTER_089,437.6,437.636,0.036,SKI_CLUSTER_089,True,confident,46.458319,6.933703
+leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,SKI_CLUSTER_008,321.7,321.713,0.013,SKI_CLUSTER_008,True,confident,46.358421,7.009964
+rochers_de_naye_haut_de_caux_dent_de_jaman,Rochers de Naye - Haut de Caux - Dent de Jaman,SKI_CLUSTER_089,117.7,117.742,0.042,SKI_CLUSTER_089,True,confident,46.431587,6.978421
+rougemont_rougemont_la_videmanette,Rougemont Rougemont - La Videmanette,SKI_CLUSTER_016,13.3,13.306,0.006,SKI_CLUSTER_016,True,confident,46.454889,7.226973
+saint_george_saint_george,Saint George Saint - George,SKI_CLUSTER_124,12.7,12.716,0.016,SKI_CLUSTER_124,True,confident,46.515628,6.257503
+sainte_croix_les_rasses,Sainte Croix - Les Rasses,SKI_CLUSTER_050,199.4,199.348,-0.052,SKI_CLUSTER_050,True,confident,46.840057,6.528625
+st_cergue,St. Cergue,SKI_CLUSTER_100,19.4,19.302,-0.098,SKI_CLUSTER_100,True,confident,46.444289,6.150305
+trelasse_la_trelasse,Trelasse La Trélasse,SKI_CLUSTER_041,16.7,16.574,-0.126,SKI_CLUSTER_041,True,confident,46.451521,6.105243
+vallee_de_joux,Vallée de Joux,SKI_CLUSTER_101,108.0,107.977,-0.023,SKI_CLUSTER_101,True,confident,46.594702,6.247745
+villars_gryon_villars_gryon_les_diablerets,Villars - Gryon Villars - Gryon - Les Diablerets,SKI_CLUSTER_008,14.3,14.331,0.031,SKI_CLUSTER_008,True,confident,46.321504,7.064209
+dicki_weisslingen,Dicki - Weisslingen,SKI_CLUSTER_210,12658.4,12658.628,0.228,SKI_CLUSTER_210,True,review,47.434103,8.760052
+ghoch,Ghöch,SKI_CLUSTER_065,116.5,116.392,-0.108,SKI_CLUSTER_065,True,confident,47.333543,8.902917
+oberholz_farner,Oberholz - Farner,SKI_CLUSTER_066,3.5,3.635,0.135,SKI_CLUSTER_066,True,confident,47.287597,8.942528
+oberwangen,Oberwangen,SKI_CLUSTER_145,92.3,92.087,-0.213,SKI_CLUSTER_145,True,confident,47.420394,8.986676
+regensberg_im_buck,Regensberg - Im Buck,SKI_CLUSTER_200,23.6,23.792,0.192,SKI_CLUSTER_200,True,confident,47.473696,8.429014
+rohrenmoos_dietikon,Röhrenmoos Dietikon,SKI_CLUSTER_200,8914.6,8914.608,0.008,SKI_CLUSTER_200,True,review,47.400898,8.380101
+schafbuel_wildberg,Schafbüel - Wildberg,SKI_CLUSTER_210,8301.7,8301.906,0.206,SKI_CLUSTER_210,True,review,47.421584,8.81537
+sitzberg,Sitzberg,SKI_CLUSTER_210,4476.9,4477.027,0.127,SKI_CLUSTER_210,True,warning,47.426313,8.913517
+steg_im_tosstal,Steg im Tösstal,SKI_CLUSTER_065,6.8,6.912,0.112,SKI_CLUSTER_065,True,confident,47.343247,8.936402
+steig_baretswill_steig_baretswil,Steig - Bäretswill Steig - Bäretswil,SKI_CLUSTER_065,279.7,279.843,0.143,SKI_CLUSTER_065,True,confident,47.340218,8.859047
+sternenberg,Sternenberg,SKI_CLUSTER_210,7.9,7.934,0.034,SKI_CLUSTER_210,True,confident,47.386108,8.912187
