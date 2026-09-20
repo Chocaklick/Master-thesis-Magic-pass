@@ -1,0 +1,11 @@
+{
+  "hotel_municipalities_reached_by_resort_points": 74,
+  "municipalities_with_known_magic_exposure_from_resolved_links": 17,
+  "candidate_control_municipalities_upper_bound": 57,
+  "unresolved_official_base_entry_labels": 26,
+  "reviewed_treatments_screened": 11,
+  "treatment_donor_pairs_screened": 814,
+  "provisional_donor_pairs_30km_36pre": 438,
+  "approved_causal_controls": 0,
+  "interpretation": "The provisional donor flag excludes resolved Magic links, the treated scope, donors within 30 km, and donors without 36 pre/24 post months. It is not an approval because membership and confounder audits are incomplete."
+}

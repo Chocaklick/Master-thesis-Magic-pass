@@ -36,10 +36,12 @@ def blank_source(source_id: str, **values: object) -> dict:
 
 
 def cached_metadata(source_id: str) -> dict | None:
-    paths = sorted(EVIDENCE_DIR.glob(f"{source_id}_*.metadata.json"))
-    if not paths:
-        return None
-    return json.loads(paths[-1].read_text(encoding="utf-8"))
+    records = [
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in sorted(EVIDENCE_DIR.glob(f"{source_id}_*.metadata.json"))
+    ]
+    records = [record for record in records if record.get("source_id") == source_id]
+    return records[-1] if records else None
 
 
 def raw_name(metadata: dict | None) -> str:
@@ -149,7 +151,7 @@ def main() -> None:
             transformation_applied="Page-numbered text extraction and manually reviewed event transcription" if not is_map else "Embedded official destination JSON extracted from cached HTML",
             quality_notes=("Current snapshot is not historical evidence" if is_map else "Destination/operator scope may differ from Bergfex listing scope"),
             confidence_level=("high for source authenticity; event/entity confidence stored per row" if metadata else "official URL verified; local retrieval pending"),
-            manual_verification="reviewed" if source_id in {"MAGIC_2017", "MAGIC_2018", "MAGIC_2019", "MAGIC_2020", "MAGIC_2022", "MAGIC_2023", "MAGIC_2024", "MAGIC_2025"} else "pending or page-level",
+            manual_verification="reviewed" if source_id in {"MAGIC_2017", "MAGIC_2018", "MAGIC_2019", "MAGIC_2020", "MAGIC_2021_APRIL", "MAGIC_2022", "MAGIC_2022_DOSSIER", "MAGIC_2023", "MAGIC_2024", "MAGIC_2025"} else "pending or page-level",
             notes="Not used as extracted evidence because download did not complete" if not metadata else "",
         ))
     rows.append(blank_source(
@@ -171,6 +173,66 @@ def main() -> None:
         confidence_level="mixed; stored per event",
         manual_verification="partial",
         notes="Treatment-ready is false for every event at the current checkpoint",
+    ))
+
+    scope_ids = [
+        "ANNIVIERS_SCOPE_OFFICIAL",
+        "EVOLENE_SCOPE_OFFICIAL",
+        "REICHENBACH_SCOPE_OFFICIAL",
+        "VILLARS_GRYON_SCOPE_OFFICIAL",
+        "SAINTE_CROIX_SCOPE_OFFICIAL",
+        "GSTAAD_SCOPE_OFFICIAL",
+        "MEIRINGEN_HASLIBERG_SCOPE_OFFICIAL",
+        "MEIRINGEN_HASLIBERG_MAGIC_OFFICIAL",
+    ]
+    for source_id in scope_ids:
+        item = configured[source_id]
+        metadata = cached_metadata(source_id)
+        rows.append(blank_source(
+            source_id,
+            variable_name="destination_scope_evidence",
+            variable_description=item["description"],
+            source_organisation=item["organisation"],
+            source_dataset_name="Official destination or municipal scope page",
+            source_page_url=item["url"],
+            direct_download_url=item["url"],
+            retrieval_method=(
+                "HTTP GET with immutable response and SHA-256 sidecar"
+                if metadata else "official URL verified; local retrieval pending"
+            ),
+            retrieval_date=metadata.get("retrieval_date", "") if metadata else "",
+            original_file_name=raw_name(metadata),
+            local_raw_file=metadata.get("raw_file", "") if metadata else "",
+            processed_file="data_processed/treatment_destination_units.csv",
+            geographic_level="official destination or municipality",
+            temporal_resolution="retrieval-date scope snapshot",
+            temporal_start="",
+            temporal_end="2026",
+            unit="scope evidence",
+            license="UNKNOWN; preserve citation and original URL",
+            access_conditions="Public official website; automated retrieval respects robots.txt",
+            transformation_applied="Manually reviewed scope statement encoded in config/treatment_destination_review.json",
+            quality_notes="Current scope evidence does not by itself establish historical tourism exposure",
+            confidence_level="high for stated scope; analytical mapping remains explicitly qualified",
+            manual_verification="reviewed",
+        ))
+    rows.append(blank_source(
+        "DESTINATION_SCOPE_OFFICIAL_SET",
+        variable_name="destination_unit_scope|municipality_outcome_scope",
+        variable_description="Reviewed union of official municipality and lift-operator scope evidence",
+        source_organisation="Municipalities and official lift operators",
+        source_dataset_name="Destination scope evidence set",
+        retrieval_method="Derived from individually registered official pages and geo.admin.ch point containment",
+        processed_file="data_processed/treatment_destination_units.csv|data_processed/treatment_destination_municipality.csv",
+        geographic_level="reviewed destination and municipality",
+        temporal_resolution="scope snapshot",
+        temporal_end="2026",
+        unit="review decision",
+        transformation_applied="Explicit inclusion/exclusion decisions and additive municipality outcome weights",
+        quality_notes="Core-municipality proxies are labelled separately from complete observed municipal scope",
+        confidence_level="reviewed analytical decision",
+        manual_verification="reviewed",
+        notes="Does not approve causal treatment status",
     ))
 
     geo_metadata = [
@@ -243,6 +305,25 @@ def main() -> None:
         confidence_level="derived",
         manual_verification="automated tests plus checkpoint review",
     ))
+    rows.append(blank_source(
+        "DERIVED_REVIEWED_DESTINATION_PANEL",
+        variable_name="reviewed_destination_month_outcomes|diagnostic_membership_status",
+        variable_description="Monthly destination outcomes aggregated across reviewed municipality scopes with diagnostic treatment coding",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Reviewed destination-month panel",
+        retrieval_method="versioned Python transformation",
+        processed_file="data_processed/destination_month_panel.csv",
+        geographic_level="reviewed destination unit",
+        temporal_resolution="monthly",
+        temporal_start="2013-01",
+        temporal_end="2026-12 grid; 2026-03 latest observed outcome",
+        unit="destination-month",
+        license="inherits source restrictions",
+        transformation_applied="Additive municipality totals; missing unless every municipality is observed; entry carried forward only as a flagged diagnostic assumption",
+        quality_notes="No row is causal-ready; treatment continuity and controls remain unaudited",
+        confidence_level="high for reproducible aggregation; low for causal treatment status",
+        manual_verification="automated tests plus destination review",
+    ))
     sources = upsert(existing_sources, rows, "source_id", SOURCE_COLUMNS)
     sources.to_csv(SOURCE_FILE, index=False)
 
@@ -267,6 +348,25 @@ def main() -> None:
         ("current_member_snapshot", "magic_pass_current_destinations", "Presence in cached official current map", "boolean", "boolean", "official destination", "retrieval snapshot", "MAGIC_CURRENT_MAP", "extracted source", "embedded official JSON", "current status evidence", "Not historical timing evidence"),
         ("data_quality_score", "resort_data_quality", "Evidence-completeness score across eight equally weighted components", "0-100 score", "float", "resort listing", "current checkpoint", "DERIVED_MULTI_SOURCE", "derived", "100 * mean(identity scope, lift assignment, geolocation, tourism exposure, hotel outcome, membership history, infrastructure completeness, snow/climate)", "quality indicator", "Not an opportunity, performance, or causal-effect score"),
         ("data_quality_warnings", "resort_data_quality", "Pipe-delimited unresolved evidence dimensions", "labels", "string", "resort listing", "current checkpoint", "DERIVED_MULTI_SOURCE", "derived", "deterministic component-level warning rules", "quality indicator", "Weak observations remain visible"),
+        ("reviewed_destination_unit_id", "resort_municipality_crosswalk", "Reviewed destination unit linked to a supplied resort listing where available", "identifier", "string", "resort listing", "review snapshot", "DESTINATION_SCOPE_OFFICIAL_SET", "derived", "manual destination review keyed by resort_id", "entity resolution", "Blank for listings outside the 18 candidate entry/outcome links"),
+        ("causal_exposure_approved", "resort_municipality_crosswalk", "Whether point containment has been approved as a causal tourism exposure", "boolean", "boolean", "resort listing", "review snapshot", "DERIVED_MULTI_SOURCE", "derived", "always false at this checkpoint", "quality gate", "Point containment remains distinct from tourism exposure"),
+        ("scope_review_status", "treatment_destination_units", "Reviewed outcome-scope decision for a destination unit", "category", "string", "reviewed destination", "review snapshot", "DESTINATION_SCOPE_OFFICIAL_SET", "manual review", "complete observed municipal scope, core-municipality proxy, or excluded incomplete composite", "quality gate", "An approved outcome proxy is not a causal exposure approval"),
+        ("eligible_for_reviewed_outcome_panel", "treatment_destination_units", "Whether the reviewed unit has a usable explicitly defined municipality outcome scope", "boolean", "boolean", "reviewed destination", "review snapshot", "DESTINATION_SCOPE_OFFICIAL_SET", "derived", "scope decision passes and every selected municipality exists in the hotel panel", "sample inclusion", "Three composite destinations are excluded"),
+        ("municipality_weight", "treatment_destination_municipality", "Additive weight applied to a municipality total", "multiplier", "float", "destination-to-municipality link", "review snapshot", "DESTINATION_SCOPE_OFFICIAL_SET", "manual review", "1.0 for each included municipality", "outcome aggregation", "Weights are not normalised because hotel nights are counts"),
+        ("effective_month", "municipality_treatment_events", "Monthly analytical date assigned to a documented entry or exit event", "date", "date", "reviewed destination", "event month", "MAGIC_OFFICIAL_EVIDENCE_SET", "derived", "exact validity date/month where documented; otherwise explicit May analytical anchor", "treatment timing candidate", "Precision is stored separately and causal-ready remains false"),
+        ("component_count_change", "municipality_treatment_events", "Change in the number of local destination components covered by base membership", "count", "integer", "reviewed destination", "event month", "DERIVED_MULTI_SOURCE", "derived", "+1 per documented component entry; reviewed exit removes active components", "treatment intensity candidate", "Not an independent treated-unit count"),
+        ("hotel_overnights", "destination_month_panel", "Additive hotel overnight stays across the reviewed municipality outcome scope", "overnight stays", "float", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "sum(municipality hotel_overnights * 1.0), missing unless every scoped municipality is observed", "outcome", "No imputation"),
+        ("complete_outcome_scope", "destination_month_panel", "Whether all municipalities in the reviewed scope have an observed hotel-night value", "boolean", "boolean", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "observed municipality count equals expected municipality count", "outcome quality", "False rows retain a missing aggregate"),
+        ("assumed_active_component_count", "destination_month_panel", "Diagnostic count of entered components carried forward until a documented exit", "count", "integer", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "cumulative documented component entries with documented exit override", "treatment intensity candidate", "Continuity is an unverified assumption"),
+        ("event_time_months", "destination_month_panel", "Months relative to the first analytical membership anchor", "months", "integer", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "calendar month difference from first_analysis_anchor", "event-time index", "Not sufficient for causal event-study identification"),
+        ("causal_ready", "destination_month_panel", "Whether the destination-month row passes all causal evidence gates", "boolean", "boolean", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "always false at this checkpoint", "quality gate", "Continuity, confounding, spillovers, and controls remain unresolved"),
+        ("membership_status", "magic_pass_membership_status_by_season", "Evidence status for a reviewed destination in each annual Magic Pass season", "category", "string", "reviewed destination", "annual pass season", "MAGIC_OFFICIAL_EVIDENCE_SET", "manual evidence audit", "documented active, unverified active continuity, not yet entered, or documented inactive after exit", "treatment history", "Missing annual evidence is never silently filled"),
+        ("documented_active", "magic_pass_membership_status_by_season", "Whether explicit official evidence documents active base membership in the season", "boolean", "boolean", "reviewed destination", "annual pass season", "MAGIC_OFFICIAL_EVIDENCE_SET", "derived evidence flag", "true only for entry, full-roster, named-continuation, or last-active exit evidence", "treatment history quality", "False can mean unverified and must not be read as documented non-membership"),
+        ("continuity_fully_documented", "membership_continuity_audit", "Whether every active season from first entry through exit or 2025/2026 has explicit evidence", "boolean", "boolean", "reviewed destination", "2017/2018-2025/2026", "MAGIC_OFFICIAL_EVIDENCE_SET", "derived audit", "no unverified_active_continuity season in the required active window", "quality gate", "Does not resolve confounding, spillovers, or controls"),
+        ("known_magic_exposure_from_resolved_links", "control_contamination_audit", "Whether any resort point in the municipality has a resolved historical or current Magic Pass link", "boolean", "boolean", "municipality reached by resort point", "historical plus current snapshot", "DERIVED_MULTI_SOURCE", "derived screen", "any linked resort_id appears in a base-entry event or current official-map candidate link", "control contamination", "False is only an upper-bound candidate because unresolved official labels remain"),
+        ("minimum_resort_point_distance_km", "treatment_control_candidate_matrix", "Minimum great-circle distance between a donor-municipality resort point and a treated destination component point", "kilometres", "float", "treatment-donor pair", "review snapshot", "GEOADMIN_MUNICIPALITY_IDENTIFY", "derived geospatial screen", "minimum haversine distance across supplied resort points", "spillover screen", "Point distance does not prove absence of tourism spillovers"),
+        ("provisional_donor_30km_36pre", "treatment_control_candidate_matrix", "Mechanical donor-screen flag using resolved membership, geography, and outcome coverage", "boolean", "boolean", "treatment-donor pair", "monthly coverage snapshot", "DERIVED_MULTI_SOURCE", "derived screen", "no resolved Magic exposure AND not treated scope AND distance > 30 km AND >=36 pre months AND >=24 post months", "donor candidate", "Not an approved causal control; 30 km is a sensitivity threshold, not an identification result"),
+        ("causal_control_approved", "treatment_control_candidate_matrix", "Whether the donor passes all causal control audits", "boolean", "boolean", "treatment-donor pair", "review snapshot", "DERIVED_MULTI_SOURCE", "derived", "always false at this checkpoint", "quality gate", "Unresolved membership, spillovers, and time-varying confounders remain"),
     ]
     paths = {
         "hotel_municipality_month": ROOT / "data_processed" / "hotel_municipality_month.csv",
@@ -275,6 +375,15 @@ def main() -> None:
         "magic_pass_membership_history": ROOT / "data_processed" / "magic_pass_membership_history.csv",
         "magic_pass_current_destinations": ROOT / "data_processed" / "magic_pass_current_destinations.csv",
         "resort_data_quality": ROOT / "data_processed" / "resort_data_quality.csv",
+        "resort_municipality_crosswalk": ROOT / "data_processed" / "resort_municipality_crosswalk.csv",
+        "treatment_destination_units": ROOT / "data_processed" / "treatment_destination_units.csv",
+        "treatment_destination_municipality": ROOT / "data_processed" / "treatment_destination_municipality.csv",
+        "municipality_treatment_events": ROOT / "data_processed" / "municipality_treatment_events.csv",
+        "destination_month_panel": ROOT / "data_processed" / "destination_month_panel.csv",
+        "magic_pass_membership_status_by_season": ROOT / "data_processed" / "magic_pass_membership_status_by_season.csv",
+        "membership_continuity_audit": ROOT / "reports" / "membership_continuity_audit.csv",
+        "control_contamination_audit": ROOT / "reports" / "control_contamination_audit.csv",
+        "treatment_control_candidate_matrix": ROOT / "data_processed" / "treatment_control_candidate_matrix.csv",
     }
     dictionary_rows = []
     for variable, table, description, unit, data_type, geo, temporal, source_id, raw_derived, formula, role, notes in definitions:
@@ -314,7 +423,7 @@ def main() -> None:
         "## Outstanding provenance gaps", "",
         "- The retrieval date of the supplied Bergfex and hotel CSV extracts is unknown.",
         "- The precise upstream download URL/version for `bahnen-winter_2056.gpkg` has not been established; it remains registered as a hashed local source rather than attributed by inference.",
-        "- Magic Pass 2021 and 2026 PDF downloads did not complete in the scripted collector; failures remain in the collection log. The official press archive HTML is cached, and 2026 entry events are outside the current outcome window.",
+        "- The Magic Pass 2021 PDF download did not complete in the scripted collector; failures remain in the collection log. The 2026 PDF and official press archive HTML are cached, and 2026 entry events are outside the current outcome window.",
         "- Current Magic map and press headline counts do not exactly match the 95 embedded destination records; this discrepancy is retained for review.", "",
     ])
     (ROOT / "reports" / "DATA_SOURCES.md").write_text("\n".join(report_lines), encoding="utf-8")

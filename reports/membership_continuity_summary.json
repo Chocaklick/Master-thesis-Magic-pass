@@ -1,0 +1,10 @@
+{
+  "reviewed_destination_units": 14,
+  "destination_units_with_fully_documented_active_seasons": 4,
+  "outcome_panel_units_with_fully_documented_active_seasons": 3,
+  "outcome_panel_units_with_continuity_gaps": 8,
+  "unverified_active_unit_seasons": 25,
+  "fully_documented_panel_units_with_24_pre_and_post_months": 0,
+  "causal_treatment_units_approved": 0,
+  "interpretation": "Only explicit positive evidence is coded active. Missing annual evidence remains unverified and is not converted to non-membership."
+}

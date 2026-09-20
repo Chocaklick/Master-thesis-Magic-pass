@@ -1,0 +1,13 @@
+{
+  "reviewed_destination_units": 14,
+  "reviewed_component_entry_events": 18,
+  "destination_units_in_outcome_panel": 11,
+  "destination_units_excluded_for_incomplete_scope": 3,
+  "destination_month_rows": 1848,
+  "observed_destination_month_outcomes": 1581,
+  "units_with_24_pre_and_24_active_post_months_assumption": 7,
+  "units_with_36_pre_and_36_active_post_months_assumption": 6,
+  "causal_treatment_units_approved": 0,
+  "causal_ready_panel_rows": 0,
+  "continuity_assumption": "Entry is carried forward until a documented exit. This is a diagnostic coding assumption and has not been accepted for causal estimation."
+}

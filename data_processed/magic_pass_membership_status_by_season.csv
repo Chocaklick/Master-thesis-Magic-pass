@@ -1,0 +1,127 @@
+destination_unit_id,destination_name,season,membership_status,documented_active,evidence_types,source_ids,source_pages,evidence_notes,outcome_panel_eligible,causal_treatment_status_approved
+anniviers_magic_portfolio,Anniviers Magic Pass portfolio,2017/2018,documented_active,True,documented_entry,MAGIC_2017,6;8,Entry evidence for Grimentz-Zinal | Entry evidence for St-Luc / Chandolin,True,False
+anniviers_magic_portfolio,Anniviers Magic Pass portfolio,2018/2019,documented_active,True,full_base_roster,MAGIC_2018,2,The official press release presents the annual 2018/2019 pass and lists its participating domains.,True,False
+anniviers_magic_portfolio,Anniviers Magic Pass portfolio,2019/2020,unverified_active_continuity,False,,,,,True,False
+anniviers_magic_portfolio,Anniviers Magic Pass portfolio,2020/2021,unverified_active_continuity,False,,,,,True,False
+anniviers_magic_portfolio,Anniviers Magic Pass portfolio,2021/2022,unverified_active_continuity,False,,,,,True,False
+anniviers_magic_portfolio,Anniviers Magic Pass portfolio,2022/2023,documented_active,True,full_base_roster,MAGIC_2022_DOSSIER,6,The official 2022/2023 dossier page 6 lists partner and new base stations.,True,False
+anniviers_magic_portfolio,Anniviers Magic Pass portfolio,2023/2024,documented_active,True,full_base_roster,MAGIC_2023,5,The official dossier separates partner and new stations and provides the complete base roster.,True,False
+anniviers_magic_portfolio,Anniviers Magic Pass portfolio,2024/2025,unverified_active_continuity,False,,,,,True,False
+anniviers_magic_portfolio,Anniviers Magic Pass portfolio,2025/2026,documented_active,True,full_base_roster,MAGIC_2025,5,"The official dossier provides a numbered list of 99 base destinations, including grouped domain headings.",True,False
+axalp,Axalp,2017/2018,not_yet_entered,False,,,,,True,False
+axalp,Axalp,2018/2019,not_yet_entered,False,,,,,True,False
+axalp,Axalp,2019/2020,not_yet_entered,False,,,,,True,False
+axalp,Axalp,2020/2021,not_yet_entered,False,,,,,True,False
+axalp,Axalp,2021/2022,not_yet_entered,False,,,,,True,False
+axalp,Axalp,2022/2023,documented_active,True,documented_entry|full_base_roster,MAGIC_2022|MAGIC_2022_DOSSIER,1|6,Entry evidence for Axalp | The official 2022/2023 dossier page 6 lists partner and new base stations.,True,False
+axalp,Axalp,2023/2024,documented_active,True,full_base_roster,MAGIC_2023,5,The official dossier separates partner and new stations and provides the complete base roster.,True,False
+axalp,Axalp,2024/2025,unverified_active_continuity,False,,,,,True,False
+axalp,Axalp,2025/2026,documented_active,True,full_base_roster,MAGIC_2025,5,"The official dossier provides a numbered list of 99 base destinations, including grouped domain headings.",True,False
+bumbach,Bumbach,2017/2018,not_yet_entered,False,,,,,True,False
+bumbach,Bumbach,2018/2019,not_yet_entered,False,,,,,True,False
+bumbach,Bumbach,2019/2020,not_yet_entered,False,,,,,True,False
+bumbach,Bumbach,2020/2021,not_yet_entered,False,,,,,True,False
+bumbach,Bumbach,2021/2022,not_yet_entered,False,,,,,True,False
+bumbach,Bumbach,2022/2023,not_yet_entered,False,,,,,True,False
+bumbach,Bumbach,2023/2024,documented_active,True,documented_entry|full_base_roster,MAGIC_2023,2|5,Entry evidence for Bumbach | The official dossier separates partner and new stations and provides the complete base roster.,True,False
+bumbach,Bumbach,2024/2025,unverified_active_continuity,False,,,,,True,False
+bumbach,Bumbach,2025/2026,documented_active,True,full_base_roster,MAGIC_2025,5,"The official dossier provides a numbered list of 99 base destinations, including grouped domain headings.",True,False
+crans_montana,Crans-Montana,2017/2018,documented_active,True,documented_entry,MAGIC_2017,6;8,Entry evidence for Crans-Montana,True,False
+crans_montana,Crans-Montana,2018/2019,documented_active,True,full_base_roster,MAGIC_2018,2,The official press release presents the annual 2018/2019 pass and lists its participating domains.,True,False
+crans_montana,Crans-Montana,2019/2020,documented_active,True,documented_exit_last_active_season,MAGIC_PRESS_ARCHIVE,2019-10-14 announcement,Documented last active day 2020-04-30,True,False
+crans_montana,Crans-Montana,2020/2021,documented_inactive_after_exit,False,,,,,True,False
+crans_montana,Crans-Montana,2021/2022,documented_inactive_after_exit,False,,,,,True,False
+crans_montana,Crans-Montana,2022/2023,documented_inactive_after_exit,False,,,,,True,False
+crans_montana,Crans-Montana,2023/2024,documented_inactive_after_exit,False,,,,,True,False
+crans_montana,Crans-Montana,2024/2025,documented_inactive_after_exit,False,,,,,True,False
+crans_montana,Crans-Montana,2025/2026,documented_inactive_after_exit,False,,,,,True,False
+espace_dent_blanche,Espace Dent Blanche,2017/2018,not_yet_entered,False,,,,,True,False
+espace_dent_blanche,Espace Dent Blanche,2018/2019,documented_active,True,documented_entry|full_base_roster,MAGIC_2018,2,Entry evidence for Arolla | Entry evidence for Evolène | Entry evidence for La Forclaz | The official press release presents the annual 2018/2019 pass and lists its participating domains.,True,False
+espace_dent_blanche,Espace Dent Blanche,2019/2020,unverified_active_continuity,False,,,,,True,False
+espace_dent_blanche,Espace Dent Blanche,2020/2021,unverified_active_continuity,False,,,,,True,False
+espace_dent_blanche,Espace Dent Blanche,2021/2022,unverified_active_continuity,False,,,,,True,False
+espace_dent_blanche,Espace Dent Blanche,2022/2023,documented_active,True,full_base_roster,MAGIC_2022_DOSSIER,6,The official 2022/2023 dossier page 6 lists partner and new base stations.,True,False
+espace_dent_blanche,Espace Dent Blanche,2023/2024,documented_active,True,full_base_roster,MAGIC_2023,5,The official dossier separates partner and new stations and provides the complete base roster.,True,False
+espace_dent_blanche,Espace Dent Blanche,2024/2025,unverified_active_continuity,False,,,,,True,False
+espace_dent_blanche,Espace Dent Blanche,2025/2026,documented_active,True,full_base_roster,MAGIC_2025,5,"The official dossier provides a numbered list of 99 base destinations, including grouped domain headings.",True,False
+gstaad_operator_domain,Bergbahnen Destination Gstaad,2017/2018,not_yet_entered,False,,,,,False,False
+gstaad_operator_domain,Bergbahnen Destination Gstaad,2018/2019,not_yet_entered,False,,,,,False,False
+gstaad_operator_domain,Bergbahnen Destination Gstaad,2019/2020,not_yet_entered,False,,,,,False,False
+gstaad_operator_domain,Bergbahnen Destination Gstaad,2020/2021,not_yet_entered,False,,,,,False,False
+gstaad_operator_domain,Bergbahnen Destination Gstaad,2021/2022,not_yet_entered,False,,,,,False,False
+gstaad_operator_domain,Bergbahnen Destination Gstaad,2022/2023,not_yet_entered,False,,,,,False,False
+gstaad_operator_domain,Bergbahnen Destination Gstaad,2023/2024,not_yet_entered,False,,,,,False,False
+gstaad_operator_domain,Bergbahnen Destination Gstaad,2024/2025,not_yet_entered,False,,,,,False,False
+gstaad_operator_domain,Bergbahnen Destination Gstaad,2025/2026,documented_active,True,documented_entry|full_base_roster,MAGIC_2025,2|5,"Entry evidence for Bergbahnen Gstaad | The official dossier provides a numbered list of 99 base destinations, including grouped domain headings.",False,False
+les_pleiades,Les Pléiades,2017/2018,not_yet_entered,False,,,,,True,False
+les_pleiades,Les Pléiades,2018/2019,documented_active,True,documented_entry|full_base_roster,MAGIC_2018,2,Entry evidence for Les Pléiades | The official press release presents the annual 2018/2019 pass and lists its participating domains.,True,False
+les_pleiades,Les Pléiades,2019/2020,unverified_active_continuity,False,,,,,True,False
+les_pleiades,Les Pléiades,2020/2021,unverified_active_continuity,False,,,,,True,False
+les_pleiades,Les Pléiades,2021/2022,unverified_active_continuity,False,,,,,True,False
+les_pleiades,Les Pléiades,2022/2023,documented_active,True,full_base_roster,MAGIC_2022_DOSSIER,6,The official 2022/2023 dossier page 6 lists partner and new base stations.,True,False
+les_pleiades,Les Pléiades,2023/2024,documented_active,True,full_base_roster,MAGIC_2023,5,The official dossier separates partner and new stations and provides the complete base roster.,True,False
+les_pleiades,Les Pléiades,2024/2025,unverified_active_continuity,False,,,,,True,False
+les_pleiades,Les Pléiades,2025/2026,documented_active,True,full_base_roster,MAGIC_2025,5,"The official dossier provides a numbered list of 99 base destinations, including grouped domain headings.",True,False
+meiringen_hasliberg,Meiringen-Hasliberg,2017/2018,not_yet_entered,False,,,,,True,False
+meiringen_hasliberg,Meiringen-Hasliberg,2018/2019,not_yet_entered,False,,,,,True,False
+meiringen_hasliberg,Meiringen-Hasliberg,2019/2020,not_yet_entered,False,,,,,True,False
+meiringen_hasliberg,Meiringen-Hasliberg,2020/2021,not_yet_entered,False,,,,,True,False
+meiringen_hasliberg,Meiringen-Hasliberg,2021/2022,not_yet_entered,False,,,,,True,False
+meiringen_hasliberg,Meiringen-Hasliberg,2022/2023,not_yet_entered,False,,,,,True,False
+meiringen_hasliberg,Meiringen-Hasliberg,2023/2024,not_yet_entered,False,,,,,True,False
+meiringen_hasliberg,Meiringen-Hasliberg,2024/2025,not_yet_entered,False,,,,,True,False
+meiringen_hasliberg,Meiringen-Hasliberg,2025/2026,documented_active,True,documented_entry|full_base_roster,MAGIC_2025,2|5,"Entry evidence for Meiringen-Hasliberg | The official dossier provides a numbered list of 99 base destinations, including grouped domain headings.",True,False
+moleson,Moléson,2017/2018,documented_active,True,documented_entry,MAGIC_2017,6;8,Entry evidence for Moléson,True,False
+moleson,Moléson,2018/2019,documented_active,True,full_base_roster,MAGIC_2018,2,The official press release presents the annual 2018/2019 pass and lists its participating domains.,True,False
+moleson,Moléson,2019/2020,unverified_active_continuity,False,,,,,True,False
+moleson,Moléson,2020/2021,unverified_active_continuity,False,,,,,True,False
+moleson,Moléson,2021/2022,unverified_active_continuity,False,,,,,True,False
+moleson,Moléson,2022/2023,documented_active,True,full_base_roster,MAGIC_2022_DOSSIER,6,The official 2022/2023 dossier page 6 lists partner and new base stations.,True,False
+moleson,Moléson,2023/2024,documented_active,True,full_base_roster,MAGIC_2023,5,The official dossier separates partner and new stations and provides the complete base roster.,True,False
+moleson,Moléson,2024/2025,unverified_active_continuity,False,,,,,True,False
+moleson,Moléson,2025/2026,documented_active,True,full_base_roster,MAGIC_2025,5,"The official dossier provides a numbered list of 99 base destinations, including grouped domain headings.",True,False
+reichenbach_magic_portfolio,Reichenbach im Kandertal Magic Pass portfolio,2017/2018,not_yet_entered,False,,,,,True,False
+reichenbach_magic_portfolio,Reichenbach im Kandertal Magic Pass portfolio,2018/2019,not_yet_entered,False,,,,,True,False
+reichenbach_magic_portfolio,Reichenbach im Kandertal Magic Pass portfolio,2019/2020,not_yet_entered,False,,,,,True,False
+reichenbach_magic_portfolio,Reichenbach im Kandertal Magic Pass portfolio,2020/2021,not_yet_entered,False,,,,,True,False
+reichenbach_magic_portfolio,Reichenbach im Kandertal Magic Pass portfolio,2021/2022,not_yet_entered,False,,,,,True,False
+reichenbach_magic_portfolio,Reichenbach im Kandertal Magic Pass portfolio,2022/2023,documented_active,True,documented_entry|full_base_roster,MAGIC_2022|MAGIC_2022_DOSSIER,1|6,Entry evidence for Faltschen | The official 2022/2023 dossier page 6 lists partner and new base stations.,True,False
+reichenbach_magic_portfolio,Reichenbach im Kandertal Magic Pass portfolio,2023/2024,documented_active,True,documented_entry|full_base_roster,MAGIC_2023,2|5,Entry evidence for Kiental | The official dossier separates partner and new stations and provides the complete base roster.,True,False
+reichenbach_magic_portfolio,Reichenbach im Kandertal Magic Pass portfolio,2024/2025,unverified_active_continuity,False,,,,,True,False
+reichenbach_magic_portfolio,Reichenbach im Kandertal Magic Pass portfolio,2025/2026,documented_active,True,full_base_roster,MAGIC_2025,5,"The official dossier provides a numbered list of 99 base destinations, including grouped domain headings.",True,False
+saas_fee,Saas-Fee,2017/2018,not_yet_entered,False,,,,,True,False
+saas_fee,Saas-Fee,2018/2019,not_yet_entered,False,,,,,True,False
+saas_fee,Saas-Fee,2019/2020,documented_active,True,documented_entry,MAGIC_2019,1;2,Entry evidence for Saas-Fee,True,False
+saas_fee,Saas-Fee,2020/2021,documented_active,True,named_continuation,MAGIC_2020,3,The release states that Saas-Fee remains in Magic Pass and expands its summer participation; it is not a full roster.,True,False
+saas_fee,Saas-Fee,2021/2022,documented_active,True,named_continuation,MAGIC_2021_APRIL,1,The official follow-up describes the Haut-Valais axis as developed with Saas-Fee; it is not a full roster.,True,False
+saas_fee,Saas-Fee,2022/2023,documented_active,True,full_base_roster,MAGIC_2022_DOSSIER,6,The official 2022/2023 dossier page 6 lists partner and new base stations.,True,False
+saas_fee,Saas-Fee,2023/2024,documented_active,True,full_base_roster,MAGIC_2023,5,The official dossier separates partner and new stations and provides the complete base roster.,True,False
+saas_fee,Saas-Fee,2024/2025,unverified_active_continuity,False,,,,,True,False
+saas_fee,Saas-Fee,2025/2026,documented_active,True,full_base_roster,MAGIC_2025,5,"The official dossier provides a numbered list of 99 base destinations, including grouped domain headings.",True,False
+sainte_croix_les_rasses,Sainte-Croix / Les Rasses,2017/2018,not_yet_entered,False,,,,,False,False
+sainte_croix_les_rasses,Sainte-Croix / Les Rasses,2018/2019,not_yet_entered,False,,,,,False,False
+sainte_croix_les_rasses,Sainte-Croix / Les Rasses,2019/2020,not_yet_entered,False,,,,,False,False
+sainte_croix_les_rasses,Sainte-Croix / Les Rasses,2020/2021,not_yet_entered,False,,,,,False,False
+sainte_croix_les_rasses,Sainte-Croix / Les Rasses,2021/2022,not_yet_entered,False,,,,,False,False
+sainte_croix_les_rasses,Sainte-Croix / Les Rasses,2022/2023,not_yet_entered,False,,,,,False,False
+sainte_croix_les_rasses,Sainte-Croix / Les Rasses,2023/2024,documented_active,True,documented_entry|full_base_roster,MAGIC_2023,2|5,Entry evidence for Sainte-Croix - Les Rasses | The official dossier separates partner and new stations and provides the complete base roster.,False,False
+sainte_croix_les_rasses,Sainte-Croix / Les Rasses,2024/2025,unverified_active_continuity,False,,,,,False,False
+sainte_croix_les_rasses,Sainte-Croix / Les Rasses,2025/2026,documented_active,True,full_base_roster,MAGIC_2025,5,"The official dossier provides a numbered list of 99 base destinations, including grouped domain headings.",False,False
+schwanden,Schwanden,2017/2018,not_yet_entered,False,,,,,True,False
+schwanden,Schwanden,2018/2019,not_yet_entered,False,,,,,True,False
+schwanden,Schwanden,2019/2020,not_yet_entered,False,,,,,True,False
+schwanden,Schwanden,2020/2021,not_yet_entered,False,,,,,True,False
+schwanden,Schwanden,2021/2022,not_yet_entered,False,,,,,True,False
+schwanden,Schwanden,2022/2023,not_yet_entered,False,,,,,True,False
+schwanden,Schwanden,2023/2024,not_yet_entered,False,,,,,True,False
+schwanden,Schwanden,2024/2025,documented_active,True,documented_entry,MAGIC_2024,2,Entry evidence for Schwanden,True,False
+schwanden,Schwanden,2025/2026,documented_active,True,full_base_roster,MAGIC_2025,5,"The official dossier provides a numbered list of 99 base destinations, including grouped domain headings.",True,False
+villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,2017/2018,documented_active,True,documented_entry,MAGIC_2017,6;8,Entry evidence for Villars-Gryon,False,False
+villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,2018/2019,documented_active,True,full_base_roster,MAGIC_2018,2,The official press release presents the annual 2018/2019 pass and lists its participating domains.,False,False
+villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,2019/2020,unverified_active_continuity,False,,,,,False,False
+villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,2020/2021,unverified_active_continuity,False,,,,,False,False
+villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,2021/2022,unverified_active_continuity,False,,,,,False,False
+villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,2022/2023,documented_active,True,full_base_roster,MAGIC_2022_DOSSIER,6,The official 2022/2023 dossier page 6 lists partner and new base stations.,False,False
+villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,2023/2024,documented_active,True,full_base_roster,MAGIC_2023,5,The official dossier separates partner and new stations and provides the complete base roster.,False,False
+villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,2024/2025,unverified_active_continuity,False,,,,,False,False
+villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,2025/2026,documented_active,True,full_base_roster,MAGIC_2025,5,"The official dossier provides a numbered list of 99 base destinations, including grouped domain headings.",False,False

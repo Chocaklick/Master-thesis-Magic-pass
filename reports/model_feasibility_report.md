@@ -4,7 +4,7 @@ Generated reproducibly by `src/data_processing/build_feasibility_report.py`.
 
 ## Executive verdict
 
-The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. A move to Path B would require a reviewed destination-level resort definition, complete season-by-season membership and exit histories, an explicit resort-to-tourism-municipality exposure crosswalk, and an uncontaminated control audit.
+The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. Destination scope has now been manually reviewed for the 18 candidate entry/outcome links, but a move to Path B still requires complete season-by-season membership and exit histories, confounders, and an uncontaminated control audit.
 
 No causal model, treatment-effect learner, opportunity score, or neural network should be fitted at this checkpoint.
 
@@ -14,14 +14,16 @@ No causal model, treatment-effect learner, opportunity score, or neural network 
 - The official current-map snapshot contains **95 embedded destinations**; **68** have a candidate link to a supplied resort listing. The page headline and press archive refer to more than 100 destinations, so the embedded-list discrepancy must be reviewed rather than silently reconciled.
 - Official evidence records **88 base-pass entry events**. **62** have a candidate resort-listing link, but only **18** also point to an OFS hotel municipality.
 - Those 18 events reduce to **14 municipalities**. This municipality count, not the 28,455 observed monthly rows, is the more relevant upper bound for treatment heterogeneity.
-- **Zero** treatment units are approved for causal estimation because point containment is not tourism exposure and membership continuity is incomplete.
+- The 18 candidate links collapse to **14 reviewed destination units**. **11** enter a diagnostic outcome panel; **3** composite destinations are excluded because the supplied hotel panel does not cover their full reviewed scope.
+- The reviewed panel has **1,848 destination-month rows**, of which **1,581** have a complete aggregated hotel-night outcome.
+- **Zero** treatment units are approved for causal estimation. The reviewed geography is an outcome-scope decision, while membership continuity, confounding, spillovers, and control status remain unresolved.
 
 ## Outcome coverage
 
 - The cleaned OFS-derived panel has **186 municipalities**.
 - Observed hotel-night values run from **2013-01-01** through **2026-03-01**; later 2026 grid rows are missing and are not counted as observed.
 - Resort points reach **74** hotel municipalities.
-- A naive subtraction leaves at most **60** apparent control municipalities, but **zero controls are approved** because historical non-membership and spillover contamination have not been verified.
+- Resolved historical/current Magic links reduce the 74-municipality resort-point universe to an upper bound of **57** apparent controls. This is not a clean donor pool: **26** official base-entry labels remain unresolved, and **zero controls are approved**.
 
 ## Provisional pre/post windows
 
@@ -34,14 +36,35 @@ For coverage diagnostics only, the script anchors the founding 2017/18 season at
 - Distinct provisional anchors: **7**
 - Treated units with an exact entry date: **0**
 
-The event-level audit is in `reports/provisional_treatment_window_coverage.csv`.
+The provisional event-level audit is in `reports/provisional_treatment_window_coverage.csv`. The stricter destination-unit review superseding raw event counts is in `reports/destination_unit_review.csv`:
+
+- Reviewed units with at least 24 observed pre months and 24 active post months under the explicit continuity assumption: **7**
+- Reviewed units with at least 36 observed pre months and 36 active post months under that assumption: **6**
+
+These are coverage counts, not an identification claim.
+
+## Membership-continuity audit
+
+Entry events, full official rosters, named continuation statements, and the documented Crans-Montana exit were checked season by season. Missing annual evidence remains unverified rather than being filled as active or inactive.
+
+- Reviewed units with every active season explicitly documented: **4**
+- Such units that also enter the outcome panel: **3**
+- Such panel units with both 24 observed pre months and 24 observed active-post months: **0**
+
+The detailed audit is in `reports/membership_continuity_audit.csv`. Its zero in the final line is the decisive reason not to estimate a multi-unit causal effect yet.
+
+## Donor/control contamination screen
+
+The pipeline screened **814** treatment-municipality pairs. A deliberately provisional flag removes known resolved Magic exposure, the treated municipality scope, donors within 30 km, donors with fewer than 36 observed pre months, and donors with fewer than 24 post months. **438** pairs pass that mechanical screen, but **zero are approved causal controls** because unresolved membership, spillovers beyond an arbitrary distance threshold, and time-varying confounders remain.
+
+See `reports/control_contamination_audit.csv` and `reports/control_candidates_by_treatment.csv`.
 
 ## Model-family decisions
 
 | Model family | Current decision | Evidence-based reason |
 |---|---|---|
-| Municipality fixed-effects panel | Not ready | Outcome panel is large enough, but exposure and treatment coding are not validated. |
-| Staggered Difference-in-Differences | Not credible yet | Only season-level entry timing is available; exits, scope, spillovers, and controls remain incomplete. |
+| Municipality fixed-effects panel | Diagnostic-ready only | Eleven reviewed outcome units can be represented, but membership continuity, confounding, spillovers, and controls remain unresolved. |
+| Staggered Difference-in-Differences | Not credible yet | Destination scope is improved, but continuity assumptions and untreated-control status are not validated. |
 | Matching | Descriptive only | May help select analogues after pre-treatment covariates and membership status are completed; it is not yet causal. |
 | Synthetic control / synthetic DiD | Case-study candidate | Could be assessed for a few clearly mapped municipalities with uncontaminated donors; no donor pool is approved yet. |
 | Causal forest | Not supported | At most 14 provisional treated municipalities is far below a defensible heterogeneous-effect sample. |
@@ -63,4 +86,4 @@ The event-level audit is in `reports/provisional_treatment_window_coverage.csv`.
 
 ## Next evidence gate
 
-Prioritise manual review of the 18 candidate entry/outcome links, starting with shared municipalities (Anniviers, Evolène, and Reichenbach im Kandertal), complete annual membership/exit status, and define explicit destination-to-municipality weights. Only then reassess fixed-effects/event-study feasibility and donor contamination. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+Fill the remaining unverified unit-seasons, resolve the unmatched official entry labels, add time-varying confounders, and replace the mechanical donor screen with a documented membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.

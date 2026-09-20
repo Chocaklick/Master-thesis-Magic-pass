@@ -72,5 +72,75 @@
     "suffix": "pdf",
     "organisation": "Magic Mountains Cooperation",
     "description": "Official seasonal press evidence; membership extraction requires page verification"
+  },
+  {
+    "source_id": "ANNIVIERS_SCOPE_OFFICIAL",
+    "url": "https://www.anniviers.org/fr/villages-hameaux-6.html",
+    "suffix": "html",
+    "organisation": "Commune d'Anniviers",
+    "description": "Official municipal evidence that Grimentz, Zinal, Saint-Luc and Chandolin belong to Anniviers"
+  },
+  {
+    "source_id": "EVOLENE_SCOPE_OFFICIAL",
+    "url": "https://www.commune-evolene.ch/fr/villages-35.html",
+    "suffix": "html",
+    "organisation": "Commune d'Evolène",
+    "description": "Official municipal evidence that Evolène, La Forclaz and Arolla belong to the same municipality"
+  },
+  {
+    "source_id": "REICHENBACH_SCOPE_OFFICIAL",
+    "url": "https://www.reichenbach.ch/de/gemeinde/reichenbach/zahlen-und-fakten/",
+    "suffix": "html",
+    "organisation": "Gemeinde Reichenbach im Kandertal",
+    "description": "Official municipal evidence that Faltschen and Kiental are localities in Reichenbach im Kandertal"
+  },
+  {
+    "source_id": "VILLARS_GRYON_SCOPE_OFFICIAL",
+    "url": "https://www.tvgd.ch/ski/",
+    "suffix": "html",
+    "organisation": "Télé-Villars-Gryon-Diablerets SA",
+    "description": "Official operator evidence that Villars, Gryon and Les Diablerets form one connected ski domain"
+  },
+  {
+    "source_id": "SAINTE_CROIX_SCOPE_OFFICIAL",
+    "url": "https://www.ski-vaud.ch/",
+    "suffix": "html",
+    "organisation": "Ski Lift Les Rasses SA",
+    "description": "Official operator page for the Sainte-Croix / Les Rasses ski domain"
+  },
+  {
+    "source_id": "GSTAAD_SCOPE_OFFICIAL",
+    "url": "https://bergbahnen-gstaad.ch/en/arrival-parking",
+    "suffix": "html",
+    "organisation": "Bergbahnen Destination Gstaad AG",
+    "description": "Official operator evidence for access points spanning Saanen, Rougemont, Zweisimmen and St. Stephan"
+  },
+  {
+    "source_id": "MEIRINGEN_HASLIBERG_SCOPE_OFFICIAL",
+    "url": "https://en.meiringen-hasliberg.ch/Infos/anreise",
+    "suffix": "html",
+    "organisation": "Bergbahnen Meiringen-Hasliberg AG",
+    "description": "Official operator evidence for lift access in both Hasliberg and Meiringen"
+  },
+  {
+    "source_id": "MEIRINGEN_HASLIBERG_MAGIC_OFFICIAL",
+    "url": "https://en.meiringen-hasliberg.ch/Infos/magic-pass",
+    "suffix": "html",
+    "organisation": "Bergbahnen Meiringen-Hasliberg AG",
+    "description": "Official operator evidence for Magic Pass membership from 1 May 2025"
+  },
+  {
+    "source_id": "MAGIC_2021_APRIL",
+    "url": "https://www.magicpass.ch/media/document/0/210412_magicpass_communiquedepresse.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official April 2021 follow-up release for the 2021/2022 pass"
+  },
+  {
+    "source_id": "MAGIC_2022_DOSSIER",
+    "url": "https://www.magicpass.ch/media/document/0/magicpass-dossierpresse-2022-fr-1.pdf",
+    "suffix": "pdf",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official full press dossier for the 2022/2023 pass"
   }
 ]

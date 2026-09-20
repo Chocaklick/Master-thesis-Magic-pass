@@ -2,6 +2,18 @@
 
 This report is generated from `metadata/data_sources_master.csv`. Raw internet responses are immutable and accompanied by collection-log entries and SHA-256 metadata where available.
 
+## ANNIVIERS_SCOPE_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Official municipal evidence that Grimentz, Zinal, Saint-Luc and Chandolin belong to Anniviers
+- **Producer:** Commune d'Anniviers
+- **Exact URL:** https://www.anniviers.org/fr/villages-hameaux-6.html
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T00:55:33.490971+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/treatment_destination_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/ANNIVIERS_SCOPE_OFFICIAL_20260920T005533Z.html`.
+
 ## BERGFEX_RESORT_DIRECTORY — Bergfex Swiss ski-resort directory
 
 - **Contents and relevance:** Existing resort-directory scrape supplied by the researcher
@@ -50,6 +62,42 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Not an external source; lineage remains in source_ids and formulas
 - **Local raw file:** `not cached / not applicable`.
 
+## DERIVED_REVIEWED_DESTINATION_PANEL — Reviewed destination-month panel
+
+- **Contents and relevance:** Monthly destination outcomes aggregated across reviewed municipality scopes with diagnostic treatment coding
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** versioned Python transformation; unknown date.
+- **Variables:** reviewed_destination_month_outcomes|diagnostic_membership_status
+- **Transformations:** Additive municipality totals; missing unless every municipality is observed; entry carried forward only as a flagged diagnostic assumption
+- **Coverage:** reviewed destination unit; monthly; 2013-01 to 2026-12 grid; 2026-03 latest observed outcome.
+- **Limitations:** No row is causal-ready; treatment continuity and controls remain unaudited
+- **Local raw file:** `not cached / not applicable`.
+
+## DESTINATION_SCOPE_OFFICIAL_SET — Destination scope evidence set
+
+- **Contents and relevance:** Reviewed union of official municipality and lift-operator scope evidence
+- **Producer:** Municipalities and official lift operators
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Derived from individually registered official pages and geo.admin.ch point containment; unknown date.
+- **Variables:** destination_unit_scope|municipality_outcome_scope
+- **Transformations:** Explicit inclusion/exclusion decisions and additive municipality outcome weights
+- **Coverage:** reviewed destination and municipality; scope snapshot; ? to 2026.
+- **Limitations:** Core-municipality proxies are labelled separately from complete observed municipal scope
+- **Local raw file:** `not cached / not applicable`.
+
+## EVOLENE_SCOPE_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Official municipal evidence that Evolène, La Forclaz and Arolla belong to the same municipality
+- **Producer:** Commune d'Evolène
+- **Exact URL:** https://www.commune-evolene.ch/fr/villages-35.html
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T00:55:34.825822+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/treatment_destination_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/EVOLENE_SCOPE_OFFICIAL_20260920T005534Z.html`.
+
 ## GEOADMIN_MUNICIPALITY_IDENTIFY — Municipal boundaries — current swissBOUNDARIES3D layer
 
 - **Contents and relevance:** Current municipality polygon containing each supplied resort coordinate
@@ -61,6 +109,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** point-in-current-municipality polygon; boundary snapshot; 2026-01-01 to 2026-01-01.
 - **Limitations:** Coordinate containment is not a tourism catchment or municipal exposure weight
 - **Local raw file:** `data_external/source_evidence/GEO_POINT_*.json`.
+
+## GSTAAD_SCOPE_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Official operator evidence for access points spanning Saanen, Rougemont, Zweisimmen and St. Stephan
+- **Producer:** Bergbahnen Destination Gstaad AG
+- **Exact URL:** https://bergbahnen-gstaad.ch/en/arrival-parking
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T00:55:49.309926+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/treatment_destination_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/GSTAAD_SCOPE_OFFICIAL_20260920T005549Z.html`.
 
 ## LOCAL_03b4345dbe87 — stations_ski_assignations_clusters_gps_bergfex.csv
 
@@ -254,6 +314,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope
 - **Local raw file:** `not cached / not applicable`.
 
+## MAGIC_2021_APRIL — Official Magic Pass press material
+
+- **Contents and relevance:** Official April 2021 follow-up release for the 2021/2022 pass
+- **Producer:** Magic Mountains Cooperation
+- **Exact URL:** https://www.magicpass.ch/fr/presse
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T01:15:19.337900+00:00.
+- **Variables:** membership_event_evidence
+- **Transformations:** Page-numbered text extraction and manually reviewed event transcription
+- **Coverage:** official ski destination; dated announcement / season; ? to ?.
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Local raw file:** `data_external/source_evidence/MAGIC_2021_APRIL_20260920T011519Z.pdf`.
+
 ## MAGIC_2022 — Official Magic Pass press material
 
 - **Contents and relevance:** Official seasonal press evidence; membership extraction requires page verification
@@ -265,6 +337,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official ski destination; dated announcement / season; 2022 to ?.
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope
 - **Local raw file:** `data_external/source_evidence/MAGIC_2022_20260919T232227Z.pdf`.
+
+## MAGIC_2022_DOSSIER — Official Magic Pass press material
+
+- **Contents and relevance:** Official full press dossier for the 2022/2023 pass
+- **Producer:** Magic Mountains Cooperation
+- **Exact URL:** https://www.magicpass.ch/fr/presse
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T01:16:51.624040+00:00.
+- **Variables:** membership_event_evidence
+- **Transformations:** Page-numbered text extraction and manually reviewed event transcription
+- **Coverage:** official ski destination; dated announcement / season; ? to ?.
+- **Limitations:** Destination/operator scope may differ from Bergfex listing scope
+- **Local raw file:** `data_external/source_evidence/MAGIC_2022_DOSSIER_20260920T011651Z.pdf`.
 
 ## MAGIC_2023 — Official Magic Pass press material
 
@@ -307,12 +391,12 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Contents and relevance:** Official seasonal press evidence; membership extraction requires page verification
 - **Producer:** Magic Mountains Cooperation
 - **Exact URL:** https://www.magicpass.ch/fr/presse
-- **Access and retrieval date:** attempted HTTP GET; see collection log; unknown date.
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T00:56:13.071390+00:00.
 - **Variables:** membership_event_evidence
 - **Transformations:** Page-numbered text extraction and manually reviewed event transcription
 - **Coverage:** official ski destination; dated announcement / season; 2026 to ?.
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope
-- **Local raw file:** `not cached / not applicable`.
+- **Local raw file:** `data_external/source_evidence/MAGIC_2026_20260920T005613Z.pdf`.
 
 ## MAGIC_CURRENT_MAP — Official current destination map
 
@@ -350,9 +434,69 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope
 - **Local raw file:** `data_external/source_evidence/MAGIC_PRESS_ARCHIVE_20260919T231715Z.html`.
 
+## MEIRINGEN_HASLIBERG_MAGIC_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Official operator evidence for Magic Pass membership from 1 May 2025
+- **Producer:** Bergbahnen Meiringen-Hasliberg AG
+- **Exact URL:** https://en.meiringen-hasliberg.ch/Infos/magic-pass
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T00:55:52.206162+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/treatment_destination_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/MEIRINGEN_HASLIBERG_MAGIC_OFFICIAL_20260920T005552Z.html`.
+
+## MEIRINGEN_HASLIBERG_SCOPE_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Official operator evidence for lift access in both Hasliberg and Meiringen
+- **Producer:** Bergbahnen Meiringen-Hasliberg AG
+- **Exact URL:** https://en.meiringen-hasliberg.ch/Infos/anreise
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T00:55:50.713606+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/treatment_destination_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/MEIRINGEN_HASLIBERG_SCOPE_OFFICIAL_20260920T005550Z.html`.
+
+## REICHENBACH_SCOPE_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Official municipal evidence that Faltschen and Kiental are localities in Reichenbach im Kandertal
+- **Producer:** Gemeinde Reichenbach im Kandertal
+- **Exact URL:** https://www.reichenbach.ch/de/gemeinde/reichenbach/zahlen-und-fakten/
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T00:55:36.148672+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/treatment_destination_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/REICHENBACH_SCOPE_OFFICIAL_20260920T005536Z.html`.
+
+## SAINTE_CROIX_SCOPE_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Official operator page for the Sainte-Croix / Les Rasses ski domain
+- **Producer:** Ski Lift Les Rasses SA
+- **Exact URL:** https://www.ski-vaud.ch/
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T00:55:39.094372+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/treatment_destination_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/SAINTE_CROIX_SCOPE_OFFICIAL_20260920T005539Z.html`.
+
+## VILLARS_GRYON_SCOPE_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Official operator evidence that Villars, Gryon and Les Diablerets form one connected ski domain
+- **Producer:** Télé-Villars-Gryon-Diablerets SA
+- **Exact URL:** https://www.tvgd.ch/ski/
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T00:55:37.624544+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/treatment_destination_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/VILLARS_GRYON_SCOPE_OFFICIAL_20260920T005537Z.html`.
+
 ## Outstanding provenance gaps
 
 - The retrieval date of the supplied Bergfex and hotel CSV extracts is unknown.
 - The precise upstream download URL/version for `bahnen-winter_2056.gpkg` has not been established; it remains registered as a hashed local source rather than attributed by inference.
-- Magic Pass 2021 and 2026 PDF downloads did not complete in the scripted collector; failures remain in the collection log. The official press archive HTML is cached, and 2026 entry events are outside the current outcome window.
+- The Magic Pass 2021 PDF download did not complete in the scripted collector; failures remain in the collection log. The 2026 PDF and official press archive HTML are cached, and 2026 entry events are outside the current outcome window.
 - Current Magic map and press headline counts do not exactly match the 95 embedded destination records; this discrepancy is retained for review.

@@ -55,7 +55,11 @@ def load_bfs_hotel_universe() -> dict[int, str]:
 
 
 def metadata_for(source_id: str) -> tuple[Path, dict]:
-    matches = sorted(EVIDENCE_DIR.glob(f"{source_id}_*.metadata.json"))
+    matches = [
+        path
+        for path in sorted(EVIDENCE_DIR.glob(f"{source_id}_*.metadata.json"))
+        if json.loads(path.read_text(encoding="utf-8")).get("source_id") == source_id
+    ]
     if len(matches) != 1:
         raise ValueError(f"Expected exactly one metadata file for {source_id}, found {len(matches)}")
     path = matches[0]

@@ -107,6 +107,16 @@ def test_provenance_and_dictionary_referential_integrity() -> None:
     assert sources["source_id"].is_unique
     assert not dictionary.duplicated(["table", "variable"]).any()
     assert set(dictionary["source_id"].dropna()) <= set(sources["source_id"])
+    for row in sources.itertuples(index=False):
+        if pd.isna(row.local_raw_file) or not row.local_raw_file.startswith(
+            "data_external/source_evidence/"
+        ):
+            continue
+        raw = ROOT / row.local_raw_file
+        metadata_path = raw.with_name(raw.stem + ".metadata.json")
+        if metadata_path.exists():
+            cached = json.loads(metadata_path.read_text(encoding="utf-8"))
+            assert cached["source_id"] == row.source_id
 
 
 def test_checkpoint_metrics_remain_conservative() -> None:
@@ -115,3 +125,111 @@ def test_checkpoint_metrics_remain_conservative() -> None:
     assert int(metrics["provisional_treated_municipalities_with_hotel_outcome"]) == 14
     assert int(metrics["causal_treatment_units_approved"]) == 0
     assert int(metrics["approved_usable_controls"]) == 0
+    assert int(metrics["reviewed_destination_units"]) == 14
+    assert int(metrics["reviewed_destination_units_in_outcome_panel"]) == 11
+    assert int(metrics["reviewed_units_with_24_pre_and_post_months_assumption"]) == 7
+    assert int(metrics["reviewed_units_with_36_pre_and_post_months_assumption"]) == 6
+    assert int(metrics["reviewed_units_with_fully_documented_membership_continuity"]) == 4
+    assert int(metrics["panel_units_with_fully_documented_membership_continuity"]) == 3
+    assert int(metrics["fully_documented_panel_units_with_24_pre_and_post_months"]) == 0
+    assert int(metrics["control_municipalities_upper_bound_after_resolved_magic_links"]) == 57
+    assert int(metrics["treatment_donor_pairs_screened"]) == 814
+    assert int(metrics["provisional_donor_pairs_30km_36pre"]) == 438
+
+
+def test_reviewed_destination_scope_is_explicit_and_conservative() -> None:
+    units = read("data_processed/treatment_destination_units.csv", dtype=str)
+    mappings = read("data_processed/treatment_destination_municipality.csv", dtype=str)
+    crosswalk = read("data_processed/resort_municipality_crosswalk.csv", dtype=str)
+    assert len(units) == 14
+    assert units["destination_unit_id"].is_unique
+    eligible = units["eligible_for_reviewed_outcome_panel"].str.lower().eq("true")
+    assert eligible.sum() == 11
+    excluded = set(units.loc[~eligible, "destination_unit_id"])
+    assert excluded == {
+        "gstaad_operator_domain",
+        "sainte_croix_les_rasses",
+        "villars_gryon_les_diablerets",
+    }
+    assert (units["causal_treatment_unit_approved"].str.lower() == "false").all()
+    assert (mappings["municipality_weight"].astype(float) == 1.0).all()
+    assert (mappings["causal_exposure_approved"].str.lower() == "false").all()
+    assert len(crosswalk) == 271
+    assert crosswalk["resort_id"].is_unique
+    assert (crosswalk["causal_exposure_approved"].str.lower() == "false").all()
+
+
+def test_reviewed_destination_panel_aggregation_and_timing() -> None:
+    panel = read("data_processed/destination_month_panel.csv")
+    hotel = read("data_processed/hotel_municipality_month.csv")
+    events = read("data_processed/municipality_treatment_events.csv", dtype=str)
+    assert len(panel) == 1_848
+    assert panel["destination_unit_id"].nunique() == 11
+    assert not panel.duplicated(["destination_unit_id", "date"]).any()
+    assert not panel["causal_ready"].any()
+    assert len(events) == 19
+    assert (events["treatment_ready"].str.lower() == "false").all()
+
+    date = "2019-01-01"
+    source_total = hotel.loc[
+        hotel["municipality_name_source"].isin(["Hasliberg", "Meiringen"])
+        & hotel["date"].eq(date),
+        "hotel_overnights",
+    ].sum(min_count=2)
+    panel_total = panel.loc[
+        panel["destination_unit_id"].eq("meiringen_hasliberg")
+        & panel["date"].eq(date),
+        "hotel_overnights",
+    ].iloc[0]
+    assert panel_total == source_total
+
+    crans = panel[
+        panel["destination_unit_id"].eq("crans_montana")
+        & panel["date"].isin(["2020-04-01", "2020-05-01"])
+    ].set_index("date")
+    assert bool(crans.loc["2020-04-01", "assumed_base_member"])
+    assert not bool(crans.loc["2020-05-01", "assumed_base_member"])
+
+    reichenbach = panel[
+        panel["destination_unit_id"].eq("reichenbach_magic_portfolio")
+        & panel["date"].isin(["2023-04-01", "2023-05-01"])
+    ].set_index("date")
+    assert int(reichenbach.loc["2023-04-01", "assumed_active_component_count"]) == 1
+    assert int(reichenbach.loc["2023-05-01", "assumed_active_component_count"]) == 2
+
+
+def test_membership_continuity_gaps_are_not_silently_filled() -> None:
+    status = read("data_processed/magic_pass_membership_status_by_season.csv", dtype=str)
+    audit = read("reports/membership_continuity_audit.csv", dtype=str)
+    assert len(status) == 14 * 9
+    assert not status.duplicated(["destination_unit_id", "season"]).any()
+    assert (status["causal_treatment_status_approved"].str.lower() == "false").all()
+    assert (status["membership_status"] == "unverified_active_continuity").sum() == 25
+    complete = audit["continuity_fully_documented"].str.lower().eq("true")
+    assert set(audit.loc[complete, "destination_unit_id"]) == {
+        "crans_montana",
+        "gstaad_operator_domain",
+        "meiringen_hasliberg",
+        "schwanden",
+    }
+    anniviers_2019 = status[
+        status["destination_unit_id"].eq("anniviers_magic_portfolio")
+        & status["season"].eq("2019/2020")
+    ].iloc[0]
+    assert anniviers_2019["membership_status"] == "unverified_active_continuity"
+
+
+def test_control_audit_never_promotes_screened_donors() -> None:
+    audit = read("reports/control_contamination_audit.csv")
+    matrix = read("data_processed/treatment_control_candidate_matrix.csv")
+    assert len(audit) == 74
+    assert audit["municipality_bfs_id"].is_unique
+    assert int(audit["known_magic_exposure_from_resolved_links"].sum()) == 17
+    assert int(audit["candidate_control_upper_bound"].sum()) == 57
+    assert not audit["causal_control_approved"].any()
+    assert len(matrix) == 11 * 74
+    assert not matrix.duplicated(
+        ["destination_unit_id", "donor_municipality_bfs_id"]
+    ).any()
+    assert int(matrix["provisional_donor_30km_36pre"].sum()) == 438
+    assert not matrix["causal_control_approved"].any()

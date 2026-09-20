@@ -14,6 +14,10 @@ POINTS = ROOT / "data_processed" / "resort_point_municipality.csv"
 HOTEL = ROOT / "data_processed" / "hotel_municipality_month.csv"
 HISTORY = ROOT / "data_processed" / "magic_pass_membership_history.csv"
 CURRENT = ROOT / "data_processed" / "magic_pass_current_destinations.csv"
+REVIEWED_UNITS = ROOT / "data_processed" / "treatment_destination_units.csv"
+REVIEWED_PANEL = ROOT / "data_processed" / "destination_month_panel.csv"
+CONTINUITY_AUDIT = ROOT / "reports" / "membership_continuity_audit.csv"
+CONTROL_SUMMARY = ROOT / "reports" / "control_audit_summary.json"
 CLUSTERS = ROOT / "data_raw" / "stations_ski_clusters_resume_gps_bergfex.csv"
 WINDOW_OUTPUT = ROOT / "reports" / "provisional_treatment_window_coverage.csv"
 COUNT_OUTPUT = ROOT / "reports" / "feasibility_counts.csv"
@@ -39,6 +43,10 @@ def main() -> None:
     hotel = pd.read_csv(HOTEL)
     history = pd.read_csv(HISTORY, dtype="string")
     current = pd.read_csv(CURRENT, dtype="string")
+    reviewed_units = pd.read_csv(REVIEWED_UNITS, dtype="string")
+    reviewed_panel = pd.read_csv(REVIEWED_PANEL)
+    continuity = pd.read_csv(CONTINUITY_AUDIT, dtype="string")
+    control_summary = json.loads(CONTROL_SUMMARY.read_text(encoding="utf-8"))
     clusters = pd.read_csv(CLUSTERS, sep=";", dtype="string")
     hotel["date"] = pd.to_datetime(hotel["date"], errors="raise")
 
@@ -134,14 +142,73 @@ def main() -> None:
         "hotel_observed_end": observed_end.date().isoformat(),
         "hotel_observed_month_rows": int(observed["hotel_overnights"].notna().sum()),
         "causal_treatment_units_approved": 0,
+        "reviewed_destination_units": len(reviewed_units),
+        "reviewed_destination_units_in_outcome_panel": int(
+            as_bool(reviewed_units["eligible_for_reviewed_outcome_panel"]).sum()
+        ),
+        "reviewed_destination_units_excluded_incomplete_scope": int(
+            (~as_bool(reviewed_units["eligible_for_reviewed_outcome_panel"])).sum()
+        ),
+        "reviewed_destination_month_rows": len(reviewed_panel),
+        "reviewed_observed_destination_months": int(
+            reviewed_panel["hotel_overnights"].notna().sum()
+        ),
+        "reviewed_units_with_24_pre_and_post_months_assumption": int(
+            (
+                as_bool(reviewed_units["eligible_for_reviewed_outcome_panel"])
+                & as_bool(reviewed_units["has_24_observed_pre_months"])
+                & as_bool(reviewed_units["has_24_active_post_months_assumption"])
+            ).sum()
+        ),
+        "reviewed_units_with_36_pre_and_post_months_assumption": int(
+            (
+                as_bool(reviewed_units["eligible_for_reviewed_outcome_panel"])
+                & as_bool(reviewed_units["has_36_observed_pre_months"])
+                & as_bool(reviewed_units["has_36_active_post_months_assumption"])
+            ).sum()
+        ),
+        "reviewed_units_with_fully_documented_membership_continuity": int(
+            as_bool(continuity["continuity_fully_documented"]).sum()
+        ),
+        "panel_units_with_fully_documented_membership_continuity": int(
+            (
+                as_bool(continuity["outcome_panel_eligible"])
+                & as_bool(continuity["continuity_fully_documented"])
+            ).sum()
+        ),
+        "fully_documented_panel_units_with_24_pre_and_post_months": int(
+            (
+                as_bool(reviewed_units["eligible_for_reviewed_outcome_panel"])
+                & as_bool(reviewed_units["has_24_observed_pre_months"])
+                & as_bool(reviewed_units["has_24_active_post_months_assumption"])
+                & reviewed_units["destination_unit_id"].isin(
+                    continuity.loc[
+                        as_bool(continuity["continuity_fully_documented"]),
+                        "destination_unit_id",
+                    ]
+                )
+            ).sum()
+        ),
+        "control_municipalities_upper_bound_after_resolved_magic_links": int(
+            control_summary["candidate_control_municipalities_upper_bound"]
+        ),
+        "treatment_donor_pairs_screened": int(
+            control_summary["treatment_donor_pairs_screened"]
+        ),
+        "provisional_donor_pairs_30km_36pre": int(
+            control_summary["provisional_donor_pairs_30km_36pre"]
+        ),
+        "unresolved_official_base_entry_labels": int(
+            control_summary["unresolved_official_base_entry_labels"]
+        ),
     }
     pd.DataFrame([{"metric": key, "value": value} for key, value in metrics.items()]).to_csv(
         COUNT_OUTPUT, index=False
     )
 
     model_rows = [
-        ("Municipality fixed-effects panel", "Not ready", "Outcome panel is large enough, but exposure and treatment coding are not validated."),
-        ("Staggered Difference-in-Differences", "Not credible yet", "Only season-level entry timing is available; exits, scope, spillovers, and controls remain incomplete."),
+        ("Municipality fixed-effects panel", "Diagnostic-ready only", "Eleven reviewed outcome units can be represented, but membership continuity, confounding, spillovers, and controls remain unresolved."),
+        ("Staggered Difference-in-Differences", "Not credible yet", "Destination scope is improved, but continuity assumptions and untreated-control status are not validated."),
         ("Matching", "Descriptive only", "May help select analogues after pre-treatment covariates and membership status are completed; it is not yet causal."),
         ("Synthetic control / synthetic DiD", "Case-study candidate", "Could be assessed for a few clearly mapped municipalities with uncontaminated donors; no donor pool is approved yet."),
         ("Causal forest", "Not supported", "At most 14 provisional treated municipalities is far below a defensible heterogeneous-effect sample."),
@@ -160,7 +227,7 @@ Generated reproducibly by `src/data_processing/build_feasibility_report.py`.
 
 ## Executive verdict
 
-The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. A move to Path B would require a reviewed destination-level resort definition, complete season-by-season membership and exit histories, an explicit resort-to-tourism-municipality exposure crosswalk, and an uncontaminated control audit.
+The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. Destination scope has now been manually reviewed for the 18 candidate entry/outcome links, but a move to Path B still requires complete season-by-season membership and exit histories, confounders, and an uncontaminated control audit.
 
 No causal model, treatment-effect learner, opportunity score, or neural network should be fitted at this checkpoint.
 
@@ -170,14 +237,16 @@ No causal model, treatment-effect learner, opportunity score, or neural network 
 - The official current-map snapshot contains **{metrics['official_current_magic_destinations_snapshot']} embedded destinations**; **{metrics['official_current_destinations_candidate_linked']}** have a candidate link to a supplied resort listing. The page headline and press archive refer to more than 100 destinations, so the embedded-list discrepancy must be reviewed rather than silently reconciled.
 - Official evidence records **{metrics['documented_base_entry_events']} base-pass entry events**. **{metrics['candidate_linked_base_entry_events']}** have a candidate resort-listing link, but only **{metrics['candidate_linked_base_entries_with_hotel_outcome']}** also point to an OFS hotel municipality.
 - Those {metrics['candidate_linked_base_entries_with_hotel_outcome']} events reduce to **{metrics['provisional_treated_municipalities_with_hotel_outcome']} municipalities**. This municipality count, not the {metrics['hotel_observed_month_rows']:,} observed monthly rows, is the more relevant upper bound for treatment heterogeneity.
-- **Zero** treatment units are approved for causal estimation because point containment is not tourism exposure and membership continuity is incomplete.
+- The 18 candidate links collapse to **{metrics['reviewed_destination_units']} reviewed destination units**. **{metrics['reviewed_destination_units_in_outcome_panel']}** enter a diagnostic outcome panel; **{metrics['reviewed_destination_units_excluded_incomplete_scope']}** composite destinations are excluded because the supplied hotel panel does not cover their full reviewed scope.
+- The reviewed panel has **{metrics['reviewed_destination_month_rows']:,} destination-month rows**, of which **{metrics['reviewed_observed_destination_months']:,}** have a complete aggregated hotel-night outcome.
+- **Zero** treatment units are approved for causal estimation. The reviewed geography is an outcome-scope decision, while membership continuity, confounding, spillovers, and control status remain unresolved.
 
 ## Outcome coverage
 
 - The cleaned OFS-derived panel has **{metrics['hotel_municipalities_total']} municipalities**.
 - Observed hotel-night values run from **{metrics['hotel_observed_start']}** through **{metrics['hotel_observed_end']}**; later 2026 grid rows are missing and are not counted as observed.
 - Resort points reach **{metrics['hotel_municipalities_reached_by_resort_point']}** hotel municipalities.
-- A naive subtraction leaves at most **{metrics['naive_non_treated_control_municipalities_upper_bound']}** apparent control municipalities, but **zero controls are approved** because historical non-membership and spillover contamination have not been verified.
+- Resolved historical/current Magic links reduce the 74-municipality resort-point universe to an upper bound of **{metrics['control_municipalities_upper_bound_after_resolved_magic_links']}** apparent controls. This is not a clean donor pool: **{metrics['unresolved_official_base_entry_labels']}** official base-entry labels remain unresolved, and **zero controls are approved**.
 
 ## Provisional pre/post windows
 
@@ -190,7 +259,28 @@ For coverage diagnostics only, the script anchors the founding 2017/18 season at
 - Distinct provisional anchors: **{metrics['unique_provisional_treatment_anchors']}**
 - Treated units with an exact entry date: **0**
 
-The event-level audit is in `reports/provisional_treatment_window_coverage.csv`.
+The provisional event-level audit is in `reports/provisional_treatment_window_coverage.csv`. The stricter destination-unit review superseding raw event counts is in `reports/destination_unit_review.csv`:
+
+- Reviewed units with at least 24 observed pre months and 24 active post months under the explicit continuity assumption: **{metrics['reviewed_units_with_24_pre_and_post_months_assumption']}**
+- Reviewed units with at least 36 observed pre months and 36 active post months under that assumption: **{metrics['reviewed_units_with_36_pre_and_post_months_assumption']}**
+
+These are coverage counts, not an identification claim.
+
+## Membership-continuity audit
+
+Entry events, full official rosters, named continuation statements, and the documented Crans-Montana exit were checked season by season. Missing annual evidence remains unverified rather than being filled as active or inactive.
+
+- Reviewed units with every active season explicitly documented: **{metrics['reviewed_units_with_fully_documented_membership_continuity']}**
+- Such units that also enter the outcome panel: **{metrics['panel_units_with_fully_documented_membership_continuity']}**
+- Such panel units with both 24 observed pre months and 24 observed active-post months: **{metrics['fully_documented_panel_units_with_24_pre_and_post_months']}**
+
+The detailed audit is in `reports/membership_continuity_audit.csv`. Its zero in the final line is the decisive reason not to estimate a multi-unit causal effect yet.
+
+## Donor/control contamination screen
+
+The pipeline screened **{metrics['treatment_donor_pairs_screened']}** treatment-municipality pairs. A deliberately provisional flag removes known resolved Magic exposure, the treated municipality scope, donors within 30 km, donors with fewer than 36 observed pre months, and donors with fewer than 24 post months. **{metrics['provisional_donor_pairs_30km_36pre']}** pairs pass that mechanical screen, but **zero are approved causal controls** because unresolved membership, spillovers beyond an arbitrary distance threshold, and time-varying confounders remain.
+
+See `reports/control_contamination_audit.csv` and `reports/control_candidates_by_treatment.csv`.
 
 ## Model-family decisions
 
@@ -210,7 +300,7 @@ The event-level audit is in `reports/provisional_treatment_window_coverage.csv`.
 
 ## Next evidence gate
 
-Prioritise manual review of the 18 candidate entry/outcome links, starting with shared municipalities (Anniviers, Evolène, and Reichenbach im Kandertal), complete annual membership/exit status, and define explicit destination-to-municipality weights. Only then reassess fixed-effects/event-study feasibility and donor contamination. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+Fill the remaining unverified unit-seasons, resolve the unmatched official entry labels, add time-varying confounders, and replace the mechanical donor screen with a documented membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "review_date": "2026-09-20",
+  "season_definition": "An annual Magic Pass season runs from May through April, except the founding 2017/2018 pass which began on 1 November 2017.",
+  "interpretation": "Only explicit positive roster or continuation evidence is encoded. Absence from a non-exhaustive press release is never treated as non-membership.",
+  "observations": [
+    {
+      "season": "2018/2019",
+      "source_id": "MAGIC_2018",
+      "source_page": "2",
+      "evidence_type": "full_base_roster",
+      "active_destination_unit_ids": [
+        "crans_montana",
+        "anniviers_magic_portfolio",
+        "moleson",
+        "villars_gryon_les_diablerets",
+        "espace_dent_blanche",
+        "les_pleiades"
+      ],
+      "note": "The official press release presents the annual 2018/2019 pass and lists its participating domains."
+    },
+    {
+      "season": "2020/2021",
+      "source_id": "MAGIC_2020",
+      "source_page": "3",
+      "evidence_type": "named_continuation",
+      "active_destination_unit_ids": ["saas_fee"],
+      "note": "The release states that Saas-Fee remains in Magic Pass and expands its summer participation; it is not a full roster."
+    },
+    {
+      "season": "2021/2022",
+      "source_id": "MAGIC_2021_APRIL",
+      "source_page": "1",
+      "evidence_type": "named_continuation",
+      "active_destination_unit_ids": ["saas_fee"],
+      "note": "The official follow-up describes the Haut-Valais axis as developed with Saas-Fee; it is not a full roster."
+    },
+    {
+      "season": "2022/2023",
+      "source_id": "MAGIC_2022_DOSSIER",
+      "source_page": "6",
+      "evidence_type": "full_base_roster",
+      "active_destination_unit_ids": [
+        "anniviers_magic_portfolio",
+        "moleson",
+        "villars_gryon_les_diablerets",
+        "espace_dent_blanche",
+        "les_pleiades",
+        "saas_fee",
+        "axalp",
+        "reichenbach_magic_portfolio"
+      ],
+      "note": "The official 2022/2023 dossier page 6 lists partner and new base stations."
+    },
+    {
+      "season": "2023/2024",
+      "source_id": "MAGIC_2023",
+      "source_page": "5",
+      "evidence_type": "full_base_roster",
+      "active_destination_unit_ids": [
+        "anniviers_magic_portfolio",
+        "moleson",
+        "villars_gryon_les_diablerets",
+        "espace_dent_blanche",
+        "les_pleiades",
+        "saas_fee",
+        "axalp",
+        "reichenbach_magic_portfolio",
+        "bumbach",
+        "sainte_croix_les_rasses"
+      ],
+      "note": "The official dossier separates partner and new stations and provides the complete base roster."
+    },
+    {
+      "season": "2025/2026",
+      "source_id": "MAGIC_2025",
+      "source_page": "5",
+      "evidence_type": "full_base_roster",
+      "active_destination_unit_ids": [
+        "anniviers_magic_portfolio",
+        "moleson",
+        "villars_gryon_les_diablerets",
+        "espace_dent_blanche",
+        "les_pleiades",
+        "saas_fee",
+        "axalp",
+        "reichenbach_magic_portfolio",
+        "bumbach",
+        "sainte_croix_les_rasses",
+        "schwanden",
+        "gstaad_operator_domain",
+        "meiringen_hasliberg"
+      ],
+      "note": "The official dossier provides a numbered list of 99 base destinations, including grouped domain headings."
+    }
+  ]
+}

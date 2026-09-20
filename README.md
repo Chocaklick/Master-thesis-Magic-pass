@@ -25,7 +25,8 @@ A resort assignment is not automatically a municipality assignment.
 - Eleven supplied raw files are hashed, profiled, and preserved as immutable inputs.
 - The existing 242-cluster/1,805-lift layer has been validated without reclustering.
 - A 31,248-row municipality-month hotel panel, current point-municipality crosswalk, official Magic Pass evidence table, and resort-level data-quality table are reproducibly generated.
-- The current feasibility decision is Path C: exploratory segmentation/analogue decision support. Causal modelling remains gated by destination scope, membership continuity, exposure mapping, and control contamination.
+- The 18 candidate entry/outcome links have been collapsed into 14 reviewed destination units. Eleven have an explicit outcome scope and form a 1,848-row diagnostic destination-month panel; three incomplete composite scopes are excluded.
+- The current feasibility decision is Path C: exploratory segmentation/analogue decision support. Causal modelling remains gated by membership continuity, time-varying confounders, spillovers, and control contamination.
 - GitHub synchronization is configured: `main` tracks `origin/main` at `https://github.com/Chocaklick/Master-thesis-Magic-pass.git`.
 
 See [PROJECT_STATE.md](PROJECT_STATE.md) for the authoritative current state and [logs/research_journal.md](logs/research_journal.md) for the chronological record.
@@ -84,7 +85,7 @@ With the original files available under ignored `data_raw/` and the previously c
 
 To check or collect configured official evidence before rebuilding, add `--with-collection`. The collector reuses checksum-verified cached responses and logs every success or failure. The default pipeline performs no network access.
 
-The run ends with the automated test suite. Main checkpoint reports are `reports/01_DATA_AUDIT.md`, `reports/02_DATA_COLLECTION.md`, `reports/03_DATA_QUALITY.md`, and `reports/model_feasibility_report.md`.
+The run ends with the automated test suite. Main checkpoint reports are `reports/01_DATA_AUDIT.md`, `reports/02_DATA_COLLECTION.md`, `reports/03_DATA_QUALITY.md`, `reports/04_DESTINATION_UNIT_REVIEW.md`, and `reports/model_feasibility_report.md`.
 
 ## Data conventions
 

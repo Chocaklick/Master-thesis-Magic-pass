@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import argparse
 import hashlib
+from http.client import IncompleteRead
 import json
 import time
 from datetime import datetime, timezone
@@ -31,8 +32,33 @@ def append_log(row):
 
 
 def fetch(url):
-    with urlopen(Request(url, headers={"User-Agent": AGENT}), timeout=45) as response:
-        return response.read(), response.status, response.geturl()
+    content = b""
+    last_error = None
+    for _ in range(4):
+        headers = {"User-Agent": AGENT}
+        if content:
+            headers["Range"] = f"bytes={len(content)}-"
+        with urlopen(Request(url, headers=headers), timeout=45) as response:
+            status = response.status
+            final_url = response.geturl()
+            try:
+                block = response.read()
+            except IncompleteRead as exc:
+                block = exc.partial
+                last_error = exc
+                if content and status == 206:
+                    content += block
+                else:
+                    content = block
+                continue
+            if content and status == 206:
+                content += block
+            else:
+                content = block
+            return content, status, final_url
+    if last_error:
+        raise last_error
+    raise RuntimeError(f"Download did not complete: {url}")
 
 
 def main():
@@ -48,7 +74,11 @@ def main():
     policies = {}
     for source in sources:
         sid, url = source["source_id"], source["url"]
-        cached = sorted(folder.glob(sid + "_*.metadata.json"))
+        cached = [
+            path
+            for path in sorted(folder.glob(sid + "_*.metadata.json"))
+            if json.loads(path.read_text(encoding="utf-8")).get("source_id") == sid
+        ]
         if cached:
             metadata = json.loads(cached[-1].read_text(encoding="utf-8"))
             raw = ROOT / metadata["raw_file"]
