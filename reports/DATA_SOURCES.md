@@ -26,6 +26,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Observation date and independent-domain semantics are unknown
 - **Local raw file:** `data_raw/bergfex_stations_ski_suisse_par_region.csv`.
 
+## BFS_HOTEL_CAPACITY_DATA — px-x-1003020000_201
+
+- **Contents and relevance:** Monthly HESTA hotel supply, demand, and occupancy in open establishments by municipality
+- **Producer:** Swiss Federal Statistical Office (FSO/OFS/BFS)
+- **Exact URL:** https://www.pxweb.bfs.admin.ch/pxweb/fr/px-x-1003020000_201/
+- **Access and retrieval date:** PXWeb HTTP POST in 14 annual chunks; exact queries, responses, SHA-256 checksums, and logs preserved; 2026-09-20T08:39:13.504956+00:00.
+- **Variables:** hotel_establishments_open|hotel_rooms_available|hotel_beds_available|hotel_room_occupancy_rate_pct|hotel_bed_occupancy_rate_pct
+- **Transformations:** Annual chunks concatenated; literal '..' and '...' tokens preserved; numeric values parsed without imputation; exact municipality-date join to legacy demand panel
+- **Coverage:** municipality; monthly grid; 2013-01 to 2026-12 grid; later months unavailable at retrieval.
+- **Limitations:** 1,974 supply rows are unavailable/protected; 59 bed-occupancy percentages exceed 100 as published; 6 demand cells in 3 Davos months differ from the legacy extraction and are reported without overwriting it
+- **Local raw file:** `data_external/source_evidence/BFS_HOTEL_CAPACITY_DATA_2013_20260920T083901Z.csv`.
+
+## BFS_HOTEL_CAPACITY_METADATA — px-x-1003020000_201 metadata
+
+- **Contents and relevance:** Live metadata for the HESTA supply, demand, and occupancy table
+- **Producer:** Swiss Federal Statistical Office (FSO/OFS/BFS)
+- **Exact URL:** https://www.pxweb.bfs.admin.ch/pxweb/fr/px-x-1003020000_201/
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T08:36:08.846339+00:00.
+- **Variables:** capacity_table_schema|municipality_bfs_id
+- **Transformations:** Dimension codes and municipality code-label pairs extracted exactly
+- **Coverage:** municipality; metadata snapshot; 2013 to 2026.
+- **Limitations:** Reference municipality universe is dated 2026-01-01; cached response anchors the schema
+- **Local raw file:** `data_external/source_evidence/BFS_HOTEL_CAPACITY_METADATA_20260920T083608Z.json`.
+
 ## BFS_HOTEL_DATA — px-x-1003020000_101
 
 - **Contents and relevance:** Monthly hotel arrivals and overnight stays in open establishments by municipality and visitor origin
@@ -64,14 +88,14 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 
 ## DERIVED_REVIEWED_DESTINATION_PANEL — Reviewed destination-month panel
 
-- **Contents and relevance:** Monthly destination outcomes aggregated across reviewed municipality scopes with diagnostic treatment coding
+- **Contents and relevance:** Monthly destination outcomes and hotel capacity aggregated across reviewed municipality scopes with diagnostic treatment coding
 - **Producer:** Master thesis analytical pipeline
 - **Exact URL:** Not documented.
 - **Access and retrieval date:** versioned Python transformation; unknown date.
-- **Variables:** reviewed_destination_month_outcomes|diagnostic_membership_status
-- **Transformations:** Additive municipality totals; missing unless every municipality is observed; entry carried forward only as a flagged diagnostic assumption
+- **Variables:** reviewed_destination_month_outcomes|hotel_capacity|diagnostic_membership_status
+- **Transformations:** Additive municipality outcome and capacity totals; missing unless every municipality is observed; official occupancy percentages retained only for single-municipality units; entry carried forward only as a flagged diagnostic assumption
 - **Coverage:** reviewed destination unit; monthly; 2013-01 to 2026-12 grid; 2026-03 latest observed outcome.
-- **Limitations:** No row is causal-ready; treatment continuity and controls remain unaudited
+- **Limitations:** No row is causal-ready; treatment continuity and controls remain unresolved and other time-varying confounders are pending
 - **Local raw file:** `not cached / not applicable`.
 
 ## DESTINATION_SCOPE_OFFICIAL_SET — Destination scope evidence set

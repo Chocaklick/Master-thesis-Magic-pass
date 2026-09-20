@@ -1,0 +1,9 @@
+[
+  {
+    "source_id": "BFS_HOTEL_CAPACITY_METADATA",
+    "url": "https://www.pxweb.bfs.admin.ch/api/v1/fr/px-x-1003020000_201/px-x-1003020000_201.px",
+    "suffix": "json",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "Official HESTA municipality-month hotel supply, demand and occupancy table metadata"
+  }
+]

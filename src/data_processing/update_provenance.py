@@ -67,6 +67,22 @@ def main() -> None:
     rows: list[dict] = []
 
     bfs_metadata = cached_metadata("BFS_HOTEL_METADATA")
+    bfs_capacity_metadata = cached_metadata("BFS_HOTEL_CAPACITY_METADATA")
+    bfs_capacity_records = [
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in EVIDENCE_DIR.glob("BFS_HOTEL_CAPACITY_DATA_*.metadata.json")
+    ]
+    bfs_capacity_records = [
+        record
+        for record in bfs_capacity_records
+        if record.get("source_id") == "BFS_HOTEL_CAPACITY_DATA"
+        and record.get("raw_files")
+    ]
+    bfs_capacity_data = (
+        max(bfs_capacity_records, key=lambda record: record["retrieval_date"])
+        if bfs_capacity_records
+        else None
+    )
     rows.append(blank_source(
         "BFS_HOTEL_DATA",
         variable_name="hotel_arrivals|hotel_overnights|domestic_overnights|foreign_overnights",
@@ -120,6 +136,63 @@ def main() -> None:
         quality_notes="Live table composition can change; cached response is the reproducibility anchor",
         confidence_level="high",
         manual_verification="response schema and Gemeinde dimension checked",
+    ))
+    rows.append(blank_source(
+        "BFS_HOTEL_CAPACITY_METADATA",
+        variable_name="capacity_table_schema|municipality_bfs_id",
+        variable_description="Live metadata for the HESTA supply, demand, and occupancy table",
+        source_organisation="Swiss Federal Statistical Office (FSO/OFS/BFS)",
+        source_dataset_name="px-x-1003020000_201 metadata",
+        source_page_url="https://www.pxweb.bfs.admin.ch/pxweb/fr/px-x-1003020000_201/",
+        direct_download_url=configured["BFS_HOTEL_CAPACITY_METADATA"]["url"],
+        api_endpoint=configured["BFS_HOTEL_CAPACITY_METADATA"]["url"],
+        api_parameters="GET table metadata",
+        retrieval_method="HTTP GET with immutable response and SHA-256 sidecar",
+        retrieval_date=(bfs_capacity_metadata or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(bfs_capacity_metadata),
+        local_raw_file=(bfs_capacity_metadata or {}).get("raw_file", ""),
+        processed_file="data_processed/hotel_capacity_municipality_month.csv",
+        geographic_level="municipality",
+        temporal_resolution="metadata snapshot",
+        temporal_start="2013",
+        temporal_end="2026",
+        unit="metadata",
+        license="See official FSO terms",
+        access_conditions="Public PXWeb API",
+        transformation_applied="Dimension codes and municipality code-label pairs extracted exactly",
+        quality_notes="Reference municipality universe is dated 2026-01-01; cached response anchors the schema",
+        confidence_level="high",
+        manual_verification="response schema and all four dimensions checked",
+    ))
+    capacity_first_raw = (
+        bfs_capacity_data["raw_files"][0]["raw_file"] if bfs_capacity_data else ""
+    )
+    rows.append(blank_source(
+        "BFS_HOTEL_CAPACITY_DATA",
+        variable_name="hotel_establishments_open|hotel_rooms_available|hotel_beds_available|hotel_room_occupancy_rate_pct|hotel_bed_occupancy_rate_pct",
+        variable_description="Monthly HESTA hotel supply, demand, and occupancy in open establishments by municipality",
+        source_organisation="Swiss Federal Statistical Office (FSO/OFS/BFS)",
+        source_dataset_name="px-x-1003020000_201",
+        source_page_url="https://www.pxweb.bfs.admin.ch/pxweb/fr/px-x-1003020000_201/",
+        api_endpoint=configured["BFS_HOTEL_CAPACITY_METADATA"]["url"],
+        api_parameters="All 2013-2026 years, 12 months, 186 municipalities, and 8 indicators; annual-total month excluded; one POST per year",
+        retrieval_method="PXWeb HTTP POST in 14 annual chunks; exact queries, responses, SHA-256 checksums, and logs preserved",
+        retrieval_date=(bfs_capacity_data or {}).get("retrieval_date", ""),
+        original_file_name=Path(capacity_first_raw).name if capacity_first_raw else "",
+        local_raw_file=capacity_first_raw,
+        processed_file="data_processed/hotel_capacity_municipality_month.csv|data_processed/hotel_municipality_month_enriched.csv|data_processed/destination_month_panel.csv",
+        geographic_level="municipality",
+        temporal_resolution="monthly grid",
+        temporal_start="2013-01",
+        temporal_end="2026-12 grid; later months unavailable at retrieval",
+        unit="establishments; rooms; beds; arrivals; overnight stays; percent",
+        license="See official FSO terms",
+        access_conditions="Public PXWeb API; source missing and protection tokens apply",
+        transformation_applied="Annual chunks concatenated; literal '..' and '...' tokens preserved; numeric values parsed without imputation; exact municipality-date join to legacy demand panel",
+        quality_notes="1,974 supply rows are unavailable/protected; 59 bed-occupancy percentages exceed 100 as published; 6 demand cells in 3 Davos months differ from the legacy extraction and are reported without overwriting it",
+        confidence_level="high for official source; version differences explicitly retained",
+        manual_verification="schema, checksums, grain, value bounds, and demand reconciliation checked",
+        notes="Fourteen raw annual response files are listed in the master metadata sidecar; local_raw_file points to the first chunk",
     ))
 
     magic_ids = [key for key in configured if key.startswith("MAGIC_")]
@@ -307,8 +380,8 @@ def main() -> None:
     ))
     rows.append(blank_source(
         "DERIVED_REVIEWED_DESTINATION_PANEL",
-        variable_name="reviewed_destination_month_outcomes|diagnostic_membership_status",
-        variable_description="Monthly destination outcomes aggregated across reviewed municipality scopes with diagnostic treatment coding",
+        variable_name="reviewed_destination_month_outcomes|hotel_capacity|diagnostic_membership_status",
+        variable_description="Monthly destination outcomes and hotel capacity aggregated across reviewed municipality scopes with diagnostic treatment coding",
         source_organisation="Master thesis analytical pipeline",
         source_dataset_name="Reviewed destination-month panel",
         retrieval_method="versioned Python transformation",
@@ -319,8 +392,8 @@ def main() -> None:
         temporal_end="2026-12 grid; 2026-03 latest observed outcome",
         unit="destination-month",
         license="inherits source restrictions",
-        transformation_applied="Additive municipality totals; missing unless every municipality is observed; entry carried forward only as a flagged diagnostic assumption",
-        quality_notes="No row is causal-ready; treatment continuity and controls remain unaudited",
+        transformation_applied="Additive municipality outcome and capacity totals; missing unless every municipality is observed; official occupancy percentages retained only for single-municipality units; entry carried forward only as a flagged diagnostic assumption",
+        quality_notes="No row is causal-ready; treatment continuity and controls remain unresolved and other time-varying confounders are pending",
         confidence_level="high for reproducible aggregation; low for causal treatment status",
         manual_verification="automated tests plus destination review",
     ))
@@ -334,6 +407,13 @@ def main() -> None:
         ("domestic_overnights", "hotel_municipality_month", "Overnight stays by Swiss residents", "overnight stays", "Int64", "municipality", "monthly", "BFS_HOTEL_DATA", "cleaned source", "Parsed only when source token is a nonnegative integer", "secondary outcome", "Suppressed values remain missing"),
         ("foreign_overnights", "hotel_municipality_month", "Total minus domestic overnight stays", "overnight stays", "Int64", "municipality", "monthly", "BFS_HOTEL_DATA", "derived", "hotel_overnights - domestic_overnights", "secondary outcome", "Missing when either component is unavailable"),
         ("log_overnights", "hotel_municipality_month", "Log-transformed hotel overnight stays", "log points", "float", "municipality", "monthly", "BFS_HOTEL_DATA", "derived", "log(1 + hotel_overnights)", "outcome", "No imputation"),
+        ("hotel_establishments_open", "hotel_capacity_municipality_month", "Open hotel and health establishments", "establishments", "Int64", "municipality", "monthly", "BFS_HOTEL_CAPACITY_DATA", "cleaned source", "Parsed only when the literal source token is a nonnegative integer", "time-varying supply confounder", "Source '..' and '...' tokens remain missing"),
+        ("hotel_rooms_available", "hotel_capacity_municipality_month", "Rooms in open hotel and health establishments", "rooms", "Int64", "municipality", "monthly", "BFS_HOTEL_CAPACITY_DATA", "cleaned source", "Parsed only when the literal source token is a nonnegative integer", "time-varying supply confounder", "No imputation"),
+        ("hotel_beds_available", "hotel_capacity_municipality_month", "Beds in open hotel and health establishments", "beds", "Int64", "municipality", "monthly", "BFS_HOTEL_CAPACITY_DATA", "cleaned source", "Parsed only when the literal source token is a nonnegative integer", "time-varying supply confounder", "No imputation"),
+        ("hotel_room_occupancy_rate_pct", "hotel_capacity_municipality_month", "Official room occupancy rate", "percent", "Float64", "municipality", "monthly", "BFS_HOTEL_CAPACITY_DATA", "cleaned source", "Official published value parsed without adjustment", "descriptive capacity utilisation", "Not an outcome denominator for multi-municipality aggregation"),
+        ("hotel_bed_occupancy_rate_pct", "hotel_capacity_municipality_month", "Official bed occupancy rate", "percent", "Float64", "municipality", "monthly", "BFS_HOTEL_CAPACITY_DATA", "cleaned source", "Official published value parsed without adjustment", "descriptive capacity utilisation", "59 source values exceed 100 and remain unchanged"),
+        ("complete_capacity_supply", "hotel_capacity_municipality_month", "Whether establishments, rooms, and beds are all observed", "boolean", "boolean", "municipality", "monthly", "BFS_HOTEL_CAPACITY_DATA", "derived", "all three supply values are numeric source observations", "capacity quality", "False rows remain missing; no imputation"),
+        ("hotel_overnights_per_available_bed_month", "hotel_municipality_month_enriched", "Monthly overnight stays per contemporaneous available bed", "overnight stays per bed-month", "float", "municipality", "monthly", "BFS_HOTEL_CAPACITY_DATA", "derived", "live-table hotel_overnights_capacity_table / hotel_beds_available when beds > 0", "descriptive capacity-adjusted demand", "Not the official occupancy rate"),
         ("resort_id", "resort_master", "Stable ID retained from existing normalised listing table", "identifier", "string", "resort listing", "snapshot", "DERIVED_MULTI_SOURCE", "existing identifier", "retained without fuzzy merging", "identifier", "Does not yet prove independent resort-domain status"),
         ("cluster_id", "resort_master", "Existing lift-cluster assignment", "identifier", "string", "lift cluster", "snapshot", "DERIVED_MULTI_SOURCE", "existing identifier", "preserved existing assignment", "group identifier", "Clustering was validated, not rebuilt"),
         ("altitude_top_m", "resort_master", "Published maximum resort altitude", "metres", "numeric", "resort listing", "snapshot", "BERGFEX_RESORT_DIRECTORY", "cleaned source", "unique URL join", "candidate pre-treatment feature", "Observation date unknown"),
@@ -357,6 +437,12 @@ def main() -> None:
         ("component_count_change", "municipality_treatment_events", "Change in the number of local destination components covered by base membership", "count", "integer", "reviewed destination", "event month", "DERIVED_MULTI_SOURCE", "derived", "+1 per documented component entry; reviewed exit removes active components", "treatment intensity candidate", "Not an independent treated-unit count"),
         ("hotel_overnights", "destination_month_panel", "Additive hotel overnight stays across the reviewed municipality outcome scope", "overnight stays", "float", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "sum(municipality hotel_overnights * 1.0), missing unless every scoped municipality is observed", "outcome", "No imputation"),
         ("complete_outcome_scope", "destination_month_panel", "Whether all municipalities in the reviewed scope have an observed hotel-night value", "boolean", "boolean", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "observed municipality count equals expected municipality count", "outcome quality", "False rows retain a missing aggregate"),
+        ("hotel_beds_available", "destination_month_panel", "Additive available beds across the reviewed municipality outcome scope", "beds", "float", "reviewed destination", "monthly", "BFS_HOTEL_CAPACITY_DATA", "derived", "sum(municipality beds * 1.0), missing unless every scoped municipality is observed", "time-varying supply confounder", "No imputation"),
+        ("hotel_rooms_available", "destination_month_panel", "Additive available rooms across the reviewed municipality outcome scope", "rooms", "float", "reviewed destination", "monthly", "BFS_HOTEL_CAPACITY_DATA", "derived", "sum(municipality rooms * 1.0), missing unless every scoped municipality is observed", "time-varying supply confounder", "No imputation"),
+        ("hotel_establishments_open", "destination_month_panel", "Additive open establishments across the reviewed municipality outcome scope", "establishments", "float", "reviewed destination", "monthly", "BFS_HOTEL_CAPACITY_DATA", "derived", "sum(municipality establishments * 1.0), missing unless every scoped municipality is observed", "time-varying supply confounder", "No imputation"),
+        ("complete_capacity_scope", "destination_month_panel", "Whether supply is observed for every municipality in the reviewed scope", "boolean", "boolean", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "establishments, rooms, and beds observed for all scoped municipalities", "capacity quality", "False rows retain missing capacity aggregates"),
+        ("hotel_overnights_per_available_bed_month", "destination_month_panel", "Monthly live-table overnight stays per summed available bed", "overnight stays per bed-month", "float", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "summed live-table overnight stays / summed beds when beds > 0", "descriptive capacity-adjusted demand", "Not the official occupancy rate"),
+        ("hotel_bed_occupancy_rate_pct", "destination_month_panel", "Official bed occupancy rate for single-municipality destination units", "percent", "float", "reviewed destination", "monthly", "BFS_HOTEL_CAPACITY_DATA", "cleaned source", "retained only when destination scope has exactly one municipality", "descriptive capacity utilisation", "Not aggregated for Meiringen-Hasliberg"),
         ("assumed_active_component_count", "destination_month_panel", "Diagnostic count of entered components carried forward until a documented exit", "count", "integer", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "cumulative documented component entries with documented exit override", "treatment intensity candidate", "Continuity is an unverified assumption"),
         ("event_time_months", "destination_month_panel", "Months relative to the first analytical membership anchor", "months", "integer", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "calendar month difference from first_analysis_anchor", "event-time index", "Not sufficient for causal event-study identification"),
         ("causal_ready", "destination_month_panel", "Whether the destination-month row passes all causal evidence gates", "boolean", "boolean", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "always false at this checkpoint", "quality gate", "Continuity, confounding, spillovers, and controls remain unresolved"),
@@ -370,6 +456,8 @@ def main() -> None:
     ]
     paths = {
         "hotel_municipality_month": ROOT / "data_processed" / "hotel_municipality_month.csv",
+        "hotel_capacity_municipality_month": ROOT / "data_processed" / "hotel_capacity_municipality_month.csv",
+        "hotel_municipality_month_enriched": ROOT / "data_processed" / "hotel_municipality_month_enriched.csv",
         "resort_master": ROOT / "data_processed" / "resort_master.csv",
         "resort_point_municipality": ROOT / "data_processed" / "resort_point_municipality.csv",
         "magic_pass_membership_history": ROOT / "data_processed" / "magic_pass_membership_history.csv",

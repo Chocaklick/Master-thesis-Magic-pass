@@ -63,6 +63,25 @@ def test_hotel_panel_grain_and_values() -> None:
     assert observed["municipality_name_source"].nunique() == 186
 
 
+def test_hotel_capacity_panel_is_complete_at_grid_level_and_not_imputed() -> None:
+    capacity = read("data_processed/hotel_capacity_municipality_month.csv")
+    enriched = read("data_processed/hotel_municipality_month_enriched.csv")
+    reconciliation = read("reports/hotel_capacity_reconciliation.csv")
+    assert len(capacity) == len(enriched) == 31_248
+    assert not capacity.duplicated(["municipality_bfs_id", "date"]).any()
+    assert capacity["municipality_bfs_id"].nunique() == 186
+    for variable in [
+        "hotel_establishments_open",
+        "hotel_rooms_available",
+        "hotel_beds_available",
+    ]:
+        assert (capacity[variable].dropna() >= 0).all()
+    assert int(capacity["complete_capacity_supply"].sum()) == 29_274
+    missing = capacity["hotel_beds_available"].isna()
+    assert set(capacity.loc[missing, "hotel_beds_available_source_token"]) == {"..", "..."}
+    assert int(reconciliation["mismatches"].sum()) == 6
+
+
 def test_magic_evidence_is_not_silently_promoted_to_treatment() -> None:
     history = read("data_processed/magic_pass_membership_history.csv", dtype=str)
     assert len(history) == 93
@@ -162,6 +181,7 @@ def test_reviewed_destination_scope_is_explicit_and_conservative() -> None:
 def test_reviewed_destination_panel_aggregation_and_timing() -> None:
     panel = read("data_processed/destination_month_panel.csv")
     hotel = read("data_processed/hotel_municipality_month.csv")
+    capacity = read("data_processed/hotel_capacity_municipality_month.csv")
     events = read("data_processed/municipality_treatment_events.csv", dtype=str)
     assert len(panel) == 1_848
     assert panel["destination_unit_id"].nunique() == 11
@@ -182,6 +202,21 @@ def test_reviewed_destination_panel_aggregation_and_timing() -> None:
         "hotel_overnights",
     ].iloc[0]
     assert panel_total == source_total
+
+    source_beds = capacity.loc[
+        capacity["municipality_name_source"].isin(["Hasliberg", "Meiringen"])
+        & capacity["date"].eq(date),
+        "hotel_beds_available",
+    ].sum(min_count=2)
+    panel_row = panel.loc[
+        panel["destination_unit_id"].eq("meiringen_hasliberg")
+        & panel["date"].eq(date)
+    ].iloc[0]
+    assert panel_row["hotel_beds_available"] == source_beds
+    assert pd.isna(panel_row["hotel_bed_occupancy_rate_pct"])
+    assert panel_row["occupancy_rate_aggregation_status"] == (
+        "not_aggregated_across_multiple_municipalities"
+    )
 
     crans = panel[
         panel["destination_unit_id"].eq("crans_montana")

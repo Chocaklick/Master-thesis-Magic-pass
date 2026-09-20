@@ -18,10 +18,12 @@ REVIEWED_UNITS = ROOT / "data_processed" / "treatment_destination_units.csv"
 REVIEWED_PANEL = ROOT / "data_processed" / "destination_month_panel.csv"
 CONTINUITY_AUDIT = ROOT / "reports" / "membership_continuity_audit.csv"
 CONTROL_SUMMARY = ROOT / "reports" / "control_audit_summary.json"
+CAPACITY_SUMMARY = ROOT / "reports" / "hotel_capacity_summary.json"
 CLUSTERS = ROOT / "data_raw" / "stations_ski_clusters_resume_gps_bergfex.csv"
 WINDOW_OUTPUT = ROOT / "reports" / "provisional_treatment_window_coverage.csv"
 COUNT_OUTPUT = ROOT / "reports" / "feasibility_counts.csv"
 REPORT_OUTPUT = ROOT / "reports" / "model_feasibility_report.md"
+CAPACITY_DIAGNOSTIC_OUTPUT = ROOT / "reports" / "hotel_capacity_treatment_diagnostics.csv"
 
 
 def as_bool(series: pd.Series) -> pd.Series:
@@ -47,6 +49,7 @@ def main() -> None:
     reviewed_panel = pd.read_csv(REVIEWED_PANEL)
     continuity = pd.read_csv(CONTINUITY_AUDIT, dtype="string")
     control_summary = json.loads(CONTROL_SUMMARY.read_text(encoding="utf-8"))
+    capacity_summary = json.loads(CAPACITY_SUMMARY.read_text(encoding="utf-8"))
     clusters = pd.read_csv(CLUSTERS, sep=";", dtype="string")
     hotel["date"] = pd.to_datetime(hotel["date"], errors="raise")
 
@@ -102,6 +105,73 @@ def main() -> None:
     WINDOW_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     windows.to_csv(WINDOW_OUTPUT, index=False)
 
+    reviewed_panel["date"] = pd.to_datetime(reviewed_panel["date"], errors="raise")
+    reviewed_panel["first_analysis_anchor"] = pd.to_datetime(
+        reviewed_panel["first_analysis_anchor"], errors="raise"
+    )
+    capacity_diagnostics: list[dict] = []
+    for destination_unit_id, group in reviewed_panel.groupby(
+        "destination_unit_id", observed=True
+    ):
+        group = group.sort_values("date")
+        complete = group.dropna(
+            subset=[
+                "hotel_overnights_capacity_table",
+                "hotel_beds_available",
+                "hotel_overnights_per_available_bed_month",
+            ]
+        )
+        anchor = group["first_analysis_anchor"].iloc[0]
+        pre = complete.loc[complete["date"].lt(anchor)].tail(24)
+        post = complete.loc[
+            complete["date"].ge(anchor) & complete["assumed_base_member"]
+        ].head(24)
+
+        def mean(frame: pd.DataFrame, column: str) -> float:
+            return float(frame[column].mean()) if len(frame) else float("nan")
+
+        def percent_change(before: float, after: float) -> float:
+            if pd.isna(before) or pd.isna(after) or before == 0:
+                return float("nan")
+            return 100 * (after / before - 1)
+
+        pre_beds = mean(pre, "hotel_beds_available")
+        post_beds = mean(post, "hotel_beds_available")
+        pre_nights = mean(pre, "hotel_overnights_capacity_table")
+        post_nights = mean(post, "hotel_overnights_capacity_table")
+        pre_intensity = mean(pre, "hotel_overnights_per_available_bed_month")
+        post_intensity = mean(post, "hotel_overnights_per_available_bed_month")
+        capacity_diagnostics.append(
+            {
+                "destination_unit_id": destination_unit_id,
+                "destination_name": group["destination_name"].iloc[0],
+                "first_analysis_anchor": anchor.date().isoformat(),
+                "pre_window_observed_months": len(pre),
+                "active_post_window_observed_months_assumption": len(post),
+                "complete_24_pre_and_24_post_capacity_window": len(pre) == 24
+                and len(post) == 24,
+                "mean_available_beds_pre24": pre_beds,
+                "mean_available_beds_post24": post_beds,
+                "available_beds_change_pct": percent_change(pre_beds, post_beds),
+                "mean_hotel_overnights_pre24": pre_nights,
+                "mean_hotel_overnights_post24": post_nights,
+                "hotel_overnights_change_pct": percent_change(pre_nights, post_nights),
+                "mean_overnights_per_bed_pre24": pre_intensity,
+                "mean_overnights_per_bed_post24": post_intensity,
+                "overnights_per_bed_change_pct": percent_change(
+                    pre_intensity, post_intensity
+                ),
+                "membership_continuity_assumed": True,
+                "causal_interpretation_approved": False,
+                "diagnostic_note": (
+                    "Descriptive adjacent-window comparison; no seasonality, COVID, "
+                    "selection, trends, weather, or donor adjustment."
+                ),
+            }
+        )
+    capacity_diagnostic = pd.DataFrame(capacity_diagnostics)
+    capacity_diagnostic.to_csv(CAPACITY_DIAGNOSTIC_OUTPUT, index=False)
+
     reached_hotel_municipalities = set(
         points.loc[as_bool(points["bfs_hotel_universe"]), "point_municipality_bfs_id"].dropna()
     )
@@ -152,6 +222,18 @@ def main() -> None:
         "reviewed_destination_month_rows": len(reviewed_panel),
         "reviewed_observed_destination_months": int(
             reviewed_panel["hotel_overnights"].notna().sum()
+        ),
+        "hotel_capacity_municipality_month_rows": int(
+            capacity_summary["municipality_month_rows"]
+        ),
+        "hotel_capacity_complete_supply_rows": int(
+            capacity_summary["complete_capacity_supply_rows"]
+        ),
+        "reviewed_destination_months_complete_capacity": int(
+            reviewed_panel["complete_capacity_scope"].sum()
+        ),
+        "reviewed_units_with_complete_24pre_24post_capacity_window": int(
+            capacity_diagnostic["complete_24_pre_and_24_post_capacity_window"].sum()
         ),
         "reviewed_units_with_24_pre_and_post_months_assumption": int(
             (
@@ -207,7 +289,7 @@ def main() -> None:
     )
 
     model_rows = [
-        ("Municipality fixed-effects panel", "Diagnostic-ready only", "Eleven reviewed outcome units can be represented, but membership continuity, confounding, spillovers, and controls remain unresolved."),
+        ("Municipality fixed-effects panel", "Diagnostic-ready only", "Eleven reviewed outcome units and monthly hotel capacity can be represented, but membership continuity, remaining confounding, spillovers, and controls remain unresolved."),
         ("Staggered Difference-in-Differences", "Not credible yet", "Destination scope is improved, but continuity assumptions and untreated-control status are not validated."),
         ("Matching", "Descriptive only", "May help select analogues after pre-treatment covariates and membership status are completed; it is not yet causal."),
         ("Synthetic control / synthetic DiD", "Case-study candidate", "Could be assessed for a few clearly mapped municipalities with uncontaminated donors; no donor pool is approved yet."),
@@ -227,7 +309,7 @@ Generated reproducibly by `src/data_processing/build_feasibility_report.py`.
 
 ## Executive verdict
 
-The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. Destination scope has now been manually reviewed for the 18 candidate entry/outcome links, but a move to Path B still requires complete season-by-season membership and exit histories, confounders, and an uncontaminated control audit.
+The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. Destination scope and monthly hotel capacity have now been integrated, but a move to Path B still requires complete season-by-season membership and exit histories, the remaining confounders, and an uncontaminated control audit.
 
 No causal model, treatment-effect learner, opportunity score, or neural network should be fitted at this checkpoint.
 
@@ -266,6 +348,14 @@ The provisional event-level audit is in `reports/provisional_treatment_window_co
 
 These are coverage counts, not an identification claim.
 
+## Hotel-capacity diagnostic
+
+The official HESTA supply table contributes **{metrics['hotel_capacity_municipality_month_rows']:,} municipality-month rows**; **{metrics['hotel_capacity_complete_supply_rows']:,}** have establishments, rooms, and beds observed. After reviewed destination aggregation, **{metrics['reviewed_destination_months_complete_capacity']:,} of {metrics['reviewed_destination_month_rows']:,}** destination-month rows have complete capacity scope.
+
+For each destination, `reports/hotel_capacity_treatment_diagnostics.csv` compares the last 24 observed pre-anchor months with the first 24 observed active-post months under the explicit continuity assumption. It reports separate changes in live-table overnight stays, available beds, and overnight stays per bed. **{metrics['reviewed_units_with_complete_24pre_24post_capacity_window']} units** have both complete 24-month capacity windows.
+
+This is a descriptive diagnostic only. The adjacent windows are not seasonally or trend adjusted, early post-periods can overlap COVID, and membership continuity remains assumed. Capacity integration therefore helps distinguish demand changes from contemporaneous supply changes but does not identify a Magic Pass effect.
+
 ## Membership-continuity audit
 
 Entry events, full official rosters, named continuation statements, and the documented Crans-Montana exit were checked season by season. Missing annual evidence remains unverified rather than being filled as active or inactive.
@@ -296,11 +386,11 @@ See `reports/control_contamination_audit.csv` and `reports/control_candidates_by
 4. Crans-Montana proves that treatment is not universally absorbing.
 5. COVID overlaps the post-period of early entrants and the entry period of later ones.
 6. Spillovers may contaminate nearby nominal controls.
-7. Hotel capacity, snow, accessibility, investment, and local economic controls have not yet been integrated.
+7. Hotel capacity is integrated, but snow, weather, accessibility, investment, local economic conditions, and competing-network changes remain unmeasured.
 
 ## Next evidence gate
 
-Fill the remaining unverified unit-seasons, resolve the unmatched official entry labels, add time-varying confounders, and replace the mechanical donor screen with a documented membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+Fill the remaining unverified unit-seasons, resolve the unmatched official entry labels, add snow/weather and the remaining time-varying confounders, and replace the mechanical donor screen with a documented membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

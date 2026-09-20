@@ -4,7 +4,7 @@ Generated reproducibly by `src/data_processing/build_feasibility_report.py`.
 
 ## Executive verdict
 
-The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. Destination scope has now been manually reviewed for the 18 candidate entry/outcome links, but a move to Path B still requires complete season-by-season membership and exit histories, confounders, and an uncontaminated control audit.
+The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. Destination scope and monthly hotel capacity have now been integrated, but a move to Path B still requires complete season-by-season membership and exit histories, the remaining confounders, and an uncontaminated control audit.
 
 No causal model, treatment-effect learner, opportunity score, or neural network should be fitted at this checkpoint.
 
@@ -43,6 +43,14 @@ The provisional event-level audit is in `reports/provisional_treatment_window_co
 
 These are coverage counts, not an identification claim.
 
+## Hotel-capacity diagnostic
+
+The official HESTA supply table contributes **31,248 municipality-month rows**; **29,274** have establishments, rooms, and beds observed. After reviewed destination aggregation, **1,637 of 1,848** destination-month rows have complete capacity scope.
+
+For each destination, `reports/hotel_capacity_treatment_diagnostics.csv` compares the last 24 observed pre-anchor months with the first 24 observed active-post months under the explicit continuity assumption. It reports separate changes in live-table overnight stays, available beds, and overnight stays per bed. **8 units** have both complete 24-month capacity windows.
+
+This is a descriptive diagnostic only. The adjacent windows are not seasonally or trend adjusted, early post-periods can overlap COVID, and membership continuity remains assumed. Capacity integration therefore helps distinguish demand changes from contemporaneous supply changes but does not identify a Magic Pass effect.
+
 ## Membership-continuity audit
 
 Entry events, full official rosters, named continuation statements, and the documented Crans-Montana exit were checked season by season. Missing annual evidence remains unverified rather than being filled as active or inactive.
@@ -63,7 +71,7 @@ See `reports/control_contamination_audit.csv` and `reports/control_candidates_by
 
 | Model family | Current decision | Evidence-based reason |
 |---|---|---|
-| Municipality fixed-effects panel | Diagnostic-ready only | Eleven reviewed outcome units can be represented, but membership continuity, confounding, spillovers, and controls remain unresolved. |
+| Municipality fixed-effects panel | Diagnostic-ready only | Eleven reviewed outcome units and monthly hotel capacity can be represented, but membership continuity, remaining confounding, spillovers, and controls remain unresolved. |
 | Staggered Difference-in-Differences | Not credible yet | Destination scope is improved, but continuity assumptions and untreated-control status are not validated. |
 | Matching | Descriptive only | May help select analogues after pre-treatment covariates and membership status are completed; it is not yet causal. |
 | Synthetic control / synthetic DiD | Case-study candidate | Could be assessed for a few clearly mapped municipalities with uncontaminated donors; no donor pool is approved yet. |
@@ -82,8 +90,8 @@ See `reports/control_contamination_audit.csv` and `reports/control_candidates_by
 4. Crans-Montana proves that treatment is not universally absorbing.
 5. COVID overlaps the post-period of early entrants and the entry period of later ones.
 6. Spillovers may contaminate nearby nominal controls.
-7. Hotel capacity, snow, accessibility, investment, and local economic controls have not yet been integrated.
+7. Hotel capacity is integrated, but snow, weather, accessibility, investment, local economic conditions, and competing-network changes remain unmeasured.
 
 ## Next evidence gate
 
-Fill the remaining unverified unit-seasons, resolve the unmatched official entry labels, add time-varying confounders, and replace the mechanical donor screen with a documented membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+Fill the remaining unverified unit-seasons, resolve the unmatched official entry labels, add snow/weather and the remaining time-varying confounders, and replace the mechanical donor screen with a documented membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.

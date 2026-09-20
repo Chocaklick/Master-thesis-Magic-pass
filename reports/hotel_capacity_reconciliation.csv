@@ -1,0 +1,3 @@
+legacy_variable,capacity_table_variable,both_observed_rows,exact_matches,mismatches
+hotel_arrivals,hotel_arrivals_capacity_table,28455,28452,3
+hotel_overnights,hotel_overnights_capacity_table,28455,28452,3

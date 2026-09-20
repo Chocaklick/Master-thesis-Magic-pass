@@ -32,6 +32,8 @@ This review approves an outcome aggregation, not a causal exposure. Every destin
 - Resort point containment remains a geographic fact only. It is copied to `data_processed/resort_municipality_crosswalk.csv` with causal exposure set to false.
 - Municipality hotel-night counts are additive. Each included municipality has weight 1.0; weights are not normalised into shares.
 - A destination-month aggregate is missing unless every municipality in its approved scope has an observed value.
+- Establishments, rooms and beds are summed across the reviewed municipal scope only when every municipality is observed. `hotel_overnights_per_available_bed_month` uses the contemporaneous demand and bed capacity from the same live HESTA table.
+- Official occupancy percentages are retained for single-municipality destinations only. They are not averaged across multi-municipality destinations because the required open-bed-day denominator is unavailable.
 - Anniviers and Espace Dent Blanche collapse multiple same-season resort labels to one municipal outcome. Reichenbach im Kandertal has one municipal outcome with a later treatment-intensity increment when Kiental enters.
 - Meiringen-Hasliberg sums Hasliberg and Meiringen. Villars-Gryon-Les Diablerets, Sainte-Croix / Les Rasses, and Bergbahnen Destination Gstaad are excluded because the hotel panel only observes part of their reviewed composite scope.
 

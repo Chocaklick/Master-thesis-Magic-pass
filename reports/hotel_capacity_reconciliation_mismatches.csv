@@ -1,0 +1,7 @@
+municipality_name_source,date,legacy_variable,legacy_value,current_capacity_table_variable,current_capacity_table_value,difference_current_minus_legacy,handling
+Davos,2014-01-01,hotel_arrivals,31036.0,hotel_arrivals_capacity_table,30736,-300.0,retain legacy series as primary outcome; record live-table revision
+Davos,2014-02-01,hotel_arrivals,31315.0,hotel_arrivals_capacity_table,30964,-351.0,retain legacy series as primary outcome; record live-table revision
+Davos,2014-12-01,hotel_arrivals,37456.0,hotel_arrivals_capacity_table,37344,-112.0,retain legacy series as primary outcome; record live-table revision
+Davos,2014-01-01,hotel_overnights,102432.0,hotel_overnights_capacity_table,101743,-689.0,retain legacy series as primary outcome; record live-table revision
+Davos,2014-02-01,hotel_overnights,101741.0,hotel_overnights_capacity_table,100776,-965.0,retain legacy series as primary outcome; record live-table revision
+Davos,2014-12-01,hotel_overnights,114824.0,hotel_overnights_capacity_table,114412,-412.0,retain legacy series as primary outcome; record live-table revision

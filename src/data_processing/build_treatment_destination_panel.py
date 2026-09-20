@@ -25,7 +25,7 @@ CONFIG = ROOT / "config" / "treatment_destination_review.json"
 RESORTS = ROOT / "data_processed" / "resort_master.csv"
 POINTS = ROOT / "data_processed" / "resort_point_municipality.csv"
 HISTORY = ROOT / "data_processed" / "magic_pass_membership_history.csv"
-HOTEL = ROOT / "data_processed" / "hotel_municipality_month.csv"
+HOTEL = ROOT / "data_processed" / "hotel_municipality_month_enriched.csv"
 EVIDENCE_DIR = ROOT / "data_external" / "source_evidence"
 
 RESORT_CROSSWALK_OUT = ROOT / "data_processed" / "resort_municipality_crosswalk.csv"
@@ -329,6 +329,12 @@ def main() -> None:
         "domestic_overnights",
         "foreign_overnights",
     ]
+    capacity_sum_columns = [
+        "hotel_establishments_open",
+        "hotel_rooms_available",
+        "hotel_beds_available",
+        "hotel_overnights_capacity_table",
+    ]
     for destination_unit_id, mappings in approved.groupby(
         "destination_unit_id", observed=True
     ):
@@ -354,6 +360,22 @@ def main() -> None:
                 "complete_outcome_scope": bool(
                     group["hotel_overnights"].notna().sum() == expected
                 ),
+                "municipalities_observed_hotel_beds_available": int(
+                    group["hotel_beds_available"].notna().sum()
+                ),
+                "complete_capacity_scope": bool(
+                    group[
+                        [
+                            "hotel_establishments_open",
+                            "hotel_rooms_available",
+                            "hotel_beds_available",
+                        ]
+                    ]
+                    .notna()
+                    .all(axis=1)
+                    .sum()
+                    == expected
+                ),
                 "first_analysis_anchor": pd.Timestamp(unit["analysis_anchor"]),
                 "anchor_precision": unit["anchor_precision"],
                 "membership_continuity_assumed": True,
@@ -361,6 +383,24 @@ def main() -> None:
             }
             for column in outcome_columns:
                 row[column] = complete_weighted_sum(group, column, expected)
+            for column in capacity_sum_columns:
+                row[column] = complete_weighted_sum(group, column, expected)
+            if expected == 1:
+                row["hotel_room_occupancy_rate_pct"] = complete_weighted_sum(
+                    group, "hotel_room_occupancy_rate_pct", expected
+                )
+                row["hotel_bed_occupancy_rate_pct"] = complete_weighted_sum(
+                    group, "hotel_bed_occupancy_rate_pct", expected
+                )
+                row["occupancy_rate_aggregation_status"] = (
+                    "official_source_value_single_municipality"
+                )
+            else:
+                row["hotel_room_occupancy_rate_pct"] = np.nan
+                row["hotel_bed_occupancy_rate_pct"] = np.nan
+                row["occupancy_rate_aggregation_status"] = (
+                    "not_aggregated_across_multiple_municipalities"
+                )
             panel_rows.append(row)
 
     panel = pd.DataFrame(panel_rows)
@@ -393,6 +433,10 @@ def main() -> None:
         - panel["first_analysis_anchor"].dt.month
     )
     panel["log_overnights"] = np.log1p(panel["hotel_overnights"])
+    panel["hotel_overnights_per_available_bed_month"] = (
+        panel["hotel_overnights_capacity_table"]
+        / panel["hotel_beds_available"].where(panel["hotel_beds_available"].gt(0))
+    )
     panel["treatment_status_basis"] = (
         "entry_plus_no_exit_continuity_assumption; documented exits override after last active month"
     )
@@ -400,6 +444,7 @@ def main() -> None:
         {unit["destination_unit_id"]: unit["scope_review_status"] for unit in units}
     )
     panel["source_id"] = "DERIVED_REVIEWED_DESTINATION_PANEL"
+    panel["capacity_source_id"] = "BFS_HOTEL_CAPACITY_DATA"
     panel = panel.sort_values(["destination_unit_id", "date"]).reset_index(drop=True)
     panel["date"] = panel["date"].dt.date.astype(str)
     panel["first_analysis_anchor"] = panel["first_analysis_anchor"].dt.date.astype(str)
@@ -472,6 +517,12 @@ def main() -> None:
         ),
         "destination_month_rows": int(len(panel)),
         "observed_destination_month_outcomes": int(panel["hotel_overnights"].notna().sum()),
+        "complete_destination_month_capacity_rows": int(
+            panel["complete_capacity_scope"].sum()
+        ),
+        "destination_month_rows_with_observed_bed_capacity": int(
+            panel["hotel_beds_available"].notna().sum()
+        ),
         "units_with_24_pre_and_24_active_post_months_assumption": int(usable_24.sum()),
         "units_with_36_pre_and_36_active_post_months_assumption": int(usable_36.sum()),
         "causal_treatment_units_approved": 0,
@@ -527,6 +578,8 @@ This review approves an outcome aggregation, not a causal exposure. Every destin
 - Resort point containment remains a geographic fact only. It is copied to `data_processed/resort_municipality_crosswalk.csv` with causal exposure set to false.
 - Municipality hotel-night counts are additive. Each included municipality has weight 1.0; weights are not normalised into shares.
 - A destination-month aggregate is missing unless every municipality in its approved scope has an observed value.
+- Establishments, rooms and beds are summed across the reviewed municipal scope only when every municipality is observed. `hotel_overnights_per_available_bed_month` uses the contemporaneous demand and bed capacity from the same live HESTA table.
+- Official occupancy percentages are retained for single-municipality destinations only. They are not averaged across multi-municipality destinations because the required open-bed-day denominator is unavailable.
 - Anniviers and Espace Dent Blanche collapse multiple same-season resort labels to one municipal outcome. Reichenbach im Kandertal has one municipal outcome with a later treatment-intensity increment when Kiental enters.
 - Meiringen-Hasliberg sums Hasliberg and Meiringen. Villars-Gryon-Les Diablerets, Sainte-Croix / Les Rasses, and Bergbahnen Destination Gstaad are excluded because the hotel panel only observes part of their reviewed composite scope.
 

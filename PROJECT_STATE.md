@@ -6,11 +6,11 @@ Build a reproducible and scientifically defensible Business Analytics framework 
 
 ## Current phase
 
-Checkpoints 1–3 and the first treatment-unit review are complete: existing data have been audited, official treatment evidence collected, candidate destination/municipality scopes reviewed, membership continuity audited season by season, and donor contamination mechanically screened. Checkpoints 4–5 still fail for causal and heterogeneous-effect modelling. The evidence supports Path C (exploratory segmentation/analogue decision support) unless membership continuity, confounders, spillovers, and controls are materially improved.
+Checkpoints 1–3, the first treatment-unit review, and the first time-varying confounder integration are complete: existing data have been audited, official treatment evidence collected, candidate destination/municipality scopes reviewed, membership continuity audited season by season, donor contamination mechanically screened, and official monthly hotel capacity added. Checkpoints 4–5 still fail for causal and heterogeneous-effect modelling. The evidence supports Path C (exploratory segmentation/analogue decision support) unless membership continuity, remaining confounders, spillovers, and controls are materially improved.
 
 ## Last update
 
-2026-09-20 03:20 CEST
+2026-09-20 10:51 CEST
 
 ## Completed work
 
@@ -19,16 +19,19 @@ Checkpoints 1–3 and the first treatment-unit review are complete: existing dat
 - Retained and validated the existing clustering without rebuilding it: 1,805 valid lift geometries, 242 clusters, 162 assigned clusters, no duplicate lift membership, no count mismatch, and all 271 listing assignments nearest their stored cluster.
 - Built `data_processed/resort_master.csv` with 271 provisional resort listings and stable IDs.
 - Built a 31,248-row municipality-month hotel table for 186 municipalities. It contains 28,455 observed total-night values from 2013-01 through 2026-03; 2,793 suppressed monthly total-night cells remain missing.
+- Collected the official HESTA supply/demand table in 14 checksum-verified annual PXWeb chunks and built a 31,248-row capacity panel. Establishments, rooms, and beds are jointly observed in 29,274 municipality-months; source `..`/`...` tokens remain missing with no imputation.
+- Reconciled the new live table to the legacy demand extraction: 28,452 arrival cells and 28,452 overnight-stay cells match exactly; six cells across three Davos months in 2014 reflect live-table revisions and are reported without overwriting the legacy outcome.
 - Cached official OFS table metadata, the official Magic Pass press archive/current map, nine main seasonal Magic Pass PDFs except the repeatedly truncated 2021 dossier, two supplemental 2021/2022 releases, eight official destination-scope pages, and 271 geo.admin.ch point-identify responses with checksums and retrieval logs.
 - Built a point-container crosswalk: 268 coordinates resolve to a current Swiss municipality, 103 listings fall in 74 municipalities present in the OFS hotel universe, and three coordinates lie outside the Swiss current-municipality layer.
 - Built 93 official Magic Pass evidence events: 88 base-pass entries plus separately coded exit/supplement/inclusion events. Sixty-four events have candidate listing links; 29 remain unresolved.
 - Extracted 95 destinations from the cached current official map, with 68 candidate listing links. The embedded count conflicts with the official page's “more than 100” headline and is retained as a discrepancy.
 - Collapsed the 18 candidate entry/outcome links into 14 reviewed destination units. Eleven units have an explicit municipality outcome scope; Villars-Gryon-Les Diablerets, Sainte-Croix / Les Rasses, and Bergbahnen Destination Gstaad are excluded because their composite geography is only partly covered by the hotel panel.
-- Built a 1,848-row reviewed destination-month panel with 1,581 complete aggregated hotel-night outcomes. Municipality count outcomes are summed with weight 1 and are missing unless every municipality in scope is observed.
+- Built a 1,848-row reviewed destination-month panel with 1,581 complete aggregated hotel-night outcomes and 1,637 complete aggregated capacity rows. Counts are summed with weight 1 and are missing unless every municipality in scope is observed; official occupancy rates are not averaged across multi-municipality units.
+- Produced a non-causal 24-month capacity diagnostic separating changes in overnight stays, available beds, and overnight stays per bed. Eight panel units have complete adjacent 24-month capacity windows, but continuity, seasonality, trends, COVID, weather, and donor adjustment remain unresolved.
 - Audited annual membership evidence without filling gaps: 4 of 14 reviewed units have every active season documented, only 3 of those enter the outcome panel, and none of the 3 has both 24 observed pre and 24 observed active-post months.
 - Screened 814 treatment-donor pairs across 74 resort-linked hotel municipalities. Fifty-seven municipalities remain an upper-bound control pool after resolved Magic links; 438 pairs pass a mechanical 30 km / 36-pre / 24-post screen, but zero controls are approved.
-- Generated normalized provenance (41 source records), a 332-row data dictionary, source report, destination review, continuity/control audits, a resort-level evidence-quality table, and an updated model-feasibility report.
-- Added a reproducible checkpoint runner and 12 passing automated tests.
+- Generated normalized provenance (43 source records), a 345-row data dictionary, source report, destination/capacity reviews, continuity/control audits, a resort-level evidence-quality table, and an updated model-feasibility report.
+- Added a reproducible checkpoint runner and 13 passing automated tests.
 
 ## Main empirical counts
 
@@ -39,6 +42,7 @@ Checkpoints 1–3 and the first treatment-unit review are complete: existing dat
 | Clusters linked to listings | 162 | Listing-to-cluster assignments |
 | Hotel municipalities | 186 | OFS outcome universe |
 | Observed hotel municipality-months | 28,455 | Repeated outcomes, not independent resorts |
+| Complete hotel-capacity municipality-months | 29,274 | Establishments, rooms, and beds all observed |
 | Official base-entry events | 88 | Destination labels from official evidence |
 | Candidate-linked base entries | 62 | Scope still provisional |
 | Candidate-linked base entries with hotel outcome | 18 | Upper-bound event count |
@@ -46,6 +50,8 @@ Checkpoints 1–3 and the first treatment-unit review are complete: existing dat
 | Reviewed destination units | 14 | 18 events collapsed across shared/composite units |
 | Units in reviewed destination-month panel | 11 | 3 incomplete composite scopes excluded |
 | Reviewed destination-month rows | 1,848 | 1,581 complete hotel-night outcomes |
+| Reviewed destination-months with complete capacity | 1,637 | Capacity covariate coverage, not causal identification |
+| Units with complete 24-month pre/post capacity windows | 8 | Descriptive adjacent-window diagnostic only |
 | Units with 24 pre and 24 post months under continuity assumption | 7 | Coverage only; not identification |
 | Panel units with fully documented active-season continuity | 3 | Crans-Montana, Schwanden, Meiringen-Hasliberg |
 | Fully documented panel units with 24 pre and 24 post months | 0 | Decisive causal feasibility failure |
@@ -83,13 +89,13 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 3. Twenty-six official base-entry labels remain unresolved to supplied listings.
 4. Core-municipality proxies do not establish full tourism catchments, and spillovers remain unresolved.
 5. No historical municipality-boundary harmonization has been implemented.
-6. Hotel capacity, snow/climate, accessibility, population, tourism dependence, simultaneous investment, and competition/network controls are missing.
+6. Hotel capacity is integrated, but snow/climate, accessibility, population, tourism dependence, simultaneous investment, and competition/network controls are missing.
 7. The 57-municipality apparent control pool and 438 provisional donor pairs remain upper bounds, not approved controls.
 8. The exact upstream source/version of the lift GPKG and retrieval dates of legacy extracts remain unknown.
 
 ## Immediate next action
 
-Fill the remaining 25 unverified active unit-seasons, resolve the 26 unmatched base-entry labels, and collect time-varying confounders beginning with hotel capacity and snow/climate. Replace the mechanical donor screen with a documented membership/spillover review before reassessing Checkpoints 4–5. Do not fit causal or complex ML models before the gate changes.
+Fill the remaining 25 unverified active unit-seasons, resolve the 26 unmatched base-entry labels, and collect the next time-varying confounder: snow/weather. Replace the mechanical donor screen with a documented membership/spillover review before reassessing Checkpoints 4–5. Do not fit causal or complex ML models before the gate changes.
 
 ## Key files
 
@@ -105,6 +111,7 @@ Fill the remaining 25 unverified active unit-seasons, resolve the 26 unmatched b
 - Point municipality mapping: `data_processed/resort_point_municipality.csv`
 - Reviewed destination panel: `data_processed/destination_month_panel.csv`
 - Destination review: `reports/04_DESTINATION_UNIT_REVIEW.md`
+- Hotel capacity: `reports/05_HOTEL_CAPACITY.md` and `reports/hotel_capacity_treatment_diagnostics.csv`
 - Membership continuity: `reports/membership_continuity_audit.csv`
 - Control screen: `reports/control_candidates_by_treatment.csv`
 - Research log: `logs/research_journal.md`

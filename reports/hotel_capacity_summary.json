@@ -1,0 +1,50 @@
+{
+  "municipality_month_rows": 31248,
+  "municipalities": 186,
+  "years": [
+    2013,
+    2026
+  ],
+  "complete_capacity_supply_rows": 29274,
+  "observed_bed_capacity_rows": 29274,
+  "observed_bed_occupancy_rate_rows": 29194,
+  "bed_occupancy_rate_rows_above_100_as_published": 59,
+  "source_missing_tokens": {
+    "hotel_establishments_open": {
+      "...": 1909,
+      "..": 65
+    },
+    "hotel_rooms_available": {
+      "...": 1909,
+      "..": 65
+    },
+    "hotel_beds_available": {
+      "...": 1909,
+      "..": 65
+    },
+    "hotel_arrivals_capacity_table": {
+      "...": 1910,
+      "..": 144
+    },
+    "hotel_overnights_capacity_table": {
+      "...": 1910,
+      "..": 144
+    },
+    "hotel_room_nights": {
+      "...": 1910,
+      "..": 144
+    },
+    "hotel_room_occupancy_rate_pct": {
+      "...": 1910,
+      "..": 144
+    },
+    "hotel_bed_occupancy_rate_pct": {
+      "...": 1910,
+      "..": 144
+    }
+  },
+  "demand_reconciliation_mismatch_cells": 6,
+  "demand_reconciliation_mismatch_month_rows": 3,
+  "primary_outcome_version_policy": "Retain the legacy px-x-1003020000_101 extraction as the primary demand series; preserve and report revisions visible in the live capacity table.",
+  "no_imputation": true
+}
