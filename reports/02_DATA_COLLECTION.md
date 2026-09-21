@@ -16,6 +16,8 @@ Collection was initially limited to high-priority evidence needed for the treatm
 | Magic Pass current map | Cached successfully | Current-state destination snapshot, not historical timing |
 | Magic Pass seasonal publications | 2017–2025 annual PDFs plus the official 2020/2021 PNG map cached | Page/image-reviewed entry, roster and modality evidence |
 | Magic Pass 2021 main PDF | Download recovered on 2026-09-21 after earlier incomplete responses | Page 3 documents an expansion by five named additions; page 4 gives aggregate 40-winter/21-summer counts but no named modality list |
+| Grisons competing-pass archives | Three BBGR annual reports (2017/18–2019/20) and the 2022/23 graubündenCARD operator/transport list cached | Page-referenced SnowPass, TopCard and graubündenCARD environment review for remote donor candidates |
+| Kronberg operator archives | Official 2017 and 2023 annual reports cached | Contemporaneous investment, product mix, winter sensitivity and local tourism-shock review for Gonten |
 | SLF IMIS documentation, stations and daily snow | Cached successfully | Daily mountain-station snow-depth history and auditable station-proxy construction |
 | MeteoSwiss SwissMetNet metadata and selected daily station files | Six metadata snapshots plus 14 historical/recent station files cached successfully | Daily temperature and precipitation, coverage-qualified monthly anomalies, and auditable regional station proxies |
 
@@ -37,6 +39,7 @@ The annual-offering review rendered seven dated launch lists/maps and transcribe
 - `data_processed/resort_weather_station_crosswalk.csv`: 15 reviewed component resorts linked to the nearest of 112 current inventory-eligible SwissMetNet stations, with distance, elevation gap and non-piste representation flags.
 - `data_processed/destination_weather_month.csv`: 1,749 reviewed destination-month weather rows through 2026-03; 1,744 pass the complete station-month coverage gate.
 - `data_processed/treatment_municipality_distance_exposure.csv`: 2,046 same-destination distance rows for 11 reviewed destinations and 186 hotel municipality series, using 185 current polygons and an explicit Moutier boundary-version bridge.
+- `data_processed/donor_shortlist_final_audit.csv`: all 35 shortlisted pairs with network-distance priority and the seven beyond-50-km pairs joined to page-referenced competing-pass/local-shock evidence.
 
 ## Collection discrepancies and gaps
 
@@ -46,5 +49,6 @@ The annual-offering review rendered seven dated launch lists/maps and transcribe
 - The exact upstream version and download URL of `bahnen-winter_2056.gpkg` remain unknown.
 - SLF IMIS stations support avalanche monitoring and are not direct observations of resort pistes; the 60 low-comparability resort links remain visible and are not feature-ready.
 - SwissMetNet stations are regional weather proxies rather than piste measurements. EVO 2016-07 and INT 2013-08 fail the 80% precipitation coverage gate and remain missing; the daily precipitation window is 06:00 UTC to 06:00 UTC the following day.
+- The official 2023/24 graubündenCARD operator/transport PDF remains visible in the publisher's search index but returned HTTP 404 during reproducible collection. The audit therefore records exact Splügen-Tambo participation in 2022/23 and leaves anchor-season continuity unresolved.
 
 Full field-level provenance and plain-language source descriptions are in `metadata/data_sources_master.csv` and `reports/DATA_SOURCES.md`.

@@ -1,0 +1,93 @@
+[
+  {
+    "destination_unit_id": "anniviers_magic_portfolio",
+    "donor_municipality_bfs_id": 3782,
+    "donor_resort_name": "Corviglia St. Moritz",
+    "analysis_anchor": "2017-11-01",
+    "competing_pass_names": "SnowPass Graubünden",
+    "competing_pass_at_anchor_status": "regional_pass_environment_documented_operator_participation_not_exactly_proven",
+    "local_tourism_shock_status": "specific_operator_investment_review_pending",
+    "review_source_ids": "BBGR_ANNUAL_2017_18",
+    "review_source_pages": "12-13",
+    "review_evidence_note": "The official 2017/18 report documents active SnowPass sales and first-entry revenue in Engadin/South Grisons. It does not provide an explicit SnowPass operator roster on the cited pages, so Corviglia participation is not promoted to an exact historical fact.",
+    "final_manual_review_decision": "retain_for_deeper_manual_audit_competing_pass_risk"
+  },
+  {
+    "destination_unit_id": "bumbach",
+    "donor_municipality_bfs_id": 3102,
+    "donor_resort_name": "Jakobsbad - Kronberg",
+    "analysis_anchor": "2023-05-01",
+    "competing_pass_names": "",
+    "competing_pass_at_anchor_status": "no_multiresort_pass_evidence_found_in_reviewed_sources",
+    "local_tourism_shock_status": "contemporaneous_operator_investment_and_weather_sensitive_winter_change_documented",
+    "review_source_ids": "KRONBERG_ANNUAL_2023",
+    "review_source_pages": "15-17",
+    "review_evidence_note": "The official 2023 report records CHF 656,000 of investment in digitalisation, infrastructure and vehicles, including a new piste machine, while winter cableway frequency fell 29 percent amid missing snow. These donor-specific changes overlap the post-anchor period.",
+    "final_manual_review_decision": "exclude_contemporaneous_local_tourism_shock"
+  },
+  {
+    "destination_unit_id": "bumbach",
+    "donor_municipality_bfs_id": 3714,
+    "donor_resort_name": "Splügen Rheinwald",
+    "analysis_anchor": "2023-05-01",
+    "competing_pass_names": "graubündenCARD",
+    "competing_pass_at_anchor_status": "operator_participation_documented_immediately_before_anchor_exact_anchor_continuity_unresolved",
+    "local_tourism_shock_status": "specific_operator_investment_review_pending",
+    "review_source_ids": "GRAUBUENDENCARD_TRANSIT_2022_23",
+    "review_source_pages": "1",
+    "review_evidence_note": "The official 2022/23 graubündenCARD transport-benefits list names Bergbahnen Splügen-Tambo AG. The original 2023/24 file is indexed but returned HTTP 404 during reproducible collection, so exact continuity at the May 2023 anchor remains unresolved.",
+    "final_manual_review_decision": "retain_for_deeper_manual_audit_competing_pass_risk"
+  },
+  {
+    "destination_unit_id": "espace_dent_blanche",
+    "donor_municipality_bfs_id": 3847,
+    "donor_resort_name": "Minschuns - Val Müstair",
+    "analysis_anchor": "2018-05-01",
+    "competing_pass_names": "SnowPass Graubünden",
+    "competing_pass_at_anchor_status": "regional_pass_environment_documented_operator_participation_not_exactly_proven",
+    "local_tourism_shock_status": "specific_operator_investment_review_pending",
+    "review_source_ids": "BBGR_ANNUAL_2018_19",
+    "review_source_pages": "12-13",
+    "review_evidence_note": "The official 2018/19 report documents SnowPass sales and revenue distribution across Grisons regions and companies. The cited pages do not explicitly enumerate participating operators, so Minschuns participation remains a qualified pass-environment risk rather than an exact fact.",
+    "final_manual_review_decision": "retain_for_deeper_manual_audit_competing_pass_risk"
+  },
+  {
+    "destination_unit_id": "moleson",
+    "donor_municipality_bfs_id": 3102,
+    "donor_resort_name": "Jakobsbad - Kronberg",
+    "analysis_anchor": "2017-11-01",
+    "competing_pass_names": "",
+    "competing_pass_at_anchor_status": "no_multiresort_pass_evidence_found_in_reviewed_sources",
+    "local_tourism_shock_status": "contemporaneous_major_talstation_investment_documented",
+    "review_source_ids": "KRONBERG_ANNUAL_2017",
+    "review_source_pages": "8-12",
+    "review_evidence_note": "The official 2017 report describes an independent family/leisure tourism business, a master-plan repositioning, and CHF 732,000 of investment, including CHF 500,000 for the valley-station expansion begun in October 2017. This directly overlaps the November 2017 treatment anchor.",
+    "final_manual_review_decision": "exclude_contemporaneous_local_tourism_shock"
+  },
+  {
+    "destination_unit_id": "saas_fee",
+    "donor_municipality_bfs_id": 3782,
+    "donor_resort_name": "Corviglia St. Moritz",
+    "analysis_anchor": "2019-05-01",
+    "competing_pass_names": "SnowPass Graubünden|TopCard",
+    "competing_pass_at_anchor_status": "named_upper_engadine_topcard_offer_and_regional_snowpass_environment_documented",
+    "local_tourism_shock_status": "specific_operator_investment_review_pending",
+    "review_source_ids": "BBGR_ANNUAL_2018_19|BBGR_ANNUAL_2019_20",
+    "review_source_pages": "12|11-12",
+    "review_evidence_note": "The official 2018/19 report states that TopCard offered three freely chosen days in Upper Engadine, and the 2019/20 report documents the final SnowPass winter. This is direct evidence of competing-pass exposure around the anchor, though exact Corviglia operator terms still require the original tariff documents.",
+    "final_manual_review_decision": "retain_for_deeper_manual_audit_competing_pass_risk"
+  },
+  {
+    "destination_unit_id": "saas_fee",
+    "donor_municipality_bfs_id": 3752,
+    "donor_resort_name": "Samnaun Silvretta Arena Samnaun / Ischgl",
+    "analysis_anchor": "2019-05-01",
+    "competing_pass_names": "SnowPass Graubünden",
+    "competing_pass_at_anchor_status": "regional_pass_environment_documented_operator_participation_not_exactly_proven",
+    "local_tourism_shock_status": "cross_border_domain_and_specific_operator_investment_review_pending",
+    "review_source_ids": "BBGR_ANNUAL_2017_18|BBGR_ANNUAL_2019_20",
+    "review_source_pages": "12|11-12",
+    "review_evidence_note": "The official reports state that Samnaun-Ischgl left TopCard for winter 2018/19 and that SnowPass remained active through winter 2019/20. The donor is also a cross-border ski domain, so Austrian demand and policy shocks require separate review.",
+    "final_manual_review_decision": "retain_for_deeper_manual_audit_competing_pass_risk"
+  }
+]

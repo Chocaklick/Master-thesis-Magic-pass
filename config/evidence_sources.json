@@ -218,5 +218,47 @@
     "suffix": "html",
     "organisation": "Vallee de Joux tourism",
     "description": "Tourism article distinguishing the ski areas of Le Brassus, L Orient, L Abbaye and Dent de Vaulion; regional scope is broader than the three historical entry labels"
+  },
+  {
+    "source_id": "BBGR_ANNUAL_2017_18",
+    "url": "https://www.bbgr.ch/wp-content/uploads/2016/10/BBGR_WEB-JB_2017-18.pdf",
+    "suffix": "pdf",
+    "organisation": "Bergbahnen Graubünden",
+    "description": "Official 2017/2018 annual report documenting the SnowPass Graubünden market, regional first entries and the then-current TopCard change"
+  },
+  {
+    "source_id": "BBGR_ANNUAL_2018_19",
+    "url": "https://www.bbgr.ch/wp-content/uploads/2016/10/WEB_BBGR_JB_18_19.pdf",
+    "suffix": "pdf",
+    "organisation": "Bergbahnen Graubünden",
+    "description": "Official 2018/2019 annual report documenting SnowPass Graubünden and three TopCard days in Upper Engadine"
+  },
+  {
+    "source_id": "BBGR_ANNUAL_2019_20",
+    "url": "https://www.bbgr.ch/wp-content/uploads/2020/11/WEB_BBGR_JB_19_20.pdf",
+    "suffix": "pdf",
+    "organisation": "Bergbahnen Graubünden",
+    "description": "Official 2019/2020 annual report documenting the last SnowPass winter and transition to the year-round graubündenCARD"
+  },
+  {
+    "source_id": "GRAUBUENDENCARD_TRANSIT_2022_23",
+    "url": "https://www.graubuenden.ch/sites/graubuenden/files/2022-05/grCARD_%C3%B6V_Leistungen.pdf",
+    "suffix": "pdf",
+    "organisation": "Graubünden Ferien",
+    "description": "Official 2022/2023 graubündenCARD public-transport benefits list naming participating mountain-railway companies and locations"
+  },
+  {
+    "source_id": "KRONBERG_ANNUAL_2017",
+    "url": "https://kronberg.ch/unternehmen/aktionaere.html?_hash=XU5TA%2FffZUYVBDBMWIN%2FWDNF5O1dfE9i44s8GwhIZHk%3D&ctx=a%3A1%3A%7Bs%3A2%3A%22id%22%3Bi%3A8053%3B%7D&d=attachment&f=Gesch%C3%A4ftsbericht+2017.pdf&p=kronberg.ch%2Fmedia%2Faktionaere%2Fgeschaeftsberichte%2FGesch%C3%A4ftsbericht+2017.pdf",
+    "suffix": "pdf",
+    "organisation": "Kronberg AG",
+    "description": "Official 2017 annual report for the tourism and cableway operator at Jakobsbad-Kronberg"
+  },
+  {
+    "source_id": "KRONBERG_ANNUAL_2023",
+    "url": "https://kronberg.ch/unternehmen/aktionaere.html?_hash=V%2F26lNWygBi2ya3rwmMKRRFnxKwshl7U9e8jWKlZjuY%3D&ctx=a%3A1%3A%7Bs%3A2%3A%22id%22%3Bi%3A8053%3B%7D&d=attachment&f=Gesch%C3%A4ftsbericht+2023.pdf&p=kronberg.ch%2Fmedia%2Faktionaere%2Fgeschaeftsberichte%2FGesch%C3%A4ftsbericht+2023.pdf",
+    "suffix": "pdf",
+    "organisation": "Kronberg AG",
+    "description": "Official 2023 annual report documenting the independent year-round tourism business and winter investment decision at Jakobsbad-Kronberg"
   }
 ]

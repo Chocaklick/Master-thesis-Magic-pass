@@ -21,6 +21,7 @@ MEMBERSHIP_STATUS = ROOT / "data_processed" / "magic_pass_membership_status_by_s
 CONTROL_SUMMARY = ROOT / "reports" / "control_audit_summary.json"
 DONOR_PRETREND_SUMMARY = ROOT / "reports" / "donor_pretrend_summary.json"
 DONOR_NETWORK_SUMMARY = ROOT / "reports" / "donor_network_spillover_summary.json"
+DONOR_EXTERNAL_SHOCK_SUMMARY = ROOT / "reports" / "donor_external_shock_summary.json"
 DISTANCE_GRADIENT_SUMMARY = ROOT / "reports" / "treatment_distance_gradient_summary.json"
 CAPACITY_SUMMARY = ROOT / "reports" / "hotel_capacity_summary.json"
 SNOW_SUMMARY = ROOT / "reports" / "snow_proxy_summary.json"
@@ -63,6 +64,9 @@ def main() -> None:
     )
     donor_network_summary = json.loads(
         DONOR_NETWORK_SUMMARY.read_text(encoding="utf-8")
+    )
+    donor_external_shock_summary = json.loads(
+        DONOR_EXTERNAL_SHOCK_SUMMARY.read_text(encoding="utf-8")
     )
     distance_gradient_summary = json.loads(
         DISTANCE_GRADIENT_SUMMARY.read_text(encoding="utf-8")
@@ -402,6 +406,14 @@ def main() -> None:
                 "shortlisted_pairs_within_50km_resolved_magic"
             ]
         ),
+        "beyond_50km_pairs_excluded_for_local_tourism_shocks": int(
+            donor_external_shock_summary[
+                "excluded_contemporaneous_local_tourism_shock"
+            ]
+        ),
+        "donor_pairs_remaining_deep_manual_audit": int(
+            donor_external_shock_summary["remaining_deep_audit_pairs"]
+        ),
         "same_destination_distance_crosswalk_rows": int(
             distance_gradient_summary["distance_crosswalk_rows"]
         ),
@@ -534,6 +546,8 @@ The pipeline screened **{metrics['treatment_donor_pairs_screened']}** treatment-
 For the seven continuity-plus-coverage treatments, the pre-trend screen ranks **{metrics['donor_pretrend_pairs_screened']}** provisional pairs from the 36 pre-anchor months and retains **{metrics['donor_pretrend_shortlisted_pairs']}** top-five pairs for manual review. The heuristic combines outcome level, deseasonalized trend, seasonality, standardized shape, bed capacity, distance and current resort-directory structure. **Zero are approved causal controls** because historical donor membership, spillovers beyond simple distance, accessibility, time-varying confounders and formal balance remain unresolved. See `reports/11_DONOR_PRETREND_SCREEN.md`.
 
 The first screen measured distance only to the treatment being evaluated. A network-wide audit now shows that **{metrics['shortlisted_pairs_within_30km_any_resolved_magic']} of the 35 shortlisted pairs** use a donor municipality within 30 km of some historically or currently resolved Magic Pass resort point; only **{metrics['shortlisted_pairs_beyond_50km_any_resolved_magic']} pairs** lie beyond 50 km from every resolved point. This is a lower-bound proximity screen because 26 official labels remain unresolved, and distance cannot prove spillovers or their absence. See `reports/14_DONOR_NETWORK_SPILLOVER_AUDIT.md`.
+
+The official-source review of those seven geographically remote pairs excludes **{metrics['beyond_50km_pairs_excluded_for_local_tourism_shocks']} Gonten/Kronberg pairs** from priority consideration because independent local tourism investment overlaps the anchors. **{metrics['donor_pairs_remaining_deep_manual_audit']} pairs remain for deep manual audit**, all with documented or strongly indicated competing-pass exposure in Grisons. Historical Magic nonmembership, exact operator tariff participation, accessibility stability and operator-specific investment are not yet jointly cleared. See `reports/16_DONOR_EXTERNAL_SHOCK_AUDIT.md`; approved controls remain zero.
 
 See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_treatment.csv`, and `reports/donor_pretrend_shortlist.csv`.
 

@@ -97,6 +97,8 @@ For the seven continuity-plus-coverage treatments, the pre-trend screen ranks **
 
 The first screen measured distance only to the treatment being evaluated. A network-wide audit now shows that **15 of the 35 shortlisted pairs** use a donor municipality within 30 km of some historically or currently resolved Magic Pass resort point; only **7 pairs** lie beyond 50 km from every resolved point. This is a lower-bound proximity screen because 26 official labels remain unresolved, and distance cannot prove spillovers or their absence. See `reports/14_DONOR_NETWORK_SPILLOVER_AUDIT.md`.
 
+The official-source review of those seven geographically remote pairs excludes **2 Gonten/Kronberg pairs** from priority consideration because independent local tourism investment overlaps the anchors. **5 pairs remain for deep manual audit**, all with documented or strongly indicated competing-pass exposure in Grisons. Historical Magic nonmembership, exact operator tariff participation, accessibility stability and operator-specific investment are not yet jointly cleared. See `reports/16_DONOR_EXTERNAL_SHOCK_AUDIT.md`; approved controls remain zero.
+
 See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_treatment.csv`, and `reports/donor_pretrend_shortlist.csv`.
 
 ## Model-family decisions

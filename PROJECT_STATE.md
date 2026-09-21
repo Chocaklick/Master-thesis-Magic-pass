@@ -10,7 +10,7 @@ Checkpoints 1–3, the first treatment-unit review, and initial capacity/climate
 
 ## Last update
 
-2026-09-21 17:05 CEST
+2026-09-21 17:26 CEST
 
 ## Completed work
 
@@ -42,10 +42,11 @@ Checkpoints 1–3, the first treatment-unit review, and initial capacity/climate
 - Built a 168-month deterministic calendar table and joined it to all 1,848 reviewed destination-month rows. It supplies winter/summer, December/January peak, Easter-month and broad March 2020–April 2022 COVID-sensitivity flags; 286 panel rows fall in that broad interval, which is explicitly not treated as a canton-specific restriction chronology.
 - Compared the selected SLF snow station with the next-nearest station passing the same longitudinal gate for all 15 reviewed resort components. Six comparisons have high, five moderate and four low descriptive agreement; median winter-depth correlation is 0.864, but median relative mean absolute depth difference is 47.2%, so snow remains causally unapproved and a gridded independent-source sensitivity is still required.
 - Extended spillover screening from treatment-specific distance to the full resolved Magic Pass point network. Of 52 apparent-control municipalities, 23 lie within 30 km of a resolved Magic point; among the 35 shortlisted pairs, 15 are within 30 km and only seven are beyond 50 km. The distances are lower-bound sensitivity flags, not proof of spillovers.
+- Checksum-cached three official Bergbahnen Graubünden annual reports, the 2022/23 graubündenCARD operator/transport list, and Kronberg's official 2017 and 2023 annual reports. The seven beyond-50-km donor pairs now have page-referenced competing-pass/local-shock evidence. Two Gonten/Kronberg pairs are excluded from priority because contemporaneous independent tourism investments overlap the treatment anchors; five Grisons pairs remain for deeper audit, with zero causal approvals.
 - Implemented the researcher's same-station distance comparison using checksum-cached swissBOUNDARIES3D 2026 geometry. The 11 reviewed destinations × 186 hotel municipality series produce 2,046 distance rows; seven 24/24 destinations produce 1,302 adjacent-window diagnostic rows, 1,246 usable. Six of seven descriptive ≤30 km versus >50 km contrasts are positive; Moléson is the exception. All causal effect/exposure flags remain false.
 - Exposed the Moutier boundary-version issue: HESTA retains Moutier (BE), BFS 700, alongside Moutier (JU), BFS 6831, while the current boundary product has one BFS 6831 polygon. Both series are preserved and the geometry bridge is explicit rather than silently harmonised.
-- Generated normalized provenance (72 source records), a 459-row data dictionary, source report, destination/capacity/snow/weather/membership/scope/donor/temporal/distance reviews, continuity/control audits, a resort-level evidence-quality table, and an updated model-feasibility report.
-- Reran the complete offline checkpoint pipeline and final test suite successfully; all 23 automated tests pass, including network-wide spillover, same-destination distance, Moutier boundary-lineage and zero-causal-approval validation.
+- Generated normalized provenance (79 source records), a 464-row data dictionary, source report, destination/capacity/snow/weather/membership/scope/donor/temporal/distance reviews, continuity/control audits, a resort-level evidence-quality table, and an updated model-feasibility report.
+- Reran the complete offline checkpoint pipeline and final test suite successfully; all 24 automated tests pass, including network-wide spillover, external-shock triage, same-destination distance, Moutier boundary-lineage and zero-causal-approval validation.
 
 ## Main empirical counts
 
@@ -80,12 +81,13 @@ Checkpoints 1–3, the first treatment-unit review, and initial capacity/climate
 | Provisional donor pairs passing 30 km mechanical screen | 404 | 366 survive the 50 km sensitivity; none approved |
 | Donor pairs ranked on 36-month pre-period | 315 | 35 shortlisted for manual review across seven treatments |
 | Shortlisted pairs within 30 km of any resolved Magic point | 15 | Network-wide lower-bound spillover sensitivity; not proof of contamination |
+| Beyond-50-km donor pairs with external-shock review | 7 | Two Gonten/Kronberg pairs excluded from priority; five Grisons pairs remain for deeper audit |
 | Same-destination municipality distance rows | 2,046 | 11 reviewed destinations × 186 hotel municipality series |
 | Usable municipality rows in 24/24 distance diagnostic | 1,246 | Six of seven near/far contrasts positive; descriptive only |
 | Temporal-control months | 168 | Deterministic calendar plus broad COVID sensitivity flags; not a legal restriction chronology |
 | Reviewed components in alternative SLF-station sensitivity | 15 | 11 high/moderate and 4 low agreement; zero snow covariates approved |
 | Approved causal treatment units | 0 | Intensity/exposure, confounder, spillover and control gates not passed |
-| Approved controls | 0 | Historical status and spillovers not audited |
+| Approved controls | 0 | Five priority pairs still lack complete historical status, accessibility, tariff and investment clearance |
 
 ## Current model decision
 
@@ -119,14 +121,14 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 3. All 26 unmatched base-entry labels are classified for scope risk, but none has been promoted to an identity-equivalent causal mapping. Four Swiss labels still lack a supplied-listing relation and Les Diablerets remains ambiguous across overlapping listings.
 4. Core-municipality proxies do not establish full tourism catchments. Network-wide point distance and same-destination distance bands now expose proximity risk, but road/rail travel time, hotel locations and actual visitor spillovers remain unresolved.
 5. No full historical municipality-boundary harmonization has been implemented. Moutier's BFS 700-to-6831 transition is explicitly bridged only for the current-geometry distance diagnostic.
-6. Hotel capacity and qualified snow/temperature/precipitation proxies are integrated, but snowmaking, accessibility, population, tourism dependence, simultaneous investment, and competition/network controls are missing.
+6. Hotel capacity and qualified snow/temperature/precipitation proxies are integrated, but snowmaking, accessibility, population and tourism dependence remain missing. Competing-pass and simultaneous-investment evidence now covers the seven remote donor pairs only and is still incomplete for the five retained pairs.
 7. Sixty resort-to-snow-station links have low spatial/elevation comparability. The alternative-SLF-station test is complete for the 15 reviewed components, but four have low agreement; an independent gridded sensitivity remains pending for snow, and alternative-station/gridded sensitivity remains pending for regional weather.
-8. The 52-municipality post-scope apparent control pool, 404 provisional treatment-distance pairs and 35 pre-trend shortlist rows remain screening outputs. The network-wide audit flags 15 shortlisted pairs within 30 km of another resolved Magic point; historical membership, competing-pass, investment and accessibility audits remain incomplete.
+8. The 52-municipality post-scope apparent control pool, 404 provisional treatment-distance pairs and 35 pre-trend shortlist rows remain screening outputs. Distance deprioritises 28 shortlisted pairs at or within 50 km; external-shock review excludes two Gonten/Kronberg pairs from priority. The five remaining remote Grisons pairs still lack complete historical Magic nonmembership, exact operator tariffs, accessibility stability and operator-investment clearance.
 9. The exact upstream source/version of the lift GPKG and retrieval dates of legacy extracts remain unknown.
 
 ## Immediate next action
 
-Use the network-wide distance audit to deprioritise the 15 shortlisted pairs within 30 km of another resolved Magic point, then document historical membership, competing-pass participation, accessibility and simultaneous investment for the remaining candidates. Resolve the four missing/unverified Swiss listing relations and ambiguous Les Diablerets scope. Refine the same-destination distance diagnostic with travel time or accommodation coordinates if an authoritative source is obtainable; add gridded snow and regional-weather sensitivities before reassessing Checkpoints 4–5. Do not fit causal or complex ML models before approval gates change. See reports 08–15.
+For the five retained remote Grisons pairs, obtain exact operator-level pass tariffs/rosters at each anchor, prove historical Magic nonmembership across unresolved labels, and audit road/rail changes plus operator investments. Resolve the four missing/unverified Swiss listing relations and ambiguous Les Diablerets scope. Refine distance with authoritative travel time or accommodation coordinates if obtainable, and add gridded snow/regional-weather sensitivities before reassessing Checkpoints 4–5. Do not fit causal or complex ML models before approval gates change. See reports 08–16.
 
 ## Key files
 
@@ -154,5 +156,6 @@ Use the network-wide distance audit to deprioritise the 15 shortlisted pairs wit
 - Snow-station sensitivity: `reports/13_SNOW_PROXY_SENSITIVITY.md` and `data_processed/resort_snow_alternative_station_sensitivity.csv`
 - Donor network spillover: `reports/14_DONOR_NETWORK_SPILLOVER_AUDIT.md` and `data_processed/donor_shortlist_network_audit.csv`
 - Same-destination distance gradient: `reports/15_TREATMENT_DISTANCE_GRADIENT.md`, `data_processed/treatment_municipality_distance_exposure.csv`, and `reports/treatment_distance_near_far_contrast.csv`
+- Donor external shocks: `reports/16_DONOR_EXTERNAL_SHOCK_AUDIT.md`, `reports/donor_external_shock_evidence.csv`, and `data_processed/donor_shortlist_final_audit.csv`
 - Control screen: `reports/control_candidates_by_treatment.csv`
 - Research log: `logs/research_journal.md`

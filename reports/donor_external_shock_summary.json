@@ -1,0 +1,17 @@
+{
+  "shortlisted_pairs": 35,
+  "deprioritised_within_30km": 15,
+  "deprioritised_30_to_50km": 13,
+  "beyond_50km_pairs_reviewed": 7,
+  "excluded_contemporaneous_local_tourism_shock": 2,
+  "remaining_deep_audit_pairs": 5,
+  "remaining_deep_audit_unique_donors": 4,
+  "causal_controls_approved": 0,
+  "decision_counts": {
+    "deprioritise_network_proximity_within_30km": 15,
+    "deprioritise_network_proximity_30_to_50km": 13,
+    "retain_for_deeper_manual_audit_competing_pass_risk": 5,
+    "exclude_contemporaneous_local_tourism_shock": 2
+  },
+  "interpretation": "The review narrows manual-audit priorities but does not prove historical Magic nonmembership, clear competing-pass confounding, or approve controls."
+}

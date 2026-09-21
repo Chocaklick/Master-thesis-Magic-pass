@@ -517,6 +517,31 @@ def test_donor_network_spillover_audit_is_network_wide_and_noncausal() -> None:
     assert not as_bool(pairs["causal_control_approved"]).any()
 
 
+def test_donor_external_shock_audit_narrows_but_never_approves_controls() -> None:
+    evidence = read("reports/donor_external_shock_evidence.csv")
+    final = read("data_processed/donor_shortlist_final_audit.csv")
+    assert len(evidence) == 7
+    assert not evidence.duplicated(
+        ["destination_unit_id", "donor_municipality_bfs_id", "analysis_anchor"]
+    ).any()
+    assert evidence["review_source_ids"].notna().all()
+    assert int(
+        evidence["final_manual_review_decision"]
+        .eq("exclude_contemporaneous_local_tourism_shock")
+        .sum()
+    ) == 2
+    assert len(final) == 35
+    assert int(as_bool(final["remaining_deep_audit_candidate"]).sum()) == 5
+    assert (
+        final.loc[
+            as_bool(final["remaining_deep_audit_candidate"]),
+            "donor_municipality_bfs_id",
+        ].nunique()
+        == 4
+    )
+    assert not as_bool(final["causal_control_approved"]).any()
+
+
 def test_same_destination_distance_gradient_preserves_scope_and_uncertainty() -> None:
     distance = read("data_processed/treatment_municipality_distance_exposure.csv")
     diagnostic = read("data_processed/treatment_distance_gradient_diagnostic.csv")

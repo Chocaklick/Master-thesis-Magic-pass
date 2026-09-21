@@ -26,6 +26,42 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/ANNIVIERS_SCOPE_OFFICIAL_20260920T005533Z.html`.
 
+## BBGR_ANNUAL_2017_18 — Bergbahnen Graubünden annual report 2017/18
+
+- **Contents and relevance:** Official 2017/2018 annual report documenting the SnowPass Graubünden market, regional first entries and the then-current TopCard change
+- **Producer:** Bergbahnen Graubünden
+- **Exact URL:** https://www.bbgr.ch/wp-content/uploads/2016/10/BBGR_WEB-JB_2017-18.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T15:18:44.601748+00:00.
+- **Variables:** competing_pass_environment|operator_investment_and_tourism_shock_evidence
+- **Transformations:** Page-referenced manual review; source qualification and unresolved exactness retained
+- **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2017-07 to 2018-06.
+- **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
+- **Local raw file:** `data_external/source_evidence/BBGR_ANNUAL_2017_18_20260921T151844Z.pdf`.
+
+## BBGR_ANNUAL_2018_19 — Bergbahnen Graubünden annual report 2018/19
+
+- **Contents and relevance:** Official 2018/2019 annual report documenting SnowPass Graubünden and three TopCard days in Upper Engadine
+- **Producer:** Bergbahnen Graubünden
+- **Exact URL:** https://www.bbgr.ch/wp-content/uploads/2016/10/WEB_BBGR_JB_18_19.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T15:18:47.270687+00:00.
+- **Variables:** competing_pass_environment|operator_investment_and_tourism_shock_evidence
+- **Transformations:** Page-referenced manual review; source qualification and unresolved exactness retained
+- **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2018-07 to 2019-06.
+- **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
+- **Local raw file:** `data_external/source_evidence/BBGR_ANNUAL_2018_19_20260921T151847Z.pdf`.
+
+## BBGR_ANNUAL_2019_20 — Bergbahnen Graubünden annual report 2019/20
+
+- **Contents and relevance:** Official 2019/2020 annual report documenting the last SnowPass winter and transition to the year-round graubündenCARD
+- **Producer:** Bergbahnen Graubünden
+- **Exact URL:** https://www.bbgr.ch/wp-content/uploads/2020/11/WEB_BBGR_JB_19_20.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T15:18:49.252750+00:00.
+- **Variables:** competing_pass_environment|operator_investment_and_tourism_shock_evidence
+- **Transformations:** Page-referenced manual review; source qualification and unresolved exactness retained
+- **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2019-07 to 2020-06.
+- **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
+- **Local raw file:** `data_external/source_evidence/BBGR_ANNUAL_2019_20_20260921T151849Z.pdf`.
+
 ## BERGFEX_RESORT_DIRECTORY — Bergfex Swiss ski-resort directory
 
 - **Contents and relevance:** Existing resort-directory scrape supplied by the researcher
@@ -85,6 +121,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** municipality; metadata snapshot; 2013 to 2026.
 - **Limitations:** Live table composition can change; cached response is the reproducibility anchor
 - **Local raw file:** `data_external/source_evidence/BFS_HOTEL_METADATA_20260919T231713Z.json`.
+
+## DERIVED_DONOR_EXTERNAL_SHOCK_AUDIT — Donor competing-pass and local-shock audit
+
+- **Contents and relevance:** Page-referenced competing-pass and local-tourism-shock review for shortlisted donor pairs beyond 50 km from the resolved Magic network
+- **Producer:** Thesis research; constituent official source IDs retained per row
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned manual evidence config joined by exact treatment, donor BFS and anchor key; unknown date.
+- **Variables:** competing_pass_at_anchor_status|local_tourism_shock_status|final_manual_review_decision|remaining_deep_audit_candidate
+- **Transformations:** Exact-key completeness check for seven beyond-50-km pairs; network-distance priorities combined with reviewed external-shock evidence
+- **Coverage:** shortlisted treatment-donor pair; treatment-specific anchor and surrounding pass season; 2017-11 to 2023-05.
+- **Limitations:** Five pairs remain for deeper audit; historical Magic nonmembership, accessibility and all operator investments are not cleared
+- **Local raw file:** `config/donor_external_shock_review.json`.
 
 ## DERIVED_DONOR_NETWORK_SPILLOVER_AUDIT — Donor network-wide spillover audit
 
@@ -230,6 +278,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Coordinate containment is not a tourism catchment or municipal exposure weight
 - **Local raw file:** `data_external/source_evidence/GEO_POINT_*.json`.
 
+## GRAUBUENDENCARD_TRANSIT_2022_23 — graubündenCARD transport benefits 2022/23
+
+- **Contents and relevance:** Official 2022/2023 graubündenCARD public-transport benefits list naming participating mountain-railway companies and locations
+- **Producer:** Graubünden Ferien
+- **Exact URL:** https://www.graubuenden.ch/sites/graubuenden/files/2022-05/grCARD_%C3%B6V_Leistungen.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T15:19:55.927551+00:00.
+- **Variables:** competing_pass_environment|operator_investment_and_tourism_shock_evidence
+- **Transformations:** Page-referenced manual review; source qualification and unresolved exactness retained
+- **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2022-11 to 2023-04.
+- **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
+- **Local raw file:** `data_external/source_evidence/GRAUBUENDENCARD_TRANSIT_2022_23_20260921T151955Z.pdf`.
+
 ## GSTAAD_SCOPE_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Official operator evidence for access points spanning Saanen, Rougemont, Zweisimmen and St. Stephan
@@ -241,6 +301,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/GSTAAD_SCOPE_OFFICIAL_20260920T005549Z.html`.
+
+## KRONBERG_ANNUAL_2017 — Kronberg AG annual report 2017
+
+- **Contents and relevance:** Official 2017 annual report for the tourism and cableway operator at Jakobsbad-Kronberg
+- **Producer:** Kronberg AG
+- **Exact URL:** https://kronberg.ch/unternehmen/aktionaere.html?_hash=XU5TA%2FffZUYVBDBMWIN%2FWDNF5O1dfE9i44s8GwhIZHk%3D&ctx=a%3A1%3A%7Bs%3A2%3A%22id%22%3Bi%3A8053%3B%7D&d=attachment&f=Gesch%C3%A4ftsbericht+2017.pdf&p=kronberg.ch%2Fmedia%2Faktionaere%2Fgeschaeftsberichte%2FGesch%C3%A4ftsbericht+2017.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T15:18:52.650090+00:00.
+- **Variables:** competing_pass_environment|operator_investment_and_tourism_shock_evidence
+- **Transformations:** Page-referenced manual review; source qualification and unresolved exactness retained
+- **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2017-01 to 2017-12.
+- **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
+- **Local raw file:** `data_external/source_evidence/KRONBERG_ANNUAL_2017_20260921T151852Z.pdf`.
+
+## KRONBERG_ANNUAL_2023 — Kronberg AG annual report 2023
+
+- **Contents and relevance:** Official 2023 annual report documenting the independent year-round tourism business and winter investment decision at Jakobsbad-Kronberg
+- **Producer:** Kronberg AG
+- **Exact URL:** https://kronberg.ch/unternehmen/aktionaere.html?_hash=V%2F26lNWygBi2ya3rwmMKRRFnxKwshl7U9e8jWKlZjuY%3D&ctx=a%3A1%3A%7Bs%3A2%3A%22id%22%3Bi%3A8053%3B%7D&d=attachment&f=Gesch%C3%A4ftsbericht+2023.pdf&p=kronberg.ch%2Fmedia%2Faktionaere%2Fgeschaeftsberichte%2FGesch%C3%A4ftsbericht+2023.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T15:18:54.653153+00:00.
+- **Variables:** competing_pass_environment|operator_investment_and_tourism_shock_evidence
+- **Transformations:** Page-referenced manual review; source qualification and unresolved exactness retained
+- **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2023-01 to 2023-12.
+- **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
+- **Local raw file:** `data_external/source_evidence/KRONBERG_ANNUAL_2023_20260921T151854Z.pdf`.
 
 ## LOCAL_03b4345dbe87 — stations_ski_assignations_clusters_gps_bergfex.csv
 
