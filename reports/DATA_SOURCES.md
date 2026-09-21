@@ -124,14 +124,14 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 
 ## DERIVED_DONOR_EXTERNAL_SHOCK_AUDIT — Donor competing-pass and local-shock audit
 
-- **Contents and relevance:** Page-referenced competing-pass and local-tourism-shock review for shortlisted donor pairs beyond 50 km from the resolved Magic network
+- **Contents and relevance:** Complete-roster nonmembership and page-referenced competing-pass/local-tourism-shock review for shortlisted donor pairs beyond 50 km from the resolved Magic network
 - **Producer:** Thesis research; constituent official source IDs retained per row
 - **Exact URL:** Not documented.
 - **Access and retrieval date:** Versioned manual evidence config joined by exact treatment, donor BFS and anchor key; unknown date.
-- **Variables:** competing_pass_at_anchor_status|local_tourism_shock_status|final_manual_review_decision|remaining_deep_audit_candidate
-- **Transformations:** Exact-key completeness check for seven beyond-50-km pairs; network-distance priorities combined with reviewed external-shock evidence
+- **Variables:** magic_roster_source_id|historical_magic_nonmembership_status|competing_pass_at_anchor_status|local_tourism_shock_status|final_manual_review_decision|remaining_deep_audit_candidate
+- **Transformations:** Exact-key completeness check for seven beyond-50-km pairs; complete annual Magic roster label review; network-distance priorities combined with reviewed external-shock evidence
 - **Coverage:** shortlisted treatment-donor pair; treatment-specific anchor and surrounding pass season; 2017-11 to 2023-05.
-- **Limitations:** Five pairs remain for deeper audit; historical Magic nonmembership, accessibility and all operator investments are not cleared
+- **Limitations:** Roster absence is documented for reviewed station/place labels, not corporate-register affiliates; all seven remote pairs have a contemporaneous local shock and are excluded
 - **Local raw file:** `config/donor_external_shock_review.json`.
 
 ## DERIVED_DONOR_NETWORK_SPILLOVER_AUDIT — Donor network-wide spillover audit
@@ -254,6 +254,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Core-municipality proxies are labelled separately from complete observed municipal scope
 - **Local raw file:** `not cached / not applicable`.
 
+## ENGADIN_MOUNTAINS_ANNUAL_2017_18 — Engadin St. Moritz Mountains AG annual report 2017/18
+
+- **Contents and relevance:** Official 2017/2018 annual report documenting Corviglia-Marguns restaurant changes, dynamic-pricing preparation and lift modernisation around the Anniviers anchor
+- **Producer:** Engadin St. Moritz Mountains AG
+- **Exact URL:** https://www.mountains.ch/fileadmin/user_upload/Bilddatenbank_HP/Organisation/Dokumente/Geschaeftsbericht_GV/Geschaeftsbericht_2017-2018_Engadin_St._Moritz_Mountains_AG.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T15:44:54.620851+00:00.
+- **Variables:** competing_pass_environment|operator_investment_and_tourism_shock_evidence
+- **Transformations:** Page-referenced manual review; source qualification and unresolved exactness retained
+- **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2017-11 to 2018-10.
+- **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
+- **Local raw file:** `data_external/source_evidence/ENGADIN_MOUNTAINS_ANNUAL_2017_18_20260921T154454Z.pdf`.
+
+## ENGADIN_MOUNTAINS_ANNUAL_2019_20 — Engadin St. Moritz Mountains AG annual report 2019/20
+
+- **Contents and relevance:** Official 2019/2020 annual report documenting Celerina and Corviglia lift, piste and other investments around the Saas-Fee anchor
+- **Producer:** Engadin St. Moritz Mountains AG
+- **Exact URL:** https://mountains.ch/fileadmin/user_upload/Bilddatenbank_HP/Organisation/Dokumente/Geschaeftsbericht_GV/Geschaeftsbericht_2019_20_.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T15:44:55.961147+00:00.
+- **Variables:** competing_pass_environment|operator_investment_and_tourism_shock_evidence
+- **Transformations:** Page-referenced manual review; source qualification and unresolved exactness retained
+- **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2019-11 to 2020-10.
+- **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
+- **Local raw file:** `data_external/source_evidence/ENGADIN_MOUNTAINS_ANNUAL_2019_20_20260921T154455Z.pdf`.
+
 ## EVOLENE_SCOPE_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Official municipal evidence that Evolène, La Forclaz and Arolla belong to the same municipality
@@ -289,6 +313,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2022-11 to 2023-04.
 - **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
 - **Local raw file:** `data_external/source_evidence/GRAUBUENDENCARD_TRANSIT_2022_23_20260921T151955Z.pdf`.
+
+## GR_MINSCHUNS_INVESTMENT_2019 — Graubünden government release on Minschuns investment
+
+- **Contents and relevance:** Official 2019 government release documenting federal and cantonal funding for a new Minschuns gondola and snowmaking system, intended to replace difficult road access and support the planned La Sassa resort
+- **Producer:** Kanton Graubuenden
+- **Exact URL:** https://www.gr.ch/DE/Medien/Mitteilungen/MMStaka/2019/Seiten/2019112101.aspx
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T15:47:22.986147+00:00.
+- **Variables:** competing_pass_environment|operator_investment_and_tourism_shock_evidence
+- **Transformations:** Page-referenced manual review; source qualification and unresolved exactness retained
+- **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2019-11 to 2019-11.
+- **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
+- **Local raw file:** `data_external/source_evidence/GR_MINSCHUNS_INVESTMENT_2019_20260921T154722Z.html`.
 
 ## GSTAAD_SCOPE_OFFICIAL — Official destination or municipal scope page
 
@@ -854,6 +890,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/SAINTE_CROIX_SCOPE_OFFICIAL_20260920T005539Z.html`.
 
+## SAMNAUN_VISNITZBAHN_HISTORY — Silvrettaseilbahn AG history of the Visnitzbahn replacement
+
+- **Contents and relevance:** Official operator history documenting replacement of Samnaun's Visnitz chairlift in 2019 and the new lift's capacity increase
+- **Producer:** Silvrettaseilbahn AG
+- **Exact URL:** https://www.ischgl.com/de/silvrettaseilbahnag/winter/bergbahnen-ueberblick/visnitzbahn
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T15:44:59.056951+00:00.
+- **Variables:** competing_pass_environment|operator_investment_and_tourism_shock_evidence
+- **Transformations:** Page-referenced manual review; source qualification and unresolved exactness retained
+- **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2019-01 to 2019-12.
+- **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
+- **Local raw file:** `data_external/source_evidence/SAMNAUN_VISNITZBAHN_HISTORY_20260921T154459Z.html`.
+
 ## SLF_DATA_SERVICE — SLF data service terms and access documentation
 
 - **Contents and relevance:** Official scope, access, licence, attribution, and quality conditions for SLF snow data
@@ -913,6 +961,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** point station; station metadata snapshot; ? to 2026.
 - **Limitations:** Station locations are avalanche-monitoring sites and not ski-slope observations
 - **Local raw file:** `data_external/source_evidence/SLF_IMIS_STATIONS_20260920T085555Z.csv`.
+
+## SPLUEGEN_TAMBO_ANNUAL_2023_24 — Bergbahnen Splügen-Tambo AG annual report 2023/24
+
+- **Contents and relevance:** Official 2023/2024 annual report documenting the new children lift, snowmaking changes, management changes and large visitor/revenue increase after the Bumbach anchor
+- **Producer:** Bergbahnen Spluegen-Tambo AG
+- **Exact URL:** https://storage.tramino.net/spluegen/1615535/gb-bbst-2024-deu-5-es-v1.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T15:46:22.543832+00:00.
+- **Variables:** competing_pass_environment|operator_investment_and_tourism_shock_evidence
+- **Transformations:** Page-referenced manual review; source qualification and unresolved exactness retained
+- **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2023-05 to 2024-04.
+- **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
+- **Local raw file:** `data_external/source_evidence/SPLUEGEN_TAMBO_ANNUAL_2023_24_20260921T154622Z.pdf`.
 
 ## SWISSTOPO_BOUNDARIES_2026 — swissBOUNDARIES3D 2026-01
 

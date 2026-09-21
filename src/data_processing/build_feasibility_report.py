@@ -411,6 +411,11 @@ def main() -> None:
                 "excluded_contemporaneous_local_tourism_shock"
             ]
         ),
+        "beyond_50km_pairs_with_magic_roster_absence": int(
+            donor_external_shock_summary[
+                "historical_magic_roster_absence_documented"
+            ]
+        ),
         "donor_pairs_remaining_deep_manual_audit": int(
             donor_external_shock_summary["remaining_deep_audit_pairs"]
         ),
@@ -543,11 +548,11 @@ Annual launch lists and map symbols now classify winter versus summer-winter acc
 
 The pipeline screened **{metrics['treatment_donor_pairs_screened']}** treatment-municipality pairs. A deliberately provisional flag removes known resolved Magic exposure, precautionary composite/overlapping scope risks, the treated municipality scope, donors within 30 km, donors with fewer than 36 observed pre months, and donors with fewer than 24 post months. Resolving the current Sattel-Hochstuckli label exposes one additional Magic-linked municipality. The scope review excludes **{metrics['additional_scope_risk_municipalities_excluded']} additional municipalities**, leaving **{metrics['control_municipalities_upper_bound_after_scope_screen']}** apparent controls and **{metrics['provisional_donor_pairs_30km_36pre']}** pairs passing the 30 km screen; **{metrics['provisional_donor_pairs_50km_36pre']}** survive a 50 km sensitivity screen.
 
-For the seven continuity-plus-coverage treatments, the pre-trend screen ranks **{metrics['donor_pretrend_pairs_screened']}** provisional pairs from the 36 pre-anchor months and retains **{metrics['donor_pretrend_shortlisted_pairs']}** top-five pairs for manual review. The heuristic combines outcome level, deseasonalized trend, seasonality, standardized shape, bed capacity, distance and current resort-directory structure. **Zero are approved causal controls** because historical donor membership, spillovers beyond simple distance, accessibility, time-varying confounders and formal balance remain unresolved. See `reports/11_DONOR_PRETREND_SCREEN.md`.
+For the seven continuity-plus-coverage treatments, the pre-trend screen ranks **{metrics['donor_pretrend_pairs_screened']}** provisional pairs from the 36 pre-anchor months and retains **{metrics['donor_pretrend_shortlisted_pairs']}** top-five pairs for manual review. The heuristic combines outcome level, deseasonalized trend, seasonality, standardized shape, bed capacity, distance and current resort-directory structure. **Zero are approved causal controls** because network spillovers, accessibility, time-varying confounders and formal balance are not jointly cleared. See `reports/11_DONOR_PRETREND_SCREEN.md`.
 
 The first screen measured distance only to the treatment being evaluated. A network-wide audit now shows that **{metrics['shortlisted_pairs_within_30km_any_resolved_magic']} of the 35 shortlisted pairs** use a donor municipality within 30 km of some historically or currently resolved Magic Pass resort point; only **{metrics['shortlisted_pairs_beyond_50km_any_resolved_magic']} pairs** lie beyond 50 km from every resolved point. This is a lower-bound proximity screen because 26 official labels remain unresolved, and distance cannot prove spillovers or their absence. See `reports/14_DONOR_NETWORK_SPILLOVER_AUDIT.md`.
 
-The official-source review of those seven geographically remote pairs excludes **{metrics['beyond_50km_pairs_excluded_for_local_tourism_shocks']} Gonten/Kronberg pairs** from priority consideration because independent local tourism investment overlaps the anchors. **{metrics['donor_pairs_remaining_deep_manual_audit']} pairs remain for deep manual audit**, all with documented or strongly indicated competing-pass exposure in Grisons. Historical Magic nonmembership, exact operator tariff participation, accessibility stability and operator-specific investment are not yet jointly cleared. See `reports/16_DONOR_EXTERNAL_SHOCK_AUDIT.md`; approved controls remain zero.
+The official-source review uses complete annual Magic Pass rosters to document station-label absence for all **{metrics['beyond_50km_pairs_with_magic_roster_absence']}** geographically remote pairs. Operator and government evidence then excludes **all {metrics['beyond_50km_pairs_excluded_for_local_tourism_shocks']} pairs** because a donor-specific tourism, pricing, access or infrastructure shock overlaps the relevant post window. **{metrics['donor_pairs_remaining_deep_manual_audit']} pairs remain for deep manual audit.** Exact regional-pass operator terms are still qualified, but no exclusion depends on resolving them. See `reports/16_DONOR_EXTERNAL_SHOCK_AUDIT.md`; approved controls remain zero.
 
 See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_treatment.csv`, and `reports/donor_pretrend_shortlist.csv`.
 

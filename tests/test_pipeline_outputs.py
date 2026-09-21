@@ -517,7 +517,7 @@ def test_donor_network_spillover_audit_is_network_wide_and_noncausal() -> None:
     assert not as_bool(pairs["causal_control_approved"]).any()
 
 
-def test_donor_external_shock_audit_narrows_but_never_approves_controls() -> None:
+def test_donor_external_shock_audit_exhausts_remote_shortlist_without_approving_controls() -> None:
     evidence = read("reports/donor_external_shock_evidence.csv")
     final = read("data_processed/donor_shortlist_final_audit.csv")
     assert len(evidence) == 7
@@ -529,16 +529,14 @@ def test_donor_external_shock_audit_narrows_but_never_approves_controls() -> Non
         evidence["final_manual_review_decision"]
         .eq("exclude_contemporaneous_local_tourism_shock")
         .sum()
-    ) == 2
+    ) == 7
+    assert as_bool(evidence["historical_magic_roster_absence_documented"]).all()
+    assert as_bool(evidence["accessibility_review_completed_or_moot"]).all()
+    assert evidence["magic_roster_source_id"].isin(
+        ["MAGIC_2017", "MAGIC_2018", "MAGIC_2019_APRIL", "MAGIC_2023"]
+    ).all()
     assert len(final) == 35
-    assert int(as_bool(final["remaining_deep_audit_candidate"]).sum()) == 5
-    assert (
-        final.loc[
-            as_bool(final["remaining_deep_audit_candidate"]),
-            "donor_municipality_bfs_id",
-        ].nunique()
-        == 4
-    )
+    assert not as_bool(final["remaining_deep_audit_candidate"]).any()
     assert not as_bool(final["causal_control_approved"]).any()
 
 

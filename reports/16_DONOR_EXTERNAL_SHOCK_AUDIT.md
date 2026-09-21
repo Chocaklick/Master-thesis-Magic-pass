@@ -4,28 +4,30 @@ Generated reproducibly by `src/causal_inference/build_donor_external_shock_audit
 
 ## Result
 
-The network screen left seven pairs beyond 50 km from every resolved Magic Pass point. Official-source review now excludes the two Gonten/Kronberg pairs from priority consideration because independent local tourism investments overlap their treatment anchors. The remaining **5 pairs (4 unique donor municipalities)** remain only deep-audit candidates: all have a documented or strongly indicated competing Grisons pass environment, and none has complete proof of historical Magic nonmembership, accessibility stability, and absence of operator-specific investment.
+The network screen left seven pairs beyond 50 km from every resolved Magic Pass point. The complete official annual rosters document that each donor station label (including the reviewed spelling and place variants) was absent from Magic Pass at the relevant anchor season. That resolves the principal historical-membership question raised for these candidates.
 
-| Treatment | Donor | Competing pass evidence | Local-shock review | Decision |
-|---|---|---|---|---|
-| anniviers_magic_portfolio | 3782 Corviglia St. Moritz | SnowPass Graubünden | specific_operator_investment_review_pending | retain_for_deeper_manual_audit_competing_pass_risk |
-| bumbach | 3102 Jakobsbad - Kronberg | — | contemporaneous_operator_investment_and_weather_sensitive_winter_change_documented | exclude_contemporaneous_local_tourism_shock |
-| bumbach | 3714 Splügen Rheinwald | graubündenCARD | specific_operator_investment_review_pending | retain_for_deeper_manual_audit_competing_pass_risk |
-| espace_dent_blanche | 3847 Minschuns - Val Müstair | SnowPass Graubünden | specific_operator_investment_review_pending | retain_for_deeper_manual_audit_competing_pass_risk |
-| moleson | 3102 Jakobsbad - Kronberg | — | contemporaneous_major_talstation_investment_documented | exclude_contemporaneous_local_tourism_shock |
-| saas_fee | 3752 Samnaun Silvretta Arena Samnaun / Ischgl | SnowPass Graubünden | cross_border_domain_and_specific_operator_investment_review_pending | retain_for_deeper_manual_audit_competing_pass_risk |
-| saas_fee | 3782 Corviglia St. Moritz | SnowPass Graubünden|TopCard | specific_operator_investment_review_pending | retain_for_deeper_manual_audit_competing_pass_risk |
+The same official-source review finds a donor-specific tourism or infrastructure shock overlapping every treatment post window. Consequently **all seven remote pairs are excluded from priority consideration and zero deep-audit candidates remain**. Historical Magic nonmembership is necessary for a donor, but it is not sufficient when the donor itself changes materially.
+
+| Treatment | Donor | Complete Magic roster checked | Competing pass evidence | Local-shock review | Decision |
+|---|---|---|---|---|---|
+| anniviers_magic_portfolio | 3782 Corviglia St. Moritz | MAGIC_2017 p. 6;8 | SnowPass Graubünden | contemporaneous_corviglia_restaurant_repositioning_pricing_and_infrastructure_changes_documented | exclude_contemporaneous_local_tourism_shock |
+| bumbach | 3102 Jakobsbad - Kronberg | MAGIC_2023 p. 5 | — | contemporaneous_operator_investment_and_weather_sensitive_winter_change_documented | exclude_contemporaneous_local_tourism_shock |
+| bumbach | 3714 Splügen Rheinwald | MAGIC_2023 p. 5 | graubündenCARD | contemporaneous_snowmaking_children_lift_management_pricing_and_demand_changes_documented | exclude_contemporaneous_local_tourism_shock |
+| espace_dent_blanche | 3847 Minschuns - Val Müstair | MAGIC_2018 p. 2 | SnowPass Graubünden | contemporaneous_gondola_snowmaking_and_resort_investment_trajectory_documented | exclude_contemporaneous_local_tourism_shock |
+| moleson | 3102 Jakobsbad - Kronberg | MAGIC_2017 p. 6;8 | — | contemporaneous_major_talstation_investment_documented | exclude_contemporaneous_local_tourism_shock |
+| saas_fee | 3752 Samnaun Silvretta Arena Samnaun / Ischgl | MAGIC_2019_APRIL p. 2 | SnowPass Graubünden | contemporaneous_visnitzbahn_capacity_upgrade_and_cross_border_domain_documented | exclude_contemporaneous_local_tourism_shock |
+| saas_fee | 3782 Corviglia St. Moritz | MAGIC_2019_APRIL p. 2 | SnowPass Graubünden / TopCard | contemporaneous_celerina_lift_piste_and_major_operator_investment_documented | exclude_contemporaneous_local_tourism_shock |
 
 ## Evidence qualifications
 
-- `regional_pass_environment_documented_operator_participation_not_exactly_proven` is deliberately weaker than exact operator membership. Regional SnowPass activity cannot by itself establish a specific operator's tariff validity.
-- The 2022/23 graubündenCARD list names Splügen-Tambo immediately before the May 2023 anchor. The original 2023/24 publication was found in the official search index but returned HTTP 404 during reproducible collection, so anchor-season continuity remains unresolved.
-- TopCard access in Upper Engadine around the Saas-Fee anchor is explicitly documented, but the original operator tariff still needs checking.
-- Samnaun is a cross-border domain. Austrian demand, access, policy, snow and investment shocks remain outside the current Swiss covariate panel.
-- Kronberg's reports show a diversified family/leisure destination with its own capital projects; it is not treated as a clean ski-only comparison municipality.
+- Roster absence is a direct statement about the checked station/place labels in a complete annual publication. It is not reinterpreted as corporate-register proof that no hidden affiliate arrangement existed.
+- Exact operator participation in SnowPass or TopCard remains weaker than the roster evidence where only a regional publication was available. The exclusion decisions do not depend on resolving that remaining tariff detail because the local-shock evidence is independently sufficient.
+- Corviglia/Celerina has contemporaneous restaurant, pricing, lift, piste and investment changes; Splügen has snowmaking, children-lift, management and demand changes; Minschuns has a publicly financed access/snowmaking project trajectory; Samnaun replaced the Visnitz chairlift in 2019; and Kronberg has its own capital projects.
+- The Minschuns source documents approval and intended access replacement, not completed construction. The exclusion is therefore based on the financing/anticipation trajectory within the post window, not on an invented commissioning date.
+- Samnaun remains a cross-border domain. Austrian demand, access, policy and tourism shocks lie outside the current Swiss covariate panel and reinforce, but are not required for, its exclusion.
 
 ## Identification decision
 
-This stage prioritises evidence collection; it does not turn any donor into a causal control. Of 35 shortlisted pairs, 15 are deprioritised within 30 km of the resolved network, 13 are deprioritised at 30–50 km, two are excluded for contemporaneous local tourism shocks, and five await deeper audit. **Approved causal controls: 0.**
+Of 35 shortlisted pairs, 15 are deprioritised within 30 km of the resolved network, 13 are deprioritised at 30–50 km, and all seven remote pairs are excluded for contemporaneous donor-specific tourism or infrastructure shocks. The pre-trend shortlist therefore contains **no surviving control candidate and no approved causal control**.
 
 Detailed outputs are `reports/donor_external_shock_evidence.csv` and `data_processed/donor_shortlist_final_audit.csv`.

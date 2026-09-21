@@ -20,7 +20,7 @@ The supplied files are structurally stronger than their filenames initially sugg
 | Snow/climate | Daily SLF snow proxy integrated; 211/271 listings have high/moderate proxy comparability and ≥10 usable winters; next-nearest-station sensitivity has high/moderate agreement for 11/15 reviewed components and low agreement for four; not direct piste measurement |
 | Temporal controls | All 1,848 reviewed rows receive deterministic calendar fields; 286 rows fall in a broad COVID sensitivity interval that is not a legal restriction chronology |
 | Temperature/precipitation | Seven official SwissMetNet stations cover the 15 reviewed treatment components; 1,744/1,749 destination-months complete; regional proxy only |
-| Donor external shocks | Seven beyond-50-km pairs reviewed from official archives; two Gonten/Kronberg pairs excluded from priority, five Grisons pairs still require exact historical/operator/accessibility review |
+| Donor external shocks | Seven beyond-50-km pairs checked against complete annual Magic rosters and official operator/government sources; all seven are excluded for overlapping local tourism or infrastructure shocks |
 | Accessibility | Missing |
 
 ## Resort-level assessment
@@ -32,7 +32,7 @@ This is an evidence-completeness score, not a resort ranking, opportunity score,
 ## Highest-priority corrections
 
 1. Validate treatment intensity and exact winter-versus-summer scope. All active seasons are documented for the 14 reviewed units and seven panel units pass the 24/24 coverage screen, but no causal treatment or control is approved (see `08_MEMBERSHIP_EVIDENCE_REVIEW.md`).
-2. Complete the deep donor audit for the five remote Grisons pairs retained in `16_DONOR_EXTERNAL_SHOCK_AUDIT.md`. Exact historical Magic nonmembership, operator-level competing-pass terms, accessibility stability and local investments remain unresolved; the two Gonten/Kronberg pairs are already excluded from priority.
+2. Rebuild the donor search if causal identification remains a goal. The current top-five-per-treatment shortlist is exhausted: 28 pairs are proximity-deprioritised and all seven remote pairs are excluded for overlapping local shocks. Complete-roster station-label absence is documented for the remote pairs, although corporate-affiliate and exact competing-pass tariff details remain qualified.
 3. Convert the completed 26-label scope-risk review into independently validated destination domains: four Swiss labels still lack a supplied-listing relation and Les Diablerets remains ambiguous.
 4. Establish tourism-exposure/accommodation markets and audit spillovers without double-counting. The same-destination distance gradient is exploratory: six of seven near/far contrasts are positive, but no exposure or effect is approved.
 5. Audit historical BFS municipality changes before panel estimation. The distance pipeline exposes Moutier's BFS 700-to-6831 transition explicitly but does not harmonise all historical boundaries.

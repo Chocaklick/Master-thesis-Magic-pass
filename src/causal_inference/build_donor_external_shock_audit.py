@@ -50,11 +50,28 @@ def main() -> None:
     for source_ids in review["review_source_ids"]:
         for source_id in str(source_ids).split("|"):
             assert_cached_source(source_id)
+    for source_id in review["magic_roster_source_id"]:
+        assert_cached_source(str(source_id))
 
-    review["historical_magic_nonmembership_status"] = (
-        "not_proven_complete_label_and_operator_audit_still_required"
+    required_review_fields = [
+        "magic_roster_source_page",
+        "donor_roster_labels_checked",
+        "historical_magic_nonmembership_status",
+        "accessibility_review_status",
+    ]
+    for column in required_review_fields:
+        if review[column].fillna("").astype(str).str.strip().eq("").any():
+            raise ValueError(f"External-shock review field must be populated: {column}")
+    review["historical_magic_roster_absence_documented"] = review[
+        "historical_magic_nonmembership_status"
+    ].eq(
+        "documented_absent_from_complete_anchor_season_official_roster_under_reviewed_station_labels"
     )
-    review["accessibility_review_status"] = "historical_road_rail_change_review_pending"
+    if not review["historical_magic_roster_absence_documented"].all():
+        raise ValueError("Every remote donor must have documented complete-roster label absence")
+    review["accessibility_review_completed_or_moot"] = ~review[
+        "accessibility_review_status"
+    ].str.contains("pending", case=False, na=True)
     review["external_shock_reviewed"] = True
     review["causal_control_approved"] = False
     review.to_csv(EVIDENCE_OUTPUT, index=False)
@@ -75,9 +92,11 @@ def main() -> None:
     final.loc[within_30 | within_50, "historical_magic_nonmembership_status"] = (
         "not_reviewed_after_network_proximity_deprioritisation"
     )
+    final.loc[within_30 | within_50, "historical_magic_roster_absence_documented"] = False
     final.loc[within_30 | within_50, "accessibility_review_status"] = (
         "not_reviewed_after_network_proximity_deprioritisation"
     )
+    final.loc[within_30 | within_50, "accessibility_review_completed_or_moot"] = False
     final["remaining_deep_audit_candidate"] = final[
         "final_manual_review_decision"
     ].eq("retain_for_deeper_manual_audit_competing_pass_risk")
@@ -93,6 +112,12 @@ def main() -> None:
         "excluded_contemporaneous_local_tourism_shock": int(
             (review["final_manual_review_decision"] == "exclude_contemporaneous_local_tourism_shock").sum()
         ),
+        "historical_magic_roster_absence_documented": int(
+            review["historical_magic_roster_absence_documented"].sum()
+        ),
+        "accessibility_review_completed_or_moot": int(
+            review["accessibility_review_completed_or_moot"].sum()
+        ),
         "remaining_deep_audit_pairs": int(final["remaining_deep_audit_candidate"].sum()),
         "remaining_deep_audit_unique_donors": int(
             final.loc[
@@ -102,8 +127,9 @@ def main() -> None:
         "causal_controls_approved": int(as_bool(final["causal_control_approved"]).sum()),
         "decision_counts": {key: int(value) for key, value in decision_counts.items()},
         "interpretation": (
-            "The review narrows manual-audit priorities but does not prove historical "
-            "Magic nonmembership, clear competing-pass confounding, or approve controls."
+            "Complete annual Magic Pass rosters document station-label absence for all "
+            "seven remote pairs, but official operator evidence also documents a "
+            "contemporaneous donor-specific shock for every pair. No control is approved."
         ),
     }
     SUMMARY_OUTPUT.write_text(
@@ -112,9 +138,11 @@ def main() -> None:
 
     table_rows = []
     for row in review.sort_values(KEY).itertuples(index=False):
+        competing_passes = str(row.competing_pass_names).replace("|", " / ")
         table_rows.append(
             f"| {row.destination_unit_id} | {row.donor_municipality_bfs_id} "
-            f"{row.donor_resort_name} | {row.competing_pass_names or '—'} | "
+            f"{row.donor_resort_name} | {row.magic_roster_source_id} "
+            f"p. {row.magic_roster_source_page} | {competing_passes or '—'} | "
             f"{row.local_tourism_shock_status} | {row.final_manual_review_decision} |"
         )
     report = f"""# Donor competing-pass and local-shock audit
@@ -123,23 +151,25 @@ Generated reproducibly by `src/causal_inference/build_donor_external_shock_audit
 
 ## Result
 
-The network screen left seven pairs beyond 50 km from every resolved Magic Pass point. Official-source review now excludes the two Gonten/Kronberg pairs from priority consideration because independent local tourism investments overlap their treatment anchors. The remaining **{summary['remaining_deep_audit_pairs']} pairs ({summary['remaining_deep_audit_unique_donors']} unique donor municipalities)** remain only deep-audit candidates: all have a documented or strongly indicated competing Grisons pass environment, and none has complete proof of historical Magic nonmembership, accessibility stability, and absence of operator-specific investment.
+The network screen left seven pairs beyond 50 km from every resolved Magic Pass point. The complete official annual rosters document that each donor station label (including the reviewed spelling and place variants) was absent from Magic Pass at the relevant anchor season. That resolves the principal historical-membership question raised for these candidates.
 
-| Treatment | Donor | Competing pass evidence | Local-shock review | Decision |
-|---|---|---|---|---|
+The same official-source review finds a donor-specific tourism or infrastructure shock overlapping every treatment post window. Consequently **all seven remote pairs are excluded from priority consideration and zero deep-audit candidates remain**. Historical Magic nonmembership is necessary for a donor, but it is not sufficient when the donor itself changes materially.
+
+| Treatment | Donor | Complete Magic roster checked | Competing pass evidence | Local-shock review | Decision |
+|---|---|---|---|---|---|
 {chr(10).join(table_rows)}
 
 ## Evidence qualifications
 
-- `regional_pass_environment_documented_operator_participation_not_exactly_proven` is deliberately weaker than exact operator membership. Regional SnowPass activity cannot by itself establish a specific operator's tariff validity.
-- The 2022/23 graubündenCARD list names Splügen-Tambo immediately before the May 2023 anchor. The original 2023/24 publication was found in the official search index but returned HTTP 404 during reproducible collection, so anchor-season continuity remains unresolved.
-- TopCard access in Upper Engadine around the Saas-Fee anchor is explicitly documented, but the original operator tariff still needs checking.
-- Samnaun is a cross-border domain. Austrian demand, access, policy, snow and investment shocks remain outside the current Swiss covariate panel.
-- Kronberg's reports show a diversified family/leisure destination with its own capital projects; it is not treated as a clean ski-only comparison municipality.
+- Roster absence is a direct statement about the checked station/place labels in a complete annual publication. It is not reinterpreted as corporate-register proof that no hidden affiliate arrangement existed.
+- Exact operator participation in SnowPass or TopCard remains weaker than the roster evidence where only a regional publication was available. The exclusion decisions do not depend on resolving that remaining tariff detail because the local-shock evidence is independently sufficient.
+- Corviglia/Celerina has contemporaneous restaurant, pricing, lift, piste and investment changes; Splügen has snowmaking, children-lift, management and demand changes; Minschuns has a publicly financed access/snowmaking project trajectory; Samnaun replaced the Visnitz chairlift in 2019; and Kronberg has its own capital projects.
+- The Minschuns source documents approval and intended access replacement, not completed construction. The exclusion is therefore based on the financing/anticipation trajectory within the post window, not on an invented commissioning date.
+- Samnaun remains a cross-border domain. Austrian demand, access, policy and tourism shocks lie outside the current Swiss covariate panel and reinforce, but are not required for, its exclusion.
 
 ## Identification decision
 
-This stage prioritises evidence collection; it does not turn any donor into a causal control. Of 35 shortlisted pairs, {summary['deprioritised_within_30km']} are deprioritised within 30 km of the resolved network, {summary['deprioritised_30_to_50km']} are deprioritised at 30–50 km, two are excluded for contemporaneous local tourism shocks, and five await deeper audit. **Approved causal controls: 0.**
+Of 35 shortlisted pairs, {summary['deprioritised_within_30km']} are deprioritised within 30 km of the resolved network, {summary['deprioritised_30_to_50km']} are deprioritised at 30–50 km, and all seven remote pairs are excluded for contemporaneous donor-specific tourism or infrastructure shocks. The pre-trend shortlist therefore contains **no surviving control candidate and no approved causal control**.
 
 Detailed outputs are `{EVIDENCE_OUTPUT.relative_to(ROOT).as_posix()}` and `{FINAL_OUTPUT.relative_to(ROOT).as_posix()}`.
 """

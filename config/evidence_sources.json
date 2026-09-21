@@ -260,5 +260,54 @@
     "suffix": "pdf",
     "organisation": "Kronberg AG",
     "description": "Official 2023 annual report documenting the independent year-round tourism business and winter investment decision at Jakobsbad-Kronberg"
+  },
+  {
+    "source_id": "ENGADIN_MOUNTAINS_ANNUAL_2017_18",
+    "url": "https://www.mountains.ch/fileadmin/user_upload/Bilddatenbank_HP/Organisation/Dokumente/Geschaeftsbericht_GV/Geschaeftsbericht_2017-2018_Engadin_St._Moritz_Mountains_AG.pdf",
+    "suffix": "pdf",
+    "organisation": "Engadin St. Moritz Mountains AG",
+    "description": "Official 2017/2018 annual report documenting Corviglia-Marguns restaurant changes, dynamic-pricing preparation and lift modernisation around the Anniviers anchor"
+  },
+  {
+    "source_id": "ENGADIN_MOUNTAINS_ANNUAL_2019_20",
+    "url": "https://mountains.ch/fileadmin/user_upload/Bilddatenbank_HP/Organisation/Dokumente/Geschaeftsbericht_GV/Geschaeftsbericht_2019_20_.pdf",
+    "suffix": "pdf",
+    "organisation": "Engadin St. Moritz Mountains AG",
+    "description": "Official 2019/2020 annual report documenting Celerina and Corviglia lift, piste and other investments around the Saas-Fee anchor"
+  },
+  {
+    "source_id": "SPLUEGEN_TAMBO_ANNUAL_2023_24",
+    "url": "https://storage.tramino.net/spluegen/1615535/gb-bbst-2024-deu-5-es-v1.pdf",
+    "suffix": "pdf",
+    "organisation": "Bergbahnen Spluegen-Tambo AG",
+    "description": "Official 2023/2024 annual report documenting the new children lift, snowmaking changes, management changes and large visitor/revenue increase after the Bumbach anchor"
+  },
+  {
+    "source_id": "MINSCHUNS_ANNUAL_2024_25",
+    "url": "https://www.minschuns.ch/app/download/15420357623/Gesch%C3%A4ftsbericht%202024-25%20.pdf?t=1764059886",
+    "suffix": "pdf",
+    "organisation": "Skigebiet Minschuns SA",
+    "description": "Official 2024/2025 annual report retrospectively documenting the La Sassa-Minschuns development project and its 2017 public financing decisions"
+  },
+  {
+    "source_id": "VAL_MUESTAIR_LA_SASSA_FAQ_2016",
+    "url": "https://www.cdvm.ch/fileadmin/user_upload/2_dokumente/Publikationen/Teilrevision_Ortsplanung_La_Sassa/Grundlagen/Beilage_A.pdf",
+    "suffix": "pdf",
+    "organisation": "Cumuen da Val Muestair",
+    "description": "Official municipal project FAQ documenting the planned La Sassa resort, Minschuns gondola and snowmaking package, its CHF 31 million scale and public/private financing before the February 2017 referendum"
+  },
+  {
+    "source_id": "GR_MINSCHUNS_INVESTMENT_2019",
+    "url": "https://www.gr.ch/DE/Medien/Mitteilungen/MMStaka/2019/Seiten/2019112101.aspx",
+    "suffix": "html",
+    "organisation": "Kanton Graubuenden",
+    "description": "Official 2019 government release documenting federal and cantonal funding for a new Minschuns gondola and snowmaking system, intended to replace difficult road access and support the planned La Sassa resort"
+  },
+  {
+    "source_id": "SAMNAUN_VISNITZBAHN_HISTORY",
+    "url": "https://www.ischgl.com/de/silvrettaseilbahnag/winter/bergbahnen-ueberblick/visnitzbahn",
+    "suffix": "html",
+    "organisation": "Silvrettaseilbahn AG",
+    "description": "Official operator history documenting replacement of Samnaun's Visnitz chairlift in 2019 and the new lift's capacity increase"
   }
 ]
