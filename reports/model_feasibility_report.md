@@ -4,9 +4,9 @@ Generated reproducibly by `src/data_processing/build_feasibility_report.py`.
 
 ## Executive verdict
 
-The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. Destination scope, reviewed-unit season-by-season membership, monthly hotel capacity, a qualified SLF snow proxy, and qualified MeteoSwiss temperature/precipitation proxies have now been integrated, but a move to Path B still requires treatment-intensity validation, the remaining confounders, spillover analysis, and an uncontaminated control audit.
+**Checkpoints 4 and 5 fail under the present design.** The project therefore follows **Path C (weak treatment sample / exploratory decision support)**. Destination scope, reviewed-unit season-by-season membership, monthly hotel capacity, and qualified snow/weather proxies are integrated, but the current donor shortlist is exhausted and the effective treated sample is too small for heterogeneous-effect ML.
 
-No causal model, treatment-effect learner, opportunity score, or neural network should be fitted at this checkpoint.
+No causal model, treatment-effect learner, predicted uplift, composite opportunity score, or neural network is authorised. A separate Path C module now builds current structural segments and descriptive analogues, with out-of-distribution flags and no causal interpretation.
 
 ## Effective sample
 
@@ -23,7 +23,7 @@ No causal model, treatment-effect learner, opportunity score, or neural network 
 - The cleaned OFS-derived panel has **186 municipalities**.
 - Observed hotel-night values run from **2013-01-01** through **2026-03-01**; later 2026 grid rows are missing and are not counted as observed.
 - Resort points reach **74** hotel municipalities.
-- Resolved historical/current Magic links reduce the 74-municipality resort-point universe to an upper bound of **56** apparent controls. This is not a clean donor pool: **26** official base-entry labels remain unresolved, and **zero controls are approved**.
+- Resolved historical/current Magic links reduce the 74-municipality resort-point universe to an upper bound of **56** apparent controls. The **26** base-entry labels without one-to-one supplied-directory links have all received conservative scope classifications; the remaining problem is not an unreviewed label backlog but the absence of identity-equivalent mappings and a valid donor pool. **Zero controls are approved.**
 
 ## Provisional pre/post windows
 
@@ -95,7 +95,7 @@ The pipeline screened **814** treatment-municipality pairs. A deliberately provi
 
 For the seven continuity-plus-coverage treatments, the pre-trend screen ranks **315** provisional pairs from the 36 pre-anchor months and retains **35** top-five pairs for manual review. The heuristic combines outcome level, deseasonalized trend, seasonality, standardized shape, bed capacity, distance and current resort-directory structure. **Zero are approved causal controls** because network spillovers, accessibility, time-varying confounders and formal balance are not jointly cleared. See `reports/11_DONOR_PRETREND_SCREEN.md`.
 
-The first screen measured distance only to the treatment being evaluated. A network-wide audit now shows that **15 of the 35 shortlisted pairs** use a donor municipality within 30 km of some historically or currently resolved Magic Pass resort point; only **7 pairs** lie beyond 50 km from every resolved point. This is a lower-bound proximity screen because 26 official labels remain unresolved, and distance cannot prove spillovers or their absence. See `reports/14_DONOR_NETWORK_SPILLOVER_AUDIT.md`.
+The first screen measured distance only to the treatment being evaluated. A network-wide audit now shows that **15 of the 35 shortlisted pairs** use a donor municipality within 30 km of some historically or currently resolved Magic Pass resort point; only **7 pairs** lie beyond 50 km from every resolved point. This remains a lower-bound proximity screen because scope-classified labels without one-to-one directory links cannot all be represented as points, and distance cannot prove spillovers or their absence. See `reports/14_DONOR_NETWORK_SPILLOVER_AUDIT.md`.
 
 The official-source review uses complete annual Magic Pass rosters to document station-label absence for all **7** geographically remote pairs. Operator and government evidence then excludes **all 7 pairs** because a donor-specific tourism, pricing, access or infrastructure shock overlaps the relevant post window. **0 pairs remain for deep manual audit.** Exact regional-pass operator terms are still qualified, but no exclusion depends on resolving them. See `reports/16_DONOR_EXTERNAL_SHOCK_AUDIT.md`; approved controls remain zero.
 
@@ -107,14 +107,15 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 |---|---|---|
 | Municipality fixed-effects panel | Diagnostic-ready only | Eleven reviewed outcome units, documented seasonal membership, monthly hotel capacity, deterministic calendar/COVID sensitivity flags, SLF snow proxies, and MeteoSwiss temperature/precipitation proxies can be represented, but treatment intensity, remaining confounding, spillovers, and controls remain unresolved. |
 | Staggered Difference-in-Differences | Not credible yet | Reviewed-unit membership continuity is documented, but treatment intensity, pre-trends, spillovers and untreated-control status are not validated. |
-| Matching | Descriptive only | A pre-period comparability screen now prioritises 35 donor pairs for manual review, but historical non-membership, spillovers, accessibility and covariate balance remain unapproved. |
-| Synthetic control / synthetic DiD | Case-study candidate | Could be assessed for a few clearly mapped municipalities with uncontaminated donors; no donor pool is approved yet. |
+| Matching | Causal use rejected | The 35-pair donor shortlist is exhausted by network proximity or overlapping donor-specific shocks; zero controls are approved. |
+| Synthetic control / synthetic DiD | Not credible under present donor design | Every shortlisted pair is deprioritised or excluded; a future attempt requires a redesigned and broader donor search. |
 | Causal forest | Not supported | At most 14 provisional treated municipalities is far below a defensible heterogeneous-effect sample. |
 | X-Learner | Not supported | The effective treated-unit count is too small and treatment labels are not final. |
 | DR-Learner | Not supported | The effective treated-unit count is too small and nuisance models would be unstable. |
-| Gradient boosting | Deferred | Potentially useful for ordinary prediction after features exist, but not evidence of membership uplift. |
-| Random forest | Deferred | Potentially useful as a grouped predictive benchmark; current independent destination sample is unresolved. |
+| Gradient boosting | Not run | No defensible cluster-level supervised target exists; an unadjusted post-entry change is not a membership-uplift label. |
+| Random forest | Not run | No defensible cluster-level supervised target exists and current lift clusters are not certified independent destinations. |
 | Neural network | Rejected | Monthly rows do not create independent resorts; the effective cross-sectional sample is far too small. |
+| K-means plus nearest analogues | Selected for exploratory Path C | Uses current undated structural features only, keeps snow vulnerability separate, reports stability/OOD support, and never labels analogue changes as causal uplift. |
 
 ## Main identification risks
 
@@ -128,4 +129,4 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 
 ## Next evidence gate
 
-Resolve the four Swiss labels without a supplied-listing relation and the ambiguous Les Diablerets scope, document historical membership and spillovers for the apparent donors, validate treatment intensity and winter-versus-summer definitions, and add the remaining time-varying confounders. Complete regional-weather sensitivity and an independent gridded snow sensitivity; the next-nearest SLF-station test alone is not sufficient. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, add authoritative accessibility, tourism-dependence and competing-pass variables; obtain dated infrastructure features; test sensitivity to cluster-level aggregation; and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.

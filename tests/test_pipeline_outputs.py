@@ -579,3 +579,82 @@ def test_same_destination_distance_gradient_preserves_scope_and_uncertainty() ->
     assert len(contrasts) == 7
     assert int(contrasts["descriptive_near_minus_far_log_change"].gt(0).sum()) == 6
     assert not as_bool(contrasts["causal_effect_estimate"]).any()
+
+
+def test_path_c_feature_matrix_uses_clusters_and_conservative_membership_status() -> None:
+    features = read("data_processed/path_c_resort_cluster_features.csv")
+    assert len(features) == 162
+    assert features["cluster_id"].is_unique
+    assert int(as_bool(features["structural_feature_complete"]).sum()) == 156
+    assert int(as_bool(features["resolved_current_magic_member"]).sum()) == 51
+    candidates = features[as_bool(features["candidate_for_path_c"])]
+    assert len(candidates) == 104
+    assert candidates["magic_status"].eq("no_resolved_magic_link").all()
+    assert as_bool(candidates["has_resolved_swiss_point"]).all()
+    assert as_bool(candidates["structural_feature_complete"]).all()
+    assert not as_bool(candidates["resolved_current_magic_member"]).any()
+    assert not as_bool(candidates["historical_magic_link"]).any()
+    assert not as_bool(candidates["precautionary_scope_relation"]).any()
+    assert features["feature_temporal_status"].eq(
+        "undated_cross_sectional_snapshot_not_pre_treatment"
+    ).all()
+
+
+def test_path_c_segmentation_is_stable_and_not_an_effect_model() -> None:
+    diagnostics = read("reports/path_c_segmentation_diagnostics.csv")
+    segments = read("data_processed/path_c_cluster_segments.csv")
+    assert diagnostics["k"].tolist() == list(range(2, 9))
+    selected = diagnostics[as_bool(diagnostics["selected"])]
+    assert len(selected) == 1
+    assert int(selected.iloc[0]["k"]) == 2
+    assert float(selected.iloc[0]["silhouette"]) > 0.5
+    assert float(selected.iloc[0]["bootstrap_ari_median"]) >= 0.75
+    assert int(selected.iloc[0]["minimum_cluster_size"]) >= 5
+    assigned = segments[as_bool(segments["segmentation_eligible"])]
+    assert len(assigned) == 156
+    assert assigned["segment_id"].value_counts().sort_index().to_dict() == {
+        "SEGMENT_01": 83,
+        "SEGMENT_02": 73,
+    }
+    assert assigned["segmentation_interpretation"].eq(
+        "current_structural_segment_not_treatment_effect_group"
+    ).all()
+
+
+def test_path_c_analogues_preserve_ood_and_blank_uplift_fields() -> None:
+    analogues = read("data_processed/path_c_candidate_analogues.csv")
+    treated = read("data_processed/path_c_reviewed_treated_reference.csv")
+    decision = read("data_processed/magic_pass_decision_support.csv")
+    features = read("data_processed/path_c_resort_cluster_features.csv")
+    assert len(analogues) == 104
+    assert analogues["cluster_id"].is_unique
+    assert len(treated) == 8
+    assert not as_bool(treated["causal_interpretation_approved"]).any()
+    assert analogues["reviewed_treated_ood_flag"].value_counts().to_dict() == {
+        "good_support": 74,
+        "strong_extrapolation": 25,
+        "moderate_extrapolation": 5,
+    }
+    assert analogues["predicted_uplift_pct"].isna().all()
+    assert analogues["uplift_lower_pct"].isna().all()
+    assert analogues["uplift_upper_pct"].isna().all()
+    assert analogues["composite_opportunity_need_score"].isna().all()
+    assert not as_bool(analogues["causal_interpretation_approved"]).any()
+    assert as_bool(analogues["two_dimension_coordinates_available"]).all()
+    member_clusters = set(
+        features.loc[
+            as_bool(features["resolved_current_magic_member"]), "cluster_id"
+        ]
+    )
+    for rank in range(1, 4):
+        assert set(analogues[f"closest_magic_analogue_{rank}_cluster_id"]).issubset(
+            member_clusters
+        )
+        assert set(
+            analogues[f"closest_reviewed_treated_analogue_{rank}_id"]
+        ).issubset(set(treated["destination_unit_id"]))
+    assert len(decision) == 162
+    assert decision["cluster_id"].is_unique
+    assert int(as_bool(decision["candidate_for_path_c"]).sum()) == 104
+    assert decision["predicted_uplift_pct"].isna().all()
+    assert decision["composite_opportunity_need_score"].isna().all()

@@ -1,0 +1,59 @@
+{
+  "analysis_version": "path_c_v0_1",
+  "analysis_date": "2026-09-22",
+  "analysis_entity": "existing_lift_cluster_with_at_least_one_supplied_resort_listing",
+  "feature_temporal_status": "undated_cross_sectional_snapshot_not_pre_treatment",
+  "structural_features": [
+    {
+      "output_variable": "altitude_top_m_median",
+      "transform": "zscore",
+      "interpretation": "Median published top altitude across supplied listings assigned to the cluster"
+    },
+    {
+      "output_variable": "ski_area_km_median",
+      "transform": "log1p_then_zscore",
+      "interpretation": "Median published ski-area kilometres across supplied listings assigned to the cluster"
+    },
+    {
+      "output_variable": "number_lifts_median",
+      "transform": "log1p_then_zscore",
+      "interpretation": "Median published lift count across supplied listings assigned to the cluster"
+    }
+  ],
+  "excluded_from_similarity": [
+    "hotel outcomes and capacity because point municipality is not an approved tourism catchment",
+    "Magic Pass membership and post-entry hotel changes because these are labels or descriptive outcomes",
+    "snow vulnerability because it is reserved for the separate strategic-need dimension",
+    "latitude and longitude because geography/network fit is reported separately rather than allowed to dominate structural similarity"
+  ],
+  "segmentation": {
+    "algorithm": "deterministic_numpy_kmeans",
+    "candidate_k": [2, 3, 4, 5, 6, 7, 8],
+    "selection_rule": "highest_silhouette_among_solutions_with_median_bootstrap_ari_at_least_0.75_and_minimum_cluster_size_at_least_5",
+    "random_seed": 20260922,
+    "n_init": 50,
+    "max_iter": 300,
+    "bootstrap_repetitions": 50,
+    "bootstrap_sample_share": 0.8,
+    "bootstrap_n_init": 10,
+    "minimum_median_bootstrap_ari": 0.75,
+    "minimum_cluster_size": 5
+  },
+  "analogues": {
+    "distance": "euclidean_distance_in_the_three_standardised_structural_features",
+    "nearest_magic_members": 3,
+    "nearest_reviewed_treated_destinations": 3,
+    "support_thresholds": "75th and 95th percentiles of leave-one-out nearest-neighbour distances within the corresponding reference pool",
+    "opportunity_signal": "median_unadjusted_24_month_hotel_overnight_change_of_three_nearest_reviewed_treated_destinations",
+    "opportunity_signal_interpretation": "descriptive_analogue_signal_not_predicted_uplift_or_causal_effect"
+  },
+  "decision_framework": {
+    "dimensions_kept_separate": [
+      "descriptive analogue opportunity signal",
+      "snow vulnerability percentile"
+    ],
+    "strategic_need_limitation": "Tourism dependence and accessibility are not available at an approved cluster-level exposure scope, so no complete strategic-need score or composite ranking is produced.",
+    "composite_score_approved": false,
+    "causal_interpretation_approved": false
+  }
+}

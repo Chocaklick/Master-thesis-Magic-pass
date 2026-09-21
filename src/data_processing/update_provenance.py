@@ -857,6 +857,57 @@ def main() -> None:
         confidence_level="high for reproducibility; exploratory only for treatment gradient",
         manual_verification="11x186 distance rows; seven treatment diagnostics; every causal flag false",
     ))
+    rows.append(blank_source(
+        "DERIVED_PATH_C_FEATURE_MATRIX",
+        variable_name="cluster-level structural features|Magic evidence status|snow vulnerability|data quality",
+        variable_description="Least-duplicated available cross-sectional feature table for lift clusters linked to supplied resort listings",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C resort-cluster feature matrix",
+        retrieval_method="Versioned aggregation configured in config/path_c_analysis.json",
+        local_raw_file="config/path_c_analysis.json",
+        processed_file="data_processed/path_c_resort_cluster_features.csv|reports/path_c_feature_summary.json",
+        geographic_level="existing lift cluster with at least one supplied resort listing",
+        temporal_resolution="undated cross-sectional directory snapshot",
+        unit="cluster-level feature and evidence flag",
+        transformation_applied="Median/min/max aggregation across assigned listings; exact current/history/scope evidence flags; no hotel outcome used as a feature",
+        quality_notes="Existing clusters are not certified independent destinations; Bergfex observation date is unknown; point municipality is not tourism exposure",
+        confidence_level="reproducible descriptive feature engineering; not pre-treatment or causal",
+        manual_verification="162 linked clusters; missing values retained; multi-listing disagreements exposed",
+    ))
+    rows.append(blank_source(
+        "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
+        variable_name="segment_id|silhouette|bootstrap_ari|nearest Magic analogues|reviewed-treated analogue signal|OOD flag",
+        variable_description="Stability-checked structural segmentation and nearest-neighbour analogue diagnostics for exploratory Path C",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C segmentation and analogue analysis",
+        retrieval_method="Deterministic NumPy implementation using versioned config and derived feature tables",
+        local_raw_file="config/path_c_analysis.json",
+        processed_file="data_processed/path_c_cluster_segments.csv|data_processed/path_c_candidate_analogues.csv|data_processed/path_c_reviewed_treated_reference.csv|reports/path_c_segmentation_diagnostics.csv|figures/path_c_structural_segments.png|figures/path_c_opportunity_snow_matrix.png",
+        geographic_level="linked lift cluster or reviewed treated destination",
+        temporal_resolution="current structural snapshot plus unadjusted adjacent 24-month diagnostics",
+        unit="standardised distance, segment, empirical support and descriptive percent change",
+        transformation_applied="Z-score altitude and log1p size features; select k by silhouette after size/stability gates; report three nearest reference entities and empirical leave-one-out OOD support",
+        quality_notes="Analogue changes are unadjusted, discrete and not counterfactual predictions; snow is kept outside structural similarity",
+        confidence_level="exploratory only; support qualified per candidate",
+        manual_verification="k=2 selected; predicted-uplift and causal flags remain empty/false",
+    ))
+    rows.append(blank_source(
+        "DERIVED_PATH_C_DECISION_SUPPORT",
+        variable_name="opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|missing strategic-need fields",
+        variable_description="Dashboard-ready exploratory Path C export retaining separate opportunity, vulnerability, support and quality dimensions",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Magic Pass exploratory decision-support prototype",
+        retrieval_method="Versioned merge of Path C feature, segment and analogue outputs",
+        local_raw_file="config/path_c_analysis.json",
+        processed_file="data_processed/magic_pass_decision_support.csv|reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md",
+        geographic_level="existing lift cluster with supplied resort listings",
+        temporal_resolution="mixed descriptive snapshot; lineage retained by field",
+        unit="separate decision-support dimensions",
+        transformation_applied="One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; no composite score",
+        quality_notes="Tourism dependence and accessibility are missing; apparent non-membership is not verified; blank uplift fields are intentional",
+        confidence_level="exploratory prototype; never a recommendation ranking",
+        manual_verification="Checkpoint 4 and 5 failures formalised; no predicted uplift or composite score produced",
+    ))
     sources = upsert(existing_sources, rows, "source_id", SOURCE_COLUMNS)
     sources.to_csv(SOURCE_FILE, index=False)
 
@@ -1071,6 +1122,101 @@ def main() -> None:
     for table in ["control_contamination_audit", "treatment_control_candidate_matrix"]:
         for variable in ["scope_relation_risk", "additional_scope_exclusion"] + (["scope_risk_listing_ids"] if table == "control_contamination_audit" else []):
             definitions.append((variable, table, scope_glossary[variable], "flag" if variable != "scope_risk_listing_ids" else "identifier list", "boolean" if variable != "scope_risk_listing_ids" else "string", "municipality", "whole-history conservative screen", "DERIVED_MAGIC_SCOPE_REVIEW", "derived", "Any linked listing risk; additional if not already resolved-exposed", "control contamination screening", "Precautionary exclusion; never causal approval"))
+
+    path_c_paths = {
+        "path_c_resort_cluster_features": ROOT / "data_processed/path_c_resort_cluster_features.csv",
+        "path_c_cluster_segments": ROOT / "data_processed/path_c_cluster_segments.csv",
+        "path_c_reviewed_treated_reference": ROOT / "data_processed/path_c_reviewed_treated_reference.csv",
+        "path_c_candidate_analogues": ROOT / "data_processed/path_c_candidate_analogues.csv",
+        "magic_pass_decision_support": ROOT / "data_processed/magic_pass_decision_support.csv",
+    }
+    path_c_sources = {
+        "path_c_resort_cluster_features": "DERIVED_PATH_C_FEATURE_MATRIX",
+        "path_c_cluster_segments": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
+        "path_c_reviewed_treated_reference": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
+        "path_c_candidate_analogues": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
+        "magic_pass_decision_support": "DERIVED_PATH_C_DECISION_SUPPORT",
+    }
+    path_c_glossary = {
+        "cluster_id": "Stable identifier of the preserved existing lift cluster used as the Path C analysis entity",
+        "analysis_entity_level": "Explicit statement of the cluster-level analysis entity and its limitations",
+        "cluster_display_name": "Deterministic display label built from up to three supplied listing names",
+        "member_resort_ids": "All supplied resort listing IDs assigned to the existing lift cluster",
+        "feature_temporal_status": "Whether structural features can be treated as pre-treatment; currently an undated snapshot",
+        "structural_feature_complete": "Whether altitude, ski-area kilometres and lift count are all observed",
+        "candidate_for_path_c": "Initial apparent-nonmember candidate flag after resolved current, historical and scope relations are excluded",
+        "candidate_interpretation": "Warning that the candidate flag is not verified non-membership",
+        "segment_id": "Stable label of the selected current structural k-means segment",
+        "descriptive_profile": "Relative altitude, ski-area and lift-count description of the segment",
+        "distance_to_segment_centroid": "Euclidean distance to the assigned centroid in three standardised structural features",
+        "magic_member_comparability_score": "Empirical support percentage relative to leave-one-out nearest-current-member distances",
+        "reviewed_treated_comparability_score": "Empirical support percentage relative to leave-one-out nearest-reviewed-treated distances",
+        "magic_member_ood_flag": "Good, moderate or strong extrapolation against the resolved-current-member reference pool",
+        "reviewed_treated_ood_flag": "Good, moderate or strong extrapolation against eight reviewed treated references",
+        "analogue_descriptive_change_signal_pct": "Median unadjusted hotel-overnight change of the three closest reviewed treated destinations",
+        "analogue_descriptive_change_range_low_pct": "Minimum of the three analogue change diagnostics; not a confidence bound",
+        "analogue_descriptive_change_range_high_pct": "Maximum of the three analogue change diagnostics; not a confidence bound",
+        "opportunity_signal_percentile": "Within-candidate percentile of the descriptive analogue change signal",
+        "snow_vulnerability_percentile": "Within-candidate percentile of the SLF-station snow-vulnerability proxy",
+        "strategic_need_status": "Completeness status of strategic need; tourism dependence and accessibility are missing",
+        "predicted_uplift_pct": "Intentionally empty field because no causal or predictive uplift is supported",
+        "uplift_lower_pct": "Intentionally empty lower bound because no uplift interval is supported",
+        "uplift_upper_pct": "Intentionally empty upper bound because no uplift interval is supported",
+        "composite_opportunity_need_score": "Intentionally empty because opportunity and strategic-need dimensions are kept separate",
+        "causal_interpretation_approved": "Whether a causal interpretation is authorised; always false in Path C",
+        "model_used": "Name of the descriptive segmentation and analogue architecture",
+        "confidence": "Exploratory support label, not statistical confidence or causal certainty",
+        "interpretation": "Plain-language restriction on how the row may be used",
+    }
+
+    def path_c_unit(variable: str) -> str:
+        if variable.endswith("_pct"):
+            return "percent"
+        if variable.endswith("_percentile") or "comparability_score" in variable:
+            return "0-100 empirical score"
+        if variable.endswith("_km"):
+            return "kilometres"
+        if "distance" in variable:
+            return "standardised Euclidean distance"
+        if variable.endswith("_count") or variable.endswith("_clusters"):
+            return "count"
+        if variable.endswith("_m") or "altitude" in variable:
+            return "metres"
+        return "category/value"
+
+    for table, path in path_c_paths.items():
+        paths[table] = path
+        frame = pd.read_csv(path)
+        for variable in frame.columns:
+            description = path_c_glossary.get(
+                variable,
+                "Path C output field: " + variable.replace("_", " "),
+            )
+            role = (
+                "intentionally unavailable causal prediction"
+                if variable in {"predicted_uplift_pct", "uplift_lower_pct", "uplift_upper_pct"}
+                else "strategic-need proxy"
+                if "snow_vulnerability" in variable
+                else "descriptive analogue opportunity"
+                if "analogue" in variable or "opportunity" in variable
+                else "comparability / support"
+                if "distance" in variable or "ood" in variable or "comparability" in variable
+                else "descriptive segmentation / decision support"
+            )
+            definitions.append((
+                variable,
+                table,
+                description,
+                path_c_unit(variable),
+                str(frame[variable].dtype),
+                "existing lift cluster" if table != "path_c_reviewed_treated_reference" else "reviewed treated destination",
+                "undated structural snapshot; mixed lineage where stated",
+                path_c_sources[table],
+                "derived",
+                "See config/path_c_analysis.json and src/scoring/build_path_c_segments_and_analogues.py",
+                role,
+                "No causal interpretation; blank uplift/composite fields are intentional",
+            ))
     dictionary_rows = []
     for variable, table, description, unit, data_type, geo, temporal, source_id, raw_derived, formula, role, notes in definitions:
         dictionary_rows.append({

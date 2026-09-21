@@ -6,11 +6,11 @@ Build a reproducible and scientifically defensible Business Analytics framework 
 
 ## Current phase
 
-Checkpoints 1–3, the first treatment-unit review, the unmatched-label resolution, and initial capacity/climate integrations are complete: existing data have been audited, official treatment evidence collected, candidate destination/municipality scopes reviewed, membership continuity documented for all 14 reviewed units, donor contamination mechanically screened, official monthly hotel capacity added, and qualified SLF snow plus MeteoSwiss temperature/precipitation proxies built. Checkpoints 4–5 fail for causal and heterogeneous-effect modelling under the present design. The evidence supports Path C (exploratory segmentation/analogue decision support) unless treatment intensity, remaining confounders, spillovers, and controls are materially improved.
+Checkpoints 1–3, the first treatment-unit review, the unmatched-label resolution, and initial capacity/climate integrations are complete. Checkpoints 4–5 are now formally failed for causal and heterogeneous-effect modelling under the present design. Path C version 0.1 is implemented: current structural lift-cluster segmentation, nearest-current-member and nearest-reviewed-treated analogues, empirical support/OOD flags, and separate descriptive opportunity and snow-vulnerability dimensions. It is an exploratory prototype, not a causal or predictive uplift model.
 
 ## Last update
 
-2026-09-22 00:13 CEST
+2026-09-22 00:42 CEST
 
 ## Completed work
 
@@ -45,8 +45,12 @@ Checkpoints 1–3, the first treatment-unit review, the unmatched-label resoluti
 - Checked all seven beyond-50-km donor pairs against complete official Magic Pass rosters for their anchor seasons and documented absence under reviewed station/place labels. Checksum-cached operator evidence from Engadin St. Moritz Mountains, Splügen-Tambo, Samnaun and the canton of Graubünden in addition to the existing regional/Kronberg archives. Every remote pair has an overlapping donor-specific tourism, pricing, access or infrastructure shock, so all seven are excluded, zero deep-audit candidates remain and zero causal controls are approved.
 - Implemented the researcher's same-station distance comparison using checksum-cached swissBOUNDARIES3D 2026 geometry. The 11 reviewed destinations × 186 hotel municipality series produce 2,046 distance rows; seven 24/24 destinations produce 1,302 adjacent-window diagnostic rows, 1,246 usable. Six of seven descriptive ≤30 km versus >50 km contrasts are positive; Moléson is the exception. All causal effect/exposure flags remain false.
 - Exposed the Moutier boundary-version issue: HESTA retains Moutier (BE), BFS 700, alongside Moutier (JU), BFS 6831, while the current boundary product has one BFS 6831 polygon. Both series are preserved and the geometry bridge is explicit rather than silently harmonised.
-- Generated normalized provenance (89 source records), a 469-row data dictionary, source report, destination/capacity/snow/weather/membership/scope/donor/temporal/distance reviews, continuity/control audits, a resort-level evidence-quality table, and an updated model-feasibility report.
-- Reran every offline checkpoint module and the final test suite; a transient Windows path-encoding write error required rerunning the provenance module directly, after which all 24 automated tests passed. Validation covers the new entity distinctions, network-wide spillover, external-shock triage, same-destination distance, Moutier boundary lineage and zero causal approvals.
+- Formalised Checkpoint 4 failure: zero causal treatment units, zero approved controls, and no surviving pair in the 35-pair donor shortlist. Formalised Checkpoint 5 failure: at most 14 reviewed treatments, seven with 24/24 coverage, and no defensible supervised uplift target; causal forests, meta-learners and neural networks remain rejected.
+- Built a cluster-level Path C feature matrix. The 271 directory rows reduce to 162 existing lift clusters linked to a listing; 156 have complete altitude, ski-area and lift-count features. The inputs are explicitly an undated cross-sectional snapshot, not pre-treatment features. Fifty-three clusters expose disagreement among their assigned directory listings.
+- Selected two broad structural segments using a predeclared k=2–8 rule. The selected k=2 solution has silhouette 0.514, median 80% subsample ARI 0.987 and 10th-percentile ARI 0.924; the segments contain 83 and 73 clusters.
+- Built exploratory analogues for 104 apparent non-member candidate clusters using 50 structurally complete resolved-current-Magic clusters and eight reviewed treated destinations with complete unadjusted 24-month diagnostics. Against the treated references, 74 candidates have good structural support, five moderate extrapolation and 25 strong extrapolation. Predicted-uplift and composite-score fields are intentionally blank.
+- Generated normalized provenance (92 source records), a 754-row data dictionary, source report, all checkpoint reviews, a resort-level evidence-quality table, Path C outputs and two static scientific figures.
+- Reran the Path C build/provenance modules and final test suite successfully; all 27 automated tests pass, including exact segment stability/counts, analogue-reference integrity, OOD categories, blank uplift/composite fields and zero causal approvals.
 
 ## Main empirical counts
 
@@ -55,6 +59,12 @@ Checkpoints 1–3, the first treatment-unit review, the unmatched-label resoluti
 | Resort listings | 271 | Not independent destinations |
 | Existing lift clusters | 242 | Preserved geographic clusters |
 | Clusters linked to listings | 162 | Listing-to-cluster assignments |
+| Clusters with complete Path C structural features | 156 | Undated current snapshot, not pre-treatment |
+| Selected structural segments | 2 | k=2 maximises silhouette among stable/minimum-size solutions |
+| Apparent non-member candidate clusters scored | 104 | No resolved current, historical or scope relation; not verified non-membership |
+| Resolved current Magic reference clusters | 50 | Structurally complete reference pool |
+| Reviewed treated analogue references | 8 | Complete unadjusted 24-month diagnostics; not effects |
+| Candidates with strong treated-reference extrapolation | 25 | OOD warning based on empirical leave-one-out distance |
 | Hotel municipalities | 186 | OFS outcome universe |
 | Observed hotel municipality-months | 28,455 | Repeated outcomes, not independent resorts |
 | Complete hotel-capacity municipality-months | 29,274 | Establishments, rooms, and beds all observed |
@@ -93,10 +103,10 @@ Checkpoints 1–3, the first treatment-unit review, the unmatched-label resoluti
 
 - Municipality fixed effects: diagnostic panel exists, but causal treatment/control status is not ready.
 - Staggered DiD/event study: not credible yet.
-- Matching: descriptive analogue selection only at present.
-- Synthetic control: possible future case-study design after donor audit.
+- Matching/synthetic control: rejected for causal use under the present exhausted donor design.
+- K-means plus nearest analogues: selected for exploratory Path C with stability and OOD diagnostics.
 - Causal forest, X-Learner, DR-Learner: unsupported by the effective treated sample.
-- Gradient boosting/random forest: deferred as grouped predictive benchmarks until features and independent units are ready.
+- Gradient boosting/random forest: not run because no defensible cluster-level supervised target exists.
 - Neural network: rejected; monthly repetition does not create independent resorts.
 
 No causal estimate, CATE, uplift prediction, opportunity score, or business recommendation has been produced.
@@ -113,6 +123,8 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 - Physically negative SLF snow-depth values are retained in raw evidence but set missing in derived metrics. Station proxies preserve distance/elevation diagnostics and never claim direct slope representation.
 - SwissMetNet precipitation retains its official 06:00-to-06:00 UTC daily window. Weather anomalies use project-calculated 2013–2025 station/month references, not official climatological normals. Regional station proxies remain non-piste and causal-not-approved.
 - Validation must remain grouped by destination/municipality and time.
+- Path C uses the existing lift cluster as the least duplicated available entity, while retaining the warning that it is not a certified independent destination. Membership, hotel outcomes, snow vulnerability and geography are excluded from the three-feature structural clustering.
+- Analogue opportunity and snow vulnerability remain separate dimensions. Tourism dependence/accessibility are unavailable, so strategic need is incomplete and no composite ranking is authorised.
 
 ## Known blockers and data gaps
 
@@ -125,10 +137,11 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 7. Sixty resort-to-snow-station links have low spatial/elevation comparability. The alternative-SLF-station test is complete for the 15 reviewed components, but four have low agreement; an independent gridded sensitivity remains pending for snow, and alternative-station/gridded sensitivity remains pending for regional weather.
 8. The 52-municipality post-scope apparent control pool and 404 provisional treatment-distance pairs remain screening outputs. The top-35 pre-trend shortlist is exhausted: distance deprioritises 28 pairs at or within 50 km and official-source review excludes all seven remote pairs for donor-specific shocks. Any future causal attempt requires a redesigned/broader donor strategy rather than promoting a current shortlist row.
 9. The exact upstream source/version of the lift GPKG and retrieval dates of legacy extracts remain unknown.
+10. The Path C infrastructure variables are undated directory snapshots. Tourism dependence, authoritative accessibility and competing-pass status are missing at the cluster decision-support level; 25 of 104 apparent candidates are strong extrapolations from the eight reviewed treated references.
 
 ## Immediate next action
 
-Lock Checkpoints 4–5 as failed under the present donor/effective-sample design and implement the explicitly exploratory Path C architecture: a pre-treatment resort feature table, grouped and stability-checked segmentation, treated-analogue matching, out-of-distribution/comparability diagnostics, and a separate Opportunity × Strategic Need decision framework. A future causal redesign would need a broader donor search plus authoritative travel-time/accommodation exposure and stronger accessibility/confounder data. Add gridded snow/regional-weather sensitivities before treating climate fields as causal covariates. Do not fit causal or complex heterogeneous-effect models before approval gates change. See reports 08–16.
+Strengthen Path C without turning it into a false uplift model: add authoritative accessibility, tourism-dependence and competing-pass variables; audit sensitivity to median/min/max aggregation for the 53 multi-listing clusters; and seek dated infrastructure snapshots. Add gridded snow/regional-weather sensitivities before treating climate fields as causal covariates. A future causal redesign still requires a broader donor search and stronger exposure/confounder evidence. See reports 17–18 for the active architecture.
 
 ## Key files
 
@@ -157,5 +170,8 @@ Lock Checkpoints 4–5 as failed under the present donor/effective-sample design
 - Donor network spillover: `reports/14_DONOR_NETWORK_SPILLOVER_AUDIT.md` and `data_processed/donor_shortlist_network_audit.csv`
 - Same-destination distance gradient: `reports/15_TREATMENT_DISTANCE_GRADIENT.md`, `data_processed/treatment_municipality_distance_exposure.csv`, and `reports/treatment_distance_near_far_contrast.csv`
 - Donor external shocks: `reports/16_DONOR_EXTERNAL_SHOCK_AUDIT.md`, `reports/donor_external_shock_evidence.csv`, and `data_processed/donor_shortlist_final_audit.csv`
+- Checkpoints 4–5 / Path C decision: `reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md`
+- Path C segmentation and analogues: `reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md`, `data_processed/path_c_candidate_analogues.csv`, and `data_processed/magic_pass_decision_support.csv`
+- Path C figures: `figures/path_c_structural_segments.png` and `figures/path_c_opportunity_snow_matrix.png`
 - Control screen: `reports/control_candidates_by_treatment.csv`
 - Research log: `logs/research_journal.md`

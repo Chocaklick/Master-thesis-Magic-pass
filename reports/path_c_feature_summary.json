@@ -1,0 +1,13 @@
+{
+  "analysis_version": "path_c_v0_1",
+  "resort_listings": 271,
+  "linked_lift_clusters": 162,
+  "clusters_with_complete_structural_features": 156,
+  "resolved_current_magic_clusters": 51,
+  "historical_not_current_clusters": 1,
+  "precautionary_scope_relation_clusters": 1,
+  "apparent_nonmember_candidates": 104,
+  "clusters_with_multi_listing_feature_disagreement": 53,
+  "feature_temporal_status": "undated_cross_sectional_snapshot_not_pre_treatment",
+  "causal_interpretation_approved": false
+}

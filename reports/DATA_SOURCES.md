@@ -206,6 +206,42 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Not an external source; lineage remains in source_ids and formulas
 - **Local raw file:** `not cached / not applicable`.
 
+## DERIVED_PATH_C_DECISION_SUPPORT — Magic Pass exploratory decision-support prototype
+
+- **Contents and relevance:** Dashboard-ready exploratory Path C export retaining separate opportunity, vulnerability, support and quality dimensions
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned merge of Path C feature, segment and analogue outputs; unknown date.
+- **Variables:** opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|missing strategic-need fields
+- **Transformations:** One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; no composite score
+- **Coverage:** existing lift cluster with supplied resort listings; mixed descriptive snapshot; lineage retained by field; ? to ?.
+- **Limitations:** Tourism dependence and accessibility are missing; apparent non-membership is not verified; blank uplift fields are intentional
+- **Local raw file:** `config/path_c_analysis.json`.
+
+## DERIVED_PATH_C_FEATURE_MATRIX — Path C resort-cluster feature matrix
+
+- **Contents and relevance:** Least-duplicated available cross-sectional feature table for lift clusters linked to supplied resort listings
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned aggregation configured in config/path_c_analysis.json; unknown date.
+- **Variables:** cluster-level structural features|Magic evidence status|snow vulnerability|data quality
+- **Transformations:** Median/min/max aggregation across assigned listings; exact current/history/scope evidence flags; no hotel outcome used as a feature
+- **Coverage:** existing lift cluster with at least one supplied resort listing; undated cross-sectional directory snapshot; ? to ?.
+- **Limitations:** Existing clusters are not certified independent destinations; Bergfex observation date is unknown; point municipality is not tourism exposure
+- **Local raw file:** `config/path_c_analysis.json`.
+
+## DERIVED_PATH_C_SEGMENTATION_ANALOGUES — Path C segmentation and analogue analysis
+
+- **Contents and relevance:** Stability-checked structural segmentation and nearest-neighbour analogue diagnostics for exploratory Path C
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic NumPy implementation using versioned config and derived feature tables; unknown date.
+- **Variables:** segment_id|silhouette|bootstrap_ari|nearest Magic analogues|reviewed-treated analogue signal|OOD flag
+- **Transformations:** Z-score altitude and log1p size features; select k by silhouette after size/stability gates; report three nearest reference entities and empirical leave-one-out OOD support
+- **Coverage:** linked lift cluster or reviewed treated destination; current structural snapshot plus unadjusted adjacent 24-month diagnostics; ? to ?.
+- **Limitations:** Analogue changes are unadjusted, discrete and not counterfactual predictions; snow is kept outside structural similarity
+- **Local raw file:** `config/path_c_analysis.json`.
+
 ## DERIVED_REVIEWED_DESTINATION_PANEL — Reviewed destination-month panel
 
 - **Contents and relevance:** Monthly destination outcomes, hotel capacity, qualified snow/weather proxies, and diagnostic treatment coding aggregated across reviewed scopes

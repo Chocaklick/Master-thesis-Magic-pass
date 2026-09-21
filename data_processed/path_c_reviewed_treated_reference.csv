@@ -1,0 +1,9 @@
+destination_unit_id,destination_name,component_resort_ids,altitude_top_m_median,ski_area_km_median,number_lifts_median,hotel_overnights_change_pct,available_beds_change_pct,overnights_per_bed_change_pct,causal_interpretation_approved,reference_interpretation
+anniviers_magic_portfolio,Anniviers Magic Pass portfolio,grimentz_zinal_grimentz_zinal|st_luc_chandolin,2950.0,87.5,17.5,16.42597219104949,7.540699278647156,10.535513913804696,False,unadjusted_adjacent_24_month_diagnostic_not_treatment_effect
+axalp,Axalp,axalp_brienz,2000.0,15.0,6.0,29.941336979678532,3.964665785629817,27.554441688523788,False,unadjusted_adjacent_24_month_diagnostic_not_treatment_effect
+bumbach,Bumbach,bumbach_schangnau,1365.0,9.0,4.0,22.60745466756211,15.918011338857395,22.47358584214856,False,unadjusted_adjacent_24_month_diagnostic_not_treatment_effect
+espace_dent_blanche,Espace Dent Blanche,arolla|evolene|la_forclaz,2600.0,44.5,5.0,3.549254966887428,2.7405247813411027,0.9054858572029368,False,unadjusted_adjacent_24_month_diagnostic_not_treatment_effect
+moleson,Moléson,moleson_la_gruyere,2002.0,30.0,7.0,-5.874156806369557,-3.95048243218642,-2.3905205015481656,False,unadjusted_adjacent_24_month_diagnostic_not_treatment_effect
+reichenbach_magic_portfolio,Reichenbach im Kandertal Magic Pass portfolio,faltschen_reichenbach_im_kandertal|kiental,1385.5,4.6,2.0,19.058394050474423,1.5329693406131994,17.536957728491885,False,unadjusted_adjacent_24_month_diagnostic_not_treatment_effect
+saas_fee,Saas-Fee,saas_fee,3600.0,150.0,23.0,-14.710905590777012,-15.526448362720402,-0.5486399708311551,False,unadjusted_adjacent_24_month_diagnostic_not_treatment_effect
+schwanden,Schwanden,schwanden_sigriswil_thunersee,1440.0,20.0,2.0,-20.519801422487937,-12.68635113619916,-8.606134189046944,False,unadjusted_adjacent_24_month_diagnostic_not_treatment_effect

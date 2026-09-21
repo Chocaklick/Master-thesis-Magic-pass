@@ -1,0 +1,20 @@
+{
+  "analysis_version": "path_c_v0_1",
+  "linked_lift_clusters": 162,
+  "segmentation_eligible_clusters": 156,
+  "clusters_with_multi_listing_feature_disagreement": 53,
+  "selected_k": 2,
+  "selected_silhouette": 0.5137823637971882,
+  "selected_bootstrap_ari_median": 0.9871794724440652,
+  "selected_bootstrap_ari_p10": 0.9240684607255826,
+  "resolved_current_magic_reference_clusters": 50,
+  "reviewed_treated_reference_units": 8,
+  "apparent_nonmember_candidates_scored": 104,
+  "candidate_good_treated_support": 74,
+  "candidate_moderate_treated_extrapolation": 5,
+  "candidate_strong_treated_extrapolation": 25,
+  "candidate_two_dimension_coordinates_available": 104,
+  "predicted_uplift_values": 0,
+  "composite_scores": 0,
+  "causal_interpretation_approved": false
+}

@@ -58,6 +58,9 @@ def main() -> None:
     run("src/causal_inference/build_distance_gradient_diagnostic.py")
     run("src/data_processing/build_feasibility_report.py")
     run("src/scoring/build_resort_data_quality.py")
+    run("src/scoring/build_path_c_feature_matrix.py")
+    run("src/scoring/build_path_c_segments_and_analogues.py")
+    run("src/scoring/plot_path_c_outputs.py")
     run("src/data_processing/update_provenance.py")
     subprocess.run([sys.executable, "-m", "pytest", "-q"], cwd=ROOT, check=True)
 
