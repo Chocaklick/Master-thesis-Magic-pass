@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def as_bool(series: pd.Series) -> pd.Series:
-    return series.fillna(False).astype(str).str.lower().eq("true")
+    return series.astype("string").fillna("false").str.lower().eq("true")
 
 
 def transformed_features(frame: pd.DataFrame) -> np.ndarray:

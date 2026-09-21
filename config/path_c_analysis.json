@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_1",
+  "analysis_version": "path_c_v0_2",
   "analysis_date": "2026-09-22",
   "analysis_entity": "existing_lift_cluster_with_at_least_one_supplied_resort_listing",
   "feature_temporal_status": "undated_cross_sectional_snapshot_not_pre_treatment",
@@ -46,6 +46,11 @@
     "support_thresholds": "75th and 95th percentiles of leave-one-out nearest-neighbour distances within the corresponding reference pool",
     "opportunity_signal": "median_unadjusted_24_month_hotel_overnight_change_of_three_nearest_reviewed_treated_destinations",
     "opportunity_signal_interpretation": "descriptive_analogue_signal_not_predicted_uplift_or_causal_effect"
+  },
+  "aggregation_sensitivity": {
+    "rules": ["median", "min", "max"],
+    "baseline_rule": "median",
+    "interpretation": "measurement_and_entity_definition_sensitivity_not_causal_or_predictive_validation"
   },
   "decision_framework": {
     "dimensions_kept_separate": [

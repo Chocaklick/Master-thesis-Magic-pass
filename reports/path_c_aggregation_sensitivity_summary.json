@@ -1,0 +1,21 @@
+{
+  "candidate_clusters": 104,
+  "aggregation_rules": [
+    "median",
+    "min",
+    "max"
+  ],
+  "selected_k_by_rule": {
+    "median": 2,
+    "min": 2,
+    "max": 2
+  },
+  "minimum_rule_segment_ari": 0.8274623638994455,
+  "maximum_rule_segment_ari": 0.7141397588762999,
+  "minimum_rule_treated_top1_agreement": 0.8365384615384616,
+  "maximum_rule_treated_top1_agreement": 0.7788461538461539,
+  "candidates_fully_stable_across_aggregation_rules": 11,
+  "candidates_with_stable_reviewed_treated_top1": 71,
+  "candidates_with_stable_reviewed_treated_ood": 60,
+  "causal_interpretation_approved": false
+}

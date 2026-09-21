@@ -206,6 +206,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Not an external source; lineage remains in source_ids and formulas
 - **Local raw file:** `not cached / not applicable`.
 
+## DERIVED_PATH_C_AGGREGATION_SENSITIVITY — Path C aggregation sensitivity
+
+- **Contents and relevance:** Min/median/max within-cluster aggregation robustness audit for every apparent Path C candidate
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic rebuild under three predeclared aggregation rules; unknown date.
+- **Variables:** aggregation rule|segment stability|analogue stability|OOD stability|opportunity-signal range
+- **Transformations:** Repeat segmentation and nearest-analogue construction under within-cluster minimum, median and maximum structural features; compare assignments, neighbours, OOD categories and descriptive signal
+- **Coverage:** existing lift cluster with supplied resort listings; undated cross-sectional directory snapshot; ? to ?.
+- **Limitations:** Aggregation rules probe listing semantics, not causal truth or predictive validity; exact analogue assignments and OOD flags are not invariant
+- **Local raw file:** `config/path_c_analysis.json`.
+
 ## DERIVED_PATH_C_DECISION_SUPPORT — Magic Pass exploratory decision-support prototype
 
 - **Contents and relevance:** Dashboard-ready exploratory Path C export retaining separate opportunity, vulnerability, support and quality dimensions
@@ -213,7 +225,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Exact URL:** Not documented.
 - **Access and retrieval date:** Versioned merge of Path C feature, segment and analogue outputs; unknown date.
 - **Variables:** opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|missing strategic-need fields
-- **Transformations:** One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; no composite score
+- **Transformations:** One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity appended; no composite score
 - **Coverage:** existing lift cluster with supplied resort listings; mixed descriptive snapshot; lineage retained by field; ? to ?.
 - **Limitations:** Tourism dependence and accessibility are missing; apparent non-membership is not verified; blank uplift fields are intentional
 - **Local raw file:** `config/path_c_analysis.json`.

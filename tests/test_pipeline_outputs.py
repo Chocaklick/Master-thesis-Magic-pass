@@ -658,3 +658,40 @@ def test_path_c_analogues_preserve_ood_and_blank_uplift_fields() -> None:
     assert int(as_bool(decision["candidate_for_path_c"]).sum()) == 104
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
+
+
+def test_path_c_aggregation_sensitivity_is_explicit_and_noncausal() -> None:
+    detail = read("data_processed/path_c_candidate_analogue_sensitivity.csv")
+    comparison = read("reports/path_c_aggregation_sensitivity.csv")
+    diagnostics = read("reports/path_c_aggregation_sensitivity_k_diagnostics.csv")
+    decision = read("data_processed/magic_pass_decision_support.csv")
+
+    assert len(detail) == 104 * 3
+    assert not detail.duplicated(["cluster_id", "aggregation_rule"]).any()
+    assert set(detail["aggregation_rule"]) == {"median", "min", "max"}
+    assert not as_bool(detail["causal_interpretation_approved"]).any()
+
+    assert len(comparison) == 3
+    assert comparison["selected_k"].eq(2).all()
+    by_rule = comparison.set_index("aggregation_rule")
+    assert abs(float(by_rule.loc["min", "segment_assignment_ari_vs_median"]) - 0.8274623639) < 1e-9
+    assert abs(float(by_rule.loc["max", "segment_assignment_ari_vs_median"]) - 0.7141397589) < 1e-9
+    assert not as_bool(comparison["causal_interpretation_approved"]).any()
+
+    selected = diagnostics[as_bool(diagnostics["selected"])]
+    assert selected.groupby("aggregation_rule").size().eq(1).all()
+    assert selected.set_index("aggregation_rule")["k"].eq(2).all()
+
+    candidates = decision[as_bool(decision["candidate_for_path_c"])]
+    assert len(candidates) == 104
+    assert candidates["aggregation_sensitivity_status"].notna().all()
+    assert int(
+        candidates["aggregation_sensitivity_status"]
+        .eq("stable_across_min_median_max")
+        .sum()
+    ) == 11
+    assert int(as_bool(candidates["aggregation_reviewed_treated_top1_stable"]).sum()) == 71
+    assert int(as_bool(candidates["aggregation_reviewed_treated_ood_stable"]).sum()) == 60
+    assert candidates["aggregation_signal_range_pct_points"].ge(0).all()
+    assert decision["predicted_uplift_pct"].isna().all()
+    assert decision["composite_opportunity_need_score"].isna().all()

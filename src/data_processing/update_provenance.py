@@ -899,14 +899,31 @@ def main() -> None:
         source_dataset_name="Magic Pass exploratory decision-support prototype",
         retrieval_method="Versioned merge of Path C feature, segment and analogue outputs",
         local_raw_file="config/path_c_analysis.json",
-        processed_file="data_processed/magic_pass_decision_support.csv|reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md",
+        processed_file="data_processed/magic_pass_decision_support.csv|reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md|reports/19_PATH_C_AGGREGATION_SENSITIVITY.md",
         geographic_level="existing lift cluster with supplied resort listings",
         temporal_resolution="mixed descriptive snapshot; lineage retained by field",
         unit="separate decision-support dimensions",
-        transformation_applied="One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; no composite score",
+        transformation_applied="One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity appended; no composite score",
         quality_notes="Tourism dependence and accessibility are missing; apparent non-membership is not verified; blank uplift fields are intentional",
         confidence_level="exploratory prototype; never a recommendation ranking",
         manual_verification="Checkpoint 4 and 5 failures formalised; no predicted uplift or composite score produced",
+    ))
+    rows.append(blank_source(
+        "DERIVED_PATH_C_AGGREGATION_SENSITIVITY",
+        variable_name="aggregation rule|segment stability|analogue stability|OOD stability|opportunity-signal range",
+        variable_description="Min/median/max within-cluster aggregation robustness audit for every apparent Path C candidate",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C aggregation sensitivity",
+        retrieval_method="Deterministic rebuild under three predeclared aggregation rules",
+        local_raw_file="config/path_c_analysis.json",
+        processed_file="data_processed/path_c_candidate_analogue_sensitivity.csv|reports/path_c_aggregation_sensitivity.csv|reports/path_c_aggregation_sensitivity_k_diagnostics.csv|reports/path_c_aggregation_sensitivity_summary.json|reports/19_PATH_C_AGGREGATION_SENSITIVITY.md",
+        geographic_level="existing lift cluster with supplied resort listings",
+        temporal_resolution="undated cross-sectional directory snapshot",
+        unit="scenario-level segment, analogue, support and descriptive percent change",
+        transformation_applied="Repeat segmentation and nearest-analogue construction under within-cluster minimum, median and maximum structural features; compare assignments, neighbours, OOD categories and descriptive signal",
+        quality_notes="Aggregation rules probe listing semantics, not causal truth or predictive validity; exact analogue assignments and OOD flags are not invariant",
+        confidence_level="reproducible robustness diagnostic; exploratory only",
+        manual_verification="All three rules select k=2; only 11 of 104 candidates are stable on every recorded criterion; every causal flag false",
     ))
     sources = upsert(existing_sources, rows, "source_id", SOURCE_COLUMNS)
     sources.to_csv(SOURCE_FILE, index=False)
@@ -1128,6 +1145,7 @@ def main() -> None:
         "path_c_cluster_segments": ROOT / "data_processed/path_c_cluster_segments.csv",
         "path_c_reviewed_treated_reference": ROOT / "data_processed/path_c_reviewed_treated_reference.csv",
         "path_c_candidate_analogues": ROOT / "data_processed/path_c_candidate_analogues.csv",
+        "path_c_candidate_analogue_sensitivity": ROOT / "data_processed/path_c_candidate_analogue_sensitivity.csv",
         "magic_pass_decision_support": ROOT / "data_processed/magic_pass_decision_support.csv",
     }
     path_c_sources = {
@@ -1135,6 +1153,7 @@ def main() -> None:
         "path_c_cluster_segments": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
         "path_c_reviewed_treated_reference": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
         "path_c_candidate_analogues": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
+        "path_c_candidate_analogue_sensitivity": "DERIVED_PATH_C_AGGREGATION_SENSITIVITY",
         "magic_pass_decision_support": "DERIVED_PATH_C_DECISION_SUPPORT",
     }
     path_c_glossary = {
@@ -1167,6 +1186,16 @@ def main() -> None:
         "model_used": "Name of the descriptive segmentation and analogue architecture",
         "confidence": "Exploratory support label, not statistical confidence or causal certainty",
         "interpretation": "Plain-language restriction on how the row may be used",
+        "aggregation_rule": "Within-cluster structural-feature aggregation rule used in the robustness scenario",
+        "aggregation_segment_ids": "Distinct structural segment labels assigned across the minimum, median and maximum aggregation rules",
+        "aggregation_segment_stable": "Whether the candidate's segment label is unchanged across all three aggregation rules",
+        "aggregation_current_magic_top1_stable": "Whether the closest current-Magic cluster is unchanged across all three aggregation rules",
+        "aggregation_reviewed_treated_top1_stable": "Whether the closest reviewed-treated reference is unchanged across all three aggregation rules",
+        "aggregation_reviewed_treated_ood_stable": "Whether the reviewed-treated OOD category is unchanged across all three aggregation rules",
+        "aggregation_signal_min_pct": "Minimum descriptive analogue-change signal across the three aggregation rules",
+        "aggregation_signal_max_pct": "Maximum descriptive analogue-change signal across the three aggregation rules",
+        "aggregation_signal_range_pct_points": "Range of the descriptive analogue-change signal across the three aggregation rules",
+        "aggregation_sensitivity_status": "Combined flag for stability of segment, top-one analogues and reviewed-treated OOD category",
     }
 
     def path_c_unit(variable: str) -> str:
@@ -1213,7 +1242,7 @@ def main() -> None:
                 "undated structural snapshot; mixed lineage where stated",
                 path_c_sources[table],
                 "derived",
-                "See config/path_c_analysis.json and src/scoring/build_path_c_segments_and_analogues.py",
+                "See config/path_c_analysis.json and src/scoring/build_path_c_segments_and_analogues.py; aggregation robustness is implemented in src/scoring/build_path_c_aggregation_sensitivity.py",
                 role,
                 "No causal interpretation; blank uplift/composite fields are intentional",
             ))

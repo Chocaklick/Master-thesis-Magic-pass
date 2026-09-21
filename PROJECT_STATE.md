@@ -6,11 +6,11 @@ Build a reproducible and scientifically defensible Business Analytics framework 
 
 ## Current phase
 
-Checkpoints 1–3, the first treatment-unit review, the unmatched-label resolution, and initial capacity/climate integrations are complete. Checkpoints 4–5 are now formally failed for causal and heterogeneous-effect modelling under the present design. Path C version 0.1 is implemented: current structural lift-cluster segmentation, nearest-current-member and nearest-reviewed-treated analogues, empirical support/OOD flags, and separate descriptive opportunity and snow-vulnerability dimensions. It is an exploratory prototype, not a causal or predictive uplift model.
+Checkpoints 1–3, the first treatment-unit review, the unmatched-label resolution, and initial capacity/climate integrations are complete. Checkpoints 4–5 are now formally failed for causal and heterogeneous-effect modelling under the present design. Path C version 0.2 is implemented: current structural lift-cluster segmentation, nearest-current-member and nearest-reviewed-treated analogues, empirical support/OOD flags, min/median/max aggregation sensitivity, and separate descriptive opportunity and snow-vulnerability dimensions. It is an exploratory prototype, not a causal or predictive uplift model.
 
 ## Last update
 
-2026-09-22 00:42 CEST
+2026-09-22 00:54 CEST
 
 ## Completed work
 
@@ -49,8 +49,9 @@ Checkpoints 1–3, the first treatment-unit review, the unmatched-label resoluti
 - Built a cluster-level Path C feature matrix. The 271 directory rows reduce to 162 existing lift clusters linked to a listing; 156 have complete altitude, ski-area and lift-count features. The inputs are explicitly an undated cross-sectional snapshot, not pre-treatment features. Fifty-three clusters expose disagreement among their assigned directory listings.
 - Selected two broad structural segments using a predeclared k=2–8 rule. The selected k=2 solution has silhouette 0.514, median 80% subsample ARI 0.987 and 10th-percentile ARI 0.924; the segments contain 83 and 73 clusters.
 - Built exploratory analogues for 104 apparent non-member candidate clusters using 50 structurally complete resolved-current-Magic clusters and eight reviewed treated destinations with complete unadjusted 24-month diagnostics. Against the treated references, 74 candidates have good structural support, five moderate extrapolation and 25 strong extrapolation. Predicted-uplift and composite-score fields are intentionally blank.
-- Generated normalized provenance (92 source records), a 754-row data dictionary, source report, all checkpoint reviews, a resort-level evidence-quality table, Path C outputs and two static scientific figures.
-- Reran the Path C build/provenance modules and final test suite successfully; all 27 automated tests pass, including exact segment stability/counts, analogue-reference integrity, OOD categories, blank uplift/composite fields and zero causal approvals.
+- Rebuilt Path C under within-cluster minimum, median and maximum structural features for all 104 candidates. Every rule selects k=2, while segment ARI is 0.827 for the minimum and 0.714 for the maximum relative to the median. Seventy-one candidates retain the same closest reviewed-treated analogue, 60 retain the same treated-reference OOD class, and only 11 are stable on every recorded segment/analogue/OOD criterion. These row-level flags now qualify the decision-support confidence field.
+- Generated normalized provenance (93 source records), a 780-row data dictionary, source report, all checkpoint reviews, a resort-level evidence-quality table, Path C outputs and two static scientific figures.
+- Reran the Path C sensitivity/provenance modules and final test suite successfully; all 28 automated tests pass, including exact aggregation-sensitivity counts, blank uplift/composite fields and zero causal approvals.
 
 ## Main empirical counts
 
@@ -65,6 +66,7 @@ Checkpoints 1–3, the first treatment-unit review, the unmatched-label resoluti
 | Resolved current Magic reference clusters | 50 | Structurally complete reference pool |
 | Reviewed treated analogue references | 8 | Complete unadjusted 24-month diagnostics; not effects |
 | Candidates with strong treated-reference extrapolation | 25 | OOD warning based on empirical leave-one-out distance |
+| Candidates stable across every min/median/max aggregation criterion | 11 | Segment, both top-one analogues and treated-reference OOD category unchanged |
 | Hotel municipalities | 186 | OFS outcome universe |
 | Observed hotel municipality-months | 28,455 | Repeated outcomes, not independent resorts |
 | Complete hotel-capacity municipality-months | 29,274 | Establishments, rooms, and beds all observed |
@@ -137,11 +139,11 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 7. Sixty resort-to-snow-station links have low spatial/elevation comparability. The alternative-SLF-station test is complete for the 15 reviewed components, but four have low agreement; an independent gridded sensitivity remains pending for snow, and alternative-station/gridded sensitivity remains pending for regional weather.
 8. The 52-municipality post-scope apparent control pool and 404 provisional treatment-distance pairs remain screening outputs. The top-35 pre-trend shortlist is exhausted: distance deprioritises 28 pairs at or within 50 km and official-source review excludes all seven remote pairs for donor-specific shocks. Any future causal attempt requires a redesigned/broader donor strategy rather than promoting a current shortlist row.
 9. The exact upstream source/version of the lift GPKG and retrieval dates of legacy extracts remain unknown.
-10. The Path C infrastructure variables are undated directory snapshots. Tourism dependence, authoritative accessibility and competing-pass status are missing at the cluster decision-support level; 25 of 104 apparent candidates are strong extrapolations from the eight reviewed treated references.
+10. The Path C infrastructure variables are undated directory snapshots. Tourism dependence, authoritative accessibility and competing-pass status are missing at the cluster decision-support level; 25 of 104 apparent candidates are strong extrapolations from the eight reviewed treated references. Aggregation sensitivity is now explicit: only 11 candidates are stable on every recorded min/median/max criterion.
 
 ## Immediate next action
 
-Strengthen Path C without turning it into a false uplift model: add authoritative accessibility, tourism-dependence and competing-pass variables; audit sensitivity to median/min/max aggregation for the 53 multi-listing clusters; and seek dated infrastructure snapshots. Add gridded snow/regional-weather sensitivities before treating climate fields as causal covariates. A future causal redesign still requires a broader donor search and stronger exposure/confounder evidence. See reports 17–18 for the active architecture.
+Strengthen Path C without turning it into a false uplift model: add authoritative accessibility, tourism-dependence and competing-pass variables, and seek dated infrastructure snapshots. Add gridded snow/regional-weather sensitivities before treating climate fields as causal covariates. A future causal redesign still requires a broader donor search and stronger exposure/confounder evidence. See reports 17–19 for the active architecture and aggregation caveat.
 
 ## Key files
 
@@ -172,6 +174,7 @@ Strengthen Path C without turning it into a false uplift model: add authoritativ
 - Donor external shocks: `reports/16_DONOR_EXTERNAL_SHOCK_AUDIT.md`, `reports/donor_external_shock_evidence.csv`, and `data_processed/donor_shortlist_final_audit.csv`
 - Checkpoints 4–5 / Path C decision: `reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md`
 - Path C segmentation and analogues: `reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md`, `data_processed/path_c_candidate_analogues.csv`, and `data_processed/magic_pass_decision_support.csv`
+- Path C aggregation sensitivity: `reports/19_PATH_C_AGGREGATION_SENSITIVITY.md`, `reports/path_c_aggregation_sensitivity.csv`, and `data_processed/path_c_candidate_analogue_sensitivity.csv`
 - Path C figures: `figures/path_c_structural_segments.png` and `figures/path_c_opportunity_snow_matrix.png`
 - Control screen: `reports/control_candidates_by_treatment.csv`
 - Research log: `logs/research_journal.md`
