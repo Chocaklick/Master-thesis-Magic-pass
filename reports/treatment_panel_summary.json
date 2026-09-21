@@ -11,6 +11,8 @@
   "observed_outcome_rows_with_complete_snow_proxy": 1565,
   "complete_destination_month_weather_proxy_rows": 1744,
   "observed_outcome_rows_with_complete_weather_proxy": 1576,
+  "destination_month_rows_with_temporal_controls": 1848,
+  "destination_month_rows_in_covid_sensitivity_interval": 286,
   "units_with_24_pre_and_24_active_post_months_assumption": 7,
   "units_with_36_pre_and_36_active_post_months_assumption": 6,
   "causal_treatment_units_approved": 0,

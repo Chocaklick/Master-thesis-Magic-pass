@@ -33,6 +33,21 @@
       ]
     },
     {
+      "season": "2020/2021",
+      "source_id": "MAGIC_2020_MAP",
+      "source_page": "1",
+      "evidence_type": "complete_annual_symbol_map",
+      "source_note": "The official Magic Pass-hosted map is titled 2020 / 2021. Its legend distinguishes HIVER from ÉTÉ | HIVER and separately marks the optional Glacier 3000 and baths offers; those optional symbols are not reinterpreted as lift-season symbols.",
+      "destination_offerings": [
+        {"destination_unit_id": "anniviers_magic_portfolio", "summer_winter_labels": ["Grimentz-Zinal", "St-Luc/Chandolin"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "espace_dent_blanche", "summer_winter_labels": ["Evolène"], "winter_only_labels": ["La Forclaz", "Arolla"], "scope_status": "mixed_component_offering"},
+        {"destination_unit_id": "les_pleiades", "summer_winter_labels": [], "winter_only_labels": ["Les Pléiades"], "scope_status": "winter_only_on_complete_annual_map"},
+        {"destination_unit_id": "moleson", "summer_winter_labels": ["Moléson"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "saas_fee", "summer_winter_labels": ["Saas-Almagell"], "winter_only_labels": [], "scope_status": "summer_access_named_for_published_domain_component_saas_fee_has_separate_baths_symbol"},
+        {"destination_unit_id": "villars_gryon_les_diablerets", "summer_winter_labels": ["Les Diablerets"], "winter_only_labels": [], "scope_status": "summer_access_named_for_published_domain_component_villars_gryon_has_separate_baths_symbol"}
+      ]
+    },
+    {
       "season": "2022/2023",
       "source_id": "MAGIC_2022_DOSSIER",
       "source_page": "6",

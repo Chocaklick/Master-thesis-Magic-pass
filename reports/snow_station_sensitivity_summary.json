@@ -1,0 +1,14 @@
+{
+  "reviewed_resort_components": 15,
+  "eligible_slf_stations": 115,
+  "components_with_at_least_8_common_usable_winters": 15,
+  "agreement_counts": {
+    "high": 6,
+    "moderate": 5,
+    "low": 4
+  },
+  "median_winter_mean_depth_correlation": 0.8639952584845019,
+  "median_relative_mean_absolute_depth_difference": 0.4720993734110912,
+  "trend_direction_agreement_count": 11,
+  "causal_covariates_approved": 0
+}

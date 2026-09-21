@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "review_date": "2026-09-21",
+  "panel_start": "2013-01-01",
+  "panel_end": "2026-12-01",
+  "winter_months": [11, 12, 1, 2, 3, 4],
+  "summer_months": [5, 6, 7, 8, 9, 10],
+  "christmas_new_year_peak_months": [12, 1],
+  "covid_sensitivity_start": "2020-03-01",
+  "covid_sensitivity_end": "2022-04-01",
+  "covid_interpretation": "Analyst-defined broad sensitivity interval requested by the project mission to expose 2020-2022 disruption. It is not a legal-restriction chronology or proof that every destination was affected equally.",
+  "magic_pass_season_rule": "May through April, labelled by the May start year; this calendar label does not override product-specific validity dates."
+}

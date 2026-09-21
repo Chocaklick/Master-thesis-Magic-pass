@@ -1,14 +1,14 @@
 {
   "reviewed_destination_units": 14,
-  "destination_units_with_fully_documented_active_seasons": 10,
-  "outcome_panel_units_with_fully_documented_active_seasons": 8,
-  "outcome_panel_units_with_continuity_gaps": 3,
-  "unverified_active_unit_seasons": 7,
-  "seasons_with_individual_winter_summer_evidence": 6,
-  "active_unit_seasons_with_individual_modality_evidence": 52,
-  "active_unit_seasons_with_documented_summer_access": 31,
-  "active_unit_seasons_documented_without_summer_access": 21,
-  "fully_documented_panel_units_with_24_pre_and_post_months": 4,
+  "destination_units_with_fully_documented_active_seasons": 14,
+  "outcome_panel_units_with_fully_documented_active_seasons": 11,
+  "outcome_panel_units_with_continuity_gaps": 0,
+  "unverified_active_unit_seasons": 0,
+  "seasons_with_individual_winter_summer_evidence": 7,
+  "active_unit_seasons_with_individual_modality_evidence": 58,
+  "active_unit_seasons_with_documented_summer_access": 36,
+  "active_unit_seasons_documented_without_summer_access": 22,
+  "fully_documented_panel_units_with_24_pre_and_post_months": 7,
   "causal_treatment_units_approved": 0,
   "interpretation": "Only explicit positive evidence is coded active. Missing annual evidence remains unverified and is not converted to non-membership. Summer access is coded only from individually named annual lists or winter/summer map symbols."
 }

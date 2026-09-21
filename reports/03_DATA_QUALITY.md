@@ -15,9 +15,10 @@ The supplied files are structurally stronger than their filenames initially sugg
 | Tourism municipality exposure | Not established; point containment cannot substitute for accommodation-market mapping |
 | Hotel outcome | Strong source and long panel; suppression is material and municipality boundaries need review |
 | Hotel capacity | Official monthly HESTA table integrated; 29,274/31,248 supply rows complete; live-table revisions preserved separately |
-| Magic Pass event evidence | Official sources, but incomplete continuity/exit coverage and 29 unresolved event links |
+| Magic Pass event evidence | Reviewed-unit continuity complete; 29 broader event links remain unresolved and individual annual modality is incomplete |
 | Treatment readiness | Zero approved treatment units at this checkpoint |
-| Snow/climate | Daily SLF snow proxy integrated; 211/271 listings have high/moderate proxy comparability and ≥10 usable winters; not direct piste measurement |
+| Snow/climate | Daily SLF snow proxy integrated; 211/271 listings have high/moderate proxy comparability and ≥10 usable winters; next-nearest-station sensitivity has high/moderate agreement for 11/15 reviewed components and low agreement for four; not direct piste measurement |
+| Temporal controls | All 1,848 reviewed rows receive deterministic calendar fields; 286 rows fall in a broad COVID sensitivity interval that is not a legal restriction chronology |
 | Temperature/precipitation | Seven official SwissMetNet stations cover the 15 reviewed treatment components; 1,744/1,749 destination-months complete; regional proxy only |
 | Accessibility | Missing |
 
@@ -29,11 +30,11 @@ This is an evidence-completeness score, not a resort ranking, opportunity score,
 
 ## Highest-priority corrections
 
-1. Complete membership status for the seven remaining unverified active unit-seasons, including exits and operator-group scope. The additional review resolves 18 gaps; four panel units now pass continuity plus 24/24 observed-month coverage, but no causal treatment or control is approved (see `08_MEMBERSHIP_EVIDENCE_REVIEW.md`).
-2. Convert the completed 26-label scope-risk review into independently validated destination domains: four Swiss labels still lack a supplied-listing relation and Les Diablerets remains ambiguous.
-3. Establish tourism-exposure/accommodation markets and audit spillovers without double-counting.
-4. Audit historical BFS municipality changes before panel estimation.
-5. Test temperature/precipitation and snow sensitivity to alternative stations or a gridded source.
-6. Collect accessibility, investment, local-control and competing-pass variables only where they materially improve the selected design.
+1. Validate treatment intensity and exact winter-versus-summer scope. All active seasons are documented for the 14 reviewed units and seven panel units pass the 24/24 coverage screen, but no causal treatment or control is approved (see `08_MEMBERSHIP_EVIDENCE_REVIEW.md`).
+2. Manually audit historical non-membership, competing passes, accessibility, investment and shared-valley spillovers for the 35 treatment-donor pairs prioritised in `11_DONOR_PRETREND_SCREEN.md`.
+3. Convert the completed 26-label scope-risk review into independently validated destination domains: four Swiss labels still lack a supplied-listing relation and Les Diablerets remains ambiguous.
+4. Establish tourism-exposure/accommodation markets and audit spillovers without double-counting.
+5. Audit historical BFS municipality changes before panel estimation.
+6. Add an independent gridded snow sensitivity and test temperature/precipitation sensitivity to alternative stations or a gridded source. The first next-nearest SLF-station test is complete, but its 47.2% median relative absolute depth gap confirms station dependence.
 
 The current modelling decision is documented in `reports/model_feasibility_report.md`.

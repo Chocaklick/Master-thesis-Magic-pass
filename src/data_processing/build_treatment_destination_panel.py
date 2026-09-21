@@ -35,6 +35,7 @@ UNIT_OUT = ROOT / "data_processed" / "treatment_destination_units.csv"
 UNIT_MUNICIPALITY_OUT = ROOT / "data_processed" / "treatment_destination_municipality.csv"
 EVENT_OUT = ROOT / "data_processed" / "municipality_treatment_events.csv"
 PANEL_OUT = ROOT / "data_processed" / "destination_month_panel.csv"
+TEMPORAL_CONTROLS = ROOT / "data_processed" / "temporal_controls_month.csv"
 REVIEW_OUT = ROOT / "reports" / "destination_unit_review.csv"
 SUMMARY_OUT = ROOT / "reports" / "treatment_panel_summary.json"
 REVIEW_MD_OUT = ROOT / "reports" / "04_DESTINATION_UNIT_REVIEW.md"
@@ -96,6 +97,9 @@ def main() -> None:
     snow["date"] = pd.to_datetime(snow["date"], errors="raise")
     weather = pd.read_csv(WEATHER)
     weather["date"] = pd.to_datetime(weather["date"], errors="raise")
+    temporal = pd.read_csv(TEMPORAL_CONTROLS)
+    temporal["date"] = pd.to_datetime(temporal["date"], errors="raise")
+    temporal = temporal.rename(columns={"source_id": "temporal_control_source_id"})
     bfs_hotels = load_bfs_hotel_universe()
 
     unit_ids = [unit["destination_unit_id"] for unit in units]
@@ -312,7 +316,7 @@ def main() -> None:
                 "membership_continuity_status": "not_fully_audited",
                 "causal_treatment_unit_approved": False,
                 "causal_blocker": (
-                    "Historical continuity, untreated-control status, confounding, and "
+                    "Untreated-control status, confounding, treatment intensity, and "
                     "spillovers are not all approved."
                 ),
                 "review_note": unit["review_note"],
@@ -509,6 +513,14 @@ def main() -> None:
     panel["precipitation_observation_window"] = panel[
         "precipitation_observation_window"
     ].fillna("06:00_UTC_to_06:00_UTC_next_day")
+    panel = panel.merge(temporal, on="date", how="left", validate="many_to_one")
+    if panel["temporal_control_source_id"].isna().any():
+        raise ValueError("Temporal controls do not cover the destination panel")
+    if not (
+        panel["year"].eq(panel["calendar_year"])
+        & panel["month"].eq(panel["calendar_month"])
+    ).all():
+        raise ValueError("Temporal controls do not match panel year/month fields")
     panel["source_id"] = "DERIVED_REVIEWED_DESTINATION_PANEL"
     panel["capacity_source_id"] = "BFS_HOTEL_CAPACITY_DATA"
     panel = panel.sort_values(["destination_unit_id", "date"]).reset_index(drop=True)
@@ -601,6 +613,12 @@ def main() -> None:
         "observed_outcome_rows_with_complete_weather_proxy": int(
             (panel["hotel_overnights"].notna() & panel["complete_weather_proxy"]).sum()
         ),
+        "destination_month_rows_with_temporal_controls": int(
+            panel["temporal_control_source_id"].notna().sum()
+        ),
+        "destination_month_rows_in_covid_sensitivity_interval": int(
+            panel["covid_sensitivity_month"].sum()
+        ),
         "units_with_24_pre_and_24_active_post_months_assumption": int(usable_24.sum()),
         "units_with_36_pre_and_36_active_post_months_assumption": int(usable_36.sum()),
         "causal_treatment_units_approved": 0,
@@ -643,7 +661,7 @@ Generated reproducibly by `src/data_processing/build_treatment_destination_panel
 
 The 18 candidate Magic Pass entry/outcome links represent **{summary['reviewed_destination_units']} reviewed destination units**, not 18 independent treatments. **{summary['destination_units_in_outcome_panel']} units** have an explicit municipality outcome scope and enter the diagnostic panel. **{summary['destination_units_excluded_for_incomplete_scope']} composite units** are excluded because the supplied OFS hotel panel does not cover their complete reviewed geography.
 
-This review approves an outcome aggregation, not a causal exposure. Every destination and month remains `causal_ready = false` until membership continuity, confounding, spillovers, and untreated controls are audited.
+This review approves an outcome aggregation, not a causal exposure. Every destination and month remains `causal_ready = false` until treatment intensity, confounding, spillovers, and untreated controls are audited.
 
 ## Unit decisions
 

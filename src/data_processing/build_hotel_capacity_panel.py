@@ -285,7 +285,7 @@ The project retains the legacy table as its primary hotel-demand outcome so hist
 - `hotel_overnights_per_available_bed_month` is a descriptive intensity ratio: monthly live-table overnight stays divided by contemporaneous available beds. It is not the official occupancy rate.
 - Destination capacity totals are additive only when every municipality in the reviewed scope is observed.
 - Official occupancy percentages are not averaged across multi-municipality destinations because the open-room-day/open-bed-day denominators required for a correct aggregation are unavailable.
-- Capacity integration reduces one confounding gap but does not resolve membership continuity, selection, COVID, weather/snow, investment, accessibility, spillovers, or donor contamination. No causal-readiness flag changes.
+- Capacity integration reduces one confounding gap but does not resolve treatment intensity, selection, COVID, weather/snow, investment, accessibility, spillovers, or donor contamination. No causal-readiness flag changes.
 """
     REPORT_OUT.write_text(report, encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False, indent=2))

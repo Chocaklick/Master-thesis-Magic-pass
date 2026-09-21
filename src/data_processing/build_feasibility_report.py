@@ -19,9 +19,12 @@ REVIEWED_PANEL = ROOT / "data_processed" / "destination_month_panel.csv"
 CONTINUITY_AUDIT = ROOT / "reports" / "membership_continuity_audit.csv"
 MEMBERSHIP_STATUS = ROOT / "data_processed" / "magic_pass_membership_status_by_season.csv"
 CONTROL_SUMMARY = ROOT / "reports" / "control_audit_summary.json"
+DONOR_PRETREND_SUMMARY = ROOT / "reports" / "donor_pretrend_summary.json"
 CAPACITY_SUMMARY = ROOT / "reports" / "hotel_capacity_summary.json"
 SNOW_SUMMARY = ROOT / "reports" / "snow_proxy_summary.json"
+SNOW_SENSITIVITY_SUMMARY = ROOT / "reports" / "snow_station_sensitivity_summary.json"
 WEATHER_SUMMARY = ROOT / "reports" / "weather_proxy_summary.json"
+TEMPORAL_SUMMARY = ROOT / "reports" / "temporal_controls_summary.json"
 CLUSTERS = ROOT / "data_raw" / "stations_ski_clusters_resume_gps_bergfex.csv"
 WINDOW_OUTPUT = ROOT / "reports" / "provisional_treatment_window_coverage.csv"
 COUNT_OUTPUT = ROOT / "reports" / "feasibility_counts.csv"
@@ -53,9 +56,16 @@ def main() -> None:
     continuity = pd.read_csv(CONTINUITY_AUDIT, dtype="string")
     membership_status = pd.read_csv(MEMBERSHIP_STATUS, dtype="string")
     control_summary = json.loads(CONTROL_SUMMARY.read_text(encoding="utf-8"))
+    donor_pretrend_summary = json.loads(
+        DONOR_PRETREND_SUMMARY.read_text(encoding="utf-8")
+    )
     capacity_summary = json.loads(CAPACITY_SUMMARY.read_text(encoding="utf-8"))
     snow_summary = json.loads(SNOW_SUMMARY.read_text(encoding="utf-8"))
+    snow_sensitivity_summary = json.loads(
+        SNOW_SENSITIVITY_SUMMARY.read_text(encoding="utf-8")
+    )
     weather_summary = json.loads(WEATHER_SUMMARY.read_text(encoding="utf-8"))
+    temporal_summary = json.loads(TEMPORAL_SUMMARY.read_text(encoding="utf-8"))
     clusters = pd.read_csv(CLUSTERS, sep=";", dtype="string")
     hotel["date"] = pd.to_datetime(hotel["date"], errors="raise")
 
@@ -250,6 +260,24 @@ def main() -> None:
         "resorts_with_snow_climate_feature_ready": int(
             snow_summary["resorts_with_snow_climate_feature_ready"]
         ),
+        "reviewed_resort_components_with_alternative_snow_station_test": int(
+            snow_sensitivity_summary["reviewed_resort_components"]
+        ),
+        "alternative_snow_station_high_or_moderate_agreement": int(
+            snow_sensitivity_summary["agreement_counts"].get("high", 0)
+            + snow_sensitivity_summary["agreement_counts"].get("moderate", 0)
+        ),
+        "alternative_snow_station_low_agreement": int(
+            snow_sensitivity_summary["agreement_counts"].get("low", 0)
+        ),
+        "alternative_snow_station_median_depth_correlation": float(
+            snow_sensitivity_summary["median_winter_mean_depth_correlation"]
+        ),
+        "alternative_snow_station_median_relative_depth_difference": float(
+            snow_sensitivity_summary[
+                "median_relative_mean_absolute_depth_difference"
+            ]
+        ),
         "reviewed_destination_months_complete_snow_proxy": int(
             reviewed_panel["complete_snow_proxy"].sum()
         ),
@@ -275,6 +303,13 @@ def main() -> None:
                 reviewed_panel["hotel_overnights"].notna()
                 & reviewed_panel["complete_weather_proxy"]
             ).sum()
+        ),
+        "temporal_control_month_rows": int(temporal_summary["month_rows"]),
+        "reviewed_destination_months_with_temporal_controls": int(
+            reviewed_panel["temporal_control_source_id"].notna().sum()
+        ),
+        "reviewed_destination_months_in_covid_sensitivity_interval": int(
+            as_bool(reviewed_panel["covid_sensitivity_month"]).sum()
         ),
         "reviewed_units_with_24_pre_and_post_months_assumption": int(
             (
@@ -336,6 +371,18 @@ def main() -> None:
         "provisional_donor_pairs_30km_36pre": int(
             control_summary["provisional_donor_pairs_30km_36pre"]
         ),
+        "provisional_donor_pairs_50km_36pre": int(
+            control_summary["provisional_donor_pairs_50km_36pre"]
+        ),
+        "donor_pretrend_treatments_screened": int(
+            donor_pretrend_summary["treatments_screened"]
+        ),
+        "donor_pretrend_pairs_screened": int(
+            donor_pretrend_summary["provisional_pairs_screened"]
+        ),
+        "donor_pretrend_shortlisted_pairs": int(
+            donor_pretrend_summary["shortlisted_pairs_for_manual_review"]
+        ),
         "unresolved_official_base_entry_labels": int(
             control_summary["unresolved_official_base_entry_labels"]
         ),
@@ -345,9 +392,9 @@ def main() -> None:
     )
 
     model_rows = [
-        ("Municipality fixed-effects panel", "Diagnostic-ready only", "Eleven reviewed outcome units, monthly hotel capacity, SLF snow proxies, and MeteoSwiss temperature/precipitation proxies can be represented, but membership continuity, remaining confounding, spillovers, and controls remain unresolved."),
-        ("Staggered Difference-in-Differences", "Not credible yet", "Destination scope is improved, but continuity assumptions and untreated-control status are not validated."),
-        ("Matching", "Descriptive only", "May help select analogues after pre-treatment covariates and membership status are completed; it is not yet causal."),
+        ("Municipality fixed-effects panel", "Diagnostic-ready only", "Eleven reviewed outcome units, documented seasonal membership, monthly hotel capacity, deterministic calendar/COVID sensitivity flags, SLF snow proxies, and MeteoSwiss temperature/precipitation proxies can be represented, but treatment intensity, remaining confounding, spillovers, and controls remain unresolved."),
+        ("Staggered Difference-in-Differences", "Not credible yet", "Reviewed-unit membership continuity is documented, but treatment intensity, pre-trends, spillovers and untreated-control status are not validated."),
+        ("Matching", "Descriptive only", "A pre-period comparability screen now prioritises 35 donor pairs for manual review, but historical non-membership, spillovers, accessibility and covariate balance remain unapproved."),
         ("Synthetic control / synthetic DiD", "Case-study candidate", "Could be assessed for a few clearly mapped municipalities with uncontaminated donors; no donor pool is approved yet."),
         ("Causal forest", "Not supported", "At most 14 provisional treated municipalities is far below a defensible heterogeneous-effect sample."),
         ("X-Learner", "Not supported", "The effective treated-unit count is too small and treatment labels are not final."),
@@ -365,7 +412,7 @@ Generated reproducibly by `src/data_processing/build_feasibility_report.py`.
 
 ## Executive verdict
 
-The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. Destination scope, monthly hotel capacity, a qualified SLF snow proxy, and qualified MeteoSwiss temperature/precipitation proxies have now been integrated, but a move to Path B still requires complete season-by-season membership and exit histories, the remaining confounders, and an uncontaminated control audit.
+The project currently follows **Path C (weak treatment sample / exploratory decision support)**. This is a checkpoint decision, not a permanent rejection of causal work. Destination scope, reviewed-unit season-by-season membership, monthly hotel capacity, a qualified SLF snow proxy, and qualified MeteoSwiss temperature/precipitation proxies have now been integrated, but a move to Path B still requires treatment-intensity validation, the remaining confounders, spillover analysis, and an uncontaminated control audit.
 
 No causal model, treatment-effect learner, opportunity score, or neural network should be fitted at this checkpoint.
 
@@ -377,7 +424,7 @@ No causal model, treatment-effect learner, opportunity score, or neural network 
 - Those {metrics['candidate_linked_base_entries_with_hotel_outcome']} events reduce to **{metrics['provisional_treated_municipalities_with_hotel_outcome']} municipalities**. This municipality count, not the {metrics['hotel_observed_month_rows']:,} observed monthly rows, is the more relevant upper bound for treatment heterogeneity.
 - The 18 candidate links collapse to **{metrics['reviewed_destination_units']} reviewed destination units**. **{metrics['reviewed_destination_units_in_outcome_panel']}** enter a diagnostic outcome panel; **{metrics['reviewed_destination_units_excluded_incomplete_scope']}** composite destinations are excluded because the supplied hotel panel does not cover their full reviewed scope.
 - The reviewed panel has **{metrics['reviewed_destination_month_rows']:,} destination-month rows**, of which **{metrics['reviewed_observed_destination_months']:,}** have a complete aggregated hotel-night outcome.
-- **Zero** treatment units are approved for causal estimation. The reviewed geography is an outcome-scope decision, while membership continuity, confounding, spillovers, and control status remain unresolved.
+- **Zero** treatment units are approved for causal estimation. The reviewed geography and annual membership are evidence inputs, while treatment intensity, confounding, spillovers, and control status remain unresolved.
 
 ## Outcome coverage
 
@@ -388,7 +435,7 @@ No causal model, treatment-effect learner, opportunity score, or neural network 
 
 ## Provisional pre/post windows
 
-For coverage diagnostics only, the script anchors the founding 2017/18 season at 2017-11-01 and later annual seasons at 1 May of their first year. These are not accepted treatment dates. A documented exit bounds Crans-Montana's active post period; continuity for all other events remains unverified.
+For coverage diagnostics only, the script anchors the founding 2017/18 season at 2017-11-01 and later annual seasons at 1 May of their first year. These are not accepted treatment dates. A documented exit bounds Crans-Montana's active post period. The separate reviewed-unit continuity audit now documents all active seasons for the 14 reviewed units, without converting annual membership into an exact treatment date or intensity.
 
 - Season-only candidate events with at least 24 observed pre months: **{metrics['treated_with_season_only_and_24_months_pre']}**
 - With at least 36 observed pre months: **{metrics['treated_with_season_only_and_36_months_pre']}**
@@ -410,7 +457,7 @@ The official HESTA supply table contributes **{metrics['hotel_capacity_municipal
 
 For each destination, `reports/hotel_capacity_treatment_diagnostics.csv` compares the last 24 observed pre-anchor months with the first 24 observed active-post months under the explicit continuity assumption. It reports separate changes in live-table overnight stays, available beds, and overnight stays per bed. **{metrics['reviewed_units_with_complete_24pre_24post_capacity_window']} units** have both complete 24-month capacity windows.
 
-This is a descriptive diagnostic only. The adjacent windows are not seasonally or trend adjusted, early post-periods can overlap COVID, and membership continuity remains assumed. Capacity integration therefore helps distinguish demand changes from contemporaneous supply changes but does not identify a Magic Pass effect.
+This is a descriptive diagnostic only. The adjacent windows are not seasonally or trend adjusted, early post-periods can overlap COVID, and annual membership does not establish constant treatment intensity. Capacity integration therefore helps distinguish demand changes from contemporaneous supply changes but does not identify a Magic Pass effect.
 
 ## Snow proxy coverage
 
@@ -418,11 +465,19 @@ The official SLF historical archive contains daily observations for **{metrics['
 
 The reviewed panel contains **{metrics['reviewed_destination_months_complete_snow_proxy']:,} complete station-proxy months**; **{metrics['observed_outcome_rows_with_complete_snow_proxy']:,} rows** also have an observed hotel-night outcome. These fields support descriptive climate adjustment and future robustness checks only. IMIS stations serve avalanche monitoring and can differ materially from pistes in terrain, aspect, wind, elevation, grooming, and snowmaking. No snow field is yet an approved causal covariate.
 
+A next-nearest-station sensitivity covers all **{metrics['reviewed_resort_components_with_alternative_snow_station_test']} reviewed resort components** using the same station coverage gate. **{metrics['alternative_snow_station_high_or_moderate_agreement']} components** receive a high or moderate descriptive agreement grade and **{metrics['alternative_snow_station_low_agreement']}** receive a low grade. The median winter-depth correlation is **{metrics['alternative_snow_station_median_depth_correlation']:.3f}**, but the median relative mean absolute depth difference is **{metrics['alternative_snow_station_median_relative_depth_difference']:.1%}**; absolute snow levels are therefore materially station-dependent even when seasonal variation co-moves. See `reports/13_SNOW_PROXY_SENSITIVITY.md`. This test does not approve the snow covariate, and an independent gridded-source sensitivity remains pending.
+
 ## Temperature and precipitation proxy coverage
 
 Official MeteoSwiss inventory metadata identifies **{metrics['meteoswiss_candidate_stations_with_core_parameters_since_2013']} current SwissMetNet stations** whose daily mean/minimum/maximum temperature and 06:00-to-06:00 UTC precipitation series start by the analysis date and have no recorded end. Nearest-station assignment for the reviewed resort components requires **{metrics['meteoswiss_selected_weather_stations']} stations**.
 
 The reviewed panel contains **{metrics['reviewed_destination_months_complete_weather_proxy']:,} complete weather-proxy months**; **{metrics['observed_outcome_rows_with_complete_weather_proxy']:,} rows** also have an observed hotel-night outcome. Station-specific calendar-month anomalies use 2013–2025 usable observations. Two station-months fail the 80% precipitation coverage gate and remain missing. These are regional station proxies, not piste microclimate or snowfall-phase measures, and no weather field is yet approved as a causal covariate.
+
+## Temporal controls
+
+A deterministic calendar table covers **{metrics['temporal_control_month_rows']} months** from January 2013 through December 2026 and joins to **{metrics['reviewed_destination_months_with_temporal_controls']:,} of {metrics['reviewed_destination_month_rows']:,} reviewed destination-month rows**. It records calendar month/quarter, winter and summer indicators, the December/January holiday peak, and the Gregorian Easter month.
+
+The table also flags March 2020 through April 2022 as a deliberately broad COVID sensitivity interval. This marks **{metrics['reviewed_destination_months_in_covid_sensitivity_interval']:,} reviewed destination-month rows**. It is not a legal chronology of canton-specific restrictions or travel rules. Any later event-study diagnostic must therefore report at least a full-sample specification, exclusion of this broad interval, and documented alternative period definitions; the flag does not by itself remove COVID confounding.
 
 ## Membership-continuity audit
 
@@ -438,9 +493,11 @@ Annual launch lists and map symbols now classify winter versus summer-winter acc
 
 ## Donor/control contamination screen
 
-The pipeline screened **{metrics['treatment_donor_pairs_screened']}** treatment-municipality pairs. A deliberately provisional flag removes known resolved Magic exposure, precautionary composite/overlapping scope risks, the treated municipality scope, donors within 30 km, donors with fewer than 36 observed pre months, and donors with fewer than 24 post months. The scope review excludes **{metrics['additional_scope_risk_municipalities_excluded']} additional municipalities**, leaving **{metrics['control_municipalities_upper_bound_after_scope_screen']}** apparent controls and **{metrics['provisional_donor_pairs_30km_36pre']}** pairs passing the screen. **Zero are approved causal controls** because unresolved membership, spillovers beyond an arbitrary distance threshold, and time-varying confounders remain. See `reports/09_ENTITY_SCOPE_AND_DONOR_REVIEW.md`; a precautionary exclusion is not a validated treatment mapping.
+The pipeline screened **{metrics['treatment_donor_pairs_screened']}** treatment-municipality pairs. A deliberately provisional flag removes known resolved Magic exposure, precautionary composite/overlapping scope risks, the treated municipality scope, donors within 30 km, donors with fewer than 36 observed pre months, and donors with fewer than 24 post months. Resolving the current Sattel-Hochstuckli label exposes one additional Magic-linked municipality. The scope review excludes **{metrics['additional_scope_risk_municipalities_excluded']} additional municipalities**, leaving **{metrics['control_municipalities_upper_bound_after_scope_screen']}** apparent controls and **{metrics['provisional_donor_pairs_30km_36pre']}** pairs passing the 30 km screen; **{metrics['provisional_donor_pairs_50km_36pre']}** survive a 50 km sensitivity screen.
 
-See `reports/control_contamination_audit.csv` and `reports/control_candidates_by_treatment.csv`.
+For the seven continuity-plus-coverage treatments, the pre-trend screen ranks **{metrics['donor_pretrend_pairs_screened']}** provisional pairs from the 36 pre-anchor months and retains **{metrics['donor_pretrend_shortlisted_pairs']}** top-five pairs for manual review. The heuristic combines outcome level, deseasonalized trend, seasonality, standardized shape, bed capacity, distance and current resort-directory structure. **Zero are approved causal controls** because historical donor membership, spillovers beyond simple distance, accessibility, time-varying confounders and formal balance remain unresolved. See `reports/11_DONOR_PRETREND_SCREEN.md`.
+
+See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_treatment.csv`, and `reports/donor_pretrend_shortlist.csv`.
 
 ## Model-family decisions
 
@@ -460,7 +517,7 @@ See `reports/control_contamination_audit.csv` and `reports/control_candidates_by
 
 ## Next evidence gate
 
-Fill the remaining seven unverified unit-seasons, resolve the four Swiss labels without a supplied-listing relation and the ambiguous Les Diablerets scope, add the remaining time-varying confounders, validate weather/snow proxy sensitivity, and replace the mechanical donor screen with a documented historical membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+Resolve the four Swiss labels without a supplied-listing relation and the ambiguous Les Diablerets scope, document historical membership and spillovers for the apparent donors, validate treatment intensity and winter-versus-summer definitions, and add the remaining time-varying confounders. Complete regional-weather sensitivity and an independent gridded snow sensitivity; the next-nearest SLF-station test alone is not sufficient. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

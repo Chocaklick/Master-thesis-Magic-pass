@@ -18,7 +18,7 @@ municipality_bfs_id,municipality_name,resort_listing_count,known_magic_resort_li
 1301,Einsiedeln,3,0,False,True,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
 1331,Küssnacht (SZ),1,0,False,True,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
 1366,Morschach,1,0,False,True,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
-1372,Schwyz,2,0,False,True,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
+1372,Schwyz,2,1,True,False,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
 1402,Engelberg,1,0,False,True,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
 1407,Sarnen,1,0,False,True,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
 1501,Beckenried,1,1,True,False,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."

@@ -86,12 +86,24 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Live table composition can change; cached response is the reproducibility anchor
 - **Local raw file:** `data_external/source_evidence/BFS_HOTEL_METADATA_20260919T231713Z.json`.
 
+## DERIVED_DONOR_PRETREND_SCREEN — Donor pre-trend comparability screen
+
+- **Contents and relevance:** Treatment-specific descriptive prioritisation of provisional donor municipalities using 36 pre-anchor months
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned Python transformation of checksum-traceable hotel, capacity, resort-directory and control-screen inputs; unknown date.
+- **Variables:** pretrend_comparability|descriptive_comparability_score|comparability_rank
+- **Transformations:** Log1p outcome comparisons; calendar-month-adjusted linear trend; seasonal profile and standardized-shape diagnostics; equal-weight within-treatment percentile score
+- **Coverage:** reviewed treatment and provisional donor municipality pair; 36-month pre-anchor window; treatment-specific to month before treatment-specific analytical anchor.
+- **Limitations:** Heuristic rank only; current directory structure may differ historically; historical non-membership, spillovers, accessibility, confounding, balance and parallel trends are not approved
+- **Local raw file:** `not cached / not applicable`.
+
 ## DERIVED_MAGIC_ANNUAL_OFFERING — Annual Magic Pass season-offering review
 
 - **Contents and relevance:** Page-referenced annual winter versus summer-winter access classification for reviewed destination units
 - **Producer:** Thesis research; constituent annual Magic Pass source IDs retained per row
 - **Exact URL:** Not documented.
-- **Access and retrieval date:** Visual PDF review encoded in versioned metadata/magic_pass_season_offering_evidence.json; unknown date.
+- **Access and retrieval date:** Visual annual-publication review encoded in versioned metadata/magic_pass_season_offering_evidence.json; unknown date.
 - **Variables:** winter_access_status|summer_access_status|published_summer_winter_labels|published_winter_only_labels
 - **Transformations:** Join page-referenced annual offering observations to the membership-status grid without filling seasons lacking individual modality evidence
 - **Coverage:** reviewed destination unit with published component labels retained; annual pass season; 2017/2018 to 2025/2026.
@@ -131,8 +143,32 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** reviewed_destination_month_outcomes|hotel_capacity|snow_proxy|weather_proxy|diagnostic_membership_status
 - **Transformations:** Additive municipality outcome/capacity totals; complete-case multi-station snow/weather proxy means; official occupancy percentages retained only for single-municipality units; entry carried forward only as a flagged diagnostic assumption
 - **Coverage:** reviewed destination unit; monthly; 2013-01 to 2026-12 grid; 2026-03 latest observed outcome.
-- **Limitations:** No row is causal-ready; SLF and MeteoSwiss proxies are not direct piste observations; treatment continuity, controls, and other time-varying confounders remain unresolved
+- **Limitations:** No row is causal-ready; SLF and MeteoSwiss proxies are not direct piste observations; treatment intensity, controls, spillovers, and other time-varying confounders remain unresolved
 - **Local raw file:** `not cached / not applicable`.
+
+## DERIVED_SNOW_STATION_SENSITIVITY — SLF alternative-station sensitivity
+
+- **Contents and relevance:** Selected-versus-next-nearest eligible SLF station robustness diagnostics for reviewed resort components
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned Python transformation of checksum-traceable SLF station metadata and station-winter aggregates; unknown date.
+- **Variables:** alternative_station_agreement|winter_mean_depth_correlation|relative_mean_absolute_depth_difference|trend_direction_agrees
+- **Transformations:** Replace nearest eligible station with next-nearest distinct station under the same 80% longitudinal gate; compare common usable winters
+- **Coverage:** reviewed resort component and two external SLF stations; November-April winter seasons; 2013/2014 to 2025/2026.
+- **Limitations:** Neither station is a piste observation; alternative is not elevation/aspect optimised; gridded independent-source sensitivity remains pending
+- **Local raw file:** `not cached / not applicable`.
+
+## DERIVED_TEMPORAL_CONTROLS — Temporal control calendar
+
+- **Contents and relevance:** Deterministic month-level calendar and broad COVID sensitivity controls
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned deterministic Python transformation from Gregorian calendar dates and config/temporal_controls.json; unknown date.
+- **Variables:** calendar_quarter|magic_pass_season|winter_month|summer_month|christmas_new_year_peak_month|easter_month|covid_sensitivity_month
+- **Transformations:** May-April pass-season label; November-April winter partition; Gregorian Easter calculation; analyst-defined March 2020-April 2022 sensitivity interval
+- **Coverage:** all reviewed destinations; no geographic variation; monthly; 2013-01 to 2026-12.
+- **Limitations:** Does not encode canton-specific school holidays or a legal COVID-restriction chronology; the broad COVID flag is for sensitivity analysis only
+- **Local raw file:** `config/temporal_controls.json`.
 
 ## DESTINATION_SCOPE_OFFICIAL_SET — Destination scope evidence set
 
@@ -357,7 +393,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Exact URL:** https://www.magicpass.ch/media/document/0/mp-cp-24avril-2019-fr-25.pdf
 - **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T17:32:53.161428+00:00.
 - **Variables:** membership_event_evidence
-- **Transformations:** Page-numbered visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
+- **Transformations:** Page/image-referenced visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
 - **Coverage:** official ski destination; dated announcement / season; 2019/2020 to 2019/2020.
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2019_APRIL_20260920T173253Z.pdf`.
@@ -374,6 +410,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2020_20260919T232350Z.pdf`.
 
+## MAGIC_2020_MAP — Official 2020/2021 Magic Pass network map distinguishing winter-only from summer-winter destinations
+
+- **Contents and relevance:** Official 2020/2021 Magic Pass network map distinguishing winter-only from summer-winter destinations
+- **Producer:** Magic Mountains Cooperation
+- **Exact URL:** https://www.magicpass.ch/media/image/0/stations_magic_pass_3.png
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T09:33:53.525860+00:00.
+- **Variables:** membership_event_evidence
+- **Transformations:** Page/image-referenced visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
+- **Coverage:** official ski destination; dated announcement / season; 2020/2021 to 2020/2021.
+- **Limitations:** Official publisher-hosted dated image; winter, summer-winter, Glacier 3000 and baths symbols reviewed separately; absence not evidence of non-membership
+- **Local raw file:** `data_external/source_evidence/MAGIC_2020_MAP_20260921T093353Z.png`.
+
 ## MAGIC_2021 — Official Magic Pass press material
 
 - **Contents and relevance:** Official seasonal press evidence; membership extraction requires page verification
@@ -381,8 +429,8 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Exact URL:** https://www.magicpass.ch/fr/presse
 - **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T09:09:47.167358+00:00.
 - **Variables:** membership_event_evidence
-- **Transformations:** Visual review of pp.3-4; aggregate 40-winter/21-summer counts retained but not used as individual membership evidence
-- **Coverage:** official ski destination; dated announcement / season; 2021 to ?.
+- **Transformations:** Visual review of pp.3-4; page 3 incremental expansion is used for roster continuity, while aggregate 40-winter/21-summer counts are not used as individual modality evidence
+- **Coverage:** official ski destination; dated announcement / season; 2021/2022 to 2021/2022.
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_2021_20260921T090947Z.pdf`.
 
@@ -453,7 +501,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Exact URL:** https://www.raiffeisen.ch/content/dam/www/rch/pdf/produkte/mitglieder/de/magic-pass-de.pdf
 - **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T17:33:03.755072+00:00.
 - **Variables:** membership_event_evidence
-- **Transformations:** Page-numbered visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
+- **Transformations:** Page/image-referenced visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
 - **Coverage:** official ski destination; dated announcement / season; 2024/2025 to 2024/2025.
 - **Limitations:** Magic Pass branded dated map distributed by Raiffeisen; not publisher-hosted; visible symbols and printed validity reviewed; absence not evidence of non-membership
 - **Local raw file:** `data_external/source_evidence/MAGIC_2024_MAP_20260920T173303Z.pdf`.
@@ -501,7 +549,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Exact URL:** https://fribourg.ch/wp-content/uploads/2021/12/20211201_Fribourg-Region_hiver-2021-22_CP.pdf
 - **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T17:34:44.091464+00:00.
 - **Variables:** membership_event_evidence
-- **Transformations:** Page-numbered visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
+- **Transformations:** Page/image-referenced visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
 - **Coverage:** official ski destination; dated announcement / season; 2021/2022 to 2021/2022.
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_FRIBOURG_2021_WINTER_20260920T173444Z.pdf`.
@@ -515,7 +563,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** membership_event_history|seasonal_membership_evidence
 - **Transformations:** Manual event transcription; reviewed aliases and unique normalised labels create candidate links
 - **Coverage:** official ski destination with candidate resort link; season/event; 2017/2018 to 2025/2026.
-- **Limitations:** Incomplete continuity/exit audit; unresolved destinations retained
+- **Limitations:** Continuity is complete for the 14 reviewed units only; unresolved destinations outside that reviewed set remain
 - **Local raw file:** `not cached / not applicable`.
 
 ## MAGIC_PLEIADES_2020_TARIFF — Official operator winter 2020/2021 tariff explicitly confirming Magic Pass validity at Les Pleiades
@@ -525,7 +573,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Exact URL:** https://lespleiades.ch/documents/CP21_tarifs_MP_20-21.pdf
 - **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T17:33:05.072337+00:00.
 - **Variables:** membership_event_evidence
-- **Transformations:** Page-numbered visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
+- **Transformations:** Page/image-referenced visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
 - **Coverage:** official ski destination; dated announcement / season; 2020/2021 to 2020/2021.
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_PLEIADES_2020_TARIFF_20260920T173305Z.pdf`.
@@ -537,7 +585,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Exact URL:** https://lespleiades.ch/documents/CP22_tarifs_MP_21-22.pdf
 - **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T17:34:33.826817+00:00.
 - **Variables:** membership_event_evidence
-- **Transformations:** Page-numbered visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
+- **Transformations:** Page/image-referenced visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only
 - **Coverage:** official ski destination; dated announcement / season; 2021/2022 to 2021/2022.
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_PLEIADES_2021_TARIFF_20260920T173433Z.pdf`.
@@ -786,5 +834,5 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 
 - The retrieval date of the supplied Bergfex and hotel CSV extracts is unknown.
 - The precise upstream download URL/version for `bahnen-winter_2056.gpkg` has not been established; it remains registered as a hashed local source rather than attributed by inference.
-- The Magic Pass 2021 PDF download did not complete in the scripted collector; failures remain in the collection log. The 2026 PDF and official press archive HTML are cached, and 2026 entry events are outside the current outcome window.
+- Earlier failed/truncated Magic Pass 2021 collection attempts remain in the append-only log, but a later checksum-verified full response is cached and used.
 - Current Magic map and press headline counts do not exactly match the 95 embedded destination records; this discrepancy is retained for review.

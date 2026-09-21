@@ -178,6 +178,14 @@ def main() -> None:
                         and pre >= 36
                         and post >= 24
                     ),
+                    "provisional_donor_50km_36pre": bool(
+                        not known_exposure
+                        and not municipality.scope_relation_risk
+                        and not self_scope
+                        and minimum_distance > 50
+                        and pre >= 36
+                        and post >= 24
+                    ),
                     "unresolved_membership_contamination_cleared": False,
                     "time_varying_confounders_available": False,
                     "causal_control_approved": False,
@@ -200,6 +208,7 @@ def main() -> None:
             additional_scope_exclusions=("additional_scope_exclusion", "sum"),
             within_30km=("within_30km", "sum"),
             provisional_donors_30km_36pre=("provisional_donor_30km_36pre", "sum"),
+            provisional_donors_50km_36pre=("provisional_donor_50km_36pre", "sum"),
             causal_controls_approved=("causal_control_approved", "sum"),
         )
         .reset_index()
@@ -225,11 +234,15 @@ def main() -> None:
         "provisional_donor_pairs_30km_36pre": int(
             matrix["provisional_donor_30km_36pre"].sum()
         ),
+        "provisional_donor_pairs_50km_36pre": int(
+            matrix["provisional_donor_50km_36pre"].sum()
+        ),
         "approved_causal_controls": 0,
         "interpretation": (
             "The provisional donor flag excludes resolved Magic links, precautionary scope relations, the treated "
             "scope, donors within 30 km, and donors without 36 pre/24 post months. "
-            "It is not an approval because membership and confounder audits are incomplete."
+            "A 50 km sensitivity screen is also retained. Neither flag is an approval because donor "
+            "membership, spillover and confounder audits are incomplete."
         ),
     }
     SUMMARY_OUT.write_text(

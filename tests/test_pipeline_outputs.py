@@ -14,6 +14,10 @@ def read(name: str, **kwargs) -> pd.DataFrame:
     return pd.read_csv(ROOT / name, **kwargs)
 
 
+def as_bool(series: pd.Series) -> pd.Series:
+    return series.astype(str).str.strip().str.lower().eq("true")
+
+
 def test_raw_files_match_manifest() -> None:
     manifest = read("metadata/raw_file_manifest.csv", dtype=str)
     assert len(manifest) == 11
@@ -192,17 +196,21 @@ def test_checkpoint_metrics_remain_conservative() -> None:
     assert int(metrics["reviewed_destination_units_in_outcome_panel"]) == 11
     assert int(metrics["reviewed_units_with_24_pre_and_post_months_assumption"]) == 7
     assert int(metrics["reviewed_units_with_36_pre_and_post_months_assumption"]) == 6
-    assert int(metrics["reviewed_units_with_fully_documented_membership_continuity"]) == 10
-    assert int(metrics["panel_units_with_fully_documented_membership_continuity"]) == 8
-    assert int(metrics["fully_documented_panel_units_with_24_pre_and_post_months"]) == 4
-    assert int(metrics["active_unit_seasons_with_individual_winter_summer_evidence"]) == 52
-    assert int(metrics["active_unit_seasons_with_documented_summer_access"]) == 31
-    assert int(metrics["annual_seasons_with_individual_winter_summer_evidence"]) == 6
-    assert int(metrics["control_municipalities_upper_bound_after_resolved_magic_links"]) == 57
-    assert int(metrics["control_municipalities_upper_bound_after_scope_screen"]) == 53
+    assert int(metrics["reviewed_units_with_fully_documented_membership_continuity"]) == 14
+    assert int(metrics["panel_units_with_fully_documented_membership_continuity"]) == 11
+    assert int(metrics["fully_documented_panel_units_with_24_pre_and_post_months"]) == 7
+    assert int(metrics["active_unit_seasons_with_individual_winter_summer_evidence"]) == 58
+    assert int(metrics["active_unit_seasons_with_documented_summer_access"]) == 36
+    assert int(metrics["annual_seasons_with_individual_winter_summer_evidence"]) == 7
+    assert int(metrics["control_municipalities_upper_bound_after_resolved_magic_links"]) == 56
+    assert int(metrics["control_municipalities_upper_bound_after_scope_screen"]) == 52
     assert int(metrics["additional_scope_risk_municipalities_excluded"]) == 4
     assert int(metrics["treatment_donor_pairs_screened"]) == 814
-    assert int(metrics["provisional_donor_pairs_30km_36pre"]) == 413
+    assert int(metrics["provisional_donor_pairs_30km_36pre"]) == 404
+    assert int(metrics["provisional_donor_pairs_50km_36pre"]) == 366
+    assert int(metrics["donor_pretrend_treatments_screened"]) == 7
+    assert int(metrics["donor_pretrend_pairs_screened"]) == 315
+    assert int(metrics["donor_pretrend_shortlisted_pairs"]) == 35
 
 
 def test_reviewed_destination_scope_is_explicit_and_conservative() -> None:
@@ -295,16 +303,9 @@ def test_membership_continuity_gaps_are_not_silently_filled() -> None:
     assert len(status) == 14 * 9
     assert not status.duplicated(["destination_unit_id", "season"]).any()
     assert (status["causal_treatment_status_approved"].str.lower() == "false").all()
-    assert (status["membership_status"] == "unverified_active_continuity").sum() == 7
+    assert (status["membership_status"] == "unverified_active_continuity").sum() == 0
     complete = audit["continuity_fully_documented"].str.lower().eq("true")
-    assert set(audit.loc[complete, "destination_unit_id"]) == {
-        "crans_montana",
-        "gstaad_operator_domain",
-        "meiringen_hasliberg",
-        "schwanden",
-        "axalp", "bumbach", "les_pleiades", "reichenbach_magic_portfolio",
-        "saas_fee", "sainte_croix_les_rasses",
-    }
+    assert complete.all()
     anniviers_2019 = status[
         status["destination_unit_id"].eq("anniviers_magic_portfolio")
         & status["season"].eq("2019/2020")
@@ -315,7 +316,8 @@ def test_membership_continuity_gaps_are_not_silently_filled() -> None:
         status["destination_unit_id"].eq("anniviers_magic_portfolio")
         & status["season"].eq("2020/2021")
     ].iloc[0]
-    assert anniviers_2020["membership_status"] == "unverified_active_continuity"
+    assert anniviers_2020["membership_status"] == "documented_active"
+    assert "MAGIC_2020_MAP" in anniviers_2020["source_ids"]
 
 
 def test_seasonal_roster_sources_are_cached_and_page_referenced() -> None:
@@ -330,7 +332,14 @@ def test_seasonal_roster_sources_are_cached_and_page_referenced() -> None:
         metadata = json.loads(raw.with_suffix(".metadata.json").read_text(encoding="utf-8"))
         assert metadata["source_id"] == source_id
         assert hashlib.sha256(raw.read_bytes()).hexdigest() == metadata["sha256"]
-        assert 1 <= int(observation["source_page"]) <= len(PdfReader(raw).pages)
+        if raw.suffix.lower() == ".pdf":
+            assert 1 <= int(observation["source_page"]) <= len(PdfReader(raw).pages)
+        else:
+            from PIL import Image
+
+            assert observation["source_page"] == "1"
+            with Image.open(raw) as image:
+                image.verify()
         for unit in observation["active_destination_unit_ids"]:
             row = status.loc[(unit, observation["season"])]
             assert row["membership_status"] == "documented_active"
@@ -359,7 +368,14 @@ def test_annual_winter_summer_symbols_are_page_referenced() -> None:
         )
         assert metadata["source_id"] == source_id
         assert hashlib.sha256(raw.read_bytes()).hexdigest() == metadata["sha256"]
-        assert 1 <= int(observation["source_page"]) <= len(PdfReader(raw).pages)
+        if raw.suffix.lower() == ".pdf":
+            assert 1 <= int(observation["source_page"]) <= len(PdfReader(raw).pages)
+        else:
+            from PIL import Image
+
+            assert observation["source_page"] == "1"
+            with Image.open(raw) as image:
+                image.verify()
         for offering in observation["destination_offerings"]:
             row = status.loc[
                 (offering["destination_unit_id"], observation["season"])
@@ -383,8 +399,8 @@ def test_annual_winter_summer_symbols_are_page_referenced() -> None:
             ) == "|".join(
                 offering["winter_only_labels"]
             )
-    assert reviewed == 52
-    assert summer == 31
+    assert reviewed == 58
+    assert summer == 36
 
 
 def test_unmatched_entry_scope_review_is_complete_and_noncausal() -> None:
@@ -416,13 +432,69 @@ def test_control_audit_never_promotes_screened_donors() -> None:
     matrix = read("data_processed/treatment_control_candidate_matrix.csv")
     assert len(audit) == 74
     assert audit["municipality_bfs_id"].is_unique
-    assert int(audit["known_magic_exposure_from_resolved_links"].sum()) == 17
-    assert int(audit["candidate_control_upper_bound"].sum()) == 53
+    assert int(audit["known_magic_exposure_from_resolved_links"].sum()) == 18
+    assert int(audit["candidate_control_upper_bound"].sum()) == 52
     assert int(audit["additional_scope_exclusion"].sum()) == 4
     assert not audit["causal_control_approved"].any()
     assert len(matrix) == 11 * 74
     assert not matrix.duplicated(
         ["destination_unit_id", "donor_municipality_bfs_id"]
     ).any()
-    assert int(matrix["provisional_donor_30km_36pre"].sum()) == 413
+    assert int(matrix["provisional_donor_30km_36pre"].sum()) == 404
+    assert int(matrix["provisional_donor_50km_36pre"].sum()) == 366
     assert not matrix["causal_control_approved"].any()
+
+    current = read("data_processed/magic_pass_current_destinations.csv", dtype=str)
+    sattel = current[current["official_destination_name"].eq("Sattel-Hochstuckli")]
+    assert sattel["candidate_resort_id"].tolist() == [
+        "hochstuckli_sattel_hochstuckli"
+    ]
+
+
+def test_donor_pretrend_screen_is_descriptive_and_complete() -> None:
+    pairs = read("data_processed/donor_pretrend_comparability.csv")
+    shortlist = read("reports/donor_pretrend_shortlist.csv")
+    assert len(pairs) == 315
+    assert pairs["destination_unit_id"].nunique() == 7
+    assert pairs["paired_pre_outcome_months"].ge(30).all()
+    assert pairs["pretrend_screen_usable"].all()
+    assert not pairs["causal_control_approved"].any()
+    assert len(shortlist) == 35
+    assert shortlist.groupby("destination_unit_id").size().eq(5).all()
+    assert shortlist["comparability_rank"].between(1, 5).all()
+    assert shortlist["descriptive_comparability_score"].notna().all()
+
+
+def test_temporal_controls_cover_panel_without_claiming_policy_precision() -> None:
+    temporal = read("data_processed/temporal_controls_month.csv")
+    panel = read("data_processed/destination_month_panel.csv")
+    assert len(temporal) == 168
+    assert temporal["date"].is_unique
+    assert int(as_bool(temporal["covid_sensitivity_month"]).sum()) == 26
+    assert int(as_bool(temporal["easter_month"]).sum()) == 14
+    assert (
+        as_bool(temporal["winter_month"]) ^ as_bool(temporal["summer_month"])
+    ).all()
+    assert panel["temporal_control_source_id"].eq(
+        "DERIVED_TEMPORAL_CONTROLS"
+    ).all()
+    assert int(as_bool(panel["covid_sensitivity_month"]).sum()) == 286
+
+
+def test_snow_alternative_station_sensitivity_remains_noncausal() -> None:
+    sensitivity = read(
+        "data_processed/resort_snow_alternative_station_sensitivity.csv"
+    )
+    assert len(sensitivity) == 15
+    assert sensitivity["resort_id"].is_unique
+    assert sensitivity["common_usable_winters"].ge(8).all()
+    assert sensitivity["selected_station_code"].ne(
+        sensitivity["alternative_station_code"]
+    ).all()
+    assert sensitivity["alternative_station_agreement"].value_counts().to_dict() == {
+        "high": 6,
+        "moderate": 5,
+        "low": 4,
+    }
+    assert not as_bool(sensitivity["direct_slope_representation"]).any()
+    assert not as_bool(sensitivity["causal_covariate_approved"]).any()

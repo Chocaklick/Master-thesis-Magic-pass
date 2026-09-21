@@ -1,0 +1,8 @@
+{
+  "month_rows": 168,
+  "date_min": "2013-01-01",
+  "date_max": "2026-12-01",
+  "covid_sensitivity_months": 26,
+  "easter_month_rows": 14,
+  "interpretation": "Analyst-defined broad sensitivity interval requested by the project mission to expose 2020-2022 disruption. It is not a legal-restriction chronology or proof that every destination was affected equally."
+}

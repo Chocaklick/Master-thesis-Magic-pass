@@ -44,6 +44,13 @@
     "description": "Official seasonal press evidence; membership extraction requires page verification"
   },
   {
+    "source_id": "MAGIC_2020_MAP",
+    "url": "https://www.magicpass.ch/media/image/0/stations_magic_pass_3.png",
+    "suffix": "png",
+    "organisation": "Magic Mountains Cooperation",
+    "description": "Official 2020/2021 Magic Pass network map distinguishing winter-only from summer-winter destinations"
+  },
+  {
     "source_id": "MAGIC_2021",
     "url": "https://www.magicpass.ch/media/document/0/210316_magicpass-dossier-de-presse-final.pdf",
     "suffix": "pdf",

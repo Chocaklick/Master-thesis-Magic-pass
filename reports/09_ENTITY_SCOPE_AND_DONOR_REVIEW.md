@@ -38,7 +38,9 @@ Other conservative decisions include:
 
 Among the 74 hotel municipalities reached by supplied resort points, 17 already have known Magic Pass exposure through resolved historical or current links. The scope review conservatively excludes four additional municipalities from a clean donor pool: Aeschi bei Spiez, Beatenberg, Leysin and Ormont-Dessus.
 
-This reduces the apparent control upper bound from 57 to 53 municipalities. Across 814 treatment-donor pairs, the mechanical 30 km / 36-pre / 24-post screen falls from 438 to 413 provisional pairs. Zero controls are approved for causal use.
+The historical scope review reduces the apparent control upper bound from 57 to 53 municipalities and the mechanical 30 km / 36-pre / 24-post screen from 438 to 413 provisional pairs. A subsequent exact-label review links current destination Sattel-Hochstuckli to `hochstuckli_sattel_hochstuckli`, exposing Schwyz as a current-member municipality. The current upper bounds are therefore 52 municipalities, 404 pairs at 30 km and 366 pairs at a 50 km sensitivity threshold. Zero controls are approved for causal use.
+
+For the seven treatments with complete continuity and 24/24 outcome coverage, `reports/11_DONOR_PRETREND_SCREEN.md` ranks 315 of these pairs and retains 35 for manual review. This is descriptive prioritisation, not matching or control approval.
 
 ## Remaining limitations
 

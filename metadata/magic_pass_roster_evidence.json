@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "review_date": "2026-09-20",
+  "review_date": "2026-09-21",
   "season_definition": "An annual Magic Pass season runs from May through April, except the founding 2017/2018 pass which began on 1 November 2017.",
   "interpretation": "Only explicit positive roster or continuation evidence is encoded. Absence from a non-exhaustive press release is never treated as non-membership.",
   "observations": [
@@ -38,6 +38,28 @@
       "evidence_type": "operator_seasonal_validity",
       "active_destination_unit_ids": ["les_pleiades"],
       "note": "Operator tariff dated 2020-11-01 explicitly accepts Magic Pass on all lifts for winter 2020/2021 (2020-12-12 to 2021-03-14), with restricted ski/snowboard access to the train. Evidence establishes winter membership, not continuous operation or unrestricted year-round rail validity."
+    },
+    {
+      "season": "2020/2021",
+      "source_id": "MAGIC_2020_MAP",
+      "source_page": "1",
+      "evidence_type": "official_complete_annual_symbol_map",
+      "active_destination_unit_ids": [
+        "anniviers_magic_portfolio", "moleson", "villars_gryon_les_diablerets",
+        "espace_dent_blanche", "les_pleiades", "saas_fee"
+      ],
+      "note": "Official Magic Pass-hosted image titled 2020 / 2021. Visual review verifies the complete base network and its winter, summer-winter, Glacier 3000 and baths legend. The map resolves the six reviewed active units; optional baths symbols are kept distinct from lift-season symbols."
+    },
+    {
+      "season": "2021/2022",
+      "source_id": "MAGIC_2021",
+      "source_page": "3",
+      "evidence_type": "official_incremental_roster_continuation",
+      "active_destination_unit_ids": [
+        "anniviers_magic_portfolio", "moleson", "villars_gryon_les_diablerets",
+        "espace_dent_blanche", "les_pleiades", "saas_fee"
+      ],
+      "note": "The annual launch dossier states that the Magic Pass territory expands by five new stations, then identifies the additions. Combined with the complete official 2020/2021 base map, this is explicit roster-continuation evidence for its six reviewed active units. Page 4 gives aggregate totals of 40 winter stations and 21 summer destinations but no individual 2021/2022 modality list."
     },
     {
       "season": "2024/2025",

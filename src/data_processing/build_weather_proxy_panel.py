@@ -545,7 +545,7 @@ Quality is based on horizontal distance for a regional anomaly proxy: high at â‰
 
 The destination output contains **{summary['destination_month_rows']:,} rows**, of which **{summary['destination_month_complete_weather_proxy_rows']:,}** have complete weather proxies. Temperature, precipitation and anomalies are unweighted means across unique assigned stations and are withheld unless every expected station-month passes the coverage gate.
 
-These observations describe regional weather near the reviewed resort listings. They do not measure piste microclimate, snowfall phase, snowmaking, grooming, aspect, wind redistribution or conditions across the full tourism catchment. `weather_direct_slope_representation` and `weather_causal_covariate_approved` are false throughout. Adding weather reduces one time-varying confounding gap but does not resolve treatment continuity, selection, spillovers or donor validity.
+These observations describe regional weather near the reviewed resort listings. They do not measure piste microclimate, snowfall phase, snowmaking, grooming, aspect, wind redistribution or conditions across the full tourism catchment. `weather_direct_slope_representation` and `weather_causal_covariate_approved` are false throughout. Adding weather reduces one time-varying confounding gap but does not resolve treatment intensity, selection, spillovers or donor validity.
 """
     REPORT_OUT.write_text(report, encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False, indent=2))

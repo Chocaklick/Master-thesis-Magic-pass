@@ -1,0 +1,10 @@
+{
+  "treatments_screened": 7,
+  "provisional_pairs_screened": 315,
+  "pairs_with_30_of_36_paired_outcome_months": 315,
+  "pairs_usable_for_descriptive_ranking": 315,
+  "shortlisted_pairs_for_manual_review": 35,
+  "treatments_with_pre_window_overlapping_2020_03_to_2022_04": 3,
+  "causal_controls_approved": 0,
+  "interpretation": "Ranks prioritise manual donor review using pre-anchor outcomes, capacity, current directory structure and distance. They do not establish historical non-membership, parallel trends, absence of spillovers, covariate balance or causal validity."
+}

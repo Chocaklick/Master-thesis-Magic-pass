@@ -6,7 +6,7 @@ Generated reproducibly by `src/data_processing/build_treatment_destination_panel
 
 The 18 candidate Magic Pass entry/outcome links represent **14 reviewed destination units**, not 18 independent treatments. **11 units** have an explicit municipality outcome scope and enter the diagnostic panel. **3 composite units** are excluded because the supplied OFS hotel panel does not cover their complete reviewed geography.
 
-This review approves an outcome aggregation, not a causal exposure. Every destination and month remains `causal_ready = false` until membership continuity, confounding, spillovers, and untreated controls are audited.
+This review approves an outcome aggregation, not a causal exposure. Every destination and month remains `causal_ready = false` until treatment intensity, confounding, spillovers, and untreated controls are audited.
 
 ## Unit decisions
 
