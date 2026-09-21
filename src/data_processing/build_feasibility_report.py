@@ -17,6 +17,7 @@ CURRENT = ROOT / "data_processed" / "magic_pass_current_destinations.csv"
 REVIEWED_UNITS = ROOT / "data_processed" / "treatment_destination_units.csv"
 REVIEWED_PANEL = ROOT / "data_processed" / "destination_month_panel.csv"
 CONTINUITY_AUDIT = ROOT / "reports" / "membership_continuity_audit.csv"
+MEMBERSHIP_STATUS = ROOT / "data_processed" / "magic_pass_membership_status_by_season.csv"
 CONTROL_SUMMARY = ROOT / "reports" / "control_audit_summary.json"
 CAPACITY_SUMMARY = ROOT / "reports" / "hotel_capacity_summary.json"
 SNOW_SUMMARY = ROOT / "reports" / "snow_proxy_summary.json"
@@ -50,6 +51,7 @@ def main() -> None:
     reviewed_units = pd.read_csv(REVIEWED_UNITS, dtype="string")
     reviewed_panel = pd.read_csv(REVIEWED_PANEL)
     continuity = pd.read_csv(CONTINUITY_AUDIT, dtype="string")
+    membership_status = pd.read_csv(MEMBERSHIP_STATUS, dtype="string")
     control_summary = json.loads(CONTROL_SUMMARY.read_text(encoding="utf-8"))
     capacity_summary = json.loads(CAPACITY_SUMMARY.read_text(encoding="utf-8"))
     snow_summary = json.loads(SNOW_SUMMARY.read_text(encoding="utf-8"))
@@ -310,9 +312,24 @@ def main() -> None:
                 )
             ).sum()
         ),
-        "control_municipalities_upper_bound_after_resolved_magic_links": int(
-            control_summary["candidate_control_municipalities_upper_bound"]
+        "active_unit_seasons_with_individual_winter_summer_evidence": int(
+            membership_status["offering_source_id"].fillna("").ne("").sum()
         ),
+        "active_unit_seasons_with_documented_summer_access": int(
+            as_bool(membership_status["summer_access_documented"]).sum()
+        ),
+        "annual_seasons_with_individual_winter_summer_evidence": int(
+            membership_status.loc[
+                membership_status["offering_source_id"].fillna("").ne(""),
+                "season",
+            ].nunique()
+        ),
+        "control_municipalities_upper_bound_after_resolved_magic_links": int(
+            control_summary["hotel_municipalities_reached_by_resort_points"]
+            - control_summary["municipalities_with_known_magic_exposure_from_resolved_links"]
+        ),
+        "control_municipalities_upper_bound_after_scope_screen": int(control_summary["candidate_control_municipalities_upper_bound"]),
+        "additional_scope_risk_municipalities_excluded": int(control_summary["additional_municipalities_excluded_by_scope_review"]),
         "treatment_donor_pairs_screened": int(
             control_summary["treatment_donor_pairs_screened"]
         ),
@@ -417,9 +434,11 @@ Entry events, full official rosters, named continuation statements, and the docu
 
 The detailed audit is in `reports/membership_continuity_audit.csv`. The final count is an evidence/coverage screen, not a count of identified effects. Seasonal documentation does not establish identical summer access, precise treatment intensity, absence of confounding, or a valid counterfactual. Zero controls and zero treatment units are approved for causal estimation. The additional dated rosters and operator/tourism documents are reviewed in `reports/08_MEMBERSHIP_EVIDENCE_REVIEW.md`.
 
+Annual launch lists and map symbols now classify winter versus summer-winter access for **{metrics['active_unit_seasons_with_individual_winter_summer_evidence']} active destination-unit seasons across {metrics['annual_seasons_with_individual_winter_summer_evidence']} annual publications**. **{metrics['active_unit_seasons_with_documented_summer_access']}** of those unit-seasons have documented summer access for at least one published component label. Composite destinations retain mixed-component labels rather than being flattened. See `reports/10_ANNUAL_WINTER_SUMMER_OFFERING_REVIEW.md`; summer inclusion is not evidence of daily operation or causal tourism exposure.
+
 ## Donor/control contamination screen
 
-The pipeline screened **{metrics['treatment_donor_pairs_screened']}** treatment-municipality pairs. A deliberately provisional flag removes known resolved Magic exposure, the treated municipality scope, donors within 30 km, donors with fewer than 36 observed pre months, and donors with fewer than 24 post months. **{metrics['provisional_donor_pairs_30km_36pre']}** pairs pass that mechanical screen, but **zero are approved causal controls** because unresolved membership, spillovers beyond an arbitrary distance threshold, and time-varying confounders remain.
+The pipeline screened **{metrics['treatment_donor_pairs_screened']}** treatment-municipality pairs. A deliberately provisional flag removes known resolved Magic exposure, precautionary composite/overlapping scope risks, the treated municipality scope, donors within 30 km, donors with fewer than 36 observed pre months, and donors with fewer than 24 post months. The scope review excludes **{metrics['additional_scope_risk_municipalities_excluded']} additional municipalities**, leaving **{metrics['control_municipalities_upper_bound_after_scope_screen']}** apparent controls and **{metrics['provisional_donor_pairs_30km_36pre']}** pairs passing the screen. **Zero are approved causal controls** because unresolved membership, spillovers beyond an arbitrary distance threshold, and time-varying confounders remain. See `reports/09_ENTITY_SCOPE_AND_DONOR_REVIEW.md`; a precautionary exclusion is not a validated treatment mapping.
 
 See `reports/control_contamination_audit.csv` and `reports/control_candidates_by_treatment.csv`.
 
@@ -441,7 +460,7 @@ See `reports/control_contamination_audit.csv` and `reports/control_candidates_by
 
 ## Next evidence gate
 
-Fill the remaining unverified unit-seasons, resolve the unmatched official entry labels, add the remaining time-varying confounders, validate weather/snow proxy sensitivity, and replace the mechanical donor screen with a documented membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+Fill the remaining seven unverified unit-seasons, resolve the four Swiss labels without a supplied-listing relation and the ambiguous Les Diablerets scope, add the remaining time-varying confounders, validate weather/snow proxy sensitivity, and replace the mechanical donor screen with a documented historical membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

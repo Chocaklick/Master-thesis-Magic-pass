@@ -14,7 +14,7 @@ Collection was initially limited to high-priority evidence needed for the treatm
 | Magic Pass press archive | Cached successfully | Dated official announcements and known exit/supplement evidence |
 | Magic Pass current map | Cached successfully | Current-state destination snapshot, not historical timing |
 | Magic Pass seasonal PDFs | 2017–2020 and 2022–2025 cached | Page-reviewed entry-event evidence |
-| Magic Pass 2021 main PDF | Repeated incomplete downloads | Failure retained in the collection log; smaller official follow-up used where applicable |
+| Magic Pass 2021 main PDF | Download recovered on 2026-09-21 after earlier incomplete responses | Immutable PDF and checksum retained; pages 3–4 provide aggregate 40-winter/21-summer counts but no named roster |
 | SLF IMIS documentation, stations and daily snow | Cached successfully | Daily mountain-station snow-depth history and auditable station-proxy construction |
 | MeteoSwiss SwissMetNet metadata and selected daily station files | Six metadata snapshots plus 14 historical/recent station files cached successfully | Daily temperature and precipitation, coverage-qualified monthly anomalies, and auditable regional station proxies |
 
@@ -23,6 +23,8 @@ Every successful response has a SHA-256 metadata sidecar under the ignored immut
 ## Derived evidence tables
 
 The additional membership review cached five dated documents: the official April 2019 roster, the Magic Pass 2024/2025 map distributed by Raiffeisen, operator tariffs for Les Pleiades in 2020/2021 and 2021/2022, and Fribourg Region's December 2021 winter release. These resolve 18 of 25 previously missing unit-seasons. Seven remain; exact pages and selection limits are recorded in `08_MEMBERSHIP_EVIDENCE_REVIEW.md`. Selective collection now supports repeated `--source-id` arguments so completed/failed unrelated requests need not be repeated.
+
+The later annual-offering review rendered six dated launch lists/maps and transcribed only explicit `HIVER` versus `ÉTÉ-HIVER` symbols or complete named summer lists. It classifies 52 active reviewed unit-seasons, including 31 with summer access for at least one published component. The versioned transcription and limitations are documented in `10_ANNUAL_WINTER_SUMMER_OFFERING_REVIEW.md`.
 
 - `data_processed/resort_point_municipality.csv`: 268 Swiss current point containers and three points outside the current Swiss municipality layer. This is explicitly not a tourism-exposure crosswalk.
 - `data_processed/magic_pass_membership_history.csv`: 93 official events, including 88 base-pass entries, one exit, and separately coded supplement/inclusion cases.

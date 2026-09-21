@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "review_date": "2026-09-21",
+  "purpose": "Record visually verified winter versus summer-winter symbols for the 14 reviewed destination units without treating a composite destination as more precise than the annual publication.",
+  "interpretation": "Every observation comes from a dated annual Magic Pass publication. A summer-winter symbol documents included lift access in both seasons; it does not document daily operation, identical infrastructure across seasons, or a complete tourism catchment. A winter-only classification is used only when the same complete annual publication supplies the relevant winter roster and summer distinction.",
+  "observations": [
+    {
+      "season": "2017/2018",
+      "source_id": "MAGIC_2017",
+      "source_page": "8",
+      "evidence_type": "founding_winter_only_pass",
+      "source_note": "The founding pass is explicitly valid from 1 November 2017 through the end of the 2017/2018 winter season; no summer pass was offered.",
+      "destination_offerings": [
+        {"destination_unit_id": "anniviers_magic_portfolio", "summer_winter_labels": [], "winter_only_labels": ["Grimentz-Zinal", "St-Luc/Chandolin"], "scope_status": "winter_only_pass"},
+        {"destination_unit_id": "crans_montana", "summer_winter_labels": [], "winter_only_labels": ["Crans-Montana"], "scope_status": "winter_only_pass"},
+        {"destination_unit_id": "moleson", "summer_winter_labels": [], "winter_only_labels": ["Moléson"], "scope_status": "winter_only_pass"},
+        {"destination_unit_id": "villars_gryon_les_diablerets", "summer_winter_labels": [], "winter_only_labels": ["Villars-Gryon", "Les Diablerets"], "scope_status": "winter_only_pass"}
+      ]
+    },
+    {
+      "season": "2018/2019",
+      "source_id": "MAGIC_2018",
+      "source_page": "2",
+      "evidence_type": "full_winter_roster_and_named_summer_list",
+      "source_note": "The official launch release gives the full base roster and separately names all 16 summer destinations.",
+      "destination_offerings": [
+        {"destination_unit_id": "anniviers_magic_portfolio", "summer_winter_labels": ["Grimentz", "Zinal", "St-Luc", "Chandolin"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "crans_montana", "summer_winter_labels": ["Crans-Montana"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "espace_dent_blanche", "summer_winter_labels": [], "winter_only_labels": ["Espace Dent Blanche (Evolène-La Forclaz-Arolla)"], "scope_status": "winter_only_on_complete_annual_list"},
+        {"destination_unit_id": "les_pleiades", "summer_winter_labels": [], "winter_only_labels": ["Riviera (Les Pléiades-Rochers-de-Naye)"], "scope_status": "winter_only_on_complete_annual_list"},
+        {"destination_unit_id": "moleson", "summer_winter_labels": ["Moléson"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "villars_gryon_les_diablerets", "summer_winter_labels": ["Villars-Diablerets"], "winter_only_labels": [], "scope_status": "summer_access_named_for_composite_domain"}
+      ]
+    },
+    {
+      "season": "2022/2023",
+      "source_id": "MAGIC_2022_DOSSIER",
+      "source_page": "6",
+      "evidence_type": "complete_annual_symbol_map",
+      "source_note": "The map legend distinguishes HIVER from ÉTÉ-HIVER and marks the complete partner and new-station roster.",
+      "destination_offerings": [
+        {"destination_unit_id": "anniviers_magic_portfolio", "summer_winter_labels": ["Grimentz-Zinal", "St-Luc/Chandolin"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "axalp", "summer_winter_labels": [], "winter_only_labels": ["Axalp"], "scope_status": "winter_only_on_complete_annual_map"},
+        {"destination_unit_id": "espace_dent_blanche", "summer_winter_labels": ["Evolène"], "winter_only_labels": ["La Forclaz", "Arolla"], "scope_status": "mixed_component_offering"},
+        {"destination_unit_id": "les_pleiades", "summer_winter_labels": [], "winter_only_labels": ["Les Pléiades"], "scope_status": "winter_only_on_complete_annual_map"},
+        {"destination_unit_id": "moleson", "summer_winter_labels": ["Moléson"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "reichenbach_magic_portfolio", "summer_winter_labels": [], "winter_only_labels": ["Faltschen"], "scope_status": "winter_only_for_published_active_component"},
+        {"destination_unit_id": "saas_fee", "summer_winter_labels": ["Saas-Fee"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "villars_gryon_les_diablerets", "summer_winter_labels": ["Villars-Gryon"], "winter_only_labels": ["Les Diablerets"], "scope_status": "mixed_component_offering"}
+      ]
+    },
+    {
+      "season": "2023/2024",
+      "source_id": "MAGIC_2023",
+      "source_page": "5",
+      "evidence_type": "complete_annual_symbol_map",
+      "source_note": "The map legend distinguishes HIVER from ÉTÉ-HIVER and marks partner and new destinations.",
+      "destination_offerings": [
+        {"destination_unit_id": "anniviers_magic_portfolio", "summer_winter_labels": ["Grimentz-Zinal", "St-Luc/Chandolin"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "axalp", "summer_winter_labels": [], "winter_only_labels": ["Axalp"], "scope_status": "winter_only_on_complete_annual_map"},
+        {"destination_unit_id": "bumbach", "summer_winter_labels": [], "winter_only_labels": ["Bumbach"], "scope_status": "winter_only_on_complete_annual_map"},
+        {"destination_unit_id": "espace_dent_blanche", "summer_winter_labels": ["Evolène"], "winter_only_labels": ["La Forclaz", "Arolla"], "scope_status": "mixed_component_offering"},
+        {"destination_unit_id": "les_pleiades", "summer_winter_labels": [], "winter_only_labels": ["Les Pléiades"], "scope_status": "winter_only_on_complete_annual_map"},
+        {"destination_unit_id": "moleson", "summer_winter_labels": ["Moléson"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "reichenbach_magic_portfolio", "summer_winter_labels": ["Kiental"], "winter_only_labels": ["Faltschen"], "scope_status": "mixed_component_offering"},
+        {"destination_unit_id": "saas_fee", "summer_winter_labels": ["Saas-Fee"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "sainte_croix_les_rasses", "summer_winter_labels": [], "winter_only_labels": ["Sainte-Croix-Les Rasses"], "scope_status": "winter_only_on_complete_annual_map"},
+        {"destination_unit_id": "villars_gryon_les_diablerets", "summer_winter_labels": ["Villars-Gryon", "Les Diablerets"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"}
+      ]
+    },
+    {
+      "season": "2024/2025",
+      "source_id": "MAGIC_2024_MAP",
+      "source_page": "1",
+      "evidence_type": "complete_annual_symbol_map",
+      "source_note": "The Magic Pass branded map prints validity 2024-05-01 through 2025-04-30 and distinguishes winter from summer-winter symbols.",
+      "destination_offerings": [
+        {"destination_unit_id": "anniviers_magic_portfolio", "summer_winter_labels": ["Grimentz-Zinal", "St Luc-Chandolin"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "axalp", "summer_winter_labels": ["Axalp"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "bumbach", "summer_winter_labels": [], "winter_only_labels": ["Bumbach"], "scope_status": "winter_only_on_complete_annual_map"},
+        {"destination_unit_id": "espace_dent_blanche", "summer_winter_labels": ["Evolène"], "winter_only_labels": ["La Forclaz", "Arolla"], "scope_status": "mixed_component_offering"},
+        {"destination_unit_id": "les_pleiades", "summer_winter_labels": [], "winter_only_labels": ["Les Pléiades"], "scope_status": "winter_only_on_complete_annual_map"},
+        {"destination_unit_id": "moleson", "summer_winter_labels": ["Moléson"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "reichenbach_magic_portfolio", "summer_winter_labels": ["Kiental"], "winter_only_labels": ["Faltschen"], "scope_status": "mixed_component_offering"},
+        {"destination_unit_id": "saas_fee", "summer_winter_labels": ["Saas-Fee"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "sainte_croix_les_rasses", "summer_winter_labels": [], "winter_only_labels": ["Sainte-Croix Les Rasses"], "scope_status": "winter_only_on_complete_annual_map"},
+        {"destination_unit_id": "schwanden", "summer_winter_labels": [], "winter_only_labels": ["Schwanden"], "scope_status": "winter_only_on_complete_annual_map"},
+        {"destination_unit_id": "villars_gryon_les_diablerets", "summer_winter_labels": ["Villars-Gryon", "Les Diablerets"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"}
+      ]
+    },
+    {
+      "season": "2025/2026",
+      "source_id": "MAGIC_2025",
+      "source_page": "5",
+      "evidence_type": "complete_annual_symbol_list",
+      "source_note": "The numbered list of 99 destinations distinguishes Hiver from Été-Hiver beside every label.",
+      "destination_offerings": [
+        {"destination_unit_id": "anniviers_magic_portfolio", "summer_winter_labels": ["Grimentz-Zinal", "St-Luc / Chandolin"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "axalp", "summer_winter_labels": ["Axalp"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "bumbach", "summer_winter_labels": [], "winter_only_labels": ["Bumbach"], "scope_status": "winter_only_on_complete_annual_list"},
+        {"destination_unit_id": "espace_dent_blanche", "summer_winter_labels": ["Evolène"], "winter_only_labels": ["Arolla", "La Forclaz"], "scope_status": "mixed_component_offering"},
+        {"destination_unit_id": "gstaad_operator_domain", "summer_winter_labels": ["Gstaad", "Rougemont", "Schönried", "Zweisimmen"], "winter_only_labels": ["Saanenmöser", "St-Stephan"], "scope_status": "mixed_component_offering"},
+        {"destination_unit_id": "les_pleiades", "summer_winter_labels": [], "winter_only_labels": ["Les Pléiades"], "scope_status": "winter_only_on_complete_annual_list"},
+        {"destination_unit_id": "meiringen_hasliberg", "summer_winter_labels": ["Meiringen-Hasliberg"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "moleson", "summer_winter_labels": ["Moléson"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "reichenbach_magic_portfolio", "summer_winter_labels": ["Kiental"], "winter_only_labels": ["Faltschen"], "scope_status": "mixed_component_offering"},
+        {"destination_unit_id": "saas_fee", "summer_winter_labels": ["Saas Fee"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"},
+        {"destination_unit_id": "sainte_croix_les_rasses", "summer_winter_labels": [], "winter_only_labels": ["Les Rasses"], "scope_status": "winter_only_on_complete_annual_list"},
+        {"destination_unit_id": "schwanden", "summer_winter_labels": [], "winter_only_labels": ["Schwanden"], "scope_status": "winter_only_on_complete_annual_list"},
+        {"destination_unit_id": "villars_gryon_les_diablerets", "summer_winter_labels": ["Les Diablerets", "Villars-Gryon"], "winter_only_labels": [], "scope_status": "summer_access_named_for_all_reviewed_components"}
+      ]
+    }
+  ]
+}

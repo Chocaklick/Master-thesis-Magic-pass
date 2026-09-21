@@ -448,10 +448,10 @@ def main() -> None:
             unit="destination membership event",
             license="UNKNOWN; preserve citation and original URL",
             access_conditions="Public source document; automated retrieval respects robots.txt; distributor retained explicitly where not publisher-hosted",
-            transformation_applied="Page-numbered visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only" if is_supplemental else "Page-numbered text extraction and manually reviewed event transcription" if not is_map else "Embedded official destination JSON extracted from cached HTML",
+            transformation_applied="Visual review of pp.3-4; aggregate 40-winter/21-summer counts retained but not used as individual membership evidence" if source_id == "MAGIC_2021" else "Page-numbered visual/text review recorded in metadata/magic_pass_roster_evidence.json; positive seasonal evidence only" if is_supplemental else "Page-numbered text extraction and manually reviewed event transcription" if not is_map else "Embedded official destination JSON extracted from cached HTML",
             quality_notes=("Magic Pass branded dated map distributed by Raiffeisen; not publisher-hosted; visible symbols and printed validity reviewed; absence not evidence of non-membership" if source_id == "MAGIC_2024_MAP" else "Current snapshot is not historical evidence" if is_map else "Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access"),
             confidence_level=("high for source authenticity; event/entity confidence stored per row" if metadata else "official URL verified; local retrieval pending"),
-            manual_verification="reviewed; pages " + ";".join(sorted({r["source_page"] for r in roster_records})) if roster_records else "reviewed" if source_id in {"MAGIC_2017", "MAGIC_2018", "MAGIC_2019", "MAGIC_2020", "MAGIC_2021_APRIL", "MAGIC_2022", "MAGIC_2022_DOSSIER", "MAGIC_2023", "MAGIC_2024", "MAGIC_2025"} else "pending or page-level",
+            manual_verification="reviewed; aggregate counts on pp.3-4, no named roster" if source_id == "MAGIC_2021" else "reviewed; pages " + ";".join(sorted({r["source_page"] for r in roster_records})) if roster_records else "reviewed" if source_id in {"MAGIC_2017", "MAGIC_2018", "MAGIC_2019", "MAGIC_2020", "MAGIC_2021_APRIL", "MAGIC_2022", "MAGIC_2022_DOSSIER", "MAGIC_2023", "MAGIC_2024", "MAGIC_2025"} else "pending or page-level",
             notes="Not used as extracted evidence because download did not complete" if not metadata else "",
         ))
     rows.append(blank_source(
@@ -484,6 +484,9 @@ def main() -> None:
         "GSTAAD_SCOPE_OFFICIAL",
         "MEIRINGEN_HASLIBERG_SCOPE_OFFICIAL",
         "MEIRINGEN_HASLIBERG_MAGIC_OFFICIAL",
+        "AESCHI_LIFT_SCOPE_OFFICIAL",
+        "NIEDERHORN_MAGIC_SCOPE_OFFICIAL",
+        "VALLEE_JOUX_SKI_SCOPE_OFFICIAL",
     ]
     for source_id in scope_ids:
         item = configured[source_id]
@@ -503,7 +506,7 @@ def main() -> None:
             retrieval_date=metadata.get("retrieval_date", "") if metadata else "",
             original_file_name=raw_name(metadata),
             local_raw_file=metadata.get("raw_file", "") if metadata else "",
-            processed_file="data_processed/treatment_destination_units.csv",
+            processed_file=("data_processed/magic_pass_scope_relations.csv" if source_id in {"AESCHI_LIFT_SCOPE_OFFICIAL", "VALLEE_JOUX_SKI_SCOPE_OFFICIAL"} else "" if source_id == "NIEDERHORN_MAGIC_SCOPE_OFFICIAL" else "data_processed/treatment_destination_units.csv"),
             geographic_level="official destination or municipality",
             temporal_resolution="retrieval-date scope snapshot",
             temporal_start="",
@@ -511,10 +514,10 @@ def main() -> None:
             unit="scope evidence",
             license="UNKNOWN; preserve citation and original URL",
             access_conditions="Public official website; automated retrieval respects robots.txt",
-            transformation_applied="Manually reviewed scope statement encoded in config/treatment_destination_review.json",
+            transformation_applied=("Not used; local retrieval failed with HTTP 500" if not metadata else "Manually reviewed scope statement encoded in config/unmatched_magic_scope_review.json" if source_id in {"AESCHI_LIFT_SCOPE_OFFICIAL", "VALLEE_JOUX_SKI_SCOPE_OFFICIAL"} else "Manually reviewed scope statement encoded in config/treatment_destination_review.json"),
             quality_notes="Current scope evidence does not by itself establish historical tourism exposure",
             confidence_level="high for stated scope; analytical mapping remains explicitly qualified",
-            manual_verification="reviewed",
+            manual_verification="reviewed" if metadata else "not used; retrieval pending",
         ))
     rows.append(blank_source(
         "DESTINATION_SCOPE_OFFICIAL_SET",
@@ -624,6 +627,42 @@ def main() -> None:
         confidence_level="high for reproducible aggregation; low for causal treatment status",
         manual_verification="automated tests plus destination review",
     ))
+    rows.append(blank_source(
+        "DERIVED_MAGIC_SCOPE_REVIEW",
+        variable_name="unmatched_entry_classification|non_equivalent_scope_relations|precautionary_donor_exclusions",
+        variable_description="Reviewed classification of unmatched historical entry labels and explicitly non-equivalent links to supplied resort listings",
+        source_organisation="Thesis research; constituent source IDs retained per row",
+        source_dataset_name="Unmatched Magic Pass scope review",
+        retrieval_method="Versioned config/unmatched_magic_scope_review.json plus cached official sources and supplied directory",
+        local_raw_file="config/unmatched_magic_scope_review.json",
+        processed_file="reports/unmatched_magic_entry_review.csv|data_processed/magic_pass_scope_relations.csv|reports/control_contamination_audit.csv",
+        geographic_level="official entry label; listing relation; point municipality risk",
+        temporal_resolution="historical entry event and current scope review kept separate",
+        temporal_start="2017/2018", temporal_end="2025/2026",
+        unit="classification; relation; boolean screen",
+        transformation_applied="Exact reviewed label lookup; expand many-to-many relation rows; deduplicate linked listing IDs for precautionary donor exclusions",
+        quality_notes="Not identity equivalence or causal exposure; foreign destinations can create spillovers; absent listings are not non-members",
+        manual_verification="26 labels reviewed on 2026-09-21",
+        confidence_level="qualified per relation; no causal mappings approved",
+    ))
+    rows.append(blank_source(
+        "DERIVED_MAGIC_ANNUAL_OFFERING",
+        variable_name="winter_access_status|summer_access_status|published_summer_winter_labels|published_winter_only_labels",
+        variable_description="Page-referenced annual winter versus summer-winter access classification for reviewed destination units",
+        source_organisation="Thesis research; constituent annual Magic Pass source IDs retained per row",
+        source_dataset_name="Annual Magic Pass season-offering review",
+        retrieval_method="Visual PDF review encoded in versioned metadata/magic_pass_season_offering_evidence.json",
+        local_raw_file="metadata/magic_pass_season_offering_evidence.json",
+        processed_file="data_processed/magic_pass_membership_status_by_season.csv",
+        geographic_level="reviewed destination unit with published component labels retained",
+        temporal_resolution="annual pass season",
+        temporal_start="2017/2018", temporal_end="2025/2026",
+        unit="destination-unit season",
+        transformation_applied="Join page-referenced annual offering observations to the membership-status grid without filling seasons lacking individual modality evidence",
+        quality_notes="Summer access is not daily operation, equal component coverage, tourism exposure, or a causal treatment; unverified seasons remain unknown",
+        manual_verification="Six annual publications visually reviewed on 2026-09-21",
+        confidence_level="high for transcribed symbols; qualified for composite destination scope",
+    ))
     sources = upsert(existing_sources, rows, "source_id", SOURCE_COLUMNS)
     sources.to_csv(SOURCE_FILE, index=False)
 
@@ -705,6 +744,16 @@ def main() -> None:
         ("causal_ready", "destination_month_panel", "Whether the destination-month row passes all causal evidence gates", "boolean", "boolean", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "always false at this checkpoint", "quality gate", "Continuity, confounding, spillovers, and controls remain unresolved"),
         ("membership_status", "magic_pass_membership_status_by_season", "Evidence status for a reviewed destination in each annual Magic Pass season", "category", "string", "reviewed destination", "annual pass season", "MAGIC_OFFICIAL_EVIDENCE_SET", "manual evidence audit", "documented active, unverified active continuity, not yet entered, or documented inactive after exit", "treatment history", "Missing annual evidence is never silently filled"),
         ("documented_active", "magic_pass_membership_status_by_season", "Whether explicit dated evidence documents active base membership in the season", "boolean", "boolean", "reviewed destination", "annual pass season", "MAGIC_OFFICIAL_EVIDENCE_SET", "derived evidence flag", "true only for entry, roster/map, operator/tourism continuation, or last-active exit evidence", "treatment history quality", "False can mean unverified, not documented non-membership; true does not establish identical summer access or daily operation"),
+        ("winter_access_status", "magic_pass_membership_status_by_season", "Evidence status of included winter access for the reviewed destination-season", "category", "string", "reviewed destination", "annual pass season", "DERIVED_MAGIC_ANNUAL_OFFERING", "reviewed derivation", "documented from annual symbol/list or base-membership evidence; unknown when membership continuity is unverified", "seasonal treatment description", "Does not document daily operation or lift-level scope"),
+        ("summer_access_status", "magic_pass_membership_status_by_season", "Evidence status of included summer access for the reviewed destination-season", "category", "string", "reviewed destination", "annual pass season", "DERIVED_MAGIC_ANNUAL_OFFERING", "reviewed derivation", "documented only from named annual summer lists or summer-winter symbols; otherwise explicit unknown/not-included/not-applicable", "seasonal treatment description", "Absence is coded only from a complete annual publication with a summer distinction"),
+        ("summer_access_documented", "magic_pass_membership_status_by_season", "Whether the annual publication documents summer access for at least one published label in the reviewed unit", "boolean", "boolean", "reviewed destination", "annual pass season", "DERIVED_MAGIC_ANNUAL_OFFERING", "derived evidence flag", "published_summer_winter_labels is non-empty", "seasonal treatment description", "For mixed units this does not apply to every component"),
+        ("offering_scope_status", "magic_pass_membership_status_by_season", "Scope qualification for winter/summer offering evidence within a reviewed destination", "category", "string", "reviewed destination", "annual pass season", "DERIVED_MAGIC_ANNUAL_OFFERING", "manual evidence classification", "preserve all-component, mixed-component, composite-name and winter-only distinctions", "entity scope", "Never treated as identity equivalence or accommodation-market exposure"),
+        ("published_summer_winter_labels", "magic_pass_membership_status_by_season", "Pipe-separated labels carrying the annual summer-winter symbol or appearing in the complete summer list", "label list", "string", "official published destination labels", "annual pass season", "MAGIC_OFFICIAL_EVIDENCE_SET", "manual visual transcription", "transcribed from the cited annual source page", "seasonal treatment evidence", "Labels are retained verbatim enough for audit and are not forced to listing IDs"),
+        ("published_winter_only_labels", "magic_pass_membership_status_by_season", "Pipe-separated labels carrying only winter access in the complete annual publication", "label list", "string", "official published destination labels", "annual pass season", "MAGIC_OFFICIAL_EVIDENCE_SET", "manual visual transcription", "transcribed from the cited annual source page", "seasonal treatment evidence", "Includes the founding pass, which had no summer validity"),
+        ("offering_source_id", "magic_pass_membership_status_by_season", "Source identifier for the annual winter/summer classification", "identifier", "string", "reviewed destination", "annual pass season", "DERIVED_MAGIC_ANNUAL_OFFERING", "lineage", "copied from page-referenced offering metadata", "provenance", "Blank where individual annual modality evidence is unavailable"),
+        ("offering_source_page", "magic_pass_membership_status_by_season", "One-based PDF page supporting the annual winter/summer classification", "page", "string", "reviewed destination", "annual pass season", "DERIVED_MAGIC_ANNUAL_OFFERING", "lineage", "copied from page-referenced offering metadata", "provenance", "Every nonblank page is validated against the cached PDF"),
+        ("offering_evidence_type", "magic_pass_membership_status_by_season", "Type of annual publication used for winter/summer classification", "category", "string", "reviewed destination", "annual pass season", "DERIVED_MAGIC_ANNUAL_OFFERING", "manual evidence classification", "founding winter validity, complete named summer list, symbol map or symbol list", "provenance", "Does not upgrade causal readiness"),
+        ("offering_evidence_note", "magic_pass_membership_status_by_season", "Source-level note explaining the annual winter/summer evidence", "text", "string", "reviewed destination", "annual pass season", "DERIVED_MAGIC_ANNUAL_OFFERING", "manual evidence note", "copied from versioned offering metadata", "provenance", "Read with offering_scope_status and published labels"),
         ("continuity_fully_documented", "membership_continuity_audit", "Whether every active season from first entry through exit or 2025/2026 has explicit evidence", "boolean", "boolean", "reviewed destination", "2017/2018-2025/2026", "MAGIC_OFFICIAL_EVIDENCE_SET", "derived audit", "no unverified_active_continuity season in the required active window", "quality gate", "Does not resolve confounding, spillovers, or controls"),
         ("known_magic_exposure_from_resolved_links", "control_contamination_audit", "Whether any resort point in the municipality has a resolved historical or current Magic Pass link", "boolean", "boolean", "municipality reached by resort point", "historical plus current snapshot", "DERIVED_MULTI_SOURCE", "derived screen", "any linked resort_id appears in a base-entry event or current official-map candidate link", "control contamination", "False is only an upper-bound candidate because unresolved official labels remain"),
         ("minimum_resort_point_distance_km", "treatment_control_candidate_matrix", "Minimum great-circle distance between a donor-municipality resort point and a treated destination component point", "kilometres", "float", "treatment-donor pair", "review snapshot", "GEOADMIN_MUNICIPALITY_IDENTIFY", "derived geospatial screen", "minimum haversine distance across supplied resort points", "spillover screen", "Point distance does not prove absence of tourism spillovers"),
@@ -737,6 +786,42 @@ def main() -> None:
         "control_contamination_audit": ROOT / "reports" / "control_contamination_audit.csv",
         "treatment_control_candidate_matrix": ROOT / "data_processed" / "treatment_control_candidate_matrix.csv",
     }
+    scope_glossary = {
+        "event_id": "Stable historical event identifier; preserved without merging events",
+        "source_resort_name": "Original official entry label",
+        "entry_season": "Original documented entry season, not inferred from current scope",
+        "event_source_id": "Source ID of the original historical entry announcement",
+        "event_source_page": "Page locator of the original historical entry announcement",
+        "review_date": "Date of the analyst scope review",
+        "review_class": "Foreign, composite component, overlapping scope, ambiguous scope or absent/unverified Swiss listing",
+        "source_ids": "Pipe-separated source IDs supporting the qualified scope decision",
+        "source_locators": "Human-readable source page/section locators",
+        "review_note": "Scope decision, evidence and remaining limits",
+        "identity_equivalence_approved": "Whether the relation is an approved identity equivalence; always false here",
+        "causal_mapping_approved": "Whether the relation is approved causal exposure; always false here",
+        "related_resort_ids": "Pipe-separated related listing IDs; not equivalent resort matches",
+        "related_listing_count": "Number of related or risk-candidate listings, not independent treatments",
+        "related_resort_id": "One related listing in a many-to-many scope relation",
+        "point_municipality_bfs_id": "Current municipality containing the listing point; not full tourism catchment",
+        "point_municipality_name": "Current point-container municipality name",
+        "bfs_hotel_universe": "Whether the point municipality is in the supplied hotel outcome universe",
+        "exclude_from_clean_donor_pool": "Conservative exclusion of linked point municipality from clean donor candidates",
+        "exclusion_basis": "Precautionary scope relation; does not assert measured causal exposure",
+        "scope_relation_risk": "At least one linked resort point has a composite, overlapping or ambiguous Magic scope relation",
+        "scope_risk_listing_ids": "Deduplicated related listing IDs underlying municipal scope risk",
+        "additional_scope_exclusion": "Scope-risk municipality not already excluded by resolved historical/current Magic links",
+    }
+    scope_paths = {
+        "unmatched_magic_entry_review": ROOT / "reports/unmatched_magic_entry_review.csv",
+        "magic_pass_scope_relations": ROOT / "data_processed/magic_pass_scope_relations.csv",
+    }
+    for table, path in scope_paths.items():
+        paths[table] = path
+        for variable in pd.read_csv(path, nrows=0).columns:
+            definitions.append((variable, table, scope_glossary[variable], "count" if variable == "related_listing_count" else "flag" if variable.endswith("approved") or variable in {"bfs_hotel_universe", "exclude_from_clean_donor_pool"} else "identifier/text", "integer" if variable == "related_listing_count" else "boolean" if variable.endswith("approved") or variable in {"bfs_hotel_universe", "exclude_from_clean_donor_pool"} else "string", "entry label or listing relation", "event/review", "DERIVED_MAGIC_SCOPE_REVIEW", "reviewed derivation", "Exact reviewed config lookup and explicit relation expansion", "entity scope / control screening", "Not an approved identity or causal mapping"))
+    for table in ["control_contamination_audit", "treatment_control_candidate_matrix"]:
+        for variable in ["scope_relation_risk", "additional_scope_exclusion"] + (["scope_risk_listing_ids"] if table == "control_contamination_audit" else []):
+            definitions.append((variable, table, scope_glossary[variable], "flag" if variable != "scope_risk_listing_ids" else "identifier list", "boolean" if variable != "scope_risk_listing_ids" else "string", "municipality", "whole-history conservative screen", "DERIVED_MAGIC_SCOPE_REVIEW", "derived", "Any linked listing risk; additional if not already resolved-exposed", "control contamination screening", "Precautionary exclusion; never causal approval"))
     dictionary_rows = []
     for variable, table, description, unit, data_type, geo, temporal, source_id, raw_derived, formula, role, notes in definitions:
         dictionary_rows.append({

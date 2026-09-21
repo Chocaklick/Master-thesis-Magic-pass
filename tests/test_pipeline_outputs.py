@@ -195,9 +195,14 @@ def test_checkpoint_metrics_remain_conservative() -> None:
     assert int(metrics["reviewed_units_with_fully_documented_membership_continuity"]) == 10
     assert int(metrics["panel_units_with_fully_documented_membership_continuity"]) == 8
     assert int(metrics["fully_documented_panel_units_with_24_pre_and_post_months"]) == 4
+    assert int(metrics["active_unit_seasons_with_individual_winter_summer_evidence"]) == 52
+    assert int(metrics["active_unit_seasons_with_documented_summer_access"]) == 31
+    assert int(metrics["annual_seasons_with_individual_winter_summer_evidence"]) == 6
     assert int(metrics["control_municipalities_upper_bound_after_resolved_magic_links"]) == 57
+    assert int(metrics["control_municipalities_upper_bound_after_scope_screen"]) == 53
+    assert int(metrics["additional_scope_risk_municipalities_excluded"]) == 4
     assert int(metrics["treatment_donor_pairs_screened"]) == 814
-    assert int(metrics["provisional_donor_pairs_30km_36pre"]) == 438
+    assert int(metrics["provisional_donor_pairs_30km_36pre"]) == 413
 
 
 def test_reviewed_destination_scope_is_explicit_and_conservative() -> None:
@@ -332,17 +337,92 @@ def test_seasonal_roster_sources_are_cached_and_page_referenced() -> None:
             assert source_id in row["source_ids"].split("|")
 
 
+def test_annual_winter_summer_symbols_are_page_referenced() -> None:
+    from pypdf import PdfReader
+
+    observations = json.loads(
+        (ROOT / "metadata/magic_pass_season_offering_evidence.json").read_text(
+            encoding="utf-8"
+        )
+    )["observations"]
+    sources = read("metadata/data_sources_master.csv", dtype=str).set_index("source_id")
+    status = read(
+        "data_processed/magic_pass_membership_status_by_season.csv", dtype=str
+    ).set_index(["destination_unit_id", "season"])
+    reviewed = 0
+    summer = 0
+    for observation in observations:
+        source_id = observation["source_id"]
+        raw = ROOT / sources.loc[source_id, "local_raw_file"]
+        metadata = json.loads(
+            raw.with_suffix(".metadata.json").read_text(encoding="utf-8")
+        )
+        assert metadata["source_id"] == source_id
+        assert hashlib.sha256(raw.read_bytes()).hexdigest() == metadata["sha256"]
+        assert 1 <= int(observation["source_page"]) <= len(PdfReader(raw).pages)
+        for offering in observation["destination_offerings"]:
+            row = status.loc[
+                (offering["destination_unit_id"], observation["season"])
+            ]
+            reviewed += 1
+            has_summer = bool(offering["summer_winter_labels"])
+            summer += int(has_summer)
+            assert row["membership_status"] == "documented_active"
+            assert row["offering_source_id"] == source_id
+            assert row["offering_source_page"] == observation["source_page"]
+            assert row["summer_access_documented"].lower() == str(has_summer).lower()
+            actual_summer_labels = row["published_summer_winter_labels"]
+            actual_winter_labels = row["published_winter_only_labels"]
+            assert (
+                "" if pd.isna(actual_summer_labels) else actual_summer_labels
+            ) == "|".join(
+                offering["summer_winter_labels"]
+            )
+            assert (
+                "" if pd.isna(actual_winter_labels) else actual_winter_labels
+            ) == "|".join(
+                offering["winter_only_labels"]
+            )
+    assert reviewed == 52
+    assert summer == 31
+
+
+def test_unmatched_entry_scope_review_is_complete_and_noncausal() -> None:
+    review = read("reports/unmatched_magic_entry_review.csv", dtype=str)
+    relations = read("data_processed/magic_pass_scope_relations.csv", dtype=str)
+    assert len(review) == 26
+    assert review["event_id"].is_unique
+    assert review["review_class"].value_counts().to_dict() == {
+        "foreign_outside_swiss_listing_universe": 10,
+        "component_of_composite_listing": 8,
+        "swiss_listing_missing_or_unverified": 4,
+        "partial_or_overlapping_scope": 3,
+        "ambiguous_scope": 1,
+    }
+    assert len(relations) == 14
+    assert relations["related_resort_id"].nunique() == 9
+    assert (review["identity_equivalence_approved"].str.lower() == "false").all()
+    assert (review["causal_mapping_approved"].str.lower() == "false").all()
+    assert (relations["identity_equivalence_approved"].str.lower() == "false").all()
+    assert (relations["causal_mapping_approved"].str.lower() == "false").all()
+    beatenberg = relations[relations["source_resort_name"].eq("Beatenberg")]
+    assert beatenberg["related_resort_id"].tolist() == ["beatenberg_niederhorn"]
+    gurnigelbad = relations[relations["source_resort_name"].eq("Gurnigelbad")]
+    assert gurnigelbad["related_resort_id"].tolist() == ["gantrisch_gurnigel"]
+
+
 def test_control_audit_never_promotes_screened_donors() -> None:
     audit = read("reports/control_contamination_audit.csv")
     matrix = read("data_processed/treatment_control_candidate_matrix.csv")
     assert len(audit) == 74
     assert audit["municipality_bfs_id"].is_unique
     assert int(audit["known_magic_exposure_from_resolved_links"].sum()) == 17
-    assert int(audit["candidate_control_upper_bound"].sum()) == 57
+    assert int(audit["candidate_control_upper_bound"].sum()) == 53
+    assert int(audit["additional_scope_exclusion"].sum()) == 4
     assert not audit["causal_control_approved"].any()
     assert len(matrix) == 11 * 74
     assert not matrix.duplicated(
         ["destination_unit_id", "donor_municipality_bfs_id"]
     ).any()
-    assert int(matrix["provisional_donor_30km_36pre"].sum()) == 438
+    assert int(matrix["provisional_donor_30km_36pre"].sum()) == 413
     assert not matrix["causal_control_approved"].any()

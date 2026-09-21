@@ -2,6 +2,18 @@
 
 This report is generated from `metadata/data_sources_master.csv`. Raw internet responses are immutable and accompanied by collection-log entries and SHA-256 metadata where available.
 
+## AESCHI_LIFT_SCOPE_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Official ski-area scope: Aeschiallmend and Allmispitz, with Lucky village lift explicitly outside Magic Pass
+- **Producer:** Aeschi Tourismus
+- **Exact URL:** https://www.aeschi-tourismus.ch/en/experiences/winter-sport/ski-lifts
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T19:28:15.013061+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/unmatched_magic_scope_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/AESCHI_LIFT_SCOPE_OFFICIAL_20260920T192815Z.html`.
+
 ## ANNIVIERS_SCOPE_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Official municipal evidence that Grimentz, Zinal, Saint-Luc and Chandolin belong to Anniviers
@@ -73,6 +85,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** municipality; metadata snapshot; 2013 to 2026.
 - **Limitations:** Live table composition can change; cached response is the reproducibility anchor
 - **Local raw file:** `data_external/source_evidence/BFS_HOTEL_METADATA_20260919T231713Z.json`.
+
+## DERIVED_MAGIC_ANNUAL_OFFERING — Annual Magic Pass season-offering review
+
+- **Contents and relevance:** Page-referenced annual winter versus summer-winter access classification for reviewed destination units
+- **Producer:** Thesis research; constituent annual Magic Pass source IDs retained per row
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Visual PDF review encoded in versioned metadata/magic_pass_season_offering_evidence.json; unknown date.
+- **Variables:** winter_access_status|summer_access_status|published_summer_winter_labels|published_winter_only_labels
+- **Transformations:** Join page-referenced annual offering observations to the membership-status grid without filling seasons lacking individual modality evidence
+- **Coverage:** reviewed destination unit with published component labels retained; annual pass season; 2017/2018 to 2025/2026.
+- **Limitations:** Summer access is not daily operation, equal component coverage, tourism exposure, or a causal treatment; unverified seasons remain unknown
+- **Local raw file:** `metadata/magic_pass_season_offering_evidence.json`.
+
+## DERIVED_MAGIC_SCOPE_REVIEW — Unmatched Magic Pass scope review
+
+- **Contents and relevance:** Reviewed classification of unmatched historical entry labels and explicitly non-equivalent links to supplied resort listings
+- **Producer:** Thesis research; constituent source IDs retained per row
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned config/unmatched_magic_scope_review.json plus cached official sources and supplied directory; unknown date.
+- **Variables:** unmatched_entry_classification|non_equivalent_scope_relations|precautionary_donor_exclusions
+- **Transformations:** Exact reviewed label lookup; expand many-to-many relation rows; deduplicate linked listing IDs for precautionary donor exclusions
+- **Coverage:** official entry label; listing relation; point municipality risk; historical entry event and current scope review kept separate; 2017/2018 to 2025/2026.
+- **Limitations:** Not identity equivalence or causal exposure; foreign destinations can create spillovers; absent listings are not non-members
+- **Local raw file:** `config/unmatched_magic_scope_review.json`.
 
 ## DERIVED_MULTI_SOURCE — Reproducible local transformations
 
@@ -343,12 +379,12 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Contents and relevance:** Official seasonal press evidence; membership extraction requires page verification
 - **Producer:** Magic Mountains Cooperation
 - **Exact URL:** https://www.magicpass.ch/fr/presse
-- **Access and retrieval date:** attempted HTTP GET; see collection log; unknown date.
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T09:09:47.167358+00:00.
 - **Variables:** membership_event_evidence
-- **Transformations:** Page-numbered text extraction and manually reviewed event transcription
+- **Transformations:** Visual review of pp.3-4; aggregate 40-winter/21-summer counts retained but not used as individual membership evidence
 - **Coverage:** official ski destination; dated announcement / season; 2021 to ?.
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
-- **Local raw file:** `not cached / not applicable`.
+- **Local raw file:** `data_external/source_evidence/MAGIC_2021_20260921T090947Z.pdf`.
 
 ## MAGIC_2021_APRIL — Official Magic Pass press material
 
@@ -626,6 +662,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Official metadata snapshot; source catalogue can be updated after retrieval
 - **Local raw file:** `data_external/source_evidence/METEOSWISS_SMN_STATIONS_20260920T091432Z.csv`.
 
+## NIEDERHORN_MAGIC_SCOPE_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Official Niederhorn Magic Pass participation and conditional Beatenbucht-Beatenberg route validity; current scope, not entry-date proof
+- **Producer:** Niederhornbahn AG
+- **Exact URL:** https://www.niederhorn.ch/en/special-tickets/magic-pass
+- **Access and retrieval date:** official URL verified; local retrieval pending; unknown date.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Not used; local retrieval failed with HTTP 500
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `not cached / not applicable`.
+
 ## REICHENBACH_SCOPE_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Official municipal evidence that Faltschen and Kiental are localities in Reichenbach im Kandertal
@@ -709,6 +757,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** point station; station metadata snapshot; ? to 2026.
 - **Limitations:** Station locations are avalanche-monitoring sites and not ski-slope observations
 - **Local raw file:** `data_external/source_evidence/SLF_IMIS_STATIONS_20260920T085555Z.csv`.
+
+## VALLEE_JOUX_SKI_SCOPE_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Tourism article distinguishing the ski areas of Le Brassus, L Orient, L Abbaye and Dent de Vaulion; regional scope is broader than the three historical entry labels
+- **Producer:** Vallee de Joux tourism
+- **Exact URL:** https://www.valleedejoux.ch/2022/01/04/le-ski-alpin-a-la-vallee/
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-20T19:28:18.078623+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/unmatched_magic_scope_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/VALLEE_JOUX_SKI_SCOPE_OFFICIAL_20260920T192818Z.html`.
 
 ## VILLARS_GRYON_SCOPE_OFFICIAL — Official destination or municipal scope page
 

@@ -16,6 +16,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[2]
 UNIT_CONFIG = ROOT / "config" / "treatment_destination_review.json"
 ROSTER_CONFIG = ROOT / "metadata" / "magic_pass_roster_evidence.json"
+OFFERING_CONFIG = ROOT / "metadata" / "magic_pass_season_offering_evidence.json"
 HISTORY = ROOT / "data_processed" / "magic_pass_membership_history.csv"
 UNIT_TABLE = ROOT / "data_processed" / "treatment_destination_units.csv"
 STATUS_OUT = ROOT / "data_processed" / "magic_pass_membership_status_by_season.csv"
@@ -28,9 +29,39 @@ SEASONS = [f"{year}/{year + 1}" for year in range(2017, 2026)]
 def main() -> None:
     units = json.loads(UNIT_CONFIG.read_text(encoding="utf-8"))["units"]
     roster = json.loads(ROSTER_CONFIG.read_text(encoding="utf-8"))["observations"]
+    offering_observations = json.loads(
+        OFFERING_CONFIG.read_text(encoding="utf-8")
+    )["observations"]
     history = pd.read_csv(HISTORY, dtype="string", keep_default_na=False)
     unit_table = pd.read_csv(UNIT_TABLE)
     unit_ids = {unit["destination_unit_id"] for unit in units}
+
+    offering_evidence: dict[tuple[str, str], dict] = {}
+    for observation in offering_observations:
+        if observation["season"] not in SEASONS:
+            raise ValueError(f"Unknown offering season: {observation['season']}")
+        for destination in observation["destination_offerings"]:
+            destination_unit_id = destination["destination_unit_id"]
+            if destination_unit_id not in unit_ids:
+                raise ValueError(
+                    f"Unknown offering destination unit: {destination_unit_id}"
+                )
+            key = (destination_unit_id, observation["season"])
+            if key in offering_evidence:
+                raise ValueError(f"Duplicate offering evidence: {key}")
+            summer_labels = destination["summer_winter_labels"]
+            winter_labels = destination["winter_only_labels"]
+            if not summer_labels and not winter_labels:
+                raise ValueError(f"Offering evidence has no published labels: {key}")
+            offering_evidence[key] = {
+                "source_id": observation["source_id"],
+                "source_page": observation["source_page"],
+                "evidence_type": observation["evidence_type"],
+                "source_note": observation["source_note"],
+                "scope_status": destination["scope_status"],
+                "summer_winter_labels": summer_labels,
+                "winter_only_labels": winter_labels,
+            }
 
     evidence: dict[tuple[str, str], list[dict]] = {}
     entries = history[history["event_type"].eq("base_pass_entry")]
@@ -111,6 +142,32 @@ def main() -> None:
                 status = "documented_active"
             else:
                 status = "unverified_active_continuity"
+            offering = offering_evidence.get(
+                (unit["destination_unit_id"], season)
+            )
+            if offering and status != "documented_active":
+                raise ValueError(
+                    "Offering evidence must coincide with documented membership: "
+                    f"{unit['destination_unit_id']} / {season} / {status}"
+                )
+            if offering:
+                winter_access_status = "documented"
+                summer_access_status = (
+                    "documented"
+                    if offering["summer_winter_labels"]
+                    else "not_applicable_winter_only_pass"
+                    if offering["scope_status"] == "winter_only_pass"
+                    else "not_included_on_complete_annual_publication"
+                )
+            elif status == "documented_active":
+                winter_access_status = "documented_via_membership_evidence"
+                summer_access_status = "unknown_not_individually_documented"
+            elif status == "unverified_active_continuity":
+                winter_access_status = "unknown_membership_and_modality"
+                summer_access_status = "unknown_membership_and_modality"
+            else:
+                winter_access_status = "not_applicable"
+                summer_access_status = "not_applicable"
             rows.append(
                 {
                     "destination_unit_id": unit["destination_unit_id"],
@@ -128,6 +185,34 @@ def main() -> None:
                         sorted({record["source_page"] for record in records})
                     ),
                     "evidence_notes": " | ".join(record["note"] for record in records),
+                    "winter_access_status": winter_access_status,
+                    "summer_access_status": summer_access_status,
+                    "summer_access_documented": bool(
+                        offering and offering["summer_winter_labels"]
+                    ),
+                    "offering_scope_status": (
+                        offering["scope_status"] if offering else ""
+                    ),
+                    "published_summer_winter_labels": (
+                        "|".join(offering["summer_winter_labels"])
+                        if offering
+                        else ""
+                    ),
+                    "published_winter_only_labels": (
+                        "|".join(offering["winter_only_labels"])
+                        if offering
+                        else ""
+                    ),
+                    "offering_source_id": offering["source_id"] if offering else "",
+                    "offering_source_page": (
+                        offering["source_page"] if offering else ""
+                    ),
+                    "offering_evidence_type": (
+                        offering["evidence_type"] if offering else ""
+                    ),
+                    "offering_evidence_note": (
+                        offering["source_note"] if offering else ""
+                    ),
                     "outcome_panel_eligible": unit[
                         "eligible_for_reviewed_outcome_panel"
                     ],
@@ -181,6 +266,23 @@ def main() -> None:
         "unverified_active_unit_seasons": int(
             status["membership_status"].eq("unverified_active_continuity").sum()
         ),
+        "seasons_with_individual_winter_summer_evidence": int(
+            status.loc[
+                status["offering_source_id"].ne(""), "season"
+            ].nunique()
+        ),
+        "active_unit_seasons_with_individual_modality_evidence": int(
+            status["offering_source_id"].ne("").sum()
+        ),
+        "active_unit_seasons_with_documented_summer_access": int(
+            status["summer_access_documented"].sum()
+        ),
+        "active_unit_seasons_documented_without_summer_access": int(
+            (
+                status["offering_source_id"].ne("")
+                & ~status["summer_access_documented"]
+            ).sum()
+        ),
         "fully_documented_panel_units_with_24_pre_and_post_months": int(
             audit[["destination_unit_id", "continuity_fully_documented"]]
             .merge(
@@ -204,7 +306,8 @@ def main() -> None:
         "causal_treatment_units_approved": 0,
         "interpretation": (
             "Only explicit positive evidence is coded active. Missing annual evidence "
-            "remains unverified and is not converted to non-membership."
+            "remains unverified and is not converted to non-membership. Summer access "
+            "is coded only from individually named annual lists or winter/summer map symbols."
         ),
     }
     SUMMARY_OUT.write_text(

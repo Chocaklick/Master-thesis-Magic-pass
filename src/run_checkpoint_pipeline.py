@@ -48,6 +48,7 @@ def main() -> None:
     run("src/entity_resolution/extract_current_magic_destinations.py")
     run("src/data_processing/build_treatment_destination_panel.py")
     run("src/entity_resolution/build_membership_continuity_audit.py")
+    run("src/entity_resolution/build_unmatched_scope_review.py")
     run("src/causal_inference/build_control_audit.py")
     run("src/data_processing/build_feasibility_report.py")
     run("src/scoring/build_resort_data_quality.py")

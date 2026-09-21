@@ -21,7 +21,7 @@ Checkpoints 1–3, the first treatment-unit review, and initial capacity/climate
 - Built a 31,248-row municipality-month hotel table for 186 municipalities. It contains 28,455 observed total-night values from 2013-01 through 2026-03; 2,793 suppressed monthly total-night cells remain missing.
 - Collected the official HESTA supply/demand table in 14 checksum-verified annual PXWeb chunks and built a 31,248-row capacity panel. Establishments, rooms, and beds are jointly observed in 29,274 municipality-months; source `..`/`...` tokens remain missing with no imputation.
 - Reconciled the new live table to the legacy demand extraction: 28,452 arrival cells and 28,452 overnight-stay cells match exactly; six cells across three Davos months in 2014 reflect live-table revisions and are reported without overwriting the legacy outcome.
-- Cached official OFS table metadata, the official Magic Pass press archive/current map, nine main seasonal Magic Pass PDFs except the repeatedly truncated 2021 dossier, two supplemental 2021/2022 releases, eight official destination-scope pages, and 271 geo.admin.ch point-identify responses with checksums and retrieval logs.
+- Cached official OFS table metadata, the official Magic Pass press archive/current map, all main seasonal Magic Pass PDFs including the recovered 2021/2022 dossier, two supplemental 2021/2022 releases, official destination-scope pages, and 271 geo.admin.ch point-identify responses with checksums and retrieval logs.
 - Built a point-container crosswalk: 268 coordinates resolve to a current Swiss municipality, 103 listings fall in 74 municipalities present in the OFS hotel universe, and three coordinates lie outside the Swiss current-municipality layer.
 - Built 93 official Magic Pass evidence events: 88 base-pass entries plus separately coded exit/supplement/inclusion events. Sixty-four events have candidate listing links; 29 remain unresolved.
 - Extracted 95 destinations from the cached current official map, with 68 candidate listing links. The embedded count conflicts with the official page's “more than 100” headline and is retained as a discrepancy.
@@ -35,9 +35,11 @@ Checkpoints 1–3, the first treatment-unit review, and initial capacity/climate
 - Screened the official inventory for current stations with daily mean/minimum/maximum temperature and precipitation starting by 2013. Of 112 eligible candidates, nearest assignment for the 15 reviewed resort components requires seven stations; nine links are high and six moderate on horizontal-distance comparability, with distance and elevation gaps retained.
 - Built a 1,113-row SwissMetNet station-month panel with station-specific 2013–2025 calendar-month anomalies. Two station-months fail the 80% precipitation gate. The reviewed destination weather panel contains 1,744 complete rows out of 1,749 through 2026-03; the 1,848-row outcome panel contains 1,576 rows with both observed hotel nights and complete weather, and 1,560 with observed hotel nights plus complete snow and weather.
 - Added five dated membership documents after visual PDF review, resolving 18 of 25 missing unit-seasons. Ten of 14 reviewed units have every active season documented, eight enter the outcome panel, and four have both 24 observed pre and 24 observed active-post months (Axalp, Bumbach, Reichenbach portfolio, Saas-Fee). No causal treatment/control approval follows from this coverage screen.
-- Screened 814 treatment-donor pairs across 74 resort-linked hotel municipalities. Fifty-seven municipalities remain an upper-bound control pool after resolved Magic links; 438 pairs pass a mechanical 30 km / 36-pre / 24-post screen, but zero controls are approved.
-- Generated normalized provenance (60 source records), a 375-row data dictionary, source report, destination/capacity/snow/weather/membership reviews, continuity/control audits, a resort-level evidence-quality table, and an updated model-feasibility report.
-- Reran the complete offline checkpoint pipeline successfully; all 16 automated tests pass, including cached seasonal-document checksum, page-reference and output-link validation.
+- Reviewed all 26 unmatched base-entry labels without forcing identity matches: 10 are foreign to the Swiss listing universe, eight are components of composite listings, three have partial/overlapping scope, one remains ambiguous and four Swiss listings remain missing or unverified. Four additional point municipalities are conservatively excluded from the donor pool.
+- Visually reviewed six dated annual launch lists/maps and encoded winter versus summer-winter access for 52 active reviewed unit-seasons. Thirty-one have documented summer access for at least one published component label; mixed-component destinations retain their component labels and 21 unit-seasons are winter-only or part of the founding winter-only pass.
+- Screened 814 treatment-donor pairs across 74 resort-linked hotel municipalities. Fifty-seven municipalities remain after resolved Magic links and 53 after the additional scope-risk screen; 413 pairs pass a mechanical 30 km / 36-pre / 24-post screen, but zero controls are approved.
+- Generated normalized provenance (65 source records), a 422-row data dictionary, source report, destination/capacity/snow/weather/membership/scope reviews, continuity/control audits, a resort-level evidence-quality table, and an updated model-feasibility report.
+- Reran the complete offline checkpoint pipeline and final test suite successfully; all 18 automated tests pass, including cached seasonal-document checksum, page-reference, winter/summer-symbol, scope-relation and output-link validation.
 
 ## Main empirical counts
 
@@ -67,7 +69,9 @@ Checkpoints 1–3, the first treatment-unit review, and initial capacity/climate
 | Units with 24 pre and 24 post months under continuity assumption | 7 | Coverage only; not identification |
 | Panel units with fully documented active-season continuity | 8 | Seasonal evidence, not identical summer access or daily operation |
 | Fully documented panel units with 24 pre and 24 post months | 4 | Axalp, Bumbach, Reichenbach portfolio, Saas-Fee; no approved controls |
-| Provisional donor pairs passing mechanical screen | 438 | None approved as causal controls |
+| Active reviewed unit-seasons with individual winter/summer evidence | 52 | 31 include summer access for at least one published component |
+| Apparent control municipalities after scope-risk screen | 53 | Upper bound; four extra municipalities excluded conservatively |
+| Provisional donor pairs passing mechanical screen | 413 | None approved as causal controls |
 | Approved causal treatment units | 0 | Exposure/continuity gates not passed |
 | Approved controls | 0 | Historical status and spillovers not audited |
 
@@ -99,18 +103,18 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 ## Known blockers and data gaps
 
 1. Independent destination/domain definitions remain unresolved outside the 14 reviewed candidate units.
-2. Seven active destination-seasons remain unverified: Anniviers, Espace Dent Blanche and excluded Villars-Gryon-Les Diablerets in 2020/2021 and 2021/2022, plus Moleson in 2020/2021. The main French 2021 dossier still fails to download completely; smaller operator/tourism sources now cover Les Pleiades and Moleson in 2021/2022.
-3. Twenty-six official base-entry labels remain unresolved to supplied listings.
+2. Seven active destination-seasons remain unverified: Anniviers, Espace Dent Blanche and excluded Villars-Gryon-Les Diablerets in 2020/2021 and 2021/2022, plus Moleson in 2020/2021. The recovered 2021 dossier supplies only aggregate winter/summer totals, while smaller operator/tourism sources cover Les Pleiades and Moleson in 2021/2022.
+3. All 26 unmatched base-entry labels are classified for scope risk, but none has been promoted to an identity-equivalent causal mapping. Four Swiss labels still lack a supplied-listing relation and Les Diablerets remains ambiguous across overlapping listings.
 4. Core-municipality proxies do not establish full tourism catchments, and spillovers remain unresolved.
 5. No historical municipality-boundary harmonization has been implemented.
 6. Hotel capacity and qualified snow/temperature/precipitation proxies are integrated, but snowmaking, accessibility, population, tourism dependence, simultaneous investment, and competition/network controls are missing.
 7. Sixty resort-to-snow-station links have low spatial/elevation comparability; alternative-station and gridded-data sensitivity tests remain pending for both snow and regional weather.
-8. The 57-municipality apparent control pool and 438 provisional donor pairs remain upper bounds, not approved controls.
+8. The 53-municipality post-scope apparent control pool and 413 provisional donor pairs remain upper bounds, not approved controls.
 9. The exact upstream source/version of the lift GPKG and retrieval dates of legacy extracts remain unknown.
 
 ## Immediate next action
 
-Resolve the remaining seven active unit-season gaps and 26 unmatched base-entry labels. Prioritise a documented historical membership/spillover donor review for Axalp, Bumbach, Reichenbach and Saas-Fee, which now pass continuity plus 24/24 coverage. Validate timing/intensity, COVID overlap and regional outcome scope; test alternative-station or gridded climate sensitivity before reassessing Checkpoints 4–5. Do not fit causal or complex ML models before approval gates change. See `reports/08_MEMBERSHIP_EVIDENCE_REVIEW.md` for source-selection decisions and remaining leads.
+Resolve the remaining seven active unit-season gaps, the four missing/unverified Swiss listing relations and the one ambiguous Les Diablerets scope. Prioritise a documented historical membership/spillover donor review for Axalp, Bumbach, Reichenbach and Saas-Fee, which now pass continuity plus 24/24 coverage. Validate timing/intensity, winter-versus-summer treatment definitions, COVID overlap and regional outcome scope; test alternative-station or gridded climate sensitivity before reassessing Checkpoints 4–5. Do not fit causal or complex ML models before approval gates change. See `reports/08_MEMBERSHIP_EVIDENCE_REVIEW.md`, `reports/09_ENTITY_SCOPE_AND_DONOR_REVIEW.md`, and `reports/10_ANNUAL_WINTER_SUMMER_OFFERING_REVIEW.md`.
 
 ## Key files
 
@@ -131,5 +135,7 @@ Resolve the remaining seven active unit-season gaps and 26 unmatched base-entry 
 - Weather proxy: `reports/07_WEATHER_PROXY.md`, `data_processed/resort_weather_station_crosswalk.csv`, and `data_processed/destination_weather_month.csv`
 - Membership continuity: `reports/membership_continuity_audit.csv`
 - Additional historical evidence: `reports/08_MEMBERSHIP_EVIDENCE_REVIEW.md`
+- Unmatched entity scope: `reports/09_ENTITY_SCOPE_AND_DONOR_REVIEW.md` and `data_processed/magic_pass_scope_relations.csv`
+- Annual winter/summer register: `reports/10_ANNUAL_WINTER_SUMMER_OFFERING_REVIEW.md` and `data_processed/magic_pass_membership_status_by_season.csv`
 - Control screen: `reports/control_candidates_by_treatment.csv`
 - Research log: `logs/research_journal.md`

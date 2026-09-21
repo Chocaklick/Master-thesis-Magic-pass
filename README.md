@@ -28,6 +28,7 @@ A resort assignment is not automatically a municipality assignment.
 - The 18 candidate entry/outcome links have been collapsed into 14 reviewed destination units. Eleven have an explicit outcome scope and form a 1,848-row diagnostic destination-month panel; three incomplete composite scopes are excluded. Capacity is complete for 1,637 destination-months, snow for 1,733, and temperature/precipitation for 1,744.
 - The current feasibility decision is Path C: exploratory segmentation/analogue decision support. Causal modelling remains gated by membership continuity, remaining time-varying confounders, spillovers, control contamination, and snow-proxy representativeness.
 - Five additional dated membership documents resolve 18 seasonal evidence gaps. Seven remain; four outcome units now pass annual continuity plus 24/24 observed-month coverage, with zero causal controls approved. See [the membership evidence review](reports/08_MEMBERSHIP_EVIDENCE_REVIEW.md).
+- All 26 unmatched historical labels now have a conservative scope classification, reducing the apparent donor pool to 53 municipalities and 413 mechanical treatment-donor pairs. Six annual publications also distinguish winter from summer-winter access for 52 reviewed unit-seasons. See [the scope review](reports/09_ENTITY_SCOPE_AND_DONOR_REVIEW.md) and [the annual offering review](reports/10_ANNUAL_WINTER_SUMMER_OFFERING_REVIEW.md).
 - GitHub synchronization is configured: `main` tracks `origin/main` at `https://github.com/Chocaklick/Master-thesis-Magic-pass.git`.
 
 See [PROJECT_STATE.md](PROJECT_STATE.md) for the authoritative current state and [logs/research_journal.md](logs/research_journal.md) for the chronological record.
@@ -86,7 +87,7 @@ With the original files available under ignored `data_raw/` and the previously c
 
 To check or collect configured official evidence before rebuilding, add `--with-collection`. The collector reuses checksum-verified cached responses and logs every success or failure. The default pipeline performs no network access.
 
-The run ends with the automated test suite. Main checkpoint reports are `reports/01_DATA_AUDIT.md`, `reports/02_DATA_COLLECTION.md`, `reports/03_DATA_QUALITY.md`, `reports/04_DESTINATION_UNIT_REVIEW.md`, `reports/05_HOTEL_CAPACITY.md`, `reports/06_SNOW_SOURCE_AND_PROXY.md`, `reports/07_WEATHER_PROXY.md`, and `reports/model_feasibility_report.md`.
+The run ends with the automated test suite. Main checkpoint reports are `reports/01_DATA_AUDIT.md`, `reports/02_DATA_COLLECTION.md`, `reports/03_DATA_QUALITY.md`, `reports/04_DESTINATION_UNIT_REVIEW.md`, `reports/05_HOTEL_CAPACITY.md`, `reports/06_SNOW_SOURCE_AND_PROXY.md`, `reports/07_WEATHER_PROXY.md`, `reports/08_MEMBERSHIP_EVIDENCE_REVIEW.md`, `reports/09_ENTITY_SCOPE_AND_DONOR_REVIEW.md`, `reports/10_ANNUAL_WINTER_SUMMER_OFFERING_REVIEW.md`, and `reports/model_feasibility_report.md`.
 
 ## Data conventions
 

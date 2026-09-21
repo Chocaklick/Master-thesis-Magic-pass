@@ -52,6 +52,7 @@ def main() -> None:
     hotel = pd.read_csv(HOTEL)
     units = pd.read_csv(UNITS, dtype="string")
     unit_municipalities = pd.read_csv(UNIT_MUNICIPALITIES)
+    scope_relations = pd.read_csv(ROOT / "data_processed/magic_pass_scope_relations.csv", dtype="string")
     hotel["date"] = pd.to_datetime(hotel["date"], errors="raise")
 
     reached = points[as_bool(points["bfs_hotel_universe"])].copy()
@@ -66,6 +67,10 @@ def main() -> None:
     reached["known_magic_resort_listing"] = reached["resort_id"].isin(
         known_member_resort_ids
     )
+    scope_risk_ids = set(scope_relations.loc[
+        as_bool(scope_relations["exclude_from_clean_donor_pool"]), "related_resort_id"
+    ])
+    reached["scope_relation_risk"] = reached["resort_id"].isin(scope_risk_ids)
 
     municipality_rows: list[dict] = []
     for bfs_id, group in reached.groupby("point_municipality_bfs_id", observed=True):
@@ -84,8 +89,11 @@ def main() -> None:
                     group["known_magic_resort_listing"].any()
                 ),
                 "candidate_control_upper_bound": not bool(
-                    group["known_magic_resort_listing"].any()
+                    group["known_magic_resort_listing"].any() or group["scope_relation_risk"].any()
                 ),
+                "scope_relation_risk": bool(group["scope_relation_risk"].any()),
+                "scope_risk_listing_ids": "|".join(sorted(group.loc[group["scope_relation_risk"], "resort_id"])),
+                "additional_scope_exclusion": bool(group["scope_relation_risk"].any() and not group["known_magic_resort_listing"].any()),
                 "unresolved_membership_contamination_cleared": False,
                 "spillover_contamination_cleared": False,
                 "time_varying_confounders_available": False,
@@ -151,6 +159,8 @@ def main() -> None:
                     "donor_municipality_name": municipality.municipality_name,
                     "donor_resort_listing_count": municipality.resort_listing_count,
                     "known_magic_exposure_from_resolved_links": known_exposure,
+                    "scope_relation_risk": municipality.scope_relation_risk,
+                    "additional_scope_exclusion": municipality.additional_scope_exclusion,
                     "same_as_treated_outcome_scope": self_scope,
                     "minimum_resort_point_distance_km": round(minimum_distance, 3),
                     "within_15km": minimum_distance <= 15,
@@ -162,6 +172,7 @@ def main() -> None:
                     "has_24_observed_post_months": post >= 24,
                     "provisional_donor_30km_36pre": bool(
                         not known_exposure
+                        and not municipality.scope_relation_risk
                         and not self_scope
                         and minimum_distance > 30
                         and pre >= 36
@@ -186,6 +197,7 @@ def main() -> None:
         .agg(
             municipalities_screened=("donor_municipality_bfs_id", "size"),
             known_exposed=("known_magic_exposure_from_resolved_links", "sum"),
+            additional_scope_exclusions=("additional_scope_exclusion", "sum"),
             within_30km=("within_30km", "sum"),
             provisional_donors_30km_36pre=("provisional_donor_30km_36pre", "sum"),
             causal_controls_approved=("causal_control_approved", "sum"),
@@ -206,6 +218,7 @@ def main() -> None:
         "candidate_control_municipalities_upper_bound": int(
             municipality_audit["candidate_control_upper_bound"].sum()
         ),
+        "additional_municipalities_excluded_by_scope_review": int(municipality_audit["additional_scope_exclusion"].sum()),
         "unresolved_official_base_entry_labels": int(len(unresolved_base_entries)),
         "reviewed_treatments_screened": int(len(eligible_units)),
         "treatment_donor_pairs_screened": int(len(matrix)),
@@ -214,7 +227,7 @@ def main() -> None:
         ),
         "approved_causal_controls": 0,
         "interpretation": (
-            "The provisional donor flag excludes resolved Magic links, the treated "
+            "The provisional donor flag excludes resolved Magic links, precautionary scope relations, the treated "
             "scope, donors within 30 km, and donors without 36 pre/24 post months. "
             "It is not an approval because membership and confounder audits are incomplete."
         ),

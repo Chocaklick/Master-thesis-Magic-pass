@@ -189,5 +189,26 @@
     "suffix": "pdf",
     "organisation": "Fribourg Region",
     "description": "Official tourism release dated 2021-12-01 confirming the seven named Fribourg ski stations participate in Magic Pass for winter 2021/2022"
+  },
+  {
+    "source_id": "AESCHI_LIFT_SCOPE_OFFICIAL",
+    "url": "https://www.aeschi-tourismus.ch/en/experiences/winter-sport/ski-lifts",
+    "suffix": "html",
+    "organisation": "Aeschi Tourismus",
+    "description": "Official ski-area scope: Aeschiallmend and Allmispitz, with Lucky village lift explicitly outside Magic Pass"
+  },
+  {
+    "source_id": "NIEDERHORN_MAGIC_SCOPE_OFFICIAL",
+    "url": "https://www.niederhorn.ch/en/special-tickets/magic-pass",
+    "suffix": "html",
+    "organisation": "Niederhornbahn AG",
+    "description": "Official Niederhorn Magic Pass participation and conditional Beatenbucht-Beatenberg route validity; current scope, not entry-date proof"
+  },
+  {
+    "source_id": "VALLEE_JOUX_SKI_SCOPE_OFFICIAL",
+    "url": "https://www.valleedejoux.ch/2022/01/04/le-ski-alpin-a-la-vallee/",
+    "suffix": "html",
+    "organisation": "Vallee de Joux tourism",
+    "description": "Tourism article distinguishing the ski areas of Le Brassus, L Orient, L Abbaye and Dent de Vaulion; regional scope is broader than the three historical entry labels"
   }
 ]

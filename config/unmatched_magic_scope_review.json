@@ -1,0 +1,86 @@
+{
+  "review_date": "2026-09-21",
+  "purpose": "Classify all 26 base-entry labels without a one-to-one candidate link. Related listings are conservative donor exclusions, not approved identity or treatment mappings.",
+  "groups": [
+    {
+      "labels": ["Métabief", "Habère-Poche", "Hirmentaz", "Monts Jura", "Thollon-les-Mémises", "Le Grand-Bornand", "Massif des Brasses", "Praz de Lys-Sommand"],
+      "review_class": "foreign_outside_swiss_listing_universe",
+      "related_resort_ids": [],
+      "source_ids": ["MAGIC_CURRENT_MAP", "MAGIC_2024", "MAGIC_2025"],
+      "source_locators": "Current map named destinations/France region; 2024 PDF p.2; 2025 PDF p.2. Current region identifies geography only, not historical continuity.",
+      "note": "French destinations absent from the supplied Swiss directory. Habere-Poche is labelled Les Haberes in the current map. No Swiss resort is assigned by approximate name. Cross-border spillovers remain possible."
+    },
+    {
+      "labels": ["Devero", "San Domenico"],
+      "review_class": "foreign_outside_swiss_listing_universe",
+      "related_resort_ids": [],
+      "source_ids": ["MAGIC_2024", "MAGIC_CURRENT_MAP"],
+      "source_locators": "2024 PDF p.2 names both Italian entrants; current map named destinations/Italie region.",
+      "note": "Italian destinations absent from the supplied Swiss directory. Not missing Swiss aliases; cross-border spillovers are not cleared."
+    },
+    {
+      "labels": ["Leysin", "Les Mosses", "La Lécherette"],
+      "review_class": "component_of_composite_listing",
+      "related_resort_ids": ["leysin_les_mosses_la_lecherette"],
+      "source_ids": ["MAGIC_2019_APRIL", "MAGIC_CURRENT_MAP", "BERGFEX_RESORT_DIRECTORY"],
+      "source_locators": "2019 April PDF p.2 grouped roster; current map separate Leysin and Les Mosses-La Lecherette labels; supplied combined directory listing.",
+      "note": "Three founding labels belong to the named combined listing. Preserve three event IDs and one composite relation; do not count three independent destinations or allocate all exposure to the listing point in Leysin."
+    },
+    {
+      "labels": ["L'Abbaye", "L'Orient", "Le Brassus"],
+      "review_class": "component_of_composite_listing",
+      "related_resort_ids": ["vallee_de_joux"],
+      "source_ids": ["MAGIC_2019_APRIL", "VALLEE_JOUX_SKI_SCOPE_OFFICIAL", "BERGFEX_RESORT_DIRECTORY"],
+      "source_locators": "2019 April PDF p.2 Vallee de Joux parenthetical components; tourism article Le ski alpin a La Vallee; supplied regional listing.",
+      "note": "Three historical components of a regional listing. The tourism article also includes Dent de Vaulion; the regional brand cannot be assumed identical to this three-label historical portfolio. Point in Le Chenit is not the entire outcome catchment."
+    },
+    {
+      "labels": ["Aeschiallmend"],
+      "review_class": "partial_or_overlapping_scope",
+      "related_resort_ids": ["aeschi"],
+      "source_ids": ["AESCHI_LIFT_SCOPE_OFFICIAL", "MAGIC_CURRENT_MAP", "BERGFEX_RESORT_DIRECTORY"],
+      "source_locators": "Official Aeschi tourism Ski Lifts sections Aeschiallmend/Allmispitz and Trainingslift Lucky; current map Aeschiallmend coordinates.",
+      "note": "Official description and nearly coincident listing/map points support a local relation, not full equivalence: the Lucky village lift is explicitly excluded from Magic Pass. Exclude the linked point municipality from a clean-control pool."
+    },
+    {
+      "labels": ["Niederhorn", "Beatenberg"],
+      "review_class": "component_of_composite_listing",
+      "related_resort_ids": ["beatenberg_niederhorn"],
+      "source_ids": ["MAGIC_2022", "MAGIC_2022_DOSSIER", "MAGIC_CURRENT_MAP", "BERGFEX_RESORT_DIRECTORY"],
+      "source_locators": "2022 launch PDF p.1 names Beatenberg and Niederhorn; complete 2022/2023 annual map p.6 names the corresponding new destinations Hohwald and Niederhorn; current map separates Beatenberg-Hohwald and Niederhorn; supplied directory combines Beatenberg-Niederhorn.",
+      "note": "The complete annual launch map resolves the locality-style Beatenberg announcement to the separately listed Hohwald offer while retaining Niederhorn as another destination. Both are components related to one supplied Beatenberg-Niederhorn listing, so preserve both entry events and do not treat the listing as an identity-equivalent single treatment."
+    },
+    {
+      "labels": ["Jura sur Léman"],
+      "review_class": "partial_or_overlapping_scope",
+      "related_resort_ids": ["la_dole_jura_sur_leman"],
+      "source_ids": ["MAGIC_2024", "MAGIC_CURRENT_MAP", "BERGFEX_RESORT_DIRECTORY"],
+      "source_locators": "2024 PDF p.2 identifies La Dole and Les Rousses; current map transboundary France/Vaud label and coordinates.",
+      "note": "The official domain is transboundary and includes Les Rousses. The Swiss La Dole directory listing cannot establish the complete domain, infrastructure total or accommodation market."
+    },
+    {
+      "labels": ["Les Diablerets"],
+      "review_class": "ambiguous_scope",
+      "related_resort_ids": ["les_diablerets_glacier_3000", "glacier_3000_les_diablerets", "villars_gryon_villars_gryon_les_diablerets"],
+      "source_ids": ["MAGIC_2017", "MAGIC_2019_APRIL", "MAGIC_CURRENT_MAP", "BERGFEX_RESORT_DIRECTORY"],
+      "source_locators": "2017 PDF pp.6,8; 2019 April PDF p.2 combined Villars-Gryon-Les Diablerets; current map distinct Les Diablerets, Glacier 3000 and Villars-Gryon.",
+      "note": "Multiple overlapping/duplicated supplied labels. These three IDs are risk candidates only, not three accepted matches. Do not transfer Glacier 3000's later inclusion date to the founding Les Diablerets event."
+    },
+    {
+      "labels": ["Gurnigelbad"],
+      "review_class": "partial_or_overlapping_scope",
+      "related_resort_ids": ["gantrisch_gurnigel"],
+      "source_ids": ["MAGIC_2023", "BERGFEX_RESORT_DIRECTORY"],
+      "source_locators": "Complete 2023/2024 annual map p.5 names the new station Gurnigelbad-Gantrisch; supplied directory listing is Gantrisch-Gurnigel.",
+      "note": "The annual map establishes a direct regional scope relation, but name order does not prove identical infrastructure or catchment. Exclude the linked point municipality from the clean donor pool without approving an identity or causal mapping."
+    },
+    {
+      "labels": ["Château-d'Oex", "Mayens de Conthey", "Wilerallmi", "Grenchenberg"],
+      "review_class": "swiss_listing_missing_or_unverified",
+      "related_resort_ids": [],
+      "source_ids": ["MAGIC_OFFICIAL_EVIDENCE_SET", "MAGIC_CURRENT_MAP", "BERGFEX_RESORT_DIRECTORY"],
+      "source_locators": "Own historical event source/page is retained per output row; supplied 271-listing directory; current map for all except Chateau-d'Oex.",
+      "note": "No validated supplied listing relation. Wilerallmi must not be silently merged into nearby Schwanden. Historical activity and missing/closed operator coverage need separate review."
+    }
+  ]
+}

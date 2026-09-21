@@ -73,9 +73,11 @@ Entry events, full official rosters, named continuation statements, and the docu
 
 The detailed audit is in `reports/membership_continuity_audit.csv`. The final count is an evidence/coverage screen, not a count of identified effects. Seasonal documentation does not establish identical summer access, precise treatment intensity, absence of confounding, or a valid counterfactual. Zero controls and zero treatment units are approved for causal estimation. The additional dated rosters and operator/tourism documents are reviewed in `reports/08_MEMBERSHIP_EVIDENCE_REVIEW.md`.
 
+Annual launch lists and map symbols now classify winter versus summer-winter access for **52 active destination-unit seasons across 6 annual publications**. **31** of those unit-seasons have documented summer access for at least one published component label. Composite destinations retain mixed-component labels rather than being flattened. See `reports/10_ANNUAL_WINTER_SUMMER_OFFERING_REVIEW.md`; summer inclusion is not evidence of daily operation or causal tourism exposure.
+
 ## Donor/control contamination screen
 
-The pipeline screened **814** treatment-municipality pairs. A deliberately provisional flag removes known resolved Magic exposure, the treated municipality scope, donors within 30 km, donors with fewer than 36 observed pre months, and donors with fewer than 24 post months. **438** pairs pass that mechanical screen, but **zero are approved causal controls** because unresolved membership, spillovers beyond an arbitrary distance threshold, and time-varying confounders remain.
+The pipeline screened **814** treatment-municipality pairs. A deliberately provisional flag removes known resolved Magic exposure, precautionary composite/overlapping scope risks, the treated municipality scope, donors within 30 km, donors with fewer than 36 observed pre months, and donors with fewer than 24 post months. The scope review excludes **4 additional municipalities**, leaving **53** apparent controls and **413** pairs passing the screen. **Zero are approved causal controls** because unresolved membership, spillovers beyond an arbitrary distance threshold, and time-varying confounders remain. See `reports/09_ENTITY_SCOPE_AND_DONOR_REVIEW.md`; a precautionary exclusion is not a validated treatment mapping.
 
 See `reports/control_contamination_audit.csv` and `reports/control_candidates_by_treatment.csv`.
 
@@ -106,4 +108,4 @@ See `reports/control_contamination_audit.csv` and `reports/control_candidates_by
 
 ## Next evidence gate
 
-Fill the remaining unverified unit-seasons, resolve the unmatched official entry labels, add the remaining time-varying confounders, validate weather/snow proxy sensitivity, and replace the mechanical donor screen with a documented membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+Fill the remaining seven unverified unit-seasons, resolve the four Swiss labels without a supplied-listing relation and the ambiguous Les Diablerets scope, add the remaining time-varying confounders, validate weather/snow proxy sensitivity, and replace the mechanical donor screen with a documented historical membership/spillover audit. Only then reassess fixed-effects/event-study or case-study synthetic-control feasibility. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
