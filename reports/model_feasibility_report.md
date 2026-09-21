@@ -71,6 +71,12 @@ A deterministic calendar table covers **168 months** from January 2013 through D
 
 The table also flags March 2020 through April 2022 as a deliberately broad COVID sensitivity interval. This marks **286 reviewed destination-month rows**. It is not a legal chronology of canton-specific restrictions or travel rules. Any later event-study diagnostic must therefore report at least a full-sample specification, exclusion of this broad interval, and documented alternative period definitions; the flag does not by itself remove COVID confounding.
 
+## Same-destination distance gradient
+
+Following the researcher's proposed comparison, the pipeline now measures each of 186 hotel municipality series against the component resort points of each reviewed treated destination while keeping that destination fixed. The resulting **2,046 destination–municipality rows** retain both representative-point and minimum-polygon distance. For the seven continuity-plus-24/24 destinations, **1,246 municipality rows** have at least 18 observed months in both adjacent 24-month windows.
+
+**6 of seven** treatment-specific near-versus-far contrasts are descriptively positive when municipalities at most 30 km away are compared with municipalities beyond 50 km and the 30–50 km band is omitted. Moléson is the exception. This pattern is exploratory only: current 2026 boundaries are applied to historical outcomes, hotel locations and travel time are unavailable, and the adjacent windows do not remove common shocks, COVID, competing passes or investment. See `reports/15_TREATMENT_DISTANCE_GRADIENT.md`; all effect and exposure approval flags remain false.
+
 ## Membership-continuity audit
 
 Entry events, full official rosters, named continuation statements, and the documented Crans-Montana exit were checked season by season. Missing annual evidence remains unverified rather than being filled as active or inactive.
@@ -88,6 +94,8 @@ Annual launch lists and map symbols now classify winter versus summer-winter acc
 The pipeline screened **814** treatment-municipality pairs. A deliberately provisional flag removes known resolved Magic exposure, precautionary composite/overlapping scope risks, the treated municipality scope, donors within 30 km, donors with fewer than 36 observed pre months, and donors with fewer than 24 post months. Resolving the current Sattel-Hochstuckli label exposes one additional Magic-linked municipality. The scope review excludes **4 additional municipalities**, leaving **52** apparent controls and **404** pairs passing the 30 km screen; **366** survive a 50 km sensitivity screen.
 
 For the seven continuity-plus-coverage treatments, the pre-trend screen ranks **315** provisional pairs from the 36 pre-anchor months and retains **35** top-five pairs for manual review. The heuristic combines outcome level, deseasonalized trend, seasonality, standardized shape, bed capacity, distance and current resort-directory structure. **Zero are approved causal controls** because historical donor membership, spillovers beyond simple distance, accessibility, time-varying confounders and formal balance remain unresolved. See `reports/11_DONOR_PRETREND_SCREEN.md`.
+
+The first screen measured distance only to the treatment being evaluated. A network-wide audit now shows that **15 of the 35 shortlisted pairs** use a donor municipality within 30 km of some historically or currently resolved Magic Pass resort point; only **7 pairs** lie beyond 50 km from every resolved point. This is a lower-bound proximity screen because 26 official labels remain unresolved, and distance cannot prove spillovers or their absence. See `reports/14_DONOR_NETWORK_SPILLOVER_AUDIT.md`.
 
 See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_treatment.csv`, and `reports/donor_pretrend_shortlist.csv`.
 

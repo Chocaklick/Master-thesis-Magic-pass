@@ -20,6 +20,8 @@ CONTINUITY_AUDIT = ROOT / "reports" / "membership_continuity_audit.csv"
 MEMBERSHIP_STATUS = ROOT / "data_processed" / "magic_pass_membership_status_by_season.csv"
 CONTROL_SUMMARY = ROOT / "reports" / "control_audit_summary.json"
 DONOR_PRETREND_SUMMARY = ROOT / "reports" / "donor_pretrend_summary.json"
+DONOR_NETWORK_SUMMARY = ROOT / "reports" / "donor_network_spillover_summary.json"
+DISTANCE_GRADIENT_SUMMARY = ROOT / "reports" / "treatment_distance_gradient_summary.json"
 CAPACITY_SUMMARY = ROOT / "reports" / "hotel_capacity_summary.json"
 SNOW_SUMMARY = ROOT / "reports" / "snow_proxy_summary.json"
 SNOW_SENSITIVITY_SUMMARY = ROOT / "reports" / "snow_station_sensitivity_summary.json"
@@ -58,6 +60,12 @@ def main() -> None:
     control_summary = json.loads(CONTROL_SUMMARY.read_text(encoding="utf-8"))
     donor_pretrend_summary = json.loads(
         DONOR_PRETREND_SUMMARY.read_text(encoding="utf-8")
+    )
+    donor_network_summary = json.loads(
+        DONOR_NETWORK_SUMMARY.read_text(encoding="utf-8")
+    )
+    distance_gradient_summary = json.loads(
+        DISTANCE_GRADIENT_SUMMARY.read_text(encoding="utf-8")
     )
     capacity_summary = json.loads(CAPACITY_SUMMARY.read_text(encoding="utf-8"))
     snow_summary = json.loads(SNOW_SUMMARY.read_text(encoding="utf-8"))
@@ -383,6 +391,28 @@ def main() -> None:
         "donor_pretrend_shortlisted_pairs": int(
             donor_pretrend_summary["shortlisted_pairs_for_manual_review"]
         ),
+        "shortlisted_pairs_within_30km_any_resolved_magic": int(
+            donor_network_summary[
+                "shortlisted_pairs_within_30km_resolved_magic"
+            ]
+        ),
+        "shortlisted_pairs_beyond_50km_any_resolved_magic": int(
+            donor_network_summary["shortlisted_pairs"]
+            - donor_network_summary[
+                "shortlisted_pairs_within_50km_resolved_magic"
+            ]
+        ),
+        "same_destination_distance_crosswalk_rows": int(
+            distance_gradient_summary["distance_crosswalk_rows"]
+        ),
+        "same_destination_distance_gradient_usable_rows": int(
+            distance_gradient_summary["distance_gradient_usable_rows"]
+        ),
+        "positive_descriptive_near_far_contrasts": int(
+            distance_gradient_summary[
+                "destinations_with_positive_descriptive_near_far_contrast"
+            ]
+        ),
         "unresolved_official_base_entry_labels": int(
             control_summary["unresolved_official_base_entry_labels"]
         ),
@@ -479,6 +509,12 @@ A deterministic calendar table covers **{metrics['temporal_control_month_rows']}
 
 The table also flags March 2020 through April 2022 as a deliberately broad COVID sensitivity interval. This marks **{metrics['reviewed_destination_months_in_covid_sensitivity_interval']:,} reviewed destination-month rows**. It is not a legal chronology of canton-specific restrictions or travel rules. Any later event-study diagnostic must therefore report at least a full-sample specification, exclusion of this broad interval, and documented alternative period definitions; the flag does not by itself remove COVID confounding.
 
+## Same-destination distance gradient
+
+Following the researcher's proposed comparison, the pipeline now measures each of 186 hotel municipality series against the component resort points of each reviewed treated destination while keeping that destination fixed. The resulting **{metrics['same_destination_distance_crosswalk_rows']:,} destination–municipality rows** retain both representative-point and minimum-polygon distance. For the seven continuity-plus-24/24 destinations, **{metrics['same_destination_distance_gradient_usable_rows']:,} municipality rows** have at least 18 observed months in both adjacent 24-month windows.
+
+**{metrics['positive_descriptive_near_far_contrasts']} of seven** treatment-specific near-versus-far contrasts are descriptively positive when municipalities at most 30 km away are compared with municipalities beyond 50 km and the 30–50 km band is omitted. Moléson is the exception. This pattern is exploratory only: current 2026 boundaries are applied to historical outcomes, hotel locations and travel time are unavailable, and the adjacent windows do not remove common shocks, COVID, competing passes or investment. See `reports/15_TREATMENT_DISTANCE_GRADIENT.md`; all effect and exposure approval flags remain false.
+
 ## Membership-continuity audit
 
 Entry events, full official rosters, named continuation statements, and the documented Crans-Montana exit were checked season by season. Missing annual evidence remains unverified rather than being filled as active or inactive.
@@ -496,6 +532,8 @@ Annual launch lists and map symbols now classify winter versus summer-winter acc
 The pipeline screened **{metrics['treatment_donor_pairs_screened']}** treatment-municipality pairs. A deliberately provisional flag removes known resolved Magic exposure, precautionary composite/overlapping scope risks, the treated municipality scope, donors within 30 km, donors with fewer than 36 observed pre months, and donors with fewer than 24 post months. Resolving the current Sattel-Hochstuckli label exposes one additional Magic-linked municipality. The scope review excludes **{metrics['additional_scope_risk_municipalities_excluded']} additional municipalities**, leaving **{metrics['control_municipalities_upper_bound_after_scope_screen']}** apparent controls and **{metrics['provisional_donor_pairs_30km_36pre']}** pairs passing the 30 km screen; **{metrics['provisional_donor_pairs_50km_36pre']}** survive a 50 km sensitivity screen.
 
 For the seven continuity-plus-coverage treatments, the pre-trend screen ranks **{metrics['donor_pretrend_pairs_screened']}** provisional pairs from the 36 pre-anchor months and retains **{metrics['donor_pretrend_shortlisted_pairs']}** top-five pairs for manual review. The heuristic combines outcome level, deseasonalized trend, seasonality, standardized shape, bed capacity, distance and current resort-directory structure. **Zero are approved causal controls** because historical donor membership, spillovers beyond simple distance, accessibility, time-varying confounders and formal balance remain unresolved. See `reports/11_DONOR_PRETREND_SCREEN.md`.
+
+The first screen measured distance only to the treatment being evaluated. A network-wide audit now shows that **{metrics['shortlisted_pairs_within_30km_any_resolved_magic']} of the 35 shortlisted pairs** use a donor municipality within 30 km of some historically or currently resolved Magic Pass resort point; only **{metrics['shortlisted_pairs_beyond_50km_any_resolved_magic']} pairs** lie beyond 50 km from every resolved point. This is a lower-bound proximity screen because 26 official labels remain unresolved, and distance cannot prove spillovers or their absence. See `reports/14_DONOR_NETWORK_SPILLOVER_AUDIT.md`.
 
 See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_treatment.csv`, and `reports/donor_pretrend_shortlist.csv`.
 

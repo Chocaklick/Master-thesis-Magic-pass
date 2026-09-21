@@ -1,0 +1,16 @@
+{
+  "hotel_municipalities_with_2026_geometry": 186,
+  "distinct_2026_municipality_geometries": 185,
+  "reviewed_destinations_with_distance_crosswalk": 11,
+  "distance_crosswalk_rows": 2046,
+  "continuity_24_24_destinations_in_gradient_diagnostic": 7,
+  "distance_gradient_municipality_rows": 1302,
+  "distance_gradient_usable_rows": 1246,
+  "ring_summary_rows": 35,
+  "near_far_contrast_rows": 7,
+  "destinations_with_positive_descriptive_near_far_contrast": 6,
+  "diagnostic_rows_with_pre_covid_overlap": 558,
+  "diagnostic_rows_with_post_covid_overlap": 372,
+  "causal_effect_estimates": 0,
+  "interpretation": "Distance bands compare municipalities around the same treated destination. They are descriptive exposure diagnostics, not causal treatment effects."
+}

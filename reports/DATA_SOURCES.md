@@ -86,6 +86,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Live table composition can change; cached response is the reproducibility anchor
 - **Local raw file:** `data_external/source_evidence/BFS_HOTEL_METADATA_20260919T231713Z.json`.
 
+## DERIVED_DONOR_NETWORK_SPILLOVER_AUDIT — Donor network-wide spillover audit
+
+- **Contents and relevance:** Network-wide proximity sensitivity from apparent donor resort points to all resolved Magic Pass resort points
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned Python transformation of resort points, current/historical resolved Magic links and donor screens; unknown date.
+- **Variables:** minimum_distance_to_resolved_magic_km|network_distance_band|network_spillover_cleared_30km
+- **Transformations:** Minimum haversine distance from any supplied donor-municipality resort point to any historically/currently resolved Magic resort point
+- **Coverage:** apparent donor municipality and treatment-donor shortlist pair; historical resolved links plus current snapshot; 2017/2018 to 2026 current snapshot.
+- **Limitations:** Resolved network is a lower bound; resort points are not catchments; distance does not prove spillovers or their absence
+- **Local raw file:** `not cached / not applicable`.
+
 ## DERIVED_DONOR_PRETREND_SCREEN — Donor pre-trend comparability screen
 
 - **Contents and relevance:** Treatment-specific descriptive prioritisation of provisional donor municipalities using 36 pre-anchor months
@@ -169,6 +181,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** all reviewed destinations; no geographic variation; monthly; 2013-01 to 2026-12.
 - **Limitations:** Does not encode canton-specific school holidays or a legal COVID-restriction chronology; the broad COVID flag is for sensitivity analysis only
 - **Local raw file:** `config/temporal_controls.json`.
+
+## DERIVED_TREATMENT_DISTANCE_GRADIENT — Treatment municipality distance-gradient diagnostic
+
+- **Contents and relevance:** Same-treated-destination comparison of hotel municipalities by distance to destination component resort points
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned Python transformation of swissBOUNDARIES3D, resort coordinates, reviewed treatment units and hotel outcomes; unknown date.
+- **Variables:** representative_point_distance_to_destination_km|minimum_polygon_distance_to_destination_km|descriptive_near_minus_far_log_change
+- **Transformations:** EPSG:2056 distances to the same destination's component points; 24-month pre/post municipal outcome summaries; within-destination distance rings and buffered near/far contrast
+- **Coverage:** reviewed treated destination by hotel municipality; current distance snapshot plus treatment-specific adjacent 24-month windows; 2013 to 2026.
+- **Limitations:** Current boundaries, representative points and adjacent windows do not identify exposure or causal effects; travel time and hotel coordinates unavailable
+- **Local raw file:** `not cached / not applicable`.
 
 ## DESTINATION_SCOPE_OFFICIAL_SET — Destination scope evidence set
 
@@ -805,6 +829,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** point station; station metadata snapshot; ? to 2026.
 - **Limitations:** Station locations are avalanche-monitoring sites and not ski-slope observations
 - **Local raw file:** `data_external/source_evidence/SLF_IMIS_STATIONS_20260920T085555Z.csv`.
+
+## SWISSTOPO_BOUNDARIES_2026 — swissBOUNDARIES3D 2026-01
+
+- **Contents and relevance:** Official 2026 municipality polygons used for same-destination distance diagnostics
+- **Producer:** Federal Office of Topography swisstopo
+- **Exact URL:** https://www.swisstopo.admin.ch/en/landscape-model-swissboundaries3d
+- **Access and retrieval date:** Configured HTTPS download with immutable ZIP, SHA-256 sidecar and collection log; 2026-09-21T14:53:10.749354+00:00.
+- **Variables:** municipality_geometry|municipality_bfs_id|municipality_area_ha_2026
+- **Transformations:** Checksum verification; GeoPackage extraction; representative point, centroid and polygon-to-resort distance in EPSG:2056
+- **Coverage:** Swiss political municipality polygon; boundary snapshot; 2026-01-01 to 2026-01-01.
+- **Limitations:** Current geometry is not historical harmonisation; Moutier (BE) BFS 700 is explicitly bridged to current Moutier BFS 6831 geometry
+- **Local raw file:** `data_external/source_evidence/SWISSTOPO_BOUNDARIES_2026_20260921T145310Z.zip`.
 
 ## VALLEE_JOUX_SKI_SCOPE_OFFICIAL — Official destination or municipal scope page
 

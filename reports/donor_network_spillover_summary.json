@@ -1,0 +1,17 @@
+{
+  "candidate_control_municipalities_audited": 52,
+  "candidate_municipalities_within_20km_resolved_magic": 21,
+  "candidate_municipalities_within_30km_resolved_magic": 23,
+  "candidate_municipalities_within_50km_resolved_magic": 32,
+  "shortlisted_unique_donor_municipalities": 22,
+  "shortlisted_municipalities_within_20km_resolved_magic": 10,
+  "shortlisted_municipalities_within_30km_resolved_magic": 11,
+  "shortlisted_municipalities_within_50km_resolved_magic": 17,
+  "shortlisted_pairs": 35,
+  "shortlisted_pairs_within_20km_resolved_magic": 14,
+  "shortlisted_pairs_within_30km_resolved_magic": 15,
+  "shortlisted_pairs_within_50km_resolved_magic": 28,
+  "same_cluster_candidate_municipalities": 6,
+  "causal_controls_approved": 0,
+  "interpretation": "This is a network-wide proximity sensitivity against resolved Magic Pass points, not proof of actual tourism spillovers or their absence."
+}

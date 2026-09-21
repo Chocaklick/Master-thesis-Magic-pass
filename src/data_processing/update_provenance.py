@@ -67,6 +67,7 @@ def main() -> None:
     rows: list[dict] = []
 
     bfs_metadata = cached_metadata("BFS_HOTEL_METADATA")
+    boundary_metadata = cached_metadata("SWISSTOPO_BOUNDARIES_2026")
     bfs_capacity_metadata = cached_metadata("BFS_HOTEL_CAPACITY_METADATA")
     bfs_capacity_records = [
         json.loads(path.read_text(encoding="utf-8"))
@@ -109,6 +110,31 @@ def main() -> None:
         confidence_level="high for official source; medium for legacy extraction provenance",
         manual_verification="API metadata, row structure, suppression tokens, and annual/monthly reconciliation checked",
         notes="Annual totals reconcile exactly wherever all 12 monthly observations are available",
+    ))
+    rows.append(blank_source(
+        "SWISSTOPO_BOUNDARIES_2026",
+        variable_name="municipality_geometry|municipality_bfs_id|municipality_area_ha_2026",
+        variable_description="Official 2026 municipality polygons used for same-destination distance diagnostics",
+        source_organisation="Federal Office of Topography swisstopo",
+        source_dataset_name="swissBOUNDARIES3D 2026-01",
+        source_page_url="https://www.swisstopo.admin.ch/en/landscape-model-swissboundaries3d",
+        direct_download_url=configured["SWISSTOPO_BOUNDARIES_2026"]["url"],
+        retrieval_method="Configured HTTPS download with immutable ZIP, SHA-256 sidecar and collection log",
+        retrieval_date=(boundary_metadata or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(boundary_metadata),
+        local_raw_file=(boundary_metadata or {}).get("raw_file", ""),
+        processed_file="data_processed/treatment_municipality_distance_exposure.csv|data_processed/treatment_distance_gradient_diagnostic.csv",
+        geographic_level="Swiss political municipality polygon",
+        temporal_resolution="boundary snapshot",
+        temporal_start="2026-01-01",
+        temporal_end="2026-01-01",
+        unit="EPSG:2056 multipolygon",
+        license="Federal geodata terms; public Open Government Data",
+        access_conditions="Public swisstopo download",
+        transformation_applied="Checksum verification; GeoPackage extraction; representative point, centroid and polygon-to-resort distance in EPSG:2056",
+        quality_notes="Current geometry is not historical harmonisation; Moutier (BE) BFS 700 is explicitly bridged to current Moutier BFS 6831 geometry",
+        confidence_level="high for current boundaries; qualified for historical outcome alignment",
+        manual_verification="186 hotel series map to 185 current geometries; bridge retained explicitly",
     ))
     rows.append(blank_source(
         "BFS_HOTEL_METADATA",
@@ -720,6 +746,42 @@ def main() -> None:
         confidence_level="high for reproducibility; qualified for proxy representativeness; none for causal validity",
         manual_verification="15 reviewed components, 115 eligible stations and zero causal approvals asserted",
     ))
+    rows.append(blank_source(
+        "DERIVED_DONOR_NETWORK_SPILLOVER_AUDIT",
+        variable_name="minimum_distance_to_resolved_magic_km|network_distance_band|network_spillover_cleared_30km",
+        variable_description="Network-wide proximity sensitivity from apparent donor resort points to all resolved Magic Pass resort points",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Donor network-wide spillover audit",
+        retrieval_method="Versioned Python transformation of resort points, current/historical resolved Magic links and donor screens",
+        processed_file="reports/donor_network_spillover_audit.csv|data_processed/donor_shortlist_network_audit.csv",
+        geographic_level="apparent donor municipality and treatment-donor shortlist pair",
+        temporal_resolution="historical resolved links plus current snapshot",
+        temporal_start="2017/2018",
+        temporal_end="2026 current snapshot",
+        unit="kilometres and sensitivity flags",
+        transformation_applied="Minimum haversine distance from any supplied donor-municipality resort point to any historically/currently resolved Magic resort point",
+        quality_notes="Resolved network is a lower bound; resort points are not catchments; distance does not prove spillovers or their absence",
+        confidence_level="high for reproducibility; none for causal control validity",
+        manual_verification="52 apparent controls and all 35 shortlisted pairs covered; zero causal controls approved",
+    ))
+    rows.append(blank_source(
+        "DERIVED_TREATMENT_DISTANCE_GRADIENT",
+        variable_name="representative_point_distance_to_destination_km|minimum_polygon_distance_to_destination_km|descriptive_near_minus_far_log_change",
+        variable_description="Same-treated-destination comparison of hotel municipalities by distance to destination component resort points",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Treatment municipality distance-gradient diagnostic",
+        retrieval_method="Versioned Python transformation of swissBOUNDARIES3D, resort coordinates, reviewed treatment units and hotel outcomes",
+        processed_file="data_processed/treatment_municipality_distance_exposure.csv|data_processed/treatment_distance_gradient_diagnostic.csv|reports/treatment_distance_ring_summary.csv|reports/treatment_distance_near_far_contrast.csv",
+        geographic_level="reviewed treated destination by hotel municipality",
+        temporal_resolution="current distance snapshot plus treatment-specific adjacent 24-month windows",
+        temporal_start="2013",
+        temporal_end="2026",
+        unit="kilometres and descriptive log change",
+        transformation_applied="EPSG:2056 distances to the same destination's component points; 24-month pre/post municipal outcome summaries; within-destination distance rings and buffered near/far contrast",
+        quality_notes="Current boundaries, representative points and adjacent windows do not identify exposure or causal effects; travel time and hotel coordinates unavailable",
+        confidence_level="high for reproducibility; exploratory only for treatment gradient",
+        manual_verification="11x186 distance rows; seven treatment diagnostics; every causal flag false",
+    ))
     sources = upsert(existing_sources, rows, "source_id", SOURCE_COLUMNS)
     sources.to_csv(SOURCE_FILE, index=False)
 
@@ -841,6 +903,18 @@ def main() -> None:
         ("trend_direction_agrees", "resort_snow_alternative_station_sensitivity", "Whether selected and alternative linear winter-depth slopes have the same sign", "boolean", "boolean", "reviewed resort component", "common usable winters", "DERIVED_SNOW_STATION_SENSITIVITY", "derived", "selected slope * alternative slope >= 0", "snow trend sensitivity", "No uncertainty test; short descriptive series"),
         ("alternative_station_agreement", "resort_snow_alternative_station_sensitivity", "Rule-based overall agreement grade for the station perturbation", "category", "string", "reviewed resort component", "common usable winters", "DERIVED_SNOW_STATION_SENSITIVITY", "derived", "high/moderate/low thresholds over correlation, relative depth gap and reliability gap", "snow proxy sensitivity", "Conservative descriptive grade; not measurement accuracy"),
         ("causal_covariate_approved", "resort_snow_alternative_station_sensitivity", "Whether the snow proxy passes the causal covariate gate", "boolean", "boolean", "reviewed resort component", "review checkpoint", "DERIVED_SNOW_STATION_SENSITIVITY", "quality gate", "always false at this checkpoint", "causal readiness", "Independent gridded sensitivity and snowmaking/operation data remain missing"),
+        ("minimum_distance_to_resolved_magic_km", "donor_network_spillover_audit", "Minimum great-circle distance from any donor-municipality resort point to any resolved Magic Pass resort point", "kilometres", "float", "apparent donor municipality", "historical plus current snapshot", "DERIVED_DONOR_NETWORK_SPILLOVER_AUDIT", "derived", "minimum haversine distance over donor and resolved-Magic resort-point pairs", "network spillover sensitivity", "Resolved Magic points are a lower bound and not tourism catchments"),
+        ("network_distance_band", "donor_network_spillover_audit", "Sensitivity band for network-wide Magic proximity", "category", "string", "apparent donor municipality", "historical plus current snapshot", "DERIVED_DONOR_NETWORK_SPILLOVER_AUDIT", "derived", "within 20 km, 20-30 km, 30-50 km or beyond 50 km", "network spillover sensitivity", "Thresholds are not causal rules"),
+        ("network_spillover_cleared_30km", "donor_network_spillover_audit", "Whether every resolved Magic resort point is more than 30 km from donor resort points", "boolean", "boolean", "apparent donor municipality", "historical plus current snapshot", "DERIVED_DONOR_NETWORK_SPILLOVER_AUDIT", "derived screen", "minimum network distance > 30 km", "network spillover sensitivity", "Does not prove absence of spillovers"),
+        ("same_lift_cluster_as_resolved_magic", "donor_network_spillover_audit", "Whether a donor listing shares a preserved lift cluster with a resolved Magic listing", "boolean", "boolean", "apparent donor municipality", "current listing/cluster snapshot", "DERIVED_DONOR_NETWORK_SPILLOVER_AUDIT", "derived screen", "intersection of donor and resolved-Magic cluster IDs", "domain overlap risk", "Existing clusters are provisional geographic groupings"),
+        ("representative_point_distance_to_destination_km", "treatment_municipality_distance_exposure", "Minimum projected distance from the municipality's interior representative point to a treated destination component point", "kilometres", "float", "treated destination by hotel municipality", "2026 boundary snapshot", "DERIVED_TREATMENT_DISTANCE_GRADIENT", "derived", "minimum EPSG:2056 point distance across destination components", "distance exposure diagnostic", "Representative point is not a population, hotel or transport centroid"),
+        ("minimum_polygon_distance_to_destination_km", "treatment_municipality_distance_exposure", "Minimum projected distance from the municipality polygon to a treated destination component point", "kilometres", "float", "treated destination by hotel municipality", "2026 boundary snapshot", "DERIVED_TREATMENT_DISTANCE_GRADIENT", "derived", "minimum EPSG:2056 polygon-to-point distance across components", "distance exposure diagnostic", "Zero when any component point is inside the municipality"),
+        ("boundary_bfs_id_2026", "treatment_municipality_distance_exposure", "BFS identifier of the current 2026 polygon used for distance", "identifier", "integer", "hotel municipality series", "2026 boundary snapshot", "SWISSTOPO_BOUNDARIES_2026", "source/bridge", "same as hotel BFS except explicit Moutier 700 to 6831 bridge", "boundary lineage", "Both original hotel-series ID and current boundary ID are retained"),
+        ("boundary_bfs_bridge_status", "treatment_municipality_distance_exposure", "Whether the hotel-series BFS identifier required an explicit current-boundary bridge", "category", "string", "hotel municipality series", "2026 boundary snapshot", "DERIVED_TREATMENT_DISTANCE_GRADIENT", "derived lineage", "same_bfs_id or explicit Moutier bridge", "boundary quality", "Not a full historical boundary harmonisation"),
+        ("representative_distance_band", "treatment_municipality_distance_exposure", "Common same-destination representative-point distance band", "category", "string", "treated destination by hotel municipality", "2026 boundary snapshot", "DERIVED_TREATMENT_DISTANCE_GRADIENT", "derived", "0-15, 15-30, 30-50, 50-100 or over 100 km", "distance exposure diagnostic", "Band thresholds are sensitivity choices"),
+        ("descriptive_log_change_post_minus_pre", "treatment_distance_gradient_diagnostic", "Difference between mean log1p monthly overnight stays in adjacent 24-month post and pre windows", "log points", "float", "treated destination by hotel municipality", "treatment-specific 24-month windows", "DERIVED_TREATMENT_DISTANCE_GRADIENT", "derived", "mean post log1p nights - mean pre log1p nights", "descriptive outcome diagnostic", "No common-shock, trend or treatment-intensity adjustment"),
+        ("distance_gradient_usable", "treatment_distance_gradient_diagnostic", "Whether at least 18 outcome months are observed in each adjacent window", "boolean", "boolean", "treated destination by hotel municipality", "treatment-specific 24-month windows", "DERIVED_TREATMENT_DISTANCE_GRADIENT", "derived quality", "pre observed months >=18 and post observed months >=18", "distance diagnostic quality", "Does not imply causal usability"),
+        ("descriptive_near_minus_far_log_change", "treatment_distance_near_far_contrast", "Near-municipality median log change minus far-municipality median log change for the same destination", "log points", "float", "reviewed treated destination", "treatment-specific 24-month windows", "DERIVED_TREATMENT_DISTANCE_GRADIENT", "derived", "median change at <=30 km minus median change at >50 km; 30-50 km omitted", "distance-gradient diagnostic", "Exploratory contrast, not an effect estimate"),
     ]
     paths = {
         "hotel_municipality_month": ROOT / "data_processed" / "hotel_municipality_month.csv",
@@ -870,6 +944,10 @@ def main() -> None:
         "donor_pretrend_comparability": ROOT / "data_processed" / "donor_pretrend_comparability.csv",
         "temporal_controls_month": ROOT / "data_processed" / "temporal_controls_month.csv",
         "resort_snow_alternative_station_sensitivity": ROOT / "data_processed" / "resort_snow_alternative_station_sensitivity.csv",
+        "donor_network_spillover_audit": ROOT / "reports" / "donor_network_spillover_audit.csv",
+        "treatment_municipality_distance_exposure": ROOT / "data_processed" / "treatment_municipality_distance_exposure.csv",
+        "treatment_distance_gradient_diagnostic": ROOT / "data_processed" / "treatment_distance_gradient_diagnostic.csv",
+        "treatment_distance_near_far_contrast": ROOT / "reports" / "treatment_distance_near_far_contrast.csv",
     }
     scope_glossary = {
         "event_id": "Stable historical event identifier; preserved without merging events",

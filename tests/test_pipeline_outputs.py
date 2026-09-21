@@ -498,3 +498,47 @@ def test_snow_alternative_station_sensitivity_remains_noncausal() -> None:
     }
     assert not as_bool(sensitivity["direct_slope_representation"]).any()
     assert not as_bool(sensitivity["causal_covariate_approved"]).any()
+
+
+def test_donor_network_spillover_audit_is_network_wide_and_noncausal() -> None:
+    audit = read("reports/donor_network_spillover_audit.csv")
+    pairs = read("data_processed/donor_shortlist_network_audit.csv")
+    assert len(audit) == 52
+    assert audit["municipality_bfs_id"].is_unique
+    assert int(audit["minimum_distance_to_resolved_magic_km"].le(20).sum()) == 21
+    assert int(audit["minimum_distance_to_resolved_magic_km"].le(30).sum()) == 23
+    assert int(audit["minimum_distance_to_resolved_magic_km"].le(50).sum()) == 32
+    assert int(as_bool(audit["same_lift_cluster_as_resolved_magic"]).sum()) == 6
+    assert not as_bool(audit["causal_control_approved"]).any()
+    assert len(pairs) == 35
+    assert int(pairs["minimum_distance_to_resolved_magic_km"].le(20).sum()) == 14
+    assert int(pairs["minimum_distance_to_resolved_magic_km"].le(30).sum()) == 15
+    assert int(pairs["minimum_distance_to_resolved_magic_km"].le(50).sum()) == 28
+    assert not as_bool(pairs["causal_control_approved"]).any()
+
+
+def test_same_destination_distance_gradient_preserves_scope_and_uncertainty() -> None:
+    distance = read("data_processed/treatment_municipality_distance_exposure.csv")
+    diagnostic = read("data_processed/treatment_distance_gradient_diagnostic.csv")
+    rings = read("reports/treatment_distance_ring_summary.csv")
+    contrasts = read("reports/treatment_distance_near_far_contrast.csv")
+    assert len(distance) == 11 * 186
+    assert distance["destination_unit_id"].nunique() == 11
+    assert distance["municipality_bfs_id"].nunique() == 186
+    assert distance["boundary_bfs_id_2026"].nunique() == 185
+    assert not distance.duplicated(
+        ["destination_unit_id", "municipality_bfs_id"]
+    ).any()
+    moutier_bridge = distance[distance["municipality_bfs_id"].eq(700)]
+    assert len(moutier_bridge) == 11
+    assert moutier_bridge["boundary_bfs_id_2026"].eq(6831).all()
+    assert not as_bool(distance["causal_exposure_approved"]).any()
+    assert len(diagnostic) == 7 * 186
+    assert diagnostic["destination_unit_id"].nunique() == 7
+    assert int(as_bool(diagnostic["distance_gradient_usable"]).sum()) == 1246
+    assert not as_bool(diagnostic["causal_effect_estimate"]).any()
+    assert len(rings) == 35
+    assert not as_bool(rings["causal_effect_estimate"]).any()
+    assert len(contrasts) == 7
+    assert int(contrasts["descriptive_near_minus_far_log_change"].gt(0).sum()) == 6
+    assert not as_bool(contrasts["causal_effect_estimate"]).any()

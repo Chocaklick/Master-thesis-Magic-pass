@@ -12,7 +12,7 @@ The supplied files are structurally stronger than their filenames initially sugg
 | Lift-cluster consistency | Strong internally: no duplicate lift memberships or count mismatches |
 | Resort identity | Weak-to-moderate: 271 listings remain provisional, not validated independent domains |
 | Current point geolocation | Strong for 268/271 coordinates; three lie outside the Swiss layer |
-| Tourism municipality exposure | Not established; point containment cannot substitute for accommodation-market mapping |
+| Tourism municipality exposure | Same-destination distances now cover 11×186 destination–municipality rows, but current polygon/representative-point distance cannot substitute for accommodation-market mapping or travel time |
 | Hotel outcome | Strong source and long panel; suppression is material and municipality boundaries need review |
 | Hotel capacity | Official monthly HESTA table integrated; 29,274/31,248 supply rows complete; live-table revisions preserved separately |
 | Magic Pass event evidence | Reviewed-unit continuity complete; 29 broader event links remain unresolved and individual annual modality is incomplete |
@@ -31,10 +31,10 @@ This is an evidence-completeness score, not a resort ranking, opportunity score,
 ## Highest-priority corrections
 
 1. Validate treatment intensity and exact winter-versus-summer scope. All active seasons are documented for the 14 reviewed units and seven panel units pass the 24/24 coverage screen, but no causal treatment or control is approved (see `08_MEMBERSHIP_EVIDENCE_REVIEW.md`).
-2. Manually audit historical non-membership, competing passes, accessibility, investment and shared-valley spillovers for the 35 treatment-donor pairs prioritised in `11_DONOR_PRETREND_SCREEN.md`.
+2. Manually audit historical non-membership, competing passes, accessibility and investment for the 35 treatment-donor pairs prioritised in `11_DONOR_PRETREND_SCREEN.md`. The network-wide point-distance audit now flags 15 pairs within 30 km of another resolved Magic destination, but cannot by itself prove spillovers.
 3. Convert the completed 26-label scope-risk review into independently validated destination domains: four Swiss labels still lack a supplied-listing relation and Les Diablerets remains ambiguous.
-4. Establish tourism-exposure/accommodation markets and audit spillovers without double-counting.
-5. Audit historical BFS municipality changes before panel estimation.
+4. Establish tourism-exposure/accommodation markets and audit spillovers without double-counting. The same-destination distance gradient is exploratory: six of seven near/far contrasts are positive, but no exposure or effect is approved.
+5. Audit historical BFS municipality changes before panel estimation. The distance pipeline exposes Moutier's BFS 700-to-6831 transition explicitly but does not harmonise all historical boundaries.
 6. Add an independent gridded snow sensitivity and test temperature/precipitation sensitivity to alternative stations or a gridded source. The first next-nearest SLF-station test is complete, but its 47.2% median relative absolute depth gap confirms station dependence.
 
 The current modelling decision is documented in `reports/model_feasibility_report.md`.

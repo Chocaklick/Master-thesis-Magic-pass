@@ -11,6 +11,7 @@ Collection was initially limited to high-priority evidence needed for the treatm
 | OFS/BFS PXWeb hotel metadata | Cached successfully | Official table definition and 186 municipality code-label pairs |
 | OFS/BFS HESTA supply/demand table | 14 annual API chunks cached successfully | Monthly establishments, rooms, beds and occupancy with exact query/checksum provenance |
 | geo.admin.ch current municipality identify | 271/271 requests succeeded | Current polygon containing each supplied resort coordinate |
+| swisstopo swissBOUNDARIES3D 2026-01 | Checksum-cached official GeoPackage ZIP | Current municipality polygons for same-destination distance diagnostics; not historical boundary harmonisation |
 | Magic Pass press archive | Cached successfully | Dated official announcements and known exit/supplement evidence |
 | Magic Pass current map | Cached successfully | Current-state destination snapshot, not historical timing |
 | Magic Pass seasonal publications | 2017–2025 annual PDFs plus the official 2020/2021 PNG map cached | Page/image-reviewed entry, roster and modality evidence |
@@ -28,13 +29,14 @@ The annual-offering review rendered seven dated launch lists/maps and transcribe
 
 - `data_processed/resort_point_municipality.csv`: 268 Swiss current point containers and three points outside the current Swiss municipality layer. This is explicitly not a tourism-exposure crosswalk.
 - `data_processed/magic_pass_membership_history.csv`: 93 official events, including 88 base-pass entries, one exit, and separately coded supplement/inclusion cases.
-- `data_processed/magic_pass_current_destinations.csv`: 95 destinations embedded in the cached current map; 68 have a candidate link to a supplied listing.
+- `data_processed/magic_pass_current_destinations.csv`: 95 destinations embedded in the cached current map; 69 have a candidate link to a supplied listing.
 - `data_processed/hotel_capacity_municipality_month.csv`: 31,248 official municipality-month supply rows; 29,274 have establishments, rooms and beds observed.
 - `data_processed/resort_snow_station_crosswalk.csv`: 271 resort listings linked to a coverage-qualified external SLF snow-station proxy with distance, elevation gap and representativeness flags.
 - `data_processed/destination_snow_month.csv`: 1,749 reviewed destination-month snow-proxy rows through 2026-03; 1,733 pass the complete station-month coverage gate.
 - `data_processed/meteoswiss_station_month.csv`: 1,113 station-month rows for seven selected stations; 1,111 pass the joint temperature/precipitation coverage gate.
 - `data_processed/resort_weather_station_crosswalk.csv`: 15 reviewed component resorts linked to the nearest of 112 current inventory-eligible SwissMetNet stations, with distance, elevation gap and non-piste representation flags.
 - `data_processed/destination_weather_month.csv`: 1,749 reviewed destination-month weather rows through 2026-03; 1,744 pass the complete station-month coverage gate.
+- `data_processed/treatment_municipality_distance_exposure.csv`: 2,046 same-destination distance rows for 11 reviewed destinations and 186 hotel municipality series, using 185 current polygons and an explicit Moutier boundary-version bridge.
 
 ## Collection discrepancies and gaps
 
