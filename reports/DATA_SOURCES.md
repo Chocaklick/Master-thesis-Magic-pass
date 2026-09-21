@@ -122,6 +122,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Live table composition can change; cached response is the reproducibility anchor
 - **Local raw file:** `data_external/source_evidence/BFS_HOTEL_METADATA_20260919T231713Z.json`.
 
+## CHATEAU_DOEX_LA_BRAYE_2018 — Official destination or municipal scope page
+
+- **Contents and relevance:** Official municipal preavis 17/2018 documenting the La Braye lift assets and the Télé-Château-d'Oex operator lineage
+- **Producer:** Commune de Château-d'Oex
+- **Exact URL:** https://www.chateaudoex-admin.ch/_doc/1790818
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T22:04:14.866711+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/unmatched_magic_scope_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/CHATEAU_DOEX_LA_BRAYE_2018_20260921T220414Z.pdf`.
+
 ## DERIVED_DONOR_EXTERNAL_SHOCK_AUDIT — Donor competing-pass and local-shock audit
 
 - **Contents and relevance:** Complete-roster nonmembership and page-referenced competing-pass/local-tourism-shock review for shortlisted donor pairs beyond 50 km from the resolved Magic network
@@ -179,7 +191,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** unmatched_entry_classification|non_equivalent_scope_relations|precautionary_donor_exclusions
 - **Transformations:** Exact reviewed label lookup; expand many-to-many relation rows; deduplicate linked listing IDs for precautionary donor exclusions
 - **Coverage:** official entry label; listing relation; point municipality risk; historical entry event and current scope review kept separate; 2017/2018 to 2025/2026.
-- **Limitations:** Not identity equivalence or causal exposure; foreign destinations can create spillovers; absent listings are not non-members
+- **Limitations:** Not identity equivalence or causal exposure; foreign destinations can create spillovers; a documented destination absent from the supplied directory is a coverage gap, not a non-member
 - **Local raw file:** `config/unmatched_magic_scope_review.json`.
 
 ## DERIVED_MULTI_SOURCE — Reproducible local transformations
@@ -254,6 +266,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Core-municipality proxies are labelled separately from complete observed municipal scope
 - **Local raw file:** `not cached / not applicable`.
 
+## DIABLERETS_SCOPE_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Official operator page distinguishing the Les Diablerets/Meilleret sector from Glacier 3000, reached by shuttle from the bottom of the slopes
+- **Producer:** Télé-Villars-Gryon-Diablerets SA
+- **Exact URL:** https://www.tvgd.ch/en-US/diablerets/
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T22:04:28.367940+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/unmatched_magic_scope_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/DIABLERETS_SCOPE_OFFICIAL_20260921T220428Z.html`.
+
 ## ENGADIN_MOUNTAINS_ANNUAL_2017_18 — Engadin St. Moritz Mountains AG annual report 2017/18
 
 - **Contents and relevance:** Official 2017/2018 annual report documenting Corviglia-Marguns restaurant changes, dynamic-pricing preparation and lift modernisation around the Anniviers anchor
@@ -313,6 +337,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2022-11 to 2023-04.
 - **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
 - **Local raw file:** `data_external/source_evidence/GRAUBUENDENCARD_TRANSIT_2022_23_20260921T151955Z.pdf`.
+
+## GRENCHENBERG_OPERATOR_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Official regional tourism page identifying Skilift Grenchenberg AG, its two lifts and Magic Pass integration
+- **Producer:** Jurasonnenseite / Grenchen tourism
+- **Exact URL:** https://jurasonnenseite.ch/erleben/auf-dem-berg/skilift
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T22:04:23.333867+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/unmatched_magic_scope_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/GRENCHENBERG_OPERATOR_OFFICIAL_20260921T220423Z.html`.
 
 ## GR_MINSCHUNS_INVESTMENT_2019 — Graubünden government release on Minschuns investment
 
@@ -746,6 +782,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_PRESS_ARCHIVE_20260919T231715Z.html`.
 
+## MAYENS_CONTHEY_OPERATOR_OFFICIAL — Official destination or municipal scope page
+
+- **Contents and relevance:** Official municipal directory entry for the Société coopérative, Téléskis des Mayens de Conthey
+- **Producer:** Commune de Conthey
+- **Exact URL:** https://www.conthey.ch/fr/annuaire/societe-cooperative-teleskis-des-mayens-764/
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T22:04:16.998727+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/unmatched_magic_scope_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/MAYENS_CONTHEY_OPERATOR_OFFICIAL_20260921T220416Z.html`.
+
 ## MEIRINGEN_HASLIBERG_MAGIC_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Official operator evidence for Magic Pass membership from 1 May 2025
@@ -861,7 +909,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Exact URL:** https://www.niederhorn.ch/en/special-tickets/magic-pass
 - **Access and retrieval date:** official URL verified; local retrieval pending; unknown date.
 - **Variables:** destination_scope_evidence
-- **Transformations:** Not used; local retrieval failed with HTTP 500
+- **Transformations:** Not used; local retrieval unavailable
 - **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `not cached / not applicable`.
@@ -1009,6 +1057,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/VILLARS_GRYON_SCOPE_OFFICIAL_20260920T005537Z.html`.
+
+## WILERALLMI_ANNUAL_2023_24 — Official destination or municipal scope page
+
+- **Contents and relevance:** Official 2023/2024 annual report establishing Wilerallmi as a separately operated Sigriswil ski destination
+- **Producer:** Skilift Wilerallmi Sigriswil AG
+- **Exact URL:** https://www.wilerallmi.ch/images/Skilift_Wilerallmi_Jahresbericht_2023-2024.pdf
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T22:04:21.185154+00:00.
+- **Variables:** destination_scope_evidence
+- **Transformations:** Manually reviewed scope statement encoded in config/unmatched_magic_scope_review.json
+- **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
+- **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
+- **Local raw file:** `data_external/source_evidence/WILERALLMI_ANNUAL_2023_24_20260921T220421Z.pdf`.
 
 ## Outstanding provenance gaps
 

@@ -1,5 +1,5 @@
 {
-  "review_date": "2026-09-21",
+  "review_date": "2026-09-22",
   "purpose": "Classify all 26 base-entry labels without a one-to-one candidate link. Related listings are conservative donor exclusions, not approved identity or treatment mappings.",
   "groups": [
     {
@@ -60,11 +60,11 @@
     },
     {
       "labels": ["Les Diablerets"],
-      "review_class": "ambiguous_scope",
-      "related_resort_ids": ["les_diablerets_glacier_3000", "glacier_3000_les_diablerets", "villars_gryon_villars_gryon_les_diablerets"],
-      "source_ids": ["MAGIC_2017", "MAGIC_2019_APRIL", "MAGIC_CURRENT_MAP", "BERGFEX_RESORT_DIRECTORY"],
-      "source_locators": "2017 PDF pp.6,8; 2019 April PDF p.2 combined Villars-Gryon-Les Diablerets; current map distinct Les Diablerets, Glacier 3000 and Villars-Gryon.",
-      "note": "Multiple overlapping/duplicated supplied labels. These three IDs are risk candidates only, not three accepted matches. Do not transfer Glacier 3000's later inclusion date to the founding Les Diablerets event."
+      "review_class": "resolved_overlapping_directory_scope",
+      "related_resort_ids": ["les_diablerets_glacier_3000", "villars_gryon_villars_gryon_les_diablerets"],
+      "source_ids": ["MAGIC_2017", "MAGIC_2019_APRIL", "MAGIC_CURRENT_MAP", "VILLARS_GRYON_SCOPE_OFFICIAL", "DIABLERETS_SCOPE_OFFICIAL", "BERGFEX_RESORT_DIRECTORY"],
+      "source_locators": "2017 PDF pp.6,8 lists Les Diablerets and Glacier 3000 separately; 2019 April PDF p.2 combines Villars-Gryon-Les Diablerets; current map again separates Les Diablerets, Glacier 3000 and Villars-Gryon. TVGD states that its domain connects Villars, Gryon and Les Diablerets, while its Diablerets page describes Glacier 3000 as a separate area reached by shuttle from the bottom of the Diablerets slopes.",
+      "note": "The historical Les Diablerets label overlaps two supplied directory listings that share cluster SKI_CLUSTER_008. Neither is an identity-equivalent one-to-one match. The separate glacier_3000_les_diablerets listing is removed from this relation because official annual and current evidence distinguish Glacier 3000 from Les Diablerets. Do not transfer Glacier 3000's later inclusion date to the founding Les Diablerets event."
     },
     {
       "labels": ["Gurnigelbad"],
@@ -75,12 +75,36 @@
       "note": "The annual map establishes a direct regional scope relation, but name order does not prove identical infrastructure or catchment. Exclude the linked point municipality from the clean donor pool without approving an identity or causal mapping."
     },
     {
-      "labels": ["Château-d'Oex", "Mayens de Conthey", "Wilerallmi", "Grenchenberg"],
-      "review_class": "swiss_listing_missing_or_unverified",
+      "labels": ["Château-d'Oex"],
+      "review_class": "documented_historical_destination_missing_from_directory",
       "related_resort_ids": [],
-      "source_ids": ["MAGIC_OFFICIAL_EVIDENCE_SET", "MAGIC_CURRENT_MAP", "BERGFEX_RESORT_DIRECTORY"],
-      "source_locators": "Own historical event source/page is retained per output row; supplied 271-listing directory; current map for all except Chateau-d'Oex.",
-      "note": "No validated supplied listing relation. Wilerallmi must not be silently merged into nearby Schwanden. Historical activity and missing/closed operator coverage need separate review."
+      "source_ids": ["MAGIC_2017", "CHATEAU_DOEX_LA_BRAYE_2018", "BERGFEX_RESORT_DIRECTORY"],
+      "source_locators": "2017 Magic Pass PDF pp.6,8; Commune de Château-d'Oex preavis 17/2018 pp.1-2 identifies the La Braye lift assets and the Télé-Château-d'Oex operator lineage; supplied 271-listing directory.",
+      "note": "The founding Château-d'Oex label is historically documented as the La Braye lift destination but has no row in the supplied directory. Operator restructuring means the historical event must not be attached to another nearby listing or interpreted as uninterrupted current operation."
+    },
+    {
+      "labels": ["Mayens de Conthey"],
+      "review_class": "documented_destination_missing_from_directory",
+      "related_resort_ids": [],
+      "source_ids": ["MAGIC_2017", "MAGIC_CURRENT_MAP", "MAYENS_CONTHEY_OPERATOR_OFFICIAL", "BERGFEX_RESORT_DIRECTORY"],
+      "source_locators": "2017 Magic Pass PDF pp.6,8; current map exact destination; Commune de Conthey directory entry for Société coopérative, Téléskis des Mayens de Conthey; supplied 271-listing directory.",
+      "note": "Official municipal and Magic Pass sources document a local lift operator and destination, but no supplied resort listing represents it. Absence from the supplied directory is a coverage gap, not evidence of non-operation or non-membership."
+    },
+    {
+      "labels": ["Wilerallmi"],
+      "review_class": "documented_distinct_neighbouring_destination_missing_from_directory",
+      "related_resort_ids": ["schwanden_sigriswil_thunersee"],
+      "source_ids": ["MAGIC_2024", "MAGIC_CURRENT_MAP", "WILERALLMI_ANNUAL_2023_24", "BERGFEX_RESORT_DIRECTORY"],
+      "source_locators": "2024 Magic Pass PDF p.2; current map lists Wilerallmi and Schwanden separately; official 2023/2024 annual report of Skilift Wilerallmi Sigriswil AG; supplied Schwanden listing and directory.",
+      "note": "Wilerallmi is a separately operated destination missing from the supplied directory. Its current Magic Pass point and the supplied Schwanden point are both in Sigriswil and less than one kilometre apart, so Schwanden is retained only as a precautionary neighbouring relation, never as an alias or identity match."
+    },
+    {
+      "labels": ["Grenchenberg"],
+      "review_class": "documented_destination_missing_from_directory",
+      "related_resort_ids": [],
+      "source_ids": ["MAGIC_2025", "MAGIC_CURRENT_MAP", "GRENCHENBERG_OPERATOR_OFFICIAL", "BERGFEX_RESORT_DIRECTORY"],
+      "source_locators": "2025 Magic Pass PDF p.2; current map exact destination; official Grenchen tourism page identifies Skilift Grenchenberg AG, two lifts and Magic Pass integration; supplied 271-listing directory.",
+      "note": "Official tourism and Magic Pass sources document the destination and operator, but it has no row in the supplied directory. No nearby supplied listing is assigned by approximate name or geography."
     }
   ]
 }

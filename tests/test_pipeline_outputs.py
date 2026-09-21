@@ -411,9 +411,11 @@ def test_unmatched_entry_scope_review_is_complete_and_noncausal() -> None:
     assert review["review_class"].value_counts().to_dict() == {
         "foreign_outside_swiss_listing_universe": 10,
         "component_of_composite_listing": 8,
-        "swiss_listing_missing_or_unverified": 4,
         "partial_or_overlapping_scope": 3,
-        "ambiguous_scope": 1,
+        "documented_destination_missing_from_directory": 2,
+        "documented_historical_destination_missing_from_directory": 1,
+        "documented_distinct_neighbouring_destination_missing_from_directory": 1,
+        "resolved_overlapping_directory_scope": 1,
     }
     assert len(relations) == 14
     assert relations["related_resort_id"].nunique() == 9
@@ -425,6 +427,18 @@ def test_unmatched_entry_scope_review_is_complete_and_noncausal() -> None:
     assert beatenberg["related_resort_id"].tolist() == ["beatenberg_niederhorn"]
     gurnigelbad = relations[relations["source_resort_name"].eq("Gurnigelbad")]
     assert gurnigelbad["related_resort_id"].tolist() == ["gantrisch_gurnigel"]
+    diablerets = relations[relations["source_resort_name"].eq("Les Diablerets")]
+    assert diablerets["related_resort_id"].tolist() == [
+        "les_diablerets_glacier_3000",
+        "villars_gryon_villars_gryon_les_diablerets",
+    ]
+    assert "glacier_3000_les_diablerets" not in set(
+        diablerets["related_resort_id"]
+    )
+    wilerallmi = relations[relations["source_resort_name"].eq("Wilerallmi")]
+    assert wilerallmi["related_resort_id"].tolist() == [
+        "schwanden_sigriswil_thunersee"
+    ]
 
 
 def test_control_audit_never_promotes_screened_donors() -> None:

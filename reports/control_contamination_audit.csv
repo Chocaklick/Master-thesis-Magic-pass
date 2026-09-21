@@ -13,7 +13,7 @@ municipality_bfs_id,municipality_name,resort_listing_count,known_magic_resort_li
 792,Lenk,1,0,False,True,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
 843,Saanen,1,1,True,False,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
 906,Schangnau,1,1,True,False,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
-938,Sigriswil,1,1,True,False,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
+938,Sigriswil,1,1,True,False,True,schwanden_sigriswil_thunersee,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
 1202,Andermatt,1,0,False,True,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
 1301,Einsiedeln,3,0,False,True,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."
 1331,Küssnacht (SZ),1,0,False,True,False,,False,False,False,False,False,"Unresolved official destination labels, historical membership, spillovers, and time-varying confounders are not fully audited."

@@ -554,7 +554,21 @@ def main() -> None:
         "AESCHI_LIFT_SCOPE_OFFICIAL",
         "NIEDERHORN_MAGIC_SCOPE_OFFICIAL",
         "VALLEE_JOUX_SKI_SCOPE_OFFICIAL",
+        "CHATEAU_DOEX_LA_BRAYE_2018",
+        "MAYENS_CONTHEY_OPERATOR_OFFICIAL",
+        "WILERALLMI_ANNUAL_2023_24",
+        "GRENCHENBERG_OPERATOR_OFFICIAL",
+        "DIABLERETS_SCOPE_OFFICIAL",
     ]
+    unmatched_scope_ids = {
+        "AESCHI_LIFT_SCOPE_OFFICIAL",
+        "VALLEE_JOUX_SKI_SCOPE_OFFICIAL",
+        "CHATEAU_DOEX_LA_BRAYE_2018",
+        "MAYENS_CONTHEY_OPERATOR_OFFICIAL",
+        "WILERALLMI_ANNUAL_2023_24",
+        "GRENCHENBERG_OPERATOR_OFFICIAL",
+        "DIABLERETS_SCOPE_OFFICIAL",
+    }
     for source_id in scope_ids:
         item = configured[source_id]
         metadata = cached_metadata(source_id)
@@ -573,7 +587,7 @@ def main() -> None:
             retrieval_date=metadata.get("retrieval_date", "") if metadata else "",
             original_file_name=raw_name(metadata),
             local_raw_file=metadata.get("raw_file", "") if metadata else "",
-            processed_file=("data_processed/magic_pass_scope_relations.csv" if source_id in {"AESCHI_LIFT_SCOPE_OFFICIAL", "VALLEE_JOUX_SKI_SCOPE_OFFICIAL"} else "" if source_id == "NIEDERHORN_MAGIC_SCOPE_OFFICIAL" else "data_processed/treatment_destination_units.csv"),
+            processed_file=("reports/unmatched_magic_entry_review.csv|data_processed/magic_pass_scope_relations.csv" if source_id in unmatched_scope_ids else "" if source_id == "NIEDERHORN_MAGIC_SCOPE_OFFICIAL" else "data_processed/treatment_destination_units.csv"),
             geographic_level="official destination or municipality",
             temporal_resolution="retrieval-date scope snapshot",
             temporal_start="",
@@ -581,7 +595,7 @@ def main() -> None:
             unit="scope evidence",
             license="UNKNOWN; preserve citation and original URL",
             access_conditions="Public official website; automated retrieval respects robots.txt",
-            transformation_applied=("Not used; local retrieval failed with HTTP 500" if not metadata else "Manually reviewed scope statement encoded in config/unmatched_magic_scope_review.json" if source_id in {"AESCHI_LIFT_SCOPE_OFFICIAL", "VALLEE_JOUX_SKI_SCOPE_OFFICIAL"} else "Manually reviewed scope statement encoded in config/treatment_destination_review.json"),
+            transformation_applied=("Not used; local retrieval unavailable" if not metadata else "Manually reviewed scope statement encoded in config/unmatched_magic_scope_review.json" if source_id in unmatched_scope_ids else "Manually reviewed scope statement encoded in config/treatment_destination_review.json"),
             quality_notes="Current scope evidence does not by itself establish historical tourism exposure",
             confidence_level="high for stated scope; analytical mapping remains explicitly qualified",
             manual_verification="reviewed" if metadata else "not used; retrieval pending",
@@ -708,8 +722,8 @@ def main() -> None:
         temporal_start="2017/2018", temporal_end="2025/2026",
         unit="classification; relation; boolean screen",
         transformation_applied="Exact reviewed label lookup; expand many-to-many relation rows; deduplicate linked listing IDs for precautionary donor exclusions",
-        quality_notes="Not identity equivalence or causal exposure; foreign destinations can create spillovers; absent listings are not non-members",
-        manual_verification="26 labels reviewed on 2026-09-21",
+        quality_notes="Not identity equivalence or causal exposure; foreign destinations can create spillovers; a documented destination absent from the supplied directory is a coverage gap, not a non-member",
+        manual_verification="26 labels reviewed; five previously uncertain Swiss/overlapping cases resolved on 2026-09-22",
         confidence_level="qualified per relation; no causal mappings approved",
     ))
     rows.append(blank_source(
