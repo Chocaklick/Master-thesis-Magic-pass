@@ -35,6 +35,7 @@ A resort assignment is not automatically a municipality assignment.
 - The seven geographically remote pairs were checked against the complete official Magic Pass roster for each anchor season: all seven donor station/place labels are absent. Official operator and government evidence nevertheless identifies an overlapping donor-specific tourism, pricing, access or infrastructure shock for every pair. The 35-pair shortlist is therefore exhausted and zero controls are approved. See [the external-shock audit](reports/16_DONOR_EXTERNAL_SHOCK_AUDIT.md).
 - Following the researcher's distance idea, 2,046 destination–municipality rows compare all 186 hotel municipality series around the same reviewed destination. Six of seven descriptive ≤30 km versus >50 km contrasts are positive, but every effect/exposure flag remains false. See [the distance-gradient diagnostic](reports/15_TREATMENT_DISTANCE_GRADIENT.md).
 - Checkpoints 4–5 are formally failed under the present donor and effective-sample design. Path C v0.2 instead segments 156 feature-complete linked lift clusters into two current structural groups and produces transparent analogues for 104 apparent non-member candidates. Twenty-five candidates are strong extrapolations from the eight reviewed treated references. A min/median/max aggregation audit retains `k=2`, but only 11 candidates are stable on every recorded segment/analogue/OOD criterion; row-level sensitivity is exposed in the decision-support export. Predicted-uplift and composite-score fields remain blank. See [the Path C decision](reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md), [the segmentation/analogue review](reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md), and [the aggregation-sensitivity review](reports/19_PATH_C_AGGREGATION_SENSITIVITY.md).
+- Path C v0.3 adds official 2025 STATPOP population and complete-year HESTA intensity ratios as qualified point-container context. This covers 52 of 162 clusters and 39 of 104 candidates. It does not define destination catchments: every tourism-dependence approval flag remains false and the generic tourism-dependence field remains blank. See [the tourism-context review](reports/20_TOURISM_DEPENDENCE_CONTEXT.md).
 - GitHub synchronization is configured: `main` tracks `origin/main` at `https://github.com/Chocaklick/Master-thesis-Magic-pass.git`.
 
 See [PROJECT_STATE.md](PROJECT_STATE.md) for the authoritative current state and [logs/research_journal.md](logs/research_journal.md) for the chronological record.
@@ -93,7 +94,7 @@ With the original files available under ignored `data_raw/` and the previously c
 
 To check or collect configured official evidence before rebuilding, add `--with-collection`. The collector reuses checksum-verified cached responses and logs every success or failure. The default pipeline performs no network access.
 
-The run ends with the automated test suite. Main checkpoint reports are `reports/01_DATA_AUDIT.md` through `reports/19_PATH_C_AGGREGATION_SENSITIVITY.md`, plus `reports/model_feasibility_report.md`.
+The run ends with the automated test suite. Main checkpoint reports are `reports/01_DATA_AUDIT.md` through `reports/20_TOURISM_DEPENDENCE_CONTEXT.md`, plus `reports/model_feasibility_report.md`.
 
 ## Data conventions
 

@@ -122,6 +122,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Live table composition can change; cached response is the reproducibility anchor
 - **Local raw file:** `data_external/source_evidence/BFS_HOTEL_METADATA_20260919T231713Z.json`.
 
+## BFS_STATPOP_DATA — STATPOP px-x-0102010000_101
+
+- **Contents and relevance:** Permanent resident population by municipality at 31 December 2025
+- **Producer:** Swiss Federal Statistical Office (FSO/OFS/BFS)
+- **Exact URL:** https://www.pxweb.bfs.admin.ch/pxweb/fr/px-x-0102010000_101/
+- **Access and retrieval date:** PXWeb HTTP POST; exact query, raw response and SHA-256 checksum preserved; 2026-09-21T23:16:05.143142+00:00.
+- **Variables:** resident_population|population_reference_year|municipality_bfs_id
+- **Transformations:** Exact BFS code parsed from official municipality label; no population imputation; exact BFS join to HESTA 2025
+- **Coverage:** municipality; annual reference-day population; 2025-12-31 to 2025-12-31.
+- **Limitations:** Population is municipal context; it does not define a ski destination catchment
+- **Local raw file:** `data_external/source_evidence/BFS_STATPOP_DATA_2025_20260921T231605Z.csv`.
+
+## BFS_STATPOP_METADATA — px-x-0102010000_101 metadata
+
+- **Contents and relevance:** Live metadata for the official STATPOP municipality population table
+- **Producer:** Swiss Federal Statistical Office (FSO/OFS/BFS)
+- **Exact URL:** https://www.pxweb.bfs.admin.ch/pxweb/fr/px-x-0102010000_101/
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T23:13:51.846350+00:00.
+- **Variables:** statpop_table_schema|municipality_bfs_id
+- **Transformations:** Dimension codes and 2,115 municipality code-label pairs reviewed exactly
+- **Coverage:** municipality; metadata snapshot; 2010 to 2025.
+- **Limitations:** Cached metadata states 31 December reference date and commune geography state 6 April 2025
+- **Local raw file:** `data_external/source_evidence/BFS_STATPOP_METADATA_20260921T231351Z.json`.
+
 ## CHATEAU_DOEX_LA_BRAYE_2018 — Official destination or municipal scope page
 
 - **Contents and relevance:** Official municipal preavis 17/2018 documenting the La Braye lift assets and the Télé-Château-d'Oex operator lineage
@@ -225,9 +249,9 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Exact URL:** Not documented.
 - **Access and retrieval date:** Versioned merge of Path C feature, segment and analogue outputs; unknown date.
 - **Variables:** opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|missing strategic-need fields
-- **Transformations:** One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity appended; no composite score
+- **Transformations:** One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity and qualified point-container tourism context appended; no composite score
 - **Coverage:** existing lift cluster with supplied resort listings; mixed descriptive snapshot; lineage retained by field; ? to ?.
-- **Limitations:** Tourism dependence and accessibility are missing; apparent non-membership is not verified; blank uplift fields are intentional
+- **Limitations:** Catchment-level tourism dependence and accessibility are missing; point-container context is not a destination scope; apparent non-membership is not verified; blank uplift fields are intentional
 - **Local raw file:** `config/path_c_analysis.json`.
 
 ## DERIVED_PATH_C_FEATURE_MATRIX — Path C resort-cluster feature matrix
@@ -289,6 +313,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** all reviewed destinations; no geographic variation; monthly; 2013-01 to 2026-12.
 - **Limitations:** Does not encode canton-specific school holidays or a legal COVID-restriction chronology; the broad COVID flag is for sensitivity analysis only
 - **Local raw file:** `config/temporal_controls.json`.
+
+## DERIVED_TOURISM_DEPENDENCE_CONTEXT — Path C point-container tourism context
+
+- **Contents and relevance:** Qualified tourism-intensity context for municipalities containing supplied resort listing points
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned exact-BFS merge of STATPOP 2025, HESTA 2025 and resort point-container crosswalk; unknown date.
+- **Variables:** overnights_per_resident|hotel_beds_per_1000_residents|point-container tourism context
+- **Transformations:** Require all 12 HESTA months; sum annual hotel nights; average monthly supply; divide by resident population; aggregate unique point containers only when every municipality is complete
+- **Coverage:** municipality and linked lift cluster point-container set; 2025 annual context; 2025-01-01 to 2025-12-31.
+- **Limitations:** Point containment is not an approved tourism catchment or exposure mapping; hotel statistics omit non-hotel accommodation
+- **Local raw file:** `data_processed/resort_point_municipality.csv`.
 
 ## DERIVED_TREATMENT_DISTANCE_GRADIENT — Treatment municipality distance-gradient diagnostic
 

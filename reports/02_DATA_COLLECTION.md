@@ -2,7 +2,7 @@
 
 ## Collection scope
 
-Collection was initially limited to high-priority evidence needed for the treatment/outcome feasibility gates. After those gates were assessed, the project added the official HESTA hotel-capacity table, SLF snow history, and targeted MeteoSwiss temperature/precipitation. Mobility, demographic and commercial datasets remain deferred.
+Collection was initially limited to high-priority evidence needed for the treatment/outcome feasibility gates. After those gates were assessed, the project added the official HESTA hotel-capacity table, SLF snow history, targeted MeteoSwiss temperature/precipitation, and STATPOP 2025 municipal population. Mobility, employment and commercial datasets remain deferred.
 
 ## Completed official collections
 
@@ -10,6 +10,7 @@ Collection was initially limited to high-priority evidence needed for the treatm
 |---|---|---|
 | OFS/BFS PXWeb hotel metadata | Cached successfully | Official table definition and 186 municipality code-label pairs |
 | OFS/BFS HESTA supply/demand table | 14 annual API chunks cached successfully | Monthly establishments, rooms, beds and occupancy with exact query/checksum provenance |
+| OFS/BFS STATPOP population | 2025 municipality extract and metadata cached successfully | Permanent residents for 2,115 municipalities; exact BFS join to complete-year HESTA context |
 | geo.admin.ch current municipality identify | 271/271 requests succeeded | Current polygon containing each supplied resort coordinate |
 | swisstopo swissBOUNDARIES3D 2026-01 | Checksum-cached official GeoPackage ZIP | Current municipality polygons for same-destination distance diagnostics; not historical boundary harmonisation |
 | Magic Pass press archive | Cached successfully | Dated official announcements and known exit/supplement evidence |
@@ -40,6 +41,8 @@ The annual-offering review rendered seven dated launch lists/maps and transcribe
 - `data_processed/destination_weather_month.csv`: 1,749 reviewed destination-month weather rows through 2026-03; 1,744 pass the complete station-month coverage gate.
 - `data_processed/treatment_municipality_distance_exposure.csv`: 2,046 same-destination distance rows for 11 reviewed destinations and 186 hotel municipality series, using 185 current polygons and an explicit Moutier boundary-version bridge.
 - `data_processed/donor_shortlist_final_audit.csv`: all 35 shortlisted pairs with network-distance priority and the seven beyond-50-km pairs joined to page-referenced competing-pass/local-shock evidence.
+- `data_processed/municipality_tourism_context_2025.csv`: STATPOP population plus complete-year HESTA hotel nights/supply and per-resident ratios, with no imputation.
+- `data_processed/path_c_cluster_tourism_context.csv`: qualified context for the unique municipalities containing each cluster's listing points; explicitly not a destination catchment.
 
 ## Collection discrepancies and gaps
 

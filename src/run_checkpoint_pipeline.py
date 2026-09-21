@@ -38,6 +38,7 @@ def main() -> None:
             "config/meteoswiss_selected_station_files.json",
         )
         run("src/data_collection/collect_bfs_hotel_capacity.py")
+        run("src/data_collection/collect_bfs_statpop.py")
         run("src/data_collection/collect_evidence.py", "--config", "config/municipality_queries.json")
         run("src/data_collection/extract_press_text.py")
     run("src/data_processing/build_hotel_capacity_panel.py")
@@ -61,6 +62,7 @@ def main() -> None:
     run("src/scoring/build_path_c_feature_matrix.py")
     run("src/scoring/build_path_c_segments_and_analogues.py")
     run("src/scoring/build_path_c_aggregation_sensitivity.py")
+    run("src/data_processing/build_tourism_dependence_context.py")
     run("src/scoring/plot_path_c_outputs.py")
     run("src/data_processing/update_provenance.py")
     subprocess.run([sys.executable, "-m", "pytest", "-q"], cwd=ROOT, check=True)

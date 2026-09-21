@@ -695,3 +695,48 @@ def test_path_c_aggregation_sensitivity_is_explicit_and_noncausal() -> None:
     assert candidates["aggregation_signal_range_pct_points"].ge(0).all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
+
+
+def test_tourism_context_uses_complete_official_year_without_claiming_catchment() -> None:
+    municipality = read("data_processed/municipality_tourism_context_2025.csv")
+    cluster = read("data_processed/path_c_cluster_tourism_context.csv")
+    decision = read("data_processed/magic_pass_decision_support.csv")
+
+    assert len(municipality) == 2_115
+    assert municipality["municipality_bfs_id"].is_unique
+    assert municipality["population_reference_year"].eq(2025).all()
+    assert municipality["resident_population"].gt(0).all()
+    complete = as_bool(municipality["complete_hotel_reference_year"])
+    assert int(complete.sum()) == 185
+    assert municipality.loc[complete, "overnights_per_resident"].notna().all()
+    assert municipality.loc[complete, "hotel_beds_per_1000_residents"].notna().all()
+    assert municipality.loc[~complete, "overnights_per_resident"].isna().all()
+    assert municipality.loc[~complete, "hotel_beds_per_1000_residents"].isna().all()
+    moutier_2025 = municipality[municipality["municipality_bfs_id"].eq(700)].iloc[0]
+    assert moutier_2025["municipality_name_statpop"] == "Moutier"
+    assert bool(moutier_2025["complete_hotel_reference_year"])
+    assert 6831 not in set(municipality["municipality_bfs_id"])
+    assert not as_bool(municipality["tourism_dependence_feature_approved"]).any()
+    assert municipality["tourism_context_interpretation"].eq(
+        "point_container_context_not_destination_catchment"
+    ).all()
+
+    assert len(cluster) == 162
+    assert cluster["cluster_id"].is_unique
+    assert int(as_bool(cluster["all_point_containers_have_complete_hotel_year"]).sum()) == 52
+    candidates = cluster[as_bool(cluster["candidate_for_path_c"])]
+    assert len(candidates) == 104
+    assert int(as_bool(candidates["all_point_containers_have_complete_hotel_year"]).sum()) == 39
+    assert not as_bool(cluster["tourism_dependence_feature_approved"]).any()
+    assert cluster["tourism_exposure_interpretation"].eq(
+        "point_container_context_not_destination_catchment"
+    ).all()
+
+    assert len(decision) == 162
+    assert decision["tourism_dependence"].isna().all()
+    assert int(
+        as_bool(decision["all_point_containers_have_complete_hotel_year"]).sum()
+    ) == 52
+    assert not as_bool(decision["tourism_dependence_feature_approved"]).any()
+    assert decision["predicted_uplift_pct"].isna().all()
+    assert decision["composite_opportunity_need_score"].isna().all()

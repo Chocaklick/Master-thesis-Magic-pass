@@ -1,0 +1,12 @@
+{
+  "statpop_reference_year": 2025,
+  "statpop_municipalities": 2115,
+  "hesta_municipalities_in_reference_year": 186,
+  "hesta_municipalities_with_complete_reference_year": 185,
+  "path_c_clusters": 162,
+  "clusters_with_complete_point_container_context": 52,
+  "path_c_candidates": 104,
+  "candidates_with_complete_point_container_context": 39,
+  "tourism_dependence_features_approved": 0,
+  "interpretation": "point_container_context_not_destination_catchment"
+}

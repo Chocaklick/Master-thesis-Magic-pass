@@ -22,7 +22,7 @@ For each candidate, `data_processed/path_c_candidate_analogues.csv` retains thre
 
 ## Two dimensions kept separate
 
-The decision-support export contains an analogue-opportunity percentile and a snow-vulnerability percentile for **104** candidates. Tourism dependence and accessibility are unavailable at an approved cluster exposure scope, so strategic need is incomplete. Predicted-uplift fields are blank (0 populated), and no composite score is produced (0 populated).
+The decision-support export contains an analogue-opportunity percentile and a snow-vulnerability percentile for **104** candidates. Official 2025 STATPOP/HESTA ratios now provide qualified point-container context for 39 candidates, but they are not approved destination catchments; catchment-level tourism dependence and accessibility remain unavailable. Strategic need is therefore incomplete. Predicted-uplift fields are blank (0 populated), and no composite score is produced (0 populated).
 
 ## Outputs and next evidence needs
 
@@ -30,6 +30,7 @@ The decision-support export contains an analogue-opportunity percentile and a sn
 - `data_processed/path_c_cluster_segments.csv`
 - `data_processed/path_c_reviewed_treated_reference.csv`
 - `data_processed/path_c_candidate_analogues.csv`
+- `data_processed/path_c_cluster_tourism_context.csv`
 - `data_processed/magic_pass_decision_support.csv`
 
-Next, add defensible accessibility and tourism-dependence variables, audit competing-pass status for apparent candidates, and test sensitivity to the cluster aggregation rule. Until then the export is an exploratory dashboard-ready prototype, not a recommendation ranking.
+The min/median/max aggregation audit is complete in `reports/19_PATH_C_AGGREGATION_SENSITIVITY.md`, and the qualified municipal context is documented in `reports/20_TOURISM_DEPENDENCE_CONTEXT.md`. Next, add defensible accessibility, upgrade tourism dependence to a validated catchment scope, and audit competing-pass status for apparent candidates. Until then the export is an exploratory dashboard-ready prototype, not a recommendation ranking.

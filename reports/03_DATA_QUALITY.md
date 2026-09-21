@@ -12,7 +12,7 @@ The supplied files are structurally stronger than their filenames initially sugg
 | Lift-cluster consistency | Strong internally: no duplicate lift memberships or count mismatches |
 | Resort identity | Weak-to-moderate: 271 listings remain provisional, not validated independent domains |
 | Current point geolocation | Strong for 268/271 coordinates; three lie outside the Swiss layer |
-| Tourism municipality exposure | Same-destination distances now cover 11×186 destination–municipality rows, but current polygon/representative-point distance cannot substitute for accommodation-market mapping or travel time |
+| Tourism municipality exposure | Same-destination distances cover 11×186 destination–municipality rows. STATPOP/HESTA ratios add complete 2025 point-container context for 52 linked clusters, but neither current containment nor representative-point distance establishes an accommodation market or destination catchment |
 | Hotel outcome | Strong source and long panel; suppression is material and municipality boundaries need review |
 | Hotel capacity | Official monthly HESTA table integrated; 29,274/31,248 supply rows complete; live-table revisions preserved separately |
 | Magic Pass event evidence | Reviewed-unit continuity complete; 29 broader event links remain unresolved and individual annual modality is incomplete |
@@ -21,6 +21,7 @@ The supplied files are structurally stronger than their filenames initially sugg
 | Temporal controls | All 1,848 reviewed rows receive deterministic calendar fields; 286 rows fall in a broad COVID sensitivity interval that is not a legal restriction chronology |
 | Temperature/precipitation | Seven official SwissMetNet stations cover the 15 reviewed treatment components; 1,744/1,749 destination-months complete; regional proxy only |
 | Donor external shocks | Seven beyond-50-km pairs checked against complete annual Magic rosters and official operator/government sources; all seven are excluded for overlapping local tourism or infrastructure shocks |
+| Tourism dependence | Official population and hotel-intensity ratios available for 2,115 municipalities / 185 complete HESTA joins; 39 Path C candidates have complete point-container context, but zero destination-level tourism-dependence features are approved |
 | Accessibility | Missing |
 
 ## Resort-level assessment
@@ -33,8 +34,8 @@ This is an evidence-completeness score, not a resort ranking, opportunity score,
 
 1. Validate treatment intensity and exact winter-versus-summer scope. All active seasons are documented for the 14 reviewed units and seven panel units pass the 24/24 coverage screen, but no causal treatment or control is approved (see `08_MEMBERSHIP_EVIDENCE_REVIEW.md`).
 2. Rebuild the donor search if causal identification remains a goal. The current top-five-per-treatment shortlist is exhausted: 28 pairs are proximity-deprioritised and all seven remote pairs are excluded for overlapping local shocks. Complete-roster station-label absence is documented for the remote pairs, although corporate-affiliate and exact competing-pass tariff details remain qualified.
-3. Convert the completed 26-label scope-risk review into independently validated destination domains: four Swiss labels still lack a supplied-listing relation and Les Diablerets remains ambiguous.
-4. Establish tourism-exposure/accommodation markets and audit spillovers without double-counting. The same-destination distance gradient is exploratory: six of seven near/far contrasts are positive, but no exposure or effect is approved.
+3. Convert the completed conservative 26-label scope review into independently validated destination domains. Four documented Swiss destinations have no own supplied-directory row, and Les Diablerets remains an explicit many-to-many overlap rather than an identity match.
+4. Establish tourism-exposure/accommodation markets and audit spillovers without double-counting. The new STATPOP/HESTA ratios describe point containers only, and the same-destination distance gradient is exploratory: six of seven near/far contrasts are positive, but no exposure or effect is approved.
 5. Audit historical BFS municipality changes before panel estimation. The distance pipeline exposes Moutier's BFS 700-to-6831 transition explicitly but does not harmonise all historical boundaries.
 6. Add an independent gridded snow sensitivity and test temperature/precipitation sensitivity to alternative stations or a gridded source. The first next-nearest SLF-station test is complete, but its 47.2% median relative absolute depth gap confirms station dependence.
 

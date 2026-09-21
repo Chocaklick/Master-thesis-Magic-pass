@@ -6,11 +6,11 @@ Build a reproducible and scientifically defensible Business Analytics framework 
 
 ## Current phase
 
-Checkpoints 1–3, the first treatment-unit review, the unmatched-label resolution, and initial capacity/climate integrations are complete. Checkpoints 4–5 are now formally failed for causal and heterogeneous-effect modelling under the present design. Path C version 0.2 is implemented: current structural lift-cluster segmentation, nearest-current-member and nearest-reviewed-treated analogues, empirical support/OOD flags, min/median/max aggregation sensitivity, and separate descriptive opportunity and snow-vulnerability dimensions. It is an exploratory prototype, not a causal or predictive uplift model.
+Checkpoints 1–3, the first treatment-unit review, the unmatched-label resolution, and initial capacity/climate integrations are complete. Checkpoints 4–5 are now formally failed for causal and heterogeneous-effect modelling under the present design. Path C version 0.3 is implemented: current structural lift-cluster segmentation, nearest-current-member and nearest-reviewed-treated analogues, empirical support/OOD flags, min/median/max aggregation sensitivity, qualified point-container tourism context, and separate descriptive opportunity and snow-vulnerability dimensions. It is an exploratory prototype, not a causal or predictive uplift model.
 
 ## Last update
 
-2026-09-22 00:54 CEST
+2026-09-22 01:28 CEST
 
 ## Completed work
 
@@ -21,7 +21,7 @@ Checkpoints 1–3, the first treatment-unit review, the unmatched-label resoluti
 - Built a 31,248-row municipality-month hotel table for 186 municipalities. It contains 28,455 observed total-night values from 2013-01 through 2026-03; 2,793 suppressed monthly total-night cells remain missing.
 - Collected the official HESTA supply/demand table in 14 checksum-verified annual PXWeb chunks and built a 31,248-row capacity panel. Establishments, rooms, and beds are jointly observed in 29,274 municipality-months; source `..`/`...` tokens remain missing with no imputation.
 - Reconciled the new live table to the legacy demand extraction: 28,452 arrival cells and 28,452 overnight-stay cells match exactly; six cells across three Davos months in 2014 reflect live-table revisions and are reported without overwriting the legacy outcome.
-- Cached official OFS table metadata, the official Magic Pass press archive/current map, all main seasonal Magic Pass PDFs including the recovered 2021/2022 dossier, two supplemental 2021/2022 releases, official destination-scope pages, and 271 geo.admin.ch point-identify responses with checksums and retrieval logs.
+- Cached official OFS HESTA and STATPOP table metadata/data, the official Magic Pass press archive/current map, all main seasonal Magic Pass PDFs including the recovered 2021/2022 dossier, two supplemental 2021/2022 releases, official destination-scope pages, and 271 geo.admin.ch point-identify responses with checksums and retrieval logs.
 - Built a point-container crosswalk: 268 coordinates resolve to a current Swiss municipality, 103 listings fall in 74 municipalities present in the OFS hotel universe, and three coordinates lie outside the Swiss current-municipality layer.
 - Built 93 official Magic Pass evidence events: 88 base-pass entries plus separately coded exit/supplement/inclusion events. Sixty-four events have candidate listing links; 29 remain unresolved.
 - Extracted 95 destinations from the cached current official map, with 69 candidate listing links after resolving Sattel-Hochstuckli to the supplied exact-name listing. The embedded count conflicts with the official page's “more than 100” headline and is retained as a discrepancy.
@@ -50,8 +50,9 @@ Checkpoints 1–3, the first treatment-unit review, the unmatched-label resoluti
 - Selected two broad structural segments using a predeclared k=2–8 rule. The selected k=2 solution has silhouette 0.514, median 80% subsample ARI 0.987 and 10th-percentile ARI 0.924; the segments contain 83 and 73 clusters.
 - Built exploratory analogues for 104 apparent non-member candidate clusters using 50 structurally complete resolved-current-Magic clusters and eight reviewed treated destinations with complete unadjusted 24-month diagnostics. Against the treated references, 74 candidates have good structural support, five moderate extrapolation and 25 strong extrapolation. Predicted-uplift and composite-score fields are intentionally blank.
 - Rebuilt Path C under within-cluster minimum, median and maximum structural features for all 104 candidates. Every rule selects k=2, while segment ARI is 0.827 for the minimum and 0.714 for the maximum relative to the median. Seventy-one candidates retain the same closest reviewed-treated analogue, 60 retain the same treated-reference OOD class, and only 11 are stable on every recorded segment/analogue/OOD criterion. These row-level flags now qualify the decision-support confidence field.
-- Generated normalized provenance (93 source records), a 780-row data dictionary, source report, all checkpoint reviews, a resort-level evidence-quality table, Path C outputs and two static scientific figures.
-- Reran the Path C sensitivity/provenance modules and final test suite successfully; all 28 automated tests pass, including exact aggregation-sensitivity counts, blank uplift/composite fields and zero causal approvals.
+- Added the official 2025 STATPOP permanent-resident population for 2,115 municipalities and joined it by exact BFS code to HESTA 2025. Of 186 HESTA municipalities, 185 have all 12 months for nights and supply. Complete point-container context is available for 52 linked clusters and 39 apparent candidates, but it is not promoted to a destination tourism-dependence feature.
+- Generated normalized provenance (96 source records), an 837-row data dictionary, source report, all checkpoint reviews, a resort-level evidence-quality table, Path C outputs and two static scientific figures.
+- Reran the Path C context/provenance modules and final test suite successfully; all 29 automated tests pass, including exact STATPOP/HESTA coverage, blank uplift/composite fields and zero tourism-dependence or causal approvals.
 
 ## Main empirical counts
 
@@ -67,6 +68,8 @@ Checkpoints 1–3, the first treatment-unit review, the unmatched-label resoluti
 | Reviewed treated analogue references | 8 | Complete unadjusted 24-month diagnostics; not effects |
 | Candidates with strong treated-reference extrapolation | 25 | OOD warning based on empirical leave-one-out distance |
 | Candidates stable across every min/median/max aggregation criterion | 11 | Segment, both top-one analogues and treated-reference OOD category unchanged |
+| STATPOP 2025 municipalities | 2,115 | Official permanent resident population at 31 December |
+| Path C candidates with complete point-container tourism context | 39 | 12-month HESTA ratios available; not a destination catchment |
 | Hotel municipalities | 186 | OFS outcome universe |
 | Observed hotel municipality-months | 28,455 | Repeated outcomes, not independent resorts |
 | Complete hotel-capacity municipality-months | 29,274 | Establishments, rooms, and beds all observed |
@@ -127,6 +130,7 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 - Validation must remain grouped by destination/municipality and time.
 - Path C uses the existing lift cluster as the least duplicated available entity, while retaining the warning that it is not a certified independent destination. Membership, hotel outcomes, snow vulnerability and geography are excluded from the three-feature structural clustering.
 - Analogue opportunity and snow vulnerability remain separate dimensions. Tourism dependence/accessibility are unavailable, so strategic need is incomplete and no composite ranking is authorised.
+- Official population and hotel-intensity ratios are retained only as point-container context. They do not establish destination catchments, so the generic tourism-dependence field remains blank and no composite ranking is authorised.
 
 ## Known blockers and data gaps
 
@@ -135,15 +139,15 @@ No causal estimate, CATE, uplift prediction, opportunity score, or business reco
 3. All 26 unmatched base-entry labels are classified for scope risk, but none has been promoted to an identity-equivalent causal mapping. Four officially documented Swiss destinations have no own row in the supplied directory, and Les Diablerets remains a resolved many-to-many overlap rather than a one-to-one identity.
 4. Core-municipality proxies do not establish full tourism catchments. Network-wide point distance and same-destination distance bands now expose proximity risk, but road/rail travel time, hotel locations and actual visitor spillovers remain unresolved.
 5. No full historical municipality-boundary harmonization has been implemented. Moutier's BFS 700-to-6831 transition is explicitly bridged only for the current-geometry distance diagnostic.
-6. Hotel capacity and qualified snow/temperature/precipitation proxies are integrated, but systematic snowmaking, accessibility, population and tourism dependence remain missing. The seven remote donor pairs now have complete-roster label checks and contemporaneous-shock review; exact competing-pass operator tariffs remain qualified but are no longer decision-critical because every pair is independently excluded.
+6. Hotel capacity, official municipal population and qualified snow/temperature/precipitation proxies are integrated, but systematic snowmaking, accessibility and catchment-level tourism dependence remain missing. The seven remote donor pairs now have complete-roster label checks and contemporaneous-shock review; exact competing-pass operator tariffs remain qualified but are no longer decision-critical because every pair is independently excluded.
 7. Sixty resort-to-snow-station links have low spatial/elevation comparability. The alternative-SLF-station test is complete for the 15 reviewed components, but four have low agreement; an independent gridded sensitivity remains pending for snow, and alternative-station/gridded sensitivity remains pending for regional weather.
 8. The 52-municipality post-scope apparent control pool and 404 provisional treatment-distance pairs remain screening outputs. The top-35 pre-trend shortlist is exhausted: distance deprioritises 28 pairs at or within 50 km and official-source review excludes all seven remote pairs for donor-specific shocks. Any future causal attempt requires a redesigned/broader donor strategy rather than promoting a current shortlist row.
 9. The exact upstream source/version of the lift GPKG and retrieval dates of legacy extracts remain unknown.
-10. The Path C infrastructure variables are undated directory snapshots. Tourism dependence, authoritative accessibility and competing-pass status are missing at the cluster decision-support level; 25 of 104 apparent candidates are strong extrapolations from the eight reviewed treated references. Aggregation sensitivity is now explicit: only 11 candidates are stable on every recorded min/median/max criterion.
+10. The Path C infrastructure variables are undated directory snapshots. Qualified municipal point-container intensity is available for 39 of 104 candidates, but catchment-level tourism dependence, authoritative accessibility and competing-pass status remain missing; 25 candidates are strong extrapolations from the eight reviewed treated references. Aggregation sensitivity is explicit: only 11 candidates are stable on every recorded min/median/max criterion.
 
 ## Immediate next action
 
-Strengthen Path C without turning it into a false uplift model: add authoritative accessibility, tourism-dependence and competing-pass variables, and seek dated infrastructure snapshots. Add gridded snow/regional-weather sensitivities before treating climate fields as causal covariates. A future causal redesign still requires a broader donor search and stronger exposure/confounder evidence. See reports 17–19 for the active architecture and aggregation caveat.
+Strengthen Path C without turning it into a false uplift model: add authoritative accessibility, upgrade point-container ratios to defensible destination/catchment tourism dependence, audit competing-pass status, and seek dated infrastructure snapshots. Add gridded snow/regional-weather sensitivities before treating climate fields as causal covariates. A future causal redesign still requires a broader donor search and stronger exposure/confounder evidence. See reports 17–20 for the active architecture and limitations.
 
 ## Key files
 
@@ -175,6 +179,7 @@ Strengthen Path C without turning it into a false uplift model: add authoritativ
 - Checkpoints 4–5 / Path C decision: `reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md`
 - Path C segmentation and analogues: `reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md`, `data_processed/path_c_candidate_analogues.csv`, and `data_processed/magic_pass_decision_support.csv`
 - Path C aggregation sensitivity: `reports/19_PATH_C_AGGREGATION_SENSITIVITY.md`, `reports/path_c_aggregation_sensitivity.csv`, and `data_processed/path_c_candidate_analogue_sensitivity.csv`
+- Point-container tourism context: `reports/20_TOURISM_DEPENDENCE_CONTEXT.md`, `data_processed/municipality_tourism_context_2025.csv`, and `data_processed/path_c_cluster_tourism_context.csv`
 - Path C figures: `figures/path_c_structural_segments.png` and `figures/path_c_opportunity_snow_matrix.png`
 - Control screen: `reports/control_candidates_by_treatment.csv`
 - Research log: `logs/research_journal.md`
