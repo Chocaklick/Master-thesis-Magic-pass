@@ -643,9 +643,28 @@ def main() -> None:
         temporal_end="2026-02-07",
         unit="minutes, legs, modes and coverage shares",
         transformation_applied="Choose municipality main stops by reference-day departure count; choose nearby served ground stops inside component municipalities; route five morning and seven return requests on two reference days; retain fastest component",
-        quality_notes="Algorithmic stop proxies require face validation; 480-minute and six-vehicle limits apply; current timetable is not historically stable evidence",
+        quality_notes="Current arrival nodes have a versioned name/mode/municipality/distance review; door-to-lift walking and historical continuity remain unverified; 480-minute and six-vehicle limits apply",
         confidence_level="high for reproducibility; descriptive current context only",
-        manual_verification="49,104 unique samples, no negative feasible durations, 2,046 destination-municipality pairs and zero causal approvals checked",
+        manual_verification="49,104 unique samples, no negative feasible durations, 2,046 destination-municipality pairs and zero causal approvals checked; see separate arrival-node review",
+    ))
+    rows.append(blank_source(
+        "DERIVED_PUBLIC_TRANSPORT_ARRIVAL_NODE_REVIEW",
+        variable_name="review_class|review_basis|user_fallback_rule|reference_day_availability|descriptive_routing_node_approved",
+        variable_description="Versioned review of current destination arrival-node names, modes, municipalities, point distances and sampled-service-day presence",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Public-transport arrival-node review",
+        retrieval_method="Deterministic validation of the reviewed node registry against the generated OFT/BAV and GTFS destination-node table",
+        local_raw_file="config/public_transport_arrival_node_review.csv",
+        processed_file="reports/public_transport_arrival_node_review.csv|reports/public_transport_arrival_node_review_summary.json|reports/26_PUBLIC_TRANSPORT_ARRIVAL_NODE_REVIEW.md",
+        geographic_level="reviewed destination component arrival node",
+        temporal_resolution="current official node plus winter-2026 reference-day availability",
+        temporal_start="2026-02-04",
+        temporal_end="2026-02-07",
+        unit="review class, status and distance",
+        transformation_applied="Exact component/stop-key match; require bus/train mode, matching current municipality and at most 2.1 km from the supplied component point; classify explicit village-centre fallbacks",
+        quality_notes="Does not establish door-to-lift walking, accessibility for every traveller, historical node continuity or line stability",
+        confidence_level="high for versioned current descriptive review; none for historical or causal use",
+        manual_verification="15 of 15 nodes accepted for descriptive routing; six village/local-centre proxies explicit; one sampled-weekday availability warning; zero historical or causal approvals",
     ))
     rows.append(blank_source(
         "DERIVED_PUBLIC_TRANSPORT_HISTORICAL_AUDIT",
@@ -1557,6 +1576,7 @@ def main() -> None:
         "public_transport_journey_nodes": ROOT / "reports/public_transport_journey_nodes.csv",
         "treatment_municipality_public_transport_journey_samples": ROOT / "data_processed/treatment_municipality_public_transport_journey_samples.csv",
         "treatment_municipality_public_transport_journey_context": ROOT / "data_processed/treatment_municipality_public_transport_journey_context.csv",
+        "public_transport_arrival_node_review": ROOT / "reports/public_transport_arrival_node_review.csv",
         "public_transport_historical_audit_plan": ROOT / "reports/public_transport_historical_audit_plan.csv",
         "path_c_resort_cluster_features": ROOT / "data_processed/path_c_resort_cluster_features.csv",
         "path_c_cluster_segments": ROOT / "data_processed/path_c_cluster_segments.csv",
@@ -1577,6 +1597,7 @@ def main() -> None:
         "public_transport_journey_nodes": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_samples": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_context": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
+        "public_transport_arrival_node_review": "DERIVED_PUBLIC_TRANSPORT_ARRIVAL_NODE_REVIEW",
         "public_transport_historical_audit_plan": "DERIVED_PUBLIC_TRANSPORT_HISTORICAL_AUDIT",
         "path_c_resort_cluster_features": "DERIVED_PATH_C_FEATURE_MATRIX",
         "path_c_cluster_segments": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
@@ -1591,6 +1612,14 @@ def main() -> None:
         "cluster_display_name": "Deterministic display label built from up to three supplied listing names",
         "member_resort_ids": "All supplied resort listing IDs assigned to the existing lift cluster",
         "feature_temporal_status": "Whether structural features can be treated as pre-treatment; currently an undated snapshot",
+        "review_class": "Transparent arrival-node class: named lift/ski access, named destination locality, or village/local-centre proxy",
+        "review_basis": "Human-readable basis for accepting the current stop as a descriptive routing node",
+        "user_fallback_rule": "Whether the researcher-authorised village-centre fallback was used",
+        "absent_reference_dates": "Sampled active-service dates on which the selected node is absent from the GTFS network",
+        "active_reference_day_count": "Number of the two sampled service dates on which the node occurs in the active GTFS network",
+        "descriptive_routing_node_approved": "Whether the current node passes the versioned descriptive routing review",
+        "historical_node_continuity_verified": "Whether the same node has been verified in the relevant historical timetable anchors",
+        "name_distance_municipality_review_complete": "Whether name, mode, municipality and component-point distance checks are complete",
         "structural_feature_complete": "Whether altitude, ski-area kilometres and lift count are all observed",
         "candidate_for_path_c": "Initial apparent-nonmember candidate flag after resolved current, historical and scope relations are excluded",
         "candidate_interpretation": "Warning that the candidate flag is not verified non-membership",
@@ -1871,6 +1900,7 @@ def main() -> None:
         "public_transport_journey_nodes": "hotel municipality or reviewed destination component",
         "treatment_municipality_public_transport_journey_samples": "reviewed destination by hotel municipality and scheduled request",
         "treatment_municipality_public_transport_journey_context": "reviewed destination by hotel municipality",
+        "public_transport_arrival_node_review": "reviewed destination component arrival node",
         "public_transport_historical_audit_plan": "reviewed destination component arrival node",
         "path_c_reviewed_treated_reference": "reviewed treated destination",
     }
@@ -1886,6 +1916,7 @@ def main() -> None:
         "public_transport_journey_nodes": "winter-2026 GTFS node-selection reference",
         "treatment_municipality_public_transport_journey_samples": "2026-02-04 and 2026-02-07 scheduled requests",
         "treatment_municipality_public_transport_journey_context": "winter-2026 weekday/Saturday scheduled summary",
+        "public_transport_arrival_node_review": "current official node plus 2026-02-04 and 2026-02-07 availability",
         "public_transport_historical_audit_plan": "first-exposure winters 2018-2026; service comparison pending",
     }
 
@@ -1913,6 +1944,7 @@ def main() -> None:
                 "public_transport_journey_nodes",
                 "treatment_municipality_public_transport_journey_samples",
                 "treatment_municipality_public_transport_journey_context",
+                "public_transport_arrival_node_review",
                 "public_transport_historical_audit_plan",
             }
             journey_variable = journey_table
@@ -1974,6 +2006,8 @@ def main() -> None:
             role = (
                 "intentionally unavailable causal prediction"
                 if variable in {"predicted_uplift_pct", "uplift_lower_pct", "uplift_upper_pct"}
+                else "qualified current arrival-node review"
+                if table == "public_transport_arrival_node_review"
                 else "qualified historical public-transport audit plan"
                 if table == "public_transport_historical_audit_plan"
                 else "qualified scheduled public-transport journey context"
@@ -1995,6 +2029,9 @@ def main() -> None:
                 else "descriptive segmentation / decision support"
             )
             formula_note = (
+                "See config/public_transport_arrival_node_review.csv and src/data_processing/build_public_transport_arrival_node_review.py"
+                if table == "public_transport_arrival_node_review"
+                else
                 "See config/public_transport_historical_audit.json and src/data_processing/build_public_transport_historical_audit.py"
                 if table == "public_transport_historical_audit_plan"
                 else
@@ -2012,6 +2049,9 @@ def main() -> None:
                 else "See config/path_c_analysis.json and Path C scripts; tourism context is implemented in src/data_processing/build_tourism_dependence_context.py"
             )
             limitation_note = (
+                "No causal interpretation; current name/mode/municipality/distance review does not establish door-to-lift walking, historical node continuity or line stability"
+                if table == "public_transport_arrival_node_review"
+                else
                 "No causal interpretation; historical stop/service comparison has not yet been executed and archive availability does not prove line stability"
                 if table == "public_transport_historical_audit_plan"
                 else

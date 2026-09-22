@@ -1012,6 +1012,7 @@ def test_public_transport_journey_context_preserves_grain_and_limits() -> None:
         "data_processed/treatment_municipality_public_transport_journey_context.csv"
     )
     nodes = read("reports/public_transport_journey_nodes.csv")
+    arrival_review = read("reports/public_transport_arrival_node_review.csv")
     historical = read("reports/public_transport_historical_audit_plan.csv")
 
     assert len(samples) == 49_104
@@ -1065,6 +1066,32 @@ def test_public_transport_journey_context_preserves_grain_and_limits() -> None:
     destination_nodes = nodes[nodes["node_role"].eq("destination_component_arrival")]
     assert destination_nodes["selected_stop_mode_code"].str.contains(
         "A|B", regex=True
+    ).all()
+
+    assert len(arrival_review) == 15
+    assert not arrival_review["component_resort_id"].duplicated().any()
+    assert arrival_review["review_class"].value_counts().to_dict() == {
+        "named_lift_or_ski_access_stop": 8,
+        "village_or_local_centre_proxy": 6,
+        "named_destination_locality_stop": 1,
+    }
+    assert arrival_review[
+        "selected_stop_distance_from_reference_point_km"
+    ].le(2.1).all()
+    assert as_bool(arrival_review["descriptive_routing_node_approved"]).all()
+    assert not as_bool(arrival_review["historical_node_continuity_verified"]).any()
+    assert not as_bool(arrival_review["causal_accessibility_feature_approved"]).any()
+    assert int(arrival_review["active_reference_day_count"].eq(2).sum()) == 14
+    warned = arrival_review[arrival_review["active_reference_day_count"].lt(2)]
+    assert warned["component_resort_id"].tolist() == [
+        "grimentz_zinal_grimentz_zinal"
+    ]
+    assert warned["absent_reference_dates"].astype(str).tolist() == ["20260204"]
+    village_proxies = arrival_review[
+        arrival_review["review_class"].eq("village_or_local_centre_proxy")
+    ]
+    assert village_proxies["user_fallback_rule"].eq(
+        "village_centre_stop_authorised_when_lift_stop_is_not_practical"
     ).all()
 
     assert len(historical) == 15

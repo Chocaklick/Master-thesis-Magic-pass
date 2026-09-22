@@ -488,7 +488,7 @@ The selected architecture is therefore **Path C: exploratory structural segmenta
 - Similarity uses only top altitude, log ski-area kilometres and log lift count.
 - Membership, hotel outcomes, post-entry changes and snow vulnerability do not enter the structural clustering.
 - Hotel outcomes/capacity are excluded because a resort point's municipality is not an approved tourism catchment.
-- Snow vulnerability is retained on a separate strategic-need axis. Qualified point-container tourism, Swiss straight-line population, NPVM zonal travel-time and official stop-proximity context are appended downstream, but none is an approved catchment or validated destination-accessibility feature.
+- Snow vulnerability is retained on a separate strategic-need axis. Qualified point-container tourism, Swiss straight-line population, NPVM zonal travel-time and official stop-proximity context are appended downstream. A separate winter-2026 GTFS module measures scheduled municipality-to-destination journeys, and all 15 current component arrival nodes pass a versioned name/mode/municipality/distance review for descriptive routing. Six remain explicit village/local-centre proxies; door-to-lift walking and historical continuity are unverified. None is an approved catchment or causal destination-accessibility feature.
 
 ## Prohibited interpretations
 
@@ -543,7 +543,7 @@ The decision-support export contains an analogue-opportunity percentile and a sn
 - `data_processed/path_c_cluster_public_transport_stop_context.csv`
 - `data_processed/magic_pass_decision_support.csv`
 
-The min/median/max audit and four qualified contexts are documented in reports 19–23. Next, validate actual arrival nodes and the within-municipality NPVM zone proxies, add motorway and cross-border population context where relevant, define defensible destination catchments, and audit competing-pass status for apparent candidates. Until then the export is an exploratory dashboard-ready prototype, not a recommendation ranking.
+The min/median/max audit and the qualified contexts are documented in reports 19–26. Next, compare the historical GTFS anchor feeds, validate the within-municipality NPVM zone proxies, add motorway and cross-border population context where relevant, define defensible destination catchments, and audit competing-pass status for apparent candidates. If door-to-lift precision is needed, add explicit walking/access evidence for the six village/local-centre proxies. Until then the export is an exploratory dashboard-ready prototype, not a recommendation ranking.
 """
     (ROOT / "reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md").write_text(analogue_report, encoding="utf-8")
 

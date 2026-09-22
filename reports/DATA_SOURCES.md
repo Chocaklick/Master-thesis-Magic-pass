@@ -422,6 +422,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Analogue changes are unadjusted, discrete and not counterfactual predictions; snow is kept outside structural similarity
 - **Local raw file:** `config/path_c_analysis.json`.
 
+## DERIVED_PUBLIC_TRANSPORT_ARRIVAL_NODE_REVIEW — Public-transport arrival-node review
+
+- **Contents and relevance:** Versioned review of current destination arrival-node names, modes, municipalities, point distances and sampled-service-day presence
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic validation of the reviewed node registry against the generated OFT/BAV and GTFS destination-node table; unknown date.
+- **Variables:** review_class|review_basis|user_fallback_rule|reference_day_availability|descriptive_routing_node_approved
+- **Transformations:** Exact component/stop-key match; require bus/train mode, matching current municipality and at most 2.1 km from the supplied component point; classify explicit village-centre fallbacks
+- **Coverage:** reviewed destination component arrival node; current official node plus winter-2026 reference-day availability; 2026-02-04 to 2026-02-07.
+- **Limitations:** Does not establish door-to-lift walking, accessibility for every traveller, historical node continuity or line stability
+- **Local raw file:** `config/public_transport_arrival_node_review.csv`.
+
 ## DERIVED_PUBLIC_TRANSPORT_HISTORICAL_AUDIT — Historical public-transport timetable audit plan
 
 - **Contents and relevance:** Explicit plan and completion gate for comparing current destination access nodes with official historical winter GTFS feeds
@@ -443,7 +455,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** scheduled_journey_minutes|initial_wait_minutes|generalized_elapsed_minutes|vehicle_legs|transfers|transport_modes|sample_coverage
 - **Transformations:** Choose municipality main stops by reference-day departure count; choose nearby served ground stops inside component municipalities; route five morning and seven return requests on two reference days; retain fastest component
 - **Coverage:** reviewed destination by hotel municipality, with component stop nodes; winter-2026 weekday/Saturday timetable samples; 2026-02-04 to 2026-02-07.
-- **Limitations:** Algorithmic stop proxies require face validation; 480-minute and six-vehicle limits apply; current timetable is not historically stable evidence
+- **Limitations:** Current arrival nodes have a versioned name/mode/municipality/distance review; door-to-lift walking and historical continuity remain unverified; 480-minute and six-vehicle limits apply
 - **Local raw file:** `config/path_c_analysis.json`.
 
 ## DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT — Path C public-transport-stop proximity context

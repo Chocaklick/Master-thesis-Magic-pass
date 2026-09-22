@@ -1,0 +1,16 @@
+{
+  "reviewed_component_nodes": 15,
+  "review_class_counts": {
+    "named_lift_or_ski_access_stop": 8,
+    "village_or_local_centre_proxy": 6,
+    "named_destination_locality_stop": 1
+  },
+  "accepted_for_descriptive_routing": 15,
+  "village_or_local_centre_proxies": 6,
+  "maximum_point_to_stop_distance_km": 2.042299737707369,
+  "maximum_accepted_point_distance_km": 2.1,
+  "nodes_active_on_both_reference_days": 14,
+  "nodes_with_reference_day_availability_warning": 1,
+  "historical_node_continuity_verified": 0,
+  "causal_accessibility_features_approved": 0
+}

@@ -1,0 +1,16 @@
+component_resort_id,selected_stop_id,review_class,review_decision,review_basis,user_fallback_rule
+grimentz_zinal_grimentz_zinal,8505680,village_or_local_centre_proxy,accepted_for_descriptive_routing,"Official stop name identifies the Grimentz locality (Le Boccard); retained as a village access proxy rather than a claimed lift-base stop",village_centre_stop_authorised_when_lift_stop_is_not_practical
+st_luc_chandolin,8570959,named_lift_or_ski_access_stop,accepted_for_descriptive_routing,"Official stop name explicitly identifies the Chandolin chairlift access",not_needed
+axalp_brienz,8508752,named_lift_or_ski_access_stop,accepted_for_descriptive_routing,"Official stop name explicitly identifies Axalp Sportbahnen",not_needed
+bumbach_schangnau,8508868,named_lift_or_ski_access_stop,accepted_for_descriptive_routing,"Official stop name explicitly identifies Bumbach Skilift",not_needed
+crans_montana_crans_montana,8594720,named_lift_or_ski_access_stop,accepted_for_descriptive_routing,"Official stop name identifies the Vermala Cervin ski-access sector",not_needed
+arolla,8501750,village_or_local_centre_proxy,accepted_for_descriptive_routing,"Official stop name identifies Arolla post/centre; retained as a village access proxy rather than a claimed lift-base stop",village_centre_stop_authorised_when_lift_stop_is_not_practical
+evolene,8581165,village_or_local_centre_proxy,accepted_for_descriptive_routing,"Official stop name identifies the Evolène Planchet locality; retained as a local access proxy rather than a claimed lift-base stop",village_centre_stop_authorised_when_lift_stop_is_not_practical
+la_forclaz,8570921,village_or_local_centre_proxy,accepted_for_descriptive_routing,"Official stop name identifies La Sage / Col-de-la-Forclaz; retained as a local access proxy rather than a claimed lift-base stop",village_centre_stop_authorised_when_lift_stop_is_not_practical
+les_pleiades,8501288,named_lift_or_ski_access_stop,accepted_for_descriptive_routing,"Official rail stop name exactly matches the Les Pléiades destination",not_needed
+meiringen_hasliberg,8594467,named_lift_or_ski_access_stop,accepted_for_descriptive_routing,"Official stop name identifies Bidmi in the Hasliberg ski area",not_needed
+moleson_la_gruyere,8504880,named_destination_locality_stop,accepted_for_descriptive_routing,"Official stop name exactly identifies Moléson-sur-Gruyères; retained as the destination-locality access stop",not_needed
+faltschen_reichenbach_im_kandertal,8571331,village_or_local_centre_proxy,accepted_for_descriptive_routing,"Official stop name identifies Reichenbach Bären; retained as the portfolio component's village proxy rather than a claimed lift-base stop",village_centre_stop_authorised_when_lift_stop_is_not_practical
+kiental,8582987,named_lift_or_ski_access_stop,accepted_for_descriptive_routing,"Official stop name explicitly identifies Kiental Ramslauenen",not_needed
+saas_fee,8511501,named_lift_or_ski_access_stop,accepted_for_descriptive_routing,"Official stop name explicitly identifies the Saas-Fee Spielbodenbahn access",not_needed
+schwanden_sigriswil_thunersee,8507884,village_or_local_centre_proxy,accepted_for_descriptive_routing,"Official stop name identifies Schwanden Säge; retained as a village access proxy rather than a claimed lift-base stop",village_centre_stop_authorised_when_lift_stop_is_not_practical
