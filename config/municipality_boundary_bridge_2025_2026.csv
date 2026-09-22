@@ -1,0 +1,8 @@
+source_bfs_id_2025,source_name_2025,target_bfs_id_2026,target_name_2026,relationship,source_id
+700,Moutier,6831,Moutier,canton_transfer_and_bfs_renumbering,BFS_MUNICIPAL_MUTATION_3999
+2016,Fétigny,2056,Fétigny-Ménières,municipality_fusion,BFS_MUNICIPAL_MUTATION_4000
+2027,Ménières,2056,Fétigny-Ménières,municipality_fusion,BFS_MUNICIPAL_MUTATION_4000
+2278,Ulmiz,2262,Gurmels,municipality_inclusion,BFS_MUNICIPAL_MUTATION_4001
+2520,Halten,2525,Kriegstetten,municipality_inclusion,BFS_MUNICIPAL_MUTATION_4002
+2529,Oekingen,2525,Kriegstetten,municipality_inclusion,BFS_MUNICIPAL_MUTATION_4002
+4122,Villnachern,4095,Brugg,municipality_inclusion,BFS_MUNICIPAL_MUTATION_4003

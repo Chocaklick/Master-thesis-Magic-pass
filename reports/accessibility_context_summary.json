@@ -1,0 +1,16 @@
+{
+  "analysis_version": "path_c_v0_4",
+  "statpop_2025_source_municipalities": 2115,
+  "swissboundaries_2026_municipalities": 2110,
+  "bridged_statpop_source_municipalities": 7,
+  "aligned_resident_population_total": 9127125,
+  "population_reference_municipalities_by_threshold": {
+    "20000": 55,
+    "50000": 10,
+    "100000": 6
+  },
+  "path_c_clusters_with_context": 162,
+  "path_c_candidates_with_context": 104,
+  "accessibility_features_approved": 0,
+  "interpretation": "swiss_straight_line_population_context_not_travel_time_or_destination_catchment"
+}

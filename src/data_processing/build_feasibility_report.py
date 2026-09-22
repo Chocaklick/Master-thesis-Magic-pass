@@ -571,11 +571,11 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 4. Crans-Montana proves that treatment is not universally absorbing.
 5. COVID overlaps the post-period of early entrants and the entry period of later ones.
 6. Spillovers may contaminate nearby nominal controls.
-7. Hotel capacity, mountain-station snow, and regional temperature/precipitation proxies are integrated, but snowmaking, accessibility, investment, local economic conditions, and competing-network changes remain unmeasured.
+7. Hotel capacity, mountain-station snow, regional temperature/precipitation and qualified Swiss straight-line population context are integrated, but snowmaking, road/rail travel time, cross-border population, investment, local economic conditions, and competing-network changes remain unmeasured.
 
 ## Next evidence gate
 
-For Path C, add authoritative accessibility, tourism-dependence and competing-pass variables; obtain dated infrastructure features; test sensitivity to cluster-level aggregation; and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, upgrade the qualified straight-line context to road/rail travel time and relevant cross-border population; validate destination catchments for tourism dependence; add competing-pass variables; and obtain dated infrastructure features. Keep the completed min/median/max aggregation sensitivity and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

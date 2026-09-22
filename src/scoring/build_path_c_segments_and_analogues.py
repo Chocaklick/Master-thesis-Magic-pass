@@ -386,7 +386,7 @@ def main() -> None:
             "resolved_current_magic_clusters_within_50km": int((geographic <= 50).sum()),
             "network_fit_interpretation": "geographic_context_only_not_accessibility_or_membership_fit",
             "snow_vulnerability_proxy": candidate_row["snow_vulnerability_proxy_median"],
-            "strategic_need_status": "incomplete_tourism_dependence_and_accessibility_missing",
+            "strategic_need_status": "incomplete_no_approved_tourism_or_travel_time_accessibility_feature",
             "predicted_uplift_pct": np.nan,
             "uplift_lower_pct": np.nan,
             "uplift_upper_pct": np.nan,
@@ -488,7 +488,7 @@ The selected architecture is therefore **Path C: exploratory structural segmenta
 - Similarity uses only top altitude, log ski-area kilometres and log lift count.
 - Membership, hotel outcomes, post-entry changes and snow vulnerability do not enter the structural clustering.
 - Hotel outcomes/capacity are excluded because a resort point's municipality is not an approved tourism catchment.
-- Snow vulnerability is retained on a separate strategic-need axis; tourism dependence and accessibility are still missing.
+- Snow vulnerability is retained on a separate strategic-need axis. Qualified point-container tourism and Swiss straight-line population context are appended downstream, but neither is an approved catchment or travel-time feature.
 
 ## Prohibited interpretations
 
@@ -529,7 +529,7 @@ For each candidate, `data_processed/path_c_candidate_analogues.csv` retains thre
 
 ## Two dimensions kept separate
 
-The decision-support export contains an analogue-opportunity percentile and a snow-vulnerability percentile for **{summary['candidate_two_dimension_coordinates_available']}** candidates. Tourism dependence and accessibility are unavailable at an approved cluster exposure scope, so strategic need is incomplete. Predicted-uplift fields are blank ({summary['predicted_uplift_values']} populated), and no composite score is produced ({summary['composite_scores']} populated).
+The decision-support export contains an analogue-opportunity percentile and a snow-vulnerability percentile for **{summary['candidate_two_dimension_coordinates_available']}** candidates. The downstream pipeline appends qualified point-container tourism context and Swiss straight-line population context, but neither tourism dependence nor travel-time or catchment accessibility is available as an approved feature. Strategic need is therefore incomplete. Predicted-uplift fields are blank ({summary['predicted_uplift_values']} populated), and no composite score is produced ({summary['composite_scores']} populated).
 
 ## Outputs and next evidence needs
 
@@ -537,9 +537,11 @@ The decision-support export contains an analogue-opportunity percentile and a sn
 - `data_processed/path_c_cluster_segments.csv`
 - `data_processed/path_c_reviewed_treated_reference.csv`
 - `data_processed/path_c_candidate_analogues.csv`
+- `data_processed/path_c_cluster_tourism_context.csv`
+- `data_processed/path_c_cluster_accessibility_context.csv`
 - `data_processed/magic_pass_decision_support.csv`
 
-Next, add defensible accessibility and tourism-dependence variables, audit competing-pass status for apparent candidates, and test sensitivity to the cluster aggregation rule. Until then the export is an exploratory dashboard-ready prototype, not a recommendation ranking.
+The min/median/max audit and two qualified contexts are documented in reports 19–21. Next, replace the qualified context with defensible destination catchments and network travel times, add cross-border population where relevant, and audit competing-pass status for apparent candidates. Until then the export is an exploratory dashboard-ready prototype, not a recommendation ranking.
 """
     (ROOT / "reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md").write_text(analogue_report, encoding="utf-8")
 

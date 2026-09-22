@@ -122,6 +122,66 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Live table composition can change; cached response is the reproducibility anchor
 - **Local raw file:** `data_external/source_evidence/BFS_HOTEL_METADATA_20260919T231713Z.json`.
 
+## BFS_MUNICIPAL_MUTATION_3999 — Official municipality mutation 3999
+
+- **Contents and relevance:** Official 2026 Moutier canton-transfer mutation from BFS 700 to 6831
+- **Producer:** Swiss Federal Statistical Office (FSO/OFS/BFS)
+- **Exact URL:** https://www.agvchapp.bfs.admin.ch/fr/mutations/3999
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T23:50:09.429030+00:00.
+- **Variables:** source_bfs_id_2025|target_bfs_id_2026|municipality_mutation_relationship
+- **Transformations:** Exact old/new BFS identifiers and municipality names transcribed to a versioned seven-row bridge; cached page tokens verified before use
+- **Coverage:** affected Swiss municipality identifiers; official municipality mutation; 2026-01-01 to 2026-01-01.
+- **Limitations:** Used only to align the complete 2025 STATPOP municipality universe to the 2026 boundary snapshot
+- **Local raw file:** `data_external/source_evidence/BFS_MUNICIPAL_MUTATION_3999_20260921T235009Z.html`.
+
+## BFS_MUNICIPAL_MUTATION_4000 — Official municipality mutation 4000
+
+- **Contents and relevance:** Official 2026 Fétigny and Ménières fusion into Fétigny-Ménières
+- **Producer:** Swiss Federal Statistical Office (FSO/OFS/BFS)
+- **Exact URL:** https://www.agvchapp.bfs.admin.ch/fr/mutations/4000
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T23:50:19.871716+00:00.
+- **Variables:** source_bfs_id_2025|target_bfs_id_2026|municipality_mutation_relationship
+- **Transformations:** Exact old/new BFS identifiers and municipality names transcribed to a versioned seven-row bridge; cached page tokens verified before use
+- **Coverage:** affected Swiss municipality identifiers; official municipality mutation; 2026-01-01 to 2026-01-01.
+- **Limitations:** Used only to align the complete 2025 STATPOP municipality universe to the 2026 boundary snapshot
+- **Local raw file:** `data_external/source_evidence/BFS_MUNICIPAL_MUTATION_4000_20260921T235019Z.html`.
+
+## BFS_MUNICIPAL_MUTATION_4001 — Official municipality mutation 4001
+
+- **Contents and relevance:** Official 2026 Ulmiz inclusion into Gurmels
+- **Producer:** Swiss Federal Statistical Office (FSO/OFS/BFS)
+- **Exact URL:** https://www.agvchapp.bfs.admin.ch/fr/mutations/4001
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T23:50:30.141502+00:00.
+- **Variables:** source_bfs_id_2025|target_bfs_id_2026|municipality_mutation_relationship
+- **Transformations:** Exact old/new BFS identifiers and municipality names transcribed to a versioned seven-row bridge; cached page tokens verified before use
+- **Coverage:** affected Swiss municipality identifiers; official municipality mutation; 2026-01-01 to 2026-01-01.
+- **Limitations:** Used only to align the complete 2025 STATPOP municipality universe to the 2026 boundary snapshot
+- **Local raw file:** `data_external/source_evidence/BFS_MUNICIPAL_MUTATION_4001_20260921T235030Z.html`.
+
+## BFS_MUNICIPAL_MUTATION_4002 — Official municipality mutation 4002
+
+- **Contents and relevance:** Official 2026 Halten and Oekingen inclusion into Kriegstetten
+- **Producer:** Swiss Federal Statistical Office (FSO/OFS/BFS)
+- **Exact URL:** https://www.agvchapp.bfs.admin.ch/fr/mutations/4002
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T23:50:40.444267+00:00.
+- **Variables:** source_bfs_id_2025|target_bfs_id_2026|municipality_mutation_relationship
+- **Transformations:** Exact old/new BFS identifiers and municipality names transcribed to a versioned seven-row bridge; cached page tokens verified before use
+- **Coverage:** affected Swiss municipality identifiers; official municipality mutation; 2026-01-01 to 2026-01-01.
+- **Limitations:** Used only to align the complete 2025 STATPOP municipality universe to the 2026 boundary snapshot
+- **Local raw file:** `data_external/source_evidence/BFS_MUNICIPAL_MUTATION_4002_20260921T235040Z.html`.
+
+## BFS_MUNICIPAL_MUTATION_4003 — Official municipality mutation 4003
+
+- **Contents and relevance:** Official 2026 Villnachern inclusion into Brugg
+- **Producer:** Swiss Federal Statistical Office (FSO/OFS/BFS)
+- **Exact URL:** https://www.agvchapp.bfs.admin.ch/fr/mutations/4003
+- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T23:50:50.728087+00:00.
+- **Variables:** source_bfs_id_2025|target_bfs_id_2026|municipality_mutation_relationship
+- **Transformations:** Exact old/new BFS identifiers and municipality names transcribed to a versioned seven-row bridge; cached page tokens verified before use
+- **Coverage:** affected Swiss municipality identifiers; official municipality mutation; 2026-01-01 to 2026-01-01.
+- **Limitations:** Used only to align the complete 2025 STATPOP municipality universe to the 2026 boundary snapshot
+- **Local raw file:** `data_external/source_evidence/BFS_MUNICIPAL_MUTATION_4003_20260921T235050Z.html`.
+
 ## BFS_STATPOP_DATA — STATPOP px-x-0102010000_101
 
 - **Contents and relevance:** Permanent resident population by municipality at 31 December 2025
@@ -157,6 +217,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/CHATEAU_DOEX_LA_BRAYE_2018_20260921T220414Z.pdf`.
+
+## DERIVED_ACCESSIBILITY_CONTEXT — Path C straight-line population accessibility context
+
+- **Contents and relevance:** Qualified Swiss straight-line population context for every linked Path C lift cluster
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned deterministic Python transformation of STATPOP 2025 and swissBOUNDARIES3D 2026; unknown date.
+- **Variables:** distance_to_population_threshold_municipality|resident_population_within_straight_line_radius|boundary_bridge
+- **Transformations:** Aggregate seven superseded STATPOP identifiers through five official mutations; use polygon representative points; calculate EPSG:2056 distances and population sums at versioned thresholds and radii
+- **Coverage:** current Swiss municipality and linked lift cluster; 2025 population aligned to 2026-01-01 boundaries; 2025-12-31 to 2026-01-01.
+- **Limitations:** Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point
+- **Local raw file:** `config/path_c_analysis.json|config/municipality_boundary_bridge_2025_2026.csv`.
 
 ## DERIVED_DONOR_EXTERNAL_SHOCK_AUDIT — Donor competing-pass and local-shock audit
 
@@ -244,14 +316,14 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 
 ## DERIVED_PATH_C_DECISION_SUPPORT — Magic Pass exploratory decision-support prototype
 
-- **Contents and relevance:** Dashboard-ready exploratory Path C export retaining separate opportunity, vulnerability, support and quality dimensions
+- **Contents and relevance:** Dashboard-ready exploratory Path C export retaining separate opportunity, vulnerability, support, quality and qualified context dimensions
 - **Producer:** Master thesis analytical pipeline
 - **Exact URL:** Not documented.
 - **Access and retrieval date:** Versioned merge of Path C feature, segment and analogue outputs; unknown date.
-- **Variables:** opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|missing strategic-need fields
-- **Transformations:** One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity and qualified point-container tourism context appended; no composite score
+- **Variables:** opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|qualified tourism and population context|unapproved strategic-need fields
+- **Transformations:** One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity, qualified point-container tourism context and Swiss straight-line population context appended; no composite score
 - **Coverage:** existing lift cluster with supplied resort listings; mixed descriptive snapshot; lineage retained by field; ? to ?.
-- **Limitations:** Catchment-level tourism dependence and accessibility are missing; point-container context is not a destination scope; apparent non-membership is not verified; blank uplift fields are intentional
+- **Limitations:** Catchment-level tourism dependence and network travel-time accessibility remain missing; qualified context is not an approved destination scope; foreign population is omitted; blank uplift fields are intentional
 - **Local raw file:** `config/path_c_analysis.json`.
 
 ## DERIVED_PATH_C_FEATURE_MATRIX — Path C resort-cluster feature matrix
@@ -1108,14 +1180,14 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 
 ## SWISSTOPO_BOUNDARIES_2026 — swissBOUNDARIES3D 2026-01
 
-- **Contents and relevance:** Official 2026 municipality polygons used for same-destination distance diagnostics
+- **Contents and relevance:** Official 2026 municipality polygons used for distance diagnostics and qualified population accessibility context
 - **Producer:** Federal Office of Topography swisstopo
 - **Exact URL:** https://www.swisstopo.admin.ch/en/landscape-model-swissboundaries3d
 - **Access and retrieval date:** Configured HTTPS download with immutable ZIP, SHA-256 sidecar and collection log; 2026-09-21T14:53:10.749354+00:00.
-- **Variables:** municipality_geometry|municipality_bfs_id|municipality_area_ha_2026
-- **Transformations:** Checksum verification; GeoPackage extraction; representative point, centroid and polygon-to-resort distance in EPSG:2056
+- **Variables:** municipality_geometry|municipality_bfs_id|municipality_area_ha_2026|municipality_representative_point
+- **Transformations:** Checksum verification; GeoPackage extraction; representative point, centroid and polygon-to-resort distance in EPSG:2056; official 2025 population aligned through reviewed 2026 mutations
 - **Coverage:** Swiss political municipality polygon; boundary snapshot; 2026-01-01 to 2026-01-01.
-- **Limitations:** Current geometry is not historical harmonisation; Moutier (BE) BFS 700 is explicitly bridged to current Moutier BFS 6831 geometry
+- **Limitations:** Current geometry is not historical harmonisation; representative points are neither population centroids nor transport nodes
 - **Local raw file:** `data_external/source_evidence/SWISSTOPO_BOUNDARIES_2026_20260921T145310Z.zip`.
 
 ## VALLEE_JOUX_SKI_SCOPE_OFFICIAL — Official destination or municipal scope page

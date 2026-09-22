@@ -740,3 +740,59 @@ def test_tourism_context_uses_complete_official_year_without_claiming_catchment(
     assert not as_bool(decision["tourism_dependence_feature_approved"]).any()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
+
+
+def test_accessibility_context_preserves_population_and_stays_unapproved() -> None:
+    municipality = read("data_processed/municipality_population_geometry_2026.csv")
+    cluster = read("data_processed/path_c_cluster_accessibility_context.csv")
+    decision = read("data_processed/magic_pass_decision_support.csv")
+
+    assert len(municipality) == 2_110
+    assert municipality["boundary_bfs_id_2026"].is_unique
+    assert municipality["population_reference_year"].eq(2025).all()
+    assert municipality["boundary_reference_date"].eq("2026-01-01").all()
+    assert int(municipality["resident_population_2025_on_2026_boundary"].sum()) == 9_127_125
+    assert municipality["resident_population_2025_on_2026_boundary"].gt(0).all()
+    expected_constituents = {
+        6831: (1, "700"),
+        2056: (2, "2016|2027"),
+        2262: (2, "2262|2278"),
+        2525: (3, "2520|2525|2529"),
+        4095: (2, "4095|4122"),
+    }
+    indexed = municipality.set_index("boundary_bfs_id_2026")
+    for boundary_id, (count, source_ids) in expected_constituents.items():
+        assert int(indexed.loc[boundary_id, "population_constituent_count_2025"]) == count
+        assert indexed.loc[boundary_id, "population_constituent_bfs_ids_2025"] == source_ids
+
+    assert len(cluster) == 162
+    assert cluster["cluster_id"].is_unique
+    assert int(as_bool(cluster["candidate_for_path_c"]).sum()) == 104
+    assert cluster["accessibility_context_status"].eq(
+        "complete_swiss_straight_line_population_context"
+    ).all()
+    assert not as_bool(cluster["accessibility_feature_approved"]).any()
+    assert cluster["accessibility_interpretation"].eq(
+        "swiss_straight_line_population_context_not_travel_time_or_destination_catchment"
+    ).all()
+    assert (
+        cluster["distance_to_nearest_municipality_population_ge_20000_km"]
+        <= cluster["distance_to_nearest_municipality_population_ge_50000_km"] + 1e-9
+    ).all()
+    assert (
+        cluster["distance_to_nearest_municipality_population_ge_50000_km"]
+        <= cluster["distance_to_nearest_municipality_population_ge_100000_km"] + 1e-9
+    ).all()
+    radius_columns = [
+        "resident_population_within_30km_straight_line",
+        "resident_population_within_60km_straight_line",
+        "resident_population_within_90km_straight_line",
+        "resident_population_within_120km_straight_line",
+    ]
+    assert not (cluster[radius_columns].diff(axis=1).iloc[:, 1:] < 0).any().any()
+
+    assert len(decision) == 162
+    assert decision["accessibility_score"].isna().all()
+    assert decision["predicted_uplift_pct"].isna().all()
+    assert decision["composite_opportunity_need_score"].isna().all()
+    assert not as_bool(decision["accessibility_feature_approved"]).any()

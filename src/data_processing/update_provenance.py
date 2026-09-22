@@ -115,8 +115,8 @@ def main() -> None:
     ))
     rows.append(blank_source(
         "SWISSTOPO_BOUNDARIES_2026",
-        variable_name="municipality_geometry|municipality_bfs_id|municipality_area_ha_2026",
-        variable_description="Official 2026 municipality polygons used for same-destination distance diagnostics",
+        variable_name="municipality_geometry|municipality_bfs_id|municipality_area_ha_2026|municipality_representative_point",
+        variable_description="Official 2026 municipality polygons used for distance diagnostics and qualified population accessibility context",
         source_organisation="Federal Office of Topography swisstopo",
         source_dataset_name="swissBOUNDARIES3D 2026-01",
         source_page_url="https://www.swisstopo.admin.ch/en/landscape-model-swissboundaries3d",
@@ -125,7 +125,7 @@ def main() -> None:
         retrieval_date=(boundary_metadata or {}).get("retrieval_date", ""),
         original_file_name=raw_name(boundary_metadata),
         local_raw_file=(boundary_metadata or {}).get("raw_file", ""),
-        processed_file="data_processed/treatment_municipality_distance_exposure.csv|data_processed/treatment_distance_gradient_diagnostic.csv",
+        processed_file="data_processed/treatment_municipality_distance_exposure.csv|data_processed/treatment_distance_gradient_diagnostic.csv|data_processed/municipality_population_geometry_2026.csv|data_processed/path_c_cluster_accessibility_context.csv",
         geographic_level="Swiss political municipality polygon",
         temporal_resolution="boundary snapshot",
         temporal_start="2026-01-01",
@@ -133,11 +133,40 @@ def main() -> None:
         unit="EPSG:2056 multipolygon",
         license="Federal geodata terms; public Open Government Data",
         access_conditions="Public swisstopo download",
-        transformation_applied="Checksum verification; GeoPackage extraction; representative point, centroid and polygon-to-resort distance in EPSG:2056",
-        quality_notes="Current geometry is not historical harmonisation; Moutier (BE) BFS 700 is explicitly bridged to current Moutier BFS 6831 geometry",
+        transformation_applied="Checksum verification; GeoPackage extraction; representative point, centroid and polygon-to-resort distance in EPSG:2056; official 2025 population aligned through reviewed 2026 mutations",
+        quality_notes="Current geometry is not historical harmonisation; representative points are neither population centroids nor transport nodes",
         confidence_level="high for current boundaries; qualified for historical outcome alignment",
-        manual_verification="186 hotel series map to 185 current geometries; bridge retained explicitly",
+        manual_verification="186 hotel series map to 185 current geometries; 2,115 STATPOP rows reconcile to all 2,110 current municipalities with national population preserved",
     ))
+    for mutation_id in range(3999, 4004):
+        source_id = f"BFS_MUNICIPAL_MUTATION_{mutation_id}"
+        item = configured[source_id]
+        metadata = cached_metadata(source_id)
+        rows.append(blank_source(
+            source_id,
+            variable_name="source_bfs_id_2025|target_bfs_id_2026|municipality_mutation_relationship",
+            variable_description=item["description"],
+            source_organisation="Swiss Federal Statistical Office (FSO/OFS/BFS)",
+            source_dataset_name=f"Official municipality mutation {mutation_id}",
+            source_page_url=item["url"],
+            direct_download_url=item["url"],
+            retrieval_method="HTTP GET with immutable response and SHA-256 sidecar",
+            retrieval_date=(metadata or {}).get("retrieval_date", ""),
+            original_file_name=raw_name(metadata),
+            local_raw_file=(metadata or {}).get("raw_file", ""),
+            processed_file="config/municipality_boundary_bridge_2025_2026.csv|data_processed/municipality_population_geometry_2026.csv|data_processed/path_c_cluster_accessibility_context.csv",
+            geographic_level="affected Swiss municipality identifiers",
+            temporal_resolution="official municipality mutation",
+            temporal_start="2026-01-01",
+            temporal_end="2026-01-01",
+            unit="identifier relationship",
+            license="See official FSO terms",
+            access_conditions="Public official municipality register page",
+            transformation_applied="Exact old/new BFS identifiers and municipality names transcribed to a versioned seven-row bridge; cached page tokens verified before use",
+            quality_notes="Used only to align the complete 2025 STATPOP municipality universe to the 2026 boundary snapshot",
+            confidence_level="high",
+            manual_verification="Source and target BFS identifiers and names checked in the checksum-protected official page",
+        ))
     donor_archive_sources = [
         ("BBGR_ANNUAL_2017_18", "Bergbahnen Graubünden annual report 2017/18", "2017-07", "2018-06"),
         ("BBGR_ANNUAL_2018_19", "Bergbahnen Graubünden annual report 2018/19", "2018-07", "2019-06"),
@@ -303,7 +332,7 @@ def main() -> None:
         retrieval_date=(bfs_statpop_data or {}).get("retrieval_date", ""),
         original_file_name=raw_name(bfs_statpop_data),
         local_raw_file=(bfs_statpop_data or {}).get("raw_file", ""),
-        processed_file="data_processed/municipality_tourism_context_2025.csv|data_processed/path_c_cluster_tourism_context.csv|data_processed/magic_pass_decision_support.csv",
+        processed_file="data_processed/municipality_tourism_context_2025.csv|data_processed/path_c_cluster_tourism_context.csv|data_processed/municipality_population_geometry_2026.csv|data_processed/path_c_cluster_accessibility_context.csv|data_processed/magic_pass_decision_support.csv",
         geographic_level="municipality",
         temporal_resolution="annual reference-day population",
         temporal_start="2025-12-31",
@@ -334,6 +363,25 @@ def main() -> None:
         quality_notes="Point containment is not an approved tourism catchment or exposure mapping; hotel statistics omit non-hotel accommodation",
         confidence_level="high for reproducibility; descriptive context only",
         manual_verification="2,115 population rows; 185 complete HESTA municipalities; every tourism-dependence approval flag false",
+    ))
+    rows.append(blank_source(
+        "DERIVED_ACCESSIBILITY_CONTEXT",
+        variable_name="distance_to_population_threshold_municipality|resident_population_within_straight_line_radius|boundary_bridge",
+        variable_description="Qualified Swiss straight-line population context for every linked Path C lift cluster",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C straight-line population accessibility context",
+        retrieval_method="Versioned deterministic Python transformation of STATPOP 2025 and swissBOUNDARIES3D 2026",
+        local_raw_file="config/path_c_analysis.json|config/municipality_boundary_bridge_2025_2026.csv",
+        processed_file="data_processed/municipality_population_geometry_2026.csv|data_processed/path_c_cluster_accessibility_context.csv|data_processed/magic_pass_decision_support.csv|reports/21_ACCESSIBILITY_CONTEXT.md",
+        geographic_level="current Swiss municipality and linked lift cluster",
+        temporal_resolution="2025 population aligned to 2026-01-01 boundaries",
+        temporal_start="2025-12-31",
+        temporal_end="2026-01-01",
+        unit="persons and straight-line kilometres",
+        transformation_applied="Aggregate seven superseded STATPOP identifiers through five official mutations; use polygon representative points; calculate EPSG:2056 distances and population sums at versioned thresholds and radii",
+        quality_notes="Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point",
+        confidence_level="high for reproducibility; qualified geographic context only",
+        manual_verification="2,115 STATPOP rows reconcile to 2,110 current polygons; 9,127,125 residents preserved; all 162 clusters covered; every approval flag false",
     ))
     slf_metadata = {
         source_id: cached_metadata(source_id)
@@ -967,18 +1015,18 @@ def main() -> None:
     ))
     rows.append(blank_source(
         "DERIVED_PATH_C_DECISION_SUPPORT",
-        variable_name="opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|missing strategic-need fields",
-        variable_description="Dashboard-ready exploratory Path C export retaining separate opportunity, vulnerability, support and quality dimensions",
+        variable_name="opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|qualified tourism and population context|unapproved strategic-need fields",
+        variable_description="Dashboard-ready exploratory Path C export retaining separate opportunity, vulnerability, support, quality and qualified context dimensions",
         source_organisation="Master thesis analytical pipeline",
         source_dataset_name="Magic Pass exploratory decision-support prototype",
         retrieval_method="Versioned merge of Path C feature, segment and analogue outputs",
         local_raw_file="config/path_c_analysis.json",
-        processed_file="data_processed/magic_pass_decision_support.csv|reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md|reports/19_PATH_C_AGGREGATION_SENSITIVITY.md|reports/20_TOURISM_DEPENDENCE_CONTEXT.md",
+        processed_file="data_processed/magic_pass_decision_support.csv|reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md|reports/19_PATH_C_AGGREGATION_SENSITIVITY.md|reports/20_TOURISM_DEPENDENCE_CONTEXT.md|reports/21_ACCESSIBILITY_CONTEXT.md",
         geographic_level="existing lift cluster with supplied resort listings",
         temporal_resolution="mixed descriptive snapshot; lineage retained by field",
         unit="separate decision-support dimensions",
-        transformation_applied="One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity and qualified point-container tourism context appended; no composite score",
-        quality_notes="Catchment-level tourism dependence and accessibility are missing; point-container context is not a destination scope; apparent non-membership is not verified; blank uplift fields are intentional",
+        transformation_applied="One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity, qualified point-container tourism context and Swiss straight-line population context appended; no composite score",
+        quality_notes="Catchment-level tourism dependence and network travel-time accessibility remain missing; qualified context is not an approved destination scope; foreign population is omitted; blank uplift fields are intentional",
         confidence_level="exploratory prototype; never a recommendation ranking",
         manual_verification="Checkpoint 4 and 5 failures formalised; no predicted uplift or composite score produced",
     ))
@@ -1217,6 +1265,8 @@ def main() -> None:
     path_c_paths = {
         "municipality_tourism_context_2025": ROOT / "data_processed/municipality_tourism_context_2025.csv",
         "path_c_cluster_tourism_context": ROOT / "data_processed/path_c_cluster_tourism_context.csv",
+        "municipality_population_geometry_2026": ROOT / "data_processed/municipality_population_geometry_2026.csv",
+        "path_c_cluster_accessibility_context": ROOT / "data_processed/path_c_cluster_accessibility_context.csv",
         "path_c_resort_cluster_features": ROOT / "data_processed/path_c_resort_cluster_features.csv",
         "path_c_cluster_segments": ROOT / "data_processed/path_c_cluster_segments.csv",
         "path_c_reviewed_treated_reference": ROOT / "data_processed/path_c_reviewed_treated_reference.csv",
@@ -1227,6 +1277,8 @@ def main() -> None:
     path_c_sources = {
         "municipality_tourism_context_2025": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
         "path_c_cluster_tourism_context": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
+        "municipality_population_geometry_2026": "DERIVED_ACCESSIBILITY_CONTEXT",
+        "path_c_cluster_accessibility_context": "DERIVED_ACCESSIBILITY_CONTEXT",
         "path_c_resort_cluster_features": "DERIVED_PATH_C_FEATURE_MATRIX",
         "path_c_cluster_segments": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
         "path_c_reviewed_treated_reference": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
@@ -1255,7 +1307,7 @@ def main() -> None:
         "analogue_descriptive_change_range_high_pct": "Maximum of the three analogue change diagnostics; not a confidence bound",
         "opportunity_signal_percentile": "Within-candidate percentile of the descriptive analogue change signal",
         "snow_vulnerability_percentile": "Within-candidate percentile of the SLF-station snow-vulnerability proxy",
-        "strategic_need_status": "Completeness status of strategic need; catchment-level tourism dependence and accessibility remain missing",
+        "strategic_need_status": "Completeness status of strategic need; approved catchment-level tourism dependence and network accessibility remain missing",
         "predicted_uplift_pct": "Intentionally empty field because no causal or predictive uplift is supported",
         "uplift_lower_pct": "Intentionally empty lower bound because no uplift interval is supported",
         "uplift_upper_pct": "Intentionally empty upper bound because no uplift interval is supported",
@@ -1289,7 +1341,41 @@ def main() -> None:
         "tourism_context_status": "Availability status for point-container population and complete-year hotel context",
         "tourism_exposure_interpretation": "Explicit restriction that point-container context is not an approved destination catchment",
         "tourism_dependence_feature_approved": "Whether the context is approved as a destination tourism-dependence feature; always false",
+        "boundary_bfs_id_2026": "Official BFS identifier of the municipality polygon at 1 January 2026",
+        "boundary_name_2026": "Official municipality name in swissBOUNDARIES3D at 1 January 2026",
+        "resident_population_2025_on_2026_boundary": "STATPOP 2025 permanent residents aggregated to the 2026 municipality boundary identifier",
+        "population_constituent_count_2025": "Number of STATPOP 2025 municipality rows aggregated to the current municipality",
+        "population_constituent_bfs_ids_2025": "Pipe-separated STATPOP 2025 BFS identifiers contributing to the current municipality",
+        "population_constituent_names_2025": "Pipe-separated STATPOP 2025 municipality names contributing to the current municipality",
+        "boundary_bridge_status": "Whether and how a STATPOP 2025 identifier was aligned through an official 2026 municipality mutation",
+        "boundary_bridge_source_ids": "Pipe-separated official OFS municipality-mutation source identifiers used for the alignment",
+        "municipality_representative_x_2056": "Easting of an interior representative point for the current municipality polygon",
+        "municipality_representative_y_2056": "Northing of an interior representative point for the current municipality polygon",
+        "municipality_representative_longitude": "Longitude of the current municipality polygon's interior representative point",
+        "municipality_representative_latitude": "Latitude of the current municipality polygon's interior representative point",
+        "municipality_location_method": "Method used to represent each municipality in straight-line calculations",
+        "cluster_location_longitude": "Median longitude across supplied resort listings assigned to the lift cluster",
+        "cluster_location_latitude": "Median latitude across supplied resort listings assigned to the lift cluster",
+        "accessibility_context_status": "Availability status of the qualified Swiss straight-line population context",
+        "accessibility_interpretation": "Explicit restriction that the context is neither travel time nor a destination catchment",
+        "accessibility_feature_approved": "Whether the context is approved as a generic accessibility feature; always false",
+        "population_boundary_alignment": "Reference-year relationship between STATPOP population and the current boundary snapshot",
     }
+    for threshold in [20_000, 50_000, 100_000]:
+        prefix = f"nearest_municipality_population_ge_{threshold}"
+        path_c_glossary[f"{prefix}_bfs_id_2026"] = (
+            f"BFS identifier of the nearest representative-point municipality with at least {threshold:,} STATPOP 2025 residents"
+        )
+        path_c_glossary[f"{prefix}_name"] = (
+            f"Name of the nearest representative-point municipality with at least {threshold:,} STATPOP 2025 residents"
+        )
+        path_c_glossary[f"distance_to_{prefix}_km"] = (
+            f"EPSG:2056 straight-line distance to the nearest representative-point municipality with at least {threshold:,} residents"
+        )
+    for radius in [30, 60, 90, 120]:
+        path_c_glossary[f"resident_population_within_{radius}km_straight_line"] = (
+            f"STATPOP 2025 residents assigned to municipality representative points within {radius} straight-line kilometres"
+        )
 
     def path_c_unit(variable: str) -> str:
         if variable.endswith("_pct"):
@@ -1300,7 +1386,7 @@ def main() -> None:
             return "kilometres"
         if "distance" in variable:
             return "standardised Euclidean distance"
-        if variable.endswith("_count") or variable.endswith("_clusters"):
+        if variable.endswith("_count") or "_count_" in variable or variable.endswith("_clusters"):
             return "count"
         if variable.endswith("_m") or "altitude" in variable:
             return "metres"
@@ -1308,17 +1394,24 @@ def main() -> None:
             return "hotel beds per 1,000 residents"
         if "overnights_per_resident" in variable:
             return "hotel nights per resident"
-        if variable == "resident_population" or variable.endswith("_population"):
+        if variable == "resident_population" or variable.endswith("_population") or variable.startswith("resident_population_"):
             return "persons"
+        if variable.endswith("_x_2056") or variable.endswith("_y_2056"):
+            return "metres (EPSG:2056)"
+        if variable.endswith("_longitude") or variable.endswith("_latitude"):
+            return "decimal degrees"
         return "category/value"
 
     path_c_geographic_level = {
         "municipality_tourism_context_2025": "municipality",
+        "municipality_population_geometry_2026": "current Swiss municipality",
         "path_c_reviewed_treated_reference": "reviewed treated destination",
     }
     path_c_temporal_level = {
         "municipality_tourism_context_2025": "2025 annual municipality context",
         "path_c_cluster_tourism_context": "2025 annual point-container context",
+        "municipality_population_geometry_2026": "2025 population aligned to 2026-01-01 boundaries",
+        "path_c_cluster_accessibility_context": "2025 population aligned to 2026-01-01 boundaries; undated cluster location",
     }
 
     for table, path in path_c_paths.items():
@@ -1329,9 +1422,34 @@ def main() -> None:
                 variable,
                 "Path C output field: " + variable.replace("_", " "),
             )
+            accessibility_table = table in {
+                "municipality_population_geometry_2026",
+                "path_c_cluster_accessibility_context",
+            }
+            accessibility_variable = accessibility_table or (
+                table == "magic_pass_decision_support"
+                and (
+                    "accessibility" in variable
+                    or "nearest_municipality_population" in variable
+                    or variable.startswith("resident_population_within_")
+                    or variable.startswith("cluster_location_")
+                    or variable
+                    in {
+                        "population_reference_year",
+                        "boundary_reference_date",
+                        "distance_crs",
+                        "municipality_location_method",
+                        "population_source_id",
+                        "boundary_source_id",
+                        "boundary_bridge_source_ids",
+                    }
+                )
+            )
             role = (
                 "intentionally unavailable causal prediction"
                 if variable in {"predicted_uplift_pct", "uplift_lower_pct", "uplift_upper_pct"}
+                else "qualified straight-line population context"
+                if accessibility_variable
                 else "strategic-need proxy"
                 if "snow_vulnerability" in variable
                 else "qualified point-container tourism context"
@@ -1342,6 +1460,16 @@ def main() -> None:
                 if "distance" in variable or "ood" in variable or "comparability" in variable
                 else "descriptive segmentation / decision support"
             )
+            formula_note = (
+                "See config/path_c_analysis.json and src/data_processing/build_accessibility_context.py"
+                if accessibility_variable
+                else "See config/path_c_analysis.json and Path C scripts; tourism context is implemented in src/data_processing/build_tourism_dependence_context.py"
+            )
+            limitation_note = (
+                "No causal interpretation; straight-line municipality representative-point context is not travel time or a destination catchment; foreign population is excluded"
+                if accessibility_variable
+                else "No causal interpretation; point-container context is not a destination catchment; blank uplift/composite fields are intentional"
+            )
             definitions.append((
                 variable,
                 table,
@@ -1350,11 +1478,11 @@ def main() -> None:
                 str(frame[variable].dtype),
                 path_c_geographic_level.get(table, "existing lift cluster"),
                 path_c_temporal_level.get(table, "undated structural snapshot; mixed lineage where stated"),
-                path_c_sources[table],
+                "DERIVED_ACCESSIBILITY_CONTEXT" if accessibility_variable else path_c_sources[table],
                 "derived",
-                "See config/path_c_analysis.json and Path C scripts; tourism context is implemented in src/data_processing/build_tourism_dependence_context.py",
+                formula_note,
                 role,
-                "No causal interpretation; point-container context is not a destination catchment; blank uplift/composite fields are intentional",
+                limitation_note,
             ))
     dictionary_rows = []
     for variable, table, description, unit, data_type, geo, temporal, source_id, raw_derived, formula, role, notes in definitions:
