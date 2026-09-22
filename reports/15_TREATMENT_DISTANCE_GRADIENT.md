@@ -19,6 +19,6 @@ A direct near-versus-far diagnostic compares the median log change for municipal
 
 The output can reveal whether nearby municipalities around the same treated destination display a different descriptive post-versus-pre pattern than remote municipalities. It is a useful exposure-gradient falsification and scope diagnostic.
 
-It is **not** a treatment-effect estimate. Current 2026 municipal geometry is applied to a 2013–2026 outcome panel; municipality population centres, hotel coordinates, road/rail travel time, tourism catchments and cross-destination contamination are unavailable. The adjacent windows do not remove national trends, COVID, competing passes or simultaneous investments. Every `causal_effect_estimate` and `causal_exposure_approved` flag is therefore false.
+It is **not** a treatment-effect estimate. Current 2026 municipal geometry is applied to a 2013–2026 outcome panel; hotel coordinates, validated historical arrival-node travel times, tourism catchments and cross-destination contamination are unavailable for this diagnostic. The current NPVM zonal context is not substituted for those historical exposure measures. The adjacent windows do not remove national trends, COVID, competing passes or simultaneous investments. Every `causal_effect_estimate` and `causal_exposure_approved` flag is therefore false.
 
 Detailed outputs: `data_processed/treatment_municipality_distance_exposure.csv` and `data_processed/treatment_distance_gradient_diagnostic.csv`.

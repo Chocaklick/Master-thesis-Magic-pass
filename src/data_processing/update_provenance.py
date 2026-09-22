@@ -71,6 +71,9 @@ def main() -> None:
     bfs_capacity_metadata = cached_metadata("BFS_HOTEL_CAPACITY_METADATA")
     bfs_statpop_metadata = cached_metadata("BFS_STATPOP_METADATA")
     bfs_statpop_data = cached_metadata("BFS_STATPOP_DATA")
+    are_transport_data = cached_metadata("ARE_NPVM_TRAVEL_TIME_2025")
+    are_transport_stac = cached_metadata("ARE_NPVM_TRAVEL_TIME_2025_STAC")
+    are_transport_method = cached_metadata("ARE_TRANSPORT_ACCESSIBILITY_METHOD")
     bfs_capacity_records = [
         json.loads(path.read_text(encoding="utf-8"))
         for path in EVIDENCE_DIR.glob("BFS_HOTEL_CAPACITY_DATA_*.metadata.json")
@@ -382,6 +385,100 @@ def main() -> None:
         quality_notes="Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point and radius-specific border intersection is flagged without filling foreign population",
         confidence_level="high for reproducibility; qualified geographic context only",
         manual_verification="2,115 STATPOP rows reconcile to 2,110 current polygons; 9,127,125 residents preserved; all 162 clusters covered; two artificial cluster-median points outside the Swiss polygon exposed; every approval flag false",
+    ))
+    rows.append(blank_source(
+        "ARE_NPVM_TRAVEL_TIME_2025",
+        variable_name="road_major_center_travel_time_minutes|public_transport_major_center_travel_time_minutes|road_agglomeration_travel_time_minutes|public_transport_agglomeration_travel_time_minutes|npvm_traffic_zone_geometry",
+        variable_description="Modelled traffic-zone travel times to the fastest of six major centres and to the fastest agglomeration/core municipality by road and public transport",
+        source_organisation="Swiss Federal Office for Spatial Development (ARE)",
+        source_dataset_name="NPVM travel time to centres and agglomerations, reference date 2025-06-30",
+        source_page_url="https://www.are.admin.ch/de/verkehrserschliessung",
+        direct_download_url=configured["ARE_NPVM_TRAVEL_TIME_2025"]["url"],
+        api_endpoint=configured["ARE_NPVM_TRAVEL_TIME_2025_STAC"]["url"],
+        geocat_metadata_url="https://www.geocat.ch/geonetwork/srv/eng/catalog.search#/metadata/aee88d88-6fa6-445c-8d4d-5b40f592436b",
+        retrieval_method="Configured HTTPS download with immutable GeoPackage, SHA-256 sidecar and independently cached STAC metadata",
+        retrieval_date=(are_transport_data or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(are_transport_data),
+        local_raw_file=(are_transport_data or {}).get("raw_file", ""),
+        processed_file="data_processed/resort_transport_accessibility_context.csv|data_processed/path_c_cluster_transport_accessibility_context.csv|data_processed/magic_pass_decision_support.csv",
+        geographic_level="NPVM traffic zone",
+        temporal_resolution="model reference-date snapshot",
+        temporal_start="2025-06-30",
+        temporal_end="2025-06-30",
+        unit="minutes; EPSG:2056 polygon; traffic-zone identifier",
+        license="Open Government Data terms with source attribution",
+        access_conditions="Public geo.admin.ch STAC/download service",
+        transformation_applied="Checksum and STAC multihash verification; point-in-zone assignment or nearest zone intersecting the independently resolved current point municipality; min/median/max listing-point aggregation by existing lift cluster",
+        quality_notes="Traffic-zone model output, not live door-to-door routing; polygons do not continuously cover high-alpine terrain; municipality-constrained proxy distance and exact-only medians are retained",
+        confidence_level="high for official zonal values; qualified for resort-origin interpretation",
+        manual_verification="7,978 unique zones, 84 named targets, six major centres, complete four-way travel-time fields and blank unused accessibility-index fields checked",
+    ))
+    rows.append(blank_source(
+        "ARE_NPVM_TRAVEL_TIME_2025_STAC",
+        variable_name="npvm_model_reference_date|asset_url|asset_crs|asset_multihash",
+        variable_description="Official STAC item metadata fixing the ARE travel-time asset reference date, CRS, URL and checksum",
+        source_organisation="Swiss Federal Office for Spatial Development (ARE) via geo.admin.ch",
+        source_dataset_name="STAC item ch.are.reisezeit-miv/reisezeit-miv",
+        source_page_url=configured["ARE_NPVM_TRAVEL_TIME_2025_STAC"]["url"],
+        api_endpoint=configured["ARE_NPVM_TRAVEL_TIME_2025_STAC"]["url"],
+        retrieval_method="HTTP GET with immutable JSON response and SHA-256 sidecar",
+        retrieval_date=(are_transport_stac or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(are_transport_stac),
+        local_raw_file=(are_transport_stac or {}).get("raw_file", ""),
+        processed_file="data_processed/resort_transport_accessibility_context.csv|reports/22_TRANSPORT_ACCESSIBILITY_CONTEXT.md",
+        geographic_level="dataset metadata",
+        temporal_resolution="asset metadata snapshot",
+        temporal_start="2025-06-30",
+        temporal_end="2025-06-30",
+        unit="metadata",
+        license="Open Government Data terms with source attribution",
+        access_conditions="Public STAC API",
+        transformation_applied="Reference date, EPSG code, asset URL and multihash parsed and checked against the cached GeoPackage",
+        quality_notes="Publication/update timestamps are not substituted for the model reference date",
+        confidence_level="high",
+        manual_verification="STAC datetime 2025-06-30, EPSG:2056 and SHA-256 multihash match checked",
+    ))
+    rows.append(blank_source(
+        "ARE_TRANSPORT_ACCESSIBILITY_METHOD",
+        variable_name="travel_time_measure_definition|major_centre_definition|agglomeration_core_municipality_definition",
+        variable_description="Official ARE definitions for the road and public-transport travel-time measures",
+        source_organisation="Swiss Federal Office for Spatial Development (ARE)",
+        source_dataset_name="Transport access in Switzerland methodology page",
+        source_page_url=configured["ARE_TRANSPORT_ACCESSIBILITY_METHOD"]["url"],
+        direct_download_url=configured["ARE_TRANSPORT_ACCESSIBILITY_METHOD"]["url"],
+        retrieval_method="HTTP GET with immutable HTML response and SHA-256 sidecar",
+        retrieval_date=(are_transport_method or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(are_transport_method),
+        local_raw_file=(are_transport_method or {}).get("raw_file", ""),
+        processed_file="reports/22_TRANSPORT_ACCESSIBILITY_CONTEXT.md",
+        geographic_level="methodology",
+        temporal_resolution="retrieval snapshot",
+        unit="definition",
+        license="See official ARE terms",
+        access_conditions="Public official page",
+        transformation_applied="Definitions interpreted together with the GeoPackage field schema",
+        quality_notes="Methodological definition does not make a resort listing coordinate a validated arrival node",
+        confidence_level="high",
+        manual_verification="Six major centres and fastest accessible agglomeration/core-municipality definitions reviewed",
+    ))
+    rows.append(blank_source(
+        "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT",
+        variable_name="listing_npvm_zone_assignment|cluster_road_travel_time|cluster_public_transport_travel_time|assignment_distance|exact_only_sensitivity",
+        variable_description="Qualified NPVM road and public-transport accessibility context for supplied resort listings and linked Path C lift clusters",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C NPVM transport accessibility context",
+        retrieval_method="Versioned deterministic Python transformation of checksum-verified ARE, geo.admin.ch point-municipality and swissBOUNDARIES3D sources",
+        local_raw_file="config/path_c_analysis.json|data_processed/resort_point_municipality.csv",
+        processed_file="data_processed/resort_transport_accessibility_context.csv|data_processed/path_c_cluster_transport_accessibility_context.csv|data_processed/magic_pass_decision_support.csv|reports/22_TRANSPORT_ACCESSIBILITY_CONTEXT.md",
+        geographic_level="supplied resort listing point and linked lift cluster",
+        temporal_resolution="NPVM model reference date 2025-06-30; current directory coordinates",
+        temporal_start="2025-06-30",
+        temporal_end="2025-06-30",
+        unit="minutes; kilometres; counts and assignment flags",
+        transformation_applied="Use exact zone containment for 170 points; for 98 Swiss high-alpine points use the nearest zone intersecting the same independently resolved current municipality; leave three foreign points missing; aggregate min/median/max across usable listing points and retain exact-only medians",
+        quality_notes="Not live routing, rail-only access, a timetable, a valley-station origin or a destination catchment; within-municipality zone links are explicit proxies and remain unapproved",
+        confidence_level="high for reproducibility; qualified modelled context only",
+        manual_verification="268/271 listing points usable, all 104 candidates have context, one mixed Swiss/foreign cluster is partial, zero approval flags",
     ))
     slf_metadata = {
         source_id: cached_metadata(source_id)
@@ -1015,18 +1112,18 @@ def main() -> None:
     ))
     rows.append(blank_source(
         "DERIVED_PATH_C_DECISION_SUPPORT",
-        variable_name="opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|qualified tourism and population context|unapproved strategic-need fields",
+        variable_name="opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|qualified tourism, population and NPVM transport context|unapproved strategic-need fields",
         variable_description="Dashboard-ready exploratory Path C export retaining separate opportunity, vulnerability, support, quality and qualified context dimensions",
         source_organisation="Master thesis analytical pipeline",
         source_dataset_name="Magic Pass exploratory decision-support prototype",
         retrieval_method="Versioned merge of Path C feature, segment and analogue outputs",
         local_raw_file="config/path_c_analysis.json",
-        processed_file="data_processed/magic_pass_decision_support.csv|reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md|reports/19_PATH_C_AGGREGATION_SENSITIVITY.md|reports/20_TOURISM_DEPENDENCE_CONTEXT.md|reports/21_ACCESSIBILITY_CONTEXT.md",
+        processed_file="data_processed/magic_pass_decision_support.csv|reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md|reports/19_PATH_C_AGGREGATION_SENSITIVITY.md|reports/20_TOURISM_DEPENDENCE_CONTEXT.md|reports/21_ACCESSIBILITY_CONTEXT.md|reports/22_TRANSPORT_ACCESSIBILITY_CONTEXT.md",
         geographic_level="existing lift cluster with supplied resort listings",
         temporal_resolution="mixed descriptive snapshot; lineage retained by field",
         unit="separate decision-support dimensions",
-        transformation_applied="One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity, qualified point-container tourism context and Swiss straight-line population context appended; no composite score",
-        quality_notes="Catchment-level tourism dependence and network travel-time accessibility remain missing; qualified context is not an approved destination scope; foreign population is omitted; blank uplift fields are intentional",
+        transformation_applied="One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity, qualified point-container tourism, Swiss straight-line population and NPVM transport context appended; no composite score",
+        quality_notes="Catchment-level tourism dependence and validated arrival-node/live-routing accessibility remain missing; zonal transport context is not an approved destination scope; foreign population is omitted; blank uplift fields are intentional",
         confidence_level="exploratory prototype; never a recommendation ranking",
         manual_verification="Checkpoint 4 and 5 failures formalised; no predicted uplift or composite score produced",
     ))
@@ -1267,6 +1364,8 @@ def main() -> None:
         "path_c_cluster_tourism_context": ROOT / "data_processed/path_c_cluster_tourism_context.csv",
         "municipality_population_geometry_2026": ROOT / "data_processed/municipality_population_geometry_2026.csv",
         "path_c_cluster_accessibility_context": ROOT / "data_processed/path_c_cluster_accessibility_context.csv",
+        "resort_transport_accessibility_context": ROOT / "data_processed/resort_transport_accessibility_context.csv",
+        "path_c_cluster_transport_accessibility_context": ROOT / "data_processed/path_c_cluster_transport_accessibility_context.csv",
         "path_c_resort_cluster_features": ROOT / "data_processed/path_c_resort_cluster_features.csv",
         "path_c_cluster_segments": ROOT / "data_processed/path_c_cluster_segments.csv",
         "path_c_reviewed_treated_reference": ROOT / "data_processed/path_c_reviewed_treated_reference.csv",
@@ -1279,6 +1378,8 @@ def main() -> None:
         "path_c_cluster_tourism_context": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
         "municipality_population_geometry_2026": "DERIVED_ACCESSIBILITY_CONTEXT",
         "path_c_cluster_accessibility_context": "DERIVED_ACCESSIBILITY_CONTEXT",
+        "resort_transport_accessibility_context": "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT",
+        "path_c_cluster_transport_accessibility_context": "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT",
         "path_c_resort_cluster_features": "DERIVED_PATH_C_FEATURE_MATRIX",
         "path_c_cluster_segments": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
         "path_c_reviewed_treated_reference": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
@@ -1307,7 +1408,7 @@ def main() -> None:
         "analogue_descriptive_change_range_high_pct": "Maximum of the three analogue change diagnostics; not a confidence bound",
         "opportunity_signal_percentile": "Within-candidate percentile of the descriptive analogue change signal",
         "snow_vulnerability_percentile": "Within-candidate percentile of the SLF-station snow-vulnerability proxy",
-        "strategic_need_status": "Completeness status of strategic need; approved catchment-level tourism dependence and network accessibility remain missing",
+        "strategic_need_status": "Completeness status of strategic need; qualified NPVM travel time exists but approved catchment-level tourism dependence and validated destination accessibility remain missing",
         "predicted_uplift_pct": "Intentionally empty field because no causal or predictive uplift is supported",
         "uplift_lower_pct": "Intentionally empty lower bound because no uplift interval is supported",
         "uplift_upper_pct": "Intentionally empty upper bound because no uplift interval is supported",
@@ -1362,7 +1463,64 @@ def main() -> None:
         "accessibility_interpretation": "Explicit restriction that the context is neither travel time nor a destination catchment",
         "accessibility_feature_approved": "Whether the context is approved as a generic accessibility feature; always false",
         "population_boundary_alignment": "Reference-year relationship between STATPOP population and the current boundary snapshot",
+        "npvm_traffic_zone_id": "Official NPVM traffic-zone identifier assigned to the supplied resort listing point",
+        "npvm_zone_assignment_status": "Whether the point is inside a zone, uses the nearest zone intersecting its current municipality, or remains outside scope",
+        "distance_to_nearest_npvm_zone_km": "Shortest EPSG:2056 distance from the listing point to any NPVM traffic-zone polygon",
+        "npvm_zone_assignment_distance_km": "Distance from the listing point to its assigned zone; zero for exact containment",
+        "point_municipality_bfs_id_2026": "Current municipality BFS identifier used only to constrain a nearest-zone proxy",
+        "travel_time_values_complete": "Whether all four official travel-time values are available for the assigned listing point",
+        "npvm_model_reference_date": "Reference date of the official NPVM travel-time asset",
+        "npvm_distance_crs": "Projected coordinate reference system used for zone assignment distances",
+        "transport_point_assignment_method": "Versioned exact-or-within-current-municipality zone-assignment rule",
+        "transport_cluster_aggregation_method": "Versioned listing-to-cluster aggregation rule for transport context",
+        "transport_accessibility_interpretation": "Explicit restriction that NPVM values are modelled zonal context, not live routing or a catchment",
+        "transport_accessibility_feature_approved": "Whether transport context is approved as a generic accessibility feature; always false",
+        "transport_source_ids": "Pipe-separated official source identifiers supporting the transport context",
+        "cluster_transport_context_status": "Exact, proxy-complete, partial, or unavailable cluster coverage status",
+        "cluster_listing_transport_assignment_share": "Share of supplied cluster listing points with usable NPVM travel times",
+        "cluster_listing_exact_transport_assignment_share": "Share of supplied cluster listing points falling exactly inside an NPVM zone",
+        "cluster_maximum_zone_proxy_distance_km": "Largest within-current-municipality NPVM zone-proxy distance among cluster listing points",
+        "cluster_npvm_traffic_zone_ids": "Pipe-separated NPVM zone identifiers used in the cluster summary",
+        "unassigned_resort_ids": "Pipe-separated cluster listing IDs left without an NPVM assignment",
     }
+    transport_measures = {
+        "road_major_center_travel_time": "road travel time to the fastest accessible one of six major centres",
+        "public_transport_major_center_travel_time": "public-transport travel time to the fastest accessible one of six major centres",
+        "road_agglomeration_travel_time": "road travel time to the fastest accessible agglomeration or core municipality",
+        "public_transport_agglomeration_travel_time": "public-transport travel time to the fastest accessible agglomeration or core municipality",
+    }
+    for stem, description in transport_measures.items():
+        path_c_glossary[f"{stem}_minutes"] = (
+            f"Official modelled {description} for the assigned listing-point traffic zone"
+        )
+        for statistic in ["minimum", "median", "maximum", "range"]:
+            path_c_glossary[f"{stem}_{statistic}_minutes"] = (
+                f"Cluster-level {statistic} of {description} across usable supplied listing-point assignments"
+            )
+        path_c_glossary[f"{stem}_exact_only_median_minutes"] = (
+            f"Sensitivity median of {description} using only listing points exactly contained in an NPVM zone"
+        )
+    for prefix, description in {
+        "road_major_center": "road major-centre",
+        "public_transport_major_center": "public-transport major-centre",
+        "road_agglomeration": "road agglomeration/core-municipality",
+        "public_transport_agglomeration": "public-transport agglomeration/core-municipality",
+    }.items():
+        path_c_glossary[f"{prefix}_target_zone_id"] = (
+            f"NPVM zone identifier of the official {description} target"
+        )
+        path_c_glossary[f"{prefix}_target_name"] = (
+            f"Published name of the official {description} target"
+        )
+        path_c_glossary[f"{prefix}_target_published_size_class"] = (
+            f"Published ARE size class of the {description} target"
+        )
+        path_c_glossary[f"{prefix}_target_six_major_centres_flag"] = (
+            f"Whether the {description} target is one of the six major centres"
+        )
+        path_c_glossary[f"{prefix}_target_names"] = (
+            f"Pipe-separated official {description} target names across cluster listing points"
+        )
     for threshold in [20_000, 50_000, 100_000]:
         prefix = f"nearest_municipality_population_ge_{threshold}"
         path_c_glossary[f"{prefix}_bfs_id_2026"] = (
@@ -1385,6 +1543,14 @@ def main() -> None:
         )
 
     def path_c_unit(variable: str) -> str:
+        if variable.endswith("_minutes"):
+            return "minutes"
+        if variable.endswith("_share"):
+            return "share (0-1)"
+        if variable.endswith("_crs"):
+            return "coordinate reference system"
+        if variable.startswith("cluster_listings_"):
+            return "count"
         if variable.endswith("_pct"):
             return "percent"
         if variable.endswith("_percentile") or "comparability_score" in variable:
@@ -1412,6 +1578,7 @@ def main() -> None:
     path_c_geographic_level = {
         "municipality_tourism_context_2025": "municipality",
         "municipality_population_geometry_2026": "current Swiss municipality",
+        "resort_transport_accessibility_context": "supplied resort listing point / NPVM traffic zone",
         "path_c_reviewed_treated_reference": "reviewed treated destination",
     }
     path_c_temporal_level = {
@@ -1419,6 +1586,8 @@ def main() -> None:
         "path_c_cluster_tourism_context": "2025 annual point-container context",
         "municipality_population_geometry_2026": "2025 population aligned to 2026-01-01 boundaries",
         "path_c_cluster_accessibility_context": "2025 population aligned to 2026-01-01 boundaries; undated cluster location",
+        "resort_transport_accessibility_context": "NPVM model reference date 2025-06-30; current supplied listing coordinate",
+        "path_c_cluster_transport_accessibility_context": "NPVM model reference date 2025-06-30; current supplied listing coordinates",
     }
 
     for table, path in path_c_paths.items():
@@ -1433,7 +1602,27 @@ def main() -> None:
                 "municipality_population_geometry_2026",
                 "path_c_cluster_accessibility_context",
             }
-            accessibility_variable = accessibility_table or (
+            transport_table = table in {
+                "resort_transport_accessibility_context",
+                "path_c_cluster_transport_accessibility_context",
+            }
+            transport_variable = transport_table or (
+                table == "magic_pass_decision_support"
+                and (
+                    variable.startswith("npvm_")
+                    or variable.startswith("transport_")
+                    or variable.startswith("road_")
+                    or variable.startswith("public_transport_")
+                    or variable.startswith("cluster_listing_transport_")
+                    or variable.startswith("cluster_listing_exact_transport_")
+                    or variable.startswith("cluster_listings_")
+                    or variable.startswith("cluster_maximum_zone_proxy_")
+                    or variable.startswith("cluster_npvm_")
+                    or variable
+                    in {"cluster_transport_context_status", "unassigned_resort_ids"}
+                )
+            )
+            accessibility_variable = not transport_variable and (accessibility_table or (
                 table == "magic_pass_decision_support"
                 and (
                     "accessibility" in variable
@@ -1454,10 +1643,12 @@ def main() -> None:
                         "boundary_bridge_source_ids",
                     }
                 )
-            )
+            ))
             role = (
                 "intentionally unavailable causal prediction"
                 if variable in {"predicted_uplift_pct", "uplift_lower_pct", "uplift_upper_pct"}
+                else "qualified NPVM modelled travel-time context"
+                if transport_variable
                 else "qualified straight-line population context"
                 if accessibility_variable
                 else "strategic-need proxy"
@@ -1471,11 +1662,17 @@ def main() -> None:
                 else "descriptive segmentation / decision support"
             )
             formula_note = (
+                "See config/path_c_analysis.json and src/data_processing/build_transport_accessibility_context.py"
+                if transport_variable
+                else
                 "See config/path_c_analysis.json and src/data_processing/build_accessibility_context.py"
                 if accessibility_variable
                 else "See config/path_c_analysis.json and Path C scripts; tourism context is implemented in src/data_processing/build_tourism_dependence_context.py"
             )
             limitation_note = (
+                "No causal interpretation; zonal model output is not live routing, an observed arrival node or a destination catchment; municipality-constrained zone proxies are explicit"
+                if transport_variable
+                else
                 "No causal interpretation; straight-line municipality representative-point context is not travel time or a destination catchment; foreign population is excluded"
                 if accessibility_variable
                 else "No causal interpretation; point-container context is not a destination catchment; blank uplift/composite fields are intentional"
@@ -1488,7 +1685,11 @@ def main() -> None:
                 str(frame[variable].dtype),
                 path_c_geographic_level.get(table, "existing lift cluster"),
                 path_c_temporal_level.get(table, "undated structural snapshot; mixed lineage where stated"),
-                "DERIVED_ACCESSIBILITY_CONTEXT" if accessibility_variable else path_c_sources[table],
+                "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT"
+                if transport_variable
+                else "DERIVED_ACCESSIBILITY_CONTEXT"
+                if accessibility_variable
+                else path_c_sources[table],
                 "derived",
                 formula_note,
                 role,

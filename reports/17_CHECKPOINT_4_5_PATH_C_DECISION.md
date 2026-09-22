@@ -15,7 +15,7 @@ The selected architecture is therefore **Path C: exploratory structural segmenta
 - Similarity uses only top altitude, log ski-area kilometres and log lift count.
 - Membership, hotel outcomes, post-entry changes and snow vulnerability do not enter the structural clustering.
 - Hotel outcomes/capacity are excluded because a resort point's municipality is not an approved tourism catchment.
-- Snow vulnerability is retained on a separate strategic-need axis. Qualified point-container tourism and Swiss straight-line population context are appended downstream, but neither is an approved catchment or travel-time feature.
+- Snow vulnerability is retained on a separate strategic-need axis. Qualified point-container tourism, Swiss straight-line population and NPVM zonal travel-time context are appended downstream, but none is an approved catchment or destination-accessibility feature.
 
 ## Prohibited interpretations
 

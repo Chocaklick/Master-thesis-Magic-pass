@@ -1,0 +1,32 @@
+{
+  "analysis_version": "path_c_v0_5",
+  "npvm_model_reference_date": "2025-06-30",
+  "npvm_traffic_zones": 7978,
+  "centre_and_agglomeration_targets": 84,
+  "six_major_centres": 6,
+  "resort_listings": 271,
+  "resort_listings_exactly_assigned": 170,
+  "resort_listings_assigned_by_current_municipality_zone_proxy": 98,
+  "resort_listings_with_usable_travel_time": 268,
+  "resort_listings_outside_swiss_npvm_scope": 3,
+  "resort_listings_ambiguous": 0,
+  "unassigned_resort_ids": [
+    "avoriaz_1800_portes_du_soleil",
+    "chapelle_abondance_la_chapelle_d_abondance_portes_du_soleil",
+    "chatel_portes_du_soleil"
+  ],
+  "path_c_clusters": 162,
+  "path_c_clusters_complete_all_listing_points_exact": 89,
+  "path_c_clusters_complete_with_zone_proxy": 72,
+  "path_c_clusters_partial": 1,
+  "path_c_clusters_unavailable": 0,
+  "path_c_candidates": 104,
+  "path_c_candidates_with_usable_travel_time": 104,
+  "maximum_current_municipality_zone_proxy_distance_km": 3.636454011871992,
+  "median_cluster_median_road_major_center_minutes": 72.25,
+  "median_cluster_median_public_transport_major_center_minutes": 108.25,
+  "median_cluster_median_road_agglomeration_minutes": 26.0,
+  "median_cluster_median_public_transport_agglomeration_minutes": 42.0,
+  "transport_accessibility_features_approved": 0,
+  "interpretation": "npvm_2025_modelled_traffic_zone_context_not_live_routing_or_destination_catchment"
+}

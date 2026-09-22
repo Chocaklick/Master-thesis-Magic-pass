@@ -350,5 +350,26 @@
     "suffix": "html",
     "organisation": "Télé-Villars-Gryon-Diablerets SA",
     "description": "Official operator page distinguishing the Les Diablerets/Meilleret sector from Glacier 3000, reached by shuttle from the bottom of the slopes"
+  },
+  {
+    "source_id": "ARE_NPVM_TRAVEL_TIME_2025",
+    "url": "https://data.geo.admin.ch/ch.are.reisezeit-miv/reisezeit-miv/reisezeit-miv_2056.gpkg",
+    "suffix": "gpkg",
+    "organisation": "Swiss Federal Office for Spatial Development (ARE)",
+    "description": "Official GeoPackage dated 30 June 2025 containing identical-source NPVM traffic-zone layers for travel time to the six major centres and to agglomerations/core municipalities by road and public transport"
+  },
+  {
+    "source_id": "ARE_NPVM_TRAVEL_TIME_2025_STAC",
+    "url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.are.reisezeit-miv/items/reisezeit-miv",
+    "suffix": "json",
+    "organisation": "Swiss Federal Office for Spatial Development (ARE) via geo.admin.ch",
+    "description": "Official STAC item metadata fixing the NPVM travel-time GeoPackage reference date, CRS, asset URL and multihash checksum"
+  },
+  {
+    "source_id": "ARE_TRANSPORT_ACCESSIBILITY_METHOD",
+    "url": "https://www.are.admin.ch/de/verkehrserschliessung",
+    "suffix": "html",
+    "organisation": "Swiss Federal Office for Spatial Development (ARE)",
+    "description": "Official methodological page defining travel time to the six major centres, travel time to agglomerations/core municipalities and accessibility indicators by road and public transport"
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_4",
+  "analysis_version": "path_c_v0_5",
   "analysis_date": "2026-09-22",
   "analysis_entity": "existing_lift_cluster_with_at_least_one_supplied_resort_listing",
   "feature_temporal_status": "undated_cross_sectional_snapshot_not_pre_treatment",
@@ -62,12 +62,20 @@
     "boundary_bridge": "config/municipality_boundary_bridge_2025_2026.csv",
     "interpretation": "swiss_straight_line_population_context_not_travel_time_or_destination_catchment"
   },
+  "transport_accessibility_context": {
+    "source_id": "ARE_NPVM_TRAVEL_TIME_2025",
+    "model_reference_date": "2025-06-30",
+    "distance_crs": "EPSG:2056",
+    "point_assignment": "exact_zone_or_nearest_zone_intersecting_current_point_municipality_with_distance_diagnostic",
+    "cluster_aggregation": "minimum_median_maximum_across_usable_supplied_listing_point_zone_assignments",
+    "interpretation": "npvm_2025_modelled_traffic_zone_context_not_live_routing_or_destination_catchment"
+  },
   "decision_framework": {
     "dimensions_kept_separate": [
       "descriptive analogue opportunity signal",
       "snow vulnerability percentile"
     ],
-    "strategic_need_limitation": "Tourism dependence and travel-time or catchment accessibility are not available at an approved cluster-level exposure scope. Point-container tourism context and Swiss straight-line population context remain unapproved, so no complete strategic-need score or composite ranking is produced.",
+    "strategic_need_limitation": "Qualified NPVM 2025 traffic-zone travel times are available at supplied listing points, but neither they nor point-container tourism ratios establish an approved destination catchment or exposure scope. No complete strategic-need score or composite ranking is produced.",
     "composite_score_approved": false,
     "causal_interpretation_approved": false
   }

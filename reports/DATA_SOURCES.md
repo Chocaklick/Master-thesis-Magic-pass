@@ -26,6 +26,42 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/ANNIVIERS_SCOPE_OFFICIAL_20260920T005533Z.html`.
 
+## ARE_NPVM_TRAVEL_TIME_2025 — NPVM travel time to centres and agglomerations, reference date 2025-06-30
+
+- **Contents and relevance:** Modelled traffic-zone travel times to the fastest of six major centres and to the fastest agglomeration/core municipality by road and public transport
+- **Producer:** Swiss Federal Office for Spatial Development (ARE)
+- **Exact URL:** https://www.are.admin.ch/de/verkehrserschliessung
+- **Access and retrieval date:** Configured HTTPS download with immutable GeoPackage, SHA-256 sidecar and independently cached STAC metadata; 2026-09-22T07:53:41.477342+00:00.
+- **Variables:** road_major_center_travel_time_minutes|public_transport_major_center_travel_time_minutes|road_agglomeration_travel_time_minutes|public_transport_agglomeration_travel_time_minutes|npvm_traffic_zone_geometry
+- **Transformations:** Checksum and STAC multihash verification; point-in-zone assignment or nearest zone intersecting the independently resolved current point municipality; min/median/max listing-point aggregation by existing lift cluster
+- **Coverage:** NPVM traffic zone; model reference-date snapshot; 2025-06-30 to 2025-06-30.
+- **Limitations:** Traffic-zone model output, not live door-to-door routing; polygons do not continuously cover high-alpine terrain; municipality-constrained proxy distance and exact-only medians are retained
+- **Local raw file:** `data_external/source_evidence/ARE_NPVM_TRAVEL_TIME_2025_20260922T075341Z.gpkg`.
+
+## ARE_NPVM_TRAVEL_TIME_2025_STAC — STAC item ch.are.reisezeit-miv/reisezeit-miv
+
+- **Contents and relevance:** Official STAC item metadata fixing the ARE travel-time asset reference date, CRS, URL and checksum
+- **Producer:** Swiss Federal Office for Spatial Development (ARE) via geo.admin.ch
+- **Exact URL:** https://data.geo.admin.ch/api/stac/v1/collections/ch.are.reisezeit-miv/items/reisezeit-miv
+- **Access and retrieval date:** HTTP GET with immutable JSON response and SHA-256 sidecar; 2026-09-22T07:56:58.729722+00:00.
+- **Variables:** npvm_model_reference_date|asset_url|asset_crs|asset_multihash
+- **Transformations:** Reference date, EPSG code, asset URL and multihash parsed and checked against the cached GeoPackage
+- **Coverage:** dataset metadata; asset metadata snapshot; 2025-06-30 to 2025-06-30.
+- **Limitations:** Publication/update timestamps are not substituted for the model reference date
+- **Local raw file:** `data_external/source_evidence/ARE_NPVM_TRAVEL_TIME_2025_STAC_20260922T075658Z.json`.
+
+## ARE_TRANSPORT_ACCESSIBILITY_METHOD — Transport access in Switzerland methodology page
+
+- **Contents and relevance:** Official ARE definitions for the road and public-transport travel-time measures
+- **Producer:** Swiss Federal Office for Spatial Development (ARE)
+- **Exact URL:** https://www.are.admin.ch/de/verkehrserschliessung
+- **Access and retrieval date:** HTTP GET with immutable HTML response and SHA-256 sidecar; 2026-09-22T07:57:00.124359+00:00.
+- **Variables:** travel_time_measure_definition|major_centre_definition|agglomeration_core_municipality_definition
+- **Transformations:** Definitions interpreted together with the GeoPackage field schema
+- **Coverage:** methodology; retrieval snapshot; ? to ?.
+- **Limitations:** Methodological definition does not make a resort listing coordinate a validated arrival node
+- **Local raw file:** `data_external/source_evidence/ARE_TRANSPORT_ACCESSIBILITY_METHOD_20260922T075700Z.html`.
+
 ## BBGR_ANNUAL_2017_18 — Bergbahnen Graubünden annual report 2017/18
 
 - **Contents and relevance:** Official 2017/2018 annual report documenting the SnowPass Graubünden market, regional first entries and the then-current TopCard change
@@ -320,10 +356,10 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Producer:** Master thesis analytical pipeline
 - **Exact URL:** Not documented.
 - **Access and retrieval date:** Versioned merge of Path C feature, segment and analogue outputs; unknown date.
-- **Variables:** opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|qualified tourism and population context|unapproved strategic-need fields
-- **Transformations:** One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity, qualified point-container tourism context and Swiss straight-line population context appended; no composite score
+- **Variables:** opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|qualified tourism, population and NPVM transport context|unapproved strategic-need fields
+- **Transformations:** One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity, qualified point-container tourism, Swiss straight-line population and NPVM transport context appended; no composite score
 - **Coverage:** existing lift cluster with supplied resort listings; mixed descriptive snapshot; lineage retained by field; ? to ?.
-- **Limitations:** Catchment-level tourism dependence and network travel-time accessibility remain missing; qualified context is not an approved destination scope; foreign population is omitted; blank uplift fields are intentional
+- **Limitations:** Catchment-level tourism dependence and validated arrival-node/live-routing accessibility remain missing; zonal transport context is not an approved destination scope; foreign population is omitted; blank uplift fields are intentional
 - **Local raw file:** `config/path_c_analysis.json`.
 
 ## DERIVED_PATH_C_FEATURE_MATRIX — Path C resort-cluster feature matrix
@@ -397,6 +433,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** municipality and linked lift cluster point-container set; 2025 annual context; 2025-01-01 to 2025-12-31.
 - **Limitations:** Point containment is not an approved tourism catchment or exposure mapping; hotel statistics omit non-hotel accommodation
 - **Local raw file:** `data_processed/resort_point_municipality.csv`.
+
+## DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT — Path C NPVM transport accessibility context
+
+- **Contents and relevance:** Qualified NPVM road and public-transport accessibility context for supplied resort listings and linked Path C lift clusters
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned deterministic Python transformation of checksum-verified ARE, geo.admin.ch point-municipality and swissBOUNDARIES3D sources; unknown date.
+- **Variables:** listing_npvm_zone_assignment|cluster_road_travel_time|cluster_public_transport_travel_time|assignment_distance|exact_only_sensitivity
+- **Transformations:** Use exact zone containment for 170 points; for 98 Swiss high-alpine points use the nearest zone intersecting the same independently resolved current municipality; leave three foreign points missing; aggregate min/median/max across usable listing points and retain exact-only medians
+- **Coverage:** supplied resort listing point and linked lift cluster; NPVM model reference date 2025-06-30; current directory coordinates; 2025-06-30 to 2025-06-30.
+- **Limitations:** Not live routing, rail-only access, a timetable, a valley-station origin or a destination catchment; within-municipality zone links are explicit proxies and remain unapproved
+- **Local raw file:** `config/path_c_analysis.json|data_processed/resort_point_municipality.csv`.
 
 ## DERIVED_TREATMENT_DISTANCE_GRADIENT — Treatment municipality distance-gradient diagnostic
 

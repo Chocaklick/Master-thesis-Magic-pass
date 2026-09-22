@@ -816,3 +816,100 @@ def test_accessibility_context_preserves_population_and_stays_unapproved() -> No
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
     assert not as_bool(decision["accessibility_feature_approved"]).any()
+
+
+def test_transport_accessibility_uses_npvm_zones_and_exposes_proxies() -> None:
+    listing = read("data_processed/resort_transport_accessibility_context.csv")
+    cluster = read("data_processed/path_c_cluster_transport_accessibility_context.csv")
+    decision = read("data_processed/magic_pass_decision_support.csv")
+
+    assert len(listing) == 271
+    assert listing["resort_id"].is_unique
+    assert listing["npvm_model_reference_date"].eq("2025-06-30").all()
+    status_counts = listing["npvm_zone_assignment_status"].value_counts().to_dict()
+    assert status_counts == {
+        "exact_point_in_npvm_traffic_zone": 170,
+        "nearest_npvm_zone_intersecting_current_point_municipality": 98,
+        "outside_swiss_current_municipality_and_npvm_coverage": 3,
+    }
+    usable = as_bool(listing["travel_time_values_complete"])
+    assert int(usable.sum()) == 268
+    assert set(listing.loc[~usable, "resort_id"]) == {
+        "avoriaz_1800_portes_du_soleil",
+        "chapelle_abondance_la_chapelle_d_abondance_portes_du_soleil",
+        "chatel_portes_du_soleil",
+    }
+    travel_columns = [
+        "road_major_center_travel_time_minutes",
+        "public_transport_major_center_travel_time_minutes",
+        "road_agglomeration_travel_time_minutes",
+        "public_transport_agglomeration_travel_time_minutes",
+    ]
+    assert listing.loc[usable, travel_columns].notna().all().all()
+    assert listing.loc[usable, travel_columns].ge(0).all().all()
+    assert listing.loc[~usable, travel_columns].isna().all().all()
+    exact = listing["npvm_zone_assignment_status"].eq(
+        "exact_point_in_npvm_traffic_zone"
+    )
+    proxied = listing["npvm_zone_assignment_status"].eq(
+        "nearest_npvm_zone_intersecting_current_point_municipality"
+    )
+    assert listing.loc[exact, "npvm_zone_assignment_distance_km"].eq(0).all()
+    assert listing.loc[proxied, "npvm_zone_assignment_distance_km"].gt(0).all()
+    assert listing.loc[proxied, "npvm_zone_assignment_distance_km"].max() < 4
+    assert listing.loc[usable, "road_major_center_target_six_major_centres_flag"].eq(
+        True
+    ).all()
+    assert listing.loc[
+        usable, "public_transport_major_center_target_six_major_centres_flag"
+    ].eq(True).all()
+    assert not as_bool(listing["transport_accessibility_feature_approved"]).any()
+
+    assert len(cluster) == 162
+    assert cluster["cluster_id"].is_unique
+    assert int(cluster["cluster_listing_count"].sum()) == 271
+    assert int(cluster["cluster_listings_assigned_to_npvm_zone"].sum()) == 268
+    assert int(
+        cluster["cluster_listings_assigned_by_current_municipality_zone_proxy"].sum()
+    ) == 98
+    assert cluster["cluster_transport_context_status"].value_counts().to_dict() == {
+        "complete_all_listing_points_exact": 89,
+        "complete_with_nearest_same_municipality_zone_proxy": 72,
+        "partial_foreign_or_unresolved_listing_points": 1,
+    }
+    partial = cluster[
+        cluster["cluster_transport_context_status"].eq(
+            "partial_foreign_or_unresolved_listing_points"
+        )
+    ]
+    assert partial["cluster_id"].tolist() == ["SKI_CLUSTER_001"]
+    candidates = cluster[as_bool(cluster["candidate_for_path_c"])]
+    assert len(candidates) == 104
+    assert candidates["road_major_center_travel_time_median_minutes"].notna().all()
+    assert candidates[
+        "public_transport_major_center_travel_time_median_minutes"
+    ].notna().all()
+    for prefix in [
+        "road_major_center_travel_time",
+        "public_transport_major_center_travel_time",
+        "road_agglomeration_travel_time",
+        "public_transport_agglomeration_travel_time",
+    ]:
+        assert (
+            cluster[f"{prefix}_minimum_minutes"]
+            <= cluster[f"{prefix}_median_minutes"]
+        ).all()
+        assert (
+            cluster[f"{prefix}_median_minutes"]
+            <= cluster[f"{prefix}_maximum_minutes"]
+        ).all()
+    assert not as_bool(cluster["transport_accessibility_feature_approved"]).any()
+    assert cluster["transport_accessibility_interpretation"].eq(
+        "npvm_2025_modelled_traffic_zone_context_not_live_routing_or_destination_catchment"
+    ).all()
+
+    assert len(decision) == 162
+    assert decision["accessibility_score"].isna().all()
+    assert decision["predicted_uplift_pct"].isna().all()
+    assert decision["composite_opportunity_need_score"].isna().all()
+    assert not as_bool(decision["transport_accessibility_feature_approved"]).any()

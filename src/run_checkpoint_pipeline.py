@@ -64,6 +64,7 @@ def main() -> None:
     run("src/scoring/build_path_c_aggregation_sensitivity.py")
     run("src/data_processing/build_tourism_dependence_context.py")
     run("src/data_processing/build_accessibility_context.py")
+    run("src/data_processing/build_transport_accessibility_context.py")
     run("src/scoring/plot_path_c_outputs.py")
     run("src/data_processing/update_provenance.py")
     subprocess.run([sys.executable, "-m", "pytest", "-q"], cwd=ROOT, check=True)

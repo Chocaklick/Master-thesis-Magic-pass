@@ -248,7 +248,7 @@ The distance thresholds are sensitivity bands, not causal rules. `network_spillo
 
 - Resolved historical/current Magic resort points are a lower bound: 26 official labels still lack approved identity equivalence.
 - Resort points are not full ski-domain polygons or tourism catchments.
-- Great-circle distance omits road/rail travel time, shared valleys, accommodation substitution and marketing spillovers.
+- Great-circle distance does not use the current NPVM zonal context and omits validated historical arrival-node travel time, shared valleys, accommodation substitution and marketing spillovers.
 - Absence from a resolved link is not proof of historical non-membership.
 - Competing-pass, accessibility and simultaneous-investment reviews remain pending for every donor.
 

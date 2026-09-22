@@ -22,7 +22,7 @@ For each candidate, `data_processed/path_c_candidate_analogues.csv` retains thre
 
 ## Two dimensions kept separate
 
-The decision-support export contains an analogue-opportunity percentile and a snow-vulnerability percentile for **104** candidates. The downstream pipeline appends qualified point-container tourism context and Swiss straight-line population context, but neither tourism dependence nor travel-time or catchment accessibility is available as an approved feature. Strategic need is therefore incomplete. Predicted-uplift fields are blank (0 populated), and no composite score is produced (0 populated).
+The decision-support export contains an analogue-opportunity percentile and a snow-vulnerability percentile for **104** candidates. The downstream pipeline appends qualified point-container tourism context, Swiss straight-line population context and official NPVM 2025 zonal road/public-transport context. The latter covers every candidate but uses a transparent nearest-zone-within-current-municipality proxy for high-alpine listing points outside the zone polygons. Neither tourism dependence nor destination-level accessibility is approved. Strategic need is therefore incomplete. Predicted-uplift fields are blank (0 populated), and no composite score is produced (0 populated).
 
 ## Outputs and next evidence needs
 
@@ -32,6 +32,7 @@ The decision-support export contains an analogue-opportunity percentile and a sn
 - `data_processed/path_c_candidate_analogues.csv`
 - `data_processed/path_c_cluster_tourism_context.csv`
 - `data_processed/path_c_cluster_accessibility_context.csv`
+- `data_processed/path_c_cluster_transport_accessibility_context.csv`
 - `data_processed/magic_pass_decision_support.csv`
 
-The min/median/max audit and two qualified contexts are documented in reports 19–21. Next, replace the qualified context with defensible destination catchments and network travel times, add cross-border population where relevant, and audit competing-pass status for apparent candidates. Until then the export is an exploratory dashboard-ready prototype, not a recommendation ranking.
+The min/median/max audit and three qualified contexts are documented in reports 19–22. Next, validate actual arrival nodes and the within-municipality NPVM zone proxies, add nearest-stop/motorway and cross-border population context where relevant, define defensible destination catchments, and audit competing-pass status for apparent candidates. Until then the export is an exploratory dashboard-ready prototype, not a recommendation ranking.
