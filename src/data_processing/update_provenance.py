@@ -366,7 +366,7 @@ def main() -> None:
     ))
     rows.append(blank_source(
         "DERIVED_ACCESSIBILITY_CONTEXT",
-        variable_name="distance_to_population_threshold_municipality|resident_population_within_straight_line_radius|boundary_bridge",
+        variable_name="distance_to_population_threshold_municipality|resident_population_within_straight_line_radius|distance_to_swiss_country_boundary|cross_border_truncation_risk|boundary_bridge",
         variable_description="Qualified Swiss straight-line population context for every linked Path C lift cluster",
         source_organisation="Master thesis analytical pipeline",
         source_dataset_name="Path C straight-line population accessibility context",
@@ -379,9 +379,9 @@ def main() -> None:
         temporal_end="2026-01-01",
         unit="persons and straight-line kilometres",
         transformation_applied="Aggregate seven superseded STATPOP identifiers through five official mutations; use polygon representative points; calculate EPSG:2056 distances and population sums at versioned thresholds and radii",
-        quality_notes="Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point",
+        quality_notes="Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point and radius-specific border intersection is flagged without filling foreign population",
         confidence_level="high for reproducibility; qualified geographic context only",
-        manual_verification="2,115 STATPOP rows reconcile to 2,110 current polygons; 9,127,125 residents preserved; all 162 clusters covered; every approval flag false",
+        manual_verification="2,115 STATPOP rows reconcile to 2,110 current polygons; 9,127,125 residents preserved; all 162 clusters covered; two artificial cluster-median points outside the Swiss polygon exposed; every approval flag false",
     ))
     slf_metadata = {
         source_id: cached_metadata(source_id)
@@ -1356,6 +1356,8 @@ def main() -> None:
         "municipality_location_method": "Method used to represent each municipality in straight-line calculations",
         "cluster_location_longitude": "Median longitude across supplied resort listings assigned to the lift cluster",
         "cluster_location_latitude": "Median latitude across supplied resort listings assigned to the lift cluster",
+        "cluster_inside_swiss_country_boundary_2026": "Whether the median cluster coordinate lies inside or on the official Swiss country polygon",
+        "distance_to_swiss_country_boundary_km": "EPSG:2056 straight-line distance from the median cluster coordinate to the official Swiss country boundary",
         "accessibility_context_status": "Availability status of the qualified Swiss straight-line population context",
         "accessibility_interpretation": "Explicit restriction that the context is neither travel time nor a destination catchment",
         "accessibility_feature_approved": "Whether the context is approved as a generic accessibility feature; always false",
@@ -1375,6 +1377,11 @@ def main() -> None:
     for radius in [30, 60, 90, 120]:
         path_c_glossary[f"resident_population_within_{radius}km_straight_line"] = (
             f"STATPOP 2025 residents assigned to municipality representative points within {radius} straight-line kilometres"
+        )
+        path_c_glossary[
+            f"swiss_only_population_within_{radius}km_cross_border_truncation_risk"
+        ] = (
+            f"Whether the {radius}-kilometre circle reaches beyond the official Swiss country polygon, so Swiss-only population is geographically truncated"
         )
 
     def path_c_unit(variable: str) -> str:
@@ -1432,7 +1439,10 @@ def main() -> None:
                     "accessibility" in variable
                     or "nearest_municipality_population" in variable
                     or variable.startswith("resident_population_within_")
+                    or variable.startswith("swiss_only_population_within_")
                     or variable.startswith("cluster_location_")
+                    or variable == "cluster_inside_swiss_country_boundary_2026"
+                    or variable == "distance_to_swiss_country_boundary_km"
                     or variable
                     in {
                         "population_reference_year",

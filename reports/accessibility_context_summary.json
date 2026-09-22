@@ -11,6 +11,13 @@
   },
   "path_c_clusters_with_context": 162,
   "path_c_candidates_with_context": 104,
+  "clusters_outside_swiss_country_boundary": 2,
+  "clusters_with_cross_border_truncation_risk_by_radius_km": {
+    "30": 112,
+    "60": 158,
+    "90": 162,
+    "120": 162
+  },
   "accessibility_features_approved": 0,
   "interpretation": "swiss_straight_line_population_context_not_travel_time_or_destination_catchment"
 }

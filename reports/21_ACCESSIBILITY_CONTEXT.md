@@ -11,11 +11,13 @@ Each municipality is represented by a point guaranteed to lie within its polygon
 - linked Path C clusters with complete geographic context: **162**
 - apparent Path C candidates with complete geographic context: **104**
 - municipality mutation records verified against checksum-protected OFS pages: **5**
+- clusters outside the official Swiss country polygon: **2**
+- clusters whose Swiss-only radius intersects the national boundary (30/60/90/120 km): **112 / 158 / 162 / 162**
 - approved generic accessibility features or scores: **0**
 
 ## Interpretation limit
 
-These fields are Swiss straight-line population context, not road or public-transport travel time, not a labour or visitor market, and not a destination catchment. Municipality population is collapsed to one representative point, so totals within a radius are discretised approximations. Foreign population is excluded, which especially understates context near national borders. Terrain, network impedance, seasonal closures and travel behaviour are not represented. Consequently `accessibility_feature_approved` remains false and the generic `accessibility_score` remains blank; no composite ranking or causal estimate is produced.
+These fields are Swiss straight-line population context, not road or public-transport travel time, not a labour or visitor market, and not a destination catchment. Municipality population is collapsed to one representative point, so totals within a radius are discretised approximations. Foreign population is excluded. The output therefore reports the distance to the official Swiss country boundary and a radius-specific truncation-risk flag whenever the Swiss-only circle reaches that boundary; the flag diagnoses incompleteness but does not fill it. Terrain, network impedance, seasonal closures and travel behaviour are not represented. Consequently `accessibility_feature_approved` remains false and the generic `accessibility_score` remains blank; no composite ranking or causal estimate is produced.
 
 ## Outputs
 

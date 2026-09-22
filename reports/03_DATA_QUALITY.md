@@ -22,7 +22,7 @@ The supplied files are structurally stronger than their filenames initially sugg
 | Temperature/precipitation | Seven official SwissMetNet stations cover the 15 reviewed treatment components; 1,744/1,749 destination-months complete; regional proxy only |
 | Donor external shocks | Seven beyond-50-km pairs checked against complete annual Magic rosters and official operator/government sources; all seven are excluded for overlapping local tourism or infrastructure shocks |
 | Tourism dependence | Official population and hotel-intensity ratios available for 2,115 municipalities / 185 complete HESTA joins; 39 Path C candidates have complete point-container context, but zero destination-level tourism-dependence features are approved |
-| Accessibility | Qualified Swiss straight-line population context covers all 162 linked clusters / 104 candidates at three municipality-population thresholds and four radii; network travel time, foreign-border population and destination catchments remain unavailable, so zero accessibility features are approved |
+| Accessibility | Qualified Swiss straight-line population context covers all 162 linked clusters / 104 candidates at three municipality-population thresholds and four radii. Border-truncation flags identify 112/158/162/162 affected cluster circles at 30/60/90/120 km; network travel time, foreign population and destination catchments remain unavailable, so zero accessibility features are approved |
 
 ## Resort-level assessment
 

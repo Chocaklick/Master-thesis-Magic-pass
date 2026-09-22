@@ -775,6 +775,14 @@ def test_accessibility_context_preserves_population_and_stays_unapproved() -> No
     assert cluster["accessibility_interpretation"].eq(
         "swiss_straight_line_population_context_not_travel_time_or_destination_catchment"
     ).all()
+    assert int(as_bool(cluster["cluster_inside_swiss_country_boundary_2026"]).sum()) == 160
+    assert set(
+        cluster.loc[
+            ~as_bool(cluster["cluster_inside_swiss_country_boundary_2026"]),
+            "cluster_id",
+        ]
+    ) == {"SKI_CLUSTER_001", "SKI_CLUSTER_200"}
+    assert cluster["distance_to_swiss_country_boundary_km"].ge(0).all()
     assert (
         cluster["distance_to_nearest_municipality_population_ge_20000_km"]
         <= cluster["distance_to_nearest_municipality_population_ge_50000_km"] + 1e-9
@@ -790,6 +798,18 @@ def test_accessibility_context_preserves_population_and_stays_unapproved() -> No
         "resident_population_within_120km_straight_line",
     ]
     assert not (cluster[radius_columns].diff(axis=1).iloc[:, 1:] < 0).any().any()
+    expected_border_risk = {30: 112, 60: 158, 90: 162, 120: 162}
+    for radius, expected_count in expected_border_risk.items():
+        risk = as_bool(
+            cluster[
+                f"swiss_only_population_within_{radius}km_cross_border_truncation_risk"
+            ]
+        )
+        assert int(risk.sum()) == expected_count
+        assert risk.equals(
+            (~as_bool(cluster["cluster_inside_swiss_country_boundary_2026"]))
+            | cluster["distance_to_swiss_country_boundary_km"].lt(radius)
+        )
 
     assert len(decision) == 162
     assert decision["accessibility_score"].isna().all()

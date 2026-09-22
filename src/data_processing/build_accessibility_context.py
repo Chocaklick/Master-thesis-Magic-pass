@@ -21,6 +21,7 @@ import numpy as np
 import pandas as pd
 from pyproj import Transformer
 from shapely import from_wkb, make_valid
+from shapely.geometry import Point
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -117,12 +118,11 @@ def checked_bridge() -> pd.DataFrame:
     return bridge
 
 
-def load_boundaries() -> pd.DataFrame:
+def load_boundaries(gpkg: Path) -> pd.DataFrame:
     query = (
         "SELECT bfs_nummer,name,gem_flaeche,geom "
         "FROM tlm_hoheitsgebiet WHERE objektart='Gemeindegebiet' AND icc='CH'"
     )
-    gpkg = checked_gpkg()
     with sqlite3.connect(gpkg.resolve().as_uri() + "?mode=ro", uri=True) as database:
         rows = database.execute(query).fetchall()
     boundaries = pd.DataFrame(
@@ -140,6 +140,15 @@ def load_boundaries() -> pd.DataFrame:
             f"Expected 2,110 unique Swiss 2026 municipality polygons, found {len(boundaries)}"
         )
     return boundaries
+
+
+def load_swiss_country_geometry(gpkg: Path):
+    query = "SELECT geom FROM tlm_landesgebiet WHERE objektart='Land' AND icc='CH'"
+    with sqlite3.connect(gpkg.resolve().as_uri() + "?mode=ro", uri=True) as database:
+        rows = database.execute(query).fetchall()
+    if len(rows) != 1:
+        raise ValueError(f"Expected one official Swiss country geometry, found {len(rows)}")
+    return gpkg_geometry(rows[0][0])
 
 
 def align_population(boundaries: pd.DataFrame, bridge: pd.DataFrame) -> pd.DataFrame:
@@ -230,7 +239,11 @@ def align_population(boundaries: pd.DataFrame, bridge: pd.DataFrame) -> pd.DataF
     return aligned
 
 
-def build_cluster_context(municipalities: pd.DataFrame, config: dict) -> pd.DataFrame:
+def build_cluster_context(
+    municipalities: pd.DataFrame,
+    swiss_country_geometry,
+    config: dict,
+) -> pd.DataFrame:
     features = pd.read_csv(ROOT / "data_processed" / "path_c_resort_cluster_features.csv")
     if features[["latitude_median", "longitude_median"]].isna().any().any():
         raise ValueError("Every Path C cluster must have a median coordinate")
@@ -247,13 +260,20 @@ def build_cluster_context(municipalities: pd.DataFrame, config: dict) -> pd.Data
     rows = []
     for cluster in features.itertuples(index=False):
         x, y = coordinate_transform.transform(cluster.longitude_median, cluster.latitude_median)
+        cluster_point = Point(x, y)
         distances_km = np.hypot(municipality_x - x, municipality_y - y) / 1000
+        inside_swiss_boundary = bool(swiss_country_geometry.covers(cluster_point))
+        distance_to_swiss_boundary_km = float(
+            swiss_country_geometry.boundary.distance(cluster_point) / 1000
+        )
         row = {
             "cluster_id": cluster.cluster_id,
             "cluster_display_name": cluster.cluster_display_name,
             "candidate_for_path_c": str(cluster.candidate_for_path_c).lower() == "true",
             "cluster_location_longitude": float(cluster.longitude_median),
             "cluster_location_latitude": float(cluster.latitude_median),
+            "cluster_inside_swiss_country_boundary_2026": inside_swiss_boundary,
+            "distance_to_swiss_country_boundary_km": distance_to_swiss_boundary_km,
         }
         for threshold in thresholds:
             eligible = population >= threshold
@@ -269,6 +289,11 @@ def build_cluster_context(municipalities: pd.DataFrame, config: dict) -> pd.Data
         for radius in radii:
             row[f"resident_population_within_{radius}km_straight_line"] = int(
                 population[distances_km <= radius].sum()
+            )
+            row[
+                f"swiss_only_population_within_{radius}km_cross_border_truncation_risk"
+            ] = bool(
+                not inside_swiss_boundary or distance_to_swiss_boundary_km < radius
             )
         row.update(
             {
@@ -329,10 +354,15 @@ def main() -> None:
     if settings["interpretation"] != INTERPRETATION:
         raise ValueError("Accessibility interpretation in config is not the approved qualified label")
     bridge = checked_bridge()
-    municipalities = align_population(load_boundaries(), bridge)
+    gpkg = checked_gpkg()
+    municipalities = align_population(load_boundaries(gpkg), bridge)
     municipality_export = municipalities.drop(columns="geometry")
     municipality_export.to_csv(MUNICIPALITY_OUTPUT, index=False)
-    context = build_cluster_context(municipalities, config)
+    context = build_cluster_context(
+        municipalities,
+        load_swiss_country_geometry(gpkg),
+        config,
+    )
     context.to_csv(CLUSTER_OUTPUT, index=False)
     enrich_decision_support(context)
 
@@ -342,6 +372,16 @@ def main() -> None:
             municipalities["resident_population_2025_on_2026_boundary"].ge(threshold).sum()
         )
         for threshold in settings["population_center_thresholds"]
+    }
+    cross_border_counts = {
+        str(radius): int(
+            as_bool(
+                context[
+                    f"swiss_only_population_within_{int(radius)}km_cross_border_truncation_risk"
+                ]
+            ).sum()
+        )
+        for radius in settings["straight_line_radii_km"]
     }
     summary = {
         "analysis_version": config["analysis_version"],
@@ -354,6 +394,10 @@ def main() -> None:
         "population_reference_municipalities_by_threshold": threshold_counts,
         "path_c_clusters_with_context": int(len(context)),
         "path_c_candidates_with_context": int(len(candidates)),
+        "clusters_outside_swiss_country_boundary": int(
+            (~as_bool(context["cluster_inside_swiss_country_boundary_2026"])).sum()
+        ),
+        "clusters_with_cross_border_truncation_risk_by_radius_km": cross_border_counts,
         "accessibility_features_approved": int(
             as_bool(context["accessibility_feature_approved"]).sum()
         ),
@@ -380,11 +424,13 @@ Each municipality is represented by a point guaranteed to lie within its polygon
 - linked Path C clusters with complete geographic context: **{summary['path_c_clusters_with_context']:,}**
 - apparent Path C candidates with complete geographic context: **{summary['path_c_candidates_with_context']:,}**
 - municipality mutation records verified against checksum-protected OFS pages: **5**
+- clusters outside the official Swiss country polygon: **{summary['clusters_outside_swiss_country_boundary']:,}**
+- clusters whose Swiss-only radius intersects the national boundary (30/60/90/120 km): **{cross_border_counts['30']:,} / {cross_border_counts['60']:,} / {cross_border_counts['90']:,} / {cross_border_counts['120']:,}**
 - approved generic accessibility features or scores: **0**
 
 ## Interpretation limit
 
-These fields are Swiss straight-line population context, not road or public-transport travel time, not a labour or visitor market, and not a destination catchment. Municipality population is collapsed to one representative point, so totals within a radius are discretised approximations. Foreign population is excluded, which especially understates context near national borders. Terrain, network impedance, seasonal closures and travel behaviour are not represented. Consequently `accessibility_feature_approved` remains false and the generic `accessibility_score` remains blank; no composite ranking or causal estimate is produced.
+These fields are Swiss straight-line population context, not road or public-transport travel time, not a labour or visitor market, and not a destination catchment. Municipality population is collapsed to one representative point, so totals within a radius are discretised approximations. Foreign population is excluded. The output therefore reports the distance to the official Swiss country boundary and a radius-specific truncation-risk flag whenever the Swiss-only circle reaches that boundary; the flag diagnoses incompleteness but does not fill it. Terrain, network impedance, seasonal closures and travel behaviour are not represented. Consequently `accessibility_feature_approved` remains false and the generic `accessibility_score` remains blank; no composite ranking or causal estimate is produced.
 
 ## Outputs
 
