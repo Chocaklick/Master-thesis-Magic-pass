@@ -473,7 +473,7 @@ def main() -> None:
         source_dataset_name="Path C NPVM transport accessibility context",
         retrieval_method="Versioned deterministic Python transformation of checksum-verified ARE, geo.admin.ch point-municipality and swissBOUNDARIES3D sources",
         local_raw_file="config/path_c_analysis.json|data_processed/resort_point_municipality.csv",
-        processed_file="data_processed/resort_transport_accessibility_context.csv|data_processed/path_c_cluster_transport_accessibility_context.csv|data_processed/magic_pass_decision_support.csv|reports/22_TRANSPORT_ACCESSIBILITY_CONTEXT.md",
+        processed_file="data_processed/resort_transport_accessibility_context.csv|data_processed/path_c_cluster_transport_accessibility_context.csv|data_processed/magic_pass_decision_support.csv|reports/22_TRANSPORT_ACCESSIBILITY_CONTEXT.md|reports/transport_zone_proxy_audit.csv|reports/27_TRANSPORT_ZONE_PROXY_AUDIT.md",
         geographic_level="supplied resort listing point and linked lift cluster",
         temporal_resolution="NPVM model reference date 2025-06-30; current directory coordinates",
         temporal_start="2025-06-30",
@@ -482,7 +482,7 @@ def main() -> None:
         transformation_applied="Use exact zone containment for 170 points; for 98 Swiss high-alpine points use the nearest zone intersecting the same independently resolved current municipality; leave three foreign points missing; aggregate min/median/max across usable listing points and retain exact-only medians",
         quality_notes="Not live routing, rail-only access, a timetable, a valley-station origin or a destination catchment; within-municipality zone links are explicit proxies and remain unapproved",
         confidence_level="high for reproducibility; qualified modelled context only",
-        manual_verification="268/271 listing points usable, all 104 candidates have context, one mixed Swiss/foreign cluster is partial, zero approval flags",
+        manual_verification="268/271 listing points usable; all 98 municipality-constrained proxies geometrically reconstructed; 50 proxy-only clusters lack an internal exact-zone reference; zero approval flags",
     ))
     rows.append(blank_source(
         "BAV_PUBLIC_TRANSPORT_STOPS_2026",
@@ -1571,6 +1571,7 @@ def main() -> None:
         "path_c_cluster_accessibility_context": ROOT / "data_processed/path_c_cluster_accessibility_context.csv",
         "resort_transport_accessibility_context": ROOT / "data_processed/resort_transport_accessibility_context.csv",
         "path_c_cluster_transport_accessibility_context": ROOT / "data_processed/path_c_cluster_transport_accessibility_context.csv",
+        "transport_zone_proxy_audit": ROOT / "reports/transport_zone_proxy_audit.csv",
         "resort_public_transport_stop_context": ROOT / "data_processed/resort_public_transport_stop_context.csv",
         "path_c_cluster_public_transport_stop_context": ROOT / "data_processed/path_c_cluster_public_transport_stop_context.csv",
         "public_transport_journey_nodes": ROOT / "reports/public_transport_journey_nodes.csv",
@@ -1592,6 +1593,7 @@ def main() -> None:
         "path_c_cluster_accessibility_context": "DERIVED_ACCESSIBILITY_CONTEXT",
         "resort_transport_accessibility_context": "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT",
         "path_c_cluster_transport_accessibility_context": "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT",
+        "transport_zone_proxy_audit": "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT",
         "resort_public_transport_stop_context": "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT",
         "path_c_cluster_public_transport_stop_context": "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT",
         "public_transport_journey_nodes": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
@@ -1896,6 +1898,7 @@ def main() -> None:
         "municipality_tourism_context_2025": "municipality",
         "municipality_population_geometry_2026": "current Swiss municipality",
         "resort_transport_accessibility_context": "supplied resort listing point / NPVM traffic zone",
+        "transport_zone_proxy_audit": "supplied resort listing point / NPVM traffic zone / current municipality",
         "resort_public_transport_stop_context": "supplied resort listing point / official public-transport stop point",
         "public_transport_journey_nodes": "hotel municipality or reviewed destination component",
         "treatment_municipality_public_transport_journey_samples": "reviewed destination by hotel municipality and scheduled request",
@@ -1911,6 +1914,7 @@ def main() -> None:
         "path_c_cluster_accessibility_context": "2025 population aligned to 2026-01-01 boundaries; undated cluster location",
         "resort_transport_accessibility_context": "NPVM model reference date 2025-06-30; current supplied listing coordinate",
         "path_c_cluster_transport_accessibility_context": "NPVM model reference date 2025-06-30; current supplied listing coordinates",
+        "transport_zone_proxy_audit": "NPVM model reference date 2025-06-30; current 2026 municipality geometry audit",
         "resort_public_transport_stop_context": "OFT/BAV source state 2026-09-20; current supplied listing coordinate",
         "path_c_cluster_public_transport_stop_context": "OFT/BAV source state 2026-09-20; current supplied listing coordinates",
         "public_transport_journey_nodes": "winter-2026 GTFS node-selection reference",
@@ -1935,6 +1939,7 @@ def main() -> None:
             transport_table = table in {
                 "resort_transport_accessibility_context",
                 "path_c_cluster_transport_accessibility_context",
+                "transport_zone_proxy_audit",
             }
             stop_table = table in {
                 "resort_public_transport_stop_context",

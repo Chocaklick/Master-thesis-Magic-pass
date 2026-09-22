@@ -915,6 +915,39 @@ def test_transport_accessibility_uses_npvm_zones_and_exposes_proxies() -> None:
     assert not as_bool(decision["transport_accessibility_feature_approved"]).any()
 
 
+def test_transport_zone_proxy_audit_reconstructs_geometry_and_exposes_dependence() -> None:
+    audit = read("reports/transport_zone_proxy_audit.csv")
+    summary = json.loads(
+        (ROOT / "reports/transport_zone_proxy_audit_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    assert len(audit) == 98
+    assert audit["resort_id"].is_unique
+    assert as_bool(audit["proxy_geometry_validation_passed"]).all()
+    assert as_bool(
+        audit["nearest_positive_area_intersection_with_current_municipality"]
+    ).all()
+    assert audit["assigned_zone_municipality_overlap_area_km2"].gt(0).all()
+    assert audit["stored_recomputed_absolute_difference_km"].le(1e-9).all()
+    assert audit["same_municipality_constraint_extra_distance_km"].ge(-1e-9).all()
+    assert audit["proxy_distance_band"].value_counts().to_dict() == {
+        "gt_0_to_0_5_km": 38,
+        "gt_0_5_to_1_km": 35,
+        "gt_1_to_2_km": 19,
+        "gt_2_km": 6,
+    }
+    assert not as_bool(audit["historical_npvm_zone_lineage_verified"]).any()
+    assert not as_bool(audit["transport_accessibility_feature_approved"]).any()
+    assert summary["proxy_clusters"] == 73
+    assert summary["proxy_only_clusters"] == 50
+    assert summary["mixed_exact_and_proxy_clusters"] == 23
+    assert summary["candidate_clusters_using_proxy"] == 40
+    assert summary["candidate_clusters_proxy_only"] == 28
+    assert summary["transport_accessibility_features_approved"] == 0
+
+
 def test_public_transport_stop_context_uses_only_official_passenger_stops() -> None:
     listing = read("data_processed/resort_public_transport_stop_context.csv")
     cluster = read("data_processed/path_c_cluster_public_transport_stop_context.csv")

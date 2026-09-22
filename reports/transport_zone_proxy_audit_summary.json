@@ -1,0 +1,46 @@
+{
+  "analysis_version": "path_c_v0_9",
+  "proxy_listing_points": 98,
+  "proxy_geometry_validation_passed": 98,
+  "proxy_distance_band_counts": {
+    "gt_0_to_0_5_km": 38,
+    "gt_0_5_to_1_km": 35,
+    "gt_1_to_2_km": 19,
+    "gt_2_km": 6
+  },
+  "median_proxy_distance_km": 0.6350172946057928,
+  "maximum_proxy_distance_km": 3.636454011871992,
+  "proxy_clusters": 73,
+  "proxy_only_clusters": 50,
+  "mixed_exact_and_proxy_clusters": 23,
+  "candidate_clusters_using_proxy": 40,
+  "candidate_clusters_proxy_only": 28,
+  "mixed_cluster_exact_only_sensitivity": {
+    "road_major_center": {
+      "mixed_clusters_compared": 23,
+      "median_absolute_difference_minutes": 1.5,
+      "p90_absolute_difference_minutes": 4.4,
+      "maximum_absolute_difference_minutes": 10.5
+    },
+    "public_transport_major_center": {
+      "mixed_clusters_compared": 23,
+      "median_absolute_difference_minutes": 2.0,
+      "p90_absolute_difference_minutes": 11.3,
+      "maximum_absolute_difference_minutes": 20.0
+    },
+    "road_agglomeration": {
+      "mixed_clusters_compared": 23,
+      "median_absolute_difference_minutes": 1.0,
+      "p90_absolute_difference_minutes": 4.800000000000001,
+      "maximum_absolute_difference_minutes": 12.0
+    },
+    "public_transport_agglomeration": {
+      "mixed_clusters_compared": 23,
+      "median_absolute_difference_minutes": 2.5,
+      "p90_absolute_difference_minutes": 13.800000000000002,
+      "maximum_absolute_difference_minutes": 18.0
+    }
+  },
+  "historical_npvm_zone_lineage_verified": 0,
+  "transport_accessibility_features_approved": 0
+}

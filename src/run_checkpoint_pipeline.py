@@ -68,6 +68,7 @@ def main() -> None:
     run("src/data_processing/build_tourism_dependence_context.py")
     run("src/data_processing/build_accessibility_context.py")
     run("src/data_processing/build_transport_accessibility_context.py")
+    run("src/data_processing/audit_transport_zone_proxies.py")
     run("src/data_processing/build_public_transport_stop_context.py")
     run("src/scoring/plot_path_c_outputs.py")
     run("src/data_processing/update_provenance.py")

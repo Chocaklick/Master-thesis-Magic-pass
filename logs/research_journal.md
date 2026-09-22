@@ -291,3 +291,15 @@
 - **Decision:** Adopt Path C v0.8 with all 15 nodes approved only for current descriptive routing. Keep every historical-continuity and causal-accessibility flag false. The six fallbacks must remain visibly labelled and must not be relabelled as lift-base stops.
 - **Validation:** The complete offline pipeline reused both GTFS daily journey caches, regenerated all dependent outputs, produced 115 provenance records and a 1,311-row data dictionary, and passed all 35 automated tests.
 - **Next step:** Checksum-cache and compare the 2018–2025 historical GTFS anchor feeds with the same rules, validate the 98 municipality-constrained NPVM proxies, and add walking/access evidence only if door-to-lift precision is needed.
+
+## 2026-09-22 23:02 CEST — NPVM municipality-constrained proxy audit
+
+- **Task:** Validate the 98 high-alpine NPVM assignments that use the nearest traffic zone intersecting the listing point's current municipality.
+- **Reason:** The deterministic fallback expanded NPVM coverage to 268 listings and all 104 candidates, but its geometry and influence had not been independently reconstructed or quantified.
+- **Input:** Checksum-verified ARE NPVM 2025 traffic-zone geometry, swissBOUNDARIES3D 2026 municipality geometry, the exact point-municipality crosswalk, listing-level transport context and cluster exact-only medians.
+- **Method:** Recomputed every point, municipality intersection, eligible zone set, deterministic nearest-zone tie-break and distance in EPSG:2056. Compared all-usable and exact-only medians only for clusters containing both assignment types; kept historical lineage and feature approval as separate false gates.
+- **Result:** All 98 assignments and distances reproduce exactly. Median proxy distance is 0.64 km and maximum 3.64 km; 38 are within 0.5 km, 35 within 0.5–1 km, 19 within 1–2 km and six exceed 2 km. Seventy-three clusters use a proxy; 50 are proxy-only, including 28 apparent candidates. Across 23 mixed clusters, public-transport major-centre median sensitivity is 2.0 minutes at the median, 11.3 at p90 and 20.0 maximum.
+- **Problems encountered:** Most proxy-using clusters cannot be internally compared because they have no exactly contained listing point. Geometry reconstruction validates the algorithm, not the traffic-zone travel time as an observed resort route.
+- **Decision:** Adopt Path C v0.9 while retaining every transport-accessibility approval as false. Expose proxy-only dependence and do not turn successful geometric reconstruction into route, historical or causal validation.
+- **Validation:** The complete offline pipeline reused the GTFS routing caches, regenerated all dependent outputs, produced 115 provenance records and a 1,327-row data dictionary, and passed all 36 automated tests.
+- **Next step:** Compare the identified 2018–2025 GTFS anchors where access is permitted, then add motorway/cross-border population, destination catchments, competing-pass status and dated infrastructure evidence.

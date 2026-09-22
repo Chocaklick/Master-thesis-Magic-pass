@@ -23,6 +23,9 @@ DONOR_PRETREND_SUMMARY = ROOT / "reports" / "donor_pretrend_summary.json"
 DONOR_NETWORK_SUMMARY = ROOT / "reports" / "donor_network_spillover_summary.json"
 DONOR_EXTERNAL_SHOCK_SUMMARY = ROOT / "reports" / "donor_external_shock_summary.json"
 DISTANCE_GRADIENT_SUMMARY = ROOT / "reports" / "treatment_distance_gradient_summary.json"
+TRANSPORT_ZONE_PROXY_AUDIT_SUMMARY = (
+    ROOT / "reports" / "transport_zone_proxy_audit_summary.json"
+)
 PUBLIC_TRANSPORT_JOURNEY_SUMMARY = (
     ROOT / "reports" / "public_transport_journey_context_summary.json"
 )
@@ -79,6 +82,9 @@ def main() -> None:
     )
     distance_gradient_summary = json.loads(
         DISTANCE_GRADIENT_SUMMARY.read_text(encoding="utf-8")
+    )
+    transport_zone_proxy_audit_summary = json.loads(
+        TRANSPORT_ZONE_PROXY_AUDIT_SUMMARY.read_text(encoding="utf-8")
     )
     public_transport_journey_summary = json.loads(
         PUBLIC_TRANSPORT_JOURNEY_SUMMARY.read_text(encoding="utf-8")
@@ -448,6 +454,18 @@ def main() -> None:
                 "destinations_with_positive_descriptive_near_far_contrast"
             ]
         ),
+        "npvm_proxy_listing_points_geometrically_reconstructed": int(
+            transport_zone_proxy_audit_summary["proxy_geometry_validation_passed"]
+        ),
+        "npvm_proxy_clusters": int(
+            transport_zone_proxy_audit_summary["proxy_clusters"]
+        ),
+        "npvm_proxy_only_clusters": int(
+            transport_zone_proxy_audit_summary["proxy_only_clusters"]
+        ),
+        "npvm_proxy_only_candidate_clusters": int(
+            transport_zone_proxy_audit_summary["candidate_clusters_proxy_only"]
+        ),
         "public_transport_journey_pairs": int(
             public_transport_journey_summary["destination_municipality_pairs"]
         ),
@@ -589,6 +607,10 @@ Following the researcher's proposed comparison, the pipeline now measures each o
 
 **{metrics['positive_descriptive_near_far_contrasts']} of seven** treatment-specific near-versus-far contrasts are descriptively positive when municipalities at most 30 km away are compared with municipalities beyond 50 km and the 30–50 km band is omitted. Moléson is the exception. This pattern is exploratory only: current 2026 boundaries are applied to historical outcomes, hotel locations and validated historical origin-to-destination travel times are unavailable, and the adjacent windows do not remove common shocks, COVID, competing passes or investment. See `reports/15_TREATMENT_DISTANCE_GRADIENT.md`; all effect and exposure approval flags remain false.
 
+## NPVM zone-proxy audit
+
+All **{metrics['npvm_proxy_listing_points_geometrically_reconstructed']}** municipality-constrained NPVM listing-point assignments are exactly reconstructed against the checksum-verified zone and current municipality geometries. They affect **{metrics['npvm_proxy_clusters']} clusters**; **{metrics['npvm_proxy_only_clusters']}** have no exact listing-point assignment for an internal comparison, including **{metrics['npvm_proxy_only_candidate_clusters']}** apparent Path C candidates. The geometry and deterministic choice are validated, but proxy-only travel times are not independently validated observed routes. Historical zone lineage and causal approval remain false. See `reports/27_TRANSPORT_ZONE_PROXY_AUDIT.md`.
+
 ## Scheduled public-transport journey context
 
 The official winter-2026 Swiss GTFS timetable now supplies **{metrics['public_transport_journey_samples']:,} scheduled routing requests** across **{metrics['public_transport_journey_pairs']:,} destination–municipality pairs**. Morning departures are sampled from 08:00 to 10:00 and return departures from 15:00 to 18:00 on one winter weekday and one winter Saturday. **{metrics['public_transport_journey_feasible_samples']:,} samples** meet the six-vehicle and eight-hour limits; **{metrics['public_transport_journey_pairs_complete_all_samples']:,} pairs** are feasible at every sampled time. Municipality origins use the most frequently served train stop inside the municipality where possible, with a terrestrial-stop fallback. All **{metrics['public_transport_arrival_nodes_reviewed']}** component arrival nodes have passed the versioned current name/mode/municipality/distance review for descriptive routing; **{metrics['public_transport_arrival_village_or_local_centre_proxies']}** are transparently retained as village/local-centre proxies under the researcher's fallback rule, and **{metrics['public_transport_arrival_nodes_with_reference_day_warning']}** has a reference-day availability warning. This is not historical or causal approval. See `reports/24_PUBLIC_TRANSPORT_JOURNEY_CONTEXT.md` and `reports/26_PUBLIC_TRANSPORT_ARRIVAL_NODE_REVIEW.md`.
@@ -637,7 +659,7 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 
 ## Next evidence gate
 
-For Path C, compare the identified historical GTFS anchor feeds with the same routing rules and validate the municipality-constrained NPVM zone proxies; add motorway and relevant cross-border population context; validate destination catchments for tourism dependence; add competing-pass variables; and obtain dated infrastructure features. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed min/median/max aggregation sensitivity and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, compare the identified historical GTFS anchor feeds with the same routing rules; add motorway and relevant cross-border population context; validate destination catchments for tourism dependence; add competing-pass variables; and obtain dated infrastructure features. The NPVM proxy geometry audit is complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed min/median/max aggregation sensitivity and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

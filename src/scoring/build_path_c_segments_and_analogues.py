@@ -543,7 +543,7 @@ The decision-support export contains an analogue-opportunity percentile and a sn
 - `data_processed/path_c_cluster_public_transport_stop_context.csv`
 - `data_processed/magic_pass_decision_support.csv`
 
-The min/median/max audit and the qualified contexts are documented in reports 19–26. Next, compare the historical GTFS anchor feeds, validate the within-municipality NPVM zone proxies, add motorway and cross-border population context where relevant, define defensible destination catchments, and audit competing-pass status for apparent candidates. If door-to-lift precision is needed, add explicit walking/access evidence for the six village/local-centre proxies. Until then the export is an exploratory dashboard-ready prototype, not a recommendation ranking.
+The min/median/max audit and the qualified contexts are documented in reports 19–27. Next, compare the historical GTFS anchor feeds, add motorway and cross-border population context where relevant, define defensible destination catchments, and audit competing-pass status for apparent candidates. The NPVM proxy geometry audit is complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision is needed, add explicit walking/access evidence for the six village/local-centre proxies. Until then the export is an exploratory dashboard-ready prototype, not a recommendation ranking.
 """
     (ROOT / "reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md").write_text(analogue_report, encoding="utf-8")
 
