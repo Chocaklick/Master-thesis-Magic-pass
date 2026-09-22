@@ -74,6 +74,9 @@ def main() -> None:
     are_transport_data = cached_metadata("ARE_NPVM_TRAVEL_TIME_2025")
     are_transport_stac = cached_metadata("ARE_NPVM_TRAVEL_TIME_2025_STAC")
     are_transport_method = cached_metadata("ARE_TRANSPORT_ACCESSIBILITY_METHOD")
+    bav_stop_data = cached_metadata("BAV_PUBLIC_TRANSPORT_STOPS_2026")
+    bav_stop_stac = cached_metadata("BAV_PUBLIC_TRANSPORT_STOPS_2026_STAC")
+    bav_stop_model = cached_metadata("BAV_PUBLIC_TRANSPORT_STOPS_MODEL")
     bfs_capacity_records = [
         json.loads(path.read_text(encoding="utf-8"))
         for path in EVIDENCE_DIR.glob("BFS_HOTEL_CAPACITY_DATA_*.metadata.json")
@@ -479,6 +482,101 @@ def main() -> None:
         quality_notes="Not live routing, rail-only access, a timetable, a valley-station origin or a destination catchment; within-municipality zone links are explicit proxies and remain unapproved",
         confidence_level="high for reproducibility; qualified modelled context only",
         manual_verification="268/271 listing points usable, all 104 candidates have context, one mixed Swiss/foreign cluster is partial, zero approval flags",
+    ))
+    rows.append(blank_source(
+        "BAV_PUBLIC_TRANSPORT_STOPS_2026",
+        variable_name="passenger_stop_id|passenger_stop_name|passenger_stop_type|transport_mode|operator|municipality|stop_geometry",
+        variable_description="Official public-transport stops and selected operating points, filtered to actual passenger-stop types for proximity calculations",
+        source_organisation="Swiss Federal Office of Transport (BAV/OFT)",
+        source_dataset_name="Public transport stops, GeoIV ID 98.2, French EPSG:2056 CSV export",
+        source_page_url="https://www.bav.admin.ch/de/haltestellen-des-oeffentlichen-verkehrs-geoiv-id-982",
+        direct_download_url=configured["BAV_PUBLIC_TRANSPORT_STOPS_2026"]["url"],
+        api_endpoint=configured["BAV_PUBLIC_TRANSPORT_STOPS_2026_STAC"]["url"],
+        retrieval_method="Configured HTTPS download with immutable ZIP, SHA-256 sidecar and independently cached STAC metadata",
+        retrieval_date=(bav_stop_data or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(bav_stop_data),
+        local_raw_file=(bav_stop_data or {}).get("raw_file", ""),
+        processed_file="data_processed/resort_public_transport_stop_context.csv|data_processed/path_c_cluster_public_transport_stop_context.csv|data_processed/magic_pass_decision_support.csv",
+        geographic_level="public-transport operating point",
+        temporal_resolution="source-state snapshot",
+        temporal_start="2026-09-20",
+        temporal_end="2026-09-20",
+        unit="EPSG:2056 point and categorical stop attributes",
+        license="Free use with source attribution: Public transport stops, Federal Office of Transport",
+        access_conditions="Public geo.admin.ch STAC/download service",
+        transformation_applied="Checksum and STAC multihash verification; retain official VP/VPG passenger-stop types; calculate straight-line EPSG:2056 nearest neighbours from eligible supplied listing coordinates",
+        quality_notes="The source also contains pure operating points, which are excluded; the all-stop subset contains aerial and surface modes; selected foreign points do not constitute complete foreign coverage",
+        confidence_level="high for official current points; qualified for resort-access interpretation",
+        manual_verification="28,967 operating points, 27,325 VP/VPG passenger stops, 1,717 train-capable stops and uniform 2026-09-20 source-state field checked",
+    ))
+    rows.append(blank_source(
+        "BAV_PUBLIC_TRANSPORT_STOPS_2026_STAC",
+        variable_name="public_transport_stop_stac_item_datetime|asset_url|asset_crs|asset_multihash",
+        variable_description="Official STAC item metadata for the public-transport-stop CSV archive",
+        source_organisation="Swiss Federal Office of Transport (BAV/OFT) via geo.admin.ch",
+        source_dataset_name="STAC item ch.bav.haltestellen-oev/haltestellen-oev",
+        source_page_url=configured["BAV_PUBLIC_TRANSPORT_STOPS_2026_STAC"]["url"],
+        api_endpoint=configured["BAV_PUBLIC_TRANSPORT_STOPS_2026_STAC"]["url"],
+        retrieval_method="HTTP GET with immutable JSON response and SHA-256 sidecar",
+        retrieval_date=(bav_stop_stac or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(bav_stop_stac),
+        local_raw_file=(bav_stop_stac or {}).get("raw_file", ""),
+        processed_file="data_processed/resort_public_transport_stop_context.csv|reports/23_PUBLIC_TRANSPORT_STOP_CONTEXT.md",
+        geographic_level="dataset metadata",
+        temporal_resolution="asset metadata snapshot",
+        temporal_start="2026-09-13",
+        temporal_end="2026-09-13",
+        unit="metadata",
+        license="Open Government Data terms with source attribution",
+        access_conditions="Public STAC API",
+        transformation_applied="Item datetime, EPSG code, asset URL and multihash parsed and checked against the cached CSV archive",
+        quality_notes="The STAC item datetime is retained separately from the archive's embedded 2026-09-20 data-state release note",
+        confidence_level="high",
+        manual_verification="STAC datetime 2026-09-13, EPSG:2056 and SHA-256 multihash match checked",
+    ))
+    rows.append(blank_source(
+        "BAV_PUBLIC_TRANSPORT_STOPS_MODEL",
+        variable_name="passenger_stop_type_definition|transport_mode_definition|train_mode_element_code",
+        variable_description="Official model documentation distinguishing passenger stops from pure operating points and defining the transport-mode catalogue",
+        source_organisation="Swiss Federal Office of Transport (BAV/OFT)",
+        source_dataset_name="Minimal geodata model documentation, public transport stops GeoIV ID 98.2",
+        source_page_url="https://www.bav.admin.ch/de/haltestellen-des-oeffentlichen-verkehrs-geoiv-id-982",
+        direct_download_url=configured["BAV_PUBLIC_TRANSPORT_STOPS_MODEL"]["url"],
+        retrieval_method="HTTP GET with immutable PDF response and SHA-256 sidecar",
+        retrieval_date=(bav_stop_model or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(bav_stop_model),
+        local_raw_file=(bav_stop_model or {}).get("raw_file", ""),
+        processed_file="data_processed/resort_public_transport_stop_context.csv|reports/23_PUBLIC_TRANSPORT_STOP_CONTEXT.md",
+        geographic_level="data-model definition",
+        temporal_resolution="model version 2.1 dated 2025-02-03",
+        temporal_start="2025-02-03",
+        temporal_end="2025-02-03",
+        unit="definition",
+        license="See official BAV/OFT terms",
+        access_conditions="Public official PDF",
+        transformation_applied="Definitions for VP, VPG and elementary mode code B reviewed and implemented as exact code filters",
+        quality_notes="The transport-mode attribute describes infrastructure suitability and is not necessarily proof of operation in the current timetable period",
+        confidence_level="high",
+        manual_verification="Model sections 2.1, 2.3 and 3.4 reviewed; VP/VPG and code B definitions checked",
+    ))
+    rows.append(blank_source(
+        "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT",
+        variable_name="distance_to_nearest_public_transport_stop|distance_to_nearest_train_station|nearest_stop_attributes|cluster_distance_summary",
+        variable_description="Qualified straight-line public-transport-stop and train-station proximity context for supplied resort listings and linked lift clusters",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C public-transport-stop proximity context",
+        retrieval_method="Versioned deterministic Python transformation of checksum-verified BAV/OFT stop data",
+        local_raw_file="config/path_c_analysis.json|data_processed/resort_point_municipality.csv",
+        processed_file="data_processed/resort_public_transport_stop_context.csv|data_processed/path_c_cluster_public_transport_stop_context.csv|data_processed/magic_pass_decision_support.csv|reports/23_PUBLIC_TRANSPORT_STOP_CONTEXT.md",
+        geographic_level="supplied resort listing point and linked lift cluster",
+        temporal_resolution="BAV/OFT source state 2026-09-20; current supplied listing coordinates",
+        temporal_start="2026-09-20",
+        temporal_end="2026-09-20",
+        unit="straight-line kilometres; identifiers; categorical stop attributes",
+        transformation_applied="Restrict to 268 listing points inside a unique current Swiss municipality; calculate nearest VP/VPG passenger stop and nearest VP/VPG stop whose mode code contains B; aggregate min/median/max across eligible listing points",
+        quality_notes="Not route distance, travel time, service frequency, timetable convenience, seasonal operation, a validated valley arrival node or destination catchment; all-mode nearest stops can be resort cableways/chairlifts",
+        confidence_level="high for reproducibility; qualified current proximity context only",
+        manual_verification="268/271 listings and 161/162 clusters complete; three French listings left missing; all 104 candidates retain usable cluster context; zero approval flags",
     ))
     slf_metadata = {
         source_id: cached_metadata(source_id)
@@ -1112,18 +1210,18 @@ def main() -> None:
     ))
     rows.append(blank_source(
         "DERIVED_PATH_C_DECISION_SUPPORT",
-        variable_name="opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|qualified tourism, population and NPVM transport context|unapproved strategic-need fields",
+        variable_name="opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|qualified tourism, population, NPVM transport and stop-proximity context|unapproved strategic-need fields",
         variable_description="Dashboard-ready exploratory Path C export retaining separate opportunity, vulnerability, support, quality and qualified context dimensions",
         source_organisation="Master thesis analytical pipeline",
         source_dataset_name="Magic Pass exploratory decision-support prototype",
         retrieval_method="Versioned merge of Path C feature, segment and analogue outputs",
         local_raw_file="config/path_c_analysis.json",
-        processed_file="data_processed/magic_pass_decision_support.csv|reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md|reports/19_PATH_C_AGGREGATION_SENSITIVITY.md|reports/20_TOURISM_DEPENDENCE_CONTEXT.md|reports/21_ACCESSIBILITY_CONTEXT.md|reports/22_TRANSPORT_ACCESSIBILITY_CONTEXT.md",
+        processed_file="data_processed/magic_pass_decision_support.csv|reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md|reports/19_PATH_C_AGGREGATION_SENSITIVITY.md|reports/20_TOURISM_DEPENDENCE_CONTEXT.md|reports/21_ACCESSIBILITY_CONTEXT.md|reports/22_TRANSPORT_ACCESSIBILITY_CONTEXT.md|reports/23_PUBLIC_TRANSPORT_STOP_CONTEXT.md",
         geographic_level="existing lift cluster with supplied resort listings",
         temporal_resolution="mixed descriptive snapshot; lineage retained by field",
         unit="separate decision-support dimensions",
-        transformation_applied="One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity, qualified point-container tourism, Swiss straight-line population and NPVM transport context appended; no composite score",
-        quality_notes="Catchment-level tourism dependence and validated arrival-node/live-routing accessibility remain missing; zonal transport context is not an approved destination scope; foreign population is omitted; blank uplift fields are intentional",
+        transformation_applied="One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity, qualified point-container tourism, Swiss straight-line population, NPVM transport and official stop-proximity context appended; no composite score",
+        quality_notes="Catchment-level tourism dependence and validated arrival-node/live-routing accessibility remain missing; zonal travel times and straight-line stop proximity are not approved destination-access measures; foreign population is omitted; blank uplift fields are intentional",
         confidence_level="exploratory prototype; never a recommendation ranking",
         manual_verification="Checkpoint 4 and 5 failures formalised; no predicted uplift or composite score produced",
     ))
@@ -1366,6 +1464,8 @@ def main() -> None:
         "path_c_cluster_accessibility_context": ROOT / "data_processed/path_c_cluster_accessibility_context.csv",
         "resort_transport_accessibility_context": ROOT / "data_processed/resort_transport_accessibility_context.csv",
         "path_c_cluster_transport_accessibility_context": ROOT / "data_processed/path_c_cluster_transport_accessibility_context.csv",
+        "resort_public_transport_stop_context": ROOT / "data_processed/resort_public_transport_stop_context.csv",
+        "path_c_cluster_public_transport_stop_context": ROOT / "data_processed/path_c_cluster_public_transport_stop_context.csv",
         "path_c_resort_cluster_features": ROOT / "data_processed/path_c_resort_cluster_features.csv",
         "path_c_cluster_segments": ROOT / "data_processed/path_c_cluster_segments.csv",
         "path_c_reviewed_treated_reference": ROOT / "data_processed/path_c_reviewed_treated_reference.csv",
@@ -1380,6 +1480,8 @@ def main() -> None:
         "path_c_cluster_accessibility_context": "DERIVED_ACCESSIBILITY_CONTEXT",
         "resort_transport_accessibility_context": "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT",
         "path_c_cluster_transport_accessibility_context": "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT",
+        "resort_public_transport_stop_context": "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT",
+        "path_c_cluster_public_transport_stop_context": "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT",
         "path_c_resort_cluster_features": "DERIVED_PATH_C_FEATURE_MATRIX",
         "path_c_cluster_segments": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
         "path_c_reviewed_treated_reference": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
@@ -1408,7 +1510,7 @@ def main() -> None:
         "analogue_descriptive_change_range_high_pct": "Maximum of the three analogue change diagnostics; not a confidence bound",
         "opportunity_signal_percentile": "Within-candidate percentile of the descriptive analogue change signal",
         "snow_vulnerability_percentile": "Within-candidate percentile of the SLF-station snow-vulnerability proxy",
-        "strategic_need_status": "Completeness status of strategic need; qualified NPVM travel time exists but approved catchment-level tourism dependence and validated destination accessibility remain missing",
+        "strategic_need_status": "Completeness status of strategic need; qualified NPVM travel time and current stop proximity exist but approved catchment-level tourism dependence and validated destination accessibility remain missing",
         "predicted_uplift_pct": "Intentionally empty field because no causal or predictive uplift is supported",
         "uplift_lower_pct": "Intentionally empty lower bound because no uplift interval is supported",
         "uplift_upper_pct": "Intentionally empty upper bound because no uplift interval is supported",
@@ -1521,6 +1623,64 @@ def main() -> None:
         path_c_glossary[f"{prefix}_target_names"] = (
             f"Pipe-separated official {description} target names across cluster listing points"
         )
+    path_c_glossary.update({
+        "point_x_2056": "Easting of the supplied resort listing coordinate projected to EPSG:2056",
+        "point_y_2056": "Northing of the supplied resort listing coordinate projected to EPSG:2056",
+        "selection_status": "Whether the supplied listing point falls inside one unique current Swiss municipality polygon",
+        "public_transport_stop_context_status": "Whether the listing point is inside the complete official Swiss stop-data scope and receives nearest-stop values",
+        "public_transport_stop_values_complete": "Whether both nearest passenger-stop and nearest train-station distances are populated",
+        "public_transport_stop_source_state_date": "Data-state date embedded in the official OFT/BAV archive release note and point records",
+        "public_transport_stop_stac_item_datetime": "Datetime published in the official geo.admin.ch STAC item, retained separately from the archive data-state date",
+        "public_transport_stop_distance_crs": "Projected coordinate reference system used for straight-line nearest-stop distances",
+        "public_transport_stop_point_eligibility": "Versioned rule restricting calculations to supplied points inside a unique current Swiss municipality",
+        "public_transport_stop_scope": "Official operating-point types retained as actual passenger stops across all published modes",
+        "train_station_scope": "Exact official mode-code rule used to identify train-capable passenger stops",
+        "public_transport_stop_distance_method": "Versioned point-to-point straight-line distance method",
+        "public_transport_stop_cluster_aggregation": "Versioned listing-to-cluster aggregation rule for nearest-stop distances",
+        "public_transport_stop_proximity_interpretation": "Explicit restriction that stop-point distance is not a route, service-quality measure or validated arrival-node metric",
+        "public_transport_stop_proximity_feature_approved": "Whether current straight-line stop proximity is approved as a generic accessibility feature; always false",
+        "public_transport_stop_source_ids": "Pipe-separated official OFT/BAV source identifiers supporting the stop-proximity context",
+        "cluster_listings_with_public_transport_stop_context": "Number of supplied cluster listing points eligible for official Swiss nearest-stop calculations",
+        "cluster_listing_public_transport_stop_context_share": "Share of supplied cluster listing points eligible for official Swiss nearest-stop calculations",
+        "cluster_public_transport_stop_context_status": "Complete, partial or unavailable cluster coverage under the Swiss point-eligibility rule",
+        "cluster_unassigned_public_transport_stop_resort_ids": "Pipe-separated listing identifiers left without stop context because they are outside complete Swiss coverage",
+    })
+    for prefix, description in {
+        "public_transport_stop": "official VP/VPG passenger stop across all published modes",
+        "train_station": "official VP/VPG passenger stop whose transport-mode code contains elementary code B (train)",
+    }.items():
+        for suffix, detail in {
+            "id": "official stop number",
+            "name": "published stop name",
+            "mode_code": "official transport-mode code",
+            "mode": "published transport-mode designation",
+            "type_code": "official operating-point type code",
+            "type": "published operating-point type designation",
+            "operator": "published responsible transport-company abbreviation",
+            "municipality_bfs_id": "published stop-municipality BFS identifier",
+            "municipality_name": "published stop-municipality name",
+            "x_2056": "official stop easting in EPSG:2056",
+            "y_2056": "official stop northing in EPSG:2056",
+        }.items():
+            path_c_glossary[f"nearest_{prefix}_{suffix}"] = (
+                f"{detail.capitalize()} for the nearest {description}"
+            )
+        path_c_glossary[f"distance_to_nearest_{prefix}_km"] = (
+            f"EPSG:2056 straight-line distance from the supplied listing coordinate to the nearest {description}"
+        )
+        for statistic in ["minimum", "median", "maximum", "range"]:
+            path_c_glossary[f"cluster_distance_to_nearest_{prefix}_{statistic}_km"] = (
+                f"Cluster-level {statistic} of listing-point straight-line distance to the nearest {description}"
+            )
+        for suffix, detail in {
+            "ids": "official stop numbers",
+            "names": "published stop names",
+            "mode_codes": "official transport-mode codes",
+            "modes": "published transport-mode designations",
+        }.items():
+            path_c_glossary[f"cluster_listing_nearest_{prefix}_{suffix}"] = (
+                f"Pipe-separated {detail} selected as nearest across eligible cluster listing points"
+            )
     for threshold in [20_000, 50_000, 100_000]:
         prefix = f"nearest_municipality_population_ge_{threshold}"
         path_c_glossary[f"{prefix}_bfs_id_2026"] = (
@@ -1579,6 +1739,7 @@ def main() -> None:
         "municipality_tourism_context_2025": "municipality",
         "municipality_population_geometry_2026": "current Swiss municipality",
         "resort_transport_accessibility_context": "supplied resort listing point / NPVM traffic zone",
+        "resort_public_transport_stop_context": "supplied resort listing point / official public-transport stop point",
         "path_c_reviewed_treated_reference": "reviewed treated destination",
     }
     path_c_temporal_level = {
@@ -1588,6 +1749,8 @@ def main() -> None:
         "path_c_cluster_accessibility_context": "2025 population aligned to 2026-01-01 boundaries; undated cluster location",
         "resort_transport_accessibility_context": "NPVM model reference date 2025-06-30; current supplied listing coordinate",
         "path_c_cluster_transport_accessibility_context": "NPVM model reference date 2025-06-30; current supplied listing coordinates",
+        "resort_public_transport_stop_context": "OFT/BAV source state 2026-09-20; current supplied listing coordinate",
+        "path_c_cluster_public_transport_stop_context": "OFT/BAV source state 2026-09-20; current supplied listing coordinates",
     }
 
     for table, path in path_c_paths.items():
@@ -1606,7 +1769,28 @@ def main() -> None:
                 "resort_transport_accessibility_context",
                 "path_c_cluster_transport_accessibility_context",
             }
-            transport_variable = transport_table or (
+            stop_table = table in {
+                "resort_public_transport_stop_context",
+                "path_c_cluster_public_transport_stop_context",
+            }
+            stop_variable = stop_table or (
+                table == "magic_pass_decision_support"
+                and (
+                    variable.startswith("public_transport_stop_")
+                    or variable.startswith("train_station_")
+                    or variable.startswith("distance_to_nearest_public_transport_stop_")
+                    or variable.startswith("distance_to_nearest_train_station_")
+                    or variable.startswith("cluster_distance_to_nearest_public_transport_stop_")
+                    or variable.startswith("cluster_distance_to_nearest_train_station_")
+                    or variable.startswith("cluster_listing_nearest_public_transport_stop_")
+                    or variable.startswith("cluster_listing_nearest_train_station_")
+                    or variable.startswith("cluster_listings_with_public_transport_stop_")
+                    or variable.startswith("cluster_listing_public_transport_stop_")
+                    or variable.startswith("cluster_public_transport_stop_")
+                    or variable.startswith("cluster_unassigned_public_transport_stop_")
+                )
+            )
+            transport_variable = not stop_variable and (transport_table or (
                 table == "magic_pass_decision_support"
                 and (
                     variable.startswith("npvm_")
@@ -1621,8 +1805,8 @@ def main() -> None:
                     or variable
                     in {"cluster_transport_context_status", "unassigned_resort_ids"}
                 )
-            )
-            accessibility_variable = not transport_variable and (accessibility_table or (
+            ))
+            accessibility_variable = not stop_variable and not transport_variable and (accessibility_table or (
                 table == "magic_pass_decision_support"
                 and (
                     "accessibility" in variable
@@ -1647,6 +1831,8 @@ def main() -> None:
             role = (
                 "intentionally unavailable causal prediction"
                 if variable in {"predicted_uplift_pct", "uplift_lower_pct", "uplift_upper_pct"}
+                else "qualified current public-transport-stop proximity context"
+                if stop_variable
                 else "qualified NPVM modelled travel-time context"
                 if transport_variable
                 else "qualified straight-line population context"
@@ -1662,6 +1848,9 @@ def main() -> None:
                 else "descriptive segmentation / decision support"
             )
             formula_note = (
+                "See config/path_c_analysis.json and src/data_processing/build_public_transport_stop_context.py"
+                if stop_variable
+                else
                 "See config/path_c_analysis.json and src/data_processing/build_transport_accessibility_context.py"
                 if transport_variable
                 else
@@ -1670,6 +1859,9 @@ def main() -> None:
                 else "See config/path_c_analysis.json and Path C scripts; tourism context is implemented in src/data_processing/build_tourism_dependence_context.py"
             )
             limitation_note = (
+                "No causal interpretation; straight-line stop-point distance is not a route, service frequency, timetable quality, validated arrival node or destination catchment"
+                if stop_variable
+                else
                 "No causal interpretation; zonal model output is not live routing, an observed arrival node or a destination catchment; municipality-constrained zone proxies are explicit"
                 if transport_variable
                 else
@@ -1685,7 +1877,9 @@ def main() -> None:
                 str(frame[variable].dtype),
                 path_c_geographic_level.get(table, "existing lift cluster"),
                 path_c_temporal_level.get(table, "undated structural snapshot; mixed lineage where stated"),
-                "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT"
+                "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT"
+                if stop_variable
+                else "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT"
                 if transport_variable
                 else "DERIVED_ACCESSIBILITY_CONTEXT"
                 if accessibility_variable

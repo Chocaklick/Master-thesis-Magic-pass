@@ -62,6 +62,42 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Methodological definition does not make a resort listing coordinate a validated arrival node
 - **Local raw file:** `data_external/source_evidence/ARE_TRANSPORT_ACCESSIBILITY_METHOD_20260922T075700Z.html`.
 
+## BAV_PUBLIC_TRANSPORT_STOPS_2026 — Public transport stops, GeoIV ID 98.2, French EPSG:2056 CSV export
+
+- **Contents and relevance:** Official public-transport stops and selected operating points, filtered to actual passenger-stop types for proximity calculations
+- **Producer:** Swiss Federal Office of Transport (BAV/OFT)
+- **Exact URL:** https://www.bav.admin.ch/de/haltestellen-des-oeffentlichen-verkehrs-geoiv-id-982
+- **Access and retrieval date:** Configured HTTPS download with immutable ZIP, SHA-256 sidecar and independently cached STAC metadata; 2026-09-22T08:43:57.251624+00:00.
+- **Variables:** passenger_stop_id|passenger_stop_name|passenger_stop_type|transport_mode|operator|municipality|stop_geometry
+- **Transformations:** Checksum and STAC multihash verification; retain official VP/VPG passenger-stop types; calculate straight-line EPSG:2056 nearest neighbours from eligible supplied listing coordinates
+- **Coverage:** public-transport operating point; source-state snapshot; 2026-09-20 to 2026-09-20.
+- **Limitations:** The source also contains pure operating points, which are excluded; the all-stop subset contains aerial and surface modes; selected foreign points do not constitute complete foreign coverage
+- **Local raw file:** `data_external/source_evidence/BAV_PUBLIC_TRANSPORT_STOPS_2026_20260922T084357Z.csv.zip`.
+
+## BAV_PUBLIC_TRANSPORT_STOPS_2026_STAC — STAC item ch.bav.haltestellen-oev/haltestellen-oev
+
+- **Contents and relevance:** Official STAC item metadata for the public-transport-stop CSV archive
+- **Producer:** Swiss Federal Office of Transport (BAV/OFT) via geo.admin.ch
+- **Exact URL:** https://data.geo.admin.ch/api/stac/v1/collections/ch.bav.haltestellen-oev/items/haltestellen-oev
+- **Access and retrieval date:** HTTP GET with immutable JSON response and SHA-256 sidecar; 2026-09-22T08:43:58.900116+00:00.
+- **Variables:** public_transport_stop_stac_item_datetime|asset_url|asset_crs|asset_multihash
+- **Transformations:** Item datetime, EPSG code, asset URL and multihash parsed and checked against the cached CSV archive
+- **Coverage:** dataset metadata; asset metadata snapshot; 2026-09-13 to 2026-09-13.
+- **Limitations:** The STAC item datetime is retained separately from the archive's embedded 2026-09-20 data-state release note
+- **Local raw file:** `data_external/source_evidence/BAV_PUBLIC_TRANSPORT_STOPS_2026_STAC_20260922T084358Z.json`.
+
+## BAV_PUBLIC_TRANSPORT_STOPS_MODEL — Minimal geodata model documentation, public transport stops GeoIV ID 98.2
+
+- **Contents and relevance:** Official model documentation distinguishing passenger stops from pure operating points and defining the transport-mode catalogue
+- **Producer:** Swiss Federal Office of Transport (BAV/OFT)
+- **Exact URL:** https://www.bav.admin.ch/de/haltestellen-des-oeffentlichen-verkehrs-geoiv-id-982
+- **Access and retrieval date:** HTTP GET with immutable PDF response and SHA-256 sidecar; 2026-09-22T08:46:07.859908+00:00.
+- **Variables:** passenger_stop_type_definition|transport_mode_definition|train_mode_element_code
+- **Transformations:** Definitions for VP, VPG and elementary mode code B reviewed and implemented as exact code filters
+- **Coverage:** data-model definition; model version 2.1 dated 2025-02-03; 2025-02-03 to 2025-02-03.
+- **Limitations:** The transport-mode attribute describes infrastructure suitability and is not necessarily proof of operation in the current timetable period
+- **Local raw file:** `data_external/source_evidence/BAV_PUBLIC_TRANSPORT_STOPS_MODEL_20260922T084607Z.pdf`.
+
 ## BBGR_ANNUAL_2017_18 — Bergbahnen Graubünden annual report 2017/18
 
 - **Contents and relevance:** Official 2017/2018 annual report documenting the SnowPass Graubünden market, regional first entries and the then-current TopCard change
@@ -356,10 +392,10 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Producer:** Master thesis analytical pipeline
 - **Exact URL:** Not documented.
 - **Access and retrieval date:** Versioned merge of Path C feature, segment and analogue outputs; unknown date.
-- **Variables:** opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|qualified tourism, population and NPVM transport context|unapproved strategic-need fields
-- **Transformations:** One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity, qualified point-container tourism, Swiss straight-line population and NPVM transport context appended; no composite score
+- **Variables:** opportunity_signal_percentile|snow_vulnerability_percentile|comparability|network context|qualified tourism, population, NPVM transport and stop-proximity context|unapproved strategic-need fields
+- **Transformations:** One-to-one merge by stable cluster_id; opportunity and snow percentiles retained separately; min/median/max aggregation sensitivity, qualified point-container tourism, Swiss straight-line population, NPVM transport and official stop-proximity context appended; no composite score
 - **Coverage:** existing lift cluster with supplied resort listings; mixed descriptive snapshot; lineage retained by field; ? to ?.
-- **Limitations:** Catchment-level tourism dependence and validated arrival-node/live-routing accessibility remain missing; zonal transport context is not an approved destination scope; foreign population is omitted; blank uplift fields are intentional
+- **Limitations:** Catchment-level tourism dependence and validated arrival-node/live-routing accessibility remain missing; zonal travel times and straight-line stop proximity are not approved destination-access measures; foreign population is omitted; blank uplift fields are intentional
 - **Local raw file:** `config/path_c_analysis.json`.
 
 ## DERIVED_PATH_C_FEATURE_MATRIX — Path C resort-cluster feature matrix
@@ -385,6 +421,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** linked lift cluster or reviewed treated destination; current structural snapshot plus unadjusted adjacent 24-month diagnostics; ? to ?.
 - **Limitations:** Analogue changes are unadjusted, discrete and not counterfactual predictions; snow is kept outside structural similarity
 - **Local raw file:** `config/path_c_analysis.json`.
+
+## DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT — Path C public-transport-stop proximity context
+
+- **Contents and relevance:** Qualified straight-line public-transport-stop and train-station proximity context for supplied resort listings and linked lift clusters
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned deterministic Python transformation of checksum-verified BAV/OFT stop data; unknown date.
+- **Variables:** distance_to_nearest_public_transport_stop|distance_to_nearest_train_station|nearest_stop_attributes|cluster_distance_summary
+- **Transformations:** Restrict to 268 listing points inside a unique current Swiss municipality; calculate nearest VP/VPG passenger stop and nearest VP/VPG stop whose mode code contains B; aggregate min/median/max across eligible listing points
+- **Coverage:** supplied resort listing point and linked lift cluster; BAV/OFT source state 2026-09-20; current supplied listing coordinates; 2026-09-20 to 2026-09-20.
+- **Limitations:** Not route distance, travel time, service frequency, timetable convenience, seasonal operation, a validated valley arrival node or destination catchment; all-mode nearest stops can be resort cableways/chairlifts
+- **Local raw file:** `config/path_c_analysis.json|data_processed/resort_point_municipality.csv`.
 
 ## DERIVED_REVIEWED_DESTINATION_PANEL — Reviewed destination-month panel
 

@@ -386,7 +386,7 @@ def main() -> None:
             "resolved_current_magic_clusters_within_50km": int((geographic <= 50).sum()),
             "network_fit_interpretation": "geographic_context_only_not_accessibility_or_membership_fit",
             "snow_vulnerability_proxy": candidate_row["snow_vulnerability_proxy_median"],
-            "strategic_need_status": "incomplete_no_approved_tourism_or_travel_time_accessibility_feature",
+            "strategic_need_status": "incomplete_no_approved_tourism_catchment_or_validated_destination_accessibility",
             "predicted_uplift_pct": np.nan,
             "uplift_lower_pct": np.nan,
             "uplift_upper_pct": np.nan,
@@ -488,7 +488,7 @@ The selected architecture is therefore **Path C: exploratory structural segmenta
 - Similarity uses only top altitude, log ski-area kilometres and log lift count.
 - Membership, hotel outcomes, post-entry changes and snow vulnerability do not enter the structural clustering.
 - Hotel outcomes/capacity are excluded because a resort point's municipality is not an approved tourism catchment.
-- Snow vulnerability is retained on a separate strategic-need axis. Qualified point-container tourism, Swiss straight-line population and NPVM zonal travel-time context are appended downstream, but none is an approved catchment or destination-accessibility feature.
+- Snow vulnerability is retained on a separate strategic-need axis. Qualified point-container tourism, Swiss straight-line population, NPVM zonal travel-time and official stop-proximity context are appended downstream, but none is an approved catchment or validated destination-accessibility feature.
 
 ## Prohibited interpretations
 
@@ -529,7 +529,7 @@ For each candidate, `data_processed/path_c_candidate_analogues.csv` retains thre
 
 ## Two dimensions kept separate
 
-The decision-support export contains an analogue-opportunity percentile and a snow-vulnerability percentile for **{summary['candidate_two_dimension_coordinates_available']}** candidates. The downstream pipeline appends qualified point-container tourism context, Swiss straight-line population context and official NPVM 2025 zonal road/public-transport context. The latter covers every candidate but uses a transparent nearest-zone-within-current-municipality proxy for high-alpine listing points outside the zone polygons. Neither tourism dependence nor destination-level accessibility is approved. Strategic need is therefore incomplete. Predicted-uplift fields are blank ({summary['predicted_uplift_values']} populated), and no composite score is produced ({summary['composite_scores']} populated).
+The decision-support export contains an analogue-opportunity percentile and a snow-vulnerability percentile for **{summary['candidate_two_dimension_coordinates_available']}** candidates. The downstream pipeline appends qualified point-container tourism context, Swiss straight-line population context, official NPVM 2025 zonal road/public-transport context and official OFT/BAV straight-line proximity to passenger stops and train stations. The NPVM layer covers every candidate but uses a transparent nearest-zone-within-current-municipality proxy for high-alpine listing points outside the zone polygons. Stop proximity also has usable cluster context for every candidate, while the mixed Swiss/French Portes du Soleil cluster is explicitly partial. Neither tourism dependence nor destination-level accessibility is approved. Strategic need is therefore incomplete. Predicted-uplift fields are blank ({summary['predicted_uplift_values']} populated), and no composite score is produced ({summary['composite_scores']} populated).
 
 ## Outputs and next evidence needs
 
@@ -540,9 +540,10 @@ The decision-support export contains an analogue-opportunity percentile and a sn
 - `data_processed/path_c_cluster_tourism_context.csv`
 - `data_processed/path_c_cluster_accessibility_context.csv`
 - `data_processed/path_c_cluster_transport_accessibility_context.csv`
+- `data_processed/path_c_cluster_public_transport_stop_context.csv`
 - `data_processed/magic_pass_decision_support.csv`
 
-The min/median/max audit and three qualified contexts are documented in reports 19–22. Next, validate actual arrival nodes and the within-municipality NPVM zone proxies, add nearest-stop/motorway and cross-border population context where relevant, define defensible destination catchments, and audit competing-pass status for apparent candidates. Until then the export is an exploratory dashboard-ready prototype, not a recommendation ranking.
+The min/median/max audit and four qualified contexts are documented in reports 19–23. Next, validate actual arrival nodes and the within-municipality NPVM zone proxies, add motorway and cross-border population context where relevant, define defensible destination catchments, and audit competing-pass status for apparent candidates. Until then the export is an exploratory dashboard-ready prototype, not a recommendation ranking.
 """
     (ROOT / "reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md").write_text(analogue_report, encoding="utf-8")
 

@@ -2,7 +2,7 @@
 
 ## Collection scope
 
-Collection was initially limited to high-priority evidence needed for the treatment/outcome feasibility gates. After those gates were assessed, the project added the official HESTA hotel-capacity table, SLF snow history, targeted MeteoSwiss temperature/precipitation, STATPOP 2025 municipal population, and ARE NPVM 2025 transport travel times. Employment and commercial datasets remain deferred.
+Collection was initially limited to high-priority evidence needed for the treatment/outcome feasibility gates. After those gates were assessed, the project added the official HESTA hotel-capacity table, SLF snow history, targeted MeteoSwiss temperature/precipitation, STATPOP 2025 municipal population, ARE NPVM 2025 transport travel times, and current OFT/BAV public-transport stops. Employment and commercial datasets remain deferred.
 
 ## Completed official collections
 
@@ -22,6 +22,7 @@ Collection was initially limited to high-priority evidence needed for the treatm
 | SLF IMIS documentation, stations and daily snow | Cached successfully | Daily mountain-station snow-depth history and auditable station-proxy construction |
 | MeteoSwiss SwissMetNet metadata and selected daily station files | Six metadata snapshots plus 14 historical/recent station files cached successfully | Daily temperature and precipitation, coverage-qualified monthly anomalies, and auditable regional station proxies |
 | ARE NPVM transport travel times | Checksum-verified 32.8 MB GeoPackage, STAC item and methodology page cached | 7,978 traffic-zone values for road/public transport to major centres and agglomerations, reference date 2025-06-30 |
+| OFT/BAV public-transport stops | Checksum-verified 2.8 MB French EPSG:2056 CSV archive, STAC item and official model documentation cached | 27,325 official passenger stops after excluding pure operating points; 1,717 stops carry train mode code `B` |
 
 Every successful response has a SHA-256 metadata sidecar under the ignored immutable evidence cache. Requests, statuses, files, and failures are recorded in `logs/data_collection_log.csv`. Configuration is versioned in `config/evidence_sources.json`, `config/meteoswiss_selected_station_files.json`, and `config/municipality_queries.json`.
 
@@ -46,6 +47,8 @@ The annual-offering review rendered seven dated launch lists/maps and transcribe
 - `data_processed/path_c_cluster_tourism_context.csv`: qualified context for the unique municipalities containing each cluster's listing points; explicitly not a destination catchment.
 - `data_processed/resort_transport_accessibility_context.csv`: official NPVM travel-time values for 170 exact point-in-zone assignments plus 98 explicit nearest-zone-within-current-municipality proxies; three foreign listing points remain missing.
 - `data_processed/path_c_cluster_transport_accessibility_context.csv`: min/median/max travel-time context across usable listing points for all 162 clusters, with exact-only medians, proxy distances and one partial cross-border cluster exposed.
+- `data_processed/resort_public_transport_stop_context.csv`: nearest official passenger stop and nearest train-capable passenger stop for 268 Swiss listing points; three French points remain missing.
+- `data_processed/path_c_cluster_public_transport_stop_context.csv`: min/median/max straight-line stop distances across eligible listing points for all 162 clusters, with one partial cross-border cluster exposed.
 
 ## Collection discrepancies and gaps
 
@@ -57,5 +60,6 @@ The annual-offering review rendered seven dated launch lists/maps and transcribe
 - SwissMetNet stations are regional weather proxies rather than piste measurements. EVO 2016-07 and INT 2013-08 fail the 80% precipitation coverage gate and remain missing; the daily precipitation window is 06:00 UTC to 06:00 UTC the following day.
 - The official 2023/24 graubündenCARD operator/transport PDF remains visible in the publisher's search index but returned HTTP 404 during reproducible collection. The audit therefore records exact Splügen-Tambo participation in 2022/23 and leaves anchor-season continuity unresolved.
 - NPVM zone polygons do not continuously cover high-alpine terrain. Ninety-eight Swiss listing points therefore use the nearest zone that intersects their independently resolved current municipality; assignment distance is retained (maximum 3.64 km), and the values remain qualified model context rather than live routing.
+- The OFT/BAV source includes selected foreign operating points but is not a complete French stop universe, so the three French listing points are left missing. All-mode passenger stops include cableways and chairlifts, and straight-line point distance does not measure routes, timetables, frequency, seasonal operation or validated resort arrival access.
 
 Full field-level provenance and plain-language source descriptions are in `metadata/data_sources_master.csv` and `reports/DATA_SOURCES.md`.

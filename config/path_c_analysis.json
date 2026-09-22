@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_5",
+  "analysis_version": "path_c_v0_6",
   "analysis_date": "2026-09-22",
   "analysis_entity": "existing_lift_cluster_with_at_least_one_supplied_resort_listing",
   "feature_temporal_status": "undated_cross_sectional_snapshot_not_pre_treatment",
@@ -70,12 +70,24 @@
     "cluster_aggregation": "minimum_median_maximum_across_usable_supplied_listing_point_zone_assignments",
     "interpretation": "npvm_2025_modelled_traffic_zone_context_not_live_routing_or_destination_catchment"
   },
+  "public_transport_stop_context": {
+    "source_id": "BAV_PUBLIC_TRANSPORT_STOPS_2026",
+    "source_state_date": "2026-09-20",
+    "stac_item_datetime": "2026-09-13T00:00:00Z",
+    "distance_crs": "EPSG:2056",
+    "passenger_stop_type_codes": ["VP", "VPG"],
+    "train_mode_element_code": "B",
+    "train_station_rule": "passenger_stop_with_transport_mode_element_code_B_train",
+    "point_eligibility": "supplied_listing_coordinate_inside_unique_current_swiss_municipality",
+    "cluster_aggregation": "minimum_median_maximum_across_eligible_supplied_listing_points",
+    "interpretation": "official_current_stop_point_straight_line_context_not_route_service_frequency_or_validated_resort_arrival_node"
+  },
   "decision_framework": {
     "dimensions_kept_separate": [
       "descriptive analogue opportunity signal",
       "snow vulnerability percentile"
     ],
-    "strategic_need_limitation": "Qualified NPVM 2025 traffic-zone travel times are available at supplied listing points, but neither they nor point-container tourism ratios establish an approved destination catchment or exposure scope. No complete strategic-need score or composite ranking is produced.",
+    "strategic_need_limitation": "Qualified NPVM 2025 traffic-zone travel times and current straight-line OFT/BAV stop proximity are available at supplied listing points, but neither they nor point-container tourism ratios establish an approved arrival node, service-quality measure, destination catchment or exposure scope. No complete strategic-need score or composite ranking is produced.",
     "composite_score_approved": false,
     "causal_interpretation_approved": false
   }

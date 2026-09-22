@@ -913,3 +913,92 @@ def test_transport_accessibility_uses_npvm_zones_and_exposes_proxies() -> None:
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
     assert not as_bool(decision["transport_accessibility_feature_approved"]).any()
+
+
+def test_public_transport_stop_context_uses_only_official_passenger_stops() -> None:
+    listing = read("data_processed/resort_public_transport_stop_context.csv")
+    cluster = read("data_processed/path_c_cluster_public_transport_stop_context.csv")
+    decision = read("data_processed/magic_pass_decision_support.csv")
+
+    assert len(listing) == 271
+    assert listing["resort_id"].is_unique
+    assert listing["public_transport_stop_source_state_date"].eq("2026-09-20").all()
+    assert listing["public_transport_stop_stac_item_datetime"].eq(
+        "2026-09-13T00:00:00Z"
+    ).all()
+    status_counts = listing["public_transport_stop_context_status"].value_counts().to_dict()
+    assert status_counts == {
+        "assigned_official_swiss_passenger_stop_scope": 268,
+        "outside_official_swiss_passenger_stop_scope": 3,
+    }
+    usable = as_bool(listing["public_transport_stop_values_complete"])
+    assert int(usable.sum()) == 268
+    assert set(listing.loc[~usable, "resort_id"]) == {
+        "avoriaz_1800_portes_du_soleil",
+        "chapelle_abondance_la_chapelle_d_abondance_portes_du_soleil",
+        "chatel_portes_du_soleil",
+    }
+    distance_columns = [
+        "distance_to_nearest_public_transport_stop_km",
+        "distance_to_nearest_train_station_km",
+    ]
+    assert listing.loc[usable, distance_columns].notna().all().all()
+    assert listing.loc[usable, distance_columns].ge(0).all().all()
+    assert listing.loc[~usable, distance_columns].isna().all().all()
+    assert set(listing.loc[usable, "nearest_public_transport_stop_type_code"]) <= {
+        "VP",
+        "VPG",
+    }
+    assert set(listing.loc[usable, "nearest_train_station_type_code"]) <= {
+        "VP",
+        "VPG",
+    }
+    assert listing.loc[usable, "nearest_train_station_mode_code"].str.contains(
+        "B", regex=False
+    ).all()
+    assert listing.loc[usable, "distance_to_nearest_public_transport_stop_km"].max() < 3.1
+    assert listing.loc[usable, "distance_to_nearest_train_station_km"].max() < 24.2
+    assert not as_bool(
+        listing["public_transport_stop_proximity_feature_approved"]
+    ).any()
+
+    assert len(cluster) == 162
+    assert cluster["cluster_id"].is_unique
+    assert int(cluster["cluster_listing_count"].sum()) == 271
+    assert int(cluster["cluster_listings_with_public_transport_stop_context"].sum()) == 268
+    assert cluster["cluster_public_transport_stop_context_status"].value_counts().to_dict() == {
+        "complete_all_listing_points_inside_swiss_scope": 161,
+        "partial_listing_points_outside_swiss_scope": 1,
+    }
+    partial = cluster[
+        cluster["cluster_public_transport_stop_context_status"].eq(
+            "partial_listing_points_outside_swiss_scope"
+        )
+    ]
+    assert partial["cluster_id"].tolist() == ["SKI_CLUSTER_001"]
+    candidates = cluster[as_bool(cluster["candidate_for_path_c"])]
+    assert len(candidates) == 104
+    assert candidates[
+        "cluster_distance_to_nearest_public_transport_stop_median_km"
+    ].notna().all()
+    assert candidates[
+        "cluster_distance_to_nearest_train_station_median_km"
+    ].notna().all()
+    for prefix in ["public_transport_stop", "train_station"]:
+        stem = f"cluster_distance_to_nearest_{prefix}"
+        assert (cluster[f"{stem}_minimum_km"] <= cluster[f"{stem}_median_km"]).all()
+        assert (cluster[f"{stem}_median_km"] <= cluster[f"{stem}_maximum_km"]).all()
+    assert not as_bool(
+        cluster["public_transport_stop_proximity_feature_approved"]
+    ).any()
+    assert cluster["public_transport_stop_proximity_interpretation"].eq(
+        "official_current_stop_point_straight_line_context_not_route_service_frequency_or_validated_resort_arrival_node"
+    ).all()
+
+    assert len(decision) == 162
+    assert decision["accessibility_score"].isna().all()
+    assert decision["predicted_uplift_pct"].isna().all()
+    assert decision["composite_opportunity_need_score"].isna().all()
+    assert not as_bool(
+        decision["public_transport_stop_proximity_feature_approved"]
+    ).any()
