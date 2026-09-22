@@ -422,6 +422,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Analogue changes are unadjusted, discrete and not counterfactual predictions; snow is kept outside structural similarity
 - **Local raw file:** `config/path_c_analysis.json`.
 
+## DERIVED_PUBLIC_TRANSPORT_HISTORICAL_AUDIT — Historical public-transport timetable audit plan
+
+- **Contents and relevance:** Explicit plan and completion gate for comparing current destination access nodes with official historical winter GTFS feeds
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic join of reviewed entry seasons, selected destination nodes and reviewed official archive URLs; unknown date.
+- **Variables:** first_exposure_winter_timetable_year|historical_gtfs_anchor_url|historical_service_comparison_status
+- **Transformations:** Map first-entry season to exposure-winter timetable year and its selected official archive snapshot
+- **Coverage:** reviewed destination component arrival node; first Magic Pass exposure winter; 2018 to 2026.
+- **Limitations:** Historical service comparison remains unexecuted; archive availability is not evidence of unchanged lines or journey times
+- **Local raw file:** `config/public_transport_historical_audit.json`.
+
+## DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT — Treatment municipality public-transport journey context
+
+- **Contents and relevance:** Qualified scheduled public-transport journey context between each hotel municipality main stop and each reviewed ski destination
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic routing of checksum-verified official GTFS Static and OFT/BAV stop data; unknown date.
+- **Variables:** scheduled_journey_minutes|initial_wait_minutes|generalized_elapsed_minutes|vehicle_legs|transfers|transport_modes|sample_coverage
+- **Transformations:** Choose municipality main stops by reference-day departure count; choose nearby served ground stops inside component municipalities; route five morning and seven return requests on two reference days; retain fastest component
+- **Coverage:** reviewed destination by hotel municipality, with component stop nodes; winter-2026 weekday/Saturday timetable samples; 2026-02-04 to 2026-02-07.
+- **Limitations:** Algorithmic stop proxies require face validation; 480-minute and six-vehicle limits apply; current timetable is not historically stable evidence
+- **Local raw file:** `config/path_c_analysis.json`.
+
 ## DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT — Path C public-transport-stop proximity context
 
 - **Contents and relevance:** Qualified straight-line public-transport-stop and train-station proximity context for supplied resort listings and linked lift clusters
@@ -1201,6 +1225,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2019-01 to 2019-12.
 - **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
 - **Local raw file:** `data_external/source_evidence/SAMNAUN_VISNITZBAHN_HISTORY_20260921T154459Z.html`.
+
+## SKI_GTFS_TIMETABLE_2026_WINTER_20260207 — Timetable 2026 (GTFS2020), build 20260207
+
+- **Contents and relevance:** Official all-Switzerland GTFS Static timetable snapshot used for scheduled municipality-to-ski-destination routing
+- **Producer:** Business office SKI on behalf of the Swiss Federal Office of Transport (BAV/OFT)
+- **Exact URL:** https://data.opentransportdata.swiss/en/dataset/timetable-2026-gtfs2020
+- **Access and retrieval date:** Configured HTTPS download with immutable ZIP, SHA-256 sidecar and collection log; 2026-09-22T12:55:52.405564+00:00.
+- **Variables:** scheduled_stop_times|trips|routes|service_calendar|transfers|stop_coordinates
+- **Transformations:** Checksum verification; Swiss platform IDs collapsed to base stops; active service calendars applied for 2026-02-04 and 2026-02-07; generic transfers and at most six vehicle legs routed
+- **Coverage:** Swiss public-transport stops, routes and trips; published static timetable with sampled weekday and Saturday requests; 2025-12-14 to 2026-12-12.
+- **Limitations:** Static schedule only; no delays, cancellations, fares, crowding or unlisted walking; route/trip-specific transfer rules are reported but not separately modelled
+- **Local raw file:** `data_external/source_evidence/SKI_GTFS_TIMETABLE_2026_WINTER_20260207_20260922T125552Z.zip`.
+
+## SKI_GTFS_TIMETABLE_ARCHIVE_INDEX — GTFS timetable data archive
+
+- **Contents and relevance:** Official archive index used to identify a winter GTFS snapshot for each first Magic Pass exposure timetable year
+- **Producer:** Business office SKI on behalf of the Swiss Federal Office of Transport (BAV/OFT)
+- **Exact URL:** https://archive.opentransportdata.swiss/timetable_gtfs_archive.htm
+- **Access and retrieval date:** Manual/read-only archive-index inspection; automated project collector stopped because robots.txt disallows it; 2026-09-22.
+- **Variables:** historical_gtfs_snapshot_url|timetable_year|snapshot_build
+- **Transformations:** Select the official snapshot closest to 7 February of each represented first-exposure winter
+- **Coverage:** Swiss national timetable archive; timetable-year snapshots; 2018 to 2026.
+- **Limitations:** URL availability is not service stability; historical ZIP contents have not yet been downloaded or routed
+- **Local raw file:** `not cached; robots.txt restriction respected`.
 
 ## SLF_DATA_SERVICE — SLF data service terms and access documentation
 

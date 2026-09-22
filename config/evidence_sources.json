@@ -392,5 +392,12 @@
     "suffix": "pdf",
     "organisation": "Swiss Federal Office of Transport (BAV/OFT)",
     "description": "Official data-model documentation defining actual public-transport stops, pure operating points and transport-mode attributes"
+  },
+  {
+    "source_id": "SKI_GTFS_TIMETABLE_2026_WINTER_20260207",
+    "url": "https://data.opentransportdata.swiss/dataset/3d2c18f9-9ef1-463f-a249-5c67604efd74/resource/a18f0b30-fc68-4478-af5b-a90f1fc7c65d/download/gtfs_fp2026_20260207.zip",
+    "suffix": "zip",
+    "organisation": "Business office SKI on behalf of the Swiss Federal Office of Transport (BAV/OFT)",
+    "description": "Official GTFS Static timetable-year 2026 snapshot published 9 February 2026 from the 7 February build, selected to represent scheduled Swiss public transport during the winter ski season"
   }
 ]

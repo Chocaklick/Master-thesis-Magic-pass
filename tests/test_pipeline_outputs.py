@@ -1002,3 +1002,87 @@ def test_public_transport_stop_context_uses_only_official_passenger_stops() -> N
     assert not as_bool(
         decision["public_transport_stop_proximity_feature_approved"]
     ).any()
+
+
+def test_public_transport_journey_context_preserves_grain_and_limits() -> None:
+    samples = read(
+        "data_processed/treatment_municipality_public_transport_journey_samples.csv"
+    )
+    context = read(
+        "data_processed/treatment_municipality_public_transport_journey_context.csv"
+    )
+    nodes = read("reports/public_transport_journey_nodes.csv")
+    historical = read("reports/public_transport_historical_audit_plan.csv")
+
+    assert len(samples) == 49_104
+    assert samples[
+        [
+            "destination_unit_id",
+            "municipality_bfs_id",
+            "reference_date",
+            "direction",
+            "requested_departure_time",
+        ]
+    ].duplicated().sum() == 0
+    assert samples["destination_unit_id"].nunique() == 11
+    assert samples["municipality_bfs_id"].nunique() == 186
+    assert samples["direction"].value_counts().to_dict() == {
+        "return_destination_to_municipality": 28_644,
+        "outbound_municipality_to_destination": 20_460,
+    }
+    assert set(samples["reference_date"].astype(str)) == {"20260204", "20260207"}
+
+    feasible = samples[as_bool(samples["journey_feasible"])]
+    assert len(feasible) == 38_504
+    for column in [
+        "initial_wait_minutes",
+        "scheduled_journey_minutes",
+        "generalized_elapsed_minutes",
+    ]:
+        assert feasible[column].notna().all()
+        assert feasible[column].ge(0).all()
+    assert feasible["generalized_elapsed_minutes"].le(480).all()
+    assert feasible["vehicle_legs"].between(1, 6).all()
+    assert feasible["transfers"].eq(feasible["vehicle_legs"] - 1).all()
+    assert not as_bool(samples["causal_accessibility_feature_approved"]).any()
+
+    assert len(context) == 2_046
+    assert not context[["destination_unit_id", "municipality_bfs_id"]].duplicated().any()
+    complete = context["outbound_sample_coverage_share"].eq(1) & context[
+        "return_sample_coverage_share"
+    ].eq(1)
+    assert int(complete.sum()) == 1_104
+    assert context["historical_stability_status"].eq(
+        "not_yet_verified_against_anchor_year_timetables"
+    ).all()
+    assert not as_bool(context["public_transport_journey_feature_approved"]).any()
+
+    assert len(nodes) == 201
+    assert nodes["node_role"].value_counts().to_dict() == {
+        "municipality_origin": 186,
+        "destination_component_arrival": 15,
+    }
+    destination_nodes = nodes[nodes["node_role"].eq("destination_component_arrival")]
+    assert destination_nodes["selected_stop_mode_code"].str.contains(
+        "A|B", regex=True
+    ).all()
+
+    assert len(historical) == 15
+    assert historical["destination_unit_id"].nunique() == 11
+    assert set(historical["first_exposure_winter_timetable_year"]) == {
+        2018,
+        2019,
+        2020,
+        2023,
+        2024,
+        2025,
+        2026,
+    }
+    assert historical["archive_url"].str.startswith("https://").all()
+    assert not as_bool(
+        historical["historical_destination_stop_service_compared"]
+    ).any()
+    assert historical["historical_line_stability_status"].eq(
+        "not_yet_verified_against_anchor_year_timetables"
+    ).all()
+    assert not as_bool(historical["causal_accessibility_feature_approved"]).any()

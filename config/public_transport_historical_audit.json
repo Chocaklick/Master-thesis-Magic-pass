@@ -1,0 +1,45 @@
+{
+  "archive_index_url": "https://archive.opentransportdata.swiss/timetable_gtfs_archive.htm",
+  "archive_dynamic_index_url": "https://archive.opentransportdata.swiss/timetable_gtfs.php",
+  "archive_index_review_date": "2026-09-22",
+  "archive_index_collection_status": "manually_inspected_automated_cache_disallowed_by_robots_txt",
+  "selection_rule": "official_snapshot_closest_to_7_february_of_first_magic_pass_exposure_winter",
+  "historical_service_comparison_status": "not_yet_executed",
+  "anchors": [
+    {
+      "timetable_year": 2018,
+      "snapshot_build": "2018-02-07",
+      "archive_url": "https://archive.opentransportdata.swiss/timetable_gtfs/timetable-2018-gtfs/GTFS_FP2018_2018-02-07.zip"
+    },
+    {
+      "timetable_year": 2019,
+      "snapshot_build": "2019-02-06",
+      "archive_url": "https://archive.opentransportdata.swiss/timetable_gtfs/timetable-2019-gtfs/GTFS_FP2019_2019-02-06.zip"
+    },
+    {
+      "timetable_year": 2020,
+      "snapshot_build": "2020-02-05",
+      "archive_url": "https://archive.opentransportdata.swiss/timetable_gtfs/timetable-2020-gtfs/GTFS_FP2020_2020-02-05.zip"
+    },
+    {
+      "timetable_year": 2023,
+      "snapshot_build": "2023-02-08_04-15",
+      "archive_url": "https://archive.opentransportdata.swiss/timetable_gtfs/timetable-2023-gtfs2020/GTFS_FP2023_2023-02-08_04-15.zip"
+    },
+    {
+      "timetable_year": 2024,
+      "snapshot_build": "2024-02-07_04-15",
+      "archive_url": "https://archive.opentransportdata.swiss/timetable_gtfs/timetable-2024-gtfs2020/GTFS_FP2024_2024-02-07_04-15.zip"
+    },
+    {
+      "timetable_year": 2025,
+      "snapshot_build": "2025-02-06",
+      "archive_url": "https://archive.opentransportdata.swiss/timetable_gtfs/timetable-2025-gtfs2020/GTFS_FP2025_2025-02-06.zip"
+    },
+    {
+      "timetable_year": 2026,
+      "snapshot_build": "2026-02-07",
+      "archive_url": "https://data.opentransportdata.swiss/dataset/3d2c18f9-9ef1-463f-a249-5c67604efd74/resource/a18f0b30-fc68-4478-af5b-a90f1fc7c65d/download/gtfs_fp2026_20260207.zip"
+    }
+  ]
+}

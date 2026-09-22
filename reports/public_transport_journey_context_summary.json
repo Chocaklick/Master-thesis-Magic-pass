@@ -1,0 +1,108 @@
+{
+  "analysis_version": "path_c_v0_7",
+  "source_id": "SKI_GTFS_TIMETABLE_2026_WINTER_20260207",
+  "gtfs_sha256": "ea777d0d2d43fee6b63637f19efc831eb4c07aec645a6ce06a84f977346a5dc7",
+  "gtfs_size_bytes": 195926768,
+  "feed_version": "20260207",
+  "feed_start_date": "20251214",
+  "feed_end_date": "20261212",
+  "reference_dates": {
+    "winter_weekday": "20260204",
+    "winter_saturday": "20260207"
+  },
+  "total_stop_time_rows": 16551962,
+  "active_stop_time_rows": {
+    "20260204": 3077479,
+    "20260207": 2500218
+  },
+  "active_trip_counts": {
+    "20260204": 213058,
+    "20260207": 174269
+  },
+  "active_service_counts": {
+    "20260204": 6083,
+    "20260207": 5162
+  },
+  "network_summaries": [
+    {
+      "service_date": "20260204",
+      "active_trips": 213058,
+      "normalized_stops_in_network": 33609,
+      "route_patterns_before_overtaking_split": 18987,
+      "route_patterns_after_overtaking_split": 18990,
+      "source_patterns_requiring_overtaking_split": 3,
+      "active_trip_rows_in_patterns": 213058,
+      "generic_transfer_rows": 86805,
+      "route_or_trip_specific_transfer_rows_not_modelled": 102931,
+      "normalized_self_transfer_stops": 9161,
+      "normalized_cross_stop_transfer_links": 7369,
+      "default_transfer_seconds": 120,
+      "connections": 2864421,
+      "destination_component_nodes": 15,
+      "destination_units": 11,
+      "municipality_origin_nodes": 186,
+      "selected_nodes_absent_from_active_day_network": [
+        "8505680"
+      ],
+      "daily_route_samples": 24552
+    },
+    {
+      "service_date": "20260207",
+      "active_trips": 174269,
+      "normalized_stops_in_network": 32393,
+      "route_patterns_before_overtaking_split": 12860,
+      "route_patterns_after_overtaking_split": 12862,
+      "source_patterns_requiring_overtaking_split": 2,
+      "active_trip_rows_in_patterns": 174269,
+      "generic_transfer_rows": 86805,
+      "route_or_trip_specific_transfer_rows_not_modelled": 102931,
+      "normalized_self_transfer_stops": 9161,
+      "normalized_cross_stop_transfer_links": 7369,
+      "default_transfer_seconds": 120,
+      "connections": 2325949,
+      "destination_component_nodes": 15,
+      "destination_units": 11,
+      "municipality_origin_nodes": 186,
+      "selected_nodes_absent_from_active_day_network": [],
+      "daily_route_samples": 24552
+    }
+  ],
+  "official_bav_passenger_stops_available_for_node_selection": 27325,
+  "municipality_origin_nodes": 186,
+  "municipality_origin_selection_methods": {
+    "highest_departure_count_train_stop_inside_current_municipality": 148,
+    "highest_departure_count_ground_stop_inside_current_municipality": 38
+  },
+  "destination_units": 11,
+  "destination_component_nodes": 15,
+  "destination_node_selection_methods": {
+    "nearest_served_ground_stop_inside_component_current_municipality": 15
+  },
+  "destination_component_node_names": [
+    "Arolla, poste",
+    "Axalp, Sportbahnen",
+    "Bumbach, Skilift",
+    "Chandolin, télésiège",
+    "Crans-Montana, Vermala Cervin",
+    "Evolène, Planchet",
+    "Grimentz, Le Boccard",
+    "Hasliberg Wasserwendi, Bidmi",
+    "Kiental, Ramslauenen",
+    "La Sage, Col-de-la-Forclaz",
+    "Les Pléiades",
+    "Moléson-sur-Gruyères",
+    "Reichenbach i. K., Bären",
+    "Saas-Fee, Spielbodenbahn",
+    "Schwanden (Sigriswil), Säge"
+  ],
+  "destination_municipality_pairs": 2046,
+  "journey_samples": 49104,
+  "feasible_journey_samples": 38504,
+  "pairs_complete_all_samples": 1104,
+  "median_pair_outbound_mean_generalized_minutes": 246.3,
+  "median_pair_return_mean_generalized_minutes": 243.10714285714286,
+  "median_pair_round_trip_generalized_minutes": 482.1,
+  "historical_stability_status": "not_yet_verified_against_anchor_year_timetables",
+  "approved_causal_accessibility_features": 0,
+  "interpretation": "official_2026_winter_gtfs_static_scheduled_journey_context_with_algorithmic_ground_stop_nodes_not_real_time_or_historically_stable_causal_accessibility"
+}

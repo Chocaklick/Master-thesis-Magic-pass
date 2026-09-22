@@ -23,6 +23,12 @@ DONOR_PRETREND_SUMMARY = ROOT / "reports" / "donor_pretrend_summary.json"
 DONOR_NETWORK_SUMMARY = ROOT / "reports" / "donor_network_spillover_summary.json"
 DONOR_EXTERNAL_SHOCK_SUMMARY = ROOT / "reports" / "donor_external_shock_summary.json"
 DISTANCE_GRADIENT_SUMMARY = ROOT / "reports" / "treatment_distance_gradient_summary.json"
+PUBLIC_TRANSPORT_JOURNEY_SUMMARY = (
+    ROOT / "reports" / "public_transport_journey_context_summary.json"
+)
+PUBLIC_TRANSPORT_HISTORICAL_SUMMARY = (
+    ROOT / "reports" / "public_transport_historical_audit_summary.json"
+)
 CAPACITY_SUMMARY = ROOT / "reports" / "hotel_capacity_summary.json"
 SNOW_SUMMARY = ROOT / "reports" / "snow_proxy_summary.json"
 SNOW_SENSITIVITY_SUMMARY = ROOT / "reports" / "snow_station_sensitivity_summary.json"
@@ -70,6 +76,12 @@ def main() -> None:
     )
     distance_gradient_summary = json.loads(
         DISTANCE_GRADIENT_SUMMARY.read_text(encoding="utf-8")
+    )
+    public_transport_journey_summary = json.loads(
+        PUBLIC_TRANSPORT_JOURNEY_SUMMARY.read_text(encoding="utf-8")
+    )
+    public_transport_historical_summary = json.loads(
+        PUBLIC_TRANSPORT_HISTORICAL_SUMMARY.read_text(encoding="utf-8")
     )
     capacity_summary = json.loads(CAPACITY_SUMMARY.read_text(encoding="utf-8"))
     snow_summary = json.loads(SNOW_SUMMARY.read_text(encoding="utf-8"))
@@ -430,6 +442,26 @@ def main() -> None:
                 "destinations_with_positive_descriptive_near_far_contrast"
             ]
         ),
+        "public_transport_journey_pairs": int(
+            public_transport_journey_summary["destination_municipality_pairs"]
+        ),
+        "public_transport_journey_samples": int(
+            public_transport_journey_summary["journey_samples"]
+        ),
+        "public_transport_journey_feasible_samples": int(
+            public_transport_journey_summary["feasible_journey_samples"]
+        ),
+        "public_transport_journey_pairs_complete_all_samples": int(
+            public_transport_journey_summary["pairs_complete_all_samples"]
+        ),
+        "public_transport_historical_anchor_years": len(
+            public_transport_historical_summary["historical_anchor_years"]
+        ),
+        "public_transport_historical_components_service_compared": int(
+            public_transport_historical_summary[
+                "historical_components_service_compared"
+            ]
+        ),
         "unresolved_official_base_entry_labels": int(
             control_summary["unresolved_official_base_entry_labels"]
         ),
@@ -533,6 +565,12 @@ Following the researcher's proposed comparison, the pipeline now measures each o
 
 **{metrics['positive_descriptive_near_far_contrasts']} of seven** treatment-specific near-versus-far contrasts are descriptively positive when municipalities at most 30 km away are compared with municipalities beyond 50 km and the 30–50 km band is omitted. Moléson is the exception. This pattern is exploratory only: current 2026 boundaries are applied to historical outcomes, hotel locations and validated historical origin-to-destination travel times are unavailable, and the adjacent windows do not remove common shocks, COVID, competing passes or investment. See `reports/15_TREATMENT_DISTANCE_GRADIENT.md`; all effect and exposure approval flags remain false.
 
+## Scheduled public-transport journey context
+
+The official winter-2026 Swiss GTFS timetable now supplies **{metrics['public_transport_journey_samples']:,} scheduled routing requests** across **{metrics['public_transport_journey_pairs']:,} destination–municipality pairs**. Morning departures are sampled from 08:00 to 10:00 and return departures from 15:00 to 18:00 on one winter weekday and one winter Saturday. **{metrics['public_transport_journey_feasible_samples']:,} samples** meet the six-vehicle and eight-hour limits; **{metrics['public_transport_journey_pairs_complete_all_samples']:,} pairs** are feasible at every sampled time. Municipality origins use the most frequently served train stop inside the municipality where possible, with a terrestrial-stop fallback; resort arrivals use reproducible bus/train proxies inside each component municipality. See `reports/24_PUBLIC_TRANSPORT_JOURNEY_CONTEXT.md`.
+
+The official archive index exposes snapshots for **{metrics['public_transport_historical_anchor_years']} relevant timetable years**, but **{metrics['public_transport_historical_components_service_compared']} historical component nodes** have yet undergone actual stop/service comparison. The 2026 journey measure is therefore useful descriptive context, not a historically stable pre-treatment or causal covariate. See `reports/25_PUBLIC_TRANSPORT_HISTORICAL_AUDIT.md`.
+
 ## Membership-continuity audit
 
 Entry events, full official rosters, named continuation statements, and the documented Crans-Montana exit were checked season by season. Missing annual evidence remains unverified rather than being filled as active or inactive.
@@ -571,11 +609,11 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 4. Crans-Montana proves that treatment is not universally absorbing.
 5. COVID overlaps the post-period of early entrants and the entry period of later ones.
 6. Spillovers may contaminate nearby nominal controls.
-7. Hotel capacity, mountain-station snow, regional temperature/precipitation, qualified Swiss straight-line population, NPVM 2025 road/public-transport context and current OFT/BAV stop proximity are integrated. Snowmaking, validated historical arrival-node travel time, service frequency/timetable quality, cross-border population, investment, local economic conditions, and competing-network changes remain unmeasured.
+7. Hotel capacity, mountain-station snow, regional temperature/precipitation, qualified Swiss straight-line population, NPVM 2025 context, current OFT/BAV stop proximity and winter-2026 scheduled journey context are integrated. Historical timetable stability, snowmaking, cross-border population, investment, local economic conditions, and competing-network changes remain unmeasured.
 
 ## Next evidence gate
 
-For Path C, validate actual resort/valley-station arrival nodes and the municipality-constrained NPVM zone proxies; turn current straight-line stop proximity into service-quality evidence only if timetable/frequency and seasonal-operation data support it; add motorway and relevant cross-border population context; validate destination catchments for tourism dependence; add competing-pass variables; and obtain dated infrastructure features. Keep the completed min/median/max aggregation sensitivity and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, manually face-validate the selected resort/valley arrival nodes, compare the identified historical GTFS anchor feeds with the same routing rules, and validate the municipality-constrained NPVM zone proxies; add motorway and relevant cross-border population context; validate destination catchments for tourism dependence; add competing-pass variables; and obtain dated infrastructure features. Keep the completed min/median/max aggregation sensitivity and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

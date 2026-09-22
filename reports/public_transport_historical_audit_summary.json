@@ -1,0 +1,21 @@
+{
+  "archive_index_url": "https://archive.opentransportdata.swiss/timetable_gtfs_archive.htm",
+  "archive_index_review_date": "2026-09-22",
+  "archive_index_collection_status": "manually_inspected_automated_cache_disallowed_by_robots_txt",
+  "selection_rule": "official_snapshot_closest_to_7_february_of_first_magic_pass_exposure_winter",
+  "historical_anchor_years": [
+    2018,
+    2019,
+    2020,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "destination_units": 11,
+  "destination_component_nodes": 15,
+  "components_with_official_anchor_url": 15,
+  "historical_components_service_compared": 0,
+  "historical_service_comparison_status": "not_yet_executed",
+  "causal_accessibility_features_approved": 0
+}

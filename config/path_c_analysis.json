@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_6",
+  "analysis_version": "path_c_v0_7",
   "analysis_date": "2026-09-22",
   "analysis_entity": "existing_lift_cluster_with_at_least_one_supplied_resort_listing",
   "feature_temporal_status": "undated_cross_sectional_snapshot_not_pre_treatment",
@@ -82,12 +82,32 @@
     "cluster_aggregation": "minimum_median_maximum_across_eligible_supplied_listing_points",
     "interpretation": "official_current_stop_point_straight_line_context_not_route_service_frequency_or_validated_resort_arrival_node"
   },
+  "public_transport_journey_context": {
+    "source_id": "SKI_GTFS_TIMETABLE_2026_WINTER_20260207",
+    "feed_version": "20260207",
+    "feed_start_date": "20251214",
+    "feed_end_date": "20261212",
+    "reference_dates": {
+      "winter_weekday": "20260204",
+      "winter_saturday": "20260207"
+    },
+    "outbound_sample_times": ["08:00:00", "08:30:00", "09:00:00", "09:30:00", "10:00:00"],
+    "return_sample_times": ["15:00:00", "15:30:00", "16:00:00", "16:30:00", "17:00:00", "17:30:00", "18:00:00"],
+    "municipality_origin_rule": "highest_reference_day_departure_count_train_stop_inside_current_municipality_else_highest_count_ground_stop_inside_current_municipality_else_nearest_served_ground_stop",
+    "resort_arrival_rule": "nearest_reference_day_served_bus_or_train_stop_in_the_current_municipality_of_each_supplied_destination_component_point",
+    "platform_normalization": "numeric_gtfs_stop_id_prefix_before_first_colon",
+    "default_transfer_seconds": 120,
+    "maximum_vehicle_legs": 6,
+    "maximum_generalized_elapsed_minutes": 480,
+    "historical_stability_status": "not_yet_verified_against_anchor_year_timetables",
+    "interpretation": "official_2026_winter_gtfs_static_scheduled_journey_context_with_algorithmic_ground_stop_nodes_not_real_time_or_historically_stable_causal_accessibility"
+  },
   "decision_framework": {
     "dimensions_kept_separate": [
       "descriptive analogue opportunity signal",
       "snow vulnerability percentile"
     ],
-    "strategic_need_limitation": "Qualified NPVM 2025 traffic-zone travel times and current straight-line OFT/BAV stop proximity are available at supplied listing points, but neither they nor point-container tourism ratios establish an approved arrival node, service-quality measure, destination catchment or exposure scope. No complete strategic-need score or composite ranking is produced.",
+    "strategic_need_limitation": "Qualified NPVM 2025 traffic-zone travel times, current straight-line OFT/BAV stop proximity and a winter-2026 GTFS Static municipality-to-destination journey context are available. The GTFS nodes are selected algorithmically and anchor-year timetable stability is not yet verified, while point-container tourism ratios do not establish a destination catchment. No complete strategic-need score or composite ranking is produced.",
     "composite_score_approved": false,
     "causal_interpretation_approved": false
   }

@@ -77,6 +77,7 @@ def main() -> None:
     bav_stop_data = cached_metadata("BAV_PUBLIC_TRANSPORT_STOPS_2026")
     bav_stop_stac = cached_metadata("BAV_PUBLIC_TRANSPORT_STOPS_2026_STAC")
     bav_stop_model = cached_metadata("BAV_PUBLIC_TRANSPORT_STOPS_MODEL")
+    ski_gtfs_data = cached_metadata("SKI_GTFS_TIMETABLE_2026_WINTER_20260207")
     bfs_capacity_records = [
         json.loads(path.read_text(encoding="utf-8"))
         for path in EVIDENCE_DIR.glob("BFS_HOTEL_CAPACITY_DATA_*.metadata.json")
@@ -577,6 +578,93 @@ def main() -> None:
         quality_notes="Not route distance, travel time, service frequency, timetable convenience, seasonal operation, a validated valley arrival node or destination catchment; all-mode nearest stops can be resort cableways/chairlifts",
         confidence_level="high for reproducibility; qualified current proximity context only",
         manual_verification="268/271 listings and 161/162 clusters complete; three French listings left missing; all 104 candidates retain usable cluster context; zero approval flags",
+    ))
+    rows.append(blank_source(
+        "SKI_GTFS_TIMETABLE_2026_WINTER_20260207",
+        variable_name="scheduled_stop_times|trips|routes|service_calendar|transfers|stop_coordinates",
+        variable_description="Official all-Switzerland GTFS Static timetable snapshot used for scheduled municipality-to-ski-destination routing",
+        source_organisation="Business office SKI on behalf of the Swiss Federal Office of Transport (BAV/OFT)",
+        source_dataset_name="Timetable 2026 (GTFS2020), build 20260207",
+        source_page_url="https://data.opentransportdata.swiss/en/dataset/timetable-2026-gtfs2020",
+        direct_download_url=configured["SKI_GTFS_TIMETABLE_2026_WINTER_20260207"]["url"],
+        retrieval_method="Configured HTTPS download with immutable ZIP, SHA-256 sidecar and collection log",
+        retrieval_date=(ski_gtfs_data or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(ski_gtfs_data),
+        local_raw_file=(ski_gtfs_data or {}).get("raw_file", ""),
+        processed_file="data_processed/treatment_municipality_public_transport_journey_samples.csv|data_processed/treatment_municipality_public_transport_journey_context.csv|reports/public_transport_journey_nodes.csv|reports/24_PUBLIC_TRANSPORT_JOURNEY_CONTEXT.md",
+        geographic_level="Swiss public-transport stops, routes and trips",
+        temporal_resolution="published static timetable with sampled weekday and Saturday requests",
+        temporal_start="2025-12-14",
+        temporal_end="2026-12-12",
+        unit="scheduled service and time",
+        license="Open Data Mobility Switzerland terms of use",
+        access_conditions="Public official dataset",
+        transformation_applied="Checksum verification; Swiss platform IDs collapsed to base stops; active service calendars applied for 2026-02-04 and 2026-02-07; generic transfers and at most six vehicle legs routed",
+        quality_notes="Static schedule only; no delays, cancellations, fares, crowding or unlisted walking; route/trip-specific transfer rules are reported but not separately modelled",
+        confidence_level="high for reproducibility; qualified for current scheduled access only",
+        manual_verification="Feed version, validity dates, 16,551,962 stop-time rows and selected node coverage checked; zero causal approvals",
+    ))
+    rows.append(blank_source(
+        "SKI_GTFS_TIMETABLE_ARCHIVE_INDEX",
+        variable_name="historical_gtfs_snapshot_url|timetable_year|snapshot_build",
+        variable_description="Official archive index used to identify a winter GTFS snapshot for each first Magic Pass exposure timetable year",
+        source_organisation="Business office SKI on behalf of the Swiss Federal Office of Transport (BAV/OFT)",
+        source_dataset_name="GTFS timetable data archive",
+        source_page_url="https://archive.opentransportdata.swiss/timetable_gtfs_archive.htm",
+        api_endpoint="https://archive.opentransportdata.swiss/timetable_gtfs.php",
+        retrieval_method="Manual/read-only archive-index inspection; automated project collector stopped because robots.txt disallows it",
+        retrieval_date="2026-09-22",
+        local_raw_file="not cached; robots.txt restriction respected",
+        processed_file="config/public_transport_historical_audit.json|reports/public_transport_historical_audit_plan.csv|reports/25_PUBLIC_TRANSPORT_HISTORICAL_AUDIT.md",
+        geographic_level="Swiss national timetable archive",
+        temporal_resolution="timetable-year snapshots",
+        temporal_start="2018",
+        temporal_end="2026",
+        unit="archive URL and build date",
+        license="Open Data Mobility Switzerland terms of use",
+        access_conditions="Public index; automated cache disallowed by robots.txt at review date",
+        transformation_applied="Select the official snapshot closest to 7 February of each represented first-exposure winter",
+        quality_notes="URL availability is not service stability; historical ZIP contents have not yet been downloaded or routed",
+        confidence_level="high for identified archive URLs; none yet for line stability",
+        manual_verification="Seven timetable-year URLs identified; zero historical component-service comparisons completed",
+    ))
+    rows.append(blank_source(
+        "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
+        variable_name="scheduled_journey_minutes|initial_wait_minutes|generalized_elapsed_minutes|vehicle_legs|transfers|transport_modes|sample_coverage",
+        variable_description="Qualified scheduled public-transport journey context between each hotel municipality main stop and each reviewed ski destination",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Treatment municipality public-transport journey context",
+        retrieval_method="Deterministic routing of checksum-verified official GTFS Static and OFT/BAV stop data",
+        local_raw_file="config/path_c_analysis.json",
+        processed_file="data_processed/treatment_municipality_public_transport_journey_samples.csv|data_processed/treatment_municipality_public_transport_journey_context.csv|reports/public_transport_journey_nodes.csv|reports/public_transport_journey_context_summary.json|reports/24_PUBLIC_TRANSPORT_JOURNEY_CONTEXT.md",
+        geographic_level="reviewed destination by hotel municipality, with component stop nodes",
+        temporal_resolution="winter-2026 weekday/Saturday timetable samples",
+        temporal_start="2026-02-04",
+        temporal_end="2026-02-07",
+        unit="minutes, legs, modes and coverage shares",
+        transformation_applied="Choose municipality main stops by reference-day departure count; choose nearby served ground stops inside component municipalities; route five morning and seven return requests on two reference days; retain fastest component",
+        quality_notes="Algorithmic stop proxies require face validation; 480-minute and six-vehicle limits apply; current timetable is not historically stable evidence",
+        confidence_level="high for reproducibility; descriptive current context only",
+        manual_verification="49,104 unique samples, no negative feasible durations, 2,046 destination-municipality pairs and zero causal approvals checked",
+    ))
+    rows.append(blank_source(
+        "DERIVED_PUBLIC_TRANSPORT_HISTORICAL_AUDIT",
+        variable_name="first_exposure_winter_timetable_year|historical_gtfs_anchor_url|historical_service_comparison_status",
+        variable_description="Explicit plan and completion gate for comparing current destination access nodes with official historical winter GTFS feeds",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Historical public-transport timetable audit plan",
+        retrieval_method="Deterministic join of reviewed entry seasons, selected destination nodes and reviewed official archive URLs",
+        local_raw_file="config/public_transport_historical_audit.json",
+        processed_file="reports/public_transport_historical_audit_plan.csv|reports/public_transport_historical_audit_summary.json|reports/25_PUBLIC_TRANSPORT_HISTORICAL_AUDIT.md",
+        geographic_level="reviewed destination component arrival node",
+        temporal_resolution="first Magic Pass exposure winter",
+        temporal_start="2018",
+        temporal_end="2026",
+        unit="audit status and archive reference",
+        transformation_applied="Map first-entry season to exposure-winter timetable year and its selected official archive snapshot",
+        quality_notes="Historical service comparison remains unexecuted; archive availability is not evidence of unchanged lines or journey times",
+        confidence_level="reproducible audit plan; no historical stability conclusion",
+        manual_verification="15 component nodes have an official anchor URL; zero historical service comparisons and zero causal approvals",
     ))
     slf_metadata = {
         source_id: cached_metadata(source_id)
@@ -1466,6 +1554,10 @@ def main() -> None:
         "path_c_cluster_transport_accessibility_context": ROOT / "data_processed/path_c_cluster_transport_accessibility_context.csv",
         "resort_public_transport_stop_context": ROOT / "data_processed/resort_public_transport_stop_context.csv",
         "path_c_cluster_public_transport_stop_context": ROOT / "data_processed/path_c_cluster_public_transport_stop_context.csv",
+        "public_transport_journey_nodes": ROOT / "reports/public_transport_journey_nodes.csv",
+        "treatment_municipality_public_transport_journey_samples": ROOT / "data_processed/treatment_municipality_public_transport_journey_samples.csv",
+        "treatment_municipality_public_transport_journey_context": ROOT / "data_processed/treatment_municipality_public_transport_journey_context.csv",
+        "public_transport_historical_audit_plan": ROOT / "reports/public_transport_historical_audit_plan.csv",
         "path_c_resort_cluster_features": ROOT / "data_processed/path_c_resort_cluster_features.csv",
         "path_c_cluster_segments": ROOT / "data_processed/path_c_cluster_segments.csv",
         "path_c_reviewed_treated_reference": ROOT / "data_processed/path_c_reviewed_treated_reference.csv",
@@ -1482,6 +1574,10 @@ def main() -> None:
         "path_c_cluster_transport_accessibility_context": "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT",
         "resort_public_transport_stop_context": "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT",
         "path_c_cluster_public_transport_stop_context": "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT",
+        "public_transport_journey_nodes": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
+        "treatment_municipality_public_transport_journey_samples": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
+        "treatment_municipality_public_transport_journey_context": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
+        "public_transport_historical_audit_plan": "DERIVED_PUBLIC_TRANSPORT_HISTORICAL_AUDIT",
         "path_c_resort_cluster_features": "DERIVED_PATH_C_FEATURE_MATRIX",
         "path_c_cluster_segments": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
         "path_c_reviewed_treated_reference": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
@@ -1644,6 +1740,36 @@ def main() -> None:
         "cluster_listing_public_transport_stop_context_share": "Share of supplied cluster listing points eligible for official Swiss nearest-stop calculations",
         "cluster_public_transport_stop_context_status": "Complete, partial or unavailable cluster coverage under the Swiss point-eligibility rule",
         "cluster_unassigned_public_transport_stop_resort_ids": "Pipe-separated listing identifiers left without stop context because they are outside complete Swiss coverage",
+        "node_role": "Whether the selected node is a hotel-municipality origin or a ski-destination component arrival proxy",
+        "selection_method": "Deterministic rule used to select the public-transport node",
+        "selection_rule": "Versioned public-transport node-selection rule",
+        "selected_stop_reference_departures": "Combined boardable departures at the normalized stop on the selected reference days",
+        "direction": "Outbound municipality-to-destination or return destination-to-municipality routing direction",
+        "reference_day_type": "Winter weekday or winter Saturday reference-day label",
+        "reference_date": "Exact GTFS service date used for the scheduled request",
+        "requested_departure_time": "Requested clock time at which the fastest subsequent itinerary is sought",
+        "journey_feasible": "Whether a scheduled itinerary meets the declared leg and generalized-time limits",
+        "journey_exclusion_reason": "Explicit reason a sampled request has no retained feasible itinerary",
+        "scheduled_first_boarding_time": "Scheduled first vehicle departure time for the retained itinerary",
+        "scheduled_arrival_time": "Scheduled arrival time at the retained destination node",
+        "initial_wait_minutes": "Minutes from requested departure time to first scheduled vehicle boarding",
+        "scheduled_journey_minutes": "Minutes from first vehicle boarding to arrival",
+        "generalized_elapsed_minutes": "Minutes from requested departure time to arrival, including initial waiting",
+        "vehicle_legs": "Number of boarded public-transport vehicle legs in the retained itinerary",
+        "transfers": "Number of vehicle changes, calculated as vehicle legs minus one",
+        "transport_modes": "Pipe-separated scheduled transport modes used by the retained itinerary",
+        "outbound_sample_coverage_share": "Share of declared outbound timetable samples with a feasible itinerary",
+        "return_sample_coverage_share": "Share of declared return timetable samples with a feasible itinerary",
+        "mean_round_trip_generalized_minutes": "Sum of mean outbound and return generalized scheduled times where both are observed",
+        "historical_stability_status": "Whether historical timetable stability has actually been verified",
+        "public_transport_journey_feature_approved": "Whether the journey context is approved as a causal accessibility feature; always false",
+        "first_exposure_winter_timetable_year": "Timetable year covering the destination's first documented Magic Pass exposure winter",
+        "snapshot_build": "Official GTFS archive snapshot build selected for the historical audit",
+        "archive_url": "Official archive URL for the selected timetable snapshot",
+        "archive_index_availability_status": "Status of archive-index URL verification",
+        "historical_feed_downloaded": "Whether the selected historical feed has been checksum-cached by the project",
+        "historical_destination_stop_service_compared": "Whether the component stop and scheduled service have actually been compared in the anchor-year feed",
+        "historical_line_stability_status": "Explicit historical line-stability conclusion status",
     })
     for prefix, description in {
         "public_transport_stop": "official VP/VPG passenger stop across all published modes",
@@ -1707,6 +1833,8 @@ def main() -> None:
             return "minutes"
         if variable.endswith("_share"):
             return "share (0-1)"
+        if variable.endswith("_samples") or variable in {"vehicle_legs", "transfers"}:
+            return "count"
         if variable.endswith("_crs"):
             return "coordinate reference system"
         if variable.startswith("cluster_listings_"):
@@ -1740,6 +1868,10 @@ def main() -> None:
         "municipality_population_geometry_2026": "current Swiss municipality",
         "resort_transport_accessibility_context": "supplied resort listing point / NPVM traffic zone",
         "resort_public_transport_stop_context": "supplied resort listing point / official public-transport stop point",
+        "public_transport_journey_nodes": "hotel municipality or reviewed destination component",
+        "treatment_municipality_public_transport_journey_samples": "reviewed destination by hotel municipality and scheduled request",
+        "treatment_municipality_public_transport_journey_context": "reviewed destination by hotel municipality",
+        "public_transport_historical_audit_plan": "reviewed destination component arrival node",
         "path_c_reviewed_treated_reference": "reviewed treated destination",
     }
     path_c_temporal_level = {
@@ -1751,6 +1883,10 @@ def main() -> None:
         "path_c_cluster_transport_accessibility_context": "NPVM model reference date 2025-06-30; current supplied listing coordinates",
         "resort_public_transport_stop_context": "OFT/BAV source state 2026-09-20; current supplied listing coordinate",
         "path_c_cluster_public_transport_stop_context": "OFT/BAV source state 2026-09-20; current supplied listing coordinates",
+        "public_transport_journey_nodes": "winter-2026 GTFS node-selection reference",
+        "treatment_municipality_public_transport_journey_samples": "2026-02-04 and 2026-02-07 scheduled requests",
+        "treatment_municipality_public_transport_journey_context": "winter-2026 weekday/Saturday scheduled summary",
+        "public_transport_historical_audit_plan": "first-exposure winters 2018-2026; service comparison pending",
     }
 
     for table, path in path_c_paths.items():
@@ -1773,7 +1909,14 @@ def main() -> None:
                 "resort_public_transport_stop_context",
                 "path_c_cluster_public_transport_stop_context",
             }
-            stop_variable = stop_table or (
+            journey_table = table in {
+                "public_transport_journey_nodes",
+                "treatment_municipality_public_transport_journey_samples",
+                "treatment_municipality_public_transport_journey_context",
+                "public_transport_historical_audit_plan",
+            }
+            journey_variable = journey_table
+            stop_variable = not journey_variable and (stop_table or (
                 table == "magic_pass_decision_support"
                 and (
                     variable.startswith("public_transport_stop_")
@@ -1789,8 +1932,8 @@ def main() -> None:
                     or variable.startswith("cluster_public_transport_stop_")
                     or variable.startswith("cluster_unassigned_public_transport_stop_")
                 )
-            )
-            transport_variable = not stop_variable and (transport_table or (
+            ))
+            transport_variable = not journey_variable and not stop_variable and (transport_table or (
                 table == "magic_pass_decision_support"
                 and (
                     variable.startswith("npvm_")
@@ -1806,7 +1949,7 @@ def main() -> None:
                     in {"cluster_transport_context_status", "unassigned_resort_ids"}
                 )
             ))
-            accessibility_variable = not stop_variable and not transport_variable and (accessibility_table or (
+            accessibility_variable = not journey_variable and not stop_variable and not transport_variable and (accessibility_table or (
                 table == "magic_pass_decision_support"
                 and (
                     "accessibility" in variable
@@ -1831,6 +1974,10 @@ def main() -> None:
             role = (
                 "intentionally unavailable causal prediction"
                 if variable in {"predicted_uplift_pct", "uplift_lower_pct", "uplift_upper_pct"}
+                else "qualified historical public-transport audit plan"
+                if table == "public_transport_historical_audit_plan"
+                else "qualified scheduled public-transport journey context"
+                if journey_variable
                 else "qualified current public-transport-stop proximity context"
                 if stop_variable
                 else "qualified NPVM modelled travel-time context"
@@ -1848,6 +1995,12 @@ def main() -> None:
                 else "descriptive segmentation / decision support"
             )
             formula_note = (
+                "See config/public_transport_historical_audit.json and src/data_processing/build_public_transport_historical_audit.py"
+                if table == "public_transport_historical_audit_plan"
+                else
+                "See config/path_c_analysis.json and src/data_processing/build_public_transport_journey_context.py"
+                if journey_variable
+                else
                 "See config/path_c_analysis.json and src/data_processing/build_public_transport_stop_context.py"
                 if stop_variable
                 else
@@ -1859,6 +2012,12 @@ def main() -> None:
                 else "See config/path_c_analysis.json and Path C scripts; tourism context is implemented in src/data_processing/build_tourism_dependence_context.py"
             )
             limitation_note = (
+                "No causal interpretation; historical stop/service comparison has not yet been executed and archive availability does not prove line stability"
+                if table == "public_transport_historical_audit_plan"
+                else
+                "No causal interpretation; winter-2026 static schedules and algorithmic stop proxies are not real-time, historical or validated destination catchments"
+                if journey_variable
+                else
                 "No causal interpretation; straight-line stop-point distance is not a route, service frequency, timetable quality, validated arrival node or destination catchment"
                 if stop_variable
                 else
@@ -1877,7 +2036,9 @@ def main() -> None:
                 str(frame[variable].dtype),
                 path_c_geographic_level.get(table, "existing lift cluster"),
                 path_c_temporal_level.get(table, "undated structural snapshot; mixed lineage where stated"),
-                "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT"
+                path_c_sources[table]
+                if journey_variable
+                else "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT"
                 if stop_variable
                 else "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT"
                 if transport_variable
