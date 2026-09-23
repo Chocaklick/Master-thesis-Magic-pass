@@ -89,7 +89,12 @@ def main():
         if cached:
             metadata = json.loads(cached[-1].read_text(encoding="utf-8"))
             raw = ROOT / metadata["raw_file"]
-            if raw.exists() and hashlib.sha256(raw.read_bytes()).hexdigest() == metadata["sha256"]:
+            observed_sha256 = hashlib.sha256(raw.read_bytes()).hexdigest() if raw.exists() else None
+            expected_sha256 = source.get("expected_sha256")
+            if (
+                observed_sha256 == metadata["sha256"]
+                and (expected_sha256 is None or observed_sha256 == expected_sha256)
+            ):
                 print(sid, "cached")
                 continue
             raise RuntimeError(f"Cached evidence integrity failure: {sid}")
@@ -120,12 +125,19 @@ def main():
             delay = policy.crawl_delay(AGENT) if policy else None
             time.sleep(max(1, delay or 0))
             content, status, final_url = fetch(url)
+            observed_sha256 = hashlib.sha256(content).hexdigest()
+            expected_sha256 = source.get("expected_sha256")
+            if expected_sha256 is not None and observed_sha256 != expected_sha256:
+                raise RuntimeError(
+                    f"Official SHA-256 mismatch for {sid}: "
+                    f"{observed_sha256} != {expected_sha256}"
+                )
             token = stamp.strftime("%Y%m%dT%H%M%SZ")
             raw = folder / f"{sid}_{token}.{source['suffix']}"
             with raw.open("xb") as stream:
                 stream.write(content)
             metadata = {**source, "retrieval_date": stamp.isoformat(), "final_url": final_url,
-                "raw_file": raw.relative_to(ROOT).as_posix(), "sha256": hashlib.sha256(content).hexdigest(),
+                "raw_file": raw.relative_to(ROOT).as_posix(), "sha256": observed_sha256,
                 "size_bytes": len(content), "http_status": status}
             with (folder / f"{sid}_{token}.metadata.json").open("x", encoding="utf-8") as stream:
                 json.dump(metadata, stream, ensure_ascii=False, indent=2)

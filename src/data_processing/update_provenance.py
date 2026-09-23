@@ -1276,6 +1276,110 @@ def main() -> None:
         manual_verification="15 component comparisons, 11 destination summaries and 1,749 destination-month rows; zero causal approvals",
     ))
 
+    gridded_weather_sources = json.loads(
+        (ROOT / "config" / "meteoswiss_gridded_weather_files.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    gridded_weather_metadata = {
+        item["source_id"]: cached_metadata(item["source_id"])
+        for item in gridded_weather_sources
+    }
+    if len(gridded_weather_sources) != 39 or any(
+        metadata is None for metadata in gridded_weather_metadata.values()
+    ):
+        raise FileNotFoundError(
+            "The MeteoSwiss gridded-weather source set is incomplete"
+        )
+    gridded_asset_specs = [
+        item
+        for item in gridded_weather_sources
+        if item["source_id"].startswith("METEOSWISS_GRID_")
+    ]
+    if len(gridded_asset_specs) != 32 or any(
+        gridded_weather_metadata[item["source_id"]]["sha256"]
+        != item.get("expected_sha256")
+        for item in gridded_asset_specs
+    ):
+        raise RuntimeError(
+            "MeteoSwiss gridded-weather assets do not match official STAC hashes"
+        )
+    gridded_retrieval_date = max(
+        metadata["retrieval_date"]
+        for metadata in gridded_weather_metadata.values()
+    )
+    rows.append(blank_source(
+        "METEOSWISS_TABSM_RHIRESM_MONTHLY_GRID_2013_202603",
+        variable_name="TabsM|RhiresM",
+        variable_description="Official 1 km LV95 monthly mean-temperature and precipitation spatial analyses for 2013-01 through 2026-03",
+        source_organisation="Federal Office of Meteorology and Climatology MeteoSwiss",
+        source_dataset_name="Spatial Climate Analyses — TabsM v1.4 and RhiresM v2.0",
+        source_page_url="https://data.geo.admin.ch/browser/index.html#/collections/ch.meteoschweiz.ogd-surface-derived-grid",
+        direct_download_url="https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/",
+        api_endpoint="https://data.geo.admin.ch/api/stac/v1/collections/ch.meteoschweiz.ogd-surface-derived-grid",
+        api_parameters="archive-ch plus 202601-ch, 202602-ch and 202603-ch items; TabsM/RhiresM ch01r.swiss.lv95 assets",
+        retrieval_method="HTTP GET of 26 annual and six current-month NetCDF assets; every SHA-256 matched to the official STAC multihash",
+        retrieval_date=gridded_retrieval_date,
+        original_file_name="32 TabsM/RhiresM NetCDF assets",
+        local_raw_file="data_external/source_evidence/METEOSWISS_GRID_*.nc",
+        processed_file="data_processed/meteoswiss_gridded_component_month.csv|reports/weather_gridded_component_comparison.csv|data_processed/destination_weather_gridded_sensitivity.csv|reports/weather_gridded_destination_summary.csv|reports/35_WEATHER_GRIDDED_SENSITIVITY.md",
+        geographic_level="regular 1 km cell centres in MeteoSwiss ch01r.swiss.lv95 grid",
+        temporal_resolution="direct monthly spatial analysis",
+        temporal_start="2013-01-01",
+        temporal_end="2026-03-01",
+        unit="degrees Celsius; millimetres",
+        license="CC BY / Swiss Open Government Data terms; source acknowledgement required",
+        access_conditions="Public static NetCDF assets exposed through the federal STAC catalogue",
+        transformation_applied="Nearest cell valid for both products at each reviewed component; cell/calendar-month 2013-2025 analytical normals; unique-cell destination mean; no imputation",
+        quality_notes="Station-informed grids rather than an independent measurement network; 1 km spacing exceeds effective precipitation resolution; high-elevation winter precipitation undercatch and Alpine interpolation uncertainty remain",
+        confidence_level="high for official gridded product integrity; qualified for regional-weather sensitivity only",
+        manual_verification="32/32 asset SHA-256 values match STAC; CF-1.8 schema, 1 km LV95 coordinates, product versions, units, time axes, masks and component-cell distances checked",
+        notes="Exact asset URLs, official hashes, STAC records and documentation sources are enumerated in config/meteoswiss_gridded_weather_files.json",
+    ))
+    rows.append(blank_source(
+        "METEOSWISS_SPATIAL_CLIMATE_ANALYSIS_DOCUMENTATION",
+        variable_name="TabsM_method|RhiresM_method|grid_spacing|accuracy_limits",
+        variable_description="Official product documentation and STAC discovery metadata for MeteoSwiss monthly spatial climate analyses",
+        source_organisation="Federal Office of Meteorology and Climatology MeteoSwiss",
+        source_dataset_name="TabsM and RhiresM product documentation plus surface-derived-grid STAC metadata",
+        source_page_url="https://www.meteoswiss.admin.ch/services-and-publications/service/open-data.html",
+        direct_download_url="https://www.meteoswiss.admin.ch/dam/",
+        api_endpoint="https://data.geo.admin.ch/api/stac/v1/collections/ch.meteoschweiz.ogd-surface-derived-grid",
+        retrieval_method="HTTP GET with immutable responses and SHA-256 sidecars",
+        retrieval_date=gridded_retrieval_date,
+        original_file_name="ProdDoc_TabsM.pdf|ProdDoc_RhiresM.pdf|five STAC JSON records",
+        local_raw_file="data_external/source_evidence/METEOSWISS_*GRID*STAC_*.json|data_external/source_evidence/METEOSWISS_*DOCUMENTATION_*.pdf",
+        processed_file="reports/35_WEATHER_GRIDDED_SENSITIVITY.md",
+        geographic_level="Swiss spatial climate analysis grid",
+        temporal_resolution="product-method documentation and retrieval-time catalogue snapshots",
+        unit="not applicable",
+        license="CC BY / Swiss Open Government Data terms",
+        access_conditions="Public documentation and STAC API",
+        transformation_applied="Product definitions, methods, versions, grid and limitations transcribed into guarded analytical interpretation",
+        quality_notes="RhiresM documentation notes high-elevation/winter undercatch and effective resolution coarser than 1 km; TabsM omits some local land/lake effects",
+        confidence_level="high for product definitions and declared limitations",
+        manual_verification="Product title, station basis, aggregation, version, grid and accuracy/interpretation sections reviewed",
+    ))
+    rows.append(blank_source(
+        "DERIVED_WEATHER_GRIDDED_SENSITIVITY",
+        variable_name="gridded_component_month|station_grid_anomaly_agreement|gridded_destination_month",
+        variable_description="SwissMetNet station versus MeteoSwiss TabsM/RhiresM monthly gridded sensitivity for reviewed components and destinations",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Regional-weather gridded-product sensitivity",
+        retrieval_method="Deterministic Python NetCDF extraction, monthly anomaly construction and station-grid comparison",
+        local_raw_file="config/meteoswiss_gridded_weather_files.json|config/path_c_analysis.json",
+        processed_file="data_processed/meteoswiss_gridded_component_month.csv|reports/weather_gridded_component_comparison.csv|data_processed/destination_weather_gridded_sensitivity.csv|reports/weather_gridded_destination_summary.csv|reports/35_WEATHER_GRIDDED_SENSITIVITY.md",
+        geographic_level="reviewed resort component grid cell and reviewed destination",
+        temporal_resolution="monthly 2013-01 through 2026-03 plus component/destination summary",
+        temporal_start="2013-01-01",
+        temporal_end="2026-03-01",
+        unit="degrees Celsius, millimetres, correlations, counts and flags",
+        transformation_applied="Select nearest common valid grid cell; calculate cell/calendar-month 2013-2025 anomalies; aggregate unique cells by destination; compare against station anomalies on common complete months",
+        quality_notes="Gridded method sensitivity, not an independent measurement network, piste microclimate, snow-phase measure or causal validation",
+        confidence_level="high for reproducibility; qualified gridded-product sensitivity only",
+        manual_verification="2,385 component-month rows, 15 component comparisons, 11 destination summaries and 1,749 destination-month rows; zero causal approvals",
+    ))
+
     roster_observations = json.loads(
         (ROOT / "metadata/magic_pass_roster_evidence.json").read_text(encoding="utf-8")
     )["observations"]
@@ -1817,7 +1921,7 @@ def main() -> None:
         ("precipitation_total_mm_mean_across_stations", "destination_month_panel", "Unweighted mean monthly precipitation total across unique assigned SwissMetNet stations", "millimetres", "float", "reviewed destination via station proxy", "monthly", "METEOSWISS_SMN_DAILY_SELECTED", "derived", "mean station-month precipitation_total_mm only when every assigned station month passes the 80% gate", "time-varying regional weather proxy", "Not summed across stations; 06:00-to-06:00 UTC daily window"),
         ("complete_weather_proxy", "destination_month_panel", "Whether every assigned SwissMetNet station-month passes the four-parameter coverage gate", "boolean", "boolean", "reviewed destination via station proxy", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "all assigned station months have >=80% coverage for mean/min/max temperature and precipitation", "weather data quality", "False for unavailable future months and five in-window destination-months"),
         ("destination_weather_proxy_quality", "destination_month_panel", "Worst horizontal-distance comparability class among destination components", "category", "string", "reviewed destination via station proxy", "snapshot", "DERIVED_MULTI_SOURCE", "derived", "worst of high/moderate/low component links", "weather data quality", "Comparability class, not accuracy"),
-        ("weather_causal_covariate_approved", "destination_month_panel", "Whether the regional weather proxy has passed all causal-use validation gates", "boolean", "boolean", "reviewed destination via station proxy", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "always false at this checkpoint", "quality gate", "Station choice and gridded-data sensitivity remain pending"),
+        ("weather_causal_covariate_approved", "destination_month_panel", "Whether the regional weather proxy has passed all causal-use validation gates", "boolean", "boolean", "reviewed destination via station proxy", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "always false at this checkpoint", "quality gate", "Next-nearest station and TabsM/RhiresM gridded-product sensitivities are complete, but the grids share station inputs and no piste or causal validation is established"),
         ("assumed_active_component_count", "destination_month_panel", "Diagnostic count of entered components carried forward until a documented exit", "count", "integer", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "cumulative documented component entries with documented exit override", "treatment intensity candidate", "Continuity is an unverified assumption"),
         ("event_time_months", "destination_month_panel", "Months relative to the first analytical membership anchor", "months", "integer", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "calendar month difference from first_analysis_anchor", "event-time index", "Not sufficient for causal event-study identification"),
         ("causal_ready", "destination_month_panel", "Whether the destination-month row passes all causal evidence gates", "boolean", "boolean", "reviewed destination", "monthly", "DERIVED_REVIEWED_DESTINATION_PANEL", "derived", "always false at this checkpoint", "quality gate", "Treatment intensity, confounding, spillovers, and controls remain unresolved"),
@@ -1986,6 +2090,10 @@ def main() -> None:
         "weather_station_alternative_sensitivity": ROOT / "reports/weather_station_alternative_sensitivity.csv",
         "destination_weather_alternative_sensitivity": ROOT / "data_processed/destination_weather_alternative_sensitivity.csv",
         "weather_destination_alternative_summary": ROOT / "reports/weather_destination_alternative_summary.csv",
+        "meteoswiss_gridded_component_month": ROOT / "data_processed/meteoswiss_gridded_component_month.csv",
+        "weather_gridded_component_comparison": ROOT / "reports/weather_gridded_component_comparison.csv",
+        "destination_weather_gridded_sensitivity": ROOT / "data_processed/destination_weather_gridded_sensitivity.csv",
+        "weather_gridded_destination_summary": ROOT / "reports/weather_gridded_destination_summary.csv",
         "public_transport_journey_nodes": ROOT / "reports/public_transport_journey_nodes.csv",
         "treatment_municipality_public_transport_journey_samples": ROOT / "data_processed/treatment_municipality_public_transport_journey_samples.csv",
         "treatment_municipality_public_transport_journey_context": ROOT / "data_processed/treatment_municipality_public_transport_journey_context.csv",
@@ -2030,6 +2138,10 @@ def main() -> None:
         "weather_station_alternative_sensitivity": "DERIVED_WEATHER_STATION_SENSITIVITY",
         "destination_weather_alternative_sensitivity": "DERIVED_WEATHER_STATION_SENSITIVITY",
         "weather_destination_alternative_summary": "DERIVED_WEATHER_STATION_SENSITIVITY",
+        "meteoswiss_gridded_component_month": "DERIVED_WEATHER_GRIDDED_SENSITIVITY",
+        "weather_gridded_component_comparison": "DERIVED_WEATHER_GRIDDED_SENSITIVITY",
+        "destination_weather_gridded_sensitivity": "DERIVED_WEATHER_GRIDDED_SENSITIVITY",
+        "weather_gridded_destination_summary": "DERIVED_WEATHER_GRIDDED_SENSITIVITY",
         "public_transport_journey_nodes": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_samples": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_context": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
@@ -2148,6 +2260,14 @@ def main() -> None:
         "precipitation_anomaly_difference_alternative_minus_primary_mm": "Alternative minus primary destination monthly precipitation anomaly",
         "weather_station_sensitivity_interpretation": "Guardrail stating that next-nearest station sensitivity is not piste, gridded or causal validation",
         "weather_station_sensitivity_causal_covariate_approved": "Whether the weather proxy passes causal-covariate validation after this sensitivity; always false",
+        "grid_cell_id": "Stable identifier constructed from the nearest common valid MeteoSwiss 1 km LV95 cell centre",
+        "grid_cell_distance_to_component_m": "Planar LV95 distance from the supplied resort component point to the selected climate-grid cell centre",
+        "gridded_weather_month_complete": "Whether both TabsM temperature and RhiresM precipitation are observed for the component-cell month",
+        "complete_gridded_weather_proxy": "Whether every unique component grid cell expected for the destination is complete in the month",
+        "both_station_and_grid_weather_complete": "Whether both the primary station and gridded destination weather proxies are complete in the month",
+        "gridded_weather_sensitivity_agreement": "Descriptive high/moderate/low station-grid anomaly agreement category under predeclared thresholds",
+        "gridded_weather_sensitivity_interpretation": "Guardrail stating that the monthly grid sensitivity is not an independent measurement network, piste microclimate or causal validation",
+        "gridded_weather_causal_covariate_approved": "Whether the gridded-weather proxy passes causal-covariate validation; always false",
         "segment_id": "Stable label of the selected current structural k-means segment",
         "descriptive_profile": "Relative altitude, ski-area and lift-count description of the segment",
         "distance_to_segment_centroid": "Euclidean distance to the assigned centroid in three standardised structural features",
@@ -2548,6 +2668,14 @@ def main() -> None:
             return "0-100 empirical score"
         if variable.endswith("_km"):
             return "kilometres"
+        if variable.endswith("_mm") or "_mm_" in variable:
+            return "millimetres"
+        if variable.endswith("_c") or "_c_" in variable:
+            return "degrees Celsius"
+        if "correlation" in variable:
+            return "correlation coefficient"
+        if variable.endswith("distance_to_component_m"):
+            return "metres"
         if "distance" in variable:
             return "standardised Euclidean distance"
         if variable.endswith("_count") or "_count_" in variable or variable.endswith("_clusters"):
@@ -2591,6 +2719,10 @@ def main() -> None:
         "weather_station_alternative_sensitivity": "reviewed resort component and primary/alternative station pair",
         "destination_weather_alternative_sensitivity": "reviewed destination by month",
         "weather_destination_alternative_summary": "reviewed destination",
+        "meteoswiss_gridded_component_month": "reviewed resort component / 1 km MeteoSwiss grid cell",
+        "weather_gridded_component_comparison": "reviewed resort component, selected station and 1 km grid cell",
+        "destination_weather_gridded_sensitivity": "reviewed destination by month",
+        "weather_gridded_destination_summary": "reviewed destination",
         "public_transport_journey_nodes": "hotel municipality or reviewed destination component",
         "treatment_municipality_public_transport_journey_samples": "reviewed destination by hotel municipality and scheduled request",
         "treatment_municipality_public_transport_journey_context": "reviewed destination by hotel municipality",
@@ -2630,6 +2762,10 @@ def main() -> None:
         "weather_station_alternative_sensitivity": "common complete months from 2013-01 through 2026-03",
         "destination_weather_alternative_sensitivity": "monthly 2013-01 through 2026-03",
         "weather_destination_alternative_summary": "common complete months from 2013-01 through 2026-03",
+        "meteoswiss_gridded_component_month": "monthly 2013-01 through 2026-03",
+        "weather_gridded_component_comparison": "common complete months from 2013-01 through 2026-03",
+        "destination_weather_gridded_sensitivity": "monthly 2013-01 through 2026-03",
+        "weather_gridded_destination_summary": "common complete months from 2013-01 through 2026-03",
         "public_transport_journey_nodes": "winter-2026 GTFS node-selection reference",
         "treatment_municipality_public_transport_journey_samples": "2026-02-04 and 2026-02-07 scheduled requests",
         "treatment_municipality_public_transport_journey_context": "winter-2026 weekday/Saturday scheduled summary",
@@ -2691,6 +2827,12 @@ def main() -> None:
                 "weather_station_alternative_sensitivity",
                 "destination_weather_alternative_sensitivity",
                 "weather_destination_alternative_summary",
+            }
+            weather_gridded_table = table in {
+                "meteoswiss_gridded_component_month",
+                "weather_gridded_component_comparison",
+                "destination_weather_gridded_sensitivity",
+                "weather_gridded_destination_summary",
             }
             journey_table = table in {
                 "public_transport_journey_nodes",
@@ -2864,6 +3006,8 @@ def main() -> None:
                 if competing_variable
                 else "qualified cluster-geography and network-distance sensitivity"
                 if geography_sensitivity_variable
+                else "qualified regional-weather gridded-product sensitivity"
+                if weather_gridded_table
                 else "qualified regional-weather alternative-station sensitivity"
                 if weather_sensitivity_table
                 else "qualified current ski-cluster and reviewed pass-network context"
@@ -2911,6 +3055,9 @@ def main() -> None:
                 "See config/path_c_analysis.json and src/data_processing/build_path_c_cluster_geography_sensitivity.py"
                 if geography_sensitivity_variable
                 else
+                "See config/path_c_analysis.json, config/meteoswiss_gridded_weather_files.json and src/data_processing/build_weather_gridded_sensitivity.py"
+                if weather_gridded_table
+                else
                 "See config/path_c_analysis.json, config/meteoswiss_weather_sensitivity_station_files.json and src/data_processing/build_weather_station_sensitivity.py"
                 if weather_sensitivity_table
                 else
@@ -2956,6 +3103,9 @@ def main() -> None:
                 "No causal interpretation; listing-point spread and distance-rule sensitivity do not certify commercial-domain coherence, historical market structure, travel impedance or skier substitution"
                 if geography_sensitivity_variable
                 else
+                "No causal interpretation; TabsM/RhiresM are station-informed grids rather than an independent measurement network, piste microclimate, snow-phase observation or causal-confounder validation"
+                if weather_gridded_table
+                else
                 "No causal interpretation; next-nearest SwissMetNet sensitivity is not independent gridded validation, piste microclimate, snowfall phase or causal-confounder approval"
                 if weather_sensitivity_table
                 else
@@ -2992,6 +3142,8 @@ def main() -> None:
                 if competing_variable
                 else "DERIVED_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY"
                 if geography_sensitivity_variable
+                else "DERIVED_WEATHER_GRIDDED_SENSITIVITY"
+                if weather_gridded_table
                 else "DERIVED_WEATHER_STATION_SENSITIVITY"
                 if weather_sensitivity_table
                 else "DERIVED_PATH_C_NETWORK_CONTEXT"

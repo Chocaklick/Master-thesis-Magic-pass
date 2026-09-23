@@ -18,6 +18,7 @@ audit = [
     "shapely>=2,<3",
     "pyproj>=3.6,<4",
     "pyogrio>=0.10,<1",
+    "netCDF4>=1.7,<2",
     "matplotlib>=3.8,<4",
     "beautifulsoup4>=4.12,<5",
     "pypdf>=5,<7",

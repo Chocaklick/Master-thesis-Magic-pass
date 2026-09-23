@@ -1,0 +1,307 @@
+[
+  {
+    "source_id": "METEOSWISS_SURFACE_GRID_COLLECTION_STAC",
+    "url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.meteoschweiz.ogd-surface-derived-grid",
+    "suffix": "json",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official STAC collection for MeteoSwiss spatial climate analyses"
+  },
+  {
+    "source_id": "METEOSWISS_SURFACE_GRID_ARCHIVE_STAC",
+    "url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.meteoschweiz.ogd-surface-derived-grid/items/archive-ch",
+    "suffix": "json",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official STAC archive item enumerating annual gridded climate assets and multihash checksums"
+  },
+  {
+    "source_id": "METEOSWISS_TABSM_DOCUMENTATION",
+    "url": "https://www.meteoswiss.admin.ch/dam/jcr%3A33e26211-9937-4f80-80a3-09cfe54663bc/ProdDoc_TabsM.pdf",
+    "suffix": "pdf",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official product documentation for monthly and yearly gridded temperature TabsM and TabsY"
+  },
+  {
+    "source_id": "METEOSWISS_RHIRESM_DOCUMENTATION",
+    "url": "https://www.meteoswiss.admin.ch/dam/jcr%3Ad4f53a4a-d7f4-4e1e-a594-8ff4bfd1aca5/ProdDoc_RhiresM.pdf",
+    "suffix": "pdf",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official product documentation for monthly and yearly gridded precipitation RhiresM and RhiresY"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_2013",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.rhiresm_ch01r.swiss.lv95_20130101000000_20131201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 2013",
+    "expected_sha256": "5ce0c5fbab62b294195cc463d3e111b9090f5e1c1b0f4a206f8d313d2320cca0"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_2013",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.tabsm_ch01r.swiss.lv95_20130101000000_20131201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 2013",
+    "expected_sha256": "ba431974f69ff571e7eada55330f54607b9d275e7eb6ff79f87940b4f9b9b23c"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_2014",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.rhiresm_ch01r.swiss.lv95_20140101000000_20141201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 2014",
+    "expected_sha256": "b2b23c1ba63898903f64247a3b9315cbc06a25f79e9a8d704044e692f143e221"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_2014",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.tabsm_ch01r.swiss.lv95_20140101000000_20141201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 2014",
+    "expected_sha256": "4424c3ea2ec0696a3830a736ffdfd06493aaf9cd8d7773b86d8b4e07fbcbd839"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_2015",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.rhiresm_ch01r.swiss.lv95_20150101000000_20151201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 2015",
+    "expected_sha256": "91256d9e757b2a55396f9f43e85defae46e05e4cabc79b3b4bd23fe0454e7fc3"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_2015",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.tabsm_ch01r.swiss.lv95_20150101000000_20151201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 2015",
+    "expected_sha256": "be80726538362e25b3cdc7dc40ceae0aade560ce018f50cc46dae18e2c01f598"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_2016",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.rhiresm_ch01r.swiss.lv95_20160101000000_20161201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 2016",
+    "expected_sha256": "d1a6f0177fbc79cd40203fcd73a14810196b6e6aabc6f81549e79ed97cb501d1"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_2016",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.tabsm_ch01r.swiss.lv95_20160101000000_20161201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 2016",
+    "expected_sha256": "921f599498ae84c909fd24d33e91516fd395a0a5bf597f4c26070f4580904ca6"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_2017",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.rhiresm_ch01r.swiss.lv95_20170101000000_20171201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 2017",
+    "expected_sha256": "2a63afa33584f7242a0c5c8a60f8c4e769acfb98c639b2c9ab03091dddb1c658"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_2017",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.tabsm_ch01r.swiss.lv95_20170101000000_20171201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 2017",
+    "expected_sha256": "e6d623eb45c208714546c228c50d471ca2065b83e3dc179fe106a459204c192f"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_2018",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.rhiresm_ch01r.swiss.lv95_20180101000000_20181201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 2018",
+    "expected_sha256": "d3968182c05b4fb11dc394c904ede075eb71de8d8fe0a4a96b9f03972d1d873c"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_2018",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.tabsm_ch01r.swiss.lv95_20180101000000_20181201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 2018",
+    "expected_sha256": "92de2907f267fd1f99979650bce3e5a095502031e5fb31ed6047d02fc9472037"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_2019",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.rhiresm_ch01r.swiss.lv95_20190101000000_20191201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 2019",
+    "expected_sha256": "feaa4866a43b3921e1ceb659f8c7d03cb9354872ab64cb7f6bcb3727730865dd"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_2019",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.tabsm_ch01r.swiss.lv95_20190101000000_20191201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 2019",
+    "expected_sha256": "32c6da038194a89f32ed5e49f2176d7dd6fb81e65eb39bd3a695d7759e978031"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_2020",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.rhiresm_ch01r.swiss.lv95_20200101000000_20201201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 2020",
+    "expected_sha256": "a99d2e834dded04fd915a0b74a8c5e3edc046e73fffef96ab3b4dcfddb491f0a"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_2020",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.tabsm_ch01r.swiss.lv95_20200101000000_20201201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 2020",
+    "expected_sha256": "d3ffa4dd06f22ee5bca148f759b68fefdb430d004b732caaf8f040c7989b9b70"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_2021",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.rhiresm_ch01r.swiss.lv95_20210101000000_20211201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 2021",
+    "expected_sha256": "6a300330883f61041a4392cba701f1834b8ddcdb709cce4b2e162713164e6dc0"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_2021",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.tabsm_ch01r.swiss.lv95_20210101000000_20211201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 2021",
+    "expected_sha256": "b09225c672d5d632ef3df366fc7d361d9d7648760e9f34af6332f162bf8af5ed"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_2022",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.rhiresm_ch01r.swiss.lv95_20220101000000_20221201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 2022",
+    "expected_sha256": "3e15f8555317ee686aa208054fdcfd10808a96ca1ca9ad52543b56fb816dc86b"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_2022",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.tabsm_ch01r.swiss.lv95_20220101000000_20221201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 2022",
+    "expected_sha256": "b2fe2af9c619bf20db0a367aa01c65f305dee1c92952cd9bceca6a1cc25e0b2e"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_2023",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.rhiresm_ch01r.swiss.lv95_20230101000000_20231201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 2023",
+    "expected_sha256": "f6cde5f5ecd7eb91c58f880b51a1910782beffaea778d900954b5b48b652bebf"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_2023",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.tabsm_ch01r.swiss.lv95_20230101000000_20231201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 2023",
+    "expected_sha256": "4cd68a9e0114fc2aea26dafbef69114a17e443f756e920c0b0658e2544e30b77"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_2024",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.rhiresm_ch01r.swiss.lv95_20240101000000_20241201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 2024",
+    "expected_sha256": "a266cb2f3fb4de0c9483ef137cbe42536d3dfc97e90407f342e50d7fc8d42474"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_2024",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.tabsm_ch01r.swiss.lv95_20240101000000_20241201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 2024",
+    "expected_sha256": "6452e54480ad8e7be75502b9e180eead24b86dc5879154edf66708742c7a7514"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_2025",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.rhiresm_ch01r.swiss.lv95_20250101000000_20251201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 2025",
+    "expected_sha256": "d192a8bb5c977044cc2e47c49061d85c51761f4eefaa1f2607e34623e1a67593"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_2025",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/archive-ch/ogd-surface-derived-grid-archive.tabsm_ch01r.swiss.lv95_20250101000000_20251201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 2025",
+    "expected_sha256": "071528f3bae9920f32bb681d754a00128217ac98e49088100f65b004db31b908"
+  },
+  {
+    "source_id": "METEOSWISS_SURFACE_GRID_202601_STAC",
+    "url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.meteoschweiz.ogd-surface-derived-grid/items/202601-ch",
+    "suffix": "json",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official STAC item for monthly spatial climate analyses 202601"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_202601",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/202601-ch/ogd-surface-derived-grid-last.rhiresm_ch01r.swiss.lv95_20260101000000_20260101000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 202601",
+    "expected_sha256": "7e1f4563b666add7365a3e46a56a1395cdf4bcf6a4d05e78642e0272a79180fb"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_202601",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/202601-ch/ogd-surface-derived-grid-last.tabsm_ch01r.swiss.lv95_20260101000000_20260101000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 202601",
+    "expected_sha256": "38e32a1fe070947a6fddf6b6d7d1767919a9b63235f2d4845977413c6e938592"
+  },
+  {
+    "source_id": "METEOSWISS_SURFACE_GRID_202602_STAC",
+    "url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.meteoschweiz.ogd-surface-derived-grid/items/202602-ch",
+    "suffix": "json",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official STAC item for monthly spatial climate analyses 202602"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_202602",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/202602-ch/ogd-surface-derived-grid-last.rhiresm_ch01r.swiss.lv95_20260201000000_20260201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 202602",
+    "expected_sha256": "2ee08b593bd72a221cba3f0c9f9c0c8ef979c1eaa408ba555098d2d475aaba1c"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_202602",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/202602-ch/ogd-surface-derived-grid-last.tabsm_ch01r.swiss.lv95_20260201000000_20260201000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 202602",
+    "expected_sha256": "cbb5e8697f3b7fcd837a498c04627f84307e07275b9d1f0752c14d1d02ca5284"
+  },
+  {
+    "source_id": "METEOSWISS_SURFACE_GRID_202603_STAC",
+    "url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.meteoschweiz.ogd-surface-derived-grid/items/202603-ch",
+    "suffix": "json",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official STAC item for monthly spatial climate analyses 202603"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_RHIRESM_202603",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/202603-ch/ogd-surface-derived-grid-last.rhiresm_ch01r.swiss.lv95_20260301000000_20260301000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly precipitation grid RhiresM for 202603",
+    "expected_sha256": "c987a2e00220859d4d1f9f565ea3befb17d8dbdd883d6c2026b314af3a356cd0"
+  },
+  {
+    "source_id": "METEOSWISS_GRID_TABSM_202603",
+    "url": "https://data.geo.admin.ch/ch.meteoschweiz.ogd-surface-derived-grid/202603-ch/ogd-surface-derived-grid-last.tabsm_ch01r.swiss.lv95_20260301000000_20260301000000.nc",
+    "suffix": "nc",
+    "organisation": "Federal Office of Meteorology and Climatology MeteoSwiss",
+    "description": "Official 1 km Swiss LV95 monthly mean temperature grid TabsM for 202603",
+    "expected_sha256": "ed60d0ad3d0100d82fb8eb7cfed01d7b775579391b9fa80121c77c44acf6ca8a"
+  }
+]

@@ -674,6 +674,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current boundaries, representative points and adjacent windows do not identify exposure or causal effects; travel time and hotel coordinates unavailable
 - **Local raw file:** `not cached / not applicable`.
 
+## DERIVED_WEATHER_GRIDDED_SENSITIVITY — Regional-weather gridded-product sensitivity
+
+- **Contents and relevance:** SwissMetNet station versus MeteoSwiss TabsM/RhiresM monthly gridded sensitivity for reviewed components and destinations
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic Python NetCDF extraction, monthly anomaly construction and station-grid comparison; unknown date.
+- **Variables:** gridded_component_month|station_grid_anomaly_agreement|gridded_destination_month
+- **Transformations:** Select nearest common valid grid cell; calculate cell/calendar-month 2013-2025 anomalies; aggregate unique cells by destination; compare against station anomalies on common complete months
+- **Coverage:** reviewed resort component grid cell and reviewed destination; monthly 2013-01 through 2026-03 plus component/destination summary; 2013-01-01 to 2026-03-01.
+- **Limitations:** Gridded method sensitivity, not an independent measurement network, piste microclimate, snow-phase measure or causal validation
+- **Local raw file:** `config/meteoswiss_gridded_weather_files.json|config/path_c_analysis.json`.
+
 ## DERIVED_WEATHER_STATION_SENSITIVITY — SwissMetNet regional weather alternative-station sensitivity
 
 - **Contents and relevance:** Selected-versus-next-nearest eligible SwissMetNet station sensitivity for reviewed components and destinations
@@ -1381,6 +1393,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** point station; retrieval snapshot; ? to 2026.
 - **Limitations:** Official metadata snapshot; source catalogue can be updated after retrieval
 - **Local raw file:** `data_external/source_evidence/METEOSWISS_SMN_STATIONS_20260920T091432Z.csv`.
+
+## METEOSWISS_SPATIAL_CLIMATE_ANALYSIS_DOCUMENTATION — TabsM and RhiresM product documentation plus surface-derived-grid STAC metadata
+
+- **Contents and relevance:** Official product documentation and STAC discovery metadata for MeteoSwiss monthly spatial climate analyses
+- **Producer:** Federal Office of Meteorology and Climatology MeteoSwiss
+- **Exact URL:** https://www.meteoswiss.admin.ch/services-and-publications/service/open-data.html
+- **Access and retrieval date:** HTTP GET with immutable responses and SHA-256 sidecars; 2026-09-23T23:20:07.480806+00:00.
+- **Variables:** TabsM_method|RhiresM_method|grid_spacing|accuracy_limits
+- **Transformations:** Product definitions, methods, versions, grid and limitations transcribed into guarded analytical interpretation
+- **Coverage:** Swiss spatial climate analysis grid; product-method documentation and retrieval-time catalogue snapshots; ? to ?.
+- **Limitations:** RhiresM documentation notes high-elevation/winter undercatch and effective resolution coarser than 1 km; TabsM omits some local land/lake effects
+- **Local raw file:** `data_external/source_evidence/METEOSWISS_*GRID*STAC_*.json|data_external/source_evidence/METEOSWISS_*DOCUMENTATION_*.pdf`.
+
+## METEOSWISS_TABSM_RHIRESM_MONTHLY_GRID_2013_202603 — Spatial Climate Analyses — TabsM v1.4 and RhiresM v2.0
+
+- **Contents and relevance:** Official 1 km LV95 monthly mean-temperature and precipitation spatial analyses for 2013-01 through 2026-03
+- **Producer:** Federal Office of Meteorology and Climatology MeteoSwiss
+- **Exact URL:** https://data.geo.admin.ch/browser/index.html#/collections/ch.meteoschweiz.ogd-surface-derived-grid
+- **Access and retrieval date:** HTTP GET of 26 annual and six current-month NetCDF assets; every SHA-256 matched to the official STAC multihash; 2026-09-23T23:20:07.480806+00:00.
+- **Variables:** TabsM|RhiresM
+- **Transformations:** Nearest cell valid for both products at each reviewed component; cell/calendar-month 2013-2025 analytical normals; unique-cell destination mean; no imputation
+- **Coverage:** regular 1 km cell centres in MeteoSwiss ch01r.swiss.lv95 grid; direct monthly spatial analysis; 2013-01-01 to 2026-03-01.
+- **Limitations:** Station-informed grids rather than an independent measurement network; 1 km spacing exceeds effective precipitation resolution; high-elevation winter precipitation undercatch and Alpine interpolation uncertainty remain
+- **Local raw file:** `data_external/source_evidence/METEOSWISS_GRID_*.nc`.
 
 ## NIEDERHORN_MAGIC_SCOPE_OFFICIAL — Official destination or municipal scope page
 

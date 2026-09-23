@@ -172,6 +172,60 @@ def test_meteoswiss_alternative_station_sensitivity_preserves_monthly_grain() ->
     ).any()
 
 
+def test_meteoswiss_gridded_weather_sensitivity_preserves_monthly_grain() -> None:
+    component_month = read("data_processed/meteoswiss_gridded_component_month.csv")
+    component = read("reports/weather_gridded_component_comparison.csv")
+    destination = read("data_processed/destination_weather_gridded_sensitivity.csv")
+    destination_summary = read("reports/weather_gridded_destination_summary.csv")
+
+    assert len(component_month) == 15 * 159
+    assert not component_month.duplicated(["resort_id", "date"]).any()
+    assert component_month["grid_cell_id"].nunique() == 15
+    assert int(as_bool(component_month["gridded_weather_month_complete"]).sum()) == 15 * 159
+    assert component_month["grid_cell_distance_to_component_m"].max() < 1_000
+    assert component_month["grid_normal_years_temperature"].eq(13).all()
+    assert component_month["grid_normal_years_precipitation"].eq(13).all()
+    assert not as_bool(
+        component_month["gridded_weather_causal_covariate_approved"]
+    ).any()
+
+    assert len(component) == 15
+    assert component["resort_id"].is_unique
+    assert component["common_complete_months"].ge(158).all()
+    assert component["gridded_weather_sensitivity_agreement"].value_counts().to_dict() == {
+        "high": 12,
+        "low": 2,
+        "moderate": 1,
+    }
+    assert set(
+        component.loc[
+            component["gridded_weather_sensitivity_agreement"].eq("low"),
+            "resort_id",
+        ]
+    ) == {"axalp_brienz", "meiringen_hasliberg"}
+    assert component["temperature_anomaly_correlation_station_grid"].between(-1, 1).all()
+    assert component["precipitation_anomaly_correlation_station_grid"].between(-1, 1).all()
+    assert not as_bool(
+        component["gridded_weather_causal_covariate_approved"]
+    ).any()
+
+    assert len(destination) == 11 * 159
+    assert not destination.duplicated(["destination_unit_id", "date"]).any()
+    assert int(as_bool(destination["both_station_and_grid_weather_complete"]).sum()) == 1_744
+    assert len(destination_summary) == 11
+    assert destination_summary["gridded_weather_sensitivity_agreement"].value_counts().to_dict() == {
+        "high": 8,
+        "low": 2,
+        "moderate": 1,
+    }
+    assert not as_bool(
+        destination["gridded_weather_causal_covariate_approved"]
+    ).any()
+    assert not as_bool(
+        destination_summary["gridded_weather_causal_covariate_approved"]
+    ).any()
+
+
 def test_magic_evidence_is_not_silently_promoted_to_treatment() -> None:
     history = read("data_processed/magic_pass_membership_history.csv", dtype=str)
     assert len(history) == 93
@@ -1315,7 +1369,7 @@ def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> N
         "partial_cluster_listing_links": 6,
     }
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_16").all()
+    assert decision["analysis_version"].eq("path_c_v0_17").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1396,7 +1450,7 @@ def test_path_c_network_context_excludes_focal_cluster_and_preserves_pair_grain(
     assert not as_bool(context["network_context_feature_approved"]).any()
     assert not as_bool(pairs["network_context_feature_approved"]).any()
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_16").all()
+    assert decision["analysis_version"].eq("path_c_v0_17").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1475,7 +1529,7 @@ def test_path_c_cluster_geography_sensitivity_preserves_clusters_and_bounds_rule
     assert not as_bool(context["cluster_geographic_coherence_verified"]).any()
     assert not as_bool(context["network_distance_sensitivity_feature_approved"]).any()
     assert not as_bool(pairs["network_distance_sensitivity_feature_approved"]).any()
-    assert decision["analysis_version"].eq("path_c_v0_16").all()
+    assert decision["analysis_version"].eq("path_c_v0_17").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()

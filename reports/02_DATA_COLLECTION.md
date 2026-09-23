@@ -2,7 +2,7 @@
 
 ## Collection scope
 
-Collection was initially limited to high-priority evidence needed for the treatment/outcome feasibility gates. After those gates were assessed, the project added the official HESTA hotel-capacity table, SLF snow history, targeted MeteoSwiss temperature/precipitation, STATPOP 2025 municipal population, Eurostat Census Grid 2021, ARE NPVM 2025 transport travel times, current OFT/BAV public-transport stops, and an official SKI/OFT winter-2026 GTFS Static timetable. Employment and commercial datasets remain deferred.
+Collection was initially limited to high-priority evidence needed for the treatment/outcome feasibility gates. After those gates were assessed, the project added the official HESTA hotel-capacity table, SLF snow history, targeted MeteoSwiss temperature/precipitation, official MeteoSwiss TabsM/RhiresM 1 km monthly grids, STATPOP 2025 municipal population, Eurostat Census Grid 2021, ARE NPVM 2025 transport travel times, current OFT/BAV public-transport stops, and an official SKI/OFT winter-2026 GTFS Static timetable. Employment and commercial datasets remain deferred.
 
 ## Completed official collections
 
@@ -22,11 +22,12 @@ Collection was initially limited to high-priority evidence needed for the treatm
 | Kronberg operator archives | Official 2017 and 2023 annual reports cached | Contemporaneous investment, product mix, winter sensitivity and local tourism-shock review for Gonten |
 | SLF IMIS documentation, stations and daily snow | Cached successfully | Daily mountain-station snow-depth history and auditable station-proxy construction |
 | MeteoSwiss SwissMetNet metadata and selected daily station files | Six metadata snapshots plus 14 historical/recent station files cached successfully | Daily temperature and precipitation, coverage-qualified monthly anomalies, and auditable regional station proxies |
+| MeteoSwiss TabsM/RhiresM monthly grids | 32 checksum-verified annual/recent NetCDF assets, collection metadata and both official product documents cached successfully | Official 1 km monthly temperature/precipitation sensitivity for every reviewed component, 2013-01 through 2026-03 |
 | ARE NPVM transport travel times | Checksum-verified 32.8 MB GeoPackage, STAC item and methodology page cached | 7,978 traffic-zone values for road/public transport to major centres and agglomerations, reference date 2025-06-30 |
 | OFT/BAV public-transport stops | Checksum-verified 2.8 MB French EPSG:2056 CSV archive, STAC item and official model documentation cached | 27,325 official passenger stops after excluding pure operating points; 1,717 stops carry train mode code `B` |
 | SKI/OFT GTFS Static timetable | Checksum-verified 195.9 MB build `20260207`, valid 2025-12-14 through 2026-12-12 | Scheduled weekday/Saturday routing from 186 municipality origin stops to 15 reviewed destination component nodes |
 
-Every successful response has a SHA-256 metadata sidecar under the ignored immutable evidence cache. Requests, statuses, files, and failures are recorded in `logs/data_collection_log.csv`. Configuration is versioned in `config/evidence_sources.json`, `config/eurostat_census_grid_2021.json`, `config/meteoswiss_selected_station_files.json`, and `config/municipality_queries.json`.
+Every successful response has a SHA-256 metadata sidecar under the ignored immutable evidence cache. Requests, statuses, files, and failures are recorded in `logs/data_collection_log.csv`. Configuration is versioned in `config/evidence_sources.json`, `config/eurostat_census_grid_2021.json`, `config/meteoswiss_selected_station_files.json`, `config/meteoswiss_gridded_weather_files.json`, and `config/municipality_queries.json`.
 
 ## Derived evidence tables
 
@@ -43,6 +44,8 @@ The annual-offering review rendered seven dated launch lists/maps and transcribe
 - `data_processed/meteoswiss_station_month.csv`: 1,113 station-month rows for seven selected stations; 1,111 pass the joint temperature/precipitation coverage gate.
 - `data_processed/resort_weather_station_crosswalk.csv`: 15 reviewed component resorts linked to the nearest of 112 current inventory-eligible SwissMetNet stations, with distance, elevation gap and non-piste representation flags.
 - `data_processed/destination_weather_month.csv`: 1,749 reviewed destination-month weather rows through 2026-03; 1,744 pass the complete station-month coverage gate.
+- `data_processed/meteoswiss_gridded_component_month.csv`: 2,385 complete reviewed component-month observations from the official TabsM/RhiresM grid, with grid-cell coordinates, source hashes, 2013–2025 normals and anomalies.
+- `data_processed/destination_weather_gridded_sensitivity.csv`: 1,749 destination-month grid estimates aligned to the station panel; 1,744 have a complete station–grid comparison and none is approved as a causal covariate.
 - `data_processed/treatment_municipality_distance_exposure.csv`: 2,046 same-destination distance rows for 11 reviewed destinations and 186 hotel municipality series, using 185 current polygons and an explicit Moutier boundary-version bridge.
 - `data_processed/donor_shortlist_final_audit.csv`: all 35 shortlisted pairs with network-distance priority and the seven beyond-50-km pairs joined to page-referenced competing-pass/local-shock evidence.
 - `data_processed/municipality_tourism_context_2025.csv`: STATPOP population plus complete-year HESTA hotel nights/supply and per-resident ratios, with no imputation.
@@ -68,6 +71,7 @@ The annual-offering review rendered seven dated launch lists/maps and transcribe
 - The exact upstream version and download URL of `bahnen-winter_2056.gpkg` remain unknown.
 - SLF IMIS stations support avalanche monitoring and are not direct observations of resort pistes; the 60 low-comparability resort links remain visible and are not feature-ready.
 - SwissMetNet stations are regional weather proxies rather than piste measurements. EVO 2016-07 and INT 2013-08 fail the 80% precipitation coverage gate and remain missing; the daily precipitation window is 06:00 UTC to 06:00 UTC the following day.
+- TabsM and RhiresM are official spatial analyses derived from MeteoSwiss station observations rather than an independent measurement network. Their 1 km grid spacing is not effective 1 km precipitation resolution, high-altitude interpolation remains uncertain, and precipitation undercatch is material in winter. Axalp and Meiringen-Hasliberg have low station-versus-grid temperature agreement and therefore expose rather than resolve their valley-station representativeness problem.
 - The official 2023/24 graubündenCARD operator/transport PDF remains visible in the publisher's search index but returned HTTP 404 during reproducible collection. The audit therefore records exact Splügen-Tambo participation in 2022/23 and leaves anchor-season continuity unresolved.
 - NPVM zone polygons do not continuously cover high-alpine terrain. Ninety-eight Swiss listing points therefore use the nearest zone that intersects their independently resolved current municipality; assignment distance is retained (maximum 3.64 km), and the values remain qualified model context rather than live routing.
 - The OFT/BAV source includes selected foreign operating points but is not a complete French stop universe, so the three French listing points are left missing. All-mode passenger stops include cableways and chairlifts, and straight-line point distance does not measure routes, timetables, frequency, seasonal operation or validated resort arrival access.

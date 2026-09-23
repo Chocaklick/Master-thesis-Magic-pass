@@ -58,6 +58,9 @@ WEATHER_SUMMARY = ROOT / "reports" / "weather_proxy_summary.json"
 WEATHER_SENSITIVITY_SUMMARY = (
     ROOT / "reports" / "weather_station_sensitivity_summary.json"
 )
+WEATHER_GRIDDED_SENSITIVITY_SUMMARY = (
+    ROOT / "reports" / "weather_gridded_sensitivity_summary.json"
+)
 TEMPORAL_SUMMARY = ROOT / "reports" / "temporal_controls_summary.json"
 CLUSTERS = ROOT / "data_raw" / "stations_ski_clusters_resume_gps_bergfex.csv"
 WINDOW_OUTPUT = ROOT / "reports" / "provisional_treatment_window_coverage.csv"
@@ -140,6 +143,9 @@ def main() -> None:
     weather_summary = json.loads(WEATHER_SUMMARY.read_text(encoding="utf-8"))
     weather_sensitivity_summary = json.loads(
         WEATHER_SENSITIVITY_SUMMARY.read_text(encoding="utf-8")
+    )
+    weather_gridded_sensitivity_summary = json.loads(
+        WEATHER_GRIDDED_SENSITIVITY_SUMMARY.read_text(encoding="utf-8")
     )
     temporal_summary = json.loads(TEMPORAL_SUMMARY.read_text(encoding="utf-8"))
     clusters = pd.read_csv(CLUSTERS, sep=";", dtype="string")
@@ -417,6 +423,53 @@ def main() -> None:
         ),
         "weather_destination_median_precipitation_anomaly_correlation": float(
             weather_sensitivity_summary[
+                "median_destination_precipitation_anomaly_correlation"
+            ]
+        ),
+        "weather_gridded_assets": int(
+            weather_gridded_sensitivity_summary["configured_grid_assets"]
+        ),
+        "weather_gridded_component_month_rows": int(
+            weather_gridded_sensitivity_summary["component_month_rows"]
+        ),
+        "weather_gridded_component_months_complete": int(
+            weather_gridded_sensitivity_summary["component_months_complete"]
+        ),
+        "weather_gridded_component_high_or_moderate": int(
+            weather_gridded_sensitivity_summary["component_agreement_counts"].get(
+                "high", 0
+            )
+            + weather_gridded_sensitivity_summary["component_agreement_counts"].get(
+                "moderate", 0
+            )
+        ),
+        "weather_gridded_component_low": int(
+            weather_gridded_sensitivity_summary["component_agreement_counts"].get(
+                "low", 0
+            )
+        ),
+        "weather_gridded_component_median_temperature_anomaly_correlation": float(
+            weather_gridded_sensitivity_summary[
+                "median_component_temperature_anomaly_correlation"
+            ]
+        ),
+        "weather_gridded_component_median_precipitation_anomaly_correlation": float(
+            weather_gridded_sensitivity_summary[
+                "median_component_precipitation_anomaly_correlation"
+            ]
+        ),
+        "weather_gridded_destination_months_both_complete": int(
+            weather_gridded_sensitivity_summary[
+                "destination_months_both_station_and_grid_complete"
+            ]
+        ),
+        "weather_gridded_destination_median_temperature_anomaly_correlation": float(
+            weather_gridded_sensitivity_summary[
+                "median_destination_temperature_anomaly_correlation"
+            ]
+        ),
+        "weather_gridded_destination_median_precipitation_anomaly_correlation": float(
+            weather_gridded_sensitivity_summary[
                 "median_destination_precipitation_anomaly_correlation"
             ]
         ),
@@ -839,6 +892,8 @@ The reviewed panel contains **{metrics['reviewed_destination_months_complete_wea
 
 A next-nearest-eligible-station sensitivity now covers all **{metrics['weather_component_sensitivity_comparisons']} reviewed components** using **{metrics['alternative_weather_stations_used']} distinct alternative stations** and the same parameters, monthly coverage gate and station-specific normals. All **{metrics['weather_component_sensitivity_high_or_moderate']} components** receive high or moderate descriptive agreement and **{metrics['weather_component_sensitivity_low']}** receive low agreement. Median component anomaly correlation is **{metrics['weather_component_median_temperature_anomaly_correlation']:.3f} for temperature** and **{metrics['weather_component_median_precipitation_anomaly_correlation']:.3f} for precipitation**. Both destination-level proxies are complete for **{metrics['weather_destination_sensitivity_months_both_complete']:,} months**; median destination correlations are **{metrics['weather_destination_median_temperature_anomaly_correlation']:.3f}** and **{metrics['weather_destination_median_precipitation_anomaly_correlation']:.3f}**. This supports regional anomaly robustness but remains a same-network station sensitivity, not independent gridded or piste validation. See `reports/34_WEATHER_STATION_SENSITIVITY.md`; causal approval remains false.
 
+The official 1 km TabsM/RhiresM check adds **{metrics['weather_gridded_assets']} checksum-matched NetCDF assets** and **{metrics['weather_gridded_component_month_rows']:,} component-month rows**, all complete. Station-grid agreement is high or moderate for **{metrics['weather_gridded_component_high_or_moderate']} components** and low for **{metrics['weather_gridded_component_low']}** (Axalp and Meiringen-Hasliberg). Median component correlations are **{metrics['weather_gridded_component_median_temperature_anomaly_correlation']:.3f} for temperature** and **{metrics['weather_gridded_component_median_precipitation_anomaly_correlation']:.3f} for precipitation**. At destination level, both sources are complete for **{metrics['weather_gridded_destination_months_both_complete']:,} rows**, with median correlations of **{metrics['weather_gridded_destination_median_temperature_anomaly_correlation']:.3f}** and **{metrics['weather_gridded_destination_median_precipitation_anomaly_correlation']:.3f}**. This closes the gridded-product sensitivity gate for regional weather, but TabsM/RhiresM remain station-informed analyses rather than an independent measurement network or piste observation. See `reports/35_WEATHER_GRIDDED_SENSITIVITY.md`; causal approval remains false.
+
 ## Temporal controls
 
 A deterministic calendar table covers **{metrics['temporal_control_month_rows']} months** from January 2013 through December 2026 and joins to **{metrics['reviewed_destination_months_with_temporal_controls']:,} of {metrics['reviewed_destination_month_rows']:,} reviewed destination-month rows**. It records calendar month/quarter, winter and summer indicators, the December/January holiday peak, and the Gregorian Easter month.
@@ -935,7 +990,7 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 
 ## Next evidence gate
 
-For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; validate destination catchments for tourism dependence; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. Current competing-pass links, national-road-axis proximity, listing-point distance-rule sensitivity and next-nearest SwissMetNet weather sensitivity are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed structural aggregation, network-distance and regional-weather station sensitivities and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete independent gridded climate sensitivity before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; validate destination catchments for tourism dependence; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. Current competing-pass links, national-road-axis proximity, listing-point distance-rule sensitivity, next-nearest SwissMetNet weather sensitivity and the TabsM/RhiresM gridded-product sensitivity are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed structural aggregation, network-distance and regional-weather sensitivities and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Add an independent measurement/reanalysis sensitivity if climate fields are ever proposed for causal use, and retain the separate gridded-snow gate. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

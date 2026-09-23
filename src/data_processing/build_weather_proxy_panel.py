@@ -510,7 +510,7 @@ Generated reproducibly by `src/data_processing/build_weather_proxy_panel.py`.
 
 ## Source decision
 
-The project selected official MeteoSwiss SwissMetNet station files for the first temperature and precipitation control. SwissMetNet provides directly observed daily station values, official station coordinates/elevations, a parameter inventory and static historical/current-year CSV files. MeteoSwiss 1 km spatial climate analyses remain a future robustness option; ERA5-Land remains a coarser reanalysis fallback. The targeted seven-station download is materially smaller and fully traceable to the reviewed destination units.
+The project selected official MeteoSwiss SwissMetNet station files for the first temperature and precipitation control. SwissMetNet provides directly observed daily station values, official station coordinates/elevations, a parameter inventory and static historical/current-year CSV files. The separate v0.17 robustness module now compares this proxy with MeteoSwiss 1 km TabsM/RhiresM monthly spatial analyses; those grids are station-informed rather than an independent measurement network. ERA5-Land remains a coarser reanalysis fallback if a genuinely separate modelling system is required. The targeted seven-station download remains fully traceable to the reviewed destination units.
 
 The four daily parameters are:
 
