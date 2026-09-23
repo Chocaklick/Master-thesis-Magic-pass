@@ -95,6 +95,12 @@ Official current material was checksum-cached for **3 competing products** and *
 
 AlpsPass unlimited core access remains distinct from its three-free-ski-days partner benefit. A non-link means only that no explicit link was established in these three rosters; it does not prove absence from every competing product. The snapshots do not reconstruct competition at historical Magic Pass entry dates, so all absence-verification and causal-feature approval flags remain false. See `reports/31_COMPETING_PASS_CONTEXT.md`.
 
+## Current ski-cluster and reviewed pass-network context
+
+The complete **26,082-row ordered non-self pair table** measures great-circle distance among all 162 preserved directory-linked lift clusters. Across the 104 apparent candidates, the median number of other directory clusters is **8 within 25 km** and **26 within 50 km**. The resolved-current-Magic/reviewed-competing-pass union contains **73 clusters**; a candidate has a median **9 other reviewed-network clusters within 50 km**. **1 candidate** has no other directory cluster within 25 km and **2** have no other reviewed pass-network cluster within 50 km.
+
+Every count excludes the focal cluster. The supplied clusters are not validated independent commercial domains, multi-listing median coordinates can be artificial, straight-line distance ignores terrain and transport, published ski-area values are undated and can overlap, and the pass links are current rather than historical. These are therefore directory/network diagnostics rather than true competitor counts, market penetration, visitor flows or causal exposure. Historical and feature-approval flags remain false. See `reports/32_PATH_C_NETWORK_CONTEXT.md`.
+
 ## NPVM zone-proxy audit
 
 All **98** municipality-constrained NPVM listing-point assignments are exactly reconstructed against the checksum-verified zone and current municipality geometries. They affect **73 clusters**; **50** have no exact listing-point assignment for an internal comparison, including **28** apparent Path C candidates. The geometry and deterministic choice are validated, but proxy-only travel times are not independently validated observed routes. Historical zone lineage and causal approval remain false. See `reports/27_TRANSPORT_ZONE_PROXY_AUDIT.md`.

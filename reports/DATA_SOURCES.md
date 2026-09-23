@@ -518,6 +518,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Existing clusters are not certified independent destinations; Bergfex observation date is unknown; point municipality is not tourism exposure
 - **Local raw file:** `config/path_c_analysis.json`.
 
+## DERIVED_PATH_C_NETWORK_CONTEXT — Path C ski-cluster and reviewed pass-network context
+
+- **Contents and relevance:** Current straight-line proximity and radius counts among preserved directory-linked lift clusters and reviewed pass-network links
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic Python derivation from the existing cluster feature matrix and reviewed competing-pass links; unknown date.
+- **Variables:** cluster_pair_distance|directory_cluster_density|published_ski_area_context|resolved_magic_network_density|reviewed_competing_pass_network_density
+- **Transformations:** Calculate all 26,082 ordered non-self great-circle cluster pairs from median supplied listing coordinates; count other directory, resolved current Magic and reviewed competing-pass-linked clusters within 25/50 km; retain observed/missing ski-area contributors
+- **Coverage:** ordered lift-cluster pair and focal linked lift cluster; current/undated supplied directory plus current reviewed pass-network snapshots; ? to 2026-09-23.
+- **Limitations:** Clusters are not validated independent commercial domains; median coordinates may be artificial; straight-line distance ignores terrain and transport; directory ski area may overlap; pass networks are current rather than historical
+- **Local raw file:** `data_processed/path_c_resort_cluster_features.csv|data_processed/path_c_cluster_competing_pass_context.csv`.
+
 ## DERIVED_PATH_C_SEGMENTATION_ANALOGUES — Path C segmentation and analogue analysis
 
 - **Contents and relevance:** Stability-checked structural segmentation and nearest-neighbour analogue diagnostics for exploratory Path C

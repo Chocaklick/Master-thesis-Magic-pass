@@ -74,6 +74,7 @@ def main() -> None:
     run("src/data_processing/build_public_transport_stop_context.py")
     run("src/data_processing/build_national_road_proximity_context.py")
     run("src/data_processing/build_competing_pass_context.py")
+    run("src/data_processing/build_path_c_network_context.py")
     run("src/data_processing/build_feasibility_report.py")
     run("src/scoring/plot_path_c_outputs.py")
     run("src/data_processing/update_provenance.py")

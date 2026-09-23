@@ -846,6 +846,25 @@ def main() -> None:
         manual_verification="43 official areas, 55 linked listings, 29 linked clusters and 22 linked apparent candidates; zero absence-verification or causal approval flags",
     ))
     rows.append(blank_source(
+        "DERIVED_PATH_C_NETWORK_CONTEXT",
+        variable_name="cluster_pair_distance|directory_cluster_density|published_ski_area_context|resolved_magic_network_density|reviewed_competing_pass_network_density",
+        variable_description="Current straight-line proximity and radius counts among preserved directory-linked lift clusters and reviewed pass-network links",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C ski-cluster and reviewed pass-network context",
+        retrieval_method="Deterministic Python derivation from the existing cluster feature matrix and reviewed competing-pass links",
+        local_raw_file="data_processed/path_c_resort_cluster_features.csv|data_processed/path_c_cluster_competing_pass_context.csv",
+        processed_file="data_processed/path_c_cluster_network_context.csv|reports/path_c_cluster_network_pairs.csv|reports/network_context_candidate_summary.csv|data_processed/magic_pass_decision_support.csv|reports/32_PATH_C_NETWORK_CONTEXT.md",
+        geographic_level="ordered lift-cluster pair and focal linked lift cluster",
+        temporal_resolution="current/undated supplied directory plus current reviewed pass-network snapshots",
+        temporal_start="",
+        temporal_end="2026-09-23",
+        unit="great-circle kilometres, counts, shares and summed published directory kilometres",
+        transformation_applied="Calculate all 26,082 ordered non-self great-circle cluster pairs from median supplied listing coordinates; count other directory, resolved current Magic and reviewed competing-pass-linked clusters within 25/50 km; retain observed/missing ski-area contributors",
+        quality_notes="Clusters are not validated independent commercial domains; median coordinates may be artificial; straight-line distance ignores terrain and transport; directory ski area may overlap; pass networks are current rather than historical",
+        confidence_level="high for reproducibility; qualified current directory/network context only",
+        manual_verification="162 clusters, 26,082 unique ordered non-self pairs and 104 candidates; focal cluster excluded from every count; zero historical or causal approvals",
+    ))
+    rows.append(blank_source(
         "SKI_GTFS_TIMETABLE_2026_WINTER_20260207",
         variable_name="scheduled_stop_times|trips|routes|service_calendar|transfers|stop_coordinates",
         variable_description="Official all-Switzerland GTFS Static timetable snapshot used for scheduled municipality-to-ski-destination routing",
@@ -1868,6 +1887,9 @@ def main() -> None:
         "resort_competing_pass_context": ROOT / "data_processed/resort_competing_pass_context.csv",
         "path_c_cluster_competing_pass_context": ROOT / "data_processed/path_c_cluster_competing_pass_context.csv",
         "competing_pass_candidate_summary": ROOT / "reports/competing_pass_candidate_summary.csv",
+        "path_c_cluster_network_context": ROOT / "data_processed/path_c_cluster_network_context.csv",
+        "path_c_cluster_network_pairs": ROOT / "reports/path_c_cluster_network_pairs.csv",
+        "network_context_candidate_summary": ROOT / "reports/network_context_candidate_summary.csv",
         "public_transport_journey_nodes": ROOT / "reports/public_transport_journey_nodes.csv",
         "treatment_municipality_public_transport_journey_samples": ROOT / "data_processed/treatment_municipality_public_transport_journey_samples.csv",
         "treatment_municipality_public_transport_journey_context": ROOT / "data_processed/treatment_municipality_public_transport_journey_context.csv",
@@ -1902,6 +1924,9 @@ def main() -> None:
         "resort_competing_pass_context": "DERIVED_COMPETING_PASS_CONTEXT",
         "path_c_cluster_competing_pass_context": "DERIVED_COMPETING_PASS_CONTEXT",
         "competing_pass_candidate_summary": "DERIVED_COMPETING_PASS_CONTEXT",
+        "path_c_cluster_network_context": "DERIVED_PATH_C_NETWORK_CONTEXT",
+        "path_c_cluster_network_pairs": "DERIVED_PATH_C_NETWORK_CONTEXT",
+        "network_context_candidate_summary": "DERIVED_PATH_C_NETWORK_CONTEXT",
         "public_transport_journey_nodes": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_samples": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_context": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
@@ -1967,6 +1992,24 @@ def main() -> None:
         "cluster_competing_pass_benefit_tiers": "Pipe-separated benefit tiers represented by reviewed listing links within the cluster",
         "cluster_limited_partner_benefit_listing_count": "Number of cluster listings linked to an AlpsPass three-free-ski-days partner benefit",
         "cluster_core_or_included_region_listing_count": "Number of cluster listings linked to a core or included competing-pass region",
+        "network_context_latitude": "Median supplied listing latitude used as the focal lift-cluster location for current network distances",
+        "network_context_longitude": "Median supplied listing longitude used as the focal lift-cluster location for current network distances",
+        "network_distance_method": "Declared formula and coordinate representation used for current cluster-pair distances",
+        "network_focal_cluster_excluded_from_all_neighbourhood_counts": "Whether every neighbourhood count excludes the focal cluster itself; always true",
+        "historical_network_context_verified": "Whether the current directory/pass-network context has been reconstructed for historical pre-treatment dates; always false",
+        "network_context_feature_approved": "Whether the network context is approved as a causal or historical pre-treatment feature; always false",
+        "network_context_interpretation": "Guardrail stating that current straight-line directory/pass-network context is not historical market structure, travel time or causal competition",
+        "network_context_source_ids": "Source identifiers for the cluster feature matrix and competing-pass context used in the network derivation",
+        "focal_cluster_id": "Stable identifier of the focal cluster in an ordered non-self cluster pair",
+        "focal_cluster_name": "Display name of the focal cluster in an ordered non-self cluster pair",
+        "other_cluster_id": "Stable identifier of the other cluster in an ordered non-self cluster pair",
+        "other_cluster_name": "Display name of the other cluster in an ordered non-self cluster pair",
+        "great_circle_distance_km": "Great-circle distance between the two cluster median supplied-listing coordinates",
+        "other_cluster_resolved_current_magic": "Whether the other cluster has a resolved link to the current official Magic Pass map",
+        "other_cluster_reviewed_competing_pass_linked": "Whether the other cluster contains a listing linked to a reviewed competing-pass roster",
+        "other_cluster_reviewed_competing_limited_partner": "Whether the other cluster contains an AlpsPass limited three-day partner link",
+        "other_cluster_reviewed_competing_core_or_included": "Whether the other cluster contains a core or included competing-pass-region link",
+        "other_cluster_in_reviewed_pass_network": "Whether the other cluster belongs to the union of resolved current Magic and reviewed competing-pass-linked clusters",
         "segment_id": "Stable label of the selected current structural k-means segment",
         "descriptive_profile": "Relative altitude, ski-area and lift-count description of the segment",
         "distance_to_segment_centroid": "Euclidean distance to the assigned centroid in three standardised structural features",
@@ -2205,6 +2248,60 @@ def main() -> None:
             path_c_glossary[f"cluster_listing_nearest_{prefix}_{suffix}"] = (
                 f"Pipe-separated {detail} selected as nearest across eligible cluster listing points"
             )
+    for prefix, description in {
+        "directory": "other supplied-directory lift cluster",
+        "resolved_current_magic": "other cluster with a resolved current Magic Pass link",
+        "reviewed_competing_pass": "other cluster with a reviewed competing-pass link",
+        "reviewed_pass_network": "other cluster in the union of resolved current Magic and reviewed competing-pass links",
+    }.items():
+        path_c_glossary[f"nearest_other_{prefix}_cluster_km"] = (
+            f"Great-circle distance to the nearest {description}, excluding the focal cluster"
+        )
+        path_c_glossary[f"nearest_other_{prefix}_cluster_id"] = (
+            f"Stable cluster identifier of the nearest {description}"
+        )
+        path_c_glossary[f"nearest_other_{prefix}_cluster_name"] = (
+            f"Display name of the nearest {description}"
+        )
+    for radius in [25, 50]:
+        path_c_glossary[f"other_directory_clusters_within_{radius}km"] = (
+            f"Number of other directory-linked lift clusters within {radius} great-circle kilometres"
+        )
+        path_c_glossary[f"other_directory_listings_within_{radius}km"] = (
+            f"Number of supplied listings assigned to other clusters within {radius} great-circle kilometres"
+        )
+        path_c_glossary[
+            f"other_directory_clusters_with_observed_ski_area_within_{radius}km"
+        ] = f"Number of other clusters within {radius} kilometres whose cluster-median published ski-area value is observed"
+        path_c_glossary[
+            f"other_directory_clusters_missing_ski_area_within_{radius}km"
+        ] = f"Number of other clusters within {radius} kilometres whose cluster-median published ski-area value is missing"
+        path_c_glossary[
+            f"other_directory_cluster_median_ski_area_km_sum_within_{radius}km"
+        ] = f"Sum of observed cluster-median published ski-area kilometres across other clusters within {radius} kilometres"
+        path_c_glossary[f"other_resolved_current_magic_clusters_within_{radius}km"] = (
+            f"Number of other clusters within {radius} kilometres with a resolved current Magic Pass link"
+        )
+        path_c_glossary[
+            f"other_reviewed_competing_pass_clusters_within_{radius}km"
+        ] = f"Number of other clusters within {radius} kilometres with a reviewed competing-pass link"
+        path_c_glossary[
+            f"other_reviewed_competing_limited_partner_clusters_within_{radius}km"
+        ] = f"Number of other clusters within {radius} kilometres with an AlpsPass limited three-day partner link"
+        path_c_glossary[
+            f"other_reviewed_competing_core_or_included_clusters_within_{radius}km"
+        ] = f"Number of other clusters within {radius} kilometres with a core or included competing-pass-region link"
+        path_c_glossary[f"other_reviewed_pass_network_clusters_within_{radius}km"] = (
+            f"Number of other clusters within {radius} kilometres in the union of resolved current Magic and reviewed competing-pass links"
+        )
+        for prefix, description in {
+            "resolved_current_magic": "resolved current Magic",
+            "reviewed_competing_pass": "reviewed competing-pass-linked",
+            "reviewed_pass_network": "reviewed pass-network union",
+        }.items():
+            path_c_glossary[
+                f"{prefix}_share_of_other_directory_clusters_within_{radius}km"
+            ] = f"Share of other directory clusters within {radius} kilometres belonging to the {description} set; missing when there is no neighbour"
     for threshold in [20_000, 50_000, 100_000]:
         prefix = f"nearest_municipality_population_ge_{threshold}"
         path_c_glossary[f"{prefix}_bfs_id_2026"] = (
@@ -2255,6 +2352,12 @@ def main() -> None:
         ] = f"Country codes reported by positive-population cells within {radius} straight-line kilometres"
 
     def path_c_unit(variable: str) -> str:
+        if "_share_of_" in variable:
+            return "share (0-1)"
+        if "clusters_within_" in variable or "listings_within_" in variable:
+            return "count"
+        if "ski_area_km_sum" in variable:
+            return "published ski-area kilometres"
         if "foreign_only_share_of_observed_population" in variable:
             return "share (0-1)"
         if variable.startswith("eurostat_") and "population_2021" in variable:
@@ -2314,6 +2417,9 @@ def main() -> None:
         "resort_competing_pass_context": "supplied resort listing / official competing-pass area",
         "path_c_cluster_competing_pass_context": "linked lift cluster",
         "competing_pass_candidate_summary": "apparent Path C candidate lift cluster",
+        "path_c_cluster_network_context": "linked lift cluster",
+        "path_c_cluster_network_pairs": "ordered pair of distinct linked lift clusters",
+        "network_context_candidate_summary": "apparent Path C candidate lift cluster",
         "public_transport_journey_nodes": "hotel municipality or reviewed destination component",
         "treatment_municipality_public_transport_journey_samples": "reviewed destination by hotel municipality and scheduled request",
         "treatment_municipality_public_transport_journey_context": "reviewed destination by hotel municipality",
@@ -2343,6 +2449,9 @@ def main() -> None:
         "resort_competing_pass_context": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
         "path_c_cluster_competing_pass_context": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
         "competing_pass_candidate_summary": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
+        "path_c_cluster_network_context": "current/undated supplied directory plus current reviewed pass-network snapshots",
+        "path_c_cluster_network_pairs": "current/undated supplied directory plus current reviewed pass-network snapshots",
+        "network_context_candidate_summary": "current/undated supplied directory plus current reviewed pass-network snapshots",
         "public_transport_journey_nodes": "winter-2026 GTFS node-selection reference",
         "treatment_municipality_public_transport_journey_samples": "2026-02-04 and 2026-02-07 scheduled requests",
         "treatment_municipality_public_transport_journey_context": "winter-2026 weekday/Saturday scheduled summary",
@@ -2389,6 +2498,11 @@ def main() -> None:
                 "path_c_cluster_competing_pass_context",
                 "competing_pass_candidate_summary",
             }
+            network_table = table in {
+                "path_c_cluster_network_context",
+                "path_c_cluster_network_pairs",
+                "network_context_candidate_summary",
+            }
             journey_table = table in {
                 "public_transport_journey_nodes",
                 "treatment_municipality_public_transport_journey_samples",
@@ -2412,6 +2526,29 @@ def main() -> None:
                     or variable.startswith("reviewed_competing_pass_")
                 )
             )
+            network_variable = network_table or (
+                table == "magic_pass_decision_support"
+                and (
+                    variable.startswith("nearest_other_")
+                    or variable.startswith("other_directory_")
+                    or variable.startswith("other_resolved_current_magic_")
+                    or variable.startswith("other_reviewed_")
+                    or variable.startswith("resolved_current_magic_share_")
+                    or variable.startswith("reviewed_competing_pass_share_")
+                    or variable.startswith("reviewed_pass_network_share_")
+                    or variable
+                    in {
+                        "network_context_latitude",
+                        "network_context_longitude",
+                        "network_distance_method",
+                        "network_focal_cluster_excluded_from_all_neighbourhood_counts",
+                        "historical_network_context_verified",
+                        "network_context_feature_approved",
+                        "network_context_interpretation",
+                        "network_context_source_ids",
+                    }
+                )
+            )
             cross_border_population_variable = cross_border_population_table or (
                 table == "magic_pass_decision_support"
                 and (
@@ -2423,7 +2560,7 @@ def main() -> None:
                     or variable in {"cluster_location_x_3035", "cluster_location_y_3035"}
                 )
             )
-            stop_variable = not journey_variable and not competing_variable and (stop_table or (
+            stop_variable = not journey_variable and not competing_variable and not network_variable and (stop_table or (
                 table == "magic_pass_decision_support"
                 and (
                     variable.startswith("public_transport_stop_")
@@ -2440,7 +2577,7 @@ def main() -> None:
                     or variable.startswith("cluster_unassigned_public_transport_stop_")
                 )
             ))
-            road_variable = not journey_variable and not competing_variable and not stop_variable and (road_table or (
+            road_variable = not journey_variable and not competing_variable and not network_variable and not stop_variable and (road_table or (
                 table == "magic_pass_decision_support"
                 and (
                     variable.startswith("national_road_")
@@ -2452,7 +2589,7 @@ def main() -> None:
                     or variable.startswith("cluster_nearest_national_road_")
                 )
             ))
-            transport_variable = not journey_variable and not competing_variable and not stop_variable and not road_variable and (transport_table or (
+            transport_variable = not journey_variable and not competing_variable and not network_variable and not stop_variable and not road_variable and (transport_table or (
                 table == "magic_pass_decision_support"
                 and (
                     variable.startswith("npvm_")
@@ -2468,7 +2605,7 @@ def main() -> None:
                     in {"cluster_transport_context_status", "unassigned_resort_ids"}
                 )
             ))
-            accessibility_variable = not journey_variable and not competing_variable and not stop_variable and not road_variable and not transport_variable and (accessibility_table or (
+            accessibility_variable = not journey_variable and not competing_variable and not network_variable and not stop_variable and not road_variable and not transport_variable and (accessibility_table or (
                 table == "magic_pass_decision_support"
                 and (
                     "accessibility" in variable
@@ -2507,6 +2644,8 @@ def main() -> None:
                 if journey_variable
                 else "qualified current competing-pass roster context"
                 if competing_variable
+                else "qualified current ski-cluster and reviewed pass-network context"
+                if network_variable
                 else "qualified cross-border one-kilometre population context"
                 if cross_border_population_variable
                 else "qualified current public-transport-stop proximity context"
@@ -2547,6 +2686,9 @@ def main() -> None:
                 "See config/competing_pass_roster_2026_27.csv and src/data_processing/build_competing_pass_context.py"
                 if competing_variable
                 else
+                "See src/data_processing/build_path_c_network_context.py"
+                if network_variable
+                else
                 "See config/path_c_analysis.json, config/eurostat_census_grid_2021.json and src/data_processing/build_cross_border_population_context.py"
                 if cross_border_population_variable
                 else
@@ -2583,6 +2725,9 @@ def main() -> None:
                 "No causal interpretation; current links in three official rosters do not reconstruct historical competition, verify market absence or establish equivalent benefit intensity"
                 if competing_variable
                 else
+                "No causal interpretation; current directory-cluster and reviewed pass-network straight-line context is not historical market structure, travel impedance, observed competition or visitor behaviour"
+                if network_variable
+                else
                 "No causal interpretation; 2021 census grid-cell centroids and straight-line radii are not travel-time markets, observed visitors or destination catchments; mixed and unallocated population remain explicit"
                 if cross_border_population_variable
                 else
@@ -2611,6 +2756,8 @@ def main() -> None:
                 if journey_variable
                 else "DERIVED_COMPETING_PASS_CONTEXT"
                 if competing_variable
+                else "DERIVED_PATH_C_NETWORK_CONTEXT"
+                if network_variable
                 else "DERIVED_CROSS_BORDER_POPULATION_CONTEXT"
                 if cross_border_population_variable
                 else "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT"

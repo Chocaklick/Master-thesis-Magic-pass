@@ -38,6 +38,7 @@ NATIONAL_ROAD_PROXIMITY_SUMMARY = (
 COMPETING_PASS_CONTEXT_SUMMARY = (
     ROOT / "reports" / "competing_pass_context_summary.json"
 )
+NETWORK_CONTEXT_SUMMARY = ROOT / "reports" / "network_context_summary.json"
 PUBLIC_TRANSPORT_JOURNEY_SUMMARY = (
     ROOT / "reports" / "public_transport_journey_context_summary.json"
 )
@@ -109,6 +110,9 @@ def main() -> None:
     )
     competing_pass_context_summary = json.loads(
         COMPETING_PASS_CONTEXT_SUMMARY.read_text(encoding="utf-8")
+    )
+    network_context_summary = json.loads(
+        NETWORK_CONTEXT_SUMMARY.read_text(encoding="utf-8")
     )
     public_transport_journey_summary = json.loads(
         PUBLIC_TRANSPORT_JOURNEY_SUMMARY.read_text(encoding="utf-8")
@@ -587,6 +591,37 @@ def main() -> None:
         "competing_pass_candidate_clusters": int(
             competing_pass_context_summary["path_c_candidates"]
         ),
+        "network_context_ordered_cluster_pairs": int(
+            network_context_summary["ordered_nonself_cluster_pairs"]
+        ),
+        "network_context_reviewed_pass_union_clusters": int(
+            network_context_summary["reviewed_pass_network_union_clusters"]
+        ),
+        "network_context_median_candidate_other_directory_25km": float(
+            network_context_summary[
+                "median_candidate_other_directory_clusters_within_25km"
+            ]
+        ),
+        "network_context_median_candidate_other_directory_50km": float(
+            network_context_summary[
+                "median_candidate_other_directory_clusters_within_50km"
+            ]
+        ),
+        "network_context_median_candidate_reviewed_pass_union_50km": float(
+            network_context_summary[
+                "median_candidate_other_reviewed_pass_network_clusters_within_50km"
+            ]
+        ),
+        "network_context_candidates_without_directory_neighbour_25km": int(
+            network_context_summary[
+                "candidates_with_no_other_directory_cluster_within_25km"
+            ]
+        ),
+        "network_context_candidates_without_reviewed_pass_neighbour_50km": int(
+            network_context_summary[
+                "candidates_with_no_other_reviewed_pass_network_cluster_within_50km"
+            ]
+        ),
         "public_transport_journey_pairs": int(
             public_transport_journey_summary["destination_municipality_pairs"]
         ),
@@ -745,6 +780,12 @@ The published attributes do not classify axes as motorway versus non-motorway. T
 Official current material was checksum-cached for **{metrics['competing_passes_reviewed']} competing products** and **{metrics['competing_pass_official_area_rows']} named pass areas**: AlpsPass 2026/2027, the Meilenweiss retrieval-date roster, and Schneepass Zentralschweiz 2026/2027. Explicit reviewed resort-ID links cover **{metrics['competing_pass_linked_resort_listings']} supplied listings in {metrics['competing_pass_linked_clusters']} lift clusters**. **{metrics['competing_pass_partial_clusters']} clusters** are only partially linked because neighbouring listings are not automatically assigned the same pass status. Among the **{metrics['competing_pass_candidate_clusters']} apparent Path C candidates**, **{metrics['competing_pass_linked_candidates']}** contain at least one listing linked to a reviewed roster.
 
 AlpsPass unlimited core access remains distinct from its three-free-ski-days partner benefit. A non-link means only that no explicit link was established in these three rosters; it does not prove absence from every competing product. The snapshots do not reconstruct competition at historical Magic Pass entry dates, so all absence-verification and causal-feature approval flags remain false. See `reports/31_COMPETING_PASS_CONTEXT.md`.
+
+## Current ski-cluster and reviewed pass-network context
+
+The complete **{metrics['network_context_ordered_cluster_pairs']:,}-row ordered non-self pair table** measures great-circle distance among all 162 preserved directory-linked lift clusters. Across the 104 apparent candidates, the median number of other directory clusters is **{metrics['network_context_median_candidate_other_directory_25km']:.0f} within 25 km** and **{metrics['network_context_median_candidate_other_directory_50km']:.0f} within 50 km**. The resolved-current-Magic/reviewed-competing-pass union contains **{metrics['network_context_reviewed_pass_union_clusters']} clusters**; a candidate has a median **{metrics['network_context_median_candidate_reviewed_pass_union_50km']:.0f} other reviewed-network clusters within 50 km**. **{metrics['network_context_candidates_without_directory_neighbour_25km']} candidate** has no other directory cluster within 25 km and **{metrics['network_context_candidates_without_reviewed_pass_neighbour_50km']}** have no other reviewed pass-network cluster within 50 km.
+
+Every count excludes the focal cluster. The supplied clusters are not validated independent commercial domains, multi-listing median coordinates can be artificial, straight-line distance ignores terrain and transport, published ski-area values are undated and can overlap, and the pass links are current rather than historical. These are therefore directory/network diagnostics rather than true competitor counts, market penetration, visitor flows or causal exposure. Historical and feature-approval flags remain false. See `reports/32_PATH_C_NETWORK_CONTEXT.md`.
 
 ## NPVM zone-proxy audit
 

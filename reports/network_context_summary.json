@@ -1,0 +1,20 @@
+{
+  "analysis_version": "path_c_v0_14",
+  "linked_clusters": 162,
+  "ordered_nonself_cluster_pairs": 26082,
+  "resolved_current_magic_clusters": 51,
+  "reviewed_competing_pass_linked_clusters": 29,
+  "reviewed_pass_network_union_clusters": 73,
+  "path_c_candidates": 104,
+  "median_candidate_nearest_other_directory_cluster_km": 9.163961275238169,
+  "median_candidate_other_directory_clusters_within_25km": 8.0,
+  "median_candidate_other_directory_clusters_within_50km": 26.0,
+  "median_candidate_other_resolved_current_magic_clusters_within_50km": 1.0,
+  "median_candidate_other_reviewed_competing_pass_clusters_within_50km": 6.0,
+  "median_candidate_other_reviewed_pass_network_clusters_within_50km": 9.0,
+  "candidates_with_no_other_directory_cluster_within_25km": 1,
+  "candidates_with_no_other_reviewed_pass_network_cluster_within_50km": 2,
+  "historical_network_context_verified": 0,
+  "approved_features": 0,
+  "interpretation": "current_supplied_directory_cluster_and_reviewed_pass_network_straight_line_context_not_historical_market_structure_travel_time_or_causal_competition"
+}

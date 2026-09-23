@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 
@@ -1273,11 +1274,92 @@ def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> N
         "partial_cluster_listing_links": 6,
     }
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_13").all()
+    assert decision["analysis_version"].eq("path_c_v0_14").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
     assert not as_bool(decision["competing_pass_feature_approved"]).any()
+
+
+def test_path_c_network_context_excludes_focal_cluster_and_preserves_pair_grain() -> None:
+    context = read("data_processed/path_c_cluster_network_context.csv")
+    pairs = read("reports/path_c_cluster_network_pairs.csv")
+    candidates = read("reports/network_context_candidate_summary.csv")
+    decision = read("data_processed/magic_pass_decision_support.csv")
+
+    assert len(context) == 162
+    assert context["cluster_id"].is_unique
+    assert len(pairs) == 162 * 161
+    assert not pairs[["focal_cluster_id", "other_cluster_id"]].duplicated().any()
+    assert not pairs["focal_cluster_id"].eq(pairs["other_cluster_id"]).any()
+    assert pairs["great_circle_distance_km"].ge(0).all()
+    assert pairs.groupby("focal_cluster_id").size().eq(161).all()
+
+    reversed_pairs = pairs[[
+        "focal_cluster_id", "other_cluster_id", "great_circle_distance_km"
+    ]].rename(
+        columns={
+            "focal_cluster_id": "other_cluster_id",
+            "other_cluster_id": "focal_cluster_id",
+            "great_circle_distance_km": "reverse_distance_km",
+        }
+    )
+    symmetric = pairs.merge(
+        reversed_pairs,
+        on=["focal_cluster_id", "other_cluster_id"],
+        how="left",
+        validate="one_to_one",
+    )
+    assert np.allclose(
+        symmetric["great_circle_distance_km"], symmetric["reverse_distance_km"]
+    )
+
+    for radius in [25, 50]:
+        expected_directory = (
+            pairs[pairs["great_circle_distance_km"].le(radius)]
+            .groupby("focal_cluster_id")
+            .size()
+            .reindex(context["cluster_id"], fill_value=0)
+            .to_numpy()
+        )
+        assert np.array_equal(
+            expected_directory,
+            context[f"other_directory_clusters_within_{radius}km"].to_numpy(),
+        )
+        assert (
+            context[f"other_directory_clusters_within_{radius}km"]
+            <= context[f"other_directory_clusters_within_{50}km"]
+        ).all()
+        assert (
+            context[f"other_reviewed_pass_network_clusters_within_{radius}km"]
+            <= context[f"other_directory_clusters_within_{radius}km"]
+        ).all()
+        assert (
+            context[f"other_directory_clusters_with_observed_ski_area_within_{radius}km"]
+            + context[f"other_directory_clusters_missing_ski_area_within_{radius}km"]
+            == context[f"other_directory_clusters_within_{radius}km"]
+        ).all()
+
+    assert len(candidates) == 104
+    assert candidates["cluster_id"].is_unique
+    assert int(candidates["other_directory_clusters_within_25km"].eq(0).sum()) == 1
+    assert int(
+        candidates["other_reviewed_pass_network_clusters_within_50km"].eq(0).sum()
+    ) == 2
+    assert candidates["other_directory_clusters_within_25km"].median() == 8
+    assert candidates["other_directory_clusters_within_50km"].median() == 26
+    assert candidates["other_reviewed_pass_network_clusters_within_50km"].median() == 9
+
+    assert as_bool(context["network_focal_cluster_excluded_from_all_neighbourhood_counts"]).all()
+    assert not as_bool(context["historical_network_context_verified"]).any()
+    assert not as_bool(context["network_context_feature_approved"]).any()
+    assert not as_bool(pairs["network_context_feature_approved"]).any()
+    assert len(decision) == 162
+    assert decision["analysis_version"].eq("path_c_v0_14").all()
+    assert decision["accessibility_score"].isna().all()
+    assert decision["predicted_uplift_pct"].isna().all()
+    assert decision["composite_opportunity_need_score"].isna().all()
+    assert not as_bool(decision["network_context_feature_approved"]).any()
 
 
 def test_public_transport_journey_context_preserves_grain_and_limits() -> None:
