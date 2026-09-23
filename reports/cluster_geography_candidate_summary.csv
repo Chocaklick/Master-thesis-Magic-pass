@@ -1,0 +1,105 @@
+cluster_id,cluster_display_name,cluster_listing_point_count,within_cluster_pairwise_distance_median_km,within_cluster_pairwise_distance_max_km,cluster_listing_geographic_spread_band,directory_cluster_count_distance_rule_span_within_25km,directory_cluster_count_distance_rule_span_within_50km,reviewed_pass_network_count_distance_rule_span_within_25km,reviewed_pass_network_count_distance_rule_span_within_50km,cluster_geographic_coherence_verified,network_distance_sensitivity_feature_approved
+SKI_CLUSTER_002,Thyon 4 Vallées / Bruson - Verbier / Nendaz 4 Vallées / +3 listings,6,8.07572310040571,19.08430123501778,multi_listing_diameter_gt_5_to_25km,13,11,8,10,False,False
+SKI_CLUSTER_014,Lenk / Adelboden / Engstligenalp - Adelboden,3,10.633953578133482,10.921043718619796,multi_listing_diameter_gt_5_to_25km,11,14,9,11,False,False
+SKI_CLUSTER_017,Disentis / Andermatt - Oberalp - Sedrun / Gemsstock Andermatt - Gemsstock / +1 listings,4,9.490836807934201,18.920888474602737,multi_listing_diameter_gt_5_to_25km,10,18,2,8,False,False
+SKI_CLUSTER_010,Wengen Jungfrau Ski Region Grindelwald - Wengen / Schilthorn Jungfrau Ski Region Mürren - Schilthorn,2,8.668810114240767,8.668810114240767,multi_listing_diameter_gt_5_to_25km,9,11,7,10,False,False
+SKI_CLUSTER_038,Mastrils Skilift Mastrils / Pizol - Bad Ragaz - Wangs / Tristeli St. Margarethenberg,3,5.383875464627649,7.964551111168909,multi_listing_diameter_gt_5_to_25km,7,8,4,2,False,False
+SKI_CLUSTER_210,Sitzberg / Sternenberg / Dicki - Weisslingen / +1 listings,4,7.844059791793038,12.631100802221988,multi_listing_diameter_gt_5_to_25km,6,10,0,6,False,False
+SKI_CLUSTER_021,Biel - Kinzig / Ratzi Spiringen / Flüelen Eggberge / Flüelen / +2 listings,5,5.592644312747439,8.975670617121674,multi_listing_diameter_gt_5_to_25km,6,13,5,5,False,False
+SKI_CLUSTER_007,Arosa Lenzerheide / Pradaschier - Churwalden / Brambrüesch Chur - Brambrüesch,3,6.986438889100484,10.017421081196183,multi_listing_diameter_gt_5_to_25km,6,7,3,3,False,False
+SKI_CLUSTER_006,Madrisa Klosters Madrisa / Rinerhorn Davos Rinerhorn / Jakobshorn Davos Jakobshorn / +2 listings,5,7.41029002624719,17.60731359175512,multi_listing_diameter_gt_5_to_25km,6,9,2,1,False,False
+SKI_CLUSTER_001,Châtel Portes du Soleil / Torgon Portes du Soleil / Avoriaz 1800 Portes du Soleil / +2 listings,5,8.954394761129567,16.4176229437956,multi_listing_diameter_gt_5_to_25km,5,12,5,10,False,False
+SKI_CLUSTER_157,Brot - Plamboz / Sommartel Le Locle,2,6.815710792680743,6.815710792680743,multi_listing_diameter_gt_5_to_25km,5,3,2,2,False,False
+SKI_CLUSTER_065,Ghöch / Steg im Tösstal / Steig - Bäretswill Steig - Bäretswil,3,3.3881394204674127,5.838304547205299,multi_listing_diameter_gt_5_to_25km,5,3,1,1,False,False
+SKI_CLUSTER_027,Obersaxen Mundaun / Brigels Waltensburg Andiast,2,7.350848007146573,7.350848007146573,multi_listing_diameter_gt_5_to_25km,4,9,2,4,False,False
+SKI_CLUSTER_053,Elsigenalp - Metschalp Frutigen,1,0.0,0.0,single_listing,4,3,4,3,False,False
+SKI_CLUSTER_060,Tenna / Sarn - Heinzenberg / Tschappina Tschappina - Urmein - Heinzenberg,3,5.2197606204197085,6.4943548958029735,multi_listing_diameter_gt_5_to_25km,3,9,1,3,False,False
+SKI_CLUSTER_144,Sattelegg Einsiedeln / Wägital - Vorderthal,2,3.379246400145636,3.379246400145636,multi_listing_diameter_le_5km,3,5,1,3,False,False
+SKI_CLUSTER_202,Realp,1,0.0,0.0,single_listing,3,3,2,3,False,False
+SKI_CLUSTER_116,Degersheim / Schwellbrunn,2,3.522856522727686,3.522856522727686,multi_listing_diameter_le_5km,3,2,0,2,False,False
+SKI_CLUSTER_039,Glacier 3000 - Les Diablerets,1,0.0,0.0,single_listing,3,2,3,2,False,False
+SKI_CLUSTER_047,Braunwald,1,0.0,0.0,single_listing,3,4,1,2,False,False
+SKI_CLUSTER_225,Oberhelfenschwil,1,0.0,0.0,single_listing,3,2,2,2,False,False
+SKI_CLUSTER_066,Atzmännig / Oberholz - Farner,2,4.668496255364805,4.668496255364805,multi_listing_diameter_le_5km,3,3,0,1,False,False
+SKI_CLUSTER_055,Ebenalp - Horn / Brülisau Brülisau - Leugangen,2,3.3488202196536654,3.3488202196536654,multi_listing_diameter_le_5km,3,2,1,1,False,False
+SKI_CLUSTER_079,Bennau Einsiedeln / Friherrenberg Einsiedeln / Schnabelsberg Einsiedeln,3,2.3840180817140513,2.9240551847406815,multi_listing_diameter_le_5km,3,4,1,1,False,False
+SKI_CLUSTER_022,Muottas Muragl / Survih - Samedan / Languard Pontresina / +1 listings,4,4.599207506602518,7.2357426100355084,multi_listing_diameter_gt_5_to_25km,3,4,1,0,False,False
+SKI_CLUSTER_087,Zuoz / Bügls - S - chanf / Müsella La Punt - Müsella,3,4.646529672873286,6.93953693295851,multi_listing_diameter_gt_5_to_25km,3,3,1,0,False,False
+SKI_CLUSTER_206,Bedrina Dalpe / Prato Leventina,2,1.737001396531722,1.737001396531722,multi_listing_diameter_le_5km,2,3,1,3,False,False
+SKI_CLUSTER_146,Schilt Mollis,1,0.0,0.0,single_listing,2,3,2,3,False,False
+SKI_CLUSTER_030,Toggenburg Wildhaus / Toggenburg - Chäserrugg Alt St. Johann Unterwasser,2,2.2498922982379446,2.2498922982379446,multi_listing_diameter_le_5km,2,5,1,2,False,False
+SKI_CLUSTER_126,Les Loges / Crêt - Meuron / La Corbatière - La Roche - des - Crocs,3,1.3308928502112427,2.1972420401256767,multi_listing_diameter_le_5km,2,3,2,2,False,False
+SKI_CLUSTER_081,Elm,1,0.0,0.0,single_listing,2,3,1,2,False,False
+SKI_CLUSTER_083,Alpsteinblick Gonten / Jakobsbad - Kronberg / Osteregg Urnäsch / Osteregg,3,2.9616770037455535,4.473434232955478,multi_listing_diameter_le_5km,2,2,1,1,False,False
+SKI_CLUSTER_040,Rigi / Seebodenalp - Küssnacht am Rigi,2,3.571222993373396,3.571222993373396,multi_listing_diameter_le_5km,2,4,1,1,False,False
+SKI_CLUSTER_019,Laax Flims Laax Falera,1,0.0,0.0,single_listing,2,1,2,1,False,False
+SKI_CLUSTER_114,Campo Blenio - Ghirone,1,0.0,0.0,single_listing,2,1,1,1,False,False
+SKI_CLUSTER_173,Hapfere Plaffeien,1,0.0,0.0,single_listing,2,3,2,1,False,False
+SKI_CLUSTER_230,Hörnli - Schönengrund,1,0.0,0.0,single_listing,2,1,0,1,False,False
+SKI_CLUSTER_043,Savognin,1,0.0,0.0,single_listing,2,0,1,0,False,False
+SKI_CLUSTER_086,Bergün - Filisur Bergün - Filisur / Darlux,1,0.0,0.0,single_listing,2,0,2,0,False,False
+SKI_CLUSTER_115,Wolzenalp Krummenau,1,0.0,0.0,single_listing,2,1,0,0,False,False
+SKI_CLUSTER_141,Nollen - Unterägeri,1,0.0,0.0,single_listing,2,1,1,0,False,False
+SKI_CLUSTER_198,Gadmen,1,0.0,0.0,single_listing,2,0,1,0,False,False
+SKI_CLUSTER_201,Cioss Prato Bedretto,1,0.0,0.0,single_listing,2,0,2,0,False,False
+SKI_CLUSTER_216,Bildhaus am Ricken,1,0.0,0.0,single_listing,2,1,0,0,False,False
+SKI_CLUSTER_224,Tanzboden Ebnat - Kappel,1,0.0,0.0,single_listing,2,1,1,0,False,False
+SKI_CLUSTER_240,Junker - St. Antönien,1,0.0,0.0,single_listing,2,1,2,0,False,False
+SKI_CLUSTER_241,Pischa Davos Pischa,1,0.0,0.0,single_listing,2,0,1,0,False,False
+SKI_CLUSTER_205,Mogno / Piano di Peccia,2,4.384673846829633,4.384673846829633,multi_listing_diameter_le_5km,1,5,1,3,False,False
+SKI_CLUSTER_059,Airolo - Lüina / Airolo - Pesciüm Airolo - Pesciüm,2,0.8769399246936485,0.8769399246936485,multi_listing_diameter_le_5km,1,3,1,3,False,False
+SKI_CLUSTER_145,Oberwangen / Hamberg - Gähwil,2,3.014004411847116,3.014004411847116,multi_listing_diameter_le_5km,1,3,0,2,False,False
+SKI_CLUSTER_005,Zermatt,1,0.0,0.0,single_listing,1,2,1,2,False,False
+SKI_CLUSTER_140,Obergoms Goms,1,0.0,0.0,single_listing,1,3,1,2,False,False
+SKI_CLUSTER_183,Chuderhüsi,1,0.0,0.0,single_listing,1,2,1,2,False,False
+SKI_CLUSTER_191,Langis Glaubenberg,1,0.0,0.0,single_listing,1,2,1,2,False,False
+SKI_CLUSTER_117,Grub Kaien / Oberegg St. Anton / Heiden Bischofsberg,3,2.4219661576129328,4.465488150353282,multi_listing_diameter_le_5km,1,3,0,1,False,False
+SKI_CLUSTER_082,Amden,1,0.0,0.0,single_listing,1,3,1,1,False,False
+SKI_CLUSTER_090,Champex - Lac,1,0.0,0.0,single_listing,1,1,1,1,False,False
+SKI_CLUSTER_104,Val Ferret - La Fouly,1,0.0,0.0,single_listing,1,1,1,1,False,False
+SKI_CLUSTER_118,Avers,1,0.0,0.0,single_listing,1,2,0,1,False,False
+SKI_CLUSTER_119,Bivio,1,0.0,0.0,single_listing,1,1,0,1,False,False
+SKI_CLUSTER_161,Saint - Imier - Mont Soleil,1,0.0,0.0,single_listing,1,1,0,1,False,False
+SKI_CLUSTER_193,Gfellen Entlebuch - Finsterwald,1,0.0,0.0,single_listing,1,1,1,1,False,False
+SKI_CLUSTER_228,Hemberg,1,0.0,0.0,single_listing,1,1,0,1,False,False
+SKI_CLUSTER_056,Grüsch Danusa,1,0.0,0.0,single_listing,1,0,1,0,False,False
+SKI_CLUSTER_105,Vichères Liddes - Vichères,1,0.0,0.0,single_listing,1,0,1,0,False,False
+SKI_CLUSTER_121,Heuberge Fideriser Heuberge,1,0.0,0.0,single_listing,1,1,1,0,False,False
+SKI_CLUSTER_151,Hochwang,1,0.0,0.0,single_listing,1,0,0,0,False,False
+SKI_CLUSTER_155,Les Verrières,1,0.0,0.0,single_listing,1,0,0,0,False,False
+SKI_CLUSTER_156,Côte - aux - Fées La Côte - aux - Fées,1,0.0,0.0,single_listing,1,0,0,0,False,False
+SKI_CLUSTER_159,Chapeau Rablé La Chaux - de - Fonds,1,0.0,0.0,single_listing,1,0,1,0,False,False
+SKI_CLUSTER_239,Pany,1,0.0,0.0,single_listing,1,1,1,0,False,False
+SKI_CLUSTER_200,Egg Hallau / Röhrenmoos Dietikon / Regensberg - Im Buck / +1 listings,4,29.256834870850604,46.35442691735824,multi_listing_diameter_gt_25_to_50km,0,9,0,3,False,False
+SKI_CLUSTER_077,Bosco Gurin,1,0.0,0.0,single_listing,0,2,0,2,False,False
+SKI_CLUSTER_084,Splügen Rheinwald,1,0.0,0.0,single_listing,0,3,0,2,False,False
+SKI_CLUSTER_099,Diavolezza - Lagalb,1,0.0,0.0,single_listing,0,2,0,2,False,False
+SKI_CLUSTER_120,Aela Maloja,1,0.0,0.0,single_listing,0,2,0,2,False,False
+SKI_CLUSTER_124,Saint George Saint - George,1,0.0,0.0,single_listing,0,2,0,2,False,False
+SKI_CLUSTER_133,Le Chaluet,1,0.0,0.0,single_listing,0,2,0,2,False,False
+SKI_CLUSTER_162,Les Breuleux,1,0.0,0.0,single_listing,0,2,0,2,False,False
+SKI_CLUSTER_163,Mont Gibloux,1,0.0,0.0,single_listing,0,2,0,2,False,False
+SKI_CLUSTER_184,Eggiwil,1,0.0,0.0,single_listing,0,2,0,2,False,False
+SKI_CLUSTER_011,Samnaun Silvretta Arena Samnaun / Ischgl,1,0.0,0.0,single_listing,0,2,0,1,False,False
+SKI_CLUSTER_029,Flumserberg,1,0.0,0.0,single_listing,0,3,0,1,False,False
+SKI_CLUSTER_033,Corvatsch - Furtschellas,1,0.0,0.0,single_listing,0,2,0,1,False,False
+SKI_CLUSTER_097,Vals,1,0.0,0.0,single_listing,0,2,0,1,False,False
+SKI_CLUSTER_143,Carì,1,0.0,0.0,single_listing,0,2,0,1,False,False
+SKI_CLUSTER_149,Feldis,1,0.0,0.0,single_listing,0,1,0,1,False,False
+SKI_CLUSTER_166,Nods - Chasseral,1,0.0,0.0,single_listing,0,1,0,1,False,False
+SKI_CLUSTER_168,Les Genevez,1,0.0,0.0,single_listing,0,1,0,1,False,False
+SKI_CLUSTER_170,Sous le Mont,1,0.0,0.0,single_listing,0,1,0,1,False,False
+SKI_CLUSTER_226,Kerenzerberg,1,0.0,0.0,single_listing,0,1,0,1,False,False
+SKI_CLUSTER_234,Buchserberg Skilift Buchserberg - Malbun,1,0.0,0.0,single_listing,0,4,0,1,False,False
+SKI_CLUSTER_044,Motta Naluns Scuol Motta Naluns,1,0.0,0.0,single_listing,0,0,0,0,False,False
+SKI_CLUSTER_067,Pian Cales San Bernardino,1,0.0,0.0,single_listing,0,1,0,0,False,False
+SKI_CLUSTER_080,Nara Leontica - Cancorì,1,0.0,0.0,single_listing,0,1,0,0,False,False
+SKI_CLUSTER_098,Tschiertschen,1,0.0,0.0,single_listing,0,0,0,0,False,False
+SKI_CLUSTER_111,Langenbruck,1,0.0,0.0,single_listing,0,1,0,0,False,False
+SKI_CLUSTER_122,Minschuns - Val Müstair,1,0.0,0.0,single_listing,0,0,0,0,False,False
+SKI_CLUSTER_147,Rossa,1,0.0,0.0,single_listing,0,0,0,0,False,False
+SKI_CLUSTER_208,Alpe di Neggia,1,0.0,0.0,single_listing,0,0,0,0,False,False
+SKI_CLUSTER_209,Bedea Novaggio,1,0.0,0.0,single_listing,0,0,0,0,False,False
+SKI_CLUSTER_232,Tannenberg Skiarena Tannenberg / Waldkirch,1,0.0,0.0,single_listing,0,1,0,0,False,False
+SKI_CLUSTER_235,Klausenböhl Gais / Klausenböhl,1,0.0,0.0,single_listing,0,1,0,0,False,False
+SKI_CLUSTER_236,Obermutten Mutten - Obermutten,1,0.0,0.0,single_listing,0,0,0,0,False,False

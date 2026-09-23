@@ -1274,7 +1274,7 @@ def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> N
         "partial_cluster_listing_links": 6,
     }
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_14").all()
+    assert decision["analysis_version"].eq("path_c_v0_15").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1355,11 +1355,90 @@ def test_path_c_network_context_excludes_focal_cluster_and_preserves_pair_grain(
     assert not as_bool(context["network_context_feature_approved"]).any()
     assert not as_bool(pairs["network_context_feature_approved"]).any()
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_14").all()
+    assert decision["analysis_version"].eq("path_c_v0_15").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
     assert not as_bool(decision["network_context_feature_approved"]).any()
+
+
+def test_path_c_cluster_geography_sensitivity_preserves_clusters_and_bounds_rules() -> None:
+    context = read("data_processed/path_c_cluster_geographic_sensitivity.csv")
+    pairs = read("reports/path_c_cluster_distance_rule_pairs.csv")
+    candidates = read("reports/cluster_geography_candidate_summary.csv")
+    baseline_pairs = read("reports/path_c_cluster_network_pairs.csv")
+    decision = read("data_processed/magic_pass_decision_support.csv")
+
+    assert len(context) == 162
+    assert context["cluster_id"].is_unique
+    assert int(context["cluster_listing_point_count"].sum()) == 271
+    assert int(context["cluster_listing_point_count"].eq(1).sum()) == 109
+    assert int(context["cluster_listing_point_count"].gt(1).sum()) == 53
+    assert context["cluster_listing_geographic_spread_band"].value_counts().to_dict() == {
+        "single_listing": 109,
+        "multi_listing_diameter_gt_5_to_25km": 28,
+        "multi_listing_diameter_le_5km": 24,
+        "multi_listing_diameter_gt_25_to_50km": 1,
+    }
+    widest = context.loc[context["within_cluster_pairwise_distance_max_km"].idxmax()]
+    assert widest["cluster_id"] == "SKI_CLUSTER_200"
+    assert np.isclose(widest["within_cluster_pairwise_distance_max_km"], 46.35442691735824)
+
+    assert len(pairs) == 162 * 161
+    assert not pairs[["focal_cluster_id", "other_cluster_id"]].duplicated().any()
+    assert not pairs["focal_cluster_id"].eq(pairs["other_cluster_id"]).any()
+    assert (
+        pairs["minimum_listing_pair_distance_km"]
+        <= pairs["median_listing_pair_distance_km"] + 1e-12
+    ).all()
+    assert (
+        pairs["median_listing_pair_distance_km"]
+        <= pairs["maximum_listing_pair_distance_km"] + 1e-12
+    ).all()
+    reproduced = pairs.merge(
+        baseline_pairs[["focal_cluster_id", "other_cluster_id", "great_circle_distance_km"]],
+        on=["focal_cluster_id", "other_cluster_id"],
+        how="left",
+        validate="one_to_one",
+    )
+    assert np.allclose(
+        reproduced["representative_median_coordinate_distance_km"],
+        reproduced["great_circle_distance_km"],
+    )
+
+    for radius in [25, 50]:
+        for scope in ["directory", "reviewed_pass_network"]:
+            minimum = context[
+                f"other_{scope}_clusters_within_{radius}km_by_minimum_listing_pair_distance"
+            ]
+            median = context[
+                f"other_{scope}_clusters_within_{radius}km_by_median_listing_pair_distance"
+            ]
+            maximum = context[
+                f"other_{scope}_clusters_within_{radius}km_by_maximum_listing_pair_distance"
+            ]
+            assert (minimum >= median).all()
+            assert (median >= maximum).all()
+        assert np.array_equal(
+            context[
+                f"other_directory_clusters_within_{radius}km_by_representative_median_coordinate_distance"
+            ].to_numpy(),
+            read("data_processed/path_c_cluster_network_context.csv")[
+                f"other_directory_clusters_within_{radius}km"
+            ].to_numpy(),
+        )
+
+    assert len(candidates) == 104
+    assert int(candidates["directory_cluster_count_distance_rule_span_within_25km"].gt(0).sum()) == 71
+    assert int(candidates["reviewed_pass_network_count_distance_rule_span_within_50km"].gt(0).sum()) == 72
+    assert not as_bool(context["cluster_geographic_coherence_verified"]).any()
+    assert not as_bool(context["network_distance_sensitivity_feature_approved"]).any()
+    assert not as_bool(pairs["network_distance_sensitivity_feature_approved"]).any()
+    assert decision["analysis_version"].eq("path_c_v0_15").all()
+    assert decision["accessibility_score"].isna().all()
+    assert decision["predicted_uplift_pct"].isna().all()
+    assert decision["composite_opportunity_need_score"].isna().all()
+    assert not as_bool(decision["network_distance_sensitivity_feature_approved"]).any()
 
 
 def test_public_transport_journey_context_preserves_grain_and_limits() -> None:

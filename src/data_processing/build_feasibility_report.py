@@ -39,6 +39,9 @@ COMPETING_PASS_CONTEXT_SUMMARY = (
     ROOT / "reports" / "competing_pass_context_summary.json"
 )
 NETWORK_CONTEXT_SUMMARY = ROOT / "reports" / "network_context_summary.json"
+CLUSTER_GEOGRAPHY_SENSITIVITY_SUMMARY = (
+    ROOT / "reports" / "cluster_geography_sensitivity_summary.json"
+)
 PUBLIC_TRANSPORT_JOURNEY_SUMMARY = (
     ROOT / "reports" / "public_transport_journey_context_summary.json"
 )
@@ -113,6 +116,9 @@ def main() -> None:
     )
     network_context_summary = json.loads(
         NETWORK_CONTEXT_SUMMARY.read_text(encoding="utf-8")
+    )
+    cluster_geography_sensitivity_summary = json.loads(
+        CLUSTER_GEOGRAPHY_SENSITIVITY_SUMMARY.read_text(encoding="utf-8")
     )
     public_transport_journey_summary = json.loads(
         PUBLIC_TRANSPORT_JOURNEY_SUMMARY.read_text(encoding="utf-8")
@@ -622,6 +628,40 @@ def main() -> None:
                 "candidates_with_no_other_reviewed_pass_network_cluster_within_50km"
             ]
         ),
+        "cluster_geography_multi_listing_clusters": int(
+            cluster_geography_sensitivity_summary["multi_listing_clusters"]
+        ),
+        "cluster_geography_median_multi_listing_diameter_km": float(
+            cluster_geography_sensitivity_summary[
+                "median_multi_listing_cluster_diameter_km"
+            ]
+        ),
+        "cluster_geography_maximum_diameter_km": float(
+            cluster_geography_sensitivity_summary["maximum_cluster_diameter_km"]
+        ),
+        "cluster_geography_clusters_with_diameter_gt_25km": int(
+            cluster_geography_sensitivity_summary["clusters_with_diameter_gt_25km"]
+        ),
+        "cluster_geography_candidates_directory_sensitive_25km": int(
+            cluster_geography_sensitivity_summary[
+                "candidates_with_directory_count_sensitivity_within_25km"
+            ]
+        ),
+        "cluster_geography_candidates_network_sensitive_50km": int(
+            cluster_geography_sensitivity_summary[
+                "candidates_with_reviewed_pass_network_count_sensitivity_within_50km"
+            ]
+        ),
+        "cluster_geography_max_candidate_directory_span_25km": int(
+            cluster_geography_sensitivity_summary[
+                "maximum_candidate_directory_count_span_within_25km"
+            ]
+        ),
+        "cluster_geography_max_candidate_network_span_50km": int(
+            cluster_geography_sensitivity_summary[
+                "maximum_candidate_reviewed_pass_network_count_span_within_50km"
+            ]
+        ),
         "public_transport_journey_pairs": int(
             public_transport_journey_summary["destination_municipality_pairs"]
         ),
@@ -787,6 +827,12 @@ The complete **{metrics['network_context_ordered_cluster_pairs']:,}-row ordered 
 
 Every count excludes the focal cluster. The supplied clusters are not validated independent commercial domains, multi-listing median coordinates can be artificial, straight-line distance ignores terrain and transport, published ski-area values are undated and can overlap, and the pass links are current rather than historical. These are therefore directory/network diagnostics rather than true competitor counts, market penetration, visitor flows or causal exposure. Historical and feature-approval flags remain false. See `reports/32_PATH_C_NETWORK_CONTEXT.md`.
 
+## Cluster geography and network-distance sensitivity
+
+The preserved clustering contains **{metrics['cluster_geography_multi_listing_clusters']} multi-listing clusters**. Their median point-to-point diameter is **{metrics['cluster_geography_median_multi_listing_diameter_km']:.2f} km**; the maximum is **{metrics['cluster_geography_maximum_diameter_km']:.2f} km**, and **{metrics['cluster_geography_clusters_with_diameter_gt_25km']} cluster** exceeds 25 km. Comparing minimum, median and maximum cross-listing-point distances with the existing coordinate-wise-median distance changes the 25 km directory-neighbour count for **{metrics['cluster_geography_candidates_directory_sensitive_25km']} of 104 candidates** and the 50 km reviewed-network count for **{metrics['cluster_geography_candidates_network_sensitive_50km']} candidates**. The largest candidate spans are **{metrics['cluster_geography_max_candidate_directory_span_25km']} directory clusters at 25 km** and **{metrics['cluster_geography_max_candidate_network_span_50km']} reviewed-network clusters at 50 km**.
+
+No rule is promoted as the uniquely correct commercial-market distance. Minimum distance is permissive, maximum distance is conservative, and coordinate-wise medians can fall between actual places. The audit preserves all existing cluster assignments and keeps geographic-coherence and feature-approval flags false. See `reports/33_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY.md`.
+
 ## NPVM zone-proxy audit
 
 All **{metrics['npvm_proxy_listing_points_geometrically_reconstructed']}** municipality-constrained NPVM listing-point assignments are exactly reconstructed against the checksum-verified zone and current municipality geometries. They affect **{metrics['npvm_proxy_clusters']} clusters**; **{metrics['npvm_proxy_only_clusters']}** have no exact listing-point assignment for an internal comparison, including **{metrics['npvm_proxy_only_candidate_clusters']}** apparent Path C candidates. The geometry and deterministic choice are validated, but proxy-only travel times are not independently validated observed routes. Historical zone lineage and causal approval remain false. See `reports/27_TRANSPORT_ZONE_PROXY_AUDIT.md`.
@@ -841,7 +887,7 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 
 ## Next evidence gate
 
-For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; validate destination catchments for tourism dependence; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. Current competing-pass links and national-road-axis proximity are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed min/median/max aggregation sensitivity and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; validate destination catchments for tourism dependence; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. Current competing-pass links, national-road-axis proximity and listing-point distance-rule sensitivity are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed structural aggregation and network-distance sensitivities and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

@@ -865,6 +865,25 @@ def main() -> None:
         manual_verification="162 clusters, 26,082 unique ordered non-self pairs and 104 candidates; focal cluster excluded from every count; zero historical or causal approvals",
     ))
     rows.append(blank_source(
+        "DERIVED_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY",
+        variable_name="within_cluster_listing_point_spread|cross_cluster_listing_pair_distance_rules|network_count_distance_rule_sensitivity",
+        variable_description="Geographic spread audit of preserved lift clusters and minimum/median/representative/maximum listing-point distance sensitivity",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C cluster geography and network-distance sensitivity",
+        retrieval_method="Deterministic Python derivation from all supplied listing coordinates without rebuilding the existing clusters",
+        local_raw_file="data_processed/resort_master.csv|data_processed/path_c_resort_cluster_features.csv|data_processed/path_c_cluster_competing_pass_context.csv",
+        processed_file="data_processed/path_c_cluster_geographic_sensitivity.csv|reports/path_c_cluster_distance_rule_pairs.csv|reports/cluster_geography_candidate_summary.csv|data_processed/magic_pass_decision_support.csv|reports/33_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY.md",
+        geographic_level="supplied listing point, preserved linked lift cluster and ordered pair of distinct linked clusters",
+        temporal_resolution="current/undated supplied listing coordinates and current reviewed pass-network links",
+        temporal_start="",
+        temporal_end="2026-09-23",
+        unit="great-circle kilometres, counts, categories and flags",
+        transformation_applied="Measure within-cluster pairwise listing-point spread; calculate minimum, median and maximum distance across every cross-cluster listing-point pair; reproduce the coordinate-wise-median baseline; compare 25/50 km directory and reviewed-network counts",
+        quality_notes="Existing clusters are preserved but not certified as independent commercial domains; no distance rule is uniquely correct; straight-line distance ignores terrain, transport, visitor behaviour and historical changes",
+        confidence_level="high for reproducibility; qualified entity-definition and measurement sensitivity only",
+        manual_verification="162 clusters, 271 listing points and 26,082 ordered non-self cluster pairs; all distance bounds and baseline reproduction checked; zero geographic-coherence or feature approvals",
+    ))
+    rows.append(blank_source(
         "SKI_GTFS_TIMETABLE_2026_WINTER_20260207",
         variable_name="scheduled_stop_times|trips|routes|service_calendar|transfers|stop_coordinates",
         variable_description="Official all-Switzerland GTFS Static timetable snapshot used for scheduled municipality-to-ski-destination routing",
@@ -1890,6 +1909,9 @@ def main() -> None:
         "path_c_cluster_network_context": ROOT / "data_processed/path_c_cluster_network_context.csv",
         "path_c_cluster_network_pairs": ROOT / "reports/path_c_cluster_network_pairs.csv",
         "network_context_candidate_summary": ROOT / "reports/network_context_candidate_summary.csv",
+        "path_c_cluster_geographic_sensitivity": ROOT / "data_processed/path_c_cluster_geographic_sensitivity.csv",
+        "path_c_cluster_distance_rule_pairs": ROOT / "reports/path_c_cluster_distance_rule_pairs.csv",
+        "cluster_geography_candidate_summary": ROOT / "reports/cluster_geography_candidate_summary.csv",
         "public_transport_journey_nodes": ROOT / "reports/public_transport_journey_nodes.csv",
         "treatment_municipality_public_transport_journey_samples": ROOT / "data_processed/treatment_municipality_public_transport_journey_samples.csv",
         "treatment_municipality_public_transport_journey_context": ROOT / "data_processed/treatment_municipality_public_transport_journey_context.csv",
@@ -1927,6 +1949,9 @@ def main() -> None:
         "path_c_cluster_network_context": "DERIVED_PATH_C_NETWORK_CONTEXT",
         "path_c_cluster_network_pairs": "DERIVED_PATH_C_NETWORK_CONTEXT",
         "network_context_candidate_summary": "DERIVED_PATH_C_NETWORK_CONTEXT",
+        "path_c_cluster_geographic_sensitivity": "DERIVED_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY",
+        "path_c_cluster_distance_rule_pairs": "DERIVED_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY",
+        "cluster_geography_candidate_summary": "DERIVED_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY",
         "public_transport_journey_nodes": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_samples": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_context": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
@@ -2010,6 +2035,24 @@ def main() -> None:
         "other_cluster_reviewed_competing_limited_partner": "Whether the other cluster contains an AlpsPass limited three-day partner link",
         "other_cluster_reviewed_competing_core_or_included": "Whether the other cluster contains a core or included competing-pass-region link",
         "other_cluster_in_reviewed_pass_network": "Whether the other cluster belongs to the union of resolved current Magic and reviewed competing-pass-linked clusters",
+        "cluster_listing_point_count": "Number of supplied resort listing points assigned to the preserved lift cluster",
+        "cluster_unique_coordinate_count": "Number of distinct supplied latitude/longitude pairs assigned to the preserved lift cluster",
+        "within_cluster_listing_pair_count": "Number of unordered pairs of supplied listing points inside the preserved lift cluster",
+        "within_cluster_pairwise_distance_min_km": "Minimum great-circle distance among listing-point pairs inside the preserved lift cluster; zero for a single listing",
+        "within_cluster_pairwise_distance_median_km": "Median great-circle distance among listing-point pairs inside the preserved lift cluster; zero for a single listing",
+        "within_cluster_pairwise_distance_max_km": "Maximum great-circle distance among listing-point pairs inside the preserved lift cluster; the observed listing-point diameter",
+        "maximum_listing_distance_from_representative_median_coordinate_km": "Largest great-circle distance from a cluster listing point to the coordinate-wise median location",
+        "cluster_listing_geographic_spread_band": "Descriptive band based on listing count and maximum within-cluster listing-point distance",
+        "cluster_geographic_coherence_verified": "Whether the existing cluster has been certified as one geographically and commercially coherent destination; always false",
+        "network_distance_sensitivity_feature_approved": "Whether the distance-rule sensitivity is approved as a causal or historical model feature; always false",
+        "cluster_geography_sensitivity_interpretation": "Guardrail stating that listing-point spread and distance-rule sensitivity do not redefine clusters or establish historical/causal competition",
+        "cluster_geography_sensitivity_source_ids": "Source identifiers for the resort master, Path C feature matrix and competing-pass context used in the sensitivity audit",
+        "cross_cluster_listing_pair_count": "Number of cross-product supplied listing-point pairs represented by the ordered cluster pair",
+        "minimum_listing_pair_distance_km": "Minimum great-circle distance across every supplied listing-point pair joining the two clusters",
+        "median_listing_pair_distance_km": "Median great-circle distance across every supplied listing-point pair joining the two clusters",
+        "representative_median_coordinate_distance_km": "Great-circle distance between the two coordinate-wise median cluster locations used in the baseline network context",
+        "maximum_listing_pair_distance_km": "Maximum great-circle distance across every supplied listing-point pair joining the two clusters",
+        "absolute_representative_vs_listing_pair_median_difference_km": "Absolute difference between coordinate-wise-median distance and median cross-listing-pair distance",
         "segment_id": "Stable label of the selected current structural k-means segment",
         "descriptive_profile": "Relative altitude, ski-area and lift-count description of the segment",
         "distance_to_segment_centroid": "Euclidean distance to the assigned centroid in three standardised structural features",
@@ -2302,6 +2345,30 @@ def main() -> None:
             path_c_glossary[
                 f"{prefix}_share_of_other_directory_clusters_within_{radius}km"
             ] = f"Share of other directory clusters within {radius} kilometres belonging to the {description} set; missing when there is no neighbour"
+        for rule, description in {
+            "minimum_listing_pair": "minimum cross-listing-point pair",
+            "median_listing_pair": "median cross-listing-point pair",
+            "representative_median_coordinate": "coordinate-wise median representative",
+            "maximum_listing_pair": "maximum cross-listing-point pair",
+        }.items():
+            path_c_glossary[
+                f"other_directory_clusters_within_{radius}km_by_{rule}_distance"
+            ] = f"Number of other directory clusters within {radius} kilometres under the {description} distance rule"
+            path_c_glossary[
+                f"other_reviewed_pass_network_clusters_within_{radius}km_by_{rule}_distance"
+            ] = f"Number of other reviewed pass-network clusters within {radius} kilometres under the {description} distance rule"
+        path_c_glossary[
+            f"directory_cluster_count_distance_rule_span_within_{radius}km"
+        ] = f"Maximum minus minimum directory-neighbour count across the four distance rules at {radius} kilometres"
+        path_c_glossary[
+            f"reviewed_pass_network_count_distance_rule_span_within_{radius}km"
+        ] = f"Maximum minus minimum reviewed pass-network count across the four distance rules at {radius} kilometres"
+        path_c_glossary[
+            f"directory_cluster_count_stable_across_distance_rules_within_{radius}km"
+        ] = f"Whether all four distance rules give the same directory-neighbour count at {radius} kilometres"
+        path_c_glossary[
+            f"reviewed_pass_network_count_stable_across_distance_rules_within_{radius}km"
+        ] = f"Whether all four distance rules give the same reviewed pass-network count at {radius} kilometres"
     for threshold in [20_000, 50_000, 100_000]:
         prefix = f"nearest_municipality_population_ge_{threshold}"
         path_c_glossary[f"{prefix}_bfs_id_2026"] = (
@@ -2355,6 +2422,8 @@ def main() -> None:
         if "_share_of_" in variable:
             return "share (0-1)"
         if "clusters_within_" in variable or "listings_within_" in variable:
+            return "count"
+        if "count_distance_rule_span" in variable:
             return "count"
         if "ski_area_km_sum" in variable:
             return "published ski-area kilometres"
@@ -2420,6 +2489,9 @@ def main() -> None:
         "path_c_cluster_network_context": "linked lift cluster",
         "path_c_cluster_network_pairs": "ordered pair of distinct linked lift clusters",
         "network_context_candidate_summary": "apparent Path C candidate lift cluster",
+        "path_c_cluster_geographic_sensitivity": "preserved linked lift cluster and its supplied listing points",
+        "path_c_cluster_distance_rule_pairs": "ordered pair of distinct preserved linked lift clusters",
+        "cluster_geography_candidate_summary": "apparent Path C candidate lift cluster",
         "public_transport_journey_nodes": "hotel municipality or reviewed destination component",
         "treatment_municipality_public_transport_journey_samples": "reviewed destination by hotel municipality and scheduled request",
         "treatment_municipality_public_transport_journey_context": "reviewed destination by hotel municipality",
@@ -2452,6 +2524,9 @@ def main() -> None:
         "path_c_cluster_network_context": "current/undated supplied directory plus current reviewed pass-network snapshots",
         "path_c_cluster_network_pairs": "current/undated supplied directory plus current reviewed pass-network snapshots",
         "network_context_candidate_summary": "current/undated supplied directory plus current reviewed pass-network snapshots",
+        "path_c_cluster_geographic_sensitivity": "current/undated supplied listing coordinates",
+        "path_c_cluster_distance_rule_pairs": "current/undated supplied listing coordinates plus current reviewed pass-network links",
+        "cluster_geography_candidate_summary": "current/undated supplied listing coordinates plus current reviewed pass-network links",
         "public_transport_journey_nodes": "winter-2026 GTFS node-selection reference",
         "treatment_municipality_public_transport_journey_samples": "2026-02-04 and 2026-02-07 scheduled requests",
         "treatment_municipality_public_transport_journey_context": "winter-2026 weekday/Saturday scheduled summary",
@@ -2503,6 +2578,11 @@ def main() -> None:
                 "path_c_cluster_network_pairs",
                 "network_context_candidate_summary",
             }
+            geography_sensitivity_table = table in {
+                "path_c_cluster_geographic_sensitivity",
+                "path_c_cluster_distance_rule_pairs",
+                "cluster_geography_candidate_summary",
+            }
             journey_table = table in {
                 "public_transport_journey_nodes",
                 "treatment_municipality_public_transport_journey_samples",
@@ -2526,7 +2606,36 @@ def main() -> None:
                     or variable.startswith("reviewed_competing_pass_")
                 )
             )
-            network_variable = network_table or (
+            geography_sensitivity_variable = geography_sensitivity_table or (
+                table == "magic_pass_decision_support"
+                and (
+                    variable.startswith("cluster_listing_point_")
+                    or variable.startswith("cluster_unique_coordinate_")
+                    or variable.startswith("within_cluster_")
+                    or variable.startswith("maximum_listing_distance_from_representative_")
+                    or variable.startswith("cluster_listing_geographic_spread_")
+                    or variable.startswith("directory_cluster_count_distance_rule_")
+                    or variable.startswith("reviewed_pass_network_count_distance_rule_")
+                    or variable.startswith(
+                        "directory_cluster_count_stable_across_distance_rules_"
+                    )
+                    or variable.startswith(
+                        "reviewed_pass_network_count_stable_across_distance_rules_"
+                    )
+                    or "_by_minimum_listing_pair_distance" in variable
+                    or "_by_median_listing_pair_distance" in variable
+                    or "_by_representative_median_coordinate_distance" in variable
+                    or "_by_maximum_listing_pair_distance" in variable
+                    or variable
+                    in {
+                        "cluster_geographic_coherence_verified",
+                        "network_distance_sensitivity_feature_approved",
+                        "cluster_geography_sensitivity_interpretation",
+                        "cluster_geography_sensitivity_source_ids",
+                    }
+                )
+            )
+            network_variable = not geography_sensitivity_variable and (network_table or (
                 table == "magic_pass_decision_support"
                 and (
                     variable.startswith("nearest_other_")
@@ -2548,7 +2657,7 @@ def main() -> None:
                         "network_context_source_ids",
                     }
                 )
-            )
+            ))
             cross_border_population_variable = cross_border_population_table or (
                 table == "magic_pass_decision_support"
                 and (
@@ -2644,6 +2753,8 @@ def main() -> None:
                 if journey_variable
                 else "qualified current competing-pass roster context"
                 if competing_variable
+                else "qualified cluster-geography and network-distance sensitivity"
+                if geography_sensitivity_variable
                 else "qualified current ski-cluster and reviewed pass-network context"
                 if network_variable
                 else "qualified cross-border one-kilometre population context"
@@ -2686,6 +2797,9 @@ def main() -> None:
                 "See config/competing_pass_roster_2026_27.csv and src/data_processing/build_competing_pass_context.py"
                 if competing_variable
                 else
+                "See config/path_c_analysis.json and src/data_processing/build_path_c_cluster_geography_sensitivity.py"
+                if geography_sensitivity_variable
+                else
                 "See src/data_processing/build_path_c_network_context.py"
                 if network_variable
                 else
@@ -2725,6 +2839,9 @@ def main() -> None:
                 "No causal interpretation; current links in three official rosters do not reconstruct historical competition, verify market absence or establish equivalent benefit intensity"
                 if competing_variable
                 else
+                "No causal interpretation; listing-point spread and distance-rule sensitivity do not certify commercial-domain coherence, historical market structure, travel impedance or skier substitution"
+                if geography_sensitivity_variable
+                else
                 "No causal interpretation; current directory-cluster and reviewed pass-network straight-line context is not historical market structure, travel impedance, observed competition or visitor behaviour"
                 if network_variable
                 else
@@ -2756,6 +2873,8 @@ def main() -> None:
                 if journey_variable
                 else "DERIVED_COMPETING_PASS_CONTEXT"
                 if competing_variable
+                else "DERIVED_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY"
+                if geography_sensitivity_variable
                 else "DERIVED_PATH_C_NETWORK_CONTEXT"
                 if network_variable
                 else "DERIVED_CROSS_BORDER_POPULATION_CONTEXT"

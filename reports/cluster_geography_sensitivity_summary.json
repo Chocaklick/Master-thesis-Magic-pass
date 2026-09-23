@@ -1,0 +1,32 @@
+{
+  "analysis_version": "path_c_v0_15",
+  "linked_clusters": 162,
+  "ordered_nonself_cluster_pairs": 26082,
+  "single_listing_clusters": 109,
+  "multi_listing_clusters": 53,
+  "cluster_spread_band_counts": {
+    "multi_listing_diameter_gt_25_to_50km": 1,
+    "multi_listing_diameter_gt_5_to_25km": 28,
+    "multi_listing_diameter_le_5km": 24,
+    "single_listing": 109
+  },
+  "median_multi_listing_cluster_diameter_km": 6.538942636724517,
+  "maximum_cluster_diameter_km": 46.35442691735824,
+  "maximum_cluster_diameter_cluster_id": "SKI_CLUSTER_200",
+  "clusters_with_diameter_gt_25km": 1,
+  "median_absolute_representative_vs_listing_pair_median_difference_km": 0.0,
+  "p95_absolute_representative_vs_listing_pair_median_difference_km": 1.2810597525343894,
+  "unique_cluster_pairs_involving_multi_listing_cluster": 7155,
+  "median_absolute_representative_vs_listing_pair_median_difference_for_multi_involved_pairs_km": 0.029561971313654567,
+  "p95_absolute_representative_vs_listing_pair_median_difference_for_multi_involved_pairs_km": 1.7181447861021033,
+  "path_c_candidates": 104,
+  "candidates_with_directory_count_sensitivity_within_25km": 71,
+  "candidates_with_directory_count_sensitivity_within_50km": 86,
+  "candidates_with_reviewed_pass_network_count_sensitivity_within_25km": 56,
+  "candidates_with_reviewed_pass_network_count_sensitivity_within_50km": 72,
+  "maximum_candidate_directory_count_span_within_25km": 13,
+  "maximum_candidate_reviewed_pass_network_count_span_within_50km": 11,
+  "cluster_geographic_coherence_verified": 0,
+  "approved_features": 0,
+  "interpretation": "current_supplied_listing_point_cluster_spread_and_distance_rule_sensitivity_not_cluster_redefinition_historical_market_structure_or_causal_competition"
+}

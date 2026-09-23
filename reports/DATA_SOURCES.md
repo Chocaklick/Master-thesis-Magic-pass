@@ -494,6 +494,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Aggregation rules probe listing semantics, not causal truth or predictive validity; exact analogue assignments and OOD flags are not invariant
 - **Local raw file:** `config/path_c_analysis.json`.
 
+## DERIVED_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY — Path C cluster geography and network-distance sensitivity
+
+- **Contents and relevance:** Geographic spread audit of preserved lift clusters and minimum/median/representative/maximum listing-point distance sensitivity
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic Python derivation from all supplied listing coordinates without rebuilding the existing clusters; unknown date.
+- **Variables:** within_cluster_listing_point_spread|cross_cluster_listing_pair_distance_rules|network_count_distance_rule_sensitivity
+- **Transformations:** Measure within-cluster pairwise listing-point spread; calculate minimum, median and maximum distance across every cross-cluster listing-point pair; reproduce the coordinate-wise-median baseline; compare 25/50 km directory and reviewed-network counts
+- **Coverage:** supplied listing point, preserved linked lift cluster and ordered pair of distinct linked clusters; current/undated supplied listing coordinates and current reviewed pass-network links; ? to 2026-09-23.
+- **Limitations:** Existing clusters are preserved but not certified as independent commercial domains; no distance rule is uniquely correct; straight-line distance ignores terrain, transport, visitor behaviour and historical changes
+- **Local raw file:** `data_processed/resort_master.csv|data_processed/path_c_resort_cluster_features.csv|data_processed/path_c_cluster_competing_pass_context.csv`.
+
 ## DERIVED_PATH_C_DECISION_SUPPORT — Magic Pass exploratory decision-support prototype
 
 - **Contents and relevance:** Dashboard-ready exploratory Path C export retaining separate opportunity, vulnerability, support, quality and qualified context dimensions
