@@ -1,0 +1,40 @@
+{
+  "analysis_version": "path_c_v0_13",
+  "reviewed_passes": 3,
+  "official_area_rows": 43,
+  "official_area_rows_by_pass": {
+    "alpspass": 11,
+    "meilenweiss": 17,
+    "schneepass_zentralschweiz": 15
+  },
+  "benefit_tier_rows": {
+    "unlimited_core_region": 4,
+    "three_free_ski_days_partner_region": 7,
+    "included_region_current_annual_pass": 17,
+    "included_region_winter_season_pass": 15
+  },
+  "source_sha256": {
+    "ALPSPASS_2026_27_ROSTER": "01f64905f411babeae539df372cc8e0b4f54609b99ec22b043e4ef5ecca68ae2",
+    "ALPSPASS_2026_27_GTC": "a1039dab1f4ac201009e42de21c8af39cd51a0b147c91080dea561a969c8ee6d",
+    "MEILENWEISS_CURRENT_ROSTER": "417e620dc893862b4d51959e0fc5eadea2293a76ab99213b0db70061e885c5ae",
+    "SCHNEEPASS_ZENTRALSCHWEIZ_2026_27_ROSTER": "9509ef250c9e937acbc2c4d25f943e120dcf060e33edc98050a05f9d24797d01"
+  },
+  "resort_listings": 271,
+  "resort_listings_linked": 55,
+  "resort_listings_not_linked": 216,
+  "path_c_clusters": 162,
+  "path_c_clusters_with_link": 29,
+  "path_c_clusters_partial": 10,
+  "path_c_candidates": 104,
+  "path_c_candidates_with_link": 22,
+  "path_c_candidates_without_link": 82,
+  "candidate_scope_status_counts": {
+    "no_link_in_reviewed_rosters": 82,
+    "all_listing_points_linked_to_one_or_more_reviewed_rosters": 16,
+    "partial_cluster_listing_links": 6
+  },
+  "market_absence_verified_rows": 0,
+  "approved_features": 0,
+  "temporal_scope": "official_2026_27_alpspass_and_schneepass_plus_current_retrieval_snapshot_meilenweiss",
+  "interpretation": "current_official_reviewed_roster_links_not_historical_competition_intensity_market_absence_or_causal_feature"
+}

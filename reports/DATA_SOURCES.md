@@ -14,6 +14,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/AESCHI_LIFT_SCOPE_OFFICIAL_20260920T192815Z.html`.
 
+## ALPSPASS_2026_27_GTC — AlpsPass General Terms and Conditions 2026/2027
+
+- **Contents and relevance:** Official terms identifying operators and included infrastructure within the four AlpsPass core regions
+- **Producer:** AlpsPass tariff association
+- **Exact URL:** https://www.alpspass.ski/_Resources/Persistent/8/2/0/0/8200ca8b8dbee72232ab48c0249aafface7be531/AlpsPass-2026-2027-AGB%20en.pdf
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-23T09:53:04.465946+00:00.
+- **Variables:** core_region_operator|included_infrastructure|gtc_validity
+- **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
+- **Coverage:** official pass area / supplied resort listing link; terms valid from 2026-09-01; 2026-09-01 to ?.
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; historical competition is not reconstructed
+- **Local raw file:** `data_external/source_evidence/ALPSPASS_2026_27_GTC_20260923T095304Z.pdf`.
+
+## ALPSPASS_2026_27_ROSTER — Official AlpsPass regions and tariff page 2026/2027
+
+- **Contents and relevance:** Official roster naming four AlpsPass core regions and seven partner regions with three free ski days in each partner region
+- **Producer:** AlpsPass tariff association
+- **Exact URL:** https://www.alpspass.ski/fr
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-23T09:47:12.298171+00:00.
+- **Variables:** official_area_label|roster_version|benefit_tier|partner_free_ski_days
+- **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
+- **Coverage:** official pass area / supplied resort listing link; 2026/2027; 2026-11-01 to 2027-10-31.
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; historical competition is not reconstructed
+- **Local raw file:** `data_external/source_evidence/ALPSPASS_2026_27_ROSTER_20260923T094712Z.html`.
+
 ## ANNIVIERS_SCOPE_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Official municipal evidence that Grimentz, Zinal, Saint-Luc and Chandolin belong to Anniviers
@@ -337,6 +361,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** current Swiss municipality and linked lift cluster; 2025 population aligned to 2026-01-01 boundaries; 2025-12-31 to 2026-01-01.
 - **Limitations:** Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point and radius-specific border intersection is flagged without filling foreign population
 - **Local raw file:** `config/path_c_analysis.json|config/municipality_boundary_bridge_2025_2026.csv`.
+
+## DERIVED_COMPETING_PASS_CONTEXT — Path C competing-pass roster context
+
+- **Contents and relevance:** Qualified listing- and cluster-level context from three official current competing-pass rosters
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned deterministic Python expansion of explicit reviewed resort-ID links; unknown date.
+- **Variables:** competing_pass_roster_link|benefit_tier|cluster_linked_listing_share|competing_pass_scope_status
+- **Transformations:** Validate official roster cardinalities and source tokens; expand only explicit stable resort-ID links; aggregate linked and unlinked listings separately within preserved lift clusters
+- **Coverage:** official pass area, supplied resort listing and linked lift cluster; AlpsPass and Schneepass 2026/2027; Meilenweiss retrieval-date snapshot 2026-09-23; 2026 to 2027.
+- **Limitations:** A non-link is not verified competing-pass absence; mixed clusters retain partial status; snapshots are not historical pre-treatment competition measures
+- **Local raw file:** `config/competing_pass_roster_2026_27.csv`.
 
 ## DERIVED_CROSS_BORDER_POPULATION_CONTEXT — Path C Eurostat cross-border population context
 
@@ -1178,6 +1214,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/MAYENS_CONTHEY_OPERATOR_OFFICIAL_20260921T220416Z.html`.
 
+## MEILENWEISS_CURRENT_ROSTER — Official Meilenweiss FAQ current roster
+
+- **Contents and relevance:** Official retrieval-date list of all 17 regions in the Meilenweiss annual pass
+- **Producer:** Tarifverbund Meilenweiss
+- **Exact URL:** https://meilenweiss.ch/meilenweiss-faq
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-23T09:47:13.928797+00:00.
+- **Variables:** official_area_label|current_annual_pass_roster
+- **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
+- **Coverage:** official pass area / supplied resort listing link; current retrieval-date snapshot; 2026-09-23 to 2026-09-23.
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; historical competition is not reconstructed
+- **Local raw file:** `data_external/source_evidence/MEILENWEISS_CURRENT_ROSTER_20260923T094713Z.html`.
+
 ## MEIRINGEN_HASLIBERG_MAGIC_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Official operator evidence for Magic Pass membership from 1 May 2025
@@ -1333,6 +1381,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2019-01 to 2019-12.
 - **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
 - **Local raw file:** `data_external/source_evidence/SAMNAUN_VISNITZBAHN_HISTORY_20260921T154459Z.html`.
+
+## SCHNEEPASS_ZENTRALSCHWEIZ_2026_27_ROSTER — Official Schneepass Zentralschweiz winter roster 2026/2027
+
+- **Contents and relevance:** Official winter-season page listing all 15 included Schneepass Zentralschweiz regions
+- **Producer:** Transportunternehmungen Zentralschweiz (TUZ)
+- **Exact URL:** https://www.schneepasszentralschweiz.ch/
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-23T09:47:25.393928+00:00.
+- **Variables:** official_area_label|roster_version|winter_pass_inclusion
+- **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
+- **Coverage:** official pass area / supplied resort listing link; winter season 2026/2027; 2026 to 2027.
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; historical competition is not reconstructed
+- **Local raw file:** `data_external/source_evidence/SCHNEEPASS_ZENTRALSCHWEIZ_2026_27_ROSTER_20260923T094725Z.html`.
 
 ## SKI_GTFS_TIMETABLE_2026_WINTER_20260207 — Timetable 2026 (GTFS2020), build 20260207
 

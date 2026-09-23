@@ -83,6 +83,15 @@ def main() -> None:
     astra_road_data = cached_metadata("ASTRA_NATIONAL_ROAD_AXES_2026")
     astra_road_stac = cached_metadata("ASTRA_NATIONAL_ROAD_AXES_2026_STAC")
     astra_road_collection = cached_metadata("ASTRA_NATIONAL_ROAD_AXES_COLLECTION")
+    competing_pass_metadata = {
+        source_id: cached_metadata(source_id)
+        for source_id in [
+            "ALPSPASS_2026_27_ROSTER",
+            "ALPSPASS_2026_27_GTC",
+            "MEILENWEISS_CURRENT_ROSTER",
+            "SCHNEEPASS_ZENTRALSCHWEIZ_2026_27_ROSTER",
+        ]
+    }
     ski_gtfs_data = cached_metadata("SKI_GTFS_TIMETABLE_2026_WINTER_20260207")
     eurostat_grid_data = cached_metadata("EUROSTAT_CENSUS_GRID_2021_V3")
     eurostat_grid_documentation = cached_metadata("EUROSTAT_CENSUS_GRID_2021_V3_README")
@@ -750,6 +759,91 @@ def main() -> None:
         quality_notes="Not motorway classification, network route, usable entrance, drive time, congestion, winter reliability or historical infrastructure; cross-border French road coverage intentionally left missing",
         confidence_level="high for reproducibility; qualified current proximity context only",
         manual_verification="268/271 listings and 161/162 clusters complete; 103/104 candidates complete; all-axis distance never exceeds main-axis distance; zero approval flags",
+    ))
+    competing_source_specs = {
+        "ALPSPASS_2026_27_ROSTER": {
+            "dataset": "Official AlpsPass regions and tariff page 2026/2027",
+            "variables": "official_area_label|roster_version|benefit_tier|partner_free_ski_days",
+            "description": "Official roster naming four AlpsPass core regions and seven partner regions with three free ski days in each partner region",
+            "temporal": "2026/2027",
+            "start": "2026-11-01",
+            "end": "2027-10-31",
+            "verification": "Four core and seven partner labels plus the three-free-ski-days wording checked in the cached page",
+        },
+        "ALPSPASS_2026_27_GTC": {
+            "dataset": "AlpsPass General Terms and Conditions 2026/2027",
+            "variables": "core_region_operator|included_infrastructure|gtc_validity",
+            "description": "Official terms identifying operators and included infrastructure within the four AlpsPass core regions",
+            "temporal": "terms valid from 2026-09-01",
+            "start": "2026-09-01",
+            "end": "",
+            "verification": "Adelboden-Lenk, Jungfrau, Aletsch and Engelberg-Titlis operator wording checked in extracted PDF text",
+        },
+        "MEILENWEISS_CURRENT_ROSTER": {
+            "dataset": "Official Meilenweiss FAQ current roster",
+            "variables": "official_area_label|current_annual_pass_roster",
+            "description": "Official retrieval-date list of all 17 regions in the Meilenweiss annual pass",
+            "temporal": "current retrieval-date snapshot",
+            "start": "2026-09-23",
+            "end": "2026-09-23",
+            "verification": "All 17 published region labels checked; no unsupported season label assigned",
+        },
+        "SCHNEEPASS_ZENTRALSCHWEIZ_2026_27_ROSTER": {
+            "dataset": "Official Schneepass Zentralschweiz winter roster 2026/2027",
+            "variables": "official_area_label|roster_version|winter_pass_inclusion",
+            "description": "Official winter-season page listing all 15 included Schneepass Zentralschweiz regions",
+            "temporal": "winter season 2026/2027",
+            "start": "2026",
+            "end": "2027",
+            "verification": "Season wording and all 15 published region labels checked in the cached page",
+        },
+    }
+    for source_id, spec in competing_source_specs.items():
+        item = configured[source_id]
+        metadata = competing_pass_metadata[source_id]
+        rows.append(blank_source(
+            source_id,
+            variable_name=spec["variables"],
+            variable_description=spec["description"],
+            source_organisation=item["organisation"],
+            source_dataset_name=spec["dataset"],
+            source_page_url=item["url"],
+            direct_download_url=item["url"],
+            retrieval_method="Configured HTTPS download with immutable response and SHA-256 metadata sidecar",
+            retrieval_date=(metadata or {}).get("retrieval_date", ""),
+            original_file_name=raw_name(metadata),
+            local_raw_file=(metadata or {}).get("raw_file", ""),
+            processed_file="config/competing_pass_roster_2026_27.csv|data_processed/resort_competing_pass_context.csv|data_processed/path_c_cluster_competing_pass_context.csv|data_processed/magic_pass_decision_support.csv|reports/31_COMPETING_PASS_CONTEXT.md",
+            geographic_level="official pass area / supplied resort listing link",
+            temporal_resolution=spec["temporal"],
+            temporal_start=spec["start"],
+            temporal_end=spec["end"],
+            unit="named pass area and benefit category",
+            license="Official public operator material; source terms apply",
+            access_conditions="Public official webpage or PDF",
+            transformation_applied="Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching",
+            quality_notes="Current roster scope only; area non-link does not prove absence from every competing pass; historical competition is not reconstructed",
+            confidence_level="high for the published roster; qualified for directory entity links",
+            manual_verification=spec["verification"],
+        ))
+    rows.append(blank_source(
+        "DERIVED_COMPETING_PASS_CONTEXT",
+        variable_name="competing_pass_roster_link|benefit_tier|cluster_linked_listing_share|competing_pass_scope_status",
+        variable_description="Qualified listing- and cluster-level context from three official current competing-pass rosters",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C competing-pass roster context",
+        retrieval_method="Versioned deterministic Python expansion of explicit reviewed resort-ID links",
+        local_raw_file="config/competing_pass_roster_2026_27.csv",
+        processed_file="data_processed/resort_competing_pass_context.csv|data_processed/path_c_cluster_competing_pass_context.csv|reports/competing_pass_candidate_summary.csv|data_processed/magic_pass_decision_support.csv|reports/31_COMPETING_PASS_CONTEXT.md",
+        geographic_level="official pass area, supplied resort listing and linked lift cluster",
+        temporal_resolution="AlpsPass and Schneepass 2026/2027; Meilenweiss retrieval-date snapshot 2026-09-23",
+        temporal_start="2026",
+        temporal_end="2027",
+        unit="identifiers, categories, counts, shares and flags",
+        transformation_applied="Validate official roster cardinalities and source tokens; expand only explicit stable resort-ID links; aggregate linked and unlinked listings separately within preserved lift clusters",
+        quality_notes="A non-link is not verified competing-pass absence; mixed clusters retain partial status; snapshots are not historical pre-treatment competition measures",
+        confidence_level="high for reproducibility; qualified current roster context only",
+        manual_verification="43 official areas, 55 linked listings, 29 linked clusters and 22 linked apparent candidates; zero absence-verification or causal approval flags",
     ))
     rows.append(blank_source(
         "SKI_GTFS_TIMETABLE_2026_WINTER_20260207",
@@ -1771,6 +1865,9 @@ def main() -> None:
         "resort_national_road_proximity_context": ROOT / "data_processed/resort_national_road_proximity_context.csv",
         "path_c_cluster_national_road_proximity_context": ROOT / "data_processed/path_c_cluster_national_road_proximity_context.csv",
         "national_road_proximity_candidate_summary": ROOT / "reports/national_road_proximity_candidate_summary.csv",
+        "resort_competing_pass_context": ROOT / "data_processed/resort_competing_pass_context.csv",
+        "path_c_cluster_competing_pass_context": ROOT / "data_processed/path_c_cluster_competing_pass_context.csv",
+        "competing_pass_candidate_summary": ROOT / "reports/competing_pass_candidate_summary.csv",
         "public_transport_journey_nodes": ROOT / "reports/public_transport_journey_nodes.csv",
         "treatment_municipality_public_transport_journey_samples": ROOT / "data_processed/treatment_municipality_public_transport_journey_samples.csv",
         "treatment_municipality_public_transport_journey_context": ROOT / "data_processed/treatment_municipality_public_transport_journey_context.csv",
@@ -1802,6 +1899,9 @@ def main() -> None:
         "resort_national_road_proximity_context": "DERIVED_NATIONAL_ROAD_PROXIMITY_CONTEXT",
         "path_c_cluster_national_road_proximity_context": "DERIVED_NATIONAL_ROAD_PROXIMITY_CONTEXT",
         "national_road_proximity_candidate_summary": "DERIVED_NATIONAL_ROAD_PROXIMITY_CONTEXT",
+        "resort_competing_pass_context": "DERIVED_COMPETING_PASS_CONTEXT",
+        "path_c_cluster_competing_pass_context": "DERIVED_COMPETING_PASS_CONTEXT",
+        "competing_pass_candidate_summary": "DERIVED_COMPETING_PASS_CONTEXT",
         "public_transport_journey_nodes": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_samples": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_context": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
@@ -1834,6 +1934,39 @@ def main() -> None:
         "structural_feature_complete": "Whether altitude, ski-area kilometres and lift count are all observed",
         "candidate_for_path_c": "Initial apparent-nonmember candidate flag after resolved current, historical and scope relations are excluded",
         "candidate_interpretation": "Warning that the candidate flag is not verified non-membership",
+        "reviewed_competing_pass_roster_count": "Number of official competing-pass products included in the scoped current review",
+        "reviewed_competing_pass_area_count": "Number of named official pass-area rows included in the scoped current review",
+        "competing_pass_linked": "Whether the supplied resort listing has an explicit reviewed link to at least one official area in the three reviewed rosters",
+        "competing_pass_link_count": "Number of reviewed pass-area links for the supplied resort listing",
+        "competing_pass_ids": "Pipe-separated identifiers of reviewed competing passes linked to the listing or cluster",
+        "competing_pass_names": "Pipe-separated names of reviewed competing passes linked to the listing or cluster",
+        "competing_pass_roster_versions": "Pipe-separated source roster versions attached to the listing links",
+        "competing_pass_benefit_tiers": "Pipe-separated benefit categories retaining core unlimited, limited partner and included-region distinctions",
+        "competing_pass_area_links": "Pipe-separated pass-ID and official-area-label pairs linked through the reviewed register",
+        "competing_pass_mapping_bases": "Pipe-separated reviewed bases for linking an official area to supplied resort IDs",
+        "competing_pass_limited_partner_benefit_linked": "Whether the listing is linked to an AlpsPass three-free-ski-days partner region",
+        "competing_pass_core_or_included_region_linked": "Whether the listing is linked to an AlpsPass core region or an included Meilenweiss/Schneepass region",
+        "competing_pass_roster_link_status": "Explicit link status whose no-link value does not verify absence from the competing-pass market",
+        "competing_pass_market_absence_verified": "Whether absence from the competing-pass market is verified; always false in this scoped review",
+        "competing_pass_context_temporal_scope": "Combined version statement for the three reviewed official roster snapshots",
+        "competing_pass_context_interpretation": "Guardrail stating that current roster links are not historical competition intensity, market absence or a causal feature",
+        "competing_pass_feature_approved": "Whether current competing-pass context is approved as a causal or pre-treatment model feature; always false",
+        "competing_pass_link_source_ids": "Official source identifiers supporting the listing's explicit pass-area links",
+        "competing_pass_review_source_ids": "All official source identifiers defining the scoped three-pass review universe",
+        "cluster_competing_pass_listing_count": "Number of supplied resort listings assigned to the lift cluster",
+        "cluster_listings_linked_to_reviewed_competing_pass": "Number of cluster listings with at least one explicit reviewed competing-pass area link",
+        "cluster_competing_pass_linked_listing_share": "Share of cluster listings with at least one explicit reviewed competing-pass area link",
+        "cluster_competing_pass_scope_status": "Whether the cluster has no reviewed link, partial listing links or links for every supplied listing",
+        "cluster_competing_pass_linked_resort_ids": "Pipe-separated cluster listing IDs with at least one reviewed competing-pass link",
+        "cluster_competing_pass_unlinked_resort_ids": "Pipe-separated cluster listing IDs without a link in the three reviewed rosters",
+        "cluster_has_reviewed_competing_pass_link": "Whether any supplied listing in the cluster has a reviewed competing-pass link",
+        "cluster_competing_pass_count": "Number of distinct reviewed competing passes linked to listings in the cluster",
+        "cluster_competing_pass_ids": "Pipe-separated identifiers of reviewed competing passes linked within the cluster",
+        "cluster_competing_pass_names": "Pipe-separated names of reviewed competing passes linked within the cluster",
+        "cluster_competing_pass_area_links": "Pipe-separated pass-ID and official-area-label pairs linked within the cluster",
+        "cluster_competing_pass_benefit_tiers": "Pipe-separated benefit tiers represented by reviewed listing links within the cluster",
+        "cluster_limited_partner_benefit_listing_count": "Number of cluster listings linked to an AlpsPass three-free-ski-days partner benefit",
+        "cluster_core_or_included_region_listing_count": "Number of cluster listings linked to a core or included competing-pass region",
         "segment_id": "Stable label of the selected current structural k-means segment",
         "descriptive_profile": "Relative altitude, ski-area and lift-count description of the segment",
         "distance_to_segment_centroid": "Euclidean distance to the assigned centroid in three standardised structural features",
@@ -2178,6 +2311,9 @@ def main() -> None:
         "resort_national_road_proximity_context": "supplied resort listing point / official Swiss national-road axis",
         "path_c_cluster_national_road_proximity_context": "linked lift cluster",
         "national_road_proximity_candidate_summary": "apparent Path C candidate lift cluster",
+        "resort_competing_pass_context": "supplied resort listing / official competing-pass area",
+        "path_c_cluster_competing_pass_context": "linked lift cluster",
+        "competing_pass_candidate_summary": "apparent Path C candidate lift cluster",
         "public_transport_journey_nodes": "hotel municipality or reviewed destination component",
         "treatment_municipality_public_transport_journey_samples": "reviewed destination by hotel municipality and scheduled request",
         "treatment_municipality_public_transport_journey_context": "reviewed destination by hotel municipality",
@@ -2204,6 +2340,9 @@ def main() -> None:
         "resort_national_road_proximity_context": "FEDRO/ASTRA reference 2026-08-01; current supplied listing coordinate",
         "path_c_cluster_national_road_proximity_context": "FEDRO/ASTRA reference 2026-08-01; current supplied listing coordinates",
         "national_road_proximity_candidate_summary": "FEDRO/ASTRA reference 2026-08-01; current candidate listing coordinates",
+        "resort_competing_pass_context": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
+        "path_c_cluster_competing_pass_context": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
+        "competing_pass_candidate_summary": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
         "public_transport_journey_nodes": "winter-2026 GTFS node-selection reference",
         "treatment_municipality_public_transport_journey_samples": "2026-02-04 and 2026-02-07 scheduled requests",
         "treatment_municipality_public_transport_journey_context": "winter-2026 weekday/Saturday scheduled summary",
@@ -2245,6 +2384,11 @@ def main() -> None:
                 "path_c_cluster_national_road_proximity_context",
                 "national_road_proximity_candidate_summary",
             }
+            competing_table = table in {
+                "resort_competing_pass_context",
+                "path_c_cluster_competing_pass_context",
+                "competing_pass_candidate_summary",
+            }
             journey_table = table in {
                 "public_transport_journey_nodes",
                 "treatment_municipality_public_transport_journey_samples",
@@ -2256,6 +2400,18 @@ def main() -> None:
                 "distance_transport_band_summary",
             }
             journey_variable = journey_table
+            competing_variable = competing_table or (
+                table == "magic_pass_decision_support"
+                and (
+                    variable.startswith("competing_pass_")
+                    or variable.startswith("cluster_competing_pass_")
+                    or variable.startswith("cluster_listings_linked_to_reviewed_competing_pass")
+                    or variable.startswith("cluster_has_reviewed_competing_pass")
+                    or variable.startswith("cluster_limited_partner_benefit_")
+                    or variable.startswith("cluster_core_or_included_region_")
+                    or variable.startswith("reviewed_competing_pass_")
+                )
+            )
             cross_border_population_variable = cross_border_population_table or (
                 table == "magic_pass_decision_support"
                 and (
@@ -2267,7 +2423,7 @@ def main() -> None:
                     or variable in {"cluster_location_x_3035", "cluster_location_y_3035"}
                 )
             )
-            stop_variable = not journey_variable and (stop_table or (
+            stop_variable = not journey_variable and not competing_variable and (stop_table or (
                 table == "magic_pass_decision_support"
                 and (
                     variable.startswith("public_transport_stop_")
@@ -2284,7 +2440,7 @@ def main() -> None:
                     or variable.startswith("cluster_unassigned_public_transport_stop_")
                 )
             ))
-            road_variable = not journey_variable and not stop_variable and (road_table or (
+            road_variable = not journey_variable and not competing_variable and not stop_variable and (road_table or (
                 table == "magic_pass_decision_support"
                 and (
                     variable.startswith("national_road_")
@@ -2296,7 +2452,7 @@ def main() -> None:
                     or variable.startswith("cluster_nearest_national_road_")
                 )
             ))
-            transport_variable = not journey_variable and not stop_variable and not road_variable and (transport_table or (
+            transport_variable = not journey_variable and not competing_variable and not stop_variable and not road_variable and (transport_table or (
                 table == "magic_pass_decision_support"
                 and (
                     variable.startswith("npvm_")
@@ -2312,7 +2468,7 @@ def main() -> None:
                     in {"cluster_transport_context_status", "unassigned_resort_ids"}
                 )
             ))
-            accessibility_variable = not journey_variable and not stop_variable and not road_variable and not transport_variable and (accessibility_table or (
+            accessibility_variable = not journey_variable and not competing_variable and not stop_variable and not road_variable and not transport_variable and (accessibility_table or (
                 table == "magic_pass_decision_support"
                 and (
                     "accessibility" in variable
@@ -2349,6 +2505,8 @@ def main() -> None:
                 if table == "public_transport_historical_audit_plan"
                 else "qualified scheduled public-transport journey context"
                 if journey_variable
+                else "qualified current competing-pass roster context"
+                if competing_variable
                 else "qualified cross-border one-kilometre population context"
                 if cross_border_population_variable
                 else "qualified current public-transport-stop proximity context"
@@ -2386,6 +2544,9 @@ def main() -> None:
                 "See config/path_c_analysis.json and src/data_processing/build_public_transport_journey_context.py"
                 if journey_variable
                 else
+                "See config/competing_pass_roster_2026_27.csv and src/data_processing/build_competing_pass_context.py"
+                if competing_variable
+                else
                 "See config/path_c_analysis.json, config/eurostat_census_grid_2021.json and src/data_processing/build_cross_border_population_context.py"
                 if cross_border_population_variable
                 else
@@ -2419,6 +2580,9 @@ def main() -> None:
                 "No causal interpretation; winter-2026 static schedules and algorithmic stop proxies are not real-time, historical or validated destination catchments"
                 if journey_variable
                 else
+                "No causal interpretation; current links in three official rosters do not reconstruct historical competition, verify market absence or establish equivalent benefit intensity"
+                if competing_variable
+                else
                 "No causal interpretation; 2021 census grid-cell centroids and straight-line radii are not travel-time markets, observed visitors or destination catchments; mixed and unallocated population remain explicit"
                 if cross_border_population_variable
                 else
@@ -2445,6 +2609,8 @@ def main() -> None:
                 path_c_temporal_level.get(table, "undated structural snapshot; mixed lineage where stated"),
                 path_c_sources[table]
                 if journey_variable
+                else "DERIVED_COMPETING_PASS_CONTEXT"
+                if competing_variable
                 else "DERIVED_CROSS_BORDER_POPULATION_CONTEXT"
                 if cross_border_population_variable
                 else "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT"

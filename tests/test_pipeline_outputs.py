@@ -1208,6 +1208,78 @@ def test_national_road_proximity_context_preserves_scope_and_definitions() -> No
     assert not as_bool(decision["national_road_proximity_feature_approved"]).any()
 
 
+def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> None:
+    roster = read("config/competing_pass_roster_2026_27.csv")
+    listing = read("data_processed/resort_competing_pass_context.csv")
+    cluster = read("data_processed/path_c_cluster_competing_pass_context.csv")
+    candidates = read("reports/competing_pass_candidate_summary.csv")
+    decision = read("data_processed/magic_pass_decision_support.csv")
+
+    assert len(roster) == 43
+    assert not roster[["competing_pass_id", "official_area_label"]].duplicated().any()
+    assert roster["competing_pass_id"].value_counts().to_dict() == {
+        "meilenweiss": 17,
+        "schneepass_zentralschweiz": 15,
+        "alpspass": 11,
+    }
+    assert roster["benefit_tier"].value_counts().to_dict() == {
+        "included_region_current_annual_pass": 17,
+        "included_region_winter_season_pass": 15,
+        "three_free_ski_days_partner_region": 7,
+        "unlimited_core_region": 4,
+    }
+
+    assert len(listing) == 271
+    assert listing["resort_id"].is_unique
+    assert int(as_bool(listing["competing_pass_linked"]).sum()) == 55
+    assert int(listing["competing_pass_link_count"].sum()) > 55
+    assert not as_bool(listing["competing_pass_market_absence_verified"]).any()
+    assert not as_bool(listing["competing_pass_feature_approved"]).any()
+    unlinked = listing[~as_bool(listing["competing_pass_linked"])]
+    assert unlinked["competing_pass_roster_link_status"].eq(
+        "not_linked_in_three_reviewed_rosters_not_verified_no_competing_pass"
+    ).all()
+    assert not as_bool(
+        listing.loc[
+            listing["resort_id"].eq("toggenburg_chaserrugg_alt_st_johann_unterwasser"),
+            "competing_pass_linked",
+        ]
+    ).any()
+    assert as_bool(
+        listing.loc[
+            listing["resort_id"].eq("toggenburg_wildhaus"),
+            "competing_pass_linked",
+        ]
+    ).all()
+
+    assert len(cluster) == 162
+    assert cluster["cluster_id"].is_unique
+    assert int(cluster["cluster_competing_pass_listing_count"].sum()) == 271
+    assert int(cluster["cluster_listings_linked_to_reviewed_competing_pass"].sum()) == 55
+    assert int(as_bool(cluster["cluster_has_reviewed_competing_pass_link"]).sum()) == 29
+    assert cluster["cluster_competing_pass_scope_status"].value_counts().to_dict() == {
+        "no_link_in_reviewed_rosters": 133,
+        "partial_cluster_listing_links": 10,
+        "all_listing_points_linked_to_one_or_more_reviewed_rosters": 19,
+    }
+    assert not as_bool(cluster["competing_pass_market_absence_verified"]).any()
+    assert not as_bool(cluster["competing_pass_feature_approved"]).any()
+
+    assert len(candidates) == 104
+    assert candidates["cluster_id"].is_unique
+    assert candidates["cluster_competing_pass_scope_status"].value_counts().to_dict() == {
+        "no_link_in_reviewed_rosters": 82,
+        "all_listing_points_linked_to_one_or_more_reviewed_rosters": 16,
+        "partial_cluster_listing_links": 6,
+    }
+    assert len(decision) == 162
+    assert decision["analysis_version"].eq("path_c_v0_13").all()
+    assert decision["accessibility_score"].isna().all()
+    assert decision["predicted_uplift_pct"].isna().all()
+    assert decision["composite_opportunity_need_score"].isna().all()
+    assert not as_bool(decision["competing_pass_feature_approved"]).any()
+
+
 def test_public_transport_journey_context_preserves_grain_and_limits() -> None:
     samples = read(
         "data_processed/treatment_municipality_public_transport_journey_samples.csv"

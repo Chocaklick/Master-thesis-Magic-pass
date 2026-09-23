@@ -35,6 +35,9 @@ CROSS_BORDER_POPULATION_SUMMARY = (
 NATIONAL_ROAD_PROXIMITY_SUMMARY = (
     ROOT / "reports" / "national_road_proximity_context_summary.json"
 )
+COMPETING_PASS_CONTEXT_SUMMARY = (
+    ROOT / "reports" / "competing_pass_context_summary.json"
+)
 PUBLIC_TRANSPORT_JOURNEY_SUMMARY = (
     ROOT / "reports" / "public_transport_journey_context_summary.json"
 )
@@ -103,6 +106,9 @@ def main() -> None:
     )
     national_road_proximity_summary = json.loads(
         NATIONAL_ROAD_PROXIMITY_SUMMARY.read_text(encoding="utf-8")
+    )
+    competing_pass_context_summary = json.loads(
+        COMPETING_PASS_CONTEXT_SUMMARY.read_text(encoding="utf-8")
     )
     public_transport_journey_summary = json.loads(
         PUBLIC_TRANSPORT_JOURNEY_SUMMARY.read_text(encoding="utf-8")
@@ -560,6 +566,27 @@ def main() -> None:
                 "median_cluster_median_distance_to_any_network_axis_km"
             ]
         ),
+        "competing_passes_reviewed": int(
+            competing_pass_context_summary["reviewed_passes"]
+        ),
+        "competing_pass_official_area_rows": int(
+            competing_pass_context_summary["official_area_rows"]
+        ),
+        "competing_pass_linked_resort_listings": int(
+            competing_pass_context_summary["resort_listings_linked"]
+        ),
+        "competing_pass_linked_clusters": int(
+            competing_pass_context_summary["path_c_clusters_with_link"]
+        ),
+        "competing_pass_partial_clusters": int(
+            competing_pass_context_summary["path_c_clusters_partial"]
+        ),
+        "competing_pass_linked_candidates": int(
+            competing_pass_context_summary["path_c_candidates_with_link"]
+        ),
+        "competing_pass_candidate_clusters": int(
+            competing_pass_context_summary["path_c_candidates"]
+        ),
         "public_transport_journey_pairs": int(
             public_transport_journey_summary["destination_municipality_pairs"]
         ),
@@ -713,6 +740,12 @@ The current FEDRO/ASTRA source supplies **{metrics['national_road_axis_features'
 
 The published attributes do not classify axes as motorway versus non-motorway. The measure is therefore labelled national-road-axis proximity, not motorway access. It is current point-to-line geometry rather than a route, a usable entrance, driving time, congestion, winter reliability or historical pre-treatment infrastructure; its approval flag and the generic accessibility score remain blank. See `reports/30_NATIONAL_ROAD_PROXIMITY_CONTEXT.md`.
 
+## Competing-pass roster context
+
+Official current material was checksum-cached for **{metrics['competing_passes_reviewed']} competing products** and **{metrics['competing_pass_official_area_rows']} named pass areas**: AlpsPass 2026/2027, the Meilenweiss retrieval-date roster, and Schneepass Zentralschweiz 2026/2027. Explicit reviewed resort-ID links cover **{metrics['competing_pass_linked_resort_listings']} supplied listings in {metrics['competing_pass_linked_clusters']} lift clusters**. **{metrics['competing_pass_partial_clusters']} clusters** are only partially linked because neighbouring listings are not automatically assigned the same pass status. Among the **{metrics['competing_pass_candidate_clusters']} apparent Path C candidates**, **{metrics['competing_pass_linked_candidates']}** contain at least one listing linked to a reviewed roster.
+
+AlpsPass unlimited core access remains distinct from its three-free-ski-days partner benefit. A non-link means only that no explicit link was established in these three rosters; it does not prove absence from every competing product. The snapshots do not reconstruct competition at historical Magic Pass entry dates, so all absence-verification and causal-feature approval flags remain false. See `reports/31_COMPETING_PASS_CONTEXT.md`.
+
 ## NPVM zone-proxy audit
 
 All **{metrics['npvm_proxy_listing_points_geometrically_reconstructed']}** municipality-constrained NPVM listing-point assignments are exactly reconstructed against the checksum-verified zone and current municipality geometries. They affect **{metrics['npvm_proxy_clusters']} clusters**; **{metrics['npvm_proxy_only_clusters']}** have no exact listing-point assignment for an internal comparison, including **{metrics['npvm_proxy_only_candidate_clusters']}** apparent Path C candidates. The geometry and deterministic choice are validated, but proxy-only travel times are not independently validated observed routes. Historical zone lineage and causal approval remain false. See `reports/27_TRANSPORT_ZONE_PROXY_AUDIT.md`.
@@ -763,11 +796,11 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 4. Crans-Montana proves that treatment is not universally absorbing.
 5. COVID overlaps the post-period of early entrants and the entry period of later ones.
 6. Spillovers may contaminate nearby nominal controls.
-7. Hotel capacity, mountain-station snow, regional temperature/precipitation, qualified Swiss and cross-border straight-line population, NPVM 2025 context, current OFT/BAV stop proximity, current FEDRO/ASTRA national-road-axis proximity and winter-2026 scheduled journey context are integrated. Historical timetable stability, snowmaking, true motorway-entrance access, investment, local economic conditions, and competing-network changes remain unmeasured.
+7. Hotel capacity, mountain-station snow, regional temperature/precipitation, qualified Swiss and cross-border straight-line population, NPVM 2025 context, current OFT/BAV stop proximity, current FEDRO/ASTRA national-road-axis proximity, winter-2026 scheduled journeys and three current competing-pass rosters are integrated. Historical timetable stability, historical competing-network changes, snowmaking, true motorway-entrance access, investment and local economic conditions remain unmeasured.
 
 ## Next evidence gate
 
-For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; validate destination catchments for tourism dependence; add competing-pass variables; and obtain dated infrastructure features. Current national-road-axis proximity is complete, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed min/median/max aggregation sensitivity and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; validate destination catchments for tourism dependence; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. Current competing-pass links and national-road-axis proximity are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed min/median/max aggregation sensitivity and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

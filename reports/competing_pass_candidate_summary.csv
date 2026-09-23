@@ -1,0 +1,105 @@
+cluster_id,cluster_display_name,cluster_competing_pass_scope_status,cluster_listings_linked_to_reviewed_competing_pass,cluster_competing_pass_linked_listing_share,cluster_competing_pass_count,cluster_competing_pass_names,cluster_competing_pass_area_links,cluster_competing_pass_benefit_tiers,cluster_competing_pass_linked_resort_ids,cluster_competing_pass_unlinked_resort_ids,competing_pass_market_absence_verified,competing_pass_feature_approved
+SKI_CLUSTER_001,Châtel Portes du Soleil / Torgon Portes du Soleil / Avoriaz 1800 Portes du Soleil / +2 listings,all_listing_points_linked_to_one_or_more_reviewed_rosters,5,1.0,1,AlpsPass,alpspass:Portes du Soleil,three_free_ski_days_partner_region,avoriaz_1800_portes_du_soleil|champery_les_crosets_champoussin_morgins_portes_du_soleil|chapelle_abondance_la_chapelle_d_abondance_portes_du_soleil|chatel_portes_du_soleil|torgon_portes_du_soleil,,False,False
+SKI_CLUSTER_002,Thyon 4 Vallées / Bruson - Verbier / Nendaz 4 Vallées / +3 listings,all_listing_points_linked_to_one_or_more_reviewed_rosters,6,1.0,1,AlpsPass,alpspass:4 Vallées,three_free_ski_days_partner_region,bruson_verbier|la_tzoumaz_mayens_de_riddes|nendaz_4_vallees|thyon_4_vallees|verbier_4_vallees|veysonnaz_4_vallees,,False,False
+SKI_CLUSTER_006,Madrisa Klosters Madrisa / Rinerhorn Davos Rinerhorn / Jakobshorn Davos Jakobshorn / +2 listings,all_listing_points_linked_to_one_or_more_reviewed_rosters,5,1.0,1,AlpsPass,alpspass:Davos Klosters,three_free_ski_days_partner_region,jakobshorn_davos_jakobshorn|madrisa_klosters_madrisa|parsenn_davos_klosters_parsenn|rinerhorn_davos_rinerhorn|schatzalp_davos_schatzalp_strela,,False,False
+SKI_CLUSTER_007,Arosa Lenzerheide / Pradaschier - Churwalden / Brambrüesch Chur - Brambrüesch,partial_cluster_listing_links,1,0.3333333333333333,1,AlpsPass,alpspass:Arosa Lenzerheide,three_free_ski_days_partner_region,arosa_lenzerheide,brambruesch_chur_brambruesch|pradaschier_churwalden,False,False
+SKI_CLUSTER_010,Wengen Jungfrau Ski Region Grindelwald - Wengen / Schilthorn Jungfrau Ski Region Mürren - Schilthorn,all_listing_points_linked_to_one_or_more_reviewed_rosters,2,1.0,1,AlpsPass,alpspass:Jungfrau Ski Region,unlimited_core_region,schilthorn_jungfrau_ski_region_murren_schilthorn|wengen_jungfrau_ski_region_grindelwald_wengen,,False,False
+SKI_CLUSTER_014,Lenk / Adelboden / Engstligenalp - Adelboden,all_listing_points_linked_to_one_or_more_reviewed_rosters,3,1.0,1,AlpsPass,alpspass:Adelboden-Lenk,unlimited_core_region,adelboden|engstligenalp_adelboden|lenk,,False,False
+SKI_CLUSTER_017,Disentis / Andermatt - Oberalp - Sedrun / Gemsstock Andermatt - Gemsstock / +1 listings,all_listing_points_linked_to_one_or_more_reviewed_rosters,4,1.0,1,Schneepass Zentralschweiz,schneepass_zentralschweiz:Andermatt + Sedrun + Disentis,included_region_winter_season_pass,andermatt_oberalp_sedrun|disentis|gemsstock_andermatt_gemsstock|valtgeva_druni_kidsarena_sedrun,,False,False
+SKI_CLUSTER_019,Laax Flims Laax Falera,all_listing_points_linked_to_one_or_more_reviewed_rosters,1,1.0,1,AlpsPass,alpspass:Laax Mountains,three_free_ski_days_partner_region,laax_flims_laax_falera,,False,False
+SKI_CLUSTER_029,Flumserberg,all_listing_points_linked_to_one_or_more_reviewed_rosters,1,1.0,1,Meilenweiss,meilenweiss:Flumserberg,included_region_current_annual_pass,flumserberg,,False,False
+SKI_CLUSTER_030,Toggenburg Wildhaus / Toggenburg - Chäserrugg Alt St. Johann Unterwasser,partial_cluster_listing_links,1,0.5,1,Meilenweiss,meilenweiss:Wildhaus,included_region_current_annual_pass,toggenburg_wildhaus,toggenburg_chaserrugg_alt_st_johann_unterwasser,False,False
+SKI_CLUSTER_038,Mastrils Skilift Mastrils / Pizol - Bad Ragaz - Wangs / Tristeli St. Margarethenberg,partial_cluster_listing_links,1,0.3333333333333333,1,Meilenweiss,meilenweiss:Pizol,included_region_current_annual_pass,pizol_bad_ragaz_wangs,mastrils_skilift_mastrils|tristeli_st_margarethenberg,False,False
+SKI_CLUSTER_040,Rigi / Seebodenalp - Küssnacht am Rigi,partial_cluster_listing_links,1,0.5,1,Schneepass Zentralschweiz,schneepass_zentralschweiz:Rigi,included_region_winter_season_pass,rigi,seebodenalp_kussnacht_am_rigi,False,False
+SKI_CLUSTER_044,Motta Naluns Scuol Motta Naluns,all_listing_points_linked_to_one_or_more_reviewed_rosters,1,1.0,1,AlpsPass,alpspass:Scuol Motta Naluns,three_free_ski_days_partner_region,motta_naluns_scuol_motta_naluns,,False,False
+SKI_CLUSTER_047,Braunwald,all_listing_points_linked_to_one_or_more_reviewed_rosters,1,1.0,1,Meilenweiss,meilenweiss:Braunwald,included_region_current_annual_pass,braunwald,,False,False
+SKI_CLUSTER_053,Elsigenalp - Metschalp Frutigen,all_listing_points_linked_to_one_or_more_reviewed_rosters,1,1.0,1,AlpsPass,alpspass:Adelboden-Lenk,unlimited_core_region,elsigenalp_metschalp_frutigen,,False,False
+SKI_CLUSTER_055,Ebenalp - Horn / Brülisau Brülisau - Leugangen,partial_cluster_listing_links,1,0.5,1,Meilenweiss,meilenweiss:Ebenalp,included_region_current_annual_pass,ebenalp_horn,brulisau_brulisau_leugangen,False,False
+SKI_CLUSTER_056,Grüsch Danusa,all_listing_points_linked_to_one_or_more_reviewed_rosters,1,1.0,1,Meilenweiss,meilenweiss:Grüsch-Danusa,included_region_current_annual_pass,grusch_danusa,,False,False
+SKI_CLUSTER_059,Airolo - Lüina / Airolo - Pesciüm Airolo - Pesciüm,all_listing_points_linked_to_one_or_more_reviewed_rosters,2,1.0,1,Schneepass Zentralschweiz,schneepass_zentralschweiz:Airolo,included_region_winter_season_pass,airolo_luina|airolo_pescium_airolo_pescium,,False,False
+SKI_CLUSTER_066,Atzmännig / Oberholz - Farner,partial_cluster_listing_links,1,0.5,1,Meilenweiss,meilenweiss:Atzmännig,included_region_current_annual_pass,atzmannig,oberholz_farner,False,False
+SKI_CLUSTER_081,Elm,all_listing_points_linked_to_one_or_more_reviewed_rosters,1,1.0,1,Meilenweiss,meilenweiss:Elm,included_region_current_annual_pass,elm,,False,False
+SKI_CLUSTER_082,Amden,all_listing_points_linked_to_one_or_more_reviewed_rosters,1,1.0,1,Meilenweiss,meilenweiss:Amden,included_region_current_annual_pass,amden,,False,False
+SKI_CLUSTER_115,Wolzenalp Krummenau,all_listing_points_linked_to_one_or_more_reviewed_rosters,1,1.0,1,Meilenweiss,meilenweiss:Wolzenalp,included_region_current_annual_pass,wolzenalp_krummenau,,False,False
+SKI_CLUSTER_005,Zermatt,no_link_in_reviewed_rosters,0,0.0,0,,,,,zermatt,False,False
+SKI_CLUSTER_011,Samnaun Silvretta Arena Samnaun / Ischgl,no_link_in_reviewed_rosters,0,0.0,0,,,,,samnaun_silvretta_arena_samnaun_ischgl,False,False
+SKI_CLUSTER_021,Biel - Kinzig / Ratzi Spiringen / Flüelen Eggberge / Flüelen / +2 listings,no_link_in_reviewed_rosters,0,0.0,0,,,,,attinghausen_brusti_attinghausen|biel_kinzig|fluelen_eggberge_fluelen|kellerberg_skilift_kellerberg_haldi|ratzi_spiringen,False,False
+SKI_CLUSTER_022,Muottas Muragl / Survih - Samedan / Languard Pontresina / +1 listings,no_link_in_reviewed_rosters,0,0.0,0,,,,,corviglia_st_moritz|languard_pontresina|muottas_muragl|survih_samedan,False,False
+SKI_CLUSTER_027,Obersaxen Mundaun / Brigels Waltensburg Andiast,no_link_in_reviewed_rosters,0,0.0,0,,,,,brigels_waltensburg_andiast|obersaxen_mundaun,False,False
+SKI_CLUSTER_033,Corvatsch - Furtschellas,no_link_in_reviewed_rosters,0,0.0,0,,,,,corvatsch_furtschellas,False,False
+SKI_CLUSTER_039,Glacier 3000 - Les Diablerets,no_link_in_reviewed_rosters,0,0.0,0,,,,,glacier_3000_les_diablerets,False,False
+SKI_CLUSTER_043,Savognin,no_link_in_reviewed_rosters,0,0.0,0,,,,,savognin,False,False
+SKI_CLUSTER_060,Tenna / Sarn - Heinzenberg / Tschappina Tschappina - Urmein - Heinzenberg,no_link_in_reviewed_rosters,0,0.0,0,,,,,sarn_heinzenberg|tenna|tschappina_tschappina_urmein_heinzenberg,False,False
+SKI_CLUSTER_065,Ghöch / Steg im Tösstal / Steig - Bäretswill Steig - Bäretswil,no_link_in_reviewed_rosters,0,0.0,0,,,,,ghoch|steg_im_tosstal|steig_baretswill_steig_baretswil,False,False
+SKI_CLUSTER_067,Pian Cales San Bernardino,no_link_in_reviewed_rosters,0,0.0,0,,,,,pian_cales_san_bernardino,False,False
+SKI_CLUSTER_077,Bosco Gurin,no_link_in_reviewed_rosters,0,0.0,0,,,,,bosco_gurin,False,False
+SKI_CLUSTER_079,Bennau Einsiedeln / Friherrenberg Einsiedeln / Schnabelsberg Einsiedeln,no_link_in_reviewed_rosters,0,0.0,0,,,,,bennau_einsiedeln|friherrenberg_einsiedeln|schnabelsberg_einsiedeln,False,False
+SKI_CLUSTER_080,Nara Leontica - Cancorì,no_link_in_reviewed_rosters,0,0.0,0,,,,,nara_leontica_cancori,False,False
+SKI_CLUSTER_083,Alpsteinblick Gonten / Jakobsbad - Kronberg / Osteregg Urnäsch / Osteregg,no_link_in_reviewed_rosters,0,0.0,0,,,,,alpsteinblick_gonten|jakobsbad_kronberg|osteregg_urnasch_osteregg,False,False
+SKI_CLUSTER_084,Splügen Rheinwald,no_link_in_reviewed_rosters,0,0.0,0,,,,,splugen_rheinwald,False,False
+SKI_CLUSTER_086,Bergün - Filisur Bergün - Filisur / Darlux,no_link_in_reviewed_rosters,0,0.0,0,,,,,bergun_filisur_bergun_filisur_darlux,False,False
+SKI_CLUSTER_087,Zuoz / Bügls - S - chanf / Müsella La Punt - Müsella,no_link_in_reviewed_rosters,0,0.0,0,,,,,bugls_s_chanf|musella_la_punt_musella|zuoz,False,False
+SKI_CLUSTER_090,Champex - Lac,no_link_in_reviewed_rosters,0,0.0,0,,,,,champex_lac,False,False
+SKI_CLUSTER_097,Vals,no_link_in_reviewed_rosters,0,0.0,0,,,,,vals,False,False
+SKI_CLUSTER_098,Tschiertschen,no_link_in_reviewed_rosters,0,0.0,0,,,,,tschiertschen,False,False
+SKI_CLUSTER_099,Diavolezza - Lagalb,no_link_in_reviewed_rosters,0,0.0,0,,,,,diavolezza_lagalb,False,False
+SKI_CLUSTER_104,Val Ferret - La Fouly,no_link_in_reviewed_rosters,0,0.0,0,,,,,val_ferret_la_fouly,False,False
+SKI_CLUSTER_105,Vichères Liddes - Vichères,no_link_in_reviewed_rosters,0,0.0,0,,,,,vicheres_liddes_vicheres,False,False
+SKI_CLUSTER_111,Langenbruck,no_link_in_reviewed_rosters,0,0.0,0,,,,,langenbruck,False,False
+SKI_CLUSTER_114,Campo Blenio - Ghirone,no_link_in_reviewed_rosters,0,0.0,0,,,,,campo_blenio_ghirone,False,False
+SKI_CLUSTER_116,Degersheim / Schwellbrunn,no_link_in_reviewed_rosters,0,0.0,0,,,,,degersheim|schwellbrunn,False,False
+SKI_CLUSTER_117,Grub Kaien / Oberegg St. Anton / Heiden Bischofsberg,no_link_in_reviewed_rosters,0,0.0,0,,,,,grub_kaien|heiden_bischofsberg|oberegg_st_anton,False,False
+SKI_CLUSTER_118,Avers,no_link_in_reviewed_rosters,0,0.0,0,,,,,avers,False,False
+SKI_CLUSTER_119,Bivio,no_link_in_reviewed_rosters,0,0.0,0,,,,,bivio,False,False
+SKI_CLUSTER_120,Aela Maloja,no_link_in_reviewed_rosters,0,0.0,0,,,,,aela_maloja,False,False
+SKI_CLUSTER_121,Heuberge Fideriser Heuberge,no_link_in_reviewed_rosters,0,0.0,0,,,,,heuberge_fideriser_heuberge,False,False
+SKI_CLUSTER_122,Minschuns - Val Müstair,no_link_in_reviewed_rosters,0,0.0,0,,,,,minschuns_val_mustair,False,False
+SKI_CLUSTER_124,Saint George Saint - George,no_link_in_reviewed_rosters,0,0.0,0,,,,,saint_george_saint_george,False,False
+SKI_CLUSTER_126,Les Loges / Crêt - Meuron / La Corbatière - La Roche - des - Crocs,no_link_in_reviewed_rosters,0,0.0,0,,,,,cret_meuron|la_corbatiere_la_roche_des_crocs|les_loges,False,False
+SKI_CLUSTER_133,Le Chaluet,no_link_in_reviewed_rosters,0,0.0,0,,,,,le_chaluet,False,False
+SKI_CLUSTER_140,Obergoms Goms,no_link_in_reviewed_rosters,0,0.0,0,,,,,obergoms_goms,False,False
+SKI_CLUSTER_141,Nollen - Unterägeri,no_link_in_reviewed_rosters,0,0.0,0,,,,,nollen_unterageri,False,False
+SKI_CLUSTER_143,Carì,no_link_in_reviewed_rosters,0,0.0,0,,,,,cari,False,False
+SKI_CLUSTER_144,Sattelegg Einsiedeln / Wägital - Vorderthal,no_link_in_reviewed_rosters,0,0.0,0,,,,,sattelegg_einsiedeln|wagital_vorderthal,False,False
+SKI_CLUSTER_145,Oberwangen / Hamberg - Gähwil,no_link_in_reviewed_rosters,0,0.0,0,,,,,hamberg_gahwil|oberwangen,False,False
+SKI_CLUSTER_146,Schilt Mollis,no_link_in_reviewed_rosters,0,0.0,0,,,,,schilt_mollis,False,False
+SKI_CLUSTER_147,Rossa,no_link_in_reviewed_rosters,0,0.0,0,,,,,rossa,False,False
+SKI_CLUSTER_149,Feldis,no_link_in_reviewed_rosters,0,0.0,0,,,,,feldis,False,False
+SKI_CLUSTER_151,Hochwang,no_link_in_reviewed_rosters,0,0.0,0,,,,,hochwang,False,False
+SKI_CLUSTER_155,Les Verrières,no_link_in_reviewed_rosters,0,0.0,0,,,,,les_verrieres,False,False
+SKI_CLUSTER_156,Côte - aux - Fées La Côte - aux - Fées,no_link_in_reviewed_rosters,0,0.0,0,,,,,cote_aux_fees_la_cote_aux_fees,False,False
+SKI_CLUSTER_157,Brot - Plamboz / Sommartel Le Locle,no_link_in_reviewed_rosters,0,0.0,0,,,,,brot_plamboz|sommartel_le_locle,False,False
+SKI_CLUSTER_159,Chapeau Rablé La Chaux - de - Fonds,no_link_in_reviewed_rosters,0,0.0,0,,,,,chapeau_rable_la_chaux_de_fonds,False,False
+SKI_CLUSTER_161,Saint - Imier - Mont Soleil,no_link_in_reviewed_rosters,0,0.0,0,,,,,saint_imier_mont_soleil,False,False
+SKI_CLUSTER_162,Les Breuleux,no_link_in_reviewed_rosters,0,0.0,0,,,,,les_breuleux,False,False
+SKI_CLUSTER_163,Mont Gibloux,no_link_in_reviewed_rosters,0,0.0,0,,,,,mont_gibloux,False,False
+SKI_CLUSTER_166,Nods - Chasseral,no_link_in_reviewed_rosters,0,0.0,0,,,,,nods_chasseral,False,False
+SKI_CLUSTER_168,Les Genevez,no_link_in_reviewed_rosters,0,0.0,0,,,,,les_genevez,False,False
+SKI_CLUSTER_170,Sous le Mont,no_link_in_reviewed_rosters,0,0.0,0,,,,,sous_le_mont,False,False
+SKI_CLUSTER_173,Hapfere Plaffeien,no_link_in_reviewed_rosters,0,0.0,0,,,,,hapfere_plaffeien,False,False
+SKI_CLUSTER_183,Chuderhüsi,no_link_in_reviewed_rosters,0,0.0,0,,,,,chuderhusi,False,False
+SKI_CLUSTER_184,Eggiwil,no_link_in_reviewed_rosters,0,0.0,0,,,,,eggiwil,False,False
+SKI_CLUSTER_191,Langis Glaubenberg,no_link_in_reviewed_rosters,0,0.0,0,,,,,langis_glaubenberg,False,False
+SKI_CLUSTER_193,Gfellen Entlebuch - Finsterwald,no_link_in_reviewed_rosters,0,0.0,0,,,,,gfellen_entlebuch_finsterwald,False,False
+SKI_CLUSTER_198,Gadmen,no_link_in_reviewed_rosters,0,0.0,0,,,,,gadmen,False,False
+SKI_CLUSTER_200,Egg Hallau / Röhrenmoos Dietikon / Regensberg - Im Buck / +1 listings,no_link_in_reviewed_rosters,0,0.0,0,,,,,egg_hallau|opfershofen_skilift_stich_opfertshofen|regensberg_im_buck|rohrenmoos_dietikon,False,False
+SKI_CLUSTER_201,Cioss Prato Bedretto,no_link_in_reviewed_rosters,0,0.0,0,,,,,cioss_prato_bedretto,False,False
+SKI_CLUSTER_202,Realp,no_link_in_reviewed_rosters,0,0.0,0,,,,,realp,False,False
+SKI_CLUSTER_205,Mogno / Piano di Peccia,no_link_in_reviewed_rosters,0,0.0,0,,,,,mogno|piano_di_peccia,False,False
+SKI_CLUSTER_206,Bedrina Dalpe / Prato Leventina,no_link_in_reviewed_rosters,0,0.0,0,,,,,bedrina_dalpe|prato_leventina,False,False
+SKI_CLUSTER_208,Alpe di Neggia,no_link_in_reviewed_rosters,0,0.0,0,,,,,alpe_di_neggia,False,False
+SKI_CLUSTER_209,Bedea Novaggio,no_link_in_reviewed_rosters,0,0.0,0,,,,,bedea_novaggio,False,False
+SKI_CLUSTER_210,Sitzberg / Sternenberg / Dicki - Weisslingen / +1 listings,no_link_in_reviewed_rosters,0,0.0,0,,,,,dicki_weisslingen|schafbuel_wildberg|sitzberg|sternenberg,False,False
+SKI_CLUSTER_216,Bildhaus am Ricken,no_link_in_reviewed_rosters,0,0.0,0,,,,,bildhaus_am_ricken,False,False
+SKI_CLUSTER_224,Tanzboden Ebnat - Kappel,no_link_in_reviewed_rosters,0,0.0,0,,,,,tanzboden_ebnat_kappel,False,False
+SKI_CLUSTER_225,Oberhelfenschwil,no_link_in_reviewed_rosters,0,0.0,0,,,,,oberhelfenschwil,False,False
+SKI_CLUSTER_226,Kerenzerberg,no_link_in_reviewed_rosters,0,0.0,0,,,,,kerenzerberg,False,False
+SKI_CLUSTER_228,Hemberg,no_link_in_reviewed_rosters,0,0.0,0,,,,,hemberg,False,False
+SKI_CLUSTER_230,Hörnli - Schönengrund,no_link_in_reviewed_rosters,0,0.0,0,,,,,hornli_schonengrund,False,False
+SKI_CLUSTER_232,Tannenberg Skiarena Tannenberg / Waldkirch,no_link_in_reviewed_rosters,0,0.0,0,,,,,tannenberg_skiarena_tannenberg_waldkirch,False,False
+SKI_CLUSTER_234,Buchserberg Skilift Buchserberg - Malbun,no_link_in_reviewed_rosters,0,0.0,0,,,,,buchserberg_skilift_buchserberg_malbun,False,False
+SKI_CLUSTER_235,Klausenböhl Gais / Klausenböhl,no_link_in_reviewed_rosters,0,0.0,0,,,,,klausenbohl_gais_klausenbohl,False,False
+SKI_CLUSTER_236,Obermutten Mutten - Obermutten,no_link_in_reviewed_rosters,0,0.0,0,,,,,obermutten_mutten_obermutten,False,False
+SKI_CLUSTER_239,Pany,no_link_in_reviewed_rosters,0,0.0,0,,,,,pany,False,False
+SKI_CLUSTER_240,Junker - St. Antönien,no_link_in_reviewed_rosters,0,0.0,0,,,,,junker_st_antonien,False,False
+SKI_CLUSTER_241,Pischa Davos Pischa,no_link_in_reviewed_rosters,0,0.0,0,,,,,pischa_davos_pischa,False,False

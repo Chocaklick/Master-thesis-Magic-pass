@@ -420,5 +420,33 @@
     "suffix": "json",
     "organisation": "Swiss Federal Roads Office (FEDRO/ASTRA) via geo.admin.ch",
     "description": "Official STAC collection describing the national-road axes, their maintenance and provider scope"
+  },
+  {
+    "source_id": "ALPSPASS_2026_27_ROSTER",
+    "url": "https://www.alpspass.ski/fr",
+    "suffix": "html",
+    "organisation": "AlpsPass tariff association",
+    "description": "Official 2026/2027 AlpsPass page listing four unlimited core regions and seven partner regions with three free ski days each"
+  },
+  {
+    "source_id": "ALPSPASS_2026_27_GTC",
+    "url": "https://www.alpspass.ski/_Resources/Persistent/8/2/0/0/8200ca8b8dbee72232ab48c0249aafface7be531/AlpsPass-2026-2027-AGB%20en.pdf",
+    "suffix": "pdf",
+    "organisation": "AlpsPass tariff association",
+    "description": "Official 2026/2027 AlpsPass general terms defining the core-area operators and included infrastructure"
+  },
+  {
+    "source_id": "MEILENWEISS_CURRENT_ROSTER",
+    "url": "https://meilenweiss.ch/meilenweiss-faq",
+    "suffix": "html",
+    "organisation": "Tarifverbund Meilenweiss",
+    "description": "Official current Meilenweiss FAQ listing all 17 included regions; retained as a retrieval-date snapshot rather than assigned an unsupported season label"
+  },
+  {
+    "source_id": "SCHNEEPASS_ZENTRALSCHWEIZ_2026_27_ROSTER",
+    "url": "https://www.schneepasszentralschweiz.ch/",
+    "suffix": "html",
+    "organisation": "Transportunternehmungen Zentralschweiz (TUZ)",
+    "description": "Official winter 2026/2027 Schneepass Zentralschweiz page listing the 15 included regions"
   }
 ]
