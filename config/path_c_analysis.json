@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_11",
+  "analysis_version": "path_c_v0_12",
   "analysis_date": "2026-09-23",
   "analysis_entity": "existing_lift_cluster_with_at_least_one_supplied_resort_listing",
   "feature_temporal_status": "undated_cross_sectional_snapshot_not_pre_treatment",
@@ -93,6 +93,17 @@
     "cluster_aggregation": "minimum_median_maximum_across_eligible_supplied_listing_points",
     "interpretation": "official_current_stop_point_straight_line_context_not_route_service_frequency_or_validated_resort_arrival_node"
   },
+  "national_road_proximity_context": {
+    "source_id": "ASTRA_NATIONAL_ROAD_AXES_2026",
+    "source_reference_datetime": "2026-08-01T00:00:00Z",
+    "asset_updated_datetime": "2026-09-01T03:32:13.046159Z",
+    "distance_crs": "EPSG:2056",
+    "main_axis_layer": "Stammachsen",
+    "network_axis_layers": ["Anschlussachse", "Rampenachsen", "Stammachsen", "Zubringerachsen"],
+    "point_eligibility": "supplied_listing_coordinate_inside_unique_current_swiss_municipality",
+    "cluster_aggregation": "minimum_median_maximum_across_eligible_supplied_listing_points",
+    "interpretation": "official_current_swiss_national_road_axis_straight_line_context_not_motorway_classification_route_or_historical_accessibility"
+  },
   "public_transport_journey_context": {
     "source_id": "SKI_GTFS_TIMETABLE_2026_WINTER_20260207",
     "feed_version": "20260207",
@@ -118,7 +129,7 @@
       "descriptive analogue opportunity signal",
       "snow vulnerability percentile"
     ],
-    "strategic_need_limitation": "Qualified Swiss municipality-point and Eurostat 2021 cross-border grid population, NPVM 2025 traffic-zone travel times, current straight-line OFT/BAV stop proximity and a winter-2026 GTFS Static municipality-to-destination journey context are available. Population radii remain residential straight-line context rather than visitor catchments; GTFS anchor-year timetable stability is not verified; and point-container tourism ratios do not establish a destination catchment. No complete strategic-need score or composite ranking is produced.",
+    "strategic_need_limitation": "Qualified Swiss municipality-point and Eurostat 2021 cross-border grid population, NPVM 2025 traffic-zone travel times, current straight-line OFT/BAV stop proximity, current FEDRO/ASTRA national-road-axis proximity and a winter-2026 GTFS Static municipality-to-destination journey context are available. Population radii remain residential straight-line context rather than visitor catchments; the road-axis source does not classify motorways or measure route access; GTFS anchor-year timetable stability is not verified; and point-container tourism ratios do not establish a destination catchment. No complete strategic-need score or composite ranking is produced.",
     "composite_score_approved": false,
     "causal_interpretation_approved": false
   }

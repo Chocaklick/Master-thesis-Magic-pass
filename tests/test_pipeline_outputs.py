@@ -1117,6 +1117,97 @@ def test_public_transport_stop_context_uses_only_official_passenger_stops() -> N
     ).any()
 
 
+def test_national_road_proximity_context_preserves_scope_and_definitions() -> None:
+    listing = read("data_processed/resort_national_road_proximity_context.csv")
+    cluster = read("data_processed/path_c_cluster_national_road_proximity_context.csv")
+    candidates = read("reports/national_road_proximity_candidate_summary.csv")
+    decision = read("data_processed/magic_pass_decision_support.csv")
+
+    assert len(listing) == 271
+    assert listing["resort_id"].is_unique
+    assert listing["national_road_source_reference_datetime"].eq(
+        "2026-08-01T00:00:00Z"
+    ).all()
+    assert listing["national_road_asset_updated_datetime"].eq(
+        "2026-09-01T03:32:13.046159Z"
+    ).all()
+    assert listing["national_road_proximity_context_status"].value_counts().to_dict() == {
+        "assigned_official_swiss_national_road_scope": 268,
+        "outside_official_swiss_national_road_scope": 3,
+    }
+    usable = as_bool(listing["national_road_proximity_values_complete"])
+    assert int(usable.sum()) == 268
+    assert set(listing.loc[~usable, "resort_id"]) == {
+        "avoriaz_1800_portes_du_soleil",
+        "chapelle_abondance_la_chapelle_d_abondance_portes_du_soleil",
+        "chatel_portes_du_soleil",
+    }
+    distances = [
+        "distance_to_nearest_national_road_main_km",
+        "distance_to_nearest_national_road_network_km",
+    ]
+    assert listing.loc[usable, distances].notna().all().all()
+    assert listing.loc[usable, distances].ge(0).all().all()
+    assert listing.loc[~usable, distances].isna().all().all()
+    assert (
+        listing.loc[usable, "distance_to_nearest_national_road_network_km"]
+        <= listing.loc[usable, "distance_to_nearest_national_road_main_km"] + 1e-12
+    ).all()
+    assert listing.loc[usable, "nearest_national_road_main_axis_layer"].eq(
+        "Stammachsen"
+    ).all()
+    assert listing.loc[
+        usable, "nearest_national_road_network_axis_layer"
+    ].value_counts().to_dict() == {
+        "Stammachsen": 172,
+        "Anschlussachse": 57,
+        "Rampenachsen": 35,
+        "Zubringerachsen": 4,
+    }
+    assert not as_bool(
+        listing["national_road_motorway_classification_available"]
+    ).any()
+    assert not as_bool(listing["national_road_proximity_feature_approved"]).any()
+
+    assert len(cluster) == 162
+    assert cluster["cluster_id"].is_unique
+    assert int(cluster["cluster_listing_count"].sum()) == 271
+    assert int(cluster["cluster_listings_with_national_road_context"].sum()) == 268
+    assert cluster["cluster_national_road_proximity_context_status"].value_counts().to_dict() == {
+        "complete_all_listing_points_inside_swiss_scope": 161,
+        "partial_listing_points_outside_swiss_scope": 1,
+    }
+    partial = cluster[
+        cluster["cluster_national_road_proximity_context_status"].eq(
+            "partial_listing_points_outside_swiss_scope"
+        )
+    ]
+    assert partial["cluster_id"].tolist() == ["SKI_CLUSTER_001"]
+    candidate_rows = cluster[as_bool(cluster["candidate_for_path_c"])]
+    assert len(candidate_rows) == 104
+    assert int(
+        candidate_rows["cluster_national_road_proximity_context_status"]
+        .eq("complete_all_listing_points_inside_swiss_scope")
+        .sum()
+    ) == 103
+    for prefix in ["national_road_main", "national_road_network"]:
+        stem = f"cluster_distance_to_nearest_{prefix}"
+        assert (cluster[f"{stem}_minimum_km"] <= cluster[f"{stem}_median_km"]).all()
+        assert (cluster[f"{stem}_median_km"] <= cluster[f"{stem}_maximum_km"]).all()
+    assert cluster["national_road_proximity_interpretation"].eq(
+        "official_current_swiss_national_road_axis_straight_line_context_not_motorway_classification_route_or_historical_accessibility"
+    ).all()
+    assert not as_bool(cluster["national_road_proximity_feature_approved"]).any()
+
+    assert len(candidates) == 104
+    assert candidates["cluster_id"].is_unique
+    assert len(decision) == 162
+    assert decision["accessibility_score"].isna().all()
+    assert decision["predicted_uplift_pct"].isna().all()
+    assert decision["composite_opportunity_need_score"].isna().all()
+    assert not as_bool(decision["national_road_proximity_feature_approved"]).any()
+
+
 def test_public_transport_journey_context_preserves_grain_and_limits() -> None:
     samples = read(
         "data_processed/treatment_municipality_public_transport_journey_samples.csv"

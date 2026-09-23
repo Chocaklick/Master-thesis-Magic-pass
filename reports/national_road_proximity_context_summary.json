@@ -1,0 +1,53 @@
+{
+  "analysis_version": "path_c_v0_12",
+  "source_reference_datetime": "2026-08-01T00:00:00Z",
+  "asset_updated_datetime": "2026-09-01T03:32:13.046159Z",
+  "collection_provider": "Federal Roads Office - FEDRO",
+  "embedded_data_status_date": "2026-09-01",
+  "layers": {
+    "Anschlussachse": {
+      "features": 596,
+      "published_feature_length_km": 205.99425660790567
+    },
+    "Rampenachsen": {
+      "features": 2292,
+      "published_feature_length_km": 1115.3389132085256
+    },
+    "Stammachsen": {
+      "features": 166,
+      "published_feature_length_km": 3861.887930664242
+    },
+    "Zubringerachsen": {
+      "features": 30,
+      "published_feature_length_km": 74.67468285384635
+    }
+  },
+  "network_axis_features": 3084,
+  "network_published_feature_length_km": 5257.895783334519,
+  "resort_listings": 271,
+  "resort_listings_inside_official_swiss_scope": 268,
+  "resort_listings_outside_official_swiss_scope": 3,
+  "outside_scope_resort_ids": [
+    "avoriaz_1800_portes_du_soleil",
+    "chapelle_abondance_la_chapelle_d_abondance_portes_du_soleil",
+    "chatel_portes_du_soleil"
+  ],
+  "path_c_clusters": 162,
+  "path_c_clusters_complete": 161,
+  "path_c_clusters_partial": 1,
+  "path_c_candidates": 104,
+  "path_c_candidates_complete": 103,
+  "median_cluster_median_distance_to_main_axis_km": 6.810341953972747,
+  "median_cluster_median_distance_to_any_network_axis_km": 6.792085207868556,
+  "maximum_listing_distance_to_main_axis_km": 41.41082437202164,
+  "maximum_listing_distance_to_any_network_axis_km": 41.41082437202164,
+  "nearest_network_axis_layer_counts_for_eligible_listings": {
+    "Anschlussachse": 57,
+    "Rampenachsen": 35,
+    "Stammachsen": 172,
+    "Zubringerachsen": 4
+  },
+  "motorway_classification_available": false,
+  "approved_features": 0,
+  "interpretation": "official_current_swiss_national_road_axis_straight_line_context_not_motorway_classification_route_or_historical_accessibility"
+}

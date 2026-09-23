@@ -1,0 +1,105 @@
+cluster_id,cluster_display_name,cluster_national_road_proximity_context_status,cluster_distance_to_nearest_national_road_main_median_km,cluster_distance_to_nearest_national_road_network_median_km,cluster_nearest_national_road_main_road_numbers,cluster_nearest_national_road_network_road_numbers
+SKI_CLUSTER_119,Bivio,complete_all_listing_points_inside_swiss_scope,0.040270555716217404,0.040270555716217404,N29,N29
+SKI_CLUSTER_059,Airolo - Lüina / Airolo - Pesciüm Airolo - Pesciüm,complete_all_listing_points_inside_swiss_scope,0.3873297046033404,0.2943514291886712,N2|N2P,N2_AIROV
+SKI_CLUSTER_170,Sous le Mont,complete_all_listing_points_inside_swiss_scope,0.46670789162230986,0.46670789162230986,N16,N16
+SKI_CLUSTER_067,Pian Cales San Bernardino,complete_all_listing_points_inside_swiss_scope,0.6521897128953701,0.5919853927925964,N13,N13_ASBER
+SKI_CLUSTER_206,Bedrina Dalpe / Prato Leventina,complete_all_listing_points_inside_swiss_scope,0.9820125189593326,0.9820125189593326,N2,N2
+SKI_CLUSTER_159,Chapeau Rablé La Chaux - de - Fonds,complete_all_listing_points_inside_swiss_scope,1.3753353507659638,1.3753353507659638,N20,N20
+SKI_CLUSTER_126,Les Loges / Crêt - Meuron / La Corbatière - La Roche - des - Crocs,complete_all_listing_points_inside_swiss_scope,1.4302715471243665,1.4302715471243665,N20,N20
+SKI_CLUSTER_056,Grüsch Danusa,complete_all_listing_points_inside_swiss_scope,1.5104340869761916,1.5104340869761916,N28,N28
+SKI_CLUSTER_239,Pany,complete_all_listing_points_inside_swiss_scope,1.6080528214186836,1.6080528214186836,N28,N28
+SKI_CLUSTER_040,Rigi / Seebodenalp - Küssnacht am Rigi,complete_all_listing_points_inside_swiss_scope,1.7839915412062153,1.7839915412062153,N4,N4
+SKI_CLUSTER_149,Feldis,complete_all_listing_points_inside_swiss_scope,1.7876144176725204,1.7876144176725204,N13,N13
+SKI_CLUSTER_084,Splügen Rheinwald,complete_all_listing_points_inside_swiss_scope,1.7956736917463723,1.7956736917463723,N13,N13
+SKI_CLUSTER_226,Kerenzerberg,complete_all_listing_points_inside_swiss_scope,1.828937285962325,1.828937285962325,N3,N3
+SKI_CLUSTER_105,Vichères Liddes - Vichères,complete_all_listing_points_inside_swiss_scope,1.8669886558457858,1.8669886558457858,N21,N21
+SKI_CLUSTER_236,Obermutten Mutten - Obermutten,complete_all_listing_points_inside_swiss_scope,1.9621250223199636,1.9621250223199636,N29,N29
+SKI_CLUSTER_038,Mastrils Skilift Mastrils / Pizol - Bad Ragaz - Wangs / Tristeli St. Margarethenberg,complete_all_listing_points_inside_swiss_scope,2.146240266387928,2.146240266387928,N13,N13
+SKI_CLUSTER_133,Le Chaluet,complete_all_listing_points_inside_swiss_scope,2.4215318197246285,2.4215318197246285,N16,N16
+SKI_CLUSTER_146,Schilt Mollis,complete_all_listing_points_inside_swiss_scope,2.881150501352823,2.881150501352823,N17,N17
+SKI_CLUSTER_090,Champex - Lac,complete_all_listing_points_inside_swiss_scope,3.245395521937287,3.245395521937287,N21,N21
+SKI_CLUSTER_163,Mont Gibloux,complete_all_listing_points_inside_swiss_scope,3.2467067838716632,3.2467067838716632,N12,N12
+SKI_CLUSTER_043,Savognin,complete_all_listing_points_inside_swiss_scope,3.306752499429677,3.306752499429677,N29,N29
+SKI_CLUSTER_143,Carì,complete_all_listing_points_inside_swiss_scope,3.4579404030694683,3.4579404030694683,N2,N2
+SKI_CLUSTER_029,Flumserberg,complete_all_listing_points_inside_swiss_scope,3.580826658625507,3.580826658625507,N3,N3
+SKI_CLUSTER_053,Elsigenalp - Metschalp Frutigen,complete_all_listing_points_inside_swiss_scope,3.703848258047847,3.703848258047847,N6,N6
+SKI_CLUSTER_082,Amden,complete_all_listing_points_inside_swiss_scope,3.8159514239114496,3.8159514239114496,N3,N3
+SKI_CLUSTER_111,Langenbruck,complete_all_listing_points_inside_swiss_scope,3.961608055017489,3.8501481143574323,N2,N2_AEGER
+SKI_CLUSTER_033,Corvatsch - Furtschellas,complete_all_listing_points_inside_swiss_scope,4.035158621231608,4.035158621231608,N29,N29
+SKI_CLUSTER_021,Biel - Kinzig / Ratzi Spiringen / Flüelen Eggberge / Flüelen / +2 listings,complete_all_listing_points_inside_swiss_scope,4.097187158358638,4.097187158358638,N2|N4,N2|N4
+SKI_CLUSTER_209,Bedea Novaggio,complete_all_listing_points_inside_swiss_scope,4.105858083082414,4.105858083082414,N2,N2
+SKI_CLUSTER_232,Tannenberg Skiarena Tannenberg / Waldkirch,complete_all_listing_points_inside_swiss_scope,4.362656123210026,4.329474062595673,N1,N1_ASGW
+SKI_CLUSTER_117,Grub Kaien / Oberegg St. Anton / Heiden Bischofsberg,complete_all_listing_points_inside_swiss_scope,4.458185921749761,4.458185921749761,N1,N1
+SKI_CLUSTER_083,Alpsteinblick Gonten / Jakobsbad - Kronberg / Osteregg Urnäsch / Osteregg,complete_all_listing_points_inside_swiss_scope,4.52519807798024,4.52519807798024,N25,N25
+SKI_CLUSTER_002,Thyon 4 Vallées / Bruson - Verbier / Nendaz 4 Vallées / +3 listings,complete_all_listing_points_inside_swiss_scope,4.668509485426727,4.634577490730564,N21|N9,N21|N9|N9_ARIDD|N9_ASIOO
+SKI_CLUSTER_202,Realp,complete_all_listing_points_inside_swiss_scope,4.785779448704197,4.785779448704197,N2P,N2P
+SKI_CLUSTER_080,Nara Leontica - Cancorì,complete_all_listing_points_inside_swiss_scope,4.791837326312812,4.791837326312812,N2,N2
+SKI_CLUSTER_157,Brot - Plamboz / Sommartel Le Locle,complete_all_listing_points_inside_swiss_scope,4.812482065924589,4.811187989858184,N20|N5,N20|N5_BOUD
+SKI_CLUSTER_234,Buchserberg Skilift Buchserberg - Malbun,complete_all_listing_points_inside_swiss_scope,4.813067059526127,4.771436159106196,N13,N13_ABUCH
+SKI_CLUSTER_200,Egg Hallau / Röhrenmoos Dietikon / Regensberg - Im Buck / +1 listings,complete_all_listing_points_inside_swiss_scope,5.124487805384084,5.110109830493062,N1|N4,N1|N1_ADIET|N4_ASHS|N4_KESS
+SKI_CLUSTER_116,Degersheim / Schwellbrunn,complete_all_listing_points_inside_swiss_scope,5.441425962804217,5.441425962804217,N25,N25
+SKI_CLUSTER_166,Nods - Chasseral,complete_all_listing_points_inside_swiss_scope,5.44925157918435,5.44925157918435,N5,N5
+SKI_CLUSTER_079,Bennau Einsiedeln / Friherrenberg Einsiedeln / Schnabelsberg Einsiedeln,complete_all_listing_points_inside_swiss_scope,5.5914683285839635,5.5914683285839635,N3,N3
+SKI_CLUSTER_241,Pischa Davos Pischa,complete_all_listing_points_inside_swiss_scope,5.709793376900651,5.709793376900651,N28,N28
+SKI_CLUSTER_060,Tenna / Sarn - Heinzenberg / Tschappina Tschappina - Urmein - Heinzenberg,complete_all_listing_points_inside_swiss_scope,5.771862759329804,5.771862759329804,N13,N13|N13_AROTH|N13_ATHUN
+SKI_CLUSTER_235,Klausenböhl Gais / Klausenböhl,complete_all_listing_points_inside_swiss_scope,5.799772473685245,5.799772473685245,N25,N25
+SKI_CLUSTER_216,Bildhaus am Ricken,complete_all_listing_points_inside_swiss_scope,5.947832385386727,5.854816657665223,N15,N15_SCHM
+SKI_CLUSTER_168,Les Genevez,complete_all_listing_points_inside_swiss_scope,6.02045289941941,4.759277684792746,N16,N16_ATAVA
+SKI_CLUSTER_055,Ebenalp - Horn / Brülisau Brülisau - Leugangen,complete_all_listing_points_inside_swiss_scope,6.02412444522314,6.02412444522314,N13|N25,N13|N25
+SKI_CLUSTER_066,Atzmännig / Oberholz - Farner,complete_all_listing_points_inside_swiss_scope,6.035888789787858,5.86356201213478,N15,N15_ESCH
+SKI_CLUSTER_121,Heuberge Fideriser Heuberge,complete_all_listing_points_inside_swiss_scope,6.113073657188365,6.08461680090265,N28,N28_KUBL
+SKI_CLUSTER_240,Junker - St. Antönien,complete_all_listing_points_inside_swiss_scope,6.206830417579696,6.206830417579696,N28,N28
+SKI_CLUSTER_208,Alpe di Neggia,complete_all_listing_points_inside_swiss_scope,6.222349365452228,6.222349365452228,N13,N13
+SKI_CLUSTER_065,Ghöch / Steg im Tösstal / Steig - Bäretswill Steig - Bäretswil,complete_all_listing_points_inside_swiss_scope,6.225501627263506,6.225501627263506,N15,N15
+SKI_CLUSTER_145,Oberwangen / Hamberg - Gähwil,complete_all_listing_points_inside_swiss_scope,6.262863263223261,6.262863263223261,N1,N1
+SKI_CLUSTER_201,Cioss Prato Bedretto,complete_all_listing_points_inside_swiss_scope,6.7627131794371165,6.7627131794371165,N2P,N2P
+SKI_CLUSTER_144,Sattelegg Einsiedeln / Wägital - Vorderthal,complete_all_listing_points_inside_swiss_scope,6.963867563245059,6.948833171482656,N3,N3_LACH
+SKI_CLUSTER_030,Toggenburg Wildhaus / Toggenburg - Chäserrugg Alt St. Johann Unterwasser,complete_all_listing_points_inside_swiss_scope,6.996985489432532,6.903415135595591,N3,N3_AWAST|N3_WAST
+SKI_CLUSTER_007,Arosa Lenzerheide / Pradaschier - Churwalden / Brambrüesch Chur - Brambrüesch,complete_all_listing_points_inside_swiss_scope,7.1969535602006625,7.188933796876732,N13|N29,N13_ACHUS|N13_CHUS|N29_AALVA
+SKI_CLUSTER_147,Rossa,complete_all_listing_points_inside_swiss_scope,7.284099228637896,7.284099228637896,N13,N13
+SKI_CLUSTER_141,Nollen - Unterägeri,complete_all_listing_points_inside_swiss_scope,7.405390330190595,7.39798760320024,N4,N4_AARTH
+SKI_CLUSTER_120,Aela Maloja,complete_all_listing_points_inside_swiss_scope,7.465835369936664,7.465835369936664,N29,N29
+SKI_CLUSTER_006,Madrisa Klosters Madrisa / Rinerhorn Davos Rinerhorn / Jakobshorn Davos Jakobshorn / +2 listings,complete_all_listing_points_inside_swiss_scope,7.569915074098898,7.569915074098898,N28,N28|N28_KLOW
+SKI_CLUSTER_104,Val Ferret - La Fouly,complete_all_listing_points_inside_swiss_scope,7.627716828528148,7.627716828528148,N21,N21
+SKI_CLUSTER_124,Saint George Saint - George,complete_all_listing_points_inside_swiss_scope,7.954226595048193,7.953609554522222,N1,N1_ROLL
+SKI_CLUSTER_098,Tschiertschen,complete_all_listing_points_inside_swiss_scope,8.097196971627467,7.956705115577655,N13,N13_ACHUS
+SKI_CLUSTER_230,Hörnli - Schönengrund,complete_all_listing_points_inside_swiss_scope,8.166967787489263,8.166967787489263,N25,N25
+SKI_CLUSTER_210,Sitzberg / Sternenberg / Dicki - Weisslingen / +1 listings,complete_all_listing_points_inside_swiss_scope,8.25569403179827,7.947088713916342,N1|N15,N1|N15|N1_AEFFR
+SKI_CLUSTER_022,Muottas Muragl / Survih - Samedan / Languard Pontresina / +1 listings,complete_all_listing_points_inside_swiss_scope,8.34041468639387,8.301159989144235,N29,N29_ASILV
+SKI_CLUSTER_191,Langis Glaubenberg,complete_all_listing_points_inside_swiss_scope,8.446081418075925,8.402380003545,N8,N8_GISN
+SKI_CLUSTER_001,Châtel Portes du Soleil / Torgon Portes du Soleil / Avoriaz 1800 Portes du Soleil / +2 listings,partial_listing_points_outside_swiss_scope,8.697073243172337,8.642633179813728,N9,N9|N9_AAIGL
+SKI_CLUSTER_118,Avers,complete_all_listing_points_inside_swiss_scope,8.730096886310115,8.730096886310115,N29,N29
+SKI_CLUSTER_097,Vals,complete_all_listing_points_inside_swiss_scope,9.191884889585776,9.191884889585776,N13,N13
+SKI_CLUSTER_151,Hochwang,complete_all_listing_points_inside_swiss_scope,9.640170949563835,9.387326452360664,N13,N13_ACHUN
+SKI_CLUSTER_010,Wengen Jungfrau Ski Region Grindelwald - Wengen / Schilthorn Jungfrau Ski Region Mürren - Schilthorn,complete_all_listing_points_inside_swiss_scope,9.861361032256436,9.855023446854998,N8,N8|N8_RDAE
+SKI_CLUSTER_017,Disentis / Andermatt - Oberalp - Sedrun / Gemsstock Andermatt - Gemsstock / +1 listings,complete_all_listing_points_inside_swiss_scope,10.402169046443834,10.389671674652266,N2|N2P,N2|N2P|N2_AMST|N2_GOES
+SKI_CLUSTER_014,Lenk / Adelboden / Engstligenalp - Adelboden,complete_all_listing_points_inside_swiss_scope,10.436745724636989,10.436745724636989,N6,N6|N9_ASIEO
+SKI_CLUSTER_225,Oberhelfenschwil,complete_all_listing_points_inside_swiss_scope,10.496143090267239,10.496143090267239,N1,N1
+SKI_CLUSTER_205,Mogno / Piano di Peccia,complete_all_listing_points_inside_swiss_scope,10.8345830156144,10.8345830156144,N2,N2
+SKI_CLUSTER_224,Tanzboden Ebnat - Kappel,complete_all_listing_points_inside_swiss_scope,11.33871735017705,11.2321191148775,N15,N15_SCHM
+SKI_CLUSTER_193,Gfellen Entlebuch - Finsterwald,complete_all_listing_points_inside_swiss_scope,11.399716377507659,11.039097850384557,N8,N8_AALPS
+SKI_CLUSTER_156,Côte - aux - Fées La Côte - aux - Fées,complete_all_listing_points_inside_swiss_scope,11.790339117854726,11.790339117854726,N5,N5
+SKI_CLUSTER_161,Saint - Imier - Mont Soleil,complete_all_listing_points_inside_swiss_scope,11.865322000320255,11.799702639828878,N5,N5_ALAND
+SKI_CLUSTER_047,Braunwald,complete_all_listing_points_inside_swiss_scope,11.969881306868329,11.969881306868329,N17,N17
+SKI_CLUSTER_115,Wolzenalp Krummenau,complete_all_listing_points_inside_swiss_scope,12.233354649202887,12.233354649202887,N3,N3
+SKI_CLUSTER_086,Bergün - Filisur Bergün - Filisur / Darlux,complete_all_listing_points_inside_swiss_scope,12.299045966855559,12.299045966855559,N29,N29
+SKI_CLUSTER_228,Hemberg,complete_all_listing_points_inside_swiss_scope,12.558298840641502,12.558298840641502,N25,N25
+SKI_CLUSTER_162,Les Breuleux,complete_all_listing_points_inside_swiss_scope,12.648896884354285,12.648896884354285,N16,N16
+SKI_CLUSTER_183,Chuderhüsi,complete_all_listing_points_inside_swiss_scope,12.659672721680968,11.960170718041109,N6,N6_AKIES
+SKI_CLUSTER_039,Glacier 3000 - Les Diablerets,complete_all_listing_points_inside_swiss_scope,13.066637063744524,12.955131124723206,N9,N9_ACONT
+SKI_CLUSTER_114,Campo Blenio - Ghirone,complete_all_listing_points_inside_swiss_scope,13.455925417112832,13.28199978997278,N2,N2_FAID
+SKI_CLUSTER_173,Hapfere Plaffeien,complete_all_listing_points_inside_swiss_scope,13.955007766109633,13.955007766109633,N12,N12
+SKI_CLUSTER_099,Diavolezza - Lagalb,complete_all_listing_points_inside_swiss_scope,14.005993730329001,14.003711211771567,N29,N29_ASILV
+SKI_CLUSTER_198,Gadmen,complete_all_listing_points_inside_swiss_scope,14.360864000404924,14.360864000404924,N8,N8
+SKI_CLUSTER_019,Laax Flims Laax Falera,complete_all_listing_points_inside_swiss_scope,14.732109312532959,14.461239481183606,N13,N13_BONA
+SKI_CLUSTER_155,Les Verrières,complete_all_listing_points_inside_swiss_scope,15.489314252426972,15.489314252426972,N5,N5
+SKI_CLUSTER_081,Elm,complete_all_listing_points_inside_swiss_scope,15.915981688005722,15.915981688005722,N17,N17
+SKI_CLUSTER_184,Eggiwil,complete_all_listing_points_inside_swiss_scope,17.097606552641942,16.44128742318547,N6,N6_AKIES
+SKI_CLUSTER_087,Zuoz / Bügls - S - chanf / Müsella La Punt - Müsella,complete_all_listing_points_inside_swiss_scope,19.492187847249525,19.435798645882464,N29,N29_ASILV
+SKI_CLUSTER_140,Obergoms Goms,complete_all_listing_points_inside_swiss_scope,22.512253613342125,22.512253613342125,N2P,N2P
+SKI_CLUSTER_027,Obersaxen Mundaun / Brigels Waltensburg Andiast,complete_all_listing_points_inside_swiss_scope,24.24211666690972,24.05893095598919,N13,N13_AROTH|N13_BONA
+SKI_CLUSTER_077,Bosco Gurin,complete_all_listing_points_inside_swiss_scope,24.322968560530605,24.322968560530605,N2P,N2P
+SKI_CLUSTER_044,Motta Naluns Scuol Motta Naluns,complete_all_listing_points_inside_swiss_scope,29.20020502442418,29.20020502442418,N28,N28
+SKI_CLUSTER_005,Zermatt,complete_all_listing_points_inside_swiss_scope,29.25383838901419,28.020791147950156,N9,N9_VISS
+SKI_CLUSTER_011,Samnaun Silvretta Arena Samnaun / Ischgl,complete_all_listing_points_inside_swiss_scope,39.87769932743047,39.87769932743047,N28,N28
+SKI_CLUSTER_122,Minschuns - Val Müstair,complete_all_listing_points_inside_swiss_scope,41.41082437202164,41.41082437202164,N28,N28

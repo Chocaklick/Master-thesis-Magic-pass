@@ -32,6 +32,9 @@ DISTANCE_TRANSPORT_COMPARISON_SUMMARY = (
 CROSS_BORDER_POPULATION_SUMMARY = (
     ROOT / "reports" / "cross_border_population_context_summary.json"
 )
+NATIONAL_ROAD_PROXIMITY_SUMMARY = (
+    ROOT / "reports" / "national_road_proximity_context_summary.json"
+)
 PUBLIC_TRANSPORT_JOURNEY_SUMMARY = (
     ROOT / "reports" / "public_transport_journey_context_summary.json"
 )
@@ -97,6 +100,9 @@ def main() -> None:
     )
     cross_border_population_summary = json.loads(
         CROSS_BORDER_POPULATION_SUMMARY.read_text(encoding="utf-8")
+    )
+    national_road_proximity_summary = json.loads(
+        NATIONAL_ROAD_PROXIMITY_SUMMARY.read_text(encoding="utf-8")
     )
     public_transport_journey_summary = json.loads(
         PUBLIC_TRANSPORT_JOURNEY_SUMMARY.read_text(encoding="utf-8")
@@ -530,6 +536,30 @@ def main() -> None:
                 "median_foreign_only_share_all_clusters"
             ]
         ),
+        "national_road_axis_features": int(
+            national_road_proximity_summary["network_axis_features"]
+        ),
+        "national_road_eligible_listing_points": int(
+            national_road_proximity_summary[
+                "resort_listings_inside_official_swiss_scope"
+            ]
+        ),
+        "national_road_complete_candidate_clusters": int(
+            national_road_proximity_summary["path_c_candidates_complete"]
+        ),
+        "national_road_candidate_clusters": int(
+            national_road_proximity_summary["path_c_candidates"]
+        ),
+        "national_road_median_cluster_main_axis_distance_km": float(
+            national_road_proximity_summary[
+                "median_cluster_median_distance_to_main_axis_km"
+            ]
+        ),
+        "national_road_median_cluster_any_axis_distance_km": float(
+            national_road_proximity_summary[
+                "median_cluster_median_distance_to_any_network_axis_km"
+            ]
+        ),
         "public_transport_journey_pairs": int(
             public_transport_journey_summary["destination_municipality_pairs"]
         ),
@@ -677,6 +707,12 @@ The official Eurostat 2021 census grid supplies a harmonised one-kilometre popul
 
 This resolves the known geographic truncation of the earlier Swiss-only radius totals, but it is still straight-line residential context rather than a skier or visitor catchment. Mixed Swiss/foreign border cells remain separate, unallocated national records are excluded, and the 2021 grid is not merged numerically with STATPOP 2025. No accessibility or causal feature is approved. See `reports/29_CROSS_BORDER_POPULATION_CONTEXT.md`.
 
+## National-road-axis proximity
+
+The current FEDRO/ASTRA source supplies **{metrics['national_road_axis_features']:,} line features** across the official main, feeder, connection and ramp axis layers. Straight-line EPSG:2056 distances are available for **{metrics['national_road_eligible_listing_points']} Swiss listing points**. Across linked clusters, the median of cluster-median distances is **{metrics['national_road_median_cluster_main_axis_distance_km']:.2f} km** to a main national-road axis and **{metrics['national_road_median_cluster_any_axis_distance_km']:.2f} km** to any published national-road axis. Context is complete for **{metrics['national_road_complete_candidate_clusters']} of {metrics['national_road_candidate_clusters']} apparent candidates**; the cross-border Portes du Soleil cluster remains partial because the source does not provide a complete French road universe.
+
+The published attributes do not classify axes as motorway versus non-motorway. The measure is therefore labelled national-road-axis proximity, not motorway access. It is current point-to-line geometry rather than a route, a usable entrance, driving time, congestion, winter reliability or historical pre-treatment infrastructure; its approval flag and the generic accessibility score remain blank. See `reports/30_NATIONAL_ROAD_PROXIMITY_CONTEXT.md`.
+
 ## NPVM zone-proxy audit
 
 All **{metrics['npvm_proxy_listing_points_geometrically_reconstructed']}** municipality-constrained NPVM listing-point assignments are exactly reconstructed against the checksum-verified zone and current municipality geometries. They affect **{metrics['npvm_proxy_clusters']} clusters**; **{metrics['npvm_proxy_only_clusters']}** have no exact listing-point assignment for an internal comparison, including **{metrics['npvm_proxy_only_candidate_clusters']}** apparent Path C candidates. The geometry and deterministic choice are validated, but proxy-only travel times are not independently validated observed routes. Historical zone lineage and causal approval remain false. See `reports/27_TRANSPORT_ZONE_PROXY_AUDIT.md`.
@@ -727,11 +763,11 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 4. Crans-Montana proves that treatment is not universally absorbing.
 5. COVID overlaps the post-period of early entrants and the entry period of later ones.
 6. Spillovers may contaminate nearby nominal controls.
-7. Hotel capacity, mountain-station snow, regional temperature/precipitation, qualified Swiss and cross-border straight-line population, NPVM 2025 context, current OFT/BAV stop proximity and winter-2026 scheduled journey context are integrated. Historical timetable stability, snowmaking, motorway proximity, investment, local economic conditions, and competing-network changes remain unmeasured.
+7. Hotel capacity, mountain-station snow, regional temperature/precipitation, qualified Swiss and cross-border straight-line population, NPVM 2025 context, current OFT/BAV stop proximity, current FEDRO/ASTRA national-road-axis proximity and winter-2026 scheduled journey context are integrated. Historical timetable stability, snowmaking, true motorway-entrance access, investment, local economic conditions, and competing-network changes remain unmeasured.
 
 ## Next evidence gate
 
-For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; add motorway proximity; validate destination catchments for tourism dependence; add competing-pass variables; and obtain dated infrastructure features. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed min/median/max aggregation sensitivity and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; validate destination catchments for tourism dependence; add competing-pass variables; and obtain dated infrastructure features. Current national-road-axis proximity is complete, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed min/median/max aggregation sensitivity and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

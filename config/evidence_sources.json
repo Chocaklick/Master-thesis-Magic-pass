@@ -399,5 +399,26 @@
     "suffix": "zip",
     "organisation": "Business office SKI on behalf of the Swiss Federal Office of Transport (BAV/OFT)",
     "description": "Official GTFS Static timetable-year 2026 snapshot published 9 February 2026 from the 7 February build, selected to represent scheduled Swiss public transport during the winter ski season"
+  },
+  {
+    "source_id": "ASTRA_NATIONAL_ROAD_AXES_2026",
+    "url": "https://data.geo.admin.ch/ch.astra.nationalstrassenachsen/nationalstrassenachsen/nationalstrassenachsen_2056.gdb.zip",
+    "suffix": "gdb.zip",
+    "organisation": "Swiss Federal Roads Office (FEDRO/ASTRA)",
+    "description": "Official EPSG:2056 File Geodatabase of Swiss national-road main, feeder, connection and ramp axes; source reference datetime 1 August 2026"
+  },
+  {
+    "source_id": "ASTRA_NATIONAL_ROAD_AXES_2026_STAC",
+    "url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.astra.nationalstrassenachsen/items/nationalstrassenachsen",
+    "suffix": "json",
+    "organisation": "Swiss Federal Roads Office (FEDRO/ASTRA) via geo.admin.ch",
+    "description": "Official STAC item fixing the national-road-axis asset URL, EPSG:2056, reference datetime, update timestamp and multihash checksum"
+  },
+  {
+    "source_id": "ASTRA_NATIONAL_ROAD_AXES_COLLECTION",
+    "url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.astra.nationalstrassenachsen",
+    "suffix": "json",
+    "organisation": "Swiss Federal Roads Office (FEDRO/ASTRA) via geo.admin.ch",
+    "description": "Official STAC collection describing the national-road axes, their maintenance and provider scope"
   }
 ]

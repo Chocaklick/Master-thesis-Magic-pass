@@ -62,6 +62,42 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Methodological definition does not make a resort listing coordinate a validated arrival node
 - **Local raw file:** `data_external/source_evidence/ARE_TRANSPORT_ACCESSIBILITY_METHOD_20260922T075700Z.html`.
 
+## ASTRA_NATIONAL_ROAD_AXES_2026 — Axes of national routes, EPSG:2056 File Geodatabase
+
+- **Contents and relevance:** Official Swiss national-road main, feeder, connection and ramp axes used for current straight-line proximity calculations
+- **Producer:** Swiss Federal Roads Office (FEDRO/ASTRA)
+- **Exact URL:** https://data.geo.admin.ch/api/stac/v1/collections/ch.astra.nationalstrassenachsen
+- **Access and retrieval date:** Configured HTTPS download with immutable File Geodatabase ZIP, SHA-256 sidecar and independently cached STAC item/collection metadata; 2026-09-23T09:11:02.922544+00:00.
+- **Variables:** national_road_axis_geometry|axis_layer|axis_id|national_route_number|segment_name|designation|position_code|published_length
+- **Transformations:** Verify archive SHA-256 against the STAC multihash; read all four line layers; validate feature counts, geometry validity and every published feature length; calculate Euclidean EPSG:2056 point-to-line distances
+- **Coverage:** Swiss national-road axis feature; current source snapshot; 2026-08-01 to 2026-08-01.
+- **Limitations:** National-road axes are not an explicit motorway classification; current geometry does not establish a usable entrance, route distance, travel time or historical accessibility
+- **Local raw file:** `data_external/source_evidence/ASTRA_NATIONAL_ROAD_AXES_2026_20260923T091102Z.gdb.zip`.
+
+## ASTRA_NATIONAL_ROAD_AXES_2026_STAC — STAC item ch.astra.nationalstrassenachsen/nationalstrassenachsen
+
+- **Contents and relevance:** Official STAC item fixing the national-road-axis asset dates, URL, coordinate reference and checksum
+- **Producer:** Swiss Federal Roads Office (FEDRO/ASTRA) via geo.admin.ch
+- **Exact URL:** https://data.geo.admin.ch/api/stac/v1/collections/ch.astra.nationalstrassenachsen/items/nationalstrassenachsen
+- **Access and retrieval date:** HTTP GET with immutable JSON response and SHA-256 sidecar; 2026-09-23T09:11:04.684059+00:00.
+- **Variables:** national_road_source_reference_datetime|asset_updated_datetime|asset_url|asset_crs|asset_multihash
+- **Transformations:** Reference datetime, update timestamp, EPSG code, asset URL and SHA-256 multihash parsed and checked against the cached archive
+- **Coverage:** dataset metadata; asset metadata snapshot; 2026-08-01 to 2026-08-01.
+- **Limitations:** The 2026-08-01 STAC reference datetime is retained separately from the 2026-09-01 asset update and embedded data-status date
+- **Local raw file:** `data_external/source_evidence/ASTRA_NATIONAL_ROAD_AXES_2026_STAC_20260923T091104Z.json`.
+
+## ASTRA_NATIONAL_ROAD_AXES_COLLECTION — STAC collection ch.astra.nationalstrassenachsen
+
+- **Contents and relevance:** Official collection definition stating that FEDRO manages and updates national-route axes after construction or linear-reference changes
+- **Producer:** Swiss Federal Roads Office (FEDRO/ASTRA) via geo.admin.ch
+- **Exact URL:** https://data.geo.admin.ch/api/stac/v1/collections/ch.astra.nationalstrassenachsen
+- **Access and retrieval date:** HTTP GET with immutable JSON response and SHA-256 sidecar; 2026-09-23T09:11:06.218946+00:00.
+- **Variables:** dataset_definition|provider|maintenance_scope|temporal_extent|licence_link
+- **Transformations:** Provider, scope, temporal extent and EPSG summary checked before processing
+- **Coverage:** dataset metadata; collection metadata snapshot; 2026-08-01 to 2026-08-01.
+- **Limitations:** The collection describes national routes and their axes; it does not define a motorway-only subset in the downloaded line-layer schema
+- **Local raw file:** `data_external/source_evidence/ASTRA_NATIONAL_ROAD_AXES_COLLECTION_20260923T091106Z.json`.
+
 ## BAV_PUBLIC_TRANSPORT_STOPS_2026 — Public transport stops, GeoIV ID 98.2, French EPSG:2056 CSV export
 
 - **Contents and relevance:** Official public-transport stops and selected operating points, filtered to actual passenger-stop types for proximity calculations
@@ -397,6 +433,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** mixed; mixed; ? to ?.
 - **Limitations:** Not an external source; lineage remains in source_ids and formulas
 - **Local raw file:** `not cached / not applicable`.
+
+## DERIVED_NATIONAL_ROAD_PROXIMITY_CONTEXT — Path C national-road-axis proximity context
+
+- **Contents and relevance:** Qualified current straight-line national-road-axis proximity context for supplied resort listings and linked lift clusters
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned deterministic Python transformation of checksum-verified FEDRO/ASTRA line geometry; unknown date.
+- **Variables:** distance_to_nearest_national_road_main_axis|distance_to_nearest_national_road_network_axis|nearest_axis_attributes|cluster_distance_summary
+- **Transformations:** Restrict to 268 listing points inside a unique current Swiss municipality; calculate nearest official main axis and nearest line across all four axis layers; aggregate min/median/max across eligible listing points
+- **Coverage:** supplied resort listing point and linked lift cluster; FEDRO/ASTRA reference 2026-08-01; current supplied listing coordinates; 2026-08-01 to 2026-08-01.
+- **Limitations:** Not motorway classification, network route, usable entrance, drive time, congestion, winter reliability or historical infrastructure; cross-border French road coverage intentionally left missing
+- **Local raw file:** `config/path_c_analysis.json|data_processed/resort_point_municipality.csv`.
 
 ## DERIVED_PATH_C_AGGREGATION_SENSITIVITY — Path C aggregation sensitivity
 

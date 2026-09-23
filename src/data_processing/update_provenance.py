@@ -80,6 +80,9 @@ def main() -> None:
     bav_stop_data = cached_metadata("BAV_PUBLIC_TRANSPORT_STOPS_2026")
     bav_stop_stac = cached_metadata("BAV_PUBLIC_TRANSPORT_STOPS_2026_STAC")
     bav_stop_model = cached_metadata("BAV_PUBLIC_TRANSPORT_STOPS_MODEL")
+    astra_road_data = cached_metadata("ASTRA_NATIONAL_ROAD_AXES_2026")
+    astra_road_stac = cached_metadata("ASTRA_NATIONAL_ROAD_AXES_2026_STAC")
+    astra_road_collection = cached_metadata("ASTRA_NATIONAL_ROAD_AXES_COLLECTION")
     ski_gtfs_data = cached_metadata("SKI_GTFS_TIMETABLE_2026_WINTER_20260207")
     eurostat_grid_data = cached_metadata("EUROSTAT_CENSUS_GRID_2021_V3")
     eurostat_grid_documentation = cached_metadata("EUROSTAT_CENSUS_GRID_2021_V3_README")
@@ -652,6 +655,101 @@ def main() -> None:
         quality_notes="Not route distance, travel time, service frequency, timetable convenience, seasonal operation, a validated valley arrival node or destination catchment; all-mode nearest stops can be resort cableways/chairlifts",
         confidence_level="high for reproducibility; qualified current proximity context only",
         manual_verification="268/271 listings and 161/162 clusters complete; three French listings left missing; all 104 candidates retain usable cluster context; zero approval flags",
+    ))
+    rows.append(blank_source(
+        "ASTRA_NATIONAL_ROAD_AXES_2026",
+        variable_name="national_road_axis_geometry|axis_layer|axis_id|national_route_number|segment_name|designation|position_code|published_length",
+        variable_description="Official Swiss national-road main, feeder, connection and ramp axes used for current straight-line proximity calculations",
+        source_organisation="Swiss Federal Roads Office (FEDRO/ASTRA)",
+        source_dataset_name="Axes of national routes, EPSG:2056 File Geodatabase",
+        source_page_url=configured["ASTRA_NATIONAL_ROAD_AXES_COLLECTION"]["url"],
+        direct_download_url=configured["ASTRA_NATIONAL_ROAD_AXES_2026"]["url"],
+        api_endpoint=configured["ASTRA_NATIONAL_ROAD_AXES_2026_STAC"]["url"],
+        retrieval_method="Configured HTTPS download with immutable File Geodatabase ZIP, SHA-256 sidecar and independently cached STAC item/collection metadata",
+        retrieval_date=(astra_road_data or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(astra_road_data),
+        local_raw_file=(astra_road_data or {}).get("raw_file", ""),
+        processed_file="data_processed/resort_national_road_proximity_context.csv|data_processed/path_c_cluster_national_road_proximity_context.csv|data_processed/magic_pass_decision_support.csv",
+        geographic_level="Swiss national-road axis feature",
+        temporal_resolution="current source snapshot",
+        temporal_start="2026-08-01",
+        temporal_end="2026-08-01",
+        unit="EPSG:2056 line geometry, metres and categorical segment attributes",
+        license="Official STAC collection marks the asset proprietary; federal terms-of-use link retained",
+        access_conditions="Public geo.admin.ch STAC/download service",
+        transformation_applied="Verify archive SHA-256 against the STAC multihash; read all four line layers; validate feature counts, geometry validity and every published feature length; calculate Euclidean EPSG:2056 point-to-line distances",
+        quality_notes="National-road axes are not an explicit motorway classification; current geometry does not establish a usable entrance, route distance, travel time or historical accessibility",
+        confidence_level="high for official current national-road geometry; qualified for access interpretation",
+        manual_verification="3,084 line features across four layers; 268 Swiss listing points covered; three French listings left missing; zero approval flags",
+    ))
+    rows.append(blank_source(
+        "ASTRA_NATIONAL_ROAD_AXES_2026_STAC",
+        variable_name="national_road_source_reference_datetime|asset_updated_datetime|asset_url|asset_crs|asset_multihash",
+        variable_description="Official STAC item fixing the national-road-axis asset dates, URL, coordinate reference and checksum",
+        source_organisation="Swiss Federal Roads Office (FEDRO/ASTRA) via geo.admin.ch",
+        source_dataset_name="STAC item ch.astra.nationalstrassenachsen/nationalstrassenachsen",
+        source_page_url=configured["ASTRA_NATIONAL_ROAD_AXES_2026_STAC"]["url"],
+        api_endpoint=configured["ASTRA_NATIONAL_ROAD_AXES_2026_STAC"]["url"],
+        retrieval_method="HTTP GET with immutable JSON response and SHA-256 sidecar",
+        retrieval_date=(astra_road_stac or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(astra_road_stac),
+        local_raw_file=(astra_road_stac or {}).get("raw_file", ""),
+        processed_file="data_processed/resort_national_road_proximity_context.csv|reports/30_NATIONAL_ROAD_PROXIMITY_CONTEXT.md",
+        geographic_level="dataset metadata",
+        temporal_resolution="asset metadata snapshot",
+        temporal_start="2026-08-01",
+        temporal_end="2026-08-01",
+        unit="metadata",
+        license="See official federal terms-of-use link in the STAC collection",
+        access_conditions="Public STAC API",
+        transformation_applied="Reference datetime, update timestamp, EPSG code, asset URL and SHA-256 multihash parsed and checked against the cached archive",
+        quality_notes="The 2026-08-01 STAC reference datetime is retained separately from the 2026-09-01 asset update and embedded data-status date",
+        confidence_level="high",
+        manual_verification="STAC datetime 2026-08-01, updated timestamp 2026-09-01, EPSG:2056 and SHA-256 multihash match checked",
+    ))
+    rows.append(blank_source(
+        "ASTRA_NATIONAL_ROAD_AXES_COLLECTION",
+        variable_name="dataset_definition|provider|maintenance_scope|temporal_extent|licence_link",
+        variable_description="Official collection definition stating that FEDRO manages and updates national-route axes after construction or linear-reference changes",
+        source_organisation="Swiss Federal Roads Office (FEDRO/ASTRA) via geo.admin.ch",
+        source_dataset_name="STAC collection ch.astra.nationalstrassenachsen",
+        source_page_url=configured["ASTRA_NATIONAL_ROAD_AXES_COLLECTION"]["url"],
+        api_endpoint=configured["ASTRA_NATIONAL_ROAD_AXES_COLLECTION"]["url"],
+        retrieval_method="HTTP GET with immutable JSON response and SHA-256 sidecar",
+        retrieval_date=(astra_road_collection or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(astra_road_collection),
+        local_raw_file=(astra_road_collection or {}).get("raw_file", ""),
+        processed_file="reports/30_NATIONAL_ROAD_PROXIMITY_CONTEXT.md",
+        geographic_level="dataset metadata",
+        temporal_resolution="collection metadata snapshot",
+        temporal_start="2026-08-01",
+        temporal_end="2026-08-01",
+        unit="metadata",
+        license="Official STAC licence link retained",
+        access_conditions="Public STAC API",
+        transformation_applied="Provider, scope, temporal extent and EPSG summary checked before processing",
+        quality_notes="The collection describes national routes and their axes; it does not define a motorway-only subset in the downloaded line-layer schema",
+        confidence_level="high",
+        manual_verification="Collection identifier, FEDRO provider, EPSG:2056 summary and exact temporal interval checked",
+    ))
+    rows.append(blank_source(
+        "DERIVED_NATIONAL_ROAD_PROXIMITY_CONTEXT",
+        variable_name="distance_to_nearest_national_road_main_axis|distance_to_nearest_national_road_network_axis|nearest_axis_attributes|cluster_distance_summary",
+        variable_description="Qualified current straight-line national-road-axis proximity context for supplied resort listings and linked lift clusters",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C national-road-axis proximity context",
+        retrieval_method="Versioned deterministic Python transformation of checksum-verified FEDRO/ASTRA line geometry",
+        local_raw_file="config/path_c_analysis.json|data_processed/resort_point_municipality.csv",
+        processed_file="data_processed/resort_national_road_proximity_context.csv|data_processed/path_c_cluster_national_road_proximity_context.csv|reports/national_road_proximity_candidate_summary.csv|data_processed/magic_pass_decision_support.csv|reports/30_NATIONAL_ROAD_PROXIMITY_CONTEXT.md",
+        geographic_level="supplied resort listing point and linked lift cluster",
+        temporal_resolution="FEDRO/ASTRA reference 2026-08-01; current supplied listing coordinates",
+        temporal_start="2026-08-01",
+        temporal_end="2026-08-01",
+        unit="straight-line kilometres; identifiers and categorical axis attributes",
+        transformation_applied="Restrict to 268 listing points inside a unique current Swiss municipality; calculate nearest official main axis and nearest line across all four axis layers; aggregate min/median/max across eligible listing points",
+        quality_notes="Not motorway classification, network route, usable entrance, drive time, congestion, winter reliability or historical infrastructure; cross-border French road coverage intentionally left missing",
+        confidence_level="high for reproducibility; qualified current proximity context only",
+        manual_verification="268/271 listings and 161/162 clusters complete; 103/104 candidates complete; all-axis distance never exceeds main-axis distance; zero approval flags",
     ))
     rows.append(blank_source(
         "SKI_GTFS_TIMETABLE_2026_WINTER_20260207",
@@ -1670,6 +1768,9 @@ def main() -> None:
         "transport_zone_proxy_audit": ROOT / "reports/transport_zone_proxy_audit.csv",
         "resort_public_transport_stop_context": ROOT / "data_processed/resort_public_transport_stop_context.csv",
         "path_c_cluster_public_transport_stop_context": ROOT / "data_processed/path_c_cluster_public_transport_stop_context.csv",
+        "resort_national_road_proximity_context": ROOT / "data_processed/resort_national_road_proximity_context.csv",
+        "path_c_cluster_national_road_proximity_context": ROOT / "data_processed/path_c_cluster_national_road_proximity_context.csv",
+        "national_road_proximity_candidate_summary": ROOT / "reports/national_road_proximity_candidate_summary.csv",
         "public_transport_journey_nodes": ROOT / "reports/public_transport_journey_nodes.csv",
         "treatment_municipality_public_transport_journey_samples": ROOT / "data_processed/treatment_municipality_public_transport_journey_samples.csv",
         "treatment_municipality_public_transport_journey_context": ROOT / "data_processed/treatment_municipality_public_transport_journey_context.csv",
@@ -1698,6 +1799,9 @@ def main() -> None:
         "transport_zone_proxy_audit": "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT",
         "resort_public_transport_stop_context": "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT",
         "path_c_cluster_public_transport_stop_context": "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT",
+        "resort_national_road_proximity_context": "DERIVED_NATIONAL_ROAD_PROXIMITY_CONTEXT",
+        "path_c_cluster_national_road_proximity_context": "DERIVED_NATIONAL_ROAD_PROXIMITY_CONTEXT",
+        "national_road_proximity_candidate_summary": "DERIVED_NATIONAL_ROAD_PROXIMITY_CONTEXT",
         "public_transport_journey_nodes": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_samples": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_context": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
@@ -2071,6 +2175,9 @@ def main() -> None:
         "resort_transport_accessibility_context": "supplied resort listing point / NPVM traffic zone",
         "transport_zone_proxy_audit": "supplied resort listing point / NPVM traffic zone / current municipality",
         "resort_public_transport_stop_context": "supplied resort listing point / official public-transport stop point",
+        "resort_national_road_proximity_context": "supplied resort listing point / official Swiss national-road axis",
+        "path_c_cluster_national_road_proximity_context": "linked lift cluster",
+        "national_road_proximity_candidate_summary": "apparent Path C candidate lift cluster",
         "public_transport_journey_nodes": "hotel municipality or reviewed destination component",
         "treatment_municipality_public_transport_journey_samples": "reviewed destination by hotel municipality and scheduled request",
         "treatment_municipality_public_transport_journey_context": "reviewed destination by hotel municipality",
@@ -2094,6 +2201,9 @@ def main() -> None:
         "transport_zone_proxy_audit": "NPVM model reference date 2025-06-30; current 2026 municipality geometry audit",
         "resort_public_transport_stop_context": "OFT/BAV source state 2026-09-20; current supplied listing coordinate",
         "path_c_cluster_public_transport_stop_context": "OFT/BAV source state 2026-09-20; current supplied listing coordinates",
+        "resort_national_road_proximity_context": "FEDRO/ASTRA reference 2026-08-01; current supplied listing coordinate",
+        "path_c_cluster_national_road_proximity_context": "FEDRO/ASTRA reference 2026-08-01; current supplied listing coordinates",
+        "national_road_proximity_candidate_summary": "FEDRO/ASTRA reference 2026-08-01; current candidate listing coordinates",
         "public_transport_journey_nodes": "winter-2026 GTFS node-selection reference",
         "treatment_municipality_public_transport_journey_samples": "2026-02-04 and 2026-02-07 scheduled requests",
         "treatment_municipality_public_transport_journey_context": "winter-2026 weekday/Saturday scheduled summary",
@@ -2129,6 +2239,11 @@ def main() -> None:
             stop_table = table in {
                 "resort_public_transport_stop_context",
                 "path_c_cluster_public_transport_stop_context",
+            }
+            road_table = table in {
+                "resort_national_road_proximity_context",
+                "path_c_cluster_national_road_proximity_context",
+                "national_road_proximity_candidate_summary",
             }
             journey_table = table in {
                 "public_transport_journey_nodes",
@@ -2169,7 +2284,19 @@ def main() -> None:
                     or variable.startswith("cluster_unassigned_public_transport_stop_")
                 )
             ))
-            transport_variable = not journey_variable and not stop_variable and (transport_table or (
+            road_variable = not journey_variable and not stop_variable and (road_table or (
+                table == "magic_pass_decision_support"
+                and (
+                    variable.startswith("national_road_")
+                    or variable.startswith("cluster_distance_to_nearest_national_road_")
+                    or variable.startswith("cluster_listings_with_national_road_")
+                    or variable.startswith("cluster_listing_national_road_")
+                    or variable.startswith("cluster_national_road_")
+                    or variable.startswith("cluster_unassigned_national_road_")
+                    or variable.startswith("cluster_nearest_national_road_")
+                )
+            ))
+            transport_variable = not journey_variable and not stop_variable and not road_variable and (transport_table or (
                 table == "magic_pass_decision_support"
                 and (
                     variable.startswith("npvm_")
@@ -2185,7 +2312,7 @@ def main() -> None:
                     in {"cluster_transport_context_status", "unassigned_resort_ids"}
                 )
             ))
-            accessibility_variable = not journey_variable and not stop_variable and not transport_variable and (accessibility_table or (
+            accessibility_variable = not journey_variable and not stop_variable and not road_variable and not transport_variable and (accessibility_table or (
                 table == "magic_pass_decision_support"
                 and (
                     "accessibility" in variable
@@ -2226,6 +2353,8 @@ def main() -> None:
                 if cross_border_population_variable
                 else "qualified current public-transport-stop proximity context"
                 if stop_variable
+                else "qualified current national-road-axis proximity context"
+                if road_variable
                 else "qualified NPVM modelled travel-time context"
                 if transport_variable
                 else "qualified straight-line population context"
@@ -2263,6 +2392,9 @@ def main() -> None:
                 "See config/path_c_analysis.json and src/data_processing/build_public_transport_stop_context.py"
                 if stop_variable
                 else
+                "See config/path_c_analysis.json and src/data_processing/build_national_road_proximity_context.py"
+                if road_variable
+                else
                 "See config/path_c_analysis.json and src/data_processing/build_transport_accessibility_context.py"
                 if transport_variable
                 else
@@ -2293,6 +2425,9 @@ def main() -> None:
                 "No causal interpretation; straight-line stop-point distance is not a route, service frequency, timetable quality, validated arrival node or destination catchment"
                 if stop_variable
                 else
+                "No causal interpretation; current national-road-axis proximity is not motorway classification, a usable entrance, a route, travel time, winter reliability or historical infrastructure"
+                if road_variable
+                else
                 "No causal interpretation; zonal model output is not live routing, an observed arrival node or a destination catchment; municipality-constrained zone proxies are explicit"
                 if transport_variable
                 else
@@ -2314,6 +2449,8 @@ def main() -> None:
                 if cross_border_population_variable
                 else "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT"
                 if stop_variable
+                else "DERIVED_NATIONAL_ROAD_PROXIMITY_CONTEXT"
+                if road_variable
                 else "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT"
                 if transport_variable
                 else "DERIVED_ACCESSIBILITY_CONTEXT"
