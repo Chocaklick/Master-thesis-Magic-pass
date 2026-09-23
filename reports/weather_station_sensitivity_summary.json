@@ -1,0 +1,40 @@
+{
+  "analysis_version": "path_c_v0_16",
+  "alternative_raw_daily_rows_all_dates": 354491,
+  "alternative_analysis_daily_rows": 48380,
+  "alternative_station_count": 10,
+  "alternative_station_codes": [
+    "CHD",
+    "EVO",
+    "GIH",
+    "INT",
+    "LAG",
+    "MVE",
+    "ORO",
+    "SIO",
+    "THU",
+    "ZER"
+  ],
+  "alternative_station_month_rows": 1590,
+  "alternative_station_month_usable_rows": 1583,
+  "reviewed_component_comparisons": 15,
+  "component_agreement_counts": {
+    "high": 10,
+    "moderate": 5
+  },
+  "median_component_temperature_anomaly_correlation": 0.9665757393676727,
+  "median_component_temperature_anomaly_mean_absolute_difference_c": 0.28724846615815486,
+  "median_component_precipitation_anomaly_correlation": 0.8149821120150422,
+  "median_component_precipitation_anomaly_mean_absolute_difference_mm": 18.698531320999678,
+  "destination_units": 11,
+  "destination_month_rows": 1749,
+  "destination_months_with_both_complete_proxies": 1737,
+  "destination_agreement_counts": {
+    "high": 8,
+    "moderate": 3
+  },
+  "median_destination_temperature_anomaly_correlation": 0.9593805212256906,
+  "median_destination_precipitation_anomaly_correlation": 0.8848662228251276,
+  "causal_covariates_approved": 0,
+  "interpretation": "selected_vs_next_nearest_eligible_swissmetnet_regional_weather_proxy_sensitivity_not_piste_microclimate_gridded_validation_or_causal_approval"
+}

@@ -131,6 +131,47 @@ def test_meteoswiss_weather_proxy_preserves_coverage_and_representation_limits()
     assert not destination["weather_causal_covariate_approved"].any()
 
 
+def test_meteoswiss_alternative_station_sensitivity_preserves_monthly_grain() -> None:
+    month = read("data_processed/meteoswiss_alternative_station_month.csv")
+    component = read("reports/weather_station_alternative_sensitivity.csv")
+    destination = read("data_processed/destination_weather_alternative_sensitivity.csv")
+    destination_summary = read("reports/weather_destination_alternative_summary.csv")
+
+    assert len(month) == 10 * 159
+    assert not month.duplicated(["station_abbr", "month_date"]).any()
+    assert set(month["station_abbr"]) == {
+        "CHD", "EVO", "GIH", "INT", "LAG", "MVE", "ORO", "SIO", "THU", "ZER"
+    }
+    assert int(month["month_weather_proxy_usable"].sum()) == 1_583
+    assert len(component) == 15
+    assert component["resort_id"].is_unique
+    assert component["common_usable_months"].ge(156).all()
+    assert component["weather_station_sensitivity_agreement"].value_counts().to_dict() == {
+        "high": 10,
+        "moderate": 5,
+    }
+    assert component["temperature_anomaly_correlation"].between(-1, 1).all()
+    assert component["precipitation_anomaly_correlation"].between(-1, 1).all()
+    assert not as_bool(
+        component["weather_station_sensitivity_causal_covariate_approved"]
+    ).any()
+
+    assert len(destination) == 11 * 159
+    assert not destination.duplicated(["destination_unit_id", "date"]).any()
+    assert int(as_bool(destination["both_weather_proxies_complete"]).sum()) == 1_737
+    assert len(destination_summary) == 11
+    assert destination_summary["weather_station_sensitivity_agreement"].value_counts().to_dict() == {
+        "high": 8,
+        "moderate": 3,
+    }
+    assert not as_bool(
+        destination["weather_station_sensitivity_causal_covariate_approved"]
+    ).any()
+    assert not as_bool(
+        destination_summary["weather_station_sensitivity_causal_covariate_approved"]
+    ).any()
+
+
 def test_magic_evidence_is_not_silently_promoted_to_treatment() -> None:
     history = read("data_processed/magic_pass_membership_history.csv", dtype=str)
     assert len(history) == 93
@@ -1274,7 +1315,7 @@ def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> N
         "partial_cluster_listing_links": 6,
     }
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_15").all()
+    assert decision["analysis_version"].eq("path_c_v0_16").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1355,7 +1396,7 @@ def test_path_c_network_context_excludes_focal_cluster_and_preserves_pair_grain(
     assert not as_bool(context["network_context_feature_approved"]).any()
     assert not as_bool(pairs["network_context_feature_approved"]).any()
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_15").all()
+    assert decision["analysis_version"].eq("path_c_v0_16").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1434,7 +1475,7 @@ def test_path_c_cluster_geography_sensitivity_preserves_clusters_and_bounds_rule
     assert not as_bool(context["cluster_geographic_coherence_verified"]).any()
     assert not as_bool(context["network_distance_sensitivity_feature_approved"]).any()
     assert not as_bool(pairs["network_distance_sensitivity_feature_approved"]).any()
-    assert decision["analysis_version"].eq("path_c_v0_15").all()
+    assert decision["analysis_version"].eq("path_c_v0_16").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()

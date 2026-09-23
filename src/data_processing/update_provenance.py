@@ -1205,6 +1205,76 @@ def main() -> None:
         manual_verification="checksums, schema, duplicate dates, physical signs, temperature ordering, daily/monthly coverage, distance, and elevation gaps checked",
         notes="Fourteen exact raw-file URLs, source IDs and suffixes are enumerated in config/meteoswiss_selected_station_files.json; the local_raw_file glob identifies the immutable cache files",
     ))
+    alternative_weather_sources = json.loads(
+        (ROOT / "config" / "meteoswiss_weather_sensitivity_station_files.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    required_alternative_codes = {
+        "CHD", "EVO", "GIH", "INT", "LAG", "MVE", "ORO", "SIO", "THU", "ZER"
+    }
+    all_weather_file_specs = alternative_weather_sources + selected_weather_sources
+    sensitivity_weather_specs = [
+        item
+        for item in all_weather_file_specs
+        if any(f"_{code}_" in item["source_id"] for code in required_alternative_codes)
+    ]
+    sensitivity_weather_metadata = [
+        cached_metadata(item["source_id"]) for item in sensitivity_weather_specs
+    ]
+    if len(sensitivity_weather_specs) != 20 or any(
+        metadata is None for metadata in sensitivity_weather_metadata
+    ):
+        raise FileNotFoundError(
+            "The ten-station MeteoSwiss alternative-sensitivity source set is incomplete"
+        )
+    rows.append(blank_source(
+        "METEOSWISS_SMN_DAILY_ALTERNATIVE_SELECTED",
+        variable_name="tre200d0|tre200dn|tre200dx|rre150d0",
+        variable_description="Official daily temperature and precipitation for the ten SwissMetNet stations used as next-nearest alternatives across reviewed components",
+        source_organisation="Federal Office of Meteorology and Climatology MeteoSwiss",
+        source_dataset_name="SwissMetNet next-nearest alternative daily station files",
+        source_page_url=configured["METEOSWISS_SMN_DOCUMENTATION"]["url"],
+        direct_download_url="https://data.geo.admin.ch/ch.meteoschweiz.ogd-smn/",
+        retrieval_method="Reuse six cached primary historical/recent files and HTTP GET of seven additional historical plus seven recent static CSV files; immutable responses and SHA-256 sidecars",
+        retrieval_date=max(
+            metadata["retrieval_date"] for metadata in sensitivity_weather_metadata
+        ),
+        original_file_name="20 station-period CSV files",
+        local_raw_file="data_external/source_evidence/METEOSWISS_SMN_DAILY_*.csv",
+        processed_file="data_processed/meteoswiss_alternative_station_month.csv|reports/weather_station_alternative_sensitivity.csv|data_processed/destination_weather_alternative_sensitivity.csv|reports/weather_destination_alternative_summary.csv|reports/34_WEATHER_STATION_SENSITIVITY.md",
+        geographic_level="SwissMetNet point station used as a next-nearest regional resort proxy",
+        temporal_resolution="daily source; monthly analytical aggregation",
+        temporal_start="2013-01-01 analysis window",
+        temporal_end="2026-03-31 analysis window",
+        unit="degrees Celsius; millimetres",
+        license="Swiss Open Government Data terms; source acknowledgement required",
+        access_conditions="Public static station files",
+        transformation_applied="Next-nearest distinct eligible station assignment; exact historical/recent concatenation; primary 80% monthly coverage gate and station-specific 2013-2025 calendar-month normals; no imputation",
+        quality_notes="Same-network assignment sensitivity rather than independent gridded validation; regional stations do not directly represent pistes; next-nearest stations can differ in elevation and terrain",
+        confidence_level="high for official observations; qualified for assignment sensitivity only",
+        manual_verification="Twenty exact cached files cover all ten required alternatives; checksums, schema, duplicate dates, physical signs, temperature ordering, monthly coverage and station assignment checked",
+        notes="Fourteen newly required files are enumerated in config/meteoswiss_weather_sensitivity_station_files.json; EVO, INT and MVE files are reused from the primary configuration",
+    ))
+    rows.append(blank_source(
+        "DERIVED_WEATHER_STATION_SENSITIVITY",
+        variable_name="next_nearest_weather_station|temperature_anomaly_agreement|precipitation_anomaly_agreement|alternative_destination_month",
+        variable_description="Selected-versus-next-nearest eligible SwissMetNet station sensitivity for reviewed components and destinations",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="SwissMetNet regional weather alternative-station sensitivity",
+        retrieval_method="Deterministic Python reassignment and monthly comparison",
+        local_raw_file="config/meteoswiss_weather_sensitivity_station_files.json|config/meteoswiss_selected_station_files.json",
+        processed_file="data_processed/meteoswiss_alternative_station_month.csv|reports/weather_station_alternative_sensitivity.csv|data_processed/destination_weather_alternative_sensitivity.csv|reports/weather_destination_alternative_summary.csv|reports/34_WEATHER_STATION_SENSITIVITY.md",
+        geographic_level="reviewed resort component, SwissMetNet station and reviewed destination",
+        temporal_resolution="monthly 2013-01 through 2026-03 plus component/destination summary",
+        temporal_start="2013-01-01",
+        temporal_end="2026-03-31",
+        unit="degrees Celsius, millimetres, correlations, counts and flags",
+        transformation_applied="Select next-nearest distinct eligible station; apply the primary daily validation, 80% monthly coverage and station-specific normals; compare component and destination anomaly series on common complete months",
+        quality_notes="Not independent gridded validation or piste microclimate; descriptive agreement thresholds are review categories, not causal gates",
+        confidence_level="high for reproducibility; qualified regional-station sensitivity only",
+        manual_verification="15 component comparisons, 11 destination summaries and 1,749 destination-month rows; zero causal approvals",
+    ))
 
     roster_observations = json.loads(
         (ROOT / "metadata/magic_pass_roster_evidence.json").read_text(encoding="utf-8")
@@ -1912,6 +1982,10 @@ def main() -> None:
         "path_c_cluster_geographic_sensitivity": ROOT / "data_processed/path_c_cluster_geographic_sensitivity.csv",
         "path_c_cluster_distance_rule_pairs": ROOT / "reports/path_c_cluster_distance_rule_pairs.csv",
         "cluster_geography_candidate_summary": ROOT / "reports/cluster_geography_candidate_summary.csv",
+        "meteoswiss_alternative_station_month": ROOT / "data_processed/meteoswiss_alternative_station_month.csv",
+        "weather_station_alternative_sensitivity": ROOT / "reports/weather_station_alternative_sensitivity.csv",
+        "destination_weather_alternative_sensitivity": ROOT / "data_processed/destination_weather_alternative_sensitivity.csv",
+        "weather_destination_alternative_summary": ROOT / "reports/weather_destination_alternative_summary.csv",
         "public_transport_journey_nodes": ROOT / "reports/public_transport_journey_nodes.csv",
         "treatment_municipality_public_transport_journey_samples": ROOT / "data_processed/treatment_municipality_public_transport_journey_samples.csv",
         "treatment_municipality_public_transport_journey_context": ROOT / "data_processed/treatment_municipality_public_transport_journey_context.csv",
@@ -1952,6 +2026,10 @@ def main() -> None:
         "path_c_cluster_geographic_sensitivity": "DERIVED_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY",
         "path_c_cluster_distance_rule_pairs": "DERIVED_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY",
         "cluster_geography_candidate_summary": "DERIVED_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY",
+        "meteoswiss_alternative_station_month": "DERIVED_WEATHER_STATION_SENSITIVITY",
+        "weather_station_alternative_sensitivity": "DERIVED_WEATHER_STATION_SENSITIVITY",
+        "destination_weather_alternative_sensitivity": "DERIVED_WEATHER_STATION_SENSITIVITY",
+        "weather_destination_alternative_summary": "DERIVED_WEATHER_STATION_SENSITIVITY",
         "public_transport_journey_nodes": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_samples": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_context": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
@@ -2053,6 +2131,23 @@ def main() -> None:
         "representative_median_coordinate_distance_km": "Great-circle distance between the two coordinate-wise median cluster locations used in the baseline network context",
         "maximum_listing_pair_distance_km": "Maximum great-circle distance across every supplied listing-point pair joining the two clusters",
         "absolute_representative_vs_listing_pair_median_difference_km": "Absolute difference between coordinate-wise-median distance and median cross-listing-pair distance",
+        "primary_weather_station_code": "SwissMetNet station selected as the nearest eligible primary regional weather proxy",
+        "alternative_weather_station_code": "Next-nearest distinct eligible SwissMetNet station used in the weather assignment sensitivity",
+        "alternative_station_selection_method": "Deterministic rule used to select the alternative SwissMetNet station",
+        "common_usable_months": "Months in which both primary and alternative station proxies pass the common four-parameter coverage gate",
+        "common_usable_winter_months": "November-April months in which both primary and alternative station proxies pass the coverage gate",
+        "temperature_anomaly_correlation": "Pearson correlation between primary and alternative station-specific monthly temperature anomalies on common complete months",
+        "winter_temperature_anomaly_correlation": "Pearson correlation between primary and alternative temperature anomalies in common complete November-April months",
+        "temperature_anomaly_mean_absolute_difference_c": "Mean absolute difference between primary and alternative station-specific monthly temperature anomalies",
+        "precipitation_anomaly_correlation": "Pearson correlation between primary and alternative station-specific monthly precipitation anomalies on common complete months",
+        "winter_precipitation_anomaly_correlation": "Pearson correlation between primary and alternative precipitation anomalies in common complete November-April months",
+        "precipitation_anomaly_mean_absolute_difference_mm": "Mean absolute difference between primary and alternative station-specific monthly precipitation anomalies",
+        "weather_station_sensitivity_agreement": "Descriptive high, moderate or low agreement category from predeclared temperature- and precipitation-anomaly correlation thresholds",
+        "both_weather_proxies_complete": "Whether both primary and alternative destination weather proxies are complete for the month",
+        "temperature_anomaly_difference_alternative_minus_primary_c": "Alternative minus primary destination monthly temperature anomaly",
+        "precipitation_anomaly_difference_alternative_minus_primary_mm": "Alternative minus primary destination monthly precipitation anomaly",
+        "weather_station_sensitivity_interpretation": "Guardrail stating that next-nearest station sensitivity is not piste, gridded or causal validation",
+        "weather_station_sensitivity_causal_covariate_approved": "Whether the weather proxy passes causal-covariate validation after this sensitivity; always false",
         "segment_id": "Stable label of the selected current structural k-means segment",
         "descriptive_profile": "Relative altitude, ski-area and lift-count description of the segment",
         "distance_to_segment_centroid": "Euclidean distance to the assigned centroid in three standardised structural features",
@@ -2492,6 +2587,10 @@ def main() -> None:
         "path_c_cluster_geographic_sensitivity": "preserved linked lift cluster and its supplied listing points",
         "path_c_cluster_distance_rule_pairs": "ordered pair of distinct preserved linked lift clusters",
         "cluster_geography_candidate_summary": "apparent Path C candidate lift cluster",
+        "meteoswiss_alternative_station_month": "SwissMetNet point station",
+        "weather_station_alternative_sensitivity": "reviewed resort component and primary/alternative station pair",
+        "destination_weather_alternative_sensitivity": "reviewed destination by month",
+        "weather_destination_alternative_summary": "reviewed destination",
         "public_transport_journey_nodes": "hotel municipality or reviewed destination component",
         "treatment_municipality_public_transport_journey_samples": "reviewed destination by hotel municipality and scheduled request",
         "treatment_municipality_public_transport_journey_context": "reviewed destination by hotel municipality",
@@ -2527,6 +2626,10 @@ def main() -> None:
         "path_c_cluster_geographic_sensitivity": "current/undated supplied listing coordinates",
         "path_c_cluster_distance_rule_pairs": "current/undated supplied listing coordinates plus current reviewed pass-network links",
         "cluster_geography_candidate_summary": "current/undated supplied listing coordinates plus current reviewed pass-network links",
+        "meteoswiss_alternative_station_month": "monthly 2013-01 through 2026-03",
+        "weather_station_alternative_sensitivity": "common complete months from 2013-01 through 2026-03",
+        "destination_weather_alternative_sensitivity": "monthly 2013-01 through 2026-03",
+        "weather_destination_alternative_summary": "common complete months from 2013-01 through 2026-03",
         "public_transport_journey_nodes": "winter-2026 GTFS node-selection reference",
         "treatment_municipality_public_transport_journey_samples": "2026-02-04 and 2026-02-07 scheduled requests",
         "treatment_municipality_public_transport_journey_context": "winter-2026 weekday/Saturday scheduled summary",
@@ -2582,6 +2685,12 @@ def main() -> None:
                 "path_c_cluster_geographic_sensitivity",
                 "path_c_cluster_distance_rule_pairs",
                 "cluster_geography_candidate_summary",
+            }
+            weather_sensitivity_table = table in {
+                "meteoswiss_alternative_station_month",
+                "weather_station_alternative_sensitivity",
+                "destination_weather_alternative_sensitivity",
+                "weather_destination_alternative_summary",
             }
             journey_table = table in {
                 "public_transport_journey_nodes",
@@ -2755,6 +2864,8 @@ def main() -> None:
                 if competing_variable
                 else "qualified cluster-geography and network-distance sensitivity"
                 if geography_sensitivity_variable
+                else "qualified regional-weather alternative-station sensitivity"
+                if weather_sensitivity_table
                 else "qualified current ski-cluster and reviewed pass-network context"
                 if network_variable
                 else "qualified cross-border one-kilometre population context"
@@ -2800,6 +2911,9 @@ def main() -> None:
                 "See config/path_c_analysis.json and src/data_processing/build_path_c_cluster_geography_sensitivity.py"
                 if geography_sensitivity_variable
                 else
+                "See config/path_c_analysis.json, config/meteoswiss_weather_sensitivity_station_files.json and src/data_processing/build_weather_station_sensitivity.py"
+                if weather_sensitivity_table
+                else
                 "See src/data_processing/build_path_c_network_context.py"
                 if network_variable
                 else
@@ -2842,6 +2956,9 @@ def main() -> None:
                 "No causal interpretation; listing-point spread and distance-rule sensitivity do not certify commercial-domain coherence, historical market structure, travel impedance or skier substitution"
                 if geography_sensitivity_variable
                 else
+                "No causal interpretation; next-nearest SwissMetNet sensitivity is not independent gridded validation, piste microclimate, snowfall phase or causal-confounder approval"
+                if weather_sensitivity_table
+                else
                 "No causal interpretation; current directory-cluster and reviewed pass-network straight-line context is not historical market structure, travel impedance, observed competition or visitor behaviour"
                 if network_variable
                 else
@@ -2875,6 +2992,8 @@ def main() -> None:
                 if competing_variable
                 else "DERIVED_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY"
                 if geography_sensitivity_variable
+                else "DERIVED_WEATHER_STATION_SENSITIVITY"
+                if weather_sensitivity_table
                 else "DERIVED_PATH_C_NETWORK_CONTEXT"
                 if network_variable
                 else "DERIVED_CROSS_BORDER_POPULATION_CONTEXT"

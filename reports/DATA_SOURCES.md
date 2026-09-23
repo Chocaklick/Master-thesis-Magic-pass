@@ -674,6 +674,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current boundaries, representative points and adjacent windows do not identify exposure or causal effects; travel time and hotel coordinates unavailable
 - **Local raw file:** `not cached / not applicable`.
 
+## DERIVED_WEATHER_STATION_SENSITIVITY — SwissMetNet regional weather alternative-station sensitivity
+
+- **Contents and relevance:** Selected-versus-next-nearest eligible SwissMetNet station sensitivity for reviewed components and destinations
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic Python reassignment and monthly comparison; unknown date.
+- **Variables:** next_nearest_weather_station|temperature_anomaly_agreement|precipitation_anomaly_agreement|alternative_destination_month
+- **Transformations:** Select next-nearest distinct eligible station; apply the primary daily validation, 80% monthly coverage and station-specific normals; compare component and destination anomaly series on common complete months
+- **Coverage:** reviewed resort component, SwissMetNet station and reviewed destination; monthly 2013-01 through 2026-03 plus component/destination summary; 2013-01-01 to 2026-03-31.
+- **Limitations:** Not independent gridded validation or piste microclimate; descriptive agreement thresholds are review categories, not causal gates
+- **Local raw file:** `config/meteoswiss_weather_sensitivity_station_files.json|config/meteoswiss_selected_station_files.json`.
+
 ## DESTINATION_SCOPE_OFFICIAL_SET — Destination scope evidence set
 
 - **Contents and relevance:** Reviewed union of official municipality and lift-operator scope evidence
@@ -1285,6 +1297,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** collection metadata; retrieval snapshot; ? to 2026.
 - **Limitations:** Official metadata snapshot; source catalogue can be updated after retrieval
 - **Local raw file:** `data_external/source_evidence/METEOSWISS_SMN_COLLECTION_20260920T091430Z.json`.
+
+## METEOSWISS_SMN_DAILY_ALTERNATIVE_SELECTED — SwissMetNet next-nearest alternative daily station files
+
+- **Contents and relevance:** Official daily temperature and precipitation for the ten SwissMetNet stations used as next-nearest alternatives across reviewed components
+- **Producer:** Federal Office of Meteorology and Climatology MeteoSwiss
+- **Exact URL:** https://opendatadocs.meteoswiss.ch/a-data-groundbased/a1-automatic-weather-stations
+- **Access and retrieval date:** Reuse six cached primary historical/recent files and HTTP GET of seven additional historical plus seven recent static CSV files; immutable responses and SHA-256 sidecars; 2026-09-23T22:37:28.703637+00:00.
+- **Variables:** tre200d0|tre200dn|tre200dx|rre150d0
+- **Transformations:** Next-nearest distinct eligible station assignment; exact historical/recent concatenation; primary 80% monthly coverage gate and station-specific 2013-2025 calendar-month normals; no imputation
+- **Coverage:** SwissMetNet point station used as a next-nearest regional resort proxy; daily source; monthly analytical aggregation; 2013-01-01 analysis window to 2026-03-31 analysis window.
+- **Limitations:** Same-network assignment sensitivity rather than independent gridded validation; regional stations do not directly represent pistes; next-nearest stations can differ in elevation and terrain
+- **Local raw file:** `data_external/source_evidence/METEOSWISS_SMN_DAILY_*.csv`.
 
 ## METEOSWISS_SMN_DAILY_SELECTED — SwissMetNet selected daily historical and recent station files
 
