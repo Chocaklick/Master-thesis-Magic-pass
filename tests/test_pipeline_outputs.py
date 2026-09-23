@@ -1146,3 +1146,47 @@ def test_public_transport_journey_context_preserves_grain_and_limits() -> None:
         "not_yet_verified_against_anchor_year_timetables"
     ).all()
     assert not as_bool(historical["causal_accessibility_feature_approved"]).any()
+
+
+def test_distance_transport_comparison_preserves_pairs_and_exposes_disagreement() -> None:
+    comparison = read(
+        "data_processed/treatment_municipality_distance_transport_comparison.csv"
+    )
+    correlations = read("reports/distance_transport_correlations_by_destination.csv")
+    bands = read("reports/distance_transport_band_summary.csv")
+
+    assert len(comparison) == 2_046
+    assert not comparison[["destination_unit_id", "municipality_bfs_id"]].duplicated().any()
+    assert comparison["journey_comparison_status"].value_counts().to_dict() == {
+        "complete_all_sampled_times": 1_104,
+        "bidirectional_means_partial_sample_coverage": 596,
+        "no_bidirectional_mean": 246,
+        "outbound_mean_only": 84,
+        "return_mean_only": 16,
+    }
+    ranked = comparison[
+        comparison["round_trip_time_rank_percentile_within_destination"].notna()
+    ]
+    assert len(ranked) == 1_700
+    assert ranked["distance_rank_percentile_within_destination"].between(0, 1).all()
+    assert ranked["round_trip_time_rank_percentile_within_destination"].between(0, 1).all()
+    assert int(comparison["transit_materially_worse_than_distance_rank"].sum()) == 225
+    assert int(comparison["transit_materially_better_than_distance_rank"].sum()) == 171
+    assert not as_bool(comparison["causal_exposure_approved"]).any()
+    assert not as_bool(comparison["causal_effect_approved"]).any()
+
+    assert len(correlations) == 11
+    assert correlations[
+        "distance_round_trip_rank_correlation_available_pairs"
+    ].notna().sum() == 10
+    assert correlations[
+        "distance_round_trip_rank_correlation_complete_pairs"
+    ].notna().sum() == 7
+    assert correlations.loc[
+        correlations["bidirectional_mean_pairs"].eq(0), "destination_unit_id"
+    ].tolist() == ["meiringen_hasliberg"]
+    assert correlations[
+        "distance_round_trip_rank_correlation_available_pairs"
+    ].dropna().between(0.60, 0.88).all()
+    assert len(bands) == 55
+    assert not as_bool(bands["causal_exposure_approved"]).any()

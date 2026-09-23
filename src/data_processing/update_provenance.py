@@ -1282,6 +1282,25 @@ def main() -> None:
         manual_verification="11x186 distance rows; seven treatment diagnostics; every causal flag false",
     ))
     rows.append(blank_source(
+        "DERIVED_DISTANCE_TRANSPORT_COMPARISON",
+        variable_name="distance_rank|scheduled_round_trip_rank|rank_disagreement|destination_rank_correlation|distance_band_transit_summary",
+        variable_description="Same-destination comparison of current municipality distance and winter-2026 scheduled public-transport journey time",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Distance versus scheduled public-transport comparison",
+        retrieval_method="Deterministic one-to-one merge and within-destination rank comparison of existing derived distance and GTFS journey tables",
+        local_raw_file="config/path_c_analysis.json",
+        processed_file="data_processed/treatment_municipality_distance_transport_comparison.csv|reports/distance_transport_correlations_by_destination.csv|reports/distance_transport_band_summary.csv|reports/28_DISTANCE_TRANSPORT_COMPARISON.md",
+        geographic_level="reviewed destination by hotel municipality",
+        temporal_resolution="current 2026 boundary distance and winter-2026 weekday/Saturday schedule",
+        temporal_start="2026-02-04",
+        temporal_end="2026-02-07",
+        unit="kilometres, scheduled minutes, ranks and correlations",
+        transformation_applied="Preserve all 2,046 pairs; calculate within-destination percentile ranks and rank correlations only where scheduled means are available; retain coverage status",
+        quality_notes="Current distance and two-day static timetable are not historical exposure, visitor catchments or observed trips; coverage differs by destination",
+        confidence_level="high for reproducibility; descriptive current comparison only",
+        manual_verification="1,700 bidirectional pairs, 1,104 complete pairs, ten destination correlations and zero causal approvals checked",
+    ))
+    rows.append(blank_source(
         "DERIVED_PATH_C_FEATURE_MATRIX",
         variable_name="cluster-level structural features|Magic evidence status|snow vulnerability|data quality",
         variable_description="Least-duplicated available cross-sectional feature table for lift clusters linked to supplied resort listings",
@@ -1579,6 +1598,9 @@ def main() -> None:
         "treatment_municipality_public_transport_journey_context": ROOT / "data_processed/treatment_municipality_public_transport_journey_context.csv",
         "public_transport_arrival_node_review": ROOT / "reports/public_transport_arrival_node_review.csv",
         "public_transport_historical_audit_plan": ROOT / "reports/public_transport_historical_audit_plan.csv",
+        "treatment_municipality_distance_transport_comparison": ROOT / "data_processed/treatment_municipality_distance_transport_comparison.csv",
+        "distance_transport_correlations_by_destination": ROOT / "reports/distance_transport_correlations_by_destination.csv",
+        "distance_transport_band_summary": ROOT / "reports/distance_transport_band_summary.csv",
         "path_c_resort_cluster_features": ROOT / "data_processed/path_c_resort_cluster_features.csv",
         "path_c_cluster_segments": ROOT / "data_processed/path_c_cluster_segments.csv",
         "path_c_reviewed_treated_reference": ROOT / "data_processed/path_c_reviewed_treated_reference.csv",
@@ -1601,6 +1623,9 @@ def main() -> None:
         "treatment_municipality_public_transport_journey_context": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "public_transport_arrival_node_review": "DERIVED_PUBLIC_TRANSPORT_ARRIVAL_NODE_REVIEW",
         "public_transport_historical_audit_plan": "DERIVED_PUBLIC_TRANSPORT_HISTORICAL_AUDIT",
+        "treatment_municipality_distance_transport_comparison": "DERIVED_DISTANCE_TRANSPORT_COMPARISON",
+        "distance_transport_correlations_by_destination": "DERIVED_DISTANCE_TRANSPORT_COMPARISON",
+        "distance_transport_band_summary": "DERIVED_DISTANCE_TRANSPORT_COMPARISON",
         "path_c_resort_cluster_features": "DERIVED_PATH_C_FEATURE_MATRIX",
         "path_c_cluster_segments": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
         "path_c_reviewed_treated_reference": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
@@ -1905,6 +1930,9 @@ def main() -> None:
         "treatment_municipality_public_transport_journey_context": "reviewed destination by hotel municipality",
         "public_transport_arrival_node_review": "reviewed destination component arrival node",
         "public_transport_historical_audit_plan": "reviewed destination component arrival node",
+        "treatment_municipality_distance_transport_comparison": "reviewed destination by hotel municipality",
+        "distance_transport_correlations_by_destination": "reviewed destination",
+        "distance_transport_band_summary": "reviewed destination by municipality-distance band",
         "path_c_reviewed_treated_reference": "reviewed treated destination",
     }
     path_c_temporal_level = {
@@ -1922,6 +1950,9 @@ def main() -> None:
         "treatment_municipality_public_transport_journey_context": "winter-2026 weekday/Saturday scheduled summary",
         "public_transport_arrival_node_review": "current official node plus 2026-02-04 and 2026-02-07 availability",
         "public_transport_historical_audit_plan": "first-exposure winters 2018-2026; service comparison pending",
+        "treatment_municipality_distance_transport_comparison": "2026 boundary distance plus 2026-02-04 and 2026-02-07 schedules",
+        "distance_transport_correlations_by_destination": "2026 boundary distance plus winter-2026 schedule",
+        "distance_transport_band_summary": "2026 boundary distance plus winter-2026 schedule",
     }
 
     for table, path in path_c_paths.items():
@@ -1951,6 +1982,9 @@ def main() -> None:
                 "treatment_municipality_public_transport_journey_context",
                 "public_transport_arrival_node_review",
                 "public_transport_historical_audit_plan",
+                "treatment_municipality_distance_transport_comparison",
+                "distance_transport_correlations_by_destination",
+                "distance_transport_band_summary",
             }
             journey_variable = journey_table
             stop_variable = not journey_variable and (stop_table or (
@@ -2011,6 +2045,12 @@ def main() -> None:
             role = (
                 "intentionally unavailable causal prediction"
                 if variable in {"predicted_uplift_pct", "uplift_lower_pct", "uplift_upper_pct"}
+                else "qualified distance versus scheduled-transit diagnostic"
+                if table in {
+                    "treatment_municipality_distance_transport_comparison",
+                    "distance_transport_correlations_by_destination",
+                    "distance_transport_band_summary",
+                }
                 else "qualified current arrival-node review"
                 if table == "public_transport_arrival_node_review"
                 else "qualified historical public-transport audit plan"
@@ -2034,6 +2074,13 @@ def main() -> None:
                 else "descriptive segmentation / decision support"
             )
             formula_note = (
+                "See src/data_processing/build_distance_transport_comparison.py"
+                if table in {
+                    "treatment_municipality_distance_transport_comparison",
+                    "distance_transport_correlations_by_destination",
+                    "distance_transport_band_summary",
+                }
+                else
                 "See config/public_transport_arrival_node_review.csv and src/data_processing/build_public_transport_arrival_node_review.py"
                 if table == "public_transport_arrival_node_review"
                 else
@@ -2054,6 +2101,13 @@ def main() -> None:
                 else "See config/path_c_analysis.json and Path C scripts; tourism context is implemented in src/data_processing/build_tourism_dependence_context.py"
             )
             limitation_note = (
+                "No causal interpretation; current 2026 distance and two-day static timetable are not historical exposure, observed trips or visitor catchments"
+                if table in {
+                    "treatment_municipality_distance_transport_comparison",
+                    "distance_transport_correlations_by_destination",
+                    "distance_transport_band_summary",
+                }
+                else
                 "No causal interpretation; current name/mode/municipality/distance review does not establish door-to-lift walking, historical node continuity or line stability"
                 if table == "public_transport_arrival_node_review"
                 else

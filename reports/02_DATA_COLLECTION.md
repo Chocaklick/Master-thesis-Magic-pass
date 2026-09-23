@@ -53,6 +53,7 @@ The annual-offering review rendered seven dated launch lists/maps and transcribe
 - `data_processed/path_c_cluster_public_transport_stop_context.csv`: min/median/max straight-line stop distances across eligible listing points for all 162 clusters, with one partial cross-border cluster exposed.
 - `data_processed/treatment_municipality_public_transport_journey_samples.csv`: 49,104 weekday/Saturday timetable requests, retaining waiting time, scheduled vehicle time, generalized elapsed time, legs, transfers, modes and explicit exclusion reasons.
 - `data_processed/treatment_municipality_public_transport_journey_context.csv`: 2,046 destination–municipality summaries for 11 reviewed destinations and 186 hotel municipalities; 1,104 pairs are feasible at every sampled time.
+- `data_processed/treatment_municipality_distance_transport_comparison.csv`: one-to-one comparison of current geographic distance and winter-2026 scheduled journey context for the same 2,046 pairs, retaining coverage and rank disagreement.
 - `reports/public_transport_arrival_node_review.csv`: versioned current review of all 15 component arrival nodes; eight name a lift/ski access, one names the destination locality and six are explicit village/local-centre proxies.
 - `reports/public_transport_historical_audit_plan.csv`: all 15 destination component nodes linked to an official archive snapshot for their first-exposure winter; historical service comparison remains false.
 

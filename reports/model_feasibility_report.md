@@ -87,6 +87,8 @@ The official winter-2026 Swiss GTFS timetable now supplies **49,104 scheduled ro
 
 The official archive index exposes snapshots for **7 relevant timetable years**, but **0 historical component nodes** have yet undergone actual stop/service comparison. The 2026 journey measure is therefore useful descriptive context, not a historically stable pre-treatment or causal covariate. See `reports/25_PUBLIC_TRANSPORT_HISTORICAL_AUDIT.md`.
 
+Comparing the same municipality–destination pairs shows why distance and transit time must remain separate. **1,700 pairs** have both outbound and return means. Across **10 destinations**, the median within-destination distance–round-trip rank correlation is **0.743**, while **225 pairs** have transit rank at least 0.25 worse than distance rank suggests. This is a current descriptive disagreement diagnostic, not historical exposure or an effect. See `reports/28_DISTANCE_TRANSPORT_COMPARISON.md`.
+
 ## Membership-continuity audit
 
 Entry events, full official rosters, named continuation statements, and the documented Crans-Montana exit were checked season by season. Missing annual evidence remains unverified rather than being filled as active or inactive.

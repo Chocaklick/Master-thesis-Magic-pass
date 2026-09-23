@@ -26,6 +26,9 @@ DISTANCE_GRADIENT_SUMMARY = ROOT / "reports" / "treatment_distance_gradient_summ
 TRANSPORT_ZONE_PROXY_AUDIT_SUMMARY = (
     ROOT / "reports" / "transport_zone_proxy_audit_summary.json"
 )
+DISTANCE_TRANSPORT_COMPARISON_SUMMARY = (
+    ROOT / "reports" / "distance_transport_comparison_summary.json"
+)
 PUBLIC_TRANSPORT_JOURNEY_SUMMARY = (
     ROOT / "reports" / "public_transport_journey_context_summary.json"
 )
@@ -85,6 +88,9 @@ def main() -> None:
     )
     transport_zone_proxy_audit_summary = json.loads(
         TRANSPORT_ZONE_PROXY_AUDIT_SUMMARY.read_text(encoding="utf-8")
+    )
+    distance_transport_comparison_summary = json.loads(
+        DISTANCE_TRANSPORT_COMPARISON_SUMMARY.read_text(encoding="utf-8")
     )
     public_transport_journey_summary = json.loads(
         PUBLIC_TRANSPORT_JOURNEY_SUMMARY.read_text(encoding="utf-8")
@@ -466,6 +472,24 @@ def main() -> None:
         "npvm_proxy_only_candidate_clusters": int(
             transport_zone_proxy_audit_summary["candidate_clusters_proxy_only"]
         ),
+        "distance_transport_bidirectional_pairs": int(
+            distance_transport_comparison_summary["bidirectional_mean_pairs"]
+        ),
+        "distance_transport_destinations_with_rank_correlation": int(
+            distance_transport_comparison_summary[
+                "destinations_with_bidirectional_rank_correlation"
+            ]
+        ),
+        "distance_transport_median_destination_rank_correlation": float(
+            distance_transport_comparison_summary[
+                "median_destination_distance_round_trip_rank_correlation_available_pairs"
+            ]
+        ),
+        "distance_transport_materially_worse_transit_pairs": int(
+            distance_transport_comparison_summary[
+                "materially_worse_transit_than_distance_rank_pairs"
+            ]
+        ),
         "public_transport_journey_pairs": int(
             public_transport_journey_summary["destination_municipality_pairs"]
         ),
@@ -616,6 +640,8 @@ All **{metrics['npvm_proxy_listing_points_geometrically_reconstructed']}** munic
 The official winter-2026 Swiss GTFS timetable now supplies **{metrics['public_transport_journey_samples']:,} scheduled routing requests** across **{metrics['public_transport_journey_pairs']:,} destination–municipality pairs**. Morning departures are sampled from 08:00 to 10:00 and return departures from 15:00 to 18:00 on one winter weekday and one winter Saturday. **{metrics['public_transport_journey_feasible_samples']:,} samples** meet the six-vehicle and eight-hour limits; **{metrics['public_transport_journey_pairs_complete_all_samples']:,} pairs** are feasible at every sampled time. Municipality origins use the most frequently served train stop inside the municipality where possible, with a terrestrial-stop fallback. All **{metrics['public_transport_arrival_nodes_reviewed']}** component arrival nodes have passed the versioned current name/mode/municipality/distance review for descriptive routing; **{metrics['public_transport_arrival_village_or_local_centre_proxies']}** are transparently retained as village/local-centre proxies under the researcher's fallback rule, and **{metrics['public_transport_arrival_nodes_with_reference_day_warning']}** has a reference-day availability warning. This is not historical or causal approval. See `reports/24_PUBLIC_TRANSPORT_JOURNEY_CONTEXT.md` and `reports/26_PUBLIC_TRANSPORT_ARRIVAL_NODE_REVIEW.md`.
 
 The official archive index exposes snapshots for **{metrics['public_transport_historical_anchor_years']} relevant timetable years**, but **{metrics['public_transport_historical_components_service_compared']} historical component nodes** have yet undergone actual stop/service comparison. The 2026 journey measure is therefore useful descriptive context, not a historically stable pre-treatment or causal covariate. See `reports/25_PUBLIC_TRANSPORT_HISTORICAL_AUDIT.md`.
+
+Comparing the same municipality–destination pairs shows why distance and transit time must remain separate. **{metrics['distance_transport_bidirectional_pairs']:,} pairs** have both outbound and return means. Across **{metrics['distance_transport_destinations_with_rank_correlation']} destinations**, the median within-destination distance–round-trip rank correlation is **{metrics['distance_transport_median_destination_rank_correlation']:.3f}**, while **{metrics['distance_transport_materially_worse_transit_pairs']} pairs** have transit rank at least 0.25 worse than distance rank suggests. This is a current descriptive disagreement diagnostic, not historical exposure or an effect. See `reports/28_DISTANCE_TRANSPORT_COMPARISON.md`.
 
 ## Membership-continuity audit
 

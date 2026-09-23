@@ -1,0 +1,19 @@
+{
+  "analysis_version": "path_c_v0_10",
+  "destination_municipality_pairs": 2046,
+  "bidirectional_mean_pairs": 1700,
+  "complete_all_sampled_time_pairs": 1104,
+  "destinations_with_bidirectional_rank_correlation": 10,
+  "median_destination_distance_round_trip_rank_correlation_available_pairs": 0.7434775954022474,
+  "minimum_destination_distance_round_trip_rank_correlation_available_pairs": 0.6074512375503996,
+  "maximum_destination_distance_round_trip_rank_correlation_available_pairs": 0.8693886657995664,
+  "destinations_with_complete_pair_rank_correlation": 7,
+  "median_destination_distance_round_trip_rank_correlation_complete_pairs": 0.757589500640467,
+  "materially_worse_transit_than_distance_rank_pairs": 225,
+  "materially_better_transit_than_distance_rank_pairs": 171,
+  "destinations_without_bidirectional_mean_pairs": [
+    "meiringen_hasliberg"
+  ],
+  "historical_comparability_verified": 0,
+  "causal_exposure_or_effect_approvals": 0
+}

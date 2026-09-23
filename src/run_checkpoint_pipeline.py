@@ -60,6 +60,7 @@ def main() -> None:
     run("src/data_processing/build_public_transport_journey_context.py")
     run("src/data_processing/build_public_transport_arrival_node_review.py")
     run("src/data_processing/build_public_transport_historical_audit.py")
+    run("src/data_processing/build_distance_transport_comparison.py")
     run("src/data_processing/build_feasibility_report.py")
     run("src/scoring/build_resort_data_quality.py")
     run("src/scoring/build_path_c_feature_matrix.py")

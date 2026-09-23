@@ -302,6 +302,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point and radius-specific border intersection is flagged without filling foreign population
 - **Local raw file:** `config/path_c_analysis.json|config/municipality_boundary_bridge_2025_2026.csv`.
 
+## DERIVED_DISTANCE_TRANSPORT_COMPARISON — Distance versus scheduled public-transport comparison
+
+- **Contents and relevance:** Same-destination comparison of current municipality distance and winter-2026 scheduled public-transport journey time
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic one-to-one merge and within-destination rank comparison of existing derived distance and GTFS journey tables; unknown date.
+- **Variables:** distance_rank|scheduled_round_trip_rank|rank_disagreement|destination_rank_correlation|distance_band_transit_summary
+- **Transformations:** Preserve all 2,046 pairs; calculate within-destination percentile ranks and rank correlations only where scheduled means are available; retain coverage status
+- **Coverage:** reviewed destination by hotel municipality; current 2026 boundary distance and winter-2026 weekday/Saturday schedule; 2026-02-04 to 2026-02-07.
+- **Limitations:** Current distance and two-day static timetable are not historical exposure, visitor catchments or observed trips; coverage differs by destination
+- **Local raw file:** `config/path_c_analysis.json`.
+
 ## DERIVED_DONOR_EXTERNAL_SHOCK_AUDIT — Donor competing-pass and local-shock audit
 
 - **Contents and relevance:** Complete-roster nonmembership and page-referenced competing-pass/local-tourism-shock review for shortlisted donor pairs beyond 50 km from the resolved Magic network

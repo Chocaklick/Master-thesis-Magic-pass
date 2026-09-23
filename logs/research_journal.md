@@ -303,3 +303,15 @@
 - **Decision:** Adopt Path C v0.9 while retaining every transport-accessibility approval as false. Expose proxy-only dependence and do not turn successful geometric reconstruction into route, historical or causal validation.
 - **Validation:** The complete offline pipeline reused the GTFS routing caches, regenerated all dependent outputs, produced 115 provenance records and a 1,327-row data dictionary, and passed all 36 automated tests.
 - **Next step:** Compare the identified 2018–2025 GTFS anchors where access is permitted, then add motorway/cross-border population, destination catchments, competing-pass status and dated infrastructure evidence.
+
+## 2026-09-23 02:19 CEST — Same-destination distance versus scheduled transit
+
+- **Task:** Compare geographic distance and scheduled public-transport time for the same municipalities around each reviewed destination, following the researcher's proposal that transit time may be more informative than crow-flight distance.
+- **Reason:** The distance gradient and GTFS journey modules used the same 2,046 destination–municipality universe but had not been compared directly, leaving the degree of proxy disagreement unquantified.
+- **Input:** Current 2026 representative-point and minimum-polygon distances, winter-2026 outbound/return journey summaries, main municipality stops and reviewed component arrival nodes.
+- **Method:** Exact one-to-one merge on destination and municipality; preserve all coverage states; calculate within-destination percentile ranks and Spearman-equivalent rank correlations without a SciPy dependency; flag absolute rank gaps of at least 0.25; summarise the five existing distance bands.
+- **Result:** Of 2,046 pairs, 1,700 have both outbound and return means and 1,104 are complete at every sampled time. Ten destinations support bidirectional correlations: median 0.743, minimum 0.607 for Saas-Fee and maximum 0.869 for Les Pléiades. Two hundred twenty-five pairs have materially worse transit rank than distance suggests; 171 have materially better transit rank. Meiringen-Hasliberg has no bidirectional mean under the declared limits.
+- **Problems encountered:** SciPy is not installed, so rank correlation is computed transparently as Pearson correlation of average ranks. Four destinations have no fully complete pair universe; partial and complete correlations remain separate. Current geometry and two reference days cannot establish historical exposure.
+- **Decision:** Adopt Path C v0.10 and retain both distance and scheduled time as separate descriptive diagnostics. Do not substitute one for the other, create an accessibility score, or approve causal exposure/effects.
+- **Validation:** The complete offline pipeline reused both GTFS caches, regenerated all dependent outputs, produced 116 provenance records and a 1,384-row data dictionary, and passed all 37 automated tests.
+- **Next step:** Compare historical GTFS anchors where access is permitted; otherwise continue with motorway/cross-border population, destination-catchment and competing-pass evidence.
