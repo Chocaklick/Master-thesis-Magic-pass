@@ -64,6 +64,9 @@ def main() -> None:
     existing_sources = pd.read_csv(SOURCE_FILE, dtype=str, keep_default_na=False)
     config = json.loads((ROOT / "config" / "evidence_sources.json").read_text(encoding="utf-8"))
     configured = {row["source_id"]: row for row in config}
+    eurostat_config = json.loads(
+        (ROOT / "config" / "eurostat_census_grid_2021.json").read_text(encoding="utf-8")
+    )
     rows: list[dict] = []
 
     bfs_metadata = cached_metadata("BFS_HOTEL_METADATA")
@@ -78,6 +81,8 @@ def main() -> None:
     bav_stop_stac = cached_metadata("BAV_PUBLIC_TRANSPORT_STOPS_2026_STAC")
     bav_stop_model = cached_metadata("BAV_PUBLIC_TRANSPORT_STOPS_MODEL")
     ski_gtfs_data = cached_metadata("SKI_GTFS_TIMETABLE_2026_WINTER_20260207")
+    eurostat_grid_data = cached_metadata("EUROSTAT_CENSUS_GRID_2021_V3")
+    eurostat_grid_documentation = cached_metadata("EUROSTAT_CENSUS_GRID_2021_V3_README")
     bfs_capacity_records = [
         json.loads(path.read_text(encoding="utf-8"))
         for path in EVIDENCE_DIR.glob("BFS_HOTEL_CAPACITY_DATA_*.metadata.json")
@@ -389,6 +394,75 @@ def main() -> None:
         quality_notes="Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point and radius-specific border intersection is flagged without filling foreign population",
         confidence_level="high for reproducibility; qualified geographic context only",
         manual_verification="2,115 STATPOP rows reconcile to 2,110 current polygons; 9,127,125 residents preserved; all 162 clusters covered; two artificial cluster-median points outside the Swiss polygon exposed; every approval flag false",
+    ))
+    rows.append(blank_source(
+        "EUROSTAT_CENSUS_GRID_2021_V3",
+        variable_name="grid_cell_id|total_population_2021|reporting_country_codes|land_surface|populated_flag",
+        variable_description="Official harmonised 2021 census population on a one-kilometre European grid",
+        source_organisation="European Commission, Eurostat GISCO",
+        source_dataset_name="Eurostat Census Grid 2021 version 3",
+        source_page_url=eurostat_config["source_page_url"],
+        direct_download_url=eurostat_config["archive_url"],
+        retrieval_method="HTTP byte-range extraction of the full unfiltered CSV member; ZIP size and CRC32 plus SHA-256 verified",
+        retrieval_date=(eurostat_grid_data or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(eurostat_grid_data),
+        local_raw_file=(eurostat_grid_data or {}).get("raw_file", ""),
+        processed_file="data_processed/eurostat_population_grid_2021_swiss_region.csv|data_processed/path_c_cluster_cross_border_population_context.csv|data_processed/magic_pass_decision_support.csv|reports/29_CROSS_BORDER_POPULATION_CONTEXT.md",
+        geographic_level="one-kilometre census grid cell across the European source universe",
+        temporal_resolution="2021 census reference",
+        temporal_start="2021-01-01",
+        temporal_end="2021-12-31",
+        unit="persons; EPSG:3035 grid cell",
+        license=eurostat_config["license"],
+        access_conditions="Public official Eurostat GISCO download; source acknowledgement required",
+        transformation_applied="Parse cell lower-left coordinates from the INSPIRE grid identifier; use cell centroid; retain cells within 120.707 km of a linked cluster; preserve Switzerland-only, foreign-only and mixed reporting-country scopes",
+        quality_notes="Thirteen country-level unallocated records have no spatial location; mixed-border-cell population cannot be split by country; census residents are not skier demand",
+        confidence_level="high for the official harmonised grid; qualified for resort-market interpretation",
+        manual_verification="4,595,932 source rows; 4,595,919 located cells; CSV member ZIP CRC32 and SHA-256 verified; all 162 clusters covered",
+    ))
+    rows.append(blank_source(
+        "EUROSTAT_CENSUS_GRID_2021_V3_README",
+        variable_name="grid_variable_definitions|missing_value_codes|unallocated_population_rule|change_log",
+        variable_description="Official data dictionary and change log for Eurostat Census Grid 2021 version 3",
+        source_organisation="European Commission, Eurostat GISCO",
+        source_dataset_name="Eurostat Census Grid 2021 version 3 read.me",
+        source_page_url=eurostat_config["source_page_url"],
+        direct_download_url=eurostat_config["archive_url"],
+        retrieval_method="HTTP byte-range extraction of the ZIP documentation member; CRC32 and SHA-256 verified",
+        retrieval_date=(eurostat_grid_documentation or {}).get("retrieval_date", ""),
+        original_file_name=raw_name(eurostat_grid_documentation),
+        local_raw_file=(eurostat_grid_documentation or {}).get("raw_file", ""),
+        processed_file="src/data_processing/build_cross_border_population_context.py|reports/29_CROSS_BORDER_POPULATION_CONTEXT.md",
+        geographic_level="dataset documentation",
+        temporal_resolution="version 3 release documentation",
+        temporal_start="2026-05-30",
+        temporal_end="2026-05-30",
+        unit="metadata",
+        license=eurostat_config["license"],
+        access_conditions="Public official Eurostat GISCO download",
+        transformation_applied="Definitions of total population, EPSG:3035, missing codes and unallocated records are validated before processing",
+        quality_notes="Documentation defines -8888 as confidentiality-related unavailability and -9999 as other unavailability",
+        confidence_level="high",
+        manual_verification="Required data-dictionary tokens are checked automatically against the checksum-protected read.me",
+    ))
+    rows.append(blank_source(
+        "DERIVED_CROSS_BORDER_POPULATION_CONTEXT",
+        variable_name="population_within_straight_line_radius|foreign_only_population|mixed_border_cell_population|country_scope|unavailable_total_cell_count",
+        variable_description="Qualified cross-border one-kilometre population context for every linked Path C lift cluster",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C Eurostat cross-border population context",
+        retrieval_method="Versioned deterministic Python transformation of the checksum-verified Eurostat 2021 census grid",
+        local_raw_file="config/path_c_analysis.json|config/eurostat_census_grid_2021.json",
+        processed_file="data_processed/eurostat_population_grid_2021_swiss_region.csv|data_processed/path_c_cluster_cross_border_population_context.csv|reports/cross_border_population_candidate_summary.csv|data_processed/magic_pass_decision_support.csv|reports/29_CROSS_BORDER_POPULATION_CONTEXT.md",
+        geographic_level="one-kilometre census grid cell and linked lift cluster",
+        temporal_resolution="2021 census population; current/undated cluster coordinate",
+        temporal_start="2021-01-01",
+        temporal_end="2021-12-31",
+        unit="persons, cell counts, shares and straight-line kilometres",
+        transformation_applied="Use cell centroids in EPSG:3035; sum observed total population inside 30/60/90/120 km; partition Switzerland-only, foreign-only and mixed-border cells; never allocate country-level unplaced population",
+        quality_notes="Not a travel-time market, observed visitor origin or destination catchment; separate from STATPOP 2025 because years and spatial allocation differ",
+        confidence_level="high for reproducibility; qualified geographic context only",
+        manual_verification="181,598 regional cells retained; no unavailable total-population cells in the regional extract; all 162 clusters and 104 candidates covered; every approval flag false",
     ))
     rows.append(blank_source(
         "ARE_NPVM_TRAVEL_TIME_2025",
@@ -1588,6 +1662,9 @@ def main() -> None:
         "path_c_cluster_tourism_context": ROOT / "data_processed/path_c_cluster_tourism_context.csv",
         "municipality_population_geometry_2026": ROOT / "data_processed/municipality_population_geometry_2026.csv",
         "path_c_cluster_accessibility_context": ROOT / "data_processed/path_c_cluster_accessibility_context.csv",
+        "eurostat_population_grid_2021_swiss_region": ROOT / "data_processed/eurostat_population_grid_2021_swiss_region.csv",
+        "path_c_cluster_cross_border_population_context": ROOT / "data_processed/path_c_cluster_cross_border_population_context.csv",
+        "cross_border_population_candidate_summary": ROOT / "reports/cross_border_population_candidate_summary.csv",
         "resort_transport_accessibility_context": ROOT / "data_processed/resort_transport_accessibility_context.csv",
         "path_c_cluster_transport_accessibility_context": ROOT / "data_processed/path_c_cluster_transport_accessibility_context.csv",
         "transport_zone_proxy_audit": ROOT / "reports/transport_zone_proxy_audit.csv",
@@ -1613,6 +1690,9 @@ def main() -> None:
         "path_c_cluster_tourism_context": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
         "municipality_population_geometry_2026": "DERIVED_ACCESSIBILITY_CONTEXT",
         "path_c_cluster_accessibility_context": "DERIVED_ACCESSIBILITY_CONTEXT",
+        "eurostat_population_grid_2021_swiss_region": "DERIVED_CROSS_BORDER_POPULATION_CONTEXT",
+        "path_c_cluster_cross_border_population_context": "DERIVED_CROSS_BORDER_POPULATION_CONTEXT",
+        "cross_border_population_candidate_summary": "DERIVED_CROSS_BORDER_POPULATION_CONTEXT",
         "resort_transport_accessibility_context": "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT",
         "path_c_cluster_transport_accessibility_context": "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT",
         "transport_zone_proxy_audit": "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT",
@@ -1717,6 +1797,31 @@ def main() -> None:
         "accessibility_interpretation": "Explicit restriction that the context is neither travel time nor a destination catchment",
         "accessibility_feature_approved": "Whether the context is approved as a generic accessibility feature; always false",
         "population_boundary_alignment": "Reference-year relationship between STATPOP population and the current boundary snapshot",
+        "grid_cell_id": "Official INSPIRE identifier of the Eurostat one-kilometre census grid cell",
+        "total_population_2021": "Official 2021 census total population reported for the grid cell",
+        "populated_flag": "Official Eurostat flag indicating whether the grid cell is populated",
+        "reporting_country_codes": "Hyphen-separated official country codes that reported data for the grid cell",
+        "cell_lower_left_x_3035": "Easting of the grid cell lower-left corner in EPSG:3035",
+        "cell_lower_left_y_3035": "Northing of the grid cell lower-left corner in EPSG:3035",
+        "cell_centroid_x_3035": "Easting of the one-kilometre grid cell centroid in EPSG:3035",
+        "cell_centroid_y_3035": "Northing of the one-kilometre grid cell centroid in EPSG:3035",
+        "minimum_distance_to_path_c_cluster_km": "Smallest straight-line centroid distance from the grid cell to any linked Path C cluster",
+        "country_scope_category": "Whether the grid cell is Switzerland-only, foreign-only, or reported by Switzerland and at least one foreign country",
+        "total_population_observation_status": "Whether total grid-cell population is observed or unavailable under an official Eurostat code",
+        "grid_crs": "Projected coordinate reference system of the Eurostat census grid",
+        "grid_resolution_m": "Nominal side length of the Eurostat census grid cell",
+        "cluster_location_x_3035": "Easting of the median cluster coordinate projected to EPSG:3035",
+        "cluster_location_y_3035": "Northing of the median cluster coordinate projected to EPSG:3035",
+        "cross_border_population_context_status": "Availability status of total population across the retained cross-border grid cells",
+        "population_grid_release_date": "Release date of Eurostat Census Grid 2021 version 3",
+        "population_grid_crs": "Projected coordinate reference system used for cross-border population distances",
+        "population_grid_resolution_m": "Nominal side length of the population grid cells",
+        "population_grid_cell_location_method": "Rule used to represent each one-kilometre population cell in radius calculations",
+        "grid_cell_centroid_maximum_location_error_km": "Maximum distance from a one-kilometre square centroid to any point in that square",
+        "unallocated_population_records_excluded": "Whether country-level population records without a spatial grid identifier remain excluded from radius totals",
+        "cross_border_population_interpretation": "Explicit restriction that the harmonised grid context is not travel time or a destination catchment",
+        "cross_border_population_feature_approved": "Whether cross-border population context is approved as an accessibility or causal feature; always false",
+        "cross_border_population_source_ids": "Official Eurostat data and documentation source identifiers supporting the context",
         "npvm_traffic_zone_id": "Official NPVM traffic-zone identifier assigned to the supplied resort listing point",
         "npvm_zone_assignment_status": "Whether the point is inside a zone, uses the nearest zone intersecting its current municipality, or remains outside scope",
         "distance_to_nearest_npvm_zone_km": "Shortest EPSG:2056 distance from the listing point to any NPVM traffic-zone polygon",
@@ -1883,8 +1988,46 @@ def main() -> None:
         ] = (
             f"Whether the {radius}-kilometre circle reaches beyond the official Swiss country polygon, so Swiss-only population is geographically truncated"
         )
+        path_c_glossary[f"eurostat_population_2021_within_{radius}km_cell_centroid"] = (
+            f"Observed Eurostat 2021 total population in grid cells whose centroids fall within {radius} straight-line kilometres"
+        )
+        for scope, description in {
+            "switzerland_only": "reported only by Switzerland",
+            "foreign_only": "reported only by countries other than Switzerland",
+            "ch_foreign_mixed": "reported by Switzerland and at least one foreign country",
+        }.items():
+            path_c_glossary[
+                f"eurostat_{scope}_population_2021_within_{radius}km_cell_centroid"
+            ] = (
+                f"Observed Eurostat 2021 population in cells {description} whose centroids fall within {radius} straight-line kilometres"
+            )
+        path_c_glossary[
+            f"eurostat_foreign_only_share_of_observed_population_within_{radius}km"
+        ] = f"Foreign-only cell population divided by all observed cell population within {radius} straight-line kilometres"
+        path_c_glossary[f"eurostat_population_grid_cells_within_{radius}km"] = (
+            f"Number of Eurostat grid-cell centroids within {radius} straight-line kilometres"
+        )
+        path_c_glossary[
+            f"eurostat_total_population_unavailable_cells_within_{radius}km"
+        ] = f"Number of grid cells within {radius} kilometres whose official total population is unavailable"
+        path_c_glossary[
+            f"eurostat_populated_cells_with_unavailable_total_within_{radius}km"
+        ] = f"Number of cells marked populated within {radius} kilometres whose official total population is unavailable"
+        path_c_glossary[
+            f"eurostat_positive_population_country_codes_within_{radius}km"
+        ] = f"Country codes reported by positive-population cells within {radius} straight-line kilometres"
 
     def path_c_unit(variable: str) -> str:
+        if "foreign_only_share_of_observed_population" in variable:
+            return "share (0-1)"
+        if variable.startswith("eurostat_") and "population_2021" in variable:
+            return "persons"
+        if variable.startswith("eurostat_") and "cells_within_" in variable:
+            return "count"
+        if variable.startswith("eurostat_") and "unavailable" in variable:
+            return "count"
+        if variable.endswith("_x_3035") or variable.endswith("_y_3035"):
+            return "metres (EPSG:3035)"
         if variable.endswith("_minutes"):
             return "minutes"
         if variable.endswith("_share"):
@@ -1922,6 +2065,9 @@ def main() -> None:
     path_c_geographic_level = {
         "municipality_tourism_context_2025": "municipality",
         "municipality_population_geometry_2026": "current Swiss municipality",
+        "eurostat_population_grid_2021_swiss_region": "one-kilometre European census grid cell near a linked cluster",
+        "path_c_cluster_cross_border_population_context": "linked lift cluster",
+        "cross_border_population_candidate_summary": "apparent Path C candidate lift cluster",
         "resort_transport_accessibility_context": "supplied resort listing point / NPVM traffic zone",
         "transport_zone_proxy_audit": "supplied resort listing point / NPVM traffic zone / current municipality",
         "resort_public_transport_stop_context": "supplied resort listing point / official public-transport stop point",
@@ -1940,6 +2086,9 @@ def main() -> None:
         "path_c_cluster_tourism_context": "2025 annual point-container context",
         "municipality_population_geometry_2026": "2025 population aligned to 2026-01-01 boundaries",
         "path_c_cluster_accessibility_context": "2025 population aligned to 2026-01-01 boundaries; undated cluster location",
+        "eurostat_population_grid_2021_swiss_region": "2021 census population; version 3 released 2026-05-30",
+        "path_c_cluster_cross_border_population_context": "2021 census population; current/undated cluster location",
+        "cross_border_population_candidate_summary": "2021 census population; current/undated candidate cluster location",
         "resort_transport_accessibility_context": "NPVM model reference date 2025-06-30; current supplied listing coordinate",
         "path_c_cluster_transport_accessibility_context": "NPVM model reference date 2025-06-30; current supplied listing coordinates",
         "transport_zone_proxy_audit": "NPVM model reference date 2025-06-30; current 2026 municipality geometry audit",
@@ -1967,6 +2116,11 @@ def main() -> None:
                 "municipality_population_geometry_2026",
                 "path_c_cluster_accessibility_context",
             }
+            cross_border_population_table = table in {
+                "eurostat_population_grid_2021_swiss_region",
+                "path_c_cluster_cross_border_population_context",
+                "cross_border_population_candidate_summary",
+            }
             transport_table = table in {
                 "resort_transport_accessibility_context",
                 "path_c_cluster_transport_accessibility_context",
@@ -1987,6 +2141,17 @@ def main() -> None:
                 "distance_transport_band_summary",
             }
             journey_variable = journey_table
+            cross_border_population_variable = cross_border_population_table or (
+                table == "magic_pass_decision_support"
+                and (
+                    variable.startswith("eurostat_")
+                    or variable.startswith("cross_border_population_")
+                    or variable.startswith("population_grid_")
+                    or variable.startswith("grid_cell_centroid_")
+                    or variable.startswith("unallocated_population_")
+                    or variable in {"cluster_location_x_3035", "cluster_location_y_3035"}
+                )
+            )
             stop_variable = not journey_variable and (stop_table or (
                 table == "magic_pass_decision_support"
                 and (
@@ -2057,6 +2222,8 @@ def main() -> None:
                 if table == "public_transport_historical_audit_plan"
                 else "qualified scheduled public-transport journey context"
                 if journey_variable
+                else "qualified cross-border one-kilometre population context"
+                if cross_border_population_variable
                 else "qualified current public-transport-stop proximity context"
                 if stop_variable
                 else "qualified NPVM modelled travel-time context"
@@ -2090,6 +2257,9 @@ def main() -> None:
                 "See config/path_c_analysis.json and src/data_processing/build_public_transport_journey_context.py"
                 if journey_variable
                 else
+                "See config/path_c_analysis.json, config/eurostat_census_grid_2021.json and src/data_processing/build_cross_border_population_context.py"
+                if cross_border_population_variable
+                else
                 "See config/path_c_analysis.json and src/data_processing/build_public_transport_stop_context.py"
                 if stop_variable
                 else
@@ -2117,6 +2287,9 @@ def main() -> None:
                 "No causal interpretation; winter-2026 static schedules and algorithmic stop proxies are not real-time, historical or validated destination catchments"
                 if journey_variable
                 else
+                "No causal interpretation; 2021 census grid-cell centroids and straight-line radii are not travel-time markets, observed visitors or destination catchments; mixed and unallocated population remain explicit"
+                if cross_border_population_variable
+                else
                 "No causal interpretation; straight-line stop-point distance is not a route, service frequency, timetable quality, validated arrival node or destination catchment"
                 if stop_variable
                 else
@@ -2137,6 +2310,8 @@ def main() -> None:
                 path_c_temporal_level.get(table, "undated structural snapshot; mixed lineage where stated"),
                 path_c_sources[table]
                 if journey_variable
+                else "DERIVED_CROSS_BORDER_POPULATION_CONTEXT"
+                if cross_border_population_variable
                 else "DERIVED_PUBLIC_TRANSPORT_STOP_CONTEXT"
                 if stop_variable
                 else "DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT"

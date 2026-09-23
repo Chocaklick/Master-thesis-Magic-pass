@@ -1,6 +1,6 @@
 {
-  "analysis_version": "path_c_v0_10",
-  "analysis_date": "2026-09-22",
+  "analysis_version": "path_c_v0_11",
+  "analysis_date": "2026-09-23",
   "analysis_entity": "existing_lift_cluster_with_at_least_one_supplied_resort_listing",
   "feature_temporal_status": "undated_cross_sectional_snapshot_not_pre_treatment",
   "structural_features": [
@@ -62,6 +62,17 @@
     "boundary_bridge": "config/municipality_boundary_bridge_2025_2026.csv",
     "interpretation": "swiss_straight_line_population_context_not_travel_time_or_destination_catchment"
   },
+  "cross_border_population_context": {
+    "source_id": "EUROSTAT_CENSUS_GRID_2021_V3",
+    "population_reference_year": 2021,
+    "release_date": "2026-05-30",
+    "grid_crs": "EPSG:3035",
+    "grid_resolution_m": 1000,
+    "cell_location_method": "grid_cell_centroid",
+    "straight_line_radii_km": [30, 60, 90, 120],
+    "unavailable_total_population_codes": [-8888, -9999],
+    "interpretation": "eurostat_2021_one_km_population_context_not_travel_time_or_destination_catchment"
+  },
   "transport_accessibility_context": {
     "source_id": "ARE_NPVM_TRAVEL_TIME_2025",
     "model_reference_date": "2025-06-30",
@@ -107,7 +118,7 @@
       "descriptive analogue opportunity signal",
       "snow vulnerability percentile"
     ],
-    "strategic_need_limitation": "Qualified NPVM 2025 traffic-zone travel times, current straight-line OFT/BAV stop proximity and a winter-2026 GTFS Static municipality-to-destination journey context are available. The GTFS nodes are selected algorithmically and anchor-year timetable stability is not yet verified, while point-container tourism ratios do not establish a destination catchment. No complete strategic-need score or composite ranking is produced.",
+    "strategic_need_limitation": "Qualified Swiss municipality-point and Eurostat 2021 cross-border grid population, NPVM 2025 traffic-zone travel times, current straight-line OFT/BAV stop proximity and a winter-2026 GTFS Static municipality-to-destination journey context are available. Population radii remain residential straight-line context rather than visitor catchments; GTFS anchor-year timetable stability is not verified; and point-container tourism ratios do not establish a destination catchment. No complete strategic-need score or composite ranking is produced.",
     "composite_score_approved": false,
     "causal_interpretation_approved": false
   }

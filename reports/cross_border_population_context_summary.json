@@ -1,0 +1,68 @@
+{
+  "analysis_version": "path_c_v0_11",
+  "source_id": "EUROSTAT_CENSUS_GRID_2021_V3",
+  "source_sha256": "fe54d920ebbdb35c2b48f75276cef63d9dd302591ca70deb103351b2a621b5f1",
+  "population_reference_year": 2021,
+  "grid_release_date": "2026-05-30",
+  "source_rows": 4595932,
+  "spatially_allocated_rows": 4595919,
+  "unallocated_rows_excluded": 13,
+  "observed_unallocated_population_excluded": 434787,
+  "source_rows_with_unavailable_total_population": 0,
+  "regional_cells_within_maximum_radius_plus_centroid_tolerance": 181598,
+  "regional_cells_with_observed_total_population": 181598,
+  "regional_cells_with_unavailable_total_population": 0,
+  "path_c_clusters_with_context": 162,
+  "path_c_candidates_with_context": 104,
+  "cluster_context_status_counts": {
+    "complete_observed_total_population_grid_cells": 162
+  },
+  "radii_km": {
+    "30": {
+      "clusters_with_foreign_only_population": 99,
+      "candidates_with_foreign_only_population": 73,
+      "clusters_with_mixed_border_cell_population": 89,
+      "clusters_with_unavailable_total_population_cells": 0,
+      "median_foreign_only_population_all_clusters": 2950.5,
+      "median_foreign_only_population_candidates": 9076.0,
+      "median_foreign_only_share_all_clusters": 0.015740339525236756,
+      "median_foreign_only_share_candidates": 0.03605696520165637,
+      "maximum_foreign_only_share_candidate": 0.883816671524337
+    },
+    "60": {
+      "clusters_with_foreign_only_population": 154,
+      "candidates_with_foreign_only_population": 101,
+      "clusters_with_mixed_border_cell_population": 143,
+      "clusters_with_unavailable_total_population_cells": 0,
+      "median_foreign_only_population_all_clusters": 219402.5,
+      "median_foreign_only_population_candidates": 263993.5,
+      "median_foreign_only_share_all_clusters": 0.20585609059319165,
+      "median_foreign_only_share_candidates": 0.23893899528438073,
+      "maximum_foreign_only_share_candidate": 0.9113929764273212
+    },
+    "90": {
+      "clusters_with_foreign_only_population": 162,
+      "candidates_with_foreign_only_population": 104,
+      "clusters_with_mixed_border_cell_population": 162,
+      "clusters_with_unavailable_total_population_cells": 0,
+      "median_foreign_only_population_all_clusters": 1101891.0,
+      "median_foreign_only_population_candidates": 1277138.5,
+      "median_foreign_only_share_all_clusters": 0.289889554330398,
+      "median_foreign_only_share_candidates": 0.3136420804148433,
+      "maximum_foreign_only_share_candidate": 0.9422531937758432
+    },
+    "120": {
+      "clusters_with_foreign_only_population": 162,
+      "candidates_with_foreign_only_population": 104,
+      "clusters_with_mixed_border_cell_population": 162,
+      "clusters_with_unavailable_total_population_cells": 0,
+      "median_foreign_only_population_all_clusters": 2898636.5,
+      "median_foreign_only_population_candidates": 3047590.0,
+      "median_foreign_only_share_all_clusters": 0.36747582637953113,
+      "median_foreign_only_share_candidates": 0.39561737722285906,
+      "maximum_foreign_only_share_candidate": 0.9069959819734704
+    }
+  },
+  "cross_border_population_features_approved": 0,
+  "interpretation": "eurostat_2021_one_km_population_context_not_travel_time_or_destination_catchment"
+}

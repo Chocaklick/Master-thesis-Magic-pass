@@ -29,6 +29,9 @@ TRANSPORT_ZONE_PROXY_AUDIT_SUMMARY = (
 DISTANCE_TRANSPORT_COMPARISON_SUMMARY = (
     ROOT / "reports" / "distance_transport_comparison_summary.json"
 )
+CROSS_BORDER_POPULATION_SUMMARY = (
+    ROOT / "reports" / "cross_border_population_context_summary.json"
+)
 PUBLIC_TRANSPORT_JOURNEY_SUMMARY = (
     ROOT / "reports" / "public_transport_journey_context_summary.json"
 )
@@ -91,6 +94,9 @@ def main() -> None:
     )
     distance_transport_comparison_summary = json.loads(
         DISTANCE_TRANSPORT_COMPARISON_SUMMARY.read_text(encoding="utf-8")
+    )
+    cross_border_population_summary = json.loads(
+        CROSS_BORDER_POPULATION_SUMMARY.read_text(encoding="utf-8")
     )
     public_transport_journey_summary = json.loads(
         PUBLIC_TRANSPORT_JOURNEY_SUMMARY.read_text(encoding="utf-8")
@@ -490,6 +496,40 @@ def main() -> None:
                 "materially_worse_transit_than_distance_rank_pairs"
             ]
         ),
+        "cross_border_population_grid_source_rows": int(
+            cross_border_population_summary["source_rows"]
+        ),
+        "cross_border_population_regional_cells": int(
+            cross_border_population_summary[
+                "regional_cells_within_maximum_radius_plus_centroid_tolerance"
+            ]
+        ),
+        "cross_border_population_clusters_with_context": int(
+            cross_border_population_summary["path_c_clusters_with_context"]
+        ),
+        "cross_border_population_candidates_with_context": int(
+            cross_border_population_summary["path_c_candidates_with_context"]
+        ),
+        "cross_border_population_candidates_with_foreign_30km": int(
+            cross_border_population_summary["radii_km"]["30"][
+                "candidates_with_foreign_only_population"
+            ]
+        ),
+        "cross_border_population_candidates_with_foreign_120km": int(
+            cross_border_population_summary["radii_km"]["120"][
+                "candidates_with_foreign_only_population"
+            ]
+        ),
+        "cross_border_population_median_foreign_share_60km": float(
+            cross_border_population_summary["radii_km"]["60"][
+                "median_foreign_only_share_all_clusters"
+            ]
+        ),
+        "cross_border_population_median_foreign_share_120km": float(
+            cross_border_population_summary["radii_km"]["120"][
+                "median_foreign_only_share_all_clusters"
+            ]
+        ),
         "public_transport_journey_pairs": int(
             public_transport_journey_summary["destination_municipality_pairs"]
         ),
@@ -631,6 +671,12 @@ Following the researcher's proposed comparison, the pipeline now measures each o
 
 **{metrics['positive_descriptive_near_far_contrasts']} of seven** treatment-specific near-versus-far contrasts are descriptively positive when municipalities at most 30 km away are compared with municipalities beyond 50 km and the 30–50 km band is omitted. Moléson is the exception. This pattern is exploratory only: current 2026 boundaries are applied to historical outcomes, hotel locations and validated historical origin-to-destination travel times are unavailable, and the adjacent windows do not remove common shocks, COVID, competing passes or investment. See `reports/15_TREATMENT_DISTANCE_GRADIENT.md`; all effect and exposure approval flags remain false.
 
+## Cross-border population context
+
+The official Eurostat 2021 census grid supplies a harmonised one-kilometre population reference on both sides of the Swiss border. The checksum-verified source contains **{metrics['cross_border_population_grid_source_rows']:,} rows**; the regional extract retains **{metrics['cross_border_population_regional_cells']:,} cells** and covers all **{metrics['cross_border_population_clusters_with_context']} linked clusters** and **{metrics['cross_border_population_candidates_with_context']} apparent candidates**. Foreign-only population occurs within 30 km for **{metrics['cross_border_population_candidates_with_foreign_30km']} candidates** and within 120 km for **{metrics['cross_border_population_candidates_with_foreign_120km']} candidates**. Across all linked clusters, the median foreign-only share of observed population is **{metrics['cross_border_population_median_foreign_share_60km']:.1%} at 60 km** and **{metrics['cross_border_population_median_foreign_share_120km']:.1%} at 120 km**.
+
+This resolves the known geographic truncation of the earlier Swiss-only radius totals, but it is still straight-line residential context rather than a skier or visitor catchment. Mixed Swiss/foreign border cells remain separate, unallocated national records are excluded, and the 2021 grid is not merged numerically with STATPOP 2025. No accessibility or causal feature is approved. See `reports/29_CROSS_BORDER_POPULATION_CONTEXT.md`.
+
 ## NPVM zone-proxy audit
 
 All **{metrics['npvm_proxy_listing_points_geometrically_reconstructed']}** municipality-constrained NPVM listing-point assignments are exactly reconstructed against the checksum-verified zone and current municipality geometries. They affect **{metrics['npvm_proxy_clusters']} clusters**; **{metrics['npvm_proxy_only_clusters']}** have no exact listing-point assignment for an internal comparison, including **{metrics['npvm_proxy_only_candidate_clusters']}** apparent Path C candidates. The geometry and deterministic choice are validated, but proxy-only travel times are not independently validated observed routes. Historical zone lineage and causal approval remain false. See `reports/27_TRANSPORT_ZONE_PROXY_AUDIT.md`.
@@ -681,11 +727,11 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 4. Crans-Montana proves that treatment is not universally absorbing.
 5. COVID overlaps the post-period of early entrants and the entry period of later ones.
 6. Spillovers may contaminate nearby nominal controls.
-7. Hotel capacity, mountain-station snow, regional temperature/precipitation, qualified Swiss straight-line population, NPVM 2025 context, current OFT/BAV stop proximity and winter-2026 scheduled journey context are integrated. Historical timetable stability, snowmaking, cross-border population, investment, local economic conditions, and competing-network changes remain unmeasured.
+7. Hotel capacity, mountain-station snow, regional temperature/precipitation, qualified Swiss and cross-border straight-line population, NPVM 2025 context, current OFT/BAV stop proximity and winter-2026 scheduled journey context are integrated. Historical timetable stability, snowmaking, motorway proximity, investment, local economic conditions, and competing-network changes remain unmeasured.
 
 ## Next evidence gate
 
-For Path C, compare the identified historical GTFS anchor feeds with the same routing rules; add motorway and relevant cross-border population context; validate destination catchments for tourism dependence; add competing-pass variables; and obtain dated infrastructure features. The NPVM proxy geometry audit is complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed min/median/max aggregation sensitivity and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; add motorway proximity; validate destination catchments for tourism dependence; add competing-pass variables; and obtain dated infrastructure features. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed min/median/max aggregation sensitivity and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Complete regional-weather and independent gridded-snow sensitivities before elevating climate fields. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

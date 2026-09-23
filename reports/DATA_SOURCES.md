@@ -302,6 +302,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point and radius-specific border intersection is flagged without filling foreign population
 - **Local raw file:** `config/path_c_analysis.json|config/municipality_boundary_bridge_2025_2026.csv`.
 
+## DERIVED_CROSS_BORDER_POPULATION_CONTEXT — Path C Eurostat cross-border population context
+
+- **Contents and relevance:** Qualified cross-border one-kilometre population context for every linked Path C lift cluster
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned deterministic Python transformation of the checksum-verified Eurostat 2021 census grid; unknown date.
+- **Variables:** population_within_straight_line_radius|foreign_only_population|mixed_border_cell_population|country_scope|unavailable_total_cell_count
+- **Transformations:** Use cell centroids in EPSG:3035; sum observed total population inside 30/60/90/120 km; partition Switzerland-only, foreign-only and mixed-border cells; never allocate country-level unplaced population
+- **Coverage:** one-kilometre census grid cell and linked lift cluster; 2021 census population; current/undated cluster coordinate; 2021-01-01 to 2021-12-31.
+- **Limitations:** Not a travel-time market, observed visitor origin or destination catchment; separate from STATPOP 2025 because years and spatial allocation differ
+- **Local raw file:** `config/path_c_analysis.json|config/eurostat_census_grid_2021.json`.
+
 ## DERIVED_DISTANCE_TRANSPORT_COMPARISON — Distance versus scheduled public-transport comparison
 
 - **Contents and relevance:** Same-destination comparison of current municipality distance and winter-2026 scheduled public-transport journey time
@@ -601,6 +613,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2019-11 to 2020-10.
 - **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
 - **Local raw file:** `data_external/source_evidence/ENGADIN_MOUNTAINS_ANNUAL_2019_20_20260921T154455Z.pdf`.
+
+## EUROSTAT_CENSUS_GRID_2021_V3 — Eurostat Census Grid 2021 version 3
+
+- **Contents and relevance:** Official harmonised 2021 census population on a one-kilometre European grid
+- **Producer:** European Commission, Eurostat GISCO
+- **Exact URL:** https://ec.europa.eu/eurostat/web/gisco/geodata/population-distribution/population-grids
+- **Access and retrieval date:** HTTP byte-range extraction of the full unfiltered CSV member; ZIP size and CRC32 plus SHA-256 verified; 2026-09-23T08:22:10.801414+00:00.
+- **Variables:** grid_cell_id|total_population_2021|reporting_country_codes|land_surface|populated_flag
+- **Transformations:** Parse cell lower-left coordinates from the INSPIRE grid identifier; use cell centroid; retain cells within 120.707 km of a linked cluster; preserve Switzerland-only, foreign-only and mixed reporting-country scopes
+- **Coverage:** one-kilometre census grid cell across the European source universe; 2021 census reference; 2021-01-01 to 2021-12-31.
+- **Limitations:** Thirteen country-level unallocated records have no spatial location; mixed-border-cell population cannot be split by country; census residents are not skier demand
+- **Local raw file:** `data_external/source_evidence/EUROSTAT_CENSUS_GRID_2021_V3_20260923T082210Z.csv`.
+
+## EUROSTAT_CENSUS_GRID_2021_V3_README — Eurostat Census Grid 2021 version 3 read.me
+
+- **Contents and relevance:** Official data dictionary and change log for Eurostat Census Grid 2021 version 3
+- **Producer:** European Commission, Eurostat GISCO
+- **Exact URL:** https://ec.europa.eu/eurostat/web/gisco/geodata/population-distribution/population-grids
+- **Access and retrieval date:** HTTP byte-range extraction of the ZIP documentation member; CRC32 and SHA-256 verified; 2026-09-23T08:28:16.760878+00:00.
+- **Variables:** grid_variable_definitions|missing_value_codes|unallocated_population_rule|change_log
+- **Transformations:** Definitions of total population, EPSG:3035, missing codes and unallocated records are validated before processing
+- **Coverage:** dataset documentation; version 3 release documentation; 2026-05-30 to 2026-05-30.
+- **Limitations:** Documentation defines -8888 as confidentiality-related unavailability and -9999 as other unavailability
+- **Local raw file:** `data_external/source_evidence/EUROSTAT_CENSUS_GRID_2021_V3_README_20260923T082816Z.txt`.
 
 ## EVOLENE_SCOPE_OFFICIAL — Official destination or municipal scope page
 

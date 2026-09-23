@@ -818,6 +818,86 @@ def test_accessibility_context_preserves_population_and_stays_unapproved() -> No
     assert not as_bool(decision["accessibility_feature_approved"]).any()
 
 
+def test_cross_border_population_context_is_complete_separate_and_unapproved() -> None:
+    grid = read("data_processed/eurostat_population_grid_2021_swiss_region.csv")
+    cluster = read("data_processed/path_c_cluster_cross_border_population_context.csv")
+    candidates = read("reports/cross_border_population_candidate_summary.csv")
+    decision = read("data_processed/magic_pass_decision_support.csv")
+    summary = json.loads(
+        (ROOT / "reports/cross_border_population_context_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    assert len(grid) == 181_598
+    assert grid["grid_cell_id"].is_unique
+    assert grid["population_reference_year"].eq(2021).all()
+    assert grid["grid_crs"].eq("EPSG:3035").all()
+    assert grid["total_population_2021"].ge(0).all()
+    assert grid["country_scope_category"].value_counts().to_dict() == {
+        "foreign_only": 139_217,
+        "switzerland_only": 40_171,
+        "switzerland_foreign_mixed": 2_210,
+    }
+
+    assert len(cluster) == 162
+    assert cluster["cluster_id"].is_unique
+    assert int(as_bool(cluster["candidate_for_path_c"]).sum()) == 104
+    assert cluster["cross_border_population_context_status"].eq(
+        "complete_observed_total_population_grid_cells"
+    ).all()
+    assert cluster["cross_border_population_interpretation"].eq(
+        "eurostat_2021_one_km_population_context_not_travel_time_or_destination_catchment"
+    ).all()
+    assert not as_bool(cluster["cross_border_population_feature_approved"]).any()
+    assert as_bool(cluster["unallocated_population_records_excluded"]).all()
+    assert cluster.filter(like="total_population_unavailable_cells").eq(0).all().all()
+
+    for radius in [30, 60, 90, 120]:
+        total = cluster[f"eurostat_population_2021_within_{radius}km_cell_centroid"]
+        components = (
+            cluster[
+                f"eurostat_switzerland_only_population_2021_within_{radius}km_cell_centroid"
+            ]
+            + cluster[
+                f"eurostat_foreign_only_population_2021_within_{radius}km_cell_centroid"
+            ]
+            + cluster[
+                f"eurostat_ch_foreign_mixed_population_2021_within_{radius}km_cell_centroid"
+            ]
+        )
+        assert total.equals(components)
+    total_columns = [
+        f"eurostat_population_2021_within_{radius}km_cell_centroid"
+        for radius in [30, 60, 90, 120]
+    ]
+    assert not (cluster[total_columns].diff(axis=1).iloc[:, 1:] < 0).any().any()
+    assert int(
+        cluster["eurostat_foreign_only_population_2021_within_30km_cell_centroid"]
+        .gt(0)
+        .sum()
+    ) == 99
+    assert cluster[
+        "eurostat_foreign_only_population_2021_within_120km_cell_centroid"
+    ].gt(0).all()
+
+    assert len(candidates) == 104
+    shares = candidates[
+        "eurostat_foreign_only_share_of_observed_population_within_120km"
+    ]
+    assert shares.is_monotonic_decreasing
+    assert summary["source_rows"] == 4_595_932
+    assert summary["unallocated_rows_excluded"] == 13
+    assert summary["observed_unallocated_population_excluded"] == 434_787
+    assert summary["cross_border_population_features_approved"] == 0
+
+    assert len(decision) == 162
+    assert decision["accessibility_score"].isna().all()
+    assert not as_bool(decision["cross_border_population_feature_approved"]).any()
+    assert decision["predicted_uplift_pct"].isna().all()
+    assert decision["composite_opportunity_need_score"].isna().all()
+
+
 def test_transport_accessibility_uses_npvm_zones_and_exposes_proxies() -> None:
     listing = read("data_processed/resort_transport_accessibility_context.csv")
     cluster = read("data_processed/path_c_cluster_transport_accessibility_context.csv")
