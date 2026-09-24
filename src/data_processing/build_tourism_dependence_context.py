@@ -490,11 +490,14 @@ These ratios are current 2025 descriptions, not pre-treatment features. A review
 
 The same non-approval applies to the reviewed outcome-scope layer: `tourism_catchment_validated`, `pre_treatment_feature_approved`, `tourism_dependence_feature_approved` and `causal_covariate_approved` are false in all 11 rows.
 
+The separate 0/5/10 km municipality-polygon sensitivity in `reports/40_CANDIDATE_SCOPE_RADIUS_SENSITIVITY.md` tests whether transparent radius rules can extend this context. It does not change the catchment or feature approvals.
+
 ## Outputs
 
 - `data_processed/municipality_tourism_context_2025.csv`
 - `data_processed/path_c_cluster_tourism_context.csv`
 - `data_processed/reviewed_destination_tourism_context_2025.csv`
+- `data_processed/path_c_candidate_scope_radius_sensitivity.csv` (separate downstream scope sensitivity)
 - `data_processed/magic_pass_decision_support.csv` (qualified context columns appended)
 """
     (ROOT / "reports/20_TOURISM_DEPENDENCE_CONTEXT.md").write_text(

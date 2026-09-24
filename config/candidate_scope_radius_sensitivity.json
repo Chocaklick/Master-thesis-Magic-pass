@@ -1,0 +1,20 @@
+{
+  "analysis_version": "path_c_v0_23",
+  "boundary_reference_date": "2026-01-01",
+  "population_reference_year": 2025,
+  "hotel_reference_year": 2025,
+  "distance_crs": "EPSG:2056",
+  "radius_rules_km": [0, 5, 10],
+  "candidate_pool_rule": "candidate_for_path_c_true_in_path_c_resort_cluster_features",
+  "reviewed_scope_strata": [
+    "complete_observed_municipal_scope",
+    "core_municipality_proxy"
+  ],
+  "interpretation": "municipality_polygon_radius_scope_sensitivity_not_validated_destination_catchment_or_tourism_dependence_feature",
+  "protected_outputs": {
+    "tourism_catchment_validated": false,
+    "candidate_scope_transfer_approved": false,
+    "pre_treatment_feature_approved": false,
+    "causal_covariate_approved": false
+  }
+}

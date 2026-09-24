@@ -964,6 +964,75 @@ def test_destination_scope_concordance_separates_definition_linked_proxies() -> 
     assert summary["candidate_scope_transfers_approved"] == 0
 
 
+def test_candidate_scope_radius_sensitivity_exposes_precision_recall_tradeoff() -> None:
+    rules = read("data_processed/path_c_candidate_scope_radius_sensitivity.csv")
+    clusters = read("data_processed/path_c_cluster_scope_sensitivity_summary.csv")
+    validation = read("reports/candidate_scope_radius_validation.csv")
+    decision = read("data_processed/magic_pass_decision_support.csv")
+    summary = json.loads(
+        (ROOT / "reports/candidate_scope_radius_sensitivity_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    assert len(rules) == 162 * 3
+    assert not rules[["cluster_id", "radius_km"]].duplicated().any()
+    assert sorted(rules["radius_km"].unique().tolist()) == [0, 5, 10]
+    assert len(rules[as_bool(rules["candidate_for_path_c"])]) == 104 * 3
+    for _, group in rules.groupby("cluster_id"):
+        ordered = group.sort_values("radius_km")
+        assert ordered["selected_municipality_count"].is_monotonic_increasing
+
+    assert len(clusters) == 162
+    assert clusters["cluster_id"].is_unique
+    candidates = clusters[as_bool(clusters["candidate_for_path_c"])]
+    assert len(candidates) == 104
+    assert int(candidates["scope_0km_municipality_count"].gt(0).sum()) == 104
+    assert int(
+        candidates["candidate_scope_observed_overnights_per_resident_max"]
+        .notna()
+        .sum()
+    ) == 99
+    assert int(
+        candidates["candidate_scope_complete_hotel_context_rule_count"].gt(0).sum()
+    ) == 39
+
+    assert len(validation) == 11 * 3
+    complete = validation[
+        validation["reviewed_scope_kind"].eq("complete_observed_municipal_scope")
+    ]
+    expected = {
+        0: (3, 4, 5, 0),
+        5: (0, 5, 5, 25),
+        10: (0, 5, 5, 60),
+    }
+    for radius, (exact, recovered, reviewed, extra) in expected.items():
+        group = complete[complete["radius_km"].eq(radius)]
+        assert len(group) == 4
+        assert int(as_bool(group["exact_scope_match"]).sum()) == exact
+        assert int(group["intersection_municipality_count"].sum()) == recovered
+        assert int(group["reviewed_scope_municipality_count"].sum()) == reviewed
+        assert int(group["extra_radius_municipality_count"].sum()) == extra
+
+    protected = [
+        "tourism_catchment_validated",
+        "candidate_scope_transfer_approved",
+        "pre_treatment_feature_approved",
+        "causal_covariate_approved",
+    ]
+    for column in protected:
+        assert not as_bool(rules[column]).any()
+        assert not as_bool(clusters[column]).any()
+    assert summary["candidates_with_any_observed_hesta_ratio"] == 99
+    assert summary["candidates_with_complete_hotel_context_for_any_rule"] == 39
+    assert summary["validated_tourism_catchments"] == 0
+    assert summary["candidate_scope_transfers_approved"] == 0
+    assert decision["candidate_scope_radius_sensitivity_status"].notna().all()
+    assert not as_bool(decision["candidate_scope_transfer_approved"]).any()
+    assert decision["predicted_uplift_pct"].isna().all()
+    assert decision["composite_opportunity_need_score"].isna().all()
+
+
 def test_path_c_feature_readiness_keeps_coverage_separate_from_approval() -> None:
     audit = read("reports/path_c_feature_readiness_audit.csv")
     summary = json.loads(
@@ -974,7 +1043,7 @@ def test_path_c_feature_readiness_keeps_coverage_separate_from_approval() -> Non
 
     assert len(audit) == 19
     assert audit["feature_group_id"].is_unique
-    assert audit["analysis_version"].eq("path_c_v0_22").all()
+    assert audit["analysis_version"].eq("path_c_v0_23").all()
     assert audit["candidate_pool_count"].eq(104).all()
     assert int(as_bool(audit["exploratory_similarity_use_approved"]).sum()) == 1
     approved = audit.loc[
@@ -989,9 +1058,11 @@ def test_path_c_feature_readiness_keeps_coverage_separate_from_approval() -> Non
     tourism = audit.set_index("feature_group_id").loc["point_container_tourism"]
     assert int(tourism["candidate_rows_with_complete_required_fields"]) == 39
     assert tourism["candidate_coverage_status"] == "partial_candidate_coverage"
+    scope = audit.set_index("feature_group_id").loc["destination_scope_transfer"]
+    assert int(scope["candidate_rows_with_complete_required_fields"]) == 104
+    assert scope["candidate_coverage_status"] == "complete_candidate_coverage"
     for feature_group_id in [
         "reviewed_destination_tourism_context",
-        "destination_scope_transfer",
         "current_scheduled_journey_context",
         "historical_public_transport",
         "historical_competing_pass_context",
@@ -1028,7 +1099,7 @@ def test_checkpoint_6_dashboard_separates_dimensions_and_issues_no_recommendatio
     assert len(dashboard) == 104
     assert dashboard["cluster_id"].is_unique
     assert dashboard["cluster_id"].tolist() == sorted(dashboard["cluster_id"])
-    assert dashboard["analysis_version"].eq("path_c_v0_22").all()
+    assert dashboard["analysis_version"].eq("path_c_v0_23").all()
     assert dashboard["checkpoint"].eq(6).all()
     assert dashboard["opportunity_signal_percentile"].notna().all()
     assert dashboard["predicted_uplift_pct"].isna().all()
@@ -1037,6 +1108,12 @@ def test_checkpoint_6_dashboard_separates_dimensions_and_issues_no_recommendatio
     assert dashboard["recommendation_status"].eq(
         "not_issued_evidence_gates_not_passed"
     ).all()
+    assert dashboard["candidate_scope_radius_sensitivity_status"].notna().all()
+    assert int(
+        dashboard["candidate_scope_observed_overnights_per_resident_max"]
+        .notna()
+        .sum()
+    ) == 99
     for column in [
         "two_dimension_matrix_ready",
         "causal_interpretation_approved",
@@ -1060,6 +1137,12 @@ def test_checkpoint_6_dashboard_separates_dimensions_and_issues_no_recommendatio
     assert summary["candidate_strong_treated_extrapolation"] == 25
     assert summary["candidates_stable_across_structural_aggregation"] == 11
     assert summary["candidates_with_point_container_tourism_context"] == 39
+    assert summary["candidates_with_scope_radius_sensitivity"] == 104
+    assert summary["candidates_with_any_radius_observed_hesta_ratio"] == 99
+    assert (
+        summary["candidates_with_complete_hotel_context_under_any_radius_rule"]
+        == 39
+    )
     assert summary["two_dimension_matrix_ready_candidates"] == 0
     assert summary["predicted_uplift_values"] == 0
     assert summary["recommendations_issued"] == 0
@@ -1597,7 +1680,7 @@ def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> N
         "partial_cluster_listing_links": 6,
     }
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_22").all()
+    assert decision["analysis_version"].eq("path_c_v0_23").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1678,7 +1761,7 @@ def test_path_c_network_context_excludes_focal_cluster_and_preserves_pair_grain(
     assert not as_bool(context["network_context_feature_approved"]).any()
     assert not as_bool(pairs["network_context_feature_approved"]).any()
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_22").all()
+    assert decision["analysis_version"].eq("path_c_v0_23").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1757,7 +1840,7 @@ def test_path_c_cluster_geography_sensitivity_preserves_clusters_and_bounds_rule
     assert not as_bool(context["cluster_geographic_coherence_verified"]).any()
     assert not as_bool(context["network_distance_sensitivity_feature_approved"]).any()
     assert not as_bool(pairs["network_distance_sensitivity_feature_approved"]).any()
-    assert decision["analysis_version"].eq("path_c_v0_22").all()
+    assert decision["analysis_version"].eq("path_c_v0_23").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()

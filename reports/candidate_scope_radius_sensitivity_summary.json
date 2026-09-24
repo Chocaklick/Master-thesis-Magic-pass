@@ -1,0 +1,47 @@
+{
+  "analysis_version": "path_c_v0_23",
+  "radius_rules_km": [
+    0,
+    5,
+    10
+  ],
+  "path_c_clusters": 162,
+  "path_c_candidates": 104,
+  "candidate_rule_rows": 312,
+  "candidates_with_swiss_zero_radius_scope": 104,
+  "candidates_with_any_observed_hesta_ratio": 99,
+  "candidates_with_complete_hotel_context_for_any_rule": 39,
+  "reviewed_destination_rule_rows": 33,
+  "complete_observed_scope_validation_by_radius_km": {
+    "0": {
+      "exact_matches": 3,
+      "destinations": 4,
+      "reviewed_links_recovered": 4,
+      "reviewed_links": 5,
+      "extra_municipality_links": 0,
+      "mean_precision": 1.0,
+      "mean_recall": 0.875
+    },
+    "5": {
+      "exact_matches": 0,
+      "destinations": 4,
+      "reviewed_links_recovered": 5,
+      "reviewed_links": 5,
+      "extra_municipality_links": 25,
+      "mean_precision": 0.17767857142857144,
+      "mean_recall": 1.0
+    },
+    "10": {
+      "exact_matches": 0,
+      "destinations": 4,
+      "reviewed_links_recovered": 5,
+      "reviewed_links": 5,
+      "extra_municipality_links": 60,
+      "mean_precision": 0.09545454545454546,
+      "mean_recall": 1.0
+    }
+  },
+  "validated_tourism_catchments": 0,
+  "candidate_scope_transfers_approved": 0,
+  "interpretation": "municipality_polygon_radius_scope_sensitivity_not_validated_destination_catchment_or_tourism_dependence_feature"
+}

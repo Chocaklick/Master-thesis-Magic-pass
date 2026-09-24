@@ -258,11 +258,14 @@ The seven core-proxy matches are expected because those scopes were explicitly d
 
 No candidate-scope transfer is approved. A component-point municipality set is not a visitor catchment, a hotel market, an observed origin market or a pre-treatment causal covariate. The audit supports retaining candidate point-container ratios as qualified descriptive context only; it does not justify filling `tourism_dependence`, changing analogue matching or producing a composite ranking.
 
+The follow-up 0/5/10 km municipality-polygon sensitivity is documented in `reports/40_CANDIDATE_SCOPE_RADIUS_SENSITIVITY.md`. It recovers the missing reviewed municipality at larger radii only by adding many municipalities outside the reviewed scopes, so it does not reverse this decision.
+
 ## Outputs
 
 - `reports/destination_scope_concordance_audit.csv`
 - `reports/destination_scope_concordance_audit_summary.json`
 - `reports/37_DESTINATION_SCOPE_CONCORDANCE_AUDIT.md`
+- `reports/40_CANDIDATE_SCOPE_RADIUS_SENSITIVITY.md` (downstream radius validation)
 """
     REPORT.write_text(report, encoding="utf-8")
 

@@ -409,6 +409,25 @@ def main() -> None:
         manual_verification="11 destinations; 10 exact sets overall; 3/4 exact complete scopes; 11/12 reviewed links recovered; BFS 785 is the sole outcome-only link; all transfer/catchment/causal approvals false",
     ))
     rows.append(blank_source(
+        "DERIVED_CANDIDATE_SCOPE_RADIUS_SENSITIVITY",
+        variable_name="municipality radius scope|HESTA population coverage|observed tourism ratios|reviewed-scope precision and recall",
+        variable_description="Current 0/5/10 km municipality-polygon scope sensitivity for every Path C cluster and validation against reviewed destination outcome scopes",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Candidate destination-scope radius sensitivity",
+        retrieval_method="Deterministic EPSG:2056 polygon-distance transformation of supplied resort component points, official municipality boundaries, STATPOP 2025 and HESTA 2025",
+        local_raw_file="config/candidate_scope_radius_sensitivity.json|data_processed/resort_master.csv|data_processed/municipality_population_geometry_2026.csv|data_processed/municipality_tourism_context_2025.csv|data_processed/treatment_destination_units.csv",
+        processed_file="data_processed/path_c_candidate_scope_radius_sensitivity.csv|data_processed/path_c_cluster_scope_sensitivity_summary.csv|reports/candidate_scope_radius_validation.csv|reports/candidate_scope_radius_sensitivity_summary.json|data_processed/magic_pass_decision_support.csv|reports/40_CANDIDATE_SCOPE_RADIUS_SENSITIVITY.md",
+        geographic_level="linked lift cluster by municipal radius rule and reviewed destination by municipal radius rule",
+        temporal_resolution="2025 hotel/population context aligned to 2026-01-01 municipality boundaries",
+        temporal_start="2025-01-01",
+        temporal_end="2026-01-01",
+        unit="municipalities, persons, hotel nights, beds, kilometres and set-comparison ratios",
+        transformation_applied="Select every municipality polygon within 0, 5 or 10 kilometres of any component point; preserve complete and partial HESTA coverage separately; validate each rule against reviewed scope sets",
+        quality_notes="Five-kilometre and ten-kilometre rules recover all five municipality links in the four complete reviewed scopes but add 25 and 60 extra municipality links respectively; current straight-line radii are not visitor catchments or pre-treatment scopes",
+        confidence_level="high for deterministic sensitivity; no catchment validity",
+        manual_verification="162 clusters by three rules; 104 candidates; 33 reviewed destination-rule rows; 99 candidates have an observed HESTA ratio under at least one rule; zero catchments or transfers approved",
+    ))
+    rows.append(blank_source(
         "DERIVED_PATH_C_FEATURE_READINESS_AUDIT",
         variable_name="candidate coverage|temporal status|scope comparability|leakage risk|approved use",
         variable_description="Executable registry separating candidate feature coverage from permitted analytical use for Path C",
@@ -2189,6 +2208,9 @@ def main() -> None:
         "path_c_cluster_tourism_context": ROOT / "data_processed/path_c_cluster_tourism_context.csv",
         "reviewed_destination_tourism_context_2025": ROOT / "data_processed/reviewed_destination_tourism_context_2025.csv",
         "destination_scope_concordance_audit": ROOT / "reports/destination_scope_concordance_audit.csv",
+        "path_c_candidate_scope_radius_sensitivity": ROOT / "data_processed/path_c_candidate_scope_radius_sensitivity.csv",
+        "path_c_cluster_scope_sensitivity_summary": ROOT / "data_processed/path_c_cluster_scope_sensitivity_summary.csv",
+        "candidate_scope_radius_validation": ROOT / "reports/candidate_scope_radius_validation.csv",
         "municipality_population_geometry_2026": ROOT / "data_processed/municipality_population_geometry_2026.csv",
         "path_c_cluster_accessibility_context": ROOT / "data_processed/path_c_cluster_accessibility_context.csv",
         "eurostat_population_grid_2021_swiss_region": ROOT / "data_processed/eurostat_population_grid_2021_swiss_region.csv",
@@ -2246,6 +2268,9 @@ def main() -> None:
         "path_c_cluster_tourism_context": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
         "reviewed_destination_tourism_context_2025": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
         "destination_scope_concordance_audit": "DERIVED_DESTINATION_SCOPE_CONCORDANCE_AUDIT",
+        "path_c_candidate_scope_radius_sensitivity": "DERIVED_CANDIDATE_SCOPE_RADIUS_SENSITIVITY",
+        "path_c_cluster_scope_sensitivity_summary": "DERIVED_CANDIDATE_SCOPE_RADIUS_SENSITIVITY",
+        "candidate_scope_radius_validation": "DERIVED_CANDIDATE_SCOPE_RADIUS_SENSITIVITY",
         "municipality_population_geometry_2026": "DERIVED_ACCESSIBILITY_CONTEXT",
         "path_c_cluster_accessibility_context": "DERIVED_ACCESSIBILITY_CONTEXT",
         "eurostat_population_grid_2021_swiss_region": "DERIVED_CROSS_BORDER_POPULATION_CONTEXT",
@@ -2949,6 +2974,9 @@ def main() -> None:
         "municipality_tourism_context_2025": "municipality",
         "reviewed_destination_tourism_context_2025": "reviewed destination outcome-municipality scope",
         "destination_scope_concordance_audit": "reviewed destination and municipality-set comparison",
+        "path_c_candidate_scope_radius_sensitivity": "preserved linked lift cluster by municipality-polygon radius rule",
+        "path_c_cluster_scope_sensitivity_summary": "preserved linked lift cluster",
+        "candidate_scope_radius_validation": "reviewed destination by municipality-polygon radius rule",
         "municipality_population_geometry_2026": "current Swiss municipality",
         "eurostat_population_grid_2021_swiss_region": "one-kilometre European census grid cell near a linked cluster",
         "path_c_cluster_cross_border_population_context": "linked lift cluster",
@@ -2998,6 +3026,9 @@ def main() -> None:
         "path_c_cluster_tourism_context": "2025 annual point-container context",
         "reviewed_destination_tourism_context_2025": "2025 current context on versioned reviewed outcome scope",
         "destination_scope_concordance_audit": "versioned current point-container and reviewed outcome-scope comparison",
+        "path_c_candidate_scope_radius_sensitivity": "2025 hotel/population context aligned to 2026-01-01 boundaries",
+        "path_c_cluster_scope_sensitivity_summary": "2025 hotel/population context aligned to 2026-01-01 boundaries",
+        "candidate_scope_radius_validation": "current component points and 2026-01-01 boundaries versus reviewed outcome scopes",
         "municipality_population_geometry_2026": "2025 population aligned to 2026-01-01 boundaries",
         "path_c_cluster_accessibility_context": "2025 population aligned to 2026-01-01 boundaries; undated cluster location",
         "eurostat_population_grid_2021_swiss_region": "2021 census population; version 3 released 2026-05-30",
@@ -3061,6 +3092,11 @@ def main() -> None:
                 table == "reviewed_destination_tourism_context_2025"
             )
             scope_concordance_table = table == "destination_scope_concordance_audit"
+            scope_radius_table = table in {
+                "path_c_candidate_scope_radius_sensitivity",
+                "path_c_cluster_scope_sensitivity_summary",
+                "candidate_scope_radius_validation",
+            }
             feature_readiness_table = table == "path_c_feature_readiness_audit"
             decision_framework_table = table in {
                 "path_c_candidate_evidence_dashboard",
@@ -3129,6 +3165,15 @@ def main() -> None:
                 "distance_transport_band_summary",
             }
             journey_variable = journey_table
+            scope_radius_variable = scope_radius_table or (
+                table == "magic_pass_decision_support"
+                and (
+                    variable.startswith("candidate_scope_")
+                    or variable.startswith("scope_0km_")
+                    or variable.startswith("scope_5km_")
+                    or variable.startswith("scope_10km_")
+                )
+            )
             competing_variable = competing_table or (
                 table == "magic_pass_decision_support"
                 and (
@@ -3249,7 +3294,7 @@ def main() -> None:
                     in {"cluster_transport_context_status", "unassigned_resort_ids"}
                 )
             ))
-            accessibility_variable = not journey_variable and not competing_variable and not network_variable and not stop_variable and not road_variable and not transport_variable and (accessibility_table or (
+            accessibility_variable = not scope_radius_variable and not journey_variable and not competing_variable and not network_variable and not stop_variable and not road_variable and not transport_variable and (accessibility_table or (
                 table == "magic_pass_decision_support"
                 and (
                     "accessibility" in variable
@@ -3300,6 +3345,8 @@ def main() -> None:
                 if snow_gridded_table
                 else "qualified destination municipality-scope transfer diagnostic"
                 if scope_concordance_table
+                else "qualified candidate municipality-radius scope sensitivity"
+                if scope_radius_variable
                 else "qualified current reviewed outcome-scope tourism context"
                 if destination_tourism_table
                 else "qualified regional-weather alternative-station sensitivity"
@@ -3364,6 +3411,9 @@ def main() -> None:
                 "See config/treatment_destination_review.json and src/data_processing/build_destination_scope_concordance_audit.py"
                 if scope_concordance_table
                 else
+                "See config/candidate_scope_radius_sensitivity.json and src/data_processing/build_candidate_scope_radius_sensitivity.py"
+                if scope_radius_variable
+                else
                 "See config/treatment_destination_review.json, config/path_c_analysis.json and src/data_processing/build_tourism_dependence_context.py"
                 if destination_tourism_table
                 else
@@ -3427,6 +3477,9 @@ def main() -> None:
                 "No causal interpretation; core-proxy matches are definition-linked, complete-scope concordance is based on four units, and component-point municipalities neither validate catchments nor equivalent candidate outcome scopes"
                 if scope_concordance_table
                 else
+                "No causal interpretation; fixed straight-line municipality radii trade recall for many extra municipalities and do not validate accommodation markets, visitor catchments or historical tourism dependence"
+                if scope_radius_variable
+                else
                 "No causal interpretation; 2025 reviewed outcome-municipality scope is current context, not a validated destination catchment or pre-treatment feature, and seven scopes remain core-municipality proxies"
                 if destination_tourism_table
                 else
@@ -3462,6 +3515,8 @@ def main() -> None:
                 path_c_temporal_level.get(table, "undated structural snapshot; mixed lineage where stated"),
                 path_c_sources[table]
                 if journey_variable
+                else "DERIVED_CANDIDATE_SCOPE_RADIUS_SENSITIVITY"
+                if scope_radius_variable
                 else "DERIVED_COMPETING_PASS_CONTEXT"
                 if competing_variable
                 else "DERIVED_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY"

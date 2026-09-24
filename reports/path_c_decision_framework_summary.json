@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_22",
+  "analysis_version": "path_c_v0_23",
   "checkpoint": 6,
   "framework_id": "separated_evidence_dashboard",
   "final_architecture": "exploratory_structural_analogue_dashboard_with_separate_opportunity_vulnerability_context_and_uncertainty",
@@ -11,6 +11,9 @@
   "candidate_strong_treated_extrapolation": 25,
   "candidates_stable_across_structural_aggregation": 11,
   "candidates_with_point_container_tourism_context": 39,
+  "candidates_with_scope_radius_sensitivity": 104,
+  "candidates_with_any_radius_observed_hesta_ratio": 99,
+  "candidates_with_complete_hotel_context_under_any_radius_rule": 39,
   "two_dimension_matrix_ready_candidates": 0,
   "predicted_uplift_values": 0,
   "recommendations_issued": 0,

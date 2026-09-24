@@ -4,7 +4,7 @@
 
 The registry covers **19 feature groups**. Only **1** group—the three current structural fields—is approved for the existing exploratory similarity calculation. **0** groups are approved as pre-treatment predictors, **0** as causal covariates, **0** for recommendations and **0** for a composite score.
 
-Complete candidate coverage is available for **12** groups, partial coverage for **1**, and no candidate-level feature exists for **6**. Coverage is not approval: most complete layers are current or post-treatment descriptive context.
+Complete candidate coverage is available for **13** groups, partial coverage for **1**, and no candidate-level feature exists for **5**. Coverage is not approval: most complete layers are current or post-treatment descriptive context.
 
 ## Registry
 
@@ -24,7 +24,7 @@ Complete candidate coverage is available for **12** groups, partial coverage for
 | Listing-point network-distance sensitivity | 104/104 | current_or_undated_listing_geometry | measurement_sensitivity_only |
 | Structural aggregation sensitivity | 104/104 | inherits_undated_structural_snapshot | measurement_sensitivity_only |
 | Reviewed treated outcome-scope tourism context | 0/104 | 2025_current_or_post_treatment | treated_destination_descriptive_context_only |
-| Candidate destination-scope transfer | 0/104 | current_scope_comparison | audit_only_zero_candidate_transfers |
+| Candidate destination-scope sensitivity and transfer gate | 104/104 | 2025_context_on_2026_boundaries_current_or_post_treatment | scope_measurement_sensitivity_only_zero_candidate_transfers |
 | Current scheduled destination journeys | 0/104 | winter_2026_current_or_post_treatment | treated_destination_descriptive_context_only |
 | Historical public-transport stability | 0/104 | required_historical_evidence_missing | not_available |
 | Historical competing-pass context | 0/104 | required_historical_evidence_missing | not_available |

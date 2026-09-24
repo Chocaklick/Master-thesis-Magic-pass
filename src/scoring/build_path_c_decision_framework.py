@@ -172,6 +172,17 @@ def build_summary(
             .eq("complete_point_container_population_and_hotel_context")
             .sum()
         ),
+        "candidates_with_scope_radius_sensitivity": int(
+            dashboard["candidate_scope_radius_sensitivity_status"].notna().sum()
+        ),
+        "candidates_with_any_radius_observed_hesta_ratio": int(
+            dashboard[
+                "candidate_scope_observed_overnights_per_resident_max"
+            ].notna().sum()
+        ),
+        "candidates_with_complete_hotel_context_under_any_radius_rule": int(
+            dashboard["candidate_scope_complete_hotel_context_rule_count"].gt(0).sum()
+        ),
         "two_dimension_matrix_ready_candidates": int(
             as_bool(dashboard["two_dimension_matrix_ready"]).sum()
         ),
@@ -220,7 +231,7 @@ def write_report(
 
 Checkpoint 6 selects a **separated exploratory evidence dashboard** for the **{summary['candidate_clusters']} Path C candidates**. It does not select an uplift model, causal ranking, recommendation engine or composite score. The architecture keeps structural comparability, descriptive analogue opportunity, snow vulnerability, tourism dependence, accessibility, competition/network context and evidence gaps separate across **{summary['dimensions']} dimensions**.
 
-The dashboard is deliberately incomplete as a business recommendation. Only **{summary['candidates_with_point_container_tourism_context']}** candidates have complete point-container hotel context, and those municipalities are not validated or comparable destination catchments. Historical public transport, competition and dated infrastructure remain missing. A full Opportunity × Strategic Need matrix is therefore ready for **{summary['two_dimension_matrix_ready_candidates']} candidates**.
+The dashboard is deliberately incomplete as a business recommendation. Only **{summary['candidates_with_point_container_tourism_context']}** candidates have complete point-container hotel context. The 0/5/10 km scope sensitivity reaches an observed HESTA ratio for **{summary['candidates_with_any_radius_observed_hesta_ratio']}** candidates, but still leaves only **{summary['candidates_with_complete_hotel_context_under_any_radius_rule']}** with complete municipal hotel coverage under any rule; more importantly, the radius validation rejects every rule as a comparable destination catchment. Historical public transport, competition and dated infrastructure remain missing. A full Opportunity × Strategic Need matrix is therefore ready for **{summary['two_dimension_matrix_ready_candidates']} candidates**.
 
 ## Dimension register
 
@@ -241,6 +252,7 @@ Predicted-uplift values: **{summary['predicted_uplift_values']}**. Recommendatio
 - `reports/path_c_decision_framework_dimensions.csv`
 - `reports/path_c_decision_framework_summary.json`
 - `reports/39_CHECKPOINT_6_BUSINESS_DECISION_FRAMEWORK.md`
+- `reports/40_CANDIDATE_SCOPE_RADIUS_SENSITIVITY.md` (scope diagnostic feeding the tourism-dimension gate)
 """,
         encoding="utf-8",
     )

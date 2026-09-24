@@ -362,6 +362,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point and radius-specific border intersection is flagged without filling foreign population
 - **Local raw file:** `config/path_c_analysis.json|config/municipality_boundary_bridge_2025_2026.csv`.
 
+## DERIVED_CANDIDATE_SCOPE_RADIUS_SENSITIVITY — Candidate destination-scope radius sensitivity
+
+- **Contents and relevance:** Current 0/5/10 km municipality-polygon scope sensitivity for every Path C cluster and validation against reviewed destination outcome scopes
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic EPSG:2056 polygon-distance transformation of supplied resort component points, official municipality boundaries, STATPOP 2025 and HESTA 2025; unknown date.
+- **Variables:** municipality radius scope|HESTA population coverage|observed tourism ratios|reviewed-scope precision and recall
+- **Transformations:** Select every municipality polygon within 0, 5 or 10 kilometres of any component point; preserve complete and partial HESTA coverage separately; validate each rule against reviewed scope sets
+- **Coverage:** linked lift cluster by municipal radius rule and reviewed destination by municipal radius rule; 2025 hotel/population context aligned to 2026-01-01 municipality boundaries; 2025-01-01 to 2026-01-01.
+- **Limitations:** Five-kilometre and ten-kilometre rules recover all five municipality links in the four complete reviewed scopes but add 25 and 60 extra municipality links respectively; current straight-line radii are not visitor catchments or pre-treatment scopes
+- **Local raw file:** `config/candidate_scope_radius_sensitivity.json|data_processed/resort_master.csv|data_processed/municipality_population_geometry_2026.csv|data_processed/municipality_tourism_context_2025.csv|data_processed/treatment_destination_units.csv`.
+
 ## DERIVED_COMPETING_PASS_CONTEXT — Path C competing-pass roster context
 
 - **Contents and relevance:** Qualified listing- and cluster-level context from three official current competing-pass rosters

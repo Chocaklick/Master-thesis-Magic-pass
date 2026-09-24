@@ -21,4 +21,4 @@ The selected architecture is therefore **Path C: exploratory structural segmenta
 
 The analogue signal is not predicted uplift, a counterfactual, a confidence interval or evidence that a resort should join Magic Pass. No composite opportunity/need score is produced. A later causal redesign would require new donor and exposure evidence rather than a more complex algorithm.
 
-Checkpoint 6 is formalised separately in `reports/39_CHECKPOINT_6_BUSINESS_DECISION_FRAMEWORK.md`. It organises the available evidence into seven decision dimensions while preserving the same prohibitions: no causal estimate, predicted uplift, composite score, opportunity ranking or resort recommendation is issued.
+Checkpoint 6 is formalised separately in `reports/39_CHECKPOINT_6_BUSINESS_DECISION_FRAMEWORK.md`, with the candidate scope-radius diagnostic in report 40. They preserve the same prohibitions: no causal estimate, predicted uplift, composite score, opportunity ranking or resort recommendation is issued.

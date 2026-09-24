@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_22",
+  "analysis_version": "path_c_v0_23",
   "candidate_pool_rule": "candidate_for_path_c_true_in_magic_pass_decision_support",
   "feature_groups": [
     {
@@ -186,16 +186,16 @@
     },
     {
       "feature_group_id": "destination_scope_transfer",
-      "feature_group_name": "Candidate destination-scope transfer",
-      "candidate_required_fields": [],
-      "evidence_scope": "11-unit point-versus-reviewed-scope diagnostic",
-      "temporal_status": "current_scope_comparison",
-      "scope_comparability_status": "transfer_rejected_definition_linkage_and_meiringen_omission",
-      "leakage_risk": "relabeling point containers as catchments would create scope error",
-      "approved_usage": "audit_only_zero_candidate_transfers",
+      "feature_group_name": "Candidate destination-scope sensitivity and transfer gate",
+      "candidate_required_fields": ["candidate_scope_radius_sensitivity_status", "candidate_scope_municipality_count_max", "candidate_scope_hesta_population_coverage_share_min"],
+      "evidence_scope": "all candidate clusters under 0/5/10 km municipality-polygon rules plus 11-unit validation",
+      "temporal_status": "2025_context_on_2026_boundaries_current_or_post_treatment",
+      "scope_comparability_status": "complete_candidate_sensitivity_but_transfer_rejected_due_radius_precision_recall_tradeoff",
+      "leakage_risk": "arbitrary current radius scopes and outcome-related HESTA context cannot define pre-treatment catchments",
+      "approved_usage": "scope_measurement_sensitivity_only_zero_candidate_transfers",
       "exploratory_similarity_use_approved": false,
       "descriptive_context_use_approved": true,
-      "source_ids": "DERIVED_DESTINATION_SCOPE_CONCORDANCE_AUDIT"
+      "source_ids": "DERIVED_DESTINATION_SCOPE_CONCORDANCE_AUDIT|DERIVED_CANDIDATE_SCOPE_RADIUS_SENSITIVITY"
     },
     {
       "feature_group_id": "current_scheduled_journey_context",
