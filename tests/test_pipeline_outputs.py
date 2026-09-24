@@ -844,6 +844,9 @@ def test_path_c_aggregation_sensitivity_is_explicit_and_noncausal() -> None:
 def test_tourism_context_uses_complete_official_year_without_claiming_catchment() -> None:
     municipality = read("data_processed/municipality_tourism_context_2025.csv")
     cluster = read("data_processed/path_c_cluster_tourism_context.csv")
+    destination = read(
+        "data_processed/reviewed_destination_tourism_context_2025.csv"
+    )
     decision = read("data_processed/magic_pass_decision_support.csv")
 
     assert len(municipality) == 2_115
@@ -874,6 +877,37 @@ def test_tourism_context_uses_complete_official_year_without_claiming_catchment(
     assert not as_bool(cluster["tourism_dependence_feature_approved"]).any()
     assert cluster["tourism_exposure_interpretation"].eq(
         "point_container_context_not_destination_catchment"
+    ).all()
+
+    assert len(destination) == 11
+    assert destination["destination_unit_id"].is_unique
+    assert int(destination["outcome_scope_municipality_count"].sum()) == 12
+    assert destination["outcome_scope_kind"].value_counts().to_dict() == {
+        "core_municipality_proxy": 7,
+        "complete_observed_municipal_scope": 4,
+    }
+    assert as_bool(
+        destination["all_outcome_scope_municipalities_have_population"]
+    ).all()
+    assert as_bool(
+        destination["all_outcome_scope_municipalities_have_complete_hotel_year"]
+    ).all()
+    assert destination["outcome_scope_overnights_per_resident"].notna().all()
+    assert destination[
+        "outcome_scope_hotel_beds_per_1000_residents"
+    ].notna().all()
+    meiringen = destination.set_index("destination_unit_id").loc[
+        "meiringen_hasliberg"
+    ]
+    assert int(meiringen["outcome_scope_municipality_count"]) == 2
+    assert str(meiringen["outcome_scope_municipality_bfs_ids"]) == "783|785"
+    assert not as_bool(destination["tourism_catchment_validated"]).any()
+    assert not as_bool(destination["pre_treatment_feature_approved"]).any()
+    assert not as_bool(destination["tourism_dependence_feature_approved"]).any()
+    assert not as_bool(destination["causal_covariate_approved"]).any()
+    assert destination["destination_tourism_context_interpretation"].eq(
+        "reviewed_outcome_municipality_scope_current_context_not_validated_"
+        "tourism_catchment_or_pre_treatment_feature"
     ).all()
 
     assert len(decision) == 162
@@ -1417,7 +1451,7 @@ def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> N
         "partial_cluster_listing_links": 6,
     }
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_18").all()
+    assert decision["analysis_version"].eq("path_c_v0_19").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1498,7 +1532,7 @@ def test_path_c_network_context_excludes_focal_cluster_and_preserves_pair_grain(
     assert not as_bool(context["network_context_feature_approved"]).any()
     assert not as_bool(pairs["network_context_feature_approved"]).any()
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_18").all()
+    assert decision["analysis_version"].eq("path_c_v0_19").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1577,7 +1611,7 @@ def test_path_c_cluster_geography_sensitivity_preserves_clusters_and_bounds_rule
     assert not as_bool(context["cluster_geographic_coherence_verified"]).any()
     assert not as_bool(context["network_distance_sensitivity_feature_approved"]).any()
     assert not as_bool(pairs["network_distance_sensitivity_feature_approved"]).any()
-    assert decision["analysis_version"].eq("path_c_v0_18").all()
+    assert decision["analysis_version"].eq("path_c_v0_19").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()

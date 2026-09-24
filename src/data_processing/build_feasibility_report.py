@@ -52,6 +52,7 @@ PUBLIC_TRANSPORT_HISTORICAL_SUMMARY = (
     ROOT / "reports" / "public_transport_historical_audit_summary.json"
 )
 CAPACITY_SUMMARY = ROOT / "reports" / "hotel_capacity_summary.json"
+TOURISM_CONTEXT_SUMMARY = ROOT / "reports" / "tourism_dependence_context_summary.json"
 SNOW_SUMMARY = ROOT / "reports" / "snow_proxy_summary.json"
 SNOW_SENSITIVITY_SUMMARY = ROOT / "reports" / "snow_station_sensitivity_summary.json"
 SNOW_GRIDDED_SENSITIVITY_SUMMARY = (
@@ -139,6 +140,9 @@ def main() -> None:
         PUBLIC_TRANSPORT_HISTORICAL_SUMMARY.read_text(encoding="utf-8")
     )
     capacity_summary = json.loads(CAPACITY_SUMMARY.read_text(encoding="utf-8"))
+    tourism_context_summary = json.loads(
+        TOURISM_CONTEXT_SUMMARY.read_text(encoding="utf-8")
+    )
     snow_summary = json.loads(SNOW_SUMMARY.read_text(encoding="utf-8"))
     snow_sensitivity_summary = json.loads(
         SNOW_SENSITIVITY_SUMMARY.read_text(encoding="utf-8")
@@ -338,6 +342,40 @@ def main() -> None:
         ),
         "reviewed_units_with_complete_24pre_24post_capacity_window": int(
             capacity_diagnostic["complete_24_pre_and_24_post_capacity_window"].sum()
+        ),
+        "reviewed_destination_tourism_context_scopes": int(
+            tourism_context_summary["reviewed_destination_outcome_scopes"]
+        ),
+        "reviewed_destination_tourism_context_municipality_links": int(
+            tourism_context_summary[
+                "reviewed_destination_outcome_scope_municipality_links"
+            ]
+        ),
+        "reviewed_destination_tourism_context_complete_scopes": int(
+            tourism_context_summary[
+                "reviewed_destination_scopes_with_complete_2025_context"
+            ]
+        ),
+        "reviewed_destination_tourism_context_complete_municipal_scopes": int(
+            tourism_context_summary[
+                "reviewed_complete_observed_municipal_scopes"
+            ]
+        ),
+        "reviewed_destination_tourism_context_core_proxies": int(
+            tourism_context_summary["reviewed_core_municipality_proxies"]
+        ),
+        "reviewed_destination_tourism_context_median_overnights_per_resident": float(
+            tourism_context_summary[
+                "median_reviewed_destination_outcome_scope_overnights_per_resident"
+            ]
+        ),
+        "reviewed_destination_tourism_context_median_beds_per_1000_residents": float(
+            tourism_context_summary[
+                "median_reviewed_destination_outcome_scope_hotel_beds_per_1000_residents"
+            ]
+        ),
+        "validated_tourism_catchments": int(
+            tourism_context_summary["validated_tourism_catchments"]
         ),
         "slf_snow_stations_with_daily_data": int(
             snow_summary["snow_stations_with_daily_data"]
@@ -935,6 +973,12 @@ For each destination, `reports/hotel_capacity_treatment_diagnostics.csv` compare
 
 This is a descriptive diagnostic only. The adjacent windows are not seasonally or trend adjusted, early post-periods can overlap COVID, and annual membership does not establish constant treatment intensity. Capacity integration therefore helps distinguish demand changes from contemporaneous supply changes but does not identify a Magic Pass effect.
 
+## Reviewed destination tourism context
+
+The project now aggregates STATPOP and complete-year HESTA 2025 values over the exact municipality scopes already used for the **{metrics['reviewed_destination_tourism_context_scopes']} reviewed destination outcomes**. All **{metrics['reviewed_destination_tourism_context_complete_scopes']} scopes** are complete across **{metrics['reviewed_destination_tourism_context_municipality_links']} unique destination–municipality links**. Four are complete observed municipal scopes; seven remain explicitly labelled core-municipality proxies. The median current ratios are **{metrics['reviewed_destination_tourism_context_median_overnights_per_resident']:.2f} hotel nights per resident** and **{metrics['reviewed_destination_tourism_context_median_beds_per_1000_residents']:.1f} beds per 1,000 residents**.
+
+This layer is stronger than assigning a destination from one arbitrary listing point because it reuses the versioned outcome scope, including both Hasliberg and Meiringen. It still does not validate a visitor catchment, and 2025 is post-treatment for most units rather than a pre-treatment predictor. Accordingly, validated tourism catchments and approved tourism-dependence/causal features remain **{metrics['validated_tourism_catchments']}**. Candidate resorts still lack equivalent reviewed outcome scopes. See `reports/20_TOURISM_DEPENDENCE_CONTEXT.md`.
+
 ## Snow proxy coverage
 
 The official SLF historical archive contains daily observations for **{metrics['slf_snow_stations_with_daily_data']} snow stations**. The project predeclares an 80% November–April coverage gate over 2013/14–2025/26; **{metrics['slf_snow_stations_passing_longitudinal_gate']} stations** pass. Every resort listing is mapped to the geographically nearest passing station, while distance and the elevation gap to the published resort top remain visible. **{metrics['resorts_with_snow_climate_feature_ready']} of {metrics['resort_listings_total']} listings** have high/moderate proxy comparability and at least ten usable winters.
@@ -1051,7 +1095,7 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 
 ## Next evidence gate
 
-For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; validate destination catchments for tourism dependence; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. Current competing-pass links, national-road-axis proximity, listing-point distance-rule sensitivity, next-nearest SwissMetNet weather sensitivity, TabsM/RhiresM gridded weather and SPASS gridded snow sensitivities are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed structural aggregation, network-distance and climate sensitivities and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Add an independent measurement/reanalysis sensitivity only if climate fields are proposed for causal use. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; validate candidate destination catchments for tourism dependence; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. The reviewed-destination outcome-scope tourism context, current competing-pass links, national-road-axis proximity, listing-point distance-rule sensitivity, next-nearest SwissMetNet weather sensitivity, TabsM/RhiresM gridded weather and SPASS gridded snow sensitivities are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed structural aggregation, network-distance and climate sensitivities and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Add an independent measurement/reanalysis sensitivity only if climate fields are proposed for causal use. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

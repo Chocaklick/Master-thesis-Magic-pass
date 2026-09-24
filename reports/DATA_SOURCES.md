@@ -650,17 +650,17 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Does not encode canton-specific school holidays or a legal COVID-restriction chronology; the broad COVID flag is for sensitivity analysis only
 - **Local raw file:** `config/temporal_controls.json`.
 
-## DERIVED_TOURISM_DEPENDENCE_CONTEXT — Path C point-container tourism context
+## DERIVED_TOURISM_DEPENDENCE_CONTEXT — Path C municipal tourism context
 
-- **Contents and relevance:** Qualified tourism-intensity context for municipalities containing supplied resort listing points
+- **Contents and relevance:** Qualified 2025 tourism-intensity context for point-container municipalities and separately reviewed destination outcome-municipality scopes
 - **Producer:** Master thesis analytical pipeline
 - **Exact URL:** Not documented.
-- **Access and retrieval date:** Versioned exact-BFS merge of STATPOP 2025, HESTA 2025 and resort point-container crosswalk; unknown date.
-- **Variables:** overnights_per_resident|hotel_beds_per_1000_residents|point-container tourism context
-- **Transformations:** Require all 12 HESTA months; sum annual hotel nights; average monthly supply; divide by resident population; aggregate unique point containers only when every municipality is complete
-- **Coverage:** municipality and linked lift cluster point-container set; 2025 annual context; 2025-01-01 to 2025-12-31.
-- **Limitations:** Point containment is not an approved tourism catchment or exposure mapping; hotel statistics omit non-hotel accommodation
-- **Local raw file:** `data_processed/resort_point_municipality.csv`.
+- **Access and retrieval date:** Versioned exact-BFS merge of STATPOP 2025 and HESTA 2025 with the resort point-container crosswalk and separately reviewed destination outcome scopes; unknown date.
+- **Variables:** overnights_per_resident|hotel_beds_per_1000_residents|point-container context|reviewed outcome-scope context
+- **Transformations:** Require all 12 HESTA months; sum annual hotel nights; average monthly supply; divide by resident population; aggregate unique point containers and reviewed outcome scopes only when every municipality is complete
+- **Coverage:** municipality, linked lift-cluster point-container set and reviewed destination outcome-municipality scope; 2025 annual context; 2025-01-01 to 2025-12-31.
+- **Limitations:** Point containment and reviewed outcome geography are not validated tourism catchments or pre-treatment features; seven of 11 destination scopes remain core-municipality proxies; hotel statistics omit non-hotel accommodation
+- **Local raw file:** `data_processed/resort_point_municipality.csv|data_processed/treatment_destination_units.csv`.
 
 ## DERIVED_TRANSPORT_ACCESSIBILITY_CONTEXT — Path C NPVM transport accessibility context
 

@@ -359,7 +359,7 @@ def main() -> None:
         retrieval_date=(bfs_statpop_data or {}).get("retrieval_date", ""),
         original_file_name=raw_name(bfs_statpop_data),
         local_raw_file=(bfs_statpop_data or {}).get("raw_file", ""),
-        processed_file="data_processed/municipality_tourism_context_2025.csv|data_processed/path_c_cluster_tourism_context.csv|data_processed/municipality_population_geometry_2026.csv|data_processed/path_c_cluster_accessibility_context.csv|data_processed/magic_pass_decision_support.csv",
+        processed_file="data_processed/municipality_tourism_context_2025.csv|data_processed/path_c_cluster_tourism_context.csv|data_processed/reviewed_destination_tourism_context_2025.csv|data_processed/municipality_population_geometry_2026.csv|data_processed/path_c_cluster_accessibility_context.csv|data_processed/magic_pass_decision_support.csv",
         geographic_level="municipality",
         temporal_resolution="annual reference-day population",
         temporal_start="2025-12-31",
@@ -374,22 +374,22 @@ def main() -> None:
     ))
     rows.append(blank_source(
         "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
-        variable_name="overnights_per_resident|hotel_beds_per_1000_residents|point-container tourism context",
-        variable_description="Qualified tourism-intensity context for municipalities containing supplied resort listing points",
+        variable_name="overnights_per_resident|hotel_beds_per_1000_residents|point-container context|reviewed outcome-scope context",
+        variable_description="Qualified 2025 tourism-intensity context for point-container municipalities and separately reviewed destination outcome-municipality scopes",
         source_organisation="Master thesis analytical pipeline",
-        source_dataset_name="Path C point-container tourism context",
-        retrieval_method="Versioned exact-BFS merge of STATPOP 2025, HESTA 2025 and resort point-container crosswalk",
-        local_raw_file="data_processed/resort_point_municipality.csv",
-        processed_file="data_processed/municipality_tourism_context_2025.csv|data_processed/path_c_cluster_tourism_context.csv|data_processed/magic_pass_decision_support.csv|reports/20_TOURISM_DEPENDENCE_CONTEXT.md",
-        geographic_level="municipality and linked lift cluster point-container set",
+        source_dataset_name="Path C municipal tourism context",
+        retrieval_method="Versioned exact-BFS merge of STATPOP 2025 and HESTA 2025 with the resort point-container crosswalk and separately reviewed destination outcome scopes",
+        local_raw_file="data_processed/resort_point_municipality.csv|data_processed/treatment_destination_units.csv",
+        processed_file="data_processed/municipality_tourism_context_2025.csv|data_processed/path_c_cluster_tourism_context.csv|data_processed/reviewed_destination_tourism_context_2025.csv|data_processed/magic_pass_decision_support.csv|reports/20_TOURISM_DEPENDENCE_CONTEXT.md",
+        geographic_level="municipality, linked lift-cluster point-container set and reviewed destination outcome-municipality scope",
         temporal_resolution="2025 annual context",
         temporal_start="2025-01-01",
         temporal_end="2025-12-31",
         unit="persons; hotel nights; beds; per-resident ratios",
-        transformation_applied="Require all 12 HESTA months; sum annual hotel nights; average monthly supply; divide by resident population; aggregate unique point containers only when every municipality is complete",
-        quality_notes="Point containment is not an approved tourism catchment or exposure mapping; hotel statistics omit non-hotel accommodation",
+        transformation_applied="Require all 12 HESTA months; sum annual hotel nights; average monthly supply; divide by resident population; aggregate unique point containers and reviewed outcome scopes only when every municipality is complete",
+        quality_notes="Point containment and reviewed outcome geography are not validated tourism catchments or pre-treatment features; seven of 11 destination scopes remain core-municipality proxies; hotel statistics omit non-hotel accommodation",
         confidence_level="high for reproducibility; descriptive context only",
-        manual_verification="2,115 population rows; 185 complete HESTA municipalities; every tourism-dependence approval flag false",
+        manual_verification="2,115 population rows; 185 complete HESTA municipalities; 11/11 reviewed outcome scopes complete across 12 municipality links; four complete scopes and seven core proxies; every catchment/feature/causal approval false",
     ))
     rows.append(blank_source(
         "DERIVED_ACCESSIBILITY_CONTEXT",
@@ -2135,6 +2135,7 @@ def main() -> None:
     path_c_paths = {
         "municipality_tourism_context_2025": ROOT / "data_processed/municipality_tourism_context_2025.csv",
         "path_c_cluster_tourism_context": ROOT / "data_processed/path_c_cluster_tourism_context.csv",
+        "reviewed_destination_tourism_context_2025": ROOT / "data_processed/reviewed_destination_tourism_context_2025.csv",
         "municipality_population_geometry_2026": ROOT / "data_processed/municipality_population_geometry_2026.csv",
         "path_c_cluster_accessibility_context": ROOT / "data_processed/path_c_cluster_accessibility_context.csv",
         "eurostat_population_grid_2021_swiss_region": ROOT / "data_processed/eurostat_population_grid_2021_swiss_region.csv",
@@ -2187,6 +2188,7 @@ def main() -> None:
     path_c_sources = {
         "municipality_tourism_context_2025": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
         "path_c_cluster_tourism_context": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
+        "reviewed_destination_tourism_context_2025": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
         "municipality_population_geometry_2026": "DERIVED_ACCESSIBILITY_CONTEXT",
         "path_c_cluster_accessibility_context": "DERIVED_ACCESSIBILITY_CONTEXT",
         "eurostat_population_grid_2021_swiss_region": "DERIVED_CROSS_BORDER_POPULATION_CONTEXT",
@@ -2238,6 +2240,27 @@ def main() -> None:
     }
     path_c_glossary = {
         "cluster_id": "Stable identifier of the preserved existing lift cluster used as the Path C analysis entity",
+        "destination_unit_id": "Stable identifier of the reviewed destination unit",
+        "destination_name": "Reviewed destination display name",
+        "outcome_scope_kind": "Whether the reviewed geography is a complete observed municipal scope or a core-municipality proxy",
+        "outcome_scope_review_status": "Versioned destination-review status authorising the outcome geography for descriptive aggregation",
+        "outcome_scope_municipality_count": "Number of unique municipalities in the reviewed outcome scope",
+        "outcome_scope_municipality_bfs_ids": "Pipe-delimited official BFS identifiers in the reviewed outcome scope",
+        "outcome_scope_municipality_names": "Pipe-delimited official STATPOP municipality names in the reviewed outcome scope",
+        "outcome_scope_source_ids": "Official/reviewed evidence identifiers supporting the destination outcome scope",
+        "all_outcome_scope_municipalities_have_population": "Whether every reviewed scope municipality has official 2025 population",
+        "all_outcome_scope_municipalities_have_complete_hotel_year": "Whether every reviewed scope municipality has all 12 HESTA 2025 months required for nights and supply",
+        "outcome_scope_resident_population": "Sum of official 2025 permanent residents over unique reviewed scope municipalities",
+        "outcome_scope_hotel_overnights_annual": "Sum of 2025 hotel overnight stays over the complete reviewed outcome scope",
+        "outcome_scope_hotel_beds_monthly_mean": "Sum of municipality-level mean monthly available hotel beds over the complete reviewed outcome scope",
+        "outcome_scope_hotel_rooms_monthly_mean": "Sum of municipality-level mean monthly available hotel rooms over the complete reviewed outcome scope",
+        "outcome_scope_hotel_establishments_monthly_mean": "Sum of municipality-level mean monthly open hotel establishments over the complete reviewed outcome scope",
+        "outcome_scope_overnights_per_resident": "Complete-scope 2025 hotel overnight stays divided by permanent residents",
+        "outcome_scope_hotel_beds_per_1000_residents": "Complete-scope mean available hotel beds per 1,000 permanent residents",
+        "destination_tourism_context_status": "Completeness and reviewed-scope class of the destination tourism context",
+        "destination_tourism_context_interpretation": "Guarded interpretation distinguishing current outcome-scope context from a validated catchment or pre-treatment feature",
+        "tourism_catchment_validated": "Whether the reviewed outcome geography is validated as the full tourism catchment; always false",
+        "pre_treatment_feature_approved": "Whether the 2025 context is approved as a pre-treatment predictor; always false",
         "analysis_entity_level": "Explicit statement of the cluster-level analysis entity and its limitations",
         "cluster_display_name": "Deterministic display label built from up to three supplied listing names",
         "member_resort_ids": "All supplied resort listing IDs assigned to the existing lift cluster",
@@ -2713,6 +2736,20 @@ def main() -> None:
         ] = f"Country codes reported by positive-population cells within {radius} straight-line kilometres"
 
     def path_c_unit(variable: str) -> str:
+        if variable.endswith("_approved") or variable.endswith("_validated"):
+            return "boolean flag"
+        if variable.startswith("all_") and "have_" in variable:
+            return "boolean flag"
+        if variable.endswith("_reference_year"):
+            return "year"
+        if "hotel_overnights_annual" in variable:
+            return "overnight stays"
+        if "hotel_beds_monthly_mean" in variable:
+            return "beds"
+        if "hotel_rooms_monthly_mean" in variable:
+            return "rooms"
+        if "hotel_establishments_monthly_mean" in variable:
+            return "establishments"
         if "_share_of_" in variable:
             return "share (0-1)"
         if "clusters_within_" in variable or "listings_within_" in variable:
@@ -2775,6 +2812,7 @@ def main() -> None:
 
     path_c_geographic_level = {
         "municipality_tourism_context_2025": "municipality",
+        "reviewed_destination_tourism_context_2025": "reviewed destination outcome-municipality scope",
         "municipality_population_geometry_2026": "current Swiss municipality",
         "eurostat_population_grid_2021_swiss_region": "one-kilometre European census grid cell near a linked cluster",
         "path_c_cluster_cross_border_population_context": "linked lift cluster",
@@ -2819,6 +2857,7 @@ def main() -> None:
     path_c_temporal_level = {
         "municipality_tourism_context_2025": "2025 annual municipality context",
         "path_c_cluster_tourism_context": "2025 annual point-container context",
+        "reviewed_destination_tourism_context_2025": "2025 current context on versioned reviewed outcome scope",
         "municipality_population_geometry_2026": "2025 population aligned to 2026-01-01 boundaries",
         "path_c_cluster_accessibility_context": "2025 population aligned to 2026-01-01 boundaries; undated cluster location",
         "eurostat_population_grid_2021_swiss_region": "2021 census population; version 3 released 2026-05-30",
@@ -2875,6 +2914,9 @@ def main() -> None:
                 "municipality_population_geometry_2026",
                 "path_c_cluster_accessibility_context",
             }
+            destination_tourism_table = (
+                table == "reviewed_destination_tourism_context_2025"
+            )
             cross_border_population_table = table in {
                 "eurostat_population_grid_2021_swiss_region",
                 "path_c_cluster_cross_border_population_context",
@@ -3103,6 +3145,8 @@ def main() -> None:
                 if weather_gridded_table
                 else "qualified gridded-snow spatial-representativeness sensitivity"
                 if snow_gridded_table
+                else "qualified current reviewed outcome-scope tourism context"
+                if destination_tourism_table
                 else "qualified regional-weather alternative-station sensitivity"
                 if weather_sensitivity_table
                 else "qualified current ski-cluster and reviewed pass-network context"
@@ -3156,6 +3200,9 @@ def main() -> None:
                 "See config/spass_snow_grid.json, config/path_c_analysis.json and src/data_processing/build_snow_gridded_sensitivity.py"
                 if snow_gridded_table
                 else
+                "See config/treatment_destination_review.json, config/path_c_analysis.json and src/data_processing/build_tourism_dependence_context.py"
+                if destination_tourism_table
+                else
                 "See config/path_c_analysis.json, config/meteoswiss_weather_sensitivity_station_files.json and src/data_processing/build_weather_station_sensitivity.py"
                 if weather_sensitivity_table
                 else
@@ -3207,6 +3254,9 @@ def main() -> None:
                 "No causal interpretation; SPASS is a modelled, station-informed grid sharing an SLF assimilation target and is neither an independent measurement network, direct piste snow, snowmaking/operation evidence nor causal-confounder validation"
                 if snow_gridded_table
                 else
+                "No causal interpretation; 2025 reviewed outcome-municipality scope is current context, not a validated destination catchment or pre-treatment feature, and seven scopes remain core-municipality proxies"
+                if destination_tourism_table
+                else
                 "No causal interpretation; next-nearest SwissMetNet sensitivity is not independent gridded validation, piste microclimate, snowfall phase or causal-confounder approval"
                 if weather_sensitivity_table
                 else
@@ -3247,6 +3297,8 @@ def main() -> None:
                 if weather_gridded_table
                 else "DERIVED_SNOW_GRIDDED_SENSITIVITY"
                 if snow_gridded_table
+                else "DERIVED_TOURISM_DEPENDENCE_CONTEXT"
+                if destination_tourism_table
                 else "DERIVED_WEATHER_STATION_SENSITIVITY"
                 if weather_sensitivity_table
                 else "DERIVED_PATH_C_NETWORK_CONTEXT"

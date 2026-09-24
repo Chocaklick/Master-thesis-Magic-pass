@@ -7,6 +7,14 @@
   "clusters_with_complete_point_container_context": 52,
   "path_c_candidates": 104,
   "candidates_with_complete_point_container_context": 39,
+  "reviewed_destination_outcome_scopes": 11,
+  "reviewed_destination_outcome_scope_municipality_links": 12,
+  "reviewed_complete_observed_municipal_scopes": 4,
+  "reviewed_core_municipality_proxies": 7,
+  "reviewed_destination_scopes_with_complete_2025_context": 11,
+  "median_reviewed_destination_outcome_scope_overnights_per_resident": 20.86263402791827,
+  "median_reviewed_destination_outcome_scope_hotel_beds_per_1000_residents": 160.09707537253448,
+  "validated_tourism_catchments": 0,
   "tourism_dependence_features_approved": 0,
-  "interpretation": "point_container_context_not_destination_catchment"
+  "interpretation": "separate_point_container_and_reviewed_outcome_municipality_scope_contexts_neither_validated_destination_catchment_or_causal_feature"
 }
