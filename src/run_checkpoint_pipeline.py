@@ -47,6 +47,7 @@ def main() -> None:
             "--config",
             "config/meteoswiss_gridded_weather_files.json",
         )
+        run("src/data_collection/collect_spass_snow_grid.py")
         run("src/data_collection/collect_bfs_hotel_capacity.py")
         run("src/data_collection/collect_bfs_statpop.py")
         run("src/data_collection/collect_eurostat_census_grid.py")
@@ -55,6 +56,7 @@ def main() -> None:
     run("src/data_processing/build_hotel_capacity_panel.py")
     run("src/data_processing/build_snow_proxy_panel.py")
     run("src/data_processing/build_snow_station_sensitivity.py")
+    run("src/data_processing/build_snow_gridded_sensitivity.py")
     run("src/data_processing/build_weather_proxy_panel.py")
     run("src/data_processing/build_weather_station_sensitivity.py")
     run("src/data_processing/build_weather_gridded_sensitivity.py")

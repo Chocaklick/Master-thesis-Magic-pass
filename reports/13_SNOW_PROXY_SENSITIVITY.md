@@ -20,6 +20,6 @@ The primary snow proxy assigns the nearest SLF snow station passing the 80% long
 
 ## Limitations and decision
 
-The next-nearest station is a transparent perturbation, not an elevation-, aspect-, or climatology-optimised substitute. Both stations may share regional errors or both may poorly represent a resort. Resort-top altitude is not the piste elevation distribution, and no snowmaking, grooming, wind redistribution or operating-day information is observed. The output therefore remains a robustness diagnostic; every `causal_covariate_approved` value is false. A gridded product such as ERA5-Land remains the required independent-source sensitivity.
+The next-nearest station is a transparent perturbation, not an elevation-, aspect-, or climatology-optimised substitute. Both stations may share regional errors or both may poorly represent a resort. Resort-top altitude is not the piste elevation distribution, and no snowmaking, grooming, wind redistribution or operating-day information is observed. The output therefore remains a robustness diagnostic; every `causal_covariate_approved` value is false. The separate SPASS gridded-product audit is now implemented in `reports/36_SNOW_GRIDDED_SENSITIVITY.md`; because SPASS is calibrated to a snow-assimilating SLF model, a genuinely independent measurement or reanalysis source would still be required before causal use.
 
 Detailed output: `data_processed/resort_snow_alternative_station_sensitivity.csv`.

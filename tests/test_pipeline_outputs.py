@@ -109,6 +109,54 @@ def test_slf_snow_proxy_preserves_coverage_and_representation_limits() -> None:
     assert not destination["snow_direct_slope_representation"].any()
 
 
+def test_spass_gridded_snow_sensitivity_separates_method_and_location() -> None:
+    component_winter = read("data_processed/spass_snow_component_winter.csv")
+    component = read("reports/snow_gridded_component_comparison.csv")
+    destination = read("data_processed/destination_snow_gridded_sensitivity.csv")
+    destination_summary = read("reports/snow_gridded_destination_summary.csv")
+
+    assert len(component_winter) == 15 * 10
+    assert not component_winter.duplicated(["resort_id", "winter_start_year"]).any()
+    assert set(component_winter["winter_start_year"]) == set(range(2013, 2023))
+    assert as_bool(component_winter["grid_winter_complete"]).all()
+    assert component_winter["grid_cell_distance_m"].max() < 1_000
+    assert component_winter["station_location_grid_cell_distance_m"].max() < 1_000
+    assert not as_bool(component_winter["independent_measurement_network"]).any()
+    assert not as_bool(component_winter["causal_covariate_approved"]).any()
+
+    assert len(component) == 15
+    assert component["resort_id"].is_unique
+    assert component["local_3x3_common_usable_winters"].eq(10).all()
+    assert component["local_3x3_agreement"].value_counts().to_dict() == {
+        "low": 8,
+        "moderate": 6,
+        "high": 1,
+    }
+    assert component["station_location_3x3_agreement"].value_counts().to_dict() == {
+        "high": 9,
+        "moderate": 6,
+    }
+    assert (
+        component["station_location_3x3_relative_mean_absolute_depth_difference"].median()
+        < component["local_3x3_relative_mean_absolute_depth_difference"].median()
+    )
+    assert not as_bool(component["independent_measurement_network"]).any()
+    assert not as_bool(component["causal_covariate_approved"]).any()
+
+    assert len(destination) == 11 * 10
+    assert not destination.duplicated(["destination_unit_id", "winter_start_year"]).any()
+    assert as_bool(destination["grid_winter_complete"]).all()
+    assert as_bool(destination["station_winter_complete"]).all()
+    assert len(destination_summary) == 11
+    assert destination_summary["agreement"].value_counts().to_dict() == {
+        "low": 6,
+        "moderate": 4,
+        "high": 1,
+    }
+    assert not as_bool(destination["causal_covariate_approved"]).any()
+    assert not as_bool(destination_summary["causal_covariate_approved"]).any()
+
+
 def test_meteoswiss_weather_proxy_preserves_coverage_and_representation_limits() -> None:
     month = read("data_processed/meteoswiss_station_month.csv")
     crosswalk = read("data_processed/resort_weather_station_crosswalk.csv")
@@ -1369,7 +1417,7 @@ def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> N
         "partial_cluster_listing_links": 6,
     }
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_17").all()
+    assert decision["analysis_version"].eq("path_c_v0_18").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1450,7 +1498,7 @@ def test_path_c_network_context_excludes_focal_cluster_and_preserves_pair_grain(
     assert not as_bool(context["network_context_feature_approved"]).any()
     assert not as_bool(pairs["network_context_feature_approved"]).any()
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_17").all()
+    assert decision["analysis_version"].eq("path_c_v0_18").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1529,7 +1577,7 @@ def test_path_c_cluster_geography_sensitivity_preserves_clusters_and_bounds_rule
     assert not as_bool(context["cluster_geographic_coherence_verified"]).any()
     assert not as_bool(context["network_distance_sensitivity_feature_approved"]).any()
     assert not as_bool(pairs["network_distance_sensitivity_feature_approved"]).any()
-    assert decision["analysis_version"].eq("path_c_v0_17").all()
+    assert decision["analysis_version"].eq("path_c_v0_18").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()

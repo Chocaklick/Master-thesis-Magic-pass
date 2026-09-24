@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_17",
+  "analysis_version": "path_c_v0_18",
   "analysis_date": "2026-09-24",
   "analysis_entity": "existing_lift_cluster_with_at_least_one_supplied_resort_listing",
   "feature_temporal_status": "undated_cross_sectional_snapshot_not_pre_treatment",
@@ -72,6 +72,20 @@
       "moderate": {"temperature_anomaly_correlation_minimum": 0.8, "precipitation_anomaly_correlation_minimum": 0.5}
     },
     "interpretation": "swissmetnet_station_vs_meteoswiss_tabsm_rhiresm_1km_gridded_monthly_sensitivity_not_independent_measurement_network_piste_microclimate_or_causal_approval"
+  },
+  "snow_gridded_sensitivity": {
+    "source_id": "SLF_SPASS_HSCLQMD_GRID_1962_2023",
+    "source_doi": "10.16904/envidat.580",
+    "source_product": "SPASS OSHD-CLQM snow depth v1.0",
+    "source_grid": "ch01h.swiss.lv95 1 km",
+    "comparison_winter_start_years": [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+    "primary_grid_rule": "daily_median_of_nearest_3x3_grid_cells_to_resort_component_then_november_april_mean",
+    "diagnostic_grid_rule": "repeat_nearest_3x3_extraction_at_selected_station_location_to_separate_method_from_spatial_proxy_disagreement",
+    "descriptive_agreement_thresholds": {
+      "high": {"winter_depth_correlation_minimum": 0.75, "relative_mean_absolute_depth_difference_maximum": 0.35, "absolute_30cm_reliability_share_gap_maximum": 0.2},
+      "moderate": {"winter_depth_correlation_minimum": 0.5, "relative_mean_absolute_depth_difference_maximum": 0.6}
+    },
+    "interpretation": "slf_imis_station_vs_spass_oshd_clqm_1km_modelled_snow_sensitivity_shared_slf_assimilation_target_not_independent_measurement_network_piste_observation_or_causal_approval"
   },
   "network_distance_sensitivity": {
     "radii_km": [25, 50],

@@ -614,6 +614,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** No row is causal-ready; SLF and MeteoSwiss proxies are not direct piste observations; treatment intensity, controls, spillovers, and other time-varying confounders remain unresolved
 - **Local raw file:** `not cached / not applicable`.
 
+## DERIVED_SNOW_GRIDDED_SENSITIVITY — SPASS gridded-snow spatial-representativeness sensitivity
+
+- **Contents and relevance:** Selected SLF station versus SPASS OSHD-CLQM 1 km gridded snow-depth sensitivity at resort and station locations
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic Python NetCDF extraction, daily local aggregation, winter aggregation and station-grid comparison; unknown date.
+- **Variables:** spass_component_winter|station_grid_snow_agreement|spass_destination_winter
+- **Transformations:** Compare selected-station winter metrics with resort-centred nearest/3x3 SPASS metrics and station-centred 3x3 SPASS metrics; aggregate unique station and component signals to unchanged reviewed destination units
+- **Coverage:** reviewed resort component, selected SLF station location and reviewed destination; daily source aggregated to ten November-April winters, 2013/14-2022/23; 2013-11-01 to 2023-04-30.
+- **Limitations:** Gridded model-method and location sensitivity, not an independent measurement network, direct piste snow, snowmaking/operation evidence or causal validation
+- **Local raw file:** `config/spass_snow_grid.json|config/path_c_analysis.json`.
+
 ## DERIVED_SNOW_STATION_SENSITIVITY — SLF alternative-station sensitivity
 
 - **Contents and relevance:** Selected-versus-next-nearest eligible SLF station robustness diagnostics for reviewed resort components
@@ -623,7 +635,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** alternative_station_agreement|winter_mean_depth_correlation|relative_mean_absolute_depth_difference|trend_direction_agrees
 - **Transformations:** Replace nearest eligible station with next-nearest distinct station under the same 80% longitudinal gate; compare common usable winters
 - **Coverage:** reviewed resort component and two external SLF stations; November-April winter seasons; 2013/2014 to 2025/2026.
-- **Limitations:** Neither station is a piste observation; alternative is not elevation/aspect optimised; gridded independent-source sensitivity remains pending
+- **Limitations:** Neither station is a piste observation; alternative is not elevation/aspect optimised; the completed SPASS gridded sensitivity shares an SLF assimilation target and is not an independent measurement network
 - **Local raw file:** `not cached / not applicable`.
 
 ## DERIVED_TEMPORAL_CONTROLS — Temporal control calendar
@@ -1561,6 +1573,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** point station; station metadata snapshot; ? to 2026.
 - **Limitations:** Station locations are avalanche-monitoring sites and not ski-slope observations
 - **Local raw file:** `data_external/source_evidence/SLF_IMIS_STATIONS_20260920T085555Z.csv`.
+
+## SLF_SPASS_HSCLQMD_GRID_1962_2023 — SPASS - new gridded climatological snow datasets for Switzerland
+
+- **Contents and relevance:** Daily 1 km modelled snow depth from OSHD-CLQM, quantile-mapped to the OSHD-EKF target and converted from SWE with SWE2HS
+- **Producer:** WSL Institute for Snow and Avalanche Research SLF and MeteoSwiss
+- **Exact URL:** https://www.envidat.ch/metadata/spass---new-gridded-snow-datasets-for-switzerland
+- **Access and retrieval date:** Resumable 64 MiB HTTP byte-range transfer of the complete single-member ZIP; archive/member size, ETag, CRC32 and both SHA-256 hashes verified; 2026-09-24T01:21:02.996998+00:00.
+- **Variables:** HSCLQMD
+- **Transformations:** Extract ten common 2013/14-2022/23 winters at the nearest cell and daily 3x3 median around each resort point and selected SLF station; aggregate November-April depth and >=30 cm shares
+- **Coverage:** regular 1 km cell centres in ch01h.swiss.lv95 over Switzerland; daily modelled snow depth by hydrological year; 1961-09-01 hydrological year 1962 to 2023-08-31 hydrological year 2023.
+- **Limitations:** Modelled and station-informed product, not an independent measurement network or piste observation; unresolved terrain, precipitation forcing, quantile mapping and SWE-to-depth uncertainty; missing source units attribute is explicit
+- **Local raw file:** `data_external/source_evidence/SLF_SPASS_HSCLQMD_GRID_1962_2023_20260924T012102Z.zip|data_external/source_evidence/SLF_SPASS_HSCLQMD_GRID_1962_2023_20260924T012102Z.nc`.
 
 ## SPLUEGEN_TAMBO_ANNUAL_2023_24 — Bergbahnen Splügen-Tambo AG annual report 2023/24
 

@@ -67,6 +67,9 @@ def main() -> None:
     eurostat_config = json.loads(
         (ROOT / "config" / "eurostat_census_grid_2021.json").read_text(encoding="utf-8")
     )
+    spass_config = json.loads(
+        (ROOT / "config" / "spass_snow_grid.json").read_text(encoding="utf-8")
+    )
     rows: list[dict] = []
 
     bfs_metadata = cached_metadata("BFS_HOTEL_METADATA")
@@ -1699,9 +1702,77 @@ def main() -> None:
         unit="component-level robustness diagnostic",
         license="inherits SLF source terms (CC BY 4.0)",
         transformation_applied="Replace nearest eligible station with next-nearest distinct station under the same 80% longitudinal gate; compare common usable winters",
-        quality_notes="Neither station is a piste observation; alternative is not elevation/aspect optimised; gridded independent-source sensitivity remains pending",
+        quality_notes="Neither station is a piste observation; alternative is not elevation/aspect optimised; the completed SPASS gridded sensitivity shares an SLF assimilation target and is not an independent measurement network",
         confidence_level="high for reproducibility; qualified for proxy representativeness; none for causal validity",
         manual_verification="15 reviewed components, 115 eligible stations and zero causal approvals asserted",
+    ))
+    spass_metadata = cached_metadata(spass_config["source_id"])
+    if spass_metadata is None:
+        raise FileNotFoundError("The SPASS gridded-snow source metadata is missing")
+    spass_integrity_checks = {
+        "archive_sha256": spass_metadata.get("sha256")
+        == spass_config["archive_sha256"],
+        "archive_size": spass_metadata.get("size_bytes")
+        == spass_config["archive_size_bytes"],
+        "archive_etag": spass_metadata.get("archive_etag")
+        == spass_config["archive_etag"],
+        "member_name": spass_metadata.get("archive_member")
+        == spass_config["archive_member"],
+        "member_crc32": spass_metadata.get("member_crc32")
+        == spass_config["member_crc32"],
+        "member_sha256": spass_metadata.get("extracted_sha256")
+        == spass_config["member_sha256"],
+        "member_size": spass_metadata.get("extracted_size_bytes")
+        == spass_config["member_uncompressed_size_bytes"],
+    }
+    if not all(spass_integrity_checks.values()):
+        failed = [key for key, passed in spass_integrity_checks.items() if not passed]
+        raise RuntimeError(f"SPASS source integrity checks failed: {failed}")
+    rows.append(blank_source(
+        spass_config["source_id"],
+        variable_name="HSCLQMD",
+        variable_description="Daily 1 km modelled snow depth from OSHD-CLQM, quantile-mapped to the OSHD-EKF target and converted from SWE with SWE2HS",
+        source_organisation=spass_config["organisation"],
+        source_dataset_name=spass_config["dataset_title"],
+        source_page_url=spass_config["source_page_url"],
+        direct_download_url=spass_config["archive_url"],
+        geocat_metadata_url=f"https://doi.org/{spass_config['doi']}",
+        retrieval_method="Resumable 64 MiB HTTP byte-range transfer of the complete single-member ZIP; archive/member size, ETag, CRC32 and both SHA-256 hashes verified",
+        retrieval_date=spass_metadata["retrieval_date"],
+        original_file_name=Path(spass_metadata["extracted_file"]).name,
+        local_raw_file=f"{spass_metadata['raw_file']}|{spass_metadata['extracted_file']}",
+        processed_file="data_processed/spass_snow_component_winter.csv|reports/snow_gridded_component_comparison.csv|data_processed/destination_snow_gridded_sensitivity.csv|reports/snow_gridded_destination_summary.csv|reports/36_SNOW_GRIDDED_SENSITIVITY.md",
+        geographic_level="regular 1 km cell centres in ch01h.swiss.lv95 over Switzerland",
+        temporal_resolution="daily modelled snow depth by hydrological year",
+        temporal_start="1961-09-01 hydrological year 1962",
+        temporal_end="2023-08-31 hydrological year 2023",
+        unit="metres in distributed raw values, inferred and converted to centimetres; NetCDF units attribute absent",
+        license=spass_config["license"],
+        access_conditions="Public EnviDat dataset; cite dataset DOI and peer-reviewed publication",
+        transformation_applied="Extract ten common 2013/14-2022/23 winters at the nearest cell and daily 3x3 median around each resort point and selected SLF station; aggregate November-April depth and >=30 cm shares",
+        quality_notes="Modelled and station-informed product, not an independent measurement network or piste observation; unresolved terrain, precipitation forcing, quantile mapping and SWE-to-depth uncertainty; missing source units attribute is explicit",
+        confidence_level="high for archive integrity and reproducibility; qualified for spatial snow-proxy sensitivity only",
+        manual_verification="Archive/member checksums, CRC32, ETag, dimensions, CF metadata, grid spacing, time range, physical magnitudes and all resort/station cell distances checked",
+        notes=f"Dataset DOI {spass_config['doi']}; methods publication {spass_config['publication_url']}; exact immutable specifications in config/spass_snow_grid.json",
+    ))
+    rows.append(blank_source(
+        "DERIVED_SNOW_GRIDDED_SENSITIVITY",
+        variable_name="spass_component_winter|station_grid_snow_agreement|spass_destination_winter",
+        variable_description="Selected SLF station versus SPASS OSHD-CLQM 1 km gridded snow-depth sensitivity at resort and station locations",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="SPASS gridded-snow spatial-representativeness sensitivity",
+        retrieval_method="Deterministic Python NetCDF extraction, daily local aggregation, winter aggregation and station-grid comparison",
+        local_raw_file="config/spass_snow_grid.json|config/path_c_analysis.json",
+        processed_file="data_processed/spass_snow_component_winter.csv|reports/snow_gridded_component_comparison.csv|data_processed/destination_snow_gridded_sensitivity.csv|reports/snow_gridded_destination_summary.csv|reports/36_SNOW_GRIDDED_SENSITIVITY.md",
+        geographic_level="reviewed resort component, selected SLF station location and reviewed destination",
+        temporal_resolution="daily source aggregated to ten November-April winters, 2013/14-2022/23",
+        temporal_start="2013-11-01",
+        temporal_end="2023-04-30",
+        unit="centimetres, snow-day shares, correlations, counts and flags",
+        transformation_applied="Compare selected-station winter metrics with resort-centred nearest/3x3 SPASS metrics and station-centred 3x3 SPASS metrics; aggregate unique station and component signals to unchanged reviewed destination units",
+        quality_notes="Gridded model-method and location sensitivity, not an independent measurement network, direct piste snow, snowmaking/operation evidence or causal validation",
+        confidence_level="high for reproducibility; qualified snow-proxy representativeness sensitivity only",
+        manual_verification="150/150 component-winters and 110/110 destination-winters complete; station-centred and resort-centred agreement reported separately; zero causal approvals",
     ))
     rows.append(blank_source(
         "DERIVED_DONOR_NETWORK_SPILLOVER_AUDIT",
@@ -2094,6 +2165,10 @@ def main() -> None:
         "weather_gridded_component_comparison": ROOT / "reports/weather_gridded_component_comparison.csv",
         "destination_weather_gridded_sensitivity": ROOT / "data_processed/destination_weather_gridded_sensitivity.csv",
         "weather_gridded_destination_summary": ROOT / "reports/weather_gridded_destination_summary.csv",
+        "spass_snow_component_winter": ROOT / "data_processed/spass_snow_component_winter.csv",
+        "snow_gridded_component_comparison": ROOT / "reports/snow_gridded_component_comparison.csv",
+        "destination_snow_gridded_sensitivity": ROOT / "data_processed/destination_snow_gridded_sensitivity.csv",
+        "snow_gridded_destination_summary": ROOT / "reports/snow_gridded_destination_summary.csv",
         "public_transport_journey_nodes": ROOT / "reports/public_transport_journey_nodes.csv",
         "treatment_municipality_public_transport_journey_samples": ROOT / "data_processed/treatment_municipality_public_transport_journey_samples.csv",
         "treatment_municipality_public_transport_journey_context": ROOT / "data_processed/treatment_municipality_public_transport_journey_context.csv",
@@ -2142,6 +2217,10 @@ def main() -> None:
         "weather_gridded_component_comparison": "DERIVED_WEATHER_GRIDDED_SENSITIVITY",
         "destination_weather_gridded_sensitivity": "DERIVED_WEATHER_GRIDDED_SENSITIVITY",
         "weather_gridded_destination_summary": "DERIVED_WEATHER_GRIDDED_SENSITIVITY",
+        "spass_snow_component_winter": "DERIVED_SNOW_GRIDDED_SENSITIVITY",
+        "snow_gridded_component_comparison": "DERIVED_SNOW_GRIDDED_SENSITIVITY",
+        "destination_snow_gridded_sensitivity": "DERIVED_SNOW_GRIDDED_SENSITIVITY",
+        "snow_gridded_destination_summary": "DERIVED_SNOW_GRIDDED_SENSITIVITY",
         "public_transport_journey_nodes": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_samples": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
         "treatment_municipality_public_transport_journey_context": "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
@@ -2723,6 +2802,10 @@ def main() -> None:
         "weather_gridded_component_comparison": "reviewed resort component, selected station and 1 km grid cell",
         "destination_weather_gridded_sensitivity": "reviewed destination by month",
         "weather_gridded_destination_summary": "reviewed destination",
+        "spass_snow_component_winter": "reviewed resort component and selected SLF station location / 1 km SPASS grid cell",
+        "snow_gridded_component_comparison": "reviewed resort component, selected station and resort/station-centred SPASS cells",
+        "destination_snow_gridded_sensitivity": "reviewed destination by winter",
+        "snow_gridded_destination_summary": "reviewed destination",
         "public_transport_journey_nodes": "hotel municipality or reviewed destination component",
         "treatment_municipality_public_transport_journey_samples": "reviewed destination by hotel municipality and scheduled request",
         "treatment_municipality_public_transport_journey_context": "reviewed destination by hotel municipality",
@@ -2766,6 +2849,10 @@ def main() -> None:
         "weather_gridded_component_comparison": "common complete months from 2013-01 through 2026-03",
         "destination_weather_gridded_sensitivity": "monthly 2013-01 through 2026-03",
         "weather_gridded_destination_summary": "common complete months from 2013-01 through 2026-03",
+        "spass_snow_component_winter": "November-April winters 2013/14 through 2022/23",
+        "snow_gridded_component_comparison": "ten common usable winters 2013/14 through 2022/23",
+        "destination_snow_gridded_sensitivity": "November-April winters 2013/14 through 2022/23",
+        "snow_gridded_destination_summary": "ten common usable winters 2013/14 through 2022/23",
         "public_transport_journey_nodes": "winter-2026 GTFS node-selection reference",
         "treatment_municipality_public_transport_journey_samples": "2026-02-04 and 2026-02-07 scheduled requests",
         "treatment_municipality_public_transport_journey_context": "winter-2026 weekday/Saturday scheduled summary",
@@ -2833,6 +2920,12 @@ def main() -> None:
                 "weather_gridded_component_comparison",
                 "destination_weather_gridded_sensitivity",
                 "weather_gridded_destination_summary",
+            }
+            snow_gridded_table = table in {
+                "spass_snow_component_winter",
+                "snow_gridded_component_comparison",
+                "destination_snow_gridded_sensitivity",
+                "snow_gridded_destination_summary",
             }
             journey_table = table in {
                 "public_transport_journey_nodes",
@@ -3008,6 +3101,8 @@ def main() -> None:
                 if geography_sensitivity_variable
                 else "qualified regional-weather gridded-product sensitivity"
                 if weather_gridded_table
+                else "qualified gridded-snow spatial-representativeness sensitivity"
+                if snow_gridded_table
                 else "qualified regional-weather alternative-station sensitivity"
                 if weather_sensitivity_table
                 else "qualified current ski-cluster and reviewed pass-network context"
@@ -3058,6 +3153,9 @@ def main() -> None:
                 "See config/path_c_analysis.json, config/meteoswiss_gridded_weather_files.json and src/data_processing/build_weather_gridded_sensitivity.py"
                 if weather_gridded_table
                 else
+                "See config/spass_snow_grid.json, config/path_c_analysis.json and src/data_processing/build_snow_gridded_sensitivity.py"
+                if snow_gridded_table
+                else
                 "See config/path_c_analysis.json, config/meteoswiss_weather_sensitivity_station_files.json and src/data_processing/build_weather_station_sensitivity.py"
                 if weather_sensitivity_table
                 else
@@ -3106,6 +3204,9 @@ def main() -> None:
                 "No causal interpretation; TabsM/RhiresM are station-informed grids rather than an independent measurement network, piste microclimate, snow-phase observation or causal-confounder validation"
                 if weather_gridded_table
                 else
+                "No causal interpretation; SPASS is a modelled, station-informed grid sharing an SLF assimilation target and is neither an independent measurement network, direct piste snow, snowmaking/operation evidence nor causal-confounder validation"
+                if snow_gridded_table
+                else
                 "No causal interpretation; next-nearest SwissMetNet sensitivity is not independent gridded validation, piste microclimate, snowfall phase or causal-confounder approval"
                 if weather_sensitivity_table
                 else
@@ -3144,6 +3245,8 @@ def main() -> None:
                 if geography_sensitivity_variable
                 else "DERIVED_WEATHER_GRIDDED_SENSITIVITY"
                 if weather_gridded_table
+                else "DERIVED_SNOW_GRIDDED_SENSITIVITY"
+                if snow_gridded_table
                 else "DERIVED_WEATHER_STATION_SENSITIVITY"
                 if weather_sensitivity_table
                 else "DERIVED_PATH_C_NETWORK_CONTEXT"

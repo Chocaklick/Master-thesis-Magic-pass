@@ -54,6 +54,9 @@ PUBLIC_TRANSPORT_HISTORICAL_SUMMARY = (
 CAPACITY_SUMMARY = ROOT / "reports" / "hotel_capacity_summary.json"
 SNOW_SUMMARY = ROOT / "reports" / "snow_proxy_summary.json"
 SNOW_SENSITIVITY_SUMMARY = ROOT / "reports" / "snow_station_sensitivity_summary.json"
+SNOW_GRIDDED_SENSITIVITY_SUMMARY = (
+    ROOT / "reports" / "snow_gridded_sensitivity_summary.json"
+)
 WEATHER_SUMMARY = ROOT / "reports" / "weather_proxy_summary.json"
 WEATHER_SENSITIVITY_SUMMARY = (
     ROOT / "reports" / "weather_station_sensitivity_summary.json"
@@ -139,6 +142,9 @@ def main() -> None:
     snow_summary = json.loads(SNOW_SUMMARY.read_text(encoding="utf-8"))
     snow_sensitivity_summary = json.loads(
         SNOW_SENSITIVITY_SUMMARY.read_text(encoding="utf-8")
+    )
+    snow_gridded_sensitivity_summary = json.loads(
+        SNOW_GRIDDED_SENSITIVITY_SUMMARY.read_text(encoding="utf-8")
     )
     weather_summary = json.loads(WEATHER_SUMMARY.read_text(encoding="utf-8"))
     weather_sensitivity_summary = json.loads(
@@ -359,6 +365,59 @@ def main() -> None:
             snow_sensitivity_summary[
                 "median_relative_mean_absolute_depth_difference"
             ]
+        ),
+        "snow_gridded_component_winter_rows": int(
+            snow_gridded_sensitivity_summary["component_winter_rows"]
+        ),
+        "snow_gridded_component_winters_complete": int(
+            snow_gridded_sensitivity_summary["component_winters_grid_complete"]
+        ),
+        "snow_gridded_resort_location_high_or_moderate": int(
+            snow_gridded_sensitivity_summary[
+                "component_local_3x3_agreement_counts"
+            ].get("high", 0)
+            + snow_gridded_sensitivity_summary[
+                "component_local_3x3_agreement_counts"
+            ].get("moderate", 0)
+        ),
+        "snow_gridded_resort_location_low": int(
+            snow_gridded_sensitivity_summary[
+                "component_local_3x3_agreement_counts"
+            ].get("low", 0)
+        ),
+        "snow_gridded_station_location_high_or_moderate": int(
+            snow_gridded_sensitivity_summary[
+                "component_station_location_3x3_agreement_counts"
+            ].get("high", 0)
+            + snow_gridded_sensitivity_summary[
+                "component_station_location_3x3_agreement_counts"
+            ].get("moderate", 0)
+        ),
+        "snow_gridded_resort_location_median_correlation": float(
+            snow_gridded_sensitivity_summary[
+                "median_component_local_3x3_winter_depth_correlation"
+            ]
+        ),
+        "snow_gridded_resort_location_median_relative_difference": float(
+            snow_gridded_sensitivity_summary[
+                "median_component_local_3x3_relative_depth_difference"
+            ]
+        ),
+        "snow_gridded_station_location_median_correlation": float(
+            snow_gridded_sensitivity_summary[
+                "median_component_station_location_3x3_winter_depth_correlation"
+            ]
+        ),
+        "snow_gridded_station_location_median_relative_difference": float(
+            snow_gridded_sensitivity_summary[
+                "median_component_station_location_3x3_relative_depth_difference"
+            ]
+        ),
+        "snow_gridded_destination_winter_rows": int(
+            snow_gridded_sensitivity_summary["destination_winter_rows"]
+        ),
+        "snow_gridded_destination_winters_both_complete": int(
+            snow_gridded_sensitivity_summary["destination_winters_both_complete"]
         ),
         "reviewed_destination_months_complete_snow_proxy": int(
             reviewed_panel["complete_snow_proxy"].sum()
@@ -882,7 +941,9 @@ The official SLF historical archive contains daily observations for **{metrics['
 
 The reviewed panel contains **{metrics['reviewed_destination_months_complete_snow_proxy']:,} complete station-proxy months**; **{metrics['observed_outcome_rows_with_complete_snow_proxy']:,} rows** also have an observed hotel-night outcome. These fields support descriptive climate adjustment and future robustness checks only. IMIS stations serve avalanche monitoring and can differ materially from pistes in terrain, aspect, wind, elevation, grooming, and snowmaking. No snow field is yet an approved causal covariate.
 
-A next-nearest-station sensitivity covers all **{metrics['reviewed_resort_components_with_alternative_snow_station_test']} reviewed resort components** using the same station coverage gate. **{metrics['alternative_snow_station_high_or_moderate_agreement']} components** receive a high or moderate descriptive agreement grade and **{metrics['alternative_snow_station_low_agreement']}** receive a low grade. The median winter-depth correlation is **{metrics['alternative_snow_station_median_depth_correlation']:.3f}**, but the median relative mean absolute depth difference is **{metrics['alternative_snow_station_median_relative_depth_difference']:.1%}**; absolute snow levels are therefore materially station-dependent even when seasonal variation co-moves. See `reports/13_SNOW_PROXY_SENSITIVITY.md`. This test does not approve the snow covariate, and an independent gridded-source sensitivity remains pending.
+A next-nearest-station sensitivity covers all **{metrics['reviewed_resort_components_with_alternative_snow_station_test']} reviewed resort components** using the same station coverage gate. **{metrics['alternative_snow_station_high_or_moderate_agreement']} components** receive a high or moderate descriptive agreement grade and **{metrics['alternative_snow_station_low_agreement']}** receive a low grade. The median winter-depth correlation is **{metrics['alternative_snow_station_median_depth_correlation']:.3f}**, but the median relative mean absolute depth difference is **{metrics['alternative_snow_station_median_relative_depth_difference']:.1%}**; absolute snow levels are therefore materially station-dependent even when seasonal variation co-moves. See `reports/13_SNOW_PROXY_SENSITIVITY.md`.
+
+The peer-reviewed SPASS OSHD-CLQM grid adds **{metrics['snow_gridded_component_winter_rows']} component-winter comparisons**, all complete for the ten common winters 2013/14–2022/23. Around the selected stations, all **{metrics['snow_gridded_station_location_high_or_moderate']} components** have high/moderate agreement with median correlation **{metrics['snow_gridded_station_location_median_correlation']:.3f}** and median relative depth difference **{metrics['snow_gridded_station_location_median_relative_difference']:.1%}**. Repeating the same 3×3 rule around the resort points leaves only **{metrics['snow_gridded_resort_location_high_or_moderate']} high/moderate and {metrics['snow_gridded_resort_location_low']} low**, while the median relative difference rises to **{metrics['snow_gridded_resort_location_median_relative_difference']:.1%}**. This decomposition identifies station-to-resort placement/elevation as the dominant representativeness problem. The 1 km model is quantile-mapped against a snow-assimilating SLF model and is therefore not an independent measurement network, piste observation or causal approval. See `reports/36_SNOW_GRIDDED_SENSITIVITY.md`.
 
 ## Temperature and precipitation proxy coverage
 
@@ -990,7 +1051,7 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 
 ## Next evidence gate
 
-For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; validate destination catchments for tourism dependence; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. Current competing-pass links, national-road-axis proximity, listing-point distance-rule sensitivity, next-nearest SwissMetNet weather sensitivity and the TabsM/RhiresM gridded-product sensitivity are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed structural aggregation, network-distance and regional-weather sensitivities and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Add an independent measurement/reanalysis sensitivity if climate fields are ever proposed for causal use, and retain the separate gridded-snow gate. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; validate destination catchments for tourism dependence; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. Current competing-pass links, national-road-axis proximity, listing-point distance-rule sensitivity, next-nearest SwissMetNet weather sensitivity, TabsM/RhiresM gridded weather and SPASS gridded snow sensitivities are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed structural aggregation, network-distance and climate sensitivities and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Add an independent measurement/reanalysis sensitivity only if climate fields are proposed for causal use. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

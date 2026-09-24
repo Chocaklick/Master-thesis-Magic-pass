@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_17",
+  "analysis_version": "path_c_v0_18",
   "destination_municipality_pairs": 2046,
   "bidirectional_mean_pairs": 1700,
   "complete_all_sampled_time_pairs": 1104,
