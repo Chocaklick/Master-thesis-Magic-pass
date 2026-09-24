@@ -56,6 +56,9 @@ TOURISM_CONTEXT_SUMMARY = ROOT / "reports" / "tourism_dependence_context_summary
 DESTINATION_SCOPE_CONCORDANCE_SUMMARY = (
     ROOT / "reports" / "destination_scope_concordance_audit_summary.json"
 )
+PATH_C_FEATURE_READINESS_SUMMARY = (
+    ROOT / "reports" / "path_c_feature_readiness_summary.json"
+)
 SNOW_SUMMARY = ROOT / "reports" / "snow_proxy_summary.json"
 SNOW_SENSITIVITY_SUMMARY = ROOT / "reports" / "snow_station_sensitivity_summary.json"
 SNOW_GRIDDED_SENSITIVITY_SUMMARY = (
@@ -148,6 +151,9 @@ def main() -> None:
     )
     destination_scope_concordance_summary = json.loads(
         DESTINATION_SCOPE_CONCORDANCE_SUMMARY.read_text(encoding="utf-8")
+    )
+    path_c_feature_readiness_summary = json.loads(
+        PATH_C_FEATURE_READINESS_SUMMARY.read_text(encoding="utf-8")
     )
     snow_summary = json.loads(SNOW_SUMMARY.read_text(encoding="utf-8"))
     snow_sensitivity_summary = json.loads(
@@ -415,6 +421,47 @@ def main() -> None:
         "candidate_scope_transfers_approved": int(
             destination_scope_concordance_summary[
                 "candidate_scope_transfers_approved"
+            ]
+        ),
+        "path_c_feature_groups_audited": int(
+            path_c_feature_readiness_summary["feature_groups"]
+        ),
+        "path_c_feature_groups_complete_candidate_coverage": int(
+            path_c_feature_readiness_summary[
+                "groups_with_complete_candidate_coverage"
+            ]
+        ),
+        "path_c_feature_groups_partial_candidate_coverage": int(
+            path_c_feature_readiness_summary[
+                "groups_with_partial_candidate_coverage"
+            ]
+        ),
+        "path_c_feature_groups_without_candidate_feature": int(
+            path_c_feature_readiness_summary["groups_without_candidate_feature"]
+        ),
+        "path_c_feature_groups_exploratory_similarity_approved": int(
+            path_c_feature_readiness_summary[
+                "groups_approved_for_exploratory_similarity"
+            ]
+        ),
+        "path_c_feature_groups_pre_treatment_approved": int(
+            path_c_feature_readiness_summary[
+                "groups_approved_as_pre_treatment_predictors"
+            ]
+        ),
+        "path_c_feature_groups_causal_approved": int(
+            path_c_feature_readiness_summary[
+                "groups_approved_as_causal_covariates"
+            ]
+        ),
+        "path_c_feature_groups_recommendation_approved": int(
+            path_c_feature_readiness_summary[
+                "groups_approved_for_recommendations"
+            ]
+        ),
+        "path_c_feature_groups_composite_approved": int(
+            path_c_feature_readiness_summary[
+                "groups_approved_for_composite_score"
             ]
         ),
         "slf_snow_stations_with_daily_data": int(
@@ -1019,7 +1066,11 @@ The project now aggregates STATPOP and complete-year HESTA 2025 values over the 
 
 This layer is stronger than assigning a destination from one arbitrary listing point because it reuses the versioned outcome scope, including both Hasliberg and Meiringen. It still does not validate a visitor catchment, and 2025 is post-treatment for most units rather than a pre-treatment predictor. Accordingly, validated tourism catchments and approved tourism-dependence/causal features remain **{metrics['validated_tourism_catchments']}**. Candidate resorts still lack equivalent reviewed outcome scopes. See `reports/20_TOURISM_DEPENDENCE_CONTEXT.md`.
 
-The transferability audit then compares each reviewed scope with the unique municipalities containing its supplied component points. It finds **{metrics['destination_scope_exact_matches']} / 11** exact sets and recovers **{metrics['destination_scope_shared_links']} / {metrics['destination_scope_reviewed_links']}** reviewed municipality links. However, seven exact matches are definition-linked core proxies. Among the four separately reviewed complete scopes, only **{metrics['destination_scope_complete_exact_matches']} / {metrics['destination_scope_complete_units']}** are exact and **{metrics['destination_scope_complete_shared_links']} / {metrics['destination_scope_complete_reviewed_links']}** municipality links are recovered: the Meiringen point misses Hasliberg's second municipality. Candidate-scope transfers approved therefore remain **{metrics['candidate_scope_transfers_approved']}**. See `reports/37_DESTINATION_SCOPE_CONCORDANCE_AUDIT.md`.
+The transferability audit then compares each reviewed scope with the unique municipalities containing its supplied component points. It finds **{metrics['destination_scope_exact_matches']} / 11** exact sets and recovers **{metrics['destination_scope_shared_links']} / {metrics['destination_scope_reviewed_links']}** reviewed municipality links. However, seven exact matches are definition-linked core proxies. Among the four separately reviewed complete scopes, only **{metrics['destination_scope_complete_exact_matches']} / {metrics['destination_scope_complete_units']}** are exact and **{metrics['destination_scope_complete_shared_links']} / {metrics['destination_scope_complete_reviewed_links']}** municipality links are recovered: the Meiringen-Hasliberg component point falls in Hasliberg and misses Meiringen (BFS 785). Candidate-scope transfers approved therefore remain **{metrics['candidate_scope_transfers_approved']}**. See `reports/37_DESTINATION_SCOPE_CONCORDANCE_AUDIT.md`.
+
+## Path C feature readiness
+
+The executable registry audits **{metrics['path_c_feature_groups_audited']} feature groups**. Complete 104-candidate coverage exists for **{metrics['path_c_feature_groups_complete_candidate_coverage']}**, partial coverage for **{metrics['path_c_feature_groups_partial_candidate_coverage']}**, and no candidate-level feature for **{metrics['path_c_feature_groups_without_candidate_feature']}**. Coverage is kept separate from permission: only **{metrics['path_c_feature_groups_exploratory_similarity_approved']}** group—the three undated current structural fields—is admitted to the existing exploratory similarity calculation, while approved pre-treatment predictors, causal covariates, recommendation features and composite-score inputs remain **{metrics['path_c_feature_groups_pre_treatment_approved']}, {metrics['path_c_feature_groups_causal_approved']}, {metrics['path_c_feature_groups_recommendation_approved']} and {metrics['path_c_feature_groups_composite_approved']}**. See `reports/38_PATH_C_FEATURE_READINESS_AUDIT.md`.
 
 ## Snow proxy coverage
 
@@ -1137,7 +1188,7 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 
 ## Next evidence gate
 
-For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; define candidate destination catchments with evidence beyond component-point containment; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. The reviewed-destination outcome-scope tourism context and its point-scope concordance audit, current competing-pass links, national-road-axis proximity, listing-point distance-rule sensitivity, next-nearest SwissMetNet weather sensitivity, TabsM/RhiresM gridded weather and SPASS gridded snow sensitivities are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed structural aggregation, network-distance and climate sensitivities and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Add an independent measurement/reanalysis sensitivity only if climate fields are proposed for causal use. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; define candidate destination catchments with evidence beyond component-point containment; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. The feature-readiness registry makes these missing historical layers explicit and prevents complete current coverage from being mistaken for model approval. The reviewed-destination outcome-scope tourism context and its point-scope concordance audit, current competing-pass links, national-road-axis proximity, listing-point distance-rule sensitivity, next-nearest SwissMetNet weather sensitivity, TabsM/RhiresM gridded weather and SPASS gridded snow sensitivities are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed structural aggregation, network-distance and climate sensitivities and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Add an independent measurement/reanalysis sensitivity only if climate fields are proposed for causal use. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

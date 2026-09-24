@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_20",
+  "analysis_version": "path_c_v0_21",
   "analysis_date": "2026-09-24",
   "analysis_entity": "existing_lift_cluster_with_at_least_one_supplied_resort_listing",
   "feature_temporal_status": "undated_cross_sectional_snapshot_not_pre_treatment",
@@ -107,6 +107,12 @@
     ],
     "transfer_rule": "do_not_approve_candidate_scope_transfer_or_catchment_status_from_global_match_rate",
     "interpretation": "component_point_municipality_scope_transfer_diagnostic_not_validated_tourism_catchment_or_candidate_outcome_scope"
+  },
+  "feature_readiness_audit": {
+    "registry": "config/path_c_feature_readiness.json",
+    "candidate_pool": "104 apparent non-member lift clusters",
+    "approval_rule": "coverage_does_not_imply_pre_treatment_predictive_causal_recommendation_or_composite_use",
+    "interpretation": "explicit_feature_use_registry_prevents_current_or_post_treatment_context_from_becoming_predictive_causal_or_recommendation_input"
   },
   "network_distance_sensitivity": {
     "radii_km": [25, 50],

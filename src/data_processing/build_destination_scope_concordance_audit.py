@@ -254,7 +254,7 @@ Can the municipalities containing the supplied destination component points repr
 
 ## Interpretation
 
-The seven core-proxy matches are expected because those scopes were explicitly defined from the component's core municipality; they are not independent validation. The informative comparison is the four complete observed municipal scopes: three are reproduced exactly, while the Meiringen point alone does not recover Hasliberg. Point containment is therefore a useful, conservative core-municipality descriptor, but it can omit an outcome municipality even in this small reviewed set.
+The seven core-proxy matches are expected because those scopes were explicitly defined from the component's core municipality; they are not independent validation. The informative comparison is the four complete observed municipal scopes: three are reproduced exactly, while the Meiringen-Hasliberg component point falls in Hasliberg and does not recover Meiringen. Point containment is therefore a useful, conservative core-municipality descriptor, but it can omit an outcome municipality even in this small reviewed set.
 
 No candidate-scope transfer is approved. A component-point municipality set is not a visitor catchment, a hotel market, an observed origin market or a pre-treatment causal covariate. The audit supports retaining candidate point-container ratios as qualified descriptive context only; it does not justify filling `tourism_dependence`, changing analogue matching or producing a composite ranking.
 

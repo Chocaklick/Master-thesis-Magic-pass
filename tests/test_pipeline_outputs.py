@@ -964,6 +964,58 @@ def test_destination_scope_concordance_separates_definition_linked_proxies() -> 
     assert summary["candidate_scope_transfers_approved"] == 0
 
 
+def test_path_c_feature_readiness_keeps_coverage_separate_from_approval() -> None:
+    audit = read("reports/path_c_feature_readiness_audit.csv")
+    summary = json.loads(
+        (ROOT / "reports/path_c_feature_readiness_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    assert len(audit) == 19
+    assert audit["feature_group_id"].is_unique
+    assert audit["analysis_version"].eq("path_c_v0_21").all()
+    assert audit["candidate_pool_count"].eq(104).all()
+    assert int(as_bool(audit["exploratory_similarity_use_approved"]).sum()) == 1
+    approved = audit.loc[
+        as_bool(audit["exploratory_similarity_use_approved"]), "feature_group_id"
+    ].tolist()
+    assert approved == ["structural_similarity"]
+    structural = audit.set_index("feature_group_id").loc["structural_similarity"]
+    assert int(structural["candidate_rows_with_complete_required_fields"]) == 104
+    assert structural["temporal_status"] == (
+        "undated_cross_sectional_snapshot_may_postdate_treatment"
+    )
+    tourism = audit.set_index("feature_group_id").loc["point_container_tourism"]
+    assert int(tourism["candidate_rows_with_complete_required_fields"]) == 39
+    assert tourism["candidate_coverage_status"] == "partial_candidate_coverage"
+    for feature_group_id in [
+        "reviewed_destination_tourism_context",
+        "destination_scope_transfer",
+        "current_scheduled_journey_context",
+        "historical_public_transport",
+        "historical_competing_pass_context",
+        "dated_infrastructure_context",
+    ]:
+        row = audit.set_index("feature_group_id").loc[feature_group_id]
+        assert int(row["candidate_rows_with_complete_required_fields"]) == 0
+    for column in [
+        "pre_treatment_predictor_approved",
+        "causal_covariate_approved",
+        "recommendation_feature_approved",
+        "composite_score_approved",
+    ]:
+        assert not as_bool(audit[column]).any()
+        assert summary[
+            {
+                "pre_treatment_predictor_approved": "groups_approved_as_pre_treatment_predictors",
+                "causal_covariate_approved": "groups_approved_as_causal_covariates",
+                "recommendation_feature_approved": "groups_approved_for_recommendations",
+                "composite_score_approved": "groups_approved_for_composite_score",
+            }[column]
+        ] == 0
+
+
 def test_accessibility_context_preserves_population_and_stays_unapproved() -> None:
     municipality = read("data_processed/municipality_population_geometry_2026.csv")
     cluster = read("data_processed/path_c_cluster_accessibility_context.csv")
@@ -1495,7 +1547,7 @@ def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> N
         "partial_cluster_listing_links": 6,
     }
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_20").all()
+    assert decision["analysis_version"].eq("path_c_v0_21").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1576,7 +1628,7 @@ def test_path_c_network_context_excludes_focal_cluster_and_preserves_pair_grain(
     assert not as_bool(context["network_context_feature_approved"]).any()
     assert not as_bool(pairs["network_context_feature_approved"]).any()
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_20").all()
+    assert decision["analysis_version"].eq("path_c_v0_21").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1655,7 +1707,7 @@ def test_path_c_cluster_geography_sensitivity_preserves_clusters_and_bounds_rule
     assert not as_bool(context["cluster_geographic_coherence_verified"]).any()
     assert not as_bool(context["network_distance_sensitivity_feature_approved"]).any()
     assert not as_bool(pairs["network_distance_sensitivity_feature_approved"]).any()
-    assert decision["analysis_version"].eq("path_c_v0_20").all()
+    assert decision["analysis_version"].eq("path_c_v0_21").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()

@@ -542,6 +542,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Existing clusters are not certified independent destinations; Bergfex observation date is unknown; point municipality is not tourism exposure
 - **Local raw file:** `config/path_c_analysis.json`.
 
+## DERIVED_PATH_C_FEATURE_READINESS_AUDIT — Path C feature-readiness audit
+
+- **Contents and relevance:** Executable registry separating candidate feature coverage from permitted analytical use for Path C
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned deterministic audit of declared feature groups against the Path C decision-support table; unknown date.
+- **Variables:** candidate coverage|temporal status|scope comparability|leakage risk|approved use
+- **Transformations:** Check required decision-support fields, recompute complete-row coverage, and enforce exactly one exploratory-similarity approval plus zero protected approvals
+- **Coverage:** Path C feature group and 104 candidate lift clusters; mixed feature-specific snapshots with explicit temporal qualification; ? to ?.
+- **Limitations:** Coverage is not approval; the sole similarity-approved structural group is undated and may postdate treatment; no group is approved as pre-treatment, causal, recommendation or composite input
+- **Local raw file:** `config/path_c_feature_readiness.json|data_processed/magic_pass_decision_support.csv`.
+
 ## DERIVED_PATH_C_NETWORK_CONTEXT — Path C ski-cluster and reviewed pass-network context
 
 - **Contents and relevance:** Current straight-line proximity and radius counts among preserved directory-linked lift clusters and reviewed pass-network links
@@ -1519,7 +1531,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Contents and relevance:** Official archive index used to identify a winter GTFS snapshot for each first Magic Pass exposure timetable year
 - **Producer:** Business office SKI on behalf of the Swiss Federal Office of Transport (BAV/OFT)
 - **Exact URL:** https://archive.opentransportdata.swiss/timetable_gtfs_archive.htm
-- **Access and retrieval date:** Manual/read-only archive-index inspection; automated project collector stopped because robots.txt disallows it; 2026-09-22.
+- **Access and retrieval date:** Manual/read-only archive-index inspection; automated project collector stopped because robots.txt disallows it; official CKAN/API channel checked without bypass; 2026-09-24.
 - **Variables:** historical_gtfs_snapshot_url|timetable_year|snapshot_build
 - **Transformations:** Select the official snapshot closest to 7 February of each represented first-exposure winter
 - **Coverage:** Swiss national timetable archive; timetable-year snapshots; 2018 to 2026.

@@ -1,0 +1,15 @@
+{
+  "analysis_version": "path_c_v0_21",
+  "feature_groups": 19,
+  "groups_with_complete_candidate_coverage": 12,
+  "groups_with_partial_candidate_coverage": 1,
+  "groups_without_candidate_feature": 6,
+  "groups_approved_for_exploratory_similarity": 1,
+  "groups_approved_for_descriptive_context": 16,
+  "groups_approved_as_pre_treatment_predictors": 0,
+  "groups_approved_as_causal_covariates": 0,
+  "groups_approved_for_recommendations": 0,
+  "groups_approved_for_composite_score": 0,
+  "structural_similarity_temporal_status": "undated_cross_sectional_snapshot_may_postdate_treatment",
+  "interpretation": "explicit_feature_use_registry_prevents_current_or_post_treatment_context_from_becoming_predictive_causal_or_recommendation_input"
+}

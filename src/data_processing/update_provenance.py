@@ -409,6 +409,23 @@ def main() -> None:
         manual_verification="11 destinations; 10 exact sets overall; 3/4 exact complete scopes; 11/12 reviewed links recovered; BFS 785 is the sole outcome-only link; all transfer/catchment/causal approvals false",
     ))
     rows.append(blank_source(
+        "DERIVED_PATH_C_FEATURE_READINESS_AUDIT",
+        variable_name="candidate coverage|temporal status|scope comparability|leakage risk|approved use",
+        variable_description="Executable registry separating candidate feature coverage from permitted analytical use for Path C",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C feature-readiness audit",
+        retrieval_method="Versioned deterministic audit of declared feature groups against the Path C decision-support table",
+        local_raw_file="config/path_c_feature_readiness.json|data_processed/magic_pass_decision_support.csv",
+        processed_file="reports/path_c_feature_readiness_audit.csv|reports/path_c_feature_readiness_summary.json|reports/38_PATH_C_FEATURE_READINESS_AUDIT.md",
+        geographic_level="Path C feature group and 104 candidate lift clusters",
+        temporal_resolution="mixed feature-specific snapshots with explicit temporal qualification",
+        unit="feature groups, candidate rows, coverage shares and approval flags",
+        transformation_applied="Check required decision-support fields, recompute complete-row coverage, and enforce exactly one exploratory-similarity approval plus zero protected approvals",
+        quality_notes="Coverage is not approval; the sole similarity-approved structural group is undated and may postdate treatment; no group is approved as pre-treatment, causal, recommendation or composite input",
+        confidence_level="high for deterministic registry enforcement; no predictive or causal validation",
+        manual_verification="19 feature groups; structural fields alone approved for existing exploratory similarity; all protected approvals false",
+    ))
+    rows.append(blank_source(
         "DERIVED_ACCESSIBILITY_CONTEXT",
         variable_name="distance_to_population_threshold_municipality|resident_population_within_straight_line_radius|distance_to_swiss_country_boundary|cross_border_truncation_risk|boundary_bridge",
         variable_description="Qualified Swiss straight-line population context for every linked Path C lift cluster",
@@ -936,8 +953,8 @@ def main() -> None:
         source_dataset_name="GTFS timetable data archive",
         source_page_url="https://archive.opentransportdata.swiss/timetable_gtfs_archive.htm",
         api_endpoint="https://archive.opentransportdata.swiss/timetable_gtfs.php",
-        retrieval_method="Manual/read-only archive-index inspection; automated project collector stopped because robots.txt disallows it",
-        retrieval_date="2026-09-22",
+        retrieval_method="Manual/read-only archive-index inspection; automated project collector stopped because robots.txt disallows it; official CKAN/API channel checked without bypass",
+        retrieval_date="2026-09-24",
         local_raw_file="not cached; robots.txt restriction respected",
         processed_file="config/public_transport_historical_audit.json|reports/public_transport_historical_audit_plan.csv|reports/25_PUBLIC_TRANSPORT_HISTORICAL_AUDIT.md",
         geographic_level="Swiss national timetable archive",
@@ -946,11 +963,12 @@ def main() -> None:
         temporal_end="2026",
         unit="archive URL and build date",
         license="Open Data Mobility Switzerland terms of use",
-        access_conditions="Public index; automated cache disallowed by robots.txt at review date",
+        access_conditions="Public archive index disallows automated collection; official API manager documents token-based access and an unauthenticated CKAN API request returned HTTP 403",
         transformation_applied="Select the official snapshot closest to 7 February of each represented first-exposure winter",
         quality_notes="URL availability is not service stability; historical ZIP contents have not yet been downloaded or routed",
         confidence_level="high for identified archive URLs; none yet for line stability",
-        manual_verification="Seven timetable-year URLs identified; zero historical component-service comparisons completed",
+        manual_verification="Seven timetable-year URLs identified; zero historical component-service comparisons completed; no archive or API restriction bypassed",
+        notes="Official current-dataset page and cookbook direct historical users to the archive: https://data.opentransportdata.swiss/en/dataset/timetable-2026-gtfs2020 | https://opentransportdata.swiss/en/cookbook/timetable-cookbook/ ; API access information: https://api-manager.opentransportdata.swiss/",
     ))
     rows.append(blank_source(
         "DERIVED_PUBLIC_TRANSPORT_JOURNEY_CONTEXT",
@@ -2202,6 +2220,7 @@ def main() -> None:
         "path_c_candidate_analogues": ROOT / "data_processed/path_c_candidate_analogues.csv",
         "path_c_candidate_analogue_sensitivity": ROOT / "data_processed/path_c_candidate_analogue_sensitivity.csv",
         "magic_pass_decision_support": ROOT / "data_processed/magic_pass_decision_support.csv",
+        "path_c_feature_readiness_audit": ROOT / "reports/path_c_feature_readiness_audit.csv",
     }
     path_c_sources = {
         "municipality_tourism_context_2025": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
@@ -2256,8 +2275,28 @@ def main() -> None:
         "path_c_candidate_analogues": "DERIVED_PATH_C_SEGMENTATION_ANALOGUES",
         "path_c_candidate_analogue_sensitivity": "DERIVED_PATH_C_AGGREGATION_SENSITIVITY",
         "magic_pass_decision_support": "DERIVED_PATH_C_DECISION_SUPPORT",
+        "path_c_feature_readiness_audit": "DERIVED_PATH_C_FEATURE_READINESS_AUDIT",
     }
     path_c_glossary = {
+        "feature_group_id": "Stable identifier of the Path C feature group governed by the readiness registry",
+        "feature_group_name": "Human-readable name of the Path C feature group",
+        "candidate_required_fields": "Pipe-delimited decision-support fields required to count complete candidate coverage",
+        "candidate_pool_count": "Number of unique Path C candidate clusters evaluated",
+        "candidate_rows_with_complete_required_fields": "Candidate clusters with non-missing values in every declared required field",
+        "candidate_coverage_share": "Share of candidate clusters complete across all declared required fields",
+        "candidate_coverage_status": "Whether candidate coverage is complete, partial or absent for the feature group",
+        "evidence_scope": "Declared entities and evidence universe represented by the feature group",
+        "temporal_status": "Declared time alignment and whether the feature may postdate treatment",
+        "scope_comparability_status": "Declared comparability of candidate and treated-reference scope",
+        "leakage_risk": "Explicit warning about temporal, outcome or scope leakage",
+        "approved_usage": "Narrow analytical use permitted for the feature group at this checkpoint",
+        "exploratory_similarity_use_approved": "Whether the feature group may enter the existing exploratory Path C similarity calculation",
+        "descriptive_context_use_approved": "Whether the feature group may be reported as qualified descriptive context",
+        "pre_treatment_predictor_approved": "Whether the feature group is approved as a pre-treatment predictor; always false",
+        "causal_covariate_approved": "Whether the feature group is approved as a causal covariate; always false",
+        "recommendation_feature_approved": "Whether the feature group is approved for candidate recommendation; always false",
+        "composite_score_approved": "Whether the feature group is approved for a composite score; always false",
+        "source_ids": "Pipe-delimited source identifiers supporting the feature-readiness declaration",
         "cluster_id": "Stable identifier of the preserved existing lift cluster used as the Path C analysis entity",
         "destination_unit_id": "Stable identifier of the reviewed destination unit",
         "destination_name": "Reviewed destination display name",
@@ -2903,6 +2942,7 @@ def main() -> None:
         "distance_transport_correlations_by_destination": "reviewed destination",
         "distance_transport_band_summary": "reviewed destination by municipality-distance band",
         "path_c_reviewed_treated_reference": "reviewed treated destination",
+        "path_c_feature_readiness_audit": "Path C feature group evaluated across 104 candidate lift clusters",
     }
     path_c_temporal_level = {
         "municipality_tourism_context_2025": "2025 annual municipality context",
@@ -2951,6 +2991,7 @@ def main() -> None:
         "treatment_municipality_distance_transport_comparison": "2026 boundary distance plus 2026-02-04 and 2026-02-07 schedules",
         "distance_transport_correlations_by_destination": "2026 boundary distance plus winter-2026 schedule",
         "distance_transport_band_summary": "2026 boundary distance plus winter-2026 schedule",
+        "path_c_feature_readiness_audit": "mixed feature-specific periods with explicit current, post-treatment, undated or missing status",
     }
 
     for table, path in path_c_paths.items():
@@ -2969,6 +3010,7 @@ def main() -> None:
                 table == "reviewed_destination_tourism_context_2025"
             )
             scope_concordance_table = table == "destination_scope_concordance_audit"
+            feature_readiness_table = table == "path_c_feature_readiness_audit"
             cross_border_population_table = table in {
                 "eurostat_population_grid_2021_swiss_region",
                 "path_c_cluster_cross_border_population_context",
@@ -3175,7 +3217,9 @@ def main() -> None:
                 )
             ))
             role = (
-                "intentionally unavailable causal prediction"
+                "explicit Path C feature-use and leakage gate"
+                if feature_readiness_table
+                else "intentionally unavailable causal prediction"
                 if variable in {"predicted_uplift_pct", "uplift_lower_pct", "uplift_upper_pct"}
                 else "qualified distance versus scheduled-transit diagnostic"
                 if table in {
@@ -3226,6 +3270,9 @@ def main() -> None:
                 else "descriptive segmentation / decision support"
             )
             formula_note = (
+                "See config/path_c_feature_readiness.json and src/data_processing/build_path_c_feature_readiness_audit.py"
+                if feature_readiness_table
+                else
                 "See src/data_processing/build_distance_transport_comparison.py"
                 if table in {
                     "treatment_municipality_distance_transport_comparison",
@@ -3283,6 +3330,9 @@ def main() -> None:
                 else "See config/path_c_analysis.json and Path C scripts; tourism context is implemented in src/data_processing/build_tourism_dependence_context.py"
             )
             limitation_note = (
+                "Candidate coverage is not analytical approval; structural fields are undated, and no feature group is approved for pre-treatment prediction, causal adjustment, recommendation or composite scoring"
+                if feature_readiness_table
+                else
                 "No causal interpretation; current 2026 distance and two-day static timetable are not historical exposure, observed trips or visitor catchments"
                 if table in {
                     "treatment_municipality_distance_transport_comparison",
