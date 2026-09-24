@@ -166,7 +166,7 @@ Complete candidate coverage is available for **{summary['groups_with_complete_ca
 
 ## Guardrail
 
-The current structural fields remain undated and may themselves postdate treatment. Their sole approval is the already declared exploratory segmentation and analogue distance; it is not predictive or causal approval. Opportunity uses post-treatment reference outcomes and remains a separate descriptive dimension. Snow, tourism, population, transport, road, stop, competition and network layers remain outside the similarity calculation. Historical public transport, historical competing-pass status and dated infrastructure remain absent.
+The current structural fields remain undated and may themselves postdate treatment. Their sole approval is the already declared exploratory segmentation and analogue distance; it is not predictive or causal approval. Opportunity uses post-treatment reference outcomes and remains a separate descriptive dimension. Snow, tourism, population, transport, road, stop, competition and network layers remain outside the similarity calculation. Historical public transport and dated infrastructure remain absent. Historical competing-pass coverage is partial: one eight-season Top4 roster gives positive presence links for two candidates, while all non-links remain unverified market absence.
 
 The registry is executable: every declared decision-support field must exist, candidate coverage is recomputed from the 104-candidate table, exactly one group may enter exploratory similarity, and all pre-treatment, causal, recommendation and composite approvals must remain false.
 

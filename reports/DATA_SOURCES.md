@@ -23,7 +23,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** core_region_operator|included_infrastructure|gtc_validity
 - **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
 - **Coverage:** official pass area / supplied resort listing link; terms valid from 2026-09-01; 2026-09-01 to ?.
-- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; historical competition is not reconstructed
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; a separate one-product Top4 history does not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/ALPSPASS_2026_27_GTC_20260923T095304Z.pdf`.
 
 ## ALPSPASS_2026_27_ROSTER — Official AlpsPass regions and tariff page 2026/2027
@@ -35,7 +35,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** official_area_label|roster_version|benefit_tier|partner_free_ski_days
 - **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
 - **Coverage:** official pass area / supplied resort listing link; 2026/2027; 2026-11-01 to 2027-10-31.
-- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; historical competition is not reconstructed
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; a separate one-product Top4 history does not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/ALPSPASS_2026_27_ROSTER_20260923T094712Z.html`.
 
 ## ANNIVIERS_SCOPE_OFFICIAL — Official destination or municipal scope page
@@ -457,6 +457,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** reviewed treatment and provisional donor municipality pair; 36-month pre-anchor window; treatment-specific to month before treatment-specific analytical anchor.
 - **Limitations:** Heuristic rank only; current directory structure may differ historically; historical non-membership, spillovers, accessibility, confounding, balance and parallel trends are not approved
 - **Local raw file:** `not cached / not applicable`.
+
+## DERIVED_HISTORICAL_COMPETING_PASS_CONTEXT — Path C historical competing-pass context
+
+- **Contents and relevance:** Qualified dated Top4 presence context from 2017/2018 through 2024/2025 at area, supplied-listing and preserved lift-cluster levels
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned deterministic Python expansion of eight documented Top4 seasons and explicit conservative resort-ID links; unknown date.
+- **Variables:** historical_competing_pass_area_season|documented_listing_season_link|cluster_historical_pass_context
+- **Transformations:** Validate official continuity statements and cached checksums; expand four areas over eight seasons; join five conservative stable listing IDs; aggregate documented presence without converting non-links into absence
+- **Coverage:** official pass area, supplied resort listing and linked lift cluster; eight winter seasons from 2017/2018 through 2024/2025; 2017/2018 to 2024/2025.
+- **Limitations:** Only Top4 is reconstructed; component eligibility can differ within broad regional labels; evidence is not uniformly pre-treatment for Magic Pass anchors and is not approved for prediction, causal adjustment, recommendation or scoring
+- **Local raw file:** `config/competing_pass_historical_top4.json`.
 
 ## DERIVED_MAGIC_ANNUAL_OFFERING — Annual Magic Pass season-offering review
 
@@ -902,6 +914,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/GSTAAD_SCOPE_OFFICIAL_20260920T005549Z.html`.
 
+## JUNGFRAU_TOP4_2018_19_CONTINUITY — Official Top4 second-season release
+
+- **Contents and relevance:** Official release documenting the autumn-2017 Top4 launch, the four participating regions and the unchanged 2018/2019 second season
+- **Producer:** Jungfraubahnen Management AG
+- **Exact URL:** https://www.jungfrau.ch/de-ch/unternehmen/news/sportpass-top4-startet-in-die-zweite-saison-6610/
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-24T13:55:45.502710+00:00.
+- **Variables:** top4_season_continuity|official_area_label|historical_pass_presence
+- **Transformations:** Checksum verification; explicit source-token validation; conservative stable resort-ID links without runtime fuzzy matching
+- **Coverage:** official Top4 regional area / supplied resort listing link; winter season; 2017/2018 to 2018/2019.
+- **Limitations:** The pair of official releases supports eight consecutive Top4 seasons but only one competing product; non-links do not verify absence from the wider historical pass market
+- **Local raw file:** `data_external/source_evidence/JUNGFRAU_TOP4_2018_19_CONTINUITY_20260924T135545Z.html`.
+
+## JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON — Official Top4 eighth-season release
+
+- **Contents and relevance:** Official release documenting the eighth Top4 season in 2024/2025, the same four regional areas and Gstaad's announced withdrawal after that winter
+- **Producer:** Jungfraubahnen Management AG
+- **Exact URL:** https://www.jungfrau.ch/en-gb/corporate/news/around-33000-top4-ski-passes-sold-in-advance/
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-24T13:55:47.149744+00:00.
+- **Variables:** top4_season_continuity|official_area_label|historical_pass_presence
+- **Transformations:** Checksum verification; explicit source-token validation; conservative stable resort-ID links without runtime fuzzy matching
+- **Coverage:** official Top4 regional area / supplied resort listing link; winter season; 2024/2025 to 2024/2025.
+- **Limitations:** The pair of official releases supports eight consecutive Top4 seasons but only one competing product; non-links do not verify absence from the wider historical pass market
+- **Local raw file:** `data_external/source_evidence/JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON_20260924T135547Z.html`.
+
 ## KRONBERG_ANNUAL_2017 — Kronberg AG annual report 2017
 
 - **Contents and relevance:** Official 2017 annual report for the tourism and cableway operator at Jakobsbad-Kronberg
@@ -1331,7 +1367,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** official_area_label|current_annual_pass_roster
 - **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
 - **Coverage:** official pass area / supplied resort listing link; current retrieval-date snapshot; 2026-09-23 to 2026-09-23.
-- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; historical competition is not reconstructed
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; a separate one-product Top4 history does not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/MEILENWEISS_CURRENT_ROSTER_20260923T094713Z.html`.
 
 ## MEIRINGEN_HASLIBERG_MAGIC_OFFICIAL — Official destination or municipal scope page
@@ -1535,7 +1571,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** official_area_label|roster_version|winter_pass_inclusion
 - **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
 - **Coverage:** official pass area / supplied resort listing link; winter season 2026/2027; 2026 to 2027.
-- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; historical competition is not reconstructed
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; a separate one-product Top4 history does not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/SCHNEEPASS_ZENTRALSCHWEIZ_2026_27_ROSTER_20260923T094725Z.html`.
 
 ## SKI_GTFS_TIMETABLE_2026_WINTER_20260207 — Timetable 2026 (GTFS2020), build 20260207

@@ -38,6 +38,9 @@ NATIONAL_ROAD_PROXIMITY_SUMMARY = (
 COMPETING_PASS_CONTEXT_SUMMARY = (
     ROOT / "reports" / "competing_pass_context_summary.json"
 )
+HISTORICAL_COMPETING_PASS_CONTEXT_SUMMARY = (
+    ROOT / "reports" / "historical_competing_pass_context_summary.json"
+)
 NETWORK_CONTEXT_SUMMARY = ROOT / "reports" / "network_context_summary.json"
 CLUSTER_GEOGRAPHY_SENSITIVITY_SUMMARY = (
     ROOT / "reports" / "cluster_geography_sensitivity_summary.json"
@@ -135,6 +138,9 @@ def main() -> None:
     )
     competing_pass_context_summary = json.loads(
         COMPETING_PASS_CONTEXT_SUMMARY.read_text(encoding="utf-8")
+    )
+    historical_competing_pass_context_summary = json.loads(
+        HISTORICAL_COMPETING_PASS_CONTEXT_SUMMARY.read_text(encoding="utf-8")
     )
     network_context_summary = json.loads(
         NETWORK_CONTEXT_SUMMARY.read_text(encoding="utf-8")
@@ -970,6 +976,28 @@ def main() -> None:
         "competing_pass_candidate_clusters": int(
             competing_pass_context_summary["path_c_candidates"]
         ),
+        "historical_competing_pass_products_reviewed": int(
+            historical_competing_pass_context_summary["reviewed_historical_products"]
+        ),
+        "historical_competing_pass_seasons_reviewed": int(
+            historical_competing_pass_context_summary["reviewed_seasons"]
+        ),
+        "historical_competing_pass_area_season_rows": int(
+            historical_competing_pass_context_summary["area_season_rows"]
+        ),
+        "historical_competing_pass_listing_season_links": int(
+            historical_competing_pass_context_summary[
+                "documented_listing_season_links"
+            ]
+        ),
+        "historical_competing_pass_linked_candidates": int(
+            historical_competing_pass_context_summary[
+                "path_c_candidates_with_documented_link"
+            ]
+        ),
+        "historical_competing_pass_market_absence_verified": int(
+            historical_competing_pass_context_summary["market_absence_verified_rows"]
+        ),
         "network_context_ordered_cluster_pairs": int(
             network_context_summary["ordered_nonself_cluster_pairs"]
         ),
@@ -1220,6 +1248,8 @@ Official current material was checksum-cached for **{metrics['competing_passes_r
 
 AlpsPass unlimited core access remains distinct from its three-free-ski-days partner benefit. A non-link means only that no explicit link was established in these three rosters; it does not prove absence from every competing product. The snapshots do not reconstruct competition at historical Magic Pass entry dates, so all absence-verification and causal-feature approval flags remain false. See `reports/31_COMPETING_PASS_CONTEXT.md`.
 
+A first dated layer reconstructs **{metrics['historical_competing_pass_products_reviewed']} historical product across {metrics['historical_competing_pass_seasons_reviewed']} seasons**. Official Jungfraubahnen continuity evidence supports Top4 from 2017/2018 through 2024/2025 with four named areas per season, producing **{metrics['historical_competing_pass_area_season_rows']} area-season rows** and **{metrics['historical_competing_pass_listing_season_links']} conservative listing-season links**. Two apparent candidates have a documented historical Top4 link. This remains partial market coverage: **{metrics['historical_competing_pass_market_absence_verified']} non-links** are treated as verified absence, and the layer is not approved as a pre-treatment, causal, recommendation or scoring feature. See `reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md`.
+
 ## Current ski-cluster and reviewed pass-network context
 
 The complete **{metrics['network_context_ordered_cluster_pairs']:,}-row ordered non-self pair table** measures great-circle distance among all 162 preserved directory-linked lift clusters. Across the 104 apparent candidates, the median number of other directory clusters is **{metrics['network_context_median_candidate_other_directory_25km']:.0f} within 25 km** and **{metrics['network_context_median_candidate_other_directory_50km']:.0f} within 50 km**. The resolved-current-Magic/reviewed-competing-pass union contains **{metrics['network_context_reviewed_pass_union_clusters']} clusters**; a candidate has a median **{metrics['network_context_median_candidate_reviewed_pass_union_50km']:.0f} other reviewed-network clusters within 50 km**. **{metrics['network_context_candidates_without_directory_neighbour_25km']} candidate** has no other directory cluster within 25 km and **{metrics['network_context_candidates_without_reviewed_pass_neighbour_50km']}** have no other reviewed pass-network cluster within 50 km.
@@ -1282,11 +1312,11 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 4. Crans-Montana proves that treatment is not universally absorbing.
 5. COVID overlaps the post-period of early entrants and the entry period of later ones.
 6. Spillovers may contaminate nearby nominal controls.
-7. Hotel capacity, mountain-station snow, regional temperature/precipitation, qualified Swiss and cross-border straight-line population, NPVM 2025 context, current OFT/BAV stop proximity, current FEDRO/ASTRA national-road-axis proximity, winter-2026 scheduled journeys and three current competing-pass rosters are integrated. Historical timetable stability, historical competing-network changes, snowmaking, true motorway-entrance access, investment and local economic conditions remain unmeasured.
+7. Hotel capacity, mountain-station snow, regional temperature/precipitation, qualified Swiss and cross-border straight-line population, NPVM 2025 context, current OFT/BAV stop proximity, current FEDRO/ASTRA national-road-axis proximity, winter-2026 scheduled journeys, three current competing-pass rosters and an eight-season Top4 history are integrated. Historical timetable stability, the rest of the historical competing-pass market, snowmaking, true motorway-entrance access, investment and local economic conditions remain unmeasured.
 
 ## Next evidence gate
 
-For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; define candidate destination catchments from external destination evidence rather than choosing one of the rejected 0/5/10 km radius rules; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. The feature-readiness registry makes these missing historical layers explicit and prevents complete current coverage from being mistaken for model approval. The reviewed-destination outcome-scope tourism context, point-scope concordance and municipality-radius sensitivity, current competing-pass links, national-road-axis proximity, listing-point distance-rule sensitivity, next-nearest SwissMetNet weather sensitivity, TabsM/RhiresM gridded weather and SPASS gridded snow sensitivities are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed structural aggregation, network-distance and climate sensitivities and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Add an independent measurement/reanalysis sensitivity only if climate fields are proposed for causal use. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; define candidate destination catchments from external destination evidence rather than choosing one of the rejected 0/5/10 km radius rules; extend the dated competing-pass reconstruction beyond Top4 if competition is to become a pre-treatment feature; and obtain dated infrastructure features. The feature-readiness registry makes these incomplete historical layers explicit and prevents partial or current coverage from being mistaken for model approval. The reviewed-destination outcome-scope tourism context, point-scope concordance and municipality-radius sensitivity, current competing-pass links, partial Top4 history, national-road-axis proximity, listing-point distance-rule sensitivity, next-nearest SwissMetNet weather sensitivity, TabsM/RhiresM gridded weather and SPASS gridded snow sensitivities are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed structural aggregation, network-distance and climate sensitivities and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Add an independent measurement/reanalysis sensitivity only if climate fields are proposed for causal use. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

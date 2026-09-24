@@ -95,6 +95,13 @@ def main() -> None:
             "SCHNEEPASS_ZENTRALSCHWEIZ_2026_27_ROSTER",
         ]
     }
+    historical_competing_pass_metadata = {
+        source_id: cached_metadata(source_id)
+        for source_id in [
+            "JUNGFRAU_TOP4_2018_19_CONTINUITY",
+            "JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON",
+        ]
+    }
     ski_gtfs_data = cached_metadata("SKI_GTFS_TIMETABLE_2026_WINTER_20260207")
     eurostat_grid_data = cached_metadata("EUROSTAT_CENSUS_GRID_2021_V3")
     eurostat_grid_documentation = cached_metadata("EUROSTAT_CENSUS_GRID_2021_V3_README")
@@ -895,7 +902,7 @@ def main() -> None:
             license="Official public operator material; source terms apply",
             access_conditions="Public official webpage or PDF",
             transformation_applied="Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching",
-            quality_notes="Current roster scope only; area non-link does not prove absence from every competing pass; historical competition is not reconstructed",
+            quality_notes="Current roster scope only; area non-link does not prove absence from every competing pass; a separate one-product Top4 history does not reconstruct the full historical market",
             confidence_level="high for the published roster; qualified for directory entity links",
             manual_verification=spec["verification"],
         ))
@@ -917,6 +924,69 @@ def main() -> None:
         quality_notes="A non-link is not verified competing-pass absence; mixed clusters retain partial status; snapshots are not historical pre-treatment competition measures",
         confidence_level="high for reproducibility; qualified current roster context only",
         manual_verification="43 official areas, 55 linked listings, 29 linked clusters and 22 linked apparent candidates; zero absence-verification or causal approval flags",
+    ))
+    historical_competing_source_specs = {
+        "JUNGFRAU_TOP4_2018_19_CONTINUITY": {
+            "dataset": "Official Top4 second-season release",
+            "description": "Official release documenting the autumn-2017 Top4 launch, the four participating regions and the unchanged 2018/2019 second season",
+            "start": "2017/2018",
+            "end": "2018/2019",
+            "verification": "Launch timing, second-season wording, unchanged-form wording and all four named regional areas checked in the cached page",
+        },
+        "JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON": {
+            "dataset": "Official Top4 eighth-season release",
+            "description": "Official release documenting the eighth Top4 season in 2024/2025, the same four regional areas and Gstaad's announced withdrawal after that winter",
+            "start": "2024/2025",
+            "end": "2024/2025",
+            "verification": "Eighth-season wording, all four named regional areas and Gstaad withdrawal wording checked in the cached page",
+        },
+    }
+    for source_id, spec in historical_competing_source_specs.items():
+        item = configured[source_id]
+        metadata = historical_competing_pass_metadata[source_id]
+        rows.append(blank_source(
+            source_id,
+            variable_name="top4_season_continuity|official_area_label|historical_pass_presence",
+            variable_description=spec["description"],
+            source_organisation=item["organisation"],
+            source_dataset_name=spec["dataset"],
+            source_page_url=item["url"],
+            direct_download_url=item["url"],
+            retrieval_method="Configured HTTPS download with immutable response and SHA-256 metadata sidecar",
+            retrieval_date=(metadata or {}).get("retrieval_date", ""),
+            original_file_name=raw_name(metadata),
+            local_raw_file=(metadata or {}).get("raw_file", ""),
+            processed_file="config/competing_pass_historical_top4.json|data_processed/competing_pass_historical_area_seasons.csv|data_processed/resort_competing_pass_history.csv|data_processed/path_c_cluster_historical_competing_pass_context.csv|data_processed/magic_pass_decision_support.csv|reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md",
+            geographic_level="official Top4 regional area / supplied resort listing link",
+            temporal_resolution="winter season",
+            temporal_start=spec["start"],
+            temporal_end=spec["end"],
+            unit="named pass area and dated membership-presence evidence",
+            license="Official public operator material; source terms apply",
+            access_conditions="Public official webpage",
+            transformation_applied="Checksum verification; explicit source-token validation; conservative stable resort-ID links without runtime fuzzy matching",
+            quality_notes="The pair of official releases supports eight consecutive Top4 seasons but only one competing product; non-links do not verify absence from the wider historical pass market",
+            confidence_level="high for Top4 continuity and named regional areas; conservative for supplied listing links",
+            manual_verification=spec["verification"],
+        ))
+    rows.append(blank_source(
+        "DERIVED_HISTORICAL_COMPETING_PASS_CONTEXT",
+        variable_name="historical_competing_pass_area_season|documented_listing_season_link|cluster_historical_pass_context",
+        variable_description="Qualified dated Top4 presence context from 2017/2018 through 2024/2025 at area, supplied-listing and preserved lift-cluster levels",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C historical competing-pass context",
+        retrieval_method="Versioned deterministic Python expansion of eight documented Top4 seasons and explicit conservative resort-ID links",
+        local_raw_file="config/competing_pass_historical_top4.json",
+        processed_file="data_processed/competing_pass_historical_area_seasons.csv|data_processed/resort_competing_pass_history.csv|data_processed/path_c_cluster_historical_competing_pass_context.csv|reports/historical_competing_pass_candidate_summary.csv|data_processed/magic_pass_decision_support.csv|reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md",
+        geographic_level="official pass area, supplied resort listing and linked lift cluster",
+        temporal_resolution="eight winter seasons from 2017/2018 through 2024/2025",
+        temporal_start="2017/2018",
+        temporal_end="2024/2025",
+        unit="identifiers, seasons, counts, shares and protected flags",
+        transformation_applied="Validate official continuity statements and cached checksums; expand four areas over eight seasons; join five conservative stable listing IDs; aggregate documented presence without converting non-links into absence",
+        quality_notes="Only Top4 is reconstructed; component eligibility can differ within broad regional labels; evidence is not uniformly pre-treatment for Magic Pass anchors and is not approved for prediction, causal adjustment, recommendation or scoring",
+        confidence_level="high for reproducibility and positive Top4 links; incomplete historical market coverage",
+        manual_verification="32 area-season rows, 2,168 listing-season rows, 40 positive listing-season links, four linked clusters and two linked candidates; every market-absence and protected approval flag false",
     ))
     rows.append(blank_source(
         "DERIVED_PATH_C_NETWORK_CONTEXT",
@@ -2227,6 +2297,10 @@ def main() -> None:
         "resort_competing_pass_context": ROOT / "data_processed/resort_competing_pass_context.csv",
         "path_c_cluster_competing_pass_context": ROOT / "data_processed/path_c_cluster_competing_pass_context.csv",
         "competing_pass_candidate_summary": ROOT / "reports/competing_pass_candidate_summary.csv",
+        "competing_pass_historical_area_seasons": ROOT / "data_processed/competing_pass_historical_area_seasons.csv",
+        "resort_competing_pass_history": ROOT / "data_processed/resort_competing_pass_history.csv",
+        "path_c_cluster_historical_competing_pass_context": ROOT / "data_processed/path_c_cluster_historical_competing_pass_context.csv",
+        "historical_competing_pass_candidate_summary": ROOT / "reports/historical_competing_pass_candidate_summary.csv",
         "path_c_cluster_network_context": ROOT / "data_processed/path_c_cluster_network_context.csv",
         "path_c_cluster_network_pairs": ROOT / "reports/path_c_cluster_network_pairs.csv",
         "network_context_candidate_summary": ROOT / "reports/network_context_candidate_summary.csv",
@@ -2287,6 +2361,10 @@ def main() -> None:
         "resort_competing_pass_context": "DERIVED_COMPETING_PASS_CONTEXT",
         "path_c_cluster_competing_pass_context": "DERIVED_COMPETING_PASS_CONTEXT",
         "competing_pass_candidate_summary": "DERIVED_COMPETING_PASS_CONTEXT",
+        "competing_pass_historical_area_seasons": "DERIVED_HISTORICAL_COMPETING_PASS_CONTEXT",
+        "resort_competing_pass_history": "DERIVED_HISTORICAL_COMPETING_PASS_CONTEXT",
+        "path_c_cluster_historical_competing_pass_context": "DERIVED_HISTORICAL_COMPETING_PASS_CONTEXT",
+        "historical_competing_pass_candidate_summary": "DERIVED_HISTORICAL_COMPETING_PASS_CONTEXT",
         "path_c_cluster_network_context": "DERIVED_PATH_C_NETWORK_CONTEXT",
         "path_c_cluster_network_pairs": "DERIVED_PATH_C_NETWORK_CONTEXT",
         "network_context_candidate_summary": "DERIVED_PATH_C_NETWORK_CONTEXT",
@@ -2990,6 +3068,10 @@ def main() -> None:
         "resort_competing_pass_context": "supplied resort listing / official competing-pass area",
         "path_c_cluster_competing_pass_context": "linked lift cluster",
         "competing_pass_candidate_summary": "apparent Path C candidate lift cluster",
+        "competing_pass_historical_area_seasons": "official Top4 regional area by winter season",
+        "resort_competing_pass_history": "supplied resort listing by winter season",
+        "path_c_cluster_historical_competing_pass_context": "linked lift cluster",
+        "historical_competing_pass_candidate_summary": "apparent Path C candidate lift cluster",
         "path_c_cluster_network_context": "linked lift cluster",
         "path_c_cluster_network_pairs": "ordered pair of distinct linked lift clusters",
         "network_context_candidate_summary": "apparent Path C candidate lift cluster",
@@ -3045,6 +3127,10 @@ def main() -> None:
         "resort_competing_pass_context": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
         "path_c_cluster_competing_pass_context": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
         "competing_pass_candidate_summary": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
+        "competing_pass_historical_area_seasons": "Top4 winter seasons 2017/2018 through 2024/2025",
+        "resort_competing_pass_history": "Top4 winter seasons 2017/2018 through 2024/2025",
+        "path_c_cluster_historical_competing_pass_context": "Top4 winter seasons 2017/2018 through 2024/2025",
+        "historical_competing_pass_candidate_summary": "Top4 winter seasons 2017/2018 through 2024/2025",
         "path_c_cluster_network_context": "current/undated supplied directory plus current reviewed pass-network snapshots",
         "path_c_cluster_network_pairs": "current/undated supplied directory plus current reviewed pass-network snapshots",
         "network_context_candidate_summary": "current/undated supplied directory plus current reviewed pass-network snapshots",
@@ -3126,6 +3212,12 @@ def main() -> None:
                 "path_c_cluster_competing_pass_context",
                 "competing_pass_candidate_summary",
             }
+            historical_competing_table = table in {
+                "competing_pass_historical_area_seasons",
+                "resort_competing_pass_history",
+                "path_c_cluster_historical_competing_pass_context",
+                "historical_competing_pass_candidate_summary",
+            }
             network_table = table in {
                 "path_c_cluster_network_context",
                 "path_c_cluster_network_pairs",
@@ -3174,7 +3266,11 @@ def main() -> None:
                     or variable.startswith("scope_10km_")
                 )
             )
-            competing_variable = competing_table or (
+            historical_competing_variable = historical_competing_table or (
+                table == "magic_pass_decision_support"
+                and variable.startswith("historical_competing_pass_")
+            )
+            competing_variable = not historical_competing_variable and (competing_table or (
                 table == "magic_pass_decision_support"
                 and (
                     variable.startswith("competing_pass_")
@@ -3185,7 +3281,7 @@ def main() -> None:
                     or variable.startswith("cluster_core_or_included_region_")
                     or variable.startswith("reviewed_competing_pass_")
                 )
-            )
+            ))
             geography_sensitivity_variable = geography_sensitivity_table or (
                 table == "magic_pass_decision_support"
                 and (
@@ -3335,6 +3431,8 @@ def main() -> None:
                 if table == "public_transport_historical_audit_plan"
                 else "qualified scheduled public-transport journey context"
                 if journey_variable
+                else "qualified partial historical competing-pass presence context"
+                if historical_competing_variable
                 else "qualified current competing-pass roster context"
                 if competing_variable
                 else "qualified cluster-geography and network-distance sensitivity"
@@ -3395,6 +3493,9 @@ def main() -> None:
                 else
                 "See config/path_c_analysis.json and src/data_processing/build_public_transport_journey_context.py"
                 if journey_variable
+                else
+                "See config/competing_pass_historical_top4.json and src/data_processing/build_historical_competing_pass_context.py"
+                if historical_competing_variable
                 else
                 "See config/competing_pass_roster_2026_27.csv and src/data_processing/build_competing_pass_context.py"
                 if competing_variable
@@ -3462,6 +3563,9 @@ def main() -> None:
                 "No causal interpretation; winter-2026 static schedules and algorithmic stop proxies are not real-time, historical or validated destination catchments"
                 if journey_variable
                 else
+                "No causal interpretation; one dated Top4 product does not reconstruct the full historical pass market, verify non-link absence, establish equivalent benefit intensity or supply a uniformly pre-treatment covariate"
+                if historical_competing_variable
+                else
                 "No causal interpretation; current links in three official rosters do not reconstruct historical competition, verify market absence or establish equivalent benefit intensity"
                 if competing_variable
                 else
@@ -3517,6 +3621,8 @@ def main() -> None:
                 if journey_variable
                 else "DERIVED_CANDIDATE_SCOPE_RADIUS_SENSITIVITY"
                 if scope_radius_variable
+                else "DERIVED_HISTORICAL_COMPETING_PASS_CONTEXT"
+                if historical_competing_variable
                 else "DERIVED_COMPETING_PASS_CONTEXT"
                 if competing_variable
                 else "DERIVED_PATH_C_CLUSTER_GEOGRAPHY_SENSITIVITY"

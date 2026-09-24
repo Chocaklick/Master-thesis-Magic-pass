@@ -1,0 +1,54 @@
+{
+  "analysis_version": "path_c_v0_24",
+  "competing_pass_id": "top4",
+  "competing_pass_name": "Top4 Ski Pass",
+  "season_start": "2017/2018",
+  "season_end": "2024/2025",
+  "seasons": [
+    "2017/2018",
+    "2018/2019",
+    "2019/2020",
+    "2020/2021",
+    "2021/2022",
+    "2022/2023",
+    "2023/2024",
+    "2024/2025"
+  ],
+  "source_ids": [
+    "JUNGFRAU_TOP4_2018_19_CONTINUITY",
+    "JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON"
+  ],
+  "continuity_basis": "official_2018_second_season_release_plus_official_2024_eighth_season_release",
+  "areas": [
+    {
+      "official_area_label": "Adelboden-Lenk",
+      "linked_resort_ids": ["adelboden", "lenk"],
+      "mapping_basis": "exact_official_area_components_in_supplied_directory",
+      "scope_note": "Only the exact Adelboden and Lenk listings are linked. Engstligenalp and Elsigenalp-Metschalp are not inferred into the historical Top4 scope from the broad regional label."
+    },
+    {
+      "official_area_label": "Gstaad",
+      "linked_resort_ids": ["gstaad"],
+      "mapping_basis": "exact_official_area_label",
+      "scope_note": "Only the exact supplied Gstaad listing is linked; no surrounding component is inferred."
+    },
+    {
+      "official_area_label": "Jungfrau Ski Region",
+      "linked_resort_ids": ["wengen_jungfrau_ski_region_grindelwald_wengen"],
+      "mapping_basis": "conservative_exact_regional_listing_link",
+      "scope_note": "The exact Grindelwald-Wengen regional listing is linked. The supplied Schilthorn listing is deliberately not backfilled because component eligibility changed during the Top4 period and the two continuity releases do not establish season-specific component coverage."
+    },
+    {
+      "official_area_label": "Meiringen-Hasliberg",
+      "linked_resort_ids": ["meiringen_hasliberg"],
+      "mapping_basis": "exact_official_area_label",
+      "scope_note": "Exact supplied area-name correspondence."
+    }
+  ],
+  "nonlink_interpretation": "not_linked_to_the_one_reconstructed_top4_product_not_verified_absence_from_historical_competing_passes",
+  "historical_market_absence_verified": false,
+  "pre_treatment_feature_approved": false,
+  "causal_covariate_approved": false,
+  "recommendation_feature_approved": false,
+  "composite_score_approved": false
+}

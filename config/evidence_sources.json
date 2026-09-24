@@ -448,5 +448,19 @@
     "suffix": "html",
     "organisation": "Transportunternehmungen Zentralschweiz (TUZ)",
     "description": "Official winter 2026/2027 Schneepass Zentralschweiz page listing the 15 included regions"
+  },
+  {
+    "source_id": "JUNGFRAU_TOP4_2018_19_CONTINUITY",
+    "url": "https://www.jungfrau.ch/de-ch/unternehmen/news/sportpass-top4-startet-in-die-zweite-saison-6610/",
+    "suffix": "html",
+    "organisation": "Jungfraubahnen Management AG",
+    "description": "Official 2018 release documenting the autumn-2017 Top4 launch, the four participating regions and the unchanged 2018/2019 second season"
+  },
+  {
+    "source_id": "JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON",
+    "url": "https://www.jungfrau.ch/en-gb/corporate/news/around-33000-top4-ski-passes-sold-in-advance/",
+    "suffix": "html",
+    "organisation": "Jungfraubahnen Management AG",
+    "description": "Official 2024 release documenting Top4's eighth season in 2024/2025, the four participating regions and Gstaad's announced withdrawal after that season"
   }
 ]

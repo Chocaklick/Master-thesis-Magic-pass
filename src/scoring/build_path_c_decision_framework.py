@@ -123,8 +123,16 @@ def build_dashboard(config: dict[str, object], decision: pd.DataFrame) -> pd.Dat
     dashboard["accessibility_dimension_status"] = (
         "qualified_current_context_not_historical_access_or_visitor_catchment"
     )
+    historical_competition = as_bool(
+        dashboard["historical_competing_pass_context_available"]
+    )
     dashboard["competition_network_dimension_status"] = (
-        "qualified_current_context_not_historical_market_structure"
+        "qualified_current_context_no_documented_link_in_one_historical_product_"
+        "not_market_absence"
+    )
+    dashboard.loc[historical_competition, "competition_network_dimension_status"] = (
+        "qualified_current_plus_partial_top4_history_not_complete_historical_"
+        "market_structure"
     )
     dashboard["framework_status"] = (
         "exploratory_evidence_dashboard_no_business_recommendation"
@@ -183,6 +191,9 @@ def build_summary(
         "candidates_with_complete_hotel_context_under_any_radius_rule": int(
             dashboard["candidate_scope_complete_hotel_context_rule_count"].gt(0).sum()
         ),
+        "candidates_with_documented_historical_competing_pass_link": int(
+            as_bool(dashboard["historical_competing_pass_context_available"]).sum()
+        ),
         "two_dimension_matrix_ready_candidates": int(
             as_bool(dashboard["two_dimension_matrix_ready"]).sum()
         ),
@@ -231,7 +242,7 @@ def write_report(
 
 Checkpoint 6 selects a **separated exploratory evidence dashboard** for the **{summary['candidate_clusters']} Path C candidates**. It does not select an uplift model, causal ranking, recommendation engine or composite score. The architecture keeps structural comparability, descriptive analogue opportunity, snow vulnerability, tourism dependence, accessibility, competition/network context and evidence gaps separate across **{summary['dimensions']} dimensions**.
 
-The dashboard is deliberately incomplete as a business recommendation. Only **{summary['candidates_with_point_container_tourism_context']}** candidates have complete point-container hotel context. The 0/5/10 km scope sensitivity reaches an observed HESTA ratio for **{summary['candidates_with_any_radius_observed_hesta_ratio']}** candidates, but still leaves only **{summary['candidates_with_complete_hotel_context_under_any_radius_rule']}** with complete municipal hotel coverage under any rule; more importantly, the radius validation rejects every rule as a comparable destination catchment. Historical public transport, competition and dated infrastructure remain missing. A full Opportunity × Strategic Need matrix is therefore ready for **{summary['two_dimension_matrix_ready_candidates']} candidates**.
+The dashboard is deliberately incomplete as a business recommendation. Only **{summary['candidates_with_point_container_tourism_context']}** candidates have complete point-container hotel context. The 0/5/10 km scope sensitivity reaches an observed HESTA ratio for **{summary['candidates_with_any_radius_observed_hesta_ratio']}** candidates, but still leaves only **{summary['candidates_with_complete_hotel_context_under_any_radius_rule']}** with complete municipal hotel coverage under any rule; more importantly, the radius validation rejects every rule as a comparable destination catchment. A first dated Top4 reconstruction adds historical pass presence for **{summary['candidates_with_documented_historical_competing_pass_link']}** candidates, but it covers only one product and its non-links do not establish historical market absence. Historical public transport, full historical competition and dated infrastructure therefore remain incomplete. A full Opportunity × Strategic Need matrix is ready for **{summary['two_dimension_matrix_ready_candidates']} candidates**.
 
 ## Dimension register
 
@@ -253,6 +264,7 @@ Predicted-uplift values: **{summary['predicted_uplift_values']}**. Recommendatio
 - `reports/path_c_decision_framework_summary.json`
 - `reports/39_CHECKPOINT_6_BUSINESS_DECISION_FRAMEWORK.md`
 - `reports/40_CANDIDATE_SCOPE_RADIUS_SENSITIVITY.md` (scope diagnostic feeding the tourism-dimension gate)
+- `reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md` (partial dated competition evidence)
 """,
         encoding="utf-8",
     )

@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_23",
+  "analysis_version": "path_c_v0_24",
   "candidate_pool_rule": "candidate_for_path_c_true_in_magic_pass_decision_support",
   "feature_groups": [
     {
@@ -226,15 +226,15 @@
     {
       "feature_group_id": "historical_competing_pass_context",
       "feature_group_name": "Historical competing-pass context",
-      "candidate_required_fields": [],
-      "evidence_scope": "historical candidate-level rosters not reconstructed",
-      "temporal_status": "required_historical_evidence_missing",
-      "scope_comparability_status": "not_available",
-      "leakage_risk": "current roster status cannot substitute for pre-treatment competition",
-      "approved_usage": "not_available",
+      "candidate_required_fields": ["historical_competing_pass_first_documented_season", "historical_competing_pass_last_documented_season"],
+      "evidence_scope": "Top4 four-area roster reconstructed for eight seasons from 2017/2018 through 2024/2025; two candidate clusters have conservative listing links",
+      "temporal_status": "dated_historical_product_roster_partial_market_coverage_not_uniformly_pre_anchor",
+      "scope_comparability_status": "partial_candidate_coverage_and_nonlinks_do_not_verify_historical_market_absence",
+      "leakage_risk": "one reconstructed product does not represent the full historical pass market and several seasons postdate treatment anchors",
+      "approved_usage": "qualified_partial_historical_competition_context_only",
       "exploratory_similarity_use_approved": false,
-      "descriptive_context_use_approved": false,
-      "source_ids": "DERIVED_COMPETING_PASS_CONTEXT"
+      "descriptive_context_use_approved": true,
+      "source_ids": "JUNGFRAU_TOP4_2018_19_CONTINUITY|JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON|DERIVED_HISTORICAL_COMPETING_PASS_CONTEXT"
     },
     {
       "feature_group_id": "dated_infrastructure_context",
