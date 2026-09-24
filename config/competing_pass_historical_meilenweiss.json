@@ -1,0 +1,93 @@
+{
+  "analysis_version": "path_c_v0_25",
+  "competing_pass_id": "meilenweiss",
+  "competing_pass_name": "Meilenweiss",
+  "source_sha256_by_id": {
+    "ATZMAENNIG_MEILENWEISS_2019_20_ORDER_FORM": "605bf4afce6cd3f97a92e90ced58002a857c2b335d48c1854437128f1912141d",
+    "ATZMAENNIG_WINTER_BROCHURE_2020_21": "c080690ac7fe66adbebb0fa4cc4b2078ad75b226b96acb224922ae56b23cdd83",
+    "MALBUN_MEILENWEISS_2021_22_WINTER_BROCHURE": "1c5334168a646c801875e9b508c4f0665edef700abc2c8784dab5f10a7304ad1",
+    "PIZOL_ANNUAL_REPORT_2018_19": "0d60d05626ed919f5a6f35f29158ccda3dc259c2a3ec7f22040a6b64099b8520"
+  },
+  "nonconfirming_source_reviews": [
+    {
+      "source_id": "PIZOL_ANNUAL_REPORT_2018_19",
+      "review_result": "no_explicit_meilenweiss_reference_found",
+      "membership_use": "not_used_as_membership_evidence",
+      "scope_note": "The checksum-cached 15-page official annual report was text-searched and visually reviewed. It contains no explicit Meilenweiss reference, so it creates neither a positive link nor an absence claim."
+    }
+  ],
+  "seasons": [
+    {
+      "season": "2019/2020",
+      "source_ids": ["ATZMAENNIG_MEILENWEISS_2019_20_ORDER_FORM"],
+      "evidence_scope": "positive_sales_area_evidence_not_complete_roster",
+      "product_winter_destination_count": null,
+      "product_summer_destination_count": null,
+      "annual_pass_following_summer_season": "2020",
+      "annual_pass_following_summer_included": true,
+      "season_only_pass_following_summer_included": false,
+      "areas": [
+        {"official_area_label": "Atzmännig", "linked_resort_ids": ["atzmannig"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Named as a Meilenweiss sales area in the official 2019/2020 order form."},
+        {"official_area_label": "Braunwald", "linked_resort_ids": ["braunwald"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Named as a Meilenweiss sales area in the official 2019/2020 order form."},
+        {"official_area_label": "Elm", "linked_resort_ids": ["elm"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Named as a Meilenweiss sales area in the official 2019/2020 order form."},
+        {"official_area_label": "Flumserberg", "linked_resort_ids": ["flumserberg"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Named as a Meilenweiss sales area in the official 2019/2020 order form."},
+        {"official_area_label": "Malbun", "linked_resort_ids": [], "mapping_basis": "official_area_not_present_in_supplied_directory", "scope_note": "The Liechtenstein area is documented but has no equivalent supplied listing. Buchserberg-Malbun is a different Swiss ski area and is not linked."},
+        {"official_area_label": "Mythenregion", "linked_resort_ids": ["mythenregion"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Named as a Meilenweiss sales area in the official 2019/2020 order form."},
+        {"official_area_label": "Pizol", "linked_resort_ids": ["pizol_bad_ragaz_wangs"], "mapping_basis": "conservative_official_area_to_supplied_regional_listing", "scope_note": "Official Pizol area linked to the supplied Pizol - Bad Ragaz - Wangs listing."},
+        {"official_area_label": "Stoos", "linked_resort_ids": ["stoos"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Named as a Meilenweiss sales area in the official 2019/2020 order form."},
+        {"official_area_label": "Wildhaus", "linked_resort_ids": ["toggenburg_wildhaus"], "mapping_basis": "conservative_official_local_area_to_supplied_wildhaus_listing", "scope_note": "Official Wildhaus area linked only to the supplied Toggenburg Wildhaus listing; neighbouring cluster listings do not inherit the link."},
+        {"official_area_label": "Krummenau-Wolzenalp", "linked_resort_ids": ["wolzenalp_krummenau"], "mapping_basis": "conservative_exact_name_component_link", "scope_note": "Official Krummenau-Wolzenalp area linked to the supplied Wolzenalp Krummenau listing."},
+        {"official_area_label": "Sattel-Hochstuckli", "linked_resort_ids": ["hochstuckli_sattel_hochstuckli"], "mapping_basis": "conservative_exact_name_component_link", "scope_note": "Official Sattel-Hochstuckli area linked only to the matching supplied listing; other listings in the lift cluster do not inherit the link."},
+        {"official_area_label": "Grüsch-Danusa", "linked_resort_ids": ["grusch_danusa"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Named as a Meilenweiss sales area in the official 2019/2020 order form."}
+      ]
+    },
+    {
+      "season": "2020/2021",
+      "source_ids": ["ATZMAENNIG_WINTER_BROCHURE_2020_21"],
+      "evidence_scope": "host_area_positive_offer_and_product_count_not_complete_roster",
+      "product_winter_destination_count": 19,
+      "product_summer_destination_count": null,
+      "annual_pass_following_summer_season": "2021",
+      "annual_pass_following_summer_included": true,
+      "season_only_pass_following_summer_included": false,
+      "areas": [
+        {"official_area_label": "Atzmännig", "linked_resort_ids": ["atzmannig"], "mapping_basis": "official_host_operator_brochure_positive_product_offer", "scope_note": "The official Atzmännig winter brochure sells the 2020/2021 Meilenweiss pass, states 19 areas and includes summer 2021. It does not provide the full named roster, so only the host area is linked."}
+      ]
+    },
+    {
+      "season": "2021/2022",
+      "source_ids": ["MALBUN_MEILENWEISS_2021_22_WINTER_BROCHURE"],
+      "evidence_scope": "explicit_swiss_liechtenstein_roster_subset_of_product_19_winter_destinations",
+      "product_winter_destination_count": 19,
+      "product_summer_destination_count": 18,
+      "annual_pass_following_summer_season": "2022",
+      "annual_pass_following_summer_included": true,
+      "season_only_pass_following_summer_included": false,
+      "areas": [
+        {"official_area_label": "Flumserberg", "linked_resort_ids": ["flumserberg"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Explicitly listed in the Swiss section of the official winter brochure."},
+        {"official_area_label": "Wildhaus", "linked_resort_ids": ["toggenburg_wildhaus"], "mapping_basis": "conservative_official_local_area_to_supplied_wildhaus_listing", "scope_note": "Linked only to the supplied Toggenburg Wildhaus listing."},
+        {"official_area_label": "Pizol", "linked_resort_ids": ["pizol_bad_ragaz_wangs"], "mapping_basis": "conservative_official_area_to_supplied_regional_listing", "scope_note": "Linked to the supplied Pizol - Bad Ragaz - Wangs listing."},
+        {"official_area_label": "Elm", "linked_resort_ids": ["elm"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Explicitly listed in the Swiss section of the official winter brochure."},
+        {"official_area_label": "Mythenregion", "linked_resort_ids": ["mythenregion"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Explicitly listed in the Swiss section of the official winter brochure."},
+        {"official_area_label": "Braunwald", "linked_resort_ids": ["braunwald"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Explicitly listed in the Swiss section of the official winter brochure."},
+        {"official_area_label": "Stoos", "linked_resort_ids": ["stoos"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Explicitly listed in the Swiss section of the official winter brochure."},
+        {"official_area_label": "Ebenalp-Horn", "linked_resort_ids": ["ebenalp_horn"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Explicitly listed in the Swiss section of the official winter brochure."},
+        {"official_area_label": "Sattel-Hochstuckli", "linked_resort_ids": ["hochstuckli_sattel_hochstuckli"], "mapping_basis": "conservative_exact_name_component_link", "scope_note": "Linked only to the matching supplied listing; other listings in the lift cluster do not inherit the link."},
+        {"official_area_label": "Amden", "linked_resort_ids": ["amden"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Explicitly listed in the Swiss section of the official winter brochure."},
+        {"official_area_label": "Atzmännig", "linked_resort_ids": ["atzmannig"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Explicitly listed in the Swiss section of the official winter brochure."},
+        {"official_area_label": "Wolzenalp", "linked_resort_ids": ["wolzenalp_krummenau"], "mapping_basis": "conservative_official_area_to_supplied_listing", "scope_note": "Linked to the supplied Wolzenalp Krummenau listing."},
+        {"official_area_label": "Grüsch-Danusa", "linked_resort_ids": ["grusch_danusa"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Explicitly listed in the Swiss section of the official winter brochure."},
+        {"official_area_label": "Ebnat-Kappel Tanzboden", "linked_resort_ids": ["tanzboden_ebnat_kappel"], "mapping_basis": "conservative_exact_name_component_link", "scope_note": "Linked to the supplied Tanzboden Ebnat - Kappel listing."},
+        {"official_area_label": "Hoher Kasten", "linked_resort_ids": [], "mapping_basis": "official_area_not_present_in_supplied_ski_directory", "scope_note": "The brochure lists a winter cable-car panorama destination, but the supplied ski-resort directory has no Hoher Kasten listing."},
+        {"official_area_label": "Malbun", "linked_resort_ids": [], "mapping_basis": "official_area_not_present_in_supplied_directory", "scope_note": "The Liechtenstein area is documented but has no equivalent supplied listing. Buchserberg-Malbun is a different Swiss ski area and is not linked."}
+      ]
+    }
+  ],
+  "summer_interpretation": "Product-level annual-pass summer inclusion is documented, but individual winter areas are not assigned summer-active status unless area-specific evidence exists. The 2021/2022 brochure's 19-winter/18-summer aggregate does not identify the exception.",
+  "nonlink_interpretation": "not_linked_in_reviewed_top4_or_meilenweiss_positive_evidence_not_verified_absence_from_historical_competing_passes",
+  "historical_market_absence_verified": false,
+  "pre_treatment_feature_approved": false,
+  "causal_covariate_approved": false,
+  "recommendation_feature_approved": false,
+  "composite_score_approved": false
+}

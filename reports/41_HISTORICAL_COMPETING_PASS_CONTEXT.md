@@ -1,24 +1,27 @@
-# Historical competing-pass context: Top4
+# Historical competing-pass context: Top4 and Meilenweiss
 
 ## Evidence recovered
 
-Two checksum-cached official Jungfraubahnen releases provide a bounded historical reconstruction. The September 2018 release states that Top4 was launched in autumn 2017, names Adelboden-Lenk, Gstaad, Jungfrau Ski Region and Meiringen-Hasliberg, and describes 2018/2019 as the unchanged second season. The December 2024 release names the same four regions, describes 2024/2025 as the eighth season and records Gstaad's announced withdrawal after that winter. Together these statements support **eight consecutive seasons from 2017/2018 through 2024/2025** for the four-area Top4 product.
+The checksum-pinned Top4 reconstruction remains unchanged: four official regions over eight consecutive seasons from 2017/2018 through 2024/2025. Three official operator PDFs add bounded Meilenweiss evidence for 2019/2020, 2020/2021 and 2021/2022. The 2019/2020 order form names 12 sales areas but is not treated as a complete international roster. The 2020/2021 Atzmännig brochure documents a 19-area product and links only the host area because it does not name the full roster. The 2021/2022 Malbun brochure explicitly lists 16 Swiss/Liechtenstein areas within a product advertised as 19 winter destinations.
 
-The output contains **32 area-season rows** and **2168 supplied-listing-season rows**. Five conservative supplied listing links are recorded in every season, producing **40 documented listing-season links** across **4 lift clusters**.
+The combined output contains **61 area-season rows**, **2981 product-listing-season rows** and **66 positive listing-season links**. These reach **16 lift clusters**, including **13 of 104** apparent Path C candidates.
 
-## Conservative entity scope
+## Winter and summer are not conflated
 
-Only exact or conservative supplied-directory links are used. Adelboden and Lenk are linked, but Engstligenalp and Elsigenalp-Metschalp are not inferred from the broad historical regional label. Grindelwald-Wengen is linked to Jungfrau Ski Region, while Schilthorn is deliberately left unlinked because component eligibility changed during the Top4 period and the two continuity releases do not establish its season-specific scope. Gstaad and Meiringen-Hasliberg use exact supplied listing links.
+Each linked area is positive winter evidence. The Meilenweiss annual-pass documents state that the following summer season is included; the 2021/2022 brochure gives an aggregate of 19 winter and 18 summer destinations. None of the reviewed documents identifies the area-level summer exception. Therefore **0 area-specific summer links** are asserted. Product-level summer inclusion is retained separately and never converted into a claim that every winter area operates in summer.
 
-Among the **104** apparent Path C candidates, **2** clusters have a documented Top4 link and both are partial mixed-listing clusters. The remaining 102 candidate non-links mean only that no link was found in this one reconstructed product.
+## Conservative scope and negative evidence
+
+Malbun in Liechtenstein is not linked to the supplied Buchserberg-Malbun listing, which is a different Swiss area. Hoher Kasten has no equivalent supplied ski listing. Broad cluster neighbours never inherit a documented listing link. The official Pizol 2018/2019 annual report was checksum-verified, text-searched and visually reviewed but contains no explicit Meilenweiss reference; it is recorded as a non-confirming source and creates neither membership nor absence evidence.
 
 ## Decision limit
 
-This milestone reconstructs **one competing pass**, not the full Swiss multi-resort-pass market. The evidence is dated, but it is not uniformly pre-treatment for the Magic Pass anchors, does not measure pass intensity or prices, and does not verify absence from Meilenweiss, Schneepass, SnowPass, TopCard, regional alliances or reciprocal offers. Historical market-absence, pre-treatment, causal, recommendation and composite-score approvals therefore remain false. The result is qualified partial historical context, not a ranking input.
+Two products and eleven product-seasons still do not reconstruct the full historical multi-resort-pass market. Non-links do not verify absence, evidence scopes differ by season, several observations postdate Magic Pass treatment anchors, and benefit intensity and prices are not harmonised. Historical-market-absence, pre-treatment, causal, recommendation and composite-score approvals remain false. The result is qualified context, not a ranking input.
 
 ## Outputs
 
 - `config/competing_pass_historical_top4.json`
+- `config/competing_pass_historical_meilenweiss.json`
 - `data_processed/competing_pass_historical_area_seasons.csv`
 - `data_processed/resort_competing_pass_history.csv`
 - `data_processed/path_c_cluster_historical_competing_pass_context.csv`

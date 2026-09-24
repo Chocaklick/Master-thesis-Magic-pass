@@ -100,6 +100,10 @@ def main() -> None:
         for source_id in [
             "JUNGFRAU_TOP4_2018_19_CONTINUITY",
             "JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON",
+            "ATZMAENNIG_MEILENWEISS_2019_20_ORDER_FORM",
+            "ATZMAENNIG_WINTER_BROCHURE_2020_21",
+            "MALBUN_MEILENWEISS_2021_22_WINTER_BROCHURE",
+            "PIZOL_ANNUAL_REPORT_2018_19",
         ]
     }
     ski_gtfs_data = cached_metadata("SKI_GTFS_TIMETABLE_2026_WINTER_20260207")
@@ -902,7 +906,7 @@ def main() -> None:
             license="Official public operator material; source terms apply",
             access_conditions="Public official webpage or PDF",
             transformation_applied="Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching",
-            quality_notes="Current roster scope only; area non-link does not prove absence from every competing pass; a separate one-product Top4 history does not reconstruct the full historical market",
+            quality_notes="Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4 and Meilenweiss histories do not reconstruct the full historical market",
             confidence_level="high for the published roster; qualified for directory entity links",
             manual_verification=spec["verification"],
         ))
@@ -929,16 +933,74 @@ def main() -> None:
         "JUNGFRAU_TOP4_2018_19_CONTINUITY": {
             "dataset": "Official Top4 second-season release",
             "description": "Official release documenting the autumn-2017 Top4 launch, the four participating regions and the unchanged 2018/2019 second season",
+            "variables": "top4_season_continuity|official_area_label|historical_pass_presence",
             "start": "2017/2018",
             "end": "2018/2019",
+            "geography": "official Top4 regional area / supplied resort listing link",
+            "access": "Public official webpage",
+            "quality": "Together with the eighth-season release, supports eight consecutive Top4 seasons; non-links do not verify absence from the wider historical pass market",
+            "confidence": "high for Top4 continuity and named regional areas; conservative for supplied listing links",
             "verification": "Launch timing, second-season wording, unchanged-form wording and all four named regional areas checked in the cached page",
         },
         "JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON": {
             "dataset": "Official Top4 eighth-season release",
             "description": "Official release documenting the eighth Top4 season in 2024/2025, the same four regional areas and Gstaad's announced withdrawal after that winter",
+            "variables": "top4_season_continuity|official_area_label|historical_pass_presence",
             "start": "2024/2025",
             "end": "2024/2025",
+            "geography": "official Top4 regional area / supplied resort listing link",
+            "access": "Public official webpage",
+            "quality": "Together with the second-season release, supports eight consecutive Top4 seasons; non-links do not verify absence from the wider historical pass market",
+            "confidence": "high for Top4 continuity and named regional areas; conservative for supplied listing links",
             "verification": "Eighth-season wording, all four named regional areas and Gstaad withdrawal wording checked in the cached page",
+        },
+        "ATZMAENNIG_MEILENWEISS_2019_20_ORDER_FORM": {
+            "dataset": "Official Meilenweiss 2019/2020 annual/season-pass order form",
+            "description": "Official Atzmännig-hosted order form naming 12 Meilenweiss sales areas and distinguishing the annual pass including summer 2020 from the winter-only season pass",
+            "variables": "meilenweiss_positive_sales_area|winter_access|annual_pass_summer_inclusion|season_pass_modality",
+            "start": "2019/2020",
+            "end": "2020",
+            "geography": "named Swiss/Liechtenstein sales area / supplied resort listing link",
+            "access": "Public official operator PDF",
+            "quality": "Sales-area evidence supports positive links but is not asserted to be a complete international product roster; product-level summer inclusion does not identify area-specific summer operation",
+            "confidence": "high for named positive sales areas and pass modality; incomplete roster scope",
+            "verification": "Both rendered pages reviewed; 12 sales areas, winter 2019/2020, annual-pass summer 2020 inclusion and separate season-card terms checked",
+        },
+        "ATZMAENNIG_WINTER_BROCHURE_2020_21": {
+            "dataset": "Official Atzmännig winter 2020/2021 brochure",
+            "description": "Official host-operator brochure stating that Meilenweiss covers 19 areas and that the annual pass includes summer 2021",
+            "variables": "meilenweiss_host_area_positive_offer|product_winter_area_count|annual_pass_summer_inclusion",
+            "start": "2020/2021",
+            "end": "2021",
+            "geography": "host resort and product-level aggregate",
+            "access": "Public official operator PDF",
+            "quality": "Does not name the full 19-area roster, so only the Atzmännig host listing is linked; product-level summer inclusion does not identify area-specific summer operation",
+            "confidence": "high for host-area offer and product-level count/modality; intentionally incomplete roster links",
+            "verification": "Rendered tariff page reviewed; 19-area statement and annual-pass inclusion of summer 2021 checked",
+        },
+        "MALBUN_MEILENWEISS_2021_22_WINTER_BROCHURE": {
+            "dataset": "Official Meilenweiss winter 2021/2022 brochure",
+            "description": "Official Malbun-hosted brochure listing 16 Swiss/Liechtenstein areas and advertising 19 winter versus 18 summer destinations for the annual pass",
+            "variables": "meilenweiss_swiss_liechtenstein_roster|winter_access|product_winter_destination_count|product_summer_destination_count",
+            "start": "2021/2022",
+            "end": "2022",
+            "geography": "named Swiss/Liechtenstein pass area / supplied resort listing link",
+            "access": "Public official operator PDF",
+            "quality": "The 16-area Swiss/Liechtenstein section is a subset of the four-country product; the 19-versus-18 aggregate does not identify which winter destination lacks summer access",
+            "confidence": "high for the displayed winter roster and aggregate modality; area-specific summer status remains unknown",
+            "verification": "Both wide brochure pages rendered and reviewed; all 16 Swiss/Liechtenstein labels, winter validity, summer 2022 validity and 19-winter/18-summer aggregate checked",
+        },
+        "PIZOL_ANNUAL_REPORT_2018_19": {
+            "dataset": "Official Pizolbahnen annual report 2018/2019",
+            "description": "Official annual report reviewed as a possible Meilenweiss source but containing no explicit Meilenweiss reference",
+            "variables": "nonconfirming_source_review|membership_evidence_not_found",
+            "start": "2018/2019",
+            "end": "2018/2019",
+            "geography": "Pizol operator report",
+            "access": "Public official operator PDF",
+            "quality": "Absence of an explicit token in this report is not evidence that Pizol was absent from Meilenweiss and creates no membership row",
+            "confidence": "high for the negative document review; no membership or absence inference",
+            "verification": "All 15 pages text-searched and rendered as a visual contact sheet; no explicit Meilenweiss reference found",
         },
     }
     for source_id, spec in historical_competing_source_specs.items():
@@ -946,7 +1008,7 @@ def main() -> None:
         metadata = historical_competing_pass_metadata[source_id]
         rows.append(blank_source(
             source_id,
-            variable_name="top4_season_continuity|official_area_label|historical_pass_presence",
+            variable_name=spec["variables"],
             variable_description=spec["description"],
             source_organisation=item["organisation"],
             source_dataset_name=spec["dataset"],
@@ -956,37 +1018,37 @@ def main() -> None:
             retrieval_date=(metadata or {}).get("retrieval_date", ""),
             original_file_name=raw_name(metadata),
             local_raw_file=(metadata or {}).get("raw_file", ""),
-            processed_file="config/competing_pass_historical_top4.json|data_processed/competing_pass_historical_area_seasons.csv|data_processed/resort_competing_pass_history.csv|data_processed/path_c_cluster_historical_competing_pass_context.csv|data_processed/magic_pass_decision_support.csv|reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md",
-            geographic_level="official Top4 regional area / supplied resort listing link",
+            processed_file="config/competing_pass_historical_top4.json|config/competing_pass_historical_meilenweiss.json|data_processed/competing_pass_historical_area_seasons.csv|data_processed/resort_competing_pass_history.csv|data_processed/path_c_cluster_historical_competing_pass_context.csv|data_processed/magic_pass_decision_support.csv|reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md",
+            geographic_level=spec["geography"],
             temporal_resolution="winter season",
             temporal_start=spec["start"],
             temporal_end=spec["end"],
             unit="named pass area and dated membership-presence evidence",
             license="Official public operator material; source terms apply",
-            access_conditions="Public official webpage",
-            transformation_applied="Checksum verification; explicit source-token validation; conservative stable resort-ID links without runtime fuzzy matching",
-            quality_notes="The pair of official releases supports eight consecutive Top4 seasons but only one competing product; non-links do not verify absence from the wider historical pass market",
-            confidence_level="high for Top4 continuity and named regional areas; conservative for supplied listing links",
+            access_conditions=spec["access"],
+            transformation_applied="Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching",
+            quality_notes=spec["quality"],
+            confidence_level=spec["confidence"],
             manual_verification=spec["verification"],
         ))
     rows.append(blank_source(
         "DERIVED_HISTORICAL_COMPETING_PASS_CONTEXT",
-        variable_name="historical_competing_pass_area_season|documented_listing_season_link|cluster_historical_pass_context",
-        variable_description="Qualified dated Top4 presence context from 2017/2018 through 2024/2025 at area, supplied-listing and preserved lift-cluster levels",
+        variable_name="historical_competing_pass_area_season|documented_product_listing_season_link|product_level_summer_inclusion|area_specific_summer_unknown|cluster_historical_pass_context",
+        variable_description="Qualified dated Top4 and Meilenweiss positive-presence context at area, product-listing-season and preserved lift-cluster levels",
         source_organisation="Master thesis analytical pipeline",
         source_dataset_name="Path C historical competing-pass context",
-        retrieval_method="Versioned deterministic Python expansion of eight documented Top4 seasons and explicit conservative resort-ID links",
-        local_raw_file="config/competing_pass_historical_top4.json",
+        retrieval_method="Versioned deterministic Python expansion of eight Top4 seasons and three bounded Meilenweiss seasons with explicit conservative resort-ID links",
+        local_raw_file="config/competing_pass_historical_top4.json|config/competing_pass_historical_meilenweiss.json",
         processed_file="data_processed/competing_pass_historical_area_seasons.csv|data_processed/resort_competing_pass_history.csv|data_processed/path_c_cluster_historical_competing_pass_context.csv|reports/historical_competing_pass_candidate_summary.csv|data_processed/magic_pass_decision_support.csv|reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md",
         geographic_level="official pass area, supplied resort listing and linked lift cluster",
-        temporal_resolution="eight winter seasons from 2017/2018 through 2024/2025",
+        temporal_resolution="eleven product-seasons across eight winter seasons from 2017/2018 through 2024/2025",
         temporal_start="2017/2018",
         temporal_end="2024/2025",
         unit="identifiers, seasons, counts, shares and protected flags",
-        transformation_applied="Validate official continuity statements and cached checksums; expand four areas over eight seasons; join five conservative stable listing IDs; aggregate documented presence without converting non-links into absence",
-        quality_notes="Only Top4 is reconstructed; component eligibility can differ within broad regional labels; evidence is not uniformly pre-treatment for Magic Pass anchors and is not approved for prediction, causal adjustment, recommendation or scoring",
-        confidence_level="high for reproducibility and positive Top4 links; incomplete historical market coverage",
-        manual_verification="32 area-season rows, 2,168 listing-season rows, 40 positive listing-season links, four linked clusters and two linked candidates; every market-absence and protected approval flag false",
+        transformation_applied="Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4 and 29 Meilenweiss area-season rows; join stable listing IDs; retain product-level summer inclusion separately from unknown area-specific summer activity; aggregate positive presence without converting non-links into absence",
+        quality_notes="Only two partially reconstructed products are covered; Meilenweiss evidence scope differs across seasons; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring",
+        confidence_level="high for reproducibility and documented positive links; incomplete historical market and summer-area coverage",
+        manual_verification="61 area-season rows, 2,981 product-listing-season rows, 66 positive links, 16 linked clusters and 13 linked candidates; zero area-specific summer claims and every market-absence/protected approval flag false",
     ))
     rows.append(blank_source(
         "DERIVED_PATH_C_NETWORK_CONTEXT",
@@ -3068,7 +3130,7 @@ def main() -> None:
         "resort_competing_pass_context": "supplied resort listing / official competing-pass area",
         "path_c_cluster_competing_pass_context": "linked lift cluster",
         "competing_pass_candidate_summary": "apparent Path C candidate lift cluster",
-        "competing_pass_historical_area_seasons": "official Top4 regional area by winter season",
+        "competing_pass_historical_area_seasons": "official Top4 or Meilenweiss area by winter season",
         "resort_competing_pass_history": "supplied resort listing by winter season",
         "path_c_cluster_historical_competing_pass_context": "linked lift cluster",
         "historical_competing_pass_candidate_summary": "apparent Path C candidate lift cluster",
@@ -3127,10 +3189,10 @@ def main() -> None:
         "resort_competing_pass_context": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
         "path_c_cluster_competing_pass_context": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
         "competing_pass_candidate_summary": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
-        "competing_pass_historical_area_seasons": "Top4 winter seasons 2017/2018 through 2024/2025",
-        "resort_competing_pass_history": "Top4 winter seasons 2017/2018 through 2024/2025",
-        "path_c_cluster_historical_competing_pass_context": "Top4 winter seasons 2017/2018 through 2024/2025",
-        "historical_competing_pass_candidate_summary": "Top4 winter seasons 2017/2018 through 2024/2025",
+        "competing_pass_historical_area_seasons": "Top4 2017/2018–2024/2025 and bounded Meilenweiss 2019/2020–2021/2022 product-seasons",
+        "resort_competing_pass_history": "Top4 2017/2018–2024/2025 and bounded Meilenweiss 2019/2020–2021/2022 product-seasons",
+        "path_c_cluster_historical_competing_pass_context": "Top4 2017/2018–2024/2025 and bounded Meilenweiss 2019/2020–2021/2022 product-seasons",
+        "historical_competing_pass_candidate_summary": "Top4 2017/2018–2024/2025 and bounded Meilenweiss 2019/2020–2021/2022 product-seasons",
         "path_c_cluster_network_context": "current/undated supplied directory plus current reviewed pass-network snapshots",
         "path_c_cluster_network_pairs": "current/undated supplied directory plus current reviewed pass-network snapshots",
         "network_context_candidate_summary": "current/undated supplied directory plus current reviewed pass-network snapshots",
@@ -3494,7 +3556,7 @@ def main() -> None:
                 "See config/path_c_analysis.json and src/data_processing/build_public_transport_journey_context.py"
                 if journey_variable
                 else
-                "See config/competing_pass_historical_top4.json and src/data_processing/build_historical_competing_pass_context.py"
+                "See config/competing_pass_historical_top4.json, config/competing_pass_historical_meilenweiss.json and src/data_processing/build_historical_competing_pass_context.py"
                 if historical_competing_variable
                 else
                 "See config/competing_pass_roster_2026_27.csv and src/data_processing/build_competing_pass_context.py"
@@ -3563,7 +3625,7 @@ def main() -> None:
                 "No causal interpretation; winter-2026 static schedules and algorithmic stop proxies are not real-time, historical or validated destination catchments"
                 if journey_variable
                 else
-                "No causal interpretation; one dated Top4 product does not reconstruct the full historical pass market, verify non-link absence, establish equivalent benefit intensity or supply a uniformly pre-treatment covariate"
+                "No causal interpretation; partial Top4 and Meilenweiss evidence does not reconstruct the full historical pass market, verify non-link absence, identify area-specific summer operation, establish equivalent benefit intensity or supply a uniformly pre-treatment covariate"
                 if historical_competing_variable
                 else
                 "No causal interpretation; current links in three official rosters do not reconstruct historical competition, verify market absence or establish equivalent benefit intensity"

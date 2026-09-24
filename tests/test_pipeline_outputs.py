@@ -1043,7 +1043,7 @@ def test_path_c_feature_readiness_keeps_coverage_separate_from_approval() -> Non
 
     assert len(audit) == 19
     assert audit["feature_group_id"].is_unique
-    assert audit["analysis_version"].eq("path_c_v0_24").all()
+    assert audit["analysis_version"].eq("path_c_v0_25").all()
     assert audit["candidate_pool_count"].eq(104).all()
     assert int(as_bool(audit["exploratory_similarity_use_approved"]).sum()) == 1
     approved = audit.loc[
@@ -1066,7 +1066,7 @@ def test_path_c_feature_readiness_keeps_coverage_separate_from_approval() -> Non
     ]
     assert int(
         historical_competing["candidate_rows_with_complete_required_fields"]
-    ) == 2
+    ) == 13
     assert historical_competing["candidate_coverage_status"] == (
         "partial_candidate_coverage"
     )
@@ -1110,7 +1110,7 @@ def test_checkpoint_6_dashboard_separates_dimensions_and_issues_no_recommendatio
     assert len(dashboard) == 104
     assert dashboard["cluster_id"].is_unique
     assert dashboard["cluster_id"].tolist() == sorted(dashboard["cluster_id"])
-    assert dashboard["analysis_version"].eq("path_c_v0_24").all()
+    assert dashboard["analysis_version"].eq("path_c_v0_25").all()
     assert dashboard["checkpoint"].eq(6).all()
     assert dashboard["opportunity_signal_percentile"].notna().all()
     assert dashboard["predicted_uplift_pct"].isna().all()
@@ -1150,7 +1150,7 @@ def test_checkpoint_6_dashboard_separates_dimensions_and_issues_no_recommendatio
     assert summary["candidates_with_point_container_tourism_context"] == 39
     assert summary["candidates_with_scope_radius_sensitivity"] == 104
     assert summary["candidates_with_any_radius_observed_hesta_ratio"] == 99
-    assert summary["candidates_with_documented_historical_competing_pass_link"] == 2
+    assert summary["candidates_with_documented_historical_competing_pass_link"] == 13
     competition = dimensions.set_index("dimension_id").loc["competition_network"]
     assert int(competition["complete_candidate_coverage_groups"]) == 2
     assert int(competition["partial_candidate_coverage_groups"]) == 1
@@ -1696,14 +1696,14 @@ def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> N
         "partial_cluster_listing_links": 6,
     }
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_24").all()
+    assert decision["analysis_version"].eq("path_c_v0_25").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
     assert not as_bool(decision["competing_pass_feature_approved"]).any()
 
 
-def test_historical_competing_pass_context_preserves_top4_scope_and_guards() -> None:
+def test_historical_competing_pass_context_preserves_product_scope_summer_distinction_and_guards() -> None:
     area_seasons = read("data_processed/competing_pass_historical_area_seasons.csv")
     listing_seasons = read("data_processed/resort_competing_pass_history.csv")
     cluster = read(
@@ -1717,20 +1717,53 @@ def test_historical_competing_pass_context_preserves_top4_scope_and_guards() -> 
         )
     )
 
-    assert len(area_seasons) == 32
+    assert len(area_seasons) == 61
     assert area_seasons["season"].nunique() == 8
-    assert area_seasons.groupby("season")["official_area_label"].nunique().eq(4).all()
+    assert area_seasons.groupby(["competing_pass_id", "season"]).size().to_dict() == {
+        ("meilenweiss", "2019/2020"): 12,
+        ("meilenweiss", "2020/2021"): 1,
+        ("meilenweiss", "2021/2022"): 16,
+        **{("top4", season): 4 for season in [
+            "2017/2018", "2018/2019", "2019/2020", "2020/2021",
+            "2021/2022", "2022/2023", "2023/2024", "2024/2025",
+        ]},
+    }
     assert not area_seasons[
         ["competing_pass_id", "season", "official_area_label"]
     ].duplicated().any()
+    assert not as_bool(area_seasons["area_specific_summer_access_documented"]).any()
+    meilenweiss_areas = area_seasons[area_seasons["competing_pass_id"].eq("meilenweiss")]
+    assert as_bool(meilenweiss_areas["annual_pass_following_summer_included"]).all()
+    season_2021 = meilenweiss_areas[meilenweiss_areas["season"].eq("2021/2022")]
+    assert season_2021["product_winter_destination_count"].eq(19).all()
+    assert season_2021["product_summer_destination_count"].eq(18).all()
+    assert area_seasons.loc[
+        area_seasons["official_area_label"].eq("Malbun"), "linked_resort_ids"
+    ].isna().all()
 
-    assert len(listing_seasons) == 2_168
-    assert not listing_seasons[["resort_id", "season"]].duplicated().any()
+    assert len(listing_seasons) == 2_981
+    assert not listing_seasons[
+        ["competing_pass_id", "resort_id", "season"]
+    ].duplicated().any()
     documented = as_bool(
         listing_seasons["historical_competing_pass_link_documented"]
     )
-    assert int(documented.sum()) == 40
-    assert listing_seasons.loc[documented, "resort_id"].nunique() == 5
+    assert int(documented.sum()) == 66
+    assert listing_seasons.loc[documented, "resort_id"].nunique() == 19
+    assert listing_seasons.loc[
+        listing_seasons["competing_pass_id"].eq("top4"),
+        "historical_competing_pass_link_documented",
+    ].pipe(as_bool).sum() == 40
+    assert listing_seasons.loc[
+        listing_seasons["competing_pass_id"].eq("meilenweiss"),
+        "historical_competing_pass_link_documented",
+    ].pipe(as_bool).sum() == 26
+    assert not as_bool(
+        listing_seasons["area_specific_summer_access_documented"]
+    ).any()
+    assert not listing_seasons.loc[
+        documented, "resort_id"
+    ].eq("buchserberg_skilift_buchserberg_malbun").any()
     assert not as_bool(
         listing_seasons["historical_competing_pass_market_absence_verified"]
     ).any()
@@ -1738,7 +1771,7 @@ def test_historical_competing_pass_context_preserves_top4_scope_and_guards() -> 
     assert len(cluster) == 162
     assert cluster["cluster_id"].is_unique
     linked_clusters = as_bool(cluster["historical_competing_pass_context_available"])
-    assert int(linked_clusters.sum()) == 4
+    assert int(linked_clusters.sum()) == 16
     for column in [
         "historical_competing_pass_market_absence_verified",
         "historical_competing_pass_feature_approved",
@@ -1746,30 +1779,49 @@ def test_historical_competing_pass_context_preserves_top4_scope_and_guards() -> 
         "historical_competing_pass_causal_covariate_approved",
         "historical_competing_pass_recommendation_feature_approved",
         "historical_competing_pass_composite_score_approved",
+        "historical_competing_pass_area_specific_summer_access_documented",
     ]:
         assert not as_bool(cluster[column]).any()
 
     assert len(candidates) == 104
     candidate_links = candidates["historical_competing_pass_first_documented_season"].notna()
-    assert int(candidate_links.sum()) == 2
+    assert int(candidate_links.sum()) == 13
     assert candidates.loc[
         candidate_links, "historical_competing_pass_scope_status"
-    ].eq("partial_cluster_listing_links_documented_in_top4").all()
-    assert summary["reviewed_historical_products"] == 1
-    assert summary["path_c_candidates_with_documented_link"] == 2
+    ].value_counts().to_dict() == {
+        "all_cluster_listings_have_documented_link": 7,
+        "partial_cluster_listing_links_documented": 6,
+    }
+    assert int(as_bool(candidates[
+        "historical_competing_pass_product_level_summer_inclusion_documented"
+    ]).sum()) == 11
+    assert not as_bool(candidates[
+        "historical_competing_pass_area_specific_summer_access_documented"
+    ]).any()
+    assert summary["reviewed_historical_products"] == 2
+    assert summary["reviewed_product_seasons"] == 11
+    assert summary["top4_area_season_rows"] == 32
+    assert summary["meilenweiss_area_season_rows"] == 29
+    assert summary["path_c_candidates_with_documented_link"] == 13
+    assert summary["area_specific_summer_access_documented_rows"] == 0
+    assert summary["nonconfirming_sources_reviewed"] == 1
+    assert len(summary["source_sha256"]) == 6
     assert summary["market_absence_verified_rows"] == 0
     assert summary["approved_features"] == 0
 
-    assert decision["analysis_version"].eq("path_c_v0_24").all()
+    assert decision["analysis_version"].eq("path_c_v0_25").all()
     assert int(
         as_bool(decision["historical_competing_pass_context_available"])
         .loc[as_bool(decision["candidate_for_path_c"])]
         .sum()
-    ) == 2
+    ) == 13
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
     assert not as_bool(
         decision["historical_competing_pass_feature_approved"]
+    ).any()
+    assert not as_bool(
+        decision["historical_competing_pass_area_specific_summer_access_documented"]
     ).any()
 
 
@@ -1847,7 +1899,7 @@ def test_path_c_network_context_excludes_focal_cluster_and_preserves_pair_grain(
     assert not as_bool(context["network_context_feature_approved"]).any()
     assert not as_bool(pairs["network_context_feature_approved"]).any()
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_24").all()
+    assert decision["analysis_version"].eq("path_c_v0_25").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1926,7 +1978,7 @@ def test_path_c_cluster_geography_sensitivity_preserves_clusters_and_bounds_rule
     assert not as_bool(context["cluster_geographic_coherence_verified"]).any()
     assert not as_bool(context["network_distance_sensitivity_feature_approved"]).any()
     assert not as_bool(pairs["network_distance_sensitivity_feature_approved"]).any()
-    assert decision["analysis_version"].eq("path_c_v0_24").all()
+    assert decision["analysis_version"].eq("path_c_v0_25").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()

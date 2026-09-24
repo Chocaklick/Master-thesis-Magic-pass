@@ -462,5 +462,33 @@
     "suffix": "html",
     "organisation": "Jungfraubahnen Management AG",
     "description": "Official 2024 release documenting Top4's eighth season in 2024/2025, the four participating regions and Gstaad's announced withdrawal after that season"
+  },
+  {
+    "source_id": "PIZOL_ANNUAL_REPORT_2018_19",
+    "url": "https://pizol.com/wp-content/uploads/2023/11/geschaeftsbericht-pizol-a5-2018-19-v3.pdf",
+    "suffix": "pdf",
+    "organisation": "Pizolbahnen AG",
+    "description": "Official Pizolbahnen 2018/2019 annual report reviewed as a possible Meilenweiss source; no explicit Meilenweiss reference was found, so it is non-confirming evidence only"
+  },
+  {
+    "source_id": "ATZMAENNIG_MEILENWEISS_2019_20_ORDER_FORM",
+    "url": "https://www.atzmaennig.ch/media/anmeldeformular-meilenweiss-19_20_bearbeitbar.pdf",
+    "suffix": "pdf",
+    "organisation": "Sportbahnen Atzmännig AG",
+    "description": "Official Meilenweiss 2019/2020 annual/season pass order form listing Swiss and Liechtenstein sales areas and annual-pass inclusion of summer 2020"
+  },
+  {
+    "source_id": "ATZMAENNIG_WINTER_BROCHURE_2020_21",
+    "url": "https://www.atzmaennig.ch/media/atzmaennig_winterbroschuere_a5_quer_web_2_.pdf",
+    "suffix": "pdf",
+    "organisation": "Sportbahnen Atzmännig AG",
+    "description": "Official Atzmännig 2020/2021 winter brochure stating that the Meilenweiss annual pass covers 19 areas and includes summer 2021"
+  },
+  {
+    "source_id": "MALBUN_MEILENWEISS_2021_22_WINTER_BROCHURE",
+    "url": "https://www.bergbahnen.li/application/files/4316/3540/3614/2122MeilenweissFolder.pdf",
+    "suffix": "pdf",
+    "organisation": "Bergbahnen Malbun AG",
+    "description": "Official operator-hosted Meilenweiss 2021/2022 winter brochure with 19 winter destinations and annual-pass inclusion of summer 2022"
   }
 ]

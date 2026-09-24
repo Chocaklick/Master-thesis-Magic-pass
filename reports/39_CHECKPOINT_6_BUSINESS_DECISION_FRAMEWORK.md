@@ -4,7 +4,7 @@
 
 Checkpoint 6 selects a **separated exploratory evidence dashboard** for the **104 Path C candidates**. It does not select an uplift model, causal ranking, recommendation engine or composite score. The architecture keeps structural comparability, descriptive analogue opportunity, snow vulnerability, tourism dependence, accessibility, competition/network context and evidence gaps separate across **7 dimensions**.
 
-The dashboard is deliberately incomplete as a business recommendation. Only **39** candidates have complete point-container hotel context. The 0/5/10 km scope sensitivity reaches an observed HESTA ratio for **99** candidates, but still leaves only **39** with complete municipal hotel coverage under any rule; more importantly, the radius validation rejects every rule as a comparable destination catchment. A first dated Top4 reconstruction adds historical pass presence for **2** candidates, but it covers only one product and its non-links do not establish historical market absence. Historical public transport, full historical competition and dated infrastructure therefore remain incomplete. A full Opportunity × Strategic Need matrix is ready for **0 candidates**.
+The dashboard is deliberately incomplete as a business recommendation. Only **39** candidates have complete point-container hotel context. The 0/5/10 km scope sensitivity reaches an observed HESTA ratio for **99** candidates, but still leaves only **39** with complete municipal hotel coverage under any rule; more importantly, the radius validation rejects every rule as a comparable destination catchment. A first dated Top4 reconstruction adds historical pass presence for **13** candidates, but it covers only one product and its non-links do not establish historical market absence. Historical public transport, full historical competition and dated infrastructure therefore remain incomplete. A full Opportunity × Strategic Need matrix is ready for **0 candidates**.
 
 ## Dimension register
 
@@ -15,7 +15,7 @@ The dashboard is deliberately incomplete as a business recommendation. Only **39
 | Snow vulnerability | 1 | 1 complete / 0 partial / 0 absent | qualified_proxy | separate_descriptive_vulnerability_dimension_only |
 | Tourism dependence and destination scope | 3 | 1 complete / 1 partial / 1 absent | incomplete_noncomparable_candidate_scope | qualified_context_and_scope_audit_only |
 | Population and accessibility context | 7 | 5 complete / 0 partial / 2 absent | qualified_current_context_historical_gap | separate_descriptive_context_only |
-| Competition and network context | 3 | 2 complete / 1 partial / 0 absent | qualified_current_context_partial_top4_history_full_historical_market_gap | separate_descriptive_context_only |
+| Competition and network context | 3 | 2 complete / 1 partial / 0 absent | qualified_current_context_partial_top4_and_meilenweiss_history_full_historical_market_gap | separate_descriptive_context_only |
 | Dated infrastructure and recommendation gate | 1 | 0 complete / 0 partial / 1 absent | blocked_missing_historical_evidence | no_recommendation_or_composite_score |
 
 ## Candidate uncertainty

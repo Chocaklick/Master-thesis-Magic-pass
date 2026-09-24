@@ -1,10 +1,9 @@
-"""Build a conservative dated Top4 history for the Path C competition gate.
+"""Build conservative dated Top4 and Meilenweiss context for Path C.
 
-Two checksum-cached official Jungfraubahnen releases jointly document the
-autumn-2017 launch and the eighth Top4 season in 2024/2025. The four named
-regional areas are expanded to explicit supplied listing IDs without fuzzy
-matching. A non-link is never interpreted as absence from the historical pass
-market, because this stage reconstructs only one product.
+Only positive, checksum-pinned evidence is linked to supplied resort IDs. The
+output never interprets a non-link as historical market absence. Product-level
+Meilenweiss summer inclusion is kept separate from area-specific summer
+operation, which remains unknown in the reviewed material.
 """
 
 from __future__ import annotations
@@ -14,14 +13,19 @@ import json
 import re
 import unicodedata
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import pandas as pd
 from bs4 import BeautifulSoup
+from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[2]
 EVIDENCE_DIR = ROOT / "data_external" / "source_evidence"
-CONFIG_PATH = ROOT / "config" / "competing_pass_historical_top4.json"
+TOP4_CONFIG_PATH = ROOT / "config" / "competing_pass_historical_top4.json"
+MEILENWEISS_CONFIG_PATH = (
+    ROOT / "config" / "competing_pass_historical_meilenweiss.json"
+)
 ANALYSIS_CONFIG_PATH = ROOT / "config" / "path_c_analysis.json"
 RESORT_PATH = ROOT / "data_processed" / "resort_master.csv"
 FEATURE_PATH = ROOT / "data_processed" / "path_c_resort_cluster_features.csv"
@@ -33,7 +37,7 @@ DECISION_OUTPUT = ROOT / "data_processed" / "magic_pass_decision_support.csv"
 SUMMARY_OUTPUT = ROOT / "reports" / "historical_competing_pass_context_summary.json"
 REPORT_OUTPUT = ROOT / "reports" / "41_HISTORICAL_COMPETING_PASS_CONTEXT.md"
 
-EXPECTED_SEASONS = [
+EXPECTED_TOP4_SEASONS = [
     "2017/2018",
     "2018/2019",
     "2019/2020",
@@ -43,18 +47,33 @@ EXPECTED_SEASONS = [
     "2023/2024",
     "2024/2025",
 ]
-EXPECTED_AREAS = {
+EXPECTED_TOP4_AREAS = {
     "Adelboden-Lenk",
     "Gstaad",
     "Jungfrau Ski Region",
     "Meiringen-Hasliberg",
 }
+EXPECTED_MEILENWEISS_SEASONS = ["2019/2020", "2020/2021", "2021/2022"]
+EXPECTED_MEILENWEISS_AREA_COUNTS = {
+    "2019/2020": 12,
+    "2020/2021": 1,
+    "2021/2022": 16,
+}
+EXPECTED_SOURCE_HOSTS = {
+    "JUNGFRAU_TOP4_2018_19_CONTINUITY": "jungfrau.ch",
+    "JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON": "jungfrau.ch",
+    "ATZMAENNIG_MEILENWEISS_2019_20_ORDER_FORM": "atzmaennig.ch",
+    "ATZMAENNIG_WINTER_BROCHURE_2020_21": "atzmaennig.ch",
+    "MALBUN_MEILENWEISS_2021_22_WINTER_BROCHURE": "bergbahnen.li",
+    "PIZOL_ANNUAL_REPORT_2018_19": "pizol.com",
+}
 INTERPRETATION = (
-    "dated_top4_2017_18_to_2024_25_presence_links_for_one_product_"
-    "not_complete_historical_pass_market_absence_pre_treatment_or_causal_feature"
+    "dated_top4_2017_18_to_2024_25_and_meilenweiss_2019_20_to_2021_22_"
+    "positive_presence_evidence_not_complete_historical_pass_market_absence_"
+    "pre_treatment_or_causal_feature"
 )
 NO_LINK_STATUS = (
-    "not_linked_in_one_reconstructed_top4_roster_not_verified_"
+    "not_linked_in_reviewed_product_season_positive_evidence_not_verified_"
     "absence_from_historical_competing_passes"
 )
 
@@ -79,7 +98,7 @@ def normalize_text(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", value.lower())
 
 
-def exact_metadata(source_id: str) -> dict[str, object]:
+def exact_metadata(source_id: str, expected_sha256: str) -> dict[str, object]:
     records: list[dict[str, object]] = []
     for path in EVIDENCE_DIR.glob(f"{source_id}_*.metadata.json"):
         record = json.loads(path.read_text(encoding="utf-8"))
@@ -91,26 +110,36 @@ def exact_metadata(source_id: str) -> dict[str, object]:
     raw_path = ROOT / str(record["raw_file"])
     if not raw_path.exists():
         raise FileNotFoundError(raw_path)
-    if hashlib.sha256(raw_path.read_bytes()).hexdigest() != record["sha256"]:
+    observed_sha256 = hashlib.sha256(raw_path.read_bytes()).hexdigest()
+    if observed_sha256 != record["sha256"] or observed_sha256 != expected_sha256:
         raise RuntimeError(f"Cached source checksum failure: {source_id}")
-    if "jungfrau.ch" not in str(record.get("final_url", "")):
-        raise ValueError(f"Unexpected final source host for {source_id}")
+    host = urlsplit(str(record.get("final_url", ""))).hostname or ""
+    if not host.endswith(EXPECTED_SOURCE_HOSTS[source_id]):
+        raise ValueError(f"Unexpected final source host for {source_id}: {host}")
     return record
 
 
 def source_text(record: dict[str, object]) -> str:
     path = ROOT / str(record["raw_file"])
+    if path.suffix.lower() == ".pdf":
+        return "\n".join(page.extract_text() or "" for page in PdfReader(path).pages)
     return BeautifulSoup(path.read_bytes(), "html.parser").get_text(" ", strip=True)
 
 
-def validate_sources(source_ids: list[str]) -> dict[str, dict[str, object]]:
-    expected_ids = {
-        "JUNGFRAU_TOP4_2018_19_CONTINUITY",
-        "JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON",
+def validate_sources(
+    top4_config: dict[str, object], meilenweiss_config: dict[str, object]
+) -> dict[str, dict[str, object]]:
+    expected_ids = set(EXPECTED_SOURCE_HOSTS)
+    sha_by_id = {
+        **top4_config["source_sha256_by_id"],
+        **meilenweiss_config["source_sha256_by_id"],
     }
-    if set(source_ids) != expected_ids:
-        raise ValueError("Historical Top4 source registry changed unexpectedly")
-    metadata = {source_id: exact_metadata(source_id) for source_id in source_ids}
+    if set(sha_by_id) != expected_ids:
+        raise ValueError("Historical competing-pass source registry changed unexpectedly")
+    metadata = {
+        source_id: exact_metadata(source_id, str(sha_by_id[source_id]))
+        for source_id in sorted(expected_ids)
+    }
     texts = {
         source_id: normalize_text(source_text(record))
         for source_id, record in metadata.items()
@@ -133,36 +162,98 @@ def validate_sources(source_ids: list[str]) -> dict[str, dict[str, object]]:
             "meiringenhasliberg",
             "gstaadswithdrawal",
         ],
+        "ATZMAENNIG_MEILENWEISS_2019_20_ORDER_FORM": [
+            "winter201920",
+            "jahreskarte201920inklsommersaison2020",
+            "saisonkarte201920",
+            "atzmannig",
+            "braunwald",
+            "flumserberg",
+            "malbun",
+            "mythenregion",
+            "pizol",
+            "stoos",
+            "wildhaus",
+            "krummenauwolzenalp",
+            "sattelhochstuckli",
+            "gruschdanusa",
+        ],
+        "ATZMAENNIG_WINTER_BROCHURE_2020_21": [
+            "meilenweissabo",
+            "freiefahrtin19revieren",
+            "jahreskarteinklusivesommersaison2021",
+        ],
+        "MALBUN_MEILENWEISS_2021_22_WINTER_BROCHURE": [
+            "flumserberg",
+            "wildhaus",
+            "pizol",
+            "elm",
+            "mythenregion",
+            "braunwald",
+            "stoos",
+            "ebenalphorn",
+            "sattelhochstuckli",
+            "amden",
+            "atzmannig",
+            "wolzenalp",
+            "gruschdanusa",
+            "ebnatkappeltanzboden",
+            "hoherkasten",
+            "malbun",
+        ],
     }
     for source_id, tokens in required.items():
         missing = [token for token in tokens if token not in texts[source_id]]
         if missing:
-            raise ValueError(f"Expected Top4 evidence tokens missing from {source_id}: {missing}")
+            raise ValueError(
+                f"Expected historical pass evidence tokens missing from {source_id}: {missing}"
+            )
+    if "meilenweiss" in texts["PIZOL_ANNUAL_REPORT_2018_19"]:
+        raise ValueError("Pizol annual report negative review changed; inspect before use")
     return metadata
 
 
-def validate_config(
-    config: dict[str, object], analysis_config: dict[str, object], resorts: pd.DataFrame
+def validate_configs(
+    top4_config: dict[str, object],
+    meilenweiss_config: dict[str, object],
+    analysis_config: dict[str, object],
+    resorts: pd.DataFrame,
 ) -> dict[str, dict[str, object]]:
-    if config["analysis_version"] != analysis_config["analysis_version"]:
-        raise ValueError("Historical Top4 and Path C versions differ")
-    if config["seasons"] != EXPECTED_SEASONS:
+    versions = {
+        top4_config["analysis_version"],
+        meilenweiss_config["analysis_version"],
+        analysis_config["analysis_version"],
+    }
+    if len(versions) != 1:
+        raise ValueError("Historical pass and Path C versions differ")
+    if top4_config["seasons"] != EXPECTED_TOP4_SEASONS:
         raise ValueError("Historical Top4 must preserve the eight declared seasons")
-    areas = list(config["areas"])
-    if len(areas) != 4 or {area["official_area_label"] for area in areas} != EXPECTED_AREAS:
+    top4_areas = list(top4_config["areas"])
+    if len(top4_areas) != 4 or {
+        area["official_area_label"] for area in top4_areas
+    } != EXPECTED_TOP4_AREAS:
         raise ValueError("Historical Top4 must contain the four official regional areas")
+    meilenweiss_seasons = list(meilenweiss_config["seasons"])
+    if [item["season"] for item in meilenweiss_seasons] != EXPECTED_MEILENWEISS_SEASONS:
+        raise ValueError("Historical Meilenweiss seasons changed unexpectedly")
     known_resort_ids = set(resorts["resort_id"])
-    linked_ids: list[str] = []
-    for area in areas:
-        area_ids = list(area["linked_resort_ids"])
-        if not area_ids:
-            raise ValueError(f"Empty reviewed mapping for {area['official_area_label']}")
-        unknown = set(area_ids) - known_resort_ids
+    for season in meilenweiss_seasons:
+        areas = list(season["areas"])
+        if len(areas) != EXPECTED_MEILENWEISS_AREA_COUNTS[season["season"]]:
+            raise ValueError(f"Unexpected Meilenweiss area count for {season['season']}")
+        if len({area["official_area_label"] for area in areas}) != len(areas):
+            raise ValueError(f"Duplicate Meilenweiss area in {season['season']}")
+        linked_ids = [item for area in areas for item in area["linked_resort_ids"]]
+        if len(linked_ids) != len(set(linked_ids)):
+            raise ValueError(f"Duplicate supplied listing link in {season['season']}")
+        unknown = set(linked_ids) - known_resort_ids
         if unknown:
-            raise ValueError(f"Unknown historical Top4 listing IDs: {sorted(unknown)}")
-        linked_ids.extend(area_ids)
-    if len(linked_ids) != len(set(linked_ids)) or len(linked_ids) != 5:
-        raise ValueError("Historical Top4 mapping must contain five unique conservative listing links")
+            raise ValueError(f"Unknown Meilenweiss listing IDs: {sorted(unknown)}")
+    top4_linked_ids = [
+        item for area in top4_areas for item in area["linked_resort_ids"]
+    ]
+    if len(top4_linked_ids) != 5 or len(top4_linked_ids) != len(set(top4_linked_ids)):
+        raise ValueError("Historical Top4 mapping must retain five unique listing links")
     protected = [
         "historical_market_absence_verified",
         "pre_treatment_feature_approved",
@@ -170,28 +261,83 @@ def validate_config(
         "recommendation_feature_approved",
         "composite_score_approved",
     ]
-    if any(bool(config[field]) for field in protected):
-        raise ValueError("A protected historical competing-pass approval became true")
-    return validate_sources(list(config["source_ids"]))
+    for config in [top4_config, meilenweiss_config]:
+        if any(bool(config[field]) for field in protected):
+            raise ValueError("A protected historical competing-pass approval became true")
+    reviews = list(meilenweiss_config["nonconfirming_source_reviews"])
+    if len(reviews) != 1 or reviews[0]["membership_use"] != "not_used_as_membership_evidence":
+        raise ValueError("Non-confirming Pizol source must remain excluded from membership")
+    return validate_sources(top4_config, meilenweiss_config)
 
 
-def build_area_seasons(config: dict[str, object]) -> pd.DataFrame:
+def product_seasons(
+    top4_config: dict[str, object], meilenweiss_config: dict[str, object]
+) -> list[dict[str, object]]:
+    items: list[dict[str, object]] = []
+    for season in top4_config["seasons"]:
+        items.append(
+            {
+                "competing_pass_id": top4_config["competing_pass_id"],
+                "competing_pass_name": top4_config["competing_pass_name"],
+                "season": season,
+                "areas": top4_config["areas"],
+                "source_ids": top4_config["source_ids"],
+                "evidence_scope": "continuous_official_four_area_product_roster",
+                "product_winter_destination_count": 4,
+                "product_summer_destination_count": None,
+                "annual_pass_following_summer_season": None,
+                "annual_pass_following_summer_included": None,
+                "season_only_pass_following_summer_included": None,
+                "continuity_basis": top4_config["continuity_basis"],
+            }
+        )
+    for season in meilenweiss_config["seasons"]:
+        items.append(
+            {
+                "competing_pass_id": meilenweiss_config["competing_pass_id"],
+                "competing_pass_name": meilenweiss_config["competing_pass_name"],
+                **season,
+                "continuity_basis": (
+                    "season_specific_official_operator_material_no_cross_season_"
+                    "continuity_inference"
+                ),
+            }
+        )
+    return items
+
+
+def build_area_seasons(
+    analysis_version: str, specs: list[dict[str, object]]
+) -> pd.DataFrame:
     records: list[dict[str, object]] = []
-    source_ids = "|".join(config["source_ids"])
-    for season in config["seasons"]:
-        for area in config["areas"]:
+    for spec in specs:
+        for area in spec["areas"]:
+            is_meilenweiss = spec["competing_pass_id"] == "meilenweiss"
             records.append(
                 {
-                    "analysis_version": config["analysis_version"],
-                    "competing_pass_id": config["competing_pass_id"],
-                    "competing_pass_name": config["competing_pass_name"],
-                    "season": season,
+                    "analysis_version": analysis_version,
+                    "competing_pass_id": spec["competing_pass_id"],
+                    "competing_pass_name": spec["competing_pass_name"],
+                    "season": spec["season"],
                     "official_area_label": area["official_area_label"],
+                    "winter_access_documented": True,
+                    "evidence_scope": spec["evidence_scope"],
+                    "product_winter_destination_count": spec["product_winter_destination_count"],
+                    "product_summer_destination_count": spec["product_summer_destination_count"],
+                    "annual_pass_following_summer_season": spec["annual_pass_following_summer_season"],
+                    "annual_pass_following_summer_included": spec["annual_pass_following_summer_included"],
+                    "season_only_pass_following_summer_included": spec["season_only_pass_following_summer_included"],
+                    "area_specific_summer_access_documented": False,
+                    "area_specific_summer_access_status": (
+                        "unknown_not_inferable_from_product_wide_annual_pass_statement"
+                        if is_meilenweiss
+                        else "not_documented_in_reviewed_top4_sources"
+                    ),
                     "linked_resort_ids": "|".join(area["linked_resort_ids"]),
                     "mapping_basis": area["mapping_basis"],
                     "scope_note": area["scope_note"],
-                    "continuity_basis": config["continuity_basis"],
-                    "source_ids": source_ids,
+                    "continuity_basis": spec["continuity_basis"],
+                    "source_ids": "|".join(spec["source_ids"]),
                     "historical_market_absence_verified": False,
                     "pre_treatment_feature_approved": False,
                     "causal_covariate_approved": False,
@@ -201,41 +347,61 @@ def build_area_seasons(config: dict[str, object]) -> pd.DataFrame:
                 }
             )
     area_seasons = pd.DataFrame(records)
-    if len(area_seasons) != 32:
-        raise ValueError("Expected 32 Top4 area-season rows")
-    if area_seasons.duplicated(["competing_pass_id", "season", "official_area_label"]).any():
-        raise ValueError("Duplicate historical Top4 area-season row")
-    if area_seasons.groupby("season")["official_area_label"].nunique().ne(4).any():
-        raise ValueError("Every historical Top4 season must retain four official areas")
+    if len(area_seasons) != 61:
+        raise ValueError("Expected 61 Top4 plus Meilenweiss area-season rows")
+    if area_seasons.duplicated(
+        ["competing_pass_id", "season", "official_area_label"]
+    ).any():
+        raise ValueError("Duplicate historical pass area-season row")
+    if area_seasons["area_specific_summer_access_documented"].any():
+        raise ValueError("Product-wide summer evidence became an area-specific claim")
     return area_seasons
 
 
 def build_resort_seasons(
-    config: dict[str, object], resorts: pd.DataFrame
+    analysis_version: str,
+    specs: list[dict[str, object]],
+    resorts: pd.DataFrame,
 ) -> pd.DataFrame:
-    area_by_resort: dict[str, dict[str, object]] = {}
-    for area in config["areas"]:
-        for resort_id in area["linked_resort_ids"]:
-            area_by_resort[resort_id] = area
     records: list[dict[str, object]] = []
-    source_ids = "|".join(config["source_ids"])
-    for season in config["seasons"]:
+    for spec in specs:
+        area_by_resort: dict[str, dict[str, object]] = {}
+        for area in spec["areas"]:
+            for resort_id in area["linked_resort_ids"]:
+                area_by_resort[resort_id] = area
         for resort in resorts.itertuples(index=False):
             area = area_by_resort.get(resort.resort_id)
             linked = area is not None
+            product_summer = spec["annual_pass_following_summer_included"]
             records.append(
                 {
-                    "analysis_version": config["analysis_version"],
+                    "analysis_version": analysis_version,
                     "resort_id": resort.resort_id,
                     "resort_name_canonical": resort.resort_name_canonical,
                     "cluster_id": resort.cluster_id,
-                    "season": season,
-                    "competing_pass_id": config["competing_pass_id"] if linked else "",
-                    "competing_pass_name": config["competing_pass_name"] if linked else "",
+                    "season": spec["season"],
+                    "competing_pass_id": spec["competing_pass_id"],
+                    "competing_pass_name": spec["competing_pass_name"],
                     "official_area_label": area["official_area_label"] if linked else "",
                     "historical_competing_pass_link_documented": linked,
+                    "winter_access_documented": linked,
                     "historical_competing_pass_link_status": (
-                        "documented_top4_roster_link" if linked else NO_LINK_STATUS
+                        f"documented_{spec['competing_pass_id']}_positive_area_link"
+                        if linked
+                        else NO_LINK_STATUS
+                    ),
+                    "evidence_scope": spec["evidence_scope"],
+                    "product_winter_destination_count": spec["product_winter_destination_count"],
+                    "product_summer_destination_count": spec["product_summer_destination_count"],
+                    "annual_pass_following_summer_season": spec["annual_pass_following_summer_season"],
+                    "annual_pass_following_summer_included": product_summer,
+                    "area_specific_summer_access_documented": False,
+                    "area_specific_summer_access_status": (
+                        "unknown_not_inferable_from_product_wide_annual_pass_statement"
+                        if linked and product_summer is True
+                        else "not_documented_in_reviewed_sources"
+                        if linked
+                        else "not_evaluated_without_documented_area_link"
                     ),
                     "mapping_basis": area["mapping_basis"] if linked else "",
                     "historical_competing_pass_market_absence_verified": False,
@@ -244,24 +410,34 @@ def build_resort_seasons(
                     "causal_covariate_approved": False,
                     "recommendation_feature_approved": False,
                     "composite_score_approved": False,
-                    "source_ids": source_ids,
+                    "source_ids": "|".join(spec["source_ids"]),
                     "interpretation": INTERPRETATION,
                 }
             )
     history = pd.DataFrame(records)
-    if len(history) != len(resorts) * len(EXPECTED_SEASONS):
-        raise ValueError("Historical competing-pass listing-season grain changed")
-    if history.duplicated(["resort_id", "season"]).any():
-        raise ValueError("Duplicate historical competing-pass listing-season row")
-    if int(history["historical_competing_pass_link_documented"].sum()) != 40:
-        raise ValueError("Expected five conservative listing links in each of eight seasons")
+    if len(history) != len(resorts) * 11:
+        raise ValueError("Historical product-listing-season grain changed")
+    if history.duplicated(["competing_pass_id", "resort_id", "season"]).any():
+        raise ValueError("Duplicate historical product-listing-season row")
+    links_by_product = history.groupby("competing_pass_id")[
+        "historical_competing_pass_link_documented"
+    ].sum()
+    if links_by_product.to_dict() != {"meilenweiss": 26, "top4": 40}:
+        raise ValueError(f"Unexpected documented product links: {links_by_product.to_dict()}")
     if history["historical_competing_pass_market_absence_verified"].any():
-        raise ValueError("One-product non-links cannot verify historical market absence")
+        raise ValueError("Reviewed product non-links cannot verify historical market absence")
+    if history["area_specific_summer_access_documented"].any():
+        raise ValueError("No reviewed row supports area-specific summer access")
     return history
 
 
 def build_cluster_context(
-    config: dict[str, object], history: pd.DataFrame, resorts: pd.DataFrame, features: pd.DataFrame
+    analysis_version: str,
+    history: pd.DataFrame,
+    resorts: pd.DataFrame,
+    features: pd.DataFrame,
+    positive_source_ids: list[str],
+    nonconfirming_source_ids: list[str],
 ) -> pd.DataFrame:
     feature_lookup = features.set_index("cluster_id")
     resort_groups = {cluster_id: group for cluster_id, group in resorts.groupby("cluster_id")}
@@ -274,34 +450,36 @@ def build_cluster_context(
         linked_ids = set(linked_rows["resort_id"])
         linked_listing_count = len(linked_ids)
         listing_count = len(listing_ids)
-        documented_seasons = sorted(
-            set(linked_rows["season"]), key=season_sort_key
-        )
+        documented_seasons = sorted(set(linked_rows["season"]), key=season_sort_key)
         if linked_listing_count == 0:
-            scope_status = "no_documented_link_in_one_reconstructed_product"
+            scope_status = "no_documented_link_in_reviewed_products"
         elif linked_listing_count == listing_count:
-            scope_status = "all_listing_points_documented_in_top4"
+            scope_status = "all_cluster_listings_have_documented_link"
         else:
-            scope_status = "partial_cluster_listing_links_documented_in_top4"
+            scope_status = "partial_cluster_listing_links_documented"
+        has_product_summer_statement = (
+            linked_rows["annual_pass_following_summer_included"].eq(True).any()
+        )
         rows.append(
             {
+                "analysis_version": analysis_version,
                 "cluster_id": cluster_id,
                 "cluster_display_name": feature_lookup.loc[cluster_id, "cluster_display_name"],
                 "candidate_for_path_c": feature_lookup.loc[cluster_id, "candidate_for_path_c"],
-                "historical_competing_pass_products_reviewed": 1,
-                "historical_competing_pass_seasons_reviewed": len(EXPECTED_SEASONS),
-                "historical_competing_pass_area_seasons_reviewed": 32,
+                "historical_competing_pass_products_reviewed": 2,
+                "historical_competing_pass_unique_seasons_reviewed": 8,
+                "historical_competing_pass_product_seasons_reviewed": 11,
+                "historical_competing_pass_area_seasons_reviewed": 61,
                 "historical_competing_pass_cluster_listing_count": listing_count,
                 "historical_competing_pass_linked_listing_count": linked_listing_count,
-                "historical_competing_pass_linked_listing_share": (
-                    linked_listing_count / listing_count
-                ),
+                "historical_competing_pass_linked_listing_share": linked_listing_count / listing_count,
                 "historical_competing_pass_scope_status": scope_status,
                 "historical_competing_pass_linked_resort_ids": pipe_unique(linked_ids),
-                "historical_competing_pass_unlinked_resort_ids": pipe_unique(
-                    listing_ids - linked_ids
-                ),
+                "historical_competing_pass_unlinked_resort_ids": pipe_unique(listing_ids - linked_ids),
                 "historical_competing_pass_documented_season_count": len(documented_seasons),
+                "historical_competing_pass_documented_product_season_count": len(
+                    linked_rows[["competing_pass_id", "season"]].drop_duplicates()
+                ),
                 "historical_competing_pass_documented_seasons": "|".join(documented_seasons),
                 "historical_competing_pass_first_documented_season": (
                     documented_seasons[0] if documented_seasons else pd.NA
@@ -309,19 +487,25 @@ def build_cluster_context(
                 "historical_competing_pass_last_documented_season": (
                     documented_seasons[-1] if documented_seasons else pd.NA
                 ),
-                "historical_competing_pass_ids": (
-                    config["competing_pass_id"] if documented_seasons else ""
+                "historical_competing_pass_ids": pipe_unique(linked_rows["competing_pass_id"]),
+                "historical_competing_pass_names": pipe_unique(linked_rows["competing_pass_name"]),
+                "historical_competing_pass_area_labels": pipe_unique(linked_rows["official_area_label"]),
+                "historical_competing_pass_product_level_summer_inclusion_documented": bool(
+                    has_product_summer_statement
                 ),
-                "historical_competing_pass_names": (
-                    config["competing_pass_name"] if documented_seasons else ""
-                ),
-                "historical_competing_pass_area_labels": pipe_unique(
-                    linked_rows["official_area_label"]
+                "historical_competing_pass_area_specific_summer_access_documented": False,
+                "historical_competing_pass_summer_scope_status": (
+                    "product_level_annual_pass_summer_inclusion_only_area_specific_status_unknown"
+                    if has_product_summer_statement
+                    else "no_reviewed_area_specific_summer_evidence"
+                    if documented_seasons
+                    else "no_documented_historical_link"
                 ),
                 "historical_competing_pass_market_absence_verified": False,
                 "historical_competing_pass_context_available": bool(documented_seasons),
                 "historical_competing_pass_temporal_scope": (
-                    "top4_2017_2018_through_2024_2025"
+                    "top4_2017_2018_to_2024_2025_and_meilenweiss_positive_"
+                    "evidence_2019_2020_to_2021_2022"
                 ),
                 "historical_competing_pass_context_interpretation": INTERPRETATION,
                 "historical_competing_pass_feature_approved": False,
@@ -329,15 +513,17 @@ def build_cluster_context(
                 "historical_competing_pass_causal_covariate_approved": False,
                 "historical_competing_pass_recommendation_feature_approved": False,
                 "historical_competing_pass_composite_score_approved": False,
-                "historical_competing_pass_source_ids": "|".join(config["source_ids"]),
+                "historical_competing_pass_source_ids": "|".join(sorted(positive_source_ids)),
+                "historical_competing_pass_nonconfirming_source_ids": "|".join(
+                    sorted(nonconfirming_source_ids)
+                ),
             }
         )
     context = pd.DataFrame(rows)
     if len(context) != 162 or not context["cluster_id"].is_unique:
         raise ValueError("Historical competing-pass context must preserve 162 clusters")
-    linked_clusters = context["historical_competing_pass_context_available"]
-    if int(linked_clusters.sum()) != 4:
-        raise ValueError("Expected four lift clusters with documented Top4 links")
+    if int(context["historical_competing_pass_context_available"].sum()) != 16:
+        raise ValueError("Expected 16 lift clusters with documented historical links")
     if not context["historical_competing_pass_linked_listing_share"].between(0, 1).all():
         raise ValueError("Invalid historical competing-pass listing share")
     protected = [
@@ -347,6 +533,7 @@ def build_cluster_context(
         "historical_competing_pass_causal_covariate_approved",
         "historical_competing_pass_recommendation_feature_approved",
         "historical_competing_pass_composite_score_approved",
+        "historical_competing_pass_area_specific_summer_access_documented",
     ]
     if context[protected].any().any():
         raise ValueError("A protected historical competing-pass cluster flag became true")
@@ -358,11 +545,14 @@ def enrich_decision_support(context: pd.DataFrame) -> None:
     context_columns = [
         column
         for column in context.columns
-        if column not in {"cluster_id", "cluster_display_name", "candidate_for_path_c"}
+        if column not in {"analysis_version", "cluster_id", "cluster_display_name", "candidate_for_path_c"}
     ]
-    decision = decision.drop(
-        columns=[column for column in context_columns if column in decision.columns]
-    ).merge(
+    stale_historical_columns = [
+        column
+        for column in decision.columns
+        if column.startswith("historical_competing_pass_")
+    ]
+    decision = decision.drop(columns=stale_historical_columns).merge(
         context[["cluster_id", *context_columns]],
         on="cluster_id",
         how="left",
@@ -385,36 +575,40 @@ def enrich_decision_support(context: pd.DataFrame) -> None:
         "historical_competing_pass_causal_covariate_approved",
         "historical_competing_pass_recommendation_feature_approved",
         "historical_competing_pass_composite_score_approved",
+        "historical_competing_pass_area_specific_summer_access_documented",
     ]
     if any(as_bool(decision[column]).any() for column in protected_flags):
-        raise ValueError("Historical competing-pass evidence became an approved decision feature")
+        raise ValueError("Historical pass evidence became an approved or inferred feature")
     DECISION_OUTPUT.write_text(
         decision.to_csv(index=False, lineterminator="\n"), encoding="utf-8"
     )
 
 
 def write_report(summary: dict[str, object]) -> None:
-    report = f"""# Historical competing-pass context: Top4
+    report = f"""# Historical competing-pass context: Top4 and Meilenweiss
 
 ## Evidence recovered
 
-Two checksum-cached official Jungfraubahnen releases provide a bounded historical reconstruction. The September 2018 release states that Top4 was launched in autumn 2017, names Adelboden-Lenk, Gstaad, Jungfrau Ski Region and Meiringen-Hasliberg, and describes 2018/2019 as the unchanged second season. The December 2024 release names the same four regions, describes 2024/2025 as the eighth season and records Gstaad's announced withdrawal after that winter. Together these statements support **eight consecutive seasons from 2017/2018 through 2024/2025** for the four-area Top4 product.
+The checksum-pinned Top4 reconstruction remains unchanged: four official regions over eight consecutive seasons from 2017/2018 through 2024/2025. Three official operator PDFs add bounded Meilenweiss evidence for 2019/2020, 2020/2021 and 2021/2022. The 2019/2020 order form names 12 sales areas but is not treated as a complete international roster. The 2020/2021 Atzmännig brochure documents a 19-area product and links only the host area because it does not name the full roster. The 2021/2022 Malbun brochure explicitly lists 16 Swiss/Liechtenstein areas within a product advertised as 19 winter destinations.
 
-The output contains **{summary['area_season_rows']} area-season rows** and **{summary['resort_season_rows']} supplied-listing-season rows**. Five conservative supplied listing links are recorded in every season, producing **{summary['documented_listing_season_links']} documented listing-season links** across **{summary['clusters_with_documented_link']} lift clusters**.
+The combined output contains **{summary['area_season_rows']} area-season rows**, **{summary['resort_product_season_rows']} product-listing-season rows** and **{summary['documented_listing_season_links']} positive listing-season links**. These reach **{summary['clusters_with_documented_link']} lift clusters**, including **{summary['path_c_candidates_with_documented_link']} of {summary['path_c_candidates']}** apparent Path C candidates.
 
-## Conservative entity scope
+## Winter and summer are not conflated
 
-Only exact or conservative supplied-directory links are used. Adelboden and Lenk are linked, but Engstligenalp and Elsigenalp-Metschalp are not inferred from the broad historical regional label. Grindelwald-Wengen is linked to Jungfrau Ski Region, while Schilthorn is deliberately left unlinked because component eligibility changed during the Top4 period and the two continuity releases do not establish its season-specific scope. Gstaad and Meiringen-Hasliberg use exact supplied listing links.
+Each linked area is positive winter evidence. The Meilenweiss annual-pass documents state that the following summer season is included; the 2021/2022 brochure gives an aggregate of 19 winter and 18 summer destinations. None of the reviewed documents identifies the area-level summer exception. Therefore **{summary['area_specific_summer_access_documented_rows']} area-specific summer links** are asserted. Product-level summer inclusion is retained separately and never converted into a claim that every winter area operates in summer.
 
-Among the **{summary['path_c_candidates']}** apparent Path C candidates, **{summary['path_c_candidates_with_documented_link']}** clusters have a documented Top4 link and both are partial mixed-listing clusters. The remaining {summary['path_c_candidates_without_documented_link']} candidate non-links mean only that no link was found in this one reconstructed product.
+## Conservative scope and negative evidence
+
+Malbun in Liechtenstein is not linked to the supplied Buchserberg-Malbun listing, which is a different Swiss area. Hoher Kasten has no equivalent supplied ski listing. Broad cluster neighbours never inherit a documented listing link. The official Pizol 2018/2019 annual report was checksum-verified, text-searched and visually reviewed but contains no explicit Meilenweiss reference; it is recorded as a non-confirming source and creates neither membership nor absence evidence.
 
 ## Decision limit
 
-This milestone reconstructs **one competing pass**, not the full Swiss multi-resort-pass market. The evidence is dated, but it is not uniformly pre-treatment for the Magic Pass anchors, does not measure pass intensity or prices, and does not verify absence from Meilenweiss, Schneepass, SnowPass, TopCard, regional alliances or reciprocal offers. Historical market-absence, pre-treatment, causal, recommendation and composite-score approvals therefore remain false. The result is qualified partial historical context, not a ranking input.
+Two products and eleven product-seasons still do not reconstruct the full historical multi-resort-pass market. Non-links do not verify absence, evidence scopes differ by season, several observations postdate Magic Pass treatment anchors, and benefit intensity and prices are not harmonised. Historical-market-absence, pre-treatment, causal, recommendation and composite-score approvals remain false. The result is qualified context, not a ranking input.
 
 ## Outputs
 
 - `config/competing_pass_historical_top4.json`
+- `config/competing_pass_historical_meilenweiss.json`
 - `data_processed/competing_pass_historical_area_seasons.csv`
 - `data_processed/resort_competing_pass_history.csv`
 - `data_processed/path_c_cluster_historical_competing_pass_context.csv`
@@ -425,7 +619,8 @@ This milestone reconstructs **one competing pass**, not the full Swiss multi-res
 
 
 def main() -> None:
-    config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+    top4_config = json.loads(TOP4_CONFIG_PATH.read_text(encoding="utf-8"))
+    meilenweiss_config = json.loads(MEILENWEISS_CONFIG_PATH.read_text(encoding="utf-8"))
     analysis_config = json.loads(ANALYSIS_CONFIG_PATH.read_text(encoding="utf-8"))
     resorts = pd.read_csv(RESORT_PATH, dtype="string")
     features = pd.read_csv(FEATURE_PATH, dtype="string")
@@ -434,12 +629,29 @@ def main() -> None:
     if len(features) != 162 or features["cluster_id"].duplicated().any():
         raise ValueError("Unexpected Path C cluster feature grain")
 
-    metadata = validate_config(config, analysis_config, resorts)
-    area_seasons = build_area_seasons(config)
+    metadata = validate_configs(top4_config, meilenweiss_config, analysis_config, resorts)
+    specs = product_seasons(top4_config, meilenweiss_config)
+    analysis_version = str(analysis_config["analysis_version"])
+    area_seasons = build_area_seasons(analysis_version, specs)
     area_seasons.to_csv(AREA_SEASON_OUTPUT, index=False, lineterminator="\n")
-    history = build_resort_seasons(config, resorts)
+    history = build_resort_seasons(analysis_version, specs, resorts)
     history.to_csv(RESORT_SEASON_OUTPUT, index=False, lineterminator="\n")
-    context = build_cluster_context(config, history, resorts, features)
+    positive_source_ids = list(top4_config["source_ids"]) + [
+        source_id
+        for season in meilenweiss_config["seasons"]
+        for source_id in season["source_ids"]
+    ]
+    nonconfirming_source_ids = [
+        item["source_id"] for item in meilenweiss_config["nonconfirming_source_reviews"]
+    ]
+    context = build_cluster_context(
+        analysis_version,
+        history,
+        resorts,
+        features,
+        positive_source_ids,
+        nonconfirming_source_ids,
+    )
     context.to_csv(CLUSTER_OUTPUT, index=False, lineterminator="\n")
     enrich_decision_support(context)
 
@@ -455,10 +667,15 @@ def main() -> None:
         "historical_competing_pass_linked_resort_ids",
         "historical_competing_pass_unlinked_resort_ids",
         "historical_competing_pass_documented_season_count",
+        "historical_competing_pass_documented_product_season_count",
         "historical_competing_pass_first_documented_season",
         "historical_competing_pass_last_documented_season",
+        "historical_competing_pass_ids",
         "historical_competing_pass_names",
         "historical_competing_pass_area_labels",
+        "historical_competing_pass_product_level_summer_inclusion_documented",
+        "historical_competing_pass_area_specific_summer_access_documented",
+        "historical_competing_pass_summer_scope_status",
         "historical_competing_pass_market_absence_verified",
         "historical_competing_pass_feature_approved",
     ]
@@ -469,21 +686,36 @@ def main() -> None:
 
     linked_candidates = int(candidates["historical_competing_pass_context_available"].sum())
     summary = {
-        "analysis_version": config["analysis_version"],
-        "reviewed_historical_products": 1,
-        "reviewed_seasons": len(EXPECTED_SEASONS),
-        "season_start": EXPECTED_SEASONS[0],
-        "season_end": EXPECTED_SEASONS[-1],
-        "official_areas_per_season": 4,
+        "analysis_version": analysis_version,
+        "reviewed_historical_products": 2,
+        "reviewed_product_seasons": 11,
+        "reviewed_unique_winter_seasons": 8,
+        "season_start": EXPECTED_TOP4_SEASONS[0],
+        "season_end": EXPECTED_TOP4_SEASONS[-1],
+        "top4_area_season_rows": int(area_seasons["competing_pass_id"].eq("top4").sum()),
+        "meilenweiss_area_season_rows": int(
+            area_seasons["competing_pass_id"].eq("meilenweiss").sum()
+        ),
         "area_season_rows": len(area_seasons),
+        "resort_product_season_rows": len(history),
         "resort_season_rows": len(history),
         "documented_listing_season_links": int(
             history["historical_competing_pass_link_documented"].sum()
         ),
-        "unique_supplied_listings_with_documented_link": int(
+        "documented_top4_listing_season_links": int(
             history.loc[
-                history["historical_competing_pass_link_documented"], "resort_id"
-            ].nunique()
+                history["competing_pass_id"].eq("top4"),
+                "historical_competing_pass_link_documented",
+            ].sum()
+        ),
+        "documented_meilenweiss_listing_season_links": int(
+            history.loc[
+                history["competing_pass_id"].eq("meilenweiss"),
+                "historical_competing_pass_link_documented",
+            ].sum()
+        ),
+        "unique_supplied_listings_with_documented_link": int(
+            history.loc[history["historical_competing_pass_link_documented"], "resort_id"].nunique()
         ),
         "clusters_with_documented_link": int(
             context["historical_competing_pass_context_available"].sum()
@@ -493,24 +725,49 @@ def main() -> None:
         "path_c_candidates_without_documented_link": len(candidates) - linked_candidates,
         "path_c_candidate_partial_cluster_links": int(
             candidates["historical_competing_pass_scope_status"].eq(
-                "partial_cluster_listing_links_documented_in_top4"
+                "partial_cluster_listing_links_documented"
             ).sum()
         ),
+        "path_c_candidates_with_product_level_summer_inclusion": int(
+            candidates[
+                "historical_competing_pass_product_level_summer_inclusion_documented"
+            ].sum()
+        ),
+        "area_specific_summer_access_documented_rows": int(
+            area_seasons["area_specific_summer_access_documented"].sum()
+        ),
+        "nonconfirming_sources_reviewed": len(nonconfirming_source_ids),
         "market_absence_verified_rows": int(
             context["historical_competing_pass_market_absence_verified"].sum()
         ),
-        "approved_features": int(
-            context["historical_competing_pass_feature_approved"].sum()
-        ),
+        "approved_features": int(context["historical_competing_pass_feature_approved"].sum()),
         "source_sha256": {
             source_id: record["sha256"] for source_id, record in metadata.items()
         },
         "interpretation": INTERPRETATION,
     }
-    if summary["path_c_candidates_with_documented_link"] != 2:
-        raise ValueError("Expected two Path C candidates with conservative Top4 links")
-    if summary["path_c_candidate_partial_cluster_links"] != 2:
-        raise ValueError("Expected both candidate Top4 links to be partial clusters")
+    expected_summary = {
+        "top4_area_season_rows": 32,
+        "meilenweiss_area_season_rows": 29,
+        "area_season_rows": 61,
+        "resort_product_season_rows": 2981,
+        "documented_listing_season_links": 66,
+        "unique_supplied_listings_with_documented_link": 19,
+        "clusters_with_documented_link": 16,
+        "path_c_candidates_with_documented_link": 13,
+        "path_c_candidate_partial_cluster_links": 6,
+        "path_c_candidates_with_product_level_summer_inclusion": 11,
+        "area_specific_summer_access_documented_rows": 0,
+        "market_absence_verified_rows": 0,
+        "approved_features": 0,
+    }
+    mismatches = {
+        key: (summary[key], value)
+        for key, value in expected_summary.items()
+        if summary[key] != value
+    }
+    if mismatches:
+        raise ValueError(f"Historical competing-pass invariants changed: {mismatches}")
     SUMMARY_OUTPUT.write_text(
         json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )

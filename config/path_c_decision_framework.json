@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_24",
+  "analysis_version": "path_c_v0_25",
   "checkpoint": 6,
   "framework_id": "separated_evidence_dashboard",
   "final_architecture": "exploratory_structural_analogue_dashboard_with_separate_opportunity_vulnerability_context_and_uncertainty",
@@ -44,7 +44,7 @@
       "dimension_id": "competition_network",
       "dimension_name": "Competition and network context",
       "feature_group_ids": ["current_competing_pass_context", "current_network_density", "historical_competing_pass_context"],
-      "framework_status": "qualified_current_context_partial_top4_history_full_historical_market_gap",
+      "framework_status": "qualified_current_context_partial_top4_and_meilenweiss_history_full_historical_market_gap",
       "permitted_use": "separate_descriptive_context_only"
     },
     {

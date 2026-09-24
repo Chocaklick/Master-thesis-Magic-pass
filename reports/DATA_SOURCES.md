@@ -23,7 +23,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** core_region_operator|included_infrastructure|gtc_validity
 - **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
 - **Coverage:** official pass area / supplied resort listing link; terms valid from 2026-09-01; 2026-09-01 to ?.
-- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; a separate one-product Top4 history does not reconstruct the full historical market
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4 and Meilenweiss histories do not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/ALPSPASS_2026_27_GTC_20260923T095304Z.pdf`.
 
 ## ALPSPASS_2026_27_ROSTER — Official AlpsPass regions and tariff page 2026/2027
@@ -35,7 +35,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** official_area_label|roster_version|benefit_tier|partner_free_ski_days
 - **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
 - **Coverage:** official pass area / supplied resort listing link; 2026/2027; 2026-11-01 to 2027-10-31.
-- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; a separate one-product Top4 history does not reconstruct the full historical market
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4 and Meilenweiss histories do not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/ALPSPASS_2026_27_ROSTER_20260923T094712Z.html`.
 
 ## ANNIVIERS_SCOPE_OFFICIAL — Official destination or municipal scope page
@@ -121,6 +121,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** dataset metadata; collection metadata snapshot; 2026-08-01 to 2026-08-01.
 - **Limitations:** The collection describes national routes and their axes; it does not define a motorway-only subset in the downloaded line-layer schema
 - **Local raw file:** `data_external/source_evidence/ASTRA_NATIONAL_ROAD_AXES_COLLECTION_20260923T091106Z.json`.
+
+## ATZMAENNIG_MEILENWEISS_2019_20_ORDER_FORM — Official Meilenweiss 2019/2020 annual/season-pass order form
+
+- **Contents and relevance:** Official Atzmännig-hosted order form naming 12 Meilenweiss sales areas and distinguishing the annual pass including summer 2020 from the winter-only season pass
+- **Producer:** Sportbahnen Atzmännig AG
+- **Exact URL:** https://www.atzmaennig.ch/media/anmeldeformular-meilenweiss-19_20_bearbeitbar.pdf
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-24T18:54:14.060138+00:00.
+- **Variables:** meilenweiss_positive_sales_area|winter_access|annual_pass_summer_inclusion|season_pass_modality
+- **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
+- **Coverage:** named Swiss/Liechtenstein sales area / supplied resort listing link; winter season; 2019/2020 to 2020.
+- **Limitations:** Sales-area evidence supports positive links but is not asserted to be a complete international product roster; product-level summer inclusion does not identify area-specific summer operation
+- **Local raw file:** `data_external/source_evidence/ATZMAENNIG_MEILENWEISS_2019_20_ORDER_FORM_20260924T185414Z.pdf`.
+
+## ATZMAENNIG_WINTER_BROCHURE_2020_21 — Official Atzmännig winter 2020/2021 brochure
+
+- **Contents and relevance:** Official host-operator brochure stating that Meilenweiss covers 19 areas and that the annual pass includes summer 2021
+- **Producer:** Sportbahnen Atzmännig AG
+- **Exact URL:** https://www.atzmaennig.ch/media/atzmaennig_winterbroschuere_a5_quer_web_2_.pdf
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-24T18:58:48.620191+00:00.
+- **Variables:** meilenweiss_host_area_positive_offer|product_winter_area_count|annual_pass_summer_inclusion
+- **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
+- **Coverage:** host resort and product-level aggregate; winter season; 2020/2021 to 2021.
+- **Limitations:** Does not name the full 19-area roster, so only the Atzmännig host listing is linked; product-level summer inclusion does not identify area-specific summer operation
+- **Local raw file:** `data_external/source_evidence/ATZMAENNIG_WINTER_BROCHURE_2020_21_20260924T185848Z.pdf`.
 
 ## BAV_PUBLIC_TRANSPORT_STOPS_2026 — Public transport stops, GeoIV ID 98.2, French EPSG:2056 CSV export
 
@@ -460,15 +484,15 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 
 ## DERIVED_HISTORICAL_COMPETING_PASS_CONTEXT — Path C historical competing-pass context
 
-- **Contents and relevance:** Qualified dated Top4 presence context from 2017/2018 through 2024/2025 at area, supplied-listing and preserved lift-cluster levels
+- **Contents and relevance:** Qualified dated Top4 and Meilenweiss positive-presence context at area, product-listing-season and preserved lift-cluster levels
 - **Producer:** Master thesis analytical pipeline
 - **Exact URL:** Not documented.
-- **Access and retrieval date:** Versioned deterministic Python expansion of eight documented Top4 seasons and explicit conservative resort-ID links; unknown date.
-- **Variables:** historical_competing_pass_area_season|documented_listing_season_link|cluster_historical_pass_context
-- **Transformations:** Validate official continuity statements and cached checksums; expand four areas over eight seasons; join five conservative stable listing IDs; aggregate documented presence without converting non-links into absence
-- **Coverage:** official pass area, supplied resort listing and linked lift cluster; eight winter seasons from 2017/2018 through 2024/2025; 2017/2018 to 2024/2025.
-- **Limitations:** Only Top4 is reconstructed; component eligibility can differ within broad regional labels; evidence is not uniformly pre-treatment for Magic Pass anchors and is not approved for prediction, causal adjustment, recommendation or scoring
-- **Local raw file:** `config/competing_pass_historical_top4.json`.
+- **Access and retrieval date:** Versioned deterministic Python expansion of eight Top4 seasons and three bounded Meilenweiss seasons with explicit conservative resort-ID links; unknown date.
+- **Variables:** historical_competing_pass_area_season|documented_product_listing_season_link|product_level_summer_inclusion|area_specific_summer_unknown|cluster_historical_pass_context
+- **Transformations:** Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4 and 29 Meilenweiss area-season rows; join stable listing IDs; retain product-level summer inclusion separately from unknown area-specific summer activity; aggregate positive presence without converting non-links into absence
+- **Coverage:** official pass area, supplied resort listing and linked lift cluster; eleven product-seasons across eight winter seasons from 2017/2018 through 2024/2025; 2017/2018 to 2024/2025.
+- **Limitations:** Only two partially reconstructed products are covered; Meilenweiss evidence scope differs across seasons; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring
+- **Local raw file:** `config/competing_pass_historical_top4.json|config/competing_pass_historical_meilenweiss.json`.
 
 ## DERIVED_MAGIC_ANNUAL_OFFERING — Annual Magic Pass season-offering review
 
@@ -921,9 +945,9 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Exact URL:** https://www.jungfrau.ch/de-ch/unternehmen/news/sportpass-top4-startet-in-die-zweite-saison-6610/
 - **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-24T13:55:45.502710+00:00.
 - **Variables:** top4_season_continuity|official_area_label|historical_pass_presence
-- **Transformations:** Checksum verification; explicit source-token validation; conservative stable resort-ID links without runtime fuzzy matching
+- **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
 - **Coverage:** official Top4 regional area / supplied resort listing link; winter season; 2017/2018 to 2018/2019.
-- **Limitations:** The pair of official releases supports eight consecutive Top4 seasons but only one competing product; non-links do not verify absence from the wider historical pass market
+- **Limitations:** Together with the eighth-season release, supports eight consecutive Top4 seasons; non-links do not verify absence from the wider historical pass market
 - **Local raw file:** `data_external/source_evidence/JUNGFRAU_TOP4_2018_19_CONTINUITY_20260924T135545Z.html`.
 
 ## JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON — Official Top4 eighth-season release
@@ -933,9 +957,9 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Exact URL:** https://www.jungfrau.ch/en-gb/corporate/news/around-33000-top4-ski-passes-sold-in-advance/
 - **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-24T13:55:47.149744+00:00.
 - **Variables:** top4_season_continuity|official_area_label|historical_pass_presence
-- **Transformations:** Checksum verification; explicit source-token validation; conservative stable resort-ID links without runtime fuzzy matching
+- **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
 - **Coverage:** official Top4 regional area / supplied resort listing link; winter season; 2024/2025 to 2024/2025.
-- **Limitations:** The pair of official releases supports eight consecutive Top4 seasons but only one competing product; non-links do not verify absence from the wider historical pass market
+- **Limitations:** Together with the second-season release, supports eight consecutive Top4 seasons; non-links do not verify absence from the wider historical pass market
 - **Local raw file:** `data_external/source_evidence/JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON_20260924T135547Z.html`.
 
 ## KRONBERG_ANNUAL_2017 — Kronberg AG annual report 2017
@@ -1346,6 +1370,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_PRESS_ARCHIVE_20260919T231715Z.html`.
 
+## MALBUN_MEILENWEISS_2021_22_WINTER_BROCHURE — Official Meilenweiss winter 2021/2022 brochure
+
+- **Contents and relevance:** Official Malbun-hosted brochure listing 16 Swiss/Liechtenstein areas and advertising 19 winter versus 18 summer destinations for the annual pass
+- **Producer:** Bergbahnen Malbun AG
+- **Exact URL:** https://www.bergbahnen.li/application/files/4316/3540/3614/2122MeilenweissFolder.pdf
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-24T18:54:16.464012+00:00.
+- **Variables:** meilenweiss_swiss_liechtenstein_roster|winter_access|product_winter_destination_count|product_summer_destination_count
+- **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
+- **Coverage:** named Swiss/Liechtenstein pass area / supplied resort listing link; winter season; 2021/2022 to 2022.
+- **Limitations:** The 16-area Swiss/Liechtenstein section is a subset of the four-country product; the 19-versus-18 aggregate does not identify which winter destination lacks summer access
+- **Local raw file:** `data_external/source_evidence/MALBUN_MEILENWEISS_2021_22_WINTER_BROCHURE_20260924T185416Z.pdf`.
+
 ## MAYENS_CONTHEY_OPERATOR_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Official municipal directory entry for the Société coopérative, Téléskis des Mayens de Conthey
@@ -1367,7 +1403,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** official_area_label|current_annual_pass_roster
 - **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
 - **Coverage:** official pass area / supplied resort listing link; current retrieval-date snapshot; 2026-09-23 to 2026-09-23.
-- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; a separate one-product Top4 history does not reconstruct the full historical market
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4 and Meilenweiss histories do not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/MEILENWEISS_CURRENT_ROSTER_20260923T094713Z.html`.
 
 ## MEIRINGEN_HASLIBERG_MAGIC_OFFICIAL — Official destination or municipal scope page
@@ -1526,6 +1562,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `not cached / not applicable`.
 
+## PIZOL_ANNUAL_REPORT_2018_19 — Official Pizolbahnen annual report 2018/2019
+
+- **Contents and relevance:** Official annual report reviewed as a possible Meilenweiss source but containing no explicit Meilenweiss reference
+- **Producer:** Pizolbahnen AG
+- **Exact URL:** https://pizol.com/wp-content/uploads/2023/11/geschaeftsbericht-pizol-a5-2018-19-v3.pdf
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-24T18:50:17.973418+00:00.
+- **Variables:** nonconfirming_source_review|membership_evidence_not_found
+- **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
+- **Coverage:** Pizol operator report; winter season; 2018/2019 to 2018/2019.
+- **Limitations:** Absence of an explicit token in this report is not evidence that Pizol was absent from Meilenweiss and creates no membership row
+- **Local raw file:** `data_external/source_evidence/PIZOL_ANNUAL_REPORT_2018_19_20260924T185017Z.pdf`.
+
 ## REICHENBACH_SCOPE_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Official municipal evidence that Faltschen and Kiental are localities in Reichenbach im Kandertal
@@ -1571,7 +1619,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** official_area_label|roster_version|winter_pass_inclusion
 - **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
 - **Coverage:** official pass area / supplied resort listing link; winter season 2026/2027; 2026 to 2027.
-- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; a separate one-product Top4 history does not reconstruct the full historical market
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4 and Meilenweiss histories do not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/SCHNEEPASS_ZENTRALSCHWEIZ_2026_27_ROSTER_20260923T094725Z.html`.
 
 ## SKI_GTFS_TIMETABLE_2026_WINTER_20260207 — Timetable 2026 (GTFS2020), build 20260207

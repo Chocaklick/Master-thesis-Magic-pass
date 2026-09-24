@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_24",
+  "analysis_version": "path_c_v0_25",
   "source_grid": "MeteoSwiss ch01r.swiss.lv95 1 km",
   "source_products": [
     "TabsM v1.4",
