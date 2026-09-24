@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_21",
+  "analysis_version": "path_c_v0_22",
   "candidate_pool_rule": "candidate_for_path_c_true_in_magic_pass_decision_support",
   "feature_groups": [
     {

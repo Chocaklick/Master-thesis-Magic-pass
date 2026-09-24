@@ -92,6 +92,7 @@ def main() -> None:
     run("src/data_processing/build_path_c_network_context.py")
     run("src/data_processing/build_path_c_cluster_geography_sensitivity.py")
     run("src/data_processing/build_path_c_feature_readiness_audit.py")
+    run("src/scoring/build_path_c_decision_framework.py")
     run("src/data_processing/build_feasibility_report.py")
     run("src/scoring/plot_path_c_outputs.py")
     run("src/data_processing/update_provenance.py")

@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_21",
+  "analysis_version": "path_c_v0_22",
   "analysis_date": "2026-09-24",
   "analysis_entity": "existing_lift_cluster_with_at_least_one_supplied_resort_listing",
   "feature_temporal_status": "undated_cross_sectional_snapshot_not_pre_treatment",
@@ -113,6 +113,12 @@
     "candidate_pool": "104 apparent non-member lift clusters",
     "approval_rule": "coverage_does_not_imply_pre_treatment_predictive_causal_recommendation_or_composite_use",
     "interpretation": "explicit_feature_use_registry_prevents_current_or_post_treatment_context_from_becoming_predictive_causal_or_recommendation_input"
+  },
+  "checkpoint_6_decision_framework": {
+    "registry": "config/path_c_decision_framework.json",
+    "candidate_dashboard": "data_processed/path_c_candidate_evidence_dashboard.csv",
+    "architecture": "separated exploratory evidence dashboard",
+    "decision_rule": "do_not_issue_recommendations_or_composite_scores_while_strategic_need_historical_and_scope_gates_fail"
   },
   "network_distance_sensitivity": {
     "radii_km": [25, 50],

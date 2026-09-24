@@ -426,6 +426,23 @@ def main() -> None:
         manual_verification="19 feature groups; structural fields alone approved for existing exploratory similarity; all protected approvals false",
     ))
     rows.append(blank_source(
+        "DERIVED_PATH_C_DECISION_FRAMEWORK",
+        variable_name="decision dimension|candidate evidence dashboard|recommendation gate|composite-score gate",
+        variable_description="Checkpoint 6 architecture and candidate dashboard keeping opportunity, vulnerability, context and uncertainty separate",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Path C business decision framework",
+        retrieval_method="Versioned deterministic transformation of the Path C decision-support table and executable feature-readiness registry",
+        local_raw_file="config/path_c_decision_framework.json|reports/path_c_feature_readiness_audit.csv|data_processed/magic_pass_decision_support.csv",
+        processed_file="data_processed/path_c_candidate_evidence_dashboard.csv|reports/path_c_decision_framework_dimensions.csv|reports/path_c_decision_framework_summary.json|reports/39_CHECKPOINT_6_BUSINESS_DECISION_FRAMEWORK.md",
+        geographic_level="Path C candidate lift cluster and analytical decision dimension",
+        temporal_resolution="mixed qualified snapshots with explicit historical gaps",
+        unit="candidate evidence, dimension status and protected output flags",
+        transformation_applied="Assign all 19 feature groups once to seven separate dimensions; expose 104 candidates without score sorting; enforce blank uplift/composite values and zero recommendation/causal approvals",
+        quality_notes="The dashboard is exploratory evidence communication, not a ranking, effect estimate, complete Opportunity × Strategic Need matrix or business recommendation",
+        confidence_level="high for deterministic architecture enforcement; no recommendation validity claimed",
+        manual_verification="104 unique candidate rows sorted by stable ID; seven dimensions partition 19 feature groups; zero matrix-ready candidates, recommendations, composite scores or causal approvals",
+    ))
+    rows.append(blank_source(
         "DERIVED_ACCESSIBILITY_CONTEXT",
         variable_name="distance_to_population_threshold_municipality|resident_population_within_straight_line_radius|distance_to_swiss_country_boundary|cross_border_truncation_risk|boundary_bridge",
         variable_description="Qualified Swiss straight-line population context for every linked Path C lift cluster",
@@ -2221,6 +2238,8 @@ def main() -> None:
         "path_c_candidate_analogue_sensitivity": ROOT / "data_processed/path_c_candidate_analogue_sensitivity.csv",
         "magic_pass_decision_support": ROOT / "data_processed/magic_pass_decision_support.csv",
         "path_c_feature_readiness_audit": ROOT / "reports/path_c_feature_readiness_audit.csv",
+        "path_c_candidate_evidence_dashboard": ROOT / "data_processed/path_c_candidate_evidence_dashboard.csv",
+        "path_c_decision_framework_dimensions": ROOT / "reports/path_c_decision_framework_dimensions.csv",
     }
     path_c_sources = {
         "municipality_tourism_context_2025": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
@@ -2276,8 +2295,36 @@ def main() -> None:
         "path_c_candidate_analogue_sensitivity": "DERIVED_PATH_C_AGGREGATION_SENSITIVITY",
         "magic_pass_decision_support": "DERIVED_PATH_C_DECISION_SUPPORT",
         "path_c_feature_readiness_audit": "DERIVED_PATH_C_FEATURE_READINESS_AUDIT",
+        "path_c_candidate_evidence_dashboard": "DERIVED_PATH_C_DECISION_FRAMEWORK",
+        "path_c_decision_framework_dimensions": "DERIVED_PATH_C_DECISION_FRAMEWORK",
     }
     path_c_glossary = {
+        "checkpoint": "Numbered project feasibility or architecture checkpoint",
+        "framework_id": "Stable identifier of the selected Path C decision-framework architecture",
+        "dimension_order": "Display order of the separate evidence dimension",
+        "dimension_id": "Stable identifier of the separate Path C evidence dimension",
+        "dimension_name": "Human-readable name of the separate Path C evidence dimension",
+        "feature_group_ids": "Pipe-delimited feature-readiness groups assigned to the decision dimension",
+        "feature_group_count": "Number of feature-readiness groups assigned to the decision dimension",
+        "complete_candidate_coverage_groups": "Assigned feature groups with complete candidate coverage",
+        "partial_candidate_coverage_groups": "Assigned feature groups with partial candidate coverage",
+        "no_candidate_feature_groups": "Assigned feature groups without a candidate-level feature",
+        "exploratory_similarity_approved_groups": "Assigned groups approved for the existing exploratory structural similarity calculation",
+        "pre_treatment_predictor_approved_groups": "Assigned groups approved as pre-treatment predictors; always zero",
+        "causal_covariate_approved_groups": "Assigned groups approved as causal covariates; always zero",
+        "recommendation_feature_approved_groups": "Assigned groups approved as recommendation features; always zero",
+        "composite_score_approved_groups": "Assigned groups approved for composite scoring; always zero",
+        "framework_status": "Guarded status of the selected framework or evidence dimension",
+        "permitted_use": "Narrow use authorised for the separate evidence dimension",
+        "opportunity_dimension_status": "Guardrail stating that analogue opportunity is descriptive rather than a treatment effect",
+        "strategic_need_dimension_status": "Candidate-specific completeness status for snow plus non-comparable point-container tourism context",
+        "accessibility_dimension_status": "Guardrail for current accessibility context that is neither historical access nor a visitor catchment",
+        "competition_network_dimension_status": "Guardrail for current competition/network context that is not historical market structure",
+        "recommendation_status": "Whether a business recommendation is issued; always not issued at Checkpoint 6",
+        "recommendation_confidence": "Recommendation confidence, intentionally blank because no recommendation is issued",
+        "two_dimension_matrix_ready": "Whether comparable opportunity and complete strategic-need evidence support a final matrix; always false",
+        "recommendation_approved": "Whether a candidate business recommendation is approved; always false",
+        "composite_score_approved": "Whether candidate composite scoring is approved; always false",
         "feature_group_id": "Stable identifier of the Path C feature group governed by the readiness registry",
         "feature_group_name": "Human-readable name of the Path C feature group",
         "candidate_required_fields": "Pipe-delimited decision-support fields required to count complete candidate coverage",
@@ -2943,6 +2990,8 @@ def main() -> None:
         "distance_transport_band_summary": "reviewed destination by municipality-distance band",
         "path_c_reviewed_treated_reference": "reviewed treated destination",
         "path_c_feature_readiness_audit": "Path C feature group evaluated across 104 candidate lift clusters",
+        "path_c_candidate_evidence_dashboard": "apparent Path C candidate lift cluster",
+        "path_c_decision_framework_dimensions": "separate Path C analytical decision dimension",
     }
     path_c_temporal_level = {
         "municipality_tourism_context_2025": "2025 annual municipality context",
@@ -2992,6 +3041,8 @@ def main() -> None:
         "distance_transport_correlations_by_destination": "2026 boundary distance plus winter-2026 schedule",
         "distance_transport_band_summary": "2026 boundary distance plus winter-2026 schedule",
         "path_c_feature_readiness_audit": "mixed feature-specific periods with explicit current, post-treatment, undated or missing status",
+        "path_c_candidate_evidence_dashboard": "mixed current, post-treatment, undated and missing historical evidence retained by field",
+        "path_c_decision_framework_dimensions": "Checkpoint 6 architecture snapshot over mixed feature-specific periods",
     }
 
     for table, path in path_c_paths.items():
@@ -3011,6 +3062,10 @@ def main() -> None:
             )
             scope_concordance_table = table == "destination_scope_concordance_audit"
             feature_readiness_table = table == "path_c_feature_readiness_audit"
+            decision_framework_table = table in {
+                "path_c_candidate_evidence_dashboard",
+                "path_c_decision_framework_dimensions",
+            }
             cross_border_population_table = table in {
                 "eurostat_population_grid_2021_swiss_region",
                 "path_c_cluster_cross_border_population_context",
@@ -3217,7 +3272,9 @@ def main() -> None:
                 )
             ))
             role = (
-                "explicit Path C feature-use and leakage gate"
+                "explicit Checkpoint 6 evidence-dimension and recommendation gate"
+                if decision_framework_table
+                else "explicit Path C feature-use and leakage gate"
                 if feature_readiness_table
                 else "intentionally unavailable causal prediction"
                 if variable in {"predicted_uplift_pct", "uplift_lower_pct", "uplift_upper_pct"}
@@ -3270,6 +3327,9 @@ def main() -> None:
                 else "descriptive segmentation / decision support"
             )
             formula_note = (
+                "See config/path_c_decision_framework.json and src/scoring/build_path_c_decision_framework.py"
+                if decision_framework_table
+                else
                 "See config/path_c_feature_readiness.json and src/data_processing/build_path_c_feature_readiness_audit.py"
                 if feature_readiness_table
                 else
@@ -3330,6 +3390,9 @@ def main() -> None:
                 else "See config/path_c_analysis.json and Path C scripts; tourism context is implemented in src/data_processing/build_tourism_dependence_context.py"
             )
             limitation_note = (
+                "No ranking or treatment-effect interpretation; candidate tourism scope and historical evidence remain incomplete, so the matrix, recommendation, confidence and composite outputs are unavailable"
+                if decision_framework_table
+                else
                 "Candidate coverage is not analytical approval; structural fields are undated, and no feature group is approved for pre-treatment prediction, causal adjustment, recommendation or composite scoring"
                 if feature_readiness_table
                 else

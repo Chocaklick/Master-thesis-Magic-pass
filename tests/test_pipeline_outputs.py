@@ -974,7 +974,7 @@ def test_path_c_feature_readiness_keeps_coverage_separate_from_approval() -> Non
 
     assert len(audit) == 19
     assert audit["feature_group_id"].is_unique
-    assert audit["analysis_version"].eq("path_c_v0_21").all()
+    assert audit["analysis_version"].eq("path_c_v0_22").all()
     assert audit["candidate_pool_count"].eq(104).all()
     assert int(as_bool(audit["exploratory_similarity_use_approved"]).sum()) == 1
     approved = audit.loc[
@@ -1014,6 +1014,56 @@ def test_path_c_feature_readiness_keeps_coverage_separate_from_approval() -> Non
                 "composite_score_approved": "groups_approved_for_composite_score",
             }[column]
         ] == 0
+
+
+def test_checkpoint_6_dashboard_separates_dimensions_and_issues_no_recommendation() -> None:
+    dashboard = read("data_processed/path_c_candidate_evidence_dashboard.csv")
+    dimensions = read("reports/path_c_decision_framework_dimensions.csv")
+    summary = json.loads(
+        (ROOT / "reports/path_c_decision_framework_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    assert len(dashboard) == 104
+    assert dashboard["cluster_id"].is_unique
+    assert dashboard["cluster_id"].tolist() == sorted(dashboard["cluster_id"])
+    assert dashboard["analysis_version"].eq("path_c_v0_22").all()
+    assert dashboard["checkpoint"].eq(6).all()
+    assert dashboard["opportunity_signal_percentile"].notna().all()
+    assert dashboard["predicted_uplift_pct"].isna().all()
+    assert dashboard["composite_opportunity_need_score"].isna().all()
+    assert dashboard["recommendation_confidence"].isna().all()
+    assert dashboard["recommendation_status"].eq(
+        "not_issued_evidence_gates_not_passed"
+    ).all()
+    for column in [
+        "two_dimension_matrix_ready",
+        "causal_interpretation_approved",
+        "recommendation_approved",
+        "composite_score_approved",
+    ]:
+        assert not as_bool(dashboard[column]).any()
+    assert len(dimensions) == 7
+    assert dimensions["dimension_id"].is_unique
+    assert int(dimensions["feature_group_count"].sum()) == 19
+    for column in [
+        "pre_treatment_predictor_approved_groups",
+        "causal_covariate_approved_groups",
+        "recommendation_feature_approved_groups",
+        "composite_score_approved_groups",
+    ]:
+        assert int(dimensions[column].sum()) == 0
+    assert summary["candidate_clusters"] == 104
+    assert summary["candidate_good_treated_support"] == 74
+    assert summary["candidate_moderate_treated_extrapolation"] == 5
+    assert summary["candidate_strong_treated_extrapolation"] == 25
+    assert summary["candidates_stable_across_structural_aggregation"] == 11
+    assert summary["candidates_with_point_container_tourism_context"] == 39
+    assert summary["two_dimension_matrix_ready_candidates"] == 0
+    assert summary["predicted_uplift_values"] == 0
+    assert summary["recommendations_issued"] == 0
+    assert summary["composite_scores"] == 0
 
 
 def test_accessibility_context_preserves_population_and_stays_unapproved() -> None:
@@ -1547,7 +1597,7 @@ def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> N
         "partial_cluster_listing_links": 6,
     }
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_21").all()
+    assert decision["analysis_version"].eq("path_c_v0_22").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1628,7 +1678,7 @@ def test_path_c_network_context_excludes_focal_cluster_and_preserves_pair_grain(
     assert not as_bool(context["network_context_feature_approved"]).any()
     assert not as_bool(pairs["network_context_feature_approved"]).any()
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_21").all()
+    assert decision["analysis_version"].eq("path_c_v0_22").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1707,7 +1757,7 @@ def test_path_c_cluster_geography_sensitivity_preserves_clusters_and_bounds_rule
     assert not as_bool(context["cluster_geographic_coherence_verified"]).any()
     assert not as_bool(context["network_distance_sensitivity_feature_approved"]).any()
     assert not as_bool(pairs["network_distance_sensitivity_feature_approved"]).any()
-    assert decision["analysis_version"].eq("path_c_v0_21").all()
+    assert decision["analysis_version"].eq("path_c_v0_22").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()

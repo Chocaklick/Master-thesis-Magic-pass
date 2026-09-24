@@ -63,6 +63,12 @@ The transferability audit then compares each reviewed scope with the unique muni
 
 The executable registry audits **19 feature groups**. Complete 104-candidate coverage exists for **12**, partial coverage for **1**, and no candidate-level feature for **6**. Coverage is kept separate from permission: only **1** group—the three undated current structural fields—is admitted to the existing exploratory similarity calculation, while approved pre-treatment predictors, causal covariates, recommendation features and composite-score inputs remain **0, 0, 0 and 0**. See `reports/38_PATH_C_FEATURE_READINESS_AUDIT.md`.
 
+## Checkpoint 6 — Business decision framework
+
+Checkpoint 6 selects a **seven-dimension separated exploratory evidence dashboard** for all **104** candidates. It keeps structural comparability, descriptive analogue opportunity, snow vulnerability, tourism dependence, accessibility, competition/network context and dated-evidence gaps separate. **74** candidates have good treated-reference structural support, **25** are strong extrapolations and only **11** are stable across every recorded structural aggregation criterion.
+
+The architecture is not a recommendation engine. Point-container hotel context exists for **39** candidates but is not a comparable destination catchment; historical transport, competition and dated infrastructure also remain incomplete. Consequently, a full Opportunity × Strategic Need matrix is ready for **0** candidates, recommendations issued remain **0**, and composite scores remain **0**. See `reports/39_CHECKPOINT_6_BUSINESS_DECISION_FRAMEWORK.md`.
+
 ## Snow proxy coverage
 
 The official SLF historical archive contains daily observations for **166 snow stations**. The project predeclares an 80% November–April coverage gate over 2013/14–2025/26; **115 stations** pass. Every resort listing is mapped to the geographically nearest passing station, while distance and the elevation gap to the published resort top remain visible. **211 of 271 listings** have high/moderate proxy comparability and at least ten usable winters.

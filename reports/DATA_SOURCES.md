@@ -518,6 +518,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Existing clusters are preserved but not certified as independent commercial domains; no distance rule is uniquely correct; straight-line distance ignores terrain, transport, visitor behaviour and historical changes
 - **Local raw file:** `data_processed/resort_master.csv|data_processed/path_c_resort_cluster_features.csv|data_processed/path_c_cluster_competing_pass_context.csv`.
 
+## DERIVED_PATH_C_DECISION_FRAMEWORK — Path C business decision framework
+
+- **Contents and relevance:** Checkpoint 6 architecture and candidate dashboard keeping opportunity, vulnerability, context and uncertainty separate
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Versioned deterministic transformation of the Path C decision-support table and executable feature-readiness registry; unknown date.
+- **Variables:** decision dimension|candidate evidence dashboard|recommendation gate|composite-score gate
+- **Transformations:** Assign all 19 feature groups once to seven separate dimensions; expose 104 candidates without score sorting; enforce blank uplift/composite values and zero recommendation/causal approvals
+- **Coverage:** Path C candidate lift cluster and analytical decision dimension; mixed qualified snapshots with explicit historical gaps; ? to ?.
+- **Limitations:** The dashboard is exploratory evidence communication, not a ranking, effect estimate, complete Opportunity × Strategic Need matrix or business recommendation
+- **Local raw file:** `config/path_c_decision_framework.json|reports/path_c_feature_readiness_audit.csv|data_processed/magic_pass_decision_support.csv`.
+
 ## DERIVED_PATH_C_DECISION_SUPPORT — Magic Pass exploratory decision-support prototype
 
 - **Contents and relevance:** Dashboard-ready exploratory Path C export retaining separate opportunity, vulnerability, support, quality and qualified context dimensions

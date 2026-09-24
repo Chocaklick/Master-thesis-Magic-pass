@@ -59,6 +59,9 @@ DESTINATION_SCOPE_CONCORDANCE_SUMMARY = (
 PATH_C_FEATURE_READINESS_SUMMARY = (
     ROOT / "reports" / "path_c_feature_readiness_summary.json"
 )
+PATH_C_DECISION_FRAMEWORK_SUMMARY = (
+    ROOT / "reports" / "path_c_decision_framework_summary.json"
+)
 SNOW_SUMMARY = ROOT / "reports" / "snow_proxy_summary.json"
 SNOW_SENSITIVITY_SUMMARY = ROOT / "reports" / "snow_station_sensitivity_summary.json"
 SNOW_GRIDDED_SENSITIVITY_SUMMARY = (
@@ -154,6 +157,9 @@ def main() -> None:
     )
     path_c_feature_readiness_summary = json.loads(
         PATH_C_FEATURE_READINESS_SUMMARY.read_text(encoding="utf-8")
+    )
+    path_c_decision_framework_summary = json.loads(
+        PATH_C_DECISION_FRAMEWORK_SUMMARY.read_text(encoding="utf-8")
     )
     snow_summary = json.loads(SNOW_SUMMARY.read_text(encoding="utf-8"))
     snow_sensitivity_summary = json.loads(
@@ -463,6 +469,41 @@ def main() -> None:
             path_c_feature_readiness_summary[
                 "groups_approved_for_composite_score"
             ]
+        ),
+        "checkpoint_6_dimensions": int(
+            path_c_decision_framework_summary["dimensions"]
+        ),
+        "checkpoint_6_candidate_clusters": int(
+            path_c_decision_framework_summary["candidate_clusters"]
+        ),
+        "checkpoint_6_candidate_good_support": int(
+            path_c_decision_framework_summary["candidate_good_treated_support"]
+        ),
+        "checkpoint_6_candidate_strong_extrapolation": int(
+            path_c_decision_framework_summary[
+                "candidate_strong_treated_extrapolation"
+            ]
+        ),
+        "checkpoint_6_candidates_stable_aggregation": int(
+            path_c_decision_framework_summary[
+                "candidates_stable_across_structural_aggregation"
+            ]
+        ),
+        "checkpoint_6_candidates_with_point_tourism": int(
+            path_c_decision_framework_summary[
+                "candidates_with_point_container_tourism_context"
+            ]
+        ),
+        "checkpoint_6_matrix_ready_candidates": int(
+            path_c_decision_framework_summary[
+                "two_dimension_matrix_ready_candidates"
+            ]
+        ),
+        "checkpoint_6_recommendations_issued": int(
+            path_c_decision_framework_summary["recommendations_issued"]
+        ),
+        "checkpoint_6_composite_scores": int(
+            path_c_decision_framework_summary["composite_scores"]
         ),
         "slf_snow_stations_with_daily_data": int(
             snow_summary["snow_stations_with_daily_data"]
@@ -1071,6 +1112,12 @@ The transferability audit then compares each reviewed scope with the unique muni
 ## Path C feature readiness
 
 The executable registry audits **{metrics['path_c_feature_groups_audited']} feature groups**. Complete 104-candidate coverage exists for **{metrics['path_c_feature_groups_complete_candidate_coverage']}**, partial coverage for **{metrics['path_c_feature_groups_partial_candidate_coverage']}**, and no candidate-level feature for **{metrics['path_c_feature_groups_without_candidate_feature']}**. Coverage is kept separate from permission: only **{metrics['path_c_feature_groups_exploratory_similarity_approved']}** group—the three undated current structural fields—is admitted to the existing exploratory similarity calculation, while approved pre-treatment predictors, causal covariates, recommendation features and composite-score inputs remain **{metrics['path_c_feature_groups_pre_treatment_approved']}, {metrics['path_c_feature_groups_causal_approved']}, {metrics['path_c_feature_groups_recommendation_approved']} and {metrics['path_c_feature_groups_composite_approved']}**. See `reports/38_PATH_C_FEATURE_READINESS_AUDIT.md`.
+
+## Checkpoint 6 — Business decision framework
+
+Checkpoint 6 selects a **seven-dimension separated exploratory evidence dashboard** for all **{metrics['checkpoint_6_candidate_clusters']}** candidates. It keeps structural comparability, descriptive analogue opportunity, snow vulnerability, tourism dependence, accessibility, competition/network context and dated-evidence gaps separate. **{metrics['checkpoint_6_candidate_good_support']}** candidates have good treated-reference structural support, **{metrics['checkpoint_6_candidate_strong_extrapolation']}** are strong extrapolations and only **{metrics['checkpoint_6_candidates_stable_aggregation']}** are stable across every recorded structural aggregation criterion.
+
+The architecture is not a recommendation engine. Point-container hotel context exists for **{metrics['checkpoint_6_candidates_with_point_tourism']}** candidates but is not a comparable destination catchment; historical transport, competition and dated infrastructure also remain incomplete. Consequently, a full Opportunity × Strategic Need matrix is ready for **{metrics['checkpoint_6_matrix_ready_candidates']}** candidates, recommendations issued remain **{metrics['checkpoint_6_recommendations_issued']}**, and composite scores remain **{metrics['checkpoint_6_composite_scores']}**. See `reports/39_CHECKPOINT_6_BUSINESS_DECISION_FRAMEWORK.md`.
 
 ## Snow proxy coverage
 

@@ -1,0 +1,20 @@
+{
+  "analysis_version": "path_c_v0_22",
+  "checkpoint": 6,
+  "framework_id": "separated_evidence_dashboard",
+  "final_architecture": "exploratory_structural_analogue_dashboard_with_separate_opportunity_vulnerability_context_and_uncertainty",
+  "dimensions": 7,
+  "feature_groups_assigned_once": 19,
+  "candidate_clusters": 104,
+  "candidate_good_treated_support": 74,
+  "candidate_moderate_treated_extrapolation": 5,
+  "candidate_strong_treated_extrapolation": 25,
+  "candidates_stable_across_structural_aggregation": 11,
+  "candidates_with_point_container_tourism_context": 39,
+  "two_dimension_matrix_ready_candidates": 0,
+  "predicted_uplift_values": 0,
+  "recommendations_issued": 0,
+  "composite_scores": 0,
+  "causal_interpretation_approvals": 0,
+  "interpretation": "checkpoint_6_selects_separated_exploratory_dashboard_with_no_causal_prediction_recommendation_or_composite_score"
+}

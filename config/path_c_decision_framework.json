@@ -1,0 +1,106 @@
+{
+  "analysis_version": "path_c_v0_22",
+  "checkpoint": 6,
+  "framework_id": "separated_evidence_dashboard",
+  "final_architecture": "exploratory_structural_analogue_dashboard_with_separate_opportunity_vulnerability_context_and_uncertainty",
+  "candidate_pool_rule": "candidate_for_path_c_true_in_magic_pass_decision_support",
+  "dimensions": [
+    {
+      "dimension_id": "structural_comparability",
+      "dimension_name": "Structural comparability and support",
+      "feature_group_ids": ["structural_similarity", "structural_aggregation_sensitivity", "cluster_geography_sensitivity"],
+      "framework_status": "qualified_available",
+      "permitted_use": "exploratory_segmentation_analogue_distance_and_measurement_sensitivity"
+    },
+    {
+      "dimension_id": "descriptive_opportunity",
+      "dimension_name": "Descriptive analogue opportunity",
+      "feature_group_ids": ["analogue_opportunity_signal"],
+      "framework_status": "qualified_descriptive_signal_not_effect",
+      "permitted_use": "separate_descriptive_dimension_only"
+    },
+    {
+      "dimension_id": "snow_vulnerability",
+      "dimension_name": "Snow vulnerability",
+      "feature_group_ids": ["snow_vulnerability"],
+      "framework_status": "qualified_proxy",
+      "permitted_use": "separate_descriptive_vulnerability_dimension_only"
+    },
+    {
+      "dimension_id": "tourism_dependence",
+      "dimension_name": "Tourism dependence and destination scope",
+      "feature_group_ids": ["point_container_tourism", "reviewed_destination_tourism_context", "destination_scope_transfer"],
+      "framework_status": "incomplete_noncomparable_candidate_scope",
+      "permitted_use": "qualified_context_and_scope_audit_only"
+    },
+    {
+      "dimension_id": "accessibility",
+      "dimension_name": "Population and accessibility context",
+      "feature_group_ids": ["swiss_population_context", "cross_border_population_context", "npvm_transport_context", "public_transport_stop_proximity", "national_road_proximity", "current_scheduled_journey_context", "historical_public_transport"],
+      "framework_status": "qualified_current_context_historical_gap",
+      "permitted_use": "separate_descriptive_context_only"
+    },
+    {
+      "dimension_id": "competition_network",
+      "dimension_name": "Competition and network context",
+      "feature_group_ids": ["current_competing_pass_context", "current_network_density", "historical_competing_pass_context"],
+      "framework_status": "qualified_current_context_historical_gap",
+      "permitted_use": "separate_descriptive_context_only"
+    },
+    {
+      "dimension_id": "dated_infrastructure_and_recommendation",
+      "dimension_name": "Dated infrastructure and recommendation gate",
+      "feature_group_ids": ["dated_infrastructure_context"],
+      "framework_status": "blocked_missing_historical_evidence",
+      "permitted_use": "no_recommendation_or_composite_score"
+    }
+  ],
+  "dashboard_fields": [
+    "cluster_id",
+    "cluster_display_name",
+    "listing_count",
+    "segment_id",
+    "descriptive_profile",
+    "altitude_top_m_median",
+    "ski_area_km_median",
+    "number_lifts_median",
+    "closest_magic_analogue_1_cluster_id",
+    "closest_magic_analogue_1_name",
+    "magic_member_nearest_distance",
+    "magic_member_ood_flag",
+    "closest_reviewed_treated_analogue_1_id",
+    "closest_reviewed_treated_analogue_1_name",
+    "reviewed_treated_nearest_distance",
+    "reviewed_treated_ood_flag",
+    "analogue_descriptive_change_signal_pct",
+    "analogue_descriptive_change_range_low_pct",
+    "analogue_descriptive_change_range_high_pct",
+    "opportunity_signal_percentile",
+    "snow_vulnerability_proxy",
+    "snow_vulnerability_percentile",
+    "point_container_overnights_per_resident",
+    "point_container_hotel_beds_per_1000_residents",
+    "tourism_context_status",
+    "eurostat_foreign_only_share_of_observed_population_within_60km",
+    "road_major_center_travel_time_median_minutes",
+    "public_transport_major_center_travel_time_median_minutes",
+    "cluster_distance_to_nearest_public_transport_stop_median_km",
+    "cluster_distance_to_nearest_national_road_main_median_km",
+    "cluster_has_reviewed_competing_pass_link",
+    "cluster_competing_pass_scope_status",
+    "other_directory_clusters_within_25km",
+    "other_reviewed_pass_network_clusters_within_50km",
+    "directory_cluster_count_distance_rule_span_within_25km",
+    "reviewed_pass_network_count_distance_rule_span_within_50km",
+    "aggregation_sensitivity_status",
+    "data_quality_score_median",
+    "predicted_uplift_pct",
+    "composite_opportunity_need_score"
+  ],
+  "protected_outputs": {
+    "two_dimension_matrix_ready": false,
+    "causal_interpretation_approved": false,
+    "recommendation_approved": false,
+    "composite_score_approved": false
+  }
+}
