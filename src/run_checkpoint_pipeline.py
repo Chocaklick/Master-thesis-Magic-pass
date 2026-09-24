@@ -81,6 +81,7 @@ def main() -> None:
     run("src/scoring/build_path_c_segments_and_analogues.py")
     run("src/scoring/build_path_c_aggregation_sensitivity.py")
     run("src/data_processing/build_tourism_dependence_context.py")
+    run("src/data_processing/build_destination_scope_concordance_audit.py")
     run("src/data_processing/build_accessibility_context.py")
     run("src/data_processing/build_cross_border_population_context.py")
     run("src/data_processing/build_transport_accessibility_context.py")

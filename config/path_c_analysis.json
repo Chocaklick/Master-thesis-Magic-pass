@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_19",
+  "analysis_version": "path_c_v0_20",
   "analysis_date": "2026-09-24",
   "analysis_entity": "existing_lift_cluster_with_at_least_one_supplied_resort_listing",
   "feature_temporal_status": "undated_cross_sectional_snapshot_not_pre_treatment",
@@ -97,6 +97,16 @@
       "core_municipality_proxy"
     ],
     "interpretation": "reviewed_outcome_municipality_scope_current_context_not_validated_tourism_catchment_or_pre_treatment_feature"
+  },
+  "destination_scope_concordance_audit": {
+    "point_scope": "unique current municipalities containing the reviewed destination component listing points",
+    "reference_scope": "versioned reviewed hotel-outcome municipality set",
+    "comparison_classes": [
+      "definition_linked_core_municipality_proxy",
+      "separately_reviewed_complete_observed_municipal_scope"
+    ],
+    "transfer_rule": "do_not_approve_candidate_scope_transfer_or_catchment_status_from_global_match_rate",
+    "interpretation": "component_point_municipality_scope_transfer_diagnostic_not_validated_tourism_catchment_or_candidate_outcome_scope"
   },
   "network_distance_sensitivity": {
     "radii_km": [25, 50],

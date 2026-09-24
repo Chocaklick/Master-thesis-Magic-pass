@@ -1,0 +1,21 @@
+{
+  "reviewed_destinations": 11,
+  "destinations_with_exact_municipality_set_match": 10,
+  "reviewed_outcome_municipality_links": 12,
+  "component_point_municipality_links": 11,
+  "shared_municipality_links": 11,
+  "reviewed_outcome_only_municipality_links": 1,
+  "component_point_only_municipality_links": 0,
+  "overall_component_point_scope_precision": 1.0,
+  "overall_component_point_scope_recall": 0.9166666666666666,
+  "core_proxy_destinations": 7,
+  "core_proxy_exact_matches": 7,
+  "complete_scope_destinations": 4,
+  "complete_scope_exact_matches": 3,
+  "complete_scope_reviewed_municipality_links": 5,
+  "complete_scope_shared_municipality_links": 4,
+  "complete_scope_component_point_recall": 0.8,
+  "candidate_scope_transfers_approved": 0,
+  "validated_tourism_catchments": 0,
+  "interpretation": "component_point_municipality_scope_transfer_diagnostic_not_validated_tourism_catchment_or_candidate_outcome_scope"
+}

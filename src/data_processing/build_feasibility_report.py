@@ -53,6 +53,9 @@ PUBLIC_TRANSPORT_HISTORICAL_SUMMARY = (
 )
 CAPACITY_SUMMARY = ROOT / "reports" / "hotel_capacity_summary.json"
 TOURISM_CONTEXT_SUMMARY = ROOT / "reports" / "tourism_dependence_context_summary.json"
+DESTINATION_SCOPE_CONCORDANCE_SUMMARY = (
+    ROOT / "reports" / "destination_scope_concordance_audit_summary.json"
+)
 SNOW_SUMMARY = ROOT / "reports" / "snow_proxy_summary.json"
 SNOW_SENSITIVITY_SUMMARY = ROOT / "reports" / "snow_station_sensitivity_summary.json"
 SNOW_GRIDDED_SENSITIVITY_SUMMARY = (
@@ -142,6 +145,9 @@ def main() -> None:
     capacity_summary = json.loads(CAPACITY_SUMMARY.read_text(encoding="utf-8"))
     tourism_context_summary = json.loads(
         TOURISM_CONTEXT_SUMMARY.read_text(encoding="utf-8")
+    )
+    destination_scope_concordance_summary = json.loads(
+        DESTINATION_SCOPE_CONCORDANCE_SUMMARY.read_text(encoding="utf-8")
     )
     snow_summary = json.loads(SNOW_SUMMARY.read_text(encoding="utf-8"))
     snow_sensitivity_summary = json.loads(
@@ -376,6 +382,40 @@ def main() -> None:
         ),
         "validated_tourism_catchments": int(
             tourism_context_summary["validated_tourism_catchments"]
+        ),
+        "destination_scope_exact_matches": int(
+            destination_scope_concordance_summary[
+                "destinations_with_exact_municipality_set_match"
+            ]
+        ),
+        "destination_scope_reviewed_links": int(
+            destination_scope_concordance_summary[
+                "reviewed_outcome_municipality_links"
+            ]
+        ),
+        "destination_scope_shared_links": int(
+            destination_scope_concordance_summary["shared_municipality_links"]
+        ),
+        "destination_scope_complete_exact_matches": int(
+            destination_scope_concordance_summary["complete_scope_exact_matches"]
+        ),
+        "destination_scope_complete_units": int(
+            destination_scope_concordance_summary["complete_scope_destinations"]
+        ),
+        "destination_scope_complete_shared_links": int(
+            destination_scope_concordance_summary[
+                "complete_scope_shared_municipality_links"
+            ]
+        ),
+        "destination_scope_complete_reviewed_links": int(
+            destination_scope_concordance_summary[
+                "complete_scope_reviewed_municipality_links"
+            ]
+        ),
+        "candidate_scope_transfers_approved": int(
+            destination_scope_concordance_summary[
+                "candidate_scope_transfers_approved"
+            ]
         ),
         "slf_snow_stations_with_daily_data": int(
             snow_summary["snow_stations_with_daily_data"]
@@ -979,6 +1019,8 @@ The project now aggregates STATPOP and complete-year HESTA 2025 values over the 
 
 This layer is stronger than assigning a destination from one arbitrary listing point because it reuses the versioned outcome scope, including both Hasliberg and Meiringen. It still does not validate a visitor catchment, and 2025 is post-treatment for most units rather than a pre-treatment predictor. Accordingly, validated tourism catchments and approved tourism-dependence/causal features remain **{metrics['validated_tourism_catchments']}**. Candidate resorts still lack equivalent reviewed outcome scopes. See `reports/20_TOURISM_DEPENDENCE_CONTEXT.md`.
 
+The transferability audit then compares each reviewed scope with the unique municipalities containing its supplied component points. It finds **{metrics['destination_scope_exact_matches']} / 11** exact sets and recovers **{metrics['destination_scope_shared_links']} / {metrics['destination_scope_reviewed_links']}** reviewed municipality links. However, seven exact matches are definition-linked core proxies. Among the four separately reviewed complete scopes, only **{metrics['destination_scope_complete_exact_matches']} / {metrics['destination_scope_complete_units']}** are exact and **{metrics['destination_scope_complete_shared_links']} / {metrics['destination_scope_complete_reviewed_links']}** municipality links are recovered: the Meiringen point misses Hasliberg's second municipality. Candidate-scope transfers approved therefore remain **{metrics['candidate_scope_transfers_approved']}**. See `reports/37_DESTINATION_SCOPE_CONCORDANCE_AUDIT.md`.
+
 ## Snow proxy coverage
 
 The official SLF historical archive contains daily observations for **{metrics['slf_snow_stations_with_daily_data']} snow stations**. The project predeclares an 80% November–April coverage gate over 2013/14–2025/26; **{metrics['slf_snow_stations_passing_longitudinal_gate']} stations** pass. Every resort listing is mapped to the geographically nearest passing station, while distance and the elevation gap to the published resort top remain visible. **{metrics['resorts_with_snow_climate_feature_ready']} of {metrics['resort_listings_total']} listings** have high/moderate proxy comparability and at least ten usable winters.
@@ -1095,7 +1137,7 @@ See `reports/control_contamination_audit.csv`, `reports/control_candidates_by_tr
 
 ## Next evidence gate
 
-For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; validate candidate destination catchments for tourism dependence; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. The reviewed-destination outcome-scope tourism context, current competing-pass links, national-road-axis proximity, listing-point distance-rule sensitivity, next-nearest SwissMetNet weather sensitivity, TabsM/RhiresM gridded weather and SPASS gridded snow sensitivities are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed structural aggregation, network-distance and climate sensitivities and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Add an independent measurement/reanalysis sensitivity only if climate fields are proposed for causal use. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
+For Path C, obtain the historical GTFS anchor feeds manually or through an authorised channel before applying the same routing rules; define candidate destination catchments with evidence beyond component-point containment; reconstruct historical competing-pass rosters if competition is to become a pre-treatment feature; and obtain dated infrastructure features. The reviewed-destination outcome-scope tourism context and its point-scope concordance audit, current competing-pass links, national-road-axis proximity, listing-point distance-rule sensitivity, next-nearest SwissMetNet weather sensitivity, TabsM/RhiresM gridded weather and SPASS gridded snow sensitivities are complete within their declared source scopes, while a true motorway-access measure would require explicit road-class and entrance data. The cross-border population context and NPVM proxy geometry audit are complete, but 50 proxy-only clusters still lack an internal exact-zone sensitivity reference. If door-to-lift precision becomes necessary, supplement the completed current arrival-node review with walking/access evidence. Keep the completed structural aggregation, network-distance and climate sensitivities and preserve separate opportunity, vulnerability, comparability and data-quality dimensions. Add an independent measurement/reanalysis sensitivity only if climate fields are proposed for causal use. Any return to Path B requires a redesigned broader donor search, validated treatment intensity/exposure and stronger time-varying confounders. Complex heterogeneous-effect ML remains unjustified unless the effective treated-destination count increases substantially.
 """
     REPORT_OUTPUT.write_text(report, encoding="utf-8")
     print(json.dumps(metrics, ensure_ascii=False, indent=2))

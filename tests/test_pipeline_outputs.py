@@ -920,6 +920,50 @@ def test_tourism_context_uses_complete_official_year_without_claiming_catchment(
     assert decision["composite_opportunity_need_score"].isna().all()
 
 
+def test_destination_scope_concordance_separates_definition_linked_proxies() -> None:
+    audit = read("reports/destination_scope_concordance_audit.csv", dtype=str)
+    summary = json.loads(
+        (ROOT / "reports/destination_scope_concordance_audit_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    assert len(audit) == 11
+    assert audit["destination_unit_id"].is_unique
+    assert int(as_bool(audit["exact_municipality_set_match"]).sum()) == 10
+    assert audit["reviewed_outcome_scope_kind"].value_counts().to_dict() == {
+        "core_municipality_proxy": 7,
+        "complete_observed_municipal_scope": 4,
+    }
+    core = audit[
+        audit["reviewed_outcome_scope_kind"].eq("core_municipality_proxy")
+    ]
+    assert as_bool(core["exact_municipality_set_match"]).all()
+    assert core["comparison_independence_status"].eq(
+        "definition_linked_not_independent_validation"
+    ).all()
+    complete = audit[
+        audit["reviewed_outcome_scope_kind"].eq(
+            "complete_observed_municipal_scope"
+        )
+    ]
+    assert int(as_bool(complete["exact_municipality_set_match"]).sum()) == 3
+    assert int(complete["shared_municipality_count"].astype(int).sum()) == 4
+    assert int(complete["reviewed_outcome_municipality_count"].astype(int).sum()) == 5
+    meiringen = audit.set_index("destination_unit_id").loc["meiringen_hasliberg"]
+    assert meiringen["component_point_municipality_bfs_ids"] == "783"
+    assert meiringen["reviewed_outcome_municipality_bfs_ids"] == "783|785"
+    assert meiringen["reviewed_outcome_only_municipality_bfs_ids"] == "785"
+    assert float(meiringen["component_point_scope_recall"]) == 0.5
+    assert not as_bool(audit["candidate_scope_transfer_approved"]).any()
+    assert not as_bool(audit["tourism_catchment_validated"]).any()
+    assert not as_bool(audit["causal_covariate_approved"]).any()
+    assert summary["destinations_with_exact_municipality_set_match"] == 10
+    assert summary["complete_scope_exact_matches"] == 3
+    assert summary["complete_scope_component_point_recall"] == 0.8
+    assert summary["candidate_scope_transfers_approved"] == 0
+
+
 def test_accessibility_context_preserves_population_and_stays_unapproved() -> None:
     municipality = read("data_processed/municipality_population_geometry_2026.csv")
     cluster = read("data_processed/path_c_cluster_accessibility_context.csv")
@@ -1451,7 +1495,7 @@ def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> N
         "partial_cluster_listing_links": 6,
     }
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_19").all()
+    assert decision["analysis_version"].eq("path_c_v0_20").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1532,7 +1576,7 @@ def test_path_c_network_context_excludes_focal_cluster_and_preserves_pair_grain(
     assert not as_bool(context["network_context_feature_approved"]).any()
     assert not as_bool(pairs["network_context_feature_approved"]).any()
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_19").all()
+    assert decision["analysis_version"].eq("path_c_v0_20").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1611,7 +1655,7 @@ def test_path_c_cluster_geography_sensitivity_preserves_clusters_and_bounds_rule
     assert not as_bool(context["cluster_geographic_coherence_verified"]).any()
     assert not as_bool(context["network_distance_sensitivity_feature_approved"]).any()
     assert not as_bool(pairs["network_distance_sensitivity_feature_approved"]).any()
-    assert decision["analysis_version"].eq("path_c_v0_19").all()
+    assert decision["analysis_version"].eq("path_c_v0_20").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()

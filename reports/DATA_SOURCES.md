@@ -386,6 +386,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Not a travel-time market, observed visitor origin or destination catchment; separate from STATPOP 2025 because years and spatial allocation differ
 - **Local raw file:** `config/path_c_analysis.json|config/eurostat_census_grid_2021.json`.
 
+## DERIVED_DESTINATION_SCOPE_CONCORDANCE_AUDIT — Destination scope concordance audit
+
+- **Contents and relevance:** Concordance audit between reviewed destination component-point municipalities and versioned hotel-outcome scopes
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic stable-ID comparison of component resort point containers with reviewed outcome municipality sets; unknown date.
+- **Variables:** component-point municipality set|reviewed outcome municipality set|precision|recall|Jaccard|transfer approval
+- **Transformations:** Compare unique exact BFS sets; report intersection, point-only and outcome-only links; separate definition-linked core proxies from complete observed scopes
+- **Coverage:** reviewed destination and municipality-set comparison; versioned current-scope audit; ? to ?.
+- **Limitations:** Seven core-proxy matches are definition-linked and not independent validation; Meiringen-Hasliberg shows that one component point can omit a reviewed outcome municipality; no catchment or candidate transfer is approved
+- **Local raw file:** `data_processed/resort_point_municipality.csv|data_processed/treatment_destination_units.csv`.
+
 ## DERIVED_DISTANCE_TRANSPORT_COMPARISON — Distance versus scheduled public-transport comparison
 
 - **Contents and relevance:** Same-destination comparison of current municipality distance and winter-2026 scheduled public-transport journey time

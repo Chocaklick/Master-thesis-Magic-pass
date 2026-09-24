@@ -392,6 +392,23 @@ def main() -> None:
         manual_verification="2,115 population rows; 185 complete HESTA municipalities; 11/11 reviewed outcome scopes complete across 12 municipality links; four complete scopes and seven core proxies; every catchment/feature/causal approval false",
     ))
     rows.append(blank_source(
+        "DERIVED_DESTINATION_SCOPE_CONCORDANCE_AUDIT",
+        variable_name="component-point municipality set|reviewed outcome municipality set|precision|recall|Jaccard|transfer approval",
+        variable_description="Concordance audit between reviewed destination component-point municipalities and versioned hotel-outcome scopes",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Destination scope concordance audit",
+        retrieval_method="Deterministic stable-ID comparison of component resort point containers with reviewed outcome municipality sets",
+        local_raw_file="data_processed/resort_point_municipality.csv|data_processed/treatment_destination_units.csv",
+        processed_file="reports/destination_scope_concordance_audit.csv|reports/destination_scope_concordance_audit_summary.json|reports/37_DESTINATION_SCOPE_CONCORDANCE_AUDIT.md",
+        geographic_level="reviewed destination and municipality-set comparison",
+        temporal_resolution="versioned current-scope audit",
+        unit="municipality links and set-comparison ratios",
+        transformation_applied="Compare unique exact BFS sets; report intersection, point-only and outcome-only links; separate definition-linked core proxies from complete observed scopes",
+        quality_notes="Seven core-proxy matches are definition-linked and not independent validation; Meiringen-Hasliberg shows that one component point can omit a reviewed outcome municipality; no catchment or candidate transfer is approved",
+        confidence_level="high for deterministic concordance; not catchment validation",
+        manual_verification="11 destinations; 10 exact sets overall; 3/4 exact complete scopes; 11/12 reviewed links recovered; BFS 785 is the sole outcome-only link; all transfer/catchment/causal approvals false",
+    ))
+    rows.append(blank_source(
         "DERIVED_ACCESSIBILITY_CONTEXT",
         variable_name="distance_to_population_threshold_municipality|resident_population_within_straight_line_radius|distance_to_swiss_country_boundary|cross_border_truncation_risk|boundary_bridge",
         variable_description="Qualified Swiss straight-line population context for every linked Path C lift cluster",
@@ -2136,6 +2153,7 @@ def main() -> None:
         "municipality_tourism_context_2025": ROOT / "data_processed/municipality_tourism_context_2025.csv",
         "path_c_cluster_tourism_context": ROOT / "data_processed/path_c_cluster_tourism_context.csv",
         "reviewed_destination_tourism_context_2025": ROOT / "data_processed/reviewed_destination_tourism_context_2025.csv",
+        "destination_scope_concordance_audit": ROOT / "reports/destination_scope_concordance_audit.csv",
         "municipality_population_geometry_2026": ROOT / "data_processed/municipality_population_geometry_2026.csv",
         "path_c_cluster_accessibility_context": ROOT / "data_processed/path_c_cluster_accessibility_context.csv",
         "eurostat_population_grid_2021_swiss_region": ROOT / "data_processed/eurostat_population_grid_2021_swiss_region.csv",
@@ -2189,6 +2207,7 @@ def main() -> None:
         "municipality_tourism_context_2025": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
         "path_c_cluster_tourism_context": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
         "reviewed_destination_tourism_context_2025": "DERIVED_TOURISM_DEPENDENCE_CONTEXT",
+        "destination_scope_concordance_audit": "DERIVED_DESTINATION_SCOPE_CONCORDANCE_AUDIT",
         "municipality_population_geometry_2026": "DERIVED_ACCESSIBILITY_CONTEXT",
         "path_c_cluster_accessibility_context": "DERIVED_ACCESSIBILITY_CONTEXT",
         "eurostat_population_grid_2021_swiss_region": "DERIVED_CROSS_BORDER_POPULATION_CONTEXT",
@@ -2261,6 +2280,32 @@ def main() -> None:
         "destination_tourism_context_interpretation": "Guarded interpretation distinguishing current outcome-scope context from a validated catchment or pre-treatment feature",
         "tourism_catchment_validated": "Whether the reviewed outcome geography is validated as the full tourism catchment; always false",
         "pre_treatment_feature_approved": "Whether the 2025 context is approved as a pre-treatment predictor; always false",
+        "reviewed_outcome_scope_kind": "Whether the comparison reference is a complete observed municipal scope or a definition-linked core-municipality proxy",
+        "reviewed_outcome_scope_status": "Versioned reviewed status of the hotel-outcome municipality scope",
+        "component_resort_count": "Number of supplied resort components defining the reviewed destination",
+        "component_resort_ids": "Pipe-delimited stable supplied resort-component identifiers",
+        "component_point_municipality_count": "Number of unique current municipalities containing the supplied component points",
+        "component_point_municipality_bfs_ids": "Pipe-delimited BFS identifiers of component-point municipalities",
+        "component_point_municipality_names": "Pipe-delimited current component-point municipality names",
+        "reviewed_outcome_municipality_count": "Number of unique municipalities in the reviewed hotel-outcome scope",
+        "reviewed_outcome_municipality_bfs_ids": "Pipe-delimited BFS identifiers in the reviewed hotel-outcome scope",
+        "reviewed_outcome_municipality_names": "Pipe-delimited municipality names in the reviewed hotel-outcome scope",
+        "shared_municipality_count": "Number of BFS identifiers shared by the component-point and reviewed outcome sets",
+        "shared_municipality_bfs_ids": "Pipe-delimited BFS identifiers shared by both municipality sets",
+        "component_point_only_municipality_count": "Number of component-point municipalities absent from the reviewed outcome set",
+        "component_point_only_municipality_bfs_ids": "Pipe-delimited component-point BFS identifiers absent from the reviewed outcome set",
+        "reviewed_outcome_only_municipality_count": "Number of reviewed outcome municipalities absent from the component-point set",
+        "reviewed_outcome_only_municipality_bfs_ids": "Pipe-delimited reviewed outcome BFS identifiers absent from the component-point set",
+        "component_point_scope_precision": "Shared municipality count divided by component-point municipality count",
+        "component_point_scope_recall": "Shared municipality count divided by reviewed outcome municipality count",
+        "component_point_scope_jaccard": "Shared municipality count divided by the municipality-set union count",
+        "exact_municipality_set_match": "Whether the component-point and reviewed outcome BFS sets are identical",
+        "scope_concordance_status": "Exact or partial concordance class retaining whether a core proxy is definition-linked",
+        "comparison_independence_status": "Whether the outcome scope offers a separate comparison or is definition-linked to point containment",
+        "scope_concordance_interpretation": "Guardrail that set concordance is a transfer diagnostic, not catchment validation",
+        "candidate_scope_transfer_approved": "Whether component-point municipality sets are approved as equivalent candidate outcome scopes; always false",
+        "point_scope_source_id": "Source identifier for current point-containing municipalities",
+        "reviewed_scope_source_ids": "Evidence identifiers supporting the reviewed hotel-outcome scope",
         "analysis_entity_level": "Explicit statement of the cluster-level analysis entity and its limitations",
         "cluster_display_name": "Deterministic display label built from up to three supplied listing names",
         "member_resort_ids": "All supplied resort listing IDs assigned to the existing lift cluster",
@@ -2742,6 +2787,10 @@ def main() -> None:
             return "boolean flag"
         if variable.endswith("_reference_year"):
             return "year"
+        if variable == "exact_municipality_set_match":
+            return "boolean flag"
+        if variable.endswith(("_precision", "_recall", "_jaccard")):
+            return "share (0-1)"
         if "hotel_overnights_annual" in variable:
             return "overnight stays"
         if "hotel_beds_monthly_mean" in variable:
@@ -2813,6 +2862,7 @@ def main() -> None:
     path_c_geographic_level = {
         "municipality_tourism_context_2025": "municipality",
         "reviewed_destination_tourism_context_2025": "reviewed destination outcome-municipality scope",
+        "destination_scope_concordance_audit": "reviewed destination and municipality-set comparison",
         "municipality_population_geometry_2026": "current Swiss municipality",
         "eurostat_population_grid_2021_swiss_region": "one-kilometre European census grid cell near a linked cluster",
         "path_c_cluster_cross_border_population_context": "linked lift cluster",
@@ -2858,6 +2908,7 @@ def main() -> None:
         "municipality_tourism_context_2025": "2025 annual municipality context",
         "path_c_cluster_tourism_context": "2025 annual point-container context",
         "reviewed_destination_tourism_context_2025": "2025 current context on versioned reviewed outcome scope",
+        "destination_scope_concordance_audit": "versioned current point-container and reviewed outcome-scope comparison",
         "municipality_population_geometry_2026": "2025 population aligned to 2026-01-01 boundaries",
         "path_c_cluster_accessibility_context": "2025 population aligned to 2026-01-01 boundaries; undated cluster location",
         "eurostat_population_grid_2021_swiss_region": "2021 census population; version 3 released 2026-05-30",
@@ -2917,6 +2968,7 @@ def main() -> None:
             destination_tourism_table = (
                 table == "reviewed_destination_tourism_context_2025"
             )
+            scope_concordance_table = table == "destination_scope_concordance_audit"
             cross_border_population_table = table in {
                 "eurostat_population_grid_2021_swiss_region",
                 "path_c_cluster_cross_border_population_context",
@@ -3145,6 +3197,8 @@ def main() -> None:
                 if weather_gridded_table
                 else "qualified gridded-snow spatial-representativeness sensitivity"
                 if snow_gridded_table
+                else "qualified destination municipality-scope transfer diagnostic"
+                if scope_concordance_table
                 else "qualified current reviewed outcome-scope tourism context"
                 if destination_tourism_table
                 else "qualified regional-weather alternative-station sensitivity"
@@ -3200,6 +3254,9 @@ def main() -> None:
                 "See config/spass_snow_grid.json, config/path_c_analysis.json and src/data_processing/build_snow_gridded_sensitivity.py"
                 if snow_gridded_table
                 else
+                "See config/treatment_destination_review.json and src/data_processing/build_destination_scope_concordance_audit.py"
+                if scope_concordance_table
+                else
                 "See config/treatment_destination_review.json, config/path_c_analysis.json and src/data_processing/build_tourism_dependence_context.py"
                 if destination_tourism_table
                 else
@@ -3253,6 +3310,9 @@ def main() -> None:
                 else
                 "No causal interpretation; SPASS is a modelled, station-informed grid sharing an SLF assimilation target and is neither an independent measurement network, direct piste snow, snowmaking/operation evidence nor causal-confounder validation"
                 if snow_gridded_table
+                else
+                "No causal interpretation; core-proxy matches are definition-linked, complete-scope concordance is based on four units, and component-point municipalities neither validate catchments nor equivalent candidate outcome scopes"
+                if scope_concordance_table
                 else
                 "No causal interpretation; 2025 reviewed outcome-municipality scope is current context, not a validated destination catchment or pre-treatment feature, and seven scopes remain core-municipality proxies"
                 if destination_tourism_table
