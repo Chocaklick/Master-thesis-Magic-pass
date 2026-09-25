@@ -30,6 +30,9 @@ SCHNEEPASS_CONFIG_PATH = (
     ROOT / "config" / "competing_pass_historical_schneepass_zentralschweiz.json"
 )
 TOPCARD_CONFIG_PATH = ROOT / "config" / "competing_pass_historical_topcard.json"
+SNOWPASS_GRAUBUENDEN_CONFIG_PATH = (
+    ROOT / "config" / "competing_pass_historical_snowpass_graubuenden.json"
+)
 ANALYSIS_CONFIG_PATH = ROOT / "config" / "path_c_analysis.json"
 RESORT_PATH = ROOT / "data_processed" / "resort_master.csv"
 FEATURE_PATH = ROOT / "data_processed" / "path_c_resort_cluster_features.csv"
@@ -75,6 +78,16 @@ EXPECTED_TOPCARD_AREA_COUNTS = {
     "2018/2019": 4,
     "2019/2020": 4,
 }
+EXPECTED_SNOWPASS_GRAUBUENDEN_SEASONS = [
+    "2017/2018",
+    "2018/2019",
+    "2019/2020",
+]
+EXPECTED_SNOWPASS_GRAUBUENDEN_AREA_COUNTS = {
+    "2017/2018": 1,
+    "2018/2019": 0,
+    "2019/2020": 17,
+}
 EXPECTED_SOURCE_HOSTS = {
     "JUNGFRAU_TOP4_2018_19_CONTINUITY": "jungfrau.ch",
     "JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON": "jungfrau.ch",
@@ -86,13 +99,17 @@ EXPECTED_SOURCE_HOSTS = {
     "SCHNEEPASS_ZENTRALSCHWEIZ_2023_24_MEDIA_KIT": "schneepasszentralschweiz.ch",
     "SCHNEEPASS_ZENTRALSCHWEIZ_2024_25_MEDIA_KIT": "schneepasszentralschweiz.ch",
     "SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18": "samnaun-engadin.ch",
+    "BBGR_ANNUAL_2017_18": "bbgr.ch",
     "BBGR_ANNUAL_2018_19": "bbgr.ch",
+    "BBGR_ANNUAL_2019_20": "bbgr.ch",
     "SBS_PRICING_STUDY_2020_TOPCARD": "bbgr.ch",
+    "GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE": "web.archive.org",
 }
 INTERPRETATION = (
     "dated_top4_2017_18_to_2024_25_meilenweiss_2019_20_to_2021_22_and_"
     "schneepass_zentralschweiz_2021_22_2023_24_2024_25_plus_topcard_"
-    "2017_18_to_2019_20_tiered_"
+    "2017_18_to_2019_20_tiered_plus_snowpass_graubuenden_2017_18_to_"
+    "2019_20_conservative_"
     "positive_presence_evidence_not_complete_historical_pass_market_absence_"
     "pre_treatment_or_causal_feature"
 )
@@ -155,6 +172,7 @@ def validate_sources(
     meilenweiss_config: dict[str, object],
     schneepass_config: dict[str, object],
     topcard_config: dict[str, object],
+    snowpass_graubuenden_config: dict[str, object],
 ) -> dict[str, dict[str, object]]:
     expected_ids = set(EXPECTED_SOURCE_HOSTS)
     sha_by_id = {
@@ -162,6 +180,7 @@ def validate_sources(
         **meilenweiss_config["source_sha256_by_id"],
         **schneepass_config["source_sha256_by_id"],
         **topcard_config["source_sha256_by_id"],
+        **snowpass_graubuenden_config["source_sha256_by_id"],
     }
     if set(sha_by_id) != expected_ids:
         raise ValueError("Historical competing-pass source registry changed unexpectedly")
@@ -285,11 +304,26 @@ def validate_sources(
             "1jahrsommer2017winter201718",
             "samnaunischgldavosklostersflimslaax",
         ],
+        "BBGR_ANNUAL_2017_18": [
+            "snowpassgraubunden",
+            "wintersaison201718",
+            "weiterentwicklungdessnowpasses",
+        ],
         "BBGR_ANNUAL_2018_19": [
             "topcard",
             "aufdiewintersaison201819hin",
             "arosalenzerheideanstellesamnaunischgl",
             "3freiwahlbaretageimoberengadin",
+            "snowpassgraubunden",
+            "wintersaison201819",
+            "8grossenunternehmen",
+            "11mittlerenunternehmen",
+            "31kleinenunternehmen",
+        ],
+        "BBGR_ANNUAL_2019_20": [
+            "snowpassgraubunden",
+            "letztesaisondesproduktssnowpass",
+            "erweiterungdessnowpasseszueinemganzjahresabonnement",
         ],
         "SBS_PRICING_STUDY_2020_TOPCARD": [
             "topcardberechtigtzumskifahrenindendreigebieten",
@@ -300,6 +334,19 @@ def validate_sources(
             "dietopcardzurfreienfahrtinallendreigebieten",
             "ab201920istdietopcardandreitagenimgebietengelbergtitlisgultig",
             "engelbergtitlisersetztdieregionstmoritzoberengadin",
+            "dersnowpassgraubundenkostetfurerwachsene",
+            "imgegensatzzumsurselvaskipassistdersommernichtinkludiert",
+            "inallengebietenunlimitiertgultig",
+            "abbildung39saisonkartenpreisvonuberregionalengraubundnersaisonkarten",
+        ],
+        "GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE": [
+            "snowpassderskipassfurganzgraubunden",
+            "wintersaisonabonnement",
+            "beisamtlichenbergbahneningraubunden",
+            "sedrunandermatt",
+            "samnaunischgl",
+            "ausgenommensindzudemeinzelnekleinskilifte",
+            "tarifewintersaison20192020",
         ],
     }
     for source_id, tokens in required.items():
@@ -318,6 +365,7 @@ def validate_configs(
     meilenweiss_config: dict[str, object],
     schneepass_config: dict[str, object],
     topcard_config: dict[str, object],
+    snowpass_graubuenden_config: dict[str, object],
     analysis_config: dict[str, object],
     resorts: pd.DataFrame,
 ) -> dict[str, dict[str, object]]:
@@ -326,6 +374,7 @@ def validate_configs(
         meilenweiss_config["analysis_version"],
         schneepass_config["analysis_version"],
         topcard_config["analysis_version"],
+        snowpass_graubuenden_config["analysis_version"],
         analysis_config["analysis_version"],
     }
     if len(versions) != 1:
@@ -390,6 +439,38 @@ def validate_configs(
                 raise ValueError("TopCard limited partner must retain a three-day limit")
             if tier == "unlimited_core_area" and day_limit is not None:
                 raise ValueError("TopCard core areas cannot carry a winter day limit")
+    snowpass_graubuenden_seasons = list(snowpass_graubuenden_config["seasons"])
+    if [item["season"] for item in snowpass_graubuenden_seasons] != (
+        EXPECTED_SNOWPASS_GRAUBUENDEN_SEASONS
+    ):
+        raise ValueError("Historical SnowPass Graubünden seasons changed unexpectedly")
+    for season in snowpass_graubuenden_seasons:
+        areas = list(season["areas"])
+        expected_count = EXPECTED_SNOWPASS_GRAUBUENDEN_AREA_COUNTS[season["season"]]
+        if len(areas) != expected_count:
+            raise ValueError(
+                f"Unexpected SnowPass Graubünden area count for {season['season']}"
+            )
+        if len({area["official_area_label"] for area in areas}) != len(areas):
+            raise ValueError(
+                f"Duplicate SnowPass Graubünden area in {season['season']}"
+            )
+        linked_ids = [item for area in areas for item in area["linked_resort_ids"]]
+        if len(linked_ids) != len(set(linked_ids)):
+            raise ValueError(
+                f"Duplicate supplied SnowPass Graubünden listing link in {season['season']}"
+            )
+        unknown = set(linked_ids) - known_resort_ids
+        if unknown:
+            raise ValueError(
+                f"Unknown SnowPass Graubünden listing IDs: {sorted(unknown)}"
+            )
+        if any(area["winter_access_tier"] != "unlimited_winter_area" for area in areas):
+            raise ValueError("SnowPass Graubünden areas must retain unlimited winter access")
+        if any(area["winter_access_days_limit"] is not None for area in areas):
+            raise ValueError("SnowPass Graubünden areas cannot carry a winter day limit")
+        if any(bool(area["area_specific_summer_access_documented"]) for area in areas):
+            raise ValueError("Winter-only SnowPass Graubünden cannot gain summer area links")
     top4_linked_ids = [
         item for area in top4_areas for item in area["linked_resort_ids"]
     ]
@@ -402,14 +483,24 @@ def validate_configs(
         "recommendation_feature_approved",
         "composite_score_approved",
     ]
-    for config in [top4_config, meilenweiss_config, schneepass_config, topcard_config]:
+    for config in [
+        top4_config,
+        meilenweiss_config,
+        schneepass_config,
+        topcard_config,
+        snowpass_graubuenden_config,
+    ]:
         if any(bool(config[field]) for field in protected):
             raise ValueError("A protected historical competing-pass approval became true")
     reviews = list(meilenweiss_config["nonconfirming_source_reviews"])
     if len(reviews) != 1 or reviews[0]["membership_use"] != "not_used_as_membership_evidence":
         raise ValueError("Non-confirming Pizol source must remain excluded from membership")
     return validate_sources(
-        top4_config, meilenweiss_config, schneepass_config, topcard_config
+        top4_config,
+        meilenweiss_config,
+        schneepass_config,
+        topcard_config,
+        snowpass_graubuenden_config,
     )
 
 
@@ -418,6 +509,7 @@ def product_seasons(
     meilenweiss_config: dict[str, object],
     schneepass_config: dict[str, object],
     topcard_config: dict[str, object],
+    snowpass_graubuenden_config: dict[str, object],
 ) -> list[dict[str, object]]:
     items: list[dict[str, object]] = []
     for season in top4_config["seasons"]:
@@ -470,6 +562,22 @@ def product_seasons(
                 "continuity_basis": (
                     "season_specific_official_tariff_and_industry_study_with_"
                     "explicit_2018_2019_core_area_replacement"
+                ),
+            }
+        )
+    for season in snowpass_graubuenden_config["seasons"]:
+        items.append(
+            {
+                "competing_pass_id": snowpass_graubuenden_config[
+                    "competing_pass_id"
+                ],
+                "competing_pass_name": snowpass_graubuenden_config[
+                    "competing_pass_name"
+                ],
+                **season,
+                "continuity_basis": (
+                    "season_specific_official_evidence_no_unnamed_area_or_"
+                    "cross_season_membership_inference"
                 ),
             }
         )
@@ -550,8 +658,8 @@ def build_area_seasons(
                 }
             )
     area_seasons = pd.DataFrame(records)
-    if len(area_seasons) != 103:
-        raise ValueError("Expected 103 historical pass area-season rows")
+    if len(area_seasons) != 121:
+        raise ValueError("Expected 121 historical pass area-season rows")
     if area_seasons.duplicated(
         ["competing_pass_id", "season", "official_area_label"]
     ).any():
@@ -668,7 +776,7 @@ def build_resort_seasons(
                 }
             )
     history = pd.DataFrame(records)
-    if len(history) != len(resorts) * 17:
+    if len(history) != len(resorts) * 20:
         raise ValueError("Historical product-listing-season grain changed")
     if history.duplicated(["competing_pass_id", "resort_id", "season"]).any():
         raise ValueError("Duplicate historical product-listing-season row")
@@ -678,6 +786,7 @@ def build_resort_seasons(
     if links_by_product.to_dict() != {
         "meilenweiss": 26,
         "schneepass_zentralschweiz": 37,
+        "snowpass_graubuenden": 21,
         "top4": 40,
         "topcard": 20,
     }:
@@ -737,10 +846,10 @@ def build_cluster_context(
                 "cluster_id": cluster_id,
                 "cluster_display_name": feature_lookup.loc[cluster_id, "cluster_display_name"],
                 "candidate_for_path_c": feature_lookup.loc[cluster_id, "candidate_for_path_c"],
-                "historical_competing_pass_products_reviewed": 4,
+                "historical_competing_pass_products_reviewed": 5,
                 "historical_competing_pass_unique_seasons_reviewed": 8,
-                "historical_competing_pass_product_seasons_reviewed": 17,
-                "historical_competing_pass_area_seasons_reviewed": 103,
+                "historical_competing_pass_product_seasons_reviewed": 20,
+                "historical_competing_pass_area_seasons_reviewed": 121,
                 "historical_competing_pass_cluster_listing_count": listing_count,
                 "historical_competing_pass_linked_listing_count": linked_listing_count,
                 "historical_competing_pass_linked_listing_share": linked_listing_count / listing_count,
@@ -791,7 +900,8 @@ def build_cluster_context(
                     "top4_2017_2018_to_2024_2025_and_meilenweiss_positive_"
                     "evidence_2019_2020_to_2021_2022_plus_schneepass_"
                     "zentralschweiz_2021_2022_2023_2024_2024_2025_plus_"
-                    "tiered_topcard_2017_2018_to_2019_2020"
+                    "tiered_topcard_2017_2018_to_2019_2020_plus_snowpass_"
+                    "graubuenden_2017_2018_to_2019_2020_conservative"
                 ),
                 "historical_competing_pass_context_interpretation": INTERPRETATION,
                 "historical_competing_pass_feature_approved": False,
@@ -808,8 +918,8 @@ def build_cluster_context(
     context = pd.DataFrame(rows)
     if len(context) != 162 or not context["cluster_id"].is_unique:
         raise ValueError("Historical competing-pass context must preserve 162 clusters")
-    if int(context["historical_competing_pass_context_available"].sum()) != 28:
-        raise ValueError("Expected 28 lift clusters with documented historical links")
+    if int(context["historical_competing_pass_context_available"].sum()) != 35:
+        raise ValueError("Expected 35 lift clusters with documented historical links")
     if not context["historical_competing_pass_linked_listing_share"].between(0, 1).all():
         raise ValueError("Invalid historical competing-pass listing share")
     protected = [
@@ -869,7 +979,7 @@ def enrich_decision_support(context: pd.DataFrame) -> None:
 
 
 def write_report(summary: dict[str, object]) -> None:
-    report = f"""# Historical competing-pass context: Top4, Meilenweiss, Schneepass and TopCard
+    report = f"""# Historical competing-pass context: Top4, Meilenweiss, Schneepass Zentralschweiz, TopCard and SnowPass Graubünden
 
 ## Evidence recovered
 
@@ -877,13 +987,15 @@ The checksum-pinned Top4 reconstruction remains unchanged: four official regions
 
 Three official TopCard sources add 2017/2018 through 2019/2020. Samnaun/Ischgl, Davos-Klosters and Flims-Laax form the 2017/2018 core. Arosa Lenzerheide replaces Samnaun/Ischgl in 2018/2019. The three core areas remain unlimited, while the additional partner benefit is kept in a separate tier: three freely selectable days in Engadin St. Moritz/Oberengadin in 2018/2019, replaced by three visits at Engelberg-Titlis from 2019/2020. The supplied Schatzalp listing is not inferred from the broader Davos-Klosters label.
 
+SnowPass Graubünden is now separated from both TopCard and Schneepass Zentralschweiz. The official Samnaun tariff supports one exact 2017/2018 host-area link; the 2018/2019 BBGR report proves the product and aggregate company groups but names no areas, so it creates no listing links. For 2019/2020, an immutable capture of the official Graubünden Ferien page states winter-only validity at all Graubünden mountain railways including Samnaun-Ischgl and Sedrun-Andermatt, while the industry study independently names 17 major Graubünden areas. Those sources support **{summary['snowpass_graubuenden_area_season_rows']} conservative area-season rows** and **{summary['documented_snowpass_graubuenden_listing_season_links']} positive listing-season links**. The linked set is deliberately not called complete because the referenced detailed validity PDF is unavailable and individual small-lift exclusions remain unresolved.
+
 The combined output contains **{summary['area_season_rows']} area-season rows**, **{summary['resort_product_season_rows']} product-listing-season rows** and **{summary['documented_listing_season_links']} positive listing-season links**. These reach **{summary['clusters_with_documented_link']} lift clusters**, including **{summary['path_c_candidates_with_documented_link']} of {summary['path_c_candidates']}** apparent Path C candidates.
 
 ## Winter and summer are not conflated
 
 Each linked area is positive winter evidence. TopCard contributes **{summary['documented_topcard_unlimited_core_listing_season_links']} unlimited-core** and **{summary['documented_topcard_limited_partner_listing_season_links']} limited-partner** listing-season links; those tiers are never pooled as equivalent access. Its three core areas have documented summer access, and the 2019/2020 Engelberg-Titlis benefit is limited to three visits shared between summer and winter. This yields **{summary['area_specific_summer_access_documented_rows']} area-season** and **{summary['listing_specific_summer_access_documented_rows']} listing-season** summer links, all from TopCard.
 
-Meilenweiss and Schneepass retain product-level summer statements where their official material supports them. Their aggregate statements do not identify every area-level summer entitlement, so no area-specific summer right is inferred for those products. Product-level and area-specific evidence remain separate.
+Meilenweiss and Schneepass Zentralschweiz retain product-level summer statements where their official material supports them. Their aggregate statements do not identify every area-level summer entitlement, so no area-specific summer right is inferred for those products. SnowPass Graubünden is explicitly retained as winter-only. Product-level and area-specific evidence remain separate.
 
 ## Conservative scope and negative evidence
 
@@ -891,7 +1003,7 @@ Malbun in Liechtenstein is not linked to the supplied Buchserberg-Malbun listing
 
 ## Decision limit
 
-Four products and seventeen product-seasons still do not reconstruct the full historical multi-resort-pass market. The missing 2022/2023 Schneepass season is not interpolated, non-links do not verify absence, evidence scopes differ by season, several observations postdate Magic Pass treatment anchors, and benefit intensity and prices are not harmonised. Historical-market-absence, pre-treatment, causal, recommendation and composite-score approvals remain false. The result is qualified context, not a ranking input.
+Five products and twenty product-seasons still do not reconstruct the full historical multi-resort-pass market. The missing 2022/2023 Schneepass Zentralschweiz season is not interpolated; the unnamed 2018/2019 SnowPass Graubünden roster is not backfilled; non-links do not verify absence; evidence scopes differ by season; several observations postdate Magic Pass treatment anchors; and benefit intensity and prices are not harmonised. Historical-market-absence, pre-treatment, causal, recommendation and composite-score approvals remain false. The result is qualified context, not a ranking input.
 
 ## Outputs
 
@@ -899,6 +1011,7 @@ Four products and seventeen product-seasons still do not reconstruct the full hi
 - `config/competing_pass_historical_meilenweiss.json`
 - `config/competing_pass_historical_schneepass_zentralschweiz.json`
 - `config/competing_pass_historical_topcard.json`
+- `config/competing_pass_historical_snowpass_graubuenden.json`
 - `data_processed/competing_pass_historical_area_seasons.csv`
 - `data_processed/resort_competing_pass_history.csv`
 - `data_processed/path_c_cluster_historical_competing_pass_context.csv`
@@ -913,6 +1026,9 @@ def main() -> None:
     meilenweiss_config = json.loads(MEILENWEISS_CONFIG_PATH.read_text(encoding="utf-8"))
     schneepass_config = json.loads(SCHNEEPASS_CONFIG_PATH.read_text(encoding="utf-8"))
     topcard_config = json.loads(TOPCARD_CONFIG_PATH.read_text(encoding="utf-8"))
+    snowpass_graubuenden_config = json.loads(
+        SNOWPASS_GRAUBUENDEN_CONFIG_PATH.read_text(encoding="utf-8")
+    )
     analysis_config = json.loads(ANALYSIS_CONFIG_PATH.read_text(encoding="utf-8"))
     resorts = pd.read_csv(RESORT_PATH, dtype="string")
     features = pd.read_csv(FEATURE_PATH, dtype="string")
@@ -926,11 +1042,16 @@ def main() -> None:
         meilenweiss_config,
         schneepass_config,
         topcard_config,
+        snowpass_graubuenden_config,
         analysis_config,
         resorts,
     )
     specs = product_seasons(
-        top4_config, meilenweiss_config, schneepass_config, topcard_config
+        top4_config,
+        meilenweiss_config,
+        schneepass_config,
+        topcard_config,
+        snowpass_graubuenden_config,
     )
     analysis_version = str(analysis_config["analysis_version"])
     area_seasons = build_area_seasons(analysis_version, specs)
@@ -948,6 +1069,10 @@ def main() -> None:
     ] + [
         source_id
         for season in topcard_config["seasons"]
+        for source_id in season["source_ids"]
+    ] + [
+        source_id
+        for season in snowpass_graubuenden_config["seasons"]
         for source_id in season["source_ids"]
     ]
     positive_source_ids = sorted(set(positive_source_ids))
@@ -1000,8 +1125,8 @@ def main() -> None:
     linked_candidates = int(candidates["historical_competing_pass_context_available"].sum())
     summary = {
         "analysis_version": analysis_version,
-        "reviewed_historical_products": 4,
-        "reviewed_product_seasons": 17,
+        "reviewed_historical_products": 5,
+        "reviewed_product_seasons": 20,
         "reviewed_unique_winter_seasons": 8,
         "season_start": EXPECTED_TOP4_SEASONS[0],
         "season_end": EXPECTED_TOP4_SEASONS[-1],
@@ -1014,6 +1139,9 @@ def main() -> None:
         ),
         "topcard_area_season_rows": int(
             area_seasons["competing_pass_id"].eq("topcard").sum()
+        ),
+        "snowpass_graubuenden_area_season_rows": int(
+            area_seasons["competing_pass_id"].eq("snowpass_graubuenden").sum()
         ),
         "area_season_rows": len(area_seasons),
         "resort_product_season_rows": len(history),
@@ -1042,6 +1170,12 @@ def main() -> None:
         "documented_topcard_listing_season_links": int(
             history.loc[
                 history["competing_pass_id"].eq("topcard"),
+                "historical_competing_pass_link_documented",
+            ].sum()
+        ),
+        "documented_snowpass_graubuenden_listing_season_links": int(
+            history.loc[
+                history["competing_pass_id"].eq("snowpass_graubuenden"),
                 "historical_competing_pass_link_documented",
             ].sum()
         ),
@@ -1109,17 +1243,19 @@ def main() -> None:
         "meilenweiss_area_season_rows": 29,
         "schneepass_zentralschweiz_area_season_rows": 31,
         "topcard_area_season_rows": 11,
-        "area_season_rows": 103,
-        "resort_product_season_rows": 4607,
-        "documented_listing_season_links": 123,
+        "snowpass_graubuenden_area_season_rows": 18,
+        "area_season_rows": 121,
+        "resort_product_season_rows": 5420,
+        "documented_listing_season_links": 144,
         "documented_topcard_listing_season_links": 20,
         "documented_topcard_unlimited_core_listing_season_links": 18,
         "documented_topcard_limited_partner_listing_season_links": 2,
-        "unique_supplied_listings_with_documented_link": 41,
-        "clusters_with_documented_link": 28,
-        "path_c_candidates_with_documented_link": 21,
+        "documented_snowpass_graubuenden_listing_season_links": 21,
+        "unique_supplied_listings_with_documented_link": 50,
+        "clusters_with_documented_link": 35,
+        "path_c_candidates_with_documented_link": 28,
         "path_c_candidate_partial_cluster_links": 11,
-        "path_c_candidate_all_cluster_listing_links": 10,
+        "path_c_candidate_all_cluster_listing_links": 17,
         "path_c_candidates_with_product_level_summer_inclusion": 19,
         "area_specific_summer_access_documented_rows": 10,
         "listing_specific_summer_access_documented_rows": 19,

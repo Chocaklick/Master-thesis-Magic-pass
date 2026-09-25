@@ -525,5 +525,12 @@
     "suffix": "pdf",
     "organisation": "Seilbahnen Schweiz, hosted by Bergbahnen Graubünden",
     "description": "Official industry-association 2020 study documenting TopCard core areas, the 2018/2019 Samnaun-to-Arosa replacement, year-round validity and season-specific three-day partner changes"
+  },
+  {
+    "source_id": "GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE",
+    "url": "https://web.archive.org/web/20191213234059id_/https://www.graubuenden.ch/de/snowpass-skipass-fuer-ganz-graubuenden",
+    "suffix": "html",
+    "organisation": "Graubünden Ferien (official page preserved by the Internet Archive)",
+    "description": "Official Graubünden Ferien SnowPass page captured on 2019-12-13, documenting 2019/2020 winter-only validity at all Graubünden mountain railways including Samnaun-Ischgl and Sedrun-Andermatt, subject to named concert-day and unresolved individual small-lift exclusions"
   }
 ]

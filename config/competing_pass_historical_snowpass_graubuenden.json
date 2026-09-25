@@ -1,0 +1,277 @@
+{
+  "analysis_version": "path_c_v0_28",
+  "competing_pass_id": "snowpass_graubuenden",
+  "competing_pass_name": "SnowPass Graubünden",
+  "source_sha256_by_id": {
+    "SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18": "cd2769245c9ff3e067d6da5cd0c24f38e014b3bacf9360d52e32c9b8ee493e67",
+    "BBGR_ANNUAL_2017_18": "3dd60f0084a1e0f3821bcd87f7a8664ddc9fc4e948dcb81e7d822fe08654d8da",
+    "BBGR_ANNUAL_2018_19": "3e749bf84ef443184819a05ad423ed18598ee1315f3b480585d82d1feae83831",
+    "BBGR_ANNUAL_2019_20": "f94830f0ee184bad82551802a4af94aa5164824b723b5bd06ee0e24c34f6c9a5",
+    "SBS_PRICING_STUDY_2020_TOPCARD": "d493d8213439a78bef1505d4571c82d248d2fd88fd310da2b254305644727e45",
+    "GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE": "b95760051a0f1b2330dd2fd5e3ffd115360a68bb9c36e94e2d8af672b12d3adb"
+  },
+  "seasons": [
+    {
+      "season": "2017/2018",
+      "source_ids": [
+        "SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18",
+        "BBGR_ANNUAL_2017_18"
+      ],
+      "evidence_scope": "official_product_season_plus_one_explicit_host_area_broader_roster_unresolved",
+      "product_winter_destination_count": null,
+      "product_summer_destination_count": 0,
+      "product_summer_season": null,
+      "product_summer_included": false,
+      "product_summer_timing": "winter_only_product_no_summer_inclusion",
+      "annual_pass_following_summer_season": null,
+      "annual_pass_following_summer_included": null,
+      "season_only_pass_following_summer_included": false,
+      "areas": [
+        {
+          "official_area_label": "Samnaun/Ischgl",
+          "linked_resort_ids": ["samnaun_silvretta_arena_samnaun_ischgl"],
+          "mapping_basis": "exact_official_tariff_area_to_supplied_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The official Samnaun tariff explicitly states that the 2017/2018 SnowPass is valid in Samnaun/Ischgl and Graubünden. Its broader over-40-area roster is not reconstructed from that brochure."
+        }
+      ]
+    },
+    {
+      "season": "2018/2019",
+      "source_ids": ["BBGR_ANNUAL_2018_19"],
+      "evidence_scope": "official_product_season_and_aggregate_operator_counts_without_named_area_roster",
+      "product_winter_destination_count": null,
+      "product_summer_destination_count": 0,
+      "product_summer_season": null,
+      "product_summer_included": false,
+      "product_summer_timing": "winter_only_product_no_summer_inclusion",
+      "annual_pass_following_summer_season": null,
+      "annual_pass_following_summer_included": null,
+      "season_only_pass_following_summer_included": false,
+      "areas": []
+    },
+    {
+      "season": "2019/2020",
+      "source_ids": [
+        "GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE",
+        "BBGR_ANNUAL_2019_20",
+        "SBS_PRICING_STUDY_2020_TOPCARD"
+      ],
+      "evidence_scope": "official_all_canton_statement_combined_with_industry_study_named_major_areas_small_lift_exclusions_unresolved",
+      "product_winter_destination_count": null,
+      "product_summer_destination_count": 0,
+      "product_summer_season": null,
+      "product_summer_included": false,
+      "product_summer_timing": "winter_only_product_no_summer_inclusion",
+      "annual_pass_following_summer_season": null,
+      "annual_pass_following_summer_included": null,
+      "season_only_pass_following_summer_included": false,
+      "areas": [
+        {
+          "official_area_label": "Arosa/Lenzerheide",
+          "linked_resort_ids": ["arosa_lenzerheide"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_major_area_exact_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The official 2019/2020 page covers all Graubünden mountain railways except unresolved individual small lifts; the industry study independently names Arosa/Lenzerheide as a major Graubünden area."
+        },
+        {
+          "official_area_label": "Bergün Filisur",
+          "linked_resort_ids": ["bergun_filisur_bergun_filisur_darlux"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_major_area_exact_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The industry study names the major Bergün Filisur area; the exact supplied Darlux regional listing is linked under the official all-canton statement."
+        },
+        {
+          "official_area_label": "Brigels Waltensburg Andiast",
+          "linked_resort_ids": ["brigels_waltensburg_andiast"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_major_area_exact_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "Exact supplied listing correspondence to the major area named by the industry study under the official all-canton statement."
+        },
+        {
+          "official_area_label": "Chur Bergbahnen",
+          "linked_resort_ids": ["brambruesch_chur_brambruesch"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_operator_area_conservative_component_link",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "Only the supplied Chur-Brambrüesch listing is linked to the Chur Bergbahnen label; neighbouring Pradaschier is not inherited from the shared cluster."
+        },
+        {
+          "official_area_label": "Davos/Klosters",
+          "linked_resort_ids": [
+            "parsenn_davos_klosters_parsenn",
+            "jakobshorn_davos_jakobshorn",
+            "rinerhorn_davos_rinerhorn",
+            "madrisa_klosters_madrisa"
+          ],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_regional_area_with_reviewed_components",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The four independently reviewed Davos-Klosters tariff components are linked. Pischa and Schatzalp remain unlinked because the reviewed historical sources do not establish their component-level scope."
+        },
+        {
+          "official_area_label": "Disentis",
+          "linked_resort_ids": ["disentis"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_major_area_exact_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "Exact supplied listing correspondence to the major area named by the industry study under the official all-canton statement."
+        },
+        {
+          "official_area_label": "Grüsch Danusa",
+          "linked_resort_ids": ["grusch_danusa"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_major_area_exact_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "Exact supplied listing correspondence to the major area named by the industry study under the official all-canton statement."
+        },
+        {
+          "official_area_label": "Obersaxen/Mundaun",
+          "linked_resort_ids": ["obersaxen_mundaun"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_major_area_exact_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "Exact supplied listing correspondence to the major area named by the industry study under the official all-canton statement."
+        },
+        {
+          "official_area_label": "Samnaun",
+          "linked_resort_ids": ["samnaun_silvretta_arena_samnaun_ischgl"],
+          "mapping_basis": "official_page_explicit_inclusion_of_samnaun_ischgl_plus_exact_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The official page explicitly includes Samnaun-Ischgl; the study labels the corresponding major area Samnaun."
+        },
+        {
+          "official_area_label": "Savognin",
+          "linked_resort_ids": ["savognin"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_major_area_exact_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "Exact supplied listing correspondence to the major area named by the industry study under the official all-canton statement."
+        },
+        {
+          "official_area_label": "Scuol",
+          "linked_resort_ids": ["motta_naluns_scuol_motta_naluns"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_major_area_conservative_component_link",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The supplied Motta Naluns Scuol listing is the conservative exact-place component linked to the study's Scuol label."
+        },
+        {
+          "official_area_label": "Splügen Tambo",
+          "linked_resort_ids": ["splugen_rheinwald"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_major_area_exact_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The supplied Splügen Rheinwald listing is linked to the study's Splügen Tambo label."
+        },
+        {
+          "official_area_label": "St. Moritz Oberengadin",
+          "linked_resort_ids": ["corviglia_st_moritz"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_broad_region_conservative_exact_place_component",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "Only the supplied Corviglia St. Moritz row is linked; the broad Oberengadin label is not expanded to an unverified historical component roster."
+        },
+        {
+          "official_area_label": "Tschiertschen",
+          "linked_resort_ids": ["tschiertschen"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_major_area_exact_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "Exact supplied listing correspondence to the major area named by the industry study under the official all-canton statement."
+        },
+        {
+          "official_area_label": "Vals 3000",
+          "linked_resort_ids": ["vals"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_major_area_exact_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The supplied Vals listing is linked to the study's Vals 3000 label."
+        },
+        {
+          "official_area_label": "Weisse Arena",
+          "linked_resort_ids": ["laax_flims_laax_falera"],
+          "mapping_basis": "official_all_canton_coverage_plus_industry_study_named_major_area_exact_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The supplied Flims-Laax-Falera listing is linked to the study's Weisse Arena label."
+        },
+        {
+          "official_area_label": "Skiarena Andermatt-Sedrun",
+          "linked_resort_ids": ["andermatt_oberalp_sedrun"],
+          "mapping_basis": "official_page_explicit_inclusion_of_sedrun_andermatt_plus_industry_study_exact_regional_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The official page explicitly includes Sedrun-Andermatt. Only the exact supplied Andermatt-Oberalp-Sedrun regional listing is linked; Gemsstock and the Valtgeva small-lift listing are not inherited."
+        }
+      ]
+    }
+  ],
+  "summer_interpretation": "SnowPass Graubünden is documented as a winter-season product. The official industry study explicitly states that summer was not included in 2019/2020; no summer access is inferred for any area or season.",
+  "roster_interpretation": "The 2017/2018 host link and 2019/2020 major-area links are positive evidence only. The 2018/2019 report gives aggregate participating-company counts but no names, so it creates no listing links. The unavailable 2019/2020 validity PDF and unresolved individual small-lift exclusions prevent a complete historical roster claim.",
+  "nonlink_interpretation": "not_linked_in_reviewed_snowpass_graubuenden_positive_evidence_not_verified_absence_or_exclusion",
+  "historical_market_absence_verified": false,
+  "pre_treatment_feature_approved": false,
+  "causal_covariate_approved": false,
+  "recommendation_feature_approved": false,
+  "composite_score_approved": false
+}

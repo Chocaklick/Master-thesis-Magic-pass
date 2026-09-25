@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_27",
+  "analysis_version": "path_c_v0_28",
   "checkpoint": 6,
   "framework_id": "separated_evidence_dashboard",
   "final_architecture": "exploratory_structural_analogue_dashboard_with_separate_opportunity_vulnerability_context_and_uncertainty",
@@ -14,7 +14,7 @@
   "candidates_with_scope_radius_sensitivity": 104,
   "candidates_with_any_radius_observed_hesta_ratio": 99,
   "candidates_with_complete_hotel_context_under_any_radius_rule": 39,
-  "candidates_with_documented_historical_competing_pass_link": 21,
+  "candidates_with_documented_historical_competing_pass_link": 28,
   "two_dimension_matrix_ready_candidates": 0,
   "predicted_uplift_values": 0,
   "recommendations_issued": 0,

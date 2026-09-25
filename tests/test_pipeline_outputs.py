@@ -1043,7 +1043,7 @@ def test_path_c_feature_readiness_keeps_coverage_separate_from_approval() -> Non
 
     assert len(audit) == 19
     assert audit["feature_group_id"].is_unique
-    assert audit["analysis_version"].eq("path_c_v0_27").all()
+    assert audit["analysis_version"].eq("path_c_v0_28").all()
     assert audit["candidate_pool_count"].eq(104).all()
     assert int(as_bool(audit["exploratory_similarity_use_approved"]).sum()) == 1
     approved = audit.loc[
@@ -1066,7 +1066,7 @@ def test_path_c_feature_readiness_keeps_coverage_separate_from_approval() -> Non
     ]
     assert int(
         historical_competing["candidate_rows_with_complete_required_fields"]
-        ) == 21
+        ) == 28
     assert historical_competing["candidate_coverage_status"] == (
         "partial_candidate_coverage"
     )
@@ -1110,7 +1110,7 @@ def test_checkpoint_6_dashboard_separates_dimensions_and_issues_no_recommendatio
     assert len(dashboard) == 104
     assert dashboard["cluster_id"].is_unique
     assert dashboard["cluster_id"].tolist() == sorted(dashboard["cluster_id"])
-    assert dashboard["analysis_version"].eq("path_c_v0_27").all()
+    assert dashboard["analysis_version"].eq("path_c_v0_28").all()
     assert dashboard["checkpoint"].eq(6).all()
     assert dashboard["opportunity_signal_percentile"].notna().all()
     assert dashboard["predicted_uplift_pct"].isna().all()
@@ -1150,7 +1150,7 @@ def test_checkpoint_6_dashboard_separates_dimensions_and_issues_no_recommendatio
     assert summary["candidates_with_point_container_tourism_context"] == 39
     assert summary["candidates_with_scope_radius_sensitivity"] == 104
     assert summary["candidates_with_any_radius_observed_hesta_ratio"] == 99
-    assert summary["candidates_with_documented_historical_competing_pass_link"] == 21
+    assert summary["candidates_with_documented_historical_competing_pass_link"] == 28
     competition = dimensions.set_index("dimension_id").loc["competition_network"]
     assert int(competition["complete_candidate_coverage_groups"]) == 2
     assert int(competition["partial_candidate_coverage_groups"]) == 1
@@ -1696,7 +1696,7 @@ def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> N
         "partial_cluster_listing_links": 6,
     }
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_27").all()
+    assert decision["analysis_version"].eq("path_c_v0_28").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1717,7 +1717,7 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
         )
     )
 
-    assert len(area_seasons) == 103
+    assert len(area_seasons) == 121
     assert area_seasons["season"].nunique() == 8
     assert area_seasons.groupby(["competing_pass_id", "season"]).size().to_dict() == {
         ("meilenweiss", "2019/2020"): 12,
@@ -1726,6 +1726,8 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
         ("schneepass_zentralschweiz", "2021/2022"): 1,
         ("schneepass_zentralschweiz", "2023/2024"): 15,
         ("schneepass_zentralschweiz", "2024/2025"): 15,
+        ("snowpass_graubuenden", "2017/2018"): 1,
+        ("snowpass_graubuenden", "2019/2020"): 17,
         ("topcard", "2017/2018"): 3,
         ("topcard", "2018/2019"): 4,
         ("topcard", "2019/2020"): 4,
@@ -1765,6 +1767,17 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
     assert complete_schneepass["product_winter_destination_count"].eq(15).all()
     assert complete_schneepass["product_summer_destination_count"].eq(13).all()
 
+    snowpass_gr_areas = area_seasons[
+        area_seasons["competing_pass_id"].eq("snowpass_graubuenden")
+    ]
+    assert set(snowpass_gr_areas["season"]) == {"2017/2018", "2019/2020"}
+    assert not snowpass_gr_areas["season"].eq("2018/2019").any()
+    assert len(snowpass_gr_areas["official_area_label"].unique()) == 18
+    assert not as_bool(snowpass_gr_areas["product_summer_included"]).any()
+    assert not as_bool(
+        snowpass_gr_areas["area_specific_summer_access_documented"]
+    ).any()
+
     topcard_areas = area_seasons[area_seasons["competing_pass_id"].eq("topcard")]
     assert as_bool(topcard_areas["product_summer_included"]).all()
     assert topcard_areas.loc[
@@ -1799,15 +1812,15 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
     ).all()
     assert engelberg_partner["area_specific_summer_access_days_limit"].eq(3).all()
 
-    assert len(listing_seasons) == 4_607
+    assert len(listing_seasons) == 5_420
     assert not listing_seasons[
         ["competing_pass_id", "resort_id", "season"]
     ].duplicated().any()
     documented = as_bool(
         listing_seasons["historical_competing_pass_link_documented"]
     )
-    assert int(documented.sum()) == 123
-    assert listing_seasons.loc[documented, "resort_id"].nunique() == 41
+    assert int(documented.sum()) == 144
+    assert listing_seasons.loc[documented, "resort_id"].nunique() == 50
     assert listing_seasons.loc[
         listing_seasons["competing_pass_id"].eq("top4"),
         "historical_competing_pass_link_documented",
@@ -1820,6 +1833,27 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
         listing_seasons["competing_pass_id"].eq("schneepass_zentralschweiz"),
         "historical_competing_pass_link_documented",
     ].pipe(as_bool).sum() == 37
+    snowpass_gr_listings = listing_seasons[
+        listing_seasons["competing_pass_id"].eq("snowpass_graubuenden")
+    ]
+    assert set(snowpass_gr_listings["season"]) == {
+        "2017/2018", "2018/2019", "2019/2020"
+    }
+    assert int(as_bool(
+        snowpass_gr_listings["historical_competing_pass_link_documented"]
+    ).sum()) == 21
+    assert not as_bool(snowpass_gr_listings.loc[
+        snowpass_gr_listings["season"].eq("2018/2019"),
+        "historical_competing_pass_link_documented",
+    ]).any()
+    assert not as_bool(snowpass_gr_listings.loc[
+        snowpass_gr_listings["resort_id"].isin([
+            "pischa_davos_pischa",
+            "schatzalp_davos_schatzalp_strela",
+            "valtgeva_druni_kidsarena_sedrun",
+        ]),
+        "historical_competing_pass_link_documented",
+    ]).any()
     topcard_listings = listing_seasons[
         listing_seasons["competing_pass_id"].eq("topcard")
         & as_bool(listing_seasons["historical_competing_pass_link_documented"])
@@ -1862,7 +1896,7 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
     assert len(cluster) == 162
     assert cluster["cluster_id"].is_unique
     linked_clusters = as_bool(cluster["historical_competing_pass_context_available"])
-    assert int(linked_clusters.sum()) == 28
+    assert int(linked_clusters.sum()) == 35
     for column in [
         "historical_competing_pass_market_absence_verified",
         "historical_competing_pass_feature_approved",
@@ -1881,11 +1915,11 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
 
     assert len(candidates) == 104
     candidate_links = candidates["historical_competing_pass_first_documented_season"].notna()
-    assert int(candidate_links.sum()) == 21
+    assert int(candidate_links.sum()) == 28
     assert candidates.loc[
         candidate_links, "historical_competing_pass_scope_status"
     ].value_counts().to_dict() == {
-        "all_cluster_listings_have_documented_link": 10,
+        "all_cluster_listings_have_documented_link": 17,
         "partial_cluster_listing_links_documented": 11,
     }
     assert int(as_bool(candidates[
@@ -1894,37 +1928,39 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
     assert int(as_bool(candidates[
         "historical_competing_pass_area_specific_summer_access_documented"
     ]).sum()) == 4
-    assert summary["reviewed_historical_products"] == 4
-    assert summary["reviewed_product_seasons"] == 17
+    assert summary["reviewed_historical_products"] == 5
+    assert summary["reviewed_product_seasons"] == 20
     assert summary["top4_area_season_rows"] == 32
     assert summary["meilenweiss_area_season_rows"] == 29
     assert summary["schneepass_zentralschweiz_area_season_rows"] == 31
     assert summary["topcard_area_season_rows"] == 11
-    assert summary["area_season_rows"] == 103
-    assert summary["resort_product_season_rows"] == 4_607
-    assert summary["documented_listing_season_links"] == 123
+    assert summary["snowpass_graubuenden_area_season_rows"] == 18
+    assert summary["area_season_rows"] == 121
+    assert summary["resort_product_season_rows"] == 5_420
+    assert summary["documented_listing_season_links"] == 144
     assert summary["documented_topcard_listing_season_links"] == 20
     assert summary["documented_topcard_unlimited_core_listing_season_links"] == 18
     assert summary["documented_topcard_limited_partner_listing_season_links"] == 2
-    assert summary["unique_supplied_listings_with_documented_link"] == 41
-    assert summary["clusters_with_documented_link"] == 28
-    assert summary["path_c_candidates_with_documented_link"] == 21
-    assert summary["path_c_candidate_all_cluster_listing_links"] == 10
+    assert summary["documented_snowpass_graubuenden_listing_season_links"] == 21
+    assert summary["unique_supplied_listings_with_documented_link"] == 50
+    assert summary["clusters_with_documented_link"] == 35
+    assert summary["path_c_candidates_with_documented_link"] == 28
+    assert summary["path_c_candidate_all_cluster_listing_links"] == 17
     assert summary["path_c_candidate_partial_cluster_links"] == 11
     assert summary["area_specific_summer_access_documented_rows"] == 10
     assert summary["listing_specific_summer_access_documented_rows"] == 19
     assert summary["path_c_candidates_with_area_specific_summer_access"] == 4
     assert summary["nonconfirming_sources_reviewed"] == 1
-    assert len(summary["source_sha256"]) == 12
+    assert len(summary["source_sha256"]) == 15
     assert summary["market_absence_verified_rows"] == 0
     assert summary["approved_features"] == 0
 
-    assert decision["analysis_version"].eq("path_c_v0_27").all()
+    assert decision["analysis_version"].eq("path_c_v0_28").all()
     assert int(
         as_bool(decision["historical_competing_pass_context_available"])
         .loc[as_bool(decision["candidate_for_path_c"])]
         .sum()
-    ) == 21
+    ) == 28
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
     assert not as_bool(
@@ -2009,7 +2045,7 @@ def test_path_c_network_context_excludes_focal_cluster_and_preserves_pair_grain(
     assert not as_bool(context["network_context_feature_approved"]).any()
     assert not as_bool(pairs["network_context_feature_approved"]).any()
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_27").all()
+    assert decision["analysis_version"].eq("path_c_v0_28").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -2088,7 +2124,7 @@ def test_path_c_cluster_geography_sensitivity_preserves_clusters_and_bounds_rule
     assert not as_bool(context["cluster_geographic_coherence_verified"]).any()
     assert not as_bool(context["network_distance_sensitivity_feature_approved"]).any()
     assert not as_bool(pairs["network_distance_sensitivity_feature_approved"]).any()
-    assert decision["analysis_version"].eq("path_c_v0_27").all()
+    assert decision["analysis_version"].eq("path_c_v0_28").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()

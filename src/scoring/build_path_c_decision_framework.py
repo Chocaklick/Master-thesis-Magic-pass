@@ -127,11 +127,11 @@ def build_dashboard(config: dict[str, object], decision: pd.DataFrame) -> pd.Dat
         dashboard["historical_competing_pass_context_available"]
     )
     dashboard["competition_network_dimension_status"] = (
-        "qualified_current_context_no_documented_link_in_one_historical_product_"
+        "qualified_current_context_no_documented_link_in_reviewed_historical_products_"
         "not_market_absence"
     )
     dashboard.loc[historical_competition, "competition_network_dimension_status"] = (
-        "qualified_current_plus_partial_top4_history_not_complete_historical_"
+        "qualified_current_plus_partial_five_product_history_not_complete_historical_"
         "market_structure"
     )
     dashboard["framework_status"] = (
@@ -242,7 +242,7 @@ def write_report(
 
 Checkpoint 6 selects a **separated exploratory evidence dashboard** for the **{summary['candidate_clusters']} Path C candidates**. It does not select an uplift model, causal ranking, recommendation engine or composite score. The architecture keeps structural comparability, descriptive analogue opportunity, snow vulnerability, tourism dependence, accessibility, competition/network context and evidence gaps separate across **{summary['dimensions']} dimensions**.
 
-The dashboard is deliberately incomplete as a business recommendation. Only **{summary['candidates_with_point_container_tourism_context']}** candidates have complete point-container hotel context. The 0/5/10 km scope sensitivity reaches an observed HESTA ratio for **{summary['candidates_with_any_radius_observed_hesta_ratio']}** candidates, but still leaves only **{summary['candidates_with_complete_hotel_context_under_any_radius_rule']}** with complete municipal hotel coverage under any rule; more importantly, the radius validation rejects every rule as a comparable destination catchment. A first dated Top4 reconstruction adds historical pass presence for **{summary['candidates_with_documented_historical_competing_pass_link']}** candidates, but it covers only one product and its non-links do not establish historical market absence. Historical public transport, full historical competition and dated infrastructure therefore remain incomplete. A full Opportunity × Strategic Need matrix is ready for **{summary['two_dimension_matrix_ready_candidates']} candidates**.
+The dashboard is deliberately incomplete as a business recommendation. Only **{summary['candidates_with_point_container_tourism_context']}** candidates have complete point-container hotel context. The 0/5/10 km scope sensitivity reaches an observed HESTA ratio for **{summary['candidates_with_any_radius_observed_hesta_ratio']}** candidates, but still leaves only **{summary['candidates_with_complete_hotel_context_under_any_radius_rule']}** with complete municipal hotel coverage under any rule; more importantly, the radius validation rejects every rule as a comparable destination catchment. A dated five-product reconstruction adds historical pass presence for **{summary['candidates_with_documented_historical_competing_pass_link']}** candidates, but each product window remains partial and non-links do not establish historical market absence. Historical public transport, full historical competition and dated infrastructure therefore remain incomplete. A full Opportunity × Strategic Need matrix is ready for **{summary['two_dimension_matrix_ready_candidates']} candidates**.
 
 ## Dimension register
 

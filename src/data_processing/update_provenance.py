@@ -110,6 +110,7 @@ def main() -> None:
             "SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18",
             "BBGR_ANNUAL_2018_19",
             "SBS_PRICING_STUDY_2020_TOPCARD",
+            "GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE",
         ]
     }
     ski_gtfs_data = cached_metadata("SKI_GTFS_TIMETABLE_2026_WINTER_20260207")
@@ -226,9 +227,18 @@ def main() -> None:
     for source_id, dataset_name, temporal_start, temporal_end in donor_archive_sources:
         item = configured[source_id]
         metadata = cached_metadata(source_id)
+        snowpass_source = source_id in {
+            "BBGR_ANNUAL_2017_18",
+            "BBGR_ANNUAL_2019_20",
+        }
         rows.append(blank_source(
             source_id,
-            variable_name="competing_pass_environment|operator_investment_and_tourism_shock_evidence",
+            variable_name=(
+                "competing_pass_environment|operator_investment_and_tourism_shock_evidence|"
+                "snowpass_graubuenden_product_season"
+                if snowpass_source
+                else "competing_pass_environment|operator_investment_and_tourism_shock_evidence"
+            ),
             variable_description=item["description"],
             source_organisation=item["organisation"],
             source_dataset_name=dataset_name,
@@ -238,7 +248,17 @@ def main() -> None:
             retrieval_date=(metadata or {}).get("retrieval_date", ""),
             original_file_name=raw_name(metadata),
             local_raw_file=(metadata or {}).get("raw_file", ""),
-            processed_file="reports/donor_external_shock_evidence.csv|data_processed/donor_shortlist_final_audit.csv",
+            processed_file=(
+                "reports/donor_external_shock_evidence.csv|data_processed/donor_shortlist_final_audit.csv|"
+                "config/competing_pass_historical_snowpass_graubuenden.json|"
+                "data_processed/competing_pass_historical_area_seasons.csv|"
+                "data_processed/resort_competing_pass_history.csv|"
+                "data_processed/path_c_cluster_historical_competing_pass_context.csv|"
+                "data_processed/magic_pass_decision_support.csv|"
+                "reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md"
+                if snowpass_source
+                else "reports/donor_external_shock_evidence.csv|data_processed/donor_shortlist_final_audit.csv"
+            ),
             geographic_level="regional pass market or reviewed donor operator",
             temporal_resolution="annual report or winter-season publication",
             temporal_start=temporal_start,
@@ -246,10 +266,25 @@ def main() -> None:
             unit="documentary evidence",
             license="See publisher terms",
             access_conditions="Public official PDF at collection time",
-            transformation_applied="Page-referenced manual review; source qualification and unresolved exactness retained",
-            quality_notes="Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved",
+            transformation_applied=(
+                "Page-referenced manual review; source qualification and unresolved exactness retained; "
+                "SnowPass product-season statements carried into the conservative historical pass layer"
+                if snowpass_source
+                else "Page-referenced manual review; source qualification and unresolved exactness retained"
+            ),
+            quality_notes=(
+                "SnowPass product continuity or transition is explicit, but these annual reports do not name a complete area roster; "
+                "regional pass evidence is not automatically exact operator participation"
+                if snowpass_source
+                else "Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved"
+            ),
             confidence_level="high for official document; qualified for donor-level causal interpretation",
-            manual_verification="Relevant pages reviewed for pass environment, operator scope and contemporaneous investment",
+            manual_verification=(
+                "Relevant pages rendered and reviewed for the SnowPass season, sales/activity or transition wording, "
+                "and contemporaneous pass-market context"
+                if snowpass_source
+                else "Relevant pages reviewed for pass environment, operator scope and contemporaneous investment"
+            ),
         ))
     rows.append(blank_source(
         "BFS_HOTEL_METADATA",
@@ -911,7 +946,7 @@ def main() -> None:
             license="Official public operator material; source terms apply",
             access_conditions="Public official webpage or PDF",
             transformation_applied="Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching",
-            quality_notes="Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4, Meilenweiss, Schneepass and TopCard histories do not reconstruct the full historical market",
+            quality_notes="Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4, Meilenweiss, Schneepass, TopCard and SnowPass Graubünden histories do not reconstruct the full historical market",
             confidence_level="high for the published roster; qualified for directory entity links",
             manual_verification=spec["verification"],
         ))
@@ -1045,40 +1080,52 @@ def main() -> None:
         },
         "SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18": {
             "dataset": "Official Samnaun winter 2017/2018 tariff brochure",
-            "description": "Official tariff brochure naming the three TopCard core areas and its summer-2017/winter-2017/2018 validity",
-            "variables": "topcard_complete_core_roster|winter_access_tier|area_specific_summer_access",
+            "description": "Official tariff brochure naming the three TopCard core areas and its summer-2017/winter-2017/2018 validity, plus Samnaun/Ischgl as a SnowPass Graubünden point of sale",
+            "variables": "topcard_complete_core_roster|winter_access_tier|area_specific_summer_access|snowpass_graubuenden_positive_area_link",
             "start": "2017",
             "end": "2017/2018",
-            "geography": "named TopCard core area / supplied resort listing link",
+            "geography": "named TopCard core area and SnowPass Graubünden host / supplied resort listing link",
             "access": "Public official operator PDF",
-            "quality": "The three core areas and year-round validity are explicit; Davos-Klosters component links are constrained by the separate industry study and Schatzalp is not inferred",
+            "quality": "The three TopCard core areas, year-round validity and Samnaun/Ischgl SnowPass offer are explicit; Davos-Klosters component links are constrained by the separate industry study and Schatzalp is not inferred",
             "confidence": "high for the named core roster and product validity; conservative for supplied listing components",
-            "verification": "Tariff page 5 rendered and visually reviewed; Samnaun/Ischgl, Davos-Klosters, Flims-Laax and summer-2017/winter-2017/2018 validity checked",
+            "verification": "Tariff page 5 rendered and visually reviewed; Samnaun/Ischgl, Davos-Klosters, Flims-Laax, SnowPass Graubünden and summer-2017/winter-2017/2018 validity checked",
         },
         "BBGR_ANNUAL_2018_19": {
             "dataset": "Official Bergbahnen Graubünden annual report 2018/2019",
-            "description": "Official annual report documenting Arosa Lenzerheide replacing Samnaun/Ischgl in TopCard and three freely selectable Upper Engadine partner days",
-            "variables": "topcard_core_area_replacement|limited_partner_three_day_access|competing_pass_environment",
+            "description": "Official annual report documenting Arosa Lenzerheide replacing Samnaun/Ischgl in TopCard, three freely selectable Upper Engadine partner days and the 2018/2019 SnowPass Graubünden product with aggregate beneficiary counts",
+            "variables": "topcard_core_area_replacement|limited_partner_three_day_access|competing_pass_environment|snowpass_graubuenden_product_season|snowpass_aggregate_operator_counts",
             "start": "2018/2019",
             "end": "2018/2019",
             "geography": "Graubünden pass market and named TopCard areas",
             "access": "Public official industry-association PDF",
-            "quality": "The partner region is broader than the supplied directory; only Corviglia St. Moritz is conservatively linked and no summer entitlement is inferred",
+            "quality": "The TopCard partner region is broader than the supplied directory; only Corviglia St. Moritz is conservatively linked and no summer entitlement is inferred. SnowPass beneficiary counts do not identify the operators, so no 2018/2019 SnowPass area link is backfilled",
             "confidence": "high for the replacement and three-day benefit; conservative for the supplied listing link",
-            "verification": "Page 12 rendered and visually reviewed; Arosa replacement and three freely selectable Oberengadin days checked",
-            "processed_file": "reports/donor_external_shock_evidence.csv|data_processed/donor_shortlist_final_audit.csv|config/competing_pass_historical_topcard.json|data_processed/competing_pass_historical_area_seasons.csv|data_processed/resort_competing_pass_history.csv|data_processed/path_c_cluster_historical_competing_pass_context.csv|data_processed/magic_pass_decision_support.csv|reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md",
+            "verification": "Pages 12-13 rendered and visually reviewed; Arosa replacement, three freely selectable Oberengadin days, SnowPass 2018/2019 sales and 8 large/11 medium/31 small beneficiary counts checked",
+            "processed_file": "reports/donor_external_shock_evidence.csv|data_processed/donor_shortlist_final_audit.csv|config/competing_pass_historical_topcard.json|config/competing_pass_historical_snowpass_graubuenden.json|data_processed/competing_pass_historical_area_seasons.csv|data_processed/resort_competing_pass_history.csv|data_processed/path_c_cluster_historical_competing_pass_context.csv|data_processed/magic_pass_decision_support.csv|reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md",
         },
         "SBS_PRICING_STUDY_2020_TOPCARD": {
             "dataset": "Official Seilbahnen Schweiz study of new pricing models",
-            "description": "Official industry study documenting TopCard core areas, the 2018/2019 core replacement, free summer travel and the change of three-day partner from Upper Engadine to Engelberg-Titlis in 2019/2020",
-            "variables": "topcard_core_roster|winter_access_tier|limited_partner_three_day_access|area_specific_summer_access|davos_klosters_components",
+            "description": "Official industry study documenting TopCard core areas and benefit changes, plus SnowPass Graubünden's winter-only unlimited modality and 17 named major Graubünden comparison areas",
+            "variables": "topcard_core_roster|winter_access_tier|limited_partner_three_day_access|area_specific_summer_access|davos_klosters_components|snowpass_winter_only_modality|snowpass_named_major_area_context",
             "start": "2017/2018",
             "end": "2019/2020",
-            "geography": "named TopCard core and partner areas / supplied resort listing links",
+            "geography": "named TopCard core/partner areas and major Graubünden ski areas / supplied resort listing links",
             "access": "Public official industry-association PDF hosted by Bergbahnen Graubünden",
-            "quality": "Core and limited partner access are kept separate; Engelberg-Titlis has three visits shared between summer and winter; no broader component inheritance is inferred",
+            "quality": "TopCard core and limited partner access are kept separate; Engelberg-Titlis has three visits shared between summer and winter. The SnowPass figure names major comparison areas but is paired with the archived official all-canton statement; it is not treated as a complete small-lift roster",
             "confidence": "high for roster changes, access tiers and summer wording; conservative for supplied directory component links",
-            "verification": "Pages 136-137 rendered and visually reviewed; three core areas, Samnaun-to-Arosa replacement, core summer access, Engelberg-Titlis three-day benefit and partner replacement checked",
+            "verification": "Pages 136-137 and 140-141 rendered and visually reviewed; TopCard core/replacement/benefit wording, SnowPass winter-only unlimited wording and all 17 displayed major-area labels checked",
+        },
+        "GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE": {
+            "dataset": "Archived official Graubünden SnowPass 2019/2020 product page",
+            "description": "Archived official page defining SnowPass as a winter-season pass at all Graubünden mountain railways, explicitly including Samnaun-Ischgl and Sedrun-Andermatt while excluding individual small ski lifts",
+            "variables": "snowpass_graubuenden_all_canton_scope|winter_only_modality|named_cross_border_extensions|small_lift_exclusion",
+            "start": "2019/2020",
+            "end": "2019/2020",
+            "geography": "Graubünden mountain railways and named extensions / supplied resort listing links",
+            "access": "Public archived copy of the official destination-management webpage",
+            "quality": "The all-canton statement and exclusions are explicit, but the linked detailed-validity PDF is unavailable in the reviewed archive; supplied listing links therefore remain conservative and the roster is not claimed complete",
+            "confidence": "high for product scope and stated exclusions; conservative for individual supplied listing links",
+            "verification": "Archived page text and source URL checked; winter-season, all-Graubünden, Samnaun-Ischgl, Sedrun-Andermatt and individual-small-lift exclusion wording verified",
         },
     }
     for source_id, spec in historical_competing_source_specs.items():
@@ -1096,7 +1143,7 @@ def main() -> None:
             retrieval_date=(metadata or {}).get("retrieval_date", ""),
             original_file_name=raw_name(metadata),
             local_raw_file=(metadata or {}).get("raw_file", ""),
-            processed_file=spec.get("processed_file", "config/competing_pass_historical_top4.json|config/competing_pass_historical_meilenweiss.json|config/competing_pass_historical_schneepass_zentralschweiz.json|config/competing_pass_historical_topcard.json|data_processed/competing_pass_historical_area_seasons.csv|data_processed/resort_competing_pass_history.csv|data_processed/path_c_cluster_historical_competing_pass_context.csv|data_processed/magic_pass_decision_support.csv|reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md"),
+            processed_file=spec.get("processed_file", "config/competing_pass_historical_top4.json|config/competing_pass_historical_meilenweiss.json|config/competing_pass_historical_schneepass_zentralschweiz.json|config/competing_pass_historical_topcard.json|config/competing_pass_historical_snowpass_graubuenden.json|data_processed/competing_pass_historical_area_seasons.csv|data_processed/resort_competing_pass_history.csv|data_processed/path_c_cluster_historical_competing_pass_context.csv|data_processed/magic_pass_decision_support.csv|reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md"),
             geographic_level=spec["geography"],
             temporal_resolution="winter season",
             temporal_start=spec["start"],
@@ -1112,21 +1159,21 @@ def main() -> None:
     rows.append(blank_source(
         "DERIVED_HISTORICAL_COMPETING_PASS_CONTEXT",
         variable_name="historical_competing_pass_area_season|documented_product_listing_season_link|winter_access_tier|product_level_summer_inclusion|area_specific_summer_access|cluster_historical_pass_context",
-        variable_description="Qualified dated Top4, Meilenweiss, Schneepass Zentralschweiz and tiered TopCard positive-presence context at area, product-listing-season and preserved lift-cluster levels",
+        variable_description="Qualified dated Top4, Meilenweiss, Schneepass Zentralschweiz, tiered TopCard and conservative SnowPass Graubünden positive-presence context at area, product-listing-season and preserved lift-cluster levels",
         source_organisation="Master thesis analytical pipeline",
         source_dataset_name="Path C historical competing-pass context",
-        retrieval_method="Versioned deterministic Python expansion of eight Top4 seasons, three bounded Meilenweiss seasons, three bounded Schneepass seasons and three tiered TopCard seasons with explicit conservative resort-ID links",
-        local_raw_file="config/competing_pass_historical_top4.json|config/competing_pass_historical_meilenweiss.json|config/competing_pass_historical_schneepass_zentralschweiz.json|config/competing_pass_historical_topcard.json",
+        retrieval_method="Versioned deterministic Python expansion of eight Top4 seasons, three bounded Meilenweiss seasons, three bounded Schneepass seasons, three tiered TopCard seasons and three conservative SnowPass Graubünden seasons with explicit stable resort-ID links",
+        local_raw_file="config/competing_pass_historical_top4.json|config/competing_pass_historical_meilenweiss.json|config/competing_pass_historical_schneepass_zentralschweiz.json|config/competing_pass_historical_topcard.json|config/competing_pass_historical_snowpass_graubuenden.json",
         processed_file="data_processed/competing_pass_historical_area_seasons.csv|data_processed/resort_competing_pass_history.csv|data_processed/path_c_cluster_historical_competing_pass_context.csv|reports/historical_competing_pass_candidate_summary.csv|data_processed/magic_pass_decision_support.csv|reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md",
         geographic_level="official pass area, supplied resort listing and linked lift cluster",
-        temporal_resolution="seventeen product-seasons across eight winter seasons from 2017/2018 through 2024/2025",
+        temporal_resolution="twenty product-seasons across eight winter seasons from 2017/2018 through 2024/2025",
         temporal_start="2017/2018",
         temporal_end="2024/2025",
         unit="identifiers, seasons, counts, shares and protected flags",
-        transformation_applied="Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss, 31 Schneepass and 11 TopCard area-season rows; join stable listing IDs; separate TopCard unlimited core access from limited three-day partners and area-specific summer access from product-level statements; aggregate positive presence without converting non-links into absence",
-        quality_notes="Only four partially reconstructed products are covered; evidence scope and benefit tiers differ across products and seasons; the 2022/2023 Schneepass season is not interpolated; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring",
+        transformation_applied="Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss, 31 Schneepass, 11 TopCard and 18 SnowPass Graubünden area-season rows; join stable listing IDs; separate unlimited core access from limited partners and area-specific summer access from product-level statements; aggregate positive presence without converting non-links into absence",
+        quality_notes="Only five partially reconstructed products are covered; evidence scope and benefit tiers differ across products and seasons; the 2022/2023 Schneepass season is not interpolated; the unnamed 2018/2019 SnowPass roster is not backfilled and its detailed 2019/2020 validity PDF remains unavailable; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring",
         confidence_level="high for reproducibility and documented positive links; incomplete historical market and summer-area coverage",
-        manual_verification="103 area-season rows, 4,607 product-listing-season rows, 123 positive links, 28 linked clusters and 21 linked candidates; TopCard retains 18 unlimited-core versus two limited-partner listing-season links, 10 area-season and 19 listing-season summer links; every market-absence/protected approval flag false",
+        manual_verification="121 area-season rows, 5,420 product-listing-season rows, 144 positive links, 35 linked clusters and 28 linked candidates; TopCard retains 18 unlimited-core versus two limited-partner listing-season links, while SnowPass adds 18 area rows and 21 positive links without summer inclusion; every market-absence/protected approval flag false",
     ))
     rows.append(blank_source(
         "DERIVED_PATH_C_NETWORK_CONTEXT",
@@ -3208,7 +3255,7 @@ def main() -> None:
         "resort_competing_pass_context": "supplied resort listing / official competing-pass area",
         "path_c_cluster_competing_pass_context": "linked lift cluster",
         "competing_pass_candidate_summary": "apparent Path C candidate lift cluster",
-        "competing_pass_historical_area_seasons": "official Top4, Meilenweiss, Schneepass Zentralschweiz or TopCard area by winter season",
+        "competing_pass_historical_area_seasons": "official Top4, Meilenweiss, Schneepass Zentralschweiz, TopCard or SnowPass Graubünden area by winter season",
         "resort_competing_pass_history": "supplied resort listing by winter season",
         "path_c_cluster_historical_competing_pass_context": "linked lift cluster",
         "historical_competing_pass_candidate_summary": "apparent Path C candidate lift cluster",
@@ -3267,10 +3314,10 @@ def main() -> None:
         "resort_competing_pass_context": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
         "path_c_cluster_competing_pass_context": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
         "competing_pass_candidate_summary": "AlpsPass and Schneepass 2026/2027; Meilenweiss current snapshot retrieved 2026-09-23",
-        "competing_pass_historical_area_seasons": "Top4 2017/2018–2024/2025; bounded Meilenweiss 2019/2020–2021/2022; Schneepass Zentralschweiz 2021/2022, 2023/2024, 2024/2025; and tiered TopCard 2017/2018–2019/2020 product-seasons",
-        "resort_competing_pass_history": "Top4 2017/2018–2024/2025; bounded Meilenweiss 2019/2020–2021/2022; Schneepass Zentralschweiz 2021/2022, 2023/2024, 2024/2025; and tiered TopCard 2017/2018–2019/2020 product-seasons",
-        "path_c_cluster_historical_competing_pass_context": "Top4 2017/2018–2024/2025; bounded Meilenweiss 2019/2020–2021/2022; Schneepass Zentralschweiz 2021/2022, 2023/2024, 2024/2025; and tiered TopCard 2017/2018–2019/2020 product-seasons",
-        "historical_competing_pass_candidate_summary": "Top4 2017/2018–2024/2025; bounded Meilenweiss 2019/2020–2021/2022; Schneepass Zentralschweiz 2021/2022, 2023/2024, 2024/2025; and tiered TopCard 2017/2018–2019/2020 product-seasons",
+        "competing_pass_historical_area_seasons": "Top4 2017/2018–2024/2025; bounded Meilenweiss 2019/2020–2021/2022; Schneepass Zentralschweiz 2021/2022, 2023/2024, 2024/2025; tiered TopCard 2017/2018–2019/2020; and conservative SnowPass Graubünden 2017/2018–2019/2020 product-seasons",
+        "resort_competing_pass_history": "Top4 2017/2018–2024/2025; bounded Meilenweiss 2019/2020–2021/2022; Schneepass Zentralschweiz 2021/2022, 2023/2024, 2024/2025; tiered TopCard 2017/2018–2019/2020; and conservative SnowPass Graubünden 2017/2018–2019/2020 product-seasons",
+        "path_c_cluster_historical_competing_pass_context": "Top4 2017/2018–2024/2025; bounded Meilenweiss 2019/2020–2021/2022; Schneepass Zentralschweiz 2021/2022, 2023/2024, 2024/2025; tiered TopCard 2017/2018–2019/2020; and conservative SnowPass Graubünden 2017/2018–2019/2020 product-seasons",
+        "historical_competing_pass_candidate_summary": "Top4 2017/2018–2024/2025; bounded Meilenweiss 2019/2020–2021/2022; Schneepass Zentralschweiz 2021/2022, 2023/2024, 2024/2025; tiered TopCard 2017/2018–2019/2020; and conservative SnowPass Graubünden 2017/2018–2019/2020 product-seasons",
         "path_c_cluster_network_context": "current/undated supplied directory plus current reviewed pass-network snapshots",
         "path_c_cluster_network_pairs": "current/undated supplied directory plus current reviewed pass-network snapshots",
         "network_context_candidate_summary": "current/undated supplied directory plus current reviewed pass-network snapshots",
@@ -3634,7 +3681,7 @@ def main() -> None:
                 "See config/path_c_analysis.json and src/data_processing/build_public_transport_journey_context.py"
                 if journey_variable
                 else
-                "See config/competing_pass_historical_top4.json, config/competing_pass_historical_meilenweiss.json, config/competing_pass_historical_schneepass_zentralschweiz.json, config/competing_pass_historical_topcard.json and src/data_processing/build_historical_competing_pass_context.py"
+                "See config/competing_pass_historical_top4.json, config/competing_pass_historical_meilenweiss.json, config/competing_pass_historical_schneepass_zentralschweiz.json, config/competing_pass_historical_topcard.json, config/competing_pass_historical_snowpass_graubuenden.json and src/data_processing/build_historical_competing_pass_context.py"
                 if historical_competing_variable
                 else
                 "See config/competing_pass_roster_2026_27.csv and src/data_processing/build_competing_pass_context.py"
@@ -3703,7 +3750,7 @@ def main() -> None:
                 "No causal interpretation; winter-2026 static schedules and algorithmic stop proxies are not real-time, historical or validated destination catchments"
                 if journey_variable
                 else
-                "No causal interpretation; partial Top4, Meilenweiss, Schneepass and tiered TopCard evidence does not reconstruct the full historical pass market, verify non-link absence, establish equivalent benefit intensity or supply a uniformly pre-treatment covariate"
+                "No causal interpretation; partial Top4, Meilenweiss, Schneepass, tiered TopCard and SnowPass Graubünden evidence does not reconstruct the full historical pass market, verify non-link absence, establish equivalent benefit intensity or supply a uniformly pre-treatment covariate"
                 if historical_competing_variable
                 else
                 "No causal interpretation; current links in three official rosters do not reconstruct historical competition, verify market absence or establish equivalent benefit intensity"
