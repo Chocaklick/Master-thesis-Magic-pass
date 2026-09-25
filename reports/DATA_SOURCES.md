@@ -203,7 +203,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** topcard_core_area_replacement|limited_partner_three_day_access|competing_pass_environment|snowpass_graubuenden_product_season|snowpass_aggregate_operator_counts
 - **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
 - **Coverage:** Graubünden pass market and named TopCard areas; winter season; 2018/2019 to 2018/2019.
-- **Limitations:** The TopCard partner region is broader than the supplied directory; only Corviglia St. Moritz is conservatively linked and no summer entitlement is inferred. SnowPass beneficiary counts do not identify the operators, so no 2018/2019 SnowPass area link is backfilled
+- **Limitations:** The TopCard partner region is broader than the supplied directory; only Corviglia St. Moritz is conservatively linked and no summer entitlement is inferred. SnowPass beneficiary counts do not identify the operators; 2018/2019 area links instead rely on the separate archived official all-canton page, industry study and joint operator report
 - **Local raw file:** `data_external/source_evidence/BBGR_ANNUAL_2018_19_20260921T151847Z.pdf`.
 
 ## BBGR_ANNUAL_2019_20 — Bergbahnen Graubünden annual report 2019/20
@@ -513,9 +513,9 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Exact URL:** Not documented.
 - **Access and retrieval date:** Versioned deterministic Python expansion of eight Top4 seasons, three bounded Meilenweiss seasons, four bounded Schneepass seasons, three tiered TopCard seasons and three conservative SnowPass Graubünden seasons with explicit stable resort-ID links; unknown date.
 - **Variables:** historical_competing_pass_area_season|documented_product_listing_season_link|winter_access_tier|product_level_summer_inclusion|area_specific_summer_access|cluster_historical_pass_context
-- **Transformations:** Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss, 46 Schneepass, 11 TopCard and 20 SnowPass Graubünden area-season rows; join stable listing IDs; separate unlimited core access from limited partners and area-specific summer access from product-level statements; aggregate positive presence without converting non-links into absence
+- **Transformations:** Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss, 46 Schneepass, 11 TopCard and 37 SnowPass Graubünden area-season rows; join stable listing IDs; separate unlimited core access from limited partners and area-specific summer access from product-level statements; aggregate positive presence without converting non-links into absence
 - **Coverage:** official pass area, supplied resort listing and linked lift cluster; twenty-one product-seasons across eight winter seasons from 2017/2018 through 2024/2025; 2017/2018 to 2024/2025.
-- **Limitations:** Only five partially reconstructed products are covered; evidence scope and benefit tiers differ across products and seasons; the recovered 2022/2023 Schneepass roster is season-specific official evidence rather than interpolation; two official joint-report host links do not reconstruct the unnamed remainder of the 2018/2019 SnowPass roster, and its detailed 2019/2020 validity PDF remains unavailable; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring
+- **Limitations:** Only five partially reconstructed products are covered; evidence scope and benefit tiers differ across products and seasons; the recovered 2022/2023 Schneepass roster is season-specific official evidence rather than interpolation; archived official all-canton SnowPass pages support the conservative major-area scope in 2018/2019 and 2019/2020, while missing detailed-validity PDFs prevent a complete small-lift roster; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring
 - **Local raw file:** `config/competing_pass_historical_top4.json|config/competing_pass_historical_meilenweiss.json|config/competing_pass_historical_schneepass_zentralschweiz.json|config/competing_pass_historical_topcard.json|config/competing_pass_historical_snowpass_graubuenden.json`.
 
 ## DERIVED_MAGIC_ANNUAL_OFFERING — Annual Magic Pass season-offering review
@@ -925,6 +925,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2022-11 to 2023-04.
 - **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
 - **Local raw file:** `data_external/source_evidence/GRAUBUENDENCARD_TRANSIT_2022_23_20260921T151955Z.pdf`.
+
+## GRAUBUENDEN_SNOWPASS_2018_19_ARCHIVED_PAGE — Archived official Graubünden SnowPass 2018/2019 product page
+
+- **Contents and relevance:** Archived official page defining SnowPass as a winter-season pass at all Graubünden mountain railways, explicitly including Samnaun-Ischgl and Sedrun-Andermatt while excluding individual small ski lifts
+- **Producer:** Graubünden Ferien (official page preserved by the Internet Archive)
+- **Exact URL:** https://web.archive.org/web/20181228073057id_/https://www.graubuenden.ch/de/snowpass-skipass-fuer-ganz-graubuenden
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-25T16:03:32.425872+00:00.
+- **Variables:** snowpass_graubuenden_all_canton_scope|winter_only_modality|named_cross_border_extensions|small_lift_exclusion|season_specific_validity_document_link
+- **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
+- **Coverage:** Graubünden mountain railways and named extensions / supplied resort listing links; winter season; 2018/2019 to 2018/2019.
+- **Limitations:** The all-canton statement and exclusions are explicit, but the linked detailed-validity PDF is unavailable in the reviewed archive; major-area and exact-host supplied listing links therefore remain conservative and the small-lift roster is not claimed complete
+- **Local raw file:** `data_external/source_evidence/GRAUBUENDEN_SNOWPASS_2018_19_ARCHIVED_PAGE_20260925T160332Z.html`.
 
 ## GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE — Archived official Graubünden SnowPass 2019/2020 product page
 

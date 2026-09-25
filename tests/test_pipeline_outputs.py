@@ -1043,7 +1043,7 @@ def test_path_c_feature_readiness_keeps_coverage_separate_from_approval() -> Non
 
     assert len(audit) == 19
     assert audit["feature_group_id"].is_unique
-    assert audit["analysis_version"].eq("path_c_v0_30").all()
+    assert audit["analysis_version"].eq("path_c_v0_31").all()
     assert audit["candidate_pool_count"].eq(104).all()
     assert int(as_bool(audit["exploratory_similarity_use_approved"]).sum()) == 1
     approved = audit.loc[
@@ -1110,7 +1110,7 @@ def test_checkpoint_6_dashboard_separates_dimensions_and_issues_no_recommendatio
     assert len(dashboard) == 104
     assert dashboard["cluster_id"].is_unique
     assert dashboard["cluster_id"].tolist() == sorted(dashboard["cluster_id"])
-    assert dashboard["analysis_version"].eq("path_c_v0_30").all()
+    assert dashboard["analysis_version"].eq("path_c_v0_31").all()
     assert dashboard["checkpoint"].eq(6).all()
     assert dashboard["opportunity_signal_percentile"].notna().all()
     assert dashboard["predicted_uplift_pct"].isna().all()
@@ -1696,7 +1696,7 @@ def test_competing_pass_context_preserves_roster_scope_and_mixed_clusters() -> N
         "partial_cluster_listing_links": 6,
     }
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_30").all()
+    assert decision["analysis_version"].eq("path_c_v0_31").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -1717,7 +1717,7 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
         )
     )
 
-    assert len(area_seasons) == 138
+    assert len(area_seasons) == 155
     assert area_seasons["season"].nunique() == 8
     assert area_seasons.groupby(["competing_pass_id", "season"]).size().to_dict() == {
         ("meilenweiss", "2019/2020"): 12,
@@ -1728,7 +1728,7 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
         ("schneepass_zentralschweiz", "2023/2024"): 15,
         ("schneepass_zentralschweiz", "2024/2025"): 15,
         ("snowpass_graubuenden", "2017/2018"): 1,
-        ("snowpass_graubuenden", "2018/2019"): 2,
+        ("snowpass_graubuenden", "2018/2019"): 19,
         ("snowpass_graubuenden", "2019/2020"): 17,
         ("topcard", "2017/2018"): 3,
         ("topcard", "2018/2019"): 4,
@@ -1791,10 +1791,30 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
         snowpass_gr_areas["season"].eq("2018/2019")
     ]
     assert set(recovered_2018_19["official_area_label"]) == {
-        "Corvatsch - Furtschellas", "Diavolezza - Lagalb"
+        "Arosa/Lenzerheide", "Bergün Filisur", "Brigels Waltensburg Andiast",
+        "Chur Bergbahnen", "Davos/Klosters", "Disentis", "Grüsch Danusa",
+        "Obersaxen/Mundaun", "Samnaun", "Savognin", "Scuol", "Splügen Tambo",
+        "St. Moritz Oberengadin", "Tschiertschen", "Vals 3000", "Weisse Arena",
+        "Skiarena Andermatt-Sedrun", "Corvatsch - Furtschellas",
+        "Diavolezza - Lagalb",
     }
-    assert recovered_2018_19["source_ids"].eq(
-        "BBGR_ANNUAL_2018_19|CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19"
+    major_2018_19 = recovered_2018_19[
+        ~recovered_2018_19["official_area_label"].isin(
+            ["Corvatsch - Furtschellas", "Diavolezza - Lagalb"]
+        )
+    ]
+    assert major_2018_19["source_ids"].eq(
+        "GRAUBUENDEN_SNOWPASS_2018_19_ARCHIVED_PAGE|"
+        "SBS_PRICING_STUDY_2020_TOPCARD"
+    ).all()
+    exact_hosts_2018_19 = recovered_2018_19[
+        recovered_2018_19["official_area_label"].isin(
+            ["Corvatsch - Furtschellas", "Diavolezza - Lagalb"]
+        )
+    ]
+    assert exact_hosts_2018_19["source_ids"].eq(
+        "GRAUBUENDEN_SNOWPASS_2018_19_ARCHIVED_PAGE|"
+        "CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19"
     ).all()
     assert len(snowpass_gr_areas["official_area_label"].unique()) == 20
     assert not as_bool(snowpass_gr_areas["product_summer_included"]).any()
@@ -1843,7 +1863,7 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
     documented = as_bool(
         listing_seasons["historical_competing_pass_link_documented"]
     )
-    assert int(documented.sum()) == 164
+    assert int(documented.sum()) == 184
     assert listing_seasons.loc[documented, "resort_id"].nunique() == 52
     assert listing_seasons.loc[
         listing_seasons["competing_pass_id"].eq("top4"),
@@ -1865,25 +1885,31 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
     }
     assert int(as_bool(
         snowpass_gr_listings["historical_competing_pass_link_documented"]
-    ).sum()) == 23
+    ).sum()) == 43
     recovered_2018_19_listings = snowpass_gr_listings.loc[
         snowpass_gr_listings["season"].eq("2018/2019")
         & as_bool(snowpass_gr_listings["historical_competing_pass_link_documented"])
     ]
     assert set(recovered_2018_19_listings["resort_id"]) == {
-        "corvatsch_furtschellas", "diavolezza_lagalb"
+        "arosa_lenzerheide", "bergun_filisur_bergun_filisur_darlux",
+        "brigels_waltensburg_andiast", "brambruesch_chur_brambruesch",
+        "parsenn_davos_klosters_parsenn", "jakobshorn_davos_jakobshorn",
+        "rinerhorn_davos_rinerhorn", "madrisa_klosters_madrisa", "disentis",
+        "grusch_danusa", "obersaxen_mundaun",
+        "samnaun_silvretta_arena_samnaun_ischgl", "savognin",
+        "motta_naluns_scuol_motta_naluns", "splugen_rheinwald",
+        "corviglia_st_moritz", "tschiertschen", "vals",
+        "laax_flims_laax_falera", "andermatt_oberalp_sedrun",
+        "corvatsch_furtschellas", "diavolezza_lagalb",
     }
-    assert not as_bool(snowpass_gr_listings.loc[
-        snowpass_gr_listings["season"].eq("2018/2019")
-        & snowpass_gr_listings["resort_id"].eq("corviglia_st_moritz"),
-        "historical_competing_pass_link_documented",
-    ]).any()
     assert not as_bool(snowpass_gr_listings.loc[
         snowpass_gr_listings["resort_id"].isin([
             "pischa_davos_pischa",
             "schatzalp_davos_schatzalp_strela",
+            "pradaschier_churwalden",
+            "gemsstock_andermatt_gemsstock",
             "valtgeva_druni_kidsarena_sedrun",
-        ]),
+        ]) & snowpass_gr_listings["season"].eq("2018/2019"),
         "historical_competing_pass_link_documented",
     ]).any()
     topcard_listings = listing_seasons[
@@ -1966,14 +1992,14 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
     assert summary["meilenweiss_area_season_rows"] == 29
     assert summary["schneepass_zentralschweiz_area_season_rows"] == 46
     assert summary["topcard_area_season_rows"] == 11
-    assert summary["snowpass_graubuenden_area_season_rows"] == 20
-    assert summary["area_season_rows"] == 138
+    assert summary["snowpass_graubuenden_area_season_rows"] == 37
+    assert summary["area_season_rows"] == 155
     assert summary["resort_product_season_rows"] == 5_691
-    assert summary["documented_listing_season_links"] == 164
+    assert summary["documented_listing_season_links"] == 184
     assert summary["documented_topcard_listing_season_links"] == 20
     assert summary["documented_topcard_unlimited_core_listing_season_links"] == 18
     assert summary["documented_topcard_limited_partner_listing_season_links"] == 2
-    assert summary["documented_snowpass_graubuenden_listing_season_links"] == 23
+    assert summary["documented_snowpass_graubuenden_listing_season_links"] == 43
     assert summary["unique_supplied_listings_with_documented_link"] == 52
     assert summary["clusters_with_documented_link"] == 37
     assert summary["path_c_candidates_with_documented_link"] == 30
@@ -1983,11 +2009,11 @@ def test_historical_competing_pass_context_preserves_product_scope_summer_distin
     assert summary["listing_specific_summer_access_documented_rows"] == 19
     assert summary["path_c_candidates_with_area_specific_summer_access"] == 4
     assert summary["nonconfirming_sources_reviewed"] == 1
-    assert len(summary["source_sha256"]) == 18
+    assert len(summary["source_sha256"]) == 19
     assert summary["market_absence_verified_rows"] == 0
     assert summary["approved_features"] == 0
 
-    assert decision["analysis_version"].eq("path_c_v0_30").all()
+    assert decision["analysis_version"].eq("path_c_v0_31").all()
     assert int(
         as_bool(decision["historical_competing_pass_context_available"])
         .loc[as_bool(decision["candidate_for_path_c"])]
@@ -2077,7 +2103,7 @@ def test_path_c_network_context_excludes_focal_cluster_and_preserves_pair_grain(
     assert not as_bool(context["network_context_feature_approved"]).any()
     assert not as_bool(pairs["network_context_feature_approved"]).any()
     assert len(decision) == 162
-    assert decision["analysis_version"].eq("path_c_v0_30").all()
+    assert decision["analysis_version"].eq("path_c_v0_31").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()
@@ -2156,7 +2182,7 @@ def test_path_c_cluster_geography_sensitivity_preserves_clusters_and_bounds_rule
     assert not as_bool(context["cluster_geographic_coherence_verified"]).any()
     assert not as_bool(context["network_distance_sensitivity_feature_approved"]).any()
     assert not as_bool(pairs["network_distance_sensitivity_feature_approved"]).any()
-    assert decision["analysis_version"].eq("path_c_v0_30").all()
+    assert decision["analysis_version"].eq("path_c_v0_31").all()
     assert decision["accessibility_score"].isna().all()
     assert decision["predicted_uplift_pct"].isna().all()
     assert decision["composite_opportunity_need_score"].isna().all()

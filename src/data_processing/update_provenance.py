@@ -113,6 +113,7 @@ def main() -> None:
             "BBGR_ANNUAL_2018_19",
             "CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19",
             "SBS_PRICING_STUDY_2020_TOPCARD",
+            "GRAUBUENDEN_SNOWPASS_2018_19_ARCHIVED_PAGE",
             "GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE",
         ]
     }
@@ -1125,7 +1126,7 @@ def main() -> None:
             "end": "2018/2019",
             "geography": "Graubünden pass market and named TopCard areas",
             "access": "Public official industry-association PDF",
-            "quality": "The TopCard partner region is broader than the supplied directory; only Corviglia St. Moritz is conservatively linked and no summer entitlement is inferred. SnowPass beneficiary counts do not identify the operators, so no 2018/2019 SnowPass area link is backfilled",
+            "quality": "The TopCard partner region is broader than the supplied directory; only Corviglia St. Moritz is conservatively linked and no summer entitlement is inferred. SnowPass beneficiary counts do not identify the operators; 2018/2019 area links instead rely on the separate archived official all-canton page, industry study and joint operator report",
             "confidence": "high for the replacement and three-day benefit; conservative for the supplied listing link",
             "verification": "Pages 12-13 rendered and visually reviewed; Arosa replacement, three freely selectable Oberengadin days, SnowPass 2018/2019 sales and 8 large/11 medium/31 small beneficiary counts checked",
             "processed_file": "reports/donor_external_shock_evidence.csv|data_processed/donor_shortlist_final_audit.csv|config/competing_pass_historical_topcard.json|config/competing_pass_historical_snowpass_graubuenden.json|data_processed/competing_pass_historical_area_seasons.csv|data_processed/resort_competing_pass_history.csv|data_processed/path_c_cluster_historical_competing_pass_context.csv|data_processed/magic_pass_decision_support.csv|reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md",
@@ -1153,6 +1154,18 @@ def main() -> None:
             "quality": "TopCard core and limited partner access are kept separate; Engelberg-Titlis has three visits shared between summer and winter. The SnowPass figure names major comparison areas but is paired with the archived official all-canton statement; it is not treated as a complete small-lift roster",
             "confidence": "high for roster changes, access tiers and summer wording; conservative for supplied directory component links",
             "verification": "Pages 136-137 and 140-141 rendered and visually reviewed; TopCard core/replacement/benefit wording, SnowPass winter-only unlimited wording and all 17 displayed major-area labels checked",
+        },
+        "GRAUBUENDEN_SNOWPASS_2018_19_ARCHIVED_PAGE": {
+            "dataset": "Archived official Graubünden SnowPass 2018/2019 product page",
+            "description": "Archived official page defining SnowPass as a winter-season pass at all Graubünden mountain railways, explicitly including Samnaun-Ischgl and Sedrun-Andermatt while excluding individual small ski lifts",
+            "variables": "snowpass_graubuenden_all_canton_scope|winter_only_modality|named_cross_border_extensions|small_lift_exclusion|season_specific_validity_document_link",
+            "start": "2018/2019",
+            "end": "2018/2019",
+            "geography": "Graubünden mountain railways and named extensions / supplied resort listing links",
+            "access": "Public archived copy of the official destination-management webpage",
+            "quality": "The all-canton statement and exclusions are explicit, but the linked detailed-validity PDF is unavailable in the reviewed archive; major-area and exact-host supplied listing links therefore remain conservative and the small-lift roster is not claimed complete",
+            "confidence": "high for product scope and stated exclusions; conservative for individual supplied listing links",
+            "verification": "Archived capture URL, page update date, all-Graubünden wording, Samnaun-Ischgl and Sedrun-Andermatt extensions, individual-small-lift exclusion and exact 2018/2019 validity-PDF filename checked",
         },
         "GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE": {
             "dataset": "Archived official Graubünden SnowPass 2019/2020 product page",
@@ -1209,10 +1222,10 @@ def main() -> None:
         temporal_start="2017/2018",
         temporal_end="2024/2025",
         unit="identifiers, seasons, counts, shares and protected flags",
-        transformation_applied="Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss, 46 Schneepass, 11 TopCard and 20 SnowPass Graubünden area-season rows; join stable listing IDs; separate unlimited core access from limited partners and area-specific summer access from product-level statements; aggregate positive presence without converting non-links into absence",
-        quality_notes="Only five partially reconstructed products are covered; evidence scope and benefit tiers differ across products and seasons; the recovered 2022/2023 Schneepass roster is season-specific official evidence rather than interpolation; two official joint-report host links do not reconstruct the unnamed remainder of the 2018/2019 SnowPass roster, and its detailed 2019/2020 validity PDF remains unavailable; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring",
+        transformation_applied="Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss, 46 Schneepass, 11 TopCard and 37 SnowPass Graubünden area-season rows; join stable listing IDs; separate unlimited core access from limited partners and area-specific summer access from product-level statements; aggregate positive presence without converting non-links into absence",
+        quality_notes="Only five partially reconstructed products are covered; evidence scope and benefit tiers differ across products and seasons; the recovered 2022/2023 Schneepass roster is season-specific official evidence rather than interpolation; archived official all-canton SnowPass pages support the conservative major-area scope in 2018/2019 and 2019/2020, while missing detailed-validity PDFs prevent a complete small-lift roster; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring",
         confidence_level="high for reproducibility and documented positive links; incomplete historical market and summer-area coverage",
-        manual_verification="138 area-season rows, 5,691 product-listing-season rows, 164 positive links, 37 linked clusters and 30 linked candidates; Schneepass 2022/2023 adds 15 area rows and 18 positive links with product-level 13-area summer scope only; TopCard retains 18 unlimited-core versus two limited-partner listing-season links, while SnowPass adds 20 area rows and 23 positive links without summer inclusion; every market-absence/protected approval flag false",
+        manual_verification="155 area-season rows, 5,691 product-listing-season rows, 184 positive links, 37 linked clusters and 30 linked candidates; Schneepass 2022/2023 adds 15 area rows and 18 positive links with product-level 13-area summer scope only; TopCard retains 18 unlimited-core versus two limited-partner listing-season links, while SnowPass adds 37 area rows and 43 positive links without summer inclusion; every market-absence/protected approval flag false",
     ))
     rows.append(blank_source(
         "DERIVED_PATH_C_NETWORK_CONTEXT",
