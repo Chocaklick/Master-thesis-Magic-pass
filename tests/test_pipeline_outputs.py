@@ -2342,3 +2342,32 @@ def test_distance_transport_comparison_preserves_pairs_and_exposes_disagreement(
     ].dropna().between(0.60, 0.88).all()
     assert len(bands) == 55
     assert not as_bool(bands["causal_exposure_approved"]).any()
+
+
+def test_thesis_results_synthesis_preserves_checkpoint_6_guardrails() -> None:
+    summary = json.loads(
+        (ROOT / "reports/thesis_results_synthesis_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    report = (ROOT / "reports/42_THESIS_RESULTS_SYNTHESIS.md").read_text(
+        encoding="utf-8"
+    )
+    figure = ROOT / "figures/path_c_evidence_coverage.png"
+
+    assert summary["analysis_version"] == "path_c_v0_31"
+    assert summary["candidate_clusters"] == 104
+    assert summary["dimensions"] == 7
+    assert summary["feature_groups"] == 19
+    assert summary["complete_candidate_coverage_groups"] == 13
+    assert summary["partial_candidate_coverage_groups"] == 2
+    assert summary["unavailable_candidate_feature_groups"] == 4
+    assert summary["approved_causal_treatment_units"] == 0
+    assert summary["approved_controls"] == 0
+    assert summary["recommendations_issued"] == 0
+    assert summary["composite_scores"] == 0
+    assert summary["causal_interpretation_approvals"] == 0
+    assert "not a causal Magic Pass effect model" in report
+    assert "Claims the thesis must not make" in report
+    assert figure.exists()
+    assert figure.stat().st_size > 10_000

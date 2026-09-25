@@ -1,0 +1,17 @@
+{
+  "analysis_version": "path_c_v0_31",
+  "architecture": "exploratory_structural_analogue_dashboard_with_separate_opportunity_vulnerability_context_and_uncertainty",
+  "candidate_clusters": 104,
+  "dimensions": 7,
+  "feature_groups": 19,
+  "complete_candidate_coverage_groups": 13,
+  "partial_candidate_coverage_groups": 2,
+  "unavailable_candidate_feature_groups": 4,
+  "approved_causal_treatment_units": 0,
+  "approved_controls": 0,
+  "recommendations_issued": 0,
+  "composite_scores": 0,
+  "causal_interpretation_approvals": 0,
+  "report": "reports/42_THESIS_RESULTS_SYNTHESIS.md",
+  "figure": "figures/path_c_evidence_coverage.png"
+}
