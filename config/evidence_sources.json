@@ -490,5 +490,26 @@
     "suffix": "pdf",
     "organisation": "Bergbahnen Malbun AG",
     "description": "Official operator-hosted Meilenweiss 2021/2022 winter brochure with 19 winter destinations and annual-pass inclusion of summer 2022"
+  },
+  {
+    "source_id": "BRUNNI_SCHNEEPASS_ZENTRALSCHWEIZ_2021_22_BROCHURE",
+    "url": "https://brunni.ch/cmsfiles/FINAL_2.pdf",
+    "suffix": "pdf",
+    "organisation": "Brunni-Bahnen Engelberg AG",
+    "description": "Official Brunni winter 2021/2022 tariff brochure documenting a 14-area Schneepass Zentralschweiz winter product and a distinct SchneepassPlus with winter and summer access; full roster and area-specific summer coverage require document-level verification"
+  },
+  {
+    "source_id": "SCHNEEPASS_ZENTRALSCHWEIZ_2023_24_MEDIA_KIT",
+    "url": "https://www.schneepasszentralschweiz.ch/medien/dokumente/Medienmappe%20Schneepass%20Zentralschweiz_2023_2024.pdf",
+    "suffix": "pdf",
+    "organisation": "Transportunternehmungen Zentralschweiz (TUZ)",
+    "description": "Official Schneepass Zentralschweiz 2023/2024 media kit retained for season-specific roster, benefit and winter/summer scope verification"
+  },
+  {
+    "source_id": "SCHNEEPASS_ZENTRALSCHWEIZ_2024_25_MEDIA_KIT",
+    "url": "https://www.schneepasszentralschweiz.ch/medien/dokumente/Medienmappe%20Schneepass%20Zentralschweiz_2024_2025.pdf",
+    "suffix": "pdf",
+    "organisation": "Transportunternehmungen Zentralschweiz (TUZ)",
+    "description": "Official Schneepass Zentralschweiz 2024/2025 media kit retained for season-specific roster, benefit and winter/summer scope verification"
   }
 ]

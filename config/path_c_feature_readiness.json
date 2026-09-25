@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_25",
+  "analysis_version": "path_c_v0_26",
   "candidate_pool_rule": "candidate_for_path_c_true_in_magic_pass_decision_support",
   "feature_groups": [
     {
@@ -227,7 +227,7 @@
       "feature_group_id": "historical_competing_pass_context",
       "feature_group_name": "Historical competing-pass context",
       "candidate_required_fields": ["historical_competing_pass_first_documented_season", "historical_competing_pass_last_documented_season"],
-      "evidence_scope": "Top4 four-area roster reconstructed for eight seasons plus bounded Meilenweiss positive evidence for 2019/2020 through 2021/2022; 13 candidate clusters have conservative listing links",
+      "evidence_scope": "Top4 four-area roster reconstructed for eight seasons, bounded Meilenweiss positive evidence for 2019/2020 through 2021/2022, and bounded Schneepass Zentralschweiz evidence for 2021/2022, 2023/2024 and 2024/2025; 16 candidate clusters have conservative listing links",
       "temporal_status": "dated_historical_product_roster_partial_market_coverage_not_uniformly_pre_anchor",
       "scope_comparability_status": "partial_candidate_coverage_and_nonlinks_do_not_verify_historical_market_absence",
       "leakage_risk": "two partially reconstructed products do not represent the full historical pass market, evidence scopes differ by season and several observations postdate treatment anchors",

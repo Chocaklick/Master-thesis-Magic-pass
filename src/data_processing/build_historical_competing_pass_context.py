@@ -1,8 +1,8 @@
-"""Build conservative dated Top4 and Meilenweiss context for Path C.
+"""Build conservative dated Top4, Meilenweiss and Schneepass context for Path C.
 
 Only positive, checksum-pinned evidence is linked to supplied resort IDs. The
 output never interprets a non-link as historical market absence. Product-level
-Meilenweiss summer inclusion is kept separate from area-specific summer
+Product-level summer inclusion is kept separate from area-specific summer
 operation, which remains unknown in the reviewed material.
 """
 
@@ -25,6 +25,9 @@ EVIDENCE_DIR = ROOT / "data_external" / "source_evidence"
 TOP4_CONFIG_PATH = ROOT / "config" / "competing_pass_historical_top4.json"
 MEILENWEISS_CONFIG_PATH = (
     ROOT / "config" / "competing_pass_historical_meilenweiss.json"
+)
+SCHNEEPASS_CONFIG_PATH = (
+    ROOT / "config" / "competing_pass_historical_schneepass_zentralschweiz.json"
 )
 ANALYSIS_CONFIG_PATH = ROOT / "config" / "path_c_analysis.json"
 RESORT_PATH = ROOT / "data_processed" / "resort_master.csv"
@@ -59,6 +62,12 @@ EXPECTED_MEILENWEISS_AREA_COUNTS = {
     "2020/2021": 1,
     "2021/2022": 16,
 }
+EXPECTED_SCHNEEPASS_SEASONS = ["2021/2022", "2023/2024", "2024/2025"]
+EXPECTED_SCHNEEPASS_AREA_COUNTS = {
+    "2021/2022": 1,
+    "2023/2024": 15,
+    "2024/2025": 15,
+}
 EXPECTED_SOURCE_HOSTS = {
     "JUNGFRAU_TOP4_2018_19_CONTINUITY": "jungfrau.ch",
     "JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON": "jungfrau.ch",
@@ -66,9 +75,13 @@ EXPECTED_SOURCE_HOSTS = {
     "ATZMAENNIG_WINTER_BROCHURE_2020_21": "atzmaennig.ch",
     "MALBUN_MEILENWEISS_2021_22_WINTER_BROCHURE": "bergbahnen.li",
     "PIZOL_ANNUAL_REPORT_2018_19": "pizol.com",
+    "BRUNNI_SCHNEEPASS_ZENTRALSCHWEIZ_2021_22_BROCHURE": "brunni.ch",
+    "SCHNEEPASS_ZENTRALSCHWEIZ_2023_24_MEDIA_KIT": "schneepasszentralschweiz.ch",
+    "SCHNEEPASS_ZENTRALSCHWEIZ_2024_25_MEDIA_KIT": "schneepasszentralschweiz.ch",
 }
 INTERPRETATION = (
-    "dated_top4_2017_18_to_2024_25_and_meilenweiss_2019_20_to_2021_22_"
+    "dated_top4_2017_18_to_2024_25_meilenweiss_2019_20_to_2021_22_and_"
+    "schneepass_zentralschweiz_2021_22_2023_24_2024_25_"
     "positive_presence_evidence_not_complete_historical_pass_market_absence_"
     "pre_treatment_or_causal_feature"
 )
@@ -127,12 +140,15 @@ def source_text(record: dict[str, object]) -> str:
 
 
 def validate_sources(
-    top4_config: dict[str, object], meilenweiss_config: dict[str, object]
+    top4_config: dict[str, object],
+    meilenweiss_config: dict[str, object],
+    schneepass_config: dict[str, object],
 ) -> dict[str, dict[str, object]]:
     expected_ids = set(EXPECTED_SOURCE_HOSTS)
     sha_by_id = {
         **top4_config["source_sha256_by_id"],
         **meilenweiss_config["source_sha256_by_id"],
+        **schneepass_config["source_sha256_by_id"],
     }
     if set(sha_by_id) != expected_ids:
         raise ValueError("Historical competing-pass source registry changed unexpectedly")
@@ -201,6 +217,53 @@ def validate_sources(
             "hoherkasten",
             "malbun",
         ],
+        "BRUNNI_SCHNEEPASS_ZENTRALSCHWEIZ_2021_22_BROCHURE": [
+            "winter20212022",
+            "schneepasszentralschweiz",
+            "14skigebieten",
+            "schneepasspluszentralschweiz",
+            "unlimitierteswinterundsommersportvergnugen",
+        ],
+        "SCHNEEPASS_ZENTRALSCHWEIZ_2023_24_MEDIA_KIT": [
+            "schneesportregionzentralschweiz20232024",
+            "zugangszu15skigebieten",
+            "13zentralschweizersommergebieten",
+            "airolopescium",
+            "andermattsedrundisentis",
+            "engelbergbrunni",
+            "engelbergtitlis",
+            "klewenalpstockhutte",
+            "marbachegg",
+            "meringenhasliberg",
+            "melchseefrutt",
+            "morlialp",
+            "mythenregion",
+            "rothenturmneusell",
+            "rigi",
+            "sattelhochstuckli",
+            "sorenberg",
+            "stoos",
+        ],
+        "SCHNEEPASS_ZENTRALSCHWEIZ_2024_25_MEDIA_KIT": [
+            "schneesportregion20242025",
+            "15schneesportgebieten",
+            "zugangzu13sommergebieten",
+            "airolopescium",
+            "andermattsedrundisentis",
+            "engelbergbrunni",
+            "engelbergtitlis",
+            "klewenalpstockhutte",
+            "marbachegg",
+            "meringenhasliberg",
+            "melchseefrutt",
+            "morlialp",
+            "mythenregion",
+            "rothenturmneusell",
+            "rigi",
+            "sattelhochstuckli",
+            "sorenberg",
+            "stoos",
+        ],
     }
     for source_id, tokens in required.items():
         missing = [token for token in tokens if token not in texts[source_id]]
@@ -216,12 +279,14 @@ def validate_sources(
 def validate_configs(
     top4_config: dict[str, object],
     meilenweiss_config: dict[str, object],
+    schneepass_config: dict[str, object],
     analysis_config: dict[str, object],
     resorts: pd.DataFrame,
 ) -> dict[str, dict[str, object]]:
     versions = {
         top4_config["analysis_version"],
         meilenweiss_config["analysis_version"],
+        schneepass_config["analysis_version"],
         analysis_config["analysis_version"],
     }
     if len(versions) != 1:
@@ -249,6 +314,21 @@ def validate_configs(
         unknown = set(linked_ids) - known_resort_ids
         if unknown:
             raise ValueError(f"Unknown Meilenweiss listing IDs: {sorted(unknown)}")
+    schneepass_seasons = list(schneepass_config["seasons"])
+    if [item["season"] for item in schneepass_seasons] != EXPECTED_SCHNEEPASS_SEASONS:
+        raise ValueError("Historical Schneepass seasons changed unexpectedly")
+    for season in schneepass_seasons:
+        areas = list(season["areas"])
+        if len(areas) != EXPECTED_SCHNEEPASS_AREA_COUNTS[season["season"]]:
+            raise ValueError(f"Unexpected Schneepass area count for {season['season']}")
+        if len({area["official_area_label"] for area in areas}) != len(areas):
+            raise ValueError(f"Duplicate Schneepass area in {season['season']}")
+        linked_ids = [item for area in areas for item in area["linked_resort_ids"]]
+        if len(linked_ids) != len(set(linked_ids)):
+            raise ValueError(f"Duplicate supplied Schneepass listing link in {season['season']}")
+        unknown = set(linked_ids) - known_resort_ids
+        if unknown:
+            raise ValueError(f"Unknown Schneepass listing IDs: {sorted(unknown)}")
     top4_linked_ids = [
         item for area in top4_areas for item in area["linked_resort_ids"]
     ]
@@ -261,17 +341,19 @@ def validate_configs(
         "recommendation_feature_approved",
         "composite_score_approved",
     ]
-    for config in [top4_config, meilenweiss_config]:
+    for config in [top4_config, meilenweiss_config, schneepass_config]:
         if any(bool(config[field]) for field in protected):
             raise ValueError("A protected historical competing-pass approval became true")
     reviews = list(meilenweiss_config["nonconfirming_source_reviews"])
     if len(reviews) != 1 or reviews[0]["membership_use"] != "not_used_as_membership_evidence":
         raise ValueError("Non-confirming Pizol source must remain excluded from membership")
-    return validate_sources(top4_config, meilenweiss_config)
+    return validate_sources(top4_config, meilenweiss_config, schneepass_config)
 
 
 def product_seasons(
-    top4_config: dict[str, object], meilenweiss_config: dict[str, object]
+    top4_config: dict[str, object],
+    meilenweiss_config: dict[str, object],
+    schneepass_config: dict[str, object],
 ) -> list[dict[str, object]]:
     items: list[dict[str, object]] = []
     for season in top4_config["seasons"]:
@@ -303,6 +385,18 @@ def product_seasons(
                 ),
             }
         )
+    for season in schneepass_config["seasons"]:
+        items.append(
+            {
+                "competing_pass_id": schneepass_config["competing_pass_id"],
+                "competing_pass_name": schneepass_config["competing_pass_name"],
+                **season,
+                "continuity_basis": (
+                    "season_specific_official_operator_or_product_material_no_"
+                    "cross_season_continuity_inference"
+                ),
+            }
+        )
     return items
 
 
@@ -312,7 +406,9 @@ def build_area_seasons(
     records: list[dict[str, object]] = []
     for spec in specs:
         for area in spec["areas"]:
-            is_meilenweiss = spec["competing_pass_id"] == "meilenweiss"
+            has_product_summer_statement = (
+                spec["annual_pass_following_summer_included"] is True
+            )
             records.append(
                 {
                     "analysis_version": analysis_version,
@@ -330,8 +426,8 @@ def build_area_seasons(
                     "area_specific_summer_access_documented": False,
                     "area_specific_summer_access_status": (
                         "unknown_not_inferable_from_product_wide_annual_pass_statement"
-                        if is_meilenweiss
-                        else "not_documented_in_reviewed_top4_sources"
+                        if has_product_summer_statement
+                        else "not_documented_in_reviewed_sources"
                     ),
                     "linked_resort_ids": "|".join(area["linked_resort_ids"]),
                     "mapping_basis": area["mapping_basis"],
@@ -347,8 +443,8 @@ def build_area_seasons(
                 }
             )
     area_seasons = pd.DataFrame(records)
-    if len(area_seasons) != 61:
-        raise ValueError("Expected 61 Top4 plus Meilenweiss area-season rows")
+    if len(area_seasons) != 92:
+        raise ValueError("Expected 92 Top4, Meilenweiss and Schneepass area-season rows")
     if area_seasons.duplicated(
         ["competing_pass_id", "season", "official_area_label"]
     ).any():
@@ -415,14 +511,18 @@ def build_resort_seasons(
                 }
             )
     history = pd.DataFrame(records)
-    if len(history) != len(resorts) * 11:
+    if len(history) != len(resorts) * 14:
         raise ValueError("Historical product-listing-season grain changed")
     if history.duplicated(["competing_pass_id", "resort_id", "season"]).any():
         raise ValueError("Duplicate historical product-listing-season row")
     links_by_product = history.groupby("competing_pass_id")[
         "historical_competing_pass_link_documented"
     ].sum()
-    if links_by_product.to_dict() != {"meilenweiss": 26, "top4": 40}:
+    if links_by_product.to_dict() != {
+        "meilenweiss": 26,
+        "schneepass_zentralschweiz": 37,
+        "top4": 40,
+    }:
         raise ValueError(f"Unexpected documented product links: {links_by_product.to_dict()}")
     if history["historical_competing_pass_market_absence_verified"].any():
         raise ValueError("Reviewed product non-links cannot verify historical market absence")
@@ -466,10 +566,10 @@ def build_cluster_context(
                 "cluster_id": cluster_id,
                 "cluster_display_name": feature_lookup.loc[cluster_id, "cluster_display_name"],
                 "candidate_for_path_c": feature_lookup.loc[cluster_id, "candidate_for_path_c"],
-                "historical_competing_pass_products_reviewed": 2,
+                "historical_competing_pass_products_reviewed": 3,
                 "historical_competing_pass_unique_seasons_reviewed": 8,
-                "historical_competing_pass_product_seasons_reviewed": 11,
-                "historical_competing_pass_area_seasons_reviewed": 61,
+                "historical_competing_pass_product_seasons_reviewed": 14,
+                "historical_competing_pass_area_seasons_reviewed": 92,
                 "historical_competing_pass_cluster_listing_count": listing_count,
                 "historical_competing_pass_linked_listing_count": linked_listing_count,
                 "historical_competing_pass_linked_listing_share": linked_listing_count / listing_count,
@@ -505,7 +605,8 @@ def build_cluster_context(
                 "historical_competing_pass_context_available": bool(documented_seasons),
                 "historical_competing_pass_temporal_scope": (
                     "top4_2017_2018_to_2024_2025_and_meilenweiss_positive_"
-                    "evidence_2019_2020_to_2021_2022"
+                    "evidence_2019_2020_to_2021_2022_plus_schneepass_"
+                    "zentralschweiz_2021_2022_2023_2024_2024_2025"
                 ),
                 "historical_competing_pass_context_interpretation": INTERPRETATION,
                 "historical_competing_pass_feature_approved": False,
@@ -522,8 +623,8 @@ def build_cluster_context(
     context = pd.DataFrame(rows)
     if len(context) != 162 or not context["cluster_id"].is_unique:
         raise ValueError("Historical competing-pass context must preserve 162 clusters")
-    if int(context["historical_competing_pass_context_available"].sum()) != 16:
-        raise ValueError("Expected 16 lift clusters with documented historical links")
+    if int(context["historical_competing_pass_context_available"].sum()) != 23:
+        raise ValueError("Expected 23 lift clusters with documented historical links")
     if not context["historical_competing_pass_linked_listing_share"].between(0, 1).all():
         raise ValueError("Invalid historical competing-pass listing share")
     protected = [
@@ -585,30 +686,31 @@ def enrich_decision_support(context: pd.DataFrame) -> None:
 
 
 def write_report(summary: dict[str, object]) -> None:
-    report = f"""# Historical competing-pass context: Top4 and Meilenweiss
+    report = f"""# Historical competing-pass context: Top4, Meilenweiss and Schneepass
 
 ## Evidence recovered
 
-The checksum-pinned Top4 reconstruction remains unchanged: four official regions over eight consecutive seasons from 2017/2018 through 2024/2025. Three official operator PDFs add bounded Meilenweiss evidence for 2019/2020, 2020/2021 and 2021/2022. The 2019/2020 order form names 12 sales areas but is not treated as a complete international roster. The 2020/2021 Atzmännig brochure documents a 19-area product and links only the host area because it does not name the full roster. The 2021/2022 Malbun brochure explicitly lists 16 Swiss/Liechtenstein areas within a product advertised as 19 winter destinations.
+The checksum-pinned Top4 reconstruction remains unchanged: four official regions over eight consecutive seasons from 2017/2018 through 2024/2025. Three official operator PDFs retain the bounded Meilenweiss evidence for 2019/2020, 2020/2021 and 2021/2022. Three additional official PDFs add Schneepass Zentralschweiz evidence. The Brunni 2021/2022 tariff brochure establishes a 14-area product but does not name the full roster, so only its host area is linked. The official 2023/2024 media kit contains 15 area sections, and the official 2024/2025 media kit names the same 15 areas through its media-contact roster.
 
 The combined output contains **{summary['area_season_rows']} area-season rows**, **{summary['resort_product_season_rows']} product-listing-season rows** and **{summary['documented_listing_season_links']} positive listing-season links**. These reach **{summary['clusters_with_documented_link']} lift clusters**, including **{summary['path_c_candidates_with_documented_link']} of {summary['path_c_candidates']}** apparent Path C candidates.
 
 ## Winter and summer are not conflated
 
-Each linked area is positive winter evidence. The Meilenweiss annual-pass documents state that the following summer season is included; the 2021/2022 brochure gives an aggregate of 19 winter and 18 summer destinations. None of the reviewed documents identifies the area-level summer exception. Therefore **{summary['area_specific_summer_access_documented_rows']} area-specific summer links** are asserted. Product-level summer inclusion is retained separately and never converted into a claim that every winter area operates in summer.
+Each linked area is positive winter evidence. The Meilenweiss annual-pass documents state that the following summer season is included; the 2021/2022 brochure gives an aggregate of 19 winter and 18 summer destinations. Schneepass distinguishes its winter-only pass from SchneepassPlus; the complete 2023/2024 and 2024/2025 sources state 15 winter and 13 summer areas. These aggregate statements do not identify every area-level summer entitlement. Therefore **{summary['area_specific_summer_access_documented_rows']} area-specific summer links** are asserted. Product-level summer inclusion is retained separately and never converted into a claim that every winter area operates in summer.
 
 ## Conservative scope and negative evidence
 
-Malbun in Liechtenstein is not linked to the supplied Buchserberg-Malbun listing, which is a different Swiss area. Hoher Kasten has no equivalent supplied ski listing. Broad cluster neighbours never inherit a documented listing link. The official Pizol 2018/2019 annual report was checksum-verified, text-searched and visually reviewed but contains no explicit Meilenweiss reference; it is recorded as a non-confirming source and creates neither membership nor absence evidence.
+Malbun in Liechtenstein is not linked to the supplied Buchserberg-Malbun listing, which is a different Swiss area. Hoher Kasten has no equivalent supplied ski listing. The historical Airolo-Pesciüm label is not widened to Airolo-Lüina, and broad cluster neighbours never inherit a documented listing link. The official Pizol 2018/2019 annual report was checksum-verified, text-searched and visually reviewed but contains no explicit Meilenweiss reference; it is recorded as a non-confirming source and creates neither membership nor absence evidence.
 
 ## Decision limit
 
-Two products and eleven product-seasons still do not reconstruct the full historical multi-resort-pass market. Non-links do not verify absence, evidence scopes differ by season, several observations postdate Magic Pass treatment anchors, and benefit intensity and prices are not harmonised. Historical-market-absence, pre-treatment, causal, recommendation and composite-score approvals remain false. The result is qualified context, not a ranking input.
+Three products and fourteen product-seasons still do not reconstruct the full historical multi-resort-pass market. The missing 2022/2023 Schneepass season is not interpolated, non-links do not verify absence, evidence scopes differ by season, several observations postdate Magic Pass treatment anchors, and benefit intensity and prices are not harmonised. Historical-market-absence, pre-treatment, causal, recommendation and composite-score approvals remain false. The result is qualified context, not a ranking input.
 
 ## Outputs
 
 - `config/competing_pass_historical_top4.json`
 - `config/competing_pass_historical_meilenweiss.json`
+- `config/competing_pass_historical_schneepass_zentralschweiz.json`
 - `data_processed/competing_pass_historical_area_seasons.csv`
 - `data_processed/resort_competing_pass_history.csv`
 - `data_processed/path_c_cluster_historical_competing_pass_context.csv`
@@ -621,6 +723,7 @@ Two products and eleven product-seasons still do not reconstruct the full histor
 def main() -> None:
     top4_config = json.loads(TOP4_CONFIG_PATH.read_text(encoding="utf-8"))
     meilenweiss_config = json.loads(MEILENWEISS_CONFIG_PATH.read_text(encoding="utf-8"))
+    schneepass_config = json.loads(SCHNEEPASS_CONFIG_PATH.read_text(encoding="utf-8"))
     analysis_config = json.loads(ANALYSIS_CONFIG_PATH.read_text(encoding="utf-8"))
     resorts = pd.read_csv(RESORT_PATH, dtype="string")
     features = pd.read_csv(FEATURE_PATH, dtype="string")
@@ -629,8 +732,14 @@ def main() -> None:
     if len(features) != 162 or features["cluster_id"].duplicated().any():
         raise ValueError("Unexpected Path C cluster feature grain")
 
-    metadata = validate_configs(top4_config, meilenweiss_config, analysis_config, resorts)
-    specs = product_seasons(top4_config, meilenweiss_config)
+    metadata = validate_configs(
+        top4_config,
+        meilenweiss_config,
+        schneepass_config,
+        analysis_config,
+        resorts,
+    )
+    specs = product_seasons(top4_config, meilenweiss_config, schneepass_config)
     analysis_version = str(analysis_config["analysis_version"])
     area_seasons = build_area_seasons(analysis_version, specs)
     area_seasons.to_csv(AREA_SEASON_OUTPUT, index=False, lineterminator="\n")
@@ -639,6 +748,10 @@ def main() -> None:
     positive_source_ids = list(top4_config["source_ids"]) + [
         source_id
         for season in meilenweiss_config["seasons"]
+        for source_id in season["source_ids"]
+    ] + [
+        source_id
+        for season in schneepass_config["seasons"]
         for source_id in season["source_ids"]
     ]
     nonconfirming_source_ids = [
@@ -687,14 +800,17 @@ def main() -> None:
     linked_candidates = int(candidates["historical_competing_pass_context_available"].sum())
     summary = {
         "analysis_version": analysis_version,
-        "reviewed_historical_products": 2,
-        "reviewed_product_seasons": 11,
+        "reviewed_historical_products": 3,
+        "reviewed_product_seasons": 14,
         "reviewed_unique_winter_seasons": 8,
         "season_start": EXPECTED_TOP4_SEASONS[0],
         "season_end": EXPECTED_TOP4_SEASONS[-1],
         "top4_area_season_rows": int(area_seasons["competing_pass_id"].eq("top4").sum()),
         "meilenweiss_area_season_rows": int(
             area_seasons["competing_pass_id"].eq("meilenweiss").sum()
+        ),
+        "schneepass_zentralschweiz_area_season_rows": int(
+            area_seasons["competing_pass_id"].eq("schneepass_zentralschweiz").sum()
         ),
         "area_season_rows": len(area_seasons),
         "resort_product_season_rows": len(history),
@@ -711,6 +827,12 @@ def main() -> None:
         "documented_meilenweiss_listing_season_links": int(
             history.loc[
                 history["competing_pass_id"].eq("meilenweiss"),
+                "historical_competing_pass_link_documented",
+            ].sum()
+        ),
+        "documented_schneepass_zentralschweiz_listing_season_links": int(
+            history.loc[
+                history["competing_pass_id"].eq("schneepass_zentralschweiz"),
                 "historical_competing_pass_link_documented",
             ].sum()
         ),
@@ -749,14 +871,15 @@ def main() -> None:
     expected_summary = {
         "top4_area_season_rows": 32,
         "meilenweiss_area_season_rows": 29,
-        "area_season_rows": 61,
-        "resort_product_season_rows": 2981,
-        "documented_listing_season_links": 66,
-        "unique_supplied_listings_with_documented_link": 19,
-        "clusters_with_documented_link": 16,
-        "path_c_candidates_with_documented_link": 13,
-        "path_c_candidate_partial_cluster_links": 6,
-        "path_c_candidates_with_product_level_summer_inclusion": 11,
+        "schneepass_zentralschweiz_area_season_rows": 31,
+        "area_season_rows": 92,
+        "resort_product_season_rows": 3794,
+        "documented_listing_season_links": 103,
+        "unique_supplied_listings_with_documented_link": 33,
+        "clusters_with_documented_link": 23,
+        "path_c_candidates_with_documented_link": 16,
+        "path_c_candidate_partial_cluster_links": 8,
+        "path_c_candidates_with_product_level_summer_inclusion": 14,
         "area_specific_summer_access_documented_rows": 0,
         "market_absence_verified_rows": 0,
         "approved_features": 0,
