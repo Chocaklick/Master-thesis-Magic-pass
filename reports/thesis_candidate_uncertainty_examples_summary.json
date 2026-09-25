@@ -1,0 +1,23 @@
+{
+  "analysis_version": "path_c_v0_31",
+  "candidate_universe": 104,
+  "selected_examples": 4,
+  "selection_method": "predeclared_uncertainty_categories_then_ascending_stable_cluster_id",
+  "selected_cluster_ids": [
+    "SKI_CLUSTER_010",
+    "SKI_CLUSTER_017",
+    "SKI_CLUSTER_007",
+    "SKI_CLUSTER_001"
+  ],
+  "selected_case_ids": [
+    "stable_complete_context",
+    "segment_assignment_sensitive",
+    "support_category_sensitive",
+    "strong_treated_reference_extrapolation"
+  ],
+  "predicted_uplift_values": 0,
+  "recommendations_issued": 0,
+  "composite_scores": 0,
+  "causal_interpretation_approvals": 0,
+  "interpretation": "illustrative_uncertainty_cases_not_ranking_recommendation_or_treatment_effect"
+}

@@ -2474,3 +2474,50 @@ def test_methodological_literature_register_is_complete_and_bounded() -> None:
         encoding="utf-8"
     )
     assert "do not override the project-specific identification gates" in report
+
+
+def test_candidate_uncertainty_examples_are_deterministic_not_ranked() -> None:
+    summary = json.loads(
+        (ROOT / "reports/thesis_candidate_uncertainty_examples_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    examples = read("reports/thesis_candidate_uncertainty_examples.csv")
+
+    assert summary["analysis_version"] == "path_c_v0_31"
+    assert summary["candidate_universe"] == 104
+    assert summary["selected_examples"] == 4
+    assert summary["selected_cluster_ids"] == [
+        "SKI_CLUSTER_010",
+        "SKI_CLUSTER_017",
+        "SKI_CLUSTER_007",
+        "SKI_CLUSTER_001",
+    ]
+    assert summary["predicted_uplift_values"] == 0
+    assert summary["recommendations_issued"] == 0
+    assert summary["composite_scores"] == 0
+    assert summary["causal_interpretation_approvals"] == 0
+    assert examples["cluster_id"].is_unique
+    by_case = examples.set_index("case_id")
+    assert (
+        by_case.loc["stable_complete_context", "aggregation_sensitivity_status"]
+        == "stable_across_min_median_max"
+    )
+    assert "|" in by_case.loc[
+        "segment_assignment_sensitive", "aggregation_segment_ids"
+    ]
+    assert not bool(
+        by_case.loc[
+            "support_category_sensitive", "aggregation_reviewed_treated_ood_stable"
+        ]
+    )
+    assert (
+        by_case.loc[
+            "strong_treated_reference_extrapolation", "reviewed_treated_ood_flag"
+        ]
+        == "strong_extrapolation"
+    )
+    report = (ROOT / "reports/48_CANDIDATE_UNCERTAINTY_EXAMPLES.md").read_text(
+        encoding="utf-8"
+    )
+    assert "The ordering below is the rule order, not a ranking" in report

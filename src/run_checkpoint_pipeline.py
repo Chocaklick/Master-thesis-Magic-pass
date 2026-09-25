@@ -97,6 +97,7 @@ def main() -> None:
     run("src/scoring/build_path_c_decision_framework.py")
     run("src/data_processing/build_feasibility_report.py")
     run("src/scoring/plot_path_c_outputs.py")
+    run("src/descriptive/build_candidate_uncertainty_examples.py")
     run("src/descriptive/build_thesis_results_synthesis.py")
     run("src/descriptive/build_thesis_chapter_drafts.py")
     run("src/descriptive/build_methodological_bibliography.py")
