@@ -98,11 +98,13 @@ def main() -> None:
     run("src/data_processing/build_feasibility_report.py")
     run("src/scoring/plot_path_c_outputs.py")
     run("src/descriptive/build_candidate_uncertainty_examples.py")
+    run("src/descriptive/build_final_methodological_report.py")
     run("src/descriptive/build_thesis_results_synthesis.py")
     run("src/descriptive/build_thesis_chapter_drafts.py")
     run("src/descriptive/build_methodological_bibliography.py")
     run("src/data_processing/update_provenance.py")
     run("src/descriptive/build_thesis_citation_map.py")
+    run("src/descriptive/build_thesis_reading_draft.py")
     subprocess.run([sys.executable, "-m", "pytest", "-q"], cwd=ROOT, check=True)
 
 

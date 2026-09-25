@@ -2521,3 +2521,75 @@ def test_candidate_uncertainty_examples_are_deterministic_not_ranked() -> None:
         encoding="utf-8"
     )
     assert "The ordering below is the rule order, not a ranking" in report
+
+
+def test_final_methodological_report_answers_mission_questions() -> None:
+    summary = json.loads(
+        (ROOT / "reports/final_methodological_report_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    answers = read("reports/final_methodological_question_answers.csv")
+
+    assert summary["analysis_version"] == "path_c_v0_31"
+    assert summary["questions_answered"] == 18
+    assert answers["question_number"].tolist() == list(range(1, 19))
+    assert answers["question"].notna().all()
+    assert answers["answer"].str.len().gt(100).all()
+    assert summary["resort_listings"] == 271
+    assert summary["linked_lift_clusters"] == 162
+    assert summary["official_current_magic_destinations"] == 95
+    assert summary["reviewed_destination_units"] == 14
+    assert summary["units_with_24_pre_and_post_months"] == 7
+    assert summary["causal_treatments_approved"] == 0
+    assert summary["causal_controls_approved"] == 0
+    assert summary["candidate_clusters"] == 104
+    assert summary["recommendations_issued"] == 0
+    assert summary["composite_scores"] == 0
+    assert summary["causal_interpretation_approvals"] == 0
+    report = (ROOT / "reports/49_FINAL_METHODOLOGICAL_REPORT.md").read_text(
+        encoding="utf-8"
+    )
+    executive = (ROOT / "reports/EXECUTIVE_SUMMARY.md").read_text(
+        encoding="utf-8"
+    )
+    assert report.count("\n## ") >= 20
+    assert "not a causal, predictive-uplift or profitability model" in report
+    assert "This boundary is the principal methodological result" in executive
+
+
+def test_thesis_reading_draft_assembles_validated_outputs() -> None:
+    summary = json.loads(
+        (ROOT / "reports/thesis_reading_draft_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    draft = (ROOT / "reports/50_THESIS_READING_DRAFT.md").read_text(
+        encoding="utf-8"
+    )
+
+    assert summary["analysis_version"] == "path_c_v0_31"
+    assert summary["assembled_sections"] == 8
+    assert summary["mission_questions_included"] == 18
+    assert summary["candidate_examples_included"] == 4
+    assert summary["registered_sources_linked"] == 62
+    assert summary["approximate_word_count"] >= 5000
+    assert summary["predicted_uplift_values"] == 0
+    assert summary["recommendations_issued"] == 0
+    assert summary["composite_scores"] == 0
+    assert summary["causal_interpretation_approvals"] == 0
+    for heading in [
+        "## Abstract",
+        "## 1. Executive summary",
+        "## 2. Methods",
+        "## 3. Results",
+        "## 4. Discussion and limitations",
+        "## 5. Direct answers to the 18 mission questions",
+        "## 6. Illustrative candidate uncertainty cases",
+        "## 7. Source and citation guide",
+        "## 8. Current interpretation and next revision points",
+    ]:
+        assert heading in draft
+    assert "The four example candidates are not a shortlist" in draft
+    assert "TODO" not in draft
+    assert "TBD" not in draft

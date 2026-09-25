@@ -61,6 +61,8 @@ A resort assignment is not automatically a municipality assignment.
 - Reproducible chapter drafts now translate the validated outputs into a methods chapter, results chapter, and discussion/limitations chapter. They retain zero causal treatments, controls, uplift predictions, recommendations and composite scores by construction; verified author-year methodological citations are inserted, while university-style bibliography formatting and thesis-template integration remain editorial tasks. See the [methods](reports/43_THESIS_METHODS_DRAFT.md), [results](reports/44_THESIS_RESULTS_DRAFT.md), and [discussion/limitations](reports/45_THESIS_DISCUSSION_LIMITATIONS_DRAFT.md) drafts.
 - A claim-to-source citation map connects 21 central chapter claims to 62 registered provenance records. Fifty-nine are external official/scientific sources with recorded URLs and three are explicitly internal lineage entries. Seven peer-reviewed DOI-identified articles close all three methodological claim groups without changing the failed project-specific causal gates. See [the citation map](reports/46_THESIS_CITATION_MAP.md) and [methodological literature register](reports/47_METHODOLOGICAL_LITERATURE.md).
 - Four deterministic stable-ID cases illustrate distinct uncertainty states: complete aggregation stability, segment sensitivity, treated-support sensitivity and strong extrapolation. Selection is by declared category and ascending identifier, never by opportunity signal or managerial merit; all recommendation and causal fields remain empty/false. See [the candidate uncertainty appendix](reports/48_CANDIDATE_UNCERTAINTY_EXAMPLES.md).
+- A final methodological report answers all 18 mission questions with explicit denominators and evidence boundaries, accompanied by a concise [executive summary](reports/EXECUTIVE_SUMMARY.md). See [the complete question-by-question report](reports/49_FINAL_METHODOLOGICAL_REPORT.md).
+- A single [working reading draft](reports/50_THESIS_READING_DRAFT.md) assembles the executive summary, methods, results, discussion, 18-question audit, candidate cases and source guide. It is a clear content-review version, not final university typesetting.
 - GitHub synchronization is configured: `main` tracks `origin/main` at `https://github.com/Chocaklick/Master-thesis-Magic-pass.git`.
 
 See [PROJECT_STATE.md](PROJECT_STATE.md) for the authoritative current state and [logs/research_journal.md](logs/research_journal.md) for the chronological record.
@@ -119,7 +121,7 @@ With the original files available under ignored `data_raw/` and the previously c
 
 To check or collect configured official evidence before rebuilding, add `--with-collection`. The collector reuses checksum-verified cached responses and logs every success or failure. The default pipeline performs no network access.
 
-The run ends with the automated test suite. Main numbered reports currently run through `reports/30_NATIONAL_ROAD_PROXIMITY_CONTEXT.md`, plus `reports/model_feasibility_report.md`.
+The run ends with the automated test suite. Main numbered reports currently run through `reports/50_THESIS_READING_DRAFT.md`, plus `reports/model_feasibility_report.md` and `reports/EXECUTIVE_SUMMARY.md`.
 
 ## Data conventions
 

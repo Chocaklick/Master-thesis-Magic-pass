@@ -1,0 +1,14 @@
+{
+  "analysis_version": "path_c_v0_31",
+  "output": "reports/50_THESIS_READING_DRAFT.md",
+  "assembled_sections": 8,
+  "mission_questions_included": 18,
+  "candidate_examples_included": 4,
+  "registered_sources_linked": 62,
+  "approximate_word_count": 6322,
+  "predicted_uplift_values": 0,
+  "recommendations_issued": 0,
+  "composite_scores": 0,
+  "causal_interpretation_approvals": 0,
+  "interpretation": "style_neutral_reading_draft_for_review_not_final_typesetting"
+}

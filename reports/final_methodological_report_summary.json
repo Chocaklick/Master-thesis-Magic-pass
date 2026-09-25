@@ -1,0 +1,17 @@
+{
+  "analysis_version": "path_c_v0_31",
+  "questions_answered": 18,
+  "final_classification": "exploratory_and_decision_support_not_predictive_or_causal",
+  "resort_listings": 271,
+  "linked_lift_clusters": 162,
+  "official_current_magic_destinations": 95,
+  "reviewed_destination_units": 14,
+  "units_with_24_pre_and_post_months": 7,
+  "causal_treatments_approved": 0,
+  "causal_controls_approved": 0,
+  "candidate_clusters": 104,
+  "recommendations_issued": 0,
+  "composite_scores": 0,
+  "causal_interpretation_approvals": 0,
+  "interpretation": "mission_required_final_methodological_answers_with_explicit_entity_denominators_and_guardrails"
+}
