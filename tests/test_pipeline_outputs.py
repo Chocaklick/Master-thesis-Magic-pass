@@ -2371,3 +2371,40 @@ def test_thesis_results_synthesis_preserves_checkpoint_6_guardrails() -> None:
     assert "Claims the thesis must not make" in report
     assert figure.exists()
     assert figure.stat().st_size > 10_000
+
+
+def test_thesis_chapter_drafts_use_validated_noncausal_architecture() -> None:
+    summary = json.loads(
+        (ROOT / "reports/thesis_chapter_drafts_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    assert summary["analysis_version"] == "path_c_v0_31"
+    assert summary["approved_causal_treatments"] == 0
+    assert summary["approved_causal_controls"] == 0
+    assert summary["predicted_uplift_values"] == 0
+    assert summary["recommendations_issued"] == 0
+    assert summary["composite_scores"] == 0
+    assert summary["causal_interpretation_approvals"] == 0
+    expected = {
+        "reports/43_THESIS_METHODS_DRAFT.md",
+        "reports/44_THESIS_RESULTS_DRAFT.md",
+        "reports/45_THESIS_DISCUSSION_LIMITATIONS_DRAFT.md",
+    }
+    assert set(summary["chapter_drafts"]) == expected
+    for relative_path in expected:
+        text = (ROOT / relative_path).read_text(encoding="utf-8")
+        assert len(text) > 5_000
+    methods = (ROOT / "reports/43_THESIS_METHODS_DRAFT.md").read_text(
+        encoding="utf-8"
+    )
+    results = (ROOT / "reports/44_THESIS_RESULTS_DRAFT.md").read_text(
+        encoding="utf-8"
+    )
+    discussion = (
+        ROOT / "reports/45_THESIS_DISCUSSION_LIMITATIONS_DRAFT.md"
+    ).read_text(encoding="utf-8")
+    assert "zero treatments and zero controls were approved" in methods
+    assert "does not report a Magic Pass treatment effect" in results
+    assert "not causal or predictive" in discussion

@@ -1,0 +1,15 @@
+{
+  "analysis_version": "path_c_v0_31",
+  "chapter_drafts": [
+    "reports/43_THESIS_METHODS_DRAFT.md",
+    "reports/44_THESIS_RESULTS_DRAFT.md",
+    "reports/45_THESIS_DISCUSSION_LIMITATIONS_DRAFT.md"
+  ],
+  "approved_causal_treatments": 0,
+  "approved_causal_controls": 0,
+  "predicted_uplift_values": 0,
+  "recommendations_issued": 0,
+  "composite_scores": 0,
+  "causal_interpretation_approvals": 0,
+  "interpretation": "thesis_ready_drafts_from_validated_path_c_outputs_not_final_citations_or_causal_claims"
+}
