@@ -544,5 +544,3 @@ The detailed insertion notes and internal validation artifacts are in `reports/t
 - Temporal scope: 2026-01-01–2026-01-01
 - Confidence: high for current boundaries; qualified for historical outcome alignment
 - Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
-
-

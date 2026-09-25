@@ -373,7 +373,7 @@ The detailed insertion notes and internal validation artifacts are in `reports/t
 {''.join(source_sections)}
 """
     (ROOT / "reports/46_THESIS_CITATION_MAP.md").write_text(
-        report, encoding="utf-8"
+        report.rstrip() + "\n", encoding="utf-8"
     )
 
     summary = {
