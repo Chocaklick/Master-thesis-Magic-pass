@@ -499,6 +499,20 @@
     "description": "Official Brunni winter 2021/2022 tariff brochure documenting a 14-area Schneepass Zentralschweiz winter product and a distinct SchneepassPlus with winter and summer access; full roster and area-specific summer coverage require document-level verification"
   },
   {
+    "source_id": "SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_ROSTER",
+    "url": "https://web.archive.org/web/20221130112850id_/https://www.schneepasszentralschweiz.ch/facts_figures/skigebiete/",
+    "suffix": "html",
+    "organisation": "Transportunternehmungen Zentralschweiz (TUZ; official page preserved by the Internet Archive)",
+    "description": "Official Schneepass Zentralschweiz area page captured on 2022-11-30, naming 15 included ski areas and their 2022/2023 operating dates"
+  },
+  {
+    "source_id": "SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_SUMMER_ROSTER",
+    "url": "https://web.archive.org/web/20221130112850id_/https://www.schneepasszentralschweiz.ch/facts_figures/sommergebiete/",
+    "suffix": "html",
+    "organisation": "Transportunternehmungen Zentralschweiz (TUZ; official page preserved by the Internet Archive)",
+    "description": "Official SchneepassPlus page captured on 2022-11-30, documenting 13 summer areas and 2022/2023 winter-and-summer validity from 2022-10-01 through 2023-09-30"
+  },
+  {
     "source_id": "SCHNEEPASS_ZENTRALSCHWEIZ_2023_24_MEDIA_KIT",
     "url": "https://www.schneepasszentralschweiz.ch/medien/dokumente/Medienmappe%20Schneepass%20Zentralschweiz_2023_2024.pdf",
     "suffix": "pdf",

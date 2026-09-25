@@ -499,11 +499,11 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Contents and relevance:** Qualified dated Top4, Meilenweiss, Schneepass Zentralschweiz, tiered TopCard and conservative SnowPass Graubünden positive-presence context at area, product-listing-season and preserved lift-cluster levels
 - **Producer:** Master thesis analytical pipeline
 - **Exact URL:** Not documented.
-- **Access and retrieval date:** Versioned deterministic Python expansion of eight Top4 seasons, three bounded Meilenweiss seasons, three bounded Schneepass seasons, three tiered TopCard seasons and three conservative SnowPass Graubünden seasons with explicit stable resort-ID links; unknown date.
+- **Access and retrieval date:** Versioned deterministic Python expansion of eight Top4 seasons, three bounded Meilenweiss seasons, four bounded Schneepass seasons, three tiered TopCard seasons and three conservative SnowPass Graubünden seasons with explicit stable resort-ID links; unknown date.
 - **Variables:** historical_competing_pass_area_season|documented_product_listing_season_link|winter_access_tier|product_level_summer_inclusion|area_specific_summer_access|cluster_historical_pass_context
-- **Transformations:** Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss, 31 Schneepass, 11 TopCard and 18 SnowPass Graubünden area-season rows; join stable listing IDs; separate unlimited core access from limited partners and area-specific summer access from product-level statements; aggregate positive presence without converting non-links into absence
-- **Coverage:** official pass area, supplied resort listing and linked lift cluster; twenty product-seasons across eight winter seasons from 2017/2018 through 2024/2025; 2017/2018 to 2024/2025.
-- **Limitations:** Only five partially reconstructed products are covered; evidence scope and benefit tiers differ across products and seasons; the 2022/2023 Schneepass season is not interpolated; the unnamed 2018/2019 SnowPass roster is not backfilled and its detailed 2019/2020 validity PDF remains unavailable; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring
+- **Transformations:** Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss, 46 Schneepass, 11 TopCard and 18 SnowPass Graubünden area-season rows; join stable listing IDs; separate unlimited core access from limited partners and area-specific summer access from product-level statements; aggregate positive presence without converting non-links into absence
+- **Coverage:** official pass area, supplied resort listing and linked lift cluster; twenty-one product-seasons across eight winter seasons from 2017/2018 through 2024/2025; 2017/2018 to 2024/2025.
+- **Limitations:** Only five partially reconstructed products are covered; evidence scope and benefit tiers differ across products and seasons; the recovered 2022/2023 Schneepass roster is season-specific official evidence rather than interpolation; the unnamed 2018/2019 SnowPass roster is not backfilled and its detailed 2019/2020 validity PDF remains unavailable; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring
 - **Local raw file:** `config/competing_pass_historical_top4.json|config/competing_pass_historical_meilenweiss.json|config/competing_pass_historical_schneepass_zentralschweiz.json|config/competing_pass_historical_topcard.json|config/competing_pass_historical_snowpass_graubuenden.json`.
 
 ## DERIVED_MAGIC_ANNUAL_OFFERING — Annual Magic Pass season-offering review
@@ -1657,6 +1657,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** named TopCard core/partner areas and major Graubünden ski areas / supplied resort listing links; winter season; 2017/2018 to 2019/2020.
 - **Limitations:** TopCard core and limited partner access are kept separate; Engelberg-Titlis has three visits shared between summer and winter. The SnowPass figure names major comparison areas but is paired with the archived official all-canton statement; it is not treated as a complete small-lift roster
 - **Local raw file:** `data_external/source_evidence/SBS_PRICING_STUDY_2020_TOPCARD_20260925T001235Z.pdf`.
+
+## SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_ROSTER — Archived official Schneepass Zentralschweiz 2022/2023 winter-area page
+
+- **Contents and relevance:** Official archived product page naming all 15 included winter areas and displaying their 2022/2023 operating dates
+- **Producer:** Transportunternehmungen Zentralschweiz (TUZ; official page preserved by the Internet Archive)
+- **Exact URL:** https://web.archive.org/web/20221130112850id_/https://www.schneepasszentralschweiz.ch/facts_figures/skigebiete/
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-25T10:26:43.614852+00:00.
+- **Variables:** schneepass_complete_winter_roster|winter_access|product_winter_destination_count|season_specific_operating_dates
+- **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
+- **Coverage:** named Central Swiss pass area / supplied resort listing link; winter season; 2022/2023 to 2022/2023.
+- **Limitations:** The headline and 15 named area entries support the complete winter roster; the separate additional-discount entry for other Central Swiss areas is not treated as included pass access
+- **Local raw file:** `data_external/source_evidence/SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_ROSTER_20260925T102643Z.html`.
+
+## SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_SUMMER_ROSTER — Archived official SchneepassPlus 2022/2023 summer-area page
+
+- **Contents and relevance:** Official archived product page documenting a distinct 15-winter/13-summer SchneepassPlus valid from 2022-10-01 through 2023-09-30
+- **Producer:** Transportunternehmungen Zentralschweiz (TUZ; official page preserved by the Internet Archive)
+- **Exact URL:** https://web.archive.org/web/20221130112850id_/https://www.schneepasszentralschweiz.ch/facts_figures/sommergebiete/
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-25T10:29:03.414570+00:00.
+- **Variables:** annual_pass_summer_inclusion|product_summer_destination_count|annual_pass_validity
+- **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
+- **Coverage:** Central Swiss pass product-level summer scope; winter season; 2022/2023 to 2023.
+- **Limitations:** The 13-area aggregate and annual validity are explicit, but the product-level statement is not widened into area-specific summer rights
+- **Local raw file:** `data_external/source_evidence/SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_SUMMER_ROSTER_20260925T102903Z.html`.
 
 ## SCHNEEPASS_ZENTRALSCHWEIZ_2023_24_MEDIA_KIT — Official Schneepass Zentralschweiz 2023/2024 media kit
 

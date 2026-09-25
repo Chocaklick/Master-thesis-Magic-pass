@@ -66,9 +66,15 @@ EXPECTED_MEILENWEISS_AREA_COUNTS = {
     "2020/2021": 1,
     "2021/2022": 16,
 }
-EXPECTED_SCHNEEPASS_SEASONS = ["2021/2022", "2023/2024", "2024/2025"]
+EXPECTED_SCHNEEPASS_SEASONS = [
+    "2021/2022",
+    "2022/2023",
+    "2023/2024",
+    "2024/2025",
+]
 EXPECTED_SCHNEEPASS_AREA_COUNTS = {
     "2021/2022": 1,
+    "2022/2023": 15,
     "2023/2024": 15,
     "2024/2025": 15,
 }
@@ -96,6 +102,8 @@ EXPECTED_SOURCE_HOSTS = {
     "MALBUN_MEILENWEISS_2021_22_WINTER_BROCHURE": "bergbahnen.li",
     "PIZOL_ANNUAL_REPORT_2018_19": "pizol.com",
     "BRUNNI_SCHNEEPASS_ZENTRALSCHWEIZ_2021_22_BROCHURE": "brunni.ch",
+    "SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_ROSTER": "web.archive.org",
+    "SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_SUMMER_ROSTER": "web.archive.org",
     "SCHNEEPASS_ZENTRALSCHWEIZ_2023_24_MEDIA_KIT": "schneepasszentralschweiz.ch",
     "SCHNEEPASS_ZENTRALSCHWEIZ_2024_25_MEDIA_KIT": "schneepasszentralschweiz.ch",
     "SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18": "samnaun-engadin.ch",
@@ -107,7 +115,7 @@ EXPECTED_SOURCE_HOSTS = {
 }
 INTERPRETATION = (
     "dated_top4_2017_18_to_2024_25_meilenweiss_2019_20_to_2021_22_and_"
-    "schneepass_zentralschweiz_2021_22_2023_24_2024_25_plus_topcard_"
+    "schneepass_zentralschweiz_2021_22_to_2024_25_plus_topcard_"
     "2017_18_to_2019_20_tiered_plus_snowpass_graubuenden_2017_18_to_"
     "2019_20_conservative_"
     "positive_presence_evidence_not_complete_historical_pass_market_absence_"
@@ -255,6 +263,31 @@ def validate_sources(
             "14skigebieten",
             "schneepasspluszentralschweiz",
             "unlimitierteswinterundsommersportvergnugen",
+        ],
+        "SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_ROSTER": [
+            "15schneesportgebieteuber600pistenkilometer1abo",
+            "sattelhochstuckliag",
+            "mythenregion",
+            "stoosbahnenag",
+            "klewenalpstockhutte",
+            "andermattsedrundisentis",
+            "engelbergtitlis",
+            "brunnibahnenengelberg",
+            "sportbahnenmelchseefrutt",
+            "rigibahnenag",
+            "bergbahnenmeiringenhaslibergag",
+            "morlialp",
+            "bergbahnensorenbergag",
+            "sportbahnenmarbacheggag",
+            "seilbahnenairolopescium",
+            "skigebietrothenthurmneusell",
+            "0312202212032023",
+        ],
+        "SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_SUMMER_ROSTER": [
+            "schneepassplusdasabofurdenwinterunddensommer",
+            "15wintersportgebiete13sommersportgebiete1abo",
+            "13sommergebietewartendaraufentdecktzuwerden",
+            "aboschneepassplus22231102022bis3092023",
         ],
         "SCHNEEPASS_ZENTRALSCHWEIZ_2023_24_MEDIA_KIT": [
             "schneesportregionzentralschweiz20232024",
@@ -658,8 +691,8 @@ def build_area_seasons(
                 }
             )
     area_seasons = pd.DataFrame(records)
-    if len(area_seasons) != 121:
-        raise ValueError("Expected 121 historical pass area-season rows")
+    if len(area_seasons) != 136:
+        raise ValueError("Expected 136 historical pass area-season rows")
     if area_seasons.duplicated(
         ["competing_pass_id", "season", "official_area_label"]
     ).any():
@@ -776,7 +809,7 @@ def build_resort_seasons(
                 }
             )
     history = pd.DataFrame(records)
-    if len(history) != len(resorts) * 20:
+    if len(history) != len(resorts) * 21:
         raise ValueError("Historical product-listing-season grain changed")
     if history.duplicated(["competing_pass_id", "resort_id", "season"]).any():
         raise ValueError("Duplicate historical product-listing-season row")
@@ -785,7 +818,7 @@ def build_resort_seasons(
     ].sum()
     if links_by_product.to_dict() != {
         "meilenweiss": 26,
-        "schneepass_zentralschweiz": 37,
+        "schneepass_zentralschweiz": 55,
         "snowpass_graubuenden": 21,
         "top4": 40,
         "topcard": 20,
@@ -848,8 +881,8 @@ def build_cluster_context(
                 "candidate_for_path_c": feature_lookup.loc[cluster_id, "candidate_for_path_c"],
                 "historical_competing_pass_products_reviewed": 5,
                 "historical_competing_pass_unique_seasons_reviewed": 8,
-                "historical_competing_pass_product_seasons_reviewed": 20,
-                "historical_competing_pass_area_seasons_reviewed": 121,
+                "historical_competing_pass_product_seasons_reviewed": 21,
+                "historical_competing_pass_area_seasons_reviewed": 136,
                 "historical_competing_pass_cluster_listing_count": listing_count,
                 "historical_competing_pass_linked_listing_count": linked_listing_count,
                 "historical_competing_pass_linked_listing_share": linked_listing_count / listing_count,
@@ -899,7 +932,7 @@ def build_cluster_context(
                 "historical_competing_pass_temporal_scope": (
                     "top4_2017_2018_to_2024_2025_and_meilenweiss_positive_"
                     "evidence_2019_2020_to_2021_2022_plus_schneepass_"
-                    "zentralschweiz_2021_2022_2023_2024_2024_2025_plus_"
+                    "zentralschweiz_2021_2022_to_2024_2025_plus_"
                     "tiered_topcard_2017_2018_to_2019_2020_plus_snowpass_"
                     "graubuenden_2017_2018_to_2019_2020_conservative"
                 ),
@@ -983,7 +1016,7 @@ def write_report(summary: dict[str, object]) -> None:
 
 ## Evidence recovered
 
-The checksum-pinned Top4 reconstruction remains unchanged: four official regions over eight consecutive seasons from 2017/2018 through 2024/2025. Three official operator PDFs retain the bounded Meilenweiss evidence for 2019/2020, 2020/2021 and 2021/2022. Three official PDFs retain Schneepass Zentralschweiz evidence for 2021/2022, 2023/2024 and 2024/2025 without interpolating the missing 2022/2023 roster.
+The checksum-pinned Top4 reconstruction remains unchanged: four official regions over eight consecutive seasons from 2017/2018 through 2024/2025. Three official operator PDFs retain the bounded Meilenweiss evidence for 2019/2020, 2020/2021 and 2021/2022. Schneepass Zentralschweiz now covers four consecutive seasons from 2021/2022 through 2024/2025: the previously missing 2022/2023 season is recovered from checksum-pinned official winter and summer pages captured on 30 November 2022. The archived winter page supplies the complete 15-area roster and the separate SchneepassPlus page documents a 13-area summer product valid through 30 September 2023; the product-wide summer statement is not widened into area-specific rights.
 
 Three official TopCard sources add 2017/2018 through 2019/2020. Samnaun/Ischgl, Davos-Klosters and Flims-Laax form the 2017/2018 core. Arosa Lenzerheide replaces Samnaun/Ischgl in 2018/2019. The three core areas remain unlimited, while the additional partner benefit is kept in a separate tier: three freely selectable days in Engadin St. Moritz/Oberengadin in 2018/2019, replaced by three visits at Engelberg-Titlis from 2019/2020. The supplied Schatzalp listing is not inferred from the broader Davos-Klosters label.
 
@@ -1003,7 +1036,7 @@ Malbun in Liechtenstein is not linked to the supplied Buchserberg-Malbun listing
 
 ## Decision limit
 
-Five products and twenty product-seasons still do not reconstruct the full historical multi-resort-pass market. The missing 2022/2023 Schneepass Zentralschweiz season is not interpolated; the unnamed 2018/2019 SnowPass Graubünden roster is not backfilled; non-links do not verify absence; evidence scopes differ by season; several observations postdate Magic Pass treatment anchors; and benefit intensity and prices are not harmonised. Historical-market-absence, pre-treatment, causal, recommendation and composite-score approvals remain false. The result is qualified context, not a ranking input.
+Five products and twenty-one product-seasons still do not reconstruct the full historical multi-resort-pass market. The recovered 2022/2023 Schneepass Zentralschweiz roster is season-specific official evidence rather than an adjacent-season interpolation; the unnamed 2018/2019 SnowPass Graubünden roster is not backfilled; non-links do not verify absence; evidence scopes differ by season; several observations postdate Magic Pass treatment anchors; and benefit intensity and prices are not harmonised. Historical-market-absence, pre-treatment, causal, recommendation and composite-score approvals remain false. The result is qualified context, not a ranking input.
 
 ## Outputs
 
@@ -1126,7 +1159,7 @@ def main() -> None:
     summary = {
         "analysis_version": analysis_version,
         "reviewed_historical_products": 5,
-        "reviewed_product_seasons": 20,
+        "reviewed_product_seasons": 21,
         "reviewed_unique_winter_seasons": 8,
         "season_start": EXPECTED_TOP4_SEASONS[0],
         "season_end": EXPECTED_TOP4_SEASONS[-1],
@@ -1241,12 +1274,12 @@ def main() -> None:
     expected_summary = {
         "top4_area_season_rows": 32,
         "meilenweiss_area_season_rows": 29,
-        "schneepass_zentralschweiz_area_season_rows": 31,
+        "schneepass_zentralschweiz_area_season_rows": 46,
         "topcard_area_season_rows": 11,
         "snowpass_graubuenden_area_season_rows": 18,
-        "area_season_rows": 121,
-        "resort_product_season_rows": 5420,
-        "documented_listing_season_links": 144,
+        "area_season_rows": 136,
+        "resort_product_season_rows": 5691,
+        "documented_listing_season_links": 162,
         "documented_topcard_listing_season_links": 20,
         "documented_topcard_unlimited_core_listing_season_links": 18,
         "documented_topcard_limited_partner_listing_season_links": 2,

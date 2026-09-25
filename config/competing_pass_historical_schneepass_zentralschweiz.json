@@ -1,9 +1,11 @@
 {
-  "analysis_version": "path_c_v0_28",
+  "analysis_version": "path_c_v0_29",
   "competing_pass_id": "schneepass_zentralschweiz",
   "competing_pass_name": "Schneepass Zentralschweiz",
   "source_sha256_by_id": {
     "BRUNNI_SCHNEEPASS_ZENTRALSCHWEIZ_2021_22_BROCHURE": "d7215f403b9464323155b11420fc5c914e3754bdb46ee3b78bf47242d50cf900",
+    "SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_ROSTER": "98fe58ddf87e1f6c35bf95c7f118e0cbb3933421d787605b350af2d03194ef75",
+    "SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_SUMMER_ROSTER": "0334cad5cdb1c6166224063349c302712a28250023d6fd2f0a7875bfb21fa36f",
     "SCHNEEPASS_ZENTRALSCHWEIZ_2023_24_MEDIA_KIT": "2d9219df97d264c39f4cfe6d9d69dbcd6e471bb2f0f6e9dd8d3d2664fe3923e2",
     "SCHNEEPASS_ZENTRALSCHWEIZ_2024_25_MEDIA_KIT": "e2a54a9e59228ce27abb080c6c15394ff4ec5ca4e9251bb90f66c5ed6f1a824d"
   },
@@ -24,6 +26,36 @@
           "mapping_basis": "official_host_operator_brochure_positive_product_offer",
           "scope_note": "The official Brunni tariff brochure sells the 2021/2022 Schneepass and SchneepassPlus and states 14 winter areas. It does not name the full roster, so only the host area is linked."
         }
+      ]
+    },
+    {
+      "season": "2022/2023",
+      "source_ids": [
+        "SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_ROSTER",
+        "SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_SUMMER_ROSTER"
+      ],
+      "evidence_scope": "complete_official_archived_roster_with_15_winter_areas_and_separate_13_area_summer_product_scope",
+      "product_winter_destination_count": 15,
+      "product_summer_destination_count": 13,
+      "annual_pass_following_summer_season": "2023",
+      "annual_pass_following_summer_included": true,
+      "season_only_pass_following_summer_included": false,
+      "areas": [
+        {"official_area_label": "Airolo-Pesciüm", "linked_resort_ids": ["airolo_pescium_airolo_pescium"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "The archived official roster names Airolo and explicitly describes Seilbahnen Airolo-Pesciüm; the separate supplied Airolo-Lüina listing is not inferred covered."},
+        {"official_area_label": "Andermatt + Sedrun + Disentis", "linked_resort_ids": ["andermatt_oberalp_sedrun", "disentis", "gemsstock_andermatt_gemsstock", "valtgeva_druni_kidsarena_sedrun"], "mapping_basis": "official_broad_area_label_with_reviewed_components", "scope_note": "Four supplied rows are reviewed components of the named combined region."},
+        {"official_area_label": "Engelberg-Brunni", "linked_resort_ids": ["brunni_brunni_bahnen_engelberg"], "mapping_basis": "exact_operator_area_correspondence", "scope_note": "The archived official roster names Brunni-Bahnen Engelberg; Engelberg-Titlis is a separate official area."},
+        {"official_area_label": "Engelberg-Titlis", "linked_resort_ids": ["engelberg_titlis"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Exact supplied area-name correspondence after punctuation normalisation."},
+        {"official_area_label": "Klewenalp-Stockhütte", "linked_resort_ids": ["klewenalp_stockhutte"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Exact supplied area-name correspondence after punctuation normalisation."},
+        {"official_area_label": "Marbachegg", "linked_resort_ids": ["marchbachegg_marbach_marbachegg"], "mapping_basis": "reviewed_area_component_name", "scope_note": "The supplied row contains the named Marbach-Marbachegg locality; Bumbach in the same cluster is not inferred covered."},
+        {"official_area_label": "Meiringen-Hasliberg", "linked_resort_ids": ["meiringen_hasliberg"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Exact supplied area-name correspondence."},
+        {"official_area_label": "Melchsee-Frutt", "linked_resort_ids": ["melchsee_frutt"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Exact supplied area-name correspondence."},
+        {"official_area_label": "Mörlialp", "linked_resort_ids": ["morlialp"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Exact supplied area-name correspondence after diacritic normalisation."},
+        {"official_area_label": "Mythenregion", "linked_resort_ids": ["mythenregion"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Only the exact Mythenregion listing is linked within its mixed cluster."},
+        {"official_area_label": "Rothenthurm-Neusell", "linked_resort_ids": ["neusell"], "mapping_basis": "conservative_official_area_to_supplied_listing", "scope_note": "The archived official Rothenthurm-Neusell area is linked only to the exact Neusell listing."},
+        {"official_area_label": "Rigi", "linked_resort_ids": ["rigi"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Only the exact Rigi listing is linked; Seebodenalp in the same cluster is not inferred covered."},
+        {"official_area_label": "Sattel-Hochstuckli", "linked_resort_ids": ["hochstuckli_sattel_hochstuckli"], "mapping_basis": "conservative_exact_name_component_link", "scope_note": "Only the matching supplied listing is linked; other mixed-cluster listings do not inherit the link."},
+        {"official_area_label": "Sörenberg", "linked_resort_ids": ["sorenberg"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Exact supplied area-name correspondence after diacritic normalisation."},
+        {"official_area_label": "Stoos", "linked_resort_ids": ["stoos"], "mapping_basis": "exact_official_area_to_supplied_listing", "scope_note": "Only the exact Stoos listing is linked within its mixed cluster."}
       ]
     },
     {
@@ -82,7 +114,7 @@
     }
   ],
   "summer_interpretation": "Schneepass is a winter-only product and SchneepassPlus is the distinct winter-and-summer product. Product-level summer inclusion and aggregate summer-area counts do not establish summer access for every named winter area.",
-  "nonlink_interpretation": "not_linked_in_reviewed_top4_meilenweiss_or_schneepass_positive_evidence_not_verified_absence_from_historical_competing_passes",
+  "nonlink_interpretation": "not_linked_in_reviewed_historical_competing_pass_positive_evidence_not_verified_absence_from_historical_competing_passes",
   "historical_market_absence_verified": false,
   "pre_treatment_feature_approved": false,
   "causal_covariate_approved": false,
