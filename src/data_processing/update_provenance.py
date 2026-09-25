@@ -111,6 +111,7 @@ def main() -> None:
             "SCHNEEPASS_ZENTRALSCHWEIZ_2024_25_MEDIA_KIT",
             "SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18",
             "BBGR_ANNUAL_2018_19",
+            "CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19",
             "SBS_PRICING_STUDY_2020_TOPCARD",
             "GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE",
         ]
@@ -1129,6 +1130,18 @@ def main() -> None:
             "verification": "Pages 12-13 rendered and visually reviewed; Arosa replacement, three freely selectable Oberengadin days, SnowPass 2018/2019 sales and 8 large/11 medium/31 small beneficiary counts checked",
             "processed_file": "reports/donor_external_shock_evidence.csv|data_processed/donor_shortlist_final_audit.csv|config/competing_pass_historical_topcard.json|config/competing_pass_historical_snowpass_graubuenden.json|data_processed/competing_pass_historical_area_seasons.csv|data_processed/resort_competing_pass_history.csv|data_processed/path_c_cluster_historical_competing_pass_context.csv|data_processed/magic_pass_decision_support.csv|reports/41_HISTORICAL_COMPETING_PASS_CONTEXT.md",
         },
+        "CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19": {
+            "dataset": "Official joint Corvatsch and Diavolezza Lagalb annual report 2018/2019",
+            "description": "Official joint operator report recording that the Engadin would retain SnowPass Graubünden for frequent skiers",
+            "variables": "snowpass_graubuenden_positive_host_operator_links|winter_access|joint_operator_scope",
+            "start": "2018/2019",
+            "end": "2018/2019",
+            "geography": "Corvatsch and Diavolezza Lagalb host operators / exact supplied resort listings",
+            "access": "Public official joint operator PDF",
+            "quality": "The report names the two jointly governed operators and the Engadin decision to retain SnowPass; links are restricted to their exact host listings and are not widened to the rest of Engadin",
+            "confidence": "high for the two reporting operators' positive SnowPass context; incomplete for the wider 2018/2019 roster",
+            "verification": "PDF pages 3 and 5 visually reviewed; Engadin SnowPass continuation wording, both operator names, shared governance and statement that the report applies to both companies checked",
+        },
         "SBS_PRICING_STUDY_2020_TOPCARD": {
             "dataset": "Official Seilbahnen Schweiz study of new pricing models",
             "description": "Official industry study documenting TopCard core areas and benefit changes, plus SnowPass Graubünden's winter-only unlimited modality and 17 named major Graubünden comparison areas",
@@ -1196,10 +1209,10 @@ def main() -> None:
         temporal_start="2017/2018",
         temporal_end="2024/2025",
         unit="identifiers, seasons, counts, shares and protected flags",
-        transformation_applied="Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss, 46 Schneepass, 11 TopCard and 18 SnowPass Graubünden area-season rows; join stable listing IDs; separate unlimited core access from limited partners and area-specific summer access from product-level statements; aggregate positive presence without converting non-links into absence",
-        quality_notes="Only five partially reconstructed products are covered; evidence scope and benefit tiers differ across products and seasons; the recovered 2022/2023 Schneepass roster is season-specific official evidence rather than interpolation; the unnamed 2018/2019 SnowPass roster is not backfilled and its detailed 2019/2020 validity PDF remains unavailable; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring",
+        transformation_applied="Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss, 46 Schneepass, 11 TopCard and 20 SnowPass Graubünden area-season rows; join stable listing IDs; separate unlimited core access from limited partners and area-specific summer access from product-level statements; aggregate positive presence without converting non-links into absence",
+        quality_notes="Only five partially reconstructed products are covered; evidence scope and benefit tiers differ across products and seasons; the recovered 2022/2023 Schneepass roster is season-specific official evidence rather than interpolation; two official joint-report host links do not reconstruct the unnamed remainder of the 2018/2019 SnowPass roster, and its detailed 2019/2020 validity PDF remains unavailable; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring",
         confidence_level="high for reproducibility and documented positive links; incomplete historical market and summer-area coverage",
-        manual_verification="136 area-season rows, 5,691 product-listing-season rows, 162 positive links, 35 linked clusters and 28 linked candidates; Schneepass 2022/2023 adds 15 area rows and 18 positive links with product-level 13-area summer scope only; TopCard retains 18 unlimited-core versus two limited-partner listing-season links, while SnowPass adds 18 area rows and 21 positive links without summer inclusion; every market-absence/protected approval flag false",
+        manual_verification="138 area-season rows, 5,691 product-listing-season rows, 164 positive links, 37 linked clusters and 30 linked candidates; Schneepass 2022/2023 adds 15 area rows and 18 positive links with product-level 13-area summer scope only; TopCard retains 18 unlimited-core versus two limited-partner listing-season links, while SnowPass adds 20 area rows and 23 positive links without summer inclusion; every market-absence/protected approval flag false",
     ))
     rows.append(blank_source(
         "DERIVED_PATH_C_NETWORK_CONTEXT",

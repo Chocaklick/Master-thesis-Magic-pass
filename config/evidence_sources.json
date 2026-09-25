@@ -546,5 +546,12 @@
     "suffix": "html",
     "organisation": "Graubünden Ferien (official page preserved by the Internet Archive)",
     "description": "Official Graubünden Ferien SnowPass page captured on 2019-12-13, documenting 2019/2020 winter-only validity at all Graubünden mountain railways including Samnaun-Ischgl and Sedrun-Andermatt, subject to named concert-day and unresolved individual small-lift exclusions"
+  },
+  {
+    "source_id": "CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19",
+    "url": "https://www.corvatsch-diavolezza.ch/fileadmin/user_upload/corvatsch_diavolezza_lagalb/dokumente/gb_corvatsch_2018_19.pdf",
+    "suffix": "pdf",
+    "organisation": "Corvatsch AG and Diavolezza Lagalb AG",
+    "description": "Official joint 2018/2019 annual report documenting the two operators' shared governance and the Engadin decision to retain SnowPass Graubünden for frequent skiers"
   }
 ]

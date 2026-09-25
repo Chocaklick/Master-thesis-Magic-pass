@@ -471,7 +471,7 @@ def destination_outputs(
 
 def main() -> None:
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
-    if config["analysis_version"] != "path_c_v0_29":
+    if config["analysis_version"] != "path_c_v0_30":
         raise RuntimeError("Unexpected SPASS analysis version")
     metadata, netcdf_path = source_metadata(config)
     components, unit_by_resort, destination_names = reviewed_components()

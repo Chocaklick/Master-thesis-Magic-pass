@@ -1,5 +1,5 @@
 {
-  "analysis_version": "path_c_v0_29",
+  "analysis_version": "path_c_v0_30",
   "competing_pass_id": "snowpass_graubuenden",
   "competing_pass_name": "SnowPass Graubünden",
   "source_sha256_by_id": {
@@ -8,7 +8,8 @@
     "BBGR_ANNUAL_2018_19": "3e749bf84ef443184819a05ad423ed18598ee1315f3b480585d82d1feae83831",
     "BBGR_ANNUAL_2019_20": "f94830f0ee184bad82551802a4af94aa5164824b723b5bd06ee0e24c34f6c9a5",
     "SBS_PRICING_STUDY_2020_TOPCARD": "d493d8213439a78bef1505d4571c82d248d2fd88fd310da2b254305644727e45",
-    "GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE": "b95760051a0f1b2330dd2fd5e3ffd115360a68bb9c36e94e2d8af672b12d3adb"
+    "GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE": "b95760051a0f1b2330dd2fd5e3ffd115360a68bb9c36e94e2d8af672b12d3adb",
+    "CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19": "e8a7ffceb80ae64ef2979a9886d2ff7cd21fcfe1c3831181550ae0f2062b3dc3"
   },
   "seasons": [
     {
@@ -42,8 +43,11 @@
     },
     {
       "season": "2018/2019",
-      "source_ids": ["BBGR_ANNUAL_2018_19"],
-      "evidence_scope": "official_product_season_and_aggregate_operator_counts_without_named_area_roster",
+      "source_ids": [
+        "BBGR_ANNUAL_2018_19",
+        "CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19"
+      ],
+      "evidence_scope": "official_product_season_and_aggregate_operator_counts_plus_two_joint_report_host_operators_without_complete_named_roster",
       "product_winter_destination_count": null,
       "product_summer_destination_count": 0,
       "product_summer_season": null,
@@ -52,7 +56,30 @@
       "annual_pass_following_summer_season": null,
       "annual_pass_following_summer_included": null,
       "season_only_pass_following_summer_included": false,
-      "areas": []
+      "areas": [
+        {
+          "official_area_label": "Corvatsch - Furtschellas",
+          "linked_resort_ids": ["corvatsch_furtschellas"],
+          "mapping_basis": "official_joint_operator_report_engadin_snowpass_continuation_plus_exact_host_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The joint Corvatsch AG and Diavolezza Lagalb AG report records the Engadin decision to retain SnowPass Graubünden for frequent skiers. The evidence is linked only to the two reporting operators' exact supplied host listings, not to the wider Engadin roster."
+        },
+        {
+          "official_area_label": "Diavolezza - Lagalb",
+          "linked_resort_ids": ["diavolezza_lagalb"],
+          "mapping_basis": "official_joint_operator_report_engadin_snowpass_continuation_plus_exact_host_listing",
+          "winter_access_tier": "unlimited_winter_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_included_winter_only_product",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The joint Corvatsch AG and Diavolezza Lagalb AG report records the Engadin decision to retain SnowPass Graubünden for frequent skiers. The evidence is linked only to the two reporting operators' exact supplied host listings, not to the wider Engadin roster."
+        }
+      ]
     },
     {
       "season": "2019/2020",
@@ -267,7 +294,7 @@
     }
   ],
   "summer_interpretation": "SnowPass Graubünden is documented as a winter-season product. The official industry study explicitly states that summer was not included in 2019/2020; no summer access is inferred for any area or season.",
-  "roster_interpretation": "The 2017/2018 host link and 2019/2020 major-area links are positive evidence only. The 2018/2019 report gives aggregate participating-company counts but no names, so it creates no listing links. The unavailable 2019/2020 validity PDF and unresolved individual small-lift exclusions prevent a complete historical roster claim.",
+  "roster_interpretation": "The 2017/2018 Samnaun host link, two 2018/2019 joint-report host-operator links and 2019/2020 major-area links are positive evidence only. The 2018/2019 BBGR report gives aggregate participating-company counts without names; the separate joint Corvatsch and Diavolezza report supports only its two exact host listings, not the wider Engadin roster. The unavailable 2019/2020 validity PDF and unresolved individual small-lift exclusions prevent a complete historical roster claim.",
   "nonlink_interpretation": "not_linked_in_reviewed_snowpass_graubuenden_positive_evidence_not_verified_absence_or_exclusion",
   "historical_market_absence_verified": false,
   "pre_treatment_feature_approved": false,

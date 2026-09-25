@@ -91,7 +91,7 @@ EXPECTED_SNOWPASS_GRAUBUENDEN_SEASONS = [
 ]
 EXPECTED_SNOWPASS_GRAUBUENDEN_AREA_COUNTS = {
     "2017/2018": 1,
-    "2018/2019": 0,
+    "2018/2019": 2,
     "2019/2020": 17,
 }
 EXPECTED_SOURCE_HOSTS = {
@@ -112,6 +112,7 @@ EXPECTED_SOURCE_HOSTS = {
     "BBGR_ANNUAL_2019_20": "bbgr.ch",
     "SBS_PRICING_STUDY_2020_TOPCARD": "bbgr.ch",
     "GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE": "web.archive.org",
+    "CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19": "corvatsch-diavolezza.ch",
 }
 INTERPRETATION = (
     "dated_top4_2017_18_to_2024_25_meilenweiss_2019_20_to_2021_22_and_"
@@ -380,6 +381,13 @@ def validate_sources(
             "samnaunischgl",
             "ausgenommensindzudemeinzelnekleinskilifte",
             "tarifewintersaison20192020",
+        ],
+        "CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19": [
+            "berichtdesverwaltungsratesdercorvatschagunddiavolezzalagalbag",
+            "geschaftsjahr201819",
+            "dieserberichtdesverwaltungsratesbeziehtsichsomitaufbeidegesellschaften",
+            "dasengadinwerdekeinpartnervonsnowpasscardwerden",
+            "furvielskifahreramsnowpassgraubundenfesthalten",
         ],
     }
     for source_id, tokens in required.items():
@@ -691,8 +699,8 @@ def build_area_seasons(
                 }
             )
     area_seasons = pd.DataFrame(records)
-    if len(area_seasons) != 136:
-        raise ValueError("Expected 136 historical pass area-season rows")
+    if len(area_seasons) != 138:
+        raise ValueError("Expected 138 historical pass area-season rows")
     if area_seasons.duplicated(
         ["competing_pass_id", "season", "official_area_label"]
     ).any():
@@ -819,7 +827,7 @@ def build_resort_seasons(
     if links_by_product.to_dict() != {
         "meilenweiss": 26,
         "schneepass_zentralschweiz": 55,
-        "snowpass_graubuenden": 21,
+        "snowpass_graubuenden": 23,
         "top4": 40,
         "topcard": 20,
     }:
@@ -882,7 +890,7 @@ def build_cluster_context(
                 "historical_competing_pass_products_reviewed": 5,
                 "historical_competing_pass_unique_seasons_reviewed": 8,
                 "historical_competing_pass_product_seasons_reviewed": 21,
-                "historical_competing_pass_area_seasons_reviewed": 136,
+                "historical_competing_pass_area_seasons_reviewed": 138,
                 "historical_competing_pass_cluster_listing_count": listing_count,
                 "historical_competing_pass_linked_listing_count": linked_listing_count,
                 "historical_competing_pass_linked_listing_share": linked_listing_count / listing_count,
@@ -951,8 +959,8 @@ def build_cluster_context(
     context = pd.DataFrame(rows)
     if len(context) != 162 or not context["cluster_id"].is_unique:
         raise ValueError("Historical competing-pass context must preserve 162 clusters")
-    if int(context["historical_competing_pass_context_available"].sum()) != 35:
-        raise ValueError("Expected 35 lift clusters with documented historical links")
+    if int(context["historical_competing_pass_context_available"].sum()) != 37:
+        raise ValueError("Expected 37 lift clusters with documented historical links")
     if not context["historical_competing_pass_linked_listing_share"].between(0, 1).all():
         raise ValueError("Invalid historical competing-pass listing share")
     protected = [
@@ -1020,7 +1028,7 @@ The checksum-pinned Top4 reconstruction remains unchanged: four official regions
 
 Three official TopCard sources add 2017/2018 through 2019/2020. Samnaun/Ischgl, Davos-Klosters and Flims-Laax form the 2017/2018 core. Arosa Lenzerheide replaces Samnaun/Ischgl in 2018/2019. The three core areas remain unlimited, while the additional partner benefit is kept in a separate tier: three freely selectable days in Engadin St. Moritz/Oberengadin in 2018/2019, replaced by three visits at Engelberg-Titlis from 2019/2020. The supplied Schatzalp listing is not inferred from the broader Davos-Klosters label.
 
-SnowPass Graubünden is now separated from both TopCard and Schneepass Zentralschweiz. The official Samnaun tariff supports one exact 2017/2018 host-area link; the 2018/2019 BBGR report proves the product and aggregate company groups but names no areas, so it creates no listing links. For 2019/2020, an immutable capture of the official Graubünden Ferien page states winter-only validity at all Graubünden mountain railways including Samnaun-Ischgl and Sedrun-Andermatt, while the industry study independently names 17 major Graubünden areas. Those sources support **{summary['snowpass_graubuenden_area_season_rows']} conservative area-season rows** and **{summary['documented_snowpass_graubuenden_listing_season_links']} positive listing-season links**. The linked set is deliberately not called complete because the referenced detailed validity PDF is unavailable and individual small-lift exclusions remain unresolved.
+SnowPass Graubünden is now separated from both TopCard and Schneepass Zentralschweiz. The official Samnaun tariff supports one exact 2017/2018 host-area link. For 2018/2019, the BBGR report proves the product and aggregate company groups but names no operators; a separate joint annual report by Corvatsch AG and Diavolezza Lagalb AG records that the Engadin would retain SnowPass Graubünden for frequent skiers. Only the two exact host listings of those reporting operators are linked, not the wider Engadin roster. For 2019/2020, an immutable capture of the official Graubünden Ferien page states winter-only validity at all Graubünden mountain railways including Samnaun-Ischgl and Sedrun-Andermatt, while the industry study independently names 17 major Graubünden areas. Those sources support **{summary['snowpass_graubuenden_area_season_rows']} conservative area-season rows** and **{summary['documented_snowpass_graubuenden_listing_season_links']} positive listing-season links**. The linked set is deliberately not called complete because the 2018/2019 named roster and the referenced 2019/2020 detailed validity PDF remain unavailable, and individual small-lift exclusions remain unresolved.
 
 The combined output contains **{summary['area_season_rows']} area-season rows**, **{summary['resort_product_season_rows']} product-listing-season rows** and **{summary['documented_listing_season_links']} positive listing-season links**. These reach **{summary['clusters_with_documented_link']} lift clusters**, including **{summary['path_c_candidates_with_documented_link']} of {summary['path_c_candidates']}** apparent Path C candidates.
 
@@ -1036,7 +1044,7 @@ Malbun in Liechtenstein is not linked to the supplied Buchserberg-Malbun listing
 
 ## Decision limit
 
-Five products and twenty-one product-seasons still do not reconstruct the full historical multi-resort-pass market. The recovered 2022/2023 Schneepass Zentralschweiz roster is season-specific official evidence rather than an adjacent-season interpolation; the unnamed 2018/2019 SnowPass Graubünden roster is not backfilled; non-links do not verify absence; evidence scopes differ by season; several observations postdate Magic Pass treatment anchors; and benefit intensity and prices are not harmonised. Historical-market-absence, pre-treatment, causal, recommendation and composite-score approvals remain false. The result is qualified context, not a ranking input.
+Five products and twenty-one product-seasons still do not reconstruct the full historical multi-resort-pass market. The recovered 2022/2023 Schneepass Zentralschweiz roster is season-specific official evidence rather than an adjacent-season interpolation; the two source-specific 2018/2019 SnowPass Graubünden host links are not widened to the unnamed remainder of that season's roster; non-links do not verify absence; evidence scopes differ by season; several observations postdate Magic Pass treatment anchors; and benefit intensity and prices are not harmonised. Historical-market-absence, pre-treatment, causal, recommendation and composite-score approvals remain false. The result is qualified context, not a ranking input.
 
 ## Outputs
 
@@ -1276,19 +1284,19 @@ def main() -> None:
         "meilenweiss_area_season_rows": 29,
         "schneepass_zentralschweiz_area_season_rows": 46,
         "topcard_area_season_rows": 11,
-        "snowpass_graubuenden_area_season_rows": 18,
-        "area_season_rows": 136,
+        "snowpass_graubuenden_area_season_rows": 20,
+        "area_season_rows": 138,
         "resort_product_season_rows": 5691,
-        "documented_listing_season_links": 162,
+        "documented_listing_season_links": 164,
         "documented_topcard_listing_season_links": 20,
         "documented_topcard_unlimited_core_listing_season_links": 18,
         "documented_topcard_limited_partner_listing_season_links": 2,
-        "documented_snowpass_graubuenden_listing_season_links": 21,
-        "unique_supplied_listings_with_documented_link": 50,
-        "clusters_with_documented_link": 35,
-        "path_c_candidates_with_documented_link": 28,
+        "documented_snowpass_graubuenden_listing_season_links": 23,
+        "unique_supplied_listings_with_documented_link": 52,
+        "clusters_with_documented_link": 37,
+        "path_c_candidates_with_documented_link": 30,
         "path_c_candidate_partial_cluster_links": 11,
-        "path_c_candidate_all_cluster_listing_links": 17,
+        "path_c_candidate_all_cluster_listing_links": 19,
         "path_c_candidates_with_product_level_summer_inclusion": 19,
         "area_specific_summer_access_documented_rows": 10,
         "listing_specific_summer_access_documented_rows": 19,

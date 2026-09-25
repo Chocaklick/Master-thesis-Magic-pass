@@ -386,6 +386,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/CHATEAU_DOEX_LA_BRAYE_2018_20260921T220414Z.pdf`.
 
+## CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19 — Official joint Corvatsch and Diavolezza Lagalb annual report 2018/2019
+
+- **Contents and relevance:** Official joint operator report recording that the Engadin would retain SnowPass Graubünden for frequent skiers
+- **Producer:** Corvatsch AG and Diavolezza Lagalb AG
+- **Exact URL:** https://www.corvatsch-diavolezza.ch/fileadmin/user_upload/corvatsch_diavolezza_lagalb/dokumente/gb_corvatsch_2018_19.pdf
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-25T15:17:38.012092+00:00.
+- **Variables:** snowpass_graubuenden_positive_host_operator_links|winter_access|joint_operator_scope
+- **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
+- **Coverage:** Corvatsch and Diavolezza Lagalb host operators / exact supplied resort listings; winter season; 2018/2019 to 2018/2019.
+- **Limitations:** The report names the two jointly governed operators and the Engadin decision to retain SnowPass; links are restricted to their exact host listings and are not widened to the rest of Engadin
+- **Local raw file:** `data_external/source_evidence/CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19_20260925T151738Z.pdf`.
+
 ## DERIVED_ACCESSIBILITY_CONTEXT — Path C straight-line population accessibility context
 
 - **Contents and relevance:** Qualified Swiss straight-line population context for every linked Path C lift cluster
@@ -501,9 +513,9 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Exact URL:** Not documented.
 - **Access and retrieval date:** Versioned deterministic Python expansion of eight Top4 seasons, three bounded Meilenweiss seasons, four bounded Schneepass seasons, three tiered TopCard seasons and three conservative SnowPass Graubünden seasons with explicit stable resort-ID links; unknown date.
 - **Variables:** historical_competing_pass_area_season|documented_product_listing_season_link|winter_access_tier|product_level_summer_inclusion|area_specific_summer_access|cluster_historical_pass_context
-- **Transformations:** Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss, 46 Schneepass, 11 TopCard and 18 SnowPass Graubünden area-season rows; join stable listing IDs; separate unlimited core access from limited partners and area-specific summer access from product-level statements; aggregate positive presence without converting non-links into absence
+- **Transformations:** Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss, 46 Schneepass, 11 TopCard and 20 SnowPass Graubünden area-season rows; join stable listing IDs; separate unlimited core access from limited partners and area-specific summer access from product-level statements; aggregate positive presence without converting non-links into absence
 - **Coverage:** official pass area, supplied resort listing and linked lift cluster; twenty-one product-seasons across eight winter seasons from 2017/2018 through 2024/2025; 2017/2018 to 2024/2025.
-- **Limitations:** Only five partially reconstructed products are covered; evidence scope and benefit tiers differ across products and seasons; the recovered 2022/2023 Schneepass roster is season-specific official evidence rather than interpolation; the unnamed 2018/2019 SnowPass roster is not backfilled and its detailed 2019/2020 validity PDF remains unavailable; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring
+- **Limitations:** Only five partially reconstructed products are covered; evidence scope and benefit tiers differ across products and seasons; the recovered 2022/2023 Schneepass roster is season-specific official evidence rather than interpolation; two official joint-report host links do not reconstruct the unnamed remainder of the 2018/2019 SnowPass roster, and its detailed 2019/2020 validity PDF remains unavailable; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring
 - **Local raw file:** `config/competing_pass_historical_top4.json|config/competing_pass_historical_meilenweiss.json|config/competing_pass_historical_schneepass_zentralschweiz.json|config/competing_pass_historical_topcard.json|config/competing_pass_historical_snowpass_graubuenden.json`.
 
 ## DERIVED_MAGIC_ANNUAL_OFFERING — Annual Magic Pass season-offering review
