@@ -511,5 +511,19 @@
     "suffix": "pdf",
     "organisation": "Transportunternehmungen Zentralschweiz (TUZ)",
     "description": "Official Schneepass Zentralschweiz 2024/2025 media kit retained for season-specific roster, benefit and winter/summer scope verification"
+  },
+  {
+    "source_id": "SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18",
+    "url": "https://www.samnaun-engadin.ch/tl_files/uploads/dateien/pdf/Tarife-Winter-2017I18-Samnaun_1.pdf",
+    "suffix": "pdf",
+    "organisation": "Bergbahnen Samnaun AG",
+    "description": "Official Samnaun winter 2017/2018 tariff brochure naming the three TopCard areas, year-round summer/winter validity and Samnaun/Ischgl SnowPass access"
+  },
+  {
+    "source_id": "SBS_PRICING_STUDY_2020_TOPCARD",
+    "url": "https://www.bbgr.ch/wp-content/uploads/2020/08/SBS_Schrift10_Neue_Preismodelle_Gesamtstudie_Web.pdf",
+    "suffix": "pdf",
+    "organisation": "Seilbahnen Schweiz, hosted by Bergbahnen Graubünden",
+    "description": "Official industry-association 2020 study documenting TopCard core areas, the 2018/2019 Samnaun-to-Arosa replacement, year-round validity and season-specific three-day partner changes"
   }
 ]

@@ -23,7 +23,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** core_region_operator|included_infrastructure|gtc_validity
 - **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
 - **Coverage:** official pass area / supplied resort listing link; terms valid from 2026-09-01; 2026-09-01 to ?.
-- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4, Meilenweiss and Schneepass histories do not reconstruct the full historical market
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4, Meilenweiss, Schneepass and TopCard histories do not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/ALPSPASS_2026_27_GTC_20260923T095304Z.pdf`.
 
 ## ALPSPASS_2026_27_ROSTER — Official AlpsPass regions and tariff page 2026/2027
@@ -35,7 +35,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** official_area_label|roster_version|benefit_tier|partner_free_ski_days
 - **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
 - **Coverage:** official pass area / supplied resort listing link; 2026/2027; 2026-11-01 to 2027-10-31.
-- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4, Meilenweiss and Schneepass histories do not reconstruct the full historical market
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4, Meilenweiss, Schneepass and TopCard histories do not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/ALPSPASS_2026_27_ROSTER_20260923T094712Z.html`.
 
 ## ANNIVIERS_SCOPE_OFFICIAL — Official destination or municipal scope page
@@ -194,16 +194,16 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
 - **Local raw file:** `data_external/source_evidence/BBGR_ANNUAL_2017_18_20260921T151844Z.pdf`.
 
-## BBGR_ANNUAL_2018_19 — Bergbahnen Graubünden annual report 2018/19
+## BBGR_ANNUAL_2018_19 — Official Bergbahnen Graubünden annual report 2018/2019
 
-- **Contents and relevance:** Official 2018/2019 annual report documenting SnowPass Graubünden and three TopCard days in Upper Engadine
+- **Contents and relevance:** Official annual report documenting Arosa Lenzerheide replacing Samnaun/Ischgl in TopCard and three freely selectable Upper Engadine partner days
 - **Producer:** Bergbahnen Graubünden
 - **Exact URL:** https://www.bbgr.ch/wp-content/uploads/2016/10/WEB_BBGR_JB_18_19.pdf
-- **Access and retrieval date:** HTTP GET with immutable response and SHA-256 sidecar; 2026-09-21T15:18:47.270687+00:00.
-- **Variables:** competing_pass_environment|operator_investment_and_tourism_shock_evidence
-- **Transformations:** Page-referenced manual review; source qualification and unresolved exactness retained
-- **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2018-07 to 2019-06.
-- **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-21T15:18:47.270687+00:00.
+- **Variables:** topcard_core_area_replacement|limited_partner_three_day_access|competing_pass_environment
+- **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
+- **Coverage:** Graubünden pass market and named TopCard areas; winter season; 2018/2019 to 2018/2019.
+- **Limitations:** The partner region is broader than the supplied directory; only Corviglia St. Moritz is conservatively linked and no summer entitlement is inferred
 - **Local raw file:** `data_external/source_evidence/BBGR_ANNUAL_2018_19_20260921T151847Z.pdf`.
 
 ## BBGR_ANNUAL_2019_20 — Bergbahnen Graubünden annual report 2019/20
@@ -496,15 +496,15 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 
 ## DERIVED_HISTORICAL_COMPETING_PASS_CONTEXT — Path C historical competing-pass context
 
-- **Contents and relevance:** Qualified dated Top4, Meilenweiss and Schneepass Zentralschweiz positive-presence context at area, product-listing-season and preserved lift-cluster levels
+- **Contents and relevance:** Qualified dated Top4, Meilenweiss, Schneepass Zentralschweiz and tiered TopCard positive-presence context at area, product-listing-season and preserved lift-cluster levels
 - **Producer:** Master thesis analytical pipeline
 - **Exact URL:** Not documented.
-- **Access and retrieval date:** Versioned deterministic Python expansion of eight Top4 seasons, three bounded Meilenweiss seasons and three bounded Schneepass seasons with explicit conservative resort-ID links; unknown date.
-- **Variables:** historical_competing_pass_area_season|documented_product_listing_season_link|product_level_summer_inclusion|area_specific_summer_unknown|cluster_historical_pass_context
-- **Transformations:** Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss and 31 Schneepass area-season rows; join stable listing IDs; retain product-level summer inclusion separately from unknown area-specific summer activity; aggregate positive presence without converting non-links into absence
-- **Coverage:** official pass area, supplied resort listing and linked lift cluster; fourteen product-seasons across eight winter seasons from 2017/2018 through 2024/2025; 2017/2018 to 2024/2025.
-- **Limitations:** Only three partially reconstructed products are covered; Meilenweiss and Schneepass evidence scope differs across seasons; the 2022/2023 Schneepass season is not interpolated; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring
-- **Local raw file:** `config/competing_pass_historical_top4.json|config/competing_pass_historical_meilenweiss.json|config/competing_pass_historical_schneepass_zentralschweiz.json`.
+- **Access and retrieval date:** Versioned deterministic Python expansion of eight Top4 seasons, three bounded Meilenweiss seasons, three bounded Schneepass seasons and three tiered TopCard seasons with explicit conservative resort-ID links; unknown date.
+- **Variables:** historical_competing_pass_area_season|documented_product_listing_season_link|winter_access_tier|product_level_summer_inclusion|area_specific_summer_access|cluster_historical_pass_context
+- **Transformations:** Validate pinned official-source checksums, hosts and source tokens; expand 32 Top4, 29 Meilenweiss, 31 Schneepass and 11 TopCard area-season rows; join stable listing IDs; separate TopCard unlimited core access from limited three-day partners and area-specific summer access from product-level statements; aggregate positive presence without converting non-links into absence
+- **Coverage:** official pass area, supplied resort listing and linked lift cluster; seventeen product-seasons across eight winter seasons from 2017/2018 through 2024/2025; 2017/2018 to 2024/2025.
+- **Limitations:** Only four partially reconstructed products are covered; evidence scope and benefit tiers differ across products and seasons; the 2022/2023 Schneepass season is not interpolated; component eligibility can differ within clusters; evidence is not uniformly pre-treatment and is not approved for prediction, causal adjustment, recommendation or scoring
+- **Local raw file:** `config/competing_pass_historical_top4.json|config/competing_pass_historical_meilenweiss.json|config/competing_pass_historical_schneepass_zentralschweiz.json|config/competing_pass_historical_topcard.json`.
 
 ## DERIVED_MAGIC_ANNUAL_OFFERING — Annual Magic Pass season-offering review
 
@@ -1415,7 +1415,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** official_area_label|current_annual_pass_roster
 - **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
 - **Coverage:** official pass area / supplied resort listing link; current retrieval-date snapshot; 2026-09-23 to 2026-09-23.
-- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4, Meilenweiss and Schneepass histories do not reconstruct the full historical market
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4, Meilenweiss, Schneepass and TopCard histories do not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/MEILENWEISS_CURRENT_ROSTER_20260923T094713Z.html`.
 
 ## MEIRINGEN_HASLIBERG_MAGIC_OFFICIAL — Official destination or municipal scope page
@@ -1610,6 +1610,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/SAINTE_CROIX_SCOPE_OFFICIAL_20260920T005539Z.html`.
 
+## SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18 — Official Samnaun winter 2017/2018 tariff brochure
+
+- **Contents and relevance:** Official tariff brochure naming the three TopCard core areas and its summer-2017/winter-2017/2018 validity
+- **Producer:** Bergbahnen Samnaun AG
+- **Exact URL:** https://www.samnaun-engadin.ch/tl_files/uploads/dateien/pdf/Tarife-Winter-2017I18-Samnaun_1.pdf
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-25T00:12:01.658720+00:00.
+- **Variables:** topcard_complete_core_roster|winter_access_tier|area_specific_summer_access
+- **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
+- **Coverage:** named TopCard core area / supplied resort listing link; winter season; 2017 to 2017/2018.
+- **Limitations:** The three core areas and year-round validity are explicit; Davos-Klosters component links are constrained by the separate industry study and Schatzalp is not inferred
+- **Local raw file:** `data_external/source_evidence/SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18_20260925T001201Z.pdf`.
+
 ## SAMNAUN_VISNITZBAHN_HISTORY — Silvrettaseilbahn AG history of the Visnitzbahn replacement
 
 - **Contents and relevance:** Official operator history documenting replacement of Samnaun's Visnitz chairlift in 2019 and the new lift's capacity increase
@@ -1621,6 +1633,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2019-01 to 2019-12.
 - **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
 - **Local raw file:** `data_external/source_evidence/SAMNAUN_VISNITZBAHN_HISTORY_20260921T154459Z.html`.
+
+## SBS_PRICING_STUDY_2020_TOPCARD — Official Seilbahnen Schweiz study of new pricing models
+
+- **Contents and relevance:** Official industry study documenting TopCard core areas, the 2018/2019 core replacement, free summer travel and the change of three-day partner from Upper Engadine to Engelberg-Titlis in 2019/2020
+- **Producer:** Seilbahnen Schweiz, hosted by Bergbahnen Graubünden
+- **Exact URL:** https://www.bbgr.ch/wp-content/uploads/2020/08/SBS_Schrift10_Neue_Preismodelle_Gesamtstudie_Web.pdf
+- **Access and retrieval date:** Configured HTTPS download with immutable response and SHA-256 metadata sidecar; 2026-09-25T00:12:35.395063+00:00.
+- **Variables:** topcard_core_roster|winter_access_tier|limited_partner_three_day_access|area_specific_summer_access|davos_klosters_components
+- **Transformations:** Pinned checksum verification; source-token and host validation; visual PDF review where applicable; conservative stable resort-ID links without runtime fuzzy matching
+- **Coverage:** named TopCard core and partner areas / supplied resort listing links; winter season; 2017/2018 to 2019/2020.
+- **Limitations:** Core and limited partner access are kept separate; Engelberg-Titlis has three visits shared between summer and winter; no broader component inheritance is inferred
+- **Local raw file:** `data_external/source_evidence/SBS_PRICING_STUDY_2020_TOPCARD_20260925T001235Z.pdf`.
 
 ## SCHNEEPASS_ZENTRALSCHWEIZ_2023_24_MEDIA_KIT — Official Schneepass Zentralschweiz 2023/2024 media kit
 
@@ -1655,7 +1679,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** official_area_label|roster_version|winter_pass_inclusion
 - **Transformations:** Checksum verification; source label and scope-token validation; explicit versioned resort-ID links without runtime fuzzy matching
 - **Coverage:** official pass area / supplied resort listing link; winter season 2026/2027; 2026 to 2027.
-- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4, Meilenweiss and Schneepass histories do not reconstruct the full historical market
+- **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4, Meilenweiss, Schneepass and TopCard histories do not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/SCHNEEPASS_ZENTRALSCHWEIZ_2026_27_ROSTER_20260923T094725Z.html`.
 
 ## SKI_GTFS_TIMETABLE_2026_WINTER_20260207 — Timetable 2026 (GTFS2020), build 20260207

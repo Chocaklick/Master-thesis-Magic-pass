@@ -1,0 +1,185 @@
+{
+  "analysis_version": "path_c_v0_27",
+  "competing_pass_id": "topcard",
+  "competing_pass_name": "TopCard",
+  "source_sha256_by_id": {
+    "SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18": "cd2769245c9ff3e067d6da5cd0c24f38e014b3bacf9360d52e32c9b8ee493e67",
+    "BBGR_ANNUAL_2018_19": "3e749bf84ef443184819a05ad423ed18598ee1315f3b480585d82d1feae83831",
+    "SBS_PRICING_STUDY_2020_TOPCARD": "d493d8213439a78bef1505d4571c82d248d2fd88fd310da2b254305644727e45"
+  },
+  "seasons": [
+    {
+      "season": "2017/2018",
+      "source_ids": ["SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18", "SBS_PRICING_STUDY_2020_TOPCARD"],
+      "evidence_scope": "complete_three_core_area_roster_with_year_round_validity",
+      "product_winter_destination_count": 3,
+      "product_summer_destination_count": 3,
+      "product_summer_season": "2017",
+      "product_summer_included": true,
+      "product_summer_timing": "summer_preceding_winter_season",
+      "annual_pass_following_summer_season": null,
+      "annual_pass_following_summer_included": null,
+      "season_only_pass_following_summer_included": null,
+      "areas": [
+        {
+          "official_area_label": "Samnaun/Ischgl",
+          "linked_resort_ids": ["samnaun_silvretta_arena_samnaun_ischgl"],
+          "mapping_basis": "exact_official_area_to_supplied_listing",
+          "winter_access_tier": "unlimited_core_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": true,
+          "area_specific_summer_access_tier": "unlimited_core_area",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The official Samnaun tariff names Samnaun/Ischgl in the three-area TopCard valid for summer 2017 and winter 2017/2018."
+        },
+        {
+          "official_area_label": "Davos-Klosters",
+          "linked_resort_ids": ["parsenn_davos_klosters_parsenn", "jakobshorn_davos_jakobshorn", "rinerhorn_davos_rinerhorn", "madrisa_klosters_madrisa"],
+          "mapping_basis": "official_regional_area_with_study_named_tariff_components",
+          "winter_access_tier": "unlimited_core_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": true,
+          "area_specific_summer_access_tier": "unlimited_core_area",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The official tariff names Davos-Klosters. The industry study identifies Parsenn/Jakobshorn and Rinerhorn in its Davos aggregation and explicitly states that Madrisa also belongs to the Davos-Klosters tariff association. Schatzalp is not inferred covered."
+        },
+        {
+          "official_area_label": "Flims-Laax",
+          "linked_resort_ids": ["laax_flims_laax_falera"],
+          "mapping_basis": "conservative_exact_regional_listing_link",
+          "winter_access_tier": "unlimited_core_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": true,
+          "area_specific_summer_access_tier": "unlimited_core_area",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The official tariff names Flims-Laax and the industry study identifies Flims Laax Falera (Weisse Arena) as a TopCard core area."
+        }
+      ]
+    },
+    {
+      "season": "2018/2019",
+      "source_ids": ["BBGR_ANNUAL_2018_19", "SBS_PRICING_STUDY_2020_TOPCARD"],
+      "evidence_scope": "complete_three_core_area_roster_plus_three_day_upper_engadine_partner",
+      "product_winter_destination_count": 4,
+      "product_summer_destination_count": 3,
+      "product_summer_season": "2018",
+      "product_summer_included": true,
+      "product_summer_timing": "summer_preceding_winter_season",
+      "annual_pass_following_summer_season": null,
+      "annual_pass_following_summer_included": null,
+      "season_only_pass_following_summer_included": null,
+      "areas": [
+        {
+          "official_area_label": "Arosa Lenzerheide",
+          "linked_resort_ids": ["arosa_lenzerheide"],
+          "mapping_basis": "exact_official_area_to_supplied_listing",
+          "winter_access_tier": "unlimited_core_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": true,
+          "area_specific_summer_access_tier": "unlimited_core_area",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The official BBGR report and the industry study document that Arosa Lenzerheide replaced Samnaun/Ischgl from 2018/2019."
+        },
+        {
+          "official_area_label": "Davos Klosters",
+          "linked_resort_ids": ["parsenn_davos_klosters_parsenn", "jakobshorn_davos_jakobshorn", "rinerhorn_davos_rinerhorn", "madrisa_klosters_madrisa"],
+          "mapping_basis": "official_regional_area_with_study_named_tariff_components",
+          "winter_access_tier": "unlimited_core_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": true,
+          "area_specific_summer_access_tier": "unlimited_core_area",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The industry study identifies the core area and the named Davos-Klosters tariff components; Schatzalp is not inferred covered."
+        },
+        {
+          "official_area_label": "Flims Laax Falera (Weisse Arena)",
+          "linked_resort_ids": ["laax_flims_laax_falera"],
+          "mapping_basis": "exact_official_area_to_supplied_listing",
+          "winter_access_tier": "unlimited_core_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": true,
+          "area_specific_summer_access_tier": "unlimited_core_area",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "Exact supplied regional listing correspondence to the industry study's TopCard core area."
+        },
+        {
+          "official_area_label": "Engadin St. Moritz / Oberengadin",
+          "linked_resort_ids": ["corviglia_st_moritz"],
+          "mapping_basis": "conservative_exact_place_component_link_for_broad_partner_region",
+          "winter_access_tier": "limited_partner_three_days",
+          "winter_access_days_limit": 3,
+          "area_specific_summer_access_documented": false,
+          "area_specific_summer_access_tier": "not_documented",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The BBGR report documents three freely selectable TopCard days in Engadin St. Moritz/Oberengadin. Only the supplied Corviglia St. Moritz row is linked; no wider Upper Engadine component roster or summer entitlement is inferred."
+        }
+      ]
+    },
+    {
+      "season": "2019/2020",
+      "source_ids": ["SBS_PRICING_STUDY_2020_TOPCARD"],
+      "evidence_scope": "complete_three_core_area_roster_plus_three_day_engelberg_titlis_partner",
+      "product_winter_destination_count": 4,
+      "product_summer_destination_count": 4,
+      "product_summer_season": "2019",
+      "product_summer_included": true,
+      "product_summer_timing": "summer_preceding_winter_season",
+      "annual_pass_following_summer_season": null,
+      "annual_pass_following_summer_included": null,
+      "season_only_pass_following_summer_included": null,
+      "areas": [
+        {
+          "official_area_label": "Arosa Lenzerheide",
+          "linked_resort_ids": ["arosa_lenzerheide"],
+          "mapping_basis": "exact_official_area_to_supplied_listing",
+          "winter_access_tier": "unlimited_core_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": true,
+          "area_specific_summer_access_tier": "unlimited_core_area",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "Exact supplied regional listing correspondence to the industry study's TopCard core area."
+        },
+        {
+          "official_area_label": "Davos Klosters",
+          "linked_resort_ids": ["parsenn_davos_klosters_parsenn", "jakobshorn_davos_jakobshorn", "rinerhorn_davos_rinerhorn", "madrisa_klosters_madrisa"],
+          "mapping_basis": "official_regional_area_with_study_named_tariff_components",
+          "winter_access_tier": "unlimited_core_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": true,
+          "area_specific_summer_access_tier": "unlimited_core_area",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "The industry study identifies the core area and the named Davos-Klosters tariff components; Schatzalp is not inferred covered."
+        },
+        {
+          "official_area_label": "Flims Laax Falera (Weisse Arena)",
+          "linked_resort_ids": ["laax_flims_laax_falera"],
+          "mapping_basis": "exact_official_area_to_supplied_listing",
+          "winter_access_tier": "unlimited_core_area",
+          "winter_access_days_limit": null,
+          "area_specific_summer_access_documented": true,
+          "area_specific_summer_access_tier": "unlimited_core_area",
+          "area_specific_summer_access_days_limit": null,
+          "scope_note": "Exact supplied regional listing correspondence to the industry study's TopCard core area."
+        },
+        {
+          "official_area_label": "Engelberg-Titlis",
+          "linked_resort_ids": ["engelberg_titlis"],
+          "mapping_basis": "exact_official_area_to_supplied_listing",
+          "winter_access_tier": "limited_partner_three_days",
+          "winter_access_days_limit": 3,
+          "area_specific_summer_access_documented": true,
+          "area_specific_summer_access_tier": "limited_partner_three_days_shared_between_summer_and_winter",
+          "area_specific_summer_access_days_limit": 3,
+          "scope_note": "The industry study states that Engelberg-Titlis replaced St. Moritz/Oberengadin from 2019/2020 and grants three visits usable in summer or winter."
+        }
+      ]
+    }
+  ],
+  "summer_interpretation": "TopCard is a year-round product. The three core areas have documented summer access. The 2019/2020 Engelberg-Titlis partner benefit is limited to three visits shared between summer and winter; no summer right is inferred for the 2018/2019 Upper Engadine partner from the reviewed wording.",
+  "nonlink_interpretation": "not_linked_in_reviewed_top4_meilenweiss_schneepass_or_topcard_positive_evidence_not_verified_absence_from_historical_competing_passes",
+  "historical_market_absence_verified": false,
+  "pre_treatment_feature_approved": false,
+  "causal_covariate_approved": false,
+  "recommendation_feature_approved": false,
+  "composite_score_approved": false
+}

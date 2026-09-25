@@ -27,7 +27,7 @@ Complete candidate coverage is available for **13** groups, partial coverage for
 | Candidate destination-scope sensitivity and transfer gate | 104/104 | 2025_context_on_2026_boundaries_current_or_post_treatment | scope_measurement_sensitivity_only_zero_candidate_transfers |
 | Current scheduled destination journeys | 0/104 | winter_2026_current_or_post_treatment | treated_destination_descriptive_context_only |
 | Historical public-transport stability | 0/104 | required_historical_evidence_missing | not_available |
-| Historical competing-pass context | 16/104 | dated_historical_product_roster_partial_market_coverage_not_uniformly_pre_anchor | qualified_partial_historical_competition_context_only |
+| Historical competing-pass context | 21/104 | dated_historical_product_roster_partial_market_coverage_not_uniformly_pre_anchor | qualified_partial_historical_competition_context_only |
 | Dated resort infrastructure | 0/104 | required_historical_evidence_missing | not_available |
 
 ## Guardrail
