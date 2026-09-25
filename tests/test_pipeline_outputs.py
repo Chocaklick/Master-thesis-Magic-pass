@@ -2424,22 +2424,53 @@ def test_thesis_citation_map_uses_only_registered_sources() -> None:
     assert summary["mapped_claims"] == len(claims)
     assert summary["unique_registered_sources"] == len(bibliography)
     assert summary["external_source_ready_claims"] >= 15
-    assert summary["literature_citation_required_claims"] == 3
+    assert summary["peer_reviewed_literature_ready_claims"] == 3
+    assert summary["literature_citation_required_claims"] == 0
     assert summary["unknown_source_ids"] == []
     assert claims["claim_id"].is_unique
     assert bibliography["source_id"].is_unique
     assert set(bibliography["source_id"]).issubset(set(registered["source_id"]))
     assert summary["external_sources_missing_url"] == 0
-    assert summary["registered_external_sources"] >= 50
+    assert summary["registered_external_sources"] >= 57
     assert summary["internal_lineage_sources"] == 3
     external = bibliography[
         bibliography["bibliographic_role"].eq("external_source")
     ]
     assert external["source_page_url"].notna().all()
     assert external["source_page_url"].astype(str).str.startswith("http").all()
-    literature = claims[claims["citation_status"].eq("literature_citation_required")]
-    assert literature["source_ids"].isna().all()
+    literature = claims[
+        claims["citation_status"].eq("peer_reviewed_literature_ready")
+    ]
+    assert len(literature) == 3
+    assert literature["source_ids"].notna().all()
+    assert literature["source_ids"].str.len().gt(0).all()
     report = (ROOT / "reports/46_THESIS_CITATION_MAP.md").read_text(
         encoding="utf-8"
     )
     assert "Do not replace missing bibliographic metadata with guesses" in report
+
+
+def test_methodological_literature_register_is_complete_and_bounded() -> None:
+    summary = json.loads(
+        (ROOT / "reports/thesis_methodological_literature_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    references = read("reports/thesis_methodological_references.csv")
+    registered = read("metadata/data_sources_master.csv")
+
+    assert summary["analysis_version"] == "path_c_v0_31"
+    assert summary["peer_reviewed_references"] == 7
+    assert summary["claim_groups_covered"] == 3
+    assert summary["expected_claim_groups"] == 3
+    assert summary["unique_dois"] == 7
+    assert summary["missing_required_fields"] == 0
+    assert references["source_id"].is_unique
+    assert references["doi"].is_unique
+    assert references["doi"].str.startswith("10.").all()
+    assert references["source_page_url"].str.startswith("https://").all()
+    assert set(references["source_id"]).issubset(set(registered["source_id"]))
+    report = (ROOT / "reports/47_METHODOLOGICAL_LITERATURE.md").read_text(
+        encoding="utf-8"
+    )
+    assert "do not override the project-specific identification gates" in report

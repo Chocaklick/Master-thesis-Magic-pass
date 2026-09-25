@@ -374,6 +374,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Does not name the full 14-area roster, so only Engelberg-Brunni is linked; product-level SchneepassPlus summer inclusion does not establish summer access for every winter area
 - **Local raw file:** `data_external/source_evidence/BRUNNI_SCHNEEPASS_ZENTRALSCHWEIZ_2021_22_BROCHURE_20260924T193709Z.pdf`.
 
+## CALLAWAY_SANTANNA_2021_DID — Difference-in-Differences with multiple time periods
+
+- **Contents and relevance:** Provides group-time average treatment effects and inference for staggered Difference-in-Differences with heterogeneous treatment timing and effects.
+- **Producer:** Elsevier — Journal of Econometrics
+- **Exact URL:** https://www.sciencedirect.com/science/article/pii/S0304407620303948
+- **Access and retrieval date:** Manual bibliographic verification against the original publisher article page and DOI metadata; 2026-09-25.
+- **Variables:** METHOD_CAUSAL_IDENTIFICATION
+- **Transformations:** Publisher metadata normalised into the methodological-literature register; no empirical values extracted
+- **Coverage:** not applicable; peer-reviewed methodological article; publication; 2021 to 2021.
+- **Limitations:** The method still requires a defensible comparison group and an explicit parallel-trends assumption; its availability does not identify the present design.
+- **Local raw file:** `config/methodological_literature.json`.
+
 ## CHATEAU_DOEX_LA_BRAYE_2018 — Official destination or municipal scope page
 
 - **Contents and relevance:** Official municipal preavis 17/2018 documenting the La Braye lift assets and the Télé-Château-d'Oex operator lineage
@@ -986,6 +998,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/GSTAAD_SCOPE_OFFICIAL_20260920T005549Z.html`.
 
+## HUBERT_ARABIE_1985_PARTITIONS — Comparing partitions
+
+- **Contents and relevance:** Provides chance-corrected partition-comparison foundations used for adjusted Rand stability diagnostics.
+- **Producer:** Springer Nature — Journal of Classification
+- **Exact URL:** https://link.springer.com/article/10.1007/BF01908075
+- **Access and retrieval date:** Manual bibliographic verification against the original publisher article page and DOI metadata; 2026-09-25.
+- **Variables:** METHOD_CLUSTERING_VALIDATION
+- **Transformations:** Publisher metadata normalised into the methodological-literature register; no empirical values extracted
+- **Coverage:** not applicable; peer-reviewed methodological article; publication; 1985 to 1985.
+- **Limitations:** Partition agreement measures stability relative to another partition; it does not establish that either partition is substantively correct.
+- **Local raw file:** `config/methodological_literature.json`.
+
+## HUDGENS_HALLORAN_2008_INTERFERENCE — Toward Causal Inference With Interference
+
+- **Contents and relevance:** Formalises direct, indirect, total and overall causal effects when treatment can affect other units within groups.
+- **Producer:** Taylor & Francis — Journal of the American Statistical Association
+- **Exact URL:** https://www.tandfonline.com/doi/abs/10.1198/016214508000000292
+- **Access and retrieval date:** Manual bibliographic verification against the original publisher article page and DOI metadata; 2026-09-25.
+- **Variables:** METHOD_CAUSAL_IDENTIFICATION
+- **Transformations:** Publisher metadata normalised into the methodological-literature register; no empirical values extracted
+- **Coverage:** not applicable; peer-reviewed methodological article; publication; 2008 to 2008.
+- **Limitations:** Its estimands and unbiased estimators rely on a specified grouped-interference setting and experimental assignment; the thesis uses it to motivate the spillover threat, not to estimate those effects.
+- **Local raw file:** `config/methodological_literature.json`.
+
 ## JUNGFRAU_TOP4_2018_19_CONTINUITY — Official Top4 second-season release
 
 - **Contents and relevance:** Official release documenting the autumn-2017 Top4 launch, the four participating regions and the unchanged 2018/2019 second season
@@ -1033,6 +1069,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** regional pass market or reviewed donor operator; annual report or winter-season publication; 2023-01 to 2023-12.
 - **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
 - **Local raw file:** `data_external/source_evidence/KRONBERG_ANNUAL_2023_20260921T151854Z.pdf`.
+
+## KUNZEL_ET_AL_2019_METALEARNERS — Metalearners for estimating heterogeneous treatment effects using machine learning
+
+- **Contents and relevance:** Organises supervised learners into S-, T-, X- and related strategies for estimating conditional average treatment effects.
+- **Producer:** National Academy of Sciences — Proceedings of the National Academy of Sciences
+- **Exact URL:** https://www.pnas.org/doi/10.1073/pnas.1804597116
+- **Access and retrieval date:** Manual bibliographic verification against the original publisher article page and DOI metadata; 2026-09-25.
+- **Variables:** METHOD_CAUSAL_ML_FEASIBILITY
+- **Transformations:** Publisher metadata normalised into the methodological-literature register; no empirical values extracted
+- **Coverage:** not applicable; peer-reviewed methodological article; publication; 2019 to 2019.
+- **Limitations:** Flexible outcome learning does not by itself justify a causal estimand, remove confounding or create stable heterogeneity information from a very small treated sample.
+- **Local raw file:** `config/methodological_literature.json`.
 
 ## LOCAL_03b4345dbe87 — stations_ski_assignations_clusters_gps_bergfex.csv
 
@@ -1634,6 +1682,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/REICHENBACH_SCOPE_OFFICIAL_20260920T005536Z.html`.
 
+## ROUSSEEUW_1987_SILHOUETTES — Silhouettes: A graphical aid to the interpretation and validation of cluster analysis
+
+- **Contents and relevance:** Defines the silhouette display and average silhouette width used to assess cluster tightness and separation.
+- **Producer:** Elsevier — Journal of Computational and Applied Mathematics
+- **Exact URL:** https://www.sciencedirect.com/science/article/pii/0377042787901257
+- **Access and retrieval date:** Manual bibliographic verification against the original publisher article page and DOI metadata; 2026-09-25.
+- **Variables:** METHOD_CLUSTERING_VALIDATION
+- **Transformations:** Publisher metadata normalised into the methodological-literature register; no empirical values extracted
+- **Coverage:** not applicable; peer-reviewed methodological article; publication; 1987 to 1987.
+- **Limitations:** Silhouette quality evaluates geometry in the selected feature space; it does not validate commercial destination identities or causal relevance.
+- **Local raw file:** `config/methodological_literature.json`.
+
 ## SAINTE_CROIX_SCOPE_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Official operator page for the Sainte-Croix / Les Rasses ski domain
@@ -1850,6 +1910,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
 - **Local raw file:** `data_external/source_evidence/SPLUEGEN_TAMBO_ANNUAL_2023_24_20260921T154622Z.pdf`.
 
+## SUN_ABRAHAM_2021_EVENT_STUDIES — Estimating dynamic treatment effects in event studies with heterogeneous treatment effects
+
+- **Contents and relevance:** Shows how conventional two-way fixed-effect event-study coefficients can be contaminated under staggered timing and heterogeneous effects.
+- **Producer:** Elsevier — Journal of Econometrics
+- **Exact URL:** https://www.sciencedirect.com/science/article/pii/S030440762030378X
+- **Access and retrieval date:** Manual bibliographic verification against the original publisher article page and DOI metadata; 2026-09-25.
+- **Variables:** METHOD_CAUSAL_IDENTIFICATION
+- **Transformations:** Publisher metadata normalised into the methodological-literature register; no empirical values extracted
+- **Coverage:** not applicable; peer-reviewed methodological article; publication; 2021 to 2021.
+- **Limitations:** The proposed estimator addresses heterogeneous timing, not invalid donors, spillovers, treatment ambiguity or destination-scope error.
+- **Local raw file:** `config/methodological_literature.json`.
+
 ## SWISSTOPO_BOUNDARIES_2026 — swissBOUNDARIES3D 2026-01
 
 - **Contents and relevance:** Official 2026 municipality polygons used for distance diagnostics and qualified population accessibility context
@@ -1885,6 +1957,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/VILLARS_GRYON_SCOPE_OFFICIAL_20260920T005537Z.html`.
+
+## WAGER_ATHEY_2018_CAUSAL_FORESTS — Estimation and Inference of Heterogeneous Treatment Effects using Random Forests
+
+- **Contents and relevance:** Develops causal forests for heterogeneous treatment effects and inference under a potential-outcomes framework with unconfoundedness.
+- **Producer:** Taylor & Francis — Journal of the American Statistical Association
+- **Exact URL:** https://www.tandfonline.com/doi/abs/10.1080/01621459.2017.1319839
+- **Access and retrieval date:** Manual bibliographic verification against the original publisher article page and DOI metadata; 2026-09-25.
+- **Variables:** METHOD_CAUSAL_ML_FEASIBILITY
+- **Transformations:** Publisher metadata normalised into the methodological-literature register; no empirical values extracted
+- **Coverage:** not applicable; peer-reviewed methodological article; publication; 2018 to 2018.
+- **Limitations:** The theoretical guarantees do not replace treatment identification, unconfoundedness, overlap or adequate effective sample size.
+- **Local raw file:** `config/methodological_literature.json`.
 
 ## WILERALLMI_ANNUAL_2023_24 — Official destination or municipal scope page
 

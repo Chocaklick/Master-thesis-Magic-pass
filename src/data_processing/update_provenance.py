@@ -70,6 +70,11 @@ def main() -> None:
     spass_config = json.loads(
         (ROOT / "config" / "spass_snow_grid.json").read_text(encoding="utf-8")
     )
+    methodological_literature = json.loads(
+        (ROOT / "config" / "methodological_literature.json").read_text(
+            encoding="utf-8"
+        )
+    )
     rows: list[dict] = []
 
     bfs_metadata = cached_metadata("BFS_HOTEL_METADATA")
@@ -2297,6 +2302,31 @@ def main() -> None:
         confidence_level="reproducible robustness diagnostic; exploratory only",
         manual_verification="All three rules select k=2; only 11 of 104 candidates are stable on every recorded criterion; every causal flag false",
     ))
+    for reference in methodological_literature:
+        rows.append(blank_source(
+            reference["source_id"],
+            variable_name=reference["claim_group"],
+            variable_description=reference["relevance"],
+            source_organisation=f"{reference['publisher']} — {reference['journal']}",
+            source_dataset_name=reference["title"],
+            source_page_url=reference["source_page_url"],
+            retrieval_method="Manual bibliographic verification against the original publisher article page and DOI metadata",
+            retrieval_date="2026-09-25",
+            local_raw_file="config/methodological_literature.json",
+            processed_file="reports/thesis_methodological_references.csv|reports/47_METHODOLOGICAL_LITERATURE.md|reports/thesis_claim_source_matrix.csv",
+            geographic_level="not applicable; peer-reviewed methodological article",
+            temporal_resolution="publication",
+            temporal_start=str(reference["publication_year"]),
+            temporal_end=str(reference["publication_year"]),
+            unit="article",
+            license="Bibliographic metadata publicly visible; article access and reuse remain subject to publisher terms",
+            access_conditions="Publisher landing page is public; full-text availability varies by article",
+            transformation_applied="Publisher metadata normalised into the methodological-literature register; no empirical values extracted",
+            quality_notes=reference["interpretive_boundary"],
+            confidence_level="high for bibliographic identity and stated methodological scope",
+            manual_verification=f"Authors, year, title, journal, volume, issue, pages and DOI {reference['doi']} checked against the publisher page",
+            notes=f"DOI: {reference['doi']}; authors: {reference['authors']}",
+        ))
     sources = upsert(existing_sources, rows, "source_id", SOURCE_COLUMNS)
     sources.to_csv(SOURCE_FILE, index=False)
 

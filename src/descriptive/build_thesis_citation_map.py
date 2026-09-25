@@ -44,13 +44,14 @@ def claim(
     validation: str,
     status: str = "external_source_ready",
     note: str = "Use source_id as a temporary citation key; format in the final bibliography style.",
+    citation_kind: str | None = None,
 ) -> dict[str, str]:
     return {
         "claim_id": claim_id,
         "chapter_file": chapter,
         "chapter_section": section,
         "claim_scope": claim_scope,
-        "citation_kind": (
+        "citation_kind": citation_kind or (
             "external_primary_or_scientific_source"
             if source_ids
             else "methodological_literature"
@@ -67,6 +68,23 @@ def main() -> None:
     if sources["source_id"].duplicated().any():
         raise ValueError("Source IDs must be unique before building the citation map")
     by_id = sources.set_index("source_id")
+    methodological_literature = json.loads(
+        (ROOT / "config" / "methodological_literature.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    methodology_by_claim: dict[str, list[str]] = {}
+    for reference in methodological_literature:
+        methodology_by_claim.setdefault(reference["claim_group"], []).append(
+            reference["source_id"]
+        )
+    expected_methodology_groups = {
+        "METHOD_CAUSAL_IDENTIFICATION",
+        "METHOD_CLUSTERING_VALIDATION",
+        "METHOD_CAUSAL_ML_FEASIBILITY",
+    }
+    if set(methodology_by_claim) != expected_methodology_groups:
+        raise ValueError("Methodological literature does not cover the declared claim groups")
 
     claims = [
         claim(
@@ -232,30 +250,33 @@ def main() -> None:
             "reports/43_THESIS_METHODS_DRAFT.md",
             "6. Causal feasibility assessment",
             "Parallel trends, stable treatment, no interference and credible donor conditions require methodological literature citations.",
-            None,
+            methodology_by_claim["METHOD_CAUSAL_IDENTIFICATION"],
             "reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md",
-            status="literature_citation_required",
-            note="Add peer-reviewed DiD/event-study and interference references selected in the formal literature review; do not cite a software package as identification evidence.",
+            status="peer_reviewed_literature_ready",
+            note="Use the verified DiD/event-study and interference articles; retain the project-specific rejection as an internal empirical result.",
+            citation_kind="peer_reviewed_methodological_literature",
         ),
         claim(
             "METHOD_CLUSTERING_VALIDATION",
             "reports/43_THESIS_METHODS_DRAFT.md",
             "7. Path C structural segmentation and analogues",
             "K-means, silhouette and adjusted Rand stability require standard methodological references.",
-            None,
+            methodology_by_claim["METHOD_CLUSTERING_VALIDATION"],
             "reports/18_PATH_C_SEGMENTATION_AND_ANALOGUES.md|reports/19_PATH_C_AGGREGATION_SENSITIVITY.md",
-            status="literature_citation_required",
-            note="Add canonical k-means, silhouette and adjusted Rand-index references; retain repository reports for implementation details.",
+            status="peer_reviewed_literature_ready",
+            note="Use the verified silhouette and chance-corrected partition-comparison references; retain repository reports for implementation details.",
+            citation_kind="peer_reviewed_methodological_literature",
         ),
         claim(
             "METHOD_CAUSAL_ML_FEASIBILITY",
             "reports/45_THESIS_DISCUSSION_LIMITATIONS_DRAFT.md",
             "2. Implications for causal inference and machine learning",
             "Causal ML cannot repair an unidentified treatment/control design and requires adequate effective sample size.",
-            None,
+            methodology_by_claim["METHOD_CAUSAL_ML_FEASIBILITY"],
             "reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/model_feasibility_report.md",
-            status="literature_citation_required",
-            note="Add peer-reviewed causal-forest/meta-learner references and sources on overlap/effective sample constraints; preserve the project-specific rejection as an internal result.",
+            status="peer_reviewed_literature_ready",
+            note="Use the verified causal-forest and meta-learner articles while preserving identification, overlap and sample-support requirements and the project-specific rejection.",
+            citation_kind="peer_reviewed_methodological_literature",
         ),
         claim(
             "RESULT_PATH_C_COUNTS",
@@ -350,6 +371,7 @@ This editorial map links the main externally sourced claims in the generated the
 - Internal lineage entries not requiring an external URL: **{int(bibliography_frame['bibliographic_role'].eq('internal_lineage').sum())}**
 - Claims ready for external-source bibliography formatting: **{int(claims_frame['citation_status'].eq('external_source_ready').sum())}**
 - Derived result claims with lineage: **{int(claims_frame['citation_status'].eq('internal_result_with_lineage').sum())}**
+- Methodological claims with verified peer-reviewed literature: **{int(claims_frame['citation_status'].eq('peer_reviewed_literature_ready').sum())}**
 - Methodological claims still requiring peer-reviewed literature: **{int(claims_frame['citation_status'].eq('literature_citation_required').sum())}**
 
 ## Claim map
@@ -364,7 +386,7 @@ The detailed insertion notes and internal validation artifacts are in `reports/t
 
 1. Cite external official/scientific sources for data definitions, published rosters and product scope.
 2. Cite thesis tables, figures or repository reports for derived counts and diagnostics; do not present the pipeline as an external authority.
-3. Add peer-reviewed methodological literature for causal identification, interference, clustering validation and causal-ML feasibility.
+3. Use the verified peer-reviewed methodological literature for causal identification, interference, clustering validation and causal-ML feasibility; do not treat method availability as project-specific identification.
 4. Keep retrieval dates for mutable web pages and archived captures.
 5. Do not replace missing bibliographic metadata with guesses. Mark it for manual completion.
 
@@ -390,6 +412,9 @@ The detailed insertion notes and internal validation artifacts are in `reports/t
         ),
         "internal_result_with_lineage_claims": int(
             claims_frame["citation_status"].eq("internal_result_with_lineage").sum()
+        ),
+        "peer_reviewed_literature_ready_claims": int(
+            claims_frame["citation_status"].eq("peer_reviewed_literature_ready").sum()
         ),
         "literature_citation_required_claims": int(
             claims_frame["citation_status"].eq("literature_citation_required").sum()

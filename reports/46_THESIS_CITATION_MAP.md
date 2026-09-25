@@ -5,12 +5,13 @@ This editorial map links the main externally sourced claims in the generated the
 ## Status summary
 
 - Mapped claims: **21**
-- Unique registered sources referenced: **55**
-- External bibliography sources: **52**
+- Unique registered sources referenced: **62**
+- External bibliography sources: **59**
 - Internal lineage entries not requiring an external URL: **3**
 - Claims ready for external-source bibliography formatting: **17**
 - Derived result claims with lineage: **1**
-- Methodological claims still requiring peer-reviewed literature: **3**
+- Methodological claims with verified peer-reviewed literature: **3**
+- Methodological claims still requiring peer-reviewed literature: **0**
 
 ## Claim map
 
@@ -33,9 +34,9 @@ This editorial map links the main externally sourced claims in the generated the
 | `DATA_NATIONAL_ROADS` | 43_THESIS_METHODS_DRAFT.md: 5. Accessibility, tourism and competitive context | external_source_ready | ASTRA_NATIONAL_ROAD_AXES_2026<br>ASTRA_NATIONAL_ROAD_AXES_2026_STAC |
 | `DATA_CURRENT_COMPETING_PASSES` | 43_THESIS_METHODS_DRAFT.md: 5. Accessibility, tourism and competitive context | external_source_ready | ALPSPASS_2026_27_ROSTER<br>ALPSPASS_2026_27_GTC<br>MEILENWEISS_CURRENT_ROSTER<br>SCHNEEPASS_ZENTRALSCHWEIZ_2026_27_ROSTER |
 | `DATA_HISTORICAL_COMPETING_PASSES` | 44_THESIS_RESULTS_DRAFT.md: 7. Competition and network context | external_source_ready | JUNGFRAU_TOP4_2018_19_CONTINUITY<br>JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON<br>ATZMAENNIG_MEILENWEISS_2019_20_ORDER_FORM<br>ATZMAENNIG_WINTER_BROCHURE_2020_21<br>MALBUN_MEILENWEISS_2021_22_WINTER_BROCHURE<br>PIZOL_ANNUAL_REPORT_2018_19<br>BRUNNI_SCHNEEPASS_ZENTRALSCHWEIZ_2021_22_BROCHURE<br>SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_ROSTER<br>SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_SUMMER_ROSTER<br>SCHNEEPASS_ZENTRALSCHWEIZ_2023_24_MEDIA_KIT<br>SCHNEEPASS_ZENTRALSCHWEIZ_2024_25_MEDIA_KIT<br>SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18<br>BBGR_ANNUAL_2017_18<br>BBGR_ANNUAL_2018_19<br>BBGR_ANNUAL_2019_20<br>CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19<br>SBS_PRICING_STUDY_2020_TOPCARD<br>GRAUBUENDEN_SNOWPASS_2018_19_ARCHIVED_PAGE<br>GRAUBUENDEN_SNOWPASS_2019_20_ARCHIVED_PAGE |
-| `METHOD_CAUSAL_IDENTIFICATION` | 43_THESIS_METHODS_DRAFT.md: 6. Causal feasibility assessment | literature_citation_required | — |
-| `METHOD_CLUSTERING_VALIDATION` | 43_THESIS_METHODS_DRAFT.md: 7. Path C structural segmentation and analogues | literature_citation_required | — |
-| `METHOD_CAUSAL_ML_FEASIBILITY` | 45_THESIS_DISCUSSION_LIMITATIONS_DRAFT.md: 2. Implications for causal inference and machine learning | literature_citation_required | — |
+| `METHOD_CAUSAL_IDENTIFICATION` | 43_THESIS_METHODS_DRAFT.md: 6. Causal feasibility assessment | peer_reviewed_literature_ready | CALLAWAY_SANTANNA_2021_DID<br>SUN_ABRAHAM_2021_EVENT_STUDIES<br>HUDGENS_HALLORAN_2008_INTERFERENCE |
+| `METHOD_CLUSTERING_VALIDATION` | 43_THESIS_METHODS_DRAFT.md: 7. Path C structural segmentation and analogues | peer_reviewed_literature_ready | ROUSSEEUW_1987_SILHOUETTES<br>HUBERT_ARABIE_1985_PARTITIONS |
+| `METHOD_CAUSAL_ML_FEASIBILITY` | 45_THESIS_DISCUSSION_LIMITATIONS_DRAFT.md: 2. Implications for causal inference and machine learning | peer_reviewed_literature_ready | WAGER_ATHEY_2018_CAUSAL_FORESTS<br>KUNZEL_ET_AL_2019_METALEARNERS |
 | `RESULT_PATH_C_COUNTS` | 44_THESIS_RESULTS_DRAFT.md: 3–8. Path C results | internal_result_with_lineage | DERIVED_PATH_C_DECISION_SUPPORT |
 
 The detailed insertion notes and internal validation artifacts are in `reports/thesis_claim_source_matrix.csv`. The bibliography worklist is in `reports/thesis_source_bibliography_worklist.csv`.
@@ -44,7 +45,7 @@ The detailed insertion notes and internal validation artifacts are in `reports/t
 
 1. Cite external official/scientific sources for data definitions, published rosters and product scope.
 2. Cite thesis tables, figures or repository reports for derived counts and diagnostics; do not present the pipeline as an external authority.
-3. Add peer-reviewed methodological literature for causal identification, interference, clustering validation and causal-ML feasibility.
+3. Use the verified peer-reviewed methodological literature for causal identification, interference, clustering validation and causal-ML feasibility; do not treat method availability as project-specific identification.
 4. Keep retrieval dates for mutable web pages and archived captures.
 5. Do not replace missing bibliographic metadata with guesses. Mark it for manual completion.
 
@@ -221,6 +222,15 @@ The detailed insertion notes and internal validation artifacts are in `reports/t
 - Confidence: high for host-area offer, product count and pass modality; intentionally incomplete roster links
 - Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
 
+### `CALLAWAY_SANTANNA_2021_DID`
+
+- Organisation: Elsevier — Journal of Econometrics
+- Dataset/document: Difference-in-Differences with multiple time periods
+- URL: https://www.sciencedirect.com/science/article/pii/S0304407620303948
+- Temporal scope: 2021–2021
+- Confidence: high for bibliographic identity and stated methodological scope
+- Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
+
 ### `CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19`
 
 - Organisation: Corvatsch AG and Diavolezza Lagalb AG
@@ -275,6 +285,24 @@ The detailed insertion notes and internal validation artifacts are in `reports/t
 - Confidence: high for product scope and stated exclusions; conservative for individual supplied listing links
 - Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
 
+### `HUBERT_ARABIE_1985_PARTITIONS`
+
+- Organisation: Springer Nature — Journal of Classification
+- Dataset/document: Comparing partitions
+- URL: https://link.springer.com/article/10.1007/BF01908075
+- Temporal scope: 1985–1985
+- Confidence: high for bibliographic identity and stated methodological scope
+- Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
+
+### `HUDGENS_HALLORAN_2008_INTERFERENCE`
+
+- Organisation: Taylor & Francis — Journal of the American Statistical Association
+- Dataset/document: Toward Causal Inference With Interference
+- URL: https://www.tandfonline.com/doi/abs/10.1198/016214508000000292
+- Temporal scope: 2008–2008
+- Confidence: high for bibliographic identity and stated methodological scope
+- Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
+
 ### `JUNGFRAU_TOP4_2018_19_CONTINUITY`
 
 - Organisation: Jungfraubahnen Management AG
@@ -291,6 +319,15 @@ The detailed insertion notes and internal validation artifacts are in `reports/t
 - URL: https://www.jungfrau.ch/en-gb/corporate/news/around-33000-top4-ski-passes-sold-in-advance/
 - Temporal scope: 2024/2025–2024/2025
 - Confidence: high for Top4 continuity and named regional areas; conservative for supplied listing links
+- Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
+
+### `KUNZEL_ET_AL_2019_METALEARNERS`
+
+- Organisation: National Academy of Sciences — Proceedings of the National Academy of Sciences
+- Dataset/document: Metalearners for estimating heterogeneous treatment effects using machine learning
+- URL: https://www.pnas.org/doi/10.1073/pnas.1804597116
+- Temporal scope: 2019–2019
+- Confidence: high for bibliographic identity and stated methodological scope
 - Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
 
 ### `LOCAL_03b4345dbe87`
@@ -419,6 +456,15 @@ The detailed insertion notes and internal validation artifacts are in `reports/t
 - Confidence: high for the negative document review; no membership or absence inference
 - Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
 
+### `ROUSSEEUW_1987_SILHOUETTES`
+
+- Organisation: Elsevier — Journal of Computational and Applied Mathematics
+- Dataset/document: Silhouettes: A graphical aid to the interpretation and validation of cluster analysis
+- URL: https://www.sciencedirect.com/science/article/pii/0377042787901257
+- Temporal scope: 1987–1987
+- Confidence: high for bibliographic identity and stated methodological scope
+- Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
+
 ### `SAMNAUN_TOPCARD_SNOWPASS_TARIFFS_2017_18`
 
 - Organisation: Bergbahnen Samnaun AG
@@ -536,6 +582,15 @@ The detailed insertion notes and internal validation artifacts are in `reports/t
 - Confidence: high for archive integrity and reproducibility; qualified for spatial snow-proxy sensitivity only
 - Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
 
+### `SUN_ABRAHAM_2021_EVENT_STUDIES`
+
+- Organisation: Elsevier — Journal of Econometrics
+- Dataset/document: Estimating dynamic treatment effects in event studies with heterogeneous treatment effects
+- URL: https://www.sciencedirect.com/science/article/pii/S030440762030378X
+- Temporal scope: 2021–2021
+- Confidence: high for bibliographic identity and stated methodological scope
+- Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
+
 ### `SWISSTOPO_BOUNDARIES_2026`
 
 - Organisation: Federal Office of Topography swisstopo
@@ -543,4 +598,13 @@ The detailed insertion notes and internal validation artifacts are in `reports/t
 - URL: https://www.swisstopo.admin.ch/en/landscape-model-swissboundaries3d
 - Temporal scope: 2026-01-01–2026-01-01
 - Confidence: high for current boundaries; qualified for historical outcome alignment
+- Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
+
+### `WAGER_ATHEY_2018_CAUSAL_FORESTS`
+
+- Organisation: Taylor & Francis — Journal of the American Statistical Association
+- Dataset/document: Estimation and Inference of Heterogeneous Treatment Effects using Random Forests
+- URL: https://www.tandfonline.com/doi/abs/10.1080/01621459.2017.1319839
+- Temporal scope: 2018–2018
+- Confidence: high for bibliographic identity and stated methodological scope
 - Citation note: use the official organisation and document title; verify the final access-date format required by the thesis style.
