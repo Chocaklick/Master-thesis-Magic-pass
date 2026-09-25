@@ -2408,3 +2408,38 @@ def test_thesis_chapter_drafts_use_validated_noncausal_architecture() -> None:
     assert "zero treatments and zero controls were approved" in methods
     assert "does not report a Magic Pass treatment effect" in results
     assert "not causal or predictive" in discussion
+
+
+def test_thesis_citation_map_uses_only_registered_sources() -> None:
+    summary = json.loads(
+        (ROOT / "reports/thesis_citation_map_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    claims = read("reports/thesis_claim_source_matrix.csv")
+    bibliography = read("reports/thesis_source_bibliography_worklist.csv")
+    registered = read("metadata/data_sources_master.csv")
+
+    assert summary["analysis_version"] == "path_c_v0_31"
+    assert summary["mapped_claims"] == len(claims)
+    assert summary["unique_registered_sources"] == len(bibliography)
+    assert summary["external_source_ready_claims"] >= 15
+    assert summary["literature_citation_required_claims"] == 3
+    assert summary["unknown_source_ids"] == []
+    assert claims["claim_id"].is_unique
+    assert bibliography["source_id"].is_unique
+    assert set(bibliography["source_id"]).issubset(set(registered["source_id"]))
+    assert summary["external_sources_missing_url"] == 0
+    assert summary["registered_external_sources"] >= 50
+    assert summary["internal_lineage_sources"] == 3
+    external = bibliography[
+        bibliography["bibliographic_role"].eq("external_source")
+    ]
+    assert external["source_page_url"].notna().all()
+    assert external["source_page_url"].astype(str).str.startswith("http").all()
+    literature = claims[claims["citation_status"].eq("literature_citation_required")]
+    assert literature["source_ids"].isna().all()
+    report = (ROOT / "reports/46_THESIS_CITATION_MAP.md").read_text(
+        encoding="utf-8"
+    )
+    assert "Do not replace missing bibliographic metadata with guesses" in report

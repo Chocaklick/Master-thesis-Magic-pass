@@ -1,0 +1,13 @@
+{
+  "analysis_version": "path_c_v0_31",
+  "mapped_claims": 21,
+  "unique_registered_sources": 55,
+  "registered_external_sources": 52,
+  "internal_lineage_sources": 3,
+  "external_sources_missing_url": 0,
+  "external_source_ready_claims": 17,
+  "internal_result_with_lineage_claims": 1,
+  "literature_citation_required_claims": 3,
+  "unknown_source_ids": [],
+  "interpretation": "editorial_claim_to_registered_provenance_map_not_final_formatted_bibliography"
+}
