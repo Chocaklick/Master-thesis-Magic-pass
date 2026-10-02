@@ -1,0 +1,69 @@
+{
+  "analysis_date": "2026-10-02",
+  "descriptive_usable_pairs_within_120min": 386,
+  "groups_with_complete_24_24_pair": 34,
+  "complete_24_24_group_municipality_pairs": 277,
+  "complete_pairs_overlapping_covid": 185,
+  "mechanically_isolated_non_covid_pairs": 15,
+  "groups_with_mechanically_isolated_non_covid_pair": 3,
+  "exact_same_anchor_catchment_pairs": 3,
+  "exact_same_anchor_catchment_labels": [
+    "Mayens de Conthey / Anzère",
+    "Grimentz-Zinal / St-Luc / Chandolin",
+    "Aeschiallmend / Faltschen"
+  ],
+  "two_way_fe_rank_sensitivity": [
+    {
+      "threshold_minutes": 30,
+      "usable_group_municipality_pairs": 5,
+      "nonzero_group_columns": 5,
+      "two_way_fe_design_rank": 5,
+      "rank_deficiency": 0,
+      "condition_number_nonzero_space": 1.0756214467193805
+    },
+    {
+      "threshold_minutes": 60,
+      "usable_group_municipality_pairs": 39,
+      "nonzero_group_columns": 23,
+      "two_way_fe_design_rank": 20,
+      "rank_deficiency": 3,
+      "condition_number_nonzero_space": 38.11111120788143
+    },
+    {
+      "threshold_minutes": 90,
+      "usable_group_municipality_pairs": 116,
+      "nonzero_group_columns": 32,
+      "two_way_fe_design_rank": 28,
+      "rank_deficiency": 4,
+      "condition_number_nonzero_space": 13.487584260268724
+    },
+    {
+      "threshold_minutes": 120,
+      "usable_group_municipality_pairs": 309,
+      "nonzero_group_columns": 34,
+      "two_way_fe_design_rank": 31,
+      "rank_deficiency": 3,
+      "condition_number_nonzero_space": 15.07232142030534
+    }
+  ],
+  "municipalities_with_descriptive_120min_access": 80,
+  "municipalities_with_multiple_distinct_entry_months": 46,
+  "municipalities_with_two_complete_entry_windows": 27,
+  "municipalities_with_two_non_covid_isolated_entry_windows": 0,
+  "municipalities_ever_exposed_120min": 80,
+  "municipalities_never_exposed_120min": 106,
+  "first_exposure_complete_24_24_municipalities": 65,
+  "first_exposure_manual_design_candidates": 19,
+  "founding_window_complete_comparison_candidates": 132,
+  "founding_window_complete_never_exposed_candidates": 99,
+  "causal_treatments_approved": 0,
+  "causal_controls_approved": 0,
+  "recommended_next_design": "screen municipality first exposure to the accessible Magic Pass network; do not estimate separate station effects where dates or catchments coincide",
+  "input_sha256": {
+    "data_processed/accessibility_station_groups.csv": "08040e0b7141679434eb8f4339d46ba24a77768ee07c6ab9fb98e989054987eb",
+    "data_processed/accessibility_station_group_journey_context.csv": "226114874ffff0e679c7f951e596007176e8635741ae64dd8c48ae576446ce60",
+    "data_processed/accessibility_station_group_pair_diagnostic.csv": "46a0d1252076cfdf0721fed8a104f10a4faec3ee68d358fd50c9941c1601cefd",
+    "data_processed/accessibility_municipality_month_exposure.csv": "9da2037a9fd323afdea5987a87669d94618535ded4f6a71c1a82a97f1890d0be",
+    "reports/accessibility_station_group_feasibility.csv": "6abb3dac1f26661f21dc657d02800ef3b755d1df30d88a916e78b32f4725b887"
+  }
+}

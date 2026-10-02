@@ -1,0 +1,187 @@
+municipality_bfs_id,municipality_name,shared_current_territory,ever_accessible_120min,first_exposure_month,groups_entering_at_first_exposure,first_exposure_group_names,later_entry_months_within_post24,complete_24_pre_24_post,window_overlaps_covid_sensitivity,first_exposure_candidate_for_manual_design_review,first_exposure_causal_treatment_approved,nearest_first_exposure_group_minutes,observed_pre_24_months,observed_post_24_months,pre_24_covid_months,post_24_covid_months
+62,Kloten,False,False,,0,,0,False,False,False,False,,,,,
+66,Opfikon,False,False,,0,,0,False,False,False,False,,,,,
+191,Dübendorf,False,False,,0,,0,False,False,False,False,,,,,
+198,Uster,False,False,,0,,0,False,False,False,False,,,,,
+230,Winterthur,False,False,,0,,0,False,False,False,False,,,,,
+261,Zürich,False,False,,0,,0,False,False,False,False,,,,,
+293,Wädenswil,False,False,,0,,0,False,False,False,False,,,,,
+295,Horgen,False,False,,0,,0,False,False,False,False,,,,,
+329,Langenthal,False,False,,0,,0,False,False,False,False,,,,,
+351,Bern,False,True,2017-11-01,2,Jaun|Schwarzsee,1,True,False,False,False,91.16428571428573,24.0,24.0,0.0,0.0
+355,Köniz,False,True,2017-11-01,1,Schwarzsee,0,True,False,True,False,106.09285714285716,24.0,24.0,0.0,0.0
+371,Biel/Bienne,False,True,2017-11-01,1,Tramelan,1,True,False,False,False,92.92142857142858,24.0,24.0,0.0,0.0
+404,Burgdorf,False,True,2017-11-01,1,Schwarzsee,0,True,False,True,False,116.16428571428573,24.0,24.0,0.0,0.0
+561,Adelboden,False,False,,0,,0,False,False,False,False,,,,,
+562,Aeschi bei Spiez,False,True,2022-05-01,5,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern|Rossberg,1,True,True,False,False,47.07142857142857,24.0,24.0,24.0,0.0
+565,Kandersteg,False,True,2022-05-01,1,Rossberg,1,True,True,False,False,112.92857142857144,24.0,24.0,24.0,0.0
+567,Reichenbach im Kandertal,False,True,2022-05-01,6,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Eriz|Faltschen|Habkern|Rossberg,1,False,True,False,False,85.61428571428571,23.0,24.0,24.0,0.0
+571,Beatenberg,False,True,2022-05-01,4,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern,0,True,True,False,False,37.0,24.0,24.0,24.0,0.0
+573,Brienz (BE),False,True,2022-05-01,5,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern|Rossberg,0,True,True,False,False,84.71428571428572,24.0,24.0,24.0,0.0
+576,Grindelwald,False,True,2022-05-01,2,Beatenberg-Hohwald / Niederhorn|Habkern,0,True,True,False,False,75.14285714285714,24.0,24.0,24.0,0.0
+581,Interlaken,False,True,2022-05-01,5,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern|Rossberg,0,True,True,False,False,47.74285714285715,24.0,24.0,24.0,0.0
+584,Lauterbrunnen,False,True,2022-05-01,2,Beatenberg-Hohwald / Niederhorn|Habkern,0,True,True,False,False,78.64285714285714,24.0,24.0,24.0,0.0
+587,Matten bei Interlaken,False,True,2022-05-01,5,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern|Rossberg,0,True,True,False,False,54.14285714285714,24.0,24.0,24.0,0.0
+593,Unterseen,False,True,2022-05-01,5,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern|Rossberg,0,True,True,False,False,23.642857142857142,24.0,24.0,24.0,0.0
+594,Wilderswil,False,True,2022-05-01,5,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern|Rossberg,0,True,True,False,False,48.64285714285714,24.0,24.0,24.0,0.0
+700,Moutier (BE),True,True,2017-11-01,1,Tramelan,1,True,False,False,False,109.50714285714284,24.0,24.0,0.0,0.0
+762,Diemtigen,False,True,2022-05-01,6,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Eriz|Faltschen|Habkern|Rossberg,1,True,True,False,False,49.42857142857143,24.0,24.0,24.0,0.0
+768,Spiez,False,True,2019-05-01,1,Leukerbad,0,True,True,False,False,112.87142857142857,24.0,24.0,0.0,14.0
+783,Hasliberg,False,False,,0,,0,False,False,False,False,,,,,
+784,Innertkirchen,False,True,2025-05-01,1,Meiringen-Hasliberg,0,False,False,False,False,70.22857142857143,24.0,11.0,0.0,0.0
+785,Meiringen,False,True,2022-05-01,2,Beatenberg-Hohwald / Niederhorn|Habkern,0,True,True,False,False,106.52857142857144,24.0,24.0,24.0,0.0
+792,Lenk,False,True,2022-05-01,1,Rossberg,0,True,True,False,False,68.07142857142857,24.0,24.0,24.0,0.0
+843,Saanen,False,True,2017-11-01,3,Château-d'Oex - La Braye|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,0,True,False,True,False,70.42857142857143,24.0,24.0,0.0,0.0
+902,Langnau im Emmental,False,True,2022-05-01,2,Beatenberg-Hohwald / Niederhorn|Rossberg,1,True,True,False,False,116.58571428571427,24.0,24.0,24.0,0.0
+906,Schangnau,False,True,2023-05-01,2,Bumbach|Marbachegg,0,True,True,False,False,34.964285714285715,24.0,24.0,12.0,0.0
+938,Sigriswil,False,True,2022-05-01,6,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Eriz|Faltschen|Habkern|Rossberg,0,True,True,False,False,65.15714285714286,24.0,24.0,24.0,0.0
+942,Thun,False,True,2017-11-01,1,Schwarzsee,0,True,False,True,False,117.02142857142856,24.0,24.0,0.0,0.0
+979,Herzogenbuchsee,False,False,,0,,0,False,False,False,False,,,,,
+1024,Emmen,False,True,2023-05-01,1,Marbachegg,0,True,True,False,False,109.71428571428572,24.0,24.0,12.0,0.0
+1059,Kriens,False,True,2023-05-01,1,Marbachegg,0,True,True,False,False,117.45,24.0,24.0,12.0,0.0
+1061,Luzern,False,True,2023-05-01,1,Marbachegg,0,True,True,False,False,102.21428571428572,24.0,24.0,12.0,0.0
+1063,Meggen,False,False,,0,,0,False,False,False,False,,,,,
+1068,Vitznau,False,False,,0,,0,False,False,False,False,,,,,
+1069,Weggis,False,False,,0,,0,False,False,False,False,,,,,
+1103,Sursee,False,True,2023-05-01,1,Marbachegg,0,True,True,False,False,116.52142857142856,24.0,24.0,12.0,0.0
+1202,Andermatt,False,False,,0,,0,False,False,False,False,,,,,
+1209,Gurtnellen,False,False,,0,,0,False,False,False,False,,,,,
+1301,Einsiedeln,False,False,,0,,0,False,False,False,False,,,,,
+1321,Feusisberg,False,False,,0,,0,False,False,False,False,,,,,
+1322,Freienbach,False,False,,0,,0,False,False,False,False,,,,,
+1331,Küssnacht (SZ),False,False,,0,,0,False,False,False,False,,,,,
+1364,Ingenbohl,False,False,,0,,0,False,False,False,False,,,,,
+1366,Morschach,False,False,,0,,0,False,False,False,False,,,,,
+1372,Schwyz,False,False,,0,,0,False,False,False,False,,,,,
+1402,Engelberg,False,False,,0,,0,False,False,False,False,,,,,
+1406,Sachseln,False,True,2025-05-01,1,Meiringen-Hasliberg,0,False,False,False,False,83.07142857142857,24.0,11.0,0.0,0.0
+1407,Sarnen,False,True,2025-05-01,1,Meiringen-Hasliberg,0,False,False,False,False,85.07142857142857,24.0,11.0,0.0,0.0
+1501,Beckenried,False,False,,0,,0,False,False,False,False,,,,,
+1504,Emmetten,False,False,,0,,0,False,False,False,False,,,,,
+1630,Glarus Nord,False,False,,0,,0,False,False,False,False,,,,,
+1631,Glarus Süd,False,False,,0,,0,False,False,False,False,,,,,
+1709,Unterägeri,False,False,,0,,0,False,False,False,False,,,,,
+1711,Zug,False,False,,0,,0,False,False,False,False,,,,,
+2121,Haut-Intyamon,False,True,2017-11-01,4,Château-d'Oex - La Braye|Jaun|Leysin - Les Mosses - La Lécherette|Moléson,0,True,False,True,False,64.42857142857143,24.0,24.0,0.0,0.0
+2125,Bulle,False,True,2017-11-01,5,Château-d'Oex - La Braye|Jaun|Les Paccots|Moléson|Schwarzsee,0,True,False,True,False,56.21428571428572,24.0,24.0,0.0,0.0
+2135,Gruyères,False,True,2017-11-01,3,Château-d'Oex - La Braye|Jaun|Moléson,0,True,False,True,False,35.16428571428571,24.0,24.0,0.0,0.0
+2196,Fribourg,False,True,2017-11-01,4,Jaun|Les Paccots|Moléson|Schwarzsee,0,True,False,True,False,61.64285714285714,24.0,24.0,0.0,0.0
+2275,Murten,False,True,2017-11-01,1,Schwarzsee,0,True,False,True,False,110.54285714285714,24.0,24.0,0.0,0.0
+2299,Plaffeien,False,True,2017-11-01,1,Schwarzsee,0,True,False,True,False,27.95,24.0,24.0,0.0,0.0
+2401,Egerkingen,False,False,,0,,0,False,False,False,False,,,,,
+2546,Grenchen,False,True,2017-11-01,1,Tramelan,1,True,False,False,False,118.72142857142856,24.0,24.0,0.0,0.0
+2581,Olten,False,False,,0,,0,False,False,False,False,,,,,
+2601,Solothurn,False,True,2019-05-01,1,Les Prés-d'Orvin,0,True,True,False,False,117.57142857142856,24.0,24.0,0.0,14.0
+2701,Basel,False,False,,0,,0,False,False,False,False,,,,,
+2829,Liestal,False,False,,0,,0,False,False,False,False,,,,,
+2831,Pratteln,False,False,,0,,0,False,False,False,False,,,,,
+2939,Schaffhausen,False,False,,0,,0,False,False,False,False,,,,,
+3002,Hundwil,False,False,,0,,0,False,False,False,False,,,,,
+3022,Gais,False,False,,0,,0,False,False,False,False,,,,,
+3024,Teufen (AR),False,False,,0,,0,False,False,False,False,,,,,
+3032,Heiden,False,False,,0,,0,False,False,False,False,,,,,
+3101,Appenzell,False,False,,0,,0,False,False,False,False,,,,,
+3102,Gonten,False,False,,0,,0,False,False,False,False,,,,,
+3203,St. Gallen,False,False,,0,,0,False,False,False,False,,,,,
+3216,Rorschacherberg,False,False,,0,,0,False,False,False,False,,,,,
+3251,Altstätten,False,False,,0,,0,False,False,False,False,,,,,
+3271,Buchs (SG),False,False,,0,,0,False,False,False,False,,,,,
+3291,Bad Ragaz,False,False,,0,,0,False,False,False,False,,,,,
+3292,Flums,False,False,,0,,0,False,False,False,False,,,,,
+3295,Quarten,False,False,,0,,0,False,False,False,False,,,,,
+3298,Walenstadt,False,False,,0,,0,False,False,False,False,,,,,
+3311,Amden,False,False,,0,,0,False,False,False,False,,,,,
+3340,Rapperswil-Jona,False,False,,0,,0,False,False,False,False,,,,,
+3342,Eschenbach (SG),False,False,,0,,0,False,False,False,False,,,,,
+3359,Wildhaus-Alt St. Johann,False,False,,0,,0,False,False,False,False,,,,,
+3396,Neckertal,False,False,,0,,0,False,False,False,False,,,,,
+3408,Uzwil,False,False,,0,,0,False,False,False,False,,,,,
+3427,Wil (SG),False,False,,0,,0,False,False,False,False,,,,,
+3506,Vaz/Obervaz,False,False,,0,,0,False,False,False,False,,,,,
+3543,Surses,False,False,,0,,0,False,False,False,False,,,,,
+3561,Poschiavo,False,False,,0,,0,False,False,False,False,,,,,
+3575,Laax,False,False,,0,,0,False,False,False,False,,,,,
+3603,Vals,False,False,,0,,0,False,False,False,False,,,,,
+3618,Lumnezia,False,False,,0,,0,False,False,False,False,,,,,
+3619,Ilanz/Glion,False,False,,0,,0,False,False,False,False,,,,,
+3714,Rheinwald,False,False,,0,,0,False,False,False,False,,,,,
+3732,Flims,False,False,,0,,0,False,False,False,False,,,,,
+3746,Zernez,False,False,,0,,0,False,False,False,False,,,,,
+3752,Samnaun,False,False,,0,,0,False,False,False,False,,,,,
+3762,Scuol,False,False,,0,,0,False,False,False,False,,,,,
+3782,Celerina/Schlarigna,False,False,,0,,0,False,False,False,False,,,,,
+3784,Pontresina,False,False,,0,,0,False,False,False,False,,,,,
+3786,Samedan,False,False,,0,,0,False,False,False,False,,,,,
+3787,St. Moritz,False,False,,0,,0,False,False,False,False,,,,,
+3792,Bregaglia,False,False,,0,,0,False,False,False,False,,,,,
+3847,Val Müstair,False,False,,0,,0,False,False,False,False,,,,,
+3851,Davos,False,False,,0,,0,False,False,False,False,,,,,
+3871,Klosters,False,False,,0,,0,False,False,False,False,,,,,
+3901,Chur,False,False,,0,,0,False,False,False,False,,,,,
+3921,Arosa,False,False,,0,,0,False,False,False,False,,,,,
+3953,Maienfeld,False,False,,0,,0,False,False,False,False,,,,,
+3981,Breil/Brigels,False,False,,0,,0,False,False,False,False,,,,,
+3986,Tujetsch,False,False,,0,,0,False,False,False,False,,,,,
+4001,Aarau,False,False,,0,,0,False,False,False,False,,,,,
+4021,Baden,False,False,,0,,0,False,False,False,False,,,,,
+4201,Lenzburg,False,False,,0,,0,False,False,False,False,,,,,
+4258,Rheinfelden,False,False,,0,,0,False,False,False,False,,,,,
+4289,Zofingen,False,False,,0,,0,False,False,False,False,,,,,
+4401,Arbon,False,False,,0,,0,False,False,False,False,,,,,
+4566,Frauenfeld,False,False,,0,,0,False,False,False,False,,,,,
+4671,Kreuzlingen,False,False,,0,,0,False,False,False,False,,,,,
+5002,Bellinzona,False,False,,0,,0,False,False,False,False,,,,,
+5091,Ascona,False,False,,0,,0,False,False,False,False,,,,,
+5113,Locarno,False,False,,0,,0,False,False,False,False,,,,,
+5120,Muralto,False,False,,0,,0,False,False,False,False,,,,,
+5192,Lugano,False,False,,0,,0,False,False,False,False,,,,,
+5210,Paradiso,False,False,,0,,0,False,False,False,False,,,,,
+5236,Collina d'Oro,False,False,,0,,0,False,False,False,False,,,,,
+5238,Monteceneri,False,False,,0,,0,False,False,False,False,,,,,
+5250,Chiasso,False,False,,0,,0,False,False,False,False,,,,,
+5254,Mendrisio,False,False,,0,,0,False,False,False,False,,,,,
+5407,Leysin,False,True,2017-11-01,3,Château-d'Oex - La Braye|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,0,True,False,True,False,14.67142857142857,24.0,24.0,0.0,0.0
+5409,Ollon,False,True,2017-11-01,1,Villars-Gryon-Les Diablerets,0,True,False,True,False,14.35,24.0,24.0,0.0,0.0
+5411,Ormont-Dessus,False,True,2017-11-01,3,Château-d'Oex - La Braye|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,0,True,False,True,False,58.885714285714286,24.0,24.0,0.0,0.0
+5552,Bullet,False,True,2023-05-01,1,Sainte-Croix - Les Rasses,0,True,True,False,False,55.457142857142856,24.0,24.0,12.0,0.0
+5586,Lausanne,False,True,2017-11-01,3,Les Paccots|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,1,True,False,False,False,79.5142857142857,24.0,24.0,0.0,0.0
+5613,Bourg-en-Lavaux,False,True,2017-11-01,3,Les Paccots|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,1,True,False,False,False,81.89285714285714,24.0,24.0,0.0,0.0
+5642,Morges,False,True,2017-11-01,1,Villars-Gryon-Les Diablerets,1,True,False,False,False,105.12142857142857,24.0,24.0,0.0,0.0
+5724,Nyon,False,True,2024-05-01,1,Saint-Cergue,0,False,False,False,False,52.5,24.0,23.0,0.0,0.0
+5841,Château-d'Oex,False,True,2017-11-01,2,Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,0,True,False,True,False,54.92857142857143,24.0,24.0,0.0,0.0
+5872,Le Chenit,False,True,2018-05-01,1,Vallée de Joux,0,True,True,False,False,25.67142857142857,24.0,24.0,0.0,2.0
+5886,Montreux,False,True,2017-11-01,4,Château-d'Oex - La Braye|Les Paccots|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,1,True,False,False,False,54.96428571428572,24.0,24.0,0.0,0.0
+5890,Vevey,False,True,2017-11-01,4,Château-d'Oex - La Braye|Les Paccots|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,1,True,False,False,False,58.46428571428572,24.0,24.0,0.0,0.0
+5892,Blonay - Saint-Légier,False,True,2017-11-01,3,Les Paccots|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,1,False,False,False,False,85.39285714285714,0.0,0.0,0.0,0.0
+5938,Yverdon-les-Bains,False,True,2018-05-01,1,Vallée de Joux,1,False,True,False,False,110.92857142857144,24.0,23.0,0.0,2.0
+6002,Brig-Glis,False,True,2017-11-01,2,Grimentz-Zinal|St-Luc / Chandolin,1,True,False,False,False,118.12857142857143,24.0,24.0,0.0,0.0
+6024,Nendaz,False,True,2017-11-01,2,Anzère|Mayens de Conthey,2,True,False,False,False,100.5,24.0,24.0,0.0,0.0
+6034,Orsières,False,True,2017-11-01,1,Villars-Gryon-Les Diablerets,0,True,False,True,False,117.45,24.0,24.0,0.0,0.0
+6037,Val de Bagnes,False,True,2017-11-01,1,Villars-Gryon-Les Diablerets,0,False,False,False,False,117.05714285714284,0.0,0.0,0.0,0.0
+6077,Goms,False,False,,0,,0,False,False,False,False,,,,,
+6083,Evolène,False,True,2018-05-01,3,Arolla|Evolène|La Forclaz,0,False,True,False,False,51.0,24.0,23.0,0.0,2.0
+6111,Leukerbad,False,True,2023-05-01,1,Eischoll,0,True,True,False,False,113.99285714285716,24.0,24.0,12.0,0.0
+6136,Martigny,False,True,2017-11-01,6,Anzère|Grimentz-Zinal|Leysin - Les Mosses - La Lécherette|Mayens de Conthey|St-Luc / Chandolin|Villars-Gryon-Les Diablerets,2,True,False,False,False,75.94285714285715,24.0,24.0,0.0,0.0
+6151,Champéry,False,True,2017-11-01,1,Villars-Gryon-Les Diablerets,0,True,False,True,False,117.08571428571427,24.0,24.0,0.0,0.0
+6217,Saint-Maurice,False,True,2017-11-01,5,Anzère|Château-d'Oex - La Braye|Leysin - Les Mosses - La Lécherette|Mayens de Conthey|Villars-Gryon-Les Diablerets,2,True,False,False,False,75.2357142857143,24.0,24.0,0.0,0.0
+6248,Sierre,False,True,2017-11-01,5,Anzère|Grimentz-Zinal|Mayens de Conthey|St-Luc / Chandolin|Villars-Gryon-Les Diablerets,2,True,False,False,False,79.32142857142857,24.0,24.0,0.0,0.0
+6252,Anniviers,False,True,2017-11-01,2,Grimentz-Zinal|St-Luc / Chandolin,0,True,False,True,False,42.57142857142857,24.0,24.0,0.0,0.0
+6253,Crans-Montana,False,True,2019-05-01,1,Leukerbad,0,True,True,False,False,110.22857142857144,24.0,24.0,0.0,14.0
+6266,Sion,False,True,2017-11-01,6,Anzère|Grimentz-Zinal|Leysin - Les Mosses - La Lécherette|Mayens de Conthey|St-Luc / Chandolin|Villars-Gryon-Les Diablerets,2,True,False,False,False,71.45714285714286,24.0,24.0,0.0,0.0
+6290,Saas-Fee,False,True,2023-05-01,2,Eischoll|Unterbäch,0,True,True,False,False,118.5142857142857,24.0,24.0,12.0,0.0
+6291,Saas-Grund,False,True,2023-05-01,3,Eischoll|Moosalp|Unterbäch,0,True,True,False,False,112.5142857142857,24.0,24.0,12.0,0.0
+6297,Visp,False,True,2017-11-01,5,Anzère|Grimentz-Zinal|Mayens de Conthey|St-Luc / Chandolin|Villars-Gryon-Les Diablerets,2,True,False,False,False,104.35714285714286,24.0,24.0,0.0,0.0
+6300,Zermatt,False,False,,0,,0,False,False,False,False,,,,,
+6417,La Grande Béroche,False,False,,0,,0,False,False,False,False,,,,,
+6421,La Chaux-de-Fonds,False,True,2017-11-01,1,Tramelan,0,True,False,True,False,65.89285714285714,24.0,24.0,0.0,0.0
+6458,Neuchâtel,False,True,2017-11-01,1,Tramelan,1,True,False,False,False,101.59285714285716,24.0,24.0,0.0,0.0
+6513,Laténa,False,True,2017-11-01,1,Tramelan,1,False,False,False,False,113.88571428571429,0.0,0.0,0.0,0.0
+6621,Genève,False,True,2024-05-01,1,Saint-Cergue,0,False,False,False,False,67.10714285714286,24.0,23.0,0.0,0.0
+6628,Lancy,False,True,2024-05-01,1,Saint-Cergue,0,False,False,False,False,77.14285714285714,24.0,23.0,0.0,0.0
+6630,Meyrin,False,True,2024-05-01,1,Saint-Cergue,0,False,False,False,False,93.89285714285714,24.0,23.0,0.0,0.0
+6643,Vernier,False,True,2024-05-01,1,Saint-Cergue,0,False,False,False,False,91.85714285714286,24.0,23.0,0.0,0.0
+6711,Delémont,False,True,2017-11-01,1,Tramelan,1,True,False,False,False,113.65,24.0,24.0,0.0,0.0
+6757,Saignelégier,False,True,2017-11-01,1,Tramelan,0,True,False,True,False,82.39285714285714,24.0,24.0,0.0,0.0
+6800,Porrentruy,False,False,,0,,0,False,False,False,False,,,,,
+6808,Clos du Doubs,False,False,,0,,0,False,False,False,False,,,,,
+6831,Moutier (JU),True,True,2017-11-01,1,Tramelan,1,False,False,False,False,109.50714285714284,0.0,0.0,0.0,0.0

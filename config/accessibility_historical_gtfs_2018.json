@@ -1,0 +1,22 @@
+{
+  "source_id": "SKI_GTFS_TIMETABLE_2018_WINTER_20180207",
+  "timetable_year": 2018,
+  "snapshot_build": "2018-02-07",
+  "archive_url": "https://archive.opentransportdata.swiss/timetable_gtfs/timetable-2018-gtfs/GTFS_FP2018_2018-02-07.zip",
+  "selection_rule": "official_snapshot_closest_to_7_february_of_first_magic_pass_exposure_winter",
+  "head_check_date": "2026-10-02",
+  "head_http_status": 200,
+  "content_type": "application/zip",
+  "content_length_bytes": 50151599,
+  "last_modified_header": "Thu, 06 Mar 2025 11:51:34 GMT",
+  "etag_header": "2fd40af-67c98c46-9e9a5760d1300aa7;;;",
+  "accept_ranges": "bytes",
+  "robots_policy_observed": "User-agent: *; Disallow: /",
+  "automated_download_allowed": false,
+  "manual_download_required": true,
+  "expected_manual_file_name": "SKI_GTFS_TIMETABLE_2018_WINTER_20180207.zip",
+  "expected_manual_local_path": "data_external/source_evidence/SKI_GTFS_TIMETABLE_2018_WINTER_20180207.zip",
+  "historical_feed_downloaded": false,
+  "sha256": null,
+  "notes": "The exact official ZIP returned HTTP 200 to a user-approved HEAD request. The archive host robots.txt disallows automated collection, so the project does not download the file automatically."
+}

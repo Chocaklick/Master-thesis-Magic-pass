@@ -103,6 +103,8 @@ def test_accessibility_expansion_summaries_and_provenance_are_registered() -> No
         "DERIVED_ACCESSIBILITY_STATION_GROUP_EVENTS",
         "DERIVED_ACCESSIBILITY_STATION_GROUP_JOURNEYS",
         "DERIVED_ACCESSIBILITY_MUNICIPALITY_EXPOSURE",
+        "DERIVED_ACCESSIBILITY_IDENTIFICATION_AUDIT",
+        "SKI_GTFS_TIMETABLE_2018_WINTER_20180207",
     }
     assert required_sources <= set(sources.source_id)
     assert set(dictionary.source_id) <= set(sources.source_id)
@@ -112,5 +114,66 @@ def test_accessibility_expansion_summaries_and_provenance_are_registered() -> No
         "accessibility_municipality_month_exposure",
         "accessibility_station_group_event_window",
         "accessibility_station_group_feasibility",
+        "accessibility_identification_group_audit",
+        "accessibility_first_exposure_audit",
+        "accessibility_first_exposure_pretrend_pairs",
+        "accessibility_historical_gtfs_2018_manual_worklist",
     ]:
         assert table in set(dictionary.table)
+
+
+def test_identification_audit_keeps_station_effects_separate_and_unapproved() -> None:
+    summary = json.loads((ROOT / "reports" /
+        "accessibility_identification_summary.json").read_text(encoding="utf-8"))
+    groups = read("reports/accessibility_identification_group_audit.csv")
+    municipalities = read("reports/accessibility_identification_municipality_audit.csv")
+    first = read("reports/accessibility_first_exposure_audit.csv")
+    assert summary["groups_with_complete_24_24_pair"] == 34
+    assert summary["complete_24_24_group_municipality_pairs"] == 277
+    assert summary["complete_pairs_overlapping_covid"] == 185
+    assert summary["mechanically_isolated_non_covid_pairs"] == 15
+    assert summary["groups_with_mechanically_isolated_non_covid_pair"] == 3
+    assert summary["exact_same_anchor_catchment_pairs"] == 3
+    assert summary["two_way_fe_rank_sensitivity"][-1]["two_way_fe_design_rank"] == 31
+    assert len(groups) == 71
+    assert as_bool(groups.exact_same_anchor_catchment_collision).sum() == 6
+    assert not as_bool(groups.causal_treatment_approved).any()
+    assert len(municipalities) == 186
+    assert as_bool(municipalities.sequential_complete_window_candidate).sum() == 27
+    assert not as_bool(municipalities.sequential_non_covid_isolated_candidate).any()
+    assert as_bool(first.first_exposure_candidate_for_manual_design_review).sum() == 19
+    assert not as_bool(first.first_exposure_causal_treatment_approved).any()
+
+
+def test_first_exposure_pretrend_screen_is_complete_but_not_causal() -> None:
+    pairs = read("data_processed/accessibility_first_exposure_pretrend_pairs.csv")
+    shortlist = read("reports/accessibility_first_exposure_pretrend_shortlist.csv")
+    summary = json.loads((ROOT / "reports" /
+        "accessibility_first_exposure_pretrend_summary.json").read_text(encoding="utf-8"))
+    assert len(pairs) == 19 * 132
+    assert not pairs.duplicated([
+        "treated_municipality_bfs_id", "control_municipality_bfs_id"]).any()
+    assert len(shortlist) == 19 * 5
+    assert shortlist.groupby("treated_municipality_bfs_id").size().eq(5).all()
+    assert summary["never_exposed_comparison_municipalities"] == 99
+    assert summary["not_yet_exposed_comparison_municipalities"] == 33
+    assert summary["parallel_trends_approved"] is False
+    assert not as_bool(pairs.causal_control_approved).any()
+    assert not as_bool(shortlist.causal_control_approved).any()
+
+
+def test_historical_access_worklist_respects_manual_collection_boundary() -> None:
+    worklist = read("reports/accessibility_historical_gtfs_2018_manual_worklist.csv")
+    summary = json.loads((ROOT / "reports" /
+        "accessibility_historical_gtfs_2018_summary.json").read_text(encoding="utf-8"))
+    assert len(worklist) == 39
+    assert worklist.municipality_bfs_id.nunique() == 19
+    assert worklist.station_group_id.nunique() == 10
+    assert summary["head_http_status"] == 200
+    assert summary["content_length_bytes"] == 50_151_599
+    assert summary["automated_download_allowed"] is False
+    assert summary["manual_download_required"] is True
+    assert summary["historical_feed_downloaded"] is False
+    assert not as_bool(worklist.historical_route_computed).any()
+    assert not as_bool(worklist.historical_access_validated).any()
+    assert not as_bool(worklist.causal_accessibility_feature_approved).any()

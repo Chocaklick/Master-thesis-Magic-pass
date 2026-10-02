@@ -1,0 +1,187 @@
+municipality_bfs_id,municipality_name_source,shared_current_territory,accessible_groups_120min,distinct_accessible_entry_months,complete_24_24_group_pairs,complete_24_24_distinct_entry_months,mechanically_isolated_non_covid_pairs,mechanically_isolated_non_covid_entry_months,maximum_groups_entering_same_month,multiple_accessible_groups,multiple_distinct_entry_months,sequential_complete_window_candidate,sequential_non_covid_isolated_candidate,causal_sequence_approved
+62,Kloten,False,0,0,0,0,0,0,0,False,False,False,False,False
+66,Opfikon,False,0,0,0,0,0,0,0,False,False,False,False,False
+191,Dübendorf,False,0,0,0,0,0,0,0,False,False,False,False,False
+198,Uster,False,0,0,0,0,0,0,0,False,False,False,False,False
+230,Winterthur,False,0,0,0,0,0,0,0,False,False,False,False,False
+261,Zürich,False,0,0,0,0,0,0,0,False,False,False,False,False
+293,Wädenswil,False,0,0,0,0,0,0,0,False,False,False,False,False
+295,Horgen,False,0,0,0,0,0,0,0,False,False,False,False,False
+329,Langenthal,False,0,0,0,0,0,0,0,False,False,False,False,False
+351,Bern,False,18,6,14,4,0,0,6,True,True,True,False,False
+355,Köniz,False,8,4,3,2,1,1,3,True,True,True,False,False
+371,Biel/Bienne,False,2,2,2,2,1,1,1,True,True,True,False,False
+404,Burgdorf,False,7,4,2,2,1,1,3,True,True,True,False,False
+561,Adelboden,False,0,0,0,0,0,0,0,False,False,False,False,False
+562,Aeschi bei Spiez,False,11,3,8,2,0,0,5,True,True,True,False,False
+565,Kandersteg,False,3,2,3,2,0,0,2,True,True,True,False,False
+567,Reichenbach im Kandertal,False,13,4,3,1,0,0,6,True,True,False,False,False
+571,Beatenberg,False,4,1,4,1,0,0,4,True,False,False,False,False
+573,Brienz (BE),False,6,2,5,1,0,0,5,True,True,False,False,False
+576,Grindelwald,False,2,1,2,1,0,0,2,True,False,False,False,False
+581,Interlaken,False,8,3,5,1,0,0,5,True,True,False,False,False
+584,Lauterbrunnen,False,2,1,2,1,0,0,2,True,False,False,False,False
+587,Matten bei Interlaken,False,6,2,5,1,0,0,5,True,True,False,False,False
+593,Unterseen,False,7,2,5,1,0,0,5,True,True,False,False,False
+594,Wilderswil,False,6,2,5,1,0,0,5,True,True,False,False,False
+700,Moutier (BE),True,2,2,1,1,1,1,1,True,True,False,False,False
+762,Diemtigen,False,11,3,8,2,0,0,6,True,True,True,False,False
+768,Spiez,False,20,5,14,3,0,0,7,True,True,True,False,False
+783,Hasliberg,False,0,0,0,0,0,0,0,False,False,False,False,False
+784,Innertkirchen,False,1,1,0,0,0,0,1,False,False,False,False,False
+785,Meiringen,False,3,2,2,1,0,0,2,True,True,False,False,False
+792,Lenk,False,1,1,1,1,0,0,1,False,False,False,False,False
+843,Saanen,False,4,2,4,2,0,0,3,True,True,True,False,False
+902,Langnau im Emmental,False,8,4,4,2,0,0,3,True,True,True,False,False
+906,Schangnau,False,3,2,2,1,0,0,2,True,True,False,False,False
+938,Sigriswil,False,10,3,6,1,0,0,6,True,True,False,False,False
+942,Thun,False,18,5,13,3,1,1,6,True,True,True,False,False
+979,Herzogenbuchsee,False,0,0,0,0,0,0,0,False,False,False,False,False
+1024,Emmen,False,1,1,1,1,0,0,1,False,False,False,False,False
+1059,Kriens,False,2,2,1,1,0,0,1,True,True,False,False,False
+1061,Luzern,False,3,2,1,1,0,0,2,True,True,False,False,False
+1063,Meggen,False,0,0,0,0,0,0,0,False,False,False,False,False
+1068,Vitznau,False,0,0,0,0,0,0,0,False,False,False,False,False
+1069,Weggis,False,0,0,0,0,0,0,0,False,False,False,False,False
+1103,Sursee,False,1,1,1,1,0,0,1,False,False,False,False,False
+1202,Andermatt,False,0,0,0,0,0,0,0,False,False,False,False,False
+1209,Gurtnellen,False,0,0,0,0,0,0,0,False,False,False,False,False
+1301,Einsiedeln,False,0,0,0,0,0,0,0,False,False,False,False,False
+1321,Feusisberg,False,0,0,0,0,0,0,0,False,False,False,False,False
+1322,Freienbach,False,0,0,0,0,0,0,0,False,False,False,False,False
+1331,Küssnacht (SZ),False,0,0,0,0,0,0,0,False,False,False,False,False
+1364,Ingenbohl,False,0,0,0,0,0,0,0,False,False,False,False,False
+1366,Morschach,False,0,0,0,0,0,0,0,False,False,False,False,False
+1372,Schwyz,False,0,0,0,0,0,0,0,False,False,False,False,False
+1402,Engelberg,False,0,0,0,0,0,0,0,False,False,False,False,False
+1406,Sachseln,False,1,1,0,0,0,0,1,False,False,False,False,False
+1407,Sarnen,False,1,1,0,0,0,0,1,False,False,False,False,False
+1501,Beckenried,False,0,0,0,0,0,0,0,False,False,False,False,False
+1504,Emmetten,False,0,0,0,0,0,0,0,False,False,False,False,False
+1630,Glarus Nord,False,0,0,0,0,0,0,0,False,False,False,False,False
+1631,Glarus Süd,False,0,0,0,0,0,0,0,False,False,False,False,False
+1709,Unterägeri,False,0,0,0,0,0,0,0,False,False,False,False,False
+1711,Zug,False,0,0,0,0,0,0,0,False,False,False,False,False
+2121,Haut-Intyamon,False,4,1,4,1,0,0,4,True,False,False,False,False
+2125,Bulle,False,5,1,5,1,0,0,5,True,False,False,False,False
+2135,Gruyères,False,3,1,3,1,0,0,3,True,False,False,False,False
+2196,Fribourg,False,8,3,5,2,0,0,4,True,True,True,False,False
+2275,Murten,False,1,1,1,1,1,1,1,False,False,False,False,False
+2299,Plaffeien,False,1,1,1,1,1,1,1,False,False,False,False,False
+2401,Egerkingen,False,0,0,0,0,0,0,0,False,False,False,False,False
+2546,Grenchen,False,2,2,2,2,1,1,1,True,True,True,False,False
+2581,Olten,False,0,0,0,0,0,0,0,False,False,False,False,False
+2601,Solothurn,False,2,2,1,1,0,0,1,True,True,False,False,False
+2701,Basel,False,0,0,0,0,0,0,0,False,False,False,False,False
+2829,Liestal,False,0,0,0,0,0,0,0,False,False,False,False,False
+2831,Pratteln,False,0,0,0,0,0,0,0,False,False,False,False,False
+2939,Schaffhausen,False,0,0,0,0,0,0,0,False,False,False,False,False
+3002,Hundwil,False,0,0,0,0,0,0,0,False,False,False,False,False
+3022,Gais,False,0,0,0,0,0,0,0,False,False,False,False,False
+3024,Teufen (AR),False,0,0,0,0,0,0,0,False,False,False,False,False
+3032,Heiden,False,0,0,0,0,0,0,0,False,False,False,False,False
+3101,Appenzell,False,0,0,0,0,0,0,0,False,False,False,False,False
+3102,Gonten,False,0,0,0,0,0,0,0,False,False,False,False,False
+3203,St. Gallen,False,0,0,0,0,0,0,0,False,False,False,False,False
+3216,Rorschacherberg,False,0,0,0,0,0,0,0,False,False,False,False,False
+3251,Altstätten,False,0,0,0,0,0,0,0,False,False,False,False,False
+3271,Buchs (SG),False,0,0,0,0,0,0,0,False,False,False,False,False
+3291,Bad Ragaz,False,0,0,0,0,0,0,0,False,False,False,False,False
+3292,Flums,False,0,0,0,0,0,0,0,False,False,False,False,False
+3295,Quarten,False,0,0,0,0,0,0,0,False,False,False,False,False
+3298,Walenstadt,False,0,0,0,0,0,0,0,False,False,False,False,False
+3311,Amden,False,0,0,0,0,0,0,0,False,False,False,False,False
+3340,Rapperswil-Jona,False,0,0,0,0,0,0,0,False,False,False,False,False
+3342,Eschenbach (SG),False,0,0,0,0,0,0,0,False,False,False,False,False
+3359,Wildhaus-Alt St. Johann,False,0,0,0,0,0,0,0,False,False,False,False,False
+3396,Neckertal,False,0,0,0,0,0,0,0,False,False,False,False,False
+3408,Uzwil,False,0,0,0,0,0,0,0,False,False,False,False,False
+3427,Wil (SG),False,0,0,0,0,0,0,0,False,False,False,False,False
+3506,Vaz/Obervaz,False,0,0,0,0,0,0,0,False,False,False,False,False
+3543,Surses,False,0,0,0,0,0,0,0,False,False,False,False,False
+3561,Poschiavo,False,0,0,0,0,0,0,0,False,False,False,False,False
+3575,Laax,False,0,0,0,0,0,0,0,False,False,False,False,False
+3603,Vals,False,0,0,0,0,0,0,0,False,False,False,False,False
+3618,Lumnezia,False,0,0,0,0,0,0,0,False,False,False,False,False
+3619,Ilanz/Glion,False,0,0,0,0,0,0,0,False,False,False,False,False
+3714,Rheinwald,False,0,0,0,0,0,0,0,False,False,False,False,False
+3732,Flims,False,0,0,0,0,0,0,0,False,False,False,False,False
+3746,Zernez,False,0,0,0,0,0,0,0,False,False,False,False,False
+3752,Samnaun,False,0,0,0,0,0,0,0,False,False,False,False,False
+3762,Scuol,False,0,0,0,0,0,0,0,False,False,False,False,False
+3782,Celerina/Schlarigna,False,0,0,0,0,0,0,0,False,False,False,False,False
+3784,Pontresina,False,0,0,0,0,0,0,0,False,False,False,False,False
+3786,Samedan,False,0,0,0,0,0,0,0,False,False,False,False,False
+3787,St. Moritz,False,0,0,0,0,0,0,0,False,False,False,False,False
+3792,Bregaglia,False,0,0,0,0,0,0,0,False,False,False,False,False
+3847,Val Müstair,False,0,0,0,0,0,0,0,False,False,False,False,False
+3851,Davos,False,0,0,0,0,0,0,0,False,False,False,False,False
+3871,Klosters,False,0,0,0,0,0,0,0,False,False,False,False,False
+3901,Chur,False,0,0,0,0,0,0,0,False,False,False,False,False
+3921,Arosa,False,0,0,0,0,0,0,0,False,False,False,False,False
+3953,Maienfeld,False,0,0,0,0,0,0,0,False,False,False,False,False
+3981,Breil/Brigels,False,0,0,0,0,0,0,0,False,False,False,False,False
+3986,Tujetsch,False,0,0,0,0,0,0,0,False,False,False,False,False
+4001,Aarau,False,0,0,0,0,0,0,0,False,False,False,False,False
+4021,Baden,False,0,0,0,0,0,0,0,False,False,False,False,False
+4201,Lenzburg,False,0,0,0,0,0,0,0,False,False,False,False,False
+4258,Rheinfelden,False,0,0,0,0,0,0,0,False,False,False,False,False
+4289,Zofingen,False,0,0,0,0,0,0,0,False,False,False,False,False
+4401,Arbon,False,0,0,0,0,0,0,0,False,False,False,False,False
+4566,Frauenfeld,False,0,0,0,0,0,0,0,False,False,False,False,False
+4671,Kreuzlingen,False,0,0,0,0,0,0,0,False,False,False,False,False
+5002,Bellinzona,False,0,0,0,0,0,0,0,False,False,False,False,False
+5091,Ascona,False,0,0,0,0,0,0,0,False,False,False,False,False
+5113,Locarno,False,0,0,0,0,0,0,0,False,False,False,False,False
+5120,Muralto,False,0,0,0,0,0,0,0,False,False,False,False,False
+5192,Lugano,False,0,0,0,0,0,0,0,False,False,False,False,False
+5210,Paradiso,False,0,0,0,0,0,0,0,False,False,False,False,False
+5236,Collina d'Oro,False,0,0,0,0,0,0,0,False,False,False,False,False
+5238,Monteceneri,False,0,0,0,0,0,0,0,False,False,False,False,False
+5250,Chiasso,False,0,0,0,0,0,0,0,False,False,False,False,False
+5254,Mendrisio,False,0,0,0,0,0,0,0,False,False,False,False,False
+5407,Leysin,False,3,1,3,1,0,0,3,True,False,False,False,False
+5409,Ollon,False,1,1,1,1,1,1,1,False,False,False,False,False
+5411,Ormont-Dessus,False,3,1,3,1,0,0,3,True,False,False,False,False
+5552,Bullet,False,1,1,1,1,0,0,1,False,False,False,False,False
+5586,Lausanne,False,6,3,5,2,0,0,3,True,True,True,False,False
+5613,Bourg-en-Lavaux,False,6,3,5,2,0,0,3,True,True,True,False,False
+5642,Morges,False,4,3,1,1,0,0,2,True,True,False,False,False
+5724,Nyon,False,1,1,0,0,0,0,1,False,False,False,False,False
+5841,Château-d'Oex,False,3,2,2,1,0,0,2,True,True,False,False,False
+5872,Le Chenit,False,1,1,1,1,0,0,1,False,False,False,False,False
+5886,Montreux,False,6,3,5,2,0,0,4,True,True,True,False,False
+5890,Vevey,False,6,3,5,2,0,0,4,True,True,True,False,False
+5892,Blonay - Saint-Légier,False,4,2,0,0,0,0,3,True,True,False,False,False
+5938,Yverdon-les-Bains,False,3,3,1,1,0,0,1,True,True,False,False,False
+6002,Brig-Glis,False,13,5,12,4,0,0,5,True,True,True,False,False
+6024,Nendaz,False,4,3,4,3,0,0,2,True,True,True,False,False
+6034,Orsières,False,1,1,1,1,1,1,1,False,False,False,False,False
+6037,Val de Bagnes,False,1,1,0,0,0,0,1,False,False,False,False,False
+6077,Goms,False,0,0,0,0,0,0,0,False,False,False,False,False
+6083,Evolène,False,3,1,0,0,0,0,3,True,False,False,False,False
+6111,Leukerbad,False,1,1,1,1,0,0,1,False,False,False,False,False
+6136,Martigny,False,13,6,12,5,0,0,6,True,True,True,False,False
+6151,Champéry,False,1,1,1,1,1,1,1,False,False,False,False,False
+6217,Saint-Maurice,False,8,4,8,4,0,0,5,True,True,True,False,False
+6248,Sierre,False,16,6,13,3,0,0,5,True,True,True,False,False
+6252,Anniviers,False,2,1,2,1,0,0,2,True,False,False,False,False
+6253,Crans-Montana,False,2,2,2,2,0,0,1,True,True,True,False,False
+6266,Sion,False,17,6,11,2,0,0,6,True,True,True,False,False
+6290,Saas-Fee,False,2,1,2,1,0,0,2,True,False,False,False,False
+6291,Saas-Grund,False,3,1,3,1,0,0,3,True,False,False,False,False
+6297,Visp,False,18,6,17,5,0,0,5,True,True,True,False,False
+6300,Zermatt,False,0,0,0,0,0,0,0,False,False,False,False,False
+6417,La Grande Béroche,False,0,0,0,0,0,0,0,False,False,False,False,False
+6421,La Chaux-de-Fonds,False,1,1,1,1,1,1,1,False,False,False,False,False
+6458,Neuchâtel,False,2,2,2,2,1,1,1,True,True,True,False,False
+6513,Laténa,False,2,2,0,0,0,0,1,True,True,False,False,False
+6621,Genève,False,1,1,0,0,0,0,1,False,False,False,False,False
+6628,Lancy,False,1,1,0,0,0,0,1,False,False,False,False,False
+6630,Meyrin,False,1,1,0,0,0,0,1,False,False,False,False,False
+6643,Vernier,False,1,1,0,0,0,0,1,False,False,False,False,False
+6711,Delémont,False,2,2,2,2,1,1,1,True,True,True,False,False
+6757,Saignelégier,False,1,1,1,1,1,1,1,False,False,False,False,False
+6800,Porrentruy,False,0,0,0,0,0,0,0,False,False,False,False,False
+6808,Clos du Doubs,False,0,0,0,0,0,0,0,False,False,False,False,False
+6831,Moutier (JU),True,2,2,0,0,0,0,1,True,True,False,False,False

@@ -1,0 +1,137 @@
+first_effective_month,station_group_id_left,station_group_name_left,station_group_id_right,station_group_name_right,left_municipality_count,right_municipality_count,intersection_municipality_count,union_municipality_count,jaccard_similarity,exact_same_catchment_and_anchor,individual_effects_separable_from_exposure
+2017-11-01,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,MP_GROUP_RESORT__anzere,Anzère,6,6,6,6,1.0,True,False
+2017-11-01,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,6,6,6,6,1.0,True,False
+2017-11-01,MP_GROUP_RESORT__jaun_gastlosen,Jaun,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,5,4,4,5,0.8,False,True
+2017-11-01,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,13,19,12,20,0.6,False,True
+2017-11-01,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,6,6,4,8,0.5,False,True
+2017-11-01,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,6,6,4,8,0.5,False,True
+2017-11-01,MP_GROUP_RESORT__anzere,Anzère,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,6,6,4,8,0.5,False,True
+2017-11-01,MP_GROUP_RESORT__anzere,Anzère,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,6,6,4,8,0.5,False,True
+2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,9,13,7,15,0.4666666666666667,False,True
+2017-11-01,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,7,13,5,15,0.3333333333333333,False,True
+2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,9,4,3,10,0.3,False,True
+2017-11-01,MP_GROUP_RESORT__jaun_gastlosen,Jaun,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,5,8,3,10,0.3,False,True
+2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,MP_GROUP_RESORT__jaun_gastlosen,Jaun,9,5,3,11,0.2727272727272727,False,True
+2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,9,19,6,22,0.2727272727272727,False,True
+2017-11-01,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,6,19,5,20,0.25,False,True
+2017-11-01,MP_GROUP_RESORT__anzere,Anzère,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,6,19,5,20,0.25,False,True
+2017-11-01,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,7,19,5,21,0.23809523809523808,False,True
+2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,9,7,3,13,0.23076923076923078,False,True
+2017-11-01,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,7,4,2,9,0.2222222222222222,False,True
+2017-11-01,MP_GROUP_RESORT__jaun_gastlosen,Jaun,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,5,7,2,10,0.2,False,True
+2017-11-01,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,4,8,2,10,0.2,False,True
+2017-11-01,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,6,19,4,21,0.19047619047619047,False,True
+2017-11-01,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,6,19,4,21,0.19047619047619047,False,True
+2017-11-01,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,6,13,3,16,0.1875,False,True
+2017-11-01,MP_GROUP_RESORT__anzere,Anzère,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,6,13,3,16,0.1875,False,True
+2017-11-01,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,7,8,2,13,0.15384615384615385,False,True
+2017-11-01,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,6,13,2,17,0.11764705882352941,False,True
+2017-11-01,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,13,6,2,17,0.11764705882352941,False,True
+2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,9,6,1,14,0.07142857142857142,False,True
+2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,MP_GROUP_RESORT__anzere,Anzère,9,6,1,14,0.07142857142857142,False,True
+2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,9,8,1,16,0.0625,False,True
+2017-11-01,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,13,4,1,16,0.0625,False,True
+2017-11-01,MP_GROUP_RESORT__jaun_gastlosen,Jaun,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,5,13,1,17,0.058823529411764705,False,True
+2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,9,6,0,15,0.0,False,True
+2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,9,6,0,15,0.0,False,True
+2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,MP_GROUP_RESORT__tramelan,Tramelan,9,9,0,18,0.0,False,True
+2017-11-01,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,MP_GROUP_RESORT__jaun_gastlosen,Jaun,6,5,0,11,0.0,False,True
+2017-11-01,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,6,7,0,13,0.0,False,True
+2017-11-01,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,6,4,0,10,0.0,False,True
+2017-11-01,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,6,8,0,14,0.0,False,True
+2017-11-01,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,MP_GROUP_RESORT__tramelan,Tramelan,6,9,0,15,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__anzere,Anzère,MP_GROUP_RESORT__jaun_gastlosen,Jaun,6,5,0,11,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__anzere,Anzère,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,6,7,0,13,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__anzere,Anzère,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,6,4,0,10,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__anzere,Anzère,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,6,8,0,14,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__anzere,Anzère,MP_GROUP_RESORT__tramelan,Tramelan,6,9,0,15,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,MP_GROUP_RESORT__jaun_gastlosen,Jaun,6,5,0,11,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,6,7,0,13,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,6,4,0,10,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,6,8,0,14,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,MP_GROUP_RESORT__tramelan,Tramelan,6,9,0,15,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__jaun_gastlosen,Jaun,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,5,6,0,11,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__jaun_gastlosen,Jaun,MP_GROUP_RESORT__tramelan,Tramelan,5,9,0,14,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__jaun_gastlosen,Jaun,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,5,19,0,24,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,7,6,0,13,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,MP_GROUP_RESORT__tramelan,Tramelan,7,9,0,16,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,13,8,0,21,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,MP_GROUP_RESORT__tramelan,Tramelan,13,9,0,22,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,4,6,0,10,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,MP_GROUP_RESORT__tramelan,Tramelan,4,9,0,13,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,4,19,0,23,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,8,6,0,14,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,MP_GROUP_RESORT__tramelan,Tramelan,8,9,0,17,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,8,19,0,27,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,MP_GROUP_RESORT__tramelan,Tramelan,6,9,0,15,0.0,False,True
+2017-11-01,MP_GROUP_RESORT__tramelan,Tramelan,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,9,19,0,28,0.0,False,True
+2018-05-01,MP_GROUP_RESORT__les_pleiades,Les Pléiades,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,9,5,3,11,0.2727272727272727,False,True
+2018-05-01,MP_GROUP_RESORT__evolene,Evolène,MP_GROUP_RESORT__les_pleiades,Les Pléiades,6,9,2,13,0.15384615384615385,False,True
+2018-05-01,MP_GROUP_RESORT__evolene,Evolène,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,6,5,0,11,0.0,False,True
+2019-05-01,MP_GROUP_RESORT__leukerbad,Leukerbad,MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin,Les Prés-d'Orvin,9,10,0,19,0.0,False,True
+2022-05-01,MP_GROUP_RESORT__aeschi,Aeschiallmend,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,16,16,16,16,1.0,True,False
+2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,MP_GROUP_RESORT__habkern,Habkern,22,17,17,22,0.7727272727272727,False,True
+2022-05-01,MP_GROUP_RESORT__aeschi,Aeschiallmend,MP_GROUP_RESORT__habkern,Habkern,16,17,14,19,0.7368421052631579,False,True
+2022-05-01,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,MP_GROUP_RESORT__habkern,Habkern,16,17,14,19,0.7368421052631579,False,True
+2022-05-01,MP_GROUP_RESORT__aeschi,Aeschiallmend,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,16,22,15,23,0.6521739130434783,False,True
+2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,22,16,15,23,0.6521739130434783,False,True
+2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,22,19,15,26,0.5769230769230769,False,True
+2022-05-01,MP_GROUP_RESORT__aeschi,Aeschiallmend,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,16,19,12,23,0.5217391304347826,False,True
+2022-05-01,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,16,19,12,23,0.5217391304347826,False,True
+2022-05-01,MP_GROUP_RESORT__habkern,Habkern,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,17,19,12,24,0.5,False,True
+2022-05-01,MP_GROUP_RESORT__aeschi,Aeschiallmend,MP_GROUP_RESORT__eriz,Eriz,16,5,5,16,0.3125,False,True
+2022-05-01,MP_GROUP_RESORT__eriz,Eriz,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,5,16,5,16,0.3125,False,True
+2022-05-01,MP_GROUP_RESORT__eriz,Eriz,MP_GROUP_RESORT__habkern,Habkern,5,17,5,17,0.29411764705882354,False,True
+2022-05-01,MP_GROUP_RESORT__eriz,Eriz,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,5,19,5,19,0.2631578947368421,False,True
+2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,MP_GROUP_RESORT__eriz,Eriz,22,5,5,22,0.22727272727272727,False,True
+2022-05-01,MP_GROUP_RESORT__aeschi,Aeschiallmend,MP_GROUP_RESORT__rosswald,Rosswald,16,6,4,18,0.2222222222222222,False,True
+2022-05-01,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,MP_GROUP_RESORT__rosswald,Rosswald,16,6,4,18,0.2222222222222222,False,True
+2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,MP_GROUP_RESORT__rosswald,Rosswald,22,6,3,25,0.12,False,True
+2022-05-01,MP_GROUP_RESORT__eriz,Eriz,MP_GROUP_RESORT__rosswald,Rosswald,5,6,1,10,0.1,False,True
+2022-05-01,MP_GROUP_RESORT__habkern,Habkern,MP_GROUP_RESORT__rosswald,Rosswald,17,6,2,21,0.09523809523809523,False,True
+2022-05-01,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,MP_GROUP_RESORT__rosswald,Rosswald,19,6,1,24,0.041666666666666664,False,True
+2023-05-01,MP_GROUP_RESORT__moosalpregion,Moosalp,MP_GROUP_RESORT__unterbach_brandalp,Unterbäch,6,8,6,8,0.75,False,True
+2023-05-01,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,MP_GROUP_RESORT__unterbach_brandalp,Unterbäch,8,8,6,10,0.6,False,True
+2023-05-01,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,MP_GROUP_RESORT__moosalpregion,Moosalp,8,6,5,9,0.5555555555555556,False,True
+2023-05-01,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,MP_GROUP_RESORT__visperterminen,Visperterminen,8,9,6,11,0.5454545454545454,False,True
+2023-05-01,MP_GROUP_RESORT__unterbach_brandalp,Unterbäch,MP_GROUP_RESORT__visperterminen,Visperterminen,8,9,6,11,0.5454545454545454,False,True
+2023-05-01,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,MP_GROUP_RESORT__visperterminen,Visperterminen,17,9,9,17,0.5294117647058824,False,True
+2023-05-01,MP_GROUP_RESORT__moosalpregion,Moosalp,MP_GROUP_RESORT__visperterminen,Visperterminen,6,9,5,10,0.5,False,True
+2023-05-01,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,17,8,8,17,0.47058823529411764,False,True
+2023-05-01,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,MP_GROUP_RESORT__unterbach_brandalp,Unterbäch,17,8,8,17,0.47058823529411764,False,True
+2023-05-01,MP_GROUP_RESORT__kiental,Kiental,MP_GROUP_RESORT__visperterminen,Visperterminen,6,9,4,11,0.36363636363636365,False,True
+2023-05-01,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,MP_GROUP_RESORT__kiental,Kiental,17,6,6,17,0.35294117647058826,False,True
+2023-05-01,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,MP_GROUP_RESORT__moosalpregion,Moosalp,17,6,6,17,0.35294117647058826,False,True
+2023-05-01,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,3,10,3,10,0.3,False,True
+2023-05-01,MP_GROUP_RESORT__kiental,Kiental,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,6,8,3,11,0.2727272727272727,False,True
+2023-05-01,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,MP_GROUP_RESORT__riffenmatt,Riffenmatt,3,2,1,4,0.25,False,True
+2023-05-01,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,MP_GROUP_RESORT__riffenmatt,Riffenmatt,10,2,2,10,0.2,False,True
+2023-05-01,MP_GROUP_RESORT__kiental,Kiental,MP_GROUP_RESORT__unterbach_brandalp,Unterbäch,6,8,2,12,0.16666666666666666,False,True
+2023-05-01,MP_GROUP_RESORT__kiental,Kiental,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,6,10,2,14,0.14285714285714285,False,True
+2023-05-01,MP_GROUP_RESORT__kiental,Kiental,MP_GROUP_RESORT__riffenmatt,Riffenmatt,6,2,1,7,0.14285714285714285,False,True
+2023-05-01,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,MP_GROUP_RESORT__kiental,Kiental,3,6,1,8,0.125,False,True
+2023-05-01,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,MP_GROUP_RESORT__visperterminen,Visperterminen,10,9,2,17,0.11764705882352941,False,True
+2023-05-01,MP_GROUP_RESORT__riffenmatt,Riffenmatt,MP_GROUP_RESORT__visperterminen,Visperterminen,2,9,1,10,0.1,False,True
+2023-05-01,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,MP_GROUP_RESORT__visperterminen,Visperterminen,3,9,1,11,0.09090909090909091,False,True
+2023-05-01,MP_GROUP_RESORT__kiental,Kiental,MP_GROUP_RESORT__moosalpregion,Moosalp,6,6,1,11,0.09090909090909091,False,True
+2023-05-01,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,17,10,2,25,0.08,False,True
+2023-05-01,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,8,10,1,17,0.058823529411764705,False,True
+2023-05-01,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,MP_GROUP_RESORT__unterbach_brandalp,Unterbäch,10,8,1,17,0.058823529411764705,False,True
+2023-05-01,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,MP_GROUP_RESORT__riffenmatt,Riffenmatt,17,2,1,18,0.05555555555555555,False,True
+2023-05-01,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,3,17,1,19,0.05263157894736842,False,True
+2023-05-01,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,3,8,0,11,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,MP_GROUP_RESORT__moosalpregion,Moosalp,3,6,0,9,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,3,2,0,5,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,MP_GROUP_RESORT__unterbach_brandalp,Unterbäch,3,8,0,11,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,17,2,0,19,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__kiental,Kiental,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,6,2,0,8,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,MP_GROUP_RESORT__riffenmatt,Riffenmatt,8,2,0,10,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,8,2,0,10,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,MP_GROUP_RESORT__moosalpregion,Moosalp,10,6,0,16,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,10,2,0,12,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__moosalpregion,Moosalp,MP_GROUP_RESORT__riffenmatt,Riffenmatt,6,2,0,8,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__moosalpregion,Moosalp,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,6,2,0,8,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__riffenmatt,Riffenmatt,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,2,2,0,4,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__riffenmatt,Riffenmatt,MP_GROUP_RESORT__unterbach_brandalp,Unterbäch,2,8,0,10,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,MP_GROUP_RESORT__unterbach_brandalp,Unterbäch,2,8,0,10,0.0,False,True
+2023-05-01,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,MP_GROUP_RESORT__visperterminen,Visperterminen,2,9,0,11,0.0,False,True

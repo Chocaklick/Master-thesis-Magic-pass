@@ -1,0 +1,25 @@
+{
+  "analysis_date": "2026-10-02",
+  "analysis_anchor": "2017-11-01",
+  "pre_window_months": 36,
+  "first_exposure_treated_municipalities_screened": 19,
+  "mechanical_comparison_municipalities": 132,
+  "never_exposed_comparison_municipalities": 99,
+  "not_yet_exposed_comparison_municipalities": 33,
+  "treatment_comparison_pairs_screened": 2508,
+  "pairs_usable_for_descriptive_pretrend_ranking": 2508,
+  "shortlisted_pairs_for_manual_review": 95,
+  "unique_shortlisted_comparison_municipalities": 50,
+  "shortlisted_pairs_with_never_exposed_control": 72,
+  "median_shortlist_pre_log_outcome_correlation": 0.8031639701313722,
+  "median_shortlist_pre_monthly_log_trend_gap_abs": 0.0029142082535044845,
+  "historical_access_validated_treated_municipalities": 0,
+  "manual_control_external_shock_reviews_complete": 0,
+  "parallel_trends_approved": false,
+  "causal_controls_approved": 0,
+  "causal_treatments_approved": 0,
+  "input_sha256": {
+    "reports/accessibility_first_exposure_audit.csv": "7e3a459d1c7041bf90769eb4109c852023ce1e202e30fe54bfe75a96769cb94a",
+    "data_processed/accessibility_municipality_month_exposure.csv": "9da2037a9fd323afdea5987a87669d94618535ded4f6a71c1a82a97f1890d0be"
+  }
+}

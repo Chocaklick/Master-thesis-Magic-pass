@@ -422,6 +422,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point and radius-specific border intersection is flagged without filling foreign population
 - **Local raw file:** `config/path_c_analysis.json|config/municipality_boundary_bridge_2025_2026.csv`.
 
+## DERIVED_ACCESSIBILITY_IDENTIFICATION_AUDIT — Accessibility first-exposure identification audit
+
+- **Contents and relevance:** Identification audit and pre-period comparison screening for expanded municipality accessibility exposure
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic offline Python transformation of checksum-registered project inputs; 2026-10-02.
+- **Variables:** entry_separation|covid_overlap|exposure_collinearity|first_exposure|pretrend_comparability
+- **Transformations:** Audit concurrent entries, COVID overlap, exact exposure collinearity and two-way fixed-effect rank; define municipality first exposure; rank provisional comparisons from pre-anchor outcomes and capacity only
+- **Coverage:** hotel municipality, station group, entry cohort and provisional municipality pair; entry cohort, adjacent 24-month window and 36-month pre-period; 2014-11 to 2026-03.
+- **Limitations:** Current 2026 access is projected historically; comparison ranking is relative and does not validate parallel trends, external shocks, spillovers or causal controls
+- **Local raw file:** `data_processed/accessibility_station_group_pair_diagnostic.csv|data_processed/accessibility_municipality_month_exposure.csv`.
+
 ## DERIVED_ACCESSIBILITY_MUNICIPALITY_EXPOSURE — Expanded Magic Pass municipality accessibility exposure
 
 - **Contents and relevance:** Municipality-month and station-group event-window exposure using multiple scheduled-time thresholds
@@ -1849,6 +1861,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official pass area / supplied resort listing link; winter season 2026/2027; 2026 to 2027.
 - **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4, Meilenweiss, Schneepass, TopCard and SnowPass Graubünden histories do not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/SCHNEEPASS_ZENTRALSCHWEIZ_2026_27_ROSTER_20260923T094725Z.html`.
+
+## SKI_GTFS_TIMETABLE_2018_WINTER_20180207 — Timetable 2018 GTFS, build 2018-02-07
+
+- **Contents and relevance:** Official timetable-year 2018 GTFS snapshot selected for targeted first-winter access validation
+- **Producer:** Business office SKI on behalf of the Swiss Federal Office of Transport (BAV/OFT)
+- **Exact URL:** https://archive.opentransportdata.swiss/timetable_gtfs_archive.htm
+- **Access and retrieval date:** User-approved HTTP HEAD availability check; manual ZIP download required because archive robots.txt disallows automated collection; 2026-10-02.
+- **Variables:** historical_scheduled_stop_times|trips|routes|service_calendar|transfers|stop_coordinates
+- **Transformations:** No feed transformation yet; exact snapshot metadata joined to the 39 priority route endpoints
+- **Coverage:** Swiss national public-transport timetable; targeted municipality-to-station routes; published static winter timetable snapshot; 2017-12 to 2018-12.
+- **Limitations:** HTTP 200 and 50,151,599-byte content length verified; file checksum, stop continuity and route times remain pending
+- **Local raw file:** `manual download pending: data_external/source_evidence/SKI_GTFS_TIMETABLE_2018_WINTER_20180207.zip`.
 
 ## SKI_GTFS_TIMETABLE_2026_WINTER_20260207 — Timetable 2026 (GTFS2020), build 20260207
 

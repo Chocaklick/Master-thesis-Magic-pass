@@ -1,0 +1,9 @@
+first_effective_month,station_groups_in_cohort,station_groups_with_complete_24_24_pair,station_groups_with_timing_priority_pair,complete_group_municipality_pairs,timing_priority_group_municipality_pairs,municipalities_first_exposed_in_cohort,first_exposure_complete_24_24_municipalities,first_exposure_manual_design_candidates,pre_24_covid_months,post_24_covid_months,complete_outcome_municipalities,complete_not_exposed_during_window,complete_never_exposed_municipalities,causal_cohort_approved,window_overlaps_covid_sensitivity
+2017-11-01,22,12,3,92,15,41,37,19,0,0,174,132,99,False,False
+2018-05-01,6,3,0,12,0,3,1,0,0,2,134,110,84,False,True
+2019-05-01,3,2,0,13,0,3,3,0,0,14,135,110,84,False,True
+2020-05-01,1,0,0,0,0,0,0,0,2,24,137,119,86,False,True
+2022-05-01,10,7,0,89,0,16,15,0,24,0,142,110,89,False,True
+2023-05-01,15,10,0,71,0,9,9,0,12,0,182,131,105,False,True
+2024-05-01,5,0,0,0,0,5,0,0,0,0,0,0,0,False,False
+2025-05-01,9,0,0,0,0,3,0,0,0,0,0,0,0,False,False

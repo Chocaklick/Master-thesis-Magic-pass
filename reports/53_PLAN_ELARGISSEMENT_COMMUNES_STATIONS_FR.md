@@ -24,3 +24,7 @@ Une station peut être étudiée à travers les communes hôtelières accessible
 ## Point d'arrêt levé
 
 Le compte rendu de l'étape 1 a été remis avant la suite, puis le chercheur a autorisé les étapes restantes. Les rapports 55 à 57 documentent les groupes, les accès, les trajets, le panel et la faisabilité. L'audit historique détaillé et le temps routier restent des finitions séparées. Aucun effet causal n'est approuvé.
+
+## Prolongement d'identification
+
+Les rapports 58 et 59 prolongent l'étape 10. Ils montrent que les entrées par station ne sont pas toutes séparables et proposent comme unité principale la première exposition d'une commune au réseau accessible. Dix-neuf communes fondatrices passent le filtre temporel initial; 132 comparaisons communales sont disponibles mécaniquement et 95 couples ont été retenus pour revue. Le rapport 60 réduit ensuite l'audit historique à 39 trajets prioritaires et documente le téléchargement manuel requis du GTFS 2018. Ce screening n'approuve toujours aucun traitement, contrôle ou effet causal.
