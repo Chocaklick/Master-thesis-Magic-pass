@@ -422,6 +422,54 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point and radius-specific border intersection is flagged without filling foreign population
 - **Local raw file:** `config/path_c_analysis.json|config/municipality_boundary_bridge_2025_2026.csv`.
 
+## DERIVED_ACCESSIBILITY_MUNICIPALITY_EXPOSURE — Expanded Magic Pass municipality accessibility exposure
+
+- **Contents and relevance:** Municipality-month and station-group event-window exposure using multiple scheduled-time thresholds
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic offline Python transformation of checksum-registered project inputs; 2026-10-02.
+- **Variables:** active_station_group_count|new_station_group_entry_count|known_ski_area_sum|known_lift_sum|event_time|concurrent_exposure|feasibility
+- **Transformations:** Hold current access fixed; cross documented entry anchors with 30/60/90/120-minute pairs; preserve simultaneous groups and build 24-month before/after feasibility diagnostics
+- **Coverage:** hotel municipality series and station-group/municipality pair; monthly and event month -36 to +36; 2013-01 to 2026-03.
+- **Limitations:** Exposure is descriptive; membership continuity, road travel, confounding, COVID and interference remain unresolved; zero causal approvals
+- **Local raw file:** `data_processed/accessibility_station_group_events.csv|data_processed/accessibility_station_group_journey_context.csv|data_processed/hotel_municipality_month_enriched.csv`.
+
+## DERIVED_ACCESSIBILITY_STATION_GROUPS — Accessibility expansion station-group registry
+
+- **Contents and relevance:** Reviewed Swiss Magic Pass station groups, unique-listing structural aggregation and current access references
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic offline Python transformation of checksum-registered project inputs; 2026-10-02.
+- **Variables:** station_group|component_resort_ids|deduplicated_structure|access_points|access_nodes
+- **Transformations:** Map 78 in-scope base entries to 71 groups; never group from lift cluster alone; sum each structural listing once; select official current access coordinates and nearest served ground stop
+- **Coverage:** Swiss station group and access point; entry history plus current access snapshot; 2017-11 to 2026-10.
+- **Limitations:** Four groups lack resort-directory structure; current access is not historical access; composite relation does not always prove lift connectivity
+- **Local raw file:** `config/accessibility_station_groups.json`.
+
+## DERIVED_ACCESSIBILITY_STATION_GROUP_EVENTS — Accessibility expansion station-group events
+
+- **Contents and relevance:** Event-to-group mapping and monthly base-membership anchors for all in-scope Swiss destinations
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic offline Python transformation of checksum-registered project inputs; 2026-10-02.
+- **Variables:** station_group_entry_event|effective_month|documented_exit|membership_continuity_status
+- **Transformations:** Retain every official base-entry event; collapse group exposure only at the group level; apply exact founding validity and May analytical anchors; stop Crans-Montana after documented exit
+- **Coverage:** official destination event and station group; event month; 2017-11 to 2025-05.
+- **Limitations:** Annual continuity is assumed after first entry except the one documented exit; 78 events are not 78 independent treatments
+- **Local raw file:** `config/accessibility_station_groups.json|data_processed/magic_pass_membership_history.csv`.
+
+## DERIVED_ACCESSIBILITY_STATION_GROUP_JOURNEYS — Expanded station-group public-transport journeys
+
+- **Contents and relevance:** Winter-2026 scheduled public-transport context for every station group and hotel municipality
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic offline Python transformation of checksum-registered project inputs; 2026-10-02.
+- **Variables:** generalized_elapsed_minutes|sample_coverage|mean_one_way_generalized_minutes|time_thresholds
+- **Transformations:** Route 24 published departure requests per pair; retain fastest access point separately per request; aggregate outbound, return and threshold variants
+- **Coverage:** station group by hotel municipality; Wednesday and Saturday winter-2026 timetable samples; 2026-02-04 to 2026-02-07.
+- **Limitations:** Current static schedule only; no car routing, delays, crowding, fares, unlisted walking or historical stability
+- **Local raw file:** `config/path_c_analysis.json|reports/accessibility_station_access_nodes.csv`.
+
 ## DERIVED_CANDIDATE_SCOPE_RADIUS_SENSITIVITY — Candidate destination-scope radius sensitivity
 
 - **Contents and relevance:** Current 0/5/10 km municipality-polygon scope sensitivity for every Path C cluster and validation against reviewed destination outcome scopes

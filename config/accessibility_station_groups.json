@@ -1,0 +1,121 @@
+{
+  "review_date": "2026-10-02",
+  "scope": "Swiss base-pass destinations and Swiss component of Jura-sur-Leman only",
+  "direct_group_rule": "one station group per stable candidate_resort_id unless a reviewed pending relation adds an official component",
+  "structural_aggregation_rule": "sum ski_area_km and number_lifts across unique component resort_ids only; never sum the same composite listing more than once; retain minimum and maximum published top altitude",
+  "access_point_rule": "use each relevant current official Magic Pass map point; fall back to the supplied resort point only when no current official point resolves; use the official BAV cableway operating point for historical Chateau-d'Oex-La Braye",
+  "grouping_guardrail": "shared lift cluster alone never creates a station group",
+  "pending_groups": [
+    {
+      "station_group_id": "MP_GROUP_RESORT__vallee_de_joux",
+      "station_group_name": "Vallée de Joux",
+      "component_resort_ids": ["vallee_de_joux"],
+      "event_ids": ["MAGIC_EVENT_1a52914e9910", "MAGIC_EVENT_557da5465c53", "MAGIC_EVENT_8c8a9214819c"],
+      "official_current_access_labels": ["Vallée de Joux"],
+      "grouping_basis": "regional composite listing for three documented historical components; direct lift connectivity of every component is not asserted",
+      "scope_status": "catalogue_regional_composite_multiple_historical_components",
+      "source_ids": ["MAGIC_2018", "MAGIC_2019_APRIL", "MAGIC_CURRENT_MAP", "VALLEE_JOUX_SKI_SCOPE_OFFICIAL", "BERGFEX_RESORT_DIRECTORY"]
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__leysin_les_mosses_la_lecherette",
+      "station_group_name": "Leysin - Les Mosses - La Lécherette",
+      "component_resort_ids": ["leysin_les_mosses_la_lecherette"],
+      "event_ids": ["MAGIC_EVENT_1a5fd29b268f", "MAGIC_EVENT_6682d8e383d4", "MAGIC_EVENT_ffcbfc0dc884"],
+      "official_current_access_labels": ["Leysin", "Les Mosses-La Lécherette"],
+      "grouping_basis": "one supplied combined domain listing and official annual evidence grouping the three historical labels; two current official access points retained",
+      "scope_status": "official_combined_scope_multiple_access_points",
+      "source_ids": ["MAGIC_2017", "MAGIC_2019_APRIL", "MAGIC_CURRENT_MAP", "BERGFEX_RESORT_DIRECTORY"]
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_dole_jura_sur_leman",
+      "station_group_name": "Jura-sur-Léman - composante suisse La Dôle",
+      "component_resort_ids": ["la_dole_jura_sur_leman"],
+      "event_ids": ["MAGIC_EVENT_2f693409a93f"],
+      "official_current_access_labels": ["Jura-sur-Léman (Transfrontalier)"],
+      "grouping_basis": "Swiss La Dole component retained from a transboundary official domain; French accommodation outcomes remain out of scope",
+      "scope_status": "swiss_component_of_transboundary_domain",
+      "source_ids": ["MAGIC_2024", "MAGIC_CURRENT_MAP", "BERGFEX_RESORT_DIRECTORY"]
+    },
+    {
+      "station_group_id": "MP_GROUP_EVENT__4b7d19ebb1a4",
+      "station_group_name": "Château-d'Oex - La Braye",
+      "component_resort_ids": [],
+      "event_ids": ["MAGIC_EVENT_4b7d19ebb1a4"],
+      "official_current_access_labels": [],
+      "special_access": {"type": "bav_operating_point", "stop_id": "8530674", "expected_name": "Château-d'Oex (téléphérique)"},
+      "grouping_basis": "historical official destination and La Braye operator lineage; no supplied resort listing and no current official Magic map point",
+      "scope_status": "historical_official_destination_missing_directory",
+      "source_ids": ["MAGIC_2017", "CHATEAU_DOEX_LA_BRAYE_2018", "BAV_PUBLIC_TRANSPORT_STOPS_2026"]
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__beatenberg_niederhorn",
+      "station_group_name": "Beatenberg-Hohwald / Niederhorn",
+      "component_resort_ids": ["beatenberg_niederhorn"],
+      "event_ids": ["MAGIC_EVENT_53e31aca3797", "MAGIC_EVENT_90ad88e8e2f2"],
+      "official_current_access_labels": ["Beatenberg-Hohwald", "Niederhorn"],
+      "grouping_basis": "one supplied composite listing but two official current destinations; shared structural totals are kept once and effects cannot be separated with the directory data",
+      "scope_status": "catalogue_composite_not_proven_lift_connected",
+      "source_ids": ["MAGIC_2022", "MAGIC_2022_DOSSIER", "MAGIC_CURRENT_MAP", "BERGFEX_RESORT_DIRECTORY"]
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__aeschi",
+      "station_group_name": "Aeschiallmend",
+      "component_resort_ids": ["aeschi"],
+      "event_ids": ["MAGIC_EVENT_7169bc06b4bd"],
+      "official_current_access_labels": ["Aeschiallmend"],
+      "grouping_basis": "local official relation to the Aeschi directory listing; the excluded Lucky village lift prevents full identity equivalence",
+      "scope_status": "partial_local_scope",
+      "source_ids": ["MAGIC_2022", "AESCHI_LIFT_SCOPE_OFFICIAL", "MAGIC_CURRENT_MAP", "BERGFEX_RESORT_DIRECTORY"]
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets",
+      "station_group_name": "Villars-Gryon-Les Diablerets",
+      "component_resort_ids": ["villars_gryon_villars_gryon_les_diablerets"],
+      "event_ids": ["MAGIC_EVENT_7a15946fa16d"],
+      "official_current_access_labels": ["Les Diablerets"],
+      "grouping_basis": "official connected Villars-Gryon-Les Diablerets domain; Glacier 3000 remains separate and its later inclusion is not transferred",
+      "scope_status": "official_connected_domain_multiple_access_points",
+      "source_ids": ["MAGIC_2017", "MAGIC_2019_APRIL", "MAGIC_CURRENT_MAP", "VILLARS_GRYON_SCOPE_OFFICIAL", "DIABLERETS_SCOPE_OFFICIAL", "BERGFEX_RESORT_DIRECTORY"]
+    },
+    {
+      "station_group_id": "MP_GROUP_EVENT__98c0c64310c6",
+      "station_group_name": "Mayens de Conthey",
+      "component_resort_ids": [],
+      "event_ids": ["MAGIC_EVENT_98c0c64310c6"],
+      "official_current_access_labels": ["Mayens de Conthey"],
+      "grouping_basis": "official Magic destination and municipal lift operator with no supplied resort listing",
+      "scope_status": "official_destination_missing_directory",
+      "source_ids": ["MAGIC_2017", "MAGIC_CURRENT_MAP", "MAYENS_CONTHEY_OPERATOR_OFFICIAL"]
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__gantrisch_gurnigel",
+      "station_group_name": "Gantrisch-Gurnigel / Gurnigelbad",
+      "component_resort_ids": ["gantrisch_gurnigel"],
+      "event_ids": ["MAGIC_EVENT_9cea75ff3c9b"],
+      "official_current_access_labels": ["Gurnigelbad"],
+      "grouping_basis": "official regional relation added to the already linked Gantrisch-Gurnigel listing; both current access points retained",
+      "scope_status": "official_regional_relation_multiple_access_points",
+      "source_ids": ["MAGIC_2023", "MAGIC_CURRENT_MAP", "BERGFEX_RESORT_DIRECTORY"]
+    },
+    {
+      "station_group_id": "MP_GROUP_EVENT__c1f58b57f3fa",
+      "station_group_name": "Grenchenberg",
+      "component_resort_ids": [],
+      "event_ids": ["MAGIC_EVENT_c1f58b57f3fa"],
+      "official_current_access_labels": ["Grenchenberg"],
+      "grouping_basis": "official Magic destination and regional tourism operator evidence with no supplied resort listing",
+      "scope_status": "official_destination_missing_directory",
+      "source_ids": ["MAGIC_2025", "MAGIC_CURRENT_MAP", "GRENCHENBERG_OPERATOR_OFFICIAL"]
+    },
+    {
+      "station_group_id": "MP_GROUP_EVENT__e664bf3f38d5",
+      "station_group_name": "Wilerallmi",
+      "component_resort_ids": [],
+      "event_ids": ["MAGIC_EVENT_e664bf3f38d5"],
+      "official_current_access_labels": ["Wilerallmi"],
+      "grouping_basis": "separately operated official destination missing from the directory; nearby Schwanden is not treated as an alias",
+      "scope_status": "distinct_official_destination_missing_directory",
+      "source_ids": ["MAGIC_2024", "MAGIC_CURRENT_MAP", "WILERALLMI_ANNUAL_2023_24"]
+    }
+  ]
+}

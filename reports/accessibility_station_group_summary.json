@@ -1,0 +1,39 @@
+{
+  "analysis_date": "2026-10-02",
+  "station_groups": 71,
+  "in_scope_base_entry_events": 78,
+  "foreign_base_entry_events_excluded": 10,
+  "groups_with_structural_listing_data": 67,
+  "groups_without_structural_listing_data": 4,
+  "groups_with_complete_structural_data": 66,
+  "groups_with_incomplete_structural_data": 1,
+  "unique_component_resort_listings": 67,
+  "access_points": 75,
+  "access_point_reference_methods": {
+    "current_official_magic_map_point": 61,
+    "reviewed_current_official_magic_map_point": 11,
+    "supplied_resort_point_fallback_no_current_map_match": 2,
+    "official_bav_cableway_operating_point_as_historical_base_reference": 1
+  },
+  "access_node_quality": {
+    "near_access_point": 51,
+    "local_access_proxy": 21,
+    "distant_proxy_review_required": 3
+  },
+  "groups_with_multiple_access_points": 4,
+  "maximum_access_point_to_ground_stop_km": 3.111825246292178,
+  "descriptive_routing_nodes_approved": 72,
+  "historical_access_validated": 0,
+  "causal_treatments_approved": 0,
+  "input_sha256": {
+    "config/accessibility_station_groups.json": "c0f09ac183597082aa13517c1b5b4553908215578f6013c3729911ee5cb74ebd",
+    "data_processed/magic_pass_membership_history.csv": "99b46cf250586eb80d2df3ffe6b5375775419234853fb823b773be6bbc2e4588",
+    "reports/accessibility_expansion_station_inventory.csv": "7ebec7b766c2da34a12ebd60702f7b65e36efd4bd8fe3ae569a53a6c0920f16c",
+    "reports/accessibility_expansion_pending_events.csv": "91884602d474b4d780152331202e582bee91024008b9d5acb36e1b0d79b150d3",
+    "data_processed/resort_master.csv": "e115c6efe96fdf8261d434818c75d4356acb059625df7e6a61af4456ac6c0005",
+    "data_processed/magic_pass_current_destinations.csv": "88785cfea7bf82df6ccd9a5378a83b41322b0e709450a29e13a9239d96c0128e",
+    "config/path_c_analysis.json": "606a6d4fbf66e9d52b14d0baaa6e4ba945637f00c01c411dc8cc39b4ecfd0e92"
+  },
+  "source_ids": "BAV_PUBLIC_TRANSPORT_STOPS_2026|BERGFEX_RESORT_DIRECTORY|MAGIC_CURRENT_MAP|SKI_GTFS_TIMETABLE_2026_WINTER_20260207",
+  "grouping_guardrail": "shared lift cluster alone never creates a station group"
+}

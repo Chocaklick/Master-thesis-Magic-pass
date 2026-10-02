@@ -39,6 +39,9 @@ data_external/**
 # Reproducible transient and potentially large artifacts
 data_interim/**
 !data_interim/.gitkeep
+# Reproducible expanded GTFS request-level output (~140 MB); the compact pair
+# table is versioned and the request rows rebuild from the resumable cache.
+data_processed/accessibility_station_group_journey_samples.csv
 models/**
 !models/.gitkeep
 outputs/**
