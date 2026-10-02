@@ -1,0 +1,38 @@
+{
+  "audit_date": "2026-10-02",
+  "stage": "1_inventory_only",
+  "counts": {
+    "base_entry_events": 88,
+    "foreign_events_excluded": 10,
+    "events_retained_for_review": 78,
+    "old_destination_units": 11,
+    "old_component_listings": 15,
+    "linked_station_listings_in_inventory": 62,
+    "additional_station_listings": 47,
+    "added_without_point_hotel_requirement": 44,
+    "reopened_incomplete_destination_scope": 3,
+    "pending_swiss_or_swiss_component_events": 16,
+    "pending_directory_gap_events": 4,
+    "pending_additional_related_listings_not_identity_matches": 6,
+    "old_outcome_municipality_series": 12,
+    "available_municipality_series": 186,
+    "additional_series_vs_old_outcome_scope": 174,
+    "current_territories": 185,
+    "additional_current_territories_vs_old_outcome_scope": 173,
+    "newly_collected_hotel_series": 0,
+    "additional_origins_vs_existing_journey_universe": 0,
+    "newly_validated_accessibility_pairs": 0,
+    "newly_approved_causal_units": 0
+  },
+  "input_sha256": {
+    "data_processed/magic_pass_membership_history.csv": "99b46cf250586eb80d2df3ffe6b5375775419234853fb823b773be6bbc2e4588",
+    "data_processed/treatment_destination_units.csv": "06a05e96e8954437dc5b571e6c495f133884cabf986ddbef7de63e910829ab02",
+    "data_processed/treatment_destination_municipality.csv": "3313de5bdceefc03eae3bd75528ac22f592204027f4a7931cd6796a5b34e8f6b",
+    "reports/unmatched_magic_entry_review.csv": "284fea6fc44b92ecba48b690466f1dbedfa495ecdc3279a43011696bcea07ee6",
+    "data_processed/resort_point_municipality.csv": "f1c1d1fa935460ed34bfb1f7f398837478a961ae5079f3c5507469c4f9a9a5d6",
+    "data_processed/hotel_municipality_month_enriched.csv": "e95aa1061a27a8331eaa24739acff47a9a5eedc8e43aa1f444c0ed1c602742cd",
+    "data_processed/treatment_municipality_distance_exposure.csv": "572bb23fcbd404b5afe3488b76152476941075a6ee8ebc89244eb40be2d7079f",
+    "reports/public_transport_journey_nodes.csv": "1f4a6af3cf1a5b655f48708f61ec87f029bb2db77866ac090140291ac56ec365"
+  },
+  "next_step_requires_report_to_user_first": true
+}
