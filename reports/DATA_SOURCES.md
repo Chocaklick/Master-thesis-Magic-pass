@@ -422,6 +422,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point and radius-specific border intersection is flagged without filling foreign population
 - **Local raw file:** `config/path_c_analysis.json|config/municipality_boundary_bridge_2025_2026.csv`.
 
+## DERIVED_ACCESSIBILITY_HISTORICAL_GTFS_2018_VALIDATION — Historical Magic Pass first-exposure accessibility validation
+
+- **Contents and relevance:** Targeted 2018 accessibility validation for the 39 founding group-municipality routes under strict and two documented transfer scenarios
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic offline routing of checksum-pinned 2018 and 2026 GTFS inputs; 2026-10-03.
+- **Variables:** historical_route_samples|historical_route_context|stop_crosswalk|transfer_sensitivity|historical_first_exposure_retention
+- **Transformations:** Verify ZIP and SHA-256; audit 31 endpoints; route 936 requests per scenario; preserve strict published transfers; separately test 250-metre walking links and official 2026 transfer topology on active 2018 IDs
+- **Coverage:** priority hotel municipality by founding station group; Wednesday and Saturday winter timetable samples; 2018-02-07 to 2026-02-07.
+- **Limitations:** The strict 2018 transfer graph is structurally sparse; both augmented scenarios are sensitivities rather than historically published transfer evidence. Two invalid timetable trips per two sampled days are excluded without imputation. Zero causal approvals.
+- **Local raw file:** `data_external/source_evidence/SKI_GTFS_TIMETABLE_2018_WINTER_20180207.zip|data_external/source_evidence/SKI_GTFS_TIMETABLE_2026_WINTER_20260207_20260922T125552Z.zip`.
+
 ## DERIVED_ACCESSIBILITY_IDENTIFICATION_AUDIT — Accessibility first-exposure identification audit
 
 - **Contents and relevance:** Identification audit and pre-period comparison screening for expanded municipality accessibility exposure
@@ -1867,12 +1879,12 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Contents and relevance:** Official timetable-year 2018 GTFS snapshot selected for targeted first-winter access validation
 - **Producer:** Business office SKI on behalf of the Swiss Federal Office of Transport (BAV/OFT)
 - **Exact URL:** https://archive.opentransportdata.swiss/timetable_gtfs_archive.htm
-- **Access and retrieval date:** User-approved HTTP HEAD availability check; manual ZIP download required because archive robots.txt disallows automated collection; 2026-10-02.
+- **Access and retrieval date:** Manual user download from the exact official archive URL because robots.txt disallows automated collection; local ZIP integrity, size and SHA-256 verified; 2026-10-03.
 - **Variables:** historical_scheduled_stop_times|trips|routes|service_calendar|transfers|stop_coordinates
-- **Transformations:** No feed transformation yet; exact snapshot metadata joined to the 39 priority route endpoints
+- **Transformations:** Preserve archive unchanged; normalize Swiss platform suffixes; exclude one temporally invalid trip on each sampled day; route 39 priority pairs under published 2018 transfers
 - **Coverage:** Swiss national public-transport timetable; targeted municipality-to-station routes; published static winter timetable snapshot; 2017-12 to 2018-12.
-- **Limitations:** HTTP 200 and 50,151,599-byte content length verified; file checksum, stop continuity and route times remain pending
-- **Local raw file:** `manual download pending: data_external/source_evidence/SKI_GTFS_TIMETABLE_2018_WINTER_20180207.zip`.
+- **Limitations:** Exact 50,151,599-byte archive and SHA-256 655bf97a42b88da347cbe938e392351768766fddb2c76fc4ed111400104b7234 verified. The 2018 feed publishes only 184 normalized cross-stop transfer links, so strict routes form a documented under-connected lower bound.
+- **Local raw file:** `data_external/source_evidence/SKI_GTFS_TIMETABLE_2018_WINTER_20180207.zip`.
 
 ## SKI_GTFS_TIMETABLE_2026_WINTER_20260207 — Timetable 2026 (GTFS2020), build 20260207
 

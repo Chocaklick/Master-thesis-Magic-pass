@@ -85,6 +85,39 @@ TABLES = {
     "accessibility_historical_gtfs_2018_manual_worklist": (
         ROOT / "reports" / "accessibility_historical_gtfs_2018_manual_worklist.csv",
         "SKI_GTFS_TIMETABLE_2018_WINTER_20180207", "priority municipality by founding station group", "first Magic Pass winter 2017/2018"),
+    "accessibility_historical_gtfs_2018_stop_audit": (
+        ROOT / "reports" / "accessibility_historical_gtfs_2018_stop_audit.csv",
+        "SKI_GTFS_TIMETABLE_2018_WINTER_20180207", "historical route endpoint", "winter-2018 timetable snapshot"),
+    "accessibility_historical_gtfs_2018_journey_samples": (
+        ROOT / "data_processed" / "accessibility_historical_gtfs_2018_journey_samples.csv",
+        "SKI_GTFS_TIMETABLE_2018_WINTER_20180207", "priority municipality by founding station-group request", "sampled winter-2018 time"),
+    "accessibility_historical_gtfs_2018_journey_context": (
+        ROOT / "data_processed" / "accessibility_historical_gtfs_2018_journey_context.csv",
+        "SKI_GTFS_TIMETABLE_2018_WINTER_20180207", "priority municipality by founding station group", "winter-2018 strict transfer scenario"),
+    "accessibility_historical_gtfs_2018_municipality_validation": (
+        ROOT / "reports" / "accessibility_historical_gtfs_2018_municipality_validation.csv",
+        "SKI_GTFS_TIMETABLE_2018_WINTER_20180207", "first-exposure hotel municipality", "winter-2018 strict transfer scenario"),
+    "accessibility_historical_gtfs_2018_proximity_journey_samples": (
+        ROOT / "data_processed" / "accessibility_historical_gtfs_2018_proximity_journey_samples.csv",
+        "DERIVED_ACCESSIBILITY_HISTORICAL_GTFS_2018_VALIDATION", "priority municipality by founding station-group request", "sampled winter-2018 proximity-transfer sensitivity"),
+    "accessibility_historical_gtfs_2018_proximity_journey_context": (
+        ROOT / "data_processed" / "accessibility_historical_gtfs_2018_proximity_journey_context.csv",
+        "DERIVED_ACCESSIBILITY_HISTORICAL_GTFS_2018_VALIDATION", "priority municipality by founding station group", "winter-2018 proximity-transfer sensitivity"),
+    "accessibility_historical_gtfs_2018_proximity_municipality_validation": (
+        ROOT / "reports" / "accessibility_historical_gtfs_2018_proximity_municipality_validation.csv",
+        "DERIVED_ACCESSIBILITY_HISTORICAL_GTFS_2018_VALIDATION", "first-exposure hotel municipality", "winter-2018 proximity-transfer sensitivity"),
+    "accessibility_historical_gtfs_2018_current_transfer_journey_samples": (
+        ROOT / "data_processed" / "accessibility_historical_gtfs_2018_current_transfer_journey_samples.csv",
+        "DERIVED_ACCESSIBILITY_HISTORICAL_GTFS_2018_VALIDATION", "priority municipality by founding station-group request", "sampled winter-2018 current-transfer-topology sensitivity"),
+    "accessibility_historical_gtfs_2018_current_transfer_journey_context": (
+        ROOT / "data_processed" / "accessibility_historical_gtfs_2018_current_transfer_journey_context.csv",
+        "DERIVED_ACCESSIBILITY_HISTORICAL_GTFS_2018_VALIDATION", "priority municipality by founding station group", "winter-2018 current-transfer-topology sensitivity"),
+    "accessibility_historical_gtfs_2018_current_transfer_municipality_validation": (
+        ROOT / "reports" / "accessibility_historical_gtfs_2018_current_transfer_municipality_validation.csv",
+        "DERIVED_ACCESSIBILITY_HISTORICAL_GTFS_2018_VALIDATION", "first-exposure hotel municipality", "winter-2018 current-transfer-topology sensitivity"),
+    "accessibility_historically_screened_pretrend_shortlist": (
+        ROOT / "reports" / "accessibility_historically_screened_pretrend_shortlist.csv",
+        "DERIVED_ACCESSIBILITY_HISTORICAL_GTFS_2018_VALIDATION", "historically retained treated municipality by provisional comparison municipality", "36 pre-anchor months and winter-2018 access screen"),
 }
 
 
@@ -186,6 +219,16 @@ DESCRIPTIONS = {
     "historical_destination_stop_found": "Whether the current destination access stop or a reviewed historical equivalent is present in the 2018 feed",
     "historical_route_computed": "Whether the priority route was computed from the 2018 timetable",
     "historical_access_plausibility_status": "Status of the targeted 2018 access validation",
+    "historical_routing_pair_complete": "Whether all 24 historical weekday and Saturday requests have feasible itineraries",
+    "historical_mean_one_way_generalized_minutes": "Mean historical generalized time across outbound and return directions",
+    "signed_2018_to_2026_time_change_minutes": "Current 2026 mean time minus historical 2018 mean time",
+    "absolute_2018_to_2026_time_change_minutes": "Absolute magnitude of the 2018-to-2026 mean-time change",
+    "relative_2018_to_2026_time_change_percent": "Signed 2018-to-2026 time change divided by the historical mean",
+    "historical_first_exposure_retained": "Whether at least one founding station group remains within 120 minutes under the historical routing variant",
+    "all_current_founding_groups_historically_within_120_minutes": "Whether every currently assigned founding group remains within 120 minutes under the historical routing variant",
+    "routing_transfer_variant": "Strict or sensitivity transfer topology used for historical routing",
+    "mapping_method": "Exact stable stop identifier or reviewed historical stop-equivalence rule",
+    "historical_node_usable": "Whether the historical endpoint is active on both sampled service days",
 }
 
 
@@ -283,6 +326,28 @@ def derived_sources() -> list[dict]:
         ),
     ]
     rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_HISTORICAL_GTFS_2018_VALIDATION",
+        variable_name="historical_route_samples|historical_route_context|stop_crosswalk|transfer_sensitivity|historical_first_exposure_retention",
+        variable_description="Targeted 2018 accessibility validation for the 39 founding group-municipality routes under strict and two documented transfer scenarios",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Historical Magic Pass first-exposure accessibility validation",
+        retrieval_method="Deterministic offline routing of checksum-pinned 2018 and 2026 GTFS inputs",
+        retrieval_date="2026-10-03",
+        local_raw_file="data_external/source_evidence/SKI_GTFS_TIMETABLE_2018_WINTER_20180207.zip|data_external/source_evidence/SKI_GTFS_TIMETABLE_2026_WINTER_20260207_20260922T125552Z.zip",
+        processed_file="data_processed/accessibility_historical_gtfs_2018_journey_context.csv|data_processed/accessibility_historical_gtfs_2018_proximity_journey_context.csv|data_processed/accessibility_historical_gtfs_2018_current_transfer_journey_context.csv|reports/accessibility_historical_gtfs_2018_stop_audit.csv|reports/accessibility_historical_gtfs_2018_current_transfer_municipality_validation.csv|reports/accessibility_historically_screened_pretrend_shortlist.csv|reports/61_COMPARAISON_ACCES_HISTORIQUE_2018_2026_FR.md|reports/62_SENSIBILITE_TRANSFERTS_PROXIMITE_GTFS_2018_FR.md|reports/63_SENSIBILITE_TOPOLOGIE_TRANSFERTS_ACTUELS_GTFS_2018_FR.md|reports/64_REVUE_COMPARAISONS_APRES_ACCES_HISTORIQUE_FR.md",
+        geographic_level="priority hotel municipality by founding station group",
+        temporal_resolution="Wednesday and Saturday winter timetable samples",
+        temporal_start="2018-02-07", temporal_end="2026-02-07",
+        unit="minutes, trips, transfers, routes and municipality validation flags",
+        license="Derived analytical data; Open Data Mobility Switzerland terms continue to apply",
+        access_conditions="Local reproducible output from manually supplied historical archive and registered current archive",
+        transformation_applied="Verify ZIP and SHA-256; audit 31 endpoints; route 936 requests per scenario; preserve strict published transfers; separately test 250-metre walking links and official 2026 transfer topology on active 2018 IDs",
+        quality_notes="The strict 2018 transfer graph is structurally sparse; both augmented scenarios are sensitivities rather than historically published transfer evidence. Two invalid timetable trips per two sampled days are excluded without imputation. Zero causal approvals.",
+        confidence_level="high for source integrity and computational reproducibility; medium-to-low for historical transfer topology",
+        manual_verification="Two changed destination stops reviewed; all 19 origin stops exact; strict and sensitivity results kept separate",
+        notes="Current-topology projection is the most directly documented sensitivity but remains non-historical and non-causal",
+    ))
+    rows.append(source_row(
         "SKI_GTFS_TIMETABLE_2018_WINTER_20180207",
         variable_name="historical_scheduled_stop_times|trips|routes|service_calendar|transfers|stop_coordinates",
         variable_description="Official timetable-year 2018 GTFS snapshot selected for targeted first-winter access validation",
@@ -290,22 +355,22 @@ def derived_sources() -> list[dict]:
         source_dataset_name="Timetable 2018 GTFS, build 2018-02-07",
         source_page_url="https://archive.opentransportdata.swiss/timetable_gtfs_archive.htm",
         direct_download_url="https://archive.opentransportdata.swiss/timetable_gtfs/timetable-2018-gtfs/GTFS_FP2018_2018-02-07.zip",
-        retrieval_method="User-approved HTTP HEAD availability check; manual ZIP download required because archive robots.txt disallows automated collection",
-        retrieval_date="2026-10-02",
+        retrieval_method="Manual user download from the exact official archive URL because robots.txt disallows automated collection; local ZIP integrity, size and SHA-256 verified",
+        retrieval_date="2026-10-03",
         original_file_name="GTFS_FP2018_2018-02-07.zip",
-        local_raw_file="manual download pending: data_external/source_evidence/SKI_GTFS_TIMETABLE_2018_WINTER_20180207.zip",
-        processed_file="reports/accessibility_historical_gtfs_2018_manual_worklist.csv|reports/60_AUDIT_HISTORIQUE_ACCES_PRIORITAIRE_FR.md",
+        local_raw_file="data_external/source_evidence/SKI_GTFS_TIMETABLE_2018_WINTER_20180207.zip",
+        processed_file="reports/accessibility_historical_gtfs_2018_manual_worklist.csv|reports/accessibility_historical_gtfs_2018_stop_audit.csv|data_processed/accessibility_historical_gtfs_2018_journey_samples.csv|data_processed/accessibility_historical_gtfs_2018_journey_context.csv|reports/60_AUDIT_HISTORIQUE_ACCES_PRIORITAIRE_FR.md|reports/61_COMPARAISON_ACCES_HISTORIQUE_2018_2026_FR.md",
         geographic_level="Swiss national public-transport timetable; targeted municipality-to-station routes",
         temporal_resolution="published static winter timetable snapshot",
         temporal_start="2017-12", temporal_end="2018-12",
         unit="scheduled service and time",
         license="Open Data Mobility Switzerland terms of use",
         access_conditions="Public archive; robots.txt disallows automated collection, so manual download is required",
-        transformation_applied="No feed transformation yet; exact snapshot metadata joined to the 39 priority route endpoints",
-        quality_notes="HTTP 200 and 50,151,599-byte content length verified; file checksum, stop continuity and route times remain pending",
-        confidence_level="high for URL availability; none yet for historical route stability",
-        manual_verification="Official archive URL and server headers checked; automated download intentionally not performed",
-        notes="Selected snapshot closest to 7 February of the first Magic Pass exposure winter",
+        transformation_applied="Preserve archive unchanged; normalize Swiss platform suffixes; exclude one temporally invalid trip on each sampled day; route 39 priority pairs under published 2018 transfers",
+        quality_notes="Exact 50,151,599-byte archive and SHA-256 655bf97a42b88da347cbe938e392351768766fddb2c76fc4ed111400104b7234 verified. The 2018 feed publishes only 184 normalized cross-stop transfer links, so strict routes form a documented under-connected lower bound.",
+        confidence_level="high for source identity and strict published schedule; limited for practical interchange completeness",
+        manual_verification="All 19 origins retain exact stop IDs; ten of twelve destination references are exact and two reviewed equivalents are documented",
+        notes="Selected snapshot closest to 7 February of the first Magic Pass exposure winter; manual collection respected the archive robots policy",
     ))
     return rows
 

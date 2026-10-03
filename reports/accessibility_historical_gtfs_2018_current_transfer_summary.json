@@ -1,0 +1,48 @@
+{
+  "analysis_date": "2026-10-03",
+  "historical_source_id": "SKI_GTFS_TIMETABLE_2018_WINTER_20180207",
+  "current_transfer_source_id": "SKI_GTFS_TIMETABLE_2026_WINTER_20260207",
+  "historical_gtfs_sha256": "655bf97a42b88da347cbe938e392351768766fddb2c76fc4ed111400104b7234",
+  "current_gtfs_sha256": "ea777d0d2d43fee6b63637f19efc831eb4c07aec645a6ce06a84f977346a5dc7",
+  "routing_variant": "current_2026_transfer_topology_on_2018_ids",
+  "assumption": {
+    "source_id": "SKI_GTFS_TIMETABLE_2026_WINTER_20260207",
+    "source_local_path": "data_external/source_evidence/SKI_GTFS_TIMETABLE_2026_WINTER_20260207_20260922T125552Z.zip",
+    "rule": "add_only_2026_published_cross_stop_transfer_links_whose_normalized_endpoint_ids_are_both_active_in_2018_preserve_2018_links",
+    "interpretation": "sensitivity_only_current_official_transfer_topology_projected_to_active_2018_stop_ids_not_historically_published_or_causal"
+  },
+  "current_transfer_source_summary": {
+    "generic_transfer_rows": 86805,
+    "route_or_trip_specific_transfer_rows_not_modelled": 102931,
+    "normalized_self_transfer_stops": 9161,
+    "normalized_cross_stop_transfer_links": 7369,
+    "default_transfer_seconds": 120
+  },
+  "topology_projection_summaries": [
+    {
+      "active_2018_stops": 24079,
+      "eligible_2026_published_cross_stop_links": 4876,
+      "new_projected_cross_stop_links_added": 4714,
+      "service_date": "20180207"
+    },
+    {
+      "active_2018_stops": 22995,
+      "eligible_2026_published_cross_stop_links": 4816,
+      "new_projected_cross_stop_links_added": 4658,
+      "service_date": "20180210"
+    }
+  ],
+  "journey_samples": 936,
+  "feasible_journey_samples": 936,
+  "strict_complete_routes": 9,
+  "strict_routes_within_120_minutes": 3,
+  "proximity_250m_complete_routes": 39,
+  "proximity_250m_routes_within_120_minutes": 22,
+  "current_topology_complete_routes": 39,
+  "current_topology_routes_within_120_minutes": 24,
+  "municipalities_retaining_at_least_one_founding_group_within_120_minutes": 14,
+  "municipalities_retaining_all_current_founding_groups_within_120_minutes": 6,
+  "median_signed_2018_to_2026_time_change_minutes": -20.799999999999997,
+  "median_absolute_2018_to_2026_time_change_minutes": 21.08571428571426,
+  "causal_accessibility_features_approved": 0
+}

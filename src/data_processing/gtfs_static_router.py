@@ -228,10 +228,15 @@ def count_active_departures(
 def build_transfer_rules(
     transfers: pd.DataFrame, default_transfer_seconds: int
 ) -> tuple[dict[str, int], dict[str, list[tuple[str, int]]], dict]:
+    optional_scope_columns = [
+        "from_route_id", "to_route_id", "from_trip_id", "to_trip_id"
+    ]
+    transfers = transfers.copy()
+    for column in optional_scope_columns:
+        if column not in transfers:
+            transfers[column] = pd.NA
     route_specific = transfers[
-        transfers[
-            ["from_route_id", "to_route_id", "from_trip_id", "to_trip_id"]
-        ]
+        transfers[optional_scope_columns]
         .notna()
         .any(axis=1)
     ]
@@ -321,6 +326,7 @@ def build_day_network(
     trip_reference: dict,
     date: str,
     default_transfer_seconds: int,
+    drop_invalid_time_trips: bool = False,
 ) -> DayNetwork:
     date_index = trip_reference["dates"].index(date)
     date_bit = 1 << date_index
@@ -433,9 +439,23 @@ def build_day_network(
     patterns: list[Pattern] = []
     trip_number = 0
     overtaking_source_patterns = 0
+    invalid_time_trips_excluded = 0
     for (route_id, mode, stops, pickup, dropoff), trips in grouped.items():
         arrivals = np.vstack([trip[1] for trip in trips]).astype(np.int32)
         departures = np.vstack([trip[2] for trip in trips]).astype(np.int32)
+        valid_time_order = ~np.any(
+            arrivals[:, 1:] < departures[:, :-1], axis=1
+        )
+        if not np.all(valid_time_order):
+            if not drop_invalid_time_trips:
+                raise ValueError("GTFS trip contains a backward in-vehicle time step")
+            invalid_time_trips_excluded += int((~valid_time_order).sum())
+            kept = np.flatnonzero(valid_time_order)
+            arrivals = arrivals[kept]
+            departures = departures[kept]
+            trips = [trips[int(index)] for index in kept]
+            if not trips:
+                continue
         groups = _non_overtaking_groups(arrivals, departures)
         if len(groups) > 1:
             overtaking_source_patterns += 1
@@ -500,6 +520,7 @@ def build_day_network(
         "route_patterns_after_overtaking_split": int(len(patterns)),
         "source_patterns_requiring_overtaking_split": int(overtaking_source_patterns),
         "active_trip_rows_in_patterns": int(sum(len(p.trip_ids) for p in patterns)),
+        "invalid_time_trips_excluded": int(invalid_time_trips_excluded),
         **transfer_summary,
     }
     del grouped

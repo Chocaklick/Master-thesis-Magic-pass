@@ -104,6 +104,7 @@ def test_accessibility_expansion_summaries_and_provenance_are_registered() -> No
         "DERIVED_ACCESSIBILITY_STATION_GROUP_JOURNEYS",
         "DERIVED_ACCESSIBILITY_MUNICIPALITY_EXPOSURE",
         "DERIVED_ACCESSIBILITY_IDENTIFICATION_AUDIT",
+        "DERIVED_ACCESSIBILITY_HISTORICAL_GTFS_2018_VALIDATION",
         "SKI_GTFS_TIMETABLE_2018_WINTER_20180207",
     }
     assert required_sources <= set(sources.source_id)
@@ -118,6 +119,11 @@ def test_accessibility_expansion_summaries_and_provenance_are_registered() -> No
         "accessibility_first_exposure_audit",
         "accessibility_first_exposure_pretrend_pairs",
         "accessibility_historical_gtfs_2018_manual_worklist",
+        "accessibility_historical_gtfs_2018_stop_audit",
+        "accessibility_historical_gtfs_2018_journey_context",
+        "accessibility_historical_gtfs_2018_proximity_journey_context",
+        "accessibility_historical_gtfs_2018_current_transfer_journey_context",
+        "accessibility_historically_screened_pretrend_shortlist",
     ]:
         assert table in set(dictionary.table)
 
@@ -162,10 +168,13 @@ def test_first_exposure_pretrend_screen_is_complete_but_not_causal() -> None:
     assert not as_bool(shortlist.causal_control_approved).any()
 
 
-def test_historical_access_worklist_respects_manual_collection_boundary() -> None:
+def test_historical_access_feed_and_strict_routes_are_verified_but_not_causal() -> None:
     worklist = read("reports/accessibility_historical_gtfs_2018_manual_worklist.csv")
     summary = json.loads((ROOT / "reports" /
         "accessibility_historical_gtfs_2018_summary.json").read_text(encoding="utf-8"))
+    samples = read("data_processed/accessibility_historical_gtfs_2018_journey_samples.csv")
+    context = read("data_processed/accessibility_historical_gtfs_2018_journey_context.csv")
+    stops = read("reports/accessibility_historical_gtfs_2018_stop_audit.csv")
     assert len(worklist) == 39
     assert worklist.municipality_bfs_id.nunique() == 19
     assert worklist.station_group_id.nunique() == 10
@@ -173,7 +182,73 @@ def test_historical_access_worklist_respects_manual_collection_boundary() -> Non
     assert summary["content_length_bytes"] == 50_151_599
     assert summary["automated_download_allowed"] is False
     assert summary["manual_download_required"] is True
-    assert summary["historical_feed_downloaded"] is False
-    assert not as_bool(worklist.historical_route_computed).any()
-    assert not as_bool(worklist.historical_access_validated).any()
+    assert summary["historical_feed_downloaded"] is True
+    assert summary["gtfs_sha256"] == (
+        "655bf97a42b88da347cbe938e392351768766fddb2c76fc4ed111400104b7234")
+    assert len(samples) == 39 * 24
+    assert len(context) == 39
+    assert as_bool(context.historical_route_computed).all()
+    assert as_bool(context.historical_routing_pair_complete).sum() == 9
+    assert as_bool(context.historical_access_validated).sum() == 3
+    assert len(stops) == 31
+    assert as_bool(stops.historical_node_usable).all()
+    assert stops.mapping_method.eq("exact_normalized_stop_id").sum() == 29
+    assert summary["network_summaries"][0]["invalid_time_trips_excluded"] == 1
+    assert summary["network_summaries"][1]["invalid_time_trips_excluded"] == 1
     assert not as_bool(worklist.causal_accessibility_feature_approved).any()
+
+
+def test_historical_transfer_sensitivities_remain_separate_and_unapproved() -> None:
+    proximity = read(
+        "data_processed/accessibility_historical_gtfs_2018_proximity_journey_context.csv")
+    current = read(
+        "data_processed/accessibility_historical_gtfs_2018_current_transfer_journey_context.csv")
+    proximity_municipalities = read(
+        "reports/accessibility_historical_gtfs_2018_proximity_municipality_validation.csv")
+    current_municipalities = read(
+        "reports/accessibility_historical_gtfs_2018_current_transfer_municipality_validation.csv")
+    proximity_summary = json.loads((ROOT / "reports" /
+        "accessibility_historical_gtfs_2018_proximity_summary.json").read_text(encoding="utf-8"))
+    current_summary = json.loads((ROOT / "reports" /
+        "accessibility_historical_gtfs_2018_current_transfer_summary.json").read_text(encoding="utf-8"))
+    assert len(proximity) == len(current) == 39
+    assert as_bool(proximity.historical_routing_pair_complete).all()
+    assert as_bool(current.historical_routing_pair_complete).all()
+    assert as_bool(proximity.historical_within_120_minutes).sum() == 22
+    assert as_bool(current.historical_within_120_minutes).sum() == 24
+    assert as_bool(
+        proximity_municipalities.historical_first_exposure_retained).sum() == 13
+    assert as_bool(
+        current_municipalities.historical_first_exposure_retained).sum() == 14
+    assert proximity_summary["proximity_complete_routes"] == 39
+    assert current_summary["current_topology_complete_routes"] == 39
+    assert current_summary["topology_projection_summaries"][0][
+        "new_projected_cross_stop_links_added"] == 4714
+    assert current_summary["topology_projection_summaries"][1][
+        "new_projected_cross_stop_links_added"] == 4658
+    assert not as_bool(proximity.causal_accessibility_feature_approved).any()
+    assert not as_bool(current.causal_accessibility_feature_approved).any()
+    assert not as_bool(
+        current_municipalities.causal_first_exposure_treatment_approved).any()
+
+
+def test_historically_screened_comparison_worklist_stops_before_causal_approval() -> None:
+    pairs = read("reports/accessibility_historically_screened_pretrend_shortlist.csv")
+    summary = json.loads((ROOT / "reports" /
+        "accessibility_historically_screened_pretrend_summary.json").read_text(
+            encoding="utf-8"))
+    assert len(pairs) == 14 * 5
+    assert pairs.treated_municipality_bfs_id.nunique() == 14
+    assert pairs.control_municipality_bfs_id.nunique() == 46
+    assert pairs.groupby("treated_municipality_bfs_id").size().eq(5).all()
+    assert as_bool(pairs.historical_access_screen_passed).all()
+    assert as_bool(pairs.treated_pair_retained_for_manual_review).all()
+    assert summary["historically_removed_treated_municipalities"] == 5
+    assert summary["retained_treatments_with_all_current_founding_groups"] == 6
+    assert summary["retained_treatments_with_revised_founding_group_mix"] == 8
+    assert summary["local_shock_reviews_completed"] == 0
+    assert summary["spillover_reviews_completed"] == 0
+    assert not as_bool(pairs.parallel_trends_approved).any()
+    assert not as_bool(pairs.causal_treatment_approved).any()
+    assert not as_bool(pairs.causal_control_approved).any()
+    assert not as_bool(pairs.causal_pair_approved).any()

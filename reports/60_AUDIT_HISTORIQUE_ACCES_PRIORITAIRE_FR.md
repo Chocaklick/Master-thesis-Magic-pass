@@ -12,11 +12,11 @@ Le screening du rapport 59 réduit l'audit historique à **19 communes** et **39
 - taille annoncée par le serveur : **50,151,599 octets**;
 - réponse HEAD vérifiée : HTTP 200 le 2026-10-02.
 
-Le fichier n'a pas été téléchargé automatiquement. Le `robots.txt` du serveur d'archive indique `Disallow: /`; cette restriction est respectée. Le téléchargement doit donc être effectué manuellement depuis l'URL officielle, puis le ZIP doit être placé sans modification à l'emplacement suivant :
+Le fichier n'a pas été téléchargé automatiquement. Le `robots.txt` du serveur d'archive indique `Disallow: /`; cette restriction est respectée. L'archive fournie manuellement est enregistrée sans modification à l'emplacement suivant :
 
 `data_external/source_evidence/SKI_GTFS_TIMETABLE_2018_WINTER_20180207.zip`
 
-Après dépôt, le projet devra calculer SHA-256, vérifier l'intégrité du ZIP, retrouver les arrêts historiques et exécuter exactement les mêmes horaires-types que pour 2026. Les champs de résultat restent actuellement faux ou manquants; **aucun accès historique ni usage causal n'est approuvé**.
+Le constructeur suivant vérifie la taille, SHA-256 et l'intégrité ZIP avant de retrouver les arrêts historiques et d'exécuter exactement les mêmes horaires-types que pour 2026. Cette liste est volontairement remise à l'état d'attente avant chaque recalcul; **aucun usage causal n'est approuvé**.
 
 ## Fichier de travail
 

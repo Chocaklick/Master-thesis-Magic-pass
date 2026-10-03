@@ -16,7 +16,63 @@
   "manual_download_required": true,
   "expected_manual_file_name": "SKI_GTFS_TIMETABLE_2018_WINTER_20180207.zip",
   "expected_manual_local_path": "data_external/source_evidence/SKI_GTFS_TIMETABLE_2018_WINTER_20180207.zip",
-  "historical_feed_downloaded": false,
-  "sha256": null,
-  "notes": "The exact official ZIP returned HTTP 200 to a user-approved HEAD request. The archive host robots.txt disallows automated collection, so the project does not download the file automatically."
+  "historical_feed_downloaded": true,
+  "manual_download_received_date": "2026-10-03",
+  "manual_download_original_file_name": "GTFS_FP2018_2018-02-07.zip",
+  "verified_file_size_bytes": 50151599,
+  "zip_integrity_check": "passed_no_bad_member",
+  "sha256": "655bf97a42b88da347cbe938e392351768766fddb2c76fc4ed111400104b7234",
+  "reference_dates": {
+    "winter_weekday": "20180207",
+    "winter_saturday": "20180210"
+  },
+  "outbound_sample_times": [
+    "08:00:00",
+    "08:30:00",
+    "09:00:00",
+    "09:30:00",
+    "10:00:00"
+  ],
+  "return_sample_times": [
+    "15:00:00",
+    "15:30:00",
+    "16:00:00",
+    "16:30:00",
+    "17:00:00",
+    "17:30:00",
+    "18:00:00"
+  ],
+  "default_transfer_seconds": 120,
+  "maximum_vehicle_legs": 6,
+  "maximum_generalized_elapsed_minutes": 480,
+  "proximity_transfer_sensitivity": {
+    "maximum_walk_distance_metres": 250,
+    "walking_speed_metres_per_second": 1.2,
+    "minimum_interchange_seconds": 120,
+    "duration_rounding_seconds": 30,
+    "interpretation": "sensitivity_only_inferred_bidirectional_walk_links_between_active_2018_gtfs_stops_not_published_transfers"
+  },
+  "current_transfer_topology_sensitivity": {
+    "source_id": "SKI_GTFS_TIMETABLE_2026_WINTER_20260207",
+    "source_local_path": "data_external/source_evidence/SKI_GTFS_TIMETABLE_2026_WINTER_20260207_20260922T125552Z.zip",
+    "rule": "add_only_2026_published_cross_stop_transfer_links_whose_normalized_endpoint_ids_are_both_active_in_2018_preserve_2018_links",
+    "interpretation": "sensitivity_only_current_official_transfer_topology_projected_to_active_2018_stop_ids_not_historically_published_or_causal"
+  },
+  "historical_stop_overrides": {
+    "8584841": {
+      "historical_stop_id": "8501479",
+      "historical_stop_name": "Les Diablerets",
+      "mapping_method": "reviewed_nearest_active_2018_ground_stop_to_same_official_access_point",
+      "distance_from_access_point_km": 0.578143,
+      "review_note": "The 2026 bus stop Les Diablerets, Les Vioz is absent from the 2018 feed; the nearest active 2018 train or bus stop to the same official access point is Les Diablerets railway stop."
+    },
+    "8510070": {
+      "historical_stop_id": "8579126",
+      "historical_stop_name": "Villars-sur-Ollon, temple",
+      "mapping_method": "reviewed_nearest_active_2018_ground_stop_to_same_official_access_point",
+      "distance_from_access_point_km": 0.451005,
+      "review_note": "The 2026 bus stop Villars-sur-Ollon, télécabine is absent from the 2018 feed; the nearest active 2018 train or bus stop to the same official access point is Villars-sur-Ollon, temple."
+    }
+  },
+  "notes": "The exact official ZIP returned HTTP 200 to a user-approved HEAD request. Because the archive host robots.txt disallows automated collection, the user downloaded the file manually. The project copied it unchanged to the immutable source-evidence path, verified its exact size, SHA-256 and ZIP integrity, and retained the original download."
 }

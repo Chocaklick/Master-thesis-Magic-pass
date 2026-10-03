@@ -1,8 +1,9 @@
-"""Build the focused manual 2018 GTFS validation worklist.
+"""Build the focused 2018 GTFS validation worklist.
 
 The archive host disallows automated collection in robots.txt.  This script
-therefore never downloads the feed; it records the exact official snapshot and
-the route endpoints required for the 19 first-exposure design candidates.
+therefore never downloads the feed. It records the exact official snapshot and
+the route endpoints required for the 19 first-exposure design candidates. When
+the manually supplied feed is present, the route builder validates it next.
 """
 
 from __future__ import annotations
@@ -81,7 +82,11 @@ def main() -> None:
     worklist["historical_route_computed"] = False
     worklist["historical_mean_one_way_generalized_minutes"] = pd.NA
     worklist["absolute_2018_to_2026_time_change_minutes"] = pd.NA
-    worklist["historical_access_plausibility_status"] = "pending_manual_feed_download"
+    worklist["historical_access_plausibility_status"] = (
+        "pending_route_computation_after_manual_feed_verification"
+        if config["historical_feed_downloaded"]
+        else "pending_manual_feed_download"
+    )
     worklist["historical_access_validated"] = False
     worklist["causal_accessibility_feature_approved"] = False
     worklist["source_id"] = config["source_id"]
@@ -91,7 +96,7 @@ def main() -> None:
     worklist.to_csv(WORKLIST_OUTPUT, index=False, lineterminator="\n")
 
     summary = {
-        "analysis_date": "2026-10-02",
+        "analysis_date": "2026-10-03",
         "source_id": config["source_id"],
         "archive_url": config["archive_url"],
         "head_http_status": config["head_http_status"],
@@ -104,14 +109,13 @@ def main() -> None:
         "priority_group_municipality_routes": len(worklist),
         "unique_founding_station_groups": int(worklist.station_group_id.nunique()),
         "unique_origin_stops": int(worklist.municipality_main_stop_id.nunique()),
-        "unique_current_destination_access_references": int(
-            pd.concat(
-                [
-                    worklist.outbound_access_point_ids_used,
-                    worklist.return_access_point_ids_used,
-                ]
-            ).nunique()
-        ),
+        "unique_current_destination_access_references": len({
+            value
+            for column in ["outbound_access_point_ids_used", "return_access_point_ids_used"]
+            for cell in worklist[column].dropna()
+            for value in str(cell).split("|")
+            if value
+        }),
         "historical_routes_computed": 0,
         "historical_access_validated_routes": 0,
         "causal_accessibility_features_approved": 0,
@@ -139,11 +143,11 @@ Le screening du rapport 59 réduit l'audit historique à **{len(candidates)} com
 - taille annoncée par le serveur : **{config['content_length_bytes']:,} octets**;
 - réponse HEAD vérifiée : HTTP {config['head_http_status']} le {config['head_check_date']}.
 
-Le fichier n'a pas été téléchargé automatiquement. Le `robots.txt` du serveur d'archive indique `Disallow: /`; cette restriction est respectée. Le téléchargement doit donc être effectué manuellement depuis l'URL officielle, puis le ZIP doit être placé sans modification à l'emplacement suivant :
+Le fichier n'a pas été téléchargé automatiquement. Le `robots.txt` du serveur d'archive indique `Disallow: /`; cette restriction est respectée. L'archive fournie manuellement est enregistrée sans modification à l'emplacement suivant :
 
 `{config['expected_manual_local_path']}`
 
-Après dépôt, le projet devra calculer SHA-256, vérifier l'intégrité du ZIP, retrouver les arrêts historiques et exécuter exactement les mêmes horaires-types que pour 2026. Les champs de résultat restent actuellement faux ou manquants; **aucun accès historique ni usage causal n'est approuvé**.
+Le constructeur suivant vérifie la taille, SHA-256 et l'intégrité ZIP avant de retrouver les arrêts historiques et d'exécuter exactement les mêmes horaires-types que pour 2026. Cette liste est volontairement remise à l'état d'attente avant chaque recalcul; **aucun usage causal n'est approuvé**.
 
 ## Fichier de travail
 

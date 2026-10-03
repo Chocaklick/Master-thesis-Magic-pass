@@ -1,0 +1,20 @@
+municipality_bfs_id,municipality_name,first_exposure_month,current_founding_groups_within_120_minutes,historical_founding_groups_with_complete_routes,historical_founding_groups_within_120_minutes,historical_validated_group_ids,historical_validated_group_names,historical_first_exposure_retained,all_current_founding_groups_historically_within_120_minutes,historical_first_exposure_design_review_status,causal_first_exposure_treatment_approved,source_id
+355,Köniz,2017-11-01,1,0,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+404,Burgdorf,2017-11-01,1,0,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+843,Saanen,2017-11-01,3,1,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+942,Thun,2017-11-01,1,0,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+2121,Haut-Intyamon,2017-11-01,4,0,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+2125,Bulle,2017-11-01,5,0,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+2135,Gruyères,2017-11-01,3,0,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+2196,Fribourg,2017-11-01,4,0,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+2275,Murten,2017-11-01,1,0,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+2299,Plaffeien,2017-11-01,1,1,1,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,True,True,retained_all_current_founding_groups,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+5407,Leysin,2017-11-01,3,1,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+5409,Ollon,2017-11-01,1,1,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+5411,Ormont-Dessus,2017-11-01,3,0,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+5841,Château-d'Oex,2017-11-01,2,1,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+6034,Orsières,2017-11-01,1,1,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+6151,Champéry,2017-11-01,1,1,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+6252,Anniviers,2017-11-01,2,2,2,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal|MP_GROUP_RESORT__st_luc_chandolin,Grimentz-Zinal|St-Luc / Chandolin,True,True,retained_all_current_founding_groups,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+6421,La Chaux-de-Fonds,2017-11-01,1,0,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207
+6757,Saignelégier,2017-11-01,1,0,0,,,False,False,not_retained_at_120_minutes,False,SKI_GTFS_TIMETABLE_2018_WINTER_20180207

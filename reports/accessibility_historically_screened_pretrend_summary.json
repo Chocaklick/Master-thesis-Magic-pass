@@ -1,0 +1,44 @@
+{
+  "analysis_date": "2026-10-03",
+  "original_treated_municipalities": 19,
+  "original_shortlisted_pairs": 95,
+  "historically_retained_treated_municipalities": 14,
+  "historically_removed_treated_municipalities": 5,
+  "historically_screened_pairs_for_manual_review": 70,
+  "distinct_comparison_municipalities": 46,
+  "retained_treatments_with_all_current_founding_groups": 6,
+  "retained_treatments_with_revised_founding_group_mix": 8,
+  "removed_treated_municipalities": [
+    {
+      "municipality_bfs_id": 404,
+      "municipality_name": "Burgdorf"
+    },
+    {
+      "municipality_bfs_id": 942,
+      "municipality_name": "Thun"
+    },
+    {
+      "municipality_bfs_id": 2275,
+      "municipality_name": "Murten"
+    },
+    {
+      "municipality_bfs_id": 6034,
+      "municipality_name": "Orsières"
+    },
+    {
+      "municipality_bfs_id": 6151,
+      "municipality_name": "Champéry"
+    }
+  ],
+  "historical_access_scenario": "official_2026_transfer_topology_projected_to_active_2018_stop_ids_sensitivity",
+  "historical_access_scenario_is_published_2018_fact": false,
+  "local_shock_reviews_completed": 0,
+  "spillover_reviews_completed": 0,
+  "parallel_trends_approved": false,
+  "causal_pairs_approved": 0,
+  "input_sha256": {
+    "reports/accessibility_first_exposure_pretrend_shortlist.csv": "494e6b14ec77eca2fad5fe2cd9b8d2880a7ef115904205fd47d40fb535c89cd7",
+    "reports/accessibility_historical_gtfs_2018_current_transfer_municipality_validation.csv": "0b2c5f42c628401d45fd4e45d7c3b165999a1a35463e05741661597b86b5a8d0",
+    "reports/accessibility_first_exposure_audit.csv": "7e3a459d1c7041bf90769eb4109c852023ce1e202e30fe54bfe75a96769cb94a"
+  }
+}

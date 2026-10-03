@@ -20,6 +20,10 @@ SCRIPTS = [
     "src/causal_inference/audit_accessibility_identification.py",
     "src/causal_inference/build_accessibility_first_exposure_pretrend.py",
     "src/data_processing/build_accessibility_historical_access_worklist.py",
+    "src/data_processing/build_accessibility_historical_gtfs_2018_routes.py",
+    "src/data_processing/build_accessibility_historical_gtfs_2018_proximity_sensitivity.py",
+    "src/data_processing/build_accessibility_historical_gtfs_2018_current_transfer_sensitivity.py",
+    "src/causal_inference/build_accessibility_historically_screened_comparisons.py",
     "src/data_processing/update_accessibility_expansion_provenance.py",
     "src/data_processing/update_provenance.py",
 ]
