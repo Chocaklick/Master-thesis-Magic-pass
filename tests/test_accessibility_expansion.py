@@ -105,6 +105,7 @@ def test_accessibility_expansion_summaries_and_provenance_are_registered() -> No
         "DERIVED_ACCESSIBILITY_MUNICIPALITY_EXPOSURE",
         "DERIVED_ACCESSIBILITY_IDENTIFICATION_AUDIT",
         "DERIVED_ACCESSIBILITY_HISTORICAL_GTFS_2018_VALIDATION",
+        "DERIVED_ACCESSIBILITY_COMPARISON_INTERNAL_RISK_SCREEN",
         "SKI_GTFS_TIMETABLE_2018_WINTER_20180207",
     }
     assert required_sources <= set(sources.source_id)
@@ -124,6 +125,9 @@ def test_accessibility_expansion_summaries_and_provenance_are_registered() -> No
         "accessibility_historical_gtfs_2018_proximity_journey_context",
         "accessibility_historical_gtfs_2018_current_transfer_journey_context",
         "accessibility_historically_screened_pretrend_shortlist",
+        "accessibility_comparison_internal_risk_screen",
+        "accessibility_comparison_control_internal_diagnostics",
+        "accessibility_comparison_external_review_worklist",
     ]:
         assert table in set(dictionary.table)
 
@@ -248,6 +252,46 @@ def test_historically_screened_comparison_worklist_stops_before_causal_approval(
     assert summary["retained_treatments_with_revised_founding_group_mix"] == 8
     assert summary["local_shock_reviews_completed"] == 0
     assert summary["spillover_reviews_completed"] == 0
+    assert not as_bool(pairs.parallel_trends_approved).any()
+    assert not as_bool(pairs.causal_treatment_approved).any()
+    assert not as_bool(pairs.causal_control_approved).any()
+    assert not as_bool(pairs.causal_pair_approved).any()
+
+
+def test_internal_risk_screen_prioritises_external_review_without_causal_clearance() -> None:
+    pairs = read("data_processed/accessibility_comparison_internal_risk_screen.csv")
+    controls = read("reports/accessibility_comparison_control_internal_diagnostics.csv")
+    worklist = read("reports/accessibility_comparison_external_review_worklist.csv")
+    summary = json.loads((ROOT / "reports" /
+        "accessibility_comparison_internal_risk_summary.json").read_text(
+            encoding="utf-8"))
+    assert len(pairs) == 14 * 5
+    assert len(controls) == 46
+    assert len(worklist) == 14 + 46
+    assert not pairs.duplicated([
+        "treated_municipality_bfs_id", "control_municipality_bfs_id"]).any()
+    assert summary["control_municipalities_with_documented_competing_pass_link_in_window"] == 10
+    assert summary["control_municipalities_with_existing_exact_anchor_shock_evidence"] == 1
+    assert summary["control_municipalities_with_large_capacity_shift_warning"] == 14
+    assert summary["control_municipalities_within_30km_window_magic_network"] == 4
+    assert summary["pairs_retained_for_external_review"] == 50
+    assert summary["treated_municipalities_with_at_least_one_retained_pair"] == 14
+    assert summary["distinct_controls_in_retained_pairs"] == 33
+    assert summary["priority_entities_with_external_source_review_pending"] == 47
+    assert summary["entities_deferred_after_internal_deprioritisation"] == 12
+    assert summary["entities_with_existing_exact_anchor_review_completed"] == 1
+    assert summary["spillover_reviews_completed"] == 0
+    assert as_bool(pairs.retained_for_external_review).sum() == 50
+    assert pairs.groupby("treated_municipality_bfs_id").retained_for_external_review.apply(
+        lambda values: as_bool(values).any()).all()
+    assert not as_bool(controls.network_distance_is_spillover_clearance).any()
+    assert worklist.external_review_status.value_counts().to_dict() == {
+        "pending_external_source_review": 47,
+        "deferred_after_internal_deprioritisation": 12,
+        "completed_existing_exact_anchor_evidence_control_excluded": 1,
+    }
+    assert not as_bool(worklist.causal_entity_approved).any()
+    assert not as_bool(pairs.spillover_review_completed).any()
     assert not as_bool(pairs.parallel_trends_approved).any()
     assert not as_bool(pairs.causal_treatment_approved).any()
     assert not as_bool(pairs.causal_control_approved).any()

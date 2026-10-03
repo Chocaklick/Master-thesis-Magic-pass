@@ -410,6 +410,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** The report names the two jointly governed operators and the Engadin decision to retain SnowPass; links are restricted to their exact host listings and are not widened to the rest of Engadin
 - **Local raw file:** `data_external/source_evidence/CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19_20260925T151738Z.pdf`.
 
+## DERIVED_ACCESSIBILITY_COMPARISON_INTERNAL_RISK_SCREEN — Accessibility comparison internal risk screen
+
+- **Contents and relevance:** Internal evidence and proxy-risk screen for the 70 historically retained first-exposure comparison pairs
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic offline Python transformation of registered project data and previously reviewed evidence; 2026-10-03.
+- **Variables:** network_proximity|bilateral_distance|hotel_capacity_shift|documented_competing_pass_link|existing_external_shock|pair_triage
+- **Transformations:** Measure representative-point proximity to station access points active by October 2019; retain current scheduled-time context; compare balanced 24-month capacity windows; link only positive documented competing-pass evidence and exact-anchor reviewed shocks; apply disclosed non-causal priority rules
+- **Coverage:** treated municipality by provisional comparison municipality; municipality review worklist; November 2017 anchor with adjacent 24-month windows; 2015-11 to 2019-10.
+- **Limitations:** Representative points are not tourism catchments; current scheduled times are not historical; capacity shifts can be shocks, seasonality or mediators; missing pass links never establish absence; no spillover or causal pair is cleared
+- **Local raw file:** `data_processed/municipality_population_geometry_2026.csv|data_processed/accessibility_station_group_journey_context.csv|data_processed/hotel_capacity_municipality_month.csv|data_processed/resort_point_municipality.csv|data_processed/resort_competing_pass_history.csv|reports/donor_external_shock_evidence.csv`.
+
 ## DERIVED_ACCESSIBILITY_CONTEXT — Path C straight-line population accessibility context
 
 - **Contents and relevance:** Qualified Swiss straight-line population context for every linked Path C lift cluster

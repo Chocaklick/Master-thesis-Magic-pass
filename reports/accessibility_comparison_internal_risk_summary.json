@@ -1,0 +1,53 @@
+{
+  "analysis_date": "2026-10-03",
+  "analysis_anchor": "2017-11-01",
+  "review_window": {
+    "pre_start": "2015-11-01",
+    "pre_end": "2017-10-01",
+    "post_start": "2017-11-01",
+    "post_end": "2019-10-01"
+  },
+  "historically_screened_pairs": 70,
+  "treated_municipalities": 14,
+  "distinct_control_municipalities": 46,
+  "control_municipalities_with_documented_competing_pass_link_in_window": 10,
+  "control_municipalities_with_existing_exact_anchor_shock_evidence": 1,
+  "control_municipalities_with_large_capacity_shift_warning": 14,
+  "control_municipalities_within_30km_window_magic_network": 4,
+  "control_municipalities_within_50km_window_magic_network": 7,
+  "pair_triage_decision_counts": {
+    "retain_for_external_review_lower_internal_risk": 32,
+    "retain_for_external_review_with_capacity_warning": 14,
+    "deprioritise_documented_control_competing_pass_link": 14,
+    "deprioritise_control_network_proximity_within_30km": 4,
+    "retain_for_external_review_with_intermediate_proximity_warning": 4,
+    "exclude_from_priority_existing_documented_control_shock": 2
+  },
+  "pairs_retained_for_external_review": 50,
+  "treated_municipalities_with_at_least_one_retained_pair": 14,
+  "distinct_controls_in_retained_pairs": 33,
+  "spillover_reviews_completed": 0,
+  "priority_entities_with_external_source_review_pending": 47,
+  "entities_deferred_after_internal_deprioritisation": 12,
+  "entities_with_existing_exact_anchor_review_completed": 1,
+  "parallel_trends_approved": false,
+  "causal_pairs_approved": 0,
+  "thresholds_are_sensitivity_rules": {
+    "network_proximity_deprioritisation_km": 30,
+    "intermediate_proximity_warning_km": 50,
+    "mean_capacity_change_warning_abs_share": 0.2,
+    "maximum_year_on_year_capacity_change_warning_abs_share": 0.5
+  },
+  "input_sha256": {
+    "reports/accessibility_historically_screened_pretrend_shortlist.csv": "03dabcf75b32439ed16763d46466f3a389bd013a505259dd7adb6c85e3190aaa",
+    "data_processed/municipality_population_geometry_2026.csv": "5199d194e50334e3ca5fd7d843d8c90b5da2bd6994ae179c232d6788c6fc8ad1",
+    "data_processed/accessibility_municipality_month_exposure.csv": "9da2037a9fd323afdea5987a87669d94618535ded4f6a71c1a82a97f1890d0be",
+    "data_processed/accessibility_station_groups.csv": "08040e0b7141679434eb8f4339d46ba24a77768ee07c6ab9fb98e989054987eb",
+    "data_processed/accessibility_station_access_points.csv": "e71444ba9062b23a6d8014edb37387b547162f6d20d074b5e161d8ee1f8dc916",
+    "data_processed/accessibility_station_group_journey_context.csv": "226114874ffff0e679c7f951e596007176e8635741ae64dd8c48ae576446ce60",
+    "data_processed/hotel_capacity_municipality_month.csv": "d3bfc1c6cee327bd7f8ac010d7f5b43b46f65e61e0fb7343dd2082d63e34ea25",
+    "data_processed/resort_point_municipality.csv": "f1c1d1fa935460ed34bfb1f7f398837478a961ae5079f3c5507469c4f9a9a5d6",
+    "data_processed/resort_competing_pass_history.csv": "95983fd4685b80091de2395fbf2b052cf901d406c6f271632deefcc9a6c4c4e3",
+    "reports/donor_external_shock_evidence.csv": "bf2f93b29f9b285389bfecd0edcfff210ec1f22b525de88cad16e360517f7c15"
+  }
+}

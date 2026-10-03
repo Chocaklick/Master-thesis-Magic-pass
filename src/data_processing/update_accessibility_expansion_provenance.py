@@ -118,6 +118,15 @@ TABLES = {
     "accessibility_historically_screened_pretrend_shortlist": (
         ROOT / "reports" / "accessibility_historically_screened_pretrend_shortlist.csv",
         "DERIVED_ACCESSIBILITY_HISTORICAL_GTFS_2018_VALIDATION", "historically retained treated municipality by provisional comparison municipality", "36 pre-anchor months and winter-2018 access screen"),
+    "accessibility_comparison_internal_risk_screen": (
+        ROOT / "data_processed" / "accessibility_comparison_internal_risk_screen.csv",
+        "DERIVED_ACCESSIBILITY_COMPARISON_INTERNAL_RISK_SCREEN", "historically retained treated municipality by provisional comparison municipality", "2015-11 to 2019-10 review window"),
+    "accessibility_comparison_control_internal_diagnostics": (
+        ROOT / "reports" / "accessibility_comparison_control_internal_diagnostics.csv",
+        "DERIVED_ACCESSIBILITY_COMPARISON_INTERNAL_RISK_SCREEN", "provisional comparison municipality", "2015-11 to 2019-10 review window"),
+    "accessibility_comparison_external_review_worklist": (
+        ROOT / "reports" / "accessibility_comparison_external_review_worklist.csv",
+        "DERIVED_ACCESSIBILITY_COMPARISON_INTERNAL_RISK_SCREEN", "treated or provisional comparison municipality", "external-review checkpoint"),
 }
 
 
@@ -227,6 +236,17 @@ DESCRIPTIONS = {
     "historical_first_exposure_retained": "Whether at least one founding station group remains within 120 minutes under the historical routing variant",
     "all_current_founding_groups_historically_within_120_minutes": "Whether every currently assigned founding group remains within 120 minutes under the historical routing variant",
     "routing_transfer_variant": "Strict or sensitivity transfer topology used for historical routing",
+    "minimum_representative_distance_to_window_magic_access_point_km": "Minimum straight-line distance from the municipality representative point to a station-group access point active by the end of the 24-month post window",
+    "network_proximity_band": "Sensitivity band for municipality representative-point proximity to the 2017-2019 Magic Pass network",
+    "documented_competing_pass_link_in_window": "Whether a supplied resort point in the municipality has a positive documented link to a reviewed competing pass in 2017/18 or 2018/19",
+    "large_hotel_capacity_shift_warning": "Whether hotel beds, establishments or year-on-year available-bed changes exceed a predeclared descriptive warning threshold",
+    "existing_external_shock_exact_anchor": "Whether an earlier source-backed donor review documents a local shock for the same November 2017 anchor",
+    "treated_control_representative_distance_km": "Great-circle distance between treated and comparison municipality representative points",
+    "internal_pair_triage_decision": "Non-causal priority decision combining documented risks and descriptive proxy warnings",
+    "retained_for_external_review": "Whether the pair remains prioritised for municipality-specific external source review",
+    "internal_risk_flags": "Pipe-delimited documented risks and descriptive proxy warnings raised by the internal screen",
+    "external_review_topics": "Evidence domains still requiring municipality-specific external source review",
+    "external_review_status": "Checkpoint status of the municipality-specific external source review",
     "mapping_method": "Exact stable stop identifier or reviewed historical stop-equivalence rule",
     "historical_node_usable": "Whether the historical endpoint is active on both sampled service days",
 }
@@ -371,6 +391,28 @@ def derived_sources() -> list[dict]:
         confidence_level="high for source identity and strict published schedule; limited for practical interchange completeness",
         manual_verification="All 19 origins retain exact stop IDs; ten of twelve destination references are exact and two reviewed equivalents are documented",
         notes="Selected snapshot closest to 7 February of the first Magic Pass exposure winter; manual collection respected the archive robots policy",
+    ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_COMPARISON_INTERNAL_RISK_SCREEN",
+        variable_name="network_proximity|bilateral_distance|hotel_capacity_shift|documented_competing_pass_link|existing_external_shock|pair_triage",
+        variable_description="Internal evidence and proxy-risk screen for the 70 historically retained first-exposure comparison pairs",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility comparison internal risk screen",
+        retrieval_method="Deterministic offline Python transformation of registered project data and previously reviewed evidence",
+        retrieval_date="2026-10-03",
+        local_raw_file="data_processed/municipality_population_geometry_2026.csv|data_processed/accessibility_station_group_journey_context.csv|data_processed/hotel_capacity_municipality_month.csv|data_processed/resort_point_municipality.csv|data_processed/resort_competing_pass_history.csv|reports/donor_external_shock_evidence.csv",
+        processed_file="data_processed/accessibility_comparison_internal_risk_screen.csv|reports/accessibility_comparison_control_internal_diagnostics.csv|reports/accessibility_comparison_external_review_worklist.csv|reports/65_SCREENING_INTERNE_RISQUES_COMPARAISONS_FR.md",
+        geographic_level="treated municipality by provisional comparison municipality; municipality review worklist",
+        temporal_resolution="November 2017 anchor with adjacent 24-month windows",
+        temporal_start="2015-11", temporal_end="2019-10",
+        unit="kilometres, minutes, capacity changes, evidence flags and review priorities",
+        license="Derived analytical data; upstream source terms continue to apply",
+        access_conditions="Local reproducible output",
+        transformation_applied="Measure representative-point proximity to station access points active by October 2019; retain current scheduled-time context; compare balanced 24-month capacity windows; link only positive documented competing-pass evidence and exact-anchor reviewed shocks; apply disclosed non-causal priority rules",
+        quality_notes="Representative points are not tourism catchments; current scheduled times are not historical; capacity shifts can be shocks, seasonality or mediators; missing pass links never establish absence; no spillover or causal pair is cleared",
+        confidence_level="high for deterministic joins and positive documented links; medium-to-low for proxy-risk interpretation",
+        manual_verification="Thresholds, positive-evidence semantics, exact-anchor reuse and protected false causal flags are checked by automated tests",
+        notes="The screen reduces external review effort; it does not estimate an effect or validate parallel trends",
     ))
     return rows
 
