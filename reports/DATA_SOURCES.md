@@ -458,6 +458,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point and radius-specific border intersection is flagged without filling foreign population
 - **Local raw file:** `config/path_c_analysis.json|config/municipality_boundary_bridge_2025_2026.csv`.
 
+## DERIVED_ACCESSIBILITY_HIGH_LEVERAGE_CONTROL_EXTERNAL_SHOCK_REVIEW — Accessibility high-leverage control external-shock review
+
+- **Contents and relevance:** External-shock review of the seven control municipalities reused in at least two stage-19 strict comparison pairs
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic Python join of manually reviewed evidence, checksum sidecars, stage-19 pairs and official hotel capacity; 2026-10-03.
+- **Variables:** control_external_shock_evidence|source_integrity|capacity_peak_timing|strict_candidate_after_control_review|remaining_control_worklist|stage20_pair_decision
+- **Transformations:** Review controls used in at least two strict pairs first; verify every cited file against its SHA-256 sidecar; remove pairs only for major positive competing-shock evidence; retain smaller changes with explicit sensitivity; generate the remaining-control worklist
+- **Coverage:** provisional comparison municipality and treated-control comparison pair; November 2017 anchor with November 2015 to October 2019 review window; 2015-11 to 2019-10.
+- **Limitations:** Document review cannot prove shock absence or identify an effect. Seventeen controls, visitor-market spillovers and parallel trends remain pending; zero causal approvals.
+- **Local raw file:** `config/accessibility_high_leverage_control_external_shock_review.json|config/evidence_sources.json|data_external/source_evidence|data_processed/accessibility_comparison_treated_external_risk_screen.csv|data_processed/hotel_capacity_municipality_month.csv`.
+
 ## DERIVED_ACCESSIBILITY_HISTORICAL_GTFS_2018_VALIDATION — Historical Magic Pass first-exposure accessibility validation
 
 - **Contents and relevance:** Targeted 2018 accessibility validation for the 39 founding group-municipality routes under strict and two documented transfer scenarios
@@ -974,6 +986,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/DIABLERETS_SCOPE_OFFICIAL_20260921T220428Z.html`.
 
+## EMMEN_ANNUAL_REPORT_2019 — Official 2019 municipal annual report reviewed for contemporaneous tourism, accommodation and major visitor-economy changes
+
+- **Contents and relevance:** Official 2019 municipal annual report reviewed for contemporaneous tourism, accommodation and major visitor-economy changes
+- **Producer:** Gemeinde Emmen
+- **Exact URL:** https://www.emmen.ch/_docn/2548012/Jahresbericht_2019_final.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T11:10:52.270888+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_high_leverage_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, accommodation operator or regional-tourism evidence; document-specific opening, project or policy period; 2017 to 2021.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/EMMEN_ANNUAL_REPORT_2019_20261003T111052Z.pdf`.
+
 ## ENGADIN_MOUNTAINS_ANNUAL_2017_18 — Engadin St. Moritz Mountains AG annual report 2017/18
 
 - **Contents and relevance:** Official 2017/2018 annual report documenting Corviglia-Marguns restaurant changes, dynamic-pricing preparation and lift modernisation around the Anniviers anchor
@@ -1237,6 +1261,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
 - **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
 - **Local raw file:** `data_external/source_evidence/LA_CHAUX_DE_FONDS_MANAGEMENT_REPORT_2019_20261003T103436Z.pdf`.
+
+## LENZBURG_BARRACUDA_OPENING_2017 — Contemporaneous hosted press report documenting the 16 June 2017 Barracuda opening in Lenzburg and its seven hotel rooms
+
+- **Contents and relevance:** Contemporaneous hosted press report documenting the 16 June 2017 Barracuda opening in Lenzburg and its seven hotel rooms
+- **Producer:** Im Lenz development (hosting an Aargauer Zeitung opening report)
+- **Exact URL:** https://www.imlenz.ch/media/web/imlenz.ch/media/Download/Presseartikel/2017/2017-06-17_Aargauer%2BZeitung_Eroeffnung_Barracuda.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T11:11:00.396940+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_high_leverage_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, accommodation operator or regional-tourism evidence; document-specific opening, project or policy period; 2017 to 2021.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/LENZBURG_BARRACUDA_OPENING_2017_20261003T111100Z.pdf`.
+
+## LENZBURG_BARRACUDA_OPERATOR_CURRENT — Current operator document confirming that Hotel Barracuda in Lenzburg has seven rooms
+
+- **Contents and relevance:** Current operator document confirming that Hotel Barracuda in Lenzburg has seven rooms
+- **Producer:** Trinamo AG / Hotel Barracuda
+- **Exact URL:** https://gap.trinamo.ch/wp-content/uploads/2024/08/MitarbeiterIn-Rezeption-Barracuda-Lenzburg.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T11:11:01.667678+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_high_leverage_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, accommodation operator or regional-tourism evidence; document-specific opening, project or policy period; 2017 to 2021.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/LENZBURG_BARRACUDA_OPERATOR_CURRENT_20261003T111101Z.pdf`.
 
 ## LEYSIN_CHAIRLIFT_PREAVIS_2017 — Official 2017 municipal proposal documenting guarantees for the Fer-Brion-Tete d'Ai chairlift construction loans
 
@@ -1646,6 +1694,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Destination/operator scope may differ from Bergfex listing scope; seasonal membership does not establish daily operation or identical summer access
 - **Local raw file:** `data_external/source_evidence/MAGIC_PRESS_ARCHIVE_20260919T231715Z.html`.
 
+## MAIENFELD_HEIDIDORF_GRANT_2017 — Official 2 November 2017 cantonal release documenting a conditional CHF 2 million contribution to the CHF 10.1 million Heididorf expansion project
+
+- **Contents and relevance:** Official 2 November 2017 cantonal release documenting a conditional CHF 2 million contribution to the CHF 10.1 million Heididorf expansion project
+- **Producer:** Kanton Graubuenden
+- **Exact URL:** https://www.gr.ch/DE/Medien/Mitteilungen/MMStaka/2017/Seiten/2017110201.aspx
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T11:11:11.995634+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_high_leverage_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, accommodation operator or regional-tourism evidence; document-specific opening, project or policy period; 2017 to 2021.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/MAIENFELD_HEIDIDORF_GRANT_2017_20261003T111111Z.html`.
+
 ## MALBUN_MEILENWEISS_2021_22_WINTER_BROCHURE — Official Meilenweiss winter 2021/2022 brochure
 
 - **Contents and relevance:** Official Malbun-hosted brochure listing 16 Swiss/Liechtenstein areas and advertising 19 winter versus 18 summer destinations for the annual pass
@@ -1909,6 +1969,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/REICHENBACH_SCOPE_OFFICIAL_20260920T005536Z.html`.
+
+## RORSCHACHERBERG_ANNUAL_REPORT_2019 — Official 2019 municipal annual report reviewed for contemporaneous tourism, accommodation and major visitor-economy changes
+
+- **Contents and relevance:** Official 2019 municipal annual report reviewed for contemporaneous tourism, accommodation and major visitor-economy changes
+- **Producer:** Gemeinde Rorschacherberg
+- **Exact URL:** https://rorschacherberg.ch/wp-content/uploads/2023/11/Ausfuehrlicher_Amtsbericht_2019-1.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T11:11:20.437135+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_high_leverage_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, accommodation operator or regional-tourism evidence; document-specific opening, project or policy period; 2017 to 2021.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/RORSCHACHERBERG_ANNUAL_REPORT_2019_20261003T111120Z.pdf`.
 
 ## ROUSSEEUW_1987_SILHOUETTES — Silhouettes: A graphical aid to the interpretation and validation of cluster analysis
 
@@ -2174,6 +2246,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** The proposed estimator addresses heterogeneous timing, not invalid donors, spillovers, treatment ambiguity or destination-scope error.
 - **Local raw file:** `config/methodological_literature.json`.
 
+## SURSEE_FOCUS_HOTEL_HISTORY — Hotel operator history documenting the 2019 opening of the 64-room FOCUS Hotel in Sursee
+
+- **Contents and relevance:** Hotel operator history documenting the 2019 opening of the 64-room FOCUS Hotel in Sursee
+- **Producer:** FOCUS Hotel Sursee
+- **Exact URL:** https://focushotel.ch/philosophie/
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T11:10:56.998430+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_high_leverage_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, accommodation operator or regional-tourism evidence; document-specific opening, project or policy period; 2017 to 2021.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/SURSEE_FOCUS_HOTEL_HISTORY_20261003T111056Z.html`.
+
 ## SWISSTOPO_BOUNDARIES_2026 — swissBOUNDARIES3D 2026-01
 
 - **Contents and relevance:** Official 2026 municipality polygons used for distance diagnostics and qualified population accessibility context
@@ -2210,6 +2294,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/VILLARS_GRYON_SCOPE_OFFICIAL_20260920T005537Z.html`.
 
+## VITZNAU_TOURISM_PROJECTS_RETROSPECTIVE_2021 — Official 2021 municipal accounts retrospectively documenting the 2019-2023 tourism-project programme
+
+- **Contents and relevance:** Official 2021 municipal accounts retrospectively documenting the 2019-2023 tourism-project programme
+- **Producer:** Gemeinde Vitznau
+- **Exact URL:** https://www.vitznau.ch/_docn/3708212/Rechnung_Gemeinde-Vitznau-2021_GzD.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T11:10:54.986999+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_high_leverage_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, accommodation operator or regional-tourism evidence; document-specific opening, project or policy period; 2017 to 2021.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/VITZNAU_TOURISM_PROJECTS_RETROSPECTIVE_2021_20261003T111054Z.pdf`.
+
 ## WAGER_ATHEY_2018_CAUSAL_FORESTS — Estimation and Inference of Heterogeneous Treatment Effects using Random Forests
 
 - **Contents and relevance:** Develops causal forests for heterogeneous treatment effects and inference under a potential-outcomes framework with unconfoundedness.
@@ -2221,6 +2317,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** not applicable; peer-reviewed methodological article; publication; 2018 to 2018.
 - **Limitations:** The theoretical guarantees do not replace treatment identification, unconfoundedness, overlap or adequate effective sample size.
 - **Local raw file:** `config/methodological_literature.json`.
+
+## WALENSTADT_HOTEL_LOEWEN_RENOVATION_2018 — Official regional-tourism listing documenting the 2018 renovation of the seven-room Hotel Loewen in Walenstadt
+
+- **Contents and relevance:** Official regional-tourism listing documenting the 2018 renovation of the seven-room Hotel Loewen in Walenstadt
+- **Producer:** Ostschweiz Tourismus
+- **Exact URL:** https://ostschweiz.ch/en/map/poi/hotel-lowen--id--log_x8_cbbdb.html
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T11:11:14.713431+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_high_leverage_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, accommodation operator or regional-tourism evidence; document-specific opening, project or policy period; 2017 to 2021.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/WALENSTADT_HOTEL_LOEWEN_RENOVATION_2018_20261003T111114Z.html`.
 
 ## WILERALLMI_ANNUAL_2023_24 — Official destination or municipal scope page
 

@@ -1,0 +1,30 @@
+{
+  "analysis_anchor": "2017-11-01",
+  "review_window_start": "2015-11-01",
+  "review_window_end": "2019-10-01",
+  "all_input_pairs": 70,
+  "stage19_strict_candidate_pairs": 32,
+  "stage19_strict_candidate_controls": 24,
+  "high_leverage_controls_reviewed": 7,
+  "strict_pairs_covered_by_high_leverage_review": 15,
+  "reviewed_controls_excluded_from_strict_candidate": 2,
+  "strict_pairs_excluded_by_high_leverage_control_review": 4,
+  "reviewed_controls_retained_with_qualified_sensitivity": 5,
+  "strict_pairs_with_reviewed_retained_high_leverage_control": 11,
+  "strict_candidate_pairs_after_high_leverage_control_review": 28,
+  "strict_candidate_treated_municipalities_after_high_leverage_control_review": 7,
+  "strict_candidate_controls_after_high_leverage_control_review": 22,
+  "remaining_control_reviews": 17,
+  "strict_candidate_pairs_with_control_review_pending": 17,
+  "reviewed_controls_with_verified_source_integrity": 7,
+  "causal_controls_approved": 0,
+  "causal_pairs_approved": 0,
+  "input_sha256": {
+    "data_processed/accessibility_comparison_treated_external_risk_screen.csv": "cf625b811f325ffb8d0bacb1c2f28aa7fb2eb3d5e305c326f5efed4bb3bd9123",
+    "data_processed/hotel_capacity_municipality_month.csv": "d3bfc1c6cee327bd7f8ac010d7f5b43b46f65e61e0fb7343dd2082d63e34ea25",
+    "config/accessibility_high_leverage_control_external_shock_review.json": "f17cbb6ca331bb873223a35f5fab43b4411c3e6933a5061e8f00c2dac1eb0d9b",
+    "config/evidence_sources.json": "ef6401fd72f155f40126d7f3cad441c16ed3696cb444500c5e28bc4626fbe8a5"
+  },
+  "source_id": "DERIVED_ACCESSIBILITY_HIGH_LEVERAGE_CONTROL_EXTERNAL_SHOCK_REVIEW",
+  "interpretation": "Incremental external-shock triage only. Surviving pairs remain candidates; unreviewed controls, visitor-market spillovers and parallel-trend diagnostics are pending."
+}

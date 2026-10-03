@@ -645,5 +645,61 @@
     "suffix": "pdf",
     "organisation": "Commune de Saignelegier",
     "description": "Official June 2019 municipal bulletin documenting the three-day Jura 40 celebration hosted mainly in Saignelegier and its expected thousands of visitors"
+  },
+  {
+    "source_id": "EMMEN_ANNUAL_REPORT_2019",
+    "url": "https://www.emmen.ch/_docn/2548012/Jahresbericht_2019_final.pdf",
+    "suffix": "pdf",
+    "organisation": "Gemeinde Emmen",
+    "description": "Official 2019 municipal annual report reviewed for contemporaneous tourism, accommodation and major visitor-economy changes"
+  },
+  {
+    "source_id": "VITZNAU_TOURISM_PROJECTS_RETROSPECTIVE_2021",
+    "url": "https://www.vitznau.ch/_docn/3708212/Rechnung_Gemeinde-Vitznau-2021_GzD.pdf",
+    "suffix": "pdf",
+    "organisation": "Gemeinde Vitznau",
+    "description": "Official 2021 municipal accounts retrospectively documenting the 2019-2023 tourism-project programme"
+  },
+  {
+    "source_id": "SURSEE_FOCUS_HOTEL_HISTORY",
+    "url": "https://focushotel.ch/philosophie/",
+    "suffix": "html",
+    "organisation": "FOCUS Hotel Sursee",
+    "description": "Hotel operator history documenting the 2019 opening of the 64-room FOCUS Hotel in Sursee"
+  },
+  {
+    "source_id": "LENZBURG_BARRACUDA_OPENING_2017",
+    "url": "https://www.imlenz.ch/media/web/imlenz.ch/media/Download/Presseartikel/2017/2017-06-17_Aargauer%2BZeitung_Eroeffnung_Barracuda.pdf",
+    "suffix": "pdf",
+    "organisation": "Im Lenz development (hosting an Aargauer Zeitung opening report)",
+    "description": "Contemporaneous hosted press report documenting the 16 June 2017 Barracuda opening in Lenzburg and its seven hotel rooms"
+  },
+  {
+    "source_id": "LENZBURG_BARRACUDA_OPERATOR_CURRENT",
+    "url": "https://gap.trinamo.ch/wp-content/uploads/2024/08/MitarbeiterIn-Rezeption-Barracuda-Lenzburg.pdf",
+    "suffix": "pdf",
+    "organisation": "Trinamo AG / Hotel Barracuda",
+    "description": "Current operator document confirming that Hotel Barracuda in Lenzburg has seven rooms"
+  },
+  {
+    "source_id": "MAIENFELD_HEIDIDORF_GRANT_2017",
+    "url": "https://www.gr.ch/DE/Medien/Mitteilungen/MMStaka/2017/Seiten/2017110201.aspx",
+    "suffix": "html",
+    "organisation": "Kanton Graubuenden",
+    "description": "Official 2 November 2017 cantonal release documenting a conditional CHF 2 million contribution to the CHF 10.1 million Heididorf expansion project"
+  },
+  {
+    "source_id": "WALENSTADT_HOTEL_LOEWEN_RENOVATION_2018",
+    "url": "https://ostschweiz.ch/en/map/poi/hotel-lowen--id--log_x8_cbbdb.html",
+    "suffix": "html",
+    "organisation": "Ostschweiz Tourismus",
+    "description": "Official regional-tourism listing documenting the 2018 renovation of the seven-room Hotel Loewen in Walenstadt"
+  },
+  {
+    "source_id": "RORSCHACHERBERG_ANNUAL_REPORT_2019",
+    "url": "https://rorschacherberg.ch/wp-content/uploads/2023/11/Ausfuehrlicher_Amtsbericht_2019-1.pdf",
+    "suffix": "pdf",
+    "organisation": "Gemeinde Rorschacherberg",
+    "description": "Official 2019 municipal annual report reviewed for contemporaneous tourism, accommodation and major visitor-economy changes"
   }
 ]

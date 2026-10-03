@@ -27,6 +27,16 @@ NEW_TREATED_REVIEW_SOURCE_IDS = {
     "PLAFFEIEN_TOURISM_AG_MINUTES_2019",
     "SAIGNELEGIER_INFO_JUNE_2019",
 }
+NEW_CONTROL_REVIEW_SOURCE_IDS = {
+    "EMMEN_ANNUAL_REPORT_2019",
+    "LENZBURG_BARRACUDA_OPENING_2017",
+    "LENZBURG_BARRACUDA_OPERATOR_CURRENT",
+    "MAIENFELD_HEIDIDORF_GRANT_2017",
+    "RORSCHACHERBERG_ANNUAL_REPORT_2019",
+    "SURSEE_FOCUS_HOTEL_HISTORY",
+    "VITZNAU_TOURISM_PROJECTS_RETROSPECTIVE_2021",
+    "WALENSTADT_HOTEL_LOEWEN_RENOVATION_2018",
+}
 SOURCE_COLUMNS = [
     "source_id", "variable_name", "variable_description", "source_organisation",
     "source_dataset_name", "source_page_url", "direct_download_url", "api_endpoint",
@@ -149,6 +159,15 @@ TABLES = {
     "accessibility_comparison_treated_external_risk_screen": (
         ROOT / "data_processed" / "accessibility_comparison_treated_external_risk_screen.csv",
         "DERIVED_ACCESSIBILITY_TREATED_EXTERNAL_SHOCK_REVIEW", "treated municipality by provisional comparison municipality", "November 2017 anchor and adjacent 24-month windows"),
+    "accessibility_high_leverage_control_external_shock_evidence": (
+        ROOT / "reports" / "accessibility_high_leverage_control_external_shock_evidence.csv",
+        "DERIVED_ACCESSIBILITY_HIGH_LEVERAGE_CONTROL_EXTERNAL_SHOCK_REVIEW", "high-leverage provisional comparison municipality", "2015-11 to 2019-10 external-review window"),
+    "accessibility_comparison_high_leverage_control_external_risk_screen": (
+        ROOT / "data_processed" / "accessibility_comparison_high_leverage_control_external_risk_screen.csv",
+        "DERIVED_ACCESSIBILITY_HIGH_LEVERAGE_CONTROL_EXTERNAL_SHOCK_REVIEW", "treated municipality by provisional comparison municipality", "November 2017 anchor and adjacent 24-month windows"),
+    "accessibility_remaining_control_external_review_worklist": (
+        ROOT / "reports" / "accessibility_remaining_control_external_review_worklist.csv",
+        "DERIVED_ACCESSIBILITY_HIGH_LEVERAGE_CONTROL_EXTERNAL_SHOCK_REVIEW", "provisional comparison municipality", "stage-20 review checkpoint"),
 }
 
 
@@ -187,6 +206,19 @@ DESCRIPTIONS = {
     "largest_absolute_yoy_bed_change_date": "Month of the largest absolute year-on-year change in available hotel beds during the review window",
     "largest_absolute_yoy_bed_change_phase": "Whether the largest year-on-year hotel-bed change occurs before or after the November 2017 anchor",
     "stage19_pair_decision": "Pair status after combining the stage-18 internal screen with treated-municipality external evidence",
+    "strict_pair_count": "Number of stage-19 strict comparison pairs reusing the reviewed control municipality",
+    "strict_treated_municipality_count": "Number of distinct treated municipalities paired with the reviewed control in the stage-19 strict set",
+    "strict_treated_municipality_names": "Pipe-delimited treated municipalities paired with the reviewed control in the stage-19 strict set",
+    "high_leverage_control_review_completed": "Whether this control belongs to and completed the stage-20 review of controls reused in at least two strict pairs",
+    "retained_in_strict_candidate_after_review": "Whether the reviewed control remains usable in the strict candidate set subject to its named sensitivity",
+    "excluded_from_strict_candidate_by_review": "Whether positive external-shock evidence removes the reviewed control from the strict candidate set",
+    "strict_candidate_before_high_leverage_control_review": "Whether the pair belonged to the 32-pair stage-19 strict candidate set",
+    "strict_candidate_excluded_by_high_leverage_control_review": "Whether stage-20 positive evidence removes the pair because its control has a major competing shock",
+    "retained_in_strict_candidate_after_high_leverage_control_review": "Whether the pair remains among the 28 strict candidates after stage-20 control review",
+    "strict_candidate_control_external_reviewed_and_retained": "Whether the pair's high-leverage control was reviewed and retained with a documented sensitivity",
+    "strict_candidate_control_external_review_pending": "Whether the pair remains a strict candidate but its control-specific external review is pending",
+    "control_external_review_completed_after_stage20": "Whether any completed control external review is available after stage 20",
+    "stage20_pair_decision": "Pair status after the high-leverage control external-shock review",
     "event_mapping_status": "Direct listing link or reviewed scope relation used to map the event",
     "effective_month": "Analytical month when the base-entry event begins",
     "effective_month_precision": "Exact-validity or analytical-anchor status of the effective month",
@@ -336,6 +368,54 @@ def treated_review_external_sources() -> list[dict]:
             confidence_level="high for the cited official statement; analytical severity remains a documented review judgement",
             manual_verification="Relevant page or section inspected; cached file and SHA-256 verified by the stage-19 builder",
             notes="Missing evidence is never interpreted as proof that no shock occurred",
+        ))
+    return rows
+
+
+def control_review_external_sources() -> list[dict]:
+    """Register the stage-20 control evidence with immutable local lineage."""
+    catalog = {
+        row["source_id"]: row
+        for row in json.loads(EVIDENCE_CONFIG_PATH.read_text(encoding="utf-8"))
+    }
+    rows = []
+    for source_id in sorted(NEW_CONTROL_REVIEW_SOURCE_IDS):
+        if source_id not in catalog:
+            raise KeyError(f"Missing control-review evidence config: {source_id}")
+        candidates = []
+        for path in sorted(EVIDENCE_DIR.glob(f"{source_id}_*.metadata.json")):
+            metadata = json.loads(path.read_text(encoding="utf-8"))
+            if metadata.get("source_id") == source_id and metadata.get("http_status") == 200:
+                candidates.append((metadata.get("retrieval_date", ""), metadata))
+        if not candidates:
+            raise FileNotFoundError(f"No successful cached retrieval for {source_id}")
+        _, metadata = max(candidates, key=lambda item: item[0])
+        source = catalog[source_id]
+        raw_file = metadata["raw_file"].replace("\\", "/")
+        rows.append(source_row(
+            source_id,
+            variable_name="control_municipality_external_shock_evidence",
+            variable_description=source["description"],
+            source_organisation=source["organisation"],
+            source_dataset_name=source["description"],
+            source_page_url=source["url"],
+            direct_download_url=metadata.get("final_url", source["url"]),
+            retrieval_method="HTTP GET with immutable local response, metadata sidecar and SHA-256",
+            retrieval_date=metadata["retrieval_date"],
+            original_file_name=Path(raw_file).name,
+            local_raw_file=raw_file,
+            processed_file="reports/accessibility_high_leverage_control_external_shock_evidence.csv|data_processed/accessibility_comparison_high_leverage_control_external_risk_screen.csv|reports/67_AUDIT_EXTERNE_CONTROLES_PRIORITAIRES_FR.md",
+            geographic_level="official municipality, accommodation operator or regional-tourism evidence",
+            temporal_resolution="document-specific opening, project or policy period",
+            temporal_start="2017", temporal_end="2021",
+            unit="documented hotel, tourism project, renovation or municipal-budget evidence",
+            license="UNKNOWN; preserve source citation, original URL and immutable checksum",
+            access_conditions="Public source; automated retrieval respects robots.txt",
+            transformation_applied="Manual document-level review encoded in config/accessibility_high_leverage_control_external_shock_review.json; positive evidence only",
+            quality_notes="A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays",
+            confidence_level="high for the cited statement where official or operator-owned; medium for the hosted Lenzburg press clipping; analytical severity remains a documented review judgement",
+            manual_verification="Relevant page or HTML section inspected; cached file and SHA-256 verified by the stage-20 builder",
+            notes="Missing evidence is never interpreted as proof that no shock occurred; visitor-market spillovers remain pending",
         ))
     return rows
 
@@ -517,7 +597,30 @@ def derived_sources() -> list[dict]:
         manual_verification="Fourteen treated municipalities reviewed; key municipal PDFs visually inspected; all positive evidence linked to registered official sources",
         notes="The 38-pair broad set and 32-pair strict set are review candidates, not causal samples",
     ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_HIGH_LEVERAGE_CONTROL_EXTERNAL_SHOCK_REVIEW",
+        variable_name="control_external_shock_evidence|source_integrity|capacity_peak_timing|strict_candidate_after_control_review|remaining_control_worklist|stage20_pair_decision",
+        variable_description="External-shock review of the seven control municipalities reused in at least two stage-19 strict comparison pairs",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility high-leverage control external-shock review",
+        retrieval_method="Deterministic Python join of manually reviewed evidence, checksum sidecars, stage-19 pairs and official hotel capacity",
+        retrieval_date="2026-10-03",
+        local_raw_file="config/accessibility_high_leverage_control_external_shock_review.json|config/evidence_sources.json|data_external/source_evidence|data_processed/accessibility_comparison_treated_external_risk_screen.csv|data_processed/hotel_capacity_municipality_month.csv",
+        processed_file="reports/accessibility_high_leverage_control_external_shock_evidence.csv|data_processed/accessibility_comparison_high_leverage_control_external_risk_screen.csv|reports/accessibility_remaining_control_external_review_worklist.csv|reports/accessibility_comparison_high_leverage_control_review_summary.json|reports/67_AUDIT_EXTERNE_CONTROLES_PRIORITAIRES_FR.md",
+        geographic_level="provisional comparison municipality and treated-control comparison pair",
+        temporal_resolution="November 2017 anchor with November 2015 to October 2019 review window",
+        temporal_start="2015-11", temporal_end="2019-10",
+        unit="documents, evidence classes, months, hotel beds, controls and pair flags",
+        license="Derived analytical data; upstream source terms continue to apply",
+        access_conditions="Local reproducible output from immutable cached evidence",
+        transformation_applied="Review controls used in at least two strict pairs first; verify every cited file against its SHA-256 sidecar; remove pairs only for major positive competing-shock evidence; retain smaller changes with explicit sensitivity; generate the remaining-control worklist",
+        quality_notes="Document review cannot prove shock absence or identify an effect. Seventeen controls, visitor-market spillovers and parallel trends remain pending; zero causal approvals.",
+        confidence_level="high for source integrity and deterministic set construction; medium for qualitative severity classification",
+        manual_verification="Seven controls and fifteen strict pairs reviewed; key PDFs visually inspected and HTML claims checked against cached source text",
+        notes="The 28-pair post-screen set remains a candidate pool, not a causal sample",
+    ))
     rows.extend(treated_review_external_sources())
+    rows.extend(control_review_external_sources())
     return rows
 
 
