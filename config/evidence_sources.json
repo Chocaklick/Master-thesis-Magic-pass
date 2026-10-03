@@ -701,5 +701,131 @@
     "suffix": "pdf",
     "organisation": "Gemeinde Rorschacherberg",
     "description": "Official 2019 municipal annual report reviewed for contemporaneous tourism, accommodation and major visitor-economy changes"
+  },
+  {
+    "source_id": "AARAU_HOTELLERIE_RESPONSE_2022",
+    "url": "https://www.aarau.ch/public/upload/assets/16553/2021-282%20Beantwortung%20Anfrage%20Brigitte%20Vogt%20%28FDP%29%2C%20Yannick%20Berner%20%28FDP%29%2C%20Hotellerie%20in%20Aarau.pdf?fp=1",
+    "suffix": "pdf",
+    "organisation": "Stadt Aarau",
+    "description": "Official municipal response reporting hotel overnight stays for 2018 and 2019 and current room and bed capacity"
+  },
+  {
+    "source_id": "AMDEN_ACCOUNTS_2019",
+    "url": "https://www.gemeinde-amden.ch/_docn/2490674/Jahresrechnung_2019.pdf",
+    "suffix": "pdf",
+    "organisation": "Gemeinde Amden",
+    "description": "Official 2019 accounts documenting tourism expenditure and the tourism-organisation and financing change planned for 2020"
+  },
+  {
+    "source_id": "APPENZELL_TOURISM_QUALITY_OFFENSIVE_2017",
+    "url": "https://ai.ch/medien/medienmitteilungen/medienmitteilungen-2017/mm-angebotsstarkung-im-tourismus.pdf",
+    "suffix": "pdf",
+    "organisation": "Kanton Appenzell Innerrhoden",
+    "description": "Official May 2017 release documenting the NRP-funded tourism quality initiative and product manager active from January 2017"
+  },
+  {
+    "source_id": "ARBON_METROPOL_CLOSURE_2017",
+    "url": "https://felix-arbon.ch/zeitungen/2017/20170623_23_felix.pdf",
+    "suffix": "pdf",
+    "organisation": "Felix. die zeitung. / Stadt Arbon information",
+    "description": "Contemporaneous local publication reproducing the municipal notice that Hotel Metropol had been closed since November 2016"
+  },
+  {
+    "source_id": "DUEBENDORF_ANNUAL_REPORT_2016",
+    "url": "https://www.duebendorf.ch/_docn/1355194/20170331-BE-Geschaeftsbericht_2016_GRPK.pdf",
+    "suffix": "pdf",
+    "organisation": "Stadt Dübendorf",
+    "description": "Official 2016 annual report documenting the imminent Samsung Hall opening and its unusually large event capacity"
+  },
+  {
+    "source_id": "EINSIEDELN_DESTINATION_DECISION_2017",
+    "url": "https://www.einsiedeln.ch/verwaltung/mitteilungen/mitteilungen-archiv?m=3294",
+    "suffix": "html",
+    "organisation": "Bezirk Einsiedeln",
+    "description": "Official decision documenting the Einsiedeln-Ybrig-Zürichsee destination project, its 2017 stakeholder work and 2018-2021 public support"
+  },
+  {
+    "source_id": "EMMETTEN_ACCOUNTS_2019",
+    "url": "https://www.emmetten.ch/_doc/2813320",
+    "suffix": "pdf",
+    "organisation": "Gemeinde Emmetten",
+    "description": "Official budget publication containing 2019 accounts and the stable municipal contribution to the tourism association"
+  },
+  {
+    "source_id": "FRAUENFELD_CITY_CENTRE_PROGRAMME_2019",
+    "url": "https://www.frauenfeld.ch/public/upload/assets/29001/Nr.%2046%20-%20Attraktivierung%20und%20Entwicklung%20Frauenfelder%20Innenstadt.pdf?fp=1",
+    "suffix": "pdf",
+    "organisation": "Stadt Frauenfeld",
+    "description": "Official May 2019 proposal for the 2019-2022 city-centre attractiveness and development programme"
+  },
+  {
+    "source_id": "FREIENBACH_ACCOUNTS_2019",
+    "url": "https://www.freienbach.ch/_docn/2679604/Rechnung_2019_neu.pdf",
+    "suffix": "pdf",
+    "organisation": "Gemeinde Freienbach",
+    "description": "Official 2019 accounts documenting small municipal tourism expenditure and the 2018 comparison"
+  },
+  {
+    "source_id": "GAIS_CANTONAL_TOURISM_PROGRAMME_2020_2023",
+    "url": "https://www.ar.ch/fileadmin/user_upload/Departement_Bau_Volkswirtschaft/Amt_fuer_Wirtschaft_Arbeit/AmtfuerWirtschaft/Publikationen/UP_AR_2020-2023.pdf",
+    "suffix": "pdf",
+    "organisation": "Kanton Appenzell Ausserrhoden",
+    "description": "Official cantonal implementation programme retrospectively documenting the tourism law effective January 2017 and destination-marketing mandate"
+  },
+  {
+    "source_id": "KREUZLINGEN_KULT_X_RETROSPECTIVE",
+    "url": "https://www.kreuzlingen.ch/stadt-und-politik/projekte/kulturzentrum",
+    "suffix": "html",
+    "organisation": "Stadt Kreuzlingen",
+    "description": "Official municipal retrospective documenting Kult-X operations beginning in 2017 and the winter 2017-2018 pilot"
+  },
+  {
+    "source_id": "LIESTAL_ANNUAL_REPORT_2018",
+    "url": "https://www.liestal.ch/_docn/2154580/2019-128_Amtsbericht_2018.pdf",
+    "suffix": "pdf",
+    "organisation": "Stadt Liestal",
+    "description": "Official 2018 municipal annual report reviewed for contemporaneous tourism, accommodation and visitor-economy changes"
+  },
+  {
+    "source_id": "PRATTELN_ANNUAL_REPORT_2019",
+    "url": "https://www.pratteln.ch/_docn/2623967/3223_Geschaftsbericht_2019.pdf",
+    "suffix": "pdf",
+    "organisation": "Gemeinde Pratteln",
+    "description": "Official 2019 municipal annual report reviewed for contemporaneous tourism, accommodation and visitor-economy changes"
+  },
+  {
+    "source_id": "SARNEN_HOTEL_KRONE_RENOVATION_2019",
+    "url": "https://www.sarnen.ch/_docn/2169698/Info-Sarnen-05-19.pdf",
+    "suffix": "pdf",
+    "organisation": "Gemeinde Sarnen",
+    "description": "Official municipal bulletin documenting the January-February 2019 Hotel Krone kitchen and four-room bathroom renovation"
+  },
+  {
+    "source_id": "SCHAFFHAUSEN_HOTEL_TANNE_REOPENING_2019",
+    "url": "https://archiv.stsh.ch/stadt/Pressedienst-2019.4763.0.html",
+    "suffix": "html",
+    "organisation": "Stadt Schaffhausen",
+    "description": "Official 2019 press archive documenting the April 2019 reopening of Hotel Tanne with nine guest studios"
+  },
+  {
+    "source_id": "SIGRISWIL_TOURIST_TAX_2019",
+    "url": "https://www.sigriswil-tourismus.ch/fileadmin/01_SIGRISWIL/images/aufenthalt/Kurtaxenansaetze.pdf",
+    "suffix": "pdf",
+    "organisation": "Gemeinderat Sigriswil / Sigriswil Tourismus",
+    "description": "Official tourist-tax tariff documenting the CHF 3.50 nightly rate effective January 2019"
+  },
+  {
+    "source_id": "THUN_TOURIST_TAX_CONTEXT_2017",
+    "url": "https://www.thun.ch/_doc/4324178",
+    "suffix": "pdf",
+    "organisation": "Stadt Thun",
+    "description": "Official performance-agreement report documenting the CHF 2.50 tourist-tax rate then applying in Sigriswil and partner destinations"
+  },
+  {
+    "source_id": "WINTERTHUR_HOUSE_OF_WINTERTHUR_2017",
+    "url": "https://stadt.winterthur.ch/gemeinde/verwaltung/stadtkanzlei/kommunikation-stadt-winterthur/medienmitteilungen-stadt-winterthur/abstimmung-ueber-house-of-winterthur-am-21-mai?searchterm=stadt",
+    "suffix": "html",
+    "organisation": "Stadt Winterthur",
+    "description": "Official March 2017 release documenting the tourism and regional-development merger and CHF 960,000 annual municipal contribution from 2018"
   }
 ]

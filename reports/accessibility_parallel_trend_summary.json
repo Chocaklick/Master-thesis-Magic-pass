@@ -1,0 +1,36 @@
+{
+  "rule_version": "stage23_v1_predeclared_2026_10_03",
+  "pre_period_months_required": 36,
+  "hac_lag_months": 12,
+  "primary_rule": {
+    "minimum_log_outcome_correlation": 0.7,
+    "maximum_standardised_outcome_rmse": 0.8,
+    "maximum_seasonal_profile_rmse": 0.25,
+    "maximum_absolute_seasonally_adjusted_monthly_difference_trend": 0.005
+  },
+  "sensitivity_rule": {
+    "minimum_log_outcome_correlation": 0.6,
+    "maximum_standardised_outcome_rmse": 0.9,
+    "maximum_seasonal_profile_rmse": 0.3,
+    "maximum_absolute_seasonally_adjusted_monthly_difference_trend": 0.0075
+  },
+  "all_input_pairs": 70,
+  "pairs_diagnosed": 21,
+  "primary_compatible_pairs": 11,
+  "primary_compatible_treated_municipalities": 6,
+  "sensitivity_compatible_pairs_including_primary": 15,
+  "sensitivity_only_pairs": 4,
+  "pairs_failing_sensitivity_rule": 6,
+  "treated_municipalities_without_primary_pair": 1,
+  "hac_intervals_containing_zero": 16,
+  "estimation_candidate_rows": 15,
+  "parallel_trends_approved": 0,
+  "causal_pairs_approved": 0,
+  "input_sha256": {
+    "config/accessibility_parallel_trend_rules.json": "0aaa55328f01e1ad6b386ef71aef3149d5e75ceaac72d2d8c9a5b33fc7baf24c",
+    "data_processed/accessibility_comparison_spillover_screen.csv": "c9df931702cf2395528560cb631e8c72eded2de3315d226bd612583192f7ba9e",
+    "data_processed/accessibility_municipality_month_exposure.csv": "9da2037a9fd323afdea5987a87669d94618535ded4f6a71c1a82a97f1890d0be"
+  },
+  "source_id": "DERIVED_ACCESSIBILITY_PARALLEL_TREND_DIAGNOSTIC",
+  "interpretation": "A pass means pre-treatment compatibility under disclosed magnitude rules, not proof of parallel trends. HAC uncertainty is reported but statistical non-rejection is never used alone as an acceptance rule."
+}

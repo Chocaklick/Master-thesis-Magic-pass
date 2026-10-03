@@ -27,6 +27,9 @@ SCRIPTS = [
     "src/causal_inference/screen_accessibility_comparison_internal_risks.py",
     "src/causal_inference/audit_accessibility_treated_external_shocks.py",
     "src/causal_inference/audit_accessibility_high_leverage_control_shocks.py",
+    "src/causal_inference/audit_accessibility_remaining_control_shocks.py",
+    "src/causal_inference/screen_accessibility_pair_spillovers.py",
+    "src/causal_inference/audit_accessibility_parallel_trends.py",
     "src/data_processing/update_accessibility_expansion_provenance.py",
     "src/data_processing/update_provenance.py",
 ]

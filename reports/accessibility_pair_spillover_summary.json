@@ -1,0 +1,22 @@
+{
+  "scheduled_access_limit_minutes": 120.0,
+  "pair_distance_support_threshold_km": 50.0,
+  "all_input_pairs": 70,
+  "stage21_candidate_pairs": 21,
+  "pairs_reviewed_for_direct_local_spillover": 21,
+  "pairs_low_direct_local_spillover_risk_by_declared_proxies": 21,
+  "pairs_advanced_to_parallel_trend_diagnostic": 21,
+  "pairs_with_specific_current_route_to_entry_group": 20,
+  "pairs_with_unroutable_specific_entry_group_but_window_matrix_non_exposure": 1,
+  "minimum_pair_centre_distance_km": 78.11319835697721,
+  "minimum_observed_control_to_treated_entry_group_minutes": 138.17142857142858,
+  "broad_market_substitution_cleared_pairs": 0,
+  "causal_spillover_clearances_approved": 0,
+  "causal_pairs_approved": 0,
+  "input_sha256": {
+    "data_processed/accessibility_comparison_full_control_external_risk_screen.csv": "03682a179bf9f356a1034b38f459baf7ffc10b9a071c679184ece8541fa64586",
+    "data_processed/accessibility_station_group_journey_context.csv": "226114874ffff0e679c7f951e596007176e8635741ae64dd8c48ae576446ce60"
+  },
+  "source_id": "DERIVED_ACCESSIBILITY_PAIR_SPILLOVER_SCREEN",
+  "interpretation": "The screen supports low direct local interference for pretrend prioritisation only. It does not establish absence of national or interregional visitor substitution."
+}

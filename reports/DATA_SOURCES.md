@@ -2,6 +2,18 @@
 
 This report is generated from `metadata/data_sources_master.csv`. Raw internet responses are immutable and accompanied by collection-log entries and SHA-256 metadata where available.
 
+## AARAU_HOTELLERIE_RESPONSE_2022 — Official municipal response reporting hotel overnight stays for 2018 and 2019 and current room and bed capacity
+
+- **Contents and relevance:** Official municipal response reporting hotel overnight stays for 2018 and 2019 and current room and bed capacity
+- **Producer:** Stadt Aarau
+- **Exact URL:** https://www.aarau.ch/public/upload/assets/16553/2021-282%20Beantwortung%20Anfrage%20Brigitte%20Vogt%20%28FDP%29%2C%20Yannick%20Berner%20%28FDP%29%2C%20Hotellerie%20in%20Aarau.pdf?fp=1
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:16.459746+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/AARAU_HOTELLERIE_RESPONSE_2022_20261003T152216Z.pdf`.
+
 ## AESCHI_LIFT_SCOPE_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Official ski-area scope: Aeschiallmend and Allmispitz, with Lucky village lift explicitly outside Magic Pass
@@ -38,6 +50,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4, Meilenweiss, Schneepass, TopCard and SnowPass Graubünden histories do not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/ALPSPASS_2026_27_ROSTER_20260923T094712Z.html`.
 
+## AMDEN_ACCOUNTS_2019 — Official 2019 accounts documenting tourism expenditure and the tourism-organisation and financing change planned for 2020
+
+- **Contents and relevance:** Official 2019 accounts documenting tourism expenditure and the tourism-organisation and financing change planned for 2020
+- **Producer:** Gemeinde Amden
+- **Exact URL:** https://www.gemeinde-amden.ch/_docn/2490674/Jahresrechnung_2019.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:18.205914+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/AMDEN_ACCOUNTS_2019_20261003T152218Z.pdf`.
+
 ## ANNIVIERS_SCOPE_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Official municipal evidence that Grimentz, Zinal, Saint-Luc and Chandolin belong to Anniviers
@@ -61,6 +85,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
 - **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
 - **Local raw file:** `data_external/source_evidence/ANNIVIERS_TOURISM_TAX_FLYER_2019_20261003T103434Z.pdf`.
+
+## APPENZELL_TOURISM_QUALITY_OFFENSIVE_2017 — Official May 2017 release documenting the NRP-funded tourism quality initiative and product manager active from January 2017
+
+- **Contents and relevance:** Official May 2017 release documenting the NRP-funded tourism quality initiative and product manager active from January 2017
+- **Producer:** Kanton Appenzell Innerrhoden
+- **Exact URL:** https://ai.ch/medien/medienmitteilungen/medienmitteilungen-2017/mm-angebotsstarkung-im-tourismus.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:19.833126+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/APPENZELL_TOURISM_QUALITY_OFFENSIVE_2017_20261003T152219Z.pdf`.
+
+## ARBON_METROPOL_CLOSURE_2017 — Contemporaneous local publication reproducing the municipal notice that Hotel Metropol had been closed since November 2016
+
+- **Contents and relevance:** Contemporaneous local publication reproducing the municipal notice that Hotel Metropol had been closed since November 2016
+- **Producer:** Felix. die zeitung. / Stadt Arbon information
+- **Exact URL:** https://felix-arbon.ch/zeitungen/2017/20170623_23_felix.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:21.277006+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/ARBON_METROPOL_CLOSURE_2017_20261003T152221Z.pdf`.
 
 ## ARE_NPVM_TRAVEL_TIME_2025 — NPVM travel time to centres and agglomerations, reference date 2025-06-30
 
@@ -505,6 +553,42 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** hotel municipality series and station-group/municipality pair; monthly and event month -36 to +36; 2013-01 to 2026-03.
 - **Limitations:** Exposure is descriptive; membership continuity, road travel, confounding, COVID and interference remain unresolved; zero causal approvals
 - **Local raw file:** `data_processed/accessibility_station_group_events.csv|data_processed/accessibility_station_group_journey_context.csv|data_processed/hotel_municipality_month_enriched.csv`.
+
+## DERIVED_ACCESSIBILITY_PAIR_SPILLOVER_SCREEN — Accessibility comparison operational-basin and spillover screen
+
+- **Contents and relevance:** Pair-level direct-local-spillover screen using the municipality-centre-to-station scheduled-time basin proposed for the accessibility extension
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic Python transformation of stage-21 pairs and checksum-registered current scheduled journeys; 2026-10-03.
+- **Variables:** operational_tourist_basin|control_to_treated_entry_group_time|pair_distance|window_network_distance|direct_local_spillover_screen|parallel_trend_worklist
+- **Transformations:** Require control non-exposure during the review window, more than 50 km between municipality reference points, more than 50 km from a window-active Magic access point, no shared current territory and specific-group scheduled time above 120 minutes or complete-matrix non-exposure
+- **Coverage:** treated hotel municipality by comparison hotel municipality and station-group access point; November 2017 anchor, November 2015 to October 2019 exposure window and winter-2026 scheduled-time sensitivity; 2015-11 to 2026-02.
+- **Limitations:** Current scheduled times and reference-point distances screen direct local interference only. They do not prove absence of historical, national or interregional visitor substitution; official destination boundaries are not treated as hard catchments.
+- **Local raw file:** `data_processed/accessibility_comparison_full_control_external_risk_screen.csv|data_processed/accessibility_station_group_journey_context.csv`.
+
+## DERIVED_ACCESSIBILITY_PARALLEL_TREND_DIAGNOSTIC — Accessibility comparison parallel-trend compatibility diagnostic
+
+- **Contents and relevance:** Predeclared primary and relaxed pair-level pretrend diagnostics for the 21 post-spillover comparison candidates
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic Python calculation from the predeclared JSON rule, stage-22 pairs and official monthly hotel outcomes; 2026-10-03.
+- **Variables:** pretrend_rule|paired_pre_months|outcome_correlation|standardised_rmse|seasonal_rmse|seasonally_adjusted_difference_trend|hac_uncertainty|estimation_candidate_tier
+- **Transformations:** Apply predeclared coverage, correlation, standardized-RMSE, seasonal-RMSE and seasonally adjusted differential-trend magnitude gates; report Newey-West uncertainty at 12 lags without using non-rejection alone as acceptance
+- **Coverage:** treated hotel municipality by comparison hotel municipality; 36 monthly observations before the pair's first exposure month; 2014-11 to 2017-10.
+- **Limitations:** Pre-treatment compatibility cannot prove the parallel-trends counterfactual. Historical transfer topology and broad visitor substitution remain sensitivity limitations; zero causal approvals.
+- **Local raw file:** `config/accessibility_parallel_trend_rules.json|data_processed/accessibility_comparison_spillover_screen.csv|data_processed/accessibility_municipality_month_exposure.csv`.
+
+## DERIVED_ACCESSIBILITY_REMAINING_CONTROL_EXTERNAL_SHOCK_REVIEW — Accessibility remaining-control external-shock review
+
+- **Contents and relevance:** External-shock review of the 17 controls still pending after stage 20 and construction of the complete local-control-reviewed candidate set
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic Python join of manually reviewed evidence, checksum sidecars, stage-20 pairs and official hotel capacity; 2026-10-03.
+- **Variables:** remaining_control_external_shock_evidence|source_integrity|capacity_peak_timing|strict_candidate_after_full_control_review|spillover_worklist|stage21_pair_decision
+- **Transformations:** Review all 17 controls pending after stage 20; verify every cited file against its SHA-256 sidecar; remove pairs only for major positive competing-shock evidence; retain smaller, late or out-of-window changes with explicit sensitivity; generate the pair-level spillover worklist
+- **Coverage:** provisional comparison municipality and treated-control comparison pair; November 2017 anchor with November 2015 to October 2019 review window; 2015-11 to 2019-10.
+- **Limitations:** All surviving strict controls have a local review, but document review cannot prove shock absence or identify an effect. Visitor-market spillovers and parallel trends remain pending; zero causal approvals.
+- **Local raw file:** `config/accessibility_remaining_control_external_shock_review.json|config/evidence_sources.json|data_external/source_evidence|data_processed/accessibility_comparison_high_leverage_control_external_risk_screen.csv|data_processed/hotel_capacity_municipality_month.csv`.
 
 ## DERIVED_ACCESSIBILITY_STATION_GROUPS — Accessibility expansion station-group registry
 
@@ -986,6 +1070,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/DIABLERETS_SCOPE_OFFICIAL_20260921T220428Z.html`.
 
+## DUEBENDORF_ANNUAL_REPORT_2016 — Official 2016 annual report documenting the imminent Samsung Hall opening and its unusually large event capacity
+
+- **Contents and relevance:** Official 2016 annual report documenting the imminent Samsung Hall opening and its unusually large event capacity
+- **Producer:** Stadt Dübendorf
+- **Exact URL:** https://www.duebendorf.ch/_docn/1355194/20170331-BE-Geschaeftsbericht_2016_GRPK.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:24:03.642638+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/DUEBENDORF_ANNUAL_REPORT_2016_20261003T152403Z.pdf`.
+
+## EINSIEDELN_DESTINATION_DECISION_2017 — Official decision documenting the Einsiedeln-Ybrig-Zürichsee destination project, its 2017 stakeholder work and 2018-2021 public support
+
+- **Contents and relevance:** Official decision documenting the Einsiedeln-Ybrig-Zürichsee destination project, its 2017 stakeholder work and 2018-2021 public support
+- **Producer:** Bezirk Einsiedeln
+- **Exact URL:** https://www.einsiedeln.ch/verwaltung/mitteilungen/mitteilungen-archiv?m=3294
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:24.538771+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/EINSIEDELN_DESTINATION_DECISION_2017_20261003T152224Z.html`.
+
 ## EMMEN_ANNUAL_REPORT_2019 — Official 2019 municipal annual report reviewed for contemporaneous tourism, accommodation and major visitor-economy changes
 
 - **Contents and relevance:** Official 2019 municipal annual report reviewed for contemporaneous tourism, accommodation and major visitor-economy changes
@@ -997,6 +1105,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official municipality, accommodation operator or regional-tourism evidence; document-specific opening, project or policy period; 2017 to 2021.
 - **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
 - **Local raw file:** `data_external/source_evidence/EMMEN_ANNUAL_REPORT_2019_20261003T111052Z.pdf`.
+
+## EMMETTEN_ACCOUNTS_2019 — Official budget publication containing 2019 accounts and the stable municipal contribution to the tourism association
+
+- **Contents and relevance:** Official budget publication containing 2019 accounts and the stable municipal contribution to the tourism association
+- **Producer:** Gemeinde Emmetten
+- **Exact URL:** https://www.emmetten.ch/_doc/2813320
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:26.506574+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/EMMETTEN_ACCOUNTS_2019_20261003T152226Z.pdf`.
 
 ## ENGADIN_MOUNTAINS_ANNUAL_2017_18 — Engadin St. Moritz Mountains AG annual report 2017/18
 
@@ -1058,6 +1178,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/EVOLENE_SCOPE_OFFICIAL_20260920T005534Z.html`.
 
+## FRAUENFELD_CITY_CENTRE_PROGRAMME_2019 — Official May 2019 proposal for the 2019-2022 city-centre attractiveness and development programme
+
+- **Contents and relevance:** Official May 2019 proposal for the 2019-2022 city-centre attractiveness and development programme
+- **Producer:** Stadt Frauenfeld
+- **Exact URL:** https://www.frauenfeld.ch/public/upload/assets/29001/Nr.%2046%20-%20Attraktivierung%20und%20Entwicklung%20Frauenfelder%20Innenstadt.pdf?fp=1
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:28.650888+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/FRAUENFELD_CITY_CENTRE_PROGRAMME_2019_20261003T152228Z.pdf`.
+
+## FREIENBACH_ACCOUNTS_2019 — Official 2019 accounts documenting small municipal tourism expenditure and the 2018 comparison
+
+- **Contents and relevance:** Official 2019 accounts documenting small municipal tourism expenditure and the 2018 comparison
+- **Producer:** Gemeinde Freienbach
+- **Exact URL:** https://www.freienbach.ch/_docn/2679604/Rechnung_2019_neu.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:30.075189+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/FREIENBACH_ACCOUNTS_2019_20261003T152230Z.pdf`.
+
 ## FRIBOURG_PREALPS_2030_REPORT_2019 — Official 2019 final report of the 2017-2019 Prealps Vision 2030 strategy process for Fribourg mountain-lift companies and tourism products
 
 - **Contents and relevance:** Official 2019 final report of the 2017-2019 Prealps Vision 2030 strategy process for Fribourg mountain-lift companies and tourism products
@@ -1081,6 +1225,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
 - **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
 - **Local raw file:** `data_external/source_evidence/FRIBOURG_YOUTH_HOSTEL_REPORT_2019_20261003T103431Z.html`.
+
+## GAIS_CANTONAL_TOURISM_PROGRAMME_2020_2023 — Official cantonal implementation programme retrospectively documenting the tourism law effective January 2017 and destination-marketing mandate
+
+- **Contents and relevance:** Official cantonal implementation programme retrospectively documenting the tourism law effective January 2017 and destination-marketing mandate
+- **Producer:** Kanton Appenzell Ausserrhoden
+- **Exact URL:** https://www.ar.ch/fileadmin/user_upload/Departement_Bau_Volkswirtschaft/Amt_fuer_Wirtschaft_Arbeit/AmtfuerWirtschaft/Publikationen/UP_AR_2020-2023.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:31.796983+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/GAIS_CANTONAL_TOURISM_PROGRAMME_2020_2023_20261003T152231Z.pdf`.
 
 ## GEOADMIN_MUNICIPALITY_IDENTIFY — Municipal boundaries — current swissBOUNDARIES3D layer
 
@@ -1214,6 +1370,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Together with the second-season release, supports eight consecutive Top4 seasons; non-links do not verify absence from the wider historical pass market
 - **Local raw file:** `data_external/source_evidence/JUNGFRAU_TOP4_2024_25_EIGHTH_SEASON_20260924T135547Z.html`.
 
+## KREUZLINGEN_KULT_X_RETROSPECTIVE — Official municipal retrospective documenting Kult-X operations beginning in 2017 and the winter 2017-2018 pilot
+
+- **Contents and relevance:** Official municipal retrospective documenting Kult-X operations beginning in 2017 and the winter 2017-2018 pilot
+- **Producer:** Stadt Kreuzlingen
+- **Exact URL:** https://www.kreuzlingen.ch/stadt-und-politik/projekte/kulturzentrum
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:34.219646+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/KREUZLINGEN_KULT_X_RETROSPECTIVE_20261003T152234Z.html`.
+
 ## KRONBERG_ANNUAL_2017 — Kronberg AG annual report 2017
 
 - **Contents and relevance:** Official 2017 annual report for the tourism and cableway operator at Jakobsbad-Kronberg
@@ -1309,6 +1477,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
 - **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
 - **Local raw file:** `data_external/source_evidence/LEYSIN_SNOWMAKING_PREAVIS_2018_20261003T103333Z.pdf`.
+
+## LIESTAL_ANNUAL_REPORT_2018 — Official 2018 municipal annual report reviewed for contemporaneous tourism, accommodation and visitor-economy changes
+
+- **Contents and relevance:** Official 2018 municipal annual report reviewed for contemporaneous tourism, accommodation and visitor-economy changes
+- **Producer:** Stadt Liestal
+- **Exact URL:** https://www.liestal.ch/_docn/2154580/2019-128_Amtsbericht_2018.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:35.910995+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/LIESTAL_ANNUAL_REPORT_2018_20261003T152235Z.pdf`.
 
 ## LOCAL_03b4345dbe87 — stations_ski_assignations_clusters_gps_bergfex.csv
 
@@ -1958,6 +2138,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
 - **Local raw file:** `data_external/source_evidence/PLAFFEIEN_TOURISM_AG_MINUTES_2019_20261003T103433Z.pdf`.
 
+## PRATTELN_ANNUAL_REPORT_2019 — Official 2019 municipal annual report reviewed for contemporaneous tourism, accommodation and visitor-economy changes
+
+- **Contents and relevance:** Official 2019 municipal annual report reviewed for contemporaneous tourism, accommodation and visitor-economy changes
+- **Producer:** Gemeinde Pratteln
+- **Exact URL:** https://www.pratteln.ch/_docn/2623967/3223_Geschaftsbericht_2019.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:37.918298+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/PRATTELN_ANNUAL_REPORT_2019_20261003T152237Z.pdf`.
+
 ## REICHENBACH_SCOPE_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Official municipal evidence that Faltschen and Kiental are localities in Reichenbach im Kandertal
@@ -2042,6 +2234,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Regional pass evidence is not automatically exact operator participation; unavailable anchor-season files remain unresolved
 - **Local raw file:** `data_external/source_evidence/SAMNAUN_VISNITZBAHN_HISTORY_20260921T154459Z.html`.
 
+## SARNEN_HOTEL_KRONE_RENOVATION_2019 — Official municipal bulletin documenting the January-February 2019 Hotel Krone kitchen and four-room bathroom renovation
+
+- **Contents and relevance:** Official municipal bulletin documenting the January-February 2019 Hotel Krone kitchen and four-room bathroom renovation
+- **Producer:** Gemeinde Sarnen
+- **Exact URL:** https://www.sarnen.ch/_docn/2169698/Info-Sarnen-05-19.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:43.263318+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/SARNEN_HOTEL_KRONE_RENOVATION_2019_20261003T152243Z.pdf`.
+
 ## SBS_PRICING_STUDY_2020_TOPCARD — Official Seilbahnen Schweiz study of new pricing models
 
 - **Contents and relevance:** Official industry study documenting TopCard core areas and benefit changes, plus SnowPass Graubünden's winter-only unlimited modality and 17 named major Graubünden comparison areas
@@ -2053,6 +2257,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** named TopCard core/partner areas and major Graubünden ski areas / supplied resort listing links; winter season; 2017/2018 to 2019/2020.
 - **Limitations:** TopCard core and limited partner access are kept separate; Engelberg-Titlis has three visits shared between summer and winter. The SnowPass figure names major comparison areas but is paired with the archived official all-canton statement; it is not treated as a complete small-lift roster
 - **Local raw file:** `data_external/source_evidence/SBS_PRICING_STUDY_2020_TOPCARD_20260925T001235Z.pdf`.
+
+## SCHAFFHAUSEN_HOTEL_TANNE_REOPENING_2019 — Official 2019 press archive documenting the April 2019 reopening of Hotel Tanne with nine guest studios
+
+- **Contents and relevance:** Official 2019 press archive documenting the April 2019 reopening of Hotel Tanne with nine guest studios
+- **Producer:** Stadt Schaffhausen
+- **Exact URL:** https://archiv.stsh.ch/stadt/Pressedienst-2019.4763.0.html
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:45.685364+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/SCHAFFHAUSEN_HOTEL_TANNE_REOPENING_2019_20261003T152245Z.html`.
 
 ## SCHNEEPASS_ZENTRALSCHWEIZ_2022_23_ARCHIVED_ROSTER — Archived official Schneepass Zentralschweiz 2022/2023 winter-area page
 
@@ -2113,6 +2329,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official pass area / supplied resort listing link; winter season 2026/2027; 2026 to 2027.
 - **Limitations:** Current roster scope only; area non-link does not prove absence from every competing pass; the separate partial Top4, Meilenweiss, Schneepass, TopCard and SnowPass Graubünden histories do not reconstruct the full historical market
 - **Local raw file:** `data_external/source_evidence/SCHNEEPASS_ZENTRALSCHWEIZ_2026_27_ROSTER_20260923T094725Z.html`.
+
+## SIGRISWIL_TOURIST_TAX_2019 — Official tourist-tax tariff documenting the CHF 3.50 nightly rate effective January 2019
+
+- **Contents and relevance:** Official tourist-tax tariff documenting the CHF 3.50 nightly rate effective January 2019
+- **Producer:** Gemeinderat Sigriswil / Sigriswil Tourismus
+- **Exact URL:** https://www.sigriswil-tourismus.ch/fileadmin/01_SIGRISWIL/images/aufenthalt/Kurtaxenansaetze.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:47.000737+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/SIGRISWIL_TOURIST_TAX_2019_20261003T152247Z.pdf`.
 
 ## SKI_GTFS_TIMETABLE_2018_WINTER_20180207 — Timetable 2018 GTFS, build 2018-02-07
 
@@ -2270,6 +2498,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current geometry is not historical harmonisation; representative points are neither population centroids nor transport nodes
 - **Local raw file:** `data_external/source_evidence/SWISSTOPO_BOUNDARIES_2026_20260921T145310Z.zip`.
 
+## THUN_TOURIST_TAX_CONTEXT_2017 — Official performance-agreement report documenting the CHF 2.50 tourist-tax rate then applying in Sigriswil and partner destinations
+
+- **Contents and relevance:** Official performance-agreement report documenting the CHF 2.50 tourist-tax rate then applying in Sigriswil and partner destinations
+- **Producer:** Stadt Thun
+- **Exact URL:** https://www.thun.ch/_doc/4324178
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:48.333267+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/THUN_TOURIST_TAX_CONTEXT_2017_20261003T152248Z.pdf`.
+
 ## VALLEE_JOUX_SKI_SCOPE_OFFICIAL — Official destination or municipal scope page
 
 - **Contents and relevance:** Tourism article distinguishing the ski areas of Le Brassus, L Orient, L Abbaye and Dent de Vaulion; regional scope is broader than the three historical entry labels
@@ -2341,6 +2581,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** official destination or municipality; retrieval-date scope snapshot; ? to 2026.
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/WILERALLMI_ANNUAL_2023_24_20260921T220421Z.pdf`.
+
+## WINTERTHUR_HOUSE_OF_WINTERTHUR_2017 — Official March 2017 release documenting the tourism and regional-development merger and CHF 960,000 annual municipal contribution from 2018
+
+- **Contents and relevance:** Official March 2017 release documenting the tourism and regional-development merger and CHF 960,000 annual municipal contribution from 2018
+- **Producer:** Stadt Winterthur
+- **Exact URL:** https://stadt.winterthur.ch/gemeinde/verwaltung/stadtkanzlei/kommunikation-stadt-winterthur/medienmitteilungen-stadt-winterthur/abstimmung-ueber-house-of-winterthur-am-21-mai?searchterm=stadt
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T15:22:50.340629+00:00.
+- **Variables:** control_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination, canton or accommodation-market evidence; document-specific opening, closure, project, policy or review period; 2016 to 2022.
+- **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/WINTERTHUR_HOUSE_OF_WINTERTHUR_2017_20261003T152250Z.html`.
 
 ## Outstanding provenance gaps
 

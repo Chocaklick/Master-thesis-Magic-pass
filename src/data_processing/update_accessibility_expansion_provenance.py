@@ -37,6 +37,26 @@ NEW_CONTROL_REVIEW_SOURCE_IDS = {
     "VITZNAU_TOURISM_PROJECTS_RETROSPECTIVE_2021",
     "WALENSTADT_HOTEL_LOEWEN_RENOVATION_2018",
 }
+NEW_REMAINING_CONTROL_REVIEW_SOURCE_IDS = {
+    "AARAU_HOTELLERIE_RESPONSE_2022",
+    "AMDEN_ACCOUNTS_2019",
+    "APPENZELL_TOURISM_QUALITY_OFFENSIVE_2017",
+    "ARBON_METROPOL_CLOSURE_2017",
+    "DUEBENDORF_ANNUAL_REPORT_2016",
+    "EINSIEDELN_DESTINATION_DECISION_2017",
+    "EMMETTEN_ACCOUNTS_2019",
+    "FRAUENFELD_CITY_CENTRE_PROGRAMME_2019",
+    "FREIENBACH_ACCOUNTS_2019",
+    "GAIS_CANTONAL_TOURISM_PROGRAMME_2020_2023",
+    "KREUZLINGEN_KULT_X_RETROSPECTIVE",
+    "LIESTAL_ANNUAL_REPORT_2018",
+    "PRATTELN_ANNUAL_REPORT_2019",
+    "SARNEN_HOTEL_KRONE_RENOVATION_2019",
+    "SCHAFFHAUSEN_HOTEL_TANNE_REOPENING_2019",
+    "SIGRISWIL_TOURIST_TAX_2019",
+    "THUN_TOURIST_TAX_CONTEXT_2017",
+    "WINTERTHUR_HOUSE_OF_WINTERTHUR_2017",
+}
 SOURCE_COLUMNS = [
     "source_id", "variable_name", "variable_description", "source_organisation",
     "source_dataset_name", "source_page_url", "direct_download_url", "api_endpoint",
@@ -168,6 +188,33 @@ TABLES = {
     "accessibility_remaining_control_external_review_worklist": (
         ROOT / "reports" / "accessibility_remaining_control_external_review_worklist.csv",
         "DERIVED_ACCESSIBILITY_HIGH_LEVERAGE_CONTROL_EXTERNAL_SHOCK_REVIEW", "provisional comparison municipality", "stage-20 review checkpoint"),
+    "accessibility_remaining_control_external_shock_evidence": (
+        ROOT / "reports" / "accessibility_remaining_control_external_shock_evidence.csv",
+        "DERIVED_ACCESSIBILITY_REMAINING_CONTROL_EXTERNAL_SHOCK_REVIEW", "remaining provisional comparison municipality", "2015-11 to 2019-10 external-review window"),
+    "accessibility_comparison_full_control_external_risk_screen": (
+        ROOT / "data_processed" / "accessibility_comparison_full_control_external_risk_screen.csv",
+        "DERIVED_ACCESSIBILITY_REMAINING_CONTROL_EXTERNAL_SHOCK_REVIEW", "treated municipality by provisional comparison municipality", "November 2017 anchor and adjacent 24-month windows"),
+    "accessibility_spillover_review_worklist": (
+        ROOT / "reports" / "accessibility_spillover_review_worklist.csv",
+        "DERIVED_ACCESSIBILITY_REMAINING_CONTROL_EXTERNAL_SHOCK_REVIEW", "surviving treated-control comparison pair", "stage-21 review checkpoint"),
+    "accessibility_pair_spillover_evidence": (
+        ROOT / "reports" / "accessibility_pair_spillover_evidence.csv",
+        "DERIVED_ACCESSIBILITY_PAIR_SPILLOVER_SCREEN", "surviving treated-control comparison pair", "November 2017 anchor and current scheduled-access sensitivity"),
+    "accessibility_comparison_spillover_screen": (
+        ROOT / "data_processed" / "accessibility_comparison_spillover_screen.csv",
+        "DERIVED_ACCESSIBILITY_PAIR_SPILLOVER_SCREEN", "treated municipality by provisional comparison municipality", "stage-22 spillover-screen checkpoint"),
+    "accessibility_parallel_trend_worklist": (
+        ROOT / "reports" / "accessibility_parallel_trend_worklist.csv",
+        "DERIVED_ACCESSIBILITY_PAIR_SPILLOVER_SCREEN", "surviving treated-control comparison pair", "36-month pre-anchor worklist"),
+    "accessibility_parallel_trend_diagnostics": (
+        ROOT / "reports" / "accessibility_parallel_trend_diagnostics.csv",
+        "DERIVED_ACCESSIBILITY_PARALLEL_TREND_DIAGNOSTIC", "surviving treated-control comparison pair", "36-month pre-anchor diagnostic"),
+    "accessibility_comparison_parallel_trend_screen": (
+        ROOT / "data_processed" / "accessibility_comparison_parallel_trend_screen.csv",
+        "DERIVED_ACCESSIBILITY_PARALLEL_TREND_DIAGNOSTIC", "treated municipality by provisional comparison municipality", "stage-23 pretrend checkpoint"),
+    "accessibility_estimation_candidate_pairs": (
+        ROOT / "reports" / "accessibility_estimation_candidate_pairs.csv",
+        "DERIVED_ACCESSIBILITY_PARALLEL_TREND_DIAGNOSTIC", "pretrend-compatible treated-control comparison pair", "36-month pre-anchor diagnostic"),
 }
 
 
@@ -219,6 +266,28 @@ DESCRIPTIONS = {
     "strict_candidate_control_external_review_pending": "Whether the pair remains a strict candidate but its control-specific external review is pending",
     "control_external_review_completed_after_stage20": "Whether any completed control external review is available after stage 20",
     "stage20_pair_decision": "Pair status after the high-leverage control external-shock review",
+    "remaining_control_review_completed": "Whether the stage-20 pending control completed its local external-shock review in stage 21",
+    "strict_candidate_before_remaining_control_review": "Whether the pair belonged to the 28-pair stage-20 strict candidate set",
+    "strict_candidate_excluded_by_remaining_control_review": "Whether stage-21 positive evidence removes the pair because its control has a major competing shock",
+    "retained_in_strict_candidate_after_full_control_review": "Whether the pair remains in the strict candidate set after every local control review",
+    "control_external_review_completed_after_stage21": "Whether the pair's control has a completed local external review after stage 21",
+    "strict_candidate_all_local_control_reviews_complete": "Whether a surviving strict candidate has completed treated-side and control-side local reviews",
+    "visitor_market_spillover_review_completed_after_stage21": "Whether shared tourist-basin and visitor-market spillovers have been reviewed after stage 21",
+    "stage21_pair_decision": "Pair status after all local control external-shock reviews",
+    "spillover_review_questions": "Pipe-delimited visitor-market, destination, transport and substitution questions for the pair review",
+    "parallel_trends_review_status": "Checkpoint status of the pair-specific parallel-trends assessment",
+    "operational_tourist_basin_definition": "Operational reference catchment based on scheduled travel from the municipality reference origin to station-group access points",
+    "direct_local_spillover_low_risk_by_declared_proxies": "Whether pair distance, station-network distance, window exposure and current scheduled access jointly indicate low direct local interference",
+    "broad_visitor_market_substitution_status": "Status of wider national or interregional substitution that cannot be cleared by local distance and scheduled-time proxies",
+    "eligible_for_parallel_trend_diagnostic": "Whether the pair passes the disclosed direct-local-spillover proxy screen and may enter pretrend diagnostics",
+    "seasonally_adjusted_monthly_difference_trend": "Monthly trend in treated-minus-control log hotel nights after calendar-month fixed effects",
+    "hac_trend_standard_error": "Newey-West heteroskedasticity/autocorrelation-consistent standard error for the differential monthly trend",
+    "hac_trend_ci95_contains_zero": "Whether the approximate 95 percent HAC interval for the differential trend includes zero; not an acceptance rule alone",
+    "primary_pretrend_rule_passed": "Whether all predeclared primary coverage, correlation, RMSE, seasonality and differential-trend magnitude thresholds pass",
+    "sensitivity_pretrend_rule_passed": "Whether all predeclared relaxed sensitivity thresholds pass",
+    "pretrend_diagnostic_class": "Primary-compatible, sensitivity-only or failed predeclared pretrend magnitude classification",
+    "eligible_for_primary_estimation_sensitivity": "Whether the pair may enter a primary non-causal estimation sensitivity after passing the primary diagnostic rule",
+    "eligible_for_relaxed_estimation_sensitivity": "Whether the pair may enter the broader non-causal estimation sensitivity",
     "event_mapping_status": "Direct listing link or reviewed scope relation used to map the event",
     "effective_month": "Analytical month when the base-entry event begins",
     "effective_month_precision": "Exact-validity or analytical-anchor status of the effective month",
@@ -415,6 +484,54 @@ def control_review_external_sources() -> list[dict]:
             quality_notes="A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays",
             confidence_level="high for the cited statement where official or operator-owned; medium for the hosted Lenzburg press clipping; analytical severity remains a documented review judgement",
             manual_verification="Relevant page or HTML section inspected; cached file and SHA-256 verified by the stage-20 builder",
+            notes="Missing evidence is never interpreted as proof that no shock occurred; visitor-market spillovers remain pending",
+        ))
+    return rows
+
+
+def remaining_control_review_external_sources() -> list[dict]:
+    """Register the stage-21 control evidence with immutable local lineage."""
+    catalog = {
+        row["source_id"]: row
+        for row in json.loads(EVIDENCE_CONFIG_PATH.read_text(encoding="utf-8"))
+    }
+    rows = []
+    for source_id in sorted(NEW_REMAINING_CONTROL_REVIEW_SOURCE_IDS):
+        if source_id not in catalog:
+            raise KeyError(f"Missing remaining-control evidence config: {source_id}")
+        candidates = []
+        for path in sorted(EVIDENCE_DIR.glob(f"{source_id}_*.metadata.json")):
+            metadata = json.loads(path.read_text(encoding="utf-8"))
+            if metadata.get("source_id") == source_id and metadata.get("http_status") == 200:
+                candidates.append((metadata.get("retrieval_date", ""), metadata))
+        if not candidates:
+            raise FileNotFoundError(f"No successful cached retrieval for {source_id}")
+        _, metadata = max(candidates, key=lambda item: item[0])
+        source = catalog[source_id]
+        raw_file = metadata["raw_file"].replace("\\", "/")
+        rows.append(source_row(
+            source_id,
+            variable_name="control_municipality_external_shock_evidence",
+            variable_description=source["description"],
+            source_organisation=source["organisation"],
+            source_dataset_name=source["description"],
+            source_page_url=source["url"],
+            direct_download_url=metadata.get("final_url", source["url"]),
+            retrieval_method="HTTP GET with immutable local response, metadata sidecar and SHA-256",
+            retrieval_date=metadata["retrieval_date"],
+            original_file_name=Path(raw_file).name,
+            local_raw_file=raw_file,
+            processed_file="reports/accessibility_remaining_control_external_shock_evidence.csv|data_processed/accessibility_comparison_full_control_external_risk_screen.csv|reports/68_AUDIT_EXTERNE_CONTROLES_RESTANTS_FR.md",
+            geographic_level="official municipality, destination, canton or accommodation-market evidence",
+            temporal_resolution="document-specific opening, closure, project, policy or review period",
+            temporal_start="2016", temporal_end="2022",
+            unit="documented hotel, event, tourism-policy, governance or municipal-budget evidence",
+            license="UNKNOWN; preserve source citation, original URL and immutable checksum",
+            access_conditions="Public source; automated retrieval respects robots.txt",
+            transformation_applied="Manual document-level review encoded in config/accessibility_remaining_control_external_shock_review.json; positive evidence only",
+            quality_notes="A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays",
+            confidence_level="high for the cited official statement; medium for the Arbon municipal notice reproduced in a local publication; analytical severity remains a documented review judgement",
+            manual_verification="Relevant page or HTML section inspected; cached file and SHA-256 verified by the stage-21 builder",
             notes="Missing evidence is never interpreted as proof that no shock occurred; visitor-market spillovers remain pending",
         ))
     return rows
@@ -619,8 +736,75 @@ def derived_sources() -> list[dict]:
         manual_verification="Seven controls and fifteen strict pairs reviewed; key PDFs visually inspected and HTML claims checked against cached source text",
         notes="The 28-pair post-screen set remains a candidate pool, not a causal sample",
     ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_REMAINING_CONTROL_EXTERNAL_SHOCK_REVIEW",
+        variable_name="remaining_control_external_shock_evidence|source_integrity|capacity_peak_timing|strict_candidate_after_full_control_review|spillover_worklist|stage21_pair_decision",
+        variable_description="External-shock review of the 17 controls still pending after stage 20 and construction of the complete local-control-reviewed candidate set",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility remaining-control external-shock review",
+        retrieval_method="Deterministic Python join of manually reviewed evidence, checksum sidecars, stage-20 pairs and official hotel capacity",
+        retrieval_date="2026-10-03",
+        local_raw_file="config/accessibility_remaining_control_external_shock_review.json|config/evidence_sources.json|data_external/source_evidence|data_processed/accessibility_comparison_high_leverage_control_external_risk_screen.csv|data_processed/hotel_capacity_municipality_month.csv",
+        processed_file="reports/accessibility_remaining_control_external_shock_evidence.csv|data_processed/accessibility_comparison_full_control_external_risk_screen.csv|reports/accessibility_spillover_review_worklist.csv|reports/accessibility_comparison_full_control_review_summary.json|reports/68_AUDIT_EXTERNE_CONTROLES_RESTANTS_FR.md",
+        geographic_level="provisional comparison municipality and treated-control comparison pair",
+        temporal_resolution="November 2017 anchor with November 2015 to October 2019 review window",
+        temporal_start="2015-11", temporal_end="2019-10",
+        unit="documents, evidence classes, months, hotel beds, controls and pair flags",
+        license="Derived analytical data; upstream source terms continue to apply",
+        access_conditions="Local reproducible output from immutable cached evidence",
+        transformation_applied="Review all 17 controls pending after stage 20; verify every cited file against its SHA-256 sidecar; remove pairs only for major positive competing-shock evidence; retain smaller, late or out-of-window changes with explicit sensitivity; generate the pair-level spillover worklist",
+        quality_notes="All surviving strict controls have a local review, but document review cannot prove shock absence or identify an effect. Visitor-market spillovers and parallel trends remain pending; zero causal approvals.",
+        confidence_level="high for source integrity and deterministic set construction; medium for qualitative severity classification",
+        manual_verification="Seventeen controls and seventeen strict pairs reviewed; official PDFs and HTML claims inspected; all positive evidence linked to registered sources",
+        notes="The 21-pair post-screen set remains a candidate pool, not a causal sample",
+    ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_PAIR_SPILLOVER_SCREEN",
+        variable_name="operational_tourist_basin|control_to_treated_entry_group_time|pair_distance|window_network_distance|direct_local_spillover_screen|parallel_trend_worklist",
+        variable_description="Pair-level direct-local-spillover screen using the municipality-centre-to-station scheduled-time basin proposed for the accessibility extension",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility comparison operational-basin and spillover screen",
+        retrieval_method="Deterministic Python transformation of stage-21 pairs and checksum-registered current scheduled journeys",
+        retrieval_date="2026-10-03",
+        local_raw_file="data_processed/accessibility_comparison_full_control_external_risk_screen.csv|data_processed/accessibility_station_group_journey_context.csv",
+        processed_file="reports/accessibility_pair_spillover_evidence.csv|data_processed/accessibility_comparison_spillover_screen.csv|reports/accessibility_parallel_trend_worklist.csv|reports/accessibility_pair_spillover_summary.json|reports/69_SCREENING_BASSINS_TOURISTIQUES_SPILLOVERS_FR.md",
+        geographic_level="treated hotel municipality by comparison hotel municipality and station-group access point",
+        temporal_resolution="November 2017 anchor, November 2015 to October 2019 exposure window and winter-2026 scheduled-time sensitivity",
+        temporal_start="2015-11", temporal_end="2026-02",
+        unit="kilometres, scheduled minutes, exposure classifications and pair flags",
+        license="Derived analytical data; upstream source terms continue to apply",
+        access_conditions="Local reproducible output",
+        transformation_applied="Require control non-exposure during the review window, more than 50 km between municipality reference points, more than 50 km from a window-active Magic access point, no shared current territory and specific-group scheduled time above 120 minutes or complete-matrix non-exposure",
+        quality_notes="Current scheduled times and reference-point distances screen direct local interference only. They do not prove absence of historical, national or interregional visitor substitution; official destination boundaries are not treated as hard catchments.",
+        confidence_level="high for deterministic joins; medium-to-low for historical and behavioural spillover interpretation",
+        manual_verification="All 21 surviving pairs checked; 20 have complete current routes to entry groups and one retains complete-matrix non-exposure despite no specific complete route",
+        notes="All 21 advance to pretrend diagnostics with broad-market substitution explicitly unresolved; zero causal spillover clearances",
+    ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_PARALLEL_TREND_DIAGNOSTIC",
+        variable_name="pretrend_rule|paired_pre_months|outcome_correlation|standardised_rmse|seasonal_rmse|seasonally_adjusted_difference_trend|hac_uncertainty|estimation_candidate_tier",
+        variable_description="Predeclared primary and relaxed pair-level pretrend diagnostics for the 21 post-spillover comparison candidates",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility comparison parallel-trend compatibility diagnostic",
+        retrieval_method="Deterministic Python calculation from the predeclared JSON rule, stage-22 pairs and official monthly hotel outcomes",
+        retrieval_date="2026-10-03",
+        local_raw_file="config/accessibility_parallel_trend_rules.json|data_processed/accessibility_comparison_spillover_screen.csv|data_processed/accessibility_municipality_month_exposure.csv",
+        processed_file="reports/accessibility_parallel_trend_diagnostics.csv|data_processed/accessibility_comparison_parallel_trend_screen.csv|reports/accessibility_estimation_candidate_pairs.csv|reports/accessibility_parallel_trend_summary.json|reports/70_DIAGNOSTIC_PRETENDANCES_COMPARAISONS_FR.md",
+        geographic_level="treated hotel municipality by comparison hotel municipality",
+        temporal_resolution="36 monthly observations before the pair's first exposure month",
+        temporal_start="2014-11", temporal_end="2017-10",
+        unit="months, correlations, standardised errors, log-point trends and pair flags",
+        license="Derived analytical data; upstream source terms continue to apply",
+        access_conditions="Local reproducible output",
+        transformation_applied="Apply predeclared coverage, correlation, standardized-RMSE, seasonal-RMSE and seasonally adjusted differential-trend magnitude gates; report Newey-West uncertainty at 12 lags without using non-rejection alone as acceptance",
+        quality_notes="Pre-treatment compatibility cannot prove the parallel-trends counterfactual. Historical transfer topology and broad visitor substitution remain sensitivity limitations; zero causal approvals.",
+        confidence_level="high for reproducibility and rule application; limited for causal identification",
+        manual_verification="Rule file is checksum-recorded; primary rule is nested inside relaxed sensitivity; protected causal flags remain false",
+        notes="Eleven primary-compatible pairs cover six treated municipalities; fifteen pairs including sensitivity-only cases remain available for non-causal estimation sensitivity",
+    ))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())
+    rows.extend(remaining_control_review_external_sources())
     return rows
 
 

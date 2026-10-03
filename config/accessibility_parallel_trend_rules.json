@@ -1,0 +1,22 @@
+{
+  "rule_version": "stage23_v1_predeclared_2026_10_03",
+  "pre_period_months_required": 36,
+  "hac_lag_months": 12,
+  "primary": {
+    "minimum_log_outcome_correlation": 0.70,
+    "maximum_standardised_outcome_rmse": 0.80,
+    "maximum_seasonal_profile_rmse": 0.25,
+    "maximum_absolute_seasonally_adjusted_monthly_difference_trend": 0.005
+  },
+  "sensitivity": {
+    "minimum_log_outcome_correlation": 0.60,
+    "maximum_standardised_outcome_rmse": 0.90,
+    "maximum_seasonal_profile_rmse": 0.30,
+    "maximum_absolute_seasonally_adjusted_monthly_difference_trend": 0.0075
+  },
+  "interpretation": "A pass means pre-treatment compatibility under disclosed magnitude rules, not proof of parallel trends. HAC uncertainty is reported but statistical non-rejection is never used alone as an acceptance rule.",
+  "protected_flags": {
+    "parallel_trends_approved": false,
+    "causal_pair_approved": false
+  }
+}

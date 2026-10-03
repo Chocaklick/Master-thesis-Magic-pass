@@ -1,0 +1,27 @@
+{
+  "analysis_anchor": "2017-11-01",
+  "review_window_start": "2015-11-01",
+  "review_window_end": "2019-10-01",
+  "all_input_pairs": 70,
+  "stage20_strict_candidate_pairs": 28,
+  "remaining_controls_reviewed": 17,
+  "remaining_controls_excluded": 7,
+  "remaining_controls_retained_with_qualified_sensitivity": 10,
+  "strict_pairs_excluded_by_remaining_control_review": 7,
+  "strict_candidate_pairs_after_full_local_control_review": 21,
+  "strict_candidate_treated_municipalities_after_full_local_control_review": 7,
+  "strict_candidate_controls_after_full_local_control_review": 15,
+  "surviving_pairs_with_all_local_control_reviews_complete": 21,
+  "spillover_pairs_pending": 21,
+  "reviewed_controls_with_verified_source_integrity": 17,
+  "causal_controls_approved": 0,
+  "causal_pairs_approved": 0,
+  "input_sha256": {
+    "data_processed/accessibility_comparison_high_leverage_control_external_risk_screen.csv": "a72e8c0ec20f3a4180f83007d3acf32ba159c6b0b97178b19af72ad4010cc211",
+    "data_processed/hotel_capacity_municipality_month.csv": "d3bfc1c6cee327bd7f8ac010d7f5b43b46f65e61e0fb7343dd2082d63e34ea25",
+    "config/accessibility_remaining_control_external_shock_review.json": "42c1442b2a2035effda9d1254f81688bdb706584b3a1f7d7ce409ca572362177",
+    "config/evidence_sources.json": "6400e81501f068c9b4862a52151dfc80d35c1a412c3d24ce20b1ae5fe7acc119"
+  },
+  "source_id": "DERIVED_ACCESSIBILITY_REMAINING_CONTROL_EXTERNAL_SHOCK_REVIEW",
+  "interpretation": "All surviving strict pairs now have a completed local control review. They remain candidates because basin spillovers and parallel trends are pending."
+}
