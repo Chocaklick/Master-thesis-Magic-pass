@@ -554,6 +554,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Exposure is descriptive; membership continuity, road travel, confounding, COVID and interference remain unresolved; zero causal approvals
 - **Local raw file:** `data_processed/accessibility_station_group_events.csv|data_processed/accessibility_station_group_journey_context.csv|data_processed/hotel_municipality_month_enriched.csv`.
 
+## DERIVED_ACCESSIBILITY_NONCAUSAL_PILOT_ESTIMATION — Accessibility first-exposure non-causal pilot estimation
+
+- **Contents and relevance:** Predeclared non-causal pilot estimates for the primary and relaxed pretrend-compatible municipality pairs
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic weighted two-way within transformation and municipality-clustered sandwich covariance implemented in Python; 2026-10-03.
+- **Variables:** weighted_stacked_panel|matched_difference_in_differences_pilot|binned_event_study|municipality_clustered_uncertainty|leave_one_out_sensitivity
+- **Transformations:** Give each treated municipality weight one and divide total control weight one within its stack; remove stack-by-municipality and stack-by-calendar-month means; estimate treated-post and binned event-time terms; cluster sandwich scores by stable municipality across reused controls; run uniform truncation, conservative-control exclusion and leave-one-out sensitivities
+- **Coverage:** matched stack of one treated hotel municipality and its retained comparison municipalities; monthly event time from -24 to +23 with a November 2017 common anchor; 2015-11 to 2019-10.
+- **Limitations:** Only 16 municipality clusters enter the primary pilot. Historical access relies on a transfer-topology sensitivity, broad visitor substitution remains unresolved and sample selection is substantial. Normal cluster-robust intervals are descriptive; no causal estimate is approved.
+- **Local raw file:** `config/accessibility_pilot_estimation.json|reports/accessibility_estimation_candidate_pairs.csv|data_processed/accessibility_municipality_month_exposure.csv|reports/accessibility_historical_gtfs_2018_municipality_validation.csv|reports/accessibility_historical_gtfs_2018_proximity_municipality_validation.csv`.
+
 ## DERIVED_ACCESSIBILITY_PAIR_SPILLOVER_SCREEN — Accessibility comparison operational-basin and spillover screen
 
 - **Contents and relevance:** Pair-level direct-local-spillover screen using the municipality-centre-to-station scheduled-time basin proposed for the accessibility extension

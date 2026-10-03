@@ -215,6 +215,21 @@ TABLES = {
     "accessibility_estimation_candidate_pairs": (
         ROOT / "reports" / "accessibility_estimation_candidate_pairs.csv",
         "DERIVED_ACCESSIBILITY_PARALLEL_TREND_DIAGNOSTIC", "pretrend-compatible treated-control comparison pair", "36-month pre-anchor diagnostic"),
+    "accessibility_pilot_stacked_panel": (
+        ROOT / "data_processed" / "accessibility_pilot_stacked_panel.csv",
+        "DERIVED_ACCESSIBILITY_NONCAUSAL_PILOT_ESTIMATION", "matched stack by municipality and month", "event months -24 to +23"),
+    "accessibility_pilot_did_estimates": (
+        ROOT / "reports" / "accessibility_pilot_did_estimates.csv",
+        "DERIVED_ACCESSIBILITY_NONCAUSAL_PILOT_ESTIMATION", "pilot specification", "24-month pre/post and sensitivity windows"),
+    "accessibility_pilot_event_study": (
+        ROOT / "reports" / "accessibility_pilot_event_study.csv",
+        "DERIVED_ACCESSIBILITY_NONCAUSAL_PILOT_ESTIMATION", "candidate tier by six-month event-time bin", "event months -24 to +23"),
+    "accessibility_pilot_influence_sensitivity": (
+        ROOT / "reports" / "accessibility_pilot_influence_sensitivity.csv",
+        "DERIVED_ACCESSIBILITY_NONCAUSAL_PILOT_ESTIMATION", "leave-one-treated or leave-one-pair pilot specification", "event months -24 to +23"),
+    "accessibility_pilot_treated_decomposition": (
+        ROOT / "reports" / "accessibility_pilot_treated_decomposition.csv",
+        "DERIVED_ACCESSIBILITY_NONCAUSAL_PILOT_ESTIMATION", "treated municipality and weighted retained controls", "24-month pre/post and truncated-post windows"),
 }
 
 
@@ -288,6 +303,12 @@ DESCRIPTIONS = {
     "pretrend_diagnostic_class": "Primary-compatible, sensitivity-only or failed predeclared pretrend magnitude classification",
     "eligible_for_primary_estimation_sensitivity": "Whether the pair may enter a primary non-causal estimation sensitivity after passing the primary diagnostic rule",
     "eligible_for_relaxed_estimation_sensitivity": "Whether the pair may enter the broader non-causal estimation sensitivity",
+    "stack_unit_weight": "Within-stack analytical weight: one for the treated municipality and reciprocal control count for each comparison municipality",
+    "treated_post": "Indicator equal to one for the treated municipality in event months zero and later",
+    "estimate_log_points": "Weighted stacked pilot coefficient in log hotel overnight units",
+    "estimate_percent_change": "Exponentiated pilot coefficient minus one; descriptive conversion, not a causal effect",
+    "municipality_cluster_count": "Number of stable municipality identifiers used for clustered sandwich uncertainty",
+    "estimation_candidate_tier": "Primary or relaxed-sensitivity-only pretrend compatibility tier",
     "event_mapping_status": "Direct listing link or reviewed scope relation used to map the event",
     "effective_month": "Analytical month when the base-entry event begins",
     "effective_month_precision": "Exact-validity or analytical-anchor status of the effective month",
@@ -801,6 +822,28 @@ def derived_sources() -> list[dict]:
         confidence_level="high for reproducibility and rule application; limited for causal identification",
         manual_verification="Rule file is checksum-recorded; primary rule is nested inside relaxed sensitivity; protected causal flags remain false",
         notes="Eleven primary-compatible pairs cover six treated municipalities; fifteen pairs including sensitivity-only cases remain available for non-causal estimation sensitivity",
+    ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_NONCAUSAL_PILOT_ESTIMATION",
+        variable_name="weighted_stacked_panel|matched_difference_in_differences_pilot|binned_event_study|municipality_clustered_uncertainty|leave_one_out_sensitivity",
+        variable_description="Predeclared non-causal pilot estimates for the primary and relaxed pretrend-compatible municipality pairs",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility first-exposure non-causal pilot estimation",
+        retrieval_method="Deterministic weighted two-way within transformation and municipality-clustered sandwich covariance implemented in Python",
+        retrieval_date="2026-10-03",
+        local_raw_file="config/accessibility_pilot_estimation.json|reports/accessibility_estimation_candidate_pairs.csv|data_processed/accessibility_municipality_month_exposure.csv|reports/accessibility_historical_gtfs_2018_municipality_validation.csv|reports/accessibility_historical_gtfs_2018_proximity_municipality_validation.csv",
+        processed_file="data_processed/accessibility_pilot_stacked_panel.csv|reports/accessibility_pilot_did_estimates.csv|reports/accessibility_pilot_event_study.csv|reports/accessibility_pilot_influence_sensitivity.csv|reports/accessibility_pilot_treated_decomposition.csv|reports/accessibility_pilot_estimation_summary.json|reports/71_ESTIMATION_PILOTE_NON_CAUSALE_FR.md",
+        geographic_level="matched stack of one treated hotel municipality and its retained comparison municipalities",
+        temporal_resolution="monthly event time from -24 to +23 with a November 2017 common anchor",
+        temporal_start="2015-11", temporal_end="2019-10",
+        unit="log hotel overnight coefficient, descriptive percent conversion and uncertainty interval",
+        license="Derived analytical data; upstream source terms continue to apply",
+        access_conditions="Local reproducible output",
+        transformation_applied="Give each treated municipality weight one and divide total control weight one within its stack; remove stack-by-municipality and stack-by-calendar-month means; estimate treated-post and binned event-time terms; cluster sandwich scores by stable municipality across reused controls; run uniform truncation, conservative-control exclusion and leave-one-out sensitivities",
+        quality_notes="Only 16 municipality clusters enter the primary pilot. Historical access relies on a transfer-topology sensitivity, broad visitor substitution remains unresolved and sample selection is substantial. Normal cluster-robust intervals are descriptive; no causal estimate is approved.",
+        confidence_level="high for deterministic arithmetic and internal replication; low for causal identification",
+        manual_verification="Primary coefficient independently reproduced as the equal mean of six stack-specific post-minus-pre log gaps; weights sum to one for treated and one for controls in every stack-month",
+        notes="Primary pilot is -6.8 percent, but the conservative control-exclusion sensitivity is -2.0 percent with an interval spanning zero; neither is a causal Magic Pass effect",
     ))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())

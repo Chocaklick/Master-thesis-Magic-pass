@@ -1,0 +1,43 @@
+{
+  "specification_version": "stage24_v1_predeclared_2026_10_03",
+  "primary_pair_count": 11,
+  "relaxed_pair_count": 15,
+  "primary_treated_municipalities": 6,
+  "primary_unique_municipalities": 16,
+  "primary_municipality_clusters": 16,
+  "primary_treated_retained_under_strict_published_2018_transfers": 0,
+  "primary_treated_retained_under_250m_proximity_transfer_sensitivity": 6,
+  "primary_estimate_log_points": -0.07057086705997487,
+  "primary_estimate_percent_change": -0.06813830111312832,
+  "primary_ci95_percent_change": [
+    -0.11714359907988368,
+    -0.01641283344911798
+  ],
+  "truncated_post_estimate_percent_change": -0.07169499929611917,
+  "relaxed_estimate_percent_change": -0.08690530622130037,
+  "leave_one_pair_out_percent_change_range": [
+    -0.08757433583546947,
+    -0.05725472004735523
+  ],
+  "leave_one_treated_out_percent_change_range": [
+    -0.08757433583546947,
+    -0.0476424302411921
+  ],
+  "treated_stack_percent_change_range": [
+    -0.1641880415146469,
+    0.03543134826584009
+  ],
+  "primary_pre_event_bins_with_ci_excluding_zero": 0,
+  "primary_post_event_bins_with_ci_excluding_zero": 2,
+  "causal_estimation_approved": false,
+  "causal_effect_claim_allowed": false,
+  "input_sha256": {
+    "config/accessibility_pilot_estimation.json": "29206fcc9ce72ce77405ed4d81e1d6c4635f343a59ddeb172d59e8d09e1e1dc7",
+    "reports/accessibility_estimation_candidate_pairs.csv": "b9c9c45d325a22fdf34146ab0021d031a2226a381b9dddd443a836bace5ebbf8",
+    "data_processed/accessibility_municipality_month_exposure.csv": "9da2037a9fd323afdea5987a87669d94618535ded4f6a71c1a82a97f1890d0be",
+    "reports/accessibility_historical_gtfs_2018_municipality_validation.csv": "104ed66fa58bcf226641f09433b8f7e2740580ac38d09a6a25fc284529125ca5",
+    "reports/accessibility_historical_gtfs_2018_proximity_municipality_validation.csv": "535caea1338c17aa95056b270ae3f60c3bafc238a72d0520342c91ada31533b0"
+  },
+  "source_id": "DERIVED_ACCESSIBILITY_NONCAUSAL_PILOT_ESTIMATION",
+  "interpretation": "Non-causal pilot only. Small cluster count, projected historical transfer topology, broad visitor substitution and residual selection prevent causal interpretation."
+}

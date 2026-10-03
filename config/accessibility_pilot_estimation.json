@@ -1,0 +1,46 @@
+{
+  "specification_version": "stage24_v1_predeclared_2026_10_03",
+  "outcome": "log_overnights",
+  "primary_candidate_tier": "primary",
+  "relaxed_candidate_tier": "primary_plus_relaxed_sensitivity_only",
+  "event_window": {
+    "start_month": -24,
+    "end_month": 23,
+    "post_start_month": 0,
+    "uniform_truncated_post_end_month": 13
+  },
+  "estimator": {
+    "name": "weighted_stacked_matched_difference_in_differences",
+    "stack_definition": "one treated municipality plus all retained controls assigned to it",
+    "weights": "treated weight one per month; controls divide total weight one equally within each stack-month",
+    "fixed_effects": [
+      "stack_by_municipality",
+      "stack_by_calendar_month"
+    ],
+    "uncertainty": "municipality-clustered sandwich covariance across reused controls with finite-cluster G_over_G_minus_1 correction and normal 95 percent interval"
+  },
+  "event_study_bins": [
+    {"label": "pre_24_to_19", "start": -24, "end": -19},
+    {"label": "pre_18_to_13", "start": -18, "end": -13},
+    {"label": "pre_12_to_7", "start": -12, "end": -7},
+    {"label": "pre_6_to_2", "start": -6, "end": -2},
+    {"label": "post_0_to_5", "start": 0, "end": 5},
+    {"label": "post_6_to_11", "start": 6, "end": 11},
+    {"label": "post_12_to_17", "start": 12, "end": 17},
+    {"label": "post_18_to_23", "start": 18, "end": 23}
+  ],
+  "event_study_reference_month": -1,
+  "sensitivities": [
+    "primary_uniform_post_truncation_at_event_month_13",
+    "primary_leave_one_treated_municipality_out",
+    "primary_leave_one_pair_out",
+    "primary_conservative_exclusion_of_controls_with_targeted_timing_or_leave_out_notes",
+    "relaxed_candidate_set_reported_separately"
+  ],
+  "targeted_sensitivity_control_bfs_ids": [1068, 1407, 2939, 3298, 4201, 4671],
+  "protected_interpretation": {
+    "causal_estimation_approved": false,
+    "causal_effect_claim_allowed": false,
+    "required_label": "non_causal_pilot_estimate"
+  }
+}
