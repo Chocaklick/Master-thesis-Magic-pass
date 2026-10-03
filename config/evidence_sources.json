@@ -561,5 +561,89 @@
     "suffix": "pdf",
     "organisation": "Corvatsch AG and Diavolezza Lagalb AG",
     "description": "Official joint 2018/2019 annual report documenting the two operators' shared governance and the Engadin decision to retain SnowPass Graubünden for frequent skiers"
+  },
+  {
+    "source_id": "LEYSIN_CHAIRLIFT_PREAVIS_2017",
+    "url": "https://leysin.ch/wp-content/uploads/2025/11/Preavis-01.2017.pdf",
+    "suffix": "pdf",
+    "organisation": "Commune de Leysin",
+    "description": "Official 2017 municipal proposal documenting guarantees for the Fer-Brion-Tete d'Ai chairlift construction loans"
+  },
+  {
+    "source_id": "LEYSIN_SNOWMAKING_PREAVIS_2018",
+    "url": "https://leysin.ch/wp-content/uploads/2025/11/Preavis-07.2018.pdf",
+    "suffix": "pdf",
+    "organisation": "Commune de Leysin",
+    "description": "Official 2018 municipal proposal documenting financing and guarantees for mechanical snowmaking"
+  },
+  {
+    "source_id": "ORMONT_DESSUS_TVGD_LOAN_PREAVIS_2017",
+    "url": "https://www.ormontdessus.ch/wp-content/uploads/2019/05/2017-05-signe_relatifaunedemandedecautionnementdupretLPRTVGDSA.pdf",
+    "suffix": "pdf",
+    "organisation": "Commune d'Ormont-Dessus",
+    "description": "Official 2017 municipal proposal for a communal guarantee on a regional-policy loan to TVGD for the Vioz-Mazots gondola and Jorasse works"
+  },
+  {
+    "source_id": "ORMONT_DESSUS_MEILLERET_PREAVIS_2018",
+    "url": "https://www.ormontdessus.ch/wp-content/uploads/2019/05/2018-01_modificationdu-PPA-intercommunal.pdf",
+    "suffix": "pdf",
+    "organisation": "Commune d'Ormont-Dessus",
+    "description": "Official 2018 municipal proposal documenting the Meilleret land-use changes connected to Lausanne 2020 and the Diablerets ski-domain works"
+  },
+  {
+    "source_id": "OLLON_VILLARS_BATHS_PREAVIS_2017",
+    "url": "https://www.ollon.ch/conseilcommunal/download.asp?d=416",
+    "suffix": "pdf",
+    "organisation": "Commune d'Ollon",
+    "description": "Official November 2017 municipal proposal documenting the CHF 18.5 million Villars baths renovation, wellness construction and August 2017 opening"
+  },
+  {
+    "source_id": "FRIBOURG_PREALPS_2030_REPORT_2019",
+    "url": "https://www.fr.ch/sites/default/files/2019-03/PV2030_rapport_final_FR.pdf",
+    "suffix": "pdf",
+    "organisation": "State of Fribourg and Fribourg Tourism Union",
+    "description": "Official 2019 final report of the 2017-2019 Prealps Vision 2030 strategy process for Fribourg mountain-lift companies and tourism products"
+  },
+  {
+    "source_id": "BULLE_TOURISM_POSTULATE_2019",
+    "url": "https://www.bulle.ch/_docn/2114983/9_-_Determination_postulat_V._Schmutz_et_E._Gobet_Bulle_ville_touristique.pdf",
+    "suffix": "pdf",
+    "organisation": "Ville de Bulle",
+    "description": "Official May 2019 response documenting the municipal tourism-label work and intended seasonal-tourism-site application"
+  },
+  {
+    "source_id": "FRIBOURG_YOUTH_HOSTEL_REPORT_2019",
+    "url": "https://www.ville-fribourg.ch/actualites/postulat-61-rapport-final-du-conseil-communal",
+    "suffix": "html",
+    "organisation": "Ville de Fribourg",
+    "description": "Official October 2019 report documenting the November 2016 youth-hostel closure, associated overnight-stay loss and absence of a replacement"
+  },
+  {
+    "source_id": "PLAFFEIEN_TOURISM_AG_MINUTES_2019",
+    "url": "https://www.plaffeien.ch/_docn/2344699/Protokoll_1._Gemeindeversammlung_vom_26.04.2019.pdf",
+    "suffix": "pdf",
+    "organisation": "Gemeinde Plaffeien",
+    "description": "Official April 2019 municipal-assembly minutes documenting the planned Schwarzsee tourism company, offer integration and proposed municipal participation"
+  },
+  {
+    "source_id": "ANNIVIERS_TOURISM_TAX_FLYER_2019",
+    "url": "https://www.anniviers.org/data/documents/2_Administration/Services/Finances/TSF/190101_Flyer_TS_FR.pdf",
+    "suffix": "pdf",
+    "organisation": "Commune d'Anniviers",
+    "description": "Official 2019 tourism-tax information documenting destination marketing, digital tools and new outdoor products implemented during 2017-2019"
+  },
+  {
+    "source_id": "LA_CHAUX_DE_FONDS_MANAGEMENT_REPORT_2019",
+    "url": "https://www.chaux-de-fonds.ch/rapports-et-reglements/rapports-gestion/Documents/ZZ_Rapport%20de%20gestion_2019_DEFINITIF_CORR_ERR_CDH_p_58.pdf",
+    "suffix": "pdf",
+    "organisation": "Ville de La Chaux-de-Fonds",
+    "description": "Official 2019 municipal management report reviewed for contemporaneous tourism, hotel and governance changes"
+  },
+  {
+    "source_id": "SAIGNELEGIER_INFO_JUNE_2019",
+    "url": "https://www.saignelegier.ch/FileDownload/Download/297",
+    "suffix": "pdf",
+    "organisation": "Commune de Saignelegier",
+    "description": "Official June 2019 municipal bulletin documenting the three-day Jura 40 celebration hosted mainly in Saignelegier and its expected thousands of visitors"
   }
 ]

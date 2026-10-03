@@ -11,6 +11,22 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE_PATH = ROOT / "metadata" / "data_sources_master.csv"
 DICTIONARY_PATH = ROOT / "metadata" / "data_dictionary.csv"
+EVIDENCE_CONFIG_PATH = ROOT / "config" / "evidence_sources.json"
+EVIDENCE_DIR = ROOT / "data_external" / "source_evidence"
+NEW_TREATED_REVIEW_SOURCE_IDS = {
+    "ANNIVIERS_TOURISM_TAX_FLYER_2019",
+    "BULLE_TOURISM_POSTULATE_2019",
+    "FRIBOURG_PREALPS_2030_REPORT_2019",
+    "FRIBOURG_YOUTH_HOSTEL_REPORT_2019",
+    "LA_CHAUX_DE_FONDS_MANAGEMENT_REPORT_2019",
+    "LEYSIN_CHAIRLIFT_PREAVIS_2017",
+    "LEYSIN_SNOWMAKING_PREAVIS_2018",
+    "OLLON_VILLARS_BATHS_PREAVIS_2017",
+    "ORMONT_DESSUS_MEILLERET_PREAVIS_2018",
+    "ORMONT_DESSUS_TVGD_LOAN_PREAVIS_2017",
+    "PLAFFEIEN_TOURISM_AG_MINUTES_2019",
+    "SAIGNELEGIER_INFO_JUNE_2019",
+}
 SOURCE_COLUMNS = [
     "source_id", "variable_name", "variable_description", "source_organisation",
     "source_dataset_name", "source_page_url", "direct_download_url", "api_endpoint",
@@ -127,6 +143,12 @@ TABLES = {
     "accessibility_comparison_external_review_worklist": (
         ROOT / "reports" / "accessibility_comparison_external_review_worklist.csv",
         "DERIVED_ACCESSIBILITY_COMPARISON_INTERNAL_RISK_SCREEN", "treated or provisional comparison municipality", "external-review checkpoint"),
+    "accessibility_treated_external_shock_evidence": (
+        ROOT / "reports" / "accessibility_treated_external_shock_evidence.csv",
+        "DERIVED_ACCESSIBILITY_TREATED_EXTERNAL_SHOCK_REVIEW", "treated hotel municipality", "2015-11 to 2019-10 external-review window"),
+    "accessibility_comparison_treated_external_risk_screen": (
+        ROOT / "data_processed" / "accessibility_comparison_treated_external_risk_screen.csv",
+        "DERIVED_ACCESSIBILITY_TREATED_EXTERNAL_SHOCK_REVIEW", "treated municipality by provisional comparison municipality", "November 2017 anchor and adjacent 24-month windows"),
 }
 
 
@@ -154,6 +176,17 @@ DESCRIPTIONS = {
     "membership_continuity_status": "Whether membership is carried forward by assumption or bounded by a documented exit",
     "descriptive_exposure_approved": "Whether this row has passed the current descriptive exposure gate",
     "causal_treatment_approved": "Whether the station group is approved as a causal treatment",
+    "review_status": "Documented external-shock review classification for the treated municipality",
+    "shock_severity": "Qualitative directness and severity class of the reviewed concurrent intervention",
+    "shock_timing": "Documented timing of the reviewed external intervention relative to the treatment anchor",
+    "design_decision": "Rule assigning the treated municipality to descriptive, broad-reviewed or strict Magic-only candidate sets",
+    "recommended_sensitivity": "Targeted robustness check recommended from the municipality-specific document review",
+    "review_source_ids": "Pipe-delimited official source identifiers supporting the positive evidence classification",
+    "eligible_broad_reviewed_set": "Whether the treated municipality avoids a high direct concurrent shock in the reviewed evidence",
+    "eligible_strict_magic_only_candidate_set": "Whether the row remains in the stricter candidate set after high and moderate direct interventions are removed",
+    "largest_absolute_yoy_bed_change_date": "Month of the largest absolute year-on-year change in available hotel beds during the review window",
+    "largest_absolute_yoy_bed_change_phase": "Whether the largest year-on-year hotel-bed change occurs before or after the November 2017 anchor",
+    "stage19_pair_decision": "Pair status after combining the stage-18 internal screen with treated-municipality external evidence",
     "event_mapping_status": "Direct listing link or reviewed scope relation used to map the event",
     "effective_month": "Analytical month when the base-entry event begins",
     "effective_month_precision": "Exact-validity or analytical-anchor status of the effective month",
@@ -257,6 +290,54 @@ def source_row(source_id: str, **kwargs) -> dict:
     row["source_id"] = source_id
     row.update(kwargs)
     return row
+
+
+def treated_review_external_sources() -> list[dict]:
+    """Register newly collected official documents without weakening old entries."""
+    catalog = {
+        row["source_id"]: row
+        for row in json.loads(EVIDENCE_CONFIG_PATH.read_text(encoding="utf-8"))
+    }
+    rows = []
+    for source_id in sorted(NEW_TREATED_REVIEW_SOURCE_IDS):
+        if source_id not in catalog:
+            raise KeyError(f"Missing treated-review evidence config: {source_id}")
+        candidates = []
+        for path in sorted(EVIDENCE_DIR.glob(f"{source_id}_*.metadata.json")):
+            metadata = json.loads(path.read_text(encoding="utf-8"))
+            if metadata.get("source_id") == source_id and metadata.get("http_status") == 200:
+                candidates.append((metadata.get("retrieval_date", ""), metadata))
+        if not candidates:
+            raise FileNotFoundError(f"No successful cached retrieval for {source_id}")
+        _, metadata = max(candidates, key=lambda item: item[0])
+        source = catalog[source_id]
+        raw_file = metadata["raw_file"].replace("\\", "/")
+        rows.append(source_row(
+            source_id,
+            variable_name="treated_municipality_external_shock_evidence",
+            variable_description=source["description"],
+            source_organisation=source["organisation"],
+            source_dataset_name=source["description"],
+            source_page_url=source["url"],
+            direct_download_url=metadata.get("final_url", source["url"]),
+            retrieval_method="HTTP GET with immutable local response, metadata sidecar and SHA-256",
+            retrieval_date=metadata["retrieval_date"],
+            original_file_name=Path(raw_file).name,
+            local_raw_file=raw_file,
+            processed_file="reports/accessibility_treated_external_shock_evidence.csv|data_processed/accessibility_comparison_treated_external_risk_screen.csv|reports/66_AUDIT_EXTERNE_COMMUNES_TRAITEES_FR.md",
+            geographic_level="official municipality, destination or regional tourism evidence",
+            temporal_resolution="document-specific event or policy period",
+            temporal_start="2016", temporal_end="2019",
+            unit="documented event, investment, governance or accommodation evidence",
+            license="UNKNOWN; preserve official citation, original URL and immutable checksum",
+            access_conditions="Public official source; automated retrieval respects robots.txt",
+            transformation_applied="Manual document-level review encoded in config/accessibility_treated_external_shock_review.json; positive evidence only",
+            quality_notes="A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays",
+            confidence_level="high for the cited official statement; analytical severity remains a documented review judgement",
+            manual_verification="Relevant page or section inspected; cached file and SHA-256 verified by the stage-19 builder",
+            notes="Missing evidence is never interpreted as proof that no shock occurred",
+        ))
+    return rows
 
 
 def derived_sources() -> list[dict]:
@@ -414,6 +495,29 @@ def derived_sources() -> list[dict]:
         manual_verification="Thresholds, positive-evidence semantics, exact-anchor reuse and protected false causal flags are checked by automated tests",
         notes="The screen reduces external review effort; it does not estimate an effect or validate parallel trends",
     ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_TREATED_EXTERNAL_SHOCK_REVIEW",
+        variable_name="treated_external_shock_evidence|review_source_integrity|capacity_peak_timing|broad_reviewed_set|strict_magic_only_candidate_set|stage19_pair_decision",
+        variable_description="Official-source external-shock review for the 14 historically retained treated municipalities and nested comparison sets",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility treated-municipality external shock review",
+        retrieval_method="Deterministic Python join of manually reviewed official evidence, checksum sidecars, stage-18 pairs and official hotel capacity",
+        retrieval_date="2026-10-03",
+        local_raw_file="config/accessibility_treated_external_shock_review.json|config/evidence_sources.json|data_external/source_evidence|data_processed/accessibility_comparison_internal_risk_screen.csv|data_processed/hotel_capacity_municipality_month.csv",
+        processed_file="reports/accessibility_treated_external_shock_evidence.csv|data_processed/accessibility_comparison_treated_external_risk_screen.csv|reports/accessibility_comparison_treated_external_review_summary.json|reports/66_AUDIT_EXTERNE_COMMUNES_TRAITEES_FR.md",
+        geographic_level="treated hotel municipality and treated-control comparison pair",
+        temporal_resolution="November 2017 anchor with November 2015 to October 2019 review window",
+        temporal_start="2015-11", temporal_end="2019-10",
+        unit="documents, evidence classes, months, hotel beds and nested candidate flags",
+        license="Derived analytical data; upstream official-source terms continue to apply",
+        access_conditions="Local reproducible output from immutable cached official evidence",
+        transformation_applied="Verify every cited file against its SHA-256 sidecar; classify high direct, moderate direct and targeted/indirect risks; retain all treatments descriptively; build broad and strict nested comparison sets",
+        quality_notes="Document review cannot prove shock absence or identify an effect. Control-side external review, visitor-market spillovers and parallel trends remain pending; zero causal approvals.",
+        confidence_level="high for source integrity and deterministic set construction; medium for qualitative severity classification",
+        manual_verification="Fourteen treated municipalities reviewed; key municipal PDFs visually inspected; all positive evidence linked to registered official sources",
+        notes="The 38-pair broad set and 32-pair strict set are review candidates, not causal samples",
+    ))
+    rows.extend(treated_review_external_sources())
     return rows
 
 

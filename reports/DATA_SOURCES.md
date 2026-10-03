@@ -50,6 +50,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/ANNIVIERS_SCOPE_OFFICIAL_20260920T005533Z.html`.
 
+## ANNIVIERS_TOURISM_TAX_FLYER_2019 — Official 2019 tourism-tax information documenting destination marketing, digital tools and new outdoor products implemented during 2017-2019
+
+- **Contents and relevance:** Official 2019 tourism-tax information documenting destination marketing, digital tools and new outdoor products implemented during 2017-2019
+- **Producer:** Commune d'Anniviers
+- **Exact URL:** https://www.anniviers.org/data/documents/2_Administration/Services/Finances/TSF/190101_Flyer_TS_FR.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T10:34:34.842138+00:00.
+- **Variables:** treated_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_treated_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
+- **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/ANNIVIERS_TOURISM_TAX_FLYER_2019_20261003T103434Z.pdf`.
+
 ## ARE_NPVM_TRAVEL_TIME_2025 — NPVM travel time to centres and agglomerations, reference date 2025-06-30
 
 - **Contents and relevance:** Modelled traffic-zone travel times to the fastest of six major centres and to the fastest agglomeration/core municipality by road and public transport
@@ -374,6 +386,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Does not name the full 14-area roster, so only Engelberg-Brunni is linked; product-level SchneepassPlus summer inclusion does not establish summer access for every winter area
 - **Local raw file:** `data_external/source_evidence/BRUNNI_SCHNEEPASS_ZENTRALSCHWEIZ_2021_22_BROCHURE_20260924T193709Z.pdf`.
 
+## BULLE_TOURISM_POSTULATE_2019 — Official May 2019 response documenting the municipal tourism-label work and intended seasonal-tourism-site application
+
+- **Contents and relevance:** Official May 2019 response documenting the municipal tourism-label work and intended seasonal-tourism-site application
+- **Producer:** Ville de Bulle
+- **Exact URL:** https://www.bulle.ch/_docn/2114983/9_-_Determination_postulat_V._Schmutz_et_E._Gobet_Bulle_ville_touristique.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T10:34:29.927517+00:00.
+- **Variables:** treated_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_treated_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
+- **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/BULLE_TOURISM_POSTULATE_2019_20261003T103429Z.pdf`.
+
 ## CALLAWAY_SANTANNA_2021_DID — Difference-in-Differences with multiple time periods
 
 - **Contents and relevance:** Provides group-time average treatment effects and inference for staggered Difference-in-Differences with heterogeneous treatment timing and effects.
@@ -505,6 +529,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** station group by hotel municipality; Wednesday and Saturday winter-2026 timetable samples; 2026-02-04 to 2026-02-07.
 - **Limitations:** Current static schedule only; no car routing, delays, crowding, fares, unlisted walking or historical stability
 - **Local raw file:** `config/path_c_analysis.json|reports/accessibility_station_access_nodes.csv`.
+
+## DERIVED_ACCESSIBILITY_TREATED_EXTERNAL_SHOCK_REVIEW — Accessibility treated-municipality external shock review
+
+- **Contents and relevance:** Official-source external-shock review for the 14 historically retained treated municipalities and nested comparison sets
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic Python join of manually reviewed official evidence, checksum sidecars, stage-18 pairs and official hotel capacity; 2026-10-03.
+- **Variables:** treated_external_shock_evidence|review_source_integrity|capacity_peak_timing|broad_reviewed_set|strict_magic_only_candidate_set|stage19_pair_decision
+- **Transformations:** Verify every cited file against its SHA-256 sidecar; classify high direct, moderate direct and targeted/indirect risks; retain all treatments descriptively; build broad and strict nested comparison sets
+- **Coverage:** treated hotel municipality and treated-control comparison pair; November 2017 anchor with November 2015 to October 2019 review window; 2015-11 to 2019-10.
+- **Limitations:** Document review cannot prove shock absence or identify an effect. Control-side external review, visitor-market spillovers and parallel trends remain pending; zero causal approvals.
+- **Local raw file:** `config/accessibility_treated_external_shock_review.json|config/evidence_sources.json|data_external/source_evidence|data_processed/accessibility_comparison_internal_risk_screen.csv|data_processed/hotel_capacity_municipality_month.csv`.
 
 ## DERIVED_CANDIDATE_SCOPE_RADIUS_SENSITIVITY — Candidate destination-scope radius sensitivity
 
@@ -998,6 +1034,30 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `data_external/source_evidence/EVOLENE_SCOPE_OFFICIAL_20260920T005534Z.html`.
 
+## FRIBOURG_PREALPS_2030_REPORT_2019 — Official 2019 final report of the 2017-2019 Prealps Vision 2030 strategy process for Fribourg mountain-lift companies and tourism products
+
+- **Contents and relevance:** Official 2019 final report of the 2017-2019 Prealps Vision 2030 strategy process for Fribourg mountain-lift companies and tourism products
+- **Producer:** State of Fribourg and Fribourg Tourism Union
+- **Exact URL:** https://www.fr.ch/sites/default/files/2019-03/PV2030_rapport_final_FR.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T10:34:28.560159+00:00.
+- **Variables:** treated_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_treated_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
+- **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/FRIBOURG_PREALPS_2030_REPORT_2019_20261003T103428Z.pdf`.
+
+## FRIBOURG_YOUTH_HOSTEL_REPORT_2019 — Official October 2019 report documenting the November 2016 youth-hostel closure, associated overnight-stay loss and absence of a replacement
+
+- **Contents and relevance:** Official October 2019 report documenting the November 2016 youth-hostel closure, associated overnight-stay loss and absence of a replacement
+- **Producer:** Ville de Fribourg
+- **Exact URL:** https://www.ville-fribourg.ch/actualites/postulat-61-rapport-final-du-conseil-communal
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T10:34:31.602321+00:00.
+- **Variables:** treated_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_treated_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
+- **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/FRIBOURG_YOUTH_HOSTEL_REPORT_2019_20261003T103431Z.html`.
+
 ## GEOADMIN_MUNICIPALITY_IDENTIFY — Municipal boundaries — current swissBOUNDARIES3D layer
 
 - **Contents and relevance:** Current municipality polygon containing each supplied resort coordinate
@@ -1165,6 +1225,42 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** not applicable; peer-reviewed methodological article; publication; 2019 to 2019.
 - **Limitations:** Flexible outcome learning does not by itself justify a causal estimand, remove confounding or create stable heterogeneity information from a very small treated sample.
 - **Local raw file:** `config/methodological_literature.json`.
+
+## LA_CHAUX_DE_FONDS_MANAGEMENT_REPORT_2019 — Official 2019 municipal management report reviewed for contemporaneous tourism, hotel and governance changes
+
+- **Contents and relevance:** Official 2019 municipal management report reviewed for contemporaneous tourism, hotel and governance changes
+- **Producer:** Ville de La Chaux-de-Fonds
+- **Exact URL:** https://www.chaux-de-fonds.ch/rapports-et-reglements/rapports-gestion/Documents/ZZ_Rapport%20de%20gestion_2019_DEFINITIF_CORR_ERR_CDH_p_58.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T10:34:36.285510+00:00.
+- **Variables:** treated_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_treated_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
+- **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/LA_CHAUX_DE_FONDS_MANAGEMENT_REPORT_2019_20261003T103436Z.pdf`.
+
+## LEYSIN_CHAIRLIFT_PREAVIS_2017 — Official 2017 municipal proposal documenting guarantees for the Fer-Brion-Tete d'Ai chairlift construction loans
+
+- **Contents and relevance:** Official 2017 municipal proposal documenting guarantees for the Fer-Brion-Tete d'Ai chairlift construction loans
+- **Producer:** Commune de Leysin
+- **Exact URL:** https://leysin.ch/wp-content/uploads/2025/11/Preavis-01.2017.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T10:33:23.483312+00:00.
+- **Variables:** treated_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_treated_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
+- **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/LEYSIN_CHAIRLIFT_PREAVIS_2017_20261003T103323Z.pdf`.
+
+## LEYSIN_SNOWMAKING_PREAVIS_2018 — Official 2018 municipal proposal documenting financing and guarantees for mechanical snowmaking
+
+- **Contents and relevance:** Official 2018 municipal proposal documenting financing and guarantees for mechanical snowmaking
+- **Producer:** Commune de Leysin
+- **Exact URL:** https://leysin.ch/wp-content/uploads/2025/11/Preavis-07.2018.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T10:33:33.978042+00:00.
+- **Variables:** treated_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_treated_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
+- **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/LEYSIN_SNOWMAKING_PREAVIS_2018_20261003T103333Z.pdf`.
 
 ## LOCAL_03b4345dbe87 — stations_ski_assignations_clusters_gps_bergfex.csv
 
@@ -1742,6 +1838,42 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Current scope evidence does not by itself establish historical tourism exposure
 - **Local raw file:** `not cached / not applicable`.
 
+## OLLON_VILLARS_BATHS_PREAVIS_2017 — Official November 2017 municipal proposal documenting the CHF 18.5 million Villars baths renovation, wellness construction and August 2017 opening
+
+- **Contents and relevance:** Official November 2017 municipal proposal documenting the CHF 18.5 million Villars baths renovation, wellness construction and August 2017 opening
+- **Producer:** Commune d'Ollon
+- **Exact URL:** https://www.ollon.ch/conseilcommunal/download.asp?d=416
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T10:34:05.818073+00:00.
+- **Variables:** treated_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_treated_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
+- **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/OLLON_VILLARS_BATHS_PREAVIS_2017_20261003T103405Z.pdf`.
+
+## ORMONT_DESSUS_MEILLERET_PREAVIS_2018 — Official 2018 municipal proposal documenting the Meilleret land-use changes connected to Lausanne 2020 and the Diablerets ski-domain works
+
+- **Contents and relevance:** Official 2018 municipal proposal documenting the Meilleret land-use changes connected to Lausanne 2020 and the Diablerets ski-domain works
+- **Producer:** Commune d'Ormont-Dessus
+- **Exact URL:** https://www.ormontdessus.ch/wp-content/uploads/2019/05/2018-01_modificationdu-PPA-intercommunal.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T10:33:55.006925+00:00.
+- **Variables:** treated_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_treated_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
+- **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/ORMONT_DESSUS_MEILLERET_PREAVIS_2018_20261003T103355Z.pdf`.
+
+## ORMONT_DESSUS_TVGD_LOAN_PREAVIS_2017 — Official 2017 municipal proposal for a communal guarantee on a regional-policy loan to TVGD for the Vioz-Mazots gondola and Jorasse works
+
+- **Contents and relevance:** Official 2017 municipal proposal for a communal guarantee on a regional-policy loan to TVGD for the Vioz-Mazots gondola and Jorasse works
+- **Producer:** Commune d'Ormont-Dessus
+- **Exact URL:** https://www.ormontdessus.ch/wp-content/uploads/2019/05/2017-05-signe_relatifaunedemandedecautionnementdupretLPRTVGDSA.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T10:33:44.480822+00:00.
+- **Variables:** treated_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_treated_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
+- **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/ORMONT_DESSUS_TVGD_LOAN_PREAVIS_2017_20261003T103344Z.pdf`.
+
 ## PIZOL_ANNUAL_REPORT_2018_19 — Official Pizolbahnen annual report 2018/2019
 
 - **Contents and relevance:** Official annual report reviewed as a possible Meilenweiss source but containing no explicit Meilenweiss reference
@@ -1753,6 +1885,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** Pizol operator report; winter season; 2018/2019 to 2018/2019.
 - **Limitations:** Absence of an explicit token in this report is not evidence that Pizol was absent from Meilenweiss and creates no membership row
 - **Local raw file:** `data_external/source_evidence/PIZOL_ANNUAL_REPORT_2018_19_20260924T185017Z.pdf`.
+
+## PLAFFEIEN_TOURISM_AG_MINUTES_2019 — Official April 2019 municipal-assembly minutes documenting the planned Schwarzsee tourism company, offer integration and proposed municipal participation
+
+- **Contents and relevance:** Official April 2019 municipal-assembly minutes documenting the planned Schwarzsee tourism company, offer integration and proposed municipal participation
+- **Producer:** Gemeinde Plaffeien
+- **Exact URL:** https://www.plaffeien.ch/_docn/2344699/Protokoll_1._Gemeindeversammlung_vom_26.04.2019.pdf
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T10:34:33.041117+00:00.
+- **Variables:** treated_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_treated_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
+- **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/PLAFFEIEN_TOURISM_AG_MINUTES_2019_20261003T103433Z.pdf`.
 
 ## REICHENBACH_SCOPE_OFFICIAL — Official destination or municipal scope page
 
@@ -1777,6 +1921,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** not applicable; peer-reviewed methodological article; publication; 1987 to 1987.
 - **Limitations:** Silhouette quality evaluates geometry in the selected feature space; it does not validate commercial destination identities or causal relevance.
 - **Local raw file:** `config/methodological_literature.json`.
+
+## SAIGNELEGIER_INFO_JUNE_2019 — Official June 2019 municipal bulletin documenting the three-day Jura 40 celebration hosted mainly in Saignelegier and its expected thousands of visitors
+
+- **Contents and relevance:** Official June 2019 municipal bulletin documenting the three-day Jura 40 celebration hosted mainly in Saignelegier and its expected thousands of visitors
+- **Producer:** Commune de Saignelegier
+- **Exact URL:** https://www.saignelegier.ch/FileDownload/Download/297
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-03T10:34:37.983624+00:00.
+- **Variables:** treated_municipality_external_shock_evidence
+- **Transformations:** Manual document-level review encoded in config/accessibility_treated_external_shock_review.json; positive evidence only
+- **Coverage:** official municipality, destination or regional tourism evidence; document-specific event or policy period; 2016 to 2019.
+- **Limitations:** A source can document a concurrent intervention but cannot by itself identify its effect on hotel overnight stays
+- **Local raw file:** `data_external/source_evidence/SAIGNELEGIER_INFO_JUNE_2019_20261003T103437Z.pdf`.
 
 ## SAINTE_CROIX_SCOPE_OFFICIAL — Official destination or municipal scope page
 

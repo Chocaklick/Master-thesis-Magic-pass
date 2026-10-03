@@ -25,6 +25,7 @@ SCRIPTS = [
     "src/data_processing/build_accessibility_historical_gtfs_2018_current_transfer_sensitivity.py",
     "src/causal_inference/build_accessibility_historically_screened_comparisons.py",
     "src/causal_inference/screen_accessibility_comparison_internal_risks.py",
+    "src/causal_inference/audit_accessibility_treated_external_shocks.py",
     "src/data_processing/update_accessibility_expansion_provenance.py",
     "src/data_processing/update_provenance.py",
 ]

@@ -1,0 +1,37 @@
+{
+  "analysis_date": "2026-10-03",
+  "analysis_anchor": "2017-11-01",
+  "review_window": {
+    "start": "2015-11-01",
+    "end": "2019-10-01"
+  },
+  "treated_municipalities_reviewed": 14,
+  "treated_reviews_with_cached_cited_sources": 13,
+  "treated_reviews_without_negative_proof_source": 1,
+  "stage18_pairs_retained_for_external_review": 50,
+  "broad_reviewed_set_pairs": 38,
+  "broad_reviewed_set_treated_municipalities": 9,
+  "strict_magic_only_candidate_pairs": 32,
+  "strict_magic_only_candidate_treated_municipalities": 7,
+  "high_direct_concurrent_treatments_excluded_from_broad_set": 5,
+  "moderate_direct_treatments_retained_only_in_broad_set": 2,
+  "all_treatments_descriptively_usable": true,
+  "control_external_reviews_completed_for_retained_pairs": 0,
+  "control_external_reviews_still_pending_for_retained_pairs": 50,
+  "parallel_trends_approved": false,
+  "causal_pairs_approved": 0,
+  "decision_counts": {
+    "exclude_broad_and_strict_magic_only_sets": 5,
+    "retain_broad_and_strict_with_capacity_timing_note": 1,
+    "retain_broad_and_strict_with_planning_note": 1,
+    "retain_broad_and_strict_with_regional_policy_note": 1,
+    "retain_broad_and_strict_with_targeted_sensitivity": 4,
+    "retain_broad_exclude_strict_magic_only_set": 2
+  },
+  "input_sha256": {
+    "config/accessibility_treated_external_shock_review.json": "29d811fd02bded90f1f4b7dc78b016d2bcb0001a12b44a0b56216ec58d64a8db",
+    "config/evidence_sources.json": "27dd7f229b4948df08eb16065e0438c66f902f93a41870862b9a7ff909b6175e",
+    "data_processed/accessibility_comparison_internal_risk_screen.csv": "c71f410de3f981d0d6202ebfbf683ce5812220fbcf5fa014a93f9a2bddcc5ddc",
+    "data_processed/hotel_capacity_municipality_month.csv": "d3bfc1c6cee327bd7f8ac010d7f5b43b46f65e61e0fb7343dd2082d63e34ea25"
+  }
+}
