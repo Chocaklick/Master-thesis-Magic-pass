@@ -1,0 +1,38 @@
+{
+  "specification_version": "stage25_v1_predeclared_2026_10_04",
+  "target_scenario_id": "primary_full_24m_post",
+  "target_estimand": "equal_weight_mean_of_treated_stack_post_minus_pre_log_gaps",
+  "inference_checks": {
+    "treated_stack_t_reference": {
+      "description": "Student t reference using the six treated-stack estimates as the effective observations",
+      "degrees_of_freedom_rule": "treated_stack_count_minus_one",
+      "confidence_level": 0.95,
+      "status": "diagnostic_only_because_one_control_is_reused_across_two_stacks"
+    },
+    "connected_component_sign_flip": {
+      "description": "Exact enumeration of joint sign changes over disconnected components of the stack-municipality graph",
+      "component_rule": "two treated stacks belong to the same component whenever they share any municipality; take transitive closure",
+      "test_statistic": "absolute_equal_weight_mean_of_stack_log_gaps",
+      "null": "zero mean component contribution with sign symmetry",
+      "enumeration": "all_two_power_component_count_sign_patterns"
+    }
+  },
+  "methodological_sources": [
+    {
+      "source_id": "CANAY_ROMANO_SHAIKH_APPROXIMATE_SYMMETRY_2017",
+      "citation": "Canay, Romano and Shaikh (2017), Randomization Tests Under an Approximate Symmetry Assumption, Econometrica 85(3), 1013-1030",
+      "url": "https://doi.org/10.3982/ECTA13081"
+    },
+    {
+      "source_id": "MACKINNON_WEBB_WILD_BOOTSTRAP_FEW_CLUSTERS_2018",
+      "citation": "MacKinnon and Webb (2018), The wild bootstrap for few (treated) clusters, The Econometrics Journal 21(2), 114-135",
+      "url": "https://doi.org/10.1111/ectj.12107"
+    }
+  ],
+  "protected_interpretation": {
+    "causal_estimation_approved": false,
+    "causal_effect_claim_allowed": false,
+    "sign_flip_is_random_assignment_test": false,
+    "required_label": "small_cluster_inference_sensitivity_for_non_causal_pilot"
+  }
+}

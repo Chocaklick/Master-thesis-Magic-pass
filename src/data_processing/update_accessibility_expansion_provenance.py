@@ -230,6 +230,12 @@ TABLES = {
     "accessibility_pilot_treated_decomposition": (
         ROOT / "reports" / "accessibility_pilot_treated_decomposition.csv",
         "DERIVED_ACCESSIBILITY_NONCAUSAL_PILOT_ESTIMATION", "treated municipality and weighted retained controls", "24-month pre/post and truncated-post windows"),
+    "accessibility_pilot_small_cluster_inference": (
+        ROOT / "reports" / "accessibility_pilot_small_cluster_inference.csv",
+        "DERIVED_ACCESSIBILITY_SMALL_CLUSTER_INFERENCE", "primary non-causal pilot specification", "24-month pre/post window"),
+    "accessibility_pilot_inference_components": (
+        ROOT / "reports" / "accessibility_pilot_inference_components.csv",
+        "DERIVED_ACCESSIBILITY_SMALL_CLUSTER_INFERENCE", "connected treated-stack component", "24-month pre/post window"),
 }
 
 
@@ -844,6 +850,68 @@ def derived_sources() -> list[dict]:
         confidence_level="high for deterministic arithmetic and internal replication; low for causal identification",
         manual_verification="Primary coefficient independently reproduced as the equal mean of six stack-specific post-minus-pre log gaps; weights sum to one for treated and one for controls in every stack-month",
         notes="Primary pilot is -6.8 percent, but the conservative control-exclusion sensitivity is -2.0 percent with an interval spanning zero; neither is a causal Magic Pass effect",
+    ))
+    rows.append(source_row(
+        "CANAY_ROMANO_SHAIKH_APPROXIMATE_SYMMETRY_2017",
+        variable_name="approximate_randomization_test|sign_change_symmetry|fixed_number_of_clusters",
+        variable_description="Methodological basis for sign-change tests with a fixed small number of large clusters under an explicit approximate-symmetry condition",
+        source_organisation="Econometrica / The Econometric Society",
+        source_dataset_name="Canay, Romano and Shaikh (2017), Randomization Tests Under an Approximate Symmetry Assumption",
+        source_page_url="https://doi.org/10.3982/ECTA13081",
+        retrieval_method="Methodological publication consulted through DOI metadata and the authors' public paper page",
+        retrieval_date="2026-10-04",
+        geographic_level="methodological reference",
+        temporal_resolution="not applicable",
+        unit="statistical inference method",
+        license="Publisher terms apply",
+        access_conditions="Public bibliographic page; article access depends on publisher terms",
+        transformation_applied="Used to motivate, not validate, the exact connected-component sign-change sensitivity",
+        quality_notes="The project test still requires component independence and sign symmetry; it is not a random treatment-assignment test",
+        confidence_level="peer-reviewed methodological source",
+        manual_verification="Title, authors, journal, volume, pages and DOI checked",
+        notes="Econometrica 85(3), 1013-1030",
+    ))
+    rows.append(source_row(
+        "MACKINNON_WEBB_WILD_BOOTSTRAP_FEW_CLUSTERS_2018",
+        variable_name="few_treated_clusters|cluster_robust_inference_limit|wild_bootstrap_limit",
+        variable_description="Methodological warning that conventional clustered inference and wild-cluster procedures can be unreliable with very few treated clusters",
+        source_organisation="The Econometrics Journal / Royal Economic Society",
+        source_dataset_name="MacKinnon and Webb (2018), The wild bootstrap for few (treated) clusters",
+        source_page_url="https://doi.org/10.1111/ectj.12107",
+        retrieval_method="Methodological publication consulted through publisher and author working-paper pages",
+        retrieval_date="2026-10-04",
+        geographic_level="methodological reference",
+        temporal_resolution="not applicable",
+        unit="statistical inference method",
+        license="Publisher terms apply",
+        access_conditions="Public bibliographic and author working-paper pages",
+        transformation_applied="Used to justify reporting effective treated-unit counts and avoiding a stronger causal or significance claim",
+        quality_notes="The article does not certify any one procedure for the project's selected and partially dependent matched stacks",
+        confidence_level="peer-reviewed methodological source",
+        manual_verification="Title, authors, journal, volume, pages and DOI checked",
+        notes="The Econometrics Journal 21(2), 114-135",
+    ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_SMALL_CLUSTER_INFERENCE",
+        variable_name="treated_stack_t_reference|connected_component_sign_flip|effective_treated_stack_count|component_dependence",
+        variable_description="Predeclared small-effective-sample inference sensitivity for the primary non-causal accessibility pilot",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility pilot small-cluster inference audit",
+        retrieval_method="Deterministic Python reconstruction of treated-stack contrasts and exhaustive component sign enumeration",
+        retrieval_date="2026-10-04",
+        local_raw_file="config/accessibility_small_cluster_inference.json|data_processed/accessibility_pilot_stacked_panel.csv|reports/accessibility_pilot_did_estimates.csv",
+        processed_file="reports/accessibility_pilot_small_cluster_inference.csv|reports/accessibility_pilot_inference_components.csv|reports/accessibility_pilot_small_cluster_inference_summary.json|reports/72_INFERENCE_PETIT_NOMBRE_COMMUNES_FR.md",
+        geographic_level="treated municipality stack and connected stack-municipality component",
+        temporal_resolution="monthly event time from -24 to +23 summarized as stack-level pre/post contrasts",
+        temporal_start="2015-11", temporal_end="2019-10",
+        unit="log hotel overnight contrast, descriptive percent conversion, p-value and component",
+        license="Derived analytical data; upstream source terms continue to apply",
+        access_conditions="Local reproducible output",
+        transformation_applied="Reproduce six equal-weight treated-stack DiD gaps; compute a Student-t reference with five degrees of freedom; link stacks sharing any municipality; enumerate every joint component sign pattern",
+        quality_notes="Only five disconnected components remain after respecting the reused Emmen control. The t reference approximates stack independence; the sign test assumes independence and sign symmetry across graph components and is not random-assignment inference. No causal approval.",
+        confidence_level="high for deterministic arithmetic; low for causal identification and limited for inferential power",
+        manual_verification="Stage-24 coefficient reproduced exactly; Bulle and Gruyères linked through BFS 1024; all 32 component sign patterns enumerated",
+        notes="The normal clustered result is not robust to effective-sample inference: treated-stack t and connected-component sign sensitivities both include or fail to reject zero",
     ))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())

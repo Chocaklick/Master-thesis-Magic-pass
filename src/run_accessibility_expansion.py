@@ -31,6 +31,7 @@ SCRIPTS = [
     "src/causal_inference/screen_accessibility_pair_spillovers.py",
     "src/causal_inference/audit_accessibility_parallel_trends.py",
     "src/causal_inference/estimate_accessibility_pilot.py",
+    "src/causal_inference/audit_accessibility_small_cluster_inference.py",
     "src/data_processing/update_accessibility_expansion_provenance.py",
     "src/data_processing/update_provenance.py",
 ]

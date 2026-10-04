@@ -458,6 +458,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** The method still requires a defensible comparison group and an explicit parallel-trends assumption; its availability does not identify the present design.
 - **Local raw file:** `config/methodological_literature.json`.
 
+## CANAY_ROMANO_SHAIKH_APPROXIMATE_SYMMETRY_2017 — Canay, Romano and Shaikh (2017), Randomization Tests Under an Approximate Symmetry Assumption
+
+- **Contents and relevance:** Methodological basis for sign-change tests with a fixed small number of large clusters under an explicit approximate-symmetry condition
+- **Producer:** Econometrica / The Econometric Society
+- **Exact URL:** https://doi.org/10.3982/ECTA13081
+- **Access and retrieval date:** Methodological publication consulted through DOI metadata and the authors' public paper page; 2026-10-04.
+- **Variables:** approximate_randomization_test|sign_change_symmetry|fixed_number_of_clusters
+- **Transformations:** Used to motivate, not validate, the exact connected-component sign-change sensitivity
+- **Coverage:** methodological reference; not applicable; ? to ?.
+- **Limitations:** The project test still requires component independence and sign symmetry; it is not a random treatment-assignment test
+- **Local raw file:** `not cached / not applicable`.
+
 ## CHATEAU_DOEX_LA_BRAYE_2018 — Official destination or municipal scope page
 
 - **Contents and relevance:** Official municipal preavis 17/2018 documenting the La Braye lift assets and the Télé-Château-d'Oex operator lineage
@@ -601,6 +613,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** provisional comparison municipality and treated-control comparison pair; November 2017 anchor with November 2015 to October 2019 review window; 2015-11 to 2019-10.
 - **Limitations:** All surviving strict controls have a local review, but document review cannot prove shock absence or identify an effect. Visitor-market spillovers and parallel trends remain pending; zero causal approvals.
 - **Local raw file:** `config/accessibility_remaining_control_external_shock_review.json|config/evidence_sources.json|data_external/source_evidence|data_processed/accessibility_comparison_high_leverage_control_external_risk_screen.csv|data_processed/hotel_capacity_municipality_month.csv`.
+
+## DERIVED_ACCESSIBILITY_SMALL_CLUSTER_INFERENCE — Accessibility pilot small-cluster inference audit
+
+- **Contents and relevance:** Predeclared small-effective-sample inference sensitivity for the primary non-causal accessibility pilot
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic Python reconstruction of treated-stack contrasts and exhaustive component sign enumeration; 2026-10-04.
+- **Variables:** treated_stack_t_reference|connected_component_sign_flip|effective_treated_stack_count|component_dependence
+- **Transformations:** Reproduce six equal-weight treated-stack DiD gaps; compute a Student-t reference with five degrees of freedom; link stacks sharing any municipality; enumerate every joint component sign pattern
+- **Coverage:** treated municipality stack and connected stack-municipality component; monthly event time from -24 to +23 summarized as stack-level pre/post contrasts; 2015-11 to 2019-10.
+- **Limitations:** Only five disconnected components remain after respecting the reused Emmen control. The t reference approximates stack independence; the sign test assumes component-level sign symmetry and is not random-assignment inference. No causal approval.
+- **Local raw file:** `config/accessibility_small_cluster_inference.json|data_processed/accessibility_pilot_stacked_panel.csv|reports/accessibility_pilot_did_estimates.csv`.
 
 ## DERIVED_ACCESSIBILITY_STATION_GROUPS — Accessibility expansion station-group registry
 
@@ -1633,6 +1657,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** unknown geography; unknown time resolution; ? to ?.
 - **Limitations:** See reports/data_audit_details.json; upstream provenance requires verification
 - **Local raw file:** `data_raw/stations_ski_clusters_resume_gps_bergfex.csv`.
+
+## MACKINNON_WEBB_WILD_BOOTSTRAP_FEW_CLUSTERS_2018 — MacKinnon and Webb (2018), The wild bootstrap for few (treated) clusters
+
+- **Contents and relevance:** Methodological warning that conventional clustered inference and wild-cluster procedures can be unreliable with very few treated clusters
+- **Producer:** The Econometrics Journal / Royal Economic Society
+- **Exact URL:** https://doi.org/10.1111/ectj.12107
+- **Access and retrieval date:** Methodological publication consulted through publisher and author working-paper pages; 2026-10-04.
+- **Variables:** few_treated_clusters|cluster_robust_inference_limit|wild_bootstrap_limit
+- **Transformations:** Used to justify reporting effective treated-unit counts and avoiding a stronger causal or significance claim
+- **Coverage:** methodological reference; not applicable; ? to ?.
+- **Limitations:** The article does not certify any one procedure for the project's selected and partially dependent matched stacks
+- **Local raw file:** `not cached / not applicable`.
 
 ## MAGIC_2017 — Official Magic Pass press material
 

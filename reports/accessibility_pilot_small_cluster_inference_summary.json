@@ -1,0 +1,43 @@
+{
+  "specification_version": "stage25_v1_predeclared_2026_10_04",
+  "scenario_id": "primary_full_24m_post",
+  "estimate_log_points": -0.0705708670599748,
+  "estimate_percent_change": -0.06813830111312826,
+  "treated_stack_count": 6,
+  "municipality_cluster_count": 16,
+  "connected_component_count": 5,
+  "reused_linking_municipality_bfs_ids": [
+    1024
+  ],
+  "normal_reference_two_sided_p_value": 0.010455837203348306,
+  "treated_stack_t_two_sided_p_value": 0.09888119400825035,
+  "treated_stack_t_ci95_percent_change": [
+    -0.14803108559561404,
+    0.019246372925946803
+  ],
+  "component_sign_flip_two_sided_p_value": 0.1875,
+  "component_sign_flip_sign_patterns": 32,
+  "component_sign_flip_minimum_two_sided_p_value": 0.0625,
+  "causal_estimation_approved": false,
+  "causal_effect_claim_allowed": false,
+  "sign_flip_is_random_assignment_test": false,
+  "conclusion": "The negative pilot mean is not robustly distinguishable from zero under the small-effective-sample reference checks and remains non-causal exploratory evidence.",
+  "input_sha256": {
+    "config/accessibility_small_cluster_inference.json": "43795ffe1b5242672b242e00208c718207606d0cbcec61c4029eb7830a131ea7",
+    "data_processed/accessibility_pilot_stacked_panel.csv": "42505140c1baa4084615e225187691881e0770175e48f0301a1ff8b40018d4c2",
+    "reports/accessibility_pilot_did_estimates.csv": "0db50fa35a76a826519b5f5f6547a0c34831c0781acf1cea0b13b1aa9e99be8b"
+  },
+  "methodological_sources": [
+    {
+      "source_id": "CANAY_ROMANO_SHAIKH_APPROXIMATE_SYMMETRY_2017",
+      "citation": "Canay, Romano and Shaikh (2017), Randomization Tests Under an Approximate Symmetry Assumption, Econometrica 85(3), 1013-1030",
+      "url": "https://doi.org/10.3982/ECTA13081"
+    },
+    {
+      "source_id": "MACKINNON_WEBB_WILD_BOOTSTRAP_FEW_CLUSTERS_2018",
+      "citation": "MacKinnon and Webb (2018), The wild bootstrap for few (treated) clusters, The Econometrics Journal 21(2), 114-135",
+      "url": "https://doi.org/10.1111/ectj.12107"
+    }
+  ],
+  "source_id": "DERIVED_ACCESSIBILITY_SMALL_CLUSTER_INFERENCE"
+}
