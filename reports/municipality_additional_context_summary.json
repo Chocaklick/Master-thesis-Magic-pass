@@ -1,0 +1,50 @@
+{
+  "property_price_rows": 684,
+  "investments_8_category_rows": 783,
+  "investments_3_category_rows": 1044,
+  "tourism_satellite_rows": 2304,
+  "tourism_satellite_sheet_heading_mismatches": [
+    {
+      "sheet": "2024",
+      "original_heading": "Valeur ajoutée brute, dépenses et emploi dans le tourism en 2023 2)"
+    }
+  ],
+  "researcher_request_date": "2026-10-05",
+  "aggregated_series_authorised": true,
+  "sources_already_integrated_at_initial_audit": false,
+  "municipality_typology_rows": 2110,
+  "analytical_territories": 185,
+  "typology_territory_coverage": 185,
+  "construction_rows": 11040,
+  "construction_territories": 184,
+  "baseline_rows": 1295,
+  "construction_baseline_available": 1288,
+  "construction_missing_territories": [
+    6513
+  ],
+  "causal_covariate_approved": false,
+  "pre_treatment_matching_approved": false,
+  "imputation_applied": false,
+  "source_panel_sha256": "234a23ddb6c9065ab22ca2b5edc1e9d1132d281f9f3647523e63664b66658dea",
+  "input_files": {
+    "BFS_MUNICIPAL_TYPOLOGY_2020_SNAPSHOT_2026": "51240131a247d1cd9909b9e4bf764375753b6e856052658852c23f8f94b0dd23",
+    "BFS_NEW_RESIDENTIAL_BUILDINGS_DATA": "c17400b5fc41695844a82846657db32931aaa0c170a73add547151f343c17d53",
+    "BFS_IMPI_INDEX_VALUES_2017_2026Q2": "c83b58aa279bcee4ff8159a8d8861a13319ea3bab055d5c0b78d2081a44378c0",
+    "BFS_TOURISM_INVESTMENTS_8_CATEGORIES_2023": "0bce26e1e097c3f056a30da37cecf7f6e4966317d45e56f9e4658685701cd00b",
+    "BFS_TOURISM_INVESTMENTS_ALPINE_2023": "de0fd9c72440da15b633df1f49aa7b9c1985bdde2786c3690f8e26aa371dda31",
+    "BFS_TOURISM_SATELLITE_VALUES_2024": "a541a0e272f9eae491698de8c3d431d806a948b2c6e2d66cecffd848c03e767b",
+    "BFS_TOURISM_SATELLITE_SHARES_2024": "8e1b2f565ef8e9766459d3d198587128cd8fc847ae12e2f388a9bed2e1a494a0"
+  },
+  "outputs": {
+    "municipality_typology_2020_snapshot_2026": 2110,
+    "municipality_new_residential_buildings_year": 11040,
+    "municipality_comparison_context_2026": 185,
+    "municipality_new_buildings_cohort_baseline_audit": 1295,
+    "bfs_residential_property_price_index_quarter": 684,
+    "bfs_tourism_investments_tourist_municipalities_year": 783,
+    "bfs_tourism_investments_alpine_context_year": 1044,
+    "bfs_tourism_satellite_national_context_year": 2304
+  },
+  "total_sources": 250,
+  "total_dictionary_rows": 5910
+}

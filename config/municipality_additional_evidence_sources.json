@@ -1,0 +1,107 @@
+[
+  {
+    "source_id": "BFS_MUNICIPAL_TYPOLOGY_2020_SNAPSHOT_2026",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "Municipality typology 2020; official municipal state 2026-01-01",
+    "url": "https://www.agvchapp.bfs.admin.ch/fr/typologies/results?SnapshotDate=01.01.2026&SelectedTypologies%5B0%5D=HR_GDETYP2020",
+    "suffix": "html"
+  },
+  {
+    "source_id": "BFS_MUNICIPAL_TYPOLOGY_2020_METHOD",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "Official explanation of municipality typology 2020",
+    "url": "https://www.swissstats.bfs.admin.ch/data/webviewer/appId/ch.admin.bfs.swissstat/article/issue242122982000-05/package",
+    "suffix": "html"
+  },
+  {
+    "source_id": "BFS_RESIDENTIAL_PROPERTY_PRICE_PAGE",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "User-supplied residential property price landing page",
+    "url": "https://www.bfs.admin.ch/bfs/fr/home/statistiques/prix/prix-immobilier.html",
+    "suffix": "html"
+  },
+  {
+    "source_id": "BFS_NEW_RESIDENTIAL_BUILDINGS_METADATA",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "PXWeb metadata for new buildings with dwellings since 2013",
+    "url": "https://www.pxweb.bfs.admin.ch/api/v1/fr/px-x-0904030000_106/px-x-0904030000_106.px",
+    "suffix": "json"
+  },
+  {
+    "source_id": "BFS_CATALOGUE_GNP_2025_0367",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "User-supplied catalogue page; identity to verify from content",
+    "url": "https://www.bfs.admin.ch/bfs/fr/home/statistiques/catalogues-banques-donnees.gnpdetail.2025-0367.html",
+    "suffix": "html"
+  },
+  {
+    "source_id": "BFS_TOURISM_INVESTMENTS_8_CATEGORIES_2023",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "Investments in tourist municipalities by eight structure categories, published 2025-11-17",
+    "url": "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36217219/master",
+    "suffix": "xlsx"
+  },
+  {
+    "source_id": "BFS_TOURISM_INVESTMENTS_ALPINE_2023",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "Investments in alpine cantons and tourist municipalities by three structure categories, published 2025-11-17",
+    "url": "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36217222/master",
+    "suffix": "xlsx"
+  },
+  {
+    "source_id": "BFS_NEW_RESIDENTIAL_BUILDINGS_TABLE_NOTES",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "Official construction cube footnotes and spatial reference",
+    "url": "https://www.pxweb-admin-a.bfs.admin.ch/pxweb/fr/px-x-0904030000_106/-/px-x-0904030000_106.px/",
+    "suffix": "html"
+  },
+  {
+    "source_id": "BFS_IMPI_GRAPH_METADATA",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "Residential price index graph metadata and linked data",
+    "url": "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36753648",
+    "suffix": "json"
+  },
+  {
+    "source_id": "BFS_IMPI_VISUALISATION_CLIENT",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "Official client for linked price index data visualisation",
+    "url": "https://viz.bfs.admin.ch/libs/viz-bfs/dynvis/dynvis-v0.9/dynvis.min.js",
+    "suffix": "js"
+  },
+  {
+    "source_id": "BFS_TOURISM_SATELLITE_VALUES_2024",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "Tourism value added, demand and employment 2001-2024",
+    "url": "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36217227/master",
+    "suffix": "xlsx"
+  },
+  {
+    "source_id": "BFS_TOURISM_SATELLITE_SHARES_2024",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "Tourism share of national value added and employment 2001-2024",
+    "url": "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36217232/master",
+    "suffix": "xlsx"
+  },
+  {
+    "source_id": "BFS_IMPI_PACKAGE_2026_Q2",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "Official July 2026 residential property price publication package",
+    "url": "https://dam-api.bfs.admin.ch/hub/api/dam/packages/2026-0320",
+    "suffix": "json"
+  },
+  {
+    "source_id": "BFS_IMPI_PACKAGE_ASSETS_2026_Q2",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "Linked official IMPI package asset inventory",
+    "url": "https://dam-api.bfs.admin.ch/hub/api/dam/packages/2026-0320/assets/de",
+    "suffix": "json"
+  },
+  {
+    "source_id": "BFS_IMPI_INDEX_VALUES_2017_2026Q2",
+    "organisation": "Swiss Federal Statistical Office",
+    "description": "Residential property price index total and subindices 2017 Q1-2026 Q2; multilingual original",
+    "url": "https://dam-api.bfs.admin.ch/hub/api/dam/assets/36754186/master",
+    "suffix": "xlsx"
+  }
+]

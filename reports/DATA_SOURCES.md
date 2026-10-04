@@ -2738,6 +2738,210 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** A source can document a control-side competing shock but cannot by itself identify its effect on hotel overnight stays
 - **Local raw file:** `data_external/source_evidence/WINTERTHUR_HOUSE_OF_WINTERTHUR_2017_20261003T152250Z.html`.
 
+## BFS_CATALOGUE_GNP_2025_0367 — User-supplied catalogue page; identity to verify from content
+
+- **Contents and relevance:** User-supplied catalogue page; identity to verify from content
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://www.bfs.admin.ch/bfs/fr/home/statistiques/catalogues-banques-donnees.gnpdetail.2025-0367.html
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:49:13.950373+00:00.
+- **Variables:** Dataset-level record.
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** source discovery / documentation; retrieved source snapshot; ? to ?.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_CATALOGUE_GNP_2025_0367_20261004T224913Z.html`.
+
+## BFS_IMPI_GRAPH_METADATA — Residential price index graph metadata and linked data
+
+- **Contents and relevance:** Residential price index graph metadata and linked data
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://dam-api.bfs.admin.ch/hub/api/dam/assets/36753648
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:56:37.855116+00:00.
+- **Variables:** Dataset-level record.
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** source discovery / documentation; retrieved source snapshot; ? to ?.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_IMPI_GRAPH_METADATA_20261004T225637Z.json`.
+
+## BFS_IMPI_INDEX_VALUES_2017_2026Q2 — Residential property price index total and subindices 2017 Q1-2026 Q2; multilingual original
+
+- **Contents and relevance:** Residential property price index total and subindices 2017 Q1-2026 Q2; multilingual original
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://dam-api.bfs.admin.ch/hub/api/dam/assets/36754186/master
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:59:07.013027+00:00.
+- **Variables:** causal_covariate_approved|geographic_scope|municipality_mapping_approved|municipality_type_code|property_type_code|property_type_label_fr|publication_date|quarter|quarter_start|scope_id|source_cell|source_id|source_sheet|source_token|unit|value|year
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** Switzerland and five aggregated municipality types; 2017 Q1-2026 Q2; 2017 Q1 to 2026 Q2.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_IMPI_INDEX_VALUES_2017_2026Q2_20261004T225907Z.xlsx`.
+
+## BFS_IMPI_PACKAGE_2026_Q2 — Official July 2026 residential property price publication package
+
+- **Contents and relevance:** Official July 2026 residential property price publication package
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://dam-api.bfs.admin.ch/hub/api/dam/packages/2026-0320
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:57:43.132672+00:00.
+- **Variables:** Dataset-level record.
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** source discovery / documentation; retrieved source snapshot; ? to ?.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_IMPI_PACKAGE_2026_Q2_20261004T225743Z.json`.
+
+## BFS_IMPI_PACKAGE_ASSETS_2026_Q2 — Linked official IMPI package asset inventory
+
+- **Contents and relevance:** Linked official IMPI package asset inventory
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://dam-api.bfs.admin.ch/hub/api/dam/packages/2026-0320/assets/de
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:58:19.767317+00:00.
+- **Variables:** Dataset-level record.
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** source discovery / documentation; retrieved source snapshot; ? to ?.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_IMPI_PACKAGE_ASSETS_2026_Q2_20261004T225819Z.json`.
+
+## BFS_IMPI_VISUALISATION_CLIENT — Official client for linked price index data visualisation
+
+- **Contents and relevance:** Official client for linked price index data visualisation
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://viz.bfs.admin.ch/libs/viz-bfs/dynvis/dynvis-v0.9/dynvis.min.js
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:56:39.162755+00:00.
+- **Variables:** Dataset-level record.
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** source discovery / documentation; retrieved source snapshot; ? to ?.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_IMPI_VISUALISATION_CLIENT_20261004T225639Z.js`.
+
+## BFS_MUNICIPAL_TYPOLOGY_2020_METHOD — Official explanation of municipality typology 2020
+
+- **Contents and relevance:** Official explanation of municipality typology 2020
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://www.swissstats.bfs.admin.ch/data/webviewer/appId/ch.admin.bfs.swissstat/article/issue242122982000-05/package
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:49:04.488172+00:00.
+- **Variables:** Dataset-level record.
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** source discovery / documentation; retrieved source snapshot; ? to ?.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_MUNICIPAL_TYPOLOGY_2020_METHOD_20261004T224904Z.html`.
+
+## BFS_MUNICIPAL_TYPOLOGY_2020_SNAPSHOT_2026 — Municipality typology 2020; official municipal state 2026-01-01
+
+- **Contents and relevance:** Municipality typology 2020; official municipal state 2026-01-01
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://www.agvchapp.bfs.admin.ch/fr/typologies/results?SnapshotDate=01.01.2026&SelectedTypologies%5B0%5D=HR_GDETYP2020
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:48:54.046967+00:00.
+- **Variables:** canton_source|category_label_source_id|district_id_source|district_name_source|municipality_bfs_id|municipality_history_id|municipality_name_source|municipality_snapshot_date|municipality_type_25_code|municipality_type_25_label_fr|municipality_type_9_code|municipality_type_9_label_fr|pre_treatment_matching_approved|source_id|tourist_category_2020|typology_input_period_note|typology_reference_version|urban_rural_code|urban_rural_label_fr
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** municipality; 2020 typology; 2026-01-01 administrative snapshot; 2020 to 2026-01-01.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_MUNICIPAL_TYPOLOGY_2020_SNAPSHOT_2026_20261004T224854Z.html`.
+
+## BFS_NEW_RESIDENTIAL_BUILDINGS_DATA — New completed buildings with dwellings; all five types for the existing territorial universe
+
+- **Contents and relevance:** New completed buildings with dwellings; all five types for the existing territorial universe
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://www.pxweb.bfs.admin.ch/api/v1/fr/px-x-0904030000_106/px-x-0904030000_106.px
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:54:56+00:00.
+- **Variables:** building_type_code|building_type_label_source|causal_covariate_approved|municipality_bfs_id|municipality_name_source|new_residential_buildings|new_residential_buildings_source_token|source_id|source_municipality_bfs_id|source_spatial_reference_date|territorial_harmonisation_applied|territorial_mutation_source_id|year
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** municipality on fixed 2024 spatial reference; calendar year 2013-2024; 2013 to 2024.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_NEW_RESIDENTIAL_BUILDINGS_DATA_20261004T225456Z.csv`.
+
+## BFS_NEW_RESIDENTIAL_BUILDINGS_METADATA — PXWeb metadata for new buildings with dwellings since 2013
+
+- **Contents and relevance:** PXWeb metadata for new buildings with dwellings since 2013
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://www.pxweb.bfs.admin.ch/api/v1/fr/px-x-0904030000_106/px-x-0904030000_106.px
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:49:12.380636+00:00.
+- **Variables:** Dataset-level record.
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** source discovery / documentation; retrieved source snapshot; ? to ?.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_NEW_RESIDENTIAL_BUILDINGS_METADATA_20261004T224912Z.json`.
+
+## BFS_NEW_RESIDENTIAL_BUILDINGS_TABLE_NOTES — Official construction cube footnotes and spatial reference
+
+- **Contents and relevance:** Official construction cube footnotes and spatial reference
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://www.pxweb-admin-a.bfs.admin.ch/pxweb/fr/px-x-0904030000_106/-/px-x-0904030000_106.px/
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:54:17.292276+00:00.
+- **Variables:** Dataset-level record.
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** source discovery / documentation; retrieved source snapshot; ? to ?.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_NEW_RESIDENTIAL_BUILDINGS_TABLE_NOTES_20261004T225417Z.html`.
+
+## BFS_RESIDENTIAL_PROPERTY_PRICE_PAGE — User-supplied residential property price landing page
+
+- **Contents and relevance:** User-supplied residential property price landing page
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://www.bfs.admin.ch/bfs/fr/home/statistiques/prix/prix-immobilier.html
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:49:06.034577+00:00.
+- **Variables:** Dataset-level record.
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** source discovery / documentation; retrieved source snapshot; ? to ?.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_RESIDENTIAL_PROPERTY_PRICE_PAGE_20261004T224906Z.html`.
+
+## BFS_TOURISM_INVESTMENTS_8_CATEGORIES_2023 — Investments in tourist municipalities by eight structure categories, published 2025-11-17
+
+- **Contents and relevance:** Investments in tourist municipalities by eight structure categories, published 2025-11-17
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://dam-api.bfs.admin.ch/hub/api/dam/assets/36217219/master
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:51:55.944116+00:00.
+- **Variables:** causal_covariate_approved|construction_work_type|geographic_scope|publication_date|resident_project_owners_only|scope_id|source_cell|source_id|source_sheet|source_token|structure_category_code|structure_category_label_source|unit|value|year
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** aggregate of tourist municipalities defined by 2020 typology; 1995-2023 annual; November 2025 vintage; 1995 to 2023.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_TOURISM_INVESTMENTS_8_CATEGORIES_2023_20261004T225155Z.xlsx`.
+
+## BFS_TOURISM_INVESTMENTS_ALPINE_2023 — Investments in alpine cantons and tourist municipalities by three structure categories, published 2025-11-17
+
+- **Contents and relevance:** Investments in alpine cantons and tourist municipalities by three structure categories, published 2025-11-17
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://dam-api.bfs.admin.ch/hub/api/dam/assets/36217222/master
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:51:57.339366+00:00.
+- **Variables:** causal_covariate_approved|geographic_scope|metric_label_source|publication_date|resident_project_owners_only|scope_id|source_cell|source_id|source_sheet|source_token|structure_category_code|structure_category_label_source|unit|value|year
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** tourist municipality aggregate plus cantons GR/UR/VS; 1995-2023 annual; November 2025 vintage; 1995 to 2023.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_TOURISM_INVESTMENTS_ALPINE_2023_20261004T225157Z.xlsx`.
+
+## BFS_TOURISM_SATELLITE_SHARES_2024 — Tourism share of national value added and employment 2001-2024
+
+- **Contents and relevance:** Tourism share of national value added and employment 2001-2024
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://dam-api.bfs.admin.ch/hub/api/dam/assets/36217232/master
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:56:41.563955+00:00.
+- **Variables:** causal_covariate_approved|geographic_scope|metric_label_source|original_sheet_heading|product_label_source|provisional|publication_date|scope_id|source_cell|source_id|source_sheet|source_token|unit|value|vintage_note|year|year_basis
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** Switzerland; products and national shares; 2001-2024 annual; November 2025 vintage; 2001 to 2024.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_TOURISM_SATELLITE_SHARES_2024_20261004T225641Z.xlsx`.
+
+## BFS_TOURISM_SATELLITE_VALUES_2024 — Tourism value added, demand and employment 2001-2024
+
+- **Contents and relevance:** Tourism value added, demand and employment 2001-2024
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://dam-api.bfs.admin.ch/hub/api/dam/assets/36217227/master
+- **Access and retrieval date:** Public HTTP GET or PXWeb POST; immutable local response with SHA-256; source-linked offline extraction; 2026-10-04T22:56:40.360652+00:00.
+- **Variables:** causal_covariate_approved|geographic_scope|metric_label_source|original_sheet_heading|product_label_source|provisional|publication_date|scope_id|source_cell|source_id|source_sheet|source_token|unit|value|vintage_note|year|year_basis
+- **Transformations:** Original labels, codes and tokens retained; long reshaping. See report 80 and reproducible builder
+- **Coverage:** Switzerland; products and national shares; 2001-2024 annual; November 2025 vintage; 2001 to 2024.
+- **Limitations:** Context only; no causal covariate or matching approval. Source vintages and geographic scope are retained
+- **Local raw file:** `data_external/source_evidence/BFS_TOURISM_SATELLITE_VALUES_2024_20261004T225640Z.xlsx`.
+
+## DERIVED_MUNICIPALITY_ADDITIONAL_BFS_CONTEXT — Additional BFS municipality context
+
+- **Contents and relevance:** Separate current municipal context and pre-entry construction availability audit; no automatic selection
+- **Producer:** Thesis reproducible pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic offline Python; unknown date.
+- **Variables:** Dataset-level record.
+- **Transformations:** Exact BFS ID joins; approved Moutier 700/6831 bridge; no other fusion; no imputation
+- **Coverage:** 185 approved analytical territories; 1295 territory-cohort rows; current descriptive snapshot and previous complete year; ? to ?.
+- **Limitations:** Latena missing for 2024 construction geography; typology uses post-entry HESTA for early cohorts; no matching approval
+- **Local raw file:** `not cached / not applicable`.
+
 ## Outstanding provenance gaps
 
 - The retrieval date of the supplied Bergfex and hotel CSV extracts is unknown.
