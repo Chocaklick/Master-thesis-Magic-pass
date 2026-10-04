@@ -1,0 +1,19 @@
+{
+  "specification_version": "stage28_v1_option_C_dual_donor_sets_2026_10_04",
+  "researcher_approved_option": "C",
+  "approval_date": "2026-10-04",
+  "accessibility_threshold_minutes": 120,
+  "accessibility_interpretation": "Current scheduled-public-transport accessibility is held fixed over historical cohorts; this defines the comparison audit but does not validate historical access.",
+  "primary_donor_rule": "not_yet_exposed_at_focal_cohort_or_never_exposed_in_current_120min_matrix",
+  "not_yet_exposed_donor_censoring_rule": "use_outcomes_strictly_before_own_first_exposure_month_only",
+  "sensitivity_donor_rule": "never_exposed_in_current_120min_matrix_only",
+  "already_exposed_donor_rule": "exclude_from_donor_sets",
+  "same_cohort_treated_rule": "retain_as_treated_not_as_donor",
+  "foreign_share_interaction_rule": "supplementary_complete_case_sensitivity_only",
+  "outcome_window_selected": false,
+  "comparability_screen_selected": false,
+  "estimator_selected": false,
+  "analysis_sample_selected": false,
+  "causal_estimation_approved": false,
+  "required_label": "approved_cohort_comparison_candidate_universe_not_estimation_sample"
+}

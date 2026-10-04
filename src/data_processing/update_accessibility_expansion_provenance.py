@@ -262,6 +262,12 @@ TABLES = {
     "accessibility_covid_foreign_share_reconstruction": (
         ROOT / "config" / "accessibility_covid_foreign_share_reconstruction.csv",
         "DERIVED_ACCESSIBILITY_COVID_SPECIFICATION", "current municipality by official predecessor component", "official municipality mutation and checked HESTA archive availability"),
+    "accessibility_cohort_comparison_universe": (
+        ROOT / "reports" / "accessibility_cohort_comparison_universe.csv",
+        "DERIVED_ACCESSIBILITY_COHORT_COMPARISON_RULE", "hotel municipality by focal first-exposure cohort", "approved donor roles at the cohort anchor and future-exposure exit month"),
+    "accessibility_cohort_comparison_by_cohort": (
+        ROOT / "reports" / "accessibility_cohort_comparison_by_cohort.csv",
+        "DERIVED_ACCESSIBILITY_COHORT_COMPARISON_RULE", "focal first-exposure cohort", "approved primary and sensitivity donor counts"),
 }
 
 
@@ -316,6 +322,29 @@ DESCRIPTIONS = {
     "primary_non_interacted_candidate_universe_retained": "Whether the row remains in the candidate universe for the primary analysis that does not require the foreign-share interaction",
     "foreign_share_interaction_sensitivity_complete_case_candidate": "Whether the approved foreign-client share is available for the supplementary complete-case interaction sensitivity",
     "foreign_share_interaction_sensitivity_exclusion_reason": "Reason the row cannot enter the supplementary foreign-share interaction sensitivity while remaining available to the primary non-interacted candidate universe",
+    "treated_in_focal_cohort": "Whether the municipality becomes exposed for the first time in the focal cohort",
+    "primary_donor_candidate_at_anchor": "Whether the municipality is never exposed or not yet exposed at the focal cohort anchor under the approved primary donor rule",
+    "sensitivity_never_exposed_donor_candidate": "Whether the municipality is never exposed in the current 120-minute matrix and can enter the approved donor sensitivity",
+    "primary_comparison_universe_candidate": "Whether the row is treated in the focal cohort or belongs to its approved primary donor candidate set",
+    "sensitivity_comparison_universe_candidate": "Whether the row is treated in the focal cohort or belongs to its never-exposed donor sensitivity set",
+    "primary_comparison_role": "Treated, not-yet-exposed donor, never-exposed donor or already-exposed exclusion under the primary comparison rule",
+    "sensitivity_comparison_role": "Treated, never-exposed donor, not-yet-exposed exclusion or already-exposed exclusion under the sensitivity rule",
+    "primary_donor_use_end_exclusive": "First month that a not-yet-exposed primary donor can no longer contribute control outcomes because its own exposure starts",
+    "primary_donor_month_rule": "Rule limiting the months that the row can contribute as a primary donor",
+    "comparison_group_rule_selected": "Whether the stage-28 primary and sensitivity donor definitions have been approved by the researcher",
+    "outcome_window_selected": "Whether a stage-28 outcome horizon has been approved",
+    "comparability_screen_selected": "Whether a comparability diagnostic and threshold rule has been approved for the cohort donor candidates",
+    "estimator_selected": "Whether an expanded staggered-adoption estimator has been approved",
+    "municipality_rows": "Number of municipality rows retained at the focal cohort anchor",
+    "treated_municipalities": "Number of municipalities first exposed in the focal cohort",
+    "primary_donor_municipalities": "Number of not-yet-exposed plus never-exposed donor candidates at the focal cohort anchor",
+    "primary_not_yet_exposed_donors": "Number of primary donor candidates that become exposed in a later cohort",
+    "primary_never_exposed_donors": "Number of primary donor candidates never exposed in the current 120-minute matrix",
+    "sensitivity_never_exposed_donors": "Number of never-exposed donor candidates in the approved sensitivity set",
+    "excluded_already_exposed_municipalities": "Number of municipalities excluded from donor roles because exposure began before the focal cohort",
+    "treated_with_foreign_share": "Number of focal-cohort treated municipalities with the approved foreign-client characteristic available",
+    "primary_donors_with_foreign_share": "Number of primary donor candidates with the approved foreign-client characteristic available",
+    "sensitivity_donors_with_foreign_share": "Number of never-exposed sensitivity donors with the approved foreign-client characteristic available",
     "target_bfs_id": "BFS identifier of the current municipality whose historical characteristic is audited",
     "target_name": "Official current municipality name retained for the reconstruction audit",
     "predecessor_bfs_id": "Official BFS identifier of a municipality required to reconstruct the current territory",
@@ -1107,7 +1136,29 @@ def derived_sources() -> list[dict]:
         quality_notes="The selected file retains every row. Moutier is reconstructed exactly through official identifier continuity. Blonay-Saint-Légier, Val de Bagnes and Laténa remain missing because the checked public archive lacks at least one required fusion component. They are excluded only from the foreign-share interaction sensitivity, not the primary non-interacted candidate universe. No imputation, partial fusion aggregation, comparison group or estimator is used.",
         confidence_level="high for deterministic dates and availability arithmetic; no causal identification approval",
         manual_verification="1,302 rows retained in the primary non-interacted candidate universe; seven Moutier cohort rows reconstructed; 1,268 rows and 77 of 80 first-exposed municipalities are complete-case candidates for the interaction sensitivity; all cutoffs precede pandemic and own first exposure",
-        notes="Residual-missingness option A was explicitly approved. The three unresolved fusion histories remain missing and are excluded only from the interaction sensitivity; stage-28 comparison design requires separate approval.",
+        notes="Residual-missingness option A was explicitly approved. The three unresolved fusion histories remain missing and are excluded only from the interaction sensitivity; stage-28 comparison rules are registered separately.",
+    ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_COHORT_COMPARISON_RULE",
+        variable_name="treated_in_focal_cohort|primary_donor_candidate_at_anchor|sensitivity_never_exposed_donor_candidate|primary_donor_use_end_exclusive",
+        variable_description="Researcher-approved option C cohort comparison candidate universes",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility cohort comparison option C audit",
+        retrieval_method="Deterministic classification from first accessible exposure month at 120 minutes and the stage-27 municipality-cohort universe",
+        retrieval_date="2026-10-04",
+        local_raw_file="config/accessibility_cohort_comparison.json|reports/accessibility_covid_foreign_share_selected.csv",
+        processed_file="reports/accessibility_cohort_comparison_universe.csv|reports/accessibility_cohort_comparison_by_cohort.csv|reports/accessibility_cohort_comparison_summary.json|reports/75_COMPARAISON_COHORTES_OPTION_C_FR.md",
+        geographic_level="hotel municipality by focal first-exposure cohort",
+        temporal_resolution="cohort anchor with donor exit at own first-exposure month",
+        temporal_start="2017-11", temporal_end="2025-05",
+        unit="municipality-cohort comparison role and donor counts",
+        license="Derived analytical data; upstream source terms continue to apply",
+        access_conditions="Local reproducible output",
+        transformation_applied="At each focal cohort, classify first-exposed municipalities as treated, never-exposed and not-yet-exposed municipalities as primary donor candidates, never-exposed municipalities as sensitivity donors, and already-exposed municipalities as ineligible donors; future-treated donors can contribute only before their own first exposure",
+        quality_notes="The current 120-minute accessibility matrix is held fixed over historical cohorts. Candidate donor status does not establish outcome completeness, comparability, parallel trends, absence of local shocks or causal identification.",
+        confidence_level="high for deterministic classification under the approved current-access rule; no causal identification approval",
+        manual_verification="1,302 municipality-cohort rows retained; 80 first-exposure rows; 106 never-exposed donors in every cohort; primary donor counts decline from 145 to 106 as future-treated municipalities enter",
+        notes="Option C was explicitly approved. Outcome horizon, comparability screen, final sample and estimator remain unselected.",
     ))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())

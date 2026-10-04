@@ -1,0 +1,8 @@
+focal_cohort_month,municipality_rows,treated_municipalities,primary_donor_municipalities,primary_not_yet_exposed_donors,primary_never_exposed_donors,sensitivity_never_exposed_donors,excluded_already_exposed_municipalities,treated_with_foreign_share,primary_donors_with_foreign_share,sensitivity_donors_with_foreign_share,comparison_group_rule_selected,outcome_window_selected,comparability_screen_selected,analysis_sample_selected,estimator_selected,causal_estimation_approved,source_id
+2017-11-01,186,41,145,39,106,106,0,38,140,101,True,False,False,False,False,False,DERIVED_ACCESSIBILITY_COHORT_COMPARISON_RULE
+2018-05-01,186,3,142,36,106,106,41,3,139,103,True,False,False,False,False,False,DERIVED_ACCESSIBILITY_COHORT_COMPARISON_RULE
+2019-05-01,186,3,139,33,106,106,44,3,138,105,True,False,False,False,False,False,DERIVED_ACCESSIBILITY_COHORT_COMPARISON_RULE
+2022-05-01,186,16,123,17,106,106,47,16,122,105,True,False,False,False,False,False,DERIVED_ACCESSIBILITY_COHORT_COMPARISON_RULE
+2023-05-01,186,9,114,8,106,106,63,9,113,105,True,False,False,False,False,False,DERIVED_ACCESSIBILITY_COHORT_COMPARISON_RULE
+2024-05-01,186,5,109,3,106,106,72,5,108,105,True,False,False,False,False,False,DERIVED_ACCESSIBILITY_COHORT_COMPARISON_RULE
+2025-05-01,186,3,106,0,106,106,77,3,105,105,True,False,False,False,False,False,DERIVED_ACCESSIBILITY_COHORT_COMPARISON_RULE
