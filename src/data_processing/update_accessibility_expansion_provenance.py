@@ -289,10 +289,58 @@ TABLES = {
     "accessibility_covid_foreign_share_selected_territorial": (
         ROOT / "reports" / "accessibility_covid_foreign_share_selected_territorial.csv",
         "DERIVED_ACCESSIBILITY_TERRITORIAL_MOUTIER_BRIDGE", "analytical municipality territory by focal cohort", "approved foreign-share baseline without double-counting Moutier"),
+    "accessibility_all_cohort_comparability_municipalities": (
+        ROOT / "reports" / "accessibility_all_cohort_comparability_municipalities.csv",
+        "DERIVED_ACCESSIBILITY_ALL_COHORT_COMPARABILITY_AUDIT", "exposed analytical territory by diagnostic pre-window", "6/12/24/36 pre-entry months without selection"),
+    "accessibility_all_cohort_comparability_pairs": (
+        ROOT / "reports" / "accessibility_all_cohort_comparability_pairs.csv",
+        "DERIVED_ACCESSIBILITY_ALL_COHORT_COMPARABILITY_AUDIT", "exposed territory by approved donor at focal cohort", "existing project 36-month pre-entry diagnostic without selection"),
 }
 
 
 DESCRIPTIONS = {
+    "diagnostic_pre_window_months": "Calendar months requested before focal exposure for descriptive support; not an approved estimation lead window or exclusion rule",
+    "diagnostic_pre_start": "First calendar month of the strictly pre-entry diagnostic window",
+    "diagnostic_pre_end": "Last calendar month before entry included in the diagnostic window",
+    "observed_pre_outcome_months": "Number of observed original overnight outcomes within the requested pre-entry calendar window",
+    "complete_pre_outcome_window": "Whether every requested pre-entry monthly outcome is observed; diagnostic only, not an exclusion gate",
+    "observed_pre_seasonal_calendar_months": "Distinct months of the year represented among observed pre-entry outcomes",
+    "pre_median_hotel_overnights": "Median observed pre-entry hotel overnight count without filling missing months",
+    "pre_seasonally_adjusted_log_trend_monthly": "Descriptive monthly slope of existing log1p over actual calendar time and twelve month-of-year effects; missing if full rank and residual degrees of freedom are unavailable",
+    "pre_trend_diagnostic_status": "Whether the seasonal calendar trend is algebraically calculable, not validation of a linear counterfactual",
+    "pre_observed_hotel_capacity_months": "Number of observed pre-entry monthly available-bed values",
+    "pre_median_hotel_beds_available": "Median original available hotel beds observed before entry",
+    "pre_median_hotel_establishments_open": "Median original count of open hotel establishments observed before entry",
+    "pre_largest_absolute_yoy_bed_change": "Largest absolute available-bed proportional change versus exactly twelve calendar months earlier, using pre-entry observations only and nonzero denominators",
+    "pre_bed_yoy_comparisons": "Number of pre-entry year-on-year bed comparisons with two observed values and a nonzero denominator",
+    "pre_covid_overlap_calendar_months": "Requested pre-entry calendar months overlapping March 2020 through March 2022, retained without exclusion",
+    "primary_donor_candidate_count": "All never-exposed and not-yet-exposed donor candidates approved at this focal cohort, without matching or ranking",
+    "existing_shock_review_available": "Whether an existing external source review exists for this territory; false does not imply absence of a shock",
+    "existing_shock_review_rows": "Number of existing review rows for this territory retained with original context",
+    "existing_shock_review_status": "Original review classification, not revalidated for the new focal window",
+    "existing_shock_review_severity": "Original qualitative reviewed severity, not a new exclusion decision",
+    "existing_shock_review_timing": "Original documented shock timing preserved without converting uncertain timing to fabricated dates",
+    "existing_shock_review_source_ids": "Original registered external evidence source identifiers supporting the inherited review",
+    "existing_shock_review_evidence": "Original source-based evidence note retained verbatim from the existing project review",
+    "existing_shock_review_limits": "Original review limitations or an explicit statement that the territory has not been reviewed",
+    "existing_shock_review_origin_tables": "Existing project evidence tables supplying inherited review rows",
+    "existing_shock_review_applicable_to_focal_window_validated": "Whether inherited review timing and scope have been validated against this focal window; false in this audit",
+    "former_pilot_design_decisions_applied": "Whether former founding-pilot exclusion decisions are applied to expanded cohorts; always false here",
+    "automatic_exclusion_applied": "Whether this descriptive audit excludes any territory or pair automatically; always false",
+    "primary_donor_role": "Approved never-exposed or not-yet-exposed role for this candidate donor at the focal cohort",
+    "paired_pre_observed_months": "Pre-entry calendar months with observed log1p overnight outcomes in both territories",
+    "paired_pre_complete": "Whether both candidate territories have observed outcomes in every requested pre-entry month; not an inclusion gate",
+    "seasonal_profile_calendar_months": "Distinct months of the year represented among paired observed pre-entry outcomes; twelve are required to publish a full-year seasonal-profile distance",
+    "trend_diagnostic_status": "Algebraic availability of the paired seasonally adjusted pre-entry difference slope; not a parallel-trends test",
+    "paired_pre_capacity_observed_months": "Pre-entry calendar months with observed available hotel beds in both territories",
+    "paired_pre_median_treated_beds": "Median available beds in the exposed territory over months with observed capacity in both territories",
+    "paired_pre_median_control_beds": "Median available beds in the candidate donor over the same paired observed pre-entry capacity months",
+    "paired_pre_median_bed_ratio_treated_to_control": "Ratio of exposed-territory to donor median available beds over paired observed pre-entry capacity months; missing for a nonpositive or missing donor denominator",
+    "treated_existing_shock_review_available": "Whether an inherited external review exists for the exposed territory, without validating applicability to this cohort",
+    "control_existing_shock_review_available": "Whether an inherited external review exists for the donor territory, without validating applicability to this cohort",
+    "control_existing_shock_review_status": "Original donor review classification; inherited pilot exclusion decisions are not applied",
+    "control_existing_shock_review_source_ids": "Original registered evidence source identifiers supporting the inherited donor review",
+    "shock_review_applicable_to_focal_window_validated": "Whether the inherited treated/donor shock reviews have been validated for this new focal window; false here",
     "source_municipality_bfs_id": "Original HESTA municipality identifier for this monthly source row; 700 before January 2026 and 6831 thereafter for the single analytical territory Moutier",
     "territorial_source_bfs_ids": "Original municipality identifiers belonging to this analytical territory; 700|6831 for the explicitly approved exact Moutier bridge",
     "territorial_harmonisation_applied": "Whether this row belongs to the approved same-territory Moutier identifier bridge; no imputation or other boundary reconstruction",
@@ -1307,6 +1355,27 @@ def derived_sources() -> list[dict]:
         manual_verification="Moutier has 154 observed months under BFS 700 and three under BFS 6831, combined into 157. There are 175 territory-entry months: 79 first and 96 additional in 45 territories; 45 group columns remain rank 41. Common 6/12/24 support remains 76/73/65",
         notes="Explicit researcher approval 2026-10-04. Earlier administrative outputs are preserved for lineage; future expanded estimation must read the territorial config paths. No download and no imputation",
     ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_ALL_COHORT_COMPARABILITY_AUDIT",
+        variable_name="paired_pre_observed_months|pre_log_outcome_correlation|pre_seasonal_profile_rmse|seasonally_adjusted_monthly_difference_trend|existing_shock_review_status",
+        variable_description="Researcher-approved non-selective pre-entry comparability audit of all territorial exposure cohorts",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="All-cohort descriptive comparability and inherited shock-context audit",
+        retrieval_method="Deterministic Python diagnostics of existing territorial HESTA and approved candidate donors, retaining original external-review evidence and limitations",
+        retrieval_date="2026-10-04",
+        local_raw_file="config/accessibility_all_cohort_comparability_audit.json|config/accessibility_outcome_territorial_harmonisation.json|data_processed/accessibility_municipality_month_exposure_territorial.csv|reports/accessibility_cohort_comparison_universe_territorial.csv|reports/accessibility_treated_external_shock_evidence.csv|reports/accessibility_high_leverage_control_external_shock_evidence.csv|reports/accessibility_remaining_control_external_shock_evidence.csv",
+        processed_file="reports/accessibility_all_cohort_comparability_municipalities.csv|reports/accessibility_all_cohort_comparability_pairs.csv|reports/accessibility_all_cohort_comparability_summary.json|reports/79_AUDIT_COMPARABILITE_TOUTES_COHORTES_FR.md",
+        geographic_level="analytical exposed territory and approved donor pair within focal cohort",
+        temporal_resolution="strictly pre-entry 6/12/24/36-month diagnostic windows; pair diagnostics over existing 36-month pre-window",
+        temporal_start="2014-11", temporal_end="2025-04",
+        unit="observed months, log-point trends, correlations, capacities and inherited evidence labels",
+        license="Derived analytical data; upstream source terms continue to apply", access_conditions="Local reproducible output",
+        transformation_applied="Retain all 79 territories across four diagnostic windows and every approved primary donor pair; no threshold, matching, ranking or exclusion. Reuse original log1p outcomes. Pair metrics use observed overlap; seasonal profiles require all twelve months represented. OLS seasonal trends use actual calendar index and publish only full-rank fits with residual degrees of freedom. Bed ratios use paired observed pre-entry capacity; yearly changes compare actual twelve-month lags. Inherited shock timing, evidence IDs and limits remain explicit and unvalidated for new focal windows",
+        quality_notes="A high correlation may reflect common seasonality, a calculable trend does not establish parallel trends, and inherited 2017-pilot source reviews do not validate absence or timing of shocks for later cohorts. Three fused-territory prehistories remain incomplete and explicitly retained. Missing months are not compressed or filled. COVID-overlapping pre-periods remain included and flagged. No estimation lead-window, sample or causal interpretation approved",
+        confidence_level="high for deterministic diagnostics and evidence lineage; no comparability or causal approval",
+        manual_verification="All 79 exposed territories retained in 316 territory-window rows; Moutier remains one unit; all candidate donors from approved option C audited with original exit dates",
+        notes="The researcher approved diagnostic-only comparability before separately choosing an estimator. No new external download; old pilot exclusions and thresholds are not reused as all-cohort gates",
+    ))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())
     rows.extend(remaining_control_review_external_sources())
@@ -1407,6 +1476,11 @@ def main() -> None:
                                                                fill_value="")
     sources = sources[~sources.source_id.isin(incoming_sources.source_id)]
     sources = pd.concat([sources, incoming_sources], ignore_index=True).fillna("")
+    paper = sources.source_id.eq("CALLAWAY_SANTANNA_2021_DID")
+    author_note = "Author-deposited v4 abstract consulted on 2026-10-04 at https://arxiv.org/abs/1803.09015v4 for the pending all-cohort estimator discussion; publisher fetch returned HTTP 403. Same paper as the registered journal article, no new empirical dataset or estimator approval."
+    for index in sources.index[paper]:
+        if "https://arxiv.org/abs/1803.09015v4" not in sources.at[index, "notes"]:
+            sources.at[index, "notes"] += " | " + author_note
     sources.sort_values("source_id").to_csv(SOURCE_PATH, index=False, lineterminator="\n")
 
     existing = pd.read_csv(DICTIONARY_PATH, dtype=str, keep_default_na=False)
@@ -1426,6 +1500,21 @@ def main() -> None:
                     variable_unit = "BFS identifier"
                 elif pd.api.types.is_bool_dtype(frame[variable]):
                     variable_unit = "boolean flag"
+            if table.startswith("accessibility_all_cohort_comparability_"):
+                if pd.api.types.is_bool_dtype(frame[variable]):
+                    variable_unit = "boolean flag"
+                elif variable.endswith("bfs_id"):
+                    variable_unit = "BFS identifier"
+                elif "trend" in variable and pd.api.types.is_numeric_dtype(frame[variable]):
+                    variable_unit = "log points per calendar month"
+                elif "correlation" in variable:
+                    variable_unit = "correlation"
+                elif "rmse" in variable:
+                    variable_unit = "standard deviations" if "standardised" in variable else "log points"
+                elif "ratio" in variable or "change" in variable:
+                    variable_unit = "ratio or proportional change"
+                elif pd.api.types.is_numeric_dtype(frame[variable]):
+                    variable_unit = "overnight stays" if "overnights" in variable else "count or calendar months"
             if table.startswith(("accessibility_dynamic_event_time_support_", "accessibility_successive_entry_")):
                 if pd.api.types.is_bool_dtype(frame[variable]):
                     variable_unit = "boolean flag"

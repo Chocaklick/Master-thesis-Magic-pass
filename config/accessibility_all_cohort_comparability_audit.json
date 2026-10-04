@@ -1,0 +1,18 @@
+{
+  "specification_version": "stage29c_v1_descriptive_comparability_no_filter_2026_10_04",
+  "researcher_approved_descriptive_audit": true,
+  "diagnostic_pre_windows_months": [6, 12, 24, 36],
+  "pair_diagnostic_window_months": 36,
+  "window_interpretation": "Coverage sensitivities and the existing project 36-month pretrend diagnostic, not selection of an estimation lead window",
+  "outcome_transform": "reuse_existing_log1p_hotel_overnights",
+  "trend_diagnostic": "OLS_calendar_month_index_and_month_of_year_dummies_on_observed_pre_months_only_when_full_rank_with_residual_degrees_of_freedom",
+  "seasonal_diagnostic": "centred_12_month_profile_of_paired_pre_log_outcomes_only_when_all_calendar_months_are_observed",
+  "donor_rule": "all_approved_primary_never_or_not_yet_exposed_at_focal_anchor_no_matching_or_ranking",
+  "shock_rule": "reuse_documented_reviews_with_original_scope_timing_sources_and_limits_do_not_infer_unreviewed_absence_or_apply_old_exclusions",
+  "imputation_applied": false,
+  "automatic_exclusion_applied": false,
+  "matching_rule_selected": false,
+  "analysis_sample_selected": false,
+  "estimator_selected": false,
+  "causal_estimation_approved": false
+}

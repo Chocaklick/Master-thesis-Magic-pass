@@ -38,6 +38,7 @@ SCRIPTS = [
     "src/causal_inference/build_accessibility_dynamic_event_time_audit.py",
     "src/causal_inference/audit_accessibility_successive_entries.py",
     "src/data_processing/build_accessibility_territorial_panel.py",
+    "src/causal_inference/audit_accessibility_all_cohort_comparability.py",
     "src/data_processing/build_accessibility_territorial_panel.py",
     "src/data_processing/update_accessibility_expansion_provenance.py",
     "src/data_processing/update_provenance.py",

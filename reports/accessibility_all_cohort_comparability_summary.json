@@ -1,0 +1,149 @@
+{
+  "specification_version": "stage29c_v1_descriptive_comparability_no_filter_2026_10_04",
+  "source_id": "DERIVED_ACCESSIBILITY_ALL_COHORT_COMPARABILITY_AUDIT",
+  "analytical_grain": "approved_territorial_panel_one_moutier_unit",
+  "exposed_territories_retained": 79,
+  "coverage_rows": 316,
+  "candidate_pairs_audited": 10500,
+  "diagnostic_windows": [
+    {
+      "pre_months": 6,
+      "territories_with_complete_pre_window": 76,
+      "territories_with_full_rank_trend": 0,
+      "territories_with_any_capacity": 76
+    },
+    {
+      "pre_months": 12,
+      "territories_with_complete_pre_window": 76,
+      "territories_with_full_rank_trend": 0,
+      "territories_with_any_capacity": 76
+    },
+    {
+      "pre_months": 24,
+      "territories_with_complete_pre_window": 75,
+      "territories_with_full_rank_trend": 76,
+      "territories_with_any_capacity": 76
+    },
+    {
+      "pre_months": 36,
+      "territories_with_complete_pre_window": 70,
+      "territories_with_full_rank_trend": 76,
+      "territories_with_any_capacity": 76
+    }
+  ],
+  "cohort_diagnostics": [
+    {
+      "focal_cohort_month": "2017-11-01",
+      "exposed_territories": 40,
+      "candidate_pairs_audited": 5800,
+      "pairs_with_any_observed_pre_overlap": 5180,
+      "pairs_with_complete_36_month_pre_overlap": 5069,
+      "pairs_with_full_rank_differential_trend": 5106,
+      "median_pair_log_correlation": 0.5010400330539199,
+      "median_absolute_monthly_differential_log_trend": 0.005536688375619936,
+      "pre_36_covid_overlap_calendar_months": 0,
+      "treated_with_existing_shock_review": 14,
+      "donors_with_existing_shock_review": 24
+    },
+    {
+      "focal_cohort_month": "2018-05-01",
+      "exposed_territories": 3,
+      "candidate_pairs_audited": 426,
+      "pairs_with_any_observed_pre_overlap": 417,
+      "pairs_with_complete_36_month_pre_overlap": 402,
+      "pairs_with_full_rank_differential_trend": 411,
+      "median_pair_log_correlation": 0.5267976821048204,
+      "median_absolute_monthly_differential_log_trend": 0.009171469240692426,
+      "pre_36_covid_overlap_calendar_months": 0,
+      "treated_with_existing_shock_review": 0,
+      "donors_with_existing_shock_review": 24
+    },
+    {
+      "focal_cohort_month": "2019-05-01",
+      "exposed_territories": 3,
+      "candidate_pairs_audited": 417,
+      "pairs_with_any_observed_pre_overlap": 414,
+      "pairs_with_complete_36_month_pre_overlap": 266,
+      "pairs_with_full_rank_differential_trend": 408,
+      "median_pair_log_correlation": 0.5714265938814891,
+      "median_absolute_monthly_differential_log_trend": 0.008261757829280847,
+      "pre_36_covid_overlap_calendar_months": 0,
+      "treated_with_existing_shock_review": 0,
+      "donors_with_existing_shock_review": 24
+    },
+    {
+      "focal_cohort_month": "2022-05-01",
+      "exposed_territories": 16,
+      "candidate_pairs_audited": 1968,
+      "pairs_with_any_observed_pre_overlap": 1952,
+      "pairs_with_complete_36_month_pre_overlap": 1372,
+      "pairs_with_full_rank_differential_trend": 1952,
+      "median_pair_log_correlation": 0.6755723982943551,
+      "median_absolute_monthly_differential_log_trend": 0.012867917630120851,
+      "pre_36_covid_overlap_calendar_months": 25,
+      "treated_with_existing_shock_review": 1,
+      "donors_with_existing_shock_review": 23
+    },
+    {
+      "focal_cohort_month": "2023-05-01",
+      "exposed_territories": 9,
+      "candidate_pairs_audited": 1026,
+      "pairs_with_any_observed_pre_overlap": 1026,
+      "pairs_with_complete_36_month_pre_overlap": 570,
+      "pairs_with_full_rank_differential_trend": 1017,
+      "median_pair_log_correlation": 0.4228012749338886,
+      "median_absolute_monthly_differential_log_trend": 0.02460857671456118,
+      "pre_36_covid_overlap_calendar_months": 23,
+      "treated_with_existing_shock_review": 2,
+      "donors_with_existing_shock_review": 21
+    },
+    {
+      "focal_cohort_month": "2024-05-01",
+      "exposed_territories": 5,
+      "candidate_pairs_audited": 545,
+      "pairs_with_any_observed_pre_overlap": 545,
+      "pairs_with_complete_36_month_pre_overlap": 540,
+      "pairs_with_full_rank_differential_trend": 545,
+      "median_pair_log_correlation": 0.22689475298342815,
+      "median_absolute_monthly_differential_log_trend": 0.030353704433834672,
+      "pre_36_covid_overlap_calendar_months": 11,
+      "treated_with_existing_shock_review": 0,
+      "donors_with_existing_shock_review": 21
+    },
+    {
+      "focal_cohort_month": "2025-05-01",
+      "exposed_territories": 3,
+      "candidate_pairs_audited": 318,
+      "pairs_with_any_observed_pre_overlap": 318,
+      "pairs_with_complete_36_month_pre_overlap": 315,
+      "pairs_with_full_rank_differential_trend": 318,
+      "median_pair_log_correlation": 0.6611852641755345,
+      "median_absolute_monthly_differential_log_trend": 0.0039719576965484005,
+      "pre_36_covid_overlap_calendar_months": 0,
+      "treated_with_existing_shock_review": 1,
+      "donors_with_existing_shock_review": 20
+    }
+  ],
+  "existing_shock_reviews_in_exposed_territories": 18,
+  "paired_pre_capacity_ratio_distribution": {
+    "observed_candidate_pairs": 9852,
+    "q25": 0.382078133125325,
+    "median": 1.0400892857142856,
+    "q75": 2.780766976778258
+  },
+  "shock_scope_warning": "Existing reviews concern the former founding-cohort pilot around 2017; no new window-specific validation or negative proof is inferred",
+  "automatic_exclusion_applied": false,
+  "matching_rule_selected": false,
+  "analysis_sample_selected": false,
+  "estimator_selected": false,
+  "causal_estimation_approved": false,
+  "input_sha256": {
+    "config/accessibility_all_cohort_comparability_audit.json": "2d33b25267a207c5e24a0f71fbac1f2574d11dc79c5e385b17fae5f5d555a432",
+    "config/accessibility_outcome_territorial_harmonisation.json": "943d0b67a624b23a3878de766dbfc09278c1a90bc20767fda42b5a5da21d724c",
+    "data_processed/accessibility_municipality_month_exposure_territorial.csv": "234a23ddb6c9065ab22ca2b5edc1e9d1132d281f9f3647523e63664b66658dea",
+    "reports/accessibility_cohort_comparison_universe_territorial.csv": "a9c8e0435fffe8187bb6dff9259589f0a797183746bc23348457507880d4a005",
+    "reports/accessibility_treated_external_shock_evidence.csv": "0095b6cb2f3ee4f355a4de05b7fcd24fd6c84a57647ca810a18a636c2555c1c2",
+    "reports/accessibility_high_leverage_control_external_shock_evidence.csv": "8f01d8ec1621b23218979bea14763c6ddcebbb605831aeb7d7d05a0d502841dc",
+    "reports/accessibility_remaining_control_external_shock_evidence.csv": "0bb54c1cdbf20ddf37c7f086de2f66b7ccc74a25af13bb8d8b5fd3269973e142"
+  }
+}
