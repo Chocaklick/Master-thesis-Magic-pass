@@ -1,0 +1,54 @@
+{
+  "specification_version": "stage28b_v1_unbalanced_dynamic_event_time_2026_10_04",
+  "researcher_approval_date": "2026-10-04",
+  "accessibility_threshold_minutes": 120,
+  "primary_temporal_design": "unbalanced_monthly_event_time_with_all_observed_post_treatment_months",
+  "primary_temporal_design_selected": true,
+  "fixed_symmetric_primary_horizon_selected": false,
+  "relative_time_unit": "calendar_month",
+  "primary_post_treatment_rule": "retain_each_observed_treated_outcome_month_from_event_month_zero_until_the_last_available_observation",
+  "pre_treatment_support_rule": "audit_all_observed_pre_treatment_months_without_selecting_an_estimator_specific_lead_window",
+  "post_effect_bins": [
+    {
+      "label": "0_5_months",
+      "start_inclusive": 0,
+      "end_inclusive": 5
+    },
+    {
+      "label": "6_11_months",
+      "start_inclusive": 6,
+      "end_inclusive": 11
+    },
+    {
+      "label": "12_23_months",
+      "start_inclusive": 12,
+      "end_inclusive": 23
+    },
+    {
+      "label": "24_plus_months",
+      "start_inclusive": 24,
+      "end_inclusive": null
+    }
+  ],
+  "diminishing_returns_check": "compare_post_effect_bins_without_imposing_monotonicity_or_a_decay_function",
+  "constant_step_sensitivity": "single_permanent_post_treatment_indicator_using_all_observed_post_treatment_months",
+  "common_support_sensitivity_horizons_months": [
+    6,
+    12,
+    24
+  ],
+  "common_support_window_definition": "h_pre_months_minus_h_to_minus_1_and_h_post_months_0_to_h_minus_1_with_observed_treated_outcomes",
+  "comparison_group_config": "config/accessibility_cohort_comparison.json",
+  "primary_donor_rule": "not_yet_exposed_at_focal_cohort_or_never_exposed_with_future_treated_donors_exiting_before_own_first_exposure_month",
+  "sensitivity_donor_rule": "never_exposed_in_current_120min_matrix_only",
+  "calendar_month_fixed_effects_primary": true,
+  "covid_exclusion_sensitivity_start_month": "2020-03-01",
+  "covid_exclusion_sensitivity_end_month": "2022-03-01",
+  "linear_counterfactual_status": "hypothesis_to_diagnose_not_an_assumption_validated_by_this_support_audit",
+  "successive_entry_handling_selected": false,
+  "comparability_screen_selected": false,
+  "analysis_sample_selected": false,
+  "estimator_selected": false,
+  "causal_estimation_approved": false,
+  "required_label": "approved_unbalanced_time_support_audit_not_estimation_sample"
+}

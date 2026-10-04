@@ -240,7 +240,7 @@ def write_report(summary: dict) -> None:
             "",
             "Ces effectifs décrivent une disponibilité mécanique. Ils ne valident ni comparabilité, ni tendances parallèles, ni absence de choc local. La matrice d'accessibilité actuelle reste projetée sur les cohortes historiques.",
             "",
-            "Aucune fenêtre de résultat, aucun filtre de comparabilité, aucun échantillon final et aucun estimateur n'est choisi ici. La prochaine décision doit fixer l'horizon principal avant d'appliquer les diagnostics aux témoins candidats.",
+            "Ce fichier décrit la décision sur les témoins. La décision temporelle ultérieure retient tous les mois postérieurs observés dans un dessin dynamique non équilibré, avec horizons 6/12/24 mois en sensibilité : voir le rapport 76. Le filtre de comparabilité, l'échantillon final et l'estimateur restent à définir.",
             "",
             "## Sources internes",
             "",

@@ -35,6 +35,7 @@ SCRIPTS = [
     "src/causal_inference/audit_accessibility_all_cohort_coverage.py",
     "src/causal_inference/audit_accessibility_covid_specification.py",
     "src/causal_inference/build_accessibility_cohort_comparison.py",
+    "src/causal_inference/build_accessibility_dynamic_event_time_audit.py",
     "src/data_processing/update_accessibility_expansion_provenance.py",
     "src/data_processing/update_provenance.py",
 ]

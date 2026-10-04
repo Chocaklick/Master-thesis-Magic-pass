@@ -268,6 +268,12 @@ TABLES = {
     "accessibility_cohort_comparison_by_cohort": (
         ROOT / "reports" / "accessibility_cohort_comparison_by_cohort.csv",
         "DERIVED_ACCESSIBILITY_COHORT_COMPARISON_RULE", "focal first-exposure cohort", "approved primary and sensitivity donor counts"),
+    "accessibility_dynamic_event_time_support_by_cohort_month": (
+        ROOT / "reports" / "accessibility_dynamic_event_time_support_by_cohort_month.csv",
+        "DERIVED_ACCESSIBILITY_DYNAMIC_EVENT_TIME_SUPPORT", "focal first-exposure cohort by calendar and relative month", "monthly unbalanced event-time support"),
+    "accessibility_dynamic_event_time_support_by_event_month": (
+        ROOT / "reports" / "accessibility_dynamic_event_time_support_by_event_month.csv",
+        "DERIVED_ACCESSIBILITY_DYNAMIC_EVENT_TIME_SUPPORT", "relative month pooled across first-exposure cohorts", "monthly unbalanced event-time support and cohort composition"),
 }
 
 
@@ -345,6 +351,36 @@ DESCRIPTIONS = {
     "treated_with_foreign_share": "Number of focal-cohort treated municipalities with the approved foreign-client characteristic available",
     "primary_donors_with_foreign_share": "Number of primary donor candidates with the approved foreign-client characteristic available",
     "sensitivity_donors_with_foreign_share": "Number of never-exposed sensitivity donors with the approved foreign-client characteristic available",
+    "calendar_month": "Outcome calendar month represented in the event-time support audit",
+    "event_month": "Calendar-month distance from the focal first-exposure month, with zero denoting the entry month",
+    "event_period": "Whether the relative month precedes or follows the focal first exposure",
+    "post_effect_bin": "Approved post-treatment interval used to inspect persistence or attenuation without imposing a decay function",
+    "calendar_months_represented": "Number of distinct calendar months represented at the relative event month",
+    "calendar_month_range": "First and last calendar months represented at the relative event month",
+    "treated_cohorts_contributing": "Number of first-exposure cohorts with at least one observed treated outcome in the relative period",
+    "treated_cohort_months_contributing": "Pipe-delimited first-exposure cohorts with an observed treated outcome at the relative month",
+    "treated_candidate_municipalities": "Number of municipalities first exposed in the focal cohort before checking outcome observation",
+    "treated_observed_outcome_municipalities": "Number of focal-cohort treated municipalities with an observed hotel-night outcome at the relative month",
+    "treated_missing_outcome_municipalities": "Number of focal-cohort treated municipalities without an observed hotel-night outcome in the calendar month",
+    "primary_donor_eligible_municipalities": "Number of approved never-exposed or not-yet-exposed donors still eligible in the calendar month",
+    "primary_donor_observed_outcome_municipalities": "Number of eligible primary donors with an observed hotel-night outcome in the calendar month",
+    "primary_donor_missing_outcome_municipalities": "Number of eligible primary donors without an observed hotel-night outcome in the calendar month",
+    "sensitivity_donor_eligible_municipalities": "Number of never-exposed sensitivity donors eligible in the calendar month",
+    "sensitivity_donor_observed_outcome_municipalities": "Number of never-exposed sensitivity donors with an observed hotel-night outcome in the calendar month",
+    "sensitivity_donor_missing_outcome_municipalities": "Number of never-exposed sensitivity donors without an observed hotel-night outcome in the calendar month",
+    "primary_donor_municipality_cohort_observations": "Observed primary-donor municipality-cohort rows at the relative month, restricted to cohort-months with an observed treated outcome; reused donors are not independent municipalities",
+    "sensitivity_donor_municipality_cohort_observations": "Observed never-exposed donor municipality-cohort rows at the relative month, restricted to cohort-months with an observed treated outcome; reused donors are not independent municipalities",
+    "treated_with_additional_entry_this_month": "Focal-cohort treated municipalities receiving another accessible station-group entry in the calendar month",
+    "treated_with_additional_entry_reached": "Focal-cohort treated municipalities for which at least one later accessible station-group entry has occurred by the calendar month",
+    "treated_observed_after_additional_entry": "Observed treated municipality rows at or after at least one later accessible station-group entry",
+    "primary_comparison_support_available": "Whether the cohort-month has at least one observed treated outcome and one observed primary donor outcome",
+    "sensitivity_comparison_support_available": "Whether the cohort-month has at least one observed treated outcome and one observed never-exposed donor outcome",
+    "covid_exclusion_sensitivity_month": "Whether the calendar month belongs to the approved March 2020-March 2022 exclusion sensitivity",
+    "primary_temporal_design_selected": "Whether the researcher-approved unbalanced all-available-post-month rule is active",
+    "fixed_symmetric_primary_horizon_selected": "Whether a fixed symmetric horizon is imposed as the primary temporal design; false here",
+    "successive_entry_handling_selected": "Whether a rule attributing or censoring later accessible entries has been approved",
+    "cohorts_with_primary_comparison_support": "Number of focal cohorts with observed treated and primary-donor outcomes at the relative month",
+    "cohorts_with_sensitivity_comparison_support": "Number of focal cohorts with observed treated and never-exposed-donor outcomes at the relative month",
     "target_bfs_id": "BFS identifier of the current municipality whose historical characteristic is audited",
     "target_name": "Official current municipality name retained for the reconstruction audit",
     "predecessor_bfs_id": "Official BFS identifier of a municipality required to reconstruct the current territory",
@@ -1160,6 +1196,28 @@ def derived_sources() -> list[dict]:
         manual_verification="1,302 municipality-cohort rows retained; 80 first-exposure rows; 106 never-exposed donors in every cohort; primary donor counts decline from 145 to 106 as future-treated municipalities enter",
         notes="Option C was explicitly approved. Outcome horizon, comparability screen, final sample and estimator remain unselected.",
     ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_DYNAMIC_EVENT_TIME_SUPPORT",
+        variable_name="event_month|post_effect_bin|treated_observed_outcome_municipalities|primary_donor_observed_outcome_municipalities|treated_observed_after_additional_entry",
+        variable_description="Researcher-approved unbalanced dynamic event-time support and changing-composition audit",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility unbalanced dynamic event-time support audit",
+        retrieval_method="Deterministic Python join of the approved cohort-comparison roles to existing monthly HESTA outcomes and accessible station-group entry counts",
+        retrieval_date="2026-10-04",
+        local_raw_file="config/accessibility_dynamic_event_time.json|reports/accessibility_cohort_comparison_universe.csv|data_processed/accessibility_municipality_month_exposure.csv",
+        processed_file="reports/accessibility_dynamic_event_time_support_by_cohort_month.csv|reports/accessibility_dynamic_event_time_support_by_event_month.csv|reports/accessibility_dynamic_event_time_summary.json|reports/76_DYNAMIQUE_TEMPORELLE_NON_EQUILIBREE_FR.md",
+        geographic_level="hotel municipality within focal first-exposure cohort",
+        temporal_resolution="calendar month and month relative to first accessible exposure",
+        temporal_start="2013-01", temporal_end="2026-03",
+        unit="municipality-cohort-month support counts",
+        license="Derived analytical data; upstream source terms continue to apply",
+        access_conditions="Local reproducible output",
+        transformation_applied="Retain all observed post-treatment months; report exact monthly cohort and donor composition; classify post months as 0-5, 6-11, 12-23 or 24-plus; audit a permanent-step sensitivity and common 6/12/24-month support including their 65-municipality intersection; flag outcomes at or after later accessible station-group entries; pooled donor counts include only cohort-months with an observed treated outcome",
+        quality_notes="All 80 treated municipalities have observed post support but only 76 have any observed pre-treatment outcome under current panel identifiers. The Moutier foreign-share reconstruction has not yet been applied to the outcome panel. Later entries remain flagged without attribution or censoring. The lead window, estimator, comparability screen and final sample remain unselected.",
+        confidence_level="high for deterministic support arithmetic; no effect or causal identification approval",
+        manual_verification="All 80 treated municipalities retained; common symmetric coverage reconciles to 76, 73 and 65 municipalities at 6, 12 and 24 months; 46 treated municipalities have a later accessible entry",
+        notes="The researcher approved the unbalanced dynamic design, post-period bins, permanent-step sensitivity and common-horizon sensitivities. A linear counterfactual remains a hypothesis to diagnose. Existing data are reused; no new external download.",
+    ))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())
     rows.extend(remaining_control_review_external_sources())
@@ -1270,6 +1328,19 @@ def main() -> None:
         frame = pd.read_csv(path)
         missing_shares = frame.isna().mean()
         for variable in frame.columns:
+            variable_description = description(variable, existing_lookup)
+            variable_unit = unit(variable)
+            if table.startswith("accessibility_dynamic_event_time_support_"):
+                if pd.api.types.is_bool_dtype(frame[variable]):
+                    variable_unit = "boolean flag"
+                elif pd.api.types.is_numeric_dtype(frame[variable]):
+                    variable_unit = "month" if variable == "event_month" else "count"
+                if variable == "focal_cohort_month":
+                    variable_description = "Focal municipality first-exposure cohort month used as the relative-time anchor"
+                elif variable == "source_id":
+                    variable_description = "Registered provenance identifier for the dynamic event-time support audit"
+                elif variable == "analysis_sample_selected":
+                    variable_description = "Whether a final analytical sample has been selected; false in this support audit"
             role = ("quality gate" if "approved" in variable or "usable" in variable
                     else "descriptive exposure candidate" if any(
                         token in variable for token in ["active_", "entry", "within_", "generalized_minutes"])
@@ -1278,8 +1349,8 @@ def main() -> None:
             rows.append({
                 "variable": variable,
                 "table": table,
-                "description": description(variable, existing_lookup),
-                "unit": unit(variable),
+                "description": variable_description,
+                "unit": variable_unit,
                 "data_type": str(frame[variable].dtype),
                 "geographic_level": geo,
                 "temporal_level": temporal,
