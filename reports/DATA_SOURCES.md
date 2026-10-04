@@ -623,7 +623,7 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Variables:** treated_stack_t_reference|connected_component_sign_flip|effective_treated_stack_count|component_dependence
 - **Transformations:** Reproduce six equal-weight treated-stack DiD gaps; compute a Student-t reference with five degrees of freedom; link stacks sharing any municipality; enumerate every joint component sign pattern
 - **Coverage:** treated municipality stack and connected stack-municipality component; monthly event time from -24 to +23 summarized as stack-level pre/post contrasts; 2015-11 to 2019-10.
-- **Limitations:** Only five disconnected components remain after respecting the reused Emmen control. The t reference approximates stack independence; the sign test assumes component-level sign symmetry and is not random-assignment inference. No causal approval.
+- **Limitations:** Only five disconnected components remain after respecting the reused Emmen control. The t reference approximates stack independence; the sign test assumes independence and sign symmetry across graph components and is not random-assignment inference. No causal approval.
 - **Local raw file:** `config/accessibility_small_cluster_inference.json|data_processed/accessibility_pilot_stacked_panel.csv|reports/accessibility_pilot_did_estimates.csv`.
 
 ## DERIVED_ACCESSIBILITY_STATION_GROUPS — Accessibility expansion station-group registry
