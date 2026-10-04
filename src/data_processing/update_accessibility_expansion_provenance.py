@@ -57,6 +57,10 @@ NEW_REMAINING_CONTROL_REVIEW_SOURCE_IDS = {
     "THUN_TOURIST_TAX_CONTEXT_2017",
     "WINTERTHUR_HOUSE_OF_WINTERTHUR_2017",
 }
+NEW_COVID_SPECIFICATION_SOURCE_IDS = {
+    "BFS_HOTEL_DEMAND_COVID_2020",
+    "SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY",
+}
 SOURCE_COLUMNS = [
     "source_id", "variable_name", "variable_description", "source_organisation",
     "source_dataset_name", "source_page_url", "direct_download_url", "api_endpoint",
@@ -245,6 +249,9 @@ TABLES = {
     "accessibility_all_cohort_station_group_coverage": (
         ROOT / "reports" / "accessibility_all_cohort_station_group_coverage.csv",
         "DERIVED_ACCESSIBILITY_ALL_COHORT_COVERAGE", "accessibility threshold by station group", "entry cohort and 6/12/24-month windows"),
+    "accessibility_covid_foreign_share_baseline_audit": (
+        ROOT / "reports" / "accessibility_covid_foreign_share_baseline_audit.csv",
+        "DERIVED_ACCESSIBILITY_COVID_SPECIFICATION", "hotel municipality by focal first-exposure cohort", "12/24/36-month pre-pandemic and pre-treatment baseline candidates"),
 }
 
 
@@ -269,6 +276,16 @@ DESCRIPTIONS = {
     "structural_data_status": "Completeness status of the deduplicated resort-directory structure",
     "cluster_ids_lineage_only": "Preserved lift cluster IDs for lineage; never used as the grouping rule",
     "current_access_assumption": "Statement that current access is held fixed for the first descriptive screen",
+    "focal_cohort_month": "First-exposure cohort month for which the municipality characteristic is audited",
+    "municipality_first_exposure_month_120min": "Earliest accessible Magic Pass station-group entry month at the current 120-minute threshold",
+    "exposure_status_at_focal_cohort": "Whether the municipality is first exposed, previously exposed, not yet exposed or never exposed at the focal cohort month",
+    "baseline_cutoff_month_exclusive": "First excluded month after the candidate characteristic baseline, chosen to precede the pandemic, own first exposure and focal cohort",
+    "baseline_cutoff_reason": "One or more constraints determining the earliest permissible baseline cutoff",
+    "baseline_ends_before_pandemic": "Whether the characteristic baseline ends before March 2020",
+    "baseline_ends_before_first_exposure": "Whether the characteristic baseline ends before the municipality's own first accessible exposure when one exists",
+    "primary_sample_month_policy": "Researcher-approved rule retaining all available months and cohorts in the primary analysis",
+    "common_shock_adjustment": "Researcher-approved calendar-month fixed-effect adjustment for common national shocks",
+    "cohort_comparison_rule_selected": "Whether a stage-28 comparison-group rule has been approved",
     "membership_continuity_status": "Whether membership is carried forward by assumption or bounded by a documented exit",
     "descriptive_exposure_approved": "Whether this row has passed the current descriptive exposure gate",
     "causal_treatment_approved": "Whether the station group is approved as a causal treatment",
@@ -569,6 +586,54 @@ def remaining_control_review_external_sources() -> list[dict]:
             confidence_level="high for the cited official statement; medium for the Arbon municipal notice reproduced in a local publication; analytical severity remains a documented review judgement",
             manual_verification="Relevant page or HTML section inspected; cached file and SHA-256 verified by the stage-21 builder",
             notes="Missing evidence is never interpreted as proof that no shock occurred; visitor-market spillovers remain pending",
+        ))
+    return rows
+
+
+def covid_specification_external_sources() -> list[dict]:
+    """Register the two checksum-preserved official stage-27 COVID sources."""
+    catalog = {
+        row["source_id"]: row
+        for row in json.loads(EVIDENCE_CONFIG_PATH.read_text(encoding="utf-8"))
+    }
+    rows = []
+    for source_id in sorted(NEW_COVID_SPECIFICATION_SOURCE_IDS):
+        if source_id not in catalog:
+            raise KeyError(f"Missing COVID evidence config: {source_id}")
+        candidates = []
+        for path in sorted(EVIDENCE_DIR.glob(f"{source_id}_*.metadata.json")):
+            metadata = json.loads(path.read_text(encoding="utf-8"))
+            if metadata.get("source_id") == source_id and metadata.get("http_status") == 200:
+                candidates.append((metadata.get("retrieval_date", ""), metadata))
+        if not candidates:
+            raise FileNotFoundError(f"No successful cached retrieval for {source_id}")
+        _, metadata = max(candidates, key=lambda item: item[0])
+        source = catalog[source_id]
+        raw_file = metadata["raw_file"].replace("\\", "/")
+        rows.append(source_row(
+            source_id,
+            variable_name="covid_policy_chronology|hotel_demand_disruption|foreign_demand_disruption",
+            variable_description=source["description"],
+            source_organisation=source["organisation"],
+            source_dataset_name=source["description"],
+            source_page_url=source["url"],
+            direct_download_url=metadata.get("final_url", source["url"]),
+            retrieval_method="HTTP GET with immutable local response, metadata sidecar and SHA-256",
+            retrieval_date=metadata["retrieval_date"],
+            original_file_name=Path(raw_file).name,
+            local_raw_file=raw_file,
+            processed_file="config/accessibility_covid_specification.json|reports/74_SPECIFICATION_COVID_ET_BASELINE_CLIENTELE_FR.md",
+            geographic_level="Switzerland",
+            temporal_resolution="official decision date or annual hotel-demand release",
+            temporal_start="2020-03", temporal_end="2022-04",
+            unit="official policy chronology and percentage change in hotel overnight stays",
+            license="UNKNOWN; preserve official citation, original URL and immutable checksum",
+            access_conditions="Public official source; automated retrieval respects robots.txt",
+            transformation_applied="Use the chronology to define a monthly exclusion sensitivity and the hotel-demand release to justify testing differential exposure by pre-period foreign-client share",
+            quality_notes="The national chronology does not encode canton-specific implementation or constant disruption intensity; the 2020 demand release does not identify a Magic Pass effect",
+            confidence_level="high for official dates and national hotel-demand totals; limited for local treatment-effect adjustment",
+            manual_verification="Cached response and SHA-256 verified; relevant chronology and foreign-demand statistics inspected",
+            notes="March 2020 through March 2022 is a monthly sensitivity interval, not a claim that all restrictions or effects were identical throughout",
         ))
     return rows
 
@@ -944,9 +1009,32 @@ def derived_sources() -> list[dict]:
         manual_verification="Counts reconcile to 5, 30, 55 and 80 ever-exposed municipalities at 30, 60, 90 and 120 minutes; all 71 groups are retained at every threshold",
         notes="Stage 26 deliberately reports all cohorts and horizons without choosing which communes to keep; COVID treatment and cohort estimators require researcher approval in later stages",
     ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_COVID_SPECIFICATION",
+        variable_name="approved_option_A|official_core_covid_interval|calendar_month_fixed_effects|pre_pandemic_pre_treatment_foreign_share_baselines",
+        variable_description="Researcher-approved COVID option A and non-selective audit of 12/24/36-month foreign-client-share baseline candidates",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility all-cohort COVID specification and foreign-share baseline audit",
+        retrieval_method="Deterministic Python audit of registered monthly HESTA origin data, all-cohort first exposure and checksum-preserved official COVID sources",
+        retrieval_date="2026-10-04",
+        local_raw_file="config/accessibility_covid_specification.json|data_processed/accessibility_municipality_month_exposure.csv|reports/accessibility_all_cohort_municipality_coverage.csv|config/temporal_controls.json|data_external/source_evidence/SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY_20261004T120856Z.html|data_external/source_evidence/BFS_HOTEL_DEMAND_COVID_2020_20261004T120744Z.pdf",
+        processed_file="reports/accessibility_covid_foreign_share_baseline_audit.csv|reports/accessibility_covid_specification_summary.json|reports/74_SPECIFICATION_COVID_ET_BASELINE_CLIENTELE_FR.md",
+        geographic_level="hotel municipality by focal first-exposure cohort",
+        temporal_resolution="monthly characteristic baselines and national disruption interval",
+        temporal_start="2014-11", temporal_end="2025-05",
+        unit="municipality-cohort row, months and foreign overnight-stay share",
+        license="Derived analytical data; upstream source terms continue to apply",
+        access_conditions="Local reproducible output",
+        transformation_applied="Retain all months and cohorts; record calendar-month fixed effects as the common-shock adjustment; define March 2020-March 2022 only as an exclusion sensitivity; audit 12/24/36-month characteristics ending before the pandemic, focal cohort and own first exposure",
+        quality_notes="The baseline window and aggregation method remain unselected pending researcher approval. Four exposed municipalities lack calculable historical origin shares. No comparison group or estimator is chosen.",
+        confidence_level="high for deterministic dates and availability arithmetic; no causal identification approval",
+        manual_verification="1,302 rows reconcile to 186 municipalities by seven cohorts; all baseline cutoffs precede the pandemic and own first exposure",
+        notes="Option A was explicitly approved by the researcher. Stage 28 remains blocked on separate comparison-design approval.",
+    ))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())
     rows.extend(remaining_control_review_external_sources())
+    rows.extend(covid_specification_external_sources())
     return rows
 
 
@@ -958,6 +1046,29 @@ def description(variable: str, existing_lookup: dict[str, str]) -> str:
     if variable.startswith("within_") and variable.endswith("_minutes"):
         threshold = variable.split("_")[1]
         return f"Whether mean one-way generalized scheduled time is at most {threshold} minutes"
+    if variable.startswith("baseline_"):
+        if variable.endswith("_start"):
+            return "First month included in the stated candidate characteristic baseline"
+        if variable.endswith("_end"):
+            return "Last month included in the stated candidate characteristic baseline"
+        if variable.endswith("_calendar_months"):
+            return "Number of calendar months present in the stated candidate baseline"
+        if variable.endswith("_observed_origin_months"):
+            return "Months with both domestic and foreign hotel overnight values in the stated candidate baseline"
+        if variable.endswith("_positive_total_months"):
+            return "Observed origin months with a positive domestic-plus-foreign overnight total"
+        if variable.endswith("_complete"):
+            return "Whether every month in the stated candidate baseline has domestic and foreign hotel overnight values"
+        if variable.endswith("_foreign_overnights_sum"):
+            return "Foreign hotel overnight stays summed over the stated candidate baseline"
+        if variable.endswith("_total_overnights_sum"):
+            return "Domestic plus foreign hotel overnight stays summed over the stated candidate baseline"
+        if variable.endswith("_foreign_share_ratio_of_sums"):
+            return "Summed foreign overnights divided by summed domestic-plus-foreign overnights in the candidate baseline"
+        if variable.endswith("_foreign_share_mean_monthly"):
+            return "Unweighted mean of monthly foreign overnight shares in the candidate baseline"
+        if variable.endswith("_aggregation_abs_difference"):
+            return "Absolute difference between ratio-of-sums and unweighted monthly-mean foreign shares"
     if variable.startswith("municipalities_within_"):
         threshold = variable.split("_")[2].replace("min", "")
         return f"Usable hotel municipalities within {threshold} mean one-way minutes"

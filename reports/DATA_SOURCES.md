@@ -326,6 +326,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** 2,793 monthly total-night cells contain '...'; no imputation; municipality boundary changes still require review
 - **Local raw file:** `data_raw/nuitée_commune_final.csv`.
 
+## BFS_HOTEL_DEMAND_COVID_2020 — Communiqué officiel sur l'effondrement de la demande hôtelière en 2020 et l'impact particulièrement fort sur la clientèle étrangère
+
+- **Contents and relevance:** Communiqué officiel sur l'effondrement de la demande hôtelière en 2020 et l'impact particulièrement fort sur la clientèle étrangère
+- **Producer:** Office fédéral de la statistique
+- **Exact URL:** https://www.bfs.admin.ch/bfsstatic/dam/assets/16044296/master
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-04T12:07:44.341248+00:00.
+- **Variables:** covid_policy_chronology|hotel_demand_disruption|foreign_demand_disruption
+- **Transformations:** Use the chronology to define a monthly exclusion sensitivity and the hotel-demand release to justify testing differential exposure by pre-period foreign-client share
+- **Coverage:** Switzerland; official decision date or annual hotel-demand release; 2020-03 to 2022-04.
+- **Limitations:** The national chronology does not encode canton-specific implementation or constant disruption intensity; the 2020 demand release does not identify a Magic Pass effect
+- **Local raw file:** `data_external/source_evidence/BFS_HOTEL_DEMAND_COVID_2020_20261004T120744Z.pdf`.
+
 ## BFS_HOTEL_METADATA — px-x-1003020000_101 metadata
 
 - **Contents and relevance:** Live metadata for the official hotel table, including municipality codes and labels
@@ -529,6 +541,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** current Swiss municipality and linked lift cluster; 2025 population aligned to 2026-01-01 boundaries; 2025-12-31 to 2026-01-01.
 - **Limitations:** Not travel time, a population raster, a destination catchment or a cross-border market; municipality population is collapsed to one interior point and radius-specific border intersection is flagged without filling foreign population
 - **Local raw file:** `config/path_c_analysis.json|config/municipality_boundary_bridge_2025_2026.csv`.
+
+## DERIVED_ACCESSIBILITY_COVID_SPECIFICATION — Accessibility all-cohort COVID specification and foreign-share baseline audit
+
+- **Contents and relevance:** Researcher-approved COVID option A and non-selective audit of 12/24/36-month foreign-client-share baseline candidates
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic Python audit of registered monthly HESTA origin data, all-cohort first exposure and checksum-preserved official COVID sources; 2026-10-04.
+- **Variables:** approved_option_A|official_core_covid_interval|calendar_month_fixed_effects|pre_pandemic_pre_treatment_foreign_share_baselines
+- **Transformations:** Retain all months and cohorts; record calendar-month fixed effects as the common-shock adjustment; define March 2020-March 2022 only as an exclusion sensitivity; audit 12/24/36-month characteristics ending before the pandemic, focal cohort and own first exposure
+- **Coverage:** hotel municipality by focal first-exposure cohort; monthly characteristic baselines and national disruption interval; 2014-11 to 2025-05.
+- **Limitations:** The baseline window and aggregation method remain unselected pending researcher approval. Four exposed municipalities lack calculable historical origin shares. No comparison group or estimator is chosen.
+- **Local raw file:** `config/accessibility_covid_specification.json|data_processed/accessibility_municipality_month_exposure.csv|reports/accessibility_all_cohort_municipality_coverage.csv|config/temporal_controls.json|data_external/source_evidence/SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY_20261004T120856Z.html|data_external/source_evidence/BFS_HOTEL_DEMAND_COVID_2020_20261004T120744Z.pdf`.
 
 ## DERIVED_ACCESSIBILITY_HIGH_LEVERAGE_CONTROL_EXTERNAL_SHOCK_REVIEW — Accessibility high-leverage control external-shock review
 
@@ -2557,6 +2581,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** Swiss political municipality polygon; boundary snapshot; 2026-01-01 to 2026-01-01.
 - **Limitations:** Current geometry is not historical harmonisation; representative points are neither population centroids nor transport nodes
 - **Local raw file:** `data_external/source_evidence/SWISSTOPO_BOUNDARIES_2026_20260921T145310Z.zip`.
+
+## SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY — Chronologie officielle des principales décisions du Conseil fédéral relatives au coronavirus, couvrant la situation extraordinaire de mars 2020 et la levée des dernières mesures au printemps 2022
+
+- **Contents and relevance:** Chronologie officielle des principales décisions du Conseil fédéral relatives au coronavirus, couvrant la situation extraordinaire de mars 2020 et la levée des dernières mesures au printemps 2022
+- **Producer:** Département fédéral de l'environnement, des transports, de l'énergie et de la communication
+- **Exact URL:** https://www.uvek.admin.ch/fr/coronavirus-decisions-importantes-du-conseil-federal
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-04T12:08:56.781867+00:00.
+- **Variables:** covid_policy_chronology|hotel_demand_disruption|foreign_demand_disruption
+- **Transformations:** Use the chronology to define a monthly exclusion sensitivity and the hotel-demand release to justify testing differential exposure by pre-period foreign-client share
+- **Coverage:** Switzerland; official decision date or annual hotel-demand release; 2020-03 to 2022-04.
+- **Limitations:** The national chronology does not encode canton-specific implementation or constant disruption intensity; the 2020 demand release does not identify a Magic Pass effect
+- **Local raw file:** `data_external/source_evidence/SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY_20261004T120856Z.html`.
 
 ## THUN_TOURIST_TAX_CONTEXT_2017 — Official performance-agreement report documenting the CHF 2.50 tourist-tax rate then applying in Sigriswil and partner destinations
 

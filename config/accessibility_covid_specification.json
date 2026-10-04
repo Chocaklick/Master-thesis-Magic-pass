@@ -1,0 +1,44 @@
+{
+  "specification_version": "stage27_v1_option_A_approved_2026_10_04",
+  "researcher_approved_option": "A",
+  "approval_date": "2026-10-04",
+  "primary_sample_month_policy": "retain_all_available_months_and_cohorts",
+  "common_shock_adjustment": "calendar_month_fixed_effects",
+  "standalone_national_covid_dummy_in_primary_model": false,
+  "standalone_dummy_reason": "A national month-level indicator is exactly collinear with calendar-month fixed effects.",
+  "official_core_disruption_start": "2020-03-01",
+  "official_core_disruption_end": "2022-03-01",
+  "official_core_interval_interpretation": "Monthly sensitivity interval from the first extraordinary-situation month through the last complete month before the special situation ended on 1 April 2022; it is not a claim that restrictions or tourism effects were constant.",
+  "primary_foreign_share_interaction": true,
+  "foreign_share_measurement_guardrail": "The municipality characteristic must be measured before both its own first accessible Magic Pass exposure and the pandemic, and before the focal cohort anchor.",
+  "baseline_cutoff_definition": "Earliest of focal cohort month, municipality first-exposure month at 120 minutes when any, and 2020-03-01; the baseline ends one month before this cutoff.",
+  "foreign_share_baseline_window_candidates_months": [12, 24, 36],
+  "foreign_share_baseline_window_selected_months": null,
+  "foreign_share_aggregation_candidates": [
+    "ratio_of_summed_foreign_to_summed_total_overnights",
+    "unweighted_mean_of_monthly_foreign_shares"
+  ],
+  "foreign_share_aggregation_selected": null,
+  "core_period_exclusion_sensitivity": {
+    "enabled": true,
+    "start": "2020-03-01",
+    "end": "2022-03-01"
+  },
+  "legacy_broad_interval_secondary_sensitivity": {
+    "start": "2020-03-01",
+    "end": "2022-04-01",
+    "source": "config/temporal_controls.json",
+    "interpretation": "Preserved only to compare with earlier project outputs; not treated as the official chronology."
+  },
+  "official_source_ids": [
+    "SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY",
+    "BFS_HOTEL_DEMAND_COVID_2020"
+  ],
+  "decision_status": "option_A_approved_baseline_window_and_aggregation_pending_researcher_choice",
+  "protected_interpretation": {
+    "analysis_sample_selected": false,
+    "cohort_comparison_rule_selected": false,
+    "causal_estimation_approved": false,
+    "required_label": "covid_specification_and_baseline_availability_audit"
+  }
+}

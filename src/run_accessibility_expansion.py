@@ -33,6 +33,7 @@ SCRIPTS = [
     "src/causal_inference/estimate_accessibility_pilot.py",
     "src/causal_inference/audit_accessibility_small_cluster_inference.py",
     "src/causal_inference/audit_accessibility_all_cohort_coverage.py",
+    "src/causal_inference/audit_accessibility_covid_specification.py",
     "src/data_processing/update_accessibility_expansion_provenance.py",
     "src/data_processing/update_provenance.py",
 ]

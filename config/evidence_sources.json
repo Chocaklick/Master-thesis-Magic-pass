@@ -827,5 +827,19 @@
     "suffix": "html",
     "organisation": "Stadt Winterthur",
     "description": "Official March 2017 release documenting the tourism and regional-development merger and CHF 960,000 annual municipal contribution from 2018"
+  },
+  {
+    "source_id": "SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY",
+    "url": "https://www.uvek.admin.ch/fr/coronavirus-decisions-importantes-du-conseil-federal",
+    "suffix": "html",
+    "organisation": "Département fédéral de l'environnement, des transports, de l'énergie et de la communication",
+    "description": "Chronologie officielle des principales décisions du Conseil fédéral relatives au coronavirus, couvrant la situation extraordinaire de mars 2020 et la levée des dernières mesures au printemps 2022"
+  },
+  {
+    "source_id": "BFS_HOTEL_DEMAND_COVID_2020",
+    "url": "https://www.bfs.admin.ch/bfsstatic/dam/assets/16044296/master",
+    "suffix": "pdf",
+    "organisation": "Office fédéral de la statistique",
+    "description": "Communiqué officiel sur l'effondrement de la demande hôtelière en 2020 et l'impact particulièrement fort sur la clientèle étrangère"
   }
 ]
