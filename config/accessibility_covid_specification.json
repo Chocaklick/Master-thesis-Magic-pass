@@ -1,5 +1,5 @@
 {
-  "specification_version": "stage27_v2_option_A_24m_ratio_approved_2026_10_04",
+  "specification_version": "stage27_v3_option_A_official_history_reconstruction_2026_10_04",
   "researcher_approved_option": "A",
   "approval_date": "2026-10-04",
   "primary_sample_month_policy": "retain_all_available_months_and_cohorts",
@@ -19,6 +19,9 @@
     "unweighted_mean_of_monthly_foreign_shares"
   ],
   "foreign_share_aggregation_selected": "ratio_of_summed_foreign_to_summed_total_overnights",
+  "foreign_share_missing_handling_selected": "official_predecessor_reconstruction_without_imputation",
+  "foreign_share_missing_handling_approval_date": "2026-10-04",
+  "foreign_share_reconstruction_config": "config/accessibility_covid_foreign_share_reconstruction.csv",
   "core_period_exclusion_sensitivity": {
     "enabled": true,
     "start": "2020-03-01",
@@ -34,7 +37,7 @@
     "SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY",
     "BFS_HOTEL_DEMAND_COVID_2020"
   ],
-  "decision_status": "option_A_and_24m_ratio_of_sums_approved_missing_characteristic_handling_pending",
+  "decision_status": "option_A_official_history_reconstruction_approved_and_applied_unresolved_values_remain_missing",
   "protected_interpretation": {
     "analysis_sample_selected": false,
     "cohort_comparison_rule_selected": false,

@@ -1,6 +1,6 @@
 # Spécification COVID et baseline de clientèle - étape 27
 
-**Statut : option A, baseline de 24 mois et ratio des sommes approuvés. Le traitement des valeurs manquantes reste à valider avant estimation.**
+**Statut : option A appliquée. Moutier est reconstruit exactement; trois historiques restent indisponibles sans approximation.**
 
 ## Règles déjà validées
 
@@ -32,18 +32,25 @@ Sur la baseline de 24 mois, les deux mesures sont fortement corrélées. Leur co
 
 La **baseline de 24 mois avec ratio des sommes** est maintenant verrouillée. Le fichier sélectionné conserve les 1 302 lignes commune-cohorte; il ne retire ni n'impute les valeurs manquantes.
 
-## Nouvelle décision méthodologique requise : quatre historiques manquants
+## Reconstruction officielle des historiques
 
-La part approuvée est disponible pour 76 des 80 premières expositions. Elle manque pour : Blonay - Saint-Légier, Val de Bagnes, Laténa, Moutier (JU).
+L'option A a été appliquée en exigeant l'identifiant BFS, la mutation officielle et toutes les composantes territoriales d'une fusion. Une composante absente de la publication contrôlée n'est jamais remplacée par zéro.
 
-- **A — reconstruire les historiques (recommandé pour maximiser l'inclusion)** : Moutier peut être relié à sa série BFS 700 grâce au pont officiel déjà documenté. Pour les trois autres cas, il faut collecter les séries HESTA des entités antérieures et leurs mutations officielles, puis agréger seulement sur un périmètre territorial justifié.
-- **B — interaction sur cas complets** : garder les 80 communes dans le modèle principal sans interaction, mais estimer l'hétérogénéité selon la clientèle étrangère sur les 76 cas disponibles.
-- **C — indicatrice de valeur manquante** : conserver les 80 cas dans l'interaction en centrant conventionnellement la part manquante et en ajoutant un terme spécifique. Cette solution préserve la taille, mais repose sur une convention de modélisation plus forte.
+| Commune actuelle | Couverture des composantes historiques | Résultat |
+|---|---:|---|
+| Moutier (JU) | 1/1 | Série BFS 700 reliée au BFS 6831 par la mutation officielle 3999; part reconstruite |
+| Val de Bagnes | 1/2 | Bagnes est dans l'archive HESTA contrôlée, Vollèges ne l'est pas; aucune agrégation partielle |
+| Blonay - Saint-Légier | 0/2 | Les deux anciennes communes sont absentes de l'archive HESTA contrôlée |
+| Laténa | 0/4 | Les quatre anciennes communes sont absentes de l'archive HESTA contrôlée |
 
-Aucune de ces trois solutions n'est appliquée sans validation. Aucune comparaison de cohorte, aucun échantillon et aucun estimateur n'est choisi ici.
+Après reconstruction, la part est disponible pour 77 des 80 premières expositions. Elle reste manquante pour : Blonay - Saint-Légier, Val de Bagnes, Laténa. Les 1 302 lignes sont conservées et aucune valeur n'est imputée.
+
+Aucune comparaison de cohorte, aucun échantillon et aucun estimateur n'est choisi ici. Le traitement analytique des trois valeurs toujours manquantes devra rester explicite dans la prochaine spécification.
 
 ## Sources
 
 - Chronologie officielle des décisions COVID du Conseil fédéral : `SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY`.
 - Effondrement de la demande hôtelière 2020 et exposition particulière de la clientèle étrangère : `BFS_HOTEL_DEMAND_COVID_2020`.
 - Nuitées domestiques et étrangères mensuelles : panel HESTA déjà enregistré dans le projet.
+- Mutations communales officielles : `BFS_MUNICIPAL_MUTATION_3944`, `BFS_MUNICIPAL_MUTATION_3961`, `BFS_MUNICIPAL_MUTATION_3994` et `BFS_MUNICIPAL_MUTATION_3999`.
+- Univers communal de l'ancienne publication HESTA contrôlée : `BFS_HESTA_ARCHIVE_2020_METADATA`.

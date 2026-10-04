@@ -58,7 +58,11 @@ NEW_REMAINING_CONTROL_REVIEW_SOURCE_IDS = {
     "WINTERTHUR_HOUSE_OF_WINTERTHUR_2017",
 }
 NEW_COVID_SPECIFICATION_SOURCE_IDS = {
+    "BFS_HESTA_ARCHIVE_2020_METADATA",
     "BFS_HOTEL_DEMAND_COVID_2020",
+    "BFS_MUNICIPAL_MUTATION_3944",
+    "BFS_MUNICIPAL_MUTATION_3961",
+    "BFS_MUNICIPAL_MUTATION_3994",
     "SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY",
 }
 SOURCE_COLUMNS = [
@@ -255,6 +259,9 @@ TABLES = {
     "accessibility_covid_foreign_share_selected": (
         ROOT / "reports" / "accessibility_covid_foreign_share_selected.csv",
         "DERIVED_ACCESSIBILITY_COVID_SPECIFICATION", "hotel municipality by focal first-exposure cohort", "approved 24-month pre-pandemic and pre-treatment characteristic"),
+    "accessibility_covid_foreign_share_reconstruction": (
+        ROOT / "config" / "accessibility_covid_foreign_share_reconstruction.csv",
+        "DERIVED_ACCESSIBILITY_COVID_SPECIFICATION", "current municipality by official predecessor component", "official municipality mutation and checked HESTA archive availability"),
 }
 
 
@@ -299,6 +306,23 @@ DESCRIPTIONS = {
     "selected_foreign_share": "Approved ratio of summed foreign overnight stays to summed domestic-plus-foreign overnight stays over 24 months",
     "selected_foreign_share_available": "Whether the approved foreign-client-share characteristic can be calculated from observed source values",
     "foreign_share_missing_handling_selected": "Whether a researcher-approved rule has been chosen for unavailable foreign-client-share values",
+    "foreign_share_reconstruction_applied": "Whether the approved foreign-client share was reconstructed from an officially continuous predecessor municipality series",
+    "foreign_share_reconstruction_status": "Outcome of the official predecessor-series reconstruction audit",
+    "foreign_share_reconstruction_source_bfs_ids": "Pipe-delimited predecessor BFS identifiers examined for reconstruction",
+    "foreign_share_reconstruction_source_names": "Pipe-delimited predecessor municipality names examined for reconstruction",
+    "foreign_share_reconstruction_source_ids": "Pipe-delimited hotel-data and official-mutation provenance identifiers for reconstruction",
+    "foreign_share_reconstruction_component_coverage": "Number of publicly available required predecessor components over all required components",
+    "target_bfs_id": "BFS identifier of the current municipality whose historical characteristic is audited",
+    "target_name": "Official current municipality name retained for the reconstruction audit",
+    "predecessor_bfs_id": "Official BFS identifier of a municipality required to reconstruct the current territory",
+    "predecessor_name": "Official predecessor municipality name",
+    "mutation_effective_date": "Official effective date of the municipality mutation",
+    "mutation_relationship": "Official municipality-mutation relationship relevant to historical reconstruction",
+    "mutation_source_id": "Registered official municipality-mutation provenance identifier",
+    "hesta_archive_status": "Exact predecessor presence or absence in the checked public HESTA archive dimension",
+    "reconstruction_component_required": "Whether this predecessor component is required for exact territorial reconstruction",
+    "reconstruction_approved": "Whether this predecessor component belongs to an exact researcher-approved reconstruction",
+    "reconstruction_reason": "Evidence-based reason the component is approved or blocked",
     "cohort_comparison_rule_selected": "Whether a stage-28 comparison-group rule has been approved",
     "membership_continuity_status": "Whether membership is carried forward by assumption or bounded by a documented exit",
     "descriptive_exposure_approved": "Whether this row has passed the current descriptive exposure gate",
@@ -605,7 +629,7 @@ def remaining_control_review_external_sources() -> list[dict]:
 
 
 def covid_specification_external_sources() -> list[dict]:
-    """Register the two checksum-preserved official stage-27 COVID sources."""
+    """Register checksum-preserved official stage-27 sources."""
     catalog = {
         row["source_id"]: row
         for row in json.loads(EVIDENCE_CONFIG_PATH.read_text(encoding="utf-8"))
@@ -624,9 +648,45 @@ def covid_specification_external_sources() -> list[dict]:
         _, metadata = max(candidates, key=lambda item: item[0])
         source = catalog[source_id]
         raw_file = metadata["raw_file"].replace("\\", "/")
+        if source_id.startswith("BFS_MUNICIPAL_MUTATION_"):
+            variable_name = "predecessor_bfs_id|target_bfs_id|municipality_mutation_effective_date"
+            processed_file = "config/accessibility_covid_foreign_share_reconstruction.csv|reports/74_SPECIFICATION_COVID_ET_BASELINE_CLIENTELE_FR.md"
+            geographic_level = "affected predecessor and successor Swiss municipalities"
+            temporal_resolution = "official municipality mutation effective date"
+            temporal_start = temporal_end = source["description"].split()[1]
+            unit = "official municipality identifier relationship"
+            transformation = "Verify exact predecessor and successor BFS identifiers, names and effective date before any historical HESTA bridge"
+            quality = "A fusion record establishes territorial lineage but does not make unavailable predecessor HESTA values observable"
+            confidence = "high for official municipality lineage; availability remains source-limited"
+            verification = "Mutation identifiers, municipality names and effective date checked against the checksum-preserved page"
+            notes = "Every fusion component is required; absent components are never treated as zero"
+        elif source_id == "BFS_HESTA_ARCHIVE_2020_METADATA":
+            variable_name = "archived_hesta_years|archived_hesta_municipality_ids|spatial_reference_2020"
+            processed_file = "config/accessibility_covid_foreign_share_reconstruction.csv|reports/74_SPECIFICATION_COVID_ET_BASELINE_CLIENTELE_FR.md"
+            geographic_level = "100 municipalities in the archived HESTA publication"
+            temporal_resolution = "metadata snapshot for 2013-2021 monthly data"
+            temporal_start, temporal_end = "2013", "2021"
+            unit = "published dimension code and label"
+            transformation = "Compare exact predecessor BFS identifiers and labels with the archived municipality dimension; do not infer values for absent municipalities"
+            quality = "The archive is limited to 100 published municipalities referenced at 1 January 2020; absence means unavailable in this checked public cube, not necessarily no hotels"
+            confidence = "high for the archived published dimension; limited for unobserved municipalities"
+            verification = "Cached JSON and SHA-256 verified; Bagnes is present while the other required fusion components are absent"
+            notes = "Used as an availability audit, not as permission to replace missing fusion components"
+        else:
+            variable_name = "covid_policy_chronology|hotel_demand_disruption|foreign_demand_disruption"
+            processed_file = "config/accessibility_covid_specification.json|reports/74_SPECIFICATION_COVID_ET_BASELINE_CLIENTELE_FR.md"
+            geographic_level = "Switzerland"
+            temporal_resolution = "official decision date or annual hotel-demand release"
+            temporal_start, temporal_end = "2020-03", "2022-04"
+            unit = "official policy chronology and percentage change in hotel overnight stays"
+            transformation = "Use the chronology to define a monthly exclusion sensitivity and the hotel-demand release to justify testing differential exposure by pre-period foreign-client share"
+            quality = "The national chronology does not encode canton-specific implementation or constant disruption intensity; the 2020 demand release does not identify a Magic Pass effect"
+            confidence = "high for official dates and national hotel-demand totals; limited for local treatment-effect adjustment"
+            verification = "Cached response and SHA-256 verified; relevant chronology and foreign-demand statistics inspected"
+            notes = "March 2020 through March 2022 is a monthly sensitivity interval, not a claim that all restrictions or effects were identical throughout"
         rows.append(source_row(
             source_id,
-            variable_name="covid_policy_chronology|hotel_demand_disruption|foreign_demand_disruption",
+            variable_name=variable_name,
             variable_description=source["description"],
             source_organisation=source["organisation"],
             source_dataset_name=source["description"],
@@ -636,18 +696,18 @@ def covid_specification_external_sources() -> list[dict]:
             retrieval_date=metadata["retrieval_date"],
             original_file_name=Path(raw_file).name,
             local_raw_file=raw_file,
-            processed_file="config/accessibility_covid_specification.json|reports/74_SPECIFICATION_COVID_ET_BASELINE_CLIENTELE_FR.md",
-            geographic_level="Switzerland",
-            temporal_resolution="official decision date or annual hotel-demand release",
-            temporal_start="2020-03", temporal_end="2022-04",
-            unit="official policy chronology and percentage change in hotel overnight stays",
+            processed_file=processed_file,
+            geographic_level=geographic_level,
+            temporal_resolution=temporal_resolution,
+            temporal_start=temporal_start, temporal_end=temporal_end,
+            unit=unit,
             license="UNKNOWN; preserve official citation, original URL and immutable checksum",
             access_conditions="Public official source; automated retrieval respects robots.txt",
-            transformation_applied="Use the chronology to define a monthly exclusion sensitivity and the hotel-demand release to justify testing differential exposure by pre-period foreign-client share",
-            quality_notes="The national chronology does not encode canton-specific implementation or constant disruption intensity; the 2020 demand release does not identify a Magic Pass effect",
-            confidence_level="high for official dates and national hotel-demand totals; limited for local treatment-effect adjustment",
-            manual_verification="Cached response and SHA-256 verified; relevant chronology and foreign-demand statistics inspected",
-            notes="March 2020 through March 2022 is a monthly sensitivity interval, not a claim that all restrictions or effects were identical throughout",
+            transformation_applied=transformation,
+            quality_notes=quality,
+            confidence_level=confidence,
+            manual_verification=verification,
+            notes=notes,
         ))
     return rows
 
@@ -1026,12 +1086,12 @@ def derived_sources() -> list[dict]:
     rows.append(source_row(
         "DERIVED_ACCESSIBILITY_COVID_SPECIFICATION",
         variable_name="approved_option_A|official_core_covid_interval|calendar_month_fixed_effects|pre_pandemic_pre_treatment_foreign_share_baselines",
-        variable_description="Researcher-approved COVID option A, audit of candidate baselines and selected 24-month ratio-of-sums foreign-client-share characteristic",
+        variable_description="Researcher-approved COVID option A, selected 24-month ratio-of-sums foreign-client-share characteristic and exact official predecessor-history reconstruction",
         source_organisation="Master thesis analytical pipeline",
         source_dataset_name="Accessibility all-cohort COVID specification and foreign-share baseline audit",
         retrieval_method="Deterministic Python audit of registered monthly HESTA origin data, all-cohort first exposure and checksum-preserved official COVID sources",
         retrieval_date="2026-10-04",
-        local_raw_file="config/accessibility_covid_specification.json|data_processed/accessibility_municipality_month_exposure.csv|reports/accessibility_all_cohort_municipality_coverage.csv|config/temporal_controls.json|data_external/source_evidence/SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY_20261004T120856Z.html|data_external/source_evidence/BFS_HOTEL_DEMAND_COVID_2020_20261004T120744Z.pdf",
+        local_raw_file="config/accessibility_covid_specification.json|config/accessibility_covid_foreign_share_reconstruction.csv|data_processed/accessibility_municipality_month_exposure.csv|reports/accessibility_all_cohort_municipality_coverage.csv|config/temporal_controls.json|data_external/source_evidence",
         processed_file="reports/accessibility_covid_foreign_share_baseline_audit.csv|reports/accessibility_covid_foreign_share_selected.csv|reports/accessibility_covid_specification_summary.json|reports/74_SPECIFICATION_COVID_ET_BASELINE_CLIENTELE_FR.md",
         geographic_level="hotel municipality by focal first-exposure cohort",
         temporal_resolution="monthly characteristic baselines and national disruption interval",
@@ -1039,11 +1099,11 @@ def derived_sources() -> list[dict]:
         unit="municipality-cohort row, months and foreign overnight-stay share",
         license="Derived analytical data; upstream source terms continue to apply",
         access_conditions="Local reproducible output",
-        transformation_applied="Retain all months and cohorts; record calendar-month fixed effects as the common-shock adjustment; define March 2020-March 2022 only as an exclusion sensitivity; audit 12/24/36-month characteristics ending before the pandemic, focal cohort and own first exposure; export the approved 24-month ratio of summed foreign to summed total overnight stays",
-        quality_notes="The 24-month ratio-of-sums characteristic is researcher-approved and exported without imputation or row exclusion. Four exposed municipalities lack calculable historical origin shares; their handling remains pending. No comparison group or estimator is chosen.",
+        transformation_applied="Retain all months and cohorts; use calendar-month fixed effects; define March 2020-March 2022 as an exclusion sensitivity; export the approved 24-month ratio of sums; verify every predecessor against official mutations and the archived HESTA municipality dimension; bridge only Moutier's same territory from BFS 700 to 6831",
+        quality_notes="The selected file retains every row. Moutier is reconstructed exactly through official identifier continuity. Blonay-Saint-Légier, Val de Bagnes and Laténa remain missing because the checked public archive lacks at least one required fusion component. No imputation, partial fusion aggregation, comparison group or estimator is used.",
         confidence_level="high for deterministic dates and availability arithmetic; no causal identification approval",
-        manual_verification="1,302 selected-characteristic rows reconcile to 186 municipalities by seven cohorts; 1,261 values are available overall and 76 of 80 first-exposed municipalities have a value; all baseline cutoffs precede the pandemic and own first exposure",
-        notes="Option A and the 24-month ratio-of-sums baseline were explicitly approved by the researcher. Missing-characteristic handling and stage-28 comparison design require separate approval.",
+        manual_verification="1,302 selected-characteristic rows retained; seven Moutier cohort rows reconstructed; 1,268 values available overall and 77 of 80 first-exposed municipalities have a value; all cutoffs precede pandemic and own first exposure",
+        notes="Option A reconstruction was explicitly approved. The three unresolved fusion histories remain missing; stage-28 comparison design requires separate approval.",
     ))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())

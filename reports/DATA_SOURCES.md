@@ -290,6 +290,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** Observation date and independent-domain semantics are unknown
 - **Local raw file:** `data_raw/bergfex_stations_ski_suisse_par_region.csv`.
 
+## BFS_HESTA_ARCHIVE_2020_METADATA — Official archived HESTA PXWeb metadata with municipalities referenced at 1 January 2020
+
+- **Contents and relevance:** Official archived HESTA PXWeb metadata with municipalities referenced at 1 January 2020
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://www.pxweb-r.bfs.admin.ch/api/v1/fr/px-x-1003020000_101/px-x-1003020000_101.px
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-04T16:05:30.812249+00:00.
+- **Variables:** archived_hesta_years|archived_hesta_municipality_ids|spatial_reference_2020
+- **Transformations:** Compare exact predecessor BFS identifiers and labels with the archived municipality dimension; do not infer values for absent municipalities
+- **Coverage:** 100 municipalities in the archived HESTA publication; metadata snapshot for 2013-2021 monthly data; 2013 to 2021.
+- **Limitations:** The archive is limited to 100 published municipalities referenced at 1 January 2020; absence means unavailable in this checked public cube, not necessarily no hotels
+- **Local raw file:** `data_external/source_evidence/BFS_HESTA_ARCHIVE_2020_METADATA_20261004T160530Z.json`.
+
 ## BFS_HOTEL_CAPACITY_DATA — px-x-1003020000_201
 
 - **Contents and relevance:** Monthly HESTA hotel supply, demand, and occupancy in open establishments by municipality
@@ -349,6 +361,42 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Coverage:** municipality; metadata snapshot; 2013 to 2026.
 - **Limitations:** Live table composition can change; cached response is the reproducibility anchor
 - **Local raw file:** `data_external/source_evidence/BFS_HOTEL_METADATA_20260919T231713Z.json`.
+
+## BFS_MUNICIPAL_MUTATION_3944 — Official 2021 fusion of Bagnes BFS 6031 and Vollèges BFS 6036 into Val de Bagnes BFS 6037
+
+- **Contents and relevance:** Official 2021 fusion of Bagnes BFS 6031 and Vollèges BFS 6036 into Val de Bagnes BFS 6037
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://www.agvchapp.bfs.admin.ch/fr/mutations/3944
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-04T16:04:59.725863+00:00.
+- **Variables:** predecessor_bfs_id|target_bfs_id|municipality_mutation_effective_date
+- **Transformations:** Verify exact predecessor and successor BFS identifiers, names and effective date before any historical HESTA bridge
+- **Coverage:** affected predecessor and successor Swiss municipalities; official municipality mutation effective date; 2021 to 2021.
+- **Limitations:** A fusion record establishes territorial lineage but does not make unavailable predecessor HESTA values observable
+- **Local raw file:** `data_external/source_evidence/BFS_MUNICIPAL_MUTATION_3944_20261004T160459Z.html`.
+
+## BFS_MUNICIPAL_MUTATION_3961 — Official 2022 fusion of Blonay BFS 5881 and Saint-Légier-La Chiésaz BFS 5888 into Blonay - Saint-Légier BFS 5892
+
+- **Contents and relevance:** Official 2022 fusion of Blonay BFS 5881 and Saint-Légier-La Chiésaz BFS 5888 into Blonay - Saint-Légier BFS 5892
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://www.agvchapp.bfs.admin.ch/fr/mutations/3961
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-04T16:05:10.298443+00:00.
+- **Variables:** predecessor_bfs_id|target_bfs_id|municipality_mutation_effective_date
+- **Transformations:** Verify exact predecessor and successor BFS identifiers, names and effective date before any historical HESTA bridge
+- **Coverage:** affected predecessor and successor Swiss municipalities; official municipality mutation effective date; 2022 to 2022.
+- **Limitations:** A fusion record establishes territorial lineage but does not make unavailable predecessor HESTA values observable
+- **Local raw file:** `data_external/source_evidence/BFS_MUNICIPAL_MUTATION_3961_20261004T160510Z.html`.
+
+## BFS_MUNICIPAL_MUTATION_3994 — Official 2025 fusion of Enges BFS 6453, Hauterive BFS 6454, Saint-Blaise BFS 6459 and La Tène BFS 6461 into Laténa BFS 6513
+
+- **Contents and relevance:** Official 2025 fusion of Enges BFS 6453, Hauterive BFS 6454, Saint-Blaise BFS 6459 and La Tène BFS 6461 into Laténa BFS 6513
+- **Producer:** Swiss Federal Statistical Office
+- **Exact URL:** https://www.agvchapp.bfs.admin.ch/fr/mutations/3994
+- **Access and retrieval date:** HTTP GET with immutable local response, metadata sidecar and SHA-256; 2026-10-04T16:05:20.555668+00:00.
+- **Variables:** predecessor_bfs_id|target_bfs_id|municipality_mutation_effective_date
+- **Transformations:** Verify exact predecessor and successor BFS identifiers, names and effective date before any historical HESTA bridge
+- **Coverage:** affected predecessor and successor Swiss municipalities; official municipality mutation effective date; 2025 to 2025.
+- **Limitations:** A fusion record establishes territorial lineage but does not make unavailable predecessor HESTA values observable
+- **Local raw file:** `data_external/source_evidence/BFS_MUNICIPAL_MUTATION_3994_20261004T160520Z.html`.
 
 ## BFS_MUNICIPAL_MUTATION_3999 — Official municipality mutation 3999
 
@@ -544,15 +592,15 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 
 ## DERIVED_ACCESSIBILITY_COVID_SPECIFICATION — Accessibility all-cohort COVID specification and foreign-share baseline audit
 
-- **Contents and relevance:** Researcher-approved COVID option A, audit of candidate baselines and selected 24-month ratio-of-sums foreign-client-share characteristic
+- **Contents and relevance:** Researcher-approved COVID option A, selected 24-month ratio-of-sums foreign-client-share characteristic and exact official predecessor-history reconstruction
 - **Producer:** Master thesis analytical pipeline
 - **Exact URL:** Not documented.
 - **Access and retrieval date:** Deterministic Python audit of registered monthly HESTA origin data, all-cohort first exposure and checksum-preserved official COVID sources; 2026-10-04.
 - **Variables:** approved_option_A|official_core_covid_interval|calendar_month_fixed_effects|pre_pandemic_pre_treatment_foreign_share_baselines
-- **Transformations:** Retain all months and cohorts; record calendar-month fixed effects as the common-shock adjustment; define March 2020-March 2022 only as an exclusion sensitivity; audit 12/24/36-month characteristics ending before the pandemic, focal cohort and own first exposure; export the approved 24-month ratio of summed foreign to summed total overnight stays
+- **Transformations:** Retain all months and cohorts; use calendar-month fixed effects; define March 2020-March 2022 as an exclusion sensitivity; export the approved 24-month ratio of sums; verify every predecessor against official mutations and the archived HESTA municipality dimension; bridge only Moutier's same territory from BFS 700 to 6831
 - **Coverage:** hotel municipality by focal first-exposure cohort; monthly characteristic baselines and national disruption interval; 2014-11 to 2025-05.
-- **Limitations:** The 24-month ratio-of-sums characteristic is researcher-approved and exported without imputation or row exclusion. Four exposed municipalities lack calculable historical origin shares; their handling remains pending. No comparison group or estimator is chosen.
-- **Local raw file:** `config/accessibility_covid_specification.json|data_processed/accessibility_municipality_month_exposure.csv|reports/accessibility_all_cohort_municipality_coverage.csv|config/temporal_controls.json|data_external/source_evidence/SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY_20261004T120856Z.html|data_external/source_evidence/BFS_HOTEL_DEMAND_COVID_2020_20261004T120744Z.pdf`.
+- **Limitations:** The selected file retains every row. Moutier is reconstructed exactly through official identifier continuity. Blonay-Saint-Légier, Val de Bagnes and Laténa remain missing because the checked public archive lacks at least one required fusion component. No imputation, partial fusion aggregation, comparison group or estimator is used.
+- **Local raw file:** `config/accessibility_covid_specification.json|config/accessibility_covid_foreign_share_reconstruction.csv|data_processed/accessibility_municipality_month_exposure.csv|reports/accessibility_all_cohort_municipality_coverage.csv|config/temporal_controls.json|data_external/source_evidence`.
 
 ## DERIVED_ACCESSIBILITY_HIGH_LEVERAGE_CONTROL_EXTERNAL_SHOCK_REVIEW — Accessibility high-leverage control external-shock review
 

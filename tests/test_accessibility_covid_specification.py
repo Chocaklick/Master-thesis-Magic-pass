@@ -37,6 +37,9 @@ def test_option_a_and_official_core_sensitivity_are_versioned() -> None:
     assert config["foreign_share_aggregation_selected"] == (
         "ratio_of_summed_foreign_to_summed_total_overnights"
     )
+    assert config["foreign_share_missing_handling_selected"] == (
+        "official_predecessor_reconstruction_without_imputation"
+    )
 
 
 def test_baseline_audit_is_exhaustive_nonselective_and_preperiod_only() -> None:
@@ -78,15 +81,25 @@ def test_candidate_window_counts_reconcile_with_approved_24m_choice() -> None:
     assert summary["foreign_share_aggregation_selected"] == (
         "ratio_of_summed_foreign_to_summed_total_overnights"
     )
-    assert summary["selected_foreign_share_rows_available"] == 1261
-    assert summary["selected_foreign_share_rows_missing"] == 41
-    assert summary["first_exposed_with_selected_foreign_share"] == 76
-    assert summary["first_exposed_without_selected_foreign_share"] == 4
-    assert not summary["foreign_share_missing_handling_selected"]
+    assert summary["selected_foreign_share_rows_available"] == 1268
+    assert summary["selected_foreign_share_rows_missing"] == 34
+    assert summary["first_exposed_with_selected_foreign_share"] == 77
+    assert summary["first_exposed_without_selected_foreign_share"] == 3
+    assert summary["foreign_share_missing_handling_selected"] == (
+        "official_predecessor_reconstruction_without_imputation"
+    )
+    assert summary["historical_reconstruction"] == {
+        "targets_reviewed": 4,
+        "targets_reconstructed": 1,
+        "targets_unresolved": 3,
+        "predecessor_components_reviewed": 9,
+        "selected_rows_reconstructed": 7,
+        "method": "official_predecessor_reconstruction_without_imputation",
+    }
     assert not summary["analysis_sample_selected"]
 
 
-def test_selected_foreign_share_preserves_rows_and_does_not_resolve_missing() -> None:
+def test_selected_foreign_share_preserves_rows_and_only_bridges_exact_moutier_history() -> None:
     audit = read("reports/accessibility_covid_foreign_share_baseline_audit.csv")
     selected = read("reports/accessibility_covid_foreign_share_selected.csv")
     assert len(selected) == len(audit) == 1302
@@ -94,19 +107,48 @@ def test_selected_foreign_share_preserves_rows_and_does_not_resolve_missing() ->
     assert selected.selected_foreign_share_aggregation.eq(
         "ratio_of_summed_foreign_to_summed_total_overnights"
     ).all()
+    not_reconstructed = ~as_bool(selected.foreign_share_reconstruction_applied)
     pd.testing.assert_series_equal(
-        selected.selected_foreign_share,
-        audit.baseline_24m_foreign_share_ratio_of_sums,
+        selected.loc[not_reconstructed, "selected_foreign_share"].reset_index(drop=True),
+        audit.loc[
+            not_reconstructed, "baseline_24m_foreign_share_ratio_of_sums"
+        ].reset_index(drop=True),
         check_names=False,
     )
-    assert as_bool(selected.selected_foreign_share_available).sum() == 1261
+    reconstructed = selected[as_bool(selected.foreign_share_reconstruction_applied)]
+    assert len(reconstructed) == 7
+    assert reconstructed.municipality_bfs_id.eq(6831).all()
+    assert reconstructed.foreign_share_reconstruction_source_bfs_ids.eq("700").all()
+    source = audit[audit.municipality_bfs_id.eq(700)][
+        ["focal_cohort_month", "baseline_24m_foreign_share_ratio_of_sums"]
+    ]
+    check = reconstructed.merge(source, on="focal_cohort_month", validate="one_to_one")
+    assert check.selected_foreign_share.eq(
+        check.baseline_24m_foreign_share_ratio_of_sums
+    ).all()
+    assert as_bool(selected.selected_foreign_share_available).sum() == 1268
     first = selected.exposure_status_at_focal_cohort.eq("first_exposed_in_focal_cohort")
     assert first.sum() == 80
-    assert as_bool(selected.loc[first, "selected_foreign_share_available"]).sum() == 76
-    assert not as_bool(selected.foreign_share_missing_handling_selected).any()
+    assert as_bool(selected.loc[first, "selected_foreign_share_available"]).sum() == 77
+    assert as_bool(selected.foreign_share_missing_handling_selected).all()
     assert not as_bool(selected.analysis_sample_selected).any()
     assert not as_bool(selected.cohort_comparison_rule_selected).any()
     assert not as_bool(selected.causal_estimation_approved).any()
+
+
+def test_reconstruction_mapping_requires_complete_fusion_components() -> None:
+    mapping = read("config/accessibility_covid_foreign_share_reconstruction.csv")
+    assert len(mapping) == 9
+    assert mapping.groupby("target_bfs_id").size().to_dict() == {
+        5892: 2,
+        6037: 2,
+        6513: 4,
+        6831: 1,
+    }
+    approved = mapping[as_bool(mapping.reconstruction_approved)]
+    assert approved[["target_bfs_id", "predecessor_bfs_id"]].values.tolist() == [
+        [6831, 700]
+    ]
 
 
 def test_official_evidence_checksums_and_provenance_are_registered() -> None:
@@ -123,6 +165,10 @@ def test_official_evidence_checksums_and_provenance_are_registered() -> None:
     dictionary = read("metadata/data_dictionary.csv", dtype=str)
     required_sources = {
         "BFS_HOTEL_DEMAND_COVID_2020",
+        "BFS_HESTA_ARCHIVE_2020_METADATA",
+        "BFS_MUNICIPAL_MUTATION_3944",
+        "BFS_MUNICIPAL_MUTATION_3961",
+        "BFS_MUNICIPAL_MUTATION_3994",
         "SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY",
         "DERIVED_ACCESSIBILITY_COVID_SPECIFICATION",
     }
