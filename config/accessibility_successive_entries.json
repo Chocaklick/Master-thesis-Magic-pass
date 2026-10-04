@@ -1,0 +1,20 @@
+{
+  "specification_version": "stage29_v1_network_trajectory_and_additional_entry_audit_2026_10_04",
+  "approval_date": "2026-10-04",
+  "researcher_approved_primary_target": "network_trajectory_after_first_accessible_exposure_including_later_accessible_entries",
+  "primary_followup_rule": "retain_all_observed_post_months_without_censoring_at_later_entries",
+  "additional_entry_analysis_rule": "audit_dates_catchments_and_observed_design_separability_before_selecting_an_additional_effect_estimator",
+  "accessibility_threshold_minutes": 120,
+  "membership_timeline_rule": "reuse_existing_group_first_entry_and_documented_exit_timeline",
+  "grouping_rule": "preserve_all_existing_station_group_ids_do_not_merge_collinear_groups_without_approval",
+  "fixed_effect_rank_audit": "alternating_projection_on_municipality_and_calendar_month_over_observed_outcome_rows",
+  "projection_numerical_tolerance": 1e-12,
+  "projection_maximum_iterations": 10000,
+  "rank_tolerance_rule": "numpy_default_singular_value_tolerance_max_dimension_times_machine_epsilon_times_largest_singular_value",
+  "primary_successive_entry_rule_selected": true,
+  "additional_effect_estimator_selected": false,
+  "comparability_screen_selected": false,
+  "analysis_sample_selected": false,
+  "estimator_selected": false,
+  "causal_estimation_approved": false
+}

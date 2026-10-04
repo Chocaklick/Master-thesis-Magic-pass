@@ -12,9 +12,9 @@
 
 ## Support obtenu
 
-Les nuitées observées couvrent 159 mois, de 2013-01-01 à 2026-03-01. Les 80 communes traitées sur 80 ont au moins un mois postérieur observé. Avec au moins une cohorte traitée et ses témoins principaux, le support va du mois relatif 0 au mois 100.
+Les nuitées observées couvrent 159 mois, de 2013-01-01 à 2026-03-01. Les 80 séries administratives exposées sur 80 ont au moins un mois postérieur observé. Elles représentent 79 territoires actuels, car Moutier BE (700) et JU (6831) sont deux identifiants du même territoire. Le raccordement du panel reste à valider avant estimation. Avec au moins une cohorte traitée et ses témoins principaux, le support va du mois relatif 0 au mois 100.
 
-| Cohorte | Communes traitées | Dernier mois relatif observé | Mois postérieurs avec au moins une issue observée |
+| Cohorte | Séries administratives exposées | Dernier mois relatif observé | Mois postérieurs avec au moins une issue observée |
 |---|---:|---:|---:|
 | 2017-11-01 | 41 | 100 | 101 |
 | 2018-05-01 | 3 | 94 | 95 |
@@ -45,15 +45,15 @@ Les trois fenêtres peuvent être comparées sur les mêmes 65 communes disposan
 
 ## Limites avant estimation
 
-76 communes disposent d'au moins une nuitée observée avant et après. Les quatre autres restent dans l'inventaire mais leur historique de résultat avant exposition manque sous l'identifiant courant : Blonay - Saint-Légier, Val de Bagnes, Laténa et Moutier (JU). La reconstruction déjà effectuée pour la part étrangère de Moutier n'a pas encore été appliquée au panel de résultats. Avoir un mois postérieur ne suffit donc pas à rendre les 80 communes estimables.
+76 séries disposent d'au moins une nuitée observée avant et après. Les quatre autres restent dans l'inventaire mais leur historique de résultat avant exposition manque sous l'identifiant courant : Blonay - Saint-Légier, Val de Bagnes, Laténa et Moutier (JU). L'historique antérieur de Moutier est déjà présent sous BFS 700 ; la reconstruction de sa part étrangère n'a pas encore été appliquée au panel de résultats. Les 80 séries ne constituent donc pas 80 unités indépendantes estimables.
 
-46 communes traitées connaissent au moins une entrée accessible supplémentaire. Ces observations restent visibles mais ne sont ni censurées ni attribuées à une station : leur traitement méthodologique doit être validé séparément.
+46 communes traitées connaissent au moins une entrée accessible supplémentaire. Le choix validé conserve toute la trajectoire du réseau dans l'analyse principale ; les effets additionnels sont examinés séparément au rapport 77. Aucune attribution à une station ni censure du suivi n'est appliquée.
 
 Une tendance contrefactuelle linéaire reste une hypothèse à diagnostiquer. Le présent audit ne valide ni tendances parallèles, ni forme linéaire, ni saut permanent. Aucun filtre de comparabilité, échantillon final ou estimateur n'est choisi.
 
-## Prochaine décision : les entrées successives
+## Décision sur les entrées successives
 
-Trois possibilités restent à choisir. Garder la trajectoire du réseau après la première exposition conserve les 5580 observations postérieures et décrit une exposition qui peut ensuite s'élargir. Arrêter le suivi dès la prochaine entrée accessible laisserait 3118 observations et 77 communes avec au moins une observation postérieure ; cette comparaison d'effectifs est calculée sans appliquer la règle. Enfin, modéliser les ajouts séparément exigerait d'auditer leurs dates, leurs bassins et leur variation indépendante ; des entrées simultanées ne garantissent pas des effets distincts. Aucun de ces choix n'est appliqué ici.
+Le chercheur a choisi de garder la trajectoire du réseau après la première exposition : les 5580 observations postérieures restent disponibles. L'alternative non appliquée consistant à arrêter le suivi dès la prochaine entrée laisserait 3118 observations et 77 communes avec une observation postérieure. Le diagnostic des dates, bassins et variations permettant d'examiner séparément les ajouts figure au rapport 77 ; leur estimateur reste à définir.
 
 ## Fichiers de contrôle
 

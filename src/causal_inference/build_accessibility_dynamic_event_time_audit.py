@@ -3,8 +3,9 @@
 The researcher approved keeping every observed post-treatment month, reporting
 composition at each relative month, comparing four post-treatment time bins,
 and retaining constant-step and common 6/12/24-month windows as sensitivities.
-This script audits support only. It does not choose an estimator, a lead window,
-a comparability screen, a successive-entry treatment rule or a final sample.
+The subsequent approved network-trajectory rule retains later accessible entries.
+This script audits support only; the estimator, lead window, comparability
+screen and final sample remain pending.
 """
 
 from __future__ import annotations
@@ -90,6 +91,7 @@ def build_month_frame(
         "municipality_bfs_id",
         "date",
         "hotel_overnights",
+        "boundary_bfs_id_2026",
         "new_station_group_entry_count_120min",
         "active_station_group_count_120min",
     ]
@@ -487,6 +489,8 @@ def build_summary(
             len(treated_units_post)
         ),
         "first_exposure_cohorts": int(universe.focal_cohort_month.nunique()),
+        "treated_current_territories": int(treated.boundary_bfs_id_2026.nunique()),
+        "administrative_id_harmonisation_applied": False,
         "treated_municipalities_with_observed_pre_and_post_support": int(len(pre_units)),
         "treated_municipalities_without_observed_pre_support": without_pre,
         "supported_post_event_month_start": int(supported_post.event_month.min()),
@@ -516,7 +520,7 @@ def build_summary(
             ),
             "rule_applied_to_analytical_sample": False,
         },
-        "successive_entry_handling_selected": False,
+        "successive_entry_handling_selected": bool(config["successive_entry_handling_selected"]),
         "linear_counterfactual_status": config["linear_counterfactual_status"],
         "comparability_screen_selected": False,
         "analysis_sample_selected": False,
@@ -547,9 +551,9 @@ def write_report(summary: dict) -> None:
         "",
         "## Support obtenu",
         "",
-        f"Les nuitées observées couvrent {summary['calendar_months_with_any_observed_outcome']} mois, de {summary['observed_outcome_calendar_start']} à {summary['observed_outcome_calendar_end']}. Les {summary['treated_municipalities_with_at_least_one_observed_post_month']} communes traitées sur {summary['treated_municipalities']} ont au moins un mois postérieur observé. Avec au moins une cohorte traitée et ses témoins principaux, le support va du mois relatif {summary['supported_post_event_month_start']} au mois {summary['supported_post_event_month_end']}.",
+        f"Les nuitées observées couvrent {summary['calendar_months_with_any_observed_outcome']} mois, de {summary['observed_outcome_calendar_start']} à {summary['observed_outcome_calendar_end']}. Les {summary['treated_municipalities_with_at_least_one_observed_post_month']} séries administratives exposées sur {summary['treated_municipalities']} ont au moins un mois postérieur observé. Elles représentent {summary['treated_current_territories']} territoires actuels, car Moutier BE (700) et JU (6831) sont deux identifiants du même territoire. Le raccordement du panel reste à valider avant estimation. Avec au moins une cohorte traitée et ses témoins principaux, le support va du mois relatif {summary['supported_post_event_month_start']} au mois {summary['supported_post_event_month_end']}.",
         "",
-        "| Cohorte | Communes traitées | Dernier mois relatif observé | Mois postérieurs avec au moins une issue observée |",
+        "| Cohorte | Séries administratives exposées | Dernier mois relatif observé | Mois postérieurs avec au moins une issue observée |",
         "|---|---:|---:|---:|",
     ]
     for row in summary["cohort_post_support"]:
@@ -603,15 +607,15 @@ def write_report(summary: dict) -> None:
             "",
             "## Limites avant estimation",
             "",
-            f"{summary['treated_municipalities_with_observed_pre_and_post_support']} communes disposent d'au moins une nuitée observée avant et après. Les quatre autres restent dans l'inventaire mais leur historique de résultat avant exposition manque sous l'identifiant courant : Blonay - Saint-Légier, Val de Bagnes, Laténa et Moutier (JU). La reconstruction déjà effectuée pour la part étrangère de Moutier n'a pas encore été appliquée au panel de résultats. Avoir un mois postérieur ne suffit donc pas à rendre les 80 communes estimables.",
+            f"{summary['treated_municipalities_with_observed_pre_and_post_support']} séries disposent d'au moins une nuitée observée avant et après. Les quatre autres restent dans l'inventaire mais leur historique de résultat avant exposition manque sous l'identifiant courant : Blonay - Saint-Légier, Val de Bagnes, Laténa et Moutier (JU). L'historique antérieur de Moutier est déjà présent sous BFS 700 ; la reconstruction de sa part étrangère n'a pas encore été appliquée au panel de résultats. Les 80 séries ne constituent donc pas 80 unités indépendantes estimables.",
             "",
-            f"{summary['treated_municipalities_with_any_later_accessible_entry']} communes traitées connaissent au moins une entrée accessible supplémentaire. Ces observations restent visibles mais ne sont ni censurées ni attribuées à une station : leur traitement méthodologique doit être validé séparément.",
+            f"{summary['treated_municipalities_with_any_later_accessible_entry']} communes traitées connaissent au moins une entrée accessible supplémentaire. Le choix validé conserve toute la trajectoire du réseau dans l'analyse principale ; les effets additionnels sont examinés séparément au rapport 77. Aucune attribution à une station ni censure du suivi n'est appliquée.",
             "",
             "Une tendance contrefactuelle linéaire reste une hypothèse à diagnostiquer. Le présent audit ne valide ni tendances parallèles, ni forme linéaire, ni saut permanent. Aucun filtre de comparabilité, échantillon final ou estimateur n'est choisi.",
             "",
-            "## Prochaine décision : les entrées successives",
+            "## Décision sur les entrées successives",
             "",
-            f"Trois possibilités restent à choisir. Garder la trajectoire du réseau après la première exposition conserve les {summary['constant_step_sensitivity_support']['treated_observation_rows']} observations postérieures et décrit une exposition qui peut ensuite s'élargir. Arrêter le suivi dès la prochaine entrée accessible laisserait {summary['next_entry_censoring_counterfactual_support_only']['observed_post_rows_before_next_entry']} observations et {summary['next_entry_censoring_counterfactual_support_only']['municipalities_with_any_observed_post_row_before_next_entry']} communes avec au moins une observation postérieure ; cette comparaison d'effectifs est calculée sans appliquer la règle. Enfin, modéliser les ajouts séparément exigerait d'auditer leurs dates, leurs bassins et leur variation indépendante ; des entrées simultanées ne garantissent pas des effets distincts. Aucun de ces choix n'est appliqué ici.",
+            f"Le chercheur a choisi de garder la trajectoire du réseau après la première exposition : les {summary['constant_step_sensitivity_support']['treated_observation_rows']} observations postérieures restent disponibles. L'alternative non appliquée consistant à arrêter le suivi dès la prochaine entrée laisserait {summary['next_entry_censoring_counterfactual_support_only']['observed_post_rows_before_next_entry']} observations et {summary['next_entry_censoring_counterfactual_support_only']['municipalities_with_any_observed_post_row_before_next_entry']} communes avec une observation postérieure. Le diagnostic des dates, bassins et variations permettant d'examiner séparément les ajouts figure au rapport 77 ; leur estimateur reste à définir.",
             "",
             "## Fichiers de contrôle",
             "",

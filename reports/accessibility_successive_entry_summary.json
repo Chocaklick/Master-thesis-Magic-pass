@@ -1,0 +1,81 @@
+{
+  "specification_version": "stage29_v1_network_trajectory_and_additional_entry_audit_2026_10_04",
+  "primary_target": "network_trajectory_after_first_accessible_exposure_including_later_accessible_entries",
+  "municipality_entry_months": 177,
+  "first_exposure_entry_months": 80,
+  "additional_entry_months": 97,
+  "municipalities_with_additional_entries": 46,
+  "current_territories_exposed": 79,
+  "current_territories_with_additional_entries": 45,
+  "distinct_current_territory_entry_months": 175,
+  "administrative_id_harmonisation_applied": false,
+  "additional_entries_with_multiple_groups": 43,
+  "additional_entries_with_observed_pre_and_post_segment": 94,
+  "entry_month_group_count_distribution": {
+    "1": 94,
+    "2": 26,
+    "3": 25,
+    "4": 6,
+    "5": 16,
+    "6": 9,
+    "7": 1
+  },
+  "station_groups_retained": 71,
+  "station_groups_without_current_120min_pair": 26,
+  "observed_design": {
+    "observed_outcome_rows": 28455,
+    "group_columns_with_current_access": 45,
+    "two_way_fixed_effect_rank": 41,
+    "rank_deficiency": 4,
+    "rank_numerical_tolerance": 3.322315081200222e-10,
+    "projection_iterations": 9,
+    "projection_numerical_tolerance": 1e-12,
+    "condition_number_nonzero_space": 17.44763241503981,
+    "exact_identical_observed_exposure_pairs": [
+      {
+        "station_group_id_left": "MP_GROUP_EVENT__98c0c64310c6",
+        "station_group_id_right": "MP_GROUP_RESORT__anzere",
+        "station_group_name_left": "Mayens de Conthey",
+        "station_group_name_right": "Anzère"
+      },
+      {
+        "station_group_id_left": "MP_GROUP_EVENT__e664bf3f38d5",
+        "station_group_id_right": "MP_GROUP_RESORT__schwanden_sigriswil_thunersee",
+        "station_group_name_left": "Wilerallmi",
+        "station_group_name_right": "Schwanden"
+      },
+      {
+        "station_group_id_left": "MP_GROUP_RESORT__aeschi",
+        "station_group_id_right": "MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal",
+        "station_group_name_left": "Aeschiallmend",
+        "station_group_name_right": "Faltschen"
+      },
+      {
+        "station_group_id_left": "MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal",
+        "station_group_id_right": "MP_GROUP_RESORT__st_luc_chandolin",
+        "station_group_name_left": "Grimentz-Zinal",
+        "station_group_name_right": "St-Luc / Chandolin"
+      }
+    ],
+    "documented_exits_preserved": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__crans_montana_crans_montana",
+        "last_active_month": "2020-04-01"
+      }
+    ],
+    "interpretation": "Linear rank support only; not a causal-identification test or an estimator selection"
+  },
+  "primary_network_trajectory_rule_selected": true,
+  "additional_effect_estimator_selected": false,
+  "analysis_sample_selected": false,
+  "causal_estimation_approved": false,
+  "input_sha256": {
+    "config/accessibility_successive_entries.json": "e4bf5bdaaba459b397c378ded4b98e3aa6352af66f6e88c559e29d363b46d0e7",
+    "data_processed/accessibility_station_groups.csv": "08040e0b7141679434eb8f4339d46ba24a77768ee07c6ab9fb98e989054987eb",
+    "data_processed/accessibility_station_group_events.csv": "9cb71a6820bda68b3f66b32b06bf92fc6d693758ca419c13a86d589fa43323df",
+    "data_processed/accessibility_station_group_journey_context.csv": "226114874ffff0e679c7f951e596007176e8635741ae64dd8c48ae576446ce60",
+    "data_processed/magic_pass_membership_history.csv": "99b46cf250586eb80d2df3ffe6b5375775419234853fb823b773be6bbc2e4588",
+    "data_processed/accessibility_municipality_month_exposure.csv": "9da2037a9fd323afdea5987a87669d94618535ded4f6a71c1a82a97f1890d0be"
+  },
+  "source_id": "DERIVED_ACCESSIBILITY_SUCCESSIVE_ENTRY_AUDIT"
+}

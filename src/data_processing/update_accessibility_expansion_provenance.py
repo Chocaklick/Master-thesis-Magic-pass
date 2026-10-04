@@ -274,10 +274,30 @@ TABLES = {
     "accessibility_dynamic_event_time_support_by_event_month": (
         ROOT / "reports" / "accessibility_dynamic_event_time_support_by_event_month.csv",
         "DERIVED_ACCESSIBILITY_DYNAMIC_EVENT_TIME_SUPPORT", "relative month pooled across first-exposure cohorts", "monthly unbalanced event-time support and cohort composition"),
+    "accessibility_successive_entry_events": (
+        ROOT / "reports" / "accessibility_successive_entry_events.csv",
+        "DERIVED_ACCESSIBILITY_SUCCESSIVE_ENTRY_AUDIT", "hotel municipality by accessible group-entry month", "first and additional entries with all available observed follow-up"),
+    "accessibility_successive_entry_group_separability": (
+        ROOT / "reports" / "accessibility_successive_entry_group_separability.csv",
+        "DERIVED_ACCESSIBILITY_SUCCESSIVE_ENTRY_AUDIT", "existing station group", "all observed outcome rows through March 2026"),
+    "accessibility_municipality_month_exposure_territorial": (
+        ROOT / "data_processed" / "accessibility_municipality_month_exposure_territorial.csv",
+        "DERIVED_ACCESSIBILITY_TERRITORIAL_MOUTIER_BRIDGE", "analytical municipality territory", "calendar month with original HESTA identifier lineage"),
+    "accessibility_cohort_comparison_universe_territorial": (
+        ROOT / "reports" / "accessibility_cohort_comparison_universe_territorial.csv",
+        "DERIVED_ACCESSIBILITY_TERRITORIAL_MOUTIER_BRIDGE", "analytical municipality territory by focal cohort", "approved comparison roles without double-counting Moutier"),
+    "accessibility_covid_foreign_share_selected_territorial": (
+        ROOT / "reports" / "accessibility_covid_foreign_share_selected_territorial.csv",
+        "DERIVED_ACCESSIBILITY_TERRITORIAL_MOUTIER_BRIDGE", "analytical municipality territory by focal cohort", "approved foreign-share baseline without double-counting Moutier"),
 }
 
 
 DESCRIPTIONS = {
+    "source_municipality_bfs_id": "Original HESTA municipality identifier for this monthly source row; 700 before January 2026 and 6831 thereafter for the single analytical territory Moutier",
+    "territorial_source_bfs_ids": "Original municipality identifiers belonging to this analytical territory; 700|6831 for the explicitly approved exact Moutier bridge",
+    "territorial_harmonisation_applied": "Whether this row belongs to the approved same-territory Moutier identifier bridge; no imputation or other boundary reconstruction",
+    "territorial_harmonisation_source_id": "Registered deterministic territorial bridge provenance; original outcome and feature source identifiers remain separately retained",
+    "territorial_mutation_source_id": "Registered official municipal mutation supporting this territorial bridge, where applicable",
     "station_group_id": "Stable analytical group identifier kept separate from lift cluster and municipality IDs",
     "station_group_name": "Reviewed human-readable station-group label",
     "group_origin": "Whether the group comes from a direct listing link, a reviewed pending relation, or both",
@@ -378,7 +398,32 @@ DESCRIPTIONS = {
     "covid_exclusion_sensitivity_month": "Whether the calendar month belongs to the approved March 2020-March 2022 exclusion sensitivity",
     "primary_temporal_design_selected": "Whether the researcher-approved unbalanced all-available-post-month rule is active",
     "fixed_symmetric_primary_horizon_selected": "Whether a fixed symmetric horizon is imposed as the primary temporal design; false here",
-    "successive_entry_handling_selected": "Whether a rule attributing or censoring later accessible entries has been approved",
+    "successive_entry_handling_selected": "Whether the researcher has approved the treatment of later accessible entries in the primary temporal design",
+    "municipality_entry_id": "Stable BFS-ID and calendar-month identifier of an accessible group entry in a municipality",
+    "entry_month": "Calendar month when one or more accessible station groups first enter Magic Pass",
+    "entry_order": "Chronological rank of the distinct accessible group-entry month within a municipality",
+    "entry_type": "Whether this is the municipality's first accessible exposure or a subsequent accessible group entry",
+    "entering_station_group_ids": "Pipe-delimited stable station-group identifiers entering this month and accessible to this municipality",
+    "entering_station_group_names": "Original reviewed names of the accessible station groups entering this month",
+    "entering_station_group_count": "Number of distinct accessible station groups entering together in the municipality-month",
+    "multiple_groups_entering_same_month": "Whether more than one accessible group enters in this municipality-month; does not impose a new analytical grouping",
+    "previous_entry_month": "Immediately preceding distinct accessible group-entry month in the municipality, absent for first exposure",
+    "next_entry_month": "Next distinct accessible group-entry month in the municipality, absent when no later entry is known",
+    "months_since_previous_entry": "Calendar months between this entry and the preceding accessible entry; missing for first exposure",
+    "months_until_next_entry": "Calendar months between this entry and the next accessible entry; missing when no later entry is known",
+    "observed_pre_months_since_previous_entry": "Observed hotel-night months from the preceding entry inclusive to this entry exclusive, or all available pre months for first exposure",
+    "observed_post_months_before_next_entry": "Observed hotel-night months from this entry inclusive to the next entry exclusive, or through the last observation when no later entry is known",
+    "observed_post_months_all_available": "All observed hotel-night months at or after this entry, including later accessible entries",
+    "hotel_overnights_at_entry": "Observed HESTA hotel overnight stays in the municipality at this entry month; source missing values remain missing",
+    "accessible_municipalities_120min": "Number of municipalities linked to this group by the existing descriptive quality gate and 120-minute current-access rule",
+    "accessible_current_territories_120min": "Number of distinct current BFS territories linked to this group; Moutier BE and JU administrative series count once",
+    "first_exposure_municipalities": "Municipalities for which this group enters at their first accessible group-entry month",
+    "additional_entry_municipalities": "Municipalities already exposed to at least one accessible group before this group enters",
+    "observed_exposure_rows": "Observed municipality-month outcome rows where this group's accessible membership is active, respecting its documented exit",
+    "identical_observed_exposure_group_ids": "Stable IDs of groups with exactly the same exposure column on all observed outcome rows; blank means no exact duplicate",
+    "has_identical_observed_exposure_column": "Whether another group has exactly the same active accessible exposure on all observed outcome rows",
+    "primary_network_trajectory_rule_selected": "Whether the approved primary analysis retains the full network-exposure trajectory after first exposure, including later entries",
+    "additional_effect_estimator_selected": "Whether an estimator for separate additional-entry effects is approved; false in this audit",
     "cohorts_with_primary_comparison_support": "Number of focal cohorts with observed treated and primary-donor outcomes at the relative month",
     "cohorts_with_sensitivity_comparison_support": "Number of focal cohorts with observed treated and never-exposed-donor outcomes at the relative month",
     "target_bfs_id": "BFS identifier of the current municipality whose historical characteristic is audited",
@@ -1213,10 +1258,54 @@ def derived_sources() -> list[dict]:
         license="Derived analytical data; upstream source terms continue to apply",
         access_conditions="Local reproducible output",
         transformation_applied="Retain all observed post-treatment months; report exact monthly cohort and donor composition; classify post months as 0-5, 6-11, 12-23 or 24-plus; audit a permanent-step sensitivity and common 6/12/24-month support including their 65-municipality intersection; flag outcomes at or after later accessible station-group entries; pooled donor counts include only cohort-months with an observed treated outcome",
-        quality_notes="All 80 treated municipalities have observed post support but only 76 have any observed pre-treatment outcome under current panel identifiers. The Moutier foreign-share reconstruction has not yet been applied to the outcome panel. Later entries remain flagged without attribution or censoring. The lead window, estimator, comparability screen and final sample remain unselected.",
+        quality_notes="All 80 treated municipalities have observed post support but only 76 have any observed pre-treatment outcome under current panel identifiers. The Moutier foreign-share reconstruction has not yet been applied to the outcome panel. The approved primary network trajectory includes later entries without attribution or censoring. The lead window, estimator, comparability screen and final sample remain unselected.",
         confidence_level="high for deterministic support arithmetic; no effect or causal identification approval",
         manual_verification="All 80 treated municipalities retained; common symmetric coverage reconciles to 76, 73 and 65 municipalities at 6, 12 and 24 months; 46 treated municipalities have a later accessible entry",
         notes="The researcher approved the unbalanced dynamic design, post-period bins, permanent-step sensitivity and common-horizon sensitivities. A linear counterfactual remains a hypothesis to diagnose. Existing data are reused; no new external download.",
+    ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_SUCCESSIVE_ENTRY_AUDIT",
+        variable_name="entry_order|entering_station_group_count|observed_post_months_before_next_entry|identical_observed_exposure_group_ids",
+        variable_description="Approved full network trajectory and diagnostic of separate additional accessible group entries",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility successive-entry timing and exposure-separability audit",
+        retrieval_method="Deterministic Python sequence and linear-dependence audit using registered groups, memberships, current journey matrix and existing HESTA outcome panel",
+        retrieval_date="2026-10-04",
+        local_raw_file="config/accessibility_successive_entries.json|data_processed/accessibility_station_groups.csv|data_processed/accessibility_station_group_events.csv|data_processed/magic_pass_membership_history.csv|data_processed/accessibility_station_group_journey_context.csv|data_processed/accessibility_municipality_month_exposure.csv",
+        processed_file="reports/accessibility_successive_entry_events.csv|reports/accessibility_successive_entry_group_separability.csv|reports/accessibility_successive_entry_summary.json|reports/77_ENTREES_SUCCESSIVES_TRAJECTOIRE_RESEAU_FR.md",
+        geographic_level="hotel municipality by entry month and existing station group",
+        temporal_resolution="monthly entry sequences and all observed outcome rows",
+        temporal_start="2013-01", temporal_end="2026-03",
+        unit="entry months, observed months, group exposure columns and rank",
+        license="Derived analytical data; upstream source terms continue to apply",
+        access_conditions="Local reproducible output",
+        transformation_applied="Retain all post-first-exposure observations including later entries; reconstruct group exposure with existing first-entry and documented-exit rules; reconcile group counts exactly to the existing panel; order distinct municipality entry months; count observed pre and post segments without selecting them; diagnose exact exposure duplicates and rank after alternating municipality/calendar-month projection on the unbalanced observed grid",
+        quality_notes="Current access is projected over history. Rank and observed segments do not identify causal additional effects. All 71 original groups remain separate; four identical exposure pairs are flagged without merging. The 80 exposed BFS series represent 79 current territories and the 46 series with later entries represent 45 territories because Moutier BE and JU describe the same place. Structural sums can be partial. This audit preserves source identifiers; the approved separate territorial outcome bridge and recalculated design are in report 78. An additional-effect estimator remains pending.",
+        confidence_level="high for deterministic sequence and numerical linear-dependence checks; no causal approval",
+        manual_verification="177 administrative-series entry months reconcile to 80 first exposures and 97 later entries in 46 BFS series; there are 175 distinct territory entry months across 79 exposed territories, 45 with additions; 43 later entries involve multiple groups; 45 group exposure columns have rank 41 on 28,455 observed rows; the documented Crans-Montana exit is preserved",
+        notes="The researcher explicitly approved keeping the full network trajectory as primary and examining additional effects separately. No follow-up censoring, new group merge or estimation sample selection is applied.",
+    ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_TERRITORIAL_MOUTIER_BRIDGE",
+        variable_name="municipality_bfs_id|source_municipality_bfs_id|territorial_source_bfs_ids|territorial_harmonisation_applied",
+        variable_description="Researcher-approved exact outcome and cohort-table bridge for the single territory Moutier",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility territorial analytical panel and comparison universe",
+        retrieval_method="Deterministic Python bridge of existing registered HESTA and exposure rows, approved cohort roles and foreign-share baseline; verify official mutation BFS_MUNICIPAL_MUTATION_3999",
+        retrieval_date="2026-10-04",
+        local_raw_file="config/accessibility_outcome_territorial_harmonisation.json|config/accessibility_covid_foreign_share_reconstruction.csv|data_processed/accessibility_municipality_month_exposure.csv|reports/accessibility_cohort_comparison_universe.csv|reports/accessibility_covid_foreign_share_selected.csv",
+        processed_file="data_processed/accessibility_municipality_month_exposure_territorial.csv|reports/accessibility_cohort_comparison_universe_territorial.csv|reports/accessibility_covid_foreign_share_selected_territorial.csv|reports/accessibility_territorial_harmonisation_summary.json|reports/78_RACCORDEMENT_TERRITORIAL_MOUTIER_FR.md",
+        geographic_level="analytical municipality territory and cohort",
+        temporal_resolution="monthly outcome and focal first-exposure cohort",
+        temporal_start="2013-01", temporal_end="2026-12",
+        unit="retained original source units and analytical territory identifiers",
+        license="Derived analytical data; upstream source terms continue to apply",
+        access_conditions="Local reproducible output",
+        transformation_applied="Select BFS 700 source rows before 2026-01 and BFS 6831 thereafter; analytical Moutier ID is 6831, original row IDs, names, tokens and values retained. Verify parallel discarded rows have no observed outcome or capacity; verify identical access and exposure. Deduplicate cohort roles and baseline only after exact agreement checks. Recalculate support and rank on one territorial unit without selecting an estimator or dropping any territory",
+        quality_notes="185 territories instead of 186 administrative series; 79 exposed territories instead of 80 series. Three fusion histories remain incomplete. All 28,455 observed monthly outcomes and 5,580 exposed post observations retained; gaps remain gaps. Current access is still projected over the historical period. No other fusion reconstruction, group merge, final sample or causal approval",
+        confidence_level="high for official same-territory continuity and exact deterministic reconciliation",
+        manual_verification="Moutier has 154 observed months under BFS 700 and three under BFS 6831, combined into 157. There are 175 territory-entry months: 79 first and 96 additional in 45 territories; 45 group columns remain rank 41. Common 6/12/24 support remains 76/73/65",
+        notes="Explicit researcher approval 2026-10-04. Earlier administrative outputs are preserved for lineage; future expanded estimation must read the territorial config paths. No download and no imputation",
     ))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())
@@ -1325,20 +1414,33 @@ def main() -> None:
                        .drop_duplicates("variable").set_index("variable").description.to_dict())
     rows = []
     for table, (path, source_id, geo, temporal) in TABLES.items():
-        frame = pd.read_csv(path)
+        frame = pd.read_csv(path, low_memory=False)
         missing_shares = frame.isna().mean()
         for variable in frame.columns:
             variable_description = description(variable, existing_lookup)
             variable_unit = unit(variable)
-            if table.startswith("accessibility_dynamic_event_time_support_"):
+            if table.endswith("_territorial"):
+                if variable == "municipality_bfs_id":
+                    variable_description = "Analytical territory BFS identifier; Moutier is a single unit 6831 across the exact approved 700-to-6831 identity bridge, all other units unchanged"
+                if variable in {"municipality_bfs_id", "boundary_bfs_id_2026", "source_municipality_bfs_id"}:
+                    variable_unit = "BFS identifier"
+                elif pd.api.types.is_bool_dtype(frame[variable]):
+                    variable_unit = "boolean flag"
+            if table.startswith(("accessibility_dynamic_event_time_support_", "accessibility_successive_entry_")):
                 if pd.api.types.is_bool_dtype(frame[variable]):
                     variable_unit = "boolean flag"
                 elif pd.api.types.is_numeric_dtype(frame[variable]):
-                    variable_unit = "month" if variable == "event_month" else "count"
+                    variable_unit = (
+                        "month" if variable == "event_month" or variable.startswith("months_")
+                        else "overnight stays" if variable == "hotel_overnights_at_entry"
+                        else "kilometres" if "ski_area_km" in variable
+                        else "BFS identifier" if variable in {"municipality_bfs_id", "boundary_bfs_id_2026"}
+                        else "count"
+                    )
                 if variable == "focal_cohort_month":
                     variable_description = "Focal municipality first-exposure cohort month used as the relative-time anchor"
                 elif variable == "source_id":
-                    variable_description = "Registered provenance identifier for the dynamic event-time support audit"
+                    variable_description = "Registered provenance identifier for this accessibility audit"
                 elif variable == "analysis_sample_selected":
                     variable_description = "Whether a final analytical sample has been selected; false in this support audit"
             role = ("quality gate" if "approved" in variable or "usable" in variable

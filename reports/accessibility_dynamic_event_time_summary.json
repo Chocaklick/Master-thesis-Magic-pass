@@ -1,5 +1,5 @@
 {
-  "specification_version": "stage28b_v1_unbalanced_dynamic_event_time_2026_10_04",
+  "specification_version": "stage28b_v2_unbalanced_network_trajectory_2026_10_04",
   "primary_temporal_design": "unbalanced_monthly_event_time_with_all_observed_post_treatment_months",
   "primary_temporal_design_selected": true,
   "fixed_symmetric_primary_horizon_selected": false,
@@ -9,6 +9,8 @@
   "treated_municipalities": 80,
   "treated_municipalities_with_at_least_one_observed_post_month": 80,
   "first_exposure_cohorts": 7,
+  "treated_current_territories": 79,
+  "administrative_id_harmonisation_applied": false,
   "treated_municipalities_with_observed_pre_and_post_support": 76,
   "treated_municipalities_without_observed_pre_support": [
     {
@@ -163,14 +165,14 @@
     "municipalities_with_any_observed_post_row_before_next_entry": 77,
     "rule_applied_to_analytical_sample": false
   },
-  "successive_entry_handling_selected": false,
+  "successive_entry_handling_selected": true,
   "linear_counterfactual_status": "hypothesis_to_diagnose_not_an_assumption_validated_by_this_support_audit",
   "comparability_screen_selected": false,
   "analysis_sample_selected": false,
   "estimator_selected": false,
   "causal_estimation_approved": false,
   "input_sha256": {
-    "config/accessibility_dynamic_event_time.json": "aa1c13ff6c8876ca43a67de0c75252600465864fe7d1bd1721fce1454aa3c137",
+    "config/accessibility_dynamic_event_time.json": "d295615fc51a1c197f45d34692df41d1a32a4677ecf578c90d06113976160c6a",
     "reports/accessibility_cohort_comparison_universe.csv": "f699b0ad66be51785d3960a8b70b0eb8f8be22f7dcfc25999b48b0356660591a",
     "data_processed/accessibility_municipality_month_exposure.csv": "9da2037a9fd323afdea5987a87669d94618535ded4f6a71c1a82a97f1890d0be"
   },

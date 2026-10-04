@@ -1,0 +1,256 @@
+{
+  "specification_version": "stage29b_v1_exact_moutier_territorial_bridge_2026_10_04",
+  "source_id": "DERIVED_ACCESSIBILITY_TERRITORIAL_MOUTIER_BRIDGE",
+  "official_mutation_source_id": "BFS_MUNICIPAL_MUTATION_3999",
+  "administrative_id_harmonisation_applied": true,
+  "original_administrative_series": 186,
+  "analytical_territories": 185,
+  "panel_rows": 31080,
+  "comparison_cohort_rows": 1295,
+  "observed_outcome_rows_before": 28455,
+  "observed_outcome_rows_after": 28455,
+  "moutier_observed_months": 157,
+  "exposed_territories_with_foreign_share": 76,
+  "distinct_territorial_entry_months": 175,
+  "first_exposure_entry_months": 79,
+  "additional_entry_months": 96,
+  "territories_with_additional_entries": 45,
+  "additional_entries_with_multiple_groups": 43,
+  "additional_entries_with_observed_pre_and_post_segment": 94,
+  "station_groups_retained": 71,
+  "observed_design": {
+    "observed_outcome_rows": 28455,
+    "group_columns_with_current_access": 45,
+    "two_way_fixed_effect_rank": 41,
+    "rank_deficiency": 4,
+    "rank_numerical_tolerance": 3.322405378158511e-10,
+    "projection_iterations": 9,
+    "projection_numerical_tolerance": 1e-12,
+    "condition_number_nonzero_space": 17.447802472811603,
+    "exact_identical_observed_exposure_pairs": [
+      {
+        "station_group_id_left": "MP_GROUP_EVENT__98c0c64310c6",
+        "station_group_id_right": "MP_GROUP_RESORT__anzere",
+        "station_group_name_left": "Mayens de Conthey",
+        "station_group_name_right": "Anzère"
+      },
+      {
+        "station_group_id_left": "MP_GROUP_EVENT__e664bf3f38d5",
+        "station_group_id_right": "MP_GROUP_RESORT__schwanden_sigriswil_thunersee",
+        "station_group_name_left": "Wilerallmi",
+        "station_group_name_right": "Schwanden"
+      },
+      {
+        "station_group_id_left": "MP_GROUP_RESORT__aeschi",
+        "station_group_id_right": "MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal",
+        "station_group_name_left": "Aeschiallmend",
+        "station_group_name_right": "Faltschen"
+      },
+      {
+        "station_group_id_left": "MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal",
+        "station_group_id_right": "MP_GROUP_RESORT__st_luc_chandolin",
+        "station_group_name_left": "Grimentz-Zinal",
+        "station_group_name_right": "St-Luc / Chandolin"
+      }
+    ],
+    "documented_exits_preserved": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__crans_montana_crans_montana",
+        "last_active_month": "2020-04-01"
+      }
+    ],
+    "interpretation": "Linear rank support only; not a causal-identification test or an estimator selection"
+  },
+  "temporal_support": {
+    "specification_version": "stage28b_v2_unbalanced_network_trajectory_2026_10_04",
+    "primary_temporal_design": "unbalanced_monthly_event_time_with_all_observed_post_treatment_months",
+    "primary_temporal_design_selected": true,
+    "fixed_symmetric_primary_horizon_selected": false,
+    "observed_outcome_calendar_start": "2013-01-01",
+    "observed_outcome_calendar_end": "2026-03-01",
+    "calendar_months_with_any_observed_outcome": 159,
+    "treated_municipalities": 79,
+    "treated_municipalities_with_at_least_one_observed_post_month": 79,
+    "first_exposure_cohorts": 7,
+    "treated_current_territories": 79,
+    "administrative_id_harmonisation_applied": true,
+    "treated_municipalities_with_observed_pre_and_post_support": 76,
+    "treated_municipalities_without_observed_pre_support": [
+      {
+        "municipality_bfs_id": 5892,
+        "municipality_name": "Blonay - Saint-Légier",
+        "focal_cohort_month": "2017-11-01"
+      },
+      {
+        "municipality_bfs_id": 6037,
+        "municipality_name": "Val de Bagnes",
+        "focal_cohort_month": "2017-11-01"
+      },
+      {
+        "municipality_bfs_id": 6513,
+        "municipality_name": "Laténa",
+        "focal_cohort_month": "2017-11-01"
+      }
+    ],
+    "supported_post_event_month_start": 0,
+    "supported_post_event_month_end": 100,
+    "cohort_post_support": [
+      {
+        "focal_cohort_month": "2017-11-01",
+        "treated_municipalities": 40,
+        "last_event_month_with_treated_outcome": 100,
+        "calendar_months_with_treated_outcome": 101
+      },
+      {
+        "focal_cohort_month": "2018-05-01",
+        "treated_municipalities": 3,
+        "last_event_month_with_treated_outcome": 94,
+        "calendar_months_with_treated_outcome": 95
+      },
+      {
+        "focal_cohort_month": "2019-05-01",
+        "treated_municipalities": 3,
+        "last_event_month_with_treated_outcome": 82,
+        "calendar_months_with_treated_outcome": 83
+      },
+      {
+        "focal_cohort_month": "2022-05-01",
+        "treated_municipalities": 16,
+        "last_event_month_with_treated_outcome": 46,
+        "calendar_months_with_treated_outcome": 47
+      },
+      {
+        "focal_cohort_month": "2023-05-01",
+        "treated_municipalities": 9,
+        "last_event_month_with_treated_outcome": 34,
+        "calendar_months_with_treated_outcome": 35
+      },
+      {
+        "focal_cohort_month": "2024-05-01",
+        "treated_municipalities": 5,
+        "last_event_month_with_treated_outcome": 22,
+        "calendar_months_with_treated_outcome": 23
+      },
+      {
+        "focal_cohort_month": "2025-05-01",
+        "treated_municipalities": 3,
+        "last_event_month_with_treated_outcome": 10,
+        "calendar_months_with_treated_outcome": 11
+      }
+    ],
+    "post_effect_bin_support": [
+      {
+        "post_effect_bin": "0_5_months",
+        "event_month_start": 0,
+        "event_month_end": 5,
+        "treated_cohorts_contributing": 7,
+        "treated_municipalities_contributing": 76,
+        "treated_observation_rows": 456,
+        "primary_donor_municipality_cohort_observations": 5216,
+        "sensitivity_donor_municipality_cohort_observations": 4400,
+        "treated_observation_rows_after_additional_entry": 0,
+        "share_treated_observations_after_additional_entry": 0.0
+      },
+      {
+        "post_effect_bin": "6_11_months",
+        "event_month_start": 6,
+        "event_month_end": 11,
+        "treated_cohorts_contributing": 7,
+        "treated_municipalities_contributing": 76,
+        "treated_observation_rows": 453,
+        "primary_donor_municipality_cohort_observations": 5082,
+        "sensitivity_donor_municipality_cohort_observations": 4291,
+        "treated_observation_rows_after_additional_entry": 66,
+        "share_treated_observations_after_additional_entry": 0.1456953642384106
+      },
+      {
+        "post_effect_bin": "12_23_months",
+        "event_month_start": 12,
+        "event_month_end": 23,
+        "treated_cohorts_contributing": 6,
+        "treated_municipalities_contributing": 73,
+        "treated_observation_rows": 869,
+        "primary_donor_municipality_cohort_observations": 8775,
+        "sensitivity_donor_municipality_cohort_observations": 7450,
+        "treated_observation_rows_after_additional_entry": 245,
+        "share_treated_observations_after_additional_entry": 0.2819332566168009
+      },
+      {
+        "post_effect_bin": "24_plus_months",
+        "event_month_start": 24,
+        "event_month_end": null,
+        "treated_cohorts_contributing": 5,
+        "treated_municipalities_contributing": 71,
+        "treated_observation_rows": 3802,
+        "primary_donor_municipality_cohort_observations": 28606,
+        "sensitivity_donor_municipality_cohort_observations": 25403,
+        "treated_observation_rows_after_additional_entry": 2151,
+        "share_treated_observations_after_additional_entry": 0.5657548658600736
+      }
+    ],
+    "constant_step_sensitivity_support": {
+      "treated_municipalities_contributing": 79,
+      "treated_cohorts_contributing": 7,
+      "treated_observation_rows": 5580
+    },
+    "common_support_sensitivities": [
+      {
+        "horizon_months_each_side": 6,
+        "treated_municipalities_complete": 76,
+        "treated_municipalities_complete_at_all_three_horizons": 65,
+        "treated_cohorts_with_at_least_one_complete_municipality": 7,
+        "complete_treated_municipalities_with_later_entry_in_post_window": 0
+      },
+      {
+        "horizon_months_each_side": 12,
+        "treated_municipalities_complete": 73,
+        "treated_municipalities_complete_at_all_three_horizons": 65,
+        "treated_cohorts_with_at_least_one_complete_municipality": 6,
+        "complete_treated_municipalities_with_later_entry_in_post_window": 11
+      },
+      {
+        "horizon_months_each_side": 24,
+        "treated_municipalities_complete": 65,
+        "treated_municipalities_complete_at_all_three_horizons": 65,
+        "treated_cohorts_with_at_least_one_complete_municipality": 5,
+        "complete_treated_municipalities_with_later_entry_in_post_window": 22
+      }
+    ],
+    "treated_municipalities_with_any_later_accessible_entry": 45,
+    "treated_post_observation_rows_after_later_accessible_entry": 2462,
+    "next_entry_censoring_counterfactual_support_only": {
+      "observed_post_rows_before_next_entry": 3118,
+      "municipalities_with_any_observed_post_row_before_next_entry": 77,
+      "rule_applied_to_analytical_sample": false
+    },
+    "successive_entry_handling_selected": true,
+    "linear_counterfactual_status": "hypothesis_to_diagnose_not_an_assumption_validated_by_this_support_audit",
+    "comparability_screen_selected": false,
+    "analysis_sample_selected": false,
+    "estimator_selected": false,
+    "causal_estimation_approved": false,
+    "source_id": "DERIVED_ACCESSIBILITY_TERRITORIAL_MOUTIER_BRIDGE"
+  },
+  "imputation_applied": false,
+  "analysis_sample_selected": false,
+  "estimator_selected": false,
+  "causal_estimation_approved": false,
+  "input_sha256": {
+    "config/accessibility_outcome_territorial_harmonisation.json": "943d0b67a624b23a3878de766dbfc09278c1a90bc20767fda42b5a5da21d724c",
+    "config/accessibility_dynamic_event_time.json": "d295615fc51a1c197f45d34692df41d1a32a4677ecf578c90d06113976160c6a",
+    "config/accessibility_successive_entries.json": "e4bf5bdaaba459b397c378ded4b98e3aa6352af66f6e88c559e29d363b46d0e7",
+    "data_processed/accessibility_municipality_month_exposure.csv": "9da2037a9fd323afdea5987a87669d94618535ded4f6a71c1a82a97f1890d0be",
+    "reports/accessibility_cohort_comparison_universe.csv": "f699b0ad66be51785d3960a8b70b0eb8f8be22f7dcfc25999b48b0356660591a",
+    "reports/accessibility_covid_foreign_share_selected.csv": "541ca5af5a7bf80b1f7617b0079439b9b2c46fe4bc02d510e615613d358c20d1",
+    "config/accessibility_covid_foreign_share_reconstruction.csv": "2d25526f6fafceaf26ece1d69a2b0c446ebba9420d5fedd642ee4a426a52e689",
+    "data_processed/accessibility_station_groups.csv": "08040e0b7141679434eb8f4339d46ba24a77768ee07c6ab9fb98e989054987eb",
+    "data_processed/accessibility_station_group_events.csv": "9cb71a6820bda68b3f66b32b06bf92fc6d693758ca419c13a86d589fa43323df",
+    "data_processed/accessibility_station_group_journey_context.csv": "226114874ffff0e679c7f951e596007176e8635741ae64dd8c48ae576446ce60",
+    "data_processed/magic_pass_membership_history.csv": "99b46cf250586eb80d2df3ffe6b5375775419234853fb823b773be6bbc2e4588"
+  },
+  "outputs": {
+    "analytical_panel": "data_processed/accessibility_municipality_month_exposure_territorial.csv",
+    "comparison_universe": "reports/accessibility_cohort_comparison_universe_territorial.csv",
+    "selected_foreign_share": "reports/accessibility_covid_foreign_share_selected_territorial.csv"
+  }
+}

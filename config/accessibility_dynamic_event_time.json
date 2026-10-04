@@ -1,5 +1,5 @@
 {
-  "specification_version": "stage28b_v1_unbalanced_dynamic_event_time_2026_10_04",
+  "specification_version": "stage28b_v2_unbalanced_network_trajectory_2026_10_04",
   "researcher_approval_date": "2026-10-04",
   "accessibility_threshold_minutes": 120,
   "primary_temporal_design": "unbalanced_monthly_event_time_with_all_observed_post_treatment_months",
@@ -45,7 +45,10 @@
   "covid_exclusion_sensitivity_start_month": "2020-03-01",
   "covid_exclusion_sensitivity_end_month": "2022-03-01",
   "linear_counterfactual_status": "hypothesis_to_diagnose_not_an_assumption_validated_by_this_support_audit",
-  "successive_entry_handling_selected": false,
+  "successive_entry_handling_selected": true,
+  "successive_entry_primary_rule": "retain_all_observed_months_as_network_trajectory_after_first_exposure_including_later_entries",
+  "successive_entry_config": "config/accessibility_successive_entries.json",
+  "additional_effect_estimator_selected": false,
   "comparability_screen_selected": false,
   "analysis_sample_selected": false,
   "estimator_selected": false,

@@ -1,0 +1,20 @@
+{
+  "specification_version": "stage29b_v1_exact_moutier_territorial_bridge_2026_10_04",
+  "approval_date": "2026-10-04",
+  "researcher_approved": true,
+  "predecessor_bfs_id": 700,
+  "current_bfs_id": 6831,
+  "effective_month": "2026-01-01",
+  "mutation_source_id": "BFS_MUNICIPAL_MUTATION_3999",
+  "relationship": "canton_transfer_and_bfs_renumbering_same_territory",
+  "panel_rule": "use_700_before_effective_month_and_6831_from_effective_month_without_imputation",
+  "cohort_rule": "retain_one_current_territory_row_after_verifying_identical_roles_and_selected_baseline_values",
+  "other_municipalities_rule": "unchanged_no_other_fusion_or_boundary_bridge_authorised",
+  "analytical_panel": "data_processed/accessibility_municipality_month_exposure_territorial.csv",
+  "comparison_universe": "reports/accessibility_cohort_comparison_universe_territorial.csv",
+  "selected_foreign_share": "reports/accessibility_covid_foreign_share_selected_territorial.csv",
+  "imputation_applied": false,
+  "analysis_sample_selected": false,
+  "estimator_selected": false,
+  "causal_estimation_approved": false
+}

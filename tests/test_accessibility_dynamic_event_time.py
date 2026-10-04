@@ -36,7 +36,8 @@ def test_dynamic_time_rule_is_versioned_without_selecting_an_estimator() -> None
         "24_plus_months",
     ]
     assert config["common_support_sensitivity_horizons_months"] == [6, 12, 24]
-    assert not config["successive_entry_handling_selected"]
+    assert config["successive_entry_handling_selected"]
+    assert not config["additional_effect_estimator_selected"]
     assert not config["estimator_selected"]
     assert not config["causal_estimation_approved"]
 
@@ -89,6 +90,7 @@ def test_summary_reconciles_common_horizons_and_successive_entries() -> None:
         for row in summary["common_support_sensitivities"]
     )
     assert summary["treated_municipalities"] == 80
+    assert summary["treated_current_territories"] == 79
     assert summary["treated_municipalities_with_at_least_one_observed_post_month"] == 80
     assert summary["treated_municipalities_with_observed_pre_and_post_support"] == 76
     assert summary["treated_municipalities_with_any_later_accessible_entry"] == 46
@@ -98,7 +100,7 @@ def test_summary_reconciles_common_horizons_and_successive_entries() -> None:
     assert not censoring["rule_applied_to_analytical_sample"]
     assert summary["supported_post_event_month_start"] == 0
     assert summary["supported_post_event_month_end"] >= 100
-    assert not summary["successive_entry_handling_selected"]
+    assert summary["successive_entry_handling_selected"]
     assert not summary["analysis_sample_selected"]
     assert not summary["estimator_selected"]
     assert not summary["causal_estimation_approved"]
@@ -140,6 +142,7 @@ def test_future_donor_exits_at_own_exposure_and_later_entry_flag_starts_on_entry
     panel = pd.DataFrame([
         {
             "municipality_bfs_id": bfs_id, "date": date,
+            "boundary_bfs_id_2026": bfs_id,
             "hotel_overnights": None if bfs_id == 3 and date == "2022-06-01" else 10,
             "new_station_group_entry_count_120min": int(
                 bfs_id == 1 and date in {"2022-05-01", "2022-07-01"}
