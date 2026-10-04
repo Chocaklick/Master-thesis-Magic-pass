@@ -1,0 +1,211 @@
+{
+  "specification_version": "stage26_v1_inventory_2026_10_04",
+  "panel_municipalities": 186,
+  "panel_months": 168,
+  "panel_rows": 31248,
+  "station_groups": 71,
+  "stage24_primary_treated_municipalities": 6,
+  "stage24_primary_first_exposure_groups_at_120min": 6,
+  "accessibility_thresholds_minutes": [
+    30,
+    60,
+    90,
+    120
+  ],
+  "horizons_months": [
+    6,
+    12,
+    24
+  ],
+  "threshold_overview": {
+    "30": {
+      "municipalities_ever_exposed": 5,
+      "first_exposure_cohorts": 3,
+      "first_exposure_calendar_years": [
+        2017,
+        2018,
+        2022
+      ],
+      "municipalities_with_multiple_groups_at_first_exposure": 0,
+      "municipalities_with_any_later_entry": 0,
+      "mechanical_coverage_by_horizon": {
+        "6": {
+          "municipalities_complete_pre_and_post": 5,
+          "first_exposure_groups_with_at_least_one_complete_municipality": 5,
+          "mechanically_additional_complete_municipalities_vs_stage24_primary": 5,
+          "mechanically_additional_first_exposure_groups_vs_stage24_primary": 5,
+          "municipalities_overlapping_existing_covid_sensitivity": 1,
+          "municipalities_with_later_entry_in_post_window": 0,
+          "municipalities_with_short_post_window_due_panel_end": 0
+        },
+        "12": {
+          "municipalities_complete_pre_and_post": 5,
+          "first_exposure_groups_with_at_least_one_complete_municipality": 5,
+          "mechanically_additional_complete_municipalities_vs_stage24_primary": 5,
+          "mechanically_additional_first_exposure_groups_vs_stage24_primary": 5,
+          "municipalities_overlapping_existing_covid_sensitivity": 1,
+          "municipalities_with_later_entry_in_post_window": 0,
+          "municipalities_with_short_post_window_due_panel_end": 0
+        },
+        "24": {
+          "municipalities_complete_pre_and_post": 5,
+          "first_exposure_groups_with_at_least_one_complete_municipality": 5,
+          "mechanically_additional_complete_municipalities_vs_stage24_primary": 5,
+          "mechanically_additional_first_exposure_groups_vs_stage24_primary": 5,
+          "municipalities_overlapping_existing_covid_sensitivity": 2,
+          "municipalities_with_later_entry_in_post_window": 0,
+          "municipalities_with_short_post_window_due_panel_end": 0
+        }
+      }
+    },
+    "60": {
+      "municipalities_ever_exposed": 30,
+      "first_exposure_cohorts": 6,
+      "first_exposure_calendar_years": [
+        2017,
+        2018,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "municipalities_with_multiple_groups_at_first_exposure": 9,
+      "municipalities_with_any_later_entry": 2,
+      "mechanical_coverage_by_horizon": {
+        "6": {
+          "municipalities_complete_pre_and_post": 29,
+          "first_exposure_groups_with_at_least_one_complete_municipality": 26,
+          "mechanically_additional_complete_municipalities_vs_stage24_primary": 27,
+          "mechanically_additional_first_exposure_groups_vs_stage24_primary": 24,
+          "municipalities_overlapping_existing_covid_sensitivity": 9,
+          "municipalities_with_later_entry_in_post_window": 0,
+          "municipalities_with_short_post_window_due_panel_end": 0
+        },
+        "12": {
+          "municipalities_complete_pre_and_post": 28,
+          "first_exposure_groups_with_at_least_one_complete_municipality": 25,
+          "mechanically_additional_complete_municipalities_vs_stage24_primary": 26,
+          "mechanically_additional_first_exposure_groups_vs_stage24_primary": 23,
+          "municipalities_overlapping_existing_covid_sensitivity": 9,
+          "municipalities_with_later_entry_in_post_window": 0,
+          "municipalities_with_short_post_window_due_panel_end": 1
+        },
+        "24": {
+          "municipalities_complete_pre_and_post": 25,
+          "first_exposure_groups_with_at_least_one_complete_municipality": 21,
+          "mechanically_additional_complete_municipalities_vs_stage24_primary": 23,
+          "mechanically_additional_first_exposure_groups_vs_stage24_primary": 19,
+          "municipalities_overlapping_existing_covid_sensitivity": 17,
+          "municipalities_with_later_entry_in_post_window": 1,
+          "municipalities_with_short_post_window_due_panel_end": 3
+        }
+      }
+    },
+    "90": {
+      "municipalities_ever_exposed": 55,
+      "first_exposure_cohorts": 7,
+      "first_exposure_calendar_years": [
+        2017,
+        2018,
+        2019,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "municipalities_with_multiple_groups_at_first_exposure": 27,
+      "municipalities_with_any_later_entry": 18,
+      "mechanical_coverage_by_horizon": {
+        "6": {
+          "municipalities_complete_pre_and_post": 54,
+          "first_exposure_groups_with_at_least_one_complete_municipality": 29,
+          "mechanically_additional_complete_municipalities_vs_stage24_primary": 49,
+          "mechanically_additional_first_exposure_groups_vs_stage24_primary": 25,
+          "municipalities_overlapping_existing_covid_sensitivity": 16,
+          "municipalities_with_later_entry_in_post_window": 0,
+          "municipalities_with_short_post_window_due_panel_end": 0
+        },
+        "12": {
+          "municipalities_complete_pre_and_post": 50,
+          "first_exposure_groups_with_at_least_one_complete_municipality": 28,
+          "mechanically_additional_complete_municipalities_vs_stage24_primary": 45,
+          "mechanically_additional_first_exposure_groups_vs_stage24_primary": 24,
+          "municipalities_overlapping_existing_covid_sensitivity": 19,
+          "municipalities_with_later_entry_in_post_window": 6,
+          "municipalities_with_short_post_window_due_panel_end": 4
+        },
+        "24": {
+          "municipalities_complete_pre_and_post": 44,
+          "first_exposure_groups_with_at_least_one_complete_municipality": 24,
+          "mechanically_additional_complete_municipalities_vs_stage24_primary": 39,
+          "mechanically_additional_first_exposure_groups_vs_stage24_primary": 20,
+          "municipalities_overlapping_existing_covid_sensitivity": 25,
+          "municipalities_with_later_entry_in_post_window": 10,
+          "municipalities_with_short_post_window_due_panel_end": 8
+        }
+      }
+    },
+    "120": {
+      "municipalities_ever_exposed": 80,
+      "first_exposure_cohorts": 7,
+      "first_exposure_calendar_years": [
+        2017,
+        2018,
+        2019,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "municipalities_with_multiple_groups_at_first_exposure": 40,
+      "municipalities_with_any_later_entry": 46,
+      "mechanical_coverage_by_horizon": {
+        "6": {
+          "municipalities_complete_pre_and_post": 76,
+          "first_exposure_groups_with_at_least_one_complete_municipality": 32,
+          "mechanically_additional_complete_municipalities_vs_stage24_primary": 70,
+          "mechanically_additional_first_exposure_groups_vs_stage24_primary": 26,
+          "municipalities_overlapping_existing_covid_sensitivity": 16,
+          "municipalities_with_later_entry_in_post_window": 0,
+          "municipalities_with_short_post_window_due_panel_end": 0
+        },
+        "12": {
+          "municipalities_complete_pre_and_post": 73,
+          "first_exposure_groups_with_at_least_one_complete_municipality": 31,
+          "mechanically_additional_complete_municipalities_vs_stage24_primary": 67,
+          "mechanically_additional_first_exposure_groups_vs_stage24_primary": 25,
+          "municipalities_overlapping_existing_covid_sensitivity": 19,
+          "municipalities_with_later_entry_in_post_window": 12,
+          "municipalities_with_short_post_window_due_panel_end": 3
+        },
+        "24": {
+          "municipalities_complete_pre_and_post": 65,
+          "first_exposure_groups_with_at_least_one_complete_municipality": 27,
+          "mechanically_additional_complete_municipalities_vs_stage24_primary": 59,
+          "mechanically_additional_first_exposure_groups_vs_stage24_primary": 21,
+          "municipalities_overlapping_existing_covid_sensitivity": 31,
+          "municipalities_with_later_entry_in_post_window": 27,
+          "municipalities_with_short_post_window_due_panel_end": 8
+        }
+      }
+    }
+  },
+  "cohort_summary_rows": 23,
+  "municipality_coverage_rows": 170,
+  "station_group_coverage_rows": 284,
+  "analysis_sample_selected": false,
+  "causal_treatment_approved": false,
+  "causal_estimation_approved": false,
+  "input_sha256": {
+    "config/accessibility_all_cohort_coverage.json": "643410809446d3ec5465633b33215dc8b8638dfe72b008878eb1e0481731fb7c",
+    "data_processed/accessibility_municipality_month_exposure.csv": "9da2037a9fd323afdea5987a87669d94618535ded4f6a71c1a82a97f1890d0be",
+    "data_processed/accessibility_station_group_events.csv": "9cb71a6820bda68b3f66b32b06bf92fc6d693758ca419c13a86d589fa43323df",
+    "data_processed/accessibility_station_groups.csv": "08040e0b7141679434eb8f4339d46ba24a77768ee07c6ab9fb98e989054987eb",
+    "data_processed/accessibility_station_group_journey_context.csv": "226114874ffff0e679c7f951e596007176e8635741ae64dd8c48ae576446ce60",
+    "data_processed/temporal_controls_month.csv": "d60c2d7df183515f188af25f58643df57e735613d69a2de8638be70a88f0a3a2",
+    "reports/accessibility_historical_gtfs_2018_current_transfer_municipality_validation.csv": "0b2c5f42c628401d45fd4e45d7c3b165999a1a35463e05741661597b86b5a8d0",
+    "reports/accessibility_estimation_candidate_pairs.csv": "b9c9c45d325a22fdf34146ab0021d031a2226a381b9dddd443a836bace5ebbf8"
+  },
+  "source_id": "DERIVED_ACCESSIBILITY_ALL_COHORT_COVERAGE",
+  "interpretation": "Mechanical coverage inventory only. Complete outcome windows, COVID overlap and accessible entry timing are reported without selecting an estimation sample."
+}

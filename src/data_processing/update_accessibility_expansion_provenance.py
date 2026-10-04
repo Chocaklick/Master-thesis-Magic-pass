@@ -236,6 +236,15 @@ TABLES = {
     "accessibility_pilot_inference_components": (
         ROOT / "reports" / "accessibility_pilot_inference_components.csv",
         "DERIVED_ACCESSIBILITY_SMALL_CLUSTER_INFERENCE", "connected treated-stack component", "24-month pre/post window"),
+    "accessibility_all_cohort_municipality_coverage": (
+        ROOT / "reports" / "accessibility_all_cohort_municipality_coverage.csv",
+        "DERIVED_ACCESSIBILITY_ALL_COHORT_COVERAGE", "accessibility threshold by first-exposed hotel municipality", "6/12/24-month symmetric windows"),
+    "accessibility_all_cohort_coverage_by_cohort": (
+        ROOT / "reports" / "accessibility_all_cohort_coverage_by_cohort.csv",
+        "DERIVED_ACCESSIBILITY_ALL_COHORT_COVERAGE", "accessibility threshold by first-exposure cohort", "6/12/24-month symmetric windows"),
+    "accessibility_all_cohort_station_group_coverage": (
+        ROOT / "reports" / "accessibility_all_cohort_station_group_coverage.csv",
+        "DERIVED_ACCESSIBILITY_ALL_COHORT_COVERAGE", "accessibility threshold by station group", "entry cohort and 6/12/24-month windows"),
 }
 
 
@@ -912,6 +921,28 @@ def derived_sources() -> list[dict]:
         confidence_level="high for deterministic arithmetic; low for causal identification and limited for inferential power",
         manual_verification="Stage-24 coefficient reproduced exactly; Bulle and Gruyères linked through BFS 1024; all 32 component sign patterns enumerated",
         notes="The normal clustered result is not robust to effective-sample inference: treated-stack t and connected-component sign sensitivities both include or fail to reject zero",
+    ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_ALL_COHORT_COVERAGE",
+        variable_name="all_cohort_first_exposure|6_12_24_month_coverage|covid_overlap|successive_entries|historical_access_status",
+        variable_description="Non-selective coverage inventory for every municipality first exposed across all Magic Pass entry cohorts and four existing scheduled-time thresholds",
+        source_organisation="Master thesis analytical pipeline",
+        source_dataset_name="Accessibility all-cohort coverage audit",
+        retrieval_method="Deterministic Python inventory from the existing municipality-month exposure, station-group entry, journey, temporal-control and targeted 2018 validation tables",
+        retrieval_date="2026-10-04",
+        local_raw_file="config/accessibility_all_cohort_coverage.json|data_processed/accessibility_municipality_month_exposure.csv|data_processed/accessibility_station_group_events.csv|data_processed/accessibility_station_group_journey_context.csv|data_processed/temporal_controls_month.csv|reports/accessibility_historical_gtfs_2018_current_transfer_municipality_validation.csv|reports/accessibility_estimation_candidate_pairs.csv",
+        processed_file="reports/accessibility_all_cohort_municipality_coverage.csv|reports/accessibility_all_cohort_coverage_by_cohort.csv|reports/accessibility_all_cohort_station_group_coverage.csv|reports/accessibility_all_cohort_coverage_summary.json|reports/73_COUVERTURE_TOUTES_COHORTES_FR.md",
+        geographic_level="accessibility threshold by hotel municipality, first-exposure cohort or station group",
+        temporal_resolution="monthly first exposure with symmetric 6, 12 and 24 month coverage windows",
+        temporal_start="2013-01", temporal_end="2026-12",
+        unit="municipalities, station groups, months, completeness and diagnostic flags",
+        license="Derived analytical data; upstream source terms continue to apply",
+        access_conditions="Local reproducible output",
+        transformation_applied="At each existing 30/60/90/120-minute threshold, identify the earliest accessible group-entry month for every municipality; count observed hotel outcomes, panel-bound truncation, existing broad COVID-sensitivity overlap and simultaneous or later accessible entries over 6/12/24-month windows; never select a sample",
+        quality_notes="Current accessibility is still projected over historical cohorts. COVID overlap is counted from the existing broad sensitivity flag and is not an official restriction chronology or exclusion. Complete outcomes do not establish comparability, absence of shocks or causal identification.",
+        confidence_level="high for deterministic coverage arithmetic; limited for historical access and causal interpretation",
+        manual_verification="Counts reconcile to 5, 30, 55 and 80 ever-exposed municipalities at 30, 60, 90 and 120 minutes; all 71 groups are retained at every threshold",
+        notes="Stage 26 deliberately reports all cohorts and horizons without choosing which communes to keep; COVID treatment and cohort estimators require researcher approval in later stages",
     ))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())

@@ -494,6 +494,18 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 - **Limitations:** The report names the two jointly governed operators and the Engadin decision to retain SnowPass; links are restricted to their exact host listings and are not widened to the rest of Engadin
 - **Local raw file:** `data_external/source_evidence/CORVATSCH_DIAVOLEZZA_ANNUAL_2018_19_20260925T151738Z.pdf`.
 
+## DERIVED_ACCESSIBILITY_ALL_COHORT_COVERAGE — Accessibility all-cohort coverage audit
+
+- **Contents and relevance:** Non-selective coverage inventory for every municipality first exposed across all Magic Pass entry cohorts and four existing scheduled-time thresholds
+- **Producer:** Master thesis analytical pipeline
+- **Exact URL:** Not documented.
+- **Access and retrieval date:** Deterministic Python inventory from the existing municipality-month exposure, station-group entry, journey, temporal-control and targeted 2018 validation tables; 2026-10-04.
+- **Variables:** all_cohort_first_exposure|6_12_24_month_coverage|covid_overlap|successive_entries|historical_access_status
+- **Transformations:** At each existing 30/60/90/120-minute threshold, identify the earliest accessible group-entry month for every municipality; count observed hotel outcomes, panel-bound truncation, existing broad COVID-sensitivity overlap and simultaneous or later accessible entries over 6/12/24-month windows; never select a sample
+- **Coverage:** accessibility threshold by hotel municipality, first-exposure cohort or station group; monthly first exposure with symmetric 6, 12 and 24 month coverage windows; 2013-01 to 2026-12.
+- **Limitations:** Current accessibility is still projected over historical cohorts. COVID overlap is counted from the existing broad sensitivity flag and is not an official restriction chronology or exclusion. Complete outcomes do not establish comparability, absence of shocks or causal identification.
+- **Local raw file:** `config/accessibility_all_cohort_coverage.json|data_processed/accessibility_municipality_month_exposure.csv|data_processed/accessibility_station_group_events.csv|data_processed/accessibility_station_group_journey_context.csv|data_processed/temporal_controls_month.csv|reports/accessibility_historical_gtfs_2018_current_transfer_municipality_validation.csv|reports/accessibility_estimation_candidate_pairs.csv`.
+
 ## DERIVED_ACCESSIBILITY_COMPARISON_INTERNAL_RISK_SCREEN — Accessibility comparison internal risk screen
 
 - **Contents and relevance:** Internal evidence and proxy-risk screen for the 70 historically retained first-exposure comparison pairs

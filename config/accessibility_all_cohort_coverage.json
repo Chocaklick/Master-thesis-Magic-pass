@@ -1,0 +1,19 @@
+{
+  "specification_version": "stage26_v1_inventory_2026_10_04",
+  "purpose": "Exhaustive coverage inventory before defining any new cohort estimator or exclusion rule",
+  "accessibility_thresholds_minutes": [30, 60, 90, 120],
+  "symmetric_pre_post_horizons_months": [6, 12, 24],
+  "first_exposure_definition": "Earliest existing station-group effective month among groups within the stated current scheduled-time threshold",
+  "outcome_observed_definition": "Published hotel_overnights value is non-missing; suppressed values remain missing and are never replaced by zero",
+  "calendar_coverage_definition": "Month lies between the earliest and latest month with any published hotel_overnights value in the existing 186-municipality panel",
+  "covid_handling_at_this_stage": "Count overlap with the existing broad covid_sensitivity_month flag only; do not exclude, adjust or define an official restriction chronology",
+  "historical_access_handling": "Current accessibility remains fixed. Reuse the targeted 2018 transfer-topology sensitivity only as a labelled diagnostic for municipalities already audited; do not extrapolate it to later cohorts or other thresholds.",
+  "selection_policy": "No municipality, group, cohort, threshold or horizon is selected or excluded in stage 26",
+  "comparison_baseline": "The six treated municipalities and their six first-exposure groups from the stage-24 primary pilot are used only to count mechanically additional coverage, never as an eligibility rule",
+  "protected_interpretation": {
+    "causal_treatment_approved": false,
+    "causal_estimation_approved": false,
+    "analysis_sample_selected": false,
+    "required_label": "mechanical_all_cohort_coverage_inventory"
+  }
+}
