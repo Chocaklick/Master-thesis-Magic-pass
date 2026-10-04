@@ -252,6 +252,9 @@ TABLES = {
     "accessibility_covid_foreign_share_baseline_audit": (
         ROOT / "reports" / "accessibility_covid_foreign_share_baseline_audit.csv",
         "DERIVED_ACCESSIBILITY_COVID_SPECIFICATION", "hotel municipality by focal first-exposure cohort", "12/24/36-month pre-pandemic and pre-treatment baseline candidates"),
+    "accessibility_covid_foreign_share_selected": (
+        ROOT / "reports" / "accessibility_covid_foreign_share_selected.csv",
+        "DERIVED_ACCESSIBILITY_COVID_SPECIFICATION", "hotel municipality by focal first-exposure cohort", "approved 24-month pre-pandemic and pre-treatment characteristic"),
 }
 
 
@@ -285,6 +288,17 @@ DESCRIPTIONS = {
     "baseline_ends_before_first_exposure": "Whether the characteristic baseline ends before the municipality's own first accessible exposure when one exists",
     "primary_sample_month_policy": "Researcher-approved rule retaining all available months and cohorts in the primary analysis",
     "common_shock_adjustment": "Researcher-approved calendar-month fixed-effect adjustment for common national shocks",
+    "selected_baseline_window_months": "Researcher-approved number of months in the foreign-client-share baseline",
+    "selected_foreign_share_aggregation": "Researcher-approved aggregation formula for the foreign-client-share baseline",
+    "selected_baseline_start": "First month included in the approved foreign-client-share baseline",
+    "selected_baseline_end": "Last month included in the approved foreign-client-share baseline",
+    "selected_baseline_observed_origin_months": "Months with domestic and foreign hotel overnight values in the approved baseline",
+    "selected_baseline_complete": "Whether every month in the approved baseline has domestic and foreign hotel overnight values",
+    "selected_foreign_overnights_sum": "Foreign hotel overnight stays summed over the approved baseline",
+    "selected_total_overnights_sum": "Domestic plus foreign hotel overnight stays summed over the approved baseline",
+    "selected_foreign_share": "Approved ratio of summed foreign overnight stays to summed domestic-plus-foreign overnight stays over 24 months",
+    "selected_foreign_share_available": "Whether the approved foreign-client-share characteristic can be calculated from observed source values",
+    "foreign_share_missing_handling_selected": "Whether a researcher-approved rule has been chosen for unavailable foreign-client-share values",
     "cohort_comparison_rule_selected": "Whether a stage-28 comparison-group rule has been approved",
     "membership_continuity_status": "Whether membership is carried forward by assumption or bounded by a documented exit",
     "descriptive_exposure_approved": "Whether this row has passed the current descriptive exposure gate",
@@ -1012,24 +1026,24 @@ def derived_sources() -> list[dict]:
     rows.append(source_row(
         "DERIVED_ACCESSIBILITY_COVID_SPECIFICATION",
         variable_name="approved_option_A|official_core_covid_interval|calendar_month_fixed_effects|pre_pandemic_pre_treatment_foreign_share_baselines",
-        variable_description="Researcher-approved COVID option A and non-selective audit of 12/24/36-month foreign-client-share baseline candidates",
+        variable_description="Researcher-approved COVID option A, audit of candidate baselines and selected 24-month ratio-of-sums foreign-client-share characteristic",
         source_organisation="Master thesis analytical pipeline",
         source_dataset_name="Accessibility all-cohort COVID specification and foreign-share baseline audit",
         retrieval_method="Deterministic Python audit of registered monthly HESTA origin data, all-cohort first exposure and checksum-preserved official COVID sources",
         retrieval_date="2026-10-04",
         local_raw_file="config/accessibility_covid_specification.json|data_processed/accessibility_municipality_month_exposure.csv|reports/accessibility_all_cohort_municipality_coverage.csv|config/temporal_controls.json|data_external/source_evidence/SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY_20261004T120856Z.html|data_external/source_evidence/BFS_HOTEL_DEMAND_COVID_2020_20261004T120744Z.pdf",
-        processed_file="reports/accessibility_covid_foreign_share_baseline_audit.csv|reports/accessibility_covid_specification_summary.json|reports/74_SPECIFICATION_COVID_ET_BASELINE_CLIENTELE_FR.md",
+        processed_file="reports/accessibility_covid_foreign_share_baseline_audit.csv|reports/accessibility_covid_foreign_share_selected.csv|reports/accessibility_covid_specification_summary.json|reports/74_SPECIFICATION_COVID_ET_BASELINE_CLIENTELE_FR.md",
         geographic_level="hotel municipality by focal first-exposure cohort",
         temporal_resolution="monthly characteristic baselines and national disruption interval",
         temporal_start="2014-11", temporal_end="2025-05",
         unit="municipality-cohort row, months and foreign overnight-stay share",
         license="Derived analytical data; upstream source terms continue to apply",
         access_conditions="Local reproducible output",
-        transformation_applied="Retain all months and cohorts; record calendar-month fixed effects as the common-shock adjustment; define March 2020-March 2022 only as an exclusion sensitivity; audit 12/24/36-month characteristics ending before the pandemic, focal cohort and own first exposure",
-        quality_notes="The baseline window and aggregation method remain unselected pending researcher approval. Four exposed municipalities lack calculable historical origin shares. No comparison group or estimator is chosen.",
+        transformation_applied="Retain all months and cohorts; record calendar-month fixed effects as the common-shock adjustment; define March 2020-March 2022 only as an exclusion sensitivity; audit 12/24/36-month characteristics ending before the pandemic, focal cohort and own first exposure; export the approved 24-month ratio of summed foreign to summed total overnight stays",
+        quality_notes="The 24-month ratio-of-sums characteristic is researcher-approved and exported without imputation or row exclusion. Four exposed municipalities lack calculable historical origin shares; their handling remains pending. No comparison group or estimator is chosen.",
         confidence_level="high for deterministic dates and availability arithmetic; no causal identification approval",
-        manual_verification="1,302 rows reconcile to 186 municipalities by seven cohorts; all baseline cutoffs precede the pandemic and own first exposure",
-        notes="Option A was explicitly approved by the researcher. Stage 28 remains blocked on separate comparison-design approval.",
+        manual_verification="1,302 selected-characteristic rows reconcile to 186 municipalities by seven cohorts; 1,261 values are available overall and 76 of 80 first-exposed municipalities have a value; all baseline cutoffs precede the pandemic and own first exposure",
+        notes="Option A and the 24-month ratio-of-sums baseline were explicitly approved by the researcher. Missing-characteristic handling and stage-28 comparison design require separate approval.",
     ))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())

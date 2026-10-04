@@ -1,5 +1,5 @@
 {
-  "specification_version": "stage27_v1_option_A_approved_2026_10_04",
+  "specification_version": "stage27_v2_option_A_24m_ratio_approved_2026_10_04",
   "researcher_approved_option": "A",
   "primary_sample_month_policy": "retain_all_available_months_and_cohorts",
   "common_shock_adjustment": "calendar_month_fixed_effects",
@@ -81,8 +81,13 @@
       "aggregation_abs_difference_max": 0.1630765085465029
     }
   },
-  "foreign_share_baseline_window_selected_months": null,
-  "foreign_share_aggregation_selected": null,
+  "foreign_share_baseline_window_selected_months": 24,
+  "foreign_share_aggregation_selected": "ratio_of_summed_foreign_to_summed_total_overnights",
+  "selected_foreign_share_rows_available": 1261,
+  "selected_foreign_share_rows_missing": 41,
+  "first_exposed_with_selected_foreign_share": 76,
+  "first_exposed_without_selected_foreign_share": 4,
+  "foreign_share_missing_handling_selected": false,
   "analysis_sample_selected": false,
   "cohort_comparison_rule_selected": false,
   "causal_estimation_approved": false,
@@ -101,7 +106,7 @@
     }
   },
   "input_sha256": {
-    "config/accessibility_covid_specification.json": "c32b62552620143688f5ede422a220048c4159467be9cbe5d756dbc250de6893",
+    "config/accessibility_covid_specification.json": "3e7de04bc8fe8672218ddc6d3c468046ce9fbc88b9590b94c988763dd41a7ba1",
     "data_processed/accessibility_municipality_month_exposure.csv": "9da2037a9fd323afdea5987a87669d94618535ded4f6a71c1a82a97f1890d0be",
     "reports/accessibility_all_cohort_municipality_coverage.csv": "d618c4beaa266a10a104410c55820072862d7870a173ba45d679b3161286ae05",
     "config/temporal_controls.json": "64573d89c7c4f3c4c0240f71e235c990f46fdcc1cf326bb48cca6f8f9d14dca2"

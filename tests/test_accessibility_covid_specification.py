@@ -33,8 +33,10 @@ def test_option_a_and_official_core_sensitivity_are_versioned() -> None:
         "start": "2020-03-01",
         "end": "2022-03-01",
     }
-    assert config["foreign_share_baseline_window_selected_months"] is None
-    assert config["foreign_share_aggregation_selected"] is None
+    assert config["foreign_share_baseline_window_selected_months"] == 24
+    assert config["foreign_share_aggregation_selected"] == (
+        "ratio_of_summed_foreign_to_summed_total_overnights"
+    )
 
 
 def test_baseline_audit_is_exhaustive_nonselective_and_preperiod_only() -> None:
@@ -56,7 +58,7 @@ def test_baseline_audit_is_exhaustive_nonselective_and_preperiod_only() -> None:
     assert not as_bool(audit.causal_estimation_approved).any()
 
 
-def test_candidate_window_counts_reconcile_without_choosing_one() -> None:
+def test_candidate_window_counts_reconcile_with_approved_24m_choice() -> None:
     summary = json.loads(
         (ROOT / "reports" / "accessibility_covid_specification_summary.json").read_text(
             encoding="utf-8"
@@ -72,9 +74,39 @@ def test_candidate_window_counts_reconcile_without_choosing_one() -> None:
         horizon: values["first_exposed_with_complete_baseline"]
         for horizon, values in summary["baseline_window_audit"].items()
     } == {"12": 76, "24": 76, "36": 75}
-    assert summary["foreign_share_baseline_window_selected_months"] is None
-    assert summary["foreign_share_aggregation_selected"] is None
+    assert summary["foreign_share_baseline_window_selected_months"] == 24
+    assert summary["foreign_share_aggregation_selected"] == (
+        "ratio_of_summed_foreign_to_summed_total_overnights"
+    )
+    assert summary["selected_foreign_share_rows_available"] == 1261
+    assert summary["selected_foreign_share_rows_missing"] == 41
+    assert summary["first_exposed_with_selected_foreign_share"] == 76
+    assert summary["first_exposed_without_selected_foreign_share"] == 4
+    assert not summary["foreign_share_missing_handling_selected"]
     assert not summary["analysis_sample_selected"]
+
+
+def test_selected_foreign_share_preserves_rows_and_does_not_resolve_missing() -> None:
+    audit = read("reports/accessibility_covid_foreign_share_baseline_audit.csv")
+    selected = read("reports/accessibility_covid_foreign_share_selected.csv")
+    assert len(selected) == len(audit) == 1302
+    assert selected.selected_baseline_window_months.eq(24).all()
+    assert selected.selected_foreign_share_aggregation.eq(
+        "ratio_of_summed_foreign_to_summed_total_overnights"
+    ).all()
+    pd.testing.assert_series_equal(
+        selected.selected_foreign_share,
+        audit.baseline_24m_foreign_share_ratio_of_sums,
+        check_names=False,
+    )
+    assert as_bool(selected.selected_foreign_share_available).sum() == 1261
+    first = selected.exposure_status_at_focal_cohort.eq("first_exposed_in_focal_cohort")
+    assert first.sum() == 80
+    assert as_bool(selected.loc[first, "selected_foreign_share_available"]).sum() == 76
+    assert not as_bool(selected.foreign_share_missing_handling_selected).any()
+    assert not as_bool(selected.analysis_sample_selected).any()
+    assert not as_bool(selected.cohort_comparison_rule_selected).any()
+    assert not as_bool(selected.causal_estimation_approved).any()
 
 
 def test_official_evidence_checksums_and_provenance_are_registered() -> None:
@@ -96,4 +128,5 @@ def test_official_evidence_checksums_and_provenance_are_registered() -> None:
     }
     assert required_sources <= set(sources.source_id)
     assert "accessibility_covid_foreign_share_baseline_audit" in set(dictionary.table)
+    assert "accessibility_covid_foreign_share_selected" in set(dictionary.table)
     assert set(dictionary.source_id) <= set(sources.source_id)

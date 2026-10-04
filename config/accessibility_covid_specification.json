@@ -1,5 +1,5 @@
 {
-  "specification_version": "stage27_v1_option_A_approved_2026_10_04",
+  "specification_version": "stage27_v2_option_A_24m_ratio_approved_2026_10_04",
   "researcher_approved_option": "A",
   "approval_date": "2026-10-04",
   "primary_sample_month_policy": "retain_all_available_months_and_cohorts",
@@ -13,12 +13,12 @@
   "foreign_share_measurement_guardrail": "The municipality characteristic must be measured before both its own first accessible Magic Pass exposure and the pandemic, and before the focal cohort anchor.",
   "baseline_cutoff_definition": "Earliest of focal cohort month, municipality first-exposure month at 120 minutes when any, and 2020-03-01; the baseline ends one month before this cutoff.",
   "foreign_share_baseline_window_candidates_months": [12, 24, 36],
-  "foreign_share_baseline_window_selected_months": null,
+  "foreign_share_baseline_window_selected_months": 24,
   "foreign_share_aggregation_candidates": [
     "ratio_of_summed_foreign_to_summed_total_overnights",
     "unweighted_mean_of_monthly_foreign_shares"
   ],
-  "foreign_share_aggregation_selected": null,
+  "foreign_share_aggregation_selected": "ratio_of_summed_foreign_to_summed_total_overnights",
   "core_period_exclusion_sensitivity": {
     "enabled": true,
     "start": "2020-03-01",
@@ -34,7 +34,7 @@
     "SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY",
     "BFS_HOTEL_DEMAND_COVID_2020"
   ],
-  "decision_status": "option_A_approved_baseline_window_and_aggregation_pending_researcher_choice",
+  "decision_status": "option_A_and_24m_ratio_of_sums_approved_missing_characteristic_handling_pending",
   "protected_interpretation": {
     "analysis_sample_selected": false,
     "cohort_comparison_rule_selected": false,

@@ -544,14 +544,14 @@ This report is generated from `metadata/data_sources_master.csv`. Raw internet r
 
 ## DERIVED_ACCESSIBILITY_COVID_SPECIFICATION — Accessibility all-cohort COVID specification and foreign-share baseline audit
 
-- **Contents and relevance:** Researcher-approved COVID option A and non-selective audit of 12/24/36-month foreign-client-share baseline candidates
+- **Contents and relevance:** Researcher-approved COVID option A, audit of candidate baselines and selected 24-month ratio-of-sums foreign-client-share characteristic
 - **Producer:** Master thesis analytical pipeline
 - **Exact URL:** Not documented.
 - **Access and retrieval date:** Deterministic Python audit of registered monthly HESTA origin data, all-cohort first exposure and checksum-preserved official COVID sources; 2026-10-04.
 - **Variables:** approved_option_A|official_core_covid_interval|calendar_month_fixed_effects|pre_pandemic_pre_treatment_foreign_share_baselines
-- **Transformations:** Retain all months and cohorts; record calendar-month fixed effects as the common-shock adjustment; define March 2020-March 2022 only as an exclusion sensitivity; audit 12/24/36-month characteristics ending before the pandemic, focal cohort and own first exposure
+- **Transformations:** Retain all months and cohorts; record calendar-month fixed effects as the common-shock adjustment; define March 2020-March 2022 only as an exclusion sensitivity; audit 12/24/36-month characteristics ending before the pandemic, focal cohort and own first exposure; export the approved 24-month ratio of summed foreign to summed total overnight stays
 - **Coverage:** hotel municipality by focal first-exposure cohort; monthly characteristic baselines and national disruption interval; 2014-11 to 2025-05.
-- **Limitations:** The baseline window and aggregation method remain unselected pending researcher approval. Four exposed municipalities lack calculable historical origin shares. No comparison group or estimator is chosen.
+- **Limitations:** The 24-month ratio-of-sums characteristic is researcher-approved and exported without imputation or row exclusion. Four exposed municipalities lack calculable historical origin shares; their handling remains pending. No comparison group or estimator is chosen.
 - **Local raw file:** `config/accessibility_covid_specification.json|data_processed/accessibility_municipality_month_exposure.csv|reports/accessibility_all_cohort_municipality_coverage.csv|config/temporal_controls.json|data_external/source_evidence/SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY_20261004T120856Z.html|data_external/source_evidence/BFS_HOTEL_DEMAND_COVID_2020_20261004T120744Z.pdf`.
 
 ## DERIVED_ACCESSIBILITY_HIGH_LEVERAGE_CONTROL_EXTERNAL_SHOCK_REVIEW — Accessibility high-leverage control external-shock review

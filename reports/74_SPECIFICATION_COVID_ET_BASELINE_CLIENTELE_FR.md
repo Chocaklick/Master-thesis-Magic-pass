@@ -1,6 +1,6 @@
 # Spécification COVID et baseline de clientèle - étape 27
 
-**Statut : option A approuvée. La longueur et l'agrégation de la baseline étrangère restent à valider avant estimation.**
+**Statut : option A, baseline de 24 mois et ratio des sommes approuvés. Le traitement des valeurs manquantes reste à valider avant estimation.**
 
 ## Règles déjà validées
 
@@ -8,6 +8,7 @@
 - Les effets fixes de mois calendaires absorbent les chocs nationaux communs. Une indicatrice COVID nationale seule n'est donc pas ajoutée séparément.
 - La sensibilité principale retirera mars 2020 à mars 2022 inclus. L'ancien intervalle large jusqu'à avril 2022 est conservé seulement pour comparer avec les résultats antérieurs.
 - L'interaction COVID utilisera une part de clientèle étrangère calculée avant la pandémie, avant la première exposition propre de la commune et avant la cohorte examinée.
+- La caractéristique approuvée couvre 24 mois et correspond au ratio entre la somme des nuitées étrangères et la somme des nuitées domestiques plus étrangères.
 
 ## Disponibilité des baselines candidates
 
@@ -21,18 +22,25 @@ L'audit couvre 186 communes × 7 cohortes, soit 1 302 lignes. Il ne sélectionne
 
 Quatre des 80 communes exposées n'ont aucune part calculable avant leur exposition sous leur identifiant communal actuel : Blonay - Saint-Légier, Val de Bagnes, Laténa, Moutier (JU). Elles ne sont pas exclues par ce rapport.
 
-## Deux agrégations possibles
+## Agrégation validée
 
-1. **Ratio des sommes** : somme des nuitées étrangères divisée par la somme des nuitées totales. Les mois de forte fréquentation pèsent davantage.
-2. **Moyenne des parts mensuelles** : chaque mois pèse autant. Elle décrit mieux un profil mensuel moyen, mais donne le même poids aux mois creux.
+Le **ratio des sommes** est retenu : somme des nuitées étrangères divisée par la somme des nuitées totales. Les mois de forte fréquentation pèsent donc davantage.
 
 Sur la baseline de 24 mois, les deux mesures sont fortement corrélées. Leur corrélation est 0.991; l'écart absolu médian est 0.8 point de pourcentage et le 95e percentile 5.6 points.
 
-## Proposition soumise au chercheur
+## Décision enregistrée
 
-La proposition est une **baseline de 24 mois avec ratio des sommes**. Elle conserve les 76 premières expositions disposant de données d'origine et couvre deux cycles saisonniers complets. Les quatre communes sans donnée restent documentées et ne pourront recevoir cette interaction sans une source supplémentaire.
+La **baseline de 24 mois avec ratio des sommes** est maintenant verrouillée. Le fichier sélectionné conserve les 1 302 lignes commune-cohorte; il ne retire ni n'impute les valeurs manquantes.
 
-Aucune comparaison de cohorte, aucun échantillon et aucun estimateur n'est choisi ici.
+## Nouvelle décision méthodologique requise : quatre historiques manquants
+
+La part approuvée est disponible pour 76 des 80 premières expositions. Elle manque pour : Blonay - Saint-Légier, Val de Bagnes, Laténa, Moutier (JU).
+
+- **A — reconstruire les historiques (recommandé pour maximiser l'inclusion)** : Moutier peut être relié à sa série BFS 700 grâce au pont officiel déjà documenté. Pour les trois autres cas, il faut collecter les séries HESTA des entités antérieures et leurs mutations officielles, puis agréger seulement sur un périmètre territorial justifié.
+- **B — interaction sur cas complets** : garder les 80 communes dans le modèle principal sans interaction, mais estimer l'hétérogénéité selon la clientèle étrangère sur les 76 cas disponibles.
+- **C — indicatrice de valeur manquante** : conserver les 80 cas dans l'interaction en centrant conventionnellement la part manquante et en ajoutant un terme spécifique. Cette solution préserve la taille, mais repose sur une convention de modélisation plus forte.
+
+Aucune de ces trois solutions n'est appliquée sans validation. Aucune comparaison de cohorte, aucun échantillon et aucun estimateur n'est choisi ici.
 
 ## Sources
 

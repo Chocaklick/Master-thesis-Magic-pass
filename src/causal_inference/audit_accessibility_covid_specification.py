@@ -1,8 +1,9 @@
-"""Version approved COVID option A and audit pre-treatment foreign-share baselines.
+"""Version approved COVID option A and pre-treatment foreign-share baseline.
 
-This stage does not choose a baseline window, comparison group or estimator.  It
-keeps all cohorts and months, records the official core sensitivity interval,
-and reports data availability for researcher review.
+The researcher selected a 24-month ratio-of-sums baseline.  This stage keeps all
+cohorts and months, records the official core sensitivity interval, and exports
+the selected characteristic without choosing how to handle unavailable values,
+a comparison group, or an estimator.
 """
 
 from __future__ import annotations
@@ -22,6 +23,9 @@ COVERAGE_PATH = ROOT / "reports" / "accessibility_all_cohort_municipality_covera
 TEMPORAL_CONFIG_PATH = ROOT / "config" / "temporal_controls.json"
 EVIDENCE_DIR = ROOT / "data_external" / "source_evidence"
 OUTPUT_PATH = ROOT / "reports" / "accessibility_covid_foreign_share_baseline_audit.csv"
+SELECTED_OUTPUT_PATH = (
+    ROOT / "reports" / "accessibility_covid_foreign_share_selected.csv"
+)
 SUMMARY_PATH = ROOT / "reports" / "accessibility_covid_specification_summary.json"
 REPORT_PATH = ROOT / "reports" / "74_SPECIFICATION_COVID_ET_BASELINE_CLIENTELE_FR.md"
 SOURCE_ID = "DERIVED_ACCESSIBILITY_COVID_SPECIFICATION"
@@ -194,6 +198,14 @@ def build_summary(config: dict, audit: pd.DataFrame, evidence: dict[str, dict]) 
             "aggregation_abs_difference_p95": float(differences.quantile(0.95)),
             "aggregation_abs_difference_max": float(differences.max()),
         }
+    selected_horizon = int(config["foreign_share_baseline_window_selected_months"])
+    selected_prefix = f"baseline_{selected_horizon}m"
+    selected_available = audit[
+        f"{selected_prefix}_foreign_share_ratio_of_sums"
+    ].notna()
+    first_selected_available = first[
+        f"{selected_prefix}_foreign_share_ratio_of_sums"
+    ].notna()
     return {
         "specification_version": config["specification_version"],
         "researcher_approved_option": config["researcher_approved_option"],
@@ -222,6 +234,15 @@ def build_summary(config: dict, audit: pd.DataFrame, evidence: dict[str, dict]) 
         "foreign_share_aggregation_selected": config[
             "foreign_share_aggregation_selected"
         ],
+        "selected_foreign_share_rows_available": int(selected_available.sum()),
+        "selected_foreign_share_rows_missing": int((~selected_available).sum()),
+        "first_exposed_with_selected_foreign_share": int(
+            first_selected_available.sum()
+        ),
+        "first_exposed_without_selected_foreign_share": int(
+            (~first_selected_available).sum()
+        ),
+        "foreign_share_missing_handling_selected": False,
         "analysis_sample_selected": False,
         "cohort_comparison_rule_selected": False,
         "causal_estimation_approved": False,
@@ -244,6 +265,61 @@ def build_summary(config: dict, audit: pd.DataFrame, evidence: dict[str, dict]) 
     }
 
 
+def build_selected_baseline(config: dict, audit: pd.DataFrame) -> pd.DataFrame:
+    """Export the approved characteristic without silently resolving missing data."""
+    horizon = int(config["foreign_share_baseline_window_selected_months"])
+    if horizon != 24:
+        raise ValueError(f"Stage 27 expects the approved 24-month window, found {horizon}")
+    aggregation = config["foreign_share_aggregation_selected"]
+    if aggregation != "ratio_of_summed_foreign_to_summed_total_overnights":
+        raise ValueError(f"Unexpected approved aggregation: {aggregation}")
+    prefix = f"baseline_{horizon}m"
+    selected = audit[
+        [
+            "focal_cohort_month",
+            "municipality_bfs_id",
+            "municipality_name",
+            "municipality_first_exposure_month_120min",
+            "exposure_status_at_focal_cohort",
+            "baseline_cutoff_month_exclusive",
+            "baseline_cutoff_reason",
+            "baseline_ends_before_pandemic",
+            "baseline_ends_before_first_exposure",
+            "primary_sample_month_policy",
+            "common_shock_adjustment",
+            f"{prefix}_start",
+            f"{prefix}_end",
+            f"{prefix}_observed_origin_months",
+            f"{prefix}_complete",
+            f"{prefix}_foreign_overnights_sum",
+            f"{prefix}_total_overnights_sum",
+            f"{prefix}_foreign_share_ratio_of_sums",
+            "analysis_sample_selected",
+            "cohort_comparison_rule_selected",
+            "causal_estimation_approved",
+            "source_id",
+        ]
+    ].copy()
+    selected = selected.rename(
+        columns={
+            f"{prefix}_start": "selected_baseline_start",
+            f"{prefix}_end": "selected_baseline_end",
+            f"{prefix}_observed_origin_months": "selected_baseline_observed_origin_months",
+            f"{prefix}_complete": "selected_baseline_complete",
+            f"{prefix}_foreign_overnights_sum": "selected_foreign_overnights_sum",
+            f"{prefix}_total_overnights_sum": "selected_total_overnights_sum",
+            f"{prefix}_foreign_share_ratio_of_sums": "selected_foreign_share",
+        }
+    )
+    selected.insert(11, "selected_baseline_window_months", horizon)
+    selected.insert(12, "selected_foreign_share_aggregation", aggregation)
+    selected["selected_foreign_share_available"] = selected[
+        "selected_foreign_share"
+    ].notna()
+    selected["foreign_share_missing_handling_selected"] = False
+    return selected
+
+
 def write_report(summary: dict) -> None:
     w12 = summary["baseline_window_audit"]["12"]
     w24 = summary["baseline_window_audit"]["24"]
@@ -255,7 +331,7 @@ def write_report(summary: dict) -> None:
     lines = [
         "# Spécification COVID et baseline de clientèle - étape 27",
         "",
-        "**Statut : option A approuvée. La longueur et l'agrégation de la baseline étrangère restent à valider avant estimation.**",
+        "**Statut : option A, baseline de 24 mois et ratio des sommes approuvés. Le traitement des valeurs manquantes reste à valider avant estimation.**",
         "",
         "## Règles déjà validées",
         "",
@@ -263,6 +339,7 @@ def write_report(summary: dict) -> None:
         "- Les effets fixes de mois calendaires absorbent les chocs nationaux communs. Une indicatrice COVID nationale seule n'est donc pas ajoutée séparément.",
         "- La sensibilité principale retirera mars 2020 à mars 2022 inclus. L'ancien intervalle large jusqu'à avril 2022 est conservé seulement pour comparer avec les résultats antérieurs.",
         "- L'interaction COVID utilisera une part de clientèle étrangère calculée avant la pandémie, avant la première exposition propre de la commune et avant la cohorte examinée.",
+        "- La caractéristique approuvée couvre 24 mois et correspond au ratio entre la somme des nuitées étrangères et la somme des nuitées domestiques plus étrangères.",
         "",
         "## Disponibilité des baselines candidates",
         "",
@@ -276,18 +353,25 @@ def write_report(summary: dict) -> None:
         "",
         f"Quatre des 80 communes exposées n'ont aucune part calculable avant leur exposition sous leur identifiant communal actuel : {missing_names}. Elles ne sont pas exclues par ce rapport.",
         "",
-        "## Deux agrégations possibles",
+        "## Agrégation validée",
         "",
-        "1. **Ratio des sommes** : somme des nuitées étrangères divisée par la somme des nuitées totales. Les mois de forte fréquentation pèsent davantage.",
-        "2. **Moyenne des parts mensuelles** : chaque mois pèse autant. Elle décrit mieux un profil mensuel moyen, mais donne le même poids aux mois creux.",
+        "Le **ratio des sommes** est retenu : somme des nuitées étrangères divisée par la somme des nuitées totales. Les mois de forte fréquentation pèsent donc davantage.",
         "",
         f"Sur la baseline de 24 mois, les deux mesures sont fortement corrélées. Leur corrélation est {w24['aggregation_methods_correlation']:.3f}; l'écart absolu médian est {100*w24['aggregation_abs_difference_median']:.1f} point de pourcentage et le 95e percentile {100*w24['aggregation_abs_difference_p95']:.1f} points.",
         "",
-        "## Proposition soumise au chercheur",
+        "## Décision enregistrée",
         "",
-        "La proposition est une **baseline de 24 mois avec ratio des sommes**. Elle conserve les 76 premières expositions disposant de données d'origine et couvre deux cycles saisonniers complets. Les quatre communes sans donnée restent documentées et ne pourront recevoir cette interaction sans une source supplémentaire.",
+        "La **baseline de 24 mois avec ratio des sommes** est maintenant verrouillée. Le fichier sélectionné conserve les 1 302 lignes commune-cohorte; il ne retire ni n'impute les valeurs manquantes.",
         "",
-        "Aucune comparaison de cohorte, aucun échantillon et aucun estimateur n'est choisi ici.",
+        "## Nouvelle décision méthodologique requise : quatre historiques manquants",
+        "",
+        f"La part approuvée est disponible pour {summary['first_exposed_with_selected_foreign_share']} des 80 premières expositions. Elle manque pour : {missing_names}.",
+        "",
+        "- **A — reconstruire les historiques (recommandé pour maximiser l'inclusion)** : Moutier peut être relié à sa série BFS 700 grâce au pont officiel déjà documenté. Pour les trois autres cas, il faut collecter les séries HESTA des entités antérieures et leurs mutations officielles, puis agréger seulement sur un périmètre territorial justifié.",
+        "- **B — interaction sur cas complets** : garder les 80 communes dans le modèle principal sans interaction, mais estimer l'hétérogénéité selon la clientèle étrangère sur les 76 cas disponibles.",
+        "- **C — indicatrice de valeur manquante** : conserver les 80 cas dans l'interaction en centrant conventionnellement la part manquante et en ajoutant un terme spécifique. Cette solution préserve la taille, mais repose sur une convention de modélisation plus forte.",
+        "",
+        "Aucune de ces trois solutions n'est appliquée sans validation. Aucune comparaison de cohorte, aucun échantillon et aucun estimateur n'est choisi ici.",
         "",
         "## Sources",
         "",
@@ -308,6 +392,7 @@ def main() -> None:
         for source_id in config["official_source_ids"]
     }
     audit = build_audit(config, panel, coverage)
+    selected = build_selected_baseline(config, audit)
     summary = build_summary(config, audit, evidence)
 
     if len(audit) != 186 * 7:
@@ -318,8 +403,13 @@ def main() -> None:
         raise ValueError("Every baseline must end before own first exposure")
     if audit.analysis_sample_selected.any() or audit.causal_estimation_approved.any():
         raise ValueError("Stage 27 availability audit cannot select a sample or approve causality")
+    if len(selected) != len(audit):
+        raise ValueError("The selected characteristic export must preserve every audit row")
+    if selected.foreign_share_missing_handling_selected.any():
+        raise ValueError("Missing-characteristic handling requires a separate approval")
 
     audit.to_csv(OUTPUT_PATH, index=False, lineterminator="\n")
+    selected.to_csv(SELECTED_OUTPUT_PATH, index=False, lineterminator="\n")
     SUMMARY_PATH.write_text(
         json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
