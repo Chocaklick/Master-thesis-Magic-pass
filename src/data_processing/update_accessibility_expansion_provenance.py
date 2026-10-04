@@ -312,6 +312,10 @@ DESCRIPTIONS = {
     "foreign_share_reconstruction_source_names": "Pipe-delimited predecessor municipality names examined for reconstruction",
     "foreign_share_reconstruction_source_ids": "Pipe-delimited hotel-data and official-mutation provenance identifiers for reconstruction",
     "foreign_share_reconstruction_component_coverage": "Number of publicly available required predecessor components over all required components",
+    "residual_missing_foreign_share_handling_selected": "Researcher-approved rule retaining all rows in the primary non-interacted candidate universe and using the foreign-share interaction only as a complete-case sensitivity",
+    "primary_non_interacted_candidate_universe_retained": "Whether the row remains in the candidate universe for the primary analysis that does not require the foreign-share interaction",
+    "foreign_share_interaction_sensitivity_complete_case_candidate": "Whether the approved foreign-client share is available for the supplementary complete-case interaction sensitivity",
+    "foreign_share_interaction_sensitivity_exclusion_reason": "Reason the row cannot enter the supplementary foreign-share interaction sensitivity while remaining available to the primary non-interacted candidate universe",
     "target_bfs_id": "BFS identifier of the current municipality whose historical characteristic is audited",
     "target_name": "Official current municipality name retained for the reconstruction audit",
     "predecessor_bfs_id": "Official BFS identifier of a municipality required to reconstruct the current territory",
@@ -1086,7 +1090,7 @@ def derived_sources() -> list[dict]:
     rows.append(source_row(
         "DERIVED_ACCESSIBILITY_COVID_SPECIFICATION",
         variable_name="approved_option_A|official_core_covid_interval|calendar_month_fixed_effects|pre_pandemic_pre_treatment_foreign_share_baselines",
-        variable_description="Researcher-approved COVID option A, selected 24-month ratio-of-sums foreign-client-share characteristic and exact official predecessor-history reconstruction",
+        variable_description="Researcher-approved COVID option A, selected 24-month ratio-of-sums foreign-client-share characteristic, exact official predecessor-history reconstruction and complete-case interaction sensitivity rule",
         source_organisation="Master thesis analytical pipeline",
         source_dataset_name="Accessibility all-cohort COVID specification and foreign-share baseline audit",
         retrieval_method="Deterministic Python audit of registered monthly HESTA origin data, all-cohort first exposure and checksum-preserved official COVID sources",
@@ -1099,11 +1103,11 @@ def derived_sources() -> list[dict]:
         unit="municipality-cohort row, months and foreign overnight-stay share",
         license="Derived analytical data; upstream source terms continue to apply",
         access_conditions="Local reproducible output",
-        transformation_applied="Retain all months and cohorts; use calendar-month fixed effects; define March 2020-March 2022 as an exclusion sensitivity; export the approved 24-month ratio of sums; verify every predecessor against official mutations and the archived HESTA municipality dimension; bridge only Moutier's same territory from BFS 700 to 6831",
-        quality_notes="The selected file retains every row. Moutier is reconstructed exactly through official identifier continuity. Blonay-Saint-Légier, Val de Bagnes and Laténa remain missing because the checked public archive lacks at least one required fusion component. No imputation, partial fusion aggregation, comparison group or estimator is used.",
+        transformation_applied="Retain all months and cohorts; use calendar-month fixed effects; define March 2020-March 2022 as an exclusion sensitivity; export the approved 24-month ratio of sums; verify every predecessor against official mutations and the archived HESTA municipality dimension; bridge only Moutier's same territory from BFS 700 to 6831; retain every row for the primary non-interacted candidate universe and flag observed-characteristic rows for the supplementary complete-case interaction sensitivity",
+        quality_notes="The selected file retains every row. Moutier is reconstructed exactly through official identifier continuity. Blonay-Saint-Légier, Val de Bagnes and Laténa remain missing because the checked public archive lacks at least one required fusion component. They are excluded only from the foreign-share interaction sensitivity, not the primary non-interacted candidate universe. No imputation, partial fusion aggregation, comparison group or estimator is used.",
         confidence_level="high for deterministic dates and availability arithmetic; no causal identification approval",
-        manual_verification="1,302 selected-characteristic rows retained; seven Moutier cohort rows reconstructed; 1,268 values available overall and 77 of 80 first-exposed municipalities have a value; all cutoffs precede pandemic and own first exposure",
-        notes="Option A reconstruction was explicitly approved. The three unresolved fusion histories remain missing; stage-28 comparison design requires separate approval.",
+        manual_verification="1,302 rows retained in the primary non-interacted candidate universe; seven Moutier cohort rows reconstructed; 1,268 rows and 77 of 80 first-exposed municipalities are complete-case candidates for the interaction sensitivity; all cutoffs precede pandemic and own first exposure",
+        notes="Residual-missingness option A was explicitly approved. The three unresolved fusion histories remain missing and are excluded only from the interaction sensitivity; stage-28 comparison design requires separate approval.",
     ))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())

@@ -1,8 +1,10 @@
 {
-  "specification_version": "stage27_v3_option_A_official_history_reconstruction_2026_10_04",
+  "specification_version": "stage27_v4_option_A_complete_case_interaction_sensitivity_2026_10_04",
   "researcher_approved_option": "A",
   "primary_sample_month_policy": "retain_all_available_months_and_cohorts",
   "common_shock_adjustment": "calendar_month_fixed_effects",
+  "primary_foreign_share_interaction": false,
+  "foreign_share_interaction_analysis_role": "supplementary_complete_case_sensitivity",
   "standalone_national_covid_dummy_in_primary_model": false,
   "official_core_disruption_start": "2020-03-01",
   "official_core_disruption_end": "2022-03-01",
@@ -105,6 +107,19 @@
     }
   ],
   "foreign_share_missing_handling_selected": "official_predecessor_reconstruction_without_imputation",
+  "residual_missing_foreign_share_handling_selected": "retain_all_in_primary_non_interacted_analysis_and_use_complete_cases_for_foreign_share_interaction_sensitivity",
+  "primary_non_interacted_candidate_universe": {
+    "municipality_cohort_rows_retained": 1302,
+    "first_exposed_municipalities_retained": 80
+  },
+  "foreign_share_interaction_complete_case_sensitivity": {
+    "municipality_cohort_rows_with_characteristic": 1268,
+    "municipality_cohort_rows_without_characteristic": 34,
+    "first_exposed_municipalities_with_characteristic": 77,
+    "first_exposed_municipalities_without_characteristic": 3,
+    "comparison_rule_selected": false,
+    "estimator_selected": false
+  },
   "historical_reconstruction": {
     "targets_reviewed": 4,
     "targets_reconstructed": 1,
@@ -161,7 +176,7 @@
     }
   },
   "input_sha256": {
-    "config/accessibility_covid_specification.json": "725ff3d0d8e2e7b7224443c53f0b34b522f7ef3fdc23f83409cfc64685be25fb",
+    "config/accessibility_covid_specification.json": "c8dbe6bd0a2b1e39ca302afa1108208d1def3d499337b3ba93997a333d57eb4d",
     "data_processed/accessibility_municipality_month_exposure.csv": "9da2037a9fd323afdea5987a87669d94618535ded4f6a71c1a82a97f1890d0be",
     "reports/accessibility_all_cohort_municipality_coverage.csv": "d618c4beaa266a10a104410c55820072862d7870a173ba45d679b3161286ae05",
     "config/temporal_controls.json": "64573d89c7c4f3c4c0240f71e235c990f46fdcc1cf326bb48cca6f8f9d14dca2",

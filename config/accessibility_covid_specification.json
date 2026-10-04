@@ -1,5 +1,5 @@
 {
-  "specification_version": "stage27_v3_option_A_official_history_reconstruction_2026_10_04",
+  "specification_version": "stage27_v4_option_A_complete_case_interaction_sensitivity_2026_10_04",
   "researcher_approved_option": "A",
   "approval_date": "2026-10-04",
   "primary_sample_month_policy": "retain_all_available_months_and_cohorts",
@@ -9,7 +9,8 @@
   "official_core_disruption_start": "2020-03-01",
   "official_core_disruption_end": "2022-03-01",
   "official_core_interval_interpretation": "Monthly sensitivity interval from the first extraordinary-situation month through the last complete month before the special situation ended on 1 April 2022; it is not a claim that restrictions or tourism effects were constant.",
-  "primary_foreign_share_interaction": true,
+  "primary_foreign_share_interaction": false,
+  "foreign_share_interaction_analysis_role": "supplementary_complete_case_sensitivity",
   "foreign_share_measurement_guardrail": "The municipality characteristic must be measured before both its own first accessible Magic Pass exposure and the pandemic, and before the focal cohort anchor.",
   "baseline_cutoff_definition": "Earliest of focal cohort month, municipality first-exposure month at 120 minutes when any, and 2020-03-01; the baseline ends one month before this cutoff.",
   "foreign_share_baseline_window_candidates_months": [12, 24, 36],
@@ -22,6 +23,8 @@
   "foreign_share_missing_handling_selected": "official_predecessor_reconstruction_without_imputation",
   "foreign_share_missing_handling_approval_date": "2026-10-04",
   "foreign_share_reconstruction_config": "config/accessibility_covid_foreign_share_reconstruction.csv",
+  "residual_missing_foreign_share_handling_selected": "retain_all_in_primary_non_interacted_analysis_and_use_complete_cases_for_foreign_share_interaction_sensitivity",
+  "residual_missing_foreign_share_handling_approval_date": "2026-10-04",
   "core_period_exclusion_sensitivity": {
     "enabled": true,
     "start": "2020-03-01",
@@ -37,7 +40,7 @@
     "SWISS_FEDERAL_COUNCIL_COVID_DECISION_CHRONOLOGY",
     "BFS_HOTEL_DEMAND_COVID_2020"
   ],
-  "decision_status": "option_A_official_history_reconstruction_approved_and_applied_unresolved_values_remain_missing",
+  "decision_status": "stage27_complete_option_A_primary_non_interacted_universe_retained_complete_case_foreign_share_interaction_sensitivity",
   "protected_interpretation": {
     "analysis_sample_selected": false,
     "cohort_comparison_rule_selected": false,

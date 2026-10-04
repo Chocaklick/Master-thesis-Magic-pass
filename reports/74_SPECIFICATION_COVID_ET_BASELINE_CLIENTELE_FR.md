@@ -1,6 +1,6 @@
 # Spécification COVID et baseline de clientèle - étape 27
 
-**Statut : option A appliquée. Moutier est reconstruit exactement; trois historiques restent indisponibles sans approximation.**
+**Statut : étape 27 terminée. Les 80 communes restent dans l'analyse principale non interagie; l'interaction avec la clientèle étrangère est une sensibilité en cas complets.**
 
 ## Règles déjà validées
 
@@ -8,6 +8,7 @@
 - Les effets fixes de mois calendaires absorbent les chocs nationaux communs. Une indicatrice COVID nationale seule n'est donc pas ajoutée séparément.
 - La sensibilité principale retirera mars 2020 à mars 2022 inclus. L'ancien intervalle large jusqu'à avril 2022 est conservé seulement pour comparer avec les résultats antérieurs.
 - L'interaction COVID utilisera une part de clientèle étrangère calculée avant la pandémie, avant la première exposition propre de la commune et avant la cohorte examinée.
+- Cette interaction est une analyse complémentaire en cas complets. Elle ne définit pas l'échantillon de l'analyse principale non interagie.
 - La caractéristique approuvée couvre 24 mois et correspond au ratio entre la somme des nuitées étrangères et la somme des nuitées domestiques plus étrangères.
 
 ## Disponibilité des baselines candidates
@@ -45,7 +46,11 @@ L'option A a été appliquée en exigeant l'identifiant BFS, la mutation officie
 
 Après reconstruction, la part est disponible pour 77 des 80 premières expositions. Elle reste manquante pour : Blonay - Saint-Légier, Val de Bagnes, Laténa. Les 1 302 lignes sont conservées et aucune valeur n'est imputée.
 
-Aucune comparaison de cohorte, aucun échantillon et aucun estimateur n'est choisi ici. Le traitement analytique des trois valeurs toujours manquantes devra rester explicite dans la prochaine spécification.
+## Traitement validé des trois valeurs restantes
+
+L'option A est retenue : les **80 premières expositions restent dans l'univers candidat de l'analyse principale non interagie**. L'interaction COVID × part étrangère est une **sensibilité en cas complets**, actuellement disponible pour 77 de ces 80 communes. Blonay - Saint-Légier, Val de Bagnes et Laténa sont absentes uniquement de cette interaction tant que leur caractéristique reste indisponible; elles ne sont pas retirées de l'analyse principale.
+
+Les 1 268 lignes commune-cohorte disposant de la caractéristique sont marquées comme candidates pour la sensibilité, et les 34 autres comme indisponibles pour cette seule interaction. Ces nombres ne constituent pas encore l'échantillon estimé : aucune règle de comparaison de cohorte ni aucun estimateur n'est choisi à l'étape 27.
 
 ## Sources
 

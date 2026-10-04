@@ -1,9 +1,10 @@
 """Version approved COVID option A and pre-treatment foreign-share baseline.
 
-The researcher selected a 24-month ratio-of-sums baseline.  This stage keeps all
-cohorts and months, records the official core sensitivity interval, and exports
-the selected characteristic without choosing how to handle unavailable values,
-a comparison group, or an estimator.
+The researcher selected a 24-month ratio-of-sums baseline, exact official
+predecessor reconstruction, and a residual-missingness rule. All rows remain in
+the primary non-interacted candidate universe; the foreign-share interaction is
+only a supplementary complete-case sensitivity. This stage still chooses no
+cohort comparison group or estimator.
 """
 
 from __future__ import annotations
@@ -278,6 +279,12 @@ def build_summary(
         "researcher_approved_option": config["researcher_approved_option"],
         "primary_sample_month_policy": config["primary_sample_month_policy"],
         "common_shock_adjustment": config["common_shock_adjustment"],
+        "primary_foreign_share_interaction": config[
+            "primary_foreign_share_interaction"
+        ],
+        "foreign_share_interaction_analysis_role": config[
+            "foreign_share_interaction_analysis_role"
+        ],
         "standalone_national_covid_dummy_in_primary_model": config[
             "standalone_national_covid_dummy_in_primary_model"
         ],
@@ -315,6 +322,31 @@ def build_summary(
         "foreign_share_missing_handling_selected": config[
             "foreign_share_missing_handling_selected"
         ],
+        "residual_missing_foreign_share_handling_selected": config[
+            "residual_missing_foreign_share_handling_selected"
+        ],
+        "primary_non_interacted_candidate_universe": {
+            "municipality_cohort_rows_retained": int(
+                selected.primary_non_interacted_candidate_universe_retained.sum()
+            ),
+            "first_exposed_municipalities_retained": int(len(first_selected)),
+        },
+        "foreign_share_interaction_complete_case_sensitivity": {
+            "municipality_cohort_rows_with_characteristic": int(
+                selected.foreign_share_interaction_sensitivity_complete_case_candidate.sum()
+            ),
+            "municipality_cohort_rows_without_characteristic": int(
+                (~selected.foreign_share_interaction_sensitivity_complete_case_candidate).sum()
+            ),
+            "first_exposed_municipalities_with_characteristic": int(
+                first_selected_available.sum()
+            ),
+            "first_exposed_municipalities_without_characteristic": int(
+                (~first_selected_available).sum()
+            ),
+            "comparison_rule_selected": False,
+            "estimator_selected": False,
+        },
         "historical_reconstruction": {
             "targets_reviewed": int(reconstruction.target_bfs_id.nunique()),
             "targets_reconstructed": int(reconstructed_targets),
@@ -363,6 +395,15 @@ def build_selected_baseline(
     aggregation = config["foreign_share_aggregation_selected"]
     if aggregation != "ratio_of_summed_foreign_to_summed_total_overnights":
         raise ValueError(f"Unexpected approved aggregation: {aggregation}")
+    residual_rule = config["residual_missing_foreign_share_handling_selected"]
+    expected_residual_rule = (
+        "retain_all_in_primary_non_interacted_analysis_and_use_complete_cases_"
+        "for_foreign_share_interaction_sensitivity"
+    )
+    if residual_rule != expected_residual_rule:
+        raise ValueError(f"Unexpected residual missing-share rule: {residual_rule}")
+    if config["primary_foreign_share_interaction"]:
+        raise ValueError("The approved interaction is supplementary, not primary")
     prefix = f"baseline_{horizon}m"
     selected = audit[
         [
@@ -483,6 +524,16 @@ def build_selected_baseline(
             )
 
     selected["foreign_share_missing_handling_selected"] = True
+    selected["residual_missing_foreign_share_handling_selected"] = residual_rule
+    selected["primary_non_interacted_candidate_universe_retained"] = True
+    selected["foreign_share_interaction_sensitivity_complete_case_candidate"] = (
+        selected.selected_foreign_share_available.astype(bool)
+    )
+    selected["foreign_share_interaction_sensitivity_exclusion_reason"] = np.where(
+        selected.selected_foreign_share_available,
+        "",
+        "approved_foreign_share_unavailable_after_exact_reconstruction",
+    )
     return selected
 
 
@@ -501,7 +552,7 @@ def write_report(summary: dict) -> None:
     lines = [
         "# Spécification COVID et baseline de clientèle - étape 27",
         "",
-        "**Statut : option A appliquée. Moutier est reconstruit exactement; trois historiques restent indisponibles sans approximation.**",
+        "**Statut : étape 27 terminée. Les 80 communes restent dans l'analyse principale non interagie; l'interaction avec la clientèle étrangère est une sensibilité en cas complets.**",
         "",
         "## Règles déjà validées",
         "",
@@ -509,6 +560,7 @@ def write_report(summary: dict) -> None:
         "- Les effets fixes de mois calendaires absorbent les chocs nationaux communs. Une indicatrice COVID nationale seule n'est donc pas ajoutée séparément.",
         "- La sensibilité principale retirera mars 2020 à mars 2022 inclus. L'ancien intervalle large jusqu'à avril 2022 est conservé seulement pour comparer avec les résultats antérieurs.",
         "- L'interaction COVID utilisera une part de clientèle étrangère calculée avant la pandémie, avant la première exposition propre de la commune et avant la cohorte examinée.",
+        "- Cette interaction est une analyse complémentaire en cas complets. Elle ne définit pas l'échantillon de l'analyse principale non interagie.",
         "- La caractéristique approuvée couvre 24 mois et correspond au ratio entre la somme des nuitées étrangères et la somme des nuitées domestiques plus étrangères.",
         "",
         "## Disponibilité des baselines candidates",
@@ -546,7 +598,11 @@ def write_report(summary: dict) -> None:
         "",
         f"Après reconstruction, la part est disponible pour {summary['first_exposed_with_selected_foreign_share']} des 80 premières expositions. Elle reste manquante pour : {unresolved_names}. Les 1 302 lignes sont conservées et aucune valeur n'est imputée.",
         "",
-        "Aucune comparaison de cohorte, aucun échantillon et aucun estimateur n'est choisi ici. Le traitement analytique des trois valeurs toujours manquantes devra rester explicite dans la prochaine spécification.",
+        "## Traitement validé des trois valeurs restantes",
+        "",
+        "L'option A est retenue : les **80 premières expositions restent dans l'univers candidat de l'analyse principale non interagie**. L'interaction COVID × part étrangère est une **sensibilité en cas complets**, actuellement disponible pour 77 de ces 80 communes. Blonay - Saint-Légier, Val de Bagnes et Laténa sont absentes uniquement de cette interaction tant que leur caractéristique reste indisponible; elles ne sont pas retirées de l'analyse principale.",
+        "",
+        "Les 1 268 lignes commune-cohorte disposant de la caractéristique sont marquées comme candidates pour la sensibilité, et les 34 autres comme indisponibles pour cette seule interaction. Ces nombres ne constituent pas encore l'échantillon estimé : aucune règle de comparaison de cohorte ni aucun estimateur n'est choisi à l'étape 27.",
         "",
         "## Sources",
         "",
@@ -594,6 +650,15 @@ def main() -> None:
         raise ValueError("The approved option-A handling must be recorded on every row")
     if int(selected.foreign_share_reconstruction_applied.sum()) != 7:
         raise ValueError("Expected the Moutier bridge to reconstruct seven cohort rows")
+    if not selected.primary_non_interacted_candidate_universe_retained.all():
+        raise ValueError("Every row must remain in the non-interacted candidate universe")
+    interaction_candidate = (
+        selected.foreign_share_interaction_sensitivity_complete_case_candidate
+    )
+    if not interaction_candidate.eq(selected.selected_foreign_share_available).all():
+        raise ValueError("Complete-case interaction flag must match share availability")
+    if selected.analysis_sample_selected.any() or selected.cohort_comparison_rule_selected.any():
+        raise ValueError("Residual missingness handling cannot select the stage-28 sample")
 
     audit.to_csv(OUTPUT_PATH, index=False, lineterminator="\n")
     selected.to_csv(SELECTED_OUTPUT_PATH, index=False, lineterminator="\n")

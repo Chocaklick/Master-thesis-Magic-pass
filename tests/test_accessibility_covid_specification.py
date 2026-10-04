@@ -40,6 +40,14 @@ def test_option_a_and_official_core_sensitivity_are_versioned() -> None:
     assert config["foreign_share_missing_handling_selected"] == (
         "official_predecessor_reconstruction_without_imputation"
     )
+    assert not config["primary_foreign_share_interaction"]
+    assert config["foreign_share_interaction_analysis_role"] == (
+        "supplementary_complete_case_sensitivity"
+    )
+    assert config["residual_missing_foreign_share_handling_selected"] == (
+        "retain_all_in_primary_non_interacted_analysis_and_use_complete_cases_"
+        "for_foreign_share_interaction_sensitivity"
+    )
 
 
 def test_baseline_audit_is_exhaustive_nonselective_and_preperiod_only() -> None:
@@ -96,6 +104,22 @@ def test_candidate_window_counts_reconcile_with_approved_24m_choice() -> None:
         "selected_rows_reconstructed": 7,
         "method": "official_predecessor_reconstruction_without_imputation",
     }
+    assert not summary["primary_foreign_share_interaction"]
+    assert summary["foreign_share_interaction_analysis_role"] == (
+        "supplementary_complete_case_sensitivity"
+    )
+    assert summary["primary_non_interacted_candidate_universe"] == {
+        "municipality_cohort_rows_retained": 1302,
+        "first_exposed_municipalities_retained": 80,
+    }
+    assert summary["foreign_share_interaction_complete_case_sensitivity"] == {
+        "municipality_cohort_rows_with_characteristic": 1268,
+        "municipality_cohort_rows_without_characteristic": 34,
+        "first_exposed_municipalities_with_characteristic": 77,
+        "first_exposed_municipalities_without_characteristic": 3,
+        "comparison_rule_selected": False,
+        "estimator_selected": False,
+    }
     assert not summary["analysis_sample_selected"]
 
 
@@ -131,6 +155,19 @@ def test_selected_foreign_share_preserves_rows_and_only_bridges_exact_moutier_hi
     assert first.sum() == 80
     assert as_bool(selected.loc[first, "selected_foreign_share_available"]).sum() == 77
     assert as_bool(selected.foreign_share_missing_handling_selected).all()
+    assert as_bool(selected.primary_non_interacted_candidate_universe_retained).all()
+    interaction_candidate = as_bool(
+        selected.foreign_share_interaction_sensitivity_complete_case_candidate
+    )
+    assert interaction_candidate.equals(
+        as_bool(selected.selected_foreign_share_available)
+    )
+    assert interaction_candidate.sum() == 1268
+    assert interaction_candidate[first].sum() == 77
+    missing_interaction = selected.loc[~interaction_candidate]
+    assert missing_interaction.foreign_share_interaction_sensitivity_exclusion_reason.eq(
+        "approved_foreign_share_unavailable_after_exact_reconstruction"
+    ).all()
     assert not as_bool(selected.analysis_sample_selected).any()
     assert not as_bool(selected.cohort_comparison_rule_selected).any()
     assert not as_bool(selected.causal_estimation_approved).any()
