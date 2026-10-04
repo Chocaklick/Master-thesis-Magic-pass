@@ -295,10 +295,36 @@ TABLES = {
     "accessibility_all_cohort_comparability_pairs": (
         ROOT / "reports" / "accessibility_all_cohort_comparability_pairs.csv",
         "DERIVED_ACCESSIBILITY_ALL_COHORT_COMPARABILITY_AUDIT", "exposed territory by approved donor at focal cohort", "existing project 36-month pre-entry diagnostic without selection"),
+    "accessibility_cohort_time_reference_support": (
+        ROOT / "reports" / "accessibility_cohort_time_specification_support.json",
+        "DERIVED_ACCESSIBILITY_COHORT_TIME_SPECIFICATION", "focal first-exposure cohort", "proposed pre-entry reference and seasonality support, not an estimation sample"),
+    "accessibility_cohort_time_specification_summary": (
+        ROOT / "reports" / "accessibility_cohort_time_specification_support.json",
+        "DERIVED_ACCESSIBILITY_COHORT_TIME_SPECIFICATION", "all exposed territories", "orientation approval and counterfactual support counts only"),
+    "accessibility_cohort_time_missing_histories": (
+        ROOT / "reports" / "accessibility_cohort_time_specification_support.json",
+        "DERIVED_ACCESSIBILITY_COHORT_TIME_SPECIFICATION", "exposed territory lacking proposed pre-entry support", "missing prehistory and observed post rows preserved in inventory"),
 }
 
 
 DESCRIPTIONS = {
+    "orientation_A_approved": "Whether the researcher approved cohort/month change comparisons as primary and a linear-trend variant as sensitivity",
+    "parameter_bundle_approved": "Whether the proposed reference, seasonality, weighting, missing-history and uncertainty specification is explicitly approved; false at this preparation stage",
+    "counterfactual_support_only_not_sample_selection": "Whether counts describe availability under a proposed specification without applying a selection or calculating treatment effects",
+    "treated_candidates": "All first-exposed territorial candidates in this focal cohort, retained in the approved inventory",
+    "treated_observed_reference_minus1": "Exposed territories with an observed original log1p outcome in the month immediately before the approved first exposure",
+    "treated_pre36_full_rank_seasonal_fit": "Exposed territories whose observed 36-month pre-entry seasonal/calendar design has full rank and residual degrees of freedom; algebraic availability only",
+    "treated_joint_reference_and_seasonal_fit": "Exposed territories with both an observed minus-one reference and a calculable proposed 36-month seasonal design",
+    "primary_donors_candidates": "All approved never-exposed or not-yet-exposed donor candidates at the focal anchor",
+    "primary_donors_observed_reference_minus1": "Approved donors with an observed original outcome at the proposed minus-one reference",
+    "primary_donors_pre36_full_rank_seasonal_fit": "Approved donors with algebraically calculable seasonal/calendar design over observed focal-cohort pre-entry months",
+    "primary_donors_joint_reference_and_seasonal_fit": "Approved donors with both proposed reference and seasonal-design support; current-month availability and comparability are not thereby validated",
+    "exposed_territories_retained_in_inventory": "All exposed territorial candidates retained unchanged in the canonical inventory",
+    "territories_with_proposed_reference_and_seasonal_fit": "Exposed territories with both proposed reference and seasonal-design support, without selecting them for estimation",
+    "all_observed_exposed_post_rows_retained_in_inventory": "All original observed exposed post-entry outcome rows retained in the inventory regardless of proposed prehistory support",
+    "observed_exposed_post_rows_with_proposed_reference_and_fit": "Potential post-entry observed rows among territories with the proposed reference and seasonal support, before checking each donor-date outcome; not a selected sample",
+    "observed_post_months_retained_in_inventory": "Original observed post-entry months preserved for this territory despite missing proposed prehistory support",
+    "estimation_executed": "Whether treatment-effect estimation has actually been run; false in this specification preparation",
     "diagnostic_pre_window_months": "Calendar months requested before focal exposure for descriptive support; not an approved estimation lead window or exclusion rule",
     "diagnostic_pre_start": "First calendar month of the strictly pre-entry diagnostic window",
     "diagnostic_pre_end": "Last calendar month before entry included in the diagnostic window",
@@ -1376,6 +1402,26 @@ def derived_sources() -> list[dict]:
         manual_verification="All 79 exposed territories retained in 316 territory-window rows; Moutier remains one unit; all candidate donors from approved option C audited with original exit dates",
         notes="The researcher approved diagnostic-only comparability before separately choosing an estimator. No new external download; old pilot exclusions and thresholds are not reused as all-cohort gates",
     ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_COHORT_TIME_SPECIFICATION",
+        variable_name="orientation_A_approved|parameter_bundle_approved|treated_joint_reference_and_seasonal_fit|primary_donors_joint_reference_and_seasonal_fit|observed_exposed_post_rows_with_proposed_reference_and_fit",
+        variable_description="Approved orientation A with proposed but unapproved cohort-time parameters and non-selective input-support counts",
+        source_organisation="Master thesis analytical pipeline", source_dataset_name="Cohort-month estimation specification preparation",
+        retrieval_method="Deterministic Python check of original territorial outcome availability and pre-entry seasonal/calendar design rank; no treatment-effect calculation",
+        retrieval_date="2026-10-05",
+        local_raw_file="config/accessibility_cohort_time_estimator.json|config/accessibility_outcome_territorial_harmonisation.json|data_processed/accessibility_municipality_month_exposure_territorial.csv|reports/accessibility_cohort_comparison_universe_territorial.csv",
+        processed_file="reports/accessibility_cohort_time_specification_support.json|reports/81_CADRAGE_ESTIMATION_COHORTES_MOIS_FR.md",
+        geographic_level="exposed analytical territory and approved donor candidate at each focal cohort",
+        temporal_resolution="minus-one pre-entry reference and 36-month proposed seasonal design; all observed post rows counted only",
+        temporal_start="2014-11", temporal_end="2026-03",
+        unit="territories, observed months and approval flags",
+        license="Derived data; upstream HESTA terms apply", access_conditions="Local reproducible output",
+        transformation_applied="Record explicit orientation A approval; keep reference, seasonality, weighting, missing-history and uncertainty proposal unapproved. Count observed minus-one outcomes and full-rank pre36 seasonal/calendar design using actual calendar dates. Publish their intersection and post-row support without dropping a source row, adjusting an outcome or estimating an effect",
+        quality_notes="All 79 territories and 5580 observed post rows remain in the panel. Proposed prerequisites are available for 76 territories and 5451 post rows; the three fused-territory histories retain their remaining 129 post rows but lack the proposed pre-entry support. Donor counts do not validate comparability or guarantee date-specific observations. No estimator implementation, matching, new BFS covariate, causal interpretation or final sample approved",
+        confidence_level="high for exact deterministic availability; parameters and causal identification remain unapproved",
+        manual_verification="The 51, 63 and 15 observed post months of Blonay-Saint-Legier, Val de Bagnes and Latena remain in the inventory; 5451 plus 129 reconciles exactly to 5580. Moutier remains one territorial unit",
+        notes="The researcher selected orientation A on 2026-10-05. The seasonal correction is a project-specific proposal, not automatically certified by CALLAWAY_SANTANNA_2021_DID. No external collection",
+    ))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())
     rows.extend(remaining_control_review_external_sources())
@@ -1488,11 +1534,24 @@ def main() -> None:
                        .drop_duplicates("variable").set_index("variable").description.to_dict())
     rows = []
     for table, (path, source_id, geo, temporal) in TABLES.items():
-        frame = pd.read_csv(path, low_memory=False)
+        if path.suffix == ".json":
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            if table == "accessibility_cohort_time_reference_support":
+                frame = pd.DataFrame(payload["cohort_reference_support"])
+            elif table == "accessibility_cohort_time_missing_histories":
+                frame = pd.DataFrame(payload["missing_proposed_reference_or_fit"])
+            elif table == "accessibility_cohort_time_specification_summary":
+                frame = pd.DataFrame([{key: value for key, value in payload.items() if not isinstance(value, (list, dict))}])
+            else:
+                raise ValueError(f"No registered JSON table projection for {table}")
+        else:
+            frame = pd.read_csv(path, low_memory=False)
         missing_shares = frame.isna().mean()
         for variable in frame.columns:
             variable_description = description(variable, existing_lookup)
             variable_unit = unit(variable)
+            if table.startswith("accessibility_cohort_time_"):
+                variable_unit = "boolean flag" if pd.api.types.is_bool_dtype(frame[variable]) else "BFS identifier" if variable == "municipality_bfs_id" else "count" if pd.api.types.is_numeric_dtype(frame[variable]) else "month" if variable == "focal_cohort_month" else "specification label"
             if table.endswith("_territorial"):
                 if variable == "municipality_bfs_id":
                     variable_description = "Analytical territory BFS identifier; Moutier is a single unit 6831 across the exact approved 700-to-6831 identity bridge, all other units unchanged"

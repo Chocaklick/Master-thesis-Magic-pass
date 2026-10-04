@@ -1,0 +1,118 @@
+{
+  "specification_version": "stage29d_v1_orientation_A_pending_specification_2026_10_05",
+  "orientation_A_approved": true,
+  "parameter_bundle_approved": false,
+  "counterfactual_support_only_not_sample_selection": true,
+  "cohort_reference_support": [
+    {
+      "focal_cohort_month": "2017-11-01",
+      "treated_candidates": 40,
+      "treated_observed_reference_minus1": 37,
+      "treated_pre36_full_rank_seasonal_fit": 37,
+      "treated_joint_reference_and_seasonal_fit": 37,
+      "primary_donors_candidates": 145,
+      "primary_donors_observed_reference_minus1": 140,
+      "primary_donors_pre36_full_rank_seasonal_fit": 138,
+      "primary_donors_joint_reference_and_seasonal_fit": 138
+    },
+    {
+      "focal_cohort_month": "2018-05-01",
+      "treated_candidates": 3,
+      "treated_observed_reference_minus1": 3,
+      "treated_pre36_full_rank_seasonal_fit": 3,
+      "treated_joint_reference_and_seasonal_fit": 3,
+      "primary_donors_candidates": 142,
+      "primary_donors_observed_reference_minus1": 139,
+      "primary_donors_pre36_full_rank_seasonal_fit": 137,
+      "primary_donors_joint_reference_and_seasonal_fit": 137
+    },
+    {
+      "focal_cohort_month": "2019-05-01",
+      "treated_candidates": 3,
+      "treated_observed_reference_minus1": 3,
+      "treated_pre36_full_rank_seasonal_fit": 3,
+      "treated_joint_reference_and_seasonal_fit": 3,
+      "primary_donors_candidates": 139,
+      "primary_donors_observed_reference_minus1": 138,
+      "primary_donors_pre36_full_rank_seasonal_fit": 136,
+      "primary_donors_joint_reference_and_seasonal_fit": 136
+    },
+    {
+      "focal_cohort_month": "2022-05-01",
+      "treated_candidates": 16,
+      "treated_observed_reference_minus1": 16,
+      "treated_pre36_full_rank_seasonal_fit": 16,
+      "treated_joint_reference_and_seasonal_fit": 16,
+      "primary_donors_candidates": 123,
+      "primary_donors_observed_reference_minus1": 122,
+      "primary_donors_pre36_full_rank_seasonal_fit": 122,
+      "primary_donors_joint_reference_and_seasonal_fit": 122
+    },
+    {
+      "focal_cohort_month": "2023-05-01",
+      "treated_candidates": 9,
+      "treated_observed_reference_minus1": 9,
+      "treated_pre36_full_rank_seasonal_fit": 9,
+      "treated_joint_reference_and_seasonal_fit": 9,
+      "primary_donors_candidates": 114,
+      "primary_donors_observed_reference_minus1": 114,
+      "primary_donors_pre36_full_rank_seasonal_fit": 113,
+      "primary_donors_joint_reference_and_seasonal_fit": 113
+    },
+    {
+      "focal_cohort_month": "2024-05-01",
+      "treated_candidates": 5,
+      "treated_observed_reference_minus1": 5,
+      "treated_pre36_full_rank_seasonal_fit": 5,
+      "treated_joint_reference_and_seasonal_fit": 5,
+      "primary_donors_candidates": 109,
+      "primary_donors_observed_reference_minus1": 109,
+      "primary_donors_pre36_full_rank_seasonal_fit": 109,
+      "primary_donors_joint_reference_and_seasonal_fit": 109
+    },
+    {
+      "focal_cohort_month": "2025-05-01",
+      "treated_candidates": 3,
+      "treated_observed_reference_minus1": 3,
+      "treated_pre36_full_rank_seasonal_fit": 3,
+      "treated_joint_reference_and_seasonal_fit": 3,
+      "primary_donors_candidates": 106,
+      "primary_donors_observed_reference_minus1": 106,
+      "primary_donors_pre36_full_rank_seasonal_fit": 106,
+      "primary_donors_joint_reference_and_seasonal_fit": 106
+    }
+  ],
+  "exposed_territories_retained_in_inventory": 79,
+  "territories_with_proposed_reference_and_seasonal_fit": 76,
+  "all_observed_exposed_post_rows_retained_in_inventory": 5580,
+  "observed_exposed_post_rows_with_proposed_reference_and_fit": 5451,
+  "missing_proposed_reference_or_fit": [
+    {
+      "municipality_bfs_id": 5892,
+      "municipality_name": "Blonay - Saint-Légier",
+      "focal_cohort_month": "2017-11-01",
+      "observed_post_months_retained_in_inventory": 51
+    },
+    {
+      "municipality_bfs_id": 6037,
+      "municipality_name": "Val de Bagnes",
+      "focal_cohort_month": "2017-11-01",
+      "observed_post_months_retained_in_inventory": 63
+    },
+    {
+      "municipality_bfs_id": 6513,
+      "municipality_name": "Laténa",
+      "focal_cohort_month": "2017-11-01",
+      "observed_post_months_retained_in_inventory": 15
+    }
+  ],
+  "analysis_sample_selected": false,
+  "estimation_executed": false,
+  "causal_estimation_approved": false,
+  "input_sha256": {
+    "config/accessibility_cohort_time_estimator.json": "78a3e1e6243bf0372ce4d78fcc250bf5c94e1f45ff5b1ca2db2fffa93f1669a2",
+    "config/accessibility_outcome_territorial_harmonisation.json": "943d0b67a624b23a3878de766dbfc09278c1a90bc20767fda42b5a5da21d724c",
+    "data_processed/accessibility_municipality_month_exposure_territorial.csv": "234a23ddb6c9065ab22ca2b5edc1e9d1132d281f9f3647523e63664b66658dea",
+    "reports/accessibility_cohort_comparison_universe_territorial.csv": "a9c8e0435fffe8187bb6dff9259589f0a797183746bc23348457507880d4a005"
+  }
+}
