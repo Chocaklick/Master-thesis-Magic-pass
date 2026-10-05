@@ -1,0 +1,23 @@
+{
+  "specification_version": "stage31_v1_descriptive_15_communes_option_A_2026_10_05",
+  "researcher_approval_date": "2026-10-05",
+  "approval_evidence": "Researcher requested 15 communes and approved A: seasonally adjusted trends, 36 pre-months and all available post months, reproducible random illustration sample",
+  "researcher_approved": true,
+  "selection_only_for_illustration": true,
+  "selection_seed": 20261005,
+  "selection_rule": "numpy default_rng choice without replacement of 15 IDs from the 76 calculable exposed territories sorted by analytical BFS ID; freeze and verify IDs, never select by effect or slope",
+  "selected_bfs_ids_in_draw_order": [5613, 6628, 6630, 2299, 902, 792, 5407, 6111, 6083, 2121, 581, 587, 1059, 784, 1407],
+  "support_file": "reports/accessibility_cohort_time_estimation_territory_support.csv",
+  "calibration_file": "reports/accessibility_cohort_time_estimation_calibration.csv",
+  "panel_file": "data_processed/accessibility_municipality_month_exposure_territorial.csv",
+  "temporal_config": "config/accessibility_dynamic_event_time.json",
+  "pre_months": 36,
+  "post_rule": "all actual observed follow-up months through each territory last available outcome; show missing calendar months as gaps",
+  "trend_rule": "reuse approved focal-cohort pre36 log1p monthly season coefficients; center them over 12 months; fit separate intercept/calendar slope regressions on seasonally adjusted log1p values before and after; display expm1 fitted curves in night units without smearing or claiming an arithmetic mean",
+  "seasonality_after_entry": "same pre-entry profile retained; no post-entry refitting of seasonal coefficients",
+  "trend_uncertainty": "not_requested_no_inferential_bands_or_tests",
+  "analysis_sample_changed": false,
+  "causal_estimation_approved": false,
+  "output_points": "data_processed/accessibility_commune_trend_plot_points.json",
+  "output_summary": "reports/accessibility_commune_trend_plot_summary.json"
+}

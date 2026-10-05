@@ -316,6 +316,15 @@ TABLES = {
     "accessibility_cohort_time_estimation_summary": (
         ROOT / "reports/accessibility_cohort_time_estimation_summary.json",
         "DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION", "expanded exploratory analysis", "approved cohort-time execution and support counts"),
+    "accessibility_commune_trend_plot_points": (
+        ROOT / "data_processed/accessibility_commune_trend_plot_points.json",
+        "DERIVED_ACCESSIBILITY_COMMUNE_TREND_PLOTS", "15 randomly drawn exposed territories for illustration only", "36 pre-months and all available post follow-up calendar months"),
+    "accessibility_commune_trend_plot_communes": (
+        ROOT / "data_processed/accessibility_commune_trend_plot_points.json",
+        "DERIVED_ACCESSIBILITY_COMMUNE_TREND_PLOTS", "15 illustration territories with stable BFS identifiers", "separate descriptive pre/post seasonal-adjusted log1p slopes"),
+    "accessibility_commune_trend_plot_summary": (
+        ROOT / "reports/accessibility_commune_trend_plot_summary.json",
+        "DERIVED_ACCESSIBILITY_COMMUNE_TREND_PLOTS", "approved fixed random illustration sample", "plot execution and reproducibility metadata"),
 }
 
 
@@ -1490,6 +1499,24 @@ def derived_sources() -> list[dict]:
         manual_verification="Synthetic seasonal/trend/jump, donor exit, missingness, influence/cluster reuse, source endpoint reconciliation and input/output checksum tests",
         notes="Explicit bundle approval on 2026-10-05; orientation-only report 81/config remain historical snapshots. This Python estimator is not an execution of the did R package. No new OFS covariate or matching. causal_estimation_approved remains false",
     ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_COMMUNE_TREND_PLOTS",
+        variable_name="hotel_overnights|centered_pre_seasonal_offset|seasonally_adjusted_log_overnights|pre_trend_nights|post_trend_nights|pre_trend_slope_log1p_per_month|post_trend_slope_log1p_per_month",
+        variable_description="Approved descriptive visualization of original monthly nights and separate before/after seasonally adjusted trends for 15 reproducibly drawn communes",
+        source_organisation="Master thesis analytical pipeline", source_dataset_name="15 municipality seasonally adjusted pre/post trend illustrations",
+        retrieval_method="Local deterministic Python/Matplotlib figures, reused HESTA panel and approved pre36 calibration; no external collection", retrieval_date="2026-10-05",
+        local_raw_file="config/accessibility_commune_trend_plots.json|data_processed/accessibility_municipality_month_exposure_territorial.csv|reports/accessibility_cohort_time_estimation_territory_support.csv|reports/accessibility_cohort_time_estimation_calibration.csv",
+        processed_file="data_processed/accessibility_commune_trend_plot_points.json|reports/accessibility_commune_trend_plot_summary.json|reports/83_GRAPHIQUES_15_COMMUNES_TENDANCES_FR.md|figures/accessibility_15_communes_trends_1.png|figures/accessibility_15_communes_trends_2.png|figures/accessibility_15_communes_trends_3.png",
+        geographic_level="15 analytical BFS communes selected only for illustration, not ski-station outcomes",
+        temporal_resolution="36 pre-exposure calendar months and all available post months through original last observed source outcome",
+        temporal_start="2014-11", temporal_end="2026-03", unit="observed nights, seasonal-adjusted log1p values, fitted night-unit curves",
+        license="Derived figures; upstream HESTA terms apply", access_conditions="Local reproducible output",
+        transformation_applied="Seed 20261005, default_rng choice of 15 without replacement from 76 sorted calculable BFS IDs; fixed IDs verified. Reuse pre36 local season coefficients, center over all 12 months, subtract same profile before and after. Separate observed-only calendar intercept/slope regressions on log1p adjusted values; plot expm1 trends without smearing. Missing raw outcomes remain gaps. First exposure and documented COVID period shown",
+        quality_notes="Illustration only; no analytical sample, estimator or source change, no controls or causal inference. Back-transformed log curves are seasonal-neutral descriptive levels, not unbiased arithmetic mean predictions. Same seasonal profile may not hold after entry. Short 11-month follow-up flagged for Innertkirchen and Sarnen. Independent vertical scales; all raw outcomes preserved",
+        confidence_level="high for source reconciliation and repeatable plot arithmetic; no causal claim or trend inference",
+        manual_verification="All 15 plot series reconciled to original BFS/month outcomes; pre slope reconciled to approved calibration; all three figure pages visually reviewed",
+        notes="User clarified 15 communes rather than stations, then explicitly approved visualization A on 2026-10-05; no selection by trend or estimate, no redraw if universe changes",
+    ))
     for source_id, url, title in [
         ("DID_ATT_GT_OFFICIAL_DOCUMENTATION", "https://bcallaway11.github.io/did/reference/att_gt.html", "did official att_gt reference"),
         ("DID_BASICS_OFFICIAL_DOCUMENTATION", "https://bcallaway11.github.io/did/articles/did-basics.html", "did official getting-started tutorial")
@@ -1622,6 +1649,12 @@ def main() -> None:
                 frame = pd.DataFrame(payload["missing_proposed_reference_or_fit"])
             elif table in {"accessibility_cohort_time_specification_summary", "accessibility_cohort_time_estimation_summary"}:
                 frame = pd.DataFrame([{key: value for key, value in payload.items() if not isinstance(value, (list, dict))}])
+            elif table == "accessibility_commune_trend_plot_points":
+                frame = pd.DataFrame(payload["observations"])
+            elif table == "accessibility_commune_trend_plot_communes":
+                frame = pd.DataFrame(payload["communes"])
+            elif table == "accessibility_commune_trend_plot_summary":
+                frame = pd.DataFrame([{key: value for key, value in payload.items() if not isinstance(value, (list, dict))}])
             else:
                 raise ValueError(f"No registered JSON table projection for {table}")
         else:
@@ -1630,6 +1663,44 @@ def main() -> None:
         for variable in frame.columns:
             variable_description = description(variable, existing_lookup)
             variable_unit = unit(variable)
+            if table.startswith("accessibility_commune_trend_plot_"):
+                descriptions = {
+                    "centered_pre_seasonal_offset": "Approved pre36 log1p local month-of-year coefficient centered over twelve calendar months, evaluated at this observation month; same pre-only profile retained after exposure",
+                    "observed_log_overnights": "Original log(1+HESTA hotel nights) at this BFS/calendar month; never imputed",
+                    "seasonally_adjusted_log_overnights": "Original log(1+hotel nights) minus the centered pre-only seasonal coefficient; missing outcomes stay unavailable",
+                    "pre_trend_nights": "expm1 of pre36 observed-only calendar intercept/slope fit to seasonal-adjusted log1p values, shown only before exposure; not an arithmetic mean prediction",
+                    "post_trend_nights": "expm1 of post-exposure observed-only calendar intercept/slope fit using the unchanged pre36 seasonal adjustment, shown only after exposure; not a causal effect or arithmetic mean prediction",
+                    "source_outcome_observed": "Whether this calendar month contains an original observed hotel overnight value; false months plot as gaps without filling",
+                    "pre_trend_intercept_log1p": "Intercept at relative month zero from the pre-only descriptive seasonal-adjusted log1p line; not displayed as a post counterfactual",
+                    "post_trend_intercept_log1p": "Intercept at relative month zero from the post-only descriptive seasonal-adjusted log1p line",
+                    "pre_trend_slope_log1p_per_month": "Calendar monthly slope of the observed-only pre36 seasonal-adjusted log1p line",
+                    "post_trend_slope_log1p_per_month": "Calendar monthly slope of the observed-only post seasonal-adjusted log1p line; all available post outcomes included",
+                    "post_observed_months": "Original nonmissing post-exposure months used in this commune descriptive line; not independent municipalities",
+                    "pre_observed_months": "Original nonmissing months within the 36 pre-exposure calendar months used in this descriptive line",
+                    "plot_start_month": "First plotted calendar month, exactly 36 months before this commune's approved first exposure",
+                    "plot_end_month": "Last original observed hotel outcome month for this commune; no unobserved future grid appended",
+                    "missing_source_months_in_plot": "Number of plotted calendar months without an original observed outcome, left as gaps in raw series",
+                    "illustration_only": "Whether the randomly drawn commune is used only for plotting and does not change the 79-territory inventory or estimation sample",
+                    "selection_only_for_illustration": "Whether the 15-commune random selection is strictly a display choice without analytical screening",
+                    "selection_seed": "Fixed pseudorandom seed 20261005 used for the approved without-replacement draw over sorted calculable BFS identifiers",
+                    "candidate_territories": "Number of calculable exposed territories in the approved illustration sampling universe, 76 in this frozen version",
+                    "illustrated_territories": "Number of distinct analytical BFS communes actually drawn and plotted",
+                    "plot_page": "One-based page number of the commune's five-panel plot page",
+                    "plot_pages": "Number of five-commune plot pages generated",
+                    "observed_months_plotted": "Number of actual observed BFS/month overnight values plotted across all fifteen communes, excluding missing gaps",
+                    "analysis_sample_changed": "Whether the figures changed any analysis sample or estimator; false for illustration",
+                    "trend_rule": "Recorded exact pre-season adjustment, separate before/after observed-only slope fit and expm1 display rule",
+                    "seasonality_after_entry": "Recorded fixed pre-exposure seasonal-profile rule, without post-exposure seasonal re-estimation",
+                }
+                variable_description = descriptions.get(variable, variable_description)
+                variable_unit = ("boolean flag" if pd.api.types.is_bool_dtype(frame[variable])
+                    else "BFS identifier" if variable == "municipality_bfs_id"
+                    else "overnight stays (observed or descriptive fitted level)" if variable in {"hotel_overnights", "pre_trend_nights", "post_trend_nights"}
+                    else "log(1+overnight stays) points per calendar month" if variable.endswith("_slope_log1p_per_month")
+                    else "log(1+overnight stays) points" if variable in {"observed_log_overnights", "seasonally_adjusted_log_overnights", "centered_pre_seasonal_offset", "pre_trend_intercept_log1p", "post_trend_intercept_log1p"}
+                    else "calendar or relative month" if variable in {"date", "event_month", "focal_cohort_month", "plot_start_month", "plot_end_month"}
+                    else "pseudorandom seed identifier" if variable == "selection_seed"
+                    else "count" if pd.api.types.is_numeric_dtype(frame[variable]) else "identifier or method label")
             if table.startswith("accessibility_cohort_time_"):
                 variable_unit = "boolean flag" if pd.api.types.is_bool_dtype(frame[variable]) else "BFS identifier" if variable == "municipality_bfs_id" else "count" if pd.api.types.is_numeric_dtype(frame[variable]) else "month" if variable == "focal_cohort_month" else "specification label"
             if table.startswith("accessibility_cohort_time_estimation_"):

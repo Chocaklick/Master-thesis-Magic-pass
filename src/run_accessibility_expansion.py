@@ -42,6 +42,7 @@ SCRIPTS = [
     "src/data_processing/build_accessibility_territorial_panel.py",
     "src/causal_inference/prepare_accessibility_cohort_time_specification.py",
     "src/causal_inference/estimate_accessibility_cohort_time.py",
+    "src/descriptive/plot_accessibility_commune_trends.py",
     "src/data_processing/update_accessibility_expansion_provenance.py",
     "src/data_processing/update_provenance.py",
 ]
