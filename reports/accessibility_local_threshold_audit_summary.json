@@ -1,0 +1,71 @@
+{
+  "specification_version": "stage32_v1_diagnostic_only_2026_10_05",
+  "source_id": "DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT",
+  "config_sha256": "fcf573f4bf55c61a99bf5b3a2328b4f0c996bade737c8547a81c6c08fd09fba6",
+  "builder_sha256": "4fee9e56c8a66dab04b31b2c7d5d0f23b7c17fb6f93db88b4537c3516a69774f",
+  "canonical_outputs_changed": false,
+  "primary_replacement_approved": false,
+  "causal_estimation_approved": false,
+  "input_sha256": {
+    "data_processed/accessibility_municipality_month_exposure_territorial.csv": "234a23ddb6c9065ab22ca2b5edc1e9d1132d281f9f3647523e63664b66658dea",
+    "reports/accessibility_cohort_comparison_universe_territorial.csv": "a9c8e0435fffe8187bb6dff9259589f0a797183746bc23348457507880d4a005",
+    "data_processed/accessibility_station_group_journey_context.csv": "226114874ffff0e679c7f951e596007176e8635741ae64dd8c48ae576446ce60",
+    "reports/accessibility_station_access_nodes.csv": "48441a9288736e414d4487d856ea449d41385471e967521452fad3bb123810f2",
+    "data_processed/accessibility_station_groups.csv": "08040e0b7141679434eb8f4339d46ba24a77768ee07c6ab9fb98e989054987eb",
+    "data_processed/accessibility_station_group_events.csv": "9cb71a6820bda68b3f66b32b06bf92fc6d693758ca419c13a86d589fa43323df",
+    "data_processed/magic_pass_membership_history.csv": "99b46cf250586eb80d2df3ffe6b5375775419234853fb823b773be6bbc2e4588",
+    "data_processed/accessibility_station_group_journey_samples.csv": "48cbafdba7c3dbae5b4be86b608ac13ae613f1e8ed36bf0e21903ad99ef00e24",
+    "config/accessibility_cohort_time_execution.json": "3a831d480c19fa92b4f5260c24824ab54c791e74e27a9c9f0badedafa61d9ac7",
+    "reports/accessibility_cohort_time_estimation_summary.json": "ed0c462a98f7f27ff2428a957f7ebab22142180093213ef664d4df5916de2d59",
+    "reports/accessibility_cohort_time_estimation_cohort_month.csv": "f44eb8c6e32022f76be594318a3145d1203c4601e2267b9ac212fa6b7f80bfbf",
+    "reports/accessibility_cohort_time_estimation_dynamic.csv": "06b3aff253a74766fa951c252b15ce37d71a8b696479202c391699018abdaae8",
+    "config/accessibility_commune_trend_plots.json": "66506ea44204c4ecfb6ec452109590141b1b19dd2ba25d3c8cd05867484e00eb",
+    "data_processed/accessibility_commune_trend_plot_points.json": "53142c3a17fdd08125bf63d8c97f639879a961d9874c93f7ee0b109e96ad551d",
+    "figures/accessibility_15_communes_trends_1.png": "bd5e8de57387041bb2bd8116ebb735261df84d847c55832e688c8e5b14050c80",
+    "figures/accessibility_15_communes_trends_2.png": "9504c898ab1dd60686f60b5cf41d8e6a320ae4b4c184086c775a54e53ea0e93d",
+    "figures/accessibility_15_communes_trends_3.png": "d3b9a3474f3b4fdd1de2920e19f5e474fca33ef51c993105ce2e58b107ac7d31"
+  },
+  "output_sha256": {
+    "reports/accessibility_local_node_audit.csv": "9da52bb3f26aa4435d57b836b27fdcda68e3c11534aa1703c0507dd140373e3b",
+    "reports/accessibility_zero_vehicle_rejections.csv": "df23201bdc9fd2959d948c71f824dc3f44e36ab6da1f3aea16327b85347a7930",
+    "reports/accessibility_threshold_territories.csv": "8b533de58ff0e92ca5ff9591bd79e96068e09ea6fa9bef8dfe51a80f4a05af6a",
+    "reports/accessibility_threshold_summary.csv": "db026b08bb421ad9ecf35e65dd70d473465c18714b78003466c8cb9aa6781948"
+  },
+  "output_row_counts": {
+    "accessibility_local_node_audit": 75,
+    "accessibility_zero_vehicle_rejections": 3,
+    "accessibility_threshold_territories": 740,
+    "accessibility_threshold_summary": 4
+  },
+  "same_stop_cases": [
+    {
+      "station_group_name": "Beatenberg-Hohwald / Niederhorn",
+      "municipality_name": "Beatenberg",
+      "selected_stop_name": "Beatenberg, Waldegg",
+      "selected_stop_distance_from_access_point_km": "0.6553343918844158",
+      "routing_pair_complete": "True",
+      "first_effective_month": "2022-05-01",
+      "first_exposure_month_120min": "2022-05-01"
+    },
+    {
+      "station_group_name": "Leukerbad",
+      "municipality_name": "Leukerbad",
+      "selected_stop_name": "Leukerbad, Busterminal",
+      "selected_stop_distance_from_access_point_km": "0.1752420269517101",
+      "routing_pair_complete": "False",
+      "first_effective_month": "2019-05-01",
+      "first_exposure_month_120min": "2023-05-01"
+    },
+    {
+      "station_group_name": "Meiringen-Hasliberg",
+      "municipality_name": "Hasliberg",
+      "selected_stop_name": "Hasliberg Wasserwendi, Twing",
+      "selected_stop_distance_from_access_point_km": "0.0432848590275248",
+      "routing_pair_complete": "False",
+      "first_effective_month": "2025-05-01",
+      "first_exposure_month_120min": "NaT"
+    }
+  ],
+  "zero_vehicle_rejected_requests": 58,
+  "caveat": "Local stop identity is a candidate relationship, not measured walking access or lodging catchment. No main threshold chosen."
+}

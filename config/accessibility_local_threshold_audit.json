@@ -1,0 +1,17 @@
+{
+  "specification_version": "stage32_v1_diagnostic_only_2026_10_05",
+  "audit_scope_approved": true,
+  "thresholds_minutes": [30, 45, 60, 120],
+  "purpose": "Audit local route omissions and compare tighter thresholds without changing canonical exposure or donor roles",
+  "route_metric": "Existing mean one-way scheduled generalized elapsed time, including initial waiting; winter 2026 held fixed",
+  "local_candidate_rule": "Exact identity of municipal origin stop and at least one station access stop; evidence to review, not an approved exposure or zero-minute journey",
+  "local_audit_geography": "Municipality containing the selected station bus/train stop, not necessarily the lift footprint or lodging basin",
+  "outcome_panel": "data_processed/accessibility_municipality_month_exposure_territorial.csv",
+  "comparison_universe": "reports/accessibility_cohort_comparison_universe_territorial.csv",
+  "moutier_rule": "Reuse approved analytical territory 6831; verify route equality with predecessor 700 before dropping duplicate route rows",
+  "main_threshold_selected": false,
+  "local_walking_rule_approved": false,
+  "exposure_replacement_approved": false,
+  "canonical_outputs_changed": false,
+  "causal_estimation_approved": false
+}

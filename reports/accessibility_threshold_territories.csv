@@ -1,0 +1,741 @@
+threshold_minutes,municipality_bfs_id,municipality_name,route_exposure_candidate,scenario_first_exposure_month,scenario_first_group_ids,scenario_first_group_names,qualifying_group_count,first_group_has_stop_in_commune,first_exposure_month_120min,pre36_observed_months,reference_observed,post_observed_months,complete_pre36,complete_pre12_post12,lost_relative_to_120min,date_changed_relative_to_120min,same_stop_candidate_group_ids,same_stop_candidate_first_entry,unexposed_with_same_stop_candidate,earlier_same_stop_candidate,primary_replacement_approved,source_id
+30,62,Kloten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,66,Opfikon,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,191,Dübendorf,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,198,Uster,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,230,Winterthur,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,261,Zürich,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,293,Wädenswil,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,295,Horgen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,329,Langenthal,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,351,Bern,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,355,Köniz,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,371,Biel/Bienne,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,404,Burgdorf,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,561,Adelboden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,562,Aeschi bei Spiez,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,565,Kandersteg,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,567,Reichenbach im Kandertal,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,571,Beatenberg,False,,,,0,False,2022-05-01,,False,,False,False,True,False,MP_GROUP_RESORT__beatenberg_niederhorn,2022-05-01,True,True,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,573,Brienz (BE),False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,576,Grindelwald,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,581,Interlaken,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,584,Lauterbrunnen,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,587,Matten bei Interlaken,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,593,Unterseen,True,2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,1,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,594,Wilderswil,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,762,Diemtigen,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,768,Spiez,False,,,,0,False,2019-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,783,Hasliberg,False,,,,0,False,,,False,,False,False,False,False,MP_GROUP_RESORT__meiringen_hasliberg,2025-05-01,True,True,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,784,Innertkirchen,False,,,,0,False,2025-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,785,Meiringen,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,792,Lenk,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,843,Saanen,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,902,Langnau im Emmental,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,906,Schangnau,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,938,Sigriswil,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,942,Thun,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,979,Herzogenbuchsee,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1024,Emmen,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1059,Kriens,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1061,Luzern,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1063,Meggen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1068,Vitznau,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1069,Weggis,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1103,Sursee,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1202,Andermatt,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1209,Gurtnellen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1301,Einsiedeln,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1321,Feusisberg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1322,Freienbach,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1331,Küssnacht (SZ),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1364,Ingenbohl,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1366,Morschach,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1372,Schwyz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1402,Engelberg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1406,Sachseln,False,,,,0,False,2025-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1407,Sarnen,False,,,,0,False,2025-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1501,Beckenried,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1504,Emmetten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1630,Glarus Nord,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1631,Glarus Süd,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1709,Unterägeri,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,1711,Zug,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2121,Haut-Intyamon,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2125,Bulle,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2135,Gruyères,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2196,Fribourg,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2275,Murten,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2299,Plaffeien,True,2017-11-01,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2401,Egerkingen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2546,Grenchen,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2581,Olten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2601,Solothurn,False,,,,0,False,2019-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2701,Basel,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2829,Liestal,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2831,Pratteln,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,2939,Schaffhausen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3002,Hundwil,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3022,Gais,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3024,Teufen (AR),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3032,Heiden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3101,Appenzell,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3102,Gonten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3203,St. Gallen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3216,Rorschacherberg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3251,Altstätten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3271,Buchs (SG),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3291,Bad Ragaz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3292,Flums,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3295,Quarten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3298,Walenstadt,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3311,Amden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3340,Rapperswil-Jona,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3342,Eschenbach (SG),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3359,Wildhaus-Alt St. Johann,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3396,Neckertal,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3408,Uzwil,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3427,Wil (SG),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3506,Vaz/Obervaz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3543,Surses,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3561,Poschiavo,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3575,Laax,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3603,Vals,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3618,Lumnezia,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3619,Ilanz/Glion,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3714,Rheinwald,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3732,Flims,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3746,Zernez,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3752,Samnaun,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3762,Scuol,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3782,Celerina/Schlarigna,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3784,Pontresina,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3786,Samedan,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3787,St. Moritz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3792,Bregaglia,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3847,Val Müstair,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3851,Davos,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3871,Klosters,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3901,Chur,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3921,Arosa,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3953,Maienfeld,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3981,Breil/Brigels,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,3986,Tujetsch,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,4001,Aarau,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,4021,Baden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,4201,Lenzburg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,4258,Rheinfelden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,4289,Zofingen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,4401,Arbon,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,4566,Frauenfeld,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,4671,Kreuzlingen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5002,Bellinzona,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5091,Ascona,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5113,Locarno,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5120,Muralto,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5192,Lugano,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5210,Paradiso,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5236,Collina d'Oro,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5238,Monteceneri,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5250,Chiasso,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5254,Mendrisio,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5407,Leysin,True,2017-11-01,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5409,Ollon,True,2017-11-01,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5411,Ormont-Dessus,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5552,Bullet,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5586,Lausanne,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5613,Bourg-en-Lavaux,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5642,Morges,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5724,Nyon,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5841,Château-d'Oex,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5872,Le Chenit,True,2018-05-01,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,1,True,2018-05-01,36.0,True,95.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5886,Montreux,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5890,Vevey,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5892,Blonay - Saint-Légier,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,5938,Yverdon-les-Bains,False,,,,0,False,2018-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6002,Brig-Glis,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6024,Nendaz,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6034,Orsières,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6037,Val de Bagnes,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6077,Goms,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6083,Evolène,False,,,,0,False,2018-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6111,Leukerbad,False,,,,0,False,2023-05-01,,False,,False,False,True,False,MP_GROUP_RESORT__leukerbad,2019-05-01,True,True,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6136,Martigny,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6151,Champéry,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6217,Saint-Maurice,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6248,Sierre,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6252,Anniviers,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6253,Crans-Montana,False,,,,0,False,2019-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6266,Sion,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6290,Saas-Fee,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6291,Saas-Grund,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6297,Visp,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6300,Zermatt,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6417,La Grande Béroche,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6421,La Chaux-de-Fonds,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6458,Neuchâtel,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6513,Laténa,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6621,Genève,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6628,Lancy,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6630,Meyrin,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6643,Vernier,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6711,Delémont,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6757,Saignelégier,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6800,Porrentruy,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6808,Clos du Doubs,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+30,6831,Moutier (JU),False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,62,Kloten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,66,Opfikon,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,191,Dübendorf,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,198,Uster,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,230,Winterthur,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,261,Zürich,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,293,Wädenswil,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,295,Horgen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,329,Langenthal,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,351,Bern,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,355,Köniz,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,371,Biel/Bienne,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,404,Burgdorf,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,561,Adelboden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,562,Aeschi bei Spiez,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,565,Kandersteg,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,567,Reichenbach im Kandertal,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,571,Beatenberg,True,2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,1,True,2022-05-01,36.0,True,47.0,True,True,False,False,MP_GROUP_RESORT__beatenberg_niederhorn,2022-05-01,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,573,Brienz (BE),False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,576,Grindelwald,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,581,Interlaken,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,584,Lauterbrunnen,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,587,Matten bei Interlaken,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,593,Unterseen,True,2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__habkern,Beatenberg-Hohwald / Niederhorn|Habkern,2,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,594,Wilderswil,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,762,Diemtigen,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,768,Spiez,False,,,,0,False,2019-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,783,Hasliberg,False,,,,0,False,,,False,,False,False,False,False,MP_GROUP_RESORT__meiringen_hasliberg,2025-05-01,True,True,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,784,Innertkirchen,False,,,,0,False,2025-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,785,Meiringen,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,792,Lenk,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,843,Saanen,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,902,Langnau im Emmental,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,906,Schangnau,True,2023-05-01,MP_GROUP_RESORT__bumbach_schangnau|MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Bumbach|Marbachegg,2,True,2023-05-01,35.0,True,35.0,False,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,938,Sigriswil,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,942,Thun,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,979,Herzogenbuchsee,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1024,Emmen,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1059,Kriens,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1061,Luzern,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1063,Meggen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1068,Vitznau,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1069,Weggis,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1103,Sursee,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1202,Andermatt,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1209,Gurtnellen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1301,Einsiedeln,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1321,Feusisberg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1322,Freienbach,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1331,Küssnacht (SZ),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1364,Ingenbohl,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1366,Morschach,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1372,Schwyz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1402,Engelberg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1406,Sachseln,False,,,,0,False,2025-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1407,Sarnen,False,,,,0,False,2025-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1501,Beckenried,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1504,Emmetten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1630,Glarus Nord,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1631,Glarus Süd,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1709,Unterägeri,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,1711,Zug,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2121,Haut-Intyamon,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2125,Bulle,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2135,Gruyères,True,2017-11-01,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2196,Fribourg,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2275,Murten,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2299,Plaffeien,True,2017-11-01,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2401,Egerkingen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2546,Grenchen,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2581,Olten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2601,Solothurn,False,,,,0,False,2019-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2701,Basel,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2829,Liestal,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2831,Pratteln,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,2939,Schaffhausen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3002,Hundwil,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3022,Gais,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3024,Teufen (AR),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3032,Heiden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3101,Appenzell,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3102,Gonten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3203,St. Gallen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3216,Rorschacherberg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3251,Altstätten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3271,Buchs (SG),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3291,Bad Ragaz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3292,Flums,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3295,Quarten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3298,Walenstadt,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3311,Amden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3340,Rapperswil-Jona,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3342,Eschenbach (SG),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3359,Wildhaus-Alt St. Johann,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3396,Neckertal,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3408,Uzwil,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3427,Wil (SG),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3506,Vaz/Obervaz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3543,Surses,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3561,Poschiavo,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3575,Laax,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3603,Vals,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3618,Lumnezia,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3619,Ilanz/Glion,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3714,Rheinwald,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3732,Flims,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3746,Zernez,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3752,Samnaun,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3762,Scuol,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3782,Celerina/Schlarigna,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3784,Pontresina,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3786,Samedan,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3787,St. Moritz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3792,Bregaglia,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3847,Val Müstair,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3851,Davos,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3871,Klosters,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3901,Chur,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3921,Arosa,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3953,Maienfeld,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3981,Breil/Brigels,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,3986,Tujetsch,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,4001,Aarau,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,4021,Baden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,4201,Lenzburg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,4258,Rheinfelden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,4289,Zofingen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,4401,Arbon,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,4566,Frauenfeld,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,4671,Kreuzlingen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5002,Bellinzona,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5091,Ascona,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5113,Locarno,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5120,Muralto,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5192,Lugano,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5210,Paradiso,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5236,Collina d'Oro,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5238,Monteceneri,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5250,Chiasso,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5254,Mendrisio,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5407,Leysin,True,2017-11-01,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5409,Ollon,True,2017-11-01,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5411,Ormont-Dessus,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5552,Bullet,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5586,Lausanne,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5613,Bourg-en-Lavaux,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5642,Morges,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5724,Nyon,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5841,Château-d'Oex,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5872,Le Chenit,True,2018-05-01,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,1,True,2018-05-01,36.0,True,95.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5886,Montreux,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5890,Vevey,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5892,Blonay - Saint-Légier,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,5938,Yverdon-les-Bains,False,,,,0,False,2018-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6002,Brig-Glis,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6024,Nendaz,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6034,Orsières,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6037,Val de Bagnes,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6077,Goms,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6083,Evolène,False,,,,0,False,2018-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6111,Leukerbad,False,,,,0,False,2023-05-01,,False,,False,False,True,False,MP_GROUP_RESORT__leukerbad,2019-05-01,True,True,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6136,Martigny,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6151,Champéry,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6217,Saint-Maurice,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6248,Sierre,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6252,Anniviers,True,2017-11-01,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal|MP_GROUP_RESORT__st_luc_chandolin,Grimentz-Zinal|St-Luc / Chandolin,2,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6253,Crans-Montana,False,,,,0,False,2019-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6266,Sion,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6290,Saas-Fee,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6291,Saas-Grund,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6297,Visp,True,2023-05-01,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,1,False,2017-11-01,36.0,True,35.0,True,True,False,True,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6300,Zermatt,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6417,La Grande Béroche,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6421,La Chaux-de-Fonds,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6458,Neuchâtel,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6513,Laténa,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6621,Genève,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6628,Lancy,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6630,Meyrin,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6643,Vernier,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6711,Delémont,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6757,Saignelégier,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6800,Porrentruy,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6808,Clos du Doubs,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,6831,Moutier (JU),False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,62,Kloten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,66,Opfikon,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,191,Dübendorf,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,198,Uster,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,230,Winterthur,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,261,Zürich,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,293,Wädenswil,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,295,Horgen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,329,Langenthal,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,351,Bern,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,355,Köniz,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,371,Biel/Bienne,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,404,Burgdorf,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,561,Adelboden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,562,Aeschi bei Spiez,True,2022-05-01,MP_GROUP_RESORT__aeschi|MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Aeschiallmend|Faltschen,2,True,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,565,Kandersteg,True,2023-05-01,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,1,False,2022-05-01,36.0,True,35.0,True,True,False,True,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,567,Reichenbach im Kandertal,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,571,Beatenberg,True,2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,1,True,2022-05-01,36.0,True,47.0,True,True,False,False,MP_GROUP_RESORT__beatenberg_niederhorn,2022-05-01,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,573,Brienz (BE),False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,576,Grindelwald,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,581,Interlaken,True,2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__habkern,Beatenberg-Hohwald / Niederhorn|Habkern,2,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,584,Lauterbrunnen,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,587,Matten bei Interlaken,True,2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,1,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,593,Unterseen,True,2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__habkern,Beatenberg-Hohwald / Niederhorn|Habkern,2,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,594,Wilderswil,True,2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__habkern,Beatenberg-Hohwald / Niederhorn|Habkern,2,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,762,Diemtigen,True,2022-05-01,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,1,False,2022-05-01,35.0,True,47.0,False,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,768,Spiez,True,2022-05-01,MP_GROUP_RESORT__aeschi|MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal|MP_GROUP_RESORT__rossberg_oberwil,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Rossberg,4,False,2019-05-01,36.0,True,47.0,True,True,False,True,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,783,Hasliberg,False,,,,0,False,,,False,,False,False,False,False,MP_GROUP_RESORT__meiringen_hasliberg,2025-05-01,True,True,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,784,Innertkirchen,False,,,,0,False,2025-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,785,Meiringen,True,2025-05-01,MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,1,False,2022-05-01,36.0,True,11.0,True,False,False,True,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,792,Lenk,False,,,,0,False,2022-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,843,Saanen,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,902,Langnau im Emmental,True,2023-05-01,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,1,False,2022-05-01,36.0,True,35.0,True,True,False,True,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,906,Schangnau,True,2023-05-01,MP_GROUP_RESORT__bumbach_schangnau|MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Bumbach|Marbachegg,2,True,2023-05-01,35.0,True,35.0,False,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,938,Sigriswil,True,2024-05-01,MP_GROUP_EVENT__e664bf3f38d5|MP_GROUP_RESORT__schwanden_sigriswil_thunersee,Wilerallmi|Schwanden,2,True,2022-05-01,36.0,True,23.0,True,True,False,True,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,942,Thun,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,979,Herzogenbuchsee,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1024,Emmen,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1059,Kriens,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1061,Luzern,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1063,Meggen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1068,Vitznau,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1069,Weggis,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1103,Sursee,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1202,Andermatt,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1209,Gurtnellen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1301,Einsiedeln,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1321,Feusisberg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1322,Freienbach,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1331,Küssnacht (SZ),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1364,Ingenbohl,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1366,Morschach,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1372,Schwyz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1402,Engelberg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1406,Sachseln,False,,,,0,False,2025-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1407,Sarnen,False,,,,0,False,2025-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1501,Beckenried,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1504,Emmetten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1630,Glarus Nord,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1631,Glarus Süd,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1709,Unterägeri,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,1711,Zug,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2121,Haut-Intyamon,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2125,Bulle,True,2017-11-01,MP_GROUP_RESORT__jaun_gastlosen,Jaun,1,False,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2135,Gruyères,True,2017-11-01,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2196,Fribourg,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2275,Murten,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2299,Plaffeien,True,2017-11-01,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2401,Egerkingen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2546,Grenchen,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2581,Olten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2601,Solothurn,False,,,,0,False,2019-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2701,Basel,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2829,Liestal,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2831,Pratteln,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,2939,Schaffhausen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3002,Hundwil,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3022,Gais,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3024,Teufen (AR),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3032,Heiden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3101,Appenzell,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3102,Gonten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3203,St. Gallen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3216,Rorschacherberg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3251,Altstätten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3271,Buchs (SG),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3291,Bad Ragaz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3292,Flums,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3295,Quarten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3298,Walenstadt,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3311,Amden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3340,Rapperswil-Jona,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3342,Eschenbach (SG),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3359,Wildhaus-Alt St. Johann,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3396,Neckertal,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3408,Uzwil,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3427,Wil (SG),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3506,Vaz/Obervaz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3543,Surses,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3561,Poschiavo,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3575,Laax,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3603,Vals,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3618,Lumnezia,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3619,Ilanz/Glion,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3714,Rheinwald,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3732,Flims,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3746,Zernez,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3752,Samnaun,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3762,Scuol,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3782,Celerina/Schlarigna,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3784,Pontresina,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3786,Samedan,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3787,St. Moritz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3792,Bregaglia,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3847,Val Müstair,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3851,Davos,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3871,Klosters,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3901,Chur,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3921,Arosa,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3953,Maienfeld,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3981,Breil/Brigels,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,3986,Tujetsch,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,4001,Aarau,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,4021,Baden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,4201,Lenzburg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,4258,Rheinfelden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,4289,Zofingen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,4401,Arbon,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,4566,Frauenfeld,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,4671,Kreuzlingen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5002,Bellinzona,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5091,Ascona,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5113,Locarno,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5120,Muralto,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5192,Lugano,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5210,Paradiso,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5236,Collina d'Oro,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5238,Monteceneri,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5250,Chiasso,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5254,Mendrisio,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5407,Leysin,True,2017-11-01,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5409,Ollon,True,2017-11-01,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5411,Ormont-Dessus,True,2017-11-01,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5552,Bullet,True,2023-05-01,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,1,True,2023-05-01,35.0,True,35.0,False,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5586,Lausanne,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5613,Bourg-en-Lavaux,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5642,Morges,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5724,Nyon,True,2024-05-01,MP_GROUP_RESORT__st_cergue,Saint-Cergue,1,False,2024-05-01,36.0,True,23.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5841,Château-d'Oex,True,2017-11-01,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,1,False,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5872,Le Chenit,True,2018-05-01,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,1,True,2018-05-01,36.0,True,95.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5886,Montreux,True,2017-11-01,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,1,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5890,Vevey,True,2017-11-01,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,1,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5892,Blonay - Saint-Légier,True,2018-05-01,MP_GROUP_RESORT__les_pleiades,Les Pléiades,1,True,2017-11-01,0.0,False,51.0,False,False,False,True,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,5938,Yverdon-les-Bains,False,,,,0,False,2018-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6002,Brig-Glis,True,2022-05-01,MP_GROUP_RESORT__rosswald,Rosswald,3,False,2017-11-01,36.0,True,47.0,True,True,False,True,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6024,Nendaz,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6034,Orsières,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6037,Val de Bagnes,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6077,Goms,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6083,Evolène,True,2018-05-01,MP_GROUP_RESORT__evolene,Evolène,1,True,2018-05-01,36.0,True,93.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6111,Leukerbad,False,,,,0,False,2023-05-01,,False,,False,False,True,False,MP_GROUP_RESORT__leukerbad,2019-05-01,True,True,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6136,Martigny,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6151,Champéry,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6217,Saint-Maurice,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6248,Sierre,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6252,Anniviers,True,2017-11-01,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal|MP_GROUP_RESORT__st_luc_chandolin,Grimentz-Zinal|St-Luc / Chandolin,2,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6253,Crans-Montana,False,,,,0,False,2019-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6266,Sion,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6290,Saas-Fee,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6291,Saas-Grund,False,,,,0,False,2023-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6297,Visp,True,2023-05-01,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll|MP_GROUP_RESORT__unterbach_brandalp|MP_GROUP_RESORT__visperterminen,Eischoll|Unterbäch|Visperterminen,4,False,2017-11-01,36.0,True,35.0,True,True,False,True,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6300,Zermatt,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6417,La Grande Béroche,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6421,La Chaux-de-Fonds,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6458,Neuchâtel,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6513,Laténa,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6621,Genève,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6628,Lancy,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6630,Meyrin,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6643,Vernier,False,,,,0,False,2024-05-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6711,Delémont,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6757,Saignelégier,False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6800,Porrentruy,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6808,Clos du Doubs,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,6831,Moutier (JU),False,,,,0,False,2017-11-01,,False,,False,False,True,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,62,Kloten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,66,Opfikon,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,191,Dübendorf,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,198,Uster,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,230,Winterthur,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,261,Zürich,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,293,Wädenswil,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,295,Horgen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,329,Langenthal,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,351,Bern,True,2017-11-01,MP_GROUP_RESORT__jaun_gastlosen|MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Jaun|Schwarzsee,18,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,355,Köniz,True,2017-11-01,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,8,False,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,371,Biel/Bienne,True,2017-11-01,MP_GROUP_RESORT__tramelan,Tramelan,2,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,404,Burgdorf,True,2017-11-01,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,7,False,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,561,Adelboden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,562,Aeschi bei Spiez,True,2022-05-01,MP_GROUP_RESORT__aeschi|MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal|MP_GROUP_RESORT__habkern|MP_GROUP_RESORT__rossberg_oberwil,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern|Rossberg,11,True,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,565,Kandersteg,True,2022-05-01,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,3,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,567,Reichenbach im Kandertal,True,2022-05-01,MP_GROUP_RESORT__aeschi|MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__eriz|MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal|MP_GROUP_RESORT__habkern|MP_GROUP_RESORT__rossberg_oberwil,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Eriz|Faltschen|Habkern|Rossberg,13,False,2022-05-01,34.0,True,47.0,False,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,571,Beatenberg,True,2022-05-01,MP_GROUP_RESORT__aeschi|MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal|MP_GROUP_RESORT__habkern,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern,4,True,2022-05-01,36.0,True,47.0,True,True,False,False,MP_GROUP_RESORT__beatenberg_niederhorn,2022-05-01,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,573,Brienz (BE),True,2022-05-01,MP_GROUP_RESORT__aeschi|MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal|MP_GROUP_RESORT__habkern|MP_GROUP_RESORT__rossberg_oberwil,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern|Rossberg,6,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,576,Grindelwald,True,2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__habkern,Beatenberg-Hohwald / Niederhorn|Habkern,2,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,581,Interlaken,True,2022-05-01,MP_GROUP_RESORT__aeschi|MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal|MP_GROUP_RESORT__habkern|MP_GROUP_RESORT__rossberg_oberwil,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern|Rossberg,8,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,584,Lauterbrunnen,True,2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__habkern,Beatenberg-Hohwald / Niederhorn|Habkern,2,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,587,Matten bei Interlaken,True,2022-05-01,MP_GROUP_RESORT__aeschi|MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal|MP_GROUP_RESORT__habkern|MP_GROUP_RESORT__rossberg_oberwil,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern|Rossberg,6,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,593,Unterseen,True,2022-05-01,MP_GROUP_RESORT__aeschi|MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal|MP_GROUP_RESORT__habkern|MP_GROUP_RESORT__rossberg_oberwil,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern|Rossberg,7,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,594,Wilderswil,True,2022-05-01,MP_GROUP_RESORT__aeschi|MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal|MP_GROUP_RESORT__habkern|MP_GROUP_RESORT__rossberg_oberwil,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Faltschen|Habkern|Rossberg,6,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,762,Diemtigen,True,2022-05-01,MP_GROUP_RESORT__aeschi|MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__eriz|MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal|MP_GROUP_RESORT__habkern|MP_GROUP_RESORT__rossberg_oberwil,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Eriz|Faltschen|Habkern|Rossberg,11,False,2022-05-01,35.0,True,47.0,False,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,768,Spiez,True,2019-05-01,MP_GROUP_RESORT__leukerbad,Leukerbad,20,False,2019-05-01,36.0,True,83.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,783,Hasliberg,False,,,,0,False,,,False,,False,False,False,False,MP_GROUP_RESORT__meiringen_hasliberg,2025-05-01,True,True,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,784,Innertkirchen,True,2025-05-01,MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,1,False,2025-05-01,36.0,True,11.0,True,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,785,Meiringen,True,2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__habkern,Beatenberg-Hohwald / Niederhorn|Habkern,3,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,792,Lenk,True,2022-05-01,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,1,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,843,Saanen,True,2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4|MP_GROUP_RESORT__leysin_les_mosses_la_lecherette|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Château-d'Oex - La Braye|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,4,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,902,Langnau im Emmental,True,2022-05-01,MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__rossberg_oberwil,Beatenberg-Hohwald / Niederhorn|Rossberg,8,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,906,Schangnau,True,2023-05-01,MP_GROUP_RESORT__bumbach_schangnau|MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Bumbach|Marbachegg,3,True,2023-05-01,35.0,True,35.0,False,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,938,Sigriswil,True,2022-05-01,MP_GROUP_RESORT__aeschi|MP_GROUP_RESORT__beatenberg_niederhorn|MP_GROUP_RESORT__eriz|MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal|MP_GROUP_RESORT__habkern|MP_GROUP_RESORT__rossberg_oberwil,Aeschiallmend|Beatenberg-Hohwald / Niederhorn|Eriz|Faltschen|Habkern|Rossberg,10,False,2022-05-01,36.0,True,47.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,942,Thun,True,2017-11-01,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,18,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,979,Herzogenbuchsee,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1024,Emmen,True,2023-05-01,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,1,False,2023-05-01,36.0,True,35.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1059,Kriens,True,2023-05-01,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,2,False,2023-05-01,35.0,True,35.0,False,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1061,Luzern,True,2023-05-01,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,3,False,2023-05-01,36.0,True,35.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1063,Meggen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1068,Vitznau,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1069,Weggis,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1103,Sursee,True,2023-05-01,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,1,False,2023-05-01,36.0,True,35.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1202,Andermatt,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1209,Gurtnellen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1301,Einsiedeln,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1321,Feusisberg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1322,Freienbach,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1331,Küssnacht (SZ),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1364,Ingenbohl,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1366,Morschach,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1372,Schwyz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1402,Engelberg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1406,Sachseln,True,2025-05-01,MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,1,False,2025-05-01,36.0,True,11.0,True,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1407,Sarnen,True,2025-05-01,MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,1,False,2025-05-01,36.0,True,11.0,True,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1501,Beckenried,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1504,Emmetten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1630,Glarus Nord,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1631,Glarus Süd,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1709,Unterägeri,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,1711,Zug,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2121,Haut-Intyamon,True,2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4|MP_GROUP_RESORT__jaun_gastlosen|MP_GROUP_RESORT__leysin_les_mosses_la_lecherette|MP_GROUP_RESORT__moleson_la_gruyere,Château-d'Oex - La Braye|Jaun|Leysin - Les Mosses - La Lécherette|Moléson,4,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2125,Bulle,True,2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4|MP_GROUP_RESORT__jaun_gastlosen|MP_GROUP_RESORT__les_paccots_chatel_saint_denis|MP_GROUP_RESORT__moleson_la_gruyere|MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Château-d'Oex - La Braye|Jaun|Les Paccots|Moléson|Schwarzsee,5,False,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2135,Gruyères,True,2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4|MP_GROUP_RESORT__jaun_gastlosen|MP_GROUP_RESORT__moleson_la_gruyere,Château-d'Oex - La Braye|Jaun|Moléson,3,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2196,Fribourg,True,2017-11-01,MP_GROUP_RESORT__jaun_gastlosen|MP_GROUP_RESORT__les_paccots_chatel_saint_denis|MP_GROUP_RESORT__moleson_la_gruyere|MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Jaun|Les Paccots|Moléson|Schwarzsee,8,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2275,Murten,True,2017-11-01,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,1,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2299,Plaffeien,True,2017-11-01,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2401,Egerkingen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2546,Grenchen,True,2017-11-01,MP_GROUP_RESORT__tramelan,Tramelan,2,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2581,Olten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2601,Solothurn,True,2019-05-01,MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin,Les Prés-d'Orvin,2,False,2019-05-01,36.0,True,83.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2701,Basel,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2829,Liestal,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2831,Pratteln,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,2939,Schaffhausen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3002,Hundwil,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3022,Gais,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3024,Teufen (AR),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3032,Heiden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3101,Appenzell,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3102,Gonten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3203,St. Gallen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3216,Rorschacherberg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3251,Altstätten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3271,Buchs (SG),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3291,Bad Ragaz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3292,Flums,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3295,Quarten,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3298,Walenstadt,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3311,Amden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3340,Rapperswil-Jona,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3342,Eschenbach (SG),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3359,Wildhaus-Alt St. Johann,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3396,Neckertal,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3408,Uzwil,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3427,Wil (SG),False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3506,Vaz/Obervaz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3543,Surses,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3561,Poschiavo,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3575,Laax,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3603,Vals,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3618,Lumnezia,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3619,Ilanz/Glion,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3714,Rheinwald,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3732,Flims,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3746,Zernez,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3752,Samnaun,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3762,Scuol,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3782,Celerina/Schlarigna,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3784,Pontresina,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3786,Samedan,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3787,St. Moritz,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3792,Bregaglia,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3847,Val Müstair,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3851,Davos,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3871,Klosters,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3901,Chur,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3921,Arosa,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3953,Maienfeld,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3981,Breil/Brigels,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,3986,Tujetsch,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,4001,Aarau,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,4021,Baden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,4201,Lenzburg,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,4258,Rheinfelden,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,4289,Zofingen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,4401,Arbon,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,4566,Frauenfeld,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,4671,Kreuzlingen,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5002,Bellinzona,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5091,Ascona,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5113,Locarno,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5120,Muralto,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5192,Lugano,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5210,Paradiso,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5236,Collina d'Oro,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5238,Monteceneri,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5250,Chiasso,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5254,Mendrisio,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5407,Leysin,True,2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4|MP_GROUP_RESORT__leysin_les_mosses_la_lecherette|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Château-d'Oex - La Braye|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,3,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5409,Ollon,True,2017-11-01,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,1,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5411,Ormont-Dessus,True,2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4|MP_GROUP_RESORT__leysin_les_mosses_la_lecherette|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Château-d'Oex - La Braye|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,3,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5552,Bullet,True,2023-05-01,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,1,True,2023-05-01,35.0,True,35.0,False,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5586,Lausanne,True,2017-11-01,MP_GROUP_RESORT__les_paccots_chatel_saint_denis|MP_GROUP_RESORT__leysin_les_mosses_la_lecherette|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Les Paccots|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,6,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5613,Bourg-en-Lavaux,True,2017-11-01,MP_GROUP_RESORT__les_paccots_chatel_saint_denis|MP_GROUP_RESORT__leysin_les_mosses_la_lecherette|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Les Paccots|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,6,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5642,Morges,True,2017-11-01,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,4,False,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5724,Nyon,True,2024-05-01,MP_GROUP_RESORT__st_cergue,Saint-Cergue,1,False,2024-05-01,36.0,True,23.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5841,Château-d'Oex,True,2017-11-01,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,3,False,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5872,Le Chenit,True,2018-05-01,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,1,True,2018-05-01,36.0,True,95.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5886,Montreux,True,2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4|MP_GROUP_RESORT__les_paccots_chatel_saint_denis|MP_GROUP_RESORT__leysin_les_mosses_la_lecherette|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Château-d'Oex - La Braye|Les Paccots|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,6,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5890,Vevey,True,2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4|MP_GROUP_RESORT__les_paccots_chatel_saint_denis|MP_GROUP_RESORT__leysin_les_mosses_la_lecherette|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Château-d'Oex - La Braye|Les Paccots|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,6,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5892,Blonay - Saint-Légier,True,2017-11-01,MP_GROUP_RESORT__les_paccots_chatel_saint_denis|MP_GROUP_RESORT__leysin_les_mosses_la_lecherette|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Les Paccots|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,4,False,2017-11-01,0.0,False,51.0,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,5938,Yverdon-les-Bains,True,2018-05-01,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,3,False,2018-05-01,36.0,True,93.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6002,Brig-Glis,True,2017-11-01,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal|MP_GROUP_RESORT__st_luc_chandolin,Grimentz-Zinal|St-Luc / Chandolin,13,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6024,Nendaz,True,2017-11-01,MP_GROUP_EVENT__98c0c64310c6|MP_GROUP_RESORT__anzere,Mayens de Conthey|Anzère,4,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6034,Orsières,True,2017-11-01,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,1,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6037,Val de Bagnes,True,2017-11-01,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,1,False,2017-11-01,0.0,False,63.0,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6077,Goms,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6083,Evolène,True,2018-05-01,MP_GROUP_RESORT__arolla|MP_GROUP_RESORT__evolene|MP_GROUP_RESORT__la_forclaz,Arolla|Evolène|La Forclaz,3,True,2018-05-01,36.0,True,93.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6111,Leukerbad,True,2023-05-01,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,1,False,2023-05-01,36.0,True,35.0,True,True,False,False,MP_GROUP_RESORT__leukerbad,2019-05-01,False,True,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6136,Martigny,True,2017-11-01,MP_GROUP_EVENT__98c0c64310c6|MP_GROUP_RESORT__anzere|MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal|MP_GROUP_RESORT__leysin_les_mosses_la_lecherette|MP_GROUP_RESORT__st_luc_chandolin|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Mayens de Conthey|Anzère|Grimentz-Zinal|Leysin - Les Mosses - La Lécherette|St-Luc / Chandolin|Villars-Gryon-Les Diablerets,13,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6151,Champéry,True,2017-11-01,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,1,False,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6217,Saint-Maurice,True,2017-11-01,MP_GROUP_EVENT__4b7d19ebb1a4|MP_GROUP_EVENT__98c0c64310c6|MP_GROUP_RESORT__anzere|MP_GROUP_RESORT__leysin_les_mosses_la_lecherette|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Château-d'Oex - La Braye|Mayens de Conthey|Anzère|Leysin - Les Mosses - La Lécherette|Villars-Gryon-Les Diablerets,8,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6248,Sierre,True,2017-11-01,MP_GROUP_EVENT__98c0c64310c6|MP_GROUP_RESORT__anzere|MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal|MP_GROUP_RESORT__st_luc_chandolin|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Mayens de Conthey|Anzère|Grimentz-Zinal|St-Luc / Chandolin|Villars-Gryon-Les Diablerets,16,False,2017-11-01,36.0,True,100.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6252,Anniviers,True,2017-11-01,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal|MP_GROUP_RESORT__st_luc_chandolin,Grimentz-Zinal|St-Luc / Chandolin,2,True,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6253,Crans-Montana,True,2019-05-01,MP_GROUP_RESORT__leukerbad,Leukerbad,2,False,2019-05-01,28.0,True,83.0,False,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6266,Sion,True,2017-11-01,MP_GROUP_EVENT__98c0c64310c6|MP_GROUP_RESORT__anzere|MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal|MP_GROUP_RESORT__leysin_les_mosses_la_lecherette|MP_GROUP_RESORT__st_luc_chandolin|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Mayens de Conthey|Anzère|Grimentz-Zinal|Leysin - Les Mosses - La Lécherette|St-Luc / Chandolin|Villars-Gryon-Les Diablerets,17,False,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6290,Saas-Fee,True,2023-05-01,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll|MP_GROUP_RESORT__unterbach_brandalp,Eischoll|Unterbäch,2,False,2023-05-01,36.0,True,35.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6291,Saas-Grund,True,2023-05-01,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll|MP_GROUP_RESORT__moosalpregion|MP_GROUP_RESORT__unterbach_brandalp,Eischoll|Moosalp|Unterbäch,3,False,2023-05-01,36.0,True,35.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6297,Visp,True,2017-11-01,MP_GROUP_EVENT__98c0c64310c6|MP_GROUP_RESORT__anzere|MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal|MP_GROUP_RESORT__st_luc_chandolin|MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Mayens de Conthey|Anzère|Grimentz-Zinal|St-Luc / Chandolin|Villars-Gryon-Les Diablerets,18,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6300,Zermatt,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6417,La Grande Béroche,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6421,La Chaux-de-Fonds,True,2017-11-01,MP_GROUP_RESORT__tramelan,Tramelan,1,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6458,Neuchâtel,True,2017-11-01,MP_GROUP_RESORT__tramelan,Tramelan,2,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6513,Laténa,True,2017-11-01,MP_GROUP_RESORT__tramelan,Tramelan,2,False,2017-11-01,0.0,False,15.0,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6621,Genève,True,2024-05-01,MP_GROUP_RESORT__st_cergue,Saint-Cergue,1,False,2024-05-01,36.0,True,23.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6628,Lancy,True,2024-05-01,MP_GROUP_RESORT__st_cergue,Saint-Cergue,1,False,2024-05-01,36.0,True,23.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6630,Meyrin,True,2024-05-01,MP_GROUP_RESORT__st_cergue,Saint-Cergue,1,False,2024-05-01,36.0,True,23.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6643,Vernier,True,2024-05-01,MP_GROUP_RESORT__st_cergue,Saint-Cergue,1,False,2024-05-01,36.0,True,23.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6711,Delémont,True,2017-11-01,MP_GROUP_RESORT__tramelan,Tramelan,2,False,2017-11-01,36.0,True,101.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6757,Saignelégier,True,2017-11-01,MP_GROUP_RESORT__tramelan,Tramelan,1,False,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6800,Porrentruy,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6808,Clos du Doubs,False,,,,0,False,,,False,,False,False,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,6831,Moutier (JU),True,2017-11-01,MP_GROUP_RESORT__tramelan,Tramelan,2,False,2017-11-01,36.0,True,99.0,True,True,False,False,,,False,False,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT

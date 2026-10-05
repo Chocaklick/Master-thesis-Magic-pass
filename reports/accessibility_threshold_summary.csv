@@ -1,0 +1,5 @@
+threshold_minutes,territories_in_panel,route_exposed_territories,territories_without_route_exposure,groups_with_route_exposure,territories_lost_vs_120min,territories_with_changed_first_date,exposed_complete_pre36,exposed_complete_pre12_post12,exposed_observed_post_months,unexposed_shared_stop_candidates,earlier_shared_stop_candidates,primary_replacement_approved,source_id
+30,185,5,180,5,74,0,5,5,439,3,3,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+45,185,10,175,12,69,1,9,10,754,2,2,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+60,185,30,155,28,49,8,26,28,1888,2,2,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
+120,185,79,106,45,0,0,70,73,5580,1,2,False,DERIVED_ACCESSIBILITY_LOCAL_THRESHOLD_AUDIT
