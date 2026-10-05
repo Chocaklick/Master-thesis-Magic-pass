@@ -1,0 +1,80 @@
+municipality_bfs_id,municipality_name,focal_cohort_month,calculable,reason,inventory_observed_post_months,calculable_observed_post_months,common_6_months,common_12_months,common_24_months,same_territories_6_12_24,source_id
+351,Bern,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+355,Köniz,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+371,Biel/Bienne,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+404,Burgdorf,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+843,Saanen,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+942,Thun,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+2121,Haut-Intyamon,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+2125,Bulle,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+2135,Gruyères,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+2196,Fribourg,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+2275,Murten,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+2299,Plaffeien,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+2546,Grenchen,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5407,Leysin,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5409,Ollon,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5411,Ormont-Dessus,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5586,Lausanne,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5613,Bourg-en-Lavaux,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5642,Morges,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5841,Château-d'Oex,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5886,Montreux,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5890,Vevey,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5892,Blonay - Saint-Légier,2017-11-01,False,missing_reference_or_pre36_calibration,51,0,False,False,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6002,Brig-Glis,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6024,Nendaz,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6034,Orsières,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6037,Val de Bagnes,2017-11-01,False,missing_reference_or_pre36_calibration,63,0,False,False,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6136,Martigny,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6151,Champéry,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6217,Saint-Maurice,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6248,Sierre,2017-11-01,True,observed_reference_and_full_rank_pre36,100,100,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6252,Anniviers,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6266,Sion,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6297,Visp,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6421,La Chaux-de-Fonds,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6458,Neuchâtel,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6513,Laténa,2017-11-01,False,missing_reference_or_pre36_calibration,15,0,False,False,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6711,Delémont,2017-11-01,True,observed_reference_and_full_rank_pre36,101,101,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6757,Saignelégier,2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6831,Moutier (JU),2017-11-01,True,observed_reference_and_full_rank_pre36,99,99,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5872,Le Chenit,2018-05-01,True,observed_reference_and_full_rank_pre36,95,95,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5938,Yverdon-les-Bains,2018-05-01,True,observed_reference_and_full_rank_pre36,93,93,True,True,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6083,Evolène,2018-05-01,True,observed_reference_and_full_rank_pre36,93,93,True,True,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+768,Spiez,2019-05-01,True,observed_reference_and_full_rank_pre36,83,83,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+2601,Solothurn,2019-05-01,True,observed_reference_and_full_rank_pre36,83,83,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6253,Crans-Montana,2019-05-01,True,observed_reference_and_full_rank_pre36,83,83,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+562,Aeschi bei Spiez,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+565,Kandersteg,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+567,Reichenbach im Kandertal,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+571,Beatenberg,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+573,Brienz (BE),2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+576,Grindelwald,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+581,Interlaken,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+584,Lauterbrunnen,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+587,Matten bei Interlaken,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+593,Unterseen,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+594,Wilderswil,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+762,Diemtigen,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+785,Meiringen,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+792,Lenk,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+902,Langnau im Emmental,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+938,Sigriswil,2022-05-01,True,observed_reference_and_full_rank_pre36,47,47,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+906,Schangnau,2023-05-01,True,observed_reference_and_full_rank_pre36,35,35,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+1024,Emmen,2023-05-01,True,observed_reference_and_full_rank_pre36,35,35,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+1059,Kriens,2023-05-01,True,observed_reference_and_full_rank_pre36,35,35,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+1061,Luzern,2023-05-01,True,observed_reference_and_full_rank_pre36,35,35,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+1103,Sursee,2023-05-01,True,observed_reference_and_full_rank_pre36,35,35,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5552,Bullet,2023-05-01,True,observed_reference_and_full_rank_pre36,35,35,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6111,Leukerbad,2023-05-01,True,observed_reference_and_full_rank_pre36,35,35,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6290,Saas-Fee,2023-05-01,True,observed_reference_and_full_rank_pre36,35,35,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6291,Saas-Grund,2023-05-01,True,observed_reference_and_full_rank_pre36,35,35,True,True,True,True,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+5724,Nyon,2024-05-01,True,observed_reference_and_full_rank_pre36,23,23,True,True,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6621,Genève,2024-05-01,True,observed_reference_and_full_rank_pre36,23,23,True,True,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6628,Lancy,2024-05-01,True,observed_reference_and_full_rank_pre36,23,23,True,True,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6630,Meyrin,2024-05-01,True,observed_reference_and_full_rank_pre36,23,23,True,True,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+6643,Vernier,2024-05-01,True,observed_reference_and_full_rank_pre36,23,23,True,True,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+784,Innertkirchen,2025-05-01,True,observed_reference_and_full_rank_pre36,11,11,True,False,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+1406,Sachseln,2025-05-01,True,observed_reference_and_full_rank_pre36,11,11,True,False,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION
+1407,Sarnen,2025-05-01,True,observed_reference_and_full_rank_pre36,11,11,True,False,False,False,DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION

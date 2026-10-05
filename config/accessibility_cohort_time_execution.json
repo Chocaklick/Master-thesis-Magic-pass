@@ -1,0 +1,20 @@
+{
+  "specification_version": "stage30_v1_approved_cohort_month_contrasts_2026_10_05",
+  "approval_date": "2026-10-05",
+  "approval_evidence": "Researcher reply: tu peux y aller, after the report 81 parameter bundle was presented",
+  "approved_proposal_config": "config/accessibility_cohort_time_estimator.json",
+  "parameter_bundle_approved": true,
+  "estimator_selected": true,
+  "final_causal_sample_selected": false,
+  "matching_rule_selected": false,
+  "additional_effect_estimator_selected": false,
+  "causal_estimation_approved": false,
+  "inference_implementation": "Gaussian territory multiplier bootstrap of the contrast influence contributions; one multiplier per analytical BFS territory reused for every cell and variant",
+  "bootstrap_repetitions": 4999,
+  "bootstrap_seed": 20261005,
+  "dynamic_weights": "equal observed treated territory weights at each relative month; cohort shares included in influence contributions",
+  "simultaneous_family": "all estimable relative months except normalized minus-one, separately for each variant dynamic curve; not joint across variants or cohort tables",
+  "covid_sensitivity_scope": "omit March 2020 through March 2022 contrast months; retain the approved pre36 seasonal calibration to isolate the change of follow-up months; not a full no-COVID recalibration",
+  "global_post_coefficient": "not_selected_no_global_average_or_permanent_step_coefficient",
+  "output_prefix": "accessibility_cohort_time_estimation"
+}

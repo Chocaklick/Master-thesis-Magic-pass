@@ -304,10 +304,61 @@ TABLES = {
     "accessibility_cohort_time_missing_histories": (
         ROOT / "reports" / "accessibility_cohort_time_specification_support.json",
         "DERIVED_ACCESSIBILITY_COHORT_TIME_SPECIFICATION", "exposed territory lacking proposed pre-entry support", "missing prehistory and observed post rows preserved in inventory"),
+    **{f"accessibility_cohort_time_estimation_{label}": (
+        ROOT / f"reports/accessibility_cohort_time_estimation_{label}.csv",
+        "DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION", geo, temporal)
+       for label, geo, temporal in [
+           ("cohort_month", "focal cohort and observed treated/donor territories", "calendar and relative month by variant"),
+           ("dynamic", "equal-weight observed treated territories", "relative month by variant"),
+           ("calibration", "analytical territory by focal cohort; role flags determine use", "36 observed pre-entry calendar months, no imputation"),
+           ("territory_support", "all 79 exposed territories retained", "first exposure and approved common horizons")
+       ]},
+    "accessibility_cohort_time_estimation_summary": (
+        ROOT / "reports/accessibility_cohort_time_estimation_summary.json",
+        "DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION", "expanded exploratory analysis", "approved cohort-time execution and support counts"),
 }
 
 
 DESCRIPTIONS = {
+    "estimate_log_points": "Mean exposed change since the observed g-1 reference minus eligible donor change in log(1+hotel nights), after pre36 local seasonal adjustment; dynamic estimates give equal weight to observed treated territories",
+    "cluster_standard_error": "Square root of summed squared centered BFS-territory influence contributions; asymptotic approximation, not reliable small-cohort certification",
+    "pointwise_lower_95": "Lower 95 percent pointwise confidence endpoint from shared-territory Gaussian multiplier errors; not simultaneous across months",
+    "pointwise_upper_95": "Upper 95 percent pointwise confidence endpoint from shared-territory Gaussian multiplier errors; not simultaneous across months",
+    "simultaneous_lower_95": "Lower 95 percent band endpoint covering all estimable relative months of this variant dynamic curve, not all variants jointly; unavailable in cohort-month table",
+    "simultaneous_upper_95": "Upper 95 percent band endpoint covering all estimable relative months of this variant dynamic curve, not all variants jointly; unavailable in cohort-month table",
+    "simultaneous_critical_95": "95th percentile of maximum absolute studentized shared-territory multiplier error across this variant dynamic curve; normalized event -1 excluded",
+    "pre_slope_log_points_per_month": "Focal-cohort pre36 territory calendar slope with intercept and eleven month dummies; nuisance during primary seasonality fit, extrapolated only in linear sensitivity",
+    "pre_intercept_log_points": "Pre36 territory fitted intercept at mean calendar date of the scheduled calibration window with January as the seasonal reference",
+    "pre_observed_months": "Number of original nonmissing log1p outcomes in the focal-cohort 36-month calibration window",
+    "pre_design_rank": "Rank of intercept, actual calendar trend and eleven month indicators; 13 and positive residual degrees of freedom required, not a goodness-of-fit filter",
+    "fit_status": "Algebraic availability of the local pre36 fit, not a comparability judgement",
+    "reference_observed": "Whether the original outcome at focal-cohort event month -1 is observed",
+    "reference_log_overnights": "Original unadjusted log(1+hotel nights) at focal-cohort event month -1, without imputation",
+    "reference_and_calibration_available": "Whether both observed event -1 outcome and full-rank pre36 calibration are available",
+    "treated_observed_count": "Number of exposed territorial endpoint pairs actually contributing to this contrast or dynamic relative month",
+    "donor_observed_count": "Number of approved donor territorial endpoint pairs observed at g-1 and t, with full-rank pre36 calibration and t strictly before their own exposure",
+    "donor_candidates_before_outcome_check": "Approved donors with reference and calibration, not yet exposed at date t, before checking the current-month outcome",
+    "treated_bfs_ids": "Pipe-delimited unique analytical BFS IDs of observed treated endpoint pairs, Moutier represented once as 6831",
+    "donor_bfs_ids": "Pipe-delimited analytical BFS IDs of date-specific observed approved donor endpoint pairs",
+    "cohorts_contributing_count": "Number of estimable first-exposure cohorts contributing at this relative month and variant",
+    "unique_territories_contributing_count": "Unique BFS territories contributing as treated or donor at this relative month; repeated roles are not independent units",
+    "smallest_cohort_treated_count": "Smallest observed treated-territory count among contributing cohorts, published to expose small-cohort inference limitations without applying a threshold",
+    "inventory_observed_post_months": "All original observed post-first-exposure months retained in territorial inventory, regardless of estimation availability",
+    "calculable_observed_post_months": "Observed post-first-exposure outcomes in territories with observed reference and full-rank calibration, before date-specific donor checks",
+    "same_territories_6_12_24": "Whether the exposed territory has all original outcomes in each approved symmetric 6/12/24-month window, as well as baseline and calibration; no imputation",
+    "primary_donor_candidate": "Whether the territory is in the approved never-or-not-yet-exposed donor set at the focal cohort; actual date eligibility and observed endpoints checked separately",
+    "bootstrap_repetitions": "Number of independent Gaussian territory-multiplier draws used for pointwise intervals and dynamic simultaneous critical values",
+    "bootstrap_seed": "Fixed pseudorandom generator seed for exact reproducibility of territory multiplier draws",
+    "bootstrap_kind": "Recorded Gaussian centered-influence municipality multiplier bootstrap implementation, not an independent monthly-row bootstrap",
+    "dynamic_simultaneous_band_family": "Exact relative-month family covered by a 95 percent dynamic simultaneous band; separate by variant and excluding normalized event -1",
+    "calculable_exposed_territories": "Exposed analytical territories with the approved observed reference and full-rank pre36 calibration, without a quality or matching filter",
+    "primary_observed_post_pairs": "Count of original treated g-1/current outcome pairs contributing to estimable primary post-entry contrasts after checking donors at each calendar month",
+    "same_territories_all_horizons": "Number of exposed territories with complete source outcome observations in the intersection of approved symmetric 6, 12 and 24-month windows",
+    "cohort_month_rows": "Number of exported focal cohort/calendar-month/variant cells including explicitly unavailable sensitivity cells",
+    "dynamic_rows": "Number of exported relative-month/variant dynamic cells",
+    "calibration_rows": "Number of analytical territory/focal cohort local calibration records, with role flags identifying which are eligible for use",
+    "final_causal_sample_selected": "Whether a final scientifically validated causal sample has been selected; false for exploratory execution",
+    "global_post_coefficient_selected": "Whether a single post-treatment aggregation or permanent-step coefficient has been selected; false in the approved dynamic execution",
     "orientation_A_approved": "Whether the researcher approved cohort/month change comparisons as primary and a linear-trend variant as sensitivity",
     "parameter_bundle_approved": "Whether the proposed reference, seasonality, weighting, missing-history and uncertainty specification is explicitly approved; false at this preparation stage",
     "counterfactual_support_only_not_sample_selection": "Whether counts describe availability under a proposed specification without applying a selection or calculating treatment effects",
@@ -1422,6 +1473,35 @@ def derived_sources() -> list[dict]:
         manual_verification="The 51, 63 and 15 observed post months of Blonay-Saint-Legier, Val de Bagnes and Latena remain in the inventory; 5451 plus 129 reconciles exactly to 5580. Moutier remains one territorial unit",
         notes="The researcher selected orientation A on 2026-10-05. The seasonal correction is a project-specific proposal, not automatically certified by CALLAWAY_SANTANNA_2021_DID. No external collection",
     ))
+    rows.append(source_row(
+        "DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION",
+        variable_name="estimate_log_points|cluster_standard_error|pointwise_lower_95|pointwise_upper_95|simultaneous_lower_95|simultaneous_upper_95|calculable",
+        variable_description="Researcher-approved exploratory expanded cohort/calendar-month contrasts and sensitivities, with local pre-entry seasonality and territory-cluster uncertainty",
+        source_organisation="Master thesis analytical pipeline", source_dataset_name="Approved option A exploratory cohort-month estimation",
+        retrieval_method="Deterministic project Python calculation; no raw collection or imputation", retrieval_date="2026-10-05",
+        local_raw_file="config/accessibility_cohort_time_execution.json|config/accessibility_cohort_time_estimator.json|data_processed/accessibility_municipality_month_exposure_territorial.csv|reports/accessibility_cohort_comparison_universe_territorial.csv",
+        processed_file="reports/accessibility_cohort_time_estimation_cohort_month.csv|reports/accessibility_cohort_time_estimation_dynamic.csv|reports/accessibility_cohort_time_estimation_calibration.csv|reports/accessibility_cohort_time_estimation_territory_support.csv|reports/accessibility_cohort_time_estimation_summary.json|reports/82_ESTIMATION_COHORTES_MOIS_OPTION_A_FR.md",
+        geographic_level="analytical BFS territory with exact approved Moutier identity bridge", temporal_resolution="focal cohort and actual calendar/relative month",
+        temporal_start="2014-11", temporal_end="2026-03", unit="log1p points, calendar months, territories, flags",
+        license="Derived data; upstream HESTA terms apply", access_conditions="Local reproducible output",
+        transformation_applied="Pre36 intercept/calendar trend/month dummy fit per territory at each focal cohort; subtract seasonal coefficients only in primary; observed paired changes from g-1; equal weights; approved not-yet/never donors exit before own entry. Dynamic cohort-share influence included. Gaussian multiplier bootstrap 4999 draws seed 20261005, shared by BFS across all roles. Never-donor, linear-pretrend, COVID contrast-month omission, common horizons and same-territory intersection variants",
+        quality_notes="All 79 exposed territories and 5580 post outcomes retained; 76 territories and 5451 observed post pairs calculated. Three fusion prehistories unavailable, no imputation. COVID omission preserves pre36 calibration. No global post/permanent-step aggregation selected. Small-cohort asymptotics, seasonal stability, pretrend violations, historical access and spillover caveats prevent causal certification",
+        confidence_level="exact reproducible arithmetic; uncertainty is asymptotic and identification not established",
+        manual_verification="Synthetic seasonal/trend/jump, donor exit, missingness, influence/cluster reuse, source endpoint reconciliation and input/output checksum tests",
+        notes="Explicit bundle approval on 2026-10-05; orientation-only report 81/config remain historical snapshots. This Python estimator is not an execution of the did R package. No new OFS covariate or matching. causal_estimation_approved remains false",
+    ))
+    for source_id, url, title in [
+        ("DID_ATT_GT_OFFICIAL_DOCUMENTATION", "https://bcallaway11.github.io/did/reference/att_gt.html", "did official att_gt reference"),
+        ("DID_BASICS_OFFICIAL_DOCUMENTATION", "https://bcallaway11.github.io/did/articles/did-basics.html", "did official getting-started tutorial")
+    ]:
+        rows.append(source_row(source_id, variable_name="cohort_time_methodological_reference",
+            variable_description="Official methodological software documentation consulted, not empirical data",
+            source_organisation="did package authors", source_dataset_name=title, source_page_url=url,
+            retrieval_method="Web read of official documentation", retrieval_date="2026-10-05",
+            geographic_level="methodological reference", temporal_resolution="multiple-period staggered DID",
+            access_conditions="Public documentation", license="See originating project license",
+            quality_notes="Documents cohort-time comparisons, universal base periods and multiplier/cluster bootstrap. Does not certify the project's local seasonality correction, unbalanced endpoint composition or causal assumptions",
+            notes="No R package run or empirical download; consulted for execution choices within the approved municipality bootstrap bundle"))
     rows.extend(treated_review_external_sources())
     rows.extend(control_review_external_sources())
     rows.extend(remaining_control_review_external_sources())
@@ -1540,7 +1620,7 @@ def main() -> None:
                 frame = pd.DataFrame(payload["cohort_reference_support"])
             elif table == "accessibility_cohort_time_missing_histories":
                 frame = pd.DataFrame(payload["missing_proposed_reference_or_fit"])
-            elif table == "accessibility_cohort_time_specification_summary":
+            elif table in {"accessibility_cohort_time_specification_summary", "accessibility_cohort_time_estimation_summary"}:
                 frame = pd.DataFrame([{key: value for key, value in payload.items() if not isinstance(value, (list, dict))}])
             else:
                 raise ValueError(f"No registered JSON table projection for {table}")
@@ -1552,6 +1632,31 @@ def main() -> None:
             variable_unit = unit(variable)
             if table.startswith("accessibility_cohort_time_"):
                 variable_unit = "boolean flag" if pd.api.types.is_bool_dtype(frame[variable]) else "BFS identifier" if variable == "municipality_bfs_id" else "count" if pd.api.types.is_numeric_dtype(frame[variable]) else "month" if variable == "focal_cohort_month" else "specification label"
+            if table.startswith("accessibility_cohort_time_estimation_"):
+                if variable.startswith("seasonal_offset_month_"):
+                    variable_description = f"Pre36 local month-{variable[-2:]} seasonal coefficient relative to January, fitted before focal-cohort exposure; no post-treatment input"
+                elif variable in {"parameter_bundle_approved", "estimator_selected", "estimation_executed"}:
+                    variable_description = f"Current approved execution flag: {variable.replace('_', ' ')}; not causal certification"
+                elif variable.startswith("common_") and variable.endswith("_months"):
+                    variable_description = "Whether all source outcomes in the stated symmetric pre/post window and approved reference/calibration are observed, without imputation"
+                elif variable == "calculable":
+                    variable_description = "Whether the approved baseline and algebraic pre36 calibration allow exploratory contrasts; all inventory territories retained"
+                elif variable == "reason":
+                    variable_description = "Exact observed-support or missing-history reason for estimation availability, not a subjective quality exclusion"
+                elif variable == "status":
+                    variable_description = "Whether treated and donor observed endpoint pairs both exist for this contrast"
+                elif variable == "variant":
+                    variable_description = "Approved primary or sensitivity contrast definition; COVID variant removes contrast months only, common variants use stated observed horizons"
+                if variable.startswith("seasonal_offset_month_") or variable in {"estimate_log_points", "cluster_standard_error", "pointwise_lower_95", "pointwise_upper_95", "simultaneous_lower_95", "simultaneous_upper_95", "pre_intercept_log_points", "reference_log_overnights"}:
+                    variable_unit = "log(1+overnight stays) points"
+                elif variable == "pre_slope_log_points_per_month":
+                    variable_unit = "log(1+overnight stays) points per calendar month"
+                elif variable == "simultaneous_critical_95":
+                    variable_unit = "studentized multiplier critical value"
+                elif variable in {"calendar_month", "focal_cohort_month", "event_month"}:
+                    variable_unit = "calendar or relative month"
+                elif variable == "bootstrap_seed":
+                    variable_unit = "pseudorandom seed identifier"
             if table.endswith("_territorial"):
                 if variable == "municipality_bfs_id":
                     variable_description = "Analytical territory BFS identifier; Moutier is a single unit 6831 across the exact approved 700-to-6831 identity bridge, all other units unchanged"

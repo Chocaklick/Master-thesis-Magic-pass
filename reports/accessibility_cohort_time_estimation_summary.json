@@ -1,0 +1,93 @@
+{
+  "specification_version": "stage30_v1_approved_cohort_month_contrasts_2026_10_05",
+  "parameter_bundle_approved": true,
+  "estimator_selected": true,
+  "estimation_executed": true,
+  "causal_estimation_approved": false,
+  "final_causal_sample_selected": false,
+  "additional_effect_estimator_selected": false,
+  "exposed_territories_retained_in_inventory": 79,
+  "calculable_exposed_territories": 76,
+  "inventory_observed_post_months": 5580,
+  "primary_observed_post_pairs": 5451,
+  "common_horizon_territories": {
+    "6": 76,
+    "12": 73,
+    "24": 65
+  },
+  "same_territories_all_horizons": 65,
+  "missing_histories": [
+    {
+      "municipality_bfs_id": 5892,
+      "municipality_name": "Blonay - Saint-Légier",
+      "focal_cohort_month": "2017-11-01",
+      "calculable": false,
+      "reason": "missing_reference_or_pre36_calibration",
+      "inventory_observed_post_months": 51,
+      "calculable_observed_post_months": 0,
+      "common_6_months": false,
+      "common_12_months": false,
+      "common_24_months": false,
+      "same_territories_6_12_24": false,
+      "source_id": "DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION"
+    },
+    {
+      "municipality_bfs_id": 6037,
+      "municipality_name": "Val de Bagnes",
+      "focal_cohort_month": "2017-11-01",
+      "calculable": false,
+      "reason": "missing_reference_or_pre36_calibration",
+      "inventory_observed_post_months": 63,
+      "calculable_observed_post_months": 0,
+      "common_6_months": false,
+      "common_12_months": false,
+      "common_24_months": false,
+      "same_territories_6_12_24": false,
+      "source_id": "DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION"
+    },
+    {
+      "municipality_bfs_id": 6513,
+      "municipality_name": "Laténa",
+      "focal_cohort_month": "2017-11-01",
+      "calculable": false,
+      "reason": "missing_reference_or_pre36_calibration",
+      "inventory_observed_post_months": 15,
+      "calculable_observed_post_months": 0,
+      "common_6_months": false,
+      "common_12_months": false,
+      "common_24_months": false,
+      "same_territories_6_12_24": false,
+      "source_id": "DERIVED_ACCESSIBILITY_COHORT_TIME_ESTIMATION"
+    }
+  ],
+  "bootstrap_repetitions": 4999,
+  "bootstrap_seed": 20261005,
+  "bootstrap_kind": "gaussian_territory_multiplier_centered_influence",
+  "dynamic_simultaneous_band_family": "all estimable relative months except normalized minus-one, separately for each variant dynamic curve; not joint across variants or cohort tables",
+  "global_post_coefficient_selected": false,
+  "cohort_month_rows": 3600,
+  "dynamic_rows": 716,
+  "calibration_rows": 1295,
+  "input_sha256": {
+    "config/accessibility_cohort_time_execution.json": "3a831d480c19fa92b4f5260c24824ab54c791e74e27a9c9f0badedafa61d9ac7",
+    "config/accessibility_cohort_time_estimator.json": "78a3e1e6243bf0372ce4d78fcc250bf5c94e1f45ff5b1ca2db2fffa93f1669a2",
+    "config/accessibility_outcome_territorial_harmonisation.json": "943d0b67a624b23a3878de766dbfc09278c1a90bc20767fda42b5a5da21d724c",
+    "data_processed/accessibility_municipality_month_exposure_territorial.csv": "234a23ddb6c9065ab22ca2b5edc1e9d1132d281f9f3647523e63664b66658dea",
+    "reports/accessibility_cohort_comparison_universe_territorial.csv": "a9c8e0435fffe8187bb6dff9259589f0a797183746bc23348457507880d4a005",
+    "config/accessibility_cohort_comparison.json": "b2a24d3e07c16e006e8280354564448074c16ccf9ff91aa5a8eaaeddd8ef9509",
+    "config/accessibility_dynamic_event_time.json": "d295615fc51a1c197f45d34692df41d1a32a4677ecf578c90d06113976160c6a",
+    "config/accessibility_successive_entries.json": "e4bf5bdaaba459b397c378ded4b98e3aa6352af66f6e88c559e29d363b46d0e7",
+    "src/causal_inference/estimate_accessibility_cohort_time.py": "ae0fe1ebfc8bacceb6ee244e63f819c0f5f36c4026433c8d59e1eeb1db0509d7"
+  },
+  "output_sha256": {
+    "reports/accessibility_cohort_time_estimation_cohort_month.csv": "f44eb8c6e32022f76be594318a3145d1203c4601e2267b9ac212fa6b7f80bfbf",
+    "reports/accessibility_cohort_time_estimation_dynamic.csv": "06b3aff253a74766fa951c252b15ce37d71a8b696479202c391699018abdaae8",
+    "reports/accessibility_cohort_time_estimation_calibration.csv": "f305f2ebebb1cffd5d0dec102ae22383fd2d3c2074d81ca226c134a40ae4d682",
+    "reports/accessibility_cohort_time_estimation_territory_support.csv": "d62980214a912652ccbb1e171996b17c47a58bb26151fa5bb425fc1ba52bfa4c"
+  },
+  "runtime_versions": {
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "python": "3.12.7"
+  }
+}
