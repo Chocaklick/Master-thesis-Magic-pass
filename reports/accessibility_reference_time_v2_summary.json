@@ -1,0 +1,33 @@
+{
+  "specification_version": "stage33_v2_2026_10_06",
+  "fingerprint": "49b08d6613fc772fffb9ad5ae0be7e0debb28df63f15139626c43d052d99d600",
+  "protected_legacy_sha256": {
+    "data_processed/accessibility_station_group_journey_samples.csv": "48cbafdba7c3dbae5b4be86b608ac13ae613f1e8ed36bf0e21903ad99ef00e24",
+    "data_processed/accessibility_station_group_journey_context.csv": "226114874ffff0e679c7f951e596007176e8635741ae64dd8c48ae576446ce60",
+    "data_processed/accessibility_municipality_month_exposure_territorial.csv": "234a23ddb6c9065ab22ca2b5edc1e9d1132d281f9f3647523e63664b66658dea",
+    "reports/accessibility_cohort_comparison_universe_territorial.csv": "a9c8e0435fffe8187bb6dff9259589f0a797183746bc23348457507880d4a005",
+    "reports/accessibility_local_threshold_audit_summary.json": "6badc4c993bb689c0a522cb2b6b354fbef8bfa8859263d659a70ddfab7300cab",
+    "reports/accessibility_cohort_time_estimation_summary.json": "ed0c462a98f7f27ff2428a957f7ebab22142180093213ef664d4df5916de2d59",
+    "reports/accessibility_cohort_time_estimation_cohort_month.csv": "f44eb8c6e32022f76be594318a3145d1203c4601e2267b9ac212fa6b7f80bfbf",
+    "reports/accessibility_cohort_time_estimation_dynamic.csv": "06b3aff253a74766fa951c252b15ce37d71a8b696479202c391699018abdaae8",
+    "config/accessibility_commune_trend_plots.json": "66506ea44204c4ecfb6ec452109590141b1b19dd2ba25d3c8cd05867484e00eb",
+    "data_processed/accessibility_commune_trend_plot_points.json": "53142c3a17fdd08125bf63d8c97f639879a961d9874c93f7ee0b109e96ad551d",
+    "figures/accessibility_15_communes_trends_1.png": "bd5e8de57387041bb2bd8116ebb735261df84d847c55832e688c8e5b14050c80",
+    "figures/accessibility_15_communes_trends_2.png": "9504c898ab1dd60686f60b5cf41d8e6a320ae4b4c184086c775a54e53ea0e93d",
+    "figures/accessibility_15_communes_trends_3.png": "d3b9a3474f3b4fdd1de2920e19f5e474fca33ef51c993105ce2e58b107ac7d31"
+  },
+  "canonical_outputs_changed": false,
+  "expected_access_day_caches": 150,
+  "output_paths": {
+    "accessibility_reference_time_v2_samples": "data_processed/accessibility_reference_time_v2_samples.csv",
+    "accessibility_reference_time_v2_daily": "data_processed/accessibility_reference_time_v2_daily.csv",
+    "accessibility_reference_time_v2_pairs": "data_processed/accessibility_reference_time_v2_pairs.csv",
+    "accessibility_reference_time_v2_local_review": "reports/accessibility_reference_time_v2_local_review.csv",
+    "accessibility_mobility_literature": "reports/accessibility_mobility_literature.csv",
+    "accessibility_reference_time_v2_query_status": "reports/accessibility_reference_time_v2_query_status.csv"
+  },
+  "status": "routing_in_progress",
+  "last_completed_date": "20260204",
+  "last_completed_access_point": "ACCESS_MAGIC_CURRENT__2769",
+  "completed_in_this_run": 9
+}

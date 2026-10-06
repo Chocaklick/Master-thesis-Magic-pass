@@ -1,0 +1,22 @@
+[
+  {
+    "municipality_bfs_id": 6111,
+    "access_point_name_match": "Leukerbad",
+    "outbound_walk_minutes": 5,
+    "return_walk_minutes": null,
+    "source_id": "LEUKERBAD_TORRENT_LOCAL_WALK_SWW_2025",
+    "locator": "Information / Ausgangspunkt; published 2025, presented by My Leukerbad AG",
+    "applicability": "Actual Busbahnhof to Torrent valley departure explicitly documented outward. Summer activity; winter applicability and reverse time not specified. Not a zero-time coincidence.",
+    "applied_to_reference_time": false
+  },
+  {
+    "municipality_bfs_id": 783,
+    "access_point_name_match": "Meiringen",
+    "outbound_walk_minutes": 0.5,
+    "return_walk_minutes": null,
+    "source_id": "ATE_RIDE_GLIDE_LAST_MILE_2010_2011",
+    "locator": "Ride & Glide 2010/11, printed p12 (PDF p9), Hasliberg Twing row, last-mile column: 0.5 min (P)",
+    "applicability": "Historical measured winter last-mile time from Hasliberg Wasserwendi Twing to installation; not automatically applied in winter 2026, reverse duration unspecified. Current operator page identifies departure but gives no Twing duration. Its 12 minutes concerns different Meiringen railway/Alpbach endpoints.",
+    "applied_to_reference_time": false
+  }
+]

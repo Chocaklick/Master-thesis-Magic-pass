@@ -1,0 +1,19 @@
+{
+  "specification_version": "stage33_v2_2026_10_06",
+  "approved_direction_rule": "Per reference day: (minimum available morning duration + minimum available evening return duration) / 2",
+  "approved_day_rule": "Mean of the two day-level reference durations, approved explicitly on 2026-10-06",
+  "duration_rule": "Exclude initial waiting only; retain in-vehicle time, connecting waits and coded walking",
+  "coverage_rule": "No 24/24 filter; a direction without a usable duration remains missing",
+  "missing_day_rule": "Do not substitute or impute a missing day; retain available day values separately, flag two-day reference as incomplete",
+  "local_rule": "Zero for actual origin/station-departure coincidence backed by endpoint evidence; otherwise documented directional walking duration; unresolved local candidates are not classified as no connection",
+  "query_routing_rule": "Retain existing earliest-arrival itinerary for each requested departure; take minima among these returned itineraries, not claim a globally minimum-duration search",
+  "retained_collection_bounds": "Existing six vehicle legs, 480 minutes including wait and morning profile horizon retained, not a new analytical exclusion",
+  "origin_rule_changed": false,
+  "station_nodes_changed": false,
+  "threshold_selected": false,
+  "reference_mode_selected": false,
+  "canonical_exposure_changed": false,
+  "historical_access_validated": false,
+  "local_evidence": [],
+  "actual_station_last_mile_caveat": "Bus/train access nodes are not all verified lift departures. Node durations remain a proxy; no unverified last-mile minutes or geographic coincidence inferred."
+}

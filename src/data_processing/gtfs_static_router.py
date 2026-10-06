@@ -543,6 +543,8 @@ class Journey:
     first_departure_seconds: int
     mode_mask: int
     legs: int
+    # Descriptive metadata only: keep legacy arrival/tie-breaking unchanged.
+    initial_walk_seconds: int = 0
 
     @property
     def transfers(self) -> int:
@@ -648,7 +650,9 @@ class DestinationProfile:
             else:
                 candidate = self.query_number(other, ready_seconds + duration)
                 if candidate is not None:
-                    candidates.append(candidate)
+                    candidates.append(Journey(
+                        candidate.arrival_seconds, candidate.first_departure_seconds,
+                        candidate.mode_mask, candidate.legs, int(duration)))
         return _best_journey(candidates)
 
     def add(self, stop: int, departure: int, journey: Journey) -> None:
