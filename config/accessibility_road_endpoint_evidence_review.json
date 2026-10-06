@@ -1,0 +1,10 @@
+{
+  "review_date": "2026-10-06",
+  "scope_note": "First source checks target the already-approved Moutier identifier bridge and the diagnosed Leukerbad local-access anomaly, not an analytical sample or municipality filter. Other 184 territories and 74 access points remain in the inventory.",
+  "origins": [
+    {"municipality_bfs_id":6831,"address":"Rue de l'Hôtel-de-Ville 1, 2740 Moutier","address_source_id":"MOUTIER_ADMINISTRATIVE_CENTRE_OFFICIAL_2026","address_locator":"Nous contacter > Municipalité de Moutier","coordinate_source_id":"MOUTIER_ADMINISTRATIVE_CENTRE_GEOADMIN_2026","coordinates_verified":true,"reviewed_feature_id":"1376503_0","expected_detail":"rue de l'hotel-de-ville 1 2740 moutier 6831 moutier ch ju","coordinate_locator":"Archived SearchServer results: exact official number 1 / postcode 2740 / BFS 6831, featureId 1376503_0; reject fuzzy candidates 10, 10a, 11 etc. Actual lat/lon read from original attrs, not typed or first-result inferred."}
+  ],
+  "arrivals": [
+    {"access_point_id":"ACCESS_MAGIC_CURRENT__602","source_id":"LEUKERBAD_TORRENT_ROAD_ARRIVAL_OFFICIAL_2026","locator":"Torrent Cable Cars > Torrent Valley Station","fact":"Drop-off allowed at ticket counters; parking there prohibited. Valley-station parking garage exists, stairs on its gondola path.","latitude":null,"longitude":null,"coordinates_verified":false,"winter_access_verified":false,"final_walk_minutes":null,"limits":"No exact parking entrance coordinate, winter availability or walking duration established by this page; do not substitute the bus terminal."}
+  ]
+}

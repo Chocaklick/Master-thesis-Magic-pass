@@ -1,0 +1,14 @@
+{
+  "provider": "openrouteservice",
+  "profile": "driving-car",
+  "api_endpoint": "https://api.openrouteservice.org/v2/matrix/driving-car",
+  "credential_environment_variable": "ORS_API_KEY",
+  "alternative_credential_environment_variable": "OPENROUTESERVICE_API_KEY",
+  "block_size": 25,
+  "metrics": ["duration", "distance"],
+  "units": "m",
+  "resolve_locations": true,
+  "temporal_reference": "static model, no departure-time or live traffic parameter",
+  "raw_response_policy": "Before each request, check actual account limits. Preserve successful and failed original responses immutably with payload, time, source IDs and SHA-256; never archive Authorization headers. Reuse exact matching successful checkpoints; flag graph/version differences across batches.",
+  "scope_note": "Operational request plan only. No request is made by the planning script; actual routing collector still to implement after endpoint evidence and local credential readiness."
+}

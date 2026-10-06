@@ -1,0 +1,5 @@
+[
+  {"source_id":"MOUTIER_ADMINISTRATIVE_CENTRE_OFFICIAL_2026","url":"https://moutier.ch/nous-contacter/","suffix":"html","organisation":"Municipalité de Moutier","description":"Official municipal contact address: Rue de l'Hôtel-de-Ville 1, 2740 Moutier; source BFS 700/6831 represent the one approved territory"},
+  {"source_id":"MOUTIER_ADMINISTRATIVE_CENTRE_GEOADMIN_2026","url":"https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=Rue%20de%20l%27Hotel-de-Ville%201%202740%20Moutier&type=locations&origins=address&sr=4326","suffix":"json","organisation":"swisstopo / geo.admin.ch","description":"Exact official address geocoding query; all candidates retained, not an automatic first-result selection"},
+  {"source_id":"LEUKERBAD_TORRENT_ROAD_ARRIVAL_OFFICIAL_2026","url":"https://leukerbad.ch/en/barrier-free-travelling","suffix":"html","organisation":"My Leukerbad AG / official destination","description":"Torrent valley station permits drop-off at ticket counter but not parking; separate parking garage and stairs to gondola; no duration or coordinate inferred"}
+]
