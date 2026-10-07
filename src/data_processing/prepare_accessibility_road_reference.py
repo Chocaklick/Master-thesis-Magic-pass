@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -75,7 +76,7 @@ def prepare_arrivals(nodes):
     frame["existing_reference_verified_as_road_arrival"] = False
     for name in ["road_arrival_latitude", "road_arrival_longitude", "final_walk_minutes"]:
         frame[name] = np.nan
-    for name in ["road_arrival_source_id", "road_arrival_evidence_locator", "winter_access_source_id"]:
+    for name in ["road_arrival_source_id", "road_arrival_evidence_locator", "road_arrival_coordinate_source_id", "road_arrival_coordinate_locator", "winter_access_source_id"]:
         frame[name] = ""
     frame["road_arrival_status"] = "approved_parking_dropoff_definition_actual_endpoint_evidence_pending"
     frame["road_arrival_evidence_note"] = ""
@@ -109,11 +110,13 @@ DESCRIPTIONS = {
     "selected_stop_id": ("Existing TP arrival stop identifier retained for comparison provenance", "identifier"),
     "selected_stop_name": ("Existing TP arrival stop name, not a verified road arrival", "text"),
     "existing_reference_verified_as_road_arrival": ("Whether this preparation establishes the old reference as the actual car arrival; false means unverified, not incorrect", "boolean"),
-    "road_arrival_latitude": ("Future evidenced road arrival latitude; currently missing, not the old proxy", "decimal degrees WGS84"),
-    "road_arrival_longitude": ("Future evidenced road arrival longitude; currently missing, not the old proxy", "decimal degrees WGS84"),
+    "road_arrival_latitude": ("Independently evidenced road arrival latitude; missing if unresolved, not the old proxy", "decimal degrees WGS84"),
+    "road_arrival_longitude": ("Independently evidenced road arrival longitude; missing if unresolved, not the old proxy", "decimal degrees WGS84"),
     "final_walk_minutes": ("Future documented parking/drop-off to lift-departure walk; missing is not zero", "minutes"),
     "road_arrival_source_id": ("Primary source for actual or partial road-arrival evidence; not proof of complete endpoint coordinates", "identifier"),
     "road_arrival_evidence_locator": ("Precise evidence locator for actual or partial road-arrival facts", "text"),
+    "road_arrival_coordinate_source_id": ("Archived primary-linked navigation evidence identifier; blank if coordinate unverified", "identifier"),
+    "road_arrival_coordinate_locator": ("Exact place coordinates in the operator-linked redirect, not map viewport or old station proxy", "text"),
     "winter_access_source_id": ("Future primary evidence for winter availability/restrictions; currently blank", "identifier"),
     "road_arrival_status": ("Arrival review status; unresolved case retained, not routed to arbitrary village/top coordinates", "category"),
     "road_arrival_evidence_note": ("Positive road-arrival source facts and limitations; does not imply verified coordinates/winter access", "text"),
@@ -171,12 +174,32 @@ def apply_endpoint_evidence(frames):
         archived_metadata(evidence["source_id"])
         # Positive information is useful even without exact coordinates or a
         # walking duration. Never promote it to verified road/winter access.
-        if evidence["coordinates_verified"] or evidence["winter_access_verified"] or evidence["final_walk_minutes"] is not None:
-            raise ValueError("A completed arrival needs an explicit additional verified evidence schema")
+        if evidence["winter_access_verified"] or evidence["final_walk_minutes"] is not None:
+            raise ValueError("Winter access/walking completion needs additional explicit verified evidence")
         arrivals.loc[chosen, "road_arrival_source_id"] = evidence["source_id"]
         arrivals.loc[chosen, "road_arrival_evidence_locator"] = evidence["locator"]
         arrivals.loc[chosen, "road_arrival_evidence_note"] = evidence["fact"] + " Limits: " + evidence["limits"]
         arrivals.loc[chosen, "road_arrival_status"] = "dropoff_and_garage_documented_coordinates_pending"
+        if evidence["coordinates_verified"]:
+            parent = archived_metadata(evidence["source_id"])
+            navigation = archived_metadata(evidence["coordinate_source_id"])
+            if navigation.get("parent_source_id") != evidence["source_id"]:
+                raise ValueError("Navigation evidence must identify its official operator parent")
+            if evidence["navigation_url"] not in (ROOT / parent["raw_file"]).read_text(encoding="utf-8"):
+                raise ValueError("Navigation URL missing from archived official operator page")
+            response = json.loads((ROOT / navigation["raw_file"]).read_text(encoding="utf-8"))
+            matches = re.findall(r"!3d(-?\d+\.\d+)!4d(-?\d+\.\d+)", response["location"])
+            if response["url"] != evidence["navigation_url"] or len(matches) != 1:
+                raise ValueError("Expected one exact operator-linked place coordinate")
+            latitude, longitude = map(float, matches[0])
+            if (latitude, longitude) != (evidence["latitude"], evidence["longitude"]):
+                raise ValueError("Reviewed navigation destination differs from archived original")
+            if not (-90 <= latitude <= 90 and -180 <= longitude <= 180):
+                raise ValueError("Invalid navigation coordinates")
+            arrivals.loc[chosen, ["road_arrival_latitude", "road_arrival_longitude"]] = [latitude, longitude]
+            arrivals.loc[chosen, "road_arrival_coordinate_source_id"] = evidence["coordinate_source_id"]
+            arrivals.loc[chosen, "road_arrival_coordinate_locator"] = evidence["coordinate_locator"]
+            arrivals.loc[chosen, "road_arrival_status"] = "verified_documented_road_arrival"
 
 
 def register(frames):
@@ -189,40 +212,40 @@ def register(frames):
             variable_description=spec["description"], source_organisation=spec["organisation"],
             source_dataset_name="Primary routing/source documentation, not a route dataset",
             source_page_url=spec["url"], retrieval_method="Primary web documentation consulted; no local original archived",
-            retrieval_date="2026-10-06", processed_file="reports/86_PREPARATION_REFERENCE_ROUTIERE_FR.md",
+            retrieval_date=spec.get("consultation_date", "2026-10-06"), processed_file="reports/87_COLLECTE_REFERENCE_ROUTIERE_FR.md" if spec.get("consultation_date") else "reports/86_PREPARATION_REFERENCE_ROUTIERE_FR.md",
             geographic_level="routing-service documentation", temporal_resolution="consultation snapshot",
             unit="documentation", license="See source terms; no road extract redistributed",
             access_conditions="Public primary documentation; protected pages not bypassed",
             transformation_applied="Documented service characteristics only; no queries/road durations collected",
             quality_notes=spec["limits"], confidence_level="primary documentation, not empirical travel-time evidence",
-            manual_verification=spec["locator"], notes="openrouteservice selected after delegated simplest-provider choice; no routing queries collected yet"))
+            manual_verification=spec["locator"], notes="Primary documentation, not an empirical route observation; collection progress in reports/accessibility_road_reference_collection_summary.json"))
     for spec in json.loads((ROOT / INPUTS[5]).read_text(encoding="utf-8")):
         metadata = archived_metadata(spec["source_id"])
         rows.append(dict(source_id=spec["source_id"], variable_name="road_reference_endpoint_evidence",
             variable_description=spec["description"], source_organisation=spec["organisation"],
             source_dataset_name="Official municipal/operator address and arrival evidence; official exact geocoding candidates",
             source_page_url=spec["url"], direct_download_url=metadata.get("final_url", spec["url"]),
-            retrieval_method="Existing robots-respecting collector; immutable original and SHA-256 sidecar",
+            retrieval_method=metadata.get("retrieval_method", "Existing robots-respecting collector; immutable original and SHA-256 sidecar"),
             retrieval_date=metadata["retrieval_date"], original_file_name=Path(metadata["raw_file"]).name,
             local_raw_file=metadata["raw_file"], processed_file="|".join(OUTPUTS.values()),
-            geographic_level="Moutier territory or Leukerbad station access", temporal_resolution="retrieval-date source snapshot",
+            geographic_level="Documented municipality or station-access endpoint", temporal_resolution="retrieval-date source snapshot",
             unit="documented address, coordinates or partial arrival facts",
             license="Preserve primary source URL; inherited official source terms", access_conditions="Public source; robots respected",
-            transformation_applied="Exact reviewed address/feature match for Moutier; qualitative arrival evidence only for Leukerbad",
-            quality_notes="Current access, not historically certified. Leukerbad lacks exact arrival coordinates/winter proof/walk duration; Moutier coordinate is a documented administrative address, not a road snap or measured time.",
+            transformation_applied="Official administrative address and exact reviewed geocoding; operator-linked parking place coordinates or explicitly partial arrival facts",
+            quality_notes="Current access, not historically certified. Winter proof and final walking duration unresolved; parking navigation point is not a surveyed driveway entrance. No time inferred from address.",
             confidence_level="official positive endpoint fact; uncertainties explicit", manual_verification="config/accessibility_road_endpoint_evidence_review.json",
             notes="Raw SHA-256 " + metadata["sha256"]))
     rows.append(dict(source_id=SOURCE, variable_name="road_reference_endpoint_inventory",
         variable_description="Existing municipality territories and station access identifiers preserved for road endpoint review, no road time calculated",
         source_organisation="Thesis project", source_dataset_name="Stage 34 road reference preparation",
         retrieval_method="Reproducible Python derivation from existing checked inputs",
-        retrieval_date="2026-10-06", processed_file="|".join(OUTPUTS.values()),
+        retrieval_date=json.loads((ROOT / INPUTS[6]).read_text(encoding="utf-8"))["review_date"], processed_file="|".join(OUTPUTS.values()),
         geographic_level="185 existing hotel territories and 75 existing station access points",
         temporal_resolution="preparatory review snapshot", unit="identifiers and explicit endpoint statuses",
         license="Inherited input licenses", access_conditions="Local project outputs",
         transformation_applied="Approved panel territorial mapping; preserve source BFS/TP origins and station IDs; exact sourced endpoint evidence applied from separate review config",
         quality_notes="Only explicitly evidenced endpoints filled. No road route, threshold, exclusion or canonical exposure replacement.",
-        confidence_level="exact lineage; actual road endpoints unverified",
+        confidence_level="exact lineage; only explicitly evidenced road endpoints verified",
         manual_verification="User approved road-primary/TP-comparison, administrative-centre/actual-parking-dropoff endpoints and static metric through replacement question after withdrawal of accidental initial reply",
         notes="Inputs: reports/public_transport_journey_nodes.csv; reports/accessibility_station_access_nodes.csv; data_processed/accessibility_municipality_month_exposure_territorial.csv; config/accessibility_road_endpoint_evidence_review.json. Parent evidence: DERIVED_ACCESSIBILITY_STATION_GROUP_JOURNEYS|DERIVED_ACCESSIBILITY_STATION_GROUPS|DERIVED_ACCESSIBILITY_TERRITORIAL_MOUTIER_BRIDGE|MOUTIER_ADMINISTRATIVE_CENTRE_OFFICIAL_2026|MOUTIER_ADMINISTRATIVE_CENTRE_GEOADMIN_2026|LEUKERBAD_TORRENT_ROAD_ARRIVAL_OFFICIAL_2026"))
     ids = {row["source_id"] for row in rows}
@@ -240,7 +263,7 @@ def register(frames):
                 temporal_level="preparatory 2026 review", source_id=SOURCE, raw_or_derived="derived inventory",
                 formula="Copy existing lineage/canonical bridge; apply independently reviewed endpoint evidence; no missing-value imputation",
                 causal_role="preparation only, not exposure or analysis feature", missing_share=f"{missing.mean():.6f}",
-                notes="Original references/TP stops are not road coordinates. Endpoint/static metric and ORS provider approved; unresearched coordinates and local credential remain pending."))
+                notes="Original references/TP stops are not road coordinates. Endpoint/static metric and ORS provider approved; unresearched coordinates remain pending; no credentials recorded."))
     dictionary = dictionary[~dictionary.table.isin(frames)]
     pd.concat([dictionary, pd.DataFrame(rows).reindex(columns=DICTIONARY_COLUMNS)], ignore_index=True).fillna("").to_csv(path, index=False, lineterminator="\n")
 
@@ -284,7 +307,7 @@ def main():
         builder_sha256=sha("src/data_processing/prepare_accessibility_road_reference.py"),
         output_sha256={p: sha(p) for p in OUTPUTS.values()}, protected_legacy_sha256=after,
         resume_command=".venv/Scripts/python.exe src/data_processing/prepare_accessibility_road_reference.py",
-        next_step="Extend documented administrative-centre/road-arrival evidence; configure an ORS key locally and check account limits before routing. New evidence belongs in the authoritative endpoint review input, not hand-edited output CSVs.")
+        next_step="Extend documented administrative-centre/road-arrival evidence, then resume the ORS collector at the new HeiGIT endpoint. Key stays local; quotas and originals in collection manifest. New evidence belongs in authoritative endpoint review input, not hand-edited output CSVs.")
     (ROOT / SUMMARY).write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({k: summary[k] for k in ["status", "municipality_territories", "access_points", "station_groups", "potential_territory_access_pairs", "actual_road_routes_computed"]}))
 

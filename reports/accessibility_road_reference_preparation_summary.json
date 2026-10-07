@@ -1,5 +1,5 @@
 {
-  "status": "ors_selected_endpoint_collection_and_api_key_pending",
+  "status": "road_collection_partial_endpoint_evidence_pending",
   "road_primary_approved": true,
   "origin_definition_approved": true,
   "station_arrival_definition_approved": true,
@@ -11,24 +11,24 @@
   "potential_territory_access_pairs": 13875,
   "potential_directional_routes": 27750,
   "actual_road_routes_computed": 0,
-  "verified_road_origins": 1,
-  "verified_road_arrivals": 0,
+  "verified_road_origins": 3,
+  "verified_road_arrivals": 1,
   "routing_provider_selected": true,
   "routing_provider": "openrouteservice",
   "canonical_outputs_changed": false,
   "input_sha256": {
-    "config/accessibility_road_reference_method.json": "cae536208dabbabc68b762e82089d9562301d580864545fc016fac7861fe00f1",
-    "config/accessibility_road_documentation_sources.json": "81af9be122001e42d99328ec5561b891b929f8e645206eb3200d90fdc17c604f",
+    "config/accessibility_road_reference_method.json": "5fc57c2aa20b9d67150089ff5bbd500501ee9c20bbf37b4058eec96039a31a4a",
+    "config/accessibility_road_documentation_sources.json": "f3426e8d8d219d66ee0c6ad0a37947c412d9ac843dcf0bcb9fdde0e22aadb050",
     "reports/public_transport_journey_nodes.csv": "1f4a6af3cf1a5b655f48708f61ec87f029bb2db77866ac090140291ac56ec365",
     "reports/accessibility_station_access_nodes.csv": "48441a9288736e414d4487d856ea449d41385471e967521452fad3bb123810f2",
     "data_processed/accessibility_municipality_month_exposure_territorial.csv": "234a23ddb6c9065ab22ca2b5edc1e9d1132d281f9f3647523e63664b66658dea",
-    "config/accessibility_road_endpoint_sources.json": "918fbf19666d15fc43074a2a998d6c851d26026f643528683a9a4b615e2b1861",
-    "config/accessibility_road_endpoint_evidence_review.json": "ecd828534c9e27474dc5ca3cc8a4cfe8ec0457c9c1a1bf7c290850478e7e71b6"
+    "config/accessibility_road_endpoint_sources.json": "b558f43f1bda7af69576bdea3add9471d271a5cc0106aeab23269136bc4b132d",
+    "config/accessibility_road_endpoint_evidence_review.json": "a49344c7bb8cde93e99a87fdbe2d72a0cc7d7b8ffd7f2b61ebb1514828a8c378"
   },
-  "builder_sha256": "2a5b1f1d29cf08516e7e43ba1b02eee166054127e3af835246b6b3d330715f5e",
+  "builder_sha256": "a0a02a5a311f8e06e57c316cd969800e51b17ad1962ee360237e732c682b11af",
   "output_sha256": {
-    "reports/accessibility_road_origin_review.csv": "0f469d4d1b420e63fb9f2c725962a6b61dd1b3bbbfefc6a08dd35e66ad0bcb43",
-    "reports/accessibility_road_station_arrival_review.csv": "9a0d5e0b3b6aed902f938c7c3562c512e48565bfb40a2aa973fff3ca13a3d64b"
+    "reports/accessibility_road_origin_review.csv": "70b1bc18d030748b25f042927abfe7a838e27e429e376ecd634032d009b203af",
+    "reports/accessibility_road_station_arrival_review.csv": "ceafb60e45aaa9aa7c19d9c06c1e642fec008cdef3418fc47abfd8a50918f506"
   },
   "protected_legacy_sha256": {
     "data_processed/accessibility_station_group_journey_samples.csv": "48cbafdba7c3dbae5b4be86b608ac13ae613f1e8ed36bf0e21903ad99ef00e24",
@@ -46,5 +46,5 @@
     "figures/accessibility_15_communes_trends_3.png": "d3b9a3474f3b4fdd1de2920e19f5e474fca33ef51c993105ce2e58b107ac7d31"
   },
   "resume_command": ".venv/Scripts/python.exe src/data_processing/prepare_accessibility_road_reference.py",
-  "next_step": "Extend documented administrative-centre/road-arrival evidence; configure an ORS key locally and check account limits before routing. New evidence belongs in the authoritative endpoint review input, not hand-edited output CSVs."
+  "next_step": "Extend documented administrative-centre/road-arrival evidence, then resume the ORS collector at the new HeiGIT endpoint. Key stays local; quotas and originals in collection manifest. New evidence belongs in authoritative endpoint review input, not hand-edited output CSVs."
 }

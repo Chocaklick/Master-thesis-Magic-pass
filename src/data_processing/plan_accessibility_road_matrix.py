@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-import os
 import sys
 from pathlib import Path
 
@@ -11,6 +10,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from src.data_processing.prepare_accessibility_road_reference import sha, OUTPUTS
+from src.data_collection.road_reference_credentials import load_credential
 
 CONFIG = "config/accessibility_road_routing.json"
 PLAN = "reports/accessibility_road_matrix_plan.json"
@@ -46,14 +46,15 @@ def main():
     for batch in batches:
         batch["ready_for_execution"] = (set(batch["municipality_bfs_ids"]).issubset(ready_origins)
             and set(batch["access_point_ids"]).issubset(ready_arrivals))
-    credential_present = any(bool(os.environ.get(config[name])) for name in
-        ["credential_environment_variable", "alternative_credential_environment_variable"])
+    credential, credential_location = load_credential(config)
+    credential_present = credential is not None
     plan = dict(status="planning_only_no_api_request", provider=config["provider"],
         endpoint=config["api_endpoint"], profile=config["profile"],
         all_endpoints_planned_batches=len(batches), all_endpoints_planned_directional_cells=sum(b["requested_cells"] for b in batches),
         ready_origin_count=len(ready_origins), ready_arrival_count=len(ready_arrivals),
         ready_batches=sum(b["ready_for_execution"] for b in batches),
         local_credential_environment_present=credential_present,
+        credential_location=credential_location,
         note="Pending endpoints remain represented. In later collection, verified subsets may be requested without dropping unresolved endpoints; current batch readiness is a collection status, not a municipality filter.",
         input_sha256={p: sha(p) for p in [CONFIG, origin_path, arrival_path]},
         batches=batches)

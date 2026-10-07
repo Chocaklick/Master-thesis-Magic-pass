@@ -1,19 +1,20 @@
 {
   "status": "planning_only_no_api_request",
   "provider": "openrouteservice",
-  "endpoint": "https://api.openrouteservice.org/v2/matrix/driving-car",
+  "endpoint": "https://api.heigit.org/openrouteservice/v2/matrix/driving-car",
   "profile": "driving-car",
   "all_endpoints_planned_batches": 48,
   "all_endpoints_planned_directional_cells": 27750,
-  "ready_origin_count": 1,
-  "ready_arrival_count": 0,
+  "ready_origin_count": 3,
+  "ready_arrival_count": 1,
   "ready_batches": 0,
-  "local_credential_environment_present": false,
+  "local_credential_environment_present": true,
+  "credential_location": "Windows current-user environment",
   "note": "Pending endpoints remain represented. In later collection, verified subsets may be requested without dropping unresolved endpoints; current batch readiness is a collection status, not a municipality filter.",
   "input_sha256": {
-    "config/accessibility_road_routing.json": "900d4557f26d41296cbbccfc9807c17ae669b09890be60f0fb7f558fffd35487",
-    "reports/accessibility_road_origin_review.csv": "0f469d4d1b420e63fb9f2c725962a6b61dd1b3bbbfefc6a08dd35e66ad0bcb43",
-    "reports/accessibility_road_station_arrival_review.csv": "9a0d5e0b3b6aed902f938c7c3562c512e48565bfb40a2aa973fff3ca13a3d64b"
+    "config/accessibility_road_routing.json": "be6e3b8ba52e12486a15f23584664300cbb6366de97ce23c39c3213cc42cbeeb",
+    "reports/accessibility_road_origin_review.csv": "70b1bc18d030748b25f042927abfe7a838e27e429e376ecd634032d009b203af",
+    "reports/accessibility_road_station_arrival_review.csv": "ceafb60e45aaa9aa7c19d9c06c1e642fec008cdef3418fc47abfd8a50918f506"
   },
   "batches": [
     {

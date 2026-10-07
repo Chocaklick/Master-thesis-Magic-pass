@@ -1,7 +1,9 @@
 {
   "provider": "openrouteservice",
   "profile": "driving-car",
-  "api_endpoint": "https://api.openrouteservice.org/v2/matrix/driving-car",
+  "api_endpoint": "https://api.heigit.org/openrouteservice/v2/matrix/driving-car",
+  "deprecated_api_endpoint": "https://api.openrouteservice.org/v2/matrix/driving-car",
+  "endpoint_migration_source_ids": ["ORS_API_HOST_MIGRATION_2026", "ORS_DEPRECATED_HOST_QUOTA_REDUCTION_2026"],
   "credential_environment_variable": "ORS_API_KEY",
   "alternative_credential_environment_variable": "OPENROUTESERVICE_API_KEY",
   "block_size": 25,
@@ -9,6 +11,6 @@
   "units": "m",
   "resolve_locations": true,
   "temporal_reference": "static model, no departure-time or live traffic parameter",
-  "raw_response_policy": "Before each request, check actual account limits. Preserve successful and failed original responses immutably with payload, time, source IDs and SHA-256; never archive Authorization headers. Reuse exact matching successful checkpoints; flag graph/version differences across batches.",
-  "scope_note": "Operational request plan only. No request is made by the planning script; actual routing collector still to implement after endpoint evidence and local credential readiness."
+  "raw_response_policy": "Actual allowance is first revealed by response headers, not guessed from public plan limits; check available remaining quota before subsequent requests and stop on 401/403/429. Preserve successful and failed original responses immutably with payload, time, source IDs and SHA-256; never archive Authorization headers. Reuse SHA-verified completed cells even when adding endpoints; flag graph/version differences across batches.",
+  "scope_note": "Planner makes no API request. Collector requests only independently verified endpoints; unresolved endpoints remain represented. No threshold or exposure replacement."
 }

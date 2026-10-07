@@ -4,7 +4,7 @@
   "public_transport_comparison_retained": true,
   "approval_date": "2026-10-06",
   "approval_user_text": "ouai tu peux continuer avec la référence routière",
-  "status": "ors_selected_endpoint_collection_and_api_key_pending",
+  "status": "road_collection_partial_endpoint_evidence_pending",
   "origin_definition_approved": true,
   "station_arrival_definition_approved": true,
   "endpoint_approval_date": "2026-10-06",
@@ -16,7 +16,7 @@
   "routing_source_selected": true,
   "routing_provider": "openrouteservice",
   "provider_delegation_user_text": "fait celui qui est le plus simple",
-  "provider_selection_reason": "Hosted matrices require no local Linux/Docker/routing-engine installation; key availability and actual account limits still required",
+  "provider_selection_reason": "Hosted matrices require no local Linux/Docker/routing-engine installation; user credential verified without display on 2026-10-07, actual allowance recorded from response headers",
   "threshold_selected": false,
   "canonical_exposure_replacement_approved": false,
   "proposed_origin": "Documented main administrative centre/town hall, not an arbitrary polygon centroid",
@@ -26,5 +26,5 @@
   "universe_rule": "Keep all 185 existing territorial hotel units and all 75 existing access-point identifiers in 71 unchanged station groups; retain the approved Moutier source bridge",
   "no_route_rule": "Missing directional route is missing, not zero or an inferred straight-line travel time; no automatic municipality exclusion",
   "routing_execution_authorized": true,
-  "routing_execution_note": "Primary mode, endpoint definitions and static metric approved; user delegated simplest provider choice, openrouteservice selected. Execution still requires locally configured key and verified actual coordinates. No paid account/action authorized. This preparatory builder performs no network routing."
+  "routing_execution_note": "Primary mode, endpoint definitions and static metric approved; user delegated simplest provider choice and explicitly requested collector continuation on 2026-10-07. HeiGIT endpoint migration applied. Collector requests verified endpoints only; no paid account/action or exposure replacement authorized. Preparatory builder performs no network routing."
 }

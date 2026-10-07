@@ -6,6 +6,7 @@ reusable when only the independently collected literature review is updated.
 from __future__ import annotations
 
 import json
+import argparse
 import sys
 from pathlib import Path
 
@@ -18,11 +19,22 @@ import build_accessibility_mobility_review as review
 
 
 def main():
-    routing.main()
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument("--review-only", action="store_true", help="Enrich completed outputs without routing or aggregating again")
+    args, remaining = parser.parse_known_args()
+    if not args.review_only:
+        sys.argv = [sys.argv[0], *remaining]
+        routing.main()
     path = ROOT / routing.MANIFEST
     manifest = json.loads(path.read_text(encoding="utf-8"))
     if not manifest["status"].startswith("completed_"):
+        if args.review_only:
+            raise RuntimeError("Review-only mode requires a completed routing manifest")
         return
+    if args.review_only:
+        for output, digest in manifest["output_sha256"].items():
+            if routing.sha(output) != digest:
+                raise RuntimeError("Preserve edited output before evidence enrichment: " + output)
     output_paths = dict(routing.OUTPUTS)
     review.main()
     manifest["output_sha256"] = {p: routing.sha(p) for p in output_paths.values()}

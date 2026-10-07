@@ -26,8 +26,33 @@
     "accessibility_mobility_literature": "reports/accessibility_mobility_literature.csv",
     "accessibility_reference_time_v2_query_status": "reports/accessibility_reference_time_v2_query_status.csv"
   },
-  "status": "routing_in_progress",
-  "last_completed_date": "20260204",
-  "last_completed_access_point": "ACCESS_MAGIC_CURRENT__2769",
-  "completed_in_this_run": 9
+  "status": "completed_node_proxy_local_documentation_pending",
+  "last_completed_date": "20260207",
+  "last_completed_access_point": "ACCESS_MAGIC_CURRENT__2780",
+  "completed_in_this_run": 138,
+  "output_row_counts": {
+    "accessibility_reference_time_v2_samples": 334800,
+    "accessibility_reference_time_v2_daily": 26412,
+    "accessibility_reference_time_v2_pairs": 13206,
+    "accessibility_reference_time_v2_local_review": 75,
+    "accessibility_mobility_literature": 13,
+    "accessibility_reference_time_v2_query_status": 20
+  },
+  "output_sha256": {
+    "data_processed/accessibility_reference_time_v2_samples.csv": "0a8bb15b6c15af4601a71c454223c62fb5ea1b56cf8df32f3a3da1680c924ae0",
+    "data_processed/accessibility_reference_time_v2_daily.csv": "971acd662c20c366773d9000e9ff5dda94d591dea71c103e0cae2da69710d554",
+    "data_processed/accessibility_reference_time_v2_pairs.csv": "32a3e36e71c316c6440424d37970b42580ee99ca663b5895c3cece72e273f305",
+    "reports/accessibility_reference_time_v2_local_review.csv": "941354c6cbeaf6e6b1757bc18c12233d8e8381144e9e3a1c89557afb054b37d2",
+    "reports/accessibility_mobility_literature.csv": "ed8398e10e64170256a50d013568e5345cfb5427b32793eedbb18bdeae105de2",
+    "reports/accessibility_reference_time_v2_query_status.csv": "8af69639385fa7edc76625fe1480ca8deb3ffe5132df52b386f858fbf60fa4a4"
+  },
+  "pairs_with_two_day_time": 11578,
+  "newly_available_pairs": 4007,
+  "local_pending_pairs": 4,
+  "actual_station_access_verified_pairs": 0,
+  "main_threshold_selected": false,
+  "reference_mode_selected": false,
+  "independent_walking_review_enriched": true,
+  "local_walking_review_sha256": "b81673b9d4fccfbfe3e1b629b4da4ca1d52b0f9e7b069d42ec73da5641889ef9",
+  "literature_review_sha256": "996db95af72a27ffc96a8bcc500fd10834c1dee785c5c82a6b22cecddb17f5fc"
 }
