@@ -5,15 +5,15 @@
   "profile": "driving-car",
   "all_endpoints_planned_batches": 48,
   "all_endpoints_planned_directional_cells": 27750,
-  "ready_origin_count": 3,
+  "ready_origin_count": 38,
   "ready_arrival_count": 1,
   "ready_batches": 0,
-  "local_credential_environment_present": true,
-  "credential_location": "Windows current-user environment",
+  "local_credential_environment_present": false,
+  "credential_location": "absent",
   "note": "Pending endpoints remain represented. In later collection, verified subsets may be requested without dropping unresolved endpoints; current batch readiness is a collection status, not a municipality filter.",
   "input_sha256": {
     "config/accessibility_road_routing.json": "be6e3b8ba52e12486a15f23584664300cbb6366de97ce23c39c3213cc42cbeeb",
-    "reports/accessibility_road_origin_review.csv": "70b1bc18d030748b25f042927abfe7a838e27e429e376ecd634032d009b203af",
+    "reports/accessibility_road_origin_review.csv": "eb3f31049a2fc959bc93e501c1f2656f4f66f63b0c42e5a9254f4e2a6995ae25",
     "reports/accessibility_road_station_arrival_review.csv": "ceafb60e45aaa9aa7c19d9c06c1e642fec008cdef3418fc47abfd8a50918f506"
   },
   "batches": [

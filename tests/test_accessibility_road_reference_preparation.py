@@ -77,7 +77,8 @@ def test_moutier_coordinate_is_exact_reviewed_original_not_fuzzy_geocoding():
     assert "2740 moutier 6831" in exact[0]["detail"]
     assert result.road_origin_latitude == pytest.approx(exact[0]["lat"], abs=1e-12)
     assert result.road_origin_longitude == pytest.approx(exact[0]["lon"], abs=1e-12)
-    assert frame.road_origin_latitude.notna().sum() == 3
+    summary = json.loads((ROOT / road.SUMMARY).read_text(encoding="utf-8"))
+    assert frame.road_origin_latitude.notna().sum() == summary["verified_road_origins"]
     arrivals = pd.read_csv(ROOT / road.OUTPUTS["accessibility_road_station_arrival_review"])
     leukerbad = arrivals[arrivals.access_point_id.eq("ACCESS_MAGIC_CURRENT__602")].iloc[0]
     assert "parking" in leukerbad.road_arrival_evidence_note
@@ -96,7 +97,10 @@ def test_batch_plan_preserves_every_direction_and_does_not_query_pending_points(
         plan_batches([1, 1], ["a"], 25)
     plan = json.loads((ROOT / PLAN).read_text(encoding="utf-8"))
     assert plan["status"] == "planning_only_no_api_request"
-    assert plan["ready_origin_count"] == 3 and plan["ready_arrival_count"] == 1
+    origins = pd.read_csv(ROOT / road.OUTPUTS["accessibility_road_origin_review"])
+    arrivals = pd.read_csv(ROOT / road.OUTPUTS["accessibility_road_station_arrival_review"])
+    assert plan["ready_origin_count"] == origins.road_origin_latitude.notna().sum()
+    assert plan["ready_arrival_count"] == arrivals.road_arrival_latitude.notna().sum()
     assert plan["ready_batches"] == 0
 
 

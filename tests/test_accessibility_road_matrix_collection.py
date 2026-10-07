@@ -91,7 +91,9 @@ def test_real_archived_responses_resume_and_all_pending_ids_preserved():
     assert directional.municipality_bfs_id.nunique() == 185
     assert directional.access_point_id.nunique() == 75
     assert pairs.road_reference_minutes.notna().sum() == 3
-    assert directional.route_status.eq("endpoint_evidence_pending").sum() == 27744
+    ready_origins = origins.road_origin_status.eq("verified_documented_administrative_centre").sum()
+    ready_arrivals = arrivals.road_arrival_status.eq("verified_documented_road_arrival").sum()
+    assert directional.route_status.eq("endpoint_evidence_pending").sum() == 27750 - 2 * ready_origins * ready_arrivals
     assert pairs.winter_access_status.eq("not_yet_verified").all()
     assert pairs.final_walk_minutes.isna().all()
     dictionary = pd.read_csv(road.ROOT / "metadata/data_dictionary.csv")

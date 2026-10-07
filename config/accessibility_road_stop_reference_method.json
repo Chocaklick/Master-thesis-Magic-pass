@@ -1,0 +1,23 @@
+{
+  "specification_version": "stage36_tp_stop_road_proxy_2026_10_07",
+  "approval_date": "2026-10-07",
+  "approval_user_text": "Réutilise les coordonnées déjà utilisées pour les transports publics et calcule les temps routiers entre ces mêmes points. Ne bloque plus la collecte sur la recherche des mairies et parkings : garde ces précisions comme raffinement ultérieur.",
+  "measurement_label": "arrêt communal → arrêt de station",
+  "coordinate_rule": "Keep selected_stop_id from existing TP nodes; resolve its unique official BAV operating-point E,N, EPSG:2056 to WGS84 with always_xy. No resort reference point, town hall, parking, GTFS platform average or new stop selection.",
+  "territory_rule": "Retain 185 territories /186 source histories, approved Moutier 700/6831 bridge only when their original selected stops coincide. Retain 75 access IDs in71 unchanged station groups.",
+  "metric": "Independent static fastest modelled driving directions, seconds/60 then (outbound+return)/2 if both usable; no traffic or winter supplements; no final walk invented.",
+  "snapping": "Keep service-reported snapped_distance and resolved location in both directions, plus independently computed geodesic displacement. List missing/null/zero, endpoint inconsistencies and largest displacements. No arbitrary acceptance threshold or automatic exclusion.",
+  "missing_route": "Missing directions remain missing, not zero. User approved three stop→same-stop pairs at0min for this proxy only. Distinct points collapsed by snapping, including Saas-Fee, remain unvalidated; no true lift-departure coincidence inferred.",
+  "identical_stop_zero_approval_date": "2026-10-07",
+  "identical_stop_zero_approval_user_text": "Oui, valider les trois vrais trajets arrêt → même arrêt à 0 minute.",
+  "approved_identical_stop_zero_pairs": [
+    {"municipality_bfs_id":571,"access_point_id":"ACCESS_MAGIC_CURRENT__1799","selected_stop_id":"8507775"},
+    {"municipality_bfs_id":783,"access_point_id":"ACCESS_MAGIC_CURRENT__4451","selected_stop_id":"8508878"},
+    {"municipality_bfs_id":6111,"access_point_id":"ACCESS_MAGIC_CURRENT__602","selected_stop_id":"8501656"}
+  ],
+  "winter_limit": "Current static graph, no route geometry in Matrix response; seasonal restrictions/legal car access not certified. Large snaps and car-free places require later review, not automatic exclusion.",
+  "threshold_selected": false,
+  "canonical_exposure_changed": false,
+  "administrative_parking_refinement": "Prior documented endpoint inventory and first three municipality-parking means preserved separately; further research deferred by user.",
+  "public_transport_comparison": "Common selected TP stop IDs and official stop point geometry, not exact surveyed station parking or platform; retain source date mismatch (OFT2026-09-20, GTFS2026-02-07). Comparability is stop-to-stop, not door-to-door."
+}

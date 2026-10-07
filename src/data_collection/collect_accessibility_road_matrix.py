@@ -24,6 +24,7 @@ from src.data_collection.road_reference_credentials import load_credential
 from src.data_processing.prepare_accessibility_road_reference import OUTPUTS, PROTECTED, sha
 from src.data_processing.plan_accessibility_road_matrix import plan_batches
 from src.data_processing.update_accessibility_expansion_provenance import SOURCE_COLUMNS, DICTIONARY_COLUMNS
+from src.data_processing.atomic_csv_output import write_csv
 
 CONFIG = "config/accessibility_road_routing.json"
 ENDPOINT = "https://api.heigit.org/openrouteservice/v2/matrix/driving-car"
@@ -32,6 +33,16 @@ TABLES = {"accessibility_road_reference_directional": "data_processed/accessibil
           "accessibility_road_reference_pairs": "data_processed/accessibility_road_reference_pairs.csv"}
 SUMMARY = "reports/accessibility_road_reference_collection_summary.json"
 SAFE_HEADERS = {"content-type", "x-ratelimit-limit", "x-ratelimit-remaining", "x-ratelimit-reset", "retry-after"}
+ORIGIN_READY = "verified_documented_administrative_centre"
+ARRIVAL_READY = "verified_documented_road_arrival"
+INVENTORY_SOURCE = "DERIVED_ACCESSIBILITY_ROAD_REFERENCE_PREPARATION"
+CACHE_DIRECTORY = "data_interim/accessibility_road_ors"
+RAW_DIRECTORY = "data_external/accessibility_road_ors"
+MEASUREMENT_LABEL = "administrative centre → lift-serving parking/drop-off"
+RESUME_COMMAND = ".venv/Scripts/python.exe src/data_collection/collect_accessibility_road_matrix.py --execute --max-new-batches 2"
+EXTRA_INPUTS = []
+ENTRY_POINT = "src/data_collection/collect_accessibility_road_matrix.py"
+APPROVED_ZERO_PAIRS = set()
 
 
 def digest(value):
@@ -123,6 +134,9 @@ def cell_records(batch, payload, response, metadata):
                 # promote a model zero into a documented real local coincidence.
                 status = "zero_model_duration_requires_local_review"
                 usable = None
+                if (bfs, access) in APPROVED_ZERO_PAIRS and original_s == original_d:
+                    status = "verified_same_tp_stop_zero"
+                    usable = 0
             engine = response.get("metadata", {}).get("engine", {})
             records.append(dict(municipality_bfs_id=bfs, access_point_id=access,
                 direction=batch["direction"], route_status=status,
@@ -159,9 +173,9 @@ def build_outputs(origins, arrivals, records):
     arrival_fields = ["access_point_id", "station_group_id", "road_arrival_status", "road_arrival_source_id",
                       "road_arrival_coordinate_source_id", "winter_access_status", "final_walk_minutes"]
     frame = frame.merge(origins[origin_fields], validate="many_to_one").merge(arrivals[arrival_fields], validate="many_to_one")
-    ready = frame.road_origin_status.eq("verified_documented_administrative_centre") & frame.road_arrival_status.eq("verified_documented_road_arrival")
+    ready = frame.road_origin_status.eq(ORIGIN_READY) & frame.road_arrival_status.eq(ARRIVAL_READY)
     frame["route_status"] = frame.route_status.fillna(ready.map({True: "verified_endpoints_not_yet_queried", False: "endpoint_evidence_pending"}))
-    frame["source_id"] = frame.source_id.fillna("DERIVED_ACCESSIBILITY_ROAD_REFERENCE_PREPARATION")
+    frame["source_id"] = frame.source_id.fillna(INVENTORY_SOURCE)
     keys = ["municipality_bfs_id", "access_point_id", "station_group_id"]
     pairs = frame[keys].drop_duplicates().copy()
     for direction in ("outbound", "return"):
@@ -170,15 +184,15 @@ def build_outputs(origins, arrivals, records):
     # Missing in either direction propagates; final walk is never silently zero.
     pairs["road_reference_minutes"] = (pairs.outbound_minutes + pairs.return_minutes) / 2
     pairs = pairs.merge(arrivals[["access_point_id", "winter_access_status", "final_walk_minutes"]], validate="many_to_one")
-    pairs["source_id"] = pairs.road_reference_minutes.notna().map({True: SOURCE, False: "DERIVED_ACCESSIBILITY_ROAD_REFERENCE_PREPARATION"})
+    pairs["source_id"] = pairs.road_reference_minutes.notna().map({True: SOURCE, False: INVENTORY_SOURCE})
     return dict(zip(TABLES, [frame, pairs]))
 
 
 def recover_completed(cache_folder, origins, arrivals, config):
     """Reuse prior cells even after adding endpoints: do not route them again."""
     records, successes = [], []
-    ready_m = set(origins.loc[origins.road_origin_status.eq("verified_documented_administrative_centre"), "municipality_bfs_id"])
-    ready_a = set(arrivals.loc[arrivals.road_arrival_status.eq("verified_documented_road_arrival"), "access_point_id"])
+    ready_m = set(origins.loc[origins.road_origin_status.eq(ORIGIN_READY), "municipality_bfs_id"])
+    ready_a = set(arrivals.loc[arrivals.road_arrival_status.eq(ARRIVAL_READY), "access_point_id"])
     for path in sorted(cache_folder.glob("*.json")):
         metadata = json.loads(path.read_text(encoding="utf-8"))
         batch = metadata["batch"]
@@ -217,7 +231,7 @@ def register(frames, manifest):
     source_path = ROOT / "metadata/data_sources_master.csv"
     sources = pd.read_csv(source_path, dtype=str, keep_default_na=False)
     row = dict(source_id=SOURCE, variable_name="static_directional_road_access",
-        variable_description="Fastest modelled driving-car matrix at independently documented endpoints, directions separate and averaged only if both usable",
+        variable_description="Fastest modelled driving-car matrix: " + MEASUREMENT_LABEL + "; directions separate and averaged only if both usable",
         source_organisation="HeiGIT / openrouteservice; OpenStreetMap contributors",
         source_dataset_name="ORS driving-car Matrix API, current graph snapshot",
         source_page_url="https://openrouteservice.org/dev/", api_endpoint=ENDPOINT,
@@ -225,18 +239,18 @@ def register(frames, manifest):
         retrieval_method="Authenticated POST, redirects disabled; key in Authorization only, never archived",
         retrieval_date="|".join(sorted({r["retrieval_date"] for r in manifest["successful_requests"]})),
         local_raw_file="|".join(r["raw_file"] for r in manifest["successful_requests"]),
-        processed_file="|".join(TABLES.values()), geographic_level="municipality administrative centre to lift-serving parking/drop-off",
+        processed_file="|".join(TABLES.values()), geographic_level=MEASUREMENT_LABEL,
         temporal_resolution="current static graph snapshot, not historical travel time", unit="seconds, minutes and metres",
         license="ORS terms and OpenStreetMap attribution; no account credentials redistributed",
         access_conditions="User-configured API credential; actual response quotas retained; no account/payment changes",
         transformation_applied="Seconds/60; (outbound+return)/2 only when both usable; no imputation or threshold/exposure change",
-        quality_notes="No congestion; winter restrictions and final walk separately unresolved; snapped coordinates retained. Distinct-point model zeros require review, not real zero access. Pending endpoints retained. Current graph cannot establish past access.",
+        quality_notes="No congestion; winter restrictions and final walk separately unresolved; snapped coordinates retained. Distinct-point model zeros require review, not real zero access. Pending endpoints retained. Current graph cannot establish past access. Approved same-stop zero pairs: " + str(len(APPROVED_ZERO_PAIRS)),
         confidence_level="modelled service result, not observed individual travel time",
-        manual_verification="Approved endpoints and static metric; reviewed endpoint evidence configuration",
+        manual_verification="Approved endpoints and static metric: " + MEASUREMENT_LABEL,
         notes="Request IDs, engine/graph versions, safe quota headers and response SHA-256: " + SUMMARY)
     if manifest["successful_requests"]:
         sources = sources[sources.source_id.ne(SOURCE)]
-        pd.concat([sources, pd.DataFrame([row]).reindex(columns=SOURCE_COLUMNS)], ignore_index=True).fillna("").to_csv(source_path, index=False, lineterminator="\n")
+        write_csv(pd.concat([sources, pd.DataFrame([row]).reindex(columns=SOURCE_COLUMNS)], ignore_index=True).fillna(""), source_path)
     path = ROOT / "metadata/data_dictionary.csv"
     dictionary = pd.read_csv(path, dtype=str, keep_default_na=False)
     descriptions = {
@@ -265,6 +279,12 @@ def register(frames, manifest):
         "source_id": "Provenance: model API result or unqueried endpoint inventory",
     }
     prior = dictionary[dictionary.table.isin(OUTPUTS)]
+    descriptions["outbound_minutes"] = "Usable driving time in minutes: " + MEASUREMENT_LABEL
+    descriptions["return_minutes"] = "Usable independent reverse driving time in minutes: " + MEASUREMENT_LABEL
+    descriptions["direction"] = "Outward or independent reverse direction: " + MEASUREMENT_LABEL
+    if APPROVED_ZERO_PAIRS:
+        descriptions["usable_duration_minutes"] = "Seconds/60; model zero usable only for explicitly approved same-stop pairs with identical requested coordinates; distinct-point snapping collapse remains missing"
+        descriptions["route_status"] = "Positive route, explicitly approved same-stop zero, no route, unvalidated model zero or pending; no automatic commune exclusion"
     rows = []
     for table, frame in frames.items():
         for field in frame:
@@ -279,18 +299,19 @@ def register(frames, manifest):
             missing = frame[field].isna() | frame[field].astype(str).eq("")
             rows.append(dict(variable=field, table=table, description=description, unit=unit,
                 data_type=str(frame[field].dtype), geographic_level="territory–access-point, direction where applicable",
-                temporal_level="current static graph snapshot", source_id=SOURCE if manifest["successful_requests"] else "DERIVED_ACCESSIBILITY_ROAD_REFERENCE_PREPARATION",
+                temporal_level="current static graph snapshot", source_id=SOURCE if manifest["successful_requests"] else INVENTORY_SOURCE,
                 raw_or_derived="derived", formula="Exact service observation and endpoint lineage; mean only if both directions usable",
                 causal_role="access measurement under construction, not canonical exposure",
                 missing_share=f"{missing.mean():.6f}", notes="No municipality removed; unresolved winter/walk retained; no time imputation or live congestion."))
     dictionary = dictionary[~dictionary.table.isin(TABLES)]
-    pd.concat([dictionary, pd.DataFrame(rows).reindex(columns=DICTIONARY_COLUMNS)], ignore_index=True).fillna("").to_csv(path, index=False, lineterminator="\n")
+    write_csv(pd.concat([dictionary, pd.DataFrame(rows).reindex(columns=DICTIONARY_COLUMNS)], ignore_index=True).fillna(""), path)
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--max-new-batches", type=int, default=2)
+    parser.add_argument("--recover-publication", action="store_true", help="Recover an interrupted export only if edited outputs exactly reconstruct from validated cached responses")
     args = parser.parse_args()
     if args.max_new_batches < 1:
         parser.error("max-new-batches must be positive")
@@ -298,20 +319,28 @@ def main():
     if config["api_endpoint"] != ENDPOINT:
         raise ValueError("Deprecated/unapproved endpoint; no request sent")
     protected = {p: sha(p) for p in PROTECTED}
+    interrupted_outputs = {}
     if (ROOT / SUMMARY).exists():
         previous = json.loads((ROOT / SUMMARY).read_text(encoding="utf-8"))
         for path, value in previous.get("output_sha256", {}).items():
             if sha(path) != value:
-                raise ValueError("Derived output edited; preserve before regeneration: " + path)
-    origins = pd.read_csv(ROOT / OUTPUTS["accessibility_road_origin_review"])
-    arrivals = pd.read_csv(ROOT / OUTPUTS["accessibility_road_station_arrival_review"])
-    m = sorted(origins.loc[origins.road_origin_status.eq("verified_documented_administrative_centre"), "municipality_bfs_id"].astype(int))
-    a = sorted(arrivals.loc[arrivals.road_arrival_status.eq("verified_documented_road_arrival"), "access_point_id"])
+                if not args.recover_publication:
+                    raise ValueError("Derived output edited; preserve before regeneration: " + path)
+                if any(sha(p) != v for p, v in previous["input_sha256"].items()):
+                    raise ValueError("Cannot recover publication with changed inputs")
+                interrupted_outputs[path] = sha(path)
+    if interrupted_outputs and args.execute:
+        raise ValueError("Recover publication from cache without --execute first; no network recovery")
+    origin_path, arrival_path = OUTPUTS.values()
+    origins = pd.read_csv(ROOT / origin_path)
+    arrivals = pd.read_csv(ROOT / arrival_path)
+    m = sorted(origins.loc[origins.road_origin_status.eq(ORIGIN_READY), "municipality_bfs_id"].astype(int))
+    a = sorted(arrivals.loc[arrivals.road_arrival_status.eq(ARRIVAL_READY), "access_point_id"])
     credential, credential_location = load_credential(config)
     if args.execute and not credential:
         raise ValueError("Credential absent; no request sent")
-    cache_folder = ROOT / "data_interim/accessibility_road_ors"
-    raw_folder = ROOT / "data_external/accessibility_road_ors"
+    cache_folder = ROOT / CACHE_DIRECTORY
+    raw_folder = ROOT / RAW_DIRECTORY
     cache_folder.mkdir(parents=True, exist_ok=True)
     raw_folder.mkdir(parents=True, exist_ok=True)
     # Exclusive lock prevents competing writers; unknown old lock is not removed.
@@ -378,23 +407,32 @@ def main():
             if args.execute:
                 time.sleep(1.5)  # Operational pacing, not a travel-time assumption.
         frames = build_outputs(origins, arrivals, records)
+        for table, frame in frames.items():
+            path = TABLES[table]
+            if path in interrupted_outputs:
+                reconstructed = hashlib.sha256(frame.to_csv(index=False, lineterminator="\n").encode("utf-8")).hexdigest()
+                if reconstructed != interrupted_outputs[path]:
+                    raise ValueError("Interrupted output is not exact validated-cache reconstruction; preserve user edit: " + path)
         manifest = dict(status=status, endpoint=ENDPOINT, provider="openrouteservice", credential_present=bool(credential),
             credential_location=credential_location, new_requests=new_requests, reused_successful_requests=reused,
             ready_origins=len(m), ready_arrivals=len(a), municipality_territories=len(origins), access_points=len(arrivals),
             directional_universe=2 * len(origins) * len(arrivals), successful_requests=successes, failures=failures,
             actual_directional_cells_returned=len(records), usable_directional_routes=int(frames[next(iter(TABLES))].usable_duration_minutes.notna().sum()),
-            pairs_with_both_directions=int(frames["accessibility_road_reference_pairs"].road_reference_minutes.notna().sum()),
+            pairs_with_both_directions=int(list(frames.values())[1].road_reference_minutes.notna().sum()),
+            measurement_label=MEASUREMENT_LABEL,
+            approved_same_stop_zero_pairs=sorted([list(pair) for pair in APPROVED_ZERO_PAIRS]),
             graph_versions=sorted({(r.get("graph_date", ""), r.get("engine_version", "")) for r in records}),
             full_endpoint_universe_complete=len(m) == len(origins) and len(a) == len(arrivals),
             endpoints_remaining={"origins": len(origins) - len(m), "arrivals": len(arrivals) - len(a)},
             canonical_outputs_changed=False, protected_legacy_sha256=protected,
-            input_sha256={p: sha(p) for p in [CONFIG, *OUTPUTS.values()]},
+            input_sha256={p: sha(p) for p in [CONFIG, *OUTPUTS.values(), *EXTRA_INPUTS]},
             collector_sha256=sha("src/data_collection/collect_accessibility_road_matrix.py"),
+            entry_point_sha256=sha(ENTRY_POINT),
             quota_note="No separate account quota endpoint used; first response reveals allowance headers, later requests check retained remaining quota. Missing headers mean unknown, not unlimited. 401/403/429 stop without retry.",
-            resume_command=".venv/Scripts/python.exe src/data_collection/collect_accessibility_road_matrix.py --execute --max-new-batches 2")
+            resume_command=RESUME_COMMAND)
         manifest["graph_version_difference_flag"] = len(manifest["graph_versions"]) > 1
         for table, frame in frames.items():
-            frame.to_csv(ROOT / TABLES[table], index=False, lineterminator="\n")
+            write_csv(frame, ROOT / TABLES[table])
         register(frames, manifest)
         if protected != {p: sha(p) for p in PROTECTED}:
             raise ValueError("Protected legacy changed")

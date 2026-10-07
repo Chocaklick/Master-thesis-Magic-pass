@@ -154,13 +154,24 @@ def apply_endpoint_evidence(frames):
         if evidence["coordinates_verified"]:
             metadata = archived_metadata(evidence["coordinate_source_id"])
             response = json.loads((ROOT / metadata["raw_file"]).read_text(encoding="utf-8"))
-            matches = [r["attrs"] for r in response["results"]
-                       if r["attrs"].get("featureId") == evidence["reviewed_feature_id"]
-                       and r["attrs"].get("detail") == evidence["expected_detail"]
-                       and r["attrs"].get("origin") == "address"]
-            if len(matches) != 1:
-                raise ValueError("Reviewed exact official address no longer matches one archived candidate")
-            latitude, longitude = matches[0]["lat"], matches[0]["lon"]
+            if evidence.get("coordinate_kind") == "official_main_building_arcgis_point":
+                if response.get("geometryType") != "esriGeometryPoint" or response.get("spatialReference", {}).get("wkid") != 4326:
+                    raise ValueError("Official main-building query must return WGS84 points, not a polygon")
+                matches = [r for r in response["features"] if r["attributes"].get("FOSNR") == evidence["municipality_bfs_id"]
+                    and r["attributes"].get("OBJECTID") == evidence["reviewed_object_id"]
+                    and r["attributes"].get("EGAID") == evidence["reviewed_egaid"]
+                    and r["attributes"].get("ADRESSE") == evidence["source_address_original"]]
+                if len(matches) != 1:
+                    raise ValueError("Reviewed main administration building no longer matches one official feature")
+                latitude, longitude = matches[0]["geometry"]["y"], matches[0]["geometry"]["x"]
+            else:
+                matches = [r["attrs"] for r in response["results"]
+                           if r["attrs"].get("featureId") == evidence["reviewed_feature_id"]
+                           and r["attrs"].get("detail") == evidence["expected_detail"]
+                           and r["attrs"].get("origin") == "address"]
+                if len(matches) != 1:
+                    raise ValueError("Reviewed exact official address no longer matches one archived candidate")
+                latitude, longitude = matches[0]["lat"], matches[0]["lon"]
             if not np.isfinite([latitude, longitude]).all() or not (-90 <= latitude <= 90 and -180 <= longitude <= 180):
                 raise ValueError("Invalid documented WGS84 coordinates")
             origins.loc[chosen, ["road_origin_latitude", "road_origin_longitude"]] = [latitude, longitude]
