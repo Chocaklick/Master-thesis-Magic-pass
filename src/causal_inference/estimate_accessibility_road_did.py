@@ -165,7 +165,7 @@ def plot(dynamic):
 
 def make_report(summaries, dynamic, inventory, support):
     lines = ['# DiD avec référence automobile', '', '7 octobre 2026. **30 minutes au principal ;15 et45 minutes en sensibilité**, seuils validés. Même estimateur et paramètres que les tests précédents, nouvelles dates d’exposition et nouveaux témoins. Les résultats TP et la première matrice automobile restent intacts.', '',
-        '## Couverture et correction', '', 'Le point communal de Lauterbrunnen est désormais l’arrêt officiel **Lauterbrunnen8507384**, et non Grütschalp8507378. Six nouvelles matrices mesurent150 directions/75 couples ; les autres184 communes réutilisent leurs observations. Les trois zéros locaux approuvés restent utilisables ; le zéro distinct-point Saas-Fee reste manquant. Aucun arrêt de station ni groupe n’est modifié.', '',
+        '## Couverture et corrections', '', 'Le point communal de Lauterbrunnen est désormais l’arrêt officiel **Lauterbrunnen8507384**, et non Grütschalp8507378. Six matrices mesurent150 directions/75 couples ; les autres184 communes réutilisent leurs observations. **Saas-Fee : arrivée automobile Parkplatz Nord8511180 validée**, origine Busterminal inchangée. Les185 communes ont un trajet recalculé vers ce seul accès ; les deux directions locales du probe exact sont réutilisées. Les autres74 accès et les71 groupes restent inchangés. Les trois zéros locaux déjà approuvés restent utilisables, aucun nouveau zéro n’est inventé.', '',
         '| Seuil | Exposées dans l’inventaire | Calibration/référence disponibles | Mois postérieurs effectivement utilisés |', '|---:|---:|---:|---:|']
     for t in [15, 30, 45]:
         s = summaries[str(t)]
@@ -189,19 +189,20 @@ def make_report(summaries, dynamic, inventory, support):
         '## Méthode, sources et limites', '',
         'Accessibilité : moyenne aller/retour automobile statique, puis accès le plus rapide disponible de chaque groupe et seuil inclusif. Exposition : première entrée historique d’un groupe accessible ; réseau complet conservé avec les sorties documentées selon la convention existante. Chaque seuil reconstruit ses cohortes et ses témoins, sans zone tampon ou filtre géographique nouveau.', '',
         'Calcul : changements depuis−1 chez les exposées moins ceux des témoins jamais/pas encore exposés ; ces derniers cessent de contribuer à leur première entrée. Correction saisonnière estimée sur les36 mois précédents, pente soustraite uniquement en sensibilité. Pondérations égales par territoire, pondération dynamique par effectifs traités observés. Bootstrap multiplicateur territorial4 999 tirages, graine20261005, mêmes paramètres qu’avant. Bandes simultanées par courbe/variante, pas conjointement entre seuils.', '',
-        'Sources déjà enregistrées : HESTA OFS, historique officiel Magic Pass, BAV/OFT et matrices HeiGIT/OpenStreetMap archivées. Décision et fichiers : `config/accessibility_road_did_execution.json`, `accessibility_road_stop_corrected_collection_summary.json`, sources/dictionnaire metadata. La comparaison avec le point TP d’origine n’est plus à extrémité identique pour Lauterbrunnen, exception explicitement validée. Raccordement au réseau dans les tables `accessibility_road_stop_corrected_snapping_*` ; grand raccordement, lieux sans voitures et restrictions hivernales restent signalés sans exclusion.', '',
+        'Sources déjà enregistrées : HESTA OFS, historique officiel Magic Pass, BAV/OFT et matrices HeiGIT/OpenStreetMap archivées. Décision et fichiers : `config/accessibility_road_did_final_execution.json`, `accessibility_road_final_collection_summary.json`, sources/dictionnaire metadata. La comparaison avec les TP d’origine n’est plus à extrémités identiques pour les deux exceptions validées Lauterbrunnen/Saas-Fee. Raccordement au réseau dans les tables `accessibility_road_final_snapping_*` ; grand raccordement, lieux sans voitures et restrictions hivernales restent signalés sans exclusion. Busterminal de Saas-Fee : raccordement300,78m ; Parkplatz Nord :62,29m ; parcours final vers les remontées distinct et non chiffré.', '',
         'Le réseau routier2026 est tenu fixe historiquement. Temps modélisés sans congestion, marche finale ou supplément neige/parking. Les communes au-delà du seuil ne sont pas certifiées sans retombées ; déplacer le seuil change à la fois les communes traitées, les dates et les témoins. Tendances préalables, chocs hôteliers/COVID et changements de composition limitent l’interprétation. Ce pipeline est un contraste Python spécifique au projet, pas l’exécution du package R did ni une certification causale.', '',
-        'Reprise : `.venv/Scripts/python.exe src/causal_inference/estimate_accessibility_road_did.py`. Résultats séparés par seuil (`accessibility_road_did_15min/30min/45min_*`), exposition mensuelle, inventaire, univers de témoins, figure et empreintes dans `accessibility_road_did_summary.json`. Les étapes achevées sont réutilisées si leurs entrées et sorties sont inchangées ; aucune collecte routière n’est relancée.', '']
+        'Reprise : `.venv/Scripts/python.exe src/causal_inference/estimate_accessibility_road_did.py --config config/accessibility_road_did_final_execution.json`. Résultats séparés par seuil (`accessibility_road_did_15min/30min/45min_*`), exposition mensuelle, inventaire, univers de témoins, figure et empreintes dans `accessibility_road_did_summary.json`. Les étapes achevées sont réutilisées si leurs entrées et sorties sont inchangées ; aucune collecte routière n’est relancée.', '']
     return '\n'.join(lines)
 
 
-def main():
-    config = json.loads((ROOT / CONFIG).read_text(encoding='utf-8'))
+def main(config_path=CONFIG):
+    config = json.loads((ROOT / config_path).read_text(encoding='utf-8'))
     execution = json.loads((ROOT / config['approved_estimator_execution']).read_text(encoding='utf-8'))
     parameters = json.loads((ROOT / config['approved_estimator_parameters']).read_text(encoding='utf-8'))['proposed_parameters_not_approved']
     if not execution['parameter_bundle_approved'] or config['principal_threshold_minutes'] != 30 or config['sensitivity_thresholds_minutes'] != [15, 45]:
         raise ValueError('Approved execution/thresholds differ')
-    collection = json.loads((ROOT / COLLECTION).read_text(encoding='utf-8'))
+    collection_path = config.get('collection_manifest', COLLECTION)
+    collection = json.loads((ROOT / collection_path).read_text(encoding='utf-8'))
     for p, value in {**collection['output_sha256'], **collection['input_sha256'], **collection['protected_legacy_sha256']}.items():
         if sha(p) != value:
             raise ValueError('Changed correction input/output/protected source: '+p)
@@ -210,7 +211,7 @@ def main():
     legacy = list((ROOT / 'reports').glob('accessibility_cohort_time_estimation_*.csv'))
     legacy += [ROOT / 'reports/accessibility_cohort_time_estimation_summary.json', ROOT / 'reports/82_ESTIMATION_COHORTES_MOIS_OPTION_A_FR.md']
     protected.update({p.relative_to(ROOT).as_posix(): sha(p.relative_to(ROOT).as_posix()) for p in legacy})
-    inputs = [CONFIG, COLLECTION, config['corrected_road_pairs'], config['outcome_panel'], GROUPS, HISTORY,
+    inputs = [config_path, collection_path, config['corrected_road_pairs'], config['outcome_panel'], GROUPS, HISTORY,
         config['approved_estimator_execution'], config['approved_estimator_parameters'], config['approved_comparison_rule'],
         config['historical_network_trajectory'], 'src/causal_inference/estimate_accessibility_cohort_time.py',
         'src/causal_inference/estimate_accessibility_road_did.py']
@@ -307,4 +308,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--config', default=CONFIG)
+    main(parser.parse_args().config)

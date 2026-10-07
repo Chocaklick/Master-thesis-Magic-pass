@@ -1,0 +1,43 @@
+{
+  "threshold_minutes": 15,
+  "exposed_territories": 30,
+  "calculable_exposed_territories": 28,
+  "inventory_observed_post_months": 2038,
+  "primary_observed_post_pairs": 1886,
+  "pre_months_calculable": 35,
+  "pre_months_simultaneous_excluding_zero": 0,
+  "post_months_calculable": 101,
+  "post_months_simultaneous_excluding_zero": 0,
+  "common_horizon_territories": {
+    "6": 28,
+    "12": 26,
+    "24": 22
+  },
+  "same_territories_all_horizons": 22,
+  "incomplete_history_ids": [
+    5892,
+    6253
+  ],
+  "input_sha256": {
+    "config/accessibility_road_did_final_execution.json": "1a99646a1acb53d79ae065fa63ef896c16256ad2513feb2953c1d3b4bd4a7a2c",
+    "reports/accessibility_road_final_collection_summary.json": "0d7582716fc534fda9931e451f728b2132fac46b5369d7bca4f8d88242231587",
+    "data_processed/accessibility_road_final_pairs.csv": "50b1c61bccdf75ceabb500deb8ef2e0786f2661a617e7636837bdfeb96b4775d",
+    "data_processed/accessibility_municipality_month_exposure_territorial.csv": "234a23ddb6c9065ab22ca2b5edc1e9d1132d281f9f3647523e63664b66658dea",
+    "data_processed/accessibility_station_groups.csv": "08040e0b7141679434eb8f4339d46ba24a77768ee07c6ab9fb98e989054987eb",
+    "data_processed/magic_pass_membership_history.csv": "99b46cf250586eb80d2df3ffe6b5375775419234853fb823b773be6bbc2e4588",
+    "config/accessibility_cohort_time_execution.json": "3a831d480c19fa92b4f5260c24824ab54c791e74e27a9c9f0badedafa61d9ac7",
+    "config/accessibility_cohort_time_estimator.json": "78a3e1e6243bf0372ce4d78fcc250bf5c94e1f45ff5b1ca2db2fffa93f1669a2",
+    "config/accessibility_cohort_comparison.json": "b2a24d3e07c16e006e8280354564448074c16ccf9ff91aa5a8eaaeddd8ef9509",
+    "config/accessibility_successive_entries.json": "e4bf5bdaaba459b397c378ded4b98e3aa6352af66f6e88c559e29d363b46d0e7",
+    "src/causal_inference/estimate_accessibility_cohort_time.py": "ae0fe1ebfc8bacceb6ee244e63f819c0f5f36c4026433c8d59e1eeb1db0509d7",
+    "src/causal_inference/estimate_accessibility_road_did.py": "5330fd747b08b56a361dd36208c78f0345cf8396011d452decf12fde95bfdc58"
+  },
+  "output_sha256": {
+    "reports/accessibility_road_did_15min_cohort_month.csv": "b7fa673be01ddb898d92fc2d9e9c91369d19641202351a738aa4aee0ef37c55f",
+    "reports/accessibility_road_did_15min_dynamic.csv": "0e682aaf767bbab15611c0a3b7f0b6bf3e7090340486f35e3df4ba078dd077cf",
+    "reports/accessibility_road_did_15min_calibration.csv": "4c7f4e98a9850d35a0d28665a7853ab1fe5aa94dd8038314fa4d57488881bdcb",
+    "reports/accessibility_road_did_15min_territory_support.csv": "27482e75cee5a177edcae8a28ff67ec1869d8d764d40380caa3beaa92986615b"
+  },
+  "estimation_executed": true,
+  "causal_certification": false
+}

@@ -1,0 +1,556 @@
+threshold_minutes,municipality_bfs_id,municipality_name,first_exposure_month,qualifying_group_count,observed_post_months,unusable_access_count,earliest_unknown_group_entry_month,exposure_assignment_status,source_id
+15,62,Kloten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,66,Opfikon,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,191,Dübendorf,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,198,Uster,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,230,Winterthur,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,261,Zürich,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,293,Wädenswil,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,295,Horgen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,329,Langenthal,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,351,Bern,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,355,Köniz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,371,Biel/Bienne,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,404,Burgdorf,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,561,Adelboden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,562,Aeschi bei Spiez,2022-05-01,2,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,565,Kandersteg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,567,Reichenbach im Kandertal,2022-05-01,3,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,571,Beatenberg,2022-05-01,1,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,573,Brienz (BE),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,576,Grindelwald,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,581,Interlaken,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,584,Lauterbrunnen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,587,Matten bei Interlaken,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,593,Unterseen,2022-05-01,2,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,594,Wilderswil,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,762,Diemtigen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,768,Spiez,2022-05-01,2,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,783,Hasliberg,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,784,Innertkirchen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,785,Meiringen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,792,Lenk,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,843,Saanen,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,902,Langnau im Emmental,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,906,Schangnau,2023-05-01,2,35,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,938,Sigriswil,2024-05-01,2,23,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,942,Thun,2024-05-01,1,23,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,979,Herzogenbuchsee,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1024,Emmen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1059,Kriens,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1061,Luzern,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1063,Meggen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1068,Vitznau,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1069,Weggis,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1103,Sursee,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1202,Andermatt,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1209,Gurtnellen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1301,Einsiedeln,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1321,Feusisberg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1322,Freienbach,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1331,Küssnacht (SZ),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1364,Ingenbohl,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1366,Morschach,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1372,Schwyz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1402,Engelberg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1406,Sachseln,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1407,Sarnen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1501,Beckenried,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1504,Emmetten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1630,Glarus Nord,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1631,Glarus Süd,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1709,Unterägeri,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,1711,Zug,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2121,Haut-Intyamon,2017-11-01,1,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2125,Bulle,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2135,Gruyères,2017-11-01,1,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2196,Fribourg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2275,Murten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2299,Plaffeien,2017-11-01,2,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2401,Egerkingen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2546,Grenchen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2581,Olten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2601,Solothurn,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2701,Basel,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2829,Liestal,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2831,Pratteln,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,2939,Schaffhausen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3002,Hundwil,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3022,Gais,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3024,Teufen (AR),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3032,Heiden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3101,Appenzell,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3102,Gonten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3203,St. Gallen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3216,Rorschacherberg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3251,Altstätten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3271,Buchs (SG),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3291,Bad Ragaz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3292,Flums,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3295,Quarten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3298,Walenstadt,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3311,Amden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3340,Rapperswil-Jona,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3342,Eschenbach (SG),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3359,Wildhaus-Alt St. Johann,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3396,Neckertal,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3408,Uzwil,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3427,Wil (SG),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3506,Vaz/Obervaz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3543,Surses,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3561,Poschiavo,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3575,Laax,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3603,Vals,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3618,Lumnezia,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3619,Ilanz/Glion,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3714,Rheinwald,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3732,Flims,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3746,Zernez,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3752,Samnaun,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3762,Scuol,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3782,Celerina/Schlarigna,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3784,Pontresina,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3786,Samedan,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3787,St. Moritz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3792,Bregaglia,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3847,Val Müstair,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3851,Davos,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3871,Klosters,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3901,Chur,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3921,Arosa,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3953,Maienfeld,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3981,Breil/Brigels,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,3986,Tujetsch,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,4001,Aarau,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,4021,Baden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,4201,Lenzburg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,4258,Rheinfelden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,4289,Zofingen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,4401,Arbon,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,4566,Frauenfeld,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,4671,Kreuzlingen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5002,Bellinzona,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5091,Ascona,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5113,Locarno,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5120,Muralto,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5192,Lugano,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5210,Paradiso,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5236,Collina d'Oro,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5238,Monteceneri,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5250,Chiasso,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5254,Mendrisio,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5407,Leysin,2017-11-01,1,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5409,Ollon,2017-11-01,1,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5411,Ormont-Dessus,2017-11-01,1,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5552,Bullet,2023-05-01,1,35,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5586,Lausanne,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5613,Bourg-en-Lavaux,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5642,Morges,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5724,Nyon,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5841,Château-d'Oex,2017-11-01,1,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5872,Le Chenit,2018-05-01,1,95,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5886,Montreux,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5890,Vevey,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5892,Blonay - Saint-Légier,2017-11-01,3,51,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,5938,Yverdon-les-Bains,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6002,Brig-Glis,2022-05-01,1,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6024,Nendaz,2017-11-01,1,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6034,Orsières,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6037,Val de Bagnes,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6077,Goms,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6083,Evolène,2018-05-01,2,93,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6111,Leukerbad,2019-05-01,1,83,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6136,Martigny,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6151,Champéry,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6217,Saint-Maurice,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6248,Sierre,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6252,Anniviers,2017-11-01,3,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6253,Crans-Montana,2017-11-01,1,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6266,Sion,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6290,Saas-Fee,2019-05-01,1,83,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6291,Saas-Grund,2019-05-01,1,83,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6297,Visp,2023-05-01,4,35,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6300,Zermatt,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6417,La Grande Béroche,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6421,La Chaux-de-Fonds,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6458,Neuchâtel,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6513,Laténa,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6621,Genève,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6628,Lancy,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6630,Meyrin,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6643,Vernier,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6711,Delémont,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6757,Saignelégier,2017-11-01,1,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6800,Porrentruy,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6808,Clos du Doubs,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+15,6831,Moutier (JU),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,62,Kloten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,66,Opfikon,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,191,Dübendorf,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,198,Uster,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,230,Winterthur,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,261,Zürich,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,293,Wädenswil,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,295,Horgen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,329,Langenthal,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,351,Bern,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,355,Köniz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,371,Biel/Bienne,2019-05-01,1,83,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,404,Burgdorf,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,561,Adelboden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,562,Aeschi bei Spiez,2022-05-01,3,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,565,Kandersteg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,567,Reichenbach im Kandertal,2022-05-01,3,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,571,Beatenberg,2022-05-01,2,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,573,Brienz (BE),2022-05-01,2,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,576,Grindelwald,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,581,Interlaken,2022-05-01,2,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,584,Lauterbrunnen,2022-05-01,1,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,587,Matten bei Interlaken,2022-05-01,4,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,593,Unterseen,2022-05-01,2,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,594,Wilderswil,2022-05-01,4,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,762,Diemtigen,2022-05-01,3,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,768,Spiez,2022-05-01,4,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,783,Hasliberg,2022-05-01,2,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,784,Innertkirchen,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,785,Meiringen,2022-05-01,2,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,792,Lenk,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,843,Saanen,2017-11-01,2,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,902,Langnau im Emmental,2023-05-01,1,35,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,906,Schangnau,2022-05-01,4,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,938,Sigriswil,2022-05-01,4,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,942,Thun,2022-05-01,7,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,979,Herzogenbuchsee,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1024,Emmen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1059,Kriens,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1061,Luzern,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1063,Meggen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1068,Vitznau,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1069,Weggis,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1103,Sursee,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1202,Andermatt,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1209,Gurtnellen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1301,Einsiedeln,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1321,Feusisberg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1322,Freienbach,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1331,Küssnacht (SZ),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1364,Ingenbohl,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1366,Morschach,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1372,Schwyz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1402,Engelberg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1406,Sachseln,2025-05-01,2,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1407,Sarnen,2025-05-01,2,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1501,Beckenried,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1504,Emmetten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1630,Glarus Nord,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1631,Glarus Süd,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1709,Unterägeri,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,1711,Zug,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2121,Haut-Intyamon,2017-11-01,4,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2125,Bulle,2017-11-01,5,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2135,Gruyères,2017-11-01,6,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2196,Fribourg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2275,Murten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2299,Plaffeien,2017-11-01,5,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2401,Egerkingen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2546,Grenchen,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2581,Olten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2601,Solothurn,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2701,Basel,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2829,Liestal,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2831,Pratteln,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,2939,Schaffhausen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3002,Hundwil,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3022,Gais,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3024,Teufen (AR),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3032,Heiden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3101,Appenzell,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3102,Gonten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3203,St. Gallen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3216,Rorschacherberg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3251,Altstätten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3271,Buchs (SG),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3291,Bad Ragaz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3292,Flums,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3295,Quarten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3298,Walenstadt,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3311,Amden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3340,Rapperswil-Jona,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3342,Eschenbach (SG),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3359,Wildhaus-Alt St. Johann,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3396,Neckertal,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3408,Uzwil,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3427,Wil (SG),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3506,Vaz/Obervaz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3543,Surses,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3561,Poschiavo,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3575,Laax,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3603,Vals,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3618,Lumnezia,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3619,Ilanz/Glion,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3714,Rheinwald,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3732,Flims,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3746,Zernez,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3752,Samnaun,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3762,Scuol,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3782,Celerina/Schlarigna,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3784,Pontresina,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3786,Samedan,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3787,St. Moritz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3792,Bregaglia,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3847,Val Müstair,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3851,Davos,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3871,Klosters,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3901,Chur,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3921,Arosa,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3953,Maienfeld,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3981,Breil/Brigels,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,3986,Tujetsch,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,4001,Aarau,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,4021,Baden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,4201,Lenzburg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,4258,Rheinfelden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,4289,Zofingen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,4401,Arbon,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,4566,Frauenfeld,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,4671,Kreuzlingen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5002,Bellinzona,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5091,Ascona,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5113,Locarno,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5120,Muralto,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5192,Lugano,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5210,Paradiso,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5236,Collina d'Oro,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5238,Monteceneri,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5250,Chiasso,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5254,Mendrisio,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5407,Leysin,2017-11-01,2,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5409,Ollon,2017-11-01,1,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5411,Ormont-Dessus,2017-11-01,3,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5552,Bullet,2020-05-01,2,70,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5586,Lausanne,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5613,Bourg-en-Lavaux,2017-11-01,3,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5642,Morges,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5724,Nyon,2024-05-01,2,23,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5841,Château-d'Oex,2017-11-01,3,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5872,Le Chenit,2018-05-01,2,95,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5886,Montreux,2017-11-01,4,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5890,Vevey,2017-11-01,4,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5892,Blonay - Saint-Légier,2017-11-01,4,51,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,5938,Yverdon-les-Bains,2023-05-01,1,35,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6002,Brig-Glis,2022-05-01,7,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6024,Nendaz,2017-11-01,3,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6034,Orsières,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6037,Val de Bagnes,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6077,Goms,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6083,Evolène,2018-05-01,3,93,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6111,Leukerbad,2019-05-01,1,83,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6136,Martigny,2017-11-01,2,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6151,Champéry,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6217,Saint-Maurice,2017-11-01,2,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6248,Sierre,2017-11-01,8,100,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6252,Anniviers,2017-11-01,4,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6253,Crans-Montana,2017-11-01,2,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6266,Sion,2017-11-01,4,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6290,Saas-Fee,2019-05-01,1,83,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6291,Saas-Grund,2019-05-01,2,83,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6297,Visp,2022-05-01,7,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6300,Zermatt,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6417,La Grande Béroche,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6421,La Chaux-de-Fonds,2017-11-01,2,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6458,Neuchâtel,2017-11-01,2,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6513,Laténa,2017-11-01,1,15,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6621,Genève,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6628,Lancy,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6630,Meyrin,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6643,Vernier,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6711,Delémont,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6757,Saignelégier,2017-11-01,1,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6800,Porrentruy,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6808,Clos du Doubs,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+30,6831,Moutier (JU),2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,62,Kloten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,66,Opfikon,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,191,Dübendorf,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,198,Uster,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,230,Winterthur,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,261,Zürich,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,293,Wädenswil,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,295,Horgen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,329,Langenthal,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,351,Bern,2022-05-01,8,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,355,Köniz,2023-05-01,6,35,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,371,Biel/Bienne,2017-11-01,4,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,404,Burgdorf,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,561,Adelboden,2022-05-01,3,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,562,Aeschi bei Spiez,2022-05-01,11,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,565,Kandersteg,2022-05-01,5,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,567,Reichenbach im Kandertal,2022-05-01,8,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,571,Beatenberg,2022-05-01,6,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,573,Brienz (BE),2022-05-01,4,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,576,Grindelwald,2022-05-01,2,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,581,Interlaken,2022-05-01,9,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,584,Lauterbrunnen,2022-05-01,5,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,587,Matten bei Interlaken,2022-05-01,9,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,593,Unterseen,2022-05-01,9,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,594,Wilderswil,2022-05-01,9,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,762,Diemtigen,2017-11-01,9,100,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,768,Spiez,2022-05-01,14,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,783,Hasliberg,2022-05-01,3,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,784,Innertkirchen,2022-05-01,2,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,785,Meiringen,2022-05-01,3,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,792,Lenk,2017-11-01,4,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,843,Saanen,2017-11-01,5,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,902,Langnau im Emmental,2022-05-01,4,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,906,Schangnau,2022-05-01,6,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,938,Sigriswil,2022-05-01,10,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,942,Thun,2022-05-01,14,47,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,979,Herzogenbuchsee,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1024,Emmen,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1059,Kriens,2025-05-01,2,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1061,Luzern,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1063,Meggen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1068,Vitznau,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1069,Weggis,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1103,Sursee,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1202,Andermatt,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1209,Gurtnellen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1301,Einsiedeln,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1321,Feusisberg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1322,Freienbach,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1331,Küssnacht (SZ),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1364,Ingenbohl,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1366,Morschach,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1372,Schwyz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1402,Engelberg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1406,Sachseln,2025-05-01,3,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1407,Sarnen,2025-05-01,3,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1501,Beckenried,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1504,Emmetten,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1630,Glarus Nord,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1631,Glarus Süd,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1709,Unterägeri,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,1711,Zug,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2121,Haut-Intyamon,2017-11-01,11,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2125,Bulle,2017-11-01,10,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2135,Gruyères,2017-11-01,11,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2196,Fribourg,2017-11-01,8,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2275,Murten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2299,Plaffeien,2017-11-01,7,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2401,Egerkingen,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2546,Grenchen,2017-11-01,4,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2581,Olten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2601,Solothurn,2017-11-01,4,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2701,Basel,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2829,Liestal,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2831,Pratteln,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,2939,Schaffhausen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3002,Hundwil,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3022,Gais,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3024,Teufen (AR),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3032,Heiden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3101,Appenzell,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3102,Gonten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3203,St. Gallen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3216,Rorschacherberg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3251,Altstätten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3271,Buchs (SG),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3291,Bad Ragaz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3292,Flums,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3295,Quarten,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3298,Walenstadt,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3311,Amden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3340,Rapperswil-Jona,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3342,Eschenbach (SG),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3359,Wildhaus-Alt St. Johann,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3396,Neckertal,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3408,Uzwil,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3427,Wil (SG),,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3506,Vaz/Obervaz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3543,Surses,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3561,Poschiavo,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3575,Laax,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3603,Vals,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3618,Lumnezia,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3619,Ilanz/Glion,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3714,Rheinwald,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3732,Flims,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3746,Zernez,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3752,Samnaun,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3762,Scuol,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3782,Celerina/Schlarigna,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3784,Pontresina,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3786,Samedan,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3787,St. Moritz,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3792,Bregaglia,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3847,Val Müstair,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3851,Davos,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3871,Klosters,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3901,Chur,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3921,Arosa,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3953,Maienfeld,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3981,Breil/Brigels,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,3986,Tujetsch,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,4001,Aarau,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,4021,Baden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,4201,Lenzburg,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,4258,Rheinfelden,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,4289,Zofingen,2025-05-01,1,11,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,4401,Arbon,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,4566,Frauenfeld,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,4671,Kreuzlingen,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5002,Bellinzona,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5091,Ascona,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5113,Locarno,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5120,Muralto,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5192,Lugano,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5210,Paradiso,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5236,Collina d'Oro,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5238,Monteceneri,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5250,Chiasso,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5254,Mendrisio,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5407,Leysin,2017-11-01,3,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5409,Ollon,2017-11-01,4,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5411,Ormont-Dessus,2017-11-01,4,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5552,Bullet,2020-05-01,2,70,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5586,Lausanne,2017-11-01,5,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5613,Bourg-en-Lavaux,2017-11-01,4,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5642,Morges,2017-11-01,7,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5724,Nyon,2024-05-01,2,23,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5841,Château-d'Oex,2017-11-01,6,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5872,Le Chenit,2018-05-01,3,95,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5886,Montreux,2017-11-01,7,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5890,Vevey,2017-11-01,9,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5892,Blonay - Saint-Légier,2017-11-01,9,51,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,5938,Yverdon-les-Bains,2020-05-01,2,70,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6002,Brig-Glis,2019-05-01,9,83,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6024,Nendaz,2017-11-01,12,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6034,Orsières,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6037,Val de Bagnes,2017-11-01,1,63,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6077,Goms,,0,0,0,,no_known_threshold_exposure,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6083,Evolène,2017-11-01,4,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6111,Leukerbad,2017-11-01,3,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6136,Martigny,2017-11-01,11,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6151,Champéry,2017-11-01,1,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6217,Saint-Maurice,2017-11-01,10,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6248,Sierre,2017-11-01,16,100,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6252,Anniviers,2017-11-01,8,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6253,Crans-Montana,2017-11-01,5,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6266,Sion,2017-11-01,12,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6290,Saas-Fee,2019-05-01,3,83,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6291,Saas-Grund,2019-05-01,5,83,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6297,Visp,2019-05-01,10,83,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6300,Zermatt,2023-05-01,1,35,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6417,La Grande Béroche,2017-11-01,4,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6421,La Chaux-de-Fonds,2017-11-01,3,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6458,Neuchâtel,2017-11-01,2,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6513,Laténa,2017-11-01,3,15,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6621,Genève,2024-05-01,2,23,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6628,Lancy,2024-05-01,2,23,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6630,Meyrin,2024-05-01,2,23,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6643,Vernier,2024-05-01,2,23,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6711,Delémont,2017-11-01,3,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6757,Saignelégier,2017-11-01,4,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6800,Porrentruy,2017-11-01,1,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6808,Clos du Doubs,2017-11-01,1,101,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026
+45,6831,Moutier (JU),2017-11-01,3,99,0,,known_exposed_candidate,DERIVED_ACCESSIBILITY_ROAD_DID_2026

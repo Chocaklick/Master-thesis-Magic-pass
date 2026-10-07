@@ -1,0 +1,22 @@
+{
+  "specification_version": "stage38_approved_saasfee_arrival_and_road_did_2026_10_07",
+  "approval_date": "2026-10-07",
+  "approval_user_text": "oui tout bon",
+  "approval_context": "Validate Parkplatz Nord as Saas-Fee station automobile arrival, retain Busterminal origin and document300m snap/final walk separately, then run approved road DiD",
+  "endpoint_proposal": "config/accessibility_saas_fee_road_endpoint_proposal.json",
+  "principal_threshold_minutes": 30,
+  "sensitivity_thresholds_minutes": [15, 45],
+  "group_access_rule": "minimum usable bidirectional mean among unchanged access nodes; inclusive threshold",
+  "approved_estimator_execution": "config/accessibility_cohort_time_execution.json",
+  "approved_estimator_parameters": "config/accessibility_cohort_time_estimator.json",
+  "approved_comparison_rule": "config/accessibility_cohort_comparison.json",
+  "historical_network_trajectory": "config/accessibility_successive_entries.json",
+  "outcome_panel": "data_processed/accessibility_municipality_month_exposure_territorial.csv",
+  "corrected_road_pairs": "data_processed/accessibility_road_final_pairs.csv",
+  "collection_manifest": "reports/accessibility_road_final_collection_summary.json",
+  "measurement_label": "arrêt communal → accès automobile de station; Lauterbrunnen and Saas-Fee exceptions approved",
+  "old_results_policy": "Original TP, original road and Lauterbrunnen-only road outputs remain immutable",
+  "buffer_rule": "none selected, possible donor spillovers remain a limitation",
+  "winter_or_snap_filter": "none, warnings retained without automatic exclusion",
+  "causal_certification": false
+}
