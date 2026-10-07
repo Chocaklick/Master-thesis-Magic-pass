@@ -1,0 +1,1248 @@
+{
+  "status": "available_verified_endpoints_completed",
+  "endpoint": "https://api.heigit.org/openrouteservice/v2/matrix/driving-car",
+  "provider": "openrouteservice",
+  "credential_present": true,
+  "credential_location": "Windows current-user environment",
+  "new_requests": 6,
+  "reused_successful_requests": 0,
+  "ready_origins": 1,
+  "ready_arrivals": 75,
+  "municipality_territories": 1,
+  "access_points": 75,
+  "directional_universe": 150,
+  "successful_requests": [
+    {
+      "request_id": "dec717737c3b001b32a049c6ecc5e124e423c13d1ac6d9e0fd1308060282eb31",
+      "endpoint": "https://api.heigit.org/openrouteservice/v2/matrix/driving-car",
+      "batch": {
+        "batch_id": "outbound_0000_0000",
+        "direction": "outbound",
+        "municipality_bfs_ids": [
+          584
+        ],
+        "access_point_ids": [
+          "ACCESS_BAV__8530674",
+          "ACCESS_MAGIC_CURRENT__117",
+          "ACCESS_MAGIC_CURRENT__118",
+          "ACCESS_MAGIC_CURRENT__12",
+          "ACCESS_MAGIC_CURRENT__14",
+          "ACCESS_MAGIC_CURRENT__17",
+          "ACCESS_MAGIC_CURRENT__1795",
+          "ACCESS_MAGIC_CURRENT__1796",
+          "ACCESS_MAGIC_CURRENT__1797",
+          "ACCESS_MAGIC_CURRENT__1798",
+          "ACCESS_MAGIC_CURRENT__1799",
+          "ACCESS_MAGIC_CURRENT__18",
+          "ACCESS_MAGIC_CURRENT__1800",
+          "ACCESS_MAGIC_CURRENT__1801",
+          "ACCESS_MAGIC_CURRENT__1802",
+          "ACCESS_MAGIC_CURRENT__1803",
+          "ACCESS_MAGIC_CURRENT__1804",
+          "ACCESS_MAGIC_CURRENT__1805",
+          "ACCESS_MAGIC_CURRENT__19",
+          "ACCESS_MAGIC_CURRENT__20",
+          "ACCESS_MAGIC_CURRENT__22",
+          "ACCESS_MAGIC_CURRENT__23",
+          "ACCESS_MAGIC_CURRENT__24",
+          "ACCESS_MAGIC_CURRENT__25",
+          "ACCESS_MAGIC_CURRENT__26"
+        ],
+        "requested_cells": 25
+      },
+      "payload": {
+        "locations": [
+          [
+            7.90809041529649,
+            46.5984340011305
+          ],
+          [
+            7.132409985838166,
+            46.474484263565856
+          ],
+          [
+            7.52017010545874,
+            46.085946519397865
+          ],
+          [
+            7.481595841263234,
+            46.02181169788984
+          ],
+          [
+            7.007199471936996,
+            47.1273809464745
+          ],
+          [
+            7.167338457112328,
+            46.618134810652926
+          ],
+          [
+            6.981367503500753,
+            47.09351343691946
+          ],
+          [
+            7.6807966258147555,
+            46.825236217408815
+          ],
+          [
+            7.765690888484108,
+            46.69064159879455
+          ],
+          [
+            7.825839952547531,
+            46.785716481153166
+          ],
+          [
+            7.863345625756319,
+            46.723990797209375
+          ],
+          [
+            7.809613822254249,
+            46.70372192998872
+          ],
+          [
+            7.609585299967327,
+            46.16681613336349
+          ],
+          [
+            8.037592579644752,
+            46.71873009014092
+          ],
+          [
+            7.435489095846292,
+            46.656133703666825
+          ],
+          [
+            7.337550324401884,
+            46.5914460580952
+          ],
+          [
+            8.025482037848361,
+            46.31320682550258
+          ],
+          [
+            7.724087843465519,
+            46.64500162163999
+          ],
+          [
+            7.724087843465519,
+            46.64500162163999
+          ],
+          [
+            7.287612224482771,
+            46.61022702209947
+          ],
+          [
+            7.1553172725419705,
+            46.6870925060384
+          ],
+          [
+            7.1558349268218375,
+            46.34756221375422
+          ],
+          [
+            7.008409400665352,
+            46.1119483871487
+          ],
+          [
+            7.101355755799355,
+            46.39732975852564
+          ],
+          [
+            6.944667884613811,
+            46.52255093605135
+          ],
+          [
+            7.0173026543058405,
+            46.346464564114825
+          ]
+        ],
+        "sources": [
+          "0"
+        ],
+        "destinations": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25"
+        ],
+        "metrics": [
+          "duration",
+          "distance"
+        ],
+        "units": "m",
+        "resolve_locations": true
+      },
+      "retrieval_date": "2026-10-07T15:19:28.125579+00:00",
+      "http_status": 200,
+      "safe_response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "x-ratelimit-limit": "500",
+        "x-ratelimit-remaining": "449",
+        "x-ratelimit-reset": "1791463167"
+      },
+      "network_error_type": null,
+      "raw_file": "data_external/accessibility_road_lauterbrunnen_ors/dec717737c3b001b32a049c6ecc5e124e423c13d1ac6d9e0fd1308060282eb31_20261007T151928125579Z.json",
+      "raw_sha256": "86eb94754a2fcb6fbb15c2004374ac668a6198c951a447d75476671a5aa65a05",
+      "status": "success"
+    },
+    {
+      "request_id": "9df6fb74d9dd887ea8e32d5df96eae649a12cfee420fedc57a8bdeda9841adeb",
+      "endpoint": "https://api.heigit.org/openrouteservice/v2/matrix/driving-car",
+      "batch": {
+        "batch_id": "outbound_0000_0025",
+        "direction": "outbound",
+        "municipality_bfs_ids": [
+          584
+        ],
+        "access_point_ids": [
+          "ACCESS_MAGIC_CURRENT__27",
+          "ACCESS_MAGIC_CURRENT__2765",
+          "ACCESS_MAGIC_CURRENT__2766",
+          "ACCESS_MAGIC_CURRENT__2767",
+          "ACCESS_MAGIC_CURRENT__2768",
+          "ACCESS_MAGIC_CURRENT__2769",
+          "ACCESS_MAGIC_CURRENT__2770",
+          "ACCESS_MAGIC_CURRENT__2772",
+          "ACCESS_MAGIC_CURRENT__2773",
+          "ACCESS_MAGIC_CURRENT__2774",
+          "ACCESS_MAGIC_CURRENT__2775",
+          "ACCESS_MAGIC_CURRENT__2776",
+          "ACCESS_MAGIC_CURRENT__2777",
+          "ACCESS_MAGIC_CURRENT__2778",
+          "ACCESS_MAGIC_CURRENT__2779",
+          "ACCESS_MAGIC_CURRENT__2780",
+          "ACCESS_MAGIC_CURRENT__28",
+          "ACCESS_MAGIC_CURRENT__29",
+          "ACCESS_MAGIC_CURRENT__30",
+          "ACCESS_MAGIC_CURRENT__31",
+          "ACCESS_MAGIC_CURRENT__32",
+          "ACCESS_MAGIC_CURRENT__33",
+          "ACCESS_MAGIC_CURRENT__34",
+          "ACCESS_MAGIC_CURRENT__35",
+          "ACCESS_MAGIC_CURRENT__3587"
+        ],
+        "requested_cells": 25
+      },
+      "payload": {
+        "locations": [
+          [
+            7.90809041529649,
+            46.5984340011305
+          ],
+          [
+            7.30506698061893,
+            46.25267309615217
+          ],
+          [
+            7.893681530670981,
+            46.81419846180424
+          ],
+          [
+            7.794758067811564,
+            46.30439706552697
+          ],
+          [
+            7.441357304654862,
+            46.72646048893918
+          ],
+          [
+            7.876769318850672,
+            46.23068650068853
+          ],
+          [
+            7.443243350501307,
+            46.76068809125025
+          ],
+          [
+            7.724589214097714,
+            46.58656491106076
+          ],
+          [
+            6.538813781849916,
+            46.828991914014615
+          ],
+          [
+            7.895454816921385,
+            46.85029930272611
+          ],
+          [
+            7.827952761346578,
+            46.27059896619577
+          ],
+          [
+            7.351942614005469,
+            46.71243886771705
+          ],
+          [
+            7.352102129076835,
+            46.7672842398738
+          ],
+          [
+            7.443243350501307,
+            46.76068809125025
+          ],
+          [
+            7.385792990524517,
+            46.74723629683576
+          ],
+          [
+            7.814367295207271,
+            46.28508295006609
+          ],
+          [
+            7.902901824930622,
+            46.25811836884501
+          ],
+          [
+            7.03814805866063,
+            46.56128647747146
+          ],
+          [
+            7.46345966657111,
+            46.24228872715404
+          ],
+          [
+            7.16102444462105,
+            46.20452599312026
+          ],
+          [
+            6.959531891395372,
+            46.51880952240378
+          ],
+          [
+            7.288252494149106,
+            46.670578989727055
+          ],
+          [
+            7.595408943493673,
+            46.22134094260154
+          ],
+          [
+            7.081759324455367,
+            47.22349541080919
+          ],
+          [
+            7.534113173784679,
+            46.25402695502751
+          ],
+          [
+            7.729104547325863,
+            46.74018886243515
+          ]
+        ],
+        "sources": [
+          "0"
+        ],
+        "destinations": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25"
+        ],
+        "metrics": [
+          "duration",
+          "distance"
+        ],
+        "units": "m",
+        "resolve_locations": true
+      },
+      "retrieval_date": "2026-10-07T15:19:29.983534+00:00",
+      "http_status": 200,
+      "safe_response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "x-ratelimit-limit": "500",
+        "x-ratelimit-remaining": "448",
+        "x-ratelimit-reset": "1791463167"
+      },
+      "network_error_type": null,
+      "raw_file": "data_external/accessibility_road_lauterbrunnen_ors/9df6fb74d9dd887ea8e32d5df96eae649a12cfee420fedc57a8bdeda9841adeb_20261007T151929983534Z.json",
+      "raw_sha256": "4577de3f56e7ac91bde364658e7891cfe51ff14dafb343247a6a577d7d58848f",
+      "status": "success"
+    },
+    {
+      "request_id": "297936856f67f288e6f47c1a0392d92f37725add293e6bfd4466c4049458efe3",
+      "endpoint": "https://api.heigit.org/openrouteservice/v2/matrix/driving-car",
+      "batch": {
+        "batch_id": "outbound_0000_0050",
+        "direction": "outbound",
+        "municipality_bfs_ids": [
+          584
+        ],
+        "access_point_ids": [
+          "ACCESS_MAGIC_CURRENT__3588",
+          "ACCESS_MAGIC_CURRENT__3589",
+          "ACCESS_MAGIC_CURRENT__3608",
+          "ACCESS_MAGIC_CURRENT__3611",
+          "ACCESS_MAGIC_CURRENT__37",
+          "ACCESS_MAGIC_CURRENT__4",
+          "ACCESS_MAGIC_CURRENT__4444",
+          "ACCESS_MAGIC_CURRENT__4445",
+          "ACCESS_MAGIC_CURRENT__4446",
+          "ACCESS_MAGIC_CURRENT__4447",
+          "ACCESS_MAGIC_CURRENT__4449",
+          "ACCESS_MAGIC_CURRENT__4451",
+          "ACCESS_MAGIC_CURRENT__4452",
+          "ACCESS_MAGIC_CURRENT__4453",
+          "ACCESS_MAGIC_CURRENT__4455",
+          "ACCESS_MAGIC_CURRENT__600",
+          "ACCESS_MAGIC_CURRENT__601",
+          "ACCESS_MAGIC_CURRENT__602",
+          "ACCESS_MAGIC_CURRENT__87",
+          "ACCESS_MAGIC_CURRENT__88",
+          "ACCESS_MAGIC_CURRENT__89",
+          "ACCESS_MAGIC_CURRENT__90",
+          "ACCESS_MAGIC_CURRENT__937",
+          "ACCESS_RESORT__crans_montana_crans_montana",
+          "ACCESS_RESORT__lauchernalp_lotschental"
+        ],
+        "requested_cells": 25
+      },
+      "payload": {
+        "locations": [
+          [
+            7.90809041529649,
+            46.5984340011305
+          ],
+          [
+            7.729104547325863,
+            46.74018886243515
+          ],
+          [
+            7.680328613125439,
+            46.77335161246423
+          ],
+          [
+            6.1114383668699634,
+            46.45460341135921
+          ],
+          [
+            6.160356779951057,
+            46.4486069503464
+          ],
+          [
+            7.0550057911912605,
+            46.303419409044544
+          ],
+          [
+            7.394663273408565,
+            46.29464578478979
+          ],
+          [
+            7.539800089153913,
+            47.26413297816708
+          ],
+          [
+            7.983698603284117,
+            46.35920433764522
+          ],
+          [
+            7.381104002071785,
+            47.22128447515576
+          ],
+          [
+            7.2830386477320035,
+            46.46775743345879
+          ],
+          [
+            7.677488257413923,
+            46.84764164196512
+          ],
+          [
+            8.195142102187608,
+            46.74492627002253
+          ],
+          [
+            8.279229131417411,
+            46.80242491078994
+          ],
+          [
+            8.113762751920772,
+            46.825885148528734
+          ],
+          [
+            8.034610020146634,
+            46.82181809670109
+          ],
+          [
+            7.927495162040456,
+            46.10537498717688
+          ],
+          [
+            7.171773460691825,
+            47.1508464292937
+          ],
+          [
+            7.626408956223264,
+            46.37978813056533
+          ],
+          [
+            6.2314207104689086,
+            46.60579321669085
+          ],
+          [
+            7.4878273929828785,
+            46.11816900143672
+          ],
+          [
+            6.909942195596251,
+            46.483361497753016
+          ],
+          [
+            6.965124348058344,
+            46.4546661695133
+          ],
+          [
+            6.55292249478724,
+            46.88832217556512
+          ],
+          [
+            7.492551202132988,
+            46.32027981621231
+          ],
+          [
+            7.777958629408414,
+            46.40180013410988
+          ]
+        ],
+        "sources": [
+          "0"
+        ],
+        "destinations": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25"
+        ],
+        "metrics": [
+          "duration",
+          "distance"
+        ],
+        "units": "m",
+        "resolve_locations": true
+      },
+      "retrieval_date": "2026-10-07T15:19:31.795460+00:00",
+      "http_status": 200,
+      "safe_response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "x-ratelimit-limit": "500",
+        "x-ratelimit-remaining": "447",
+        "x-ratelimit-reset": "1791463167"
+      },
+      "network_error_type": null,
+      "raw_file": "data_external/accessibility_road_lauterbrunnen_ors/297936856f67f288e6f47c1a0392d92f37725add293e6bfd4466c4049458efe3_20261007T151931795460Z.json",
+      "raw_sha256": "d3d0c0802b64250a281096d1dfc85266ba4f69cd380cfc0a1b58e69aad1f5ca1",
+      "status": "success"
+    },
+    {
+      "request_id": "fcbb369a4e1c5956ab7b2a0bfb71beb62b712e30cdb60defeadfe857dae06754",
+      "endpoint": "https://api.heigit.org/openrouteservice/v2/matrix/driving-car",
+      "batch": {
+        "batch_id": "return_0000_0000",
+        "direction": "return",
+        "municipality_bfs_ids": [
+          584
+        ],
+        "access_point_ids": [
+          "ACCESS_BAV__8530674",
+          "ACCESS_MAGIC_CURRENT__117",
+          "ACCESS_MAGIC_CURRENT__118",
+          "ACCESS_MAGIC_CURRENT__12",
+          "ACCESS_MAGIC_CURRENT__14",
+          "ACCESS_MAGIC_CURRENT__17",
+          "ACCESS_MAGIC_CURRENT__1795",
+          "ACCESS_MAGIC_CURRENT__1796",
+          "ACCESS_MAGIC_CURRENT__1797",
+          "ACCESS_MAGIC_CURRENT__1798",
+          "ACCESS_MAGIC_CURRENT__1799",
+          "ACCESS_MAGIC_CURRENT__18",
+          "ACCESS_MAGIC_CURRENT__1800",
+          "ACCESS_MAGIC_CURRENT__1801",
+          "ACCESS_MAGIC_CURRENT__1802",
+          "ACCESS_MAGIC_CURRENT__1803",
+          "ACCESS_MAGIC_CURRENT__1804",
+          "ACCESS_MAGIC_CURRENT__1805",
+          "ACCESS_MAGIC_CURRENT__19",
+          "ACCESS_MAGIC_CURRENT__20",
+          "ACCESS_MAGIC_CURRENT__22",
+          "ACCESS_MAGIC_CURRENT__23",
+          "ACCESS_MAGIC_CURRENT__24",
+          "ACCESS_MAGIC_CURRENT__25",
+          "ACCESS_MAGIC_CURRENT__26"
+        ],
+        "requested_cells": 25
+      },
+      "payload": {
+        "locations": [
+          [
+            7.132409985838166,
+            46.474484263565856
+          ],
+          [
+            7.52017010545874,
+            46.085946519397865
+          ],
+          [
+            7.481595841263234,
+            46.02181169788984
+          ],
+          [
+            7.007199471936996,
+            47.1273809464745
+          ],
+          [
+            7.167338457112328,
+            46.618134810652926
+          ],
+          [
+            6.981367503500753,
+            47.09351343691946
+          ],
+          [
+            7.6807966258147555,
+            46.825236217408815
+          ],
+          [
+            7.765690888484108,
+            46.69064159879455
+          ],
+          [
+            7.825839952547531,
+            46.785716481153166
+          ],
+          [
+            7.863345625756319,
+            46.723990797209375
+          ],
+          [
+            7.809613822254249,
+            46.70372192998872
+          ],
+          [
+            7.609585299967327,
+            46.16681613336349
+          ],
+          [
+            8.037592579644752,
+            46.71873009014092
+          ],
+          [
+            7.435489095846292,
+            46.656133703666825
+          ],
+          [
+            7.337550324401884,
+            46.5914460580952
+          ],
+          [
+            8.025482037848361,
+            46.31320682550258
+          ],
+          [
+            7.724087843465519,
+            46.64500162163999
+          ],
+          [
+            7.724087843465519,
+            46.64500162163999
+          ],
+          [
+            7.287612224482771,
+            46.61022702209947
+          ],
+          [
+            7.1553172725419705,
+            46.6870925060384
+          ],
+          [
+            7.1558349268218375,
+            46.34756221375422
+          ],
+          [
+            7.008409400665352,
+            46.1119483871487
+          ],
+          [
+            7.101355755799355,
+            46.39732975852564
+          ],
+          [
+            6.944667884613811,
+            46.52255093605135
+          ],
+          [
+            7.0173026543058405,
+            46.346464564114825
+          ],
+          [
+            7.90809041529649,
+            46.5984340011305
+          ]
+        ],
+        "sources": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24"
+        ],
+        "destinations": [
+          "25"
+        ],
+        "metrics": [
+          "duration",
+          "distance"
+        ],
+        "units": "m",
+        "resolve_locations": true
+      },
+      "retrieval_date": "2026-10-07T15:19:33.736497+00:00",
+      "http_status": 200,
+      "safe_response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "x-ratelimit-limit": "500",
+        "x-ratelimit-remaining": "446",
+        "x-ratelimit-reset": "1791463167"
+      },
+      "network_error_type": null,
+      "raw_file": "data_external/accessibility_road_lauterbrunnen_ors/fcbb369a4e1c5956ab7b2a0bfb71beb62b712e30cdb60defeadfe857dae06754_20261007T151933736497Z.json",
+      "raw_sha256": "1c277423ae24b2cf9c88863b1eefb7ffa530803765d0db0a96cddb5927709036",
+      "status": "success"
+    },
+    {
+      "request_id": "66e3a3ce3d61abcd415f2c917b760db29b87bb37f7fba2063176574062f37e7f",
+      "endpoint": "https://api.heigit.org/openrouteservice/v2/matrix/driving-car",
+      "batch": {
+        "batch_id": "return_0000_0025",
+        "direction": "return",
+        "municipality_bfs_ids": [
+          584
+        ],
+        "access_point_ids": [
+          "ACCESS_MAGIC_CURRENT__27",
+          "ACCESS_MAGIC_CURRENT__2765",
+          "ACCESS_MAGIC_CURRENT__2766",
+          "ACCESS_MAGIC_CURRENT__2767",
+          "ACCESS_MAGIC_CURRENT__2768",
+          "ACCESS_MAGIC_CURRENT__2769",
+          "ACCESS_MAGIC_CURRENT__2770",
+          "ACCESS_MAGIC_CURRENT__2772",
+          "ACCESS_MAGIC_CURRENT__2773",
+          "ACCESS_MAGIC_CURRENT__2774",
+          "ACCESS_MAGIC_CURRENT__2775",
+          "ACCESS_MAGIC_CURRENT__2776",
+          "ACCESS_MAGIC_CURRENT__2777",
+          "ACCESS_MAGIC_CURRENT__2778",
+          "ACCESS_MAGIC_CURRENT__2779",
+          "ACCESS_MAGIC_CURRENT__2780",
+          "ACCESS_MAGIC_CURRENT__28",
+          "ACCESS_MAGIC_CURRENT__29",
+          "ACCESS_MAGIC_CURRENT__30",
+          "ACCESS_MAGIC_CURRENT__31",
+          "ACCESS_MAGIC_CURRENT__32",
+          "ACCESS_MAGIC_CURRENT__33",
+          "ACCESS_MAGIC_CURRENT__34",
+          "ACCESS_MAGIC_CURRENT__35",
+          "ACCESS_MAGIC_CURRENT__3587"
+        ],
+        "requested_cells": 25
+      },
+      "payload": {
+        "locations": [
+          [
+            7.30506698061893,
+            46.25267309615217
+          ],
+          [
+            7.893681530670981,
+            46.81419846180424
+          ],
+          [
+            7.794758067811564,
+            46.30439706552697
+          ],
+          [
+            7.441357304654862,
+            46.72646048893918
+          ],
+          [
+            7.876769318850672,
+            46.23068650068853
+          ],
+          [
+            7.443243350501307,
+            46.76068809125025
+          ],
+          [
+            7.724589214097714,
+            46.58656491106076
+          ],
+          [
+            6.538813781849916,
+            46.828991914014615
+          ],
+          [
+            7.895454816921385,
+            46.85029930272611
+          ],
+          [
+            7.827952761346578,
+            46.27059896619577
+          ],
+          [
+            7.351942614005469,
+            46.71243886771705
+          ],
+          [
+            7.352102129076835,
+            46.7672842398738
+          ],
+          [
+            7.443243350501307,
+            46.76068809125025
+          ],
+          [
+            7.385792990524517,
+            46.74723629683576
+          ],
+          [
+            7.814367295207271,
+            46.28508295006609
+          ],
+          [
+            7.902901824930622,
+            46.25811836884501
+          ],
+          [
+            7.03814805866063,
+            46.56128647747146
+          ],
+          [
+            7.46345966657111,
+            46.24228872715404
+          ],
+          [
+            7.16102444462105,
+            46.20452599312026
+          ],
+          [
+            6.959531891395372,
+            46.51880952240378
+          ],
+          [
+            7.288252494149106,
+            46.670578989727055
+          ],
+          [
+            7.595408943493673,
+            46.22134094260154
+          ],
+          [
+            7.081759324455367,
+            47.22349541080919
+          ],
+          [
+            7.534113173784679,
+            46.25402695502751
+          ],
+          [
+            7.729104547325863,
+            46.74018886243515
+          ],
+          [
+            7.90809041529649,
+            46.5984340011305
+          ]
+        ],
+        "sources": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24"
+        ],
+        "destinations": [
+          "25"
+        ],
+        "metrics": [
+          "duration",
+          "distance"
+        ],
+        "units": "m",
+        "resolve_locations": true
+      },
+      "retrieval_date": "2026-10-07T15:19:35.602807+00:00",
+      "http_status": 200,
+      "safe_response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "x-ratelimit-limit": "500",
+        "x-ratelimit-remaining": "445",
+        "x-ratelimit-reset": "1791463167"
+      },
+      "network_error_type": null,
+      "raw_file": "data_external/accessibility_road_lauterbrunnen_ors/66e3a3ce3d61abcd415f2c917b760db29b87bb37f7fba2063176574062f37e7f_20261007T151935602807Z.json",
+      "raw_sha256": "0e197f7f9c962f5913424e89a140605191fa2258649c1466674d524e14c6287d",
+      "status": "success"
+    },
+    {
+      "request_id": "d5c533aeaf2b67c19d62e5bb1849aa27f29354fe31a71d22bc718f3f66637ba7",
+      "endpoint": "https://api.heigit.org/openrouteservice/v2/matrix/driving-car",
+      "batch": {
+        "batch_id": "return_0000_0050",
+        "direction": "return",
+        "municipality_bfs_ids": [
+          584
+        ],
+        "access_point_ids": [
+          "ACCESS_MAGIC_CURRENT__3588",
+          "ACCESS_MAGIC_CURRENT__3589",
+          "ACCESS_MAGIC_CURRENT__3608",
+          "ACCESS_MAGIC_CURRENT__3611",
+          "ACCESS_MAGIC_CURRENT__37",
+          "ACCESS_MAGIC_CURRENT__4",
+          "ACCESS_MAGIC_CURRENT__4444",
+          "ACCESS_MAGIC_CURRENT__4445",
+          "ACCESS_MAGIC_CURRENT__4446",
+          "ACCESS_MAGIC_CURRENT__4447",
+          "ACCESS_MAGIC_CURRENT__4449",
+          "ACCESS_MAGIC_CURRENT__4451",
+          "ACCESS_MAGIC_CURRENT__4452",
+          "ACCESS_MAGIC_CURRENT__4453",
+          "ACCESS_MAGIC_CURRENT__4455",
+          "ACCESS_MAGIC_CURRENT__600",
+          "ACCESS_MAGIC_CURRENT__601",
+          "ACCESS_MAGIC_CURRENT__602",
+          "ACCESS_MAGIC_CURRENT__87",
+          "ACCESS_MAGIC_CURRENT__88",
+          "ACCESS_MAGIC_CURRENT__89",
+          "ACCESS_MAGIC_CURRENT__90",
+          "ACCESS_MAGIC_CURRENT__937",
+          "ACCESS_RESORT__crans_montana_crans_montana",
+          "ACCESS_RESORT__lauchernalp_lotschental"
+        ],
+        "requested_cells": 25
+      },
+      "payload": {
+        "locations": [
+          [
+            7.729104547325863,
+            46.74018886243515
+          ],
+          [
+            7.680328613125439,
+            46.77335161246423
+          ],
+          [
+            6.1114383668699634,
+            46.45460341135921
+          ],
+          [
+            6.160356779951057,
+            46.4486069503464
+          ],
+          [
+            7.0550057911912605,
+            46.303419409044544
+          ],
+          [
+            7.394663273408565,
+            46.29464578478979
+          ],
+          [
+            7.539800089153913,
+            47.26413297816708
+          ],
+          [
+            7.983698603284117,
+            46.35920433764522
+          ],
+          [
+            7.381104002071785,
+            47.22128447515576
+          ],
+          [
+            7.2830386477320035,
+            46.46775743345879
+          ],
+          [
+            7.677488257413923,
+            46.84764164196512
+          ],
+          [
+            8.195142102187608,
+            46.74492627002253
+          ],
+          [
+            8.279229131417411,
+            46.80242491078994
+          ],
+          [
+            8.113762751920772,
+            46.825885148528734
+          ],
+          [
+            8.034610020146634,
+            46.82181809670109
+          ],
+          [
+            7.927495162040456,
+            46.10537498717688
+          ],
+          [
+            7.171773460691825,
+            47.1508464292937
+          ],
+          [
+            7.626408956223264,
+            46.37978813056533
+          ],
+          [
+            6.2314207104689086,
+            46.60579321669085
+          ],
+          [
+            7.4878273929828785,
+            46.11816900143672
+          ],
+          [
+            6.909942195596251,
+            46.483361497753016
+          ],
+          [
+            6.965124348058344,
+            46.4546661695133
+          ],
+          [
+            6.55292249478724,
+            46.88832217556512
+          ],
+          [
+            7.492551202132988,
+            46.32027981621231
+          ],
+          [
+            7.777958629408414,
+            46.40180013410988
+          ],
+          [
+            7.90809041529649,
+            46.5984340011305
+          ]
+        ],
+        "sources": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24"
+        ],
+        "destinations": [
+          "25"
+        ],
+        "metrics": [
+          "duration",
+          "distance"
+        ],
+        "units": "m",
+        "resolve_locations": true
+      },
+      "retrieval_date": "2026-10-07T15:19:37.391162+00:00",
+      "http_status": 200,
+      "safe_response_headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "x-ratelimit-limit": "500",
+        "x-ratelimit-remaining": "444",
+        "x-ratelimit-reset": "1791463167"
+      },
+      "network_error_type": null,
+      "raw_file": "data_external/accessibility_road_lauterbrunnen_ors/d5c533aeaf2b67c19d62e5bb1849aa27f29354fe31a71d22bc718f3f66637ba7_20261007T151937391162Z.json",
+      "raw_sha256": "49d3c8e92f4629ec02f4d74ec835d52bbcb143738df90ddc55923302c3e4c73c",
+      "status": "success"
+    }
+  ],
+  "failures": [],
+  "actual_directional_cells_returned": 150,
+  "usable_directional_routes": 150,
+  "pairs_with_both_directions": 75,
+  "measurement_label": "arrêt Lauterbrunnen8507384 → arrêts de station, correction communale validée",
+  "approved_same_stop_zero_pairs": [],
+  "graph_versions": [
+    [
+      "2026-09-21T10:31:27Z",
+      "9.10.0"
+    ]
+  ],
+  "full_endpoint_universe_complete": true,
+  "endpoints_remaining": {
+    "origins": 0,
+    "arrivals": 0
+  },
+  "canonical_outputs_changed": false,
+  "protected_legacy_sha256": {
+    "data_processed/accessibility_station_group_journey_samples.csv": "48cbafdba7c3dbae5b4be86b608ac13ae613f1e8ed36bf0e21903ad99ef00e24",
+    "data_processed/accessibility_station_group_journey_context.csv": "226114874ffff0e679c7f951e596007176e8635741ae64dd8c48ae576446ce60",
+    "data_processed/accessibility_municipality_month_exposure_territorial.csv": "234a23ddb6c9065ab22ca2b5edc1e9d1132d281f9f3647523e63664b66658dea",
+    "reports/accessibility_cohort_comparison_universe_territorial.csv": "a9c8e0435fffe8187bb6dff9259589f0a797183746bc23348457507880d4a005",
+    "reports/accessibility_local_threshold_audit_summary.json": "6badc4c993bb689c0a522cb2b6b354fbef8bfa8859263d659a70ddfab7300cab",
+    "reports/accessibility_cohort_time_estimation_summary.json": "ed0c462a98f7f27ff2428a957f7ebab22142180093213ef664d4df5916de2d59",
+    "reports/accessibility_cohort_time_estimation_cohort_month.csv": "f44eb8c6e32022f76be594318a3145d1203c4601e2267b9ac212fa6b7f80bfbf",
+    "reports/accessibility_cohort_time_estimation_dynamic.csv": "06b3aff253a74766fa951c252b15ce37d71a8b696479202c391699018abdaae8",
+    "config/accessibility_commune_trend_plots.json": "66506ea44204c4ecfb6ec452109590141b1b19dd2ba25d3c8cd05867484e00eb",
+    "data_processed/accessibility_commune_trend_plot_points.json": "53142c3a17fdd08125bf63d8c97f639879a961d9874c93f7ee0b109e96ad551d",
+    "figures/accessibility_15_communes_trends_1.png": "bd5e8de57387041bb2bd8116ebb735261df84d847c55832e688c8e5b14050c80",
+    "figures/accessibility_15_communes_trends_2.png": "9504c898ab1dd60686f60b5cf41d8e6a320ae4b4c184086c775a54e53ea0e93d",
+    "figures/accessibility_15_communes_trends_3.png": "d3b9a3474f3b4fdd1de2920e19f5e474fca33ef51c993105ce2e58b107ac7d31",
+    "reports/accessibility_road_origin_review.csv": "eb3f31049a2fc959bc93e501c1f2656f4f66f63b0c42e5a9254f4e2a6995ae25",
+    "reports/accessibility_road_station_arrival_review.csv": "ceafb60e45aaa9aa7c19d9c06c1e642fec008cdef3418fc47abfd8a50918f506",
+    "reports/accessibility_road_reference_preparation_summary.json": "0fd981161c1f245cb5bbd33bd8ae89c859cbf3bffdcf419a69cca7b4f63e8229",
+    "data_processed/accessibility_road_reference_directional.csv": "ab14c0ae2efa661dc0634ec54c1521a49e12cf87bb61e9549a941e5ba68b3f46",
+    "data_processed/accessibility_road_reference_pairs.csv": "d7d4e3601d0ba07ef0bed07ba33a03e6a0ebc11452c979a6819a490f0e39a179",
+    "reports/accessibility_road_reference_collection_summary.json": "5c0dcac96f5c3a22577bd75bf7bd47ba7dc525b2168158c576e7a1dee848ff51",
+    "reports/accessibility_road_stop_origins.csv": "abadcd468cc05d9741a7c89a1d14b98f43737a0425225de3202bfa254aac4d56",
+    "reports/accessibility_road_stop_arrivals.csv": "a84521b70425f5b96f387102d36d7a13bd386554a17b07a3a82829942b348cdd",
+    "data_processed/accessibility_road_stop_directional.csv": "8aea68b0c75c766203b3975d9bbe21430a49484f6da0bab65ab9a850608fb2a3",
+    "data_processed/accessibility_road_stop_pairs.csv": "1f0b736b75b9ae5ec436195c29a99c121ce1fdcd67e4b75bc530d8404f7b193e",
+    "reports/accessibility_road_stop_collection_summary.json": "6c51164f55836101e50eccc8bb1e0873225b72111c61a3899b908cebfeebfe12",
+    "reports/accessibility_road_stop_preparation_summary.json": "1a75ea29cc0c9ed0e951932f0ad3ab6f5a95acabcf98dce5b882cfe0205c2823",
+    "reports/accessibility_road_stop_snapping_summary.json": "bb977df9a0feea53071ab033893eca2bb9548b546bfe930ea453ef9f60b95817"
+  },
+  "input_sha256": {
+    "config/accessibility_road_routing.json": "be6e3b8ba52e12486a15f23584664300cbb6366de97ce23c39c3213cc42cbeeb",
+    "reports/accessibility_road_lauterbrunnen_origin.csv": "49ce1bab790cc4195f5dbf2d61bf05163e8ca4d21c2271550a880ab8905db4ac",
+    "reports/accessibility_road_stop_arrivals.csv": "a84521b70425f5b96f387102d36d7a13bd386554a17b07a3a82829942b348cdd",
+    "config/accessibility_road_did_execution.json": "85fe8db9e9279826aa3e09e3795fe2430dddbe6a22d9d6e385bab7d30e6b682d",
+    "reports/accessibility_road_lauterbrunnen_preparation_summary.json": "13f9d6e42e13b5c309f3a6be3ffe1211de4b8baab9e83d16f4d06cd8298c5c36"
+  },
+  "collector_sha256": "a3a90f52eb401254188efeead1076c7f7418538b5f4aebc8b858c6bc8baacfd9",
+  "entry_point_sha256": "c950b758ee67b843b3daf415befcec831c33679023a4c1674ab9b509b6f6c3d2",
+  "quota_note": "No separate account quota endpoint used; first response reveals allowance headers, later requests check retained remaining quota. Missing headers mean unknown, not unlimited. 401/403/429 stop without retry.",
+  "resume_command": ".venv/Scripts/python.exe src/data_collection/collect_accessibility_road_lauterbrunnen.py --execute --max-new-batches 6",
+  "graph_version_difference_flag": false,
+  "output_sha256": {
+    "data_processed/accessibility_road_lauterbrunnen_directional.csv": "ff9613c62fdcb1a2850bb723f29264309390e2754c761cd7314f95a492f2ac02",
+    "data_processed/accessibility_road_lauterbrunnen_pairs.csv": "3ebb64a7592f95576a9be1069d8daa200af589e5240636df1bf087c061095c7b"
+  }
+}

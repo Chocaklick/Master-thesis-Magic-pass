@@ -1,0 +1,68 @@
+{
+  "request_id": "995f2cdd4122e32acba7753b710c22708419a44b2bcaf6b0a834188a81306749",
+  "payload": {
+    "locations": [
+      [
+        7.92956923984102,
+        46.10879335336377
+      ],
+      [
+        7.931285395615681,
+        46.10978440326703
+      ],
+      [
+        7.932519089243055,
+        46.11176706686821
+      ]
+    ],
+    "sources": [
+      "0",
+      "1",
+      "2"
+    ],
+    "destinations": [
+      "0",
+      "1",
+      "2"
+    ],
+    "metrics": [
+      "duration",
+      "distance"
+    ],
+    "units": "m",
+    "resolve_locations": true
+  },
+  "http_status": 200,
+  "safe_response_headers": {
+    "content-type": "application/json;charset=UTF-8",
+    "x-ratelimit-limit": "500",
+    "x-ratelimit-remaining": "443",
+    "x-ratelimit-reset": "1791463167"
+  },
+  "retrieval_date": "2026-10-07T15:32:44.419153+00:00",
+  "raw_file": "data_external/saas_fee_road_candidate_probe/995f2cdd4122e32acba7753b710c22708419a44b2bcaf6b0a834188a81306749.json",
+  "raw_sha256": "d6d7d6ed4a5fc92800e3a8d8af52129e1aaa60a09390db6886298de767e54d27",
+  "source_id": "ORS_SAASFEE_PARKING_CANDIDATE_PROBE_2026",
+  "official_stop_ids": [
+    "8501782",
+    "8557144",
+    "8511180"
+  ],
+  "official_stop_names": [
+    "Saas-Fee, Busterminal",
+    "Saas-Fee, Parkhaus",
+    "Saas-Fee, Parkplatz Nord"
+  ],
+  "graph": {
+    "version": "9.10.0",
+    "build_date": "2026-08-13T11:53:14Z",
+    "graph_date": "2026-09-21T10:31:27Z",
+    "osm_date": "2026-09-13T23:59:59Z"
+  },
+  "coordinate_source_id": "BAV_PUBLIC_TRANSPORT_STOPS_2026",
+  "candidate_approval_received": false,
+  "analytical_endpoints_changed": false,
+  "output_sha256": {
+    "reports/saas_fee_road_candidate_probe.csv": "4b34956a7445ef93489f2cb275596d5a301a79d6e9c66343ff65bac0164c8bbd"
+  }
+}

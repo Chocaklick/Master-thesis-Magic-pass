@@ -1,0 +1,28 @@
+{
+  "specification_version": "stage37_approved_road_thresholds_lauterbrunnen_2026_10_07",
+  "approval_date": "2026-10-07",
+  "approval_user_text": "je valide les seuils mais pour la continuité du dois corriger le point d'arrivé de lauterbrunnen pour lauterbrunnen et non pas grutschalp comme ca tu règles le problème",
+  "principal_threshold_minutes": 30,
+  "sensitivity_thresholds_minutes": [15, 45],
+  "group_access_rule": "minimum usable bidirectional mean among unchanged access nodes; at least one access within inclusive threshold",
+  "communal_stop_override": {
+    "municipality_bfs_id": 584,
+    "old_selected_stop_id": "8507378",
+    "old_selected_stop_name": "Grütschalp",
+    "new_selected_stop_id": "8507384",
+    "new_selected_stop_name": "Lauterbrunnen",
+    "coordinate_source_id": "BAV_PUBLIC_TRANSPORT_STOPS_2026",
+    "application": "communal endpoint in both driving directions, not a station-access node change"
+  },
+  "approved_estimator_execution": "config/accessibility_cohort_time_execution.json",
+  "approved_estimator_parameters": "config/accessibility_cohort_time_estimator.json",
+  "approved_comparison_rule": "config/accessibility_cohort_comparison.json",
+  "historical_network_trajectory": "config/accessibility_successive_entries.json",
+  "outcome_panel": "data_processed/accessibility_municipality_month_exposure_territorial.csv",
+  "corrected_road_pairs": "data_processed/accessibility_road_stop_corrected_pairs.csv",
+  "measurement_label": "arrêt communal → arrêt de station, exception communale Lauterbrunnen validée",
+  "buffer_rule": "none selected; threshold-unexposed donors can still experience spillovers",
+  "winter_or_snap_filter": "none; existing warnings retained without automatic exclusion",
+  "old_results_policy": "immutable previous outputs; new correction and estimation namespaces",
+  "causal_certification": false
+}
