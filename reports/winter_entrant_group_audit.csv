@@ -1,0 +1,214 @@
+threshold_minutes,station_group_id,station_group_name,accessible_territories,observed_winter_exposure_rows,first_entry_territories,later_entry_territories,later_entry_complete_territories,later_entry_alone_complete_territories,later_entry_supported_same_portfolio_territories,later_entry_alone_supported_same_portfolio_territories,later_entry_supported_history_territories,identical_observed_exposure_group_ids,in_fixed_effect_linear_dependency,variation_status,source_id
+15,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,2,87,2,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,1,44,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_EVENT__c1f58b57f3fa,Grenchenberg,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_EVENT__e664bf3f38d5,Wilerallmi,1,9,1,0,0,0,0,0,0,MP_GROUP_RESORT__schwanden_sigriswil_thunersee,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__aeschi,Aeschiallmend,3,57,3,0,0,0,0,0,0,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__anzere,Anzère,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__arolla,Arolla,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__axalp_brienz,Axalp,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__balmberg,Balmberg,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,2,38,2,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__belalp,Belalp,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,1,14,1,0,0,0,0,0,0,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__charmey,Charmey,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__crans_montana_crans_montana,Crans-Montana,1,15,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,1,14,1,0,0,0,0,0,0,MP_GROUP_RESORT__staldenried_gspon|MP_GROUP_RESORT__unterbach_brandalp|MP_GROUP_RESORT__visperterminen,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__eriz,Eriz,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__evolene,Evolène,1,38,1,0,0,0,0,0,0,MP_GROUP_RESORT__la_forclaz,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,3,57,3,0,0,0,0,0,0,MP_GROUP_RESORT__aeschi,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__gantrisch_gurnigel,Gantrisch-Gurnigel / Gurnigelbad,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,1,43,1,0,0,0,0,0,0,MP_GROUP_RESORT__st_luc_chandolin|MP_GROUP_RESORT__vercorin,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__gstaad,Bergbahnen Gstaad,1,4,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__habkern,Habkern,1,19,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__heimenschwand_buchholterberg,Heimenschwand,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg,Homberg,1,9,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__jaun_gastlosen,Jaun,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__jaunpass,Jaunpass,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__kiental,Kiental,1,14,0,1,1,1,1,1,1,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__la_berra_la_roche,La Berra,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__la_dole_jura_sur_leman,Jura-sur-Léman - composante suisse La Dôle,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__la_forclaz,La Forclaz,1,38,1,0,0,0,0,0,0,MP_GROUP_RESORT__evolene,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__la_robella,La Robella,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__le_paquier_cret_du_puy,Crêt-du-Puy,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__les_bugnenets_savagnieres,Les Bugnenets-Savagnières,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__les_marecottes,Les Marécottes,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,1,23,1,0,0,0,0,0,0,MP_GROUP_RESORT__les_pleiades|MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__les_pleiades,Les Pléiades,1,23,0,1,0,0,0,0,0,MP_GROUP_RESORT__les_paccots_chatel_saint_denis|MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__leukerbad,Leukerbad,1,34,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,1,43,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__linden_skilift_linden,Linden,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,1,14,1,0,0,0,0,0,0,MP_GROUP_RESORT__bumbach_schangnau,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,1,4,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__melchsee_frutt,Melchsee-Frutt,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,1,43,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__mont_noble_nax,Nax,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__moosalpregion,Moosalp,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__morlialp,Mörlialp,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__ottenleuebad,Egg Ottenleue,1,14,0,1,1,1,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__ovronnaz,Ovronnaz,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin,Les Prés-d'Orvin,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__rathvel,Rathvel,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__riffenmatt,Riffenmatt,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman,Les Rochers de Naye,1,23,0,1,0,0,0,0,0,MP_GROUP_RESORT__les_paccots_chatel_saint_denis|MP_GROUP_RESORT__les_pleiades,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__rosswald,Rosswald,1,19,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__ruschegg_eywald,Rüschegg - Eywald,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__saas_fee,Saas-Fee,2,68,2,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,1,14,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__schwanden_sigriswil_thunersee,Schwanden,1,9,1,0,0,0,0,0,0,MP_GROUP_EVENT__e664bf3f38d5,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__schwarzenbuhl_selital,Selital,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,1,43,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__sorenberg,Sörenberg,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__st_cergue,Saint-Cergue,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,1,43,1,0,0,0,0,0,0,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal|MP_GROUP_RESORT__vercorin,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__staldenried_gspon,Gspon,1,14,1,0,0,0,0,0,0,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll|MP_GROUP_RESORT__unterbach_brandalp|MP_GROUP_RESORT__visperterminen,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__tramelan,Tramelan,1,43,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__unterbach_brandalp,Unterbäch,1,14,1,0,0,0,0,0,0,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll|MP_GROUP_RESORT__staldenried_gspon|MP_GROUP_RESORT__visperterminen,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,1,39,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__vercorin,Vercorin,1,43,1,0,0,0,0,0,0,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal|MP_GROUP_RESORT__st_luc_chandolin,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,2,86,2,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+15,MP_GROUP_RESORT__visperterminen,Visperterminen,1,14,1,0,0,0,0,0,0,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll|MP_GROUP_RESORT__staldenried_gspon|MP_GROUP_RESORT__unterbach_brandalp,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,3,131,3,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,4,174,4,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_EVENT__c1f58b57f3fa,Grenchenberg,1,4,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_EVENT__e664bf3f38d5,Wilerallmi,2,18,0,2,2,0,0,0,0,MP_GROUP_RESORT__schwanden_sigriswil_thunersee,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__aeschi,Aeschiallmend,7,133,7,0,0,0,0,0,0,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__anzere,Anzère,2,87,2,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__arolla,Arolla,1,38,1,0,0,0,0,0,0,MP_GROUP_RESORT__evolene|MP_GROUP_RESORT__la_forclaz,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__axalp_brienz,Axalp,3,57,3,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__balmberg,Balmberg,2,8,2,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,6,114,6,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__belalp,Belalp,2,8,0,2,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,1,14,0,1,1,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__charmey,Charmey,2,86,2,0,0,0,0,0,0,MP_GROUP_RESORT__la_berra_la_roche,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__crans_montana_crans_montana,Crans-Montana,2,29,2,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,3,42,0,3,3,1,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__eriz,Eriz,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__evolene,Evolène,1,38,1,0,0,0,0,0,0,MP_GROUP_RESORT__arolla|MP_GROUP_RESORT__la_forclaz,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,7,133,7,0,0,0,0,0,0,MP_GROUP_RESORT__aeschi,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__gantrisch_gurnigel,Gantrisch-Gurnigel / Gurnigelbad,1,14,0,1,1,0,0,0,0,MP_GROUP_RESORT__ottenleuebad|MP_GROUP_RESORT__riffenmatt|MP_GROUP_RESORT__schwarzenbuhl_selital,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,2,86,2,0,0,0,0,0,0,MP_GROUP_RESORT__st_luc_chandolin,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__gstaad,Bergbahnen Gstaad,3,12,0,3,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__habkern,Habkern,6,114,6,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__heimenschwand_buchholterberg,Heimenschwand,2,38,2,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg,Homberg,3,27,0,3,3,1,1,1,1,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__jaun_gastlosen,Jaun,1,43,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__jaunpass,Jaunpass,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__kiental,Kiental,3,42,0,3,3,3,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__la_berra_la_roche,La Berra,2,86,2,0,0,0,0,0,0,MP_GROUP_RESORT__charmey,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__la_dole_jura_sur_leman,Jura-sur-Léman - composante suisse La Dôle,2,18,1,1,1,1,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__la_forclaz,La Forclaz,1,38,1,0,0,0,0,0,0,MP_GROUP_RESORT__arolla|MP_GROUP_RESORT__evolene,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__la_robella,La Robella,1,29,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__le_paquier_cret_du_puy,Crêt-du-Puy,3,96,3,0,0,0,0,0,0,,True,further_fixed_effect_linear_dependency,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__les_bugnenets_savagnieres,Les Bugnenets-Savagnières,2,88,2,0,0,0,0,0,0,,True,further_fixed_effect_linear_dependency,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__les_marecottes,Les Marécottes,2,88,2,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,6,241,6,0,0,0,0,0,0,MP_GROUP_RESORT__rathvel,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__les_pleiades,Les Pléiades,3,101,0,3,2,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__leukerbad,Leukerbad,2,67,1,1,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,4,173,4,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__linden_skilift_linden,Linden,2,8,0,2,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,2,28,1,1,1,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,4,16,1,3,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__melchsee_frutt,Melchsee-Frutt,2,8,2,0,0,0,0,0,0,MP_GROUP_RESORT__morlialp,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,3,130,3,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__mont_noble_nax,Nax,4,173,4,0,0,0,0,0,0,,True,further_fixed_effect_linear_dependency,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__moosalpregion,Moosalp,2,28,0,2,2,0,0,0,0,MP_GROUP_RESORT__unterbach_brandalp|MP_GROUP_RESORT__visperterminen,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__morlialp,Mörlialp,2,8,2,0,0,0,0,0,0,MP_GROUP_RESORT__melchsee_frutt,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__ottenleuebad,Egg Ottenleue,1,14,0,1,1,0,0,0,0,MP_GROUP_RESORT__gantrisch_gurnigel|MP_GROUP_RESORT__riffenmatt|MP_GROUP_RESORT__schwarzenbuhl_selital,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__ovronnaz,Ovronnaz,1,44,1,0,0,0,0,0,0,,True,further_fixed_effect_linear_dependency,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin,Les Prés-d'Orvin,1,34,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__rathvel,Rathvel,6,241,6,0,0,0,0,0,0,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__riffenmatt,Riffenmatt,1,14,0,1,1,0,0,0,0,MP_GROUP_RESORT__gantrisch_gurnigel|MP_GROUP_RESORT__ottenleuebad|MP_GROUP_RESORT__schwarzenbuhl_selital,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman,Les Rochers de Naye,5,179,0,5,4,2,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,1,19,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__rosswald,Rosswald,2,38,2,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__ruschegg_eywald,Rüschegg - Eywald,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__saas_fee,Saas-Fee,2,68,2,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,2,28,1,1,1,1,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__schwanden_sigriswil_thunersee,Schwanden,2,18,0,2,2,0,0,0,0,MP_GROUP_EVENT__e664bf3f38d5,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__schwarzenbuhl_selital,Selital,1,14,0,1,1,0,0,0,0,MP_GROUP_RESORT__gantrisch_gurnigel|MP_GROUP_RESORT__ottenleuebad|MP_GROUP_RESORT__riffenmatt,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,1,43,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__sorenberg,Sörenberg,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__st_cergue,Saint-Cergue,1,9,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,2,86,2,0,0,0,0,0,0,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__staldenried_gspon,Gspon,3,42,0,3,3,1,1,1,1,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__tramelan,Tramelan,1,43,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__unterbach_brandalp,Unterbäch,2,28,0,2,2,0,0,0,0,MP_GROUP_RESORT__moosalpregion|MP_GROUP_RESORT__visperterminen,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,1,39,1,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__vercorin,Vercorin,3,129,3,0,0,0,0,0,0,,True,further_fixed_effect_linear_dependency,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,4,173,4,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+30,MP_GROUP_RESORT__visperterminen,Visperterminen,2,28,0,2,2,0,0,0,0,MP_GROUP_RESORT__moosalpregion|MP_GROUP_RESORT__unterbach_brandalp,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,7,303,7,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,7,305,7,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_EVENT__c1f58b57f3fa,Grenchenberg,5,20,0,5,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_EVENT__e664bf3f38d5,Wilerallmi,9,81,0,9,9,0,0,0,0,MP_GROUP_RESORT__schwanden_sigriswil_thunersee,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__aeschi,Aeschiallmend,15,285,14,1,1,0,0,0,0,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__anzere,Anzère,5,218,5,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__arolla,Arolla,1,38,0,1,1,0,1,0,1,MP_GROUP_RESORT__la_forclaz,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__axalp_brienz,Axalp,9,171,9,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__balmberg,Balmberg,9,36,5,4,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,11,209,11,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__belalp,Belalp,2,8,0,2,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,3,42,0,3,3,0,0,0,0,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__charmey,Charmey,6,241,6,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__crans_montana_crans_montana,Crans-Montana,5,72,5,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,10,140,0,10,10,4,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__eriz,Eriz,4,76,4,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__evolene,Evolène,4,153,0,4,4,3,1,0,1,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,15,285,14,1,1,0,0,0,0,MP_GROUP_RESORT__aeschi,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__gantrisch_gurnigel,Gantrisch-Gurnigel / Gurnigelbad,5,70,1,4,4,0,0,0,0,MP_GROUP_RESORT__ruschegg_eywald,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,4,173,4,0,0,0,0,0,0,MP_GROUP_RESORT__st_luc_chandolin,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__gstaad,Bergbahnen Gstaad,5,20,0,5,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__habkern,Habkern,12,228,12,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__heimenschwand_buchholterberg,Heimenschwand,9,171,8,1,1,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg,Homberg,9,81,0,9,9,5,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__jaun_gastlosen,Jaun,5,217,5,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__jaunpass,Jaunpass,5,95,0,5,5,3,1,1,1,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__kiental,Kiental,11,154,0,11,11,8,4,4,4,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__la_berra_la_roche,La Berra,7,284,7,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__la_dole_jura_sur_leman,Jura-sur-Léman - composante suisse La Dôle,7,63,5,2,2,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__la_forclaz,La Forclaz,1,38,0,1,1,0,1,0,1,MP_GROUP_RESORT__arolla,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__la_robella,La Robella,3,87,2,1,1,1,1,1,1,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,4,56,0,4,4,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__le_paquier_cret_du_puy,Crêt-du-Puy,5,182,5,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__les_bugnenets_savagnieres,Les Bugnenets-Savagnières,6,226,6,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__les_marecottes,Les Marécottes,6,246,6,0,0,0,0,0,0,,True,further_fixed_effect_linear_dependency,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,13,547,13,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__les_pleiades,Les Pléiades,9,332,0,9,8,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__leukerbad,Leukerbad,6,201,1,5,2,2,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,12,502,12,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__linden_skilift_linden,Linden,10,40,0,10,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,3,42,0,3,3,0,0,0,0,MP_GROUP_RESORT__bumbach_schangnau,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,10,40,2,8,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__melchsee_frutt,Melchsee-Frutt,7,28,7,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,8,328,8,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__mont_noble_nax,Nax,9,392,9,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__moosalpregion,Moosalp,2,28,0,2,2,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__morlialp,Mörlialp,5,20,3,2,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__ottenleuebad,Egg Ottenleue,2,28,0,2,2,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__ovronnaz,Ovronnaz,5,218,5,0,0,0,0,0,0,,True,further_fixed_effect_linear_dependency,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin,Les Prés-d'Orvin,5,143,0,5,3,3,2,2,2,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__rathvel,Rathvel,12,504,12,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__riffenmatt,Riffenmatt,4,56,1,3,3,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman,Les Rochers de Naye,13,486,0,13,12,4,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,6,114,4,2,2,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__rosswald,Rosswald,4,76,0,4,4,4,3,3,3,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__ruschegg_eywald,Rüschegg - Eywald,5,70,1,4,4,0,0,0,0,MP_GROUP_RESORT__gantrisch_gurnigel,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__saas_fee,Saas-Fee,4,136,4,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,3,42,0,3,3,3,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__schwanden_sigriswil_thunersee,Schwanden,9,81,0,9,9,0,0,0,0,MP_GROUP_EVENT__e664bf3f38d5,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__schwarzenbuhl_selital,Selital,2,28,1,1,1,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,2,87,2,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__sorenberg,Sörenberg,0,0,0,0,0,0,0,0,0,,False,no_observed_winter_exposure,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__st_cergue,Saint-Cergue,8,72,5,3,3,1,1,1,1,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,4,173,4,0,0,0,0,0,0,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,True,joint_only_exact_identical_column,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__staldenried_gspon,Gspon,6,84,1,5,5,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__tramelan,Tramelan,9,394,9,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__unterbach_brandalp,Unterbäch,3,42,0,3,3,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,2,77,1,1,1,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__vercorin,Vercorin,6,261,6,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,12,502,12,0,0,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08
+45,MP_GROUP_RESORT__visperterminen,Visperterminen,3,42,0,3,3,0,0,0,0,,False,distinct_variation_identification_pending,DERIVED_WINTER_ENTRANT_PREPARATION_2026_10_08

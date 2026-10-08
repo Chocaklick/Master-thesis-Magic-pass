@@ -1,0 +1,33 @@
+{
+  "version": "stage41_preparation_2026_10_08",
+  "researcher_reply": "vas y",
+  "approval_scope": "Prepare supplementary clustering and audit individual entrants before proposing final methodological choices",
+  "previous_decisions": "config/winter_profile_researcher_decisions.json",
+  "winter_months": [12, 1, 2, 3, 4],
+  "road_thresholds_minutes": [15, 30, 45],
+  "primary_road_threshold_minutes": 30,
+  "continuous_profiles_primary": true,
+  "supplementary_clustering_preparation_approved": true,
+  "candidate_methods": ["kmeans", "ward"],
+  "candidate_class_counts": [2, 3, 4],
+  "final_features_preprocessing_and_classes_approved": false,
+  "additional_entry_identification_audit_approved": true,
+  "additional_entry_estimator_approved": false,
+  "new_effect_estimation_approved": false,
+  "automatic_exclusion_approved": false,
+  "numerical_diagnostics": {
+    "projection_tolerance": 1e-12,
+    "projection_maximum_iterations": 10000,
+    "rank_tolerance": "largest singular value times maximum matrix dimension times float64 epsilon",
+    "nullspace_loading_tolerance": 1e-8,
+    "provenance": "Reuse the previous successive-entry audit numerical projection; not an estimator choice"
+  },
+  "proposed_clustering_features": {
+    "main_candidate": ["historically_verified_group_ski_area_km", "historically_verified_group_altitude_top_m"],
+    "alternative": "Add historically verified group lift count, examining its correlation with ski area",
+    "scaling_candidate": "log1p(size variables), then standardise each feature; compare against unlogged standardisation",
+    "missingness": "No imputation approved; preserve missing groups in inventory, present coverage before deciding fit scope",
+    "municipal_hotel_capacity": "Separate preentry municipality context, not a station capacity proxy or clustering input without an approved allocation rule",
+    "selection": "Separation, stability and interpretability before looking at treatment effects; no significance-based grouping"
+  }
+}

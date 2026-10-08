@@ -1,0 +1,33 @@
+{
+  "review_date": "2026-10-08",
+  "scope": "Targeted triage of existing archives, not exhaustive historical feature reconstruction; no numerical group trait transcribed",
+  "records": [
+    {
+      "source_id": "LEYSIN_CHAIRLIFT_PREAVIS_2017",
+      "station_group_name_contains": "Leysin",
+      "document_date": "2017-02-24",
+      "reviewed_pdf_pages": "1",
+      "inspection": "Visually rendered cover: guarantee for construction of Le Fer-Brion-Tete d'Ai chairlift, planned winter2018 opening",
+      "group_feature_status": "preentry_component_investment_not_full_group_structure",
+      "next_action": "Inspect remaining scanned pages and find an inventory for the complete retained group before assigning piste km or lift count"
+    },
+    {
+      "source_id": "ORMONT_DESSUS_TVGD_LOAN_PREAVIS_2017",
+      "station_group_name_contains": "Villars",
+      "document_date": "2017-05-29",
+      "reviewed_pdf_pages": "1",
+      "inspection": "Visually rendered introduction: Vioz-Mazots replacement and Jorasse piste project, not total Villars-Gryon-Diablerets capacity",
+      "group_feature_status": "preentry_component_investment_not_full_group_structure",
+      "next_action": "Find full-domain preentry inventory; do not count planned infrastructure as existing capacity"
+    },
+    {
+      "source_id": "CHATEAU_DOEX_LA_BRAYE_2018",
+      "station_group_name_contains": "La Braye",
+      "document_date": "2018-07-31",
+      "reviewed_pdf_pages": "1-4 text extraction; page3 visually verified",
+      "inspection": "Sale of lift assets and buildings; property table does not supply a verified complete preentry lift count",
+      "group_feature_status": "postentry_property_inventory_not_preentry_group_structure",
+      "next_action": "Find an inventory describing the domain before November2017; retain absent directory structure as missing"
+    }
+  ]
+}
