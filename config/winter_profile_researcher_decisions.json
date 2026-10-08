@@ -1,0 +1,30 @@
+{
+  "decision_version": "stage40_partial_choices_2026_10_08",
+  "researcher_message": "1. decembre avril fera largement l'affaire; 2. oui pour les variables continues, question sur le clustering; 3. essaie ca, question sur l'effet de chaque nouvel arrivant",
+  "prior_proposal_preserved": "config/winter_profile_analysis_proposal.json",
+  "report": "reports/93_DECISIONS_HIVER_CLUSTERING_ET_AJOUTS_FR.md",
+  "validated_winter_months": [12, 1, 2, 3, 4],
+  "winter_window_approved": true,
+  "continuous_station_features_approved_in_principle": true,
+  "initial_triggering_portfolio_target_approved_in_principle": true,
+  "retain_later_entries_in_primary_trajectory": true,
+  "preserve_connected_station_groups": true,
+  "no_duplicate_municipal_outcomes": true,
+  "station_traits_require_preentry_source_verification": true,
+  "continuous_portfolio_aggregation_rule_approved": false,
+  "clustering_experiment_approved": false,
+  "new_cluster_categories_approved": false,
+  "additional_entry_estimator_approved": false,
+  "seasonal_aggregation_reference_and_inference_execution_bundle_approved": false,
+  "new_effect_estimation_approved": false,
+  "automatic_exclusion_approved": false,
+  "summer_window_and_component_history_still_pending": true,
+  "december_april_preview_command": ".venv/Scripts/python.exe src/descriptive/preview_december_april_support.py",
+  "december_april_support_preview": {
+    "15": {"exposed_territories": 30, "complete_pre_and_post": 26, "first_post_complete": 27, "immediate_pre_and_first_post_complete": 26, "first_two_post_complete": 24},
+    "30": {"exposed_territories": 58, "complete_pre_and_post": 49, "first_post_complete": 50, "immediate_pre_and_first_post_complete": 48, "first_two_post_complete": 48},
+    "45": {"exposed_territories": 88, "complete_pre_and_post": 71, "first_post_complete": 72, "immediate_pre_and_first_post_complete": 69, "first_two_post_complete": 67}
+  },
+  "preview_is_not_a_selected_estimation_sample": true,
+  "winter_opening_share_90_percent": "researcher motivation, not independently verified or entered as an empirical variable"
+}
