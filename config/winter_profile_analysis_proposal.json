@@ -1,0 +1,51 @@
+{
+  "proposal_version": "stage39_winter_profile_options_2026_10_08",
+  "status": "coverage_audit_complete_methodology_pending_researcher_validation",
+  "audit_report": "reports/92_AUDIT_HIVER_PROFILS_ET_CHOIX_FR.md",
+  "audit_manifest": "reports/winter_profile_design_audit_summary.json",
+  "existing_road_execution": "config/accessibility_road_did_final_execution.json",
+  "preserve_existing_station_groups": true,
+  "preserve_prior_estimates": true,
+  "effect_estimation_authorized": false,
+  "automatic_exclusion_authorized": false,
+  "winter_options": {
+    "recommended_primary_months": [11, 12, 1, 2, 3, 4],
+    "proposed_sensitivity_months": [12, 1, 2, 3],
+    "recommended_observation": "one municipality territory per winter and scenario, sum only when all required original monthly outcomes observed",
+    "proposed_transform": "log1p of complete seasonal sum, not sum of monthly logarithms",
+    "proposed_reference": "immediately preceding winter, complete and ending strictly before first base-pass exposure; missing support is flagged, not silently replaced by an older winter",
+    "alternative": "winter-month model with separately validated reference and seasonality specification",
+    "approved": false
+  },
+  "profile_options": {
+    "A": "separate historically verified size <=20/>20 piste kilometres and summit altitude <2000/>=2000 metres; no automatic crossed classes",
+    "B": "historically verified continuous station features with simple interactions, no category cutoffs",
+    "C": "new multivariate preentry classification of existing groups; old current structural classes remain descriptive",
+    "hotel_context_proposal": "municipal accommodation in 24 months strictly before first base-pass exposure, distinct from station profile and not post-first-winter",
+    "undated_feature_rule": "no implicit stability assumption or promotion to preentry variable",
+    "approved": false
+  },
+  "multiple_exposure_options": {
+    "recommended": "freeze profile of all groups triggering first winter exposure; homogeneous, mixed or missing information; keep subsequent entries in network trajectory",
+    "alternative_joint_model": "municipality-winter joint profile exposures/additions, only after separability and estimator validation",
+    "alternative_single_exposure": "secondary restriction with separate approval and representativeness warning, never automatic",
+    "no_duplicate_outcomes": true,
+    "no_arbitrary_station_or_weight_assignment": true,
+    "approved": false
+  },
+  "summer": {
+    "proposed_months": [5, 6, 7, 8, 9, 10],
+    "window_approved": false,
+    "requires_verified_group_component_year_inclusion_and_validity": true,
+    "unknown_status_is_not_an_unexposed_control": true,
+    "old_composite_summer_flag_is_not_full_group_access": true,
+    "effect_estimation_authorized": false
+  },
+  "inference": {
+    "existing_territorial_scheme_is_not_automatic_new_profile_approval": true,
+    "shared_station_group_dependence_sensitivity_pending": true,
+    "no_reliability_filter_based_on_significance": true,
+    "final_seasonal_estimator_support_reference_and_inference_bundle_pending": true,
+    "causal_certification": false
+  }
+}
