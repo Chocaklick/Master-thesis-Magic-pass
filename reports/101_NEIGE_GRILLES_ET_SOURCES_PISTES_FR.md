@@ -2,6 +2,8 @@
 
 9 octobre 2026 — suite du [bilan précédent](100_PISTES_CORRESPONDANCES_ET_REPRISE_NEIGE_FR.md). Les **71 groupes de stations et 185 territoires communaux restent inchangés**. Anciens résultats, regroupements et seuils routiers conservés ; aucun nouveau profil, clustering ou DiD estimé.
 
+**Décision reçue après ce bilan :** « 2m de relief ». La référence swissALTI3D à **2 m** est désormais validée pour l’altitude et l’orientation du terrain, avec millésime et réserve historique conservés. Décision enregistrée dans [le protocole complémentaire](../config/winter_profile_terrain_decisions_stage48.json), sans modifier les audits antérieurs. Le choix concernant les pistes uniquement en surface reste en attente ; aucune tuile ni variable de relief n’est encore calculée. Cette résolution ne change pas les grilles neige SPASS/OSHD.
+
 ## 1. Collecte : ce qui est réellement disponible
 
 | Archive OSHD | État à la clôture | Utilisable pour le contrôle du contenu ? |

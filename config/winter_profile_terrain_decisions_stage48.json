@@ -1,0 +1,23 @@
+{
+  "version": "stage48_terrain_resolution_2026_10_09",
+  "decision_authority": "direct researcher reply in project chat",
+  "researcher_reply": "2m de relief",
+  "parent_decisions": [
+    "config/winter_profile_operational_decisions_stage43.json",
+    "config/winter_profile_aggregation_decisions_stage45.json"
+  ],
+  "official_documentation_source_id": "SWISSTOPO_ALTI3D_RESOLUTION_STAGE47",
+  "dem_dataset": "swissALTI3D",
+  "dem_grid_resolution_m": 2,
+  "dem_resolution_approved": true,
+  "dem_use": "piste altitude and terrain orientation; not snow-model grid resolution",
+  "dem_tile_vintage_must_be_retained": true,
+  "historical_uncertainty_must_be_explicit": true,
+  "current_dem_is_verified_preentry_dem": false,
+  "surface_only_piste_rule": null,
+  "terrain_flat_aspect_threshold_degrees": null,
+  "group_piste_assignment_verified": false,
+  "snow_model_splicing_or_calibration_approved": false,
+  "automatic_exclusion_approved": false,
+  "note": "Only DEM resolution is newly approved. Earlier decisions and audit snapshots remain unchanged; other methodological choices still require researcher validation."
+}
