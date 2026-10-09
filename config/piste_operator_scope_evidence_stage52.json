@@ -1,0 +1,6 @@
+[
+  {"source_id":"OPERATOR_AXALP_SCOPE_STAGE52","url":"https://www.axalp.ch/besucherinfo/pisten-pistenbericht/","organisation":"Sportbahnen Axalp Windegg AG","suffix":"html","parent_source_id":"OPERATOR_AXALP_STAGE52","observed_link_label":"Pisten & Pistenbericht"},
+  {"source_id":"OPERATOR_BALMBERG_SCOPE_STAGE52","url":"https://www.balmberg.ch/pisten-nachtskifahren","organisation":"Sportanlagen Balmberg","suffix":"html","parent_source_id":"OPERATOR_BALMBERG_STAGE52","observed_link_label":"Pisten | Nachtskifahren"},
+  {"source_id":"OPERATOR_CHARMEY_SCOPE_STAGE52","url":"https://www.charmey.ch/activites/ski-snowboard/","organisation":"TéléCharmey","suffix":"html","parent_source_id":"OPERATOR_CHARMEY_STAGE52","observed_link_label":"Ski / Snowboard"},
+  {"source_id":"OPERATOR_BERRA_SCOPE_STAGE52","url":"https://www.laberra.ch/fr/ouverture-des-installations","organisation":"SRM La Berra SA","suffix":"html","parent_source_id":"OPERATOR_BERRA_STAGE52","observed_link_label":"Ouverture des installations","resolution_note":"Relative fr/ouverture-des-installations resolved against literal HTML base=https://www.laberra.ch/, not final page /fr/."}
+]

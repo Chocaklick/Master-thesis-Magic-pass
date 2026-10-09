@@ -1,0 +1,983 @@
+{
+  "date": "2026-10-09",
+  "input_sha256": {
+    "config/piste_assignment_cases_stage52.json": "5fd7c539c63f7457df1416476774dda6a34940f941a22867921ade8e40bfaa32",
+    "config/piste_operator_evidence_stage52.json": "aa1f358b502b5c9c41fdfdf6fa3dea6dd858a505d49b929fc23641c60da406ec",
+    "config/piste_operator_scope_evidence_stage52.json": "2bec557fb35622b0be6c9010f4a8709e882415d2e79e0f3eab5329711348a9d8",
+    "config/piste_assignment_protocol_decisions_stage51.json": "d82c6ae646fcc895ccbf1b0443995caa794af39ae1775fbb88dd1da5f613b5d6",
+    "reports/piste_assignment_stage51_summary.json": "b2da38cb7d5fe174f5b662cf7bcf84c97e7f8a44a41131dd3305d094ff36c168",
+    "data_processed/winter_profile_piste_assignment_stage51.csv": "77851b835ca47003f6895cc7bda64481fcc3fa42bf6b4441b14fa7fe53c1483a",
+    "data_processed/accessibility_station_groups.csv": "08040e0b7141679434eb8f4339d46ba24a77768ee07c6ab9fb98e989054987eb",
+    "data_processed/accessibility_station_access_points.csv": "e71444ba9062b23a6d8014edb37387b547162f6d20d074b5e161d8ee1f8dc916",
+    "reports/piste_official_page_audit_stage49_summary.json": "00efeb953b19b547720ae5047cd9f061b36140be07651225ac92d5b468c115c0",
+    "reports/piste_official_page_collection_stage49_summary.json": "55b585be39fd795791d2aaa71137f36be0fdffed571773cd1c2516fc04b6f6a1",
+    "src/descriptive/verify_piste_assignments_stage52.py": "bdf5faa17c26a41d0d171656d0013c9f869b4e1ef998edbc563d150b66d51ef6",
+    "src/descriptive/verify_piste_assignments_stage51.py": "604d6f1b1d003e1b84185aa2f41485d6a57894b14548519c0cb962d79a17e1d2",
+    "src/descriptive/audit_completed_piste_membership.py": "a1527c3c5de2dc888588ff9fce5358e7bb07f62bc291d55f293bbecb84b7d2de",
+    "reports/piste_site_membership_audit_summary.json": "ddf6cb7efce4a915c4f27291075c64b2fd055f727f442b4a14633b0cea76dcb8",
+    "config/winter_profile_geometry_roles_decisions_stage49.json": "463c680cda5dadfa35c5f781748158e9ea432366ff4afab8f80d7e55824b2a66",
+    "data_external/source_evidence/OPERATOR_AXALP_STAGE52_20261009T214322Z.html": "7f7f7e7ffd9c53a472fb835f558ef029d9d53aeb9ad35e00004e007307fb00f3",
+    "data_external/source_evidence/OPERATOR_BALMBERG_STAGE52_20261009T214328Z.html": "0dcac4703b7bba9aba090c523999c39c0e680fdd8b4c2781481fae3db65b8157",
+    "data_external/source_evidence/OPERATOR_BUMBACH_STAGE52_20261009T214330Z.html": "8b6a0939cebbcd4671525bcca3752ca323463acc5a800c221bd586ab920abf9f",
+    "data_external/source_evidence/OPERATOR_CHARMEY_STAGE52_20261009T214340Z.html": "d19140e7e84c1f10bdabbcc4ae8119eb137cba2a6481805afcca0beac7f398f1",
+    "data_external/source_evidence/OPERATOR_ERIZ_STAGE52_20261009T214353Z.html": "b4b5aa18a3d129d38503465027a21a45ee5287eaedab029fc280f4171339d50f",
+    "data_external/source_evidence/OPERATOR_HABKERN_STAGE52_20261009T214359Z.html": "05e53f62934fb35a8302f0844e2e620925eef9e9810c424a11f2ddf2ef2ea34b",
+    "data_external/source_evidence/OPERATOR_JAUNPASS_STAGE52_20261009T214407Z.html": "bb48aadc785f5157614e385d4ff3418c2456c9ccca7efcbccb90ca8eccdb22fd",
+    "data_external/source_evidence/OPERATOR_BERRA_STAGE52_20261009T214411Z.html": "419eb79afeae6bc24b283d37e35037b98184e5ba594bb45b238c99fbb363c23d",
+    "data_external/source_evidence/OPERATOR_CRET_PUY_STAGE52_20261009T214421Z.html": "d260b73ca5c256bc4c005109228ef2de94ee3d5b76042c841b62b57fe745b4c5",
+    "data_external/source_evidence/OPERATOR_BUGNENETS_STAGE52_20261009T214423Z.html": "36f583cca17d44d23ba2404f7a061876a65a355e70060e66607b5cf8c20fac97",
+    "data_external/source_evidence/OPERATOR_AXALP_SCOPE_STAGE52_20261009T214555Z.html": "c4b6254a10c1cc9ccc028778842a6dc62ceda705e63b3539688dbc1d3d819921",
+    "data_external/source_evidence/OPERATOR_BALMBERG_SCOPE_STAGE52_20261009T214602Z.html": "ebe9aeb30da31a437d1d3ee6f9b5804d7780f0063cb40b893a75bf5c15fb1b14",
+    "data_external/source_evidence/OPERATOR_CHARMEY_SCOPE_STAGE52_20261009T214603Z.html": "18003caad29294f402dfd76bec5e2939dea23938e1eb0078d3372ee8abfb92d5",
+    "data_external/source_evidence/OPERATOR_BERRA_SCOPE_STAGE52_20261009T214615Z.html": "58ac7ba867d4f4b6d0916db241764772f9281a67dc33874c853a2cde9c54ba61",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1800_STAGE49_20261009T191018Z.html": "404fdab124597f7a6ba35637e76a6b9a97971ffac29a9b75aaca23a6dcbdaeb3",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_4444_STAGE49_20261009T191439Z.html": "fbf52b4580b522c98e0e0a57932b6510857ca03ff4f05775fd24f5c143de80c2",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2765_STAGE49_20261009T191120Z.html": "61245102b34859d518b5dbe84f29132b4164a0a7e574e952260b2bcd035bad3d",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_14_STAGE49_20261009T190155Z.html": "68ca228b798213b9f3392d3acb37b01034cc0748316514492dda65e29d093876",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1797_STAGE49_20261009T190946Z.html": "f6291f6129c4775b24eaba1c82e950c650823c763bc769619faf280a1f8b5685",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1798_STAGE49_20261009T190957Z.html": "351a4dd19190453ed42f46777b2eff50776980058e3f9b32be0c70bdfde6eba5",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1802_STAGE49_20261009T191038Z.html": "a753c10b526279d105f6bca9b3b56dc56fe3472d7e91a34f9a96952c6f08f9e6",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_20_STAGE49_20261009T190239Z.html": "84b4d7e0a98534b6ba41af67e8a4a01aee36a788155fd01f129711f98ffba8f8",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_17_STAGE49_20261009T190206Z.html": "eb142426e97ba8975fef1a2585e2411242869d67612c699b00812c6ee27e3fe6",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_12_STAGE49_20261009T190143Z.html": "1ab169ac0371b2d59ea572136599fe6b7875a52eca228d6b9c3bded4634b3a73",
+    "data_external/source_evidence/OSM_DOWNHILL_SWISS_CURRENT_2026_10_09_20261009T162248Z.json": "8904d22bed62031cd06f25231f083cfb502143c7609982cf4aab3d78b7d45c4f",
+    "data_external/source_evidence/OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09_20261009T172519Z.json": "6bbea578b01f12037691da5c74332a91f0ddec2d14810fa9cef68a2f19c63c68"
+  },
+  "output_sha256": {
+    "data_processed/winter_profile_piste_assignment_stage52.csv": "c6ea8491c12a73fcfd8c51b3b5315630fb7032fb854eb517757793ecedcd6449",
+    "reports/figures/piste_assignment_geographic_review_stage52_1.png": "0e16d1d6ebbc1a9bfffd068b12cf0cca25b531ba16c99eebd4261262770d4b7b",
+    "reports/figures/piste_assignment_geographic_review_stage52_2.png": "89f784bffdb5fe7aa38e7f5450a15883048f4dcb83f0187484700ea020a97eae"
+  },
+  "cases": [
+    {
+      "station_group_id": "MP_GROUP_RESORT__axalp_brienz",
+      "osm_site_relation_id": 5634250,
+      "operator_source_id": "OPERATOR_AXALP_STAGE52",
+      "scope_source_id": "OPERATOR_AXALP_SCOPE_STAGE52",
+      "required_operator_markers": [
+        "Sportbahnen Axalp Windegg AG",
+        "7 Pisten"
+      ],
+      "verified_lift_way_ids": [
+        25936973
+      ],
+      "geographic_review_status": "reviewed_current_scope_coherent",
+      "geographic_review_note": "Original LV95 map individually viewed: retained Axalp reference meets the core downhill/lift network, four lift branches contained in the same named domain. Operator Sportbahnen Axalp Windegg identity and own piste page corroborate Axalp scope. Windegg member supports geographic review; no independently dated lift reconstruction verified.",
+      "review_note": "12OSM downhill objects versus7official pistes are different counts, not missing/extra piste estimates. Published15km not imported as historical/GIS profile; whole real domain remains uncertified.",
+      "current_site_correspondence_verified": true,
+      "original_site_tags": {
+        "name": "Axalp",
+        "site": "piste",
+        "type": "site"
+      },
+      "original_site_version": 4,
+      "original_site_edit_timestamp": "2022-07-21T10:04:06Z",
+      "selected_downhill_way_ids": [
+        376526088,
+        376526089,
+        376526090,
+        376577962,
+        376580430,
+        376580431,
+        376580432,
+        376581985,
+        376581986,
+        404360050,
+        404360052,
+        1080242072
+      ],
+      "lift_way_ids": [
+        25936972,
+        25936973,
+        172793469,
+        188337465
+      ],
+      "membership_diagnostics": {
+        "osm_site_relation_id": 5634250,
+        "osm_site_name": "Axalp",
+        "initial_selected_downhill_way_count": 12,
+        "completed_selected_downhill_way_count": 12,
+        "added_downhill_way_ids": "",
+        "known_nordic_way_member_count": 0,
+        "known_aerialway_member_count": 4,
+        "remaining_unresolved_way_relation_count": 0,
+        "remaining_node_reference_count": 0,
+        "group_assignment_accepted": false,
+        "historical_scope_verified": false,
+        "source_id": "DERIVED_PISTE_SITE_MEMBERSHIP_AUDIT_2026_10_09",
+        "parent_source_ids": "OSM_DOWNHILL_SWISS_CURRENT_2026_10_09|OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09"
+      },
+      "shared_downhill_way_ids": [],
+      "upstream_quality_tags": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__balmberg",
+      "osm_site_relation_id": 9244613,
+      "operator_source_id": "OPERATOR_BALMBERG_STAGE52",
+      "scope_source_id": "OPERATOR_BALMBERG_SCOPE_STAGE52",
+      "required_operator_markers": [
+        "Skilift Kähle",
+        "Skilift Bödeli",
+        "Übungsskilift Höfli"
+      ],
+      "verified_lift_way_ids": [
+        31265375,
+        163214391
+      ],
+      "geographic_review_status": "reviewed_current_scope_coherent",
+      "geographic_review_note": "Original LV95 map individually viewed: two principal lift/descent branches and a separate short local branch form the Balmberg site's mapped sectors. Official Bödeli is an exact lift identity; Kähle/original Kählen interpreted in this corroborated domain only, not by automatic fuzzy name. Reference near the short sector retained.",
+      "review_note": "Official Höfli platter versus unnamed OSM rope_tow member requires object/type clarification. Identity of current Balmberg site accepted, not all installations or geometry roles.",
+      "current_site_correspondence_verified": true,
+      "original_site_tags": {
+        "name": "Oberbalmberg",
+        "site": "piste",
+        "type": "site"
+      },
+      "original_site_version": 1,
+      "original_site_edit_timestamp": "2019-01-22T21:31:33Z",
+      "selected_downhill_way_ids": [
+        442501913,
+        442501914,
+        442501915,
+        665434040,
+        665434041
+      ],
+      "lift_way_ids": [
+        31265375,
+        163214391,
+        543166437
+      ],
+      "membership_diagnostics": {
+        "osm_site_relation_id": 9244613,
+        "osm_site_name": "Oberbalmberg",
+        "initial_selected_downhill_way_count": 5,
+        "completed_selected_downhill_way_count": 5,
+        "added_downhill_way_ids": "",
+        "known_nordic_way_member_count": 0,
+        "known_aerialway_member_count": 3,
+        "remaining_unresolved_way_relation_count": 0,
+        "remaining_node_reference_count": 0,
+        "group_assignment_accepted": false,
+        "historical_scope_verified": false,
+        "source_id": "DERIVED_PISTE_SITE_MEMBERSHIP_AUDIT_2026_10_09",
+        "parent_source_ids": "OSM_DOWNHILL_SWISS_CURRENT_2026_10_09|OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09"
+      },
+      "shared_downhill_way_ids": [],
+      "upstream_quality_tags": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__bumbach_schangnau",
+      "osm_site_relation_id": 9206149,
+      "operator_source_id": "OPERATOR_BUMBACH_STAGE52",
+      "scope_source_id": "OPERATOR_BUMBACH_STAGE52",
+      "required_operator_markers": [
+        "Skilifte Bumbach",
+        "Bügellift 1. Sektion",
+        "Bügellift 2. Sektion"
+      ],
+      "verified_lift_way_ids": [
+        259579233,
+        259579862
+      ],
+      "geographic_review_status": "reviewed_current_scope_coherent",
+      "geographic_review_note": "Original LV95 map individually viewed: two consecutive main lift segments serve one coherent north-south descent system. Official two Bügellift sections and Bumbach-Schangnau identity corroborate this current site. Retained reference beyond the upper side of the mapped network is not moved or used for clipping.",
+      "review_note": "Official two main lift sections plus child installations; OSM contains two main members, no completeness certification. No exact official-to-OSM individual section naming inferred.",
+      "current_site_correspondence_verified": true,
+      "original_site_tags": {
+        "name": "Bumbach",
+        "site": "piste",
+        "type": "site"
+      },
+      "original_site_version": 1,
+      "original_site_edit_timestamp": "2019-01-11T10:20:01Z",
+      "selected_downhill_way_ids": [
+        442939329,
+        442939330,
+        442939331,
+        442939332,
+        442939333
+      ],
+      "lift_way_ids": [
+        259579233,
+        259579862
+      ],
+      "membership_diagnostics": {
+        "osm_site_relation_id": 9206149,
+        "osm_site_name": "Bumbach",
+        "initial_selected_downhill_way_count": 5,
+        "completed_selected_downhill_way_count": 5,
+        "added_downhill_way_ids": "",
+        "known_nordic_way_member_count": 0,
+        "known_aerialway_member_count": 2,
+        "remaining_unresolved_way_relation_count": 0,
+        "remaining_node_reference_count": 0,
+        "group_assignment_accepted": false,
+        "historical_scope_verified": false,
+        "source_id": "DERIVED_PISTE_SITE_MEMBERSHIP_AUDIT_2026_10_09",
+        "parent_source_ids": "OSM_DOWNHILL_SWISS_CURRENT_2026_10_09|OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09"
+      },
+      "shared_downhill_way_ids": [],
+      "upstream_quality_tags": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__charmey",
+      "osm_site_relation_id": 9363438,
+      "operator_source_id": "OPERATOR_CHARMEY_STAGE52",
+      "scope_source_id": "OPERATOR_CHARMEY_SCOPE_STAGE52",
+      "required_operator_markers": [
+        "TéléCharmey",
+        "Banderettes",
+        "Le Vounetz",
+        "domaine skiable de Charmey"
+      ],
+      "verified_lift_way_ids": [
+        28156424,
+        28156625,
+        28156626
+      ],
+      "geographic_review_status": "reviewed_current_scope_coherent",
+      "geographic_review_note": "Original LV95 map individually viewed: TeleCharmey valley gondola from retained reference reaches the main local lift and downhill sectors. Official Charmey/Dents Vertes/Vounetz domain and Banderettes labels corroborate site identity, without turning restaurant altitude into a terrain measure.",
+      "review_note": "Operator piste counts and OSM segments have different meanings. Source Vounetz and original Vounetse spelling retained; no automatic alias, full coverage or preentry verification. Published30km not imported as GIS-derived profile.",
+      "current_site_correspondence_verified": true,
+      "original_site_tags": {
+        "name": "Charmey",
+        "site": "piste",
+        "type": "site",
+        "url": "http://charmey.ch"
+      },
+      "original_site_version": 4,
+      "original_site_edit_timestamp": "2024-05-20T10:46:52Z",
+      "selected_downhill_way_ids": [
+        315073341,
+        315073447,
+        315160092,
+        522861224,
+        522861231,
+        522861234,
+        522861237,
+        522878446
+      ],
+      "lift_way_ids": [
+        28156424,
+        28156625,
+        28156626,
+        315073200
+      ],
+      "membership_diagnostics": {
+        "osm_site_relation_id": 9363438,
+        "osm_site_name": "Charmey",
+        "initial_selected_downhill_way_count": 8,
+        "completed_selected_downhill_way_count": 8,
+        "added_downhill_way_ids": "",
+        "known_nordic_way_member_count": 0,
+        "known_aerialway_member_count": 4,
+        "remaining_unresolved_way_relation_count": 0,
+        "remaining_node_reference_count": 0,
+        "group_assignment_accepted": false,
+        "historical_scope_verified": false,
+        "source_id": "DERIVED_PISTE_SITE_MEMBERSHIP_AUDIT_2026_10_09",
+        "parent_source_ids": "OSM_DOWNHILL_SWISS_CURRENT_2026_10_09|OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09"
+      },
+      "shared_downhill_way_ids": [],
+      "upstream_quality_tags": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__eriz",
+      "osm_site_relation_id": 9205188,
+      "operator_source_id": "OPERATOR_ERIZ_STAGE52",
+      "scope_source_id": "OPERATOR_ERIZ_STAGE52",
+      "required_operator_markers": [
+        "Skilift AG Innereriz",
+        "Tellerlift Schwändli",
+        "Bügellift Obersohl"
+      ],
+      "verified_lift_way_ids": [
+        21508632,
+        254399881
+      ],
+      "geographic_review_status": "reviewed_current_scope_coherent",
+      "geographic_review_note": "Original LV95 map individually viewed: Obersohl and the short Schwändli branch match one compact downhill system near the retained Eriz point. Both names/types independently corroborated by operator status rows, not name-only correspondence.",
+      "review_note": "Named two main installations, children/Nordic offerings not interpreted as alpine membership. No imported instantaneous open/closed state as historical availability.",
+      "current_site_correspondence_verified": true,
+      "original_site_tags": {
+        "name": "Eriz",
+        "site": "piste",
+        "type": "site"
+      },
+      "original_site_version": 1,
+      "original_site_edit_timestamp": "2019-01-11T00:00:46Z",
+      "selected_downhill_way_ids": [
+        254636092,
+        254636093,
+        254636095,
+        254636101,
+        254636102,
+        254636103
+      ],
+      "lift_way_ids": [
+        21508632,
+        254399881
+      ],
+      "membership_diagnostics": {
+        "osm_site_relation_id": 9205188,
+        "osm_site_name": "Eriz",
+        "initial_selected_downhill_way_count": 6,
+        "completed_selected_downhill_way_count": 6,
+        "added_downhill_way_ids": "",
+        "known_nordic_way_member_count": 0,
+        "known_aerialway_member_count": 2,
+        "remaining_unresolved_way_relation_count": 0,
+        "remaining_node_reference_count": 0,
+        "group_assignment_accepted": false,
+        "historical_scope_verified": false,
+        "source_id": "DERIVED_PISTE_SITE_MEMBERSHIP_AUDIT_2026_10_09",
+        "parent_source_ids": "OSM_DOWNHILL_SWISS_CURRENT_2026_10_09|OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09"
+      },
+      "shared_downhill_way_ids": [],
+      "upstream_quality_tags": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__habkern",
+      "osm_site_relation_id": 9199977,
+      "operator_source_id": "OPERATOR_HABKERN_STAGE52",
+      "scope_source_id": "OPERATOR_HABKERN_STAGE52",
+      "required_operator_markers": [
+        "Skilift Habkern-Sattelegg AG",
+        "Skilift Sattelegg",
+        "Kleinskilift"
+      ],
+      "verified_lift_way_ids": [
+        95960915
+      ],
+      "geographic_review_status": "reviewed_current_scope_coherent",
+      "geographic_review_note": "Original LV95 map individually viewed: one main Sattelegg member serves a coherent Habkern descent footprint; existing reference is south of the small slope and retained. Original site url and Magic operator link agree, official main lift named independently.",
+      "review_note": "Official main Sattelegg lift plus child lift/carpet versus one known OSM lift member; gaps retained, not absent activities.",
+      "current_site_correspondence_verified": true,
+      "original_site_tags": {
+        "name": "Habkern",
+        "site": "piste",
+        "type": "site",
+        "url": "https://www.skilifthabkern.ch/"
+      },
+      "original_site_version": 2,
+      "original_site_edit_timestamp": "2025-12-21T22:55:28Z",
+      "selected_downhill_way_ids": [
+        249312479,
+        249312480,
+        249312481,
+        249312482,
+        1460364915
+      ],
+      "lift_way_ids": [
+        95960915
+      ],
+      "membership_diagnostics": {
+        "osm_site_relation_id": 9199977,
+        "osm_site_name": "Habkern",
+        "initial_selected_downhill_way_count": 5,
+        "completed_selected_downhill_way_count": 5,
+        "added_downhill_way_ids": "",
+        "known_nordic_way_member_count": 0,
+        "known_aerialway_member_count": 1,
+        "remaining_unresolved_way_relation_count": 0,
+        "remaining_node_reference_count": 0,
+        "group_assignment_accepted": false,
+        "historical_scope_verified": false,
+        "source_id": "DERIVED_PISTE_SITE_MEMBERSHIP_AUDIT_2026_10_09",
+        "parent_source_ids": "OSM_DOWNHILL_SWISS_CURRENT_2026_10_09|OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09"
+      },
+      "shared_downhill_way_ids": [],
+      "upstream_quality_tags": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__heimenschwand_buchholterberg",
+      "osm_site_relation_id": 9210386,
+      "operator_source_id": "OPERATOR_HEIMENSCHWAND_STAGE52",
+      "scope_source_id": "OPERATOR_HEIMENSCHWAND_STAGE52",
+      "required_operator_markers": [],
+      "verified_lift_way_ids": [],
+      "geographic_review_status": "retained_official_source_unavailable",
+      "review_note": "Exact archived official link returned HTTP404; no invented operator content, no assignment accepted.",
+      "current_site_correspondence_verified": false,
+      "original_site_tags": {
+        "name": "Heimenschwand",
+        "site": "piste",
+        "type": "site"
+      },
+      "original_site_version": 1,
+      "original_site_edit_timestamp": "2019-01-12T10:29:13Z",
+      "selected_downhill_way_ids": [
+        573295314
+      ],
+      "lift_way_ids": [
+        332750518
+      ],
+      "membership_diagnostics": {
+        "osm_site_relation_id": 9210386,
+        "osm_site_name": "Heimenschwand",
+        "initial_selected_downhill_way_count": 1,
+        "completed_selected_downhill_way_count": 1,
+        "added_downhill_way_ids": "",
+        "known_nordic_way_member_count": 0,
+        "known_aerialway_member_count": 1,
+        "remaining_unresolved_way_relation_count": 0,
+        "remaining_node_reference_count": 0,
+        "group_assignment_accepted": false,
+        "historical_scope_verified": false,
+        "source_id": "DERIVED_PISTE_SITE_MEMBERSHIP_AUDIT_2026_10_09",
+        "parent_source_ids": "OSM_DOWNHILL_SWISS_CURRENT_2026_10_09|OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09"
+      },
+      "shared_downhill_way_ids": [],
+      "upstream_quality_tags": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__jaun_gastlosen",
+      "osm_site_relation_id": 4772764,
+      "operator_source_id": "OPERATOR_JAUN_STAGE52",
+      "scope_source_id": "OPERATOR_JAUN_STAGE52",
+      "required_operator_markers": [],
+      "verified_lift_way_ids": [],
+      "geographic_review_status": "retained_official_source_unavailable",
+      "review_note": "Official link TLS hostname mismatch; verification remains enabled, no insecure retry or correspondence acceptance.",
+      "current_site_correspondence_verified": false,
+      "original_site_tags": {
+        "name": "Jaun-Gastlosen Bergbahnen",
+        "site": "piste",
+        "type": "site"
+      },
+      "original_site_version": 3,
+      "original_site_edit_timestamp": "2025-02-25T23:01:09Z",
+      "selected_downhill_way_ids": [
+        242093963,
+        242093968,
+        307854274,
+        313222052,
+        313241979,
+        313241980,
+        337481338,
+        337481339,
+        337481340,
+        337481341,
+        337481342,
+        337481343,
+        337481344,
+        337481345,
+        337481346,
+        337481347,
+        337481348,
+        337481349,
+        337481350,
+        337481351,
+        337481352,
+        337481353,
+        337481354,
+        1095242984,
+        1095242985,
+        1095242988,
+        1362960294,
+        1362960295,
+        1362960300
+      ],
+      "lift_way_ids": [
+        169071997,
+        169071998,
+        169071999,
+        313222035
+      ],
+      "membership_diagnostics": {
+        "osm_site_relation_id": 4772764,
+        "osm_site_name": "Jaun-Gastlosen Bergbahnen",
+        "initial_selected_downhill_way_count": 29,
+        "completed_selected_downhill_way_count": 29,
+        "added_downhill_way_ids": "",
+        "known_nordic_way_member_count": 0,
+        "known_aerialway_member_count": 4,
+        "remaining_unresolved_way_relation_count": 0,
+        "remaining_node_reference_count": 0,
+        "group_assignment_accepted": false,
+        "historical_scope_verified": false,
+        "source_id": "DERIVED_PISTE_SITE_MEMBERSHIP_AUDIT_2026_10_09",
+        "parent_source_ids": "OSM_DOWNHILL_SWISS_CURRENT_2026_10_09|OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09"
+      },
+      "shared_downhill_way_ids": [],
+      "upstream_quality_tags": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__jaunpass",
+      "osm_site_relation_id": 9356119,
+      "operator_source_id": "OPERATOR_JAUNPASS_STAGE52",
+      "scope_source_id": "OPERATOR_JAUNPASS_STAGE52",
+      "required_operator_markers": [
+        "Sportbahnen Jaunpass",
+        "Zügwegen",
+        "Winteregg"
+      ],
+      "verified_lift_way_ids": [
+        208370459,
+        208370460
+      ],
+      "geographic_review_status": "reviewed_current_scope_coherent",
+      "geographic_review_note": "Original LV95 map individually viewed: two lift branches around a common upper side align with official description of neighbouring Winteregg/Zügwegen slopes. Reference retained near the long Winteregg lower sector; no merge with distinct Jaun site.",
+      "review_note": "Two named main lifts corroborated, official child installations not all known OSM members; upstream missing Nordic pistes alert retained separately. Source says two main lifts, not complete catalogue of every child facility.",
+      "current_site_correspondence_verified": true,
+      "original_site_tags": {
+        "fixme": "missing nordic pistes",
+        "name": "Jaunpass",
+        "site": "piste",
+        "type": "site",
+        "url": "http://www.sportbahnen-jaunpass.ch/"
+      },
+      "original_site_version": 3,
+      "original_site_edit_timestamp": "2025-12-30T18:39:35Z",
+      "selected_downhill_way_ids": [
+        254427194,
+        254427195,
+        254427816,
+        313545905,
+        313545907,
+        313545908,
+        1462899658,
+        1462899659,
+        1462899660
+      ],
+      "lift_way_ids": [
+        208370459,
+        208370460
+      ],
+      "membership_diagnostics": {
+        "osm_site_relation_id": 9356119,
+        "osm_site_name": "Jaunpass",
+        "initial_selected_downhill_way_count": 9,
+        "completed_selected_downhill_way_count": 9,
+        "added_downhill_way_ids": "",
+        "known_nordic_way_member_count": 0,
+        "known_aerialway_member_count": 2,
+        "remaining_unresolved_way_relation_count": 0,
+        "remaining_node_reference_count": 0,
+        "group_assignment_accepted": false,
+        "historical_scope_verified": false,
+        "source_id": "DERIVED_PISTE_SITE_MEMBERSHIP_AUDIT_2026_10_09",
+        "parent_source_ids": "OSM_DOWNHILL_SWISS_CURRENT_2026_10_09|OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09"
+      },
+      "shared_downhill_way_ids": [],
+      "upstream_quality_tags": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_berra_la_roche",
+      "osm_site_relation_id": 9363437,
+      "operator_source_id": "OPERATOR_BERRA_STAGE52",
+      "scope_source_id": "OPERATOR_BERRA_SCOPE_STAGE52",
+      "required_operator_markers": [
+        "SRM La Berra SA",
+        "Le Brand - La Berra",
+        "Remontées"
+      ],
+      "verified_lift_way_ids": [
+        327889524
+      ],
+      "geographic_review_status": "reviewed_current_scope_coherent",
+      "geographic_review_note": "Original LV95 map individually viewed: named Le Brand-La Berra main branch connects retained reference with the downhill footprint; second shorter OSM lift branch stays within that site. Official current lift name independently corroborated, HTML base respected for source link.",
+      "review_note": "Current autumn status lists one summer lift, not exhaustive winter installations; Gormanda presence/type/history not certified by that page. No seasonal offer inferred or old treatment altered.",
+      "current_site_correspondence_verified": true,
+      "original_site_tags": {
+        "name": "La Berra",
+        "site": "piste",
+        "type": "site",
+        "url": "https://www.laberra.ch/"
+      },
+      "original_site_version": 2,
+      "original_site_edit_timestamp": "2020-03-22T11:52:59Z",
+      "selected_downhill_way_ids": [
+        51571503,
+        315073951,
+        315159506,
+        522878447,
+        522878449,
+        522878451,
+        673729431
+      ],
+      "lift_way_ids": [
+        32651979,
+        327889524
+      ],
+      "membership_diagnostics": {
+        "osm_site_relation_id": 9363437,
+        "osm_site_name": "La Berra",
+        "initial_selected_downhill_way_count": 7,
+        "completed_selected_downhill_way_count": 7,
+        "added_downhill_way_ids": "",
+        "known_nordic_way_member_count": 0,
+        "known_aerialway_member_count": 2,
+        "remaining_unresolved_way_relation_count": 0,
+        "remaining_node_reference_count": 0,
+        "group_assignment_accepted": false,
+        "historical_scope_verified": false,
+        "source_id": "DERIVED_PISTE_SITE_MEMBERSHIP_AUDIT_2026_10_09",
+        "parent_source_ids": "OSM_DOWNHILL_SWISS_CURRENT_2026_10_09|OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09"
+      },
+      "shared_downhill_way_ids": [],
+      "upstream_quality_tags": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__le_paquier_cret_du_puy",
+      "osm_site_relation_id": 9387990,
+      "operator_source_id": "OPERATOR_CRET_PUY_STAGE52",
+      "scope_source_id": "OPERATOR_CRET_PUY_STAGE52",
+      "required_operator_markers": [
+        "Téléski du Pâquier Crêt-du-Puy",
+        "La Balère",
+        "2 téléskis"
+      ],
+      "verified_lift_way_ids": [
+        29241753,
+        262913853
+      ],
+      "geographic_review_status": "reviewed_current_scope_coherent",
+      "geographic_review_note": "Original LV95 map individually viewed: two named Crêt-du-Puy/Balère branches serve the same local descent network at the retained reference, consistent with the official two-main-lift description. Original La Balère/La Balère accents and IDs preserved.",
+      "review_note": "Two named lifts correspond; official carpet not assumed present in OSM members. Published10km not imported as a GIS-derived or historical feature.",
+      "current_site_correspondence_verified": true,
+      "original_site_tags": {
+        "name": "Crêt-du-Puy",
+        "site": "piste",
+        "type": "site",
+        "url": "https://www.cretdupuy.com"
+      },
+      "original_site_version": 1,
+      "original_site_edit_timestamp": "2019-03-11T11:46:22Z",
+      "selected_downhill_way_ids": [
+        29243811,
+        29244391,
+        29244782,
+        29244990,
+        262913861,
+        262913863
+      ],
+      "lift_way_ids": [
+        29241753,
+        262913853
+      ],
+      "membership_diagnostics": {
+        "osm_site_relation_id": 9387990,
+        "osm_site_name": "Crêt-du-Puy",
+        "initial_selected_downhill_way_count": 6,
+        "completed_selected_downhill_way_count": 6,
+        "added_downhill_way_ids": "",
+        "known_nordic_way_member_count": 0,
+        "known_aerialway_member_count": 2,
+        "remaining_unresolved_way_relation_count": 0,
+        "remaining_node_reference_count": 0,
+        "group_assignment_accepted": false,
+        "historical_scope_verified": false,
+        "source_id": "DERIVED_PISTE_SITE_MEMBERSHIP_AUDIT_2026_10_09",
+        "parent_source_ids": "OSM_DOWNHILL_SWISS_CURRENT_2026_10_09|OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09"
+      },
+      "shared_downhill_way_ids": [],
+      "upstream_quality_tags": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__les_bugnenets_savagnieres",
+      "osm_site_relation_id": 9387991,
+      "operator_source_id": "OPERATOR_BUGNENETS_STAGE52",
+      "scope_source_id": "OPERATOR_BUGNENETS_STAGE52",
+      "required_operator_markers": [
+        "Bugnenets-Savagnières SA",
+        "Sava 1",
+        "Sava 2",
+        "Les Pointes",
+        "Le Rumont"
+      ],
+      "verified_lift_way_ids": [
+        151535449,
+        151536181,
+        151536182,
+        151536651
+      ],
+      "geographic_review_status": "reviewed_current_scope_coherent",
+      "geographic_review_note": "Original LV95 map individually viewed: Pointes, two neighbouring Savagnières branches and Rumont serve one coherent joint downhill system, consistent with operator installation labels and retained station reference. Sava1/2 are contextual official abbreviations, not automatic matching aliases.",
+      "review_note": "Four named main member lifts versus eight official installation labels; incomplete/uncertain membership, not full domain certification.",
+      "current_site_correspondence_verified": true,
+      "original_site_tags": {
+        "name": "Bugnenets-Savagnières",
+        "site": "piste",
+        "type": "site",
+        "url": "http://www.chasseral-snow.ch/"
+      },
+      "original_site_version": 3,
+      "original_site_edit_timestamp": "2023-01-21T21:28:19Z",
+      "selected_downhill_way_ids": [
+        151537885,
+        151541054,
+        151541060,
+        151541070,
+        151541072,
+        151541076,
+        151541077,
+        151541357,
+        151541358,
+        151542172,
+        151542174,
+        151542176,
+        151542178,
+        151542180,
+        331593238,
+        331593239,
+        331593240,
+        331593241
+      ],
+      "lift_way_ids": [
+        151535449,
+        151536181,
+        151536182,
+        151536651
+      ],
+      "membership_diagnostics": {
+        "osm_site_relation_id": 9387991,
+        "osm_site_name": "Bugnenets-Savagnières",
+        "initial_selected_downhill_way_count": 18,
+        "completed_selected_downhill_way_count": 18,
+        "added_downhill_way_ids": "",
+        "known_nordic_way_member_count": 0,
+        "known_aerialway_member_count": 4,
+        "remaining_unresolved_way_relation_count": 0,
+        "remaining_node_reference_count": 0,
+        "group_assignment_accepted": false,
+        "historical_scope_verified": false,
+        "source_id": "DERIVED_PISTE_SITE_MEMBERSHIP_AUDIT_2026_10_09",
+        "parent_source_ids": "OSM_DOWNHILL_SWISS_CURRENT_2026_10_09|OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09"
+      },
+      "shared_downhill_way_ids": [],
+      "upstream_quality_tags": []
+    }
+  ],
+  "retained_group_count": 71,
+  "prior_verified_count": 5,
+  "new_verified_count": 10,
+  "total_verified_count": 15,
+  "remaining_group_count": 56,
+  "piste_metrics_computed": false,
+  "exclusions_applied": false,
+  "historical_or_full_domain_certification": false,
+  "archived_operator_sources": [
+    {
+      "source_id": "OPERATOR_AXALP_STAGE52",
+      "url": "https://www.axalp.ch/",
+      "organisation": "Axalp",
+      "suffix": "html",
+      "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1800_STAGE49",
+      "station_group_id": "MP_GROUP_RESORT__axalp_brienz",
+      "osm_site_relation_id": 5634250,
+      "retrieval_date": "2026-10-09T21:43:22.269677+00:00",
+      "final_url": "https://www.axalp.ch/",
+      "raw_file": "data_external/source_evidence/OPERATOR_AXALP_STAGE52_20261009T214322Z.html",
+      "sha256": "7f7f7e7ffd9c53a472fb835f558ef029d9d53aeb9ad35e00004e007307fb00f3",
+      "size_bytes": 121071,
+      "http_status": 200,
+      "link_resolution_base": "https://www.axalp.ch/"
+    },
+    {
+      "source_id": "OPERATOR_BALMBERG_STAGE52",
+      "url": "http://www.balmberg.ch/",
+      "organisation": "Balmberg",
+      "suffix": "html",
+      "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_4444_STAGE49",
+      "station_group_id": "MP_GROUP_RESORT__balmberg",
+      "osm_site_relation_id": 9244613,
+      "retrieval_date": "2026-10-09T21:43:28.485372+00:00",
+      "final_url": "https://www.balmberg.ch/",
+      "raw_file": "data_external/source_evidence/OPERATOR_BALMBERG_STAGE52_20261009T214328Z.html",
+      "sha256": "0dcac4703b7bba9aba090c523999c39c0e680fdd8b4c2781481fae3db65b8157",
+      "size_bytes": 409427,
+      "http_status": 200,
+      "link_resolution_base": "https://www.balmberg.ch/"
+    },
+    {
+      "source_id": "OPERATOR_BUMBACH_STAGE52",
+      "url": "https://bumbach.ch/",
+      "organisation": "Bumbach",
+      "suffix": "html",
+      "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2765_STAGE49",
+      "station_group_id": "MP_GROUP_RESORT__bumbach_schangnau",
+      "osm_site_relation_id": 9206149,
+      "retrieval_date": "2026-10-09T21:43:30.095480+00:00",
+      "final_url": "https://bumbach.ch/",
+      "raw_file": "data_external/source_evidence/OPERATOR_BUMBACH_STAGE52_20261009T214330Z.html",
+      "sha256": "8b6a0939cebbcd4671525bcca3752ca323463acc5a800c221bd586ab920abf9f",
+      "size_bytes": 151683,
+      "http_status": 200,
+      "link_resolution_base": "https://bumbach.ch/"
+    },
+    {
+      "source_id": "OPERATOR_CHARMEY_STAGE52",
+      "url": "http://www.charmey.ch",
+      "organisation": "Charmey",
+      "suffix": "html",
+      "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_14_STAGE49",
+      "station_group_id": "MP_GROUP_RESORT__charmey",
+      "osm_site_relation_id": 9363438,
+      "retrieval_date": "2026-10-09T21:43:40.777463+00:00",
+      "final_url": "https://www.charmey.ch/",
+      "raw_file": "data_external/source_evidence/OPERATOR_CHARMEY_STAGE52_20261009T214340Z.html",
+      "sha256": "d19140e7e84c1f10bdabbcc4ae8119eb137cba2a6481805afcca0beac7f398f1",
+      "size_bytes": 283077,
+      "http_status": 200,
+      "link_resolution_base": "https://www.charmey.ch/"
+    },
+    {
+      "source_id": "OPERATOR_ERIZ_STAGE52",
+      "url": "https://www.snowparkeriz.ch/",
+      "organisation": "Snowpark Eriz",
+      "suffix": "html",
+      "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1797_STAGE49",
+      "station_group_id": "MP_GROUP_RESORT__eriz",
+      "osm_site_relation_id": 9205188,
+      "retrieval_date": "2026-10-09T21:43:53.781212+00:00",
+      "final_url": "https://snowparkeriz.ch/",
+      "raw_file": "data_external/source_evidence/OPERATOR_ERIZ_STAGE52_20261009T214353Z.html",
+      "sha256": "b4b5aa18a3d129d38503465027a21a45ee5287eaedab029fc280f4171339d50f",
+      "size_bytes": 332680,
+      "http_status": 200,
+      "link_resolution_base": "https://snowparkeriz.ch/"
+    },
+    {
+      "source_id": "OPERATOR_HABKERN_STAGE52",
+      "url": "https://www.skilifthabkern.ch/",
+      "organisation": "Skilift Habkern",
+      "suffix": "html",
+      "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1798_STAGE49",
+      "station_group_id": "MP_GROUP_RESORT__habkern",
+      "osm_site_relation_id": 9199977,
+      "retrieval_date": "2026-10-09T21:43:59.551468+00:00",
+      "final_url": "https://www.skilifthabkern.ch/",
+      "raw_file": "data_external/source_evidence/OPERATOR_HABKERN_STAGE52_20261009T214359Z.html",
+      "sha256": "05e53f62934fb35a8302f0844e2e620925eef9e9810c424a11f2ddf2ef2ea34b",
+      "size_bytes": 47156,
+      "http_status": 200,
+      "link_resolution_base": "https://www.skilifthabkern.ch/"
+    },
+    {
+      "source_id": "OPERATOR_JAUNPASS_STAGE52",
+      "url": "https://www.sportbahnen-jaunpass.ch/?lang=fr",
+      "organisation": "Sportbahnen Jaunpass",
+      "suffix": "html",
+      "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1802_STAGE49",
+      "station_group_id": "MP_GROUP_RESORT__jaunpass",
+      "osm_site_relation_id": 9356119,
+      "retrieval_date": "2026-10-09T21:44:07.041070+00:00",
+      "final_url": "https://www.sportbahnen-jaunpass.ch/?lang=fr",
+      "raw_file": "data_external/source_evidence/OPERATOR_JAUNPASS_STAGE52_20261009T214407Z.html",
+      "sha256": "bb48aadc785f5157614e385d4ff3418c2456c9ccca7efcbccb90ca8eccdb22fd",
+      "size_bytes": 93178,
+      "http_status": 200,
+      "link_resolution_base": "https://www.sportbahnen-jaunpass.ch/?lang=fr"
+    },
+    {
+      "source_id": "OPERATOR_BERRA_STAGE52",
+      "url": "https://www.laberra.ch",
+      "organisation": "La Berra",
+      "suffix": "html",
+      "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_20_STAGE49",
+      "station_group_id": "MP_GROUP_RESORT__la_berra_la_roche",
+      "osm_site_relation_id": 9363437,
+      "retrieval_date": "2026-10-09T21:44:11.244944+00:00",
+      "final_url": "https://www.laberra.ch/fr/",
+      "raw_file": "data_external/source_evidence/OPERATOR_BERRA_STAGE52_20261009T214411Z.html",
+      "sha256": "419eb79afeae6bc24b283d37e35037b98184e5ba594bb45b238c99fbb363c23d",
+      "size_bytes": 71880,
+      "http_status": 200,
+      "link_resolution_base": "https://www.laberra.ch/"
+    },
+    {
+      "source_id": "OPERATOR_CRET_PUY_STAGE52",
+      "url": "https://www.cretdupuy.com/",
+      "organisation": "Crêt-du-Puy",
+      "suffix": "html",
+      "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_17_STAGE49",
+      "station_group_id": "MP_GROUP_RESORT__le_paquier_cret_du_puy",
+      "osm_site_relation_id": 9387990,
+      "retrieval_date": "2026-10-09T21:44:21.679076+00:00",
+      "final_url": "https://www.cretdupuy.com/",
+      "raw_file": "data_external/source_evidence/OPERATOR_CRET_PUY_STAGE52_20261009T214421Z.html",
+      "sha256": "d260b73ca5c256bc4c005109228ef2de94ee3d5b76042c841b62b57fe745b4c5",
+      "size_bytes": 36129,
+      "http_status": 200,
+      "link_resolution_base": "https://www.cretdupuy.com/"
+    },
+    {
+      "source_id": "OPERATOR_BUGNENETS_STAGE52",
+      "url": "http://www.chasseral-snow.ch",
+      "organisation": "Bugnenets-Savagnières",
+      "suffix": "html",
+      "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_12_STAGE49",
+      "station_group_id": "MP_GROUP_RESORT__les_bugnenets_savagnieres",
+      "osm_site_relation_id": 9387991,
+      "retrieval_date": "2026-10-09T21:44:23.207053+00:00",
+      "final_url": "https://www.chasseral-snow.ch/",
+      "raw_file": "data_external/source_evidence/OPERATOR_BUGNENETS_STAGE52_20261009T214423Z.html",
+      "sha256": "36f583cca17d44d23ba2404f7a061876a65a355e70060e66607b5cf8c20fac97",
+      "size_bytes": 25693,
+      "http_status": 200,
+      "link_resolution_base": "https://www.chasseral-snow.ch/"
+    },
+    {
+      "source_id": "OPERATOR_AXALP_SCOPE_STAGE52",
+      "url": "https://www.axalp.ch/besucherinfo/pisten-pistenbericht/",
+      "organisation": "Sportbahnen Axalp Windegg AG",
+      "suffix": "html",
+      "parent_source_id": "OPERATOR_AXALP_STAGE52",
+      "observed_link_label": "Pisten & Pistenbericht",
+      "retrieval_date": "2026-10-09T21:45:55.731108+00:00",
+      "final_url": "https://www.axalp.ch/besucherinfo/pisten-pistenbericht/",
+      "raw_file": "data_external/source_evidence/OPERATOR_AXALP_SCOPE_STAGE52_20261009T214555Z.html",
+      "sha256": "c4b6254a10c1cc9ccc028778842a6dc62ceda705e63b3539688dbc1d3d819921",
+      "size_bytes": 99973,
+      "http_status": 200,
+      "link_resolution_base": "https://www.axalp.ch/besucherinfo/pisten-pistenbericht/"
+    },
+    {
+      "source_id": "OPERATOR_BALMBERG_SCOPE_STAGE52",
+      "url": "https://www.balmberg.ch/pisten-nachtskifahren",
+      "organisation": "Sportanlagen Balmberg",
+      "suffix": "html",
+      "parent_source_id": "OPERATOR_BALMBERG_STAGE52",
+      "observed_link_label": "Pisten | Nachtskifahren",
+      "retrieval_date": "2026-10-09T21:46:02.058018+00:00",
+      "final_url": "https://www.balmberg.ch/pisten-nachtskifahren",
+      "raw_file": "data_external/source_evidence/OPERATOR_BALMBERG_SCOPE_STAGE52_20261009T214602Z.html",
+      "sha256": "ebe9aeb30da31a437d1d3ee6f9b5804d7780f0063cb40b893a75bf5c15fb1b14",
+      "size_bytes": 379803,
+      "http_status": 200,
+      "link_resolution_base": "https://www.balmberg.ch/pisten-nachtskifahren"
+    },
+    {
+      "source_id": "OPERATOR_CHARMEY_SCOPE_STAGE52",
+      "url": "https://www.charmey.ch/activites/ski-snowboard/",
+      "organisation": "TéléCharmey",
+      "suffix": "html",
+      "parent_source_id": "OPERATOR_CHARMEY_STAGE52",
+      "observed_link_label": "Ski / Snowboard",
+      "retrieval_date": "2026-10-09T21:46:03.514880+00:00",
+      "final_url": "https://www.charmey.ch/activites/ski-snowboard/",
+      "raw_file": "data_external/source_evidence/OPERATOR_CHARMEY_SCOPE_STAGE52_20261009T214603Z.html",
+      "sha256": "18003caad29294f402dfd76bec5e2939dea23938e1eb0078d3372ee8abfb92d5",
+      "size_bytes": 167220,
+      "http_status": 200,
+      "link_resolution_base": "https://www.charmey.ch/activites/ski-snowboard/"
+    },
+    {
+      "source_id": "OPERATOR_BERRA_SCOPE_STAGE52",
+      "url": "https://www.laberra.ch/fr/ouverture-des-installations",
+      "organisation": "SRM La Berra SA",
+      "suffix": "html",
+      "parent_source_id": "OPERATOR_BERRA_STAGE52",
+      "observed_link_label": "Ouverture des installations",
+      "resolution_note": "Relative fr/ouverture-des-installations resolved against literal HTML base=https://www.laberra.ch/, not final page /fr/.",
+      "retrieval_date": "2026-10-09T21:46:15.611016+00:00",
+      "final_url": "https://www.laberra.ch/fr/ouverture-des-installations",
+      "raw_file": "data_external/source_evidence/OPERATOR_BERRA_SCOPE_STAGE52_20261009T214615Z.html",
+      "sha256": "58ac7ba867d4f4b6d0916db241764772f9281a67dc33874c853a2cde9c54ba61",
+      "size_bytes": 58218,
+      "http_status": 200,
+      "link_resolution_base": "https://www.laberra.ch/"
+    }
+  ]
+}
