@@ -1,0 +1,902 @@
+{
+  "date": "2026-10-09",
+  "input_sha256": {
+    "data_processed/accessibility_station_access_points.csv": "e71444ba9062b23a6d8014edb37387b547162f6d20d074b5e161d8ee1f8dc916",
+    "data_processed/magic_pass_current_destinations.csv": "88785cfea7bf82df6ccd9a5378a83b41322b0e709450a29e13a9239d96c0128e"
+  },
+  "queue_sha256": "a40a7db3a5cc53a46ebf09888c43f1a00f6ec1ce423875b5a50302a6abc26fb2",
+  "group_count": 71,
+  "access_point_count": 75,
+  "page_count": 72,
+  "group_links": [
+    {
+      "station_group_id": "MP_GROUP_EVENT__4b7d19ebb1a4",
+      "access_point_id": "ACCESS_BAV__8530674",
+      "source_id": null,
+      "scope_status": "retained_fallback_reference_official_page_not_resolved"
+    },
+    {
+      "station_group_id": "MP_GROUP_EVENT__98c0c64310c6",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__27",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_27_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_EVENT__c1f58b57f3fa",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__4446",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4446_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_EVENT__e664bf3f38d5",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__3588",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_3588_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__aeschi",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__1805",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1805_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__anzere",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__4",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__arolla",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__118",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_118_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__axalp_brienz",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__1800",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1800_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__balmberg",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__4444",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4444_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__beatenberg_niederhorn",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__1796",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1796_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__beatenberg_niederhorn",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__1799",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1799_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__belalp",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__4445",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4445_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__bumbach_schangnau",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2765",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2765_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__charmey",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__14",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_14_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__crans_montana_crans_montana",
+      "access_point_id": "ACCESS_RESORT__crans_montana_crans_montana",
+      "source_id": null,
+      "scope_status": "retained_fallback_reference_official_page_not_resolved"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__eischoll_sportbahnen_eischoll",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2766",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2766_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__eriz",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__1797",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1797_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__evolene",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__88",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_88_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__1804",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1804_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__gantrisch_gurnigel",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2767",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2767_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__gantrisch_gurnigel",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2769",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2769_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__18",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_18_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__gstaad",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__4447",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4447_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__habkern",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__1798",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1798_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__heimenschwand_buchholterberg",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__1795",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1795_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__3589",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_3589_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__jaun_gastlosen",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__19",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_19_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__jaunpass",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__1802",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1802_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__kiental",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2770",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2770_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_berra_la_roche",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__20",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_20_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_dole_jura_sur_leman",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__3608",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_3608_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_forclaz",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__117",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_117_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_robella",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__937",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_937_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__lauchernalp_lotschental",
+      "access_point_id": "ACCESS_RESORT__lauchernalp_lotschental",
+      "source_id": null,
+      "scope_status": "retained_fallback_reference_official_page_not_resolved"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__le_paquier_cret_du_puy",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__17",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_17_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__les_bugnenets_savagnieres",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__12",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_12_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__les_marecottes",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__23",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_23_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__les_paccots_chatel_saint_denis",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__25",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_25_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__les_pleiades",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__89",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_89_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__leukerbad",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__602",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_602_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__leysin_les_mosses_la_lecherette",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__24",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_24_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__leysin_les_mosses_la_lecherette",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__26",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_26_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__linden_skilift_linden",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__4449",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4449_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__marchbachegg_marbach_marbachegg",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2773",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2773_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__meiringen_hasliberg",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__4451",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4451_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__melchsee_frutt",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__4452",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4452_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__moleson_la_gruyere",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__28",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_28_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__mont_noble_nax",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__29",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_29_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__moosalpregion",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2774",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2774_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__morlialp",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__4453",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4453_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__ottenleuebad",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2775",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2775_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__ovronnaz",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__30",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_30_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__601",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_601_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__rathvel",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__31",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_31_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__riffenmatt",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2776",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2776_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__90",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_90_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__rossberg_oberwil",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__1801",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1801_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__rosswald",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__1803",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1803_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__ruschegg_eywald",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2777",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2777_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__saas_fee",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__600",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_600_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__sainte_croix_les_rasses",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2772",
+      "source_id": "MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__schwanden_sigriswil_thunersee",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__3587",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_3587_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__schwarzenbuhl_selital",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2778",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2778_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__32",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_32_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__sorenberg",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__4455",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4455_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__st_cergue",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__3611",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_3611_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__st_luc_chandolin",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__33",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_33_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__staldenried_gspon",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2768",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2768_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__tramelan",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__34",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_34_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__unterbach_brandalp",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2779",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2779_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__vallee_de_joux",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__87",
+      "source_id": "MAGIC_PISTE_SCOPE_VALLEE_JOUX_2026_10_09",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__vercorin",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__35",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_35_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__22",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_22_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__37",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_37_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__visperterminen",
+      "access_point_id": "ACCESS_MAGIC_CURRENT__2780",
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2780_STAGE49",
+      "scope_status": "current_official_page_review_candidate"
+    }
+  ],
+  "group_assignments_accepted": 0,
+  "station_features_computed": false,
+  "canonical_log_merged": true,
+  "provider_collection_halted": false,
+  "archived_pages": [
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_4_STAGE49_20261009T190132Z.html",
+      "sha256": "9f19833770f5dafb5003d6ce58f24e2eaf8603ed0fdc7402b12b1904bccbfa2b",
+      "retrieval_date": "2026-10-09T19:01:32.464186+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_12_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_12_STAGE49_20261009T190143Z.html",
+      "sha256": "1ab169ac0371b2d59ea572136599fe6b7875a52eca228d6b9c3bded4634b3a73",
+      "retrieval_date": "2026-10-09T19:01:43.909931+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_14_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_14_STAGE49_20261009T190155Z.html",
+      "sha256": "68ca228b798213b9f3392d3acb37b01034cc0748316514492dda65e29d093876",
+      "retrieval_date": "2026-10-09T19:01:55.031429+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_17_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_17_STAGE49_20261009T190206Z.html",
+      "sha256": "eb142426e97ba8975fef1a2585e2411242869d67612c699b00812c6ee27e3fe6",
+      "retrieval_date": "2026-10-09T19:02:06.188495+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_18_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_18_STAGE49_20261009T190217Z.html",
+      "sha256": "6c94ba7845fd2e6ffb8773350cb0cc8343f05f83c22693032858e8787fcac0ea",
+      "retrieval_date": "2026-10-09T19:02:17.246496+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_19_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_19_STAGE49_20261009T190228Z.html",
+      "sha256": "b5dc6dc76046ccb71c25b963602247ac07294783aba9d56e6d64f95a8e2049db",
+      "retrieval_date": "2026-10-09T19:02:28.301200+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_20_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_20_STAGE49_20261009T190239Z.html",
+      "sha256": "84b4d7e0a98534b6ba41af67e8a4a01aee36a788155fd01f129711f98ffba8f8",
+      "retrieval_date": "2026-10-09T19:02:39.337987+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_22_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_22_STAGE49_20261009T190250Z.html",
+      "sha256": "54fc17c0e486b95be499f93744e445519a50d2fb66751c976f912654b59d9b53",
+      "retrieval_date": "2026-10-09T19:02:50.441556+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_23_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_23_STAGE49_20261009T190301Z.html",
+      "sha256": "3ee07079c6b15c2b9dd53ff3f240d4af6ea68fa47833c776ec8e00256ebcb947",
+      "retrieval_date": "2026-10-09T19:03:01.486032+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_24_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_24_STAGE49_20261009T190312Z.html",
+      "sha256": "e0dba81aa0101b75286c2436bb0107071db67982fea70cbf7384c0f6c0cae115",
+      "retrieval_date": "2026-10-09T19:03:12.549480+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_25_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_25_STAGE49_20261009T190323Z.html",
+      "sha256": "e242b1765605515ef821ce2273839eee8ca83e2a2f3950242fc350184da995c7",
+      "retrieval_date": "2026-10-09T19:03:23.476979+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_26_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_26_STAGE49_20261009T190334Z.html",
+      "sha256": "3f7ca2b7f0bf56a0325bbc2fc3791a01acfd4a252656f63e1a631742d019fa5e",
+      "retrieval_date": "2026-10-09T19:03:34.462691+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_27_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_27_STAGE49_20261009T190607Z.html",
+      "sha256": "f1a91b0ec4f8bd9a0cad356b6ad85404edb726604d171cb1e4da8e60cdd7e409",
+      "retrieval_date": "2026-10-09T19:06:07.001444+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_28_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_28_STAGE49_20261009T190618Z.html",
+      "sha256": "c1221c202396179250fe984f857c0d89f3d401db81fef984f4434e847a5b395b",
+      "retrieval_date": "2026-10-09T19:06:18.361240+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_29_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_29_STAGE49_20261009T190628Z.html",
+      "sha256": "a77b3396cf47d6eefb37c383a40ec8007f132de34d3f8211f31d4e81d7ad40d4",
+      "retrieval_date": "2026-10-09T19:06:28.936367+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_30_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_30_STAGE49_20261009T190639Z.html",
+      "sha256": "6921c50c3f5786fde25f2ed1cefcd58216a00b7bc69999da2c7fdcb50c13e86e",
+      "retrieval_date": "2026-10-09T19:06:39.338752+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_31_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_31_STAGE49_20261009T190649Z.html",
+      "sha256": "d35dcf59cb1f4320ef5e60b772939da9a3407b47b090f17bb46c753d842427fe",
+      "retrieval_date": "2026-10-09T19:06:49.754563+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_32_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_32_STAGE49_20261009T190700Z.html",
+      "sha256": "4dd73ce018c0581b6a277be649f229caab88a110bfd5a641330f599520cd3e52",
+      "retrieval_date": "2026-10-09T19:07:00.175635+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_33_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_33_STAGE49_20261009T190710Z.html",
+      "sha256": "eebe13a45436a6d6156a848acd0d5dc792e69ebf57174cdff3dd95fcd5b4a63f",
+      "retrieval_date": "2026-10-09T19:07:10.581906+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_34_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_34_STAGE49_20261009T190721Z.html",
+      "sha256": "eaab19ef8b0cef845c4f7f1085ebcdbf1009edf00eeb59f24f54c6a63b5684a5",
+      "retrieval_date": "2026-10-09T19:07:21.011884+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_35_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_35_STAGE49_20261009T190731Z.html",
+      "sha256": "110b8a52c29c50833a55854f3f0607b82213f3371c1f9cf2563725821ef9d470",
+      "retrieval_date": "2026-10-09T19:07:31.400124+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_37_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_37_STAGE49_20261009T190741Z.html",
+      "sha256": "5dd0d9881946a583857132ae71556f2ac2fd0c81909e88922681d6e776f4c489",
+      "retrieval_date": "2026-10-09T19:07:41.805422+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_VALLEE_JOUX_2026_10_09",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_VALLEE_JOUX_2026_10_09_20261009T173230Z.html",
+      "sha256": "baa072fb0624efefed8d90e4214f32310813233733694226c19ec4c46f333f82",
+      "retrieval_date": "2026-10-09T17:32:30.886436+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_88_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_88_STAGE49_20261009T190752Z.html",
+      "sha256": "dc0c5132e0df0d6a6abb05fdea32b3bb794c9474ce72c1dabea2a39f22a6671b",
+      "retrieval_date": "2026-10-09T19:07:52.214563+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_89_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_89_STAGE49_20261009T190802Z.html",
+      "sha256": "b54a65529dc8d89bcb5b09fc498ebaa4d3a3472f1cb2b5c64ba74582a430261a",
+      "retrieval_date": "2026-10-09T19:08:02.663283+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_90_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_90_STAGE49_20261009T190813Z.html",
+      "sha256": "4fa466148b83682caa13035a192467989a0135800d4edb6fba820374a062c9e6",
+      "retrieval_date": "2026-10-09T19:08:13.044598+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_117_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_117_STAGE49_20261009T190823Z.html",
+      "sha256": "394143ccf6d439732fd398ecba2b18bcf144eada976b6288b0e145c0355f7883",
+      "retrieval_date": "2026-10-09T19:08:23.443911+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_118_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_118_STAGE49_20261009T190833Z.html",
+      "sha256": "cd2746e888df263ce520e8be4f8fd4a81d0dd7e96345ef3faf2ae19918d2f97f",
+      "retrieval_date": "2026-10-09T19:08:33.821870+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_600_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_600_STAGE49_20261009T190844Z.html",
+      "sha256": "4de572337eeffa829dac8f25d9516024e732dfc562225227aa4b65ad70091e10",
+      "retrieval_date": "2026-10-09T19:08:44.233887+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_601_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_601_STAGE49_20261009T190854Z.html",
+      "sha256": "b4baef2ab89c6b620506dd36f076ccedea51801507395a28456d70f1e47279db",
+      "retrieval_date": "2026-10-09T19:08:54.678555+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_602_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_602_STAGE49_20261009T190905Z.html",
+      "sha256": "bfbc8ccd7acae68b25f82a70bbf57491e8e5c75a7529333dd3745c4029952588",
+      "retrieval_date": "2026-10-09T19:09:05.060619+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_937_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_937_STAGE49_20261009T190915Z.html",
+      "sha256": "afb09d6e842609ec7a4bbc4035711b33d4978e650d44295f0745e8a628dc799b",
+      "retrieval_date": "2026-10-09T19:09:15.518106+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1795_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1795_STAGE49_20261009T190925Z.html",
+      "sha256": "5020588e2b8fcbc0b4f32585ff990ba156e3a98f755e4ba874222ec2cd35bd16",
+      "retrieval_date": "2026-10-09T19:09:25.926719+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1796_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1796_STAGE49_20261009T190936Z.html",
+      "sha256": "ed68c55ae3f6117d04e5c4c10e9d9b3a90bc8bdd83fbd7d2fc2d273c3bb8c6da",
+      "retrieval_date": "2026-10-09T19:09:36.378676+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1797_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1797_STAGE49_20261009T190946Z.html",
+      "sha256": "f6291f6129c4775b24eaba1c82e950c650823c763bc769619faf280a1f8b5685",
+      "retrieval_date": "2026-10-09T19:09:46.806323+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1798_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1798_STAGE49_20261009T190957Z.html",
+      "sha256": "351a4dd19190453ed42f46777b2eff50776980058e3f9b32be0c70bdfde6eba5",
+      "retrieval_date": "2026-10-09T19:09:57.299101+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1799_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1799_STAGE49_20261009T191007Z.html",
+      "sha256": "d75e0031a58aefeabb355270c8dc5ec6bbaaf9c79057ce87631826429c89fd06",
+      "retrieval_date": "2026-10-09T19:10:07.663790+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1800_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1800_STAGE49_20261009T191018Z.html",
+      "sha256": "404fdab124597f7a6ba35637e76a6b9a97971ffac29a9b75aaca23a6dcbdaeb3",
+      "retrieval_date": "2026-10-09T19:10:18.060231+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1801_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1801_STAGE49_20261009T191028Z.html",
+      "sha256": "f9b826522ec128fe446a7e421d96bcda973df3f5cf94081de82dc19cd776ce95",
+      "retrieval_date": "2026-10-09T19:10:28.429122+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1802_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1802_STAGE49_20261009T191038Z.html",
+      "sha256": "a753c10b526279d105f6bca9b3b56dc56fe3472d7e91a34f9a96952c6f08f9e6",
+      "retrieval_date": "2026-10-09T19:10:38.891281+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1803_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1803_STAGE49_20261009T191049Z.html",
+      "sha256": "eda65cf4ac54704183c92425afed745e3d700ea48cc547704daf2d5784b3ce73",
+      "retrieval_date": "2026-10-09T19:10:49.293114+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1804_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1804_STAGE49_20261009T191100Z.html",
+      "sha256": "10c0c16b73d725a69517f82e737281243ce93114cf238f29ae1b869f264d9a8f",
+      "retrieval_date": "2026-10-09T19:11:00.161116+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_1805_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_1805_STAGE49_20261009T191110Z.html",
+      "sha256": "2565ecb1645709ee11c9d101f0540cb5cb203bdb32128868e24c84f6ccd6f267",
+      "retrieval_date": "2026-10-09T19:11:10.543571+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2765_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2765_STAGE49_20261009T191120Z.html",
+      "sha256": "61245102b34859d518b5dbe84f29132b4164a0a7e574e952260b2bcd035bad3d",
+      "retrieval_date": "2026-10-09T19:11:20.940918+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2766_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2766_STAGE49_20261009T191131Z.html",
+      "sha256": "c25ebf0f3eb43d240af5aa4b2a9d4feecd671e131af049cd935f2e073eeb8b6a",
+      "retrieval_date": "2026-10-09T19:11:31.328060+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2767_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2767_STAGE49_20261009T191141Z.html",
+      "sha256": "1c2529903be5514d790afe3098453eac790fd0d38cf8ada231f8141d10ccdbe8",
+      "retrieval_date": "2026-10-09T19:11:41.738052+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2768_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2768_STAGE49_20261009T191152Z.html",
+      "sha256": "51f49416f6f929880d3551140e0a03695719925e72d963d229fcd08c95de01fc",
+      "retrieval_date": "2026-10-09T19:11:52.317626+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2769_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2769_STAGE49_20261009T191202Z.html",
+      "sha256": "16d44969fee5bc330966fabf0a9d4c732a7e49685a2518e61da87ab3d59b952b",
+      "retrieval_date": "2026-10-09T19:12:02.749393+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2770_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2770_STAGE49_20261009T191213Z.html",
+      "sha256": "4f2fa42e04d0d5e866f6bf9200dd54b239cc6fefc97a329cb8d17bac1f63c5f3",
+      "retrieval_date": "2026-10-09T19:12:13.147609+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09_20261009T173220Z.html",
+      "sha256": "9eaf1b9b747d38b93e854803de20482001ad9baf8d5109d314a57b13ea4be1fe",
+      "retrieval_date": "2026-10-09T17:32:20.397760+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2773_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2773_STAGE49_20261009T191223Z.html",
+      "sha256": "56d3269c9b4ef577ea3123a5f7acded3bf51a298a16c82339dc0f3e3866d3236",
+      "retrieval_date": "2026-10-09T19:12:23.589676+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2774_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2774_STAGE49_20261009T191233Z.html",
+      "sha256": "bae4bc934bbbac0aebe3929d2f09a8f68faf08195776f6a85519ca502fac3cb4",
+      "retrieval_date": "2026-10-09T19:12:33.965541+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2775_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2775_STAGE49_20261009T191244Z.html",
+      "sha256": "9717e2fc900e8c0eed065234a957d4edcc378e457ca8583c388e19ed6903c1c9",
+      "retrieval_date": "2026-10-09T19:12:44.312017+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2776_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2776_STAGE49_20261009T191254Z.html",
+      "sha256": "276f91878777d251cbcb278eb0d388be2af7b11442b2535c3f11a50c30d5d4f0",
+      "retrieval_date": "2026-10-09T19:12:54.675117+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2777_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2777_STAGE49_20261009T191305Z.html",
+      "sha256": "f9f3035ebb9cd141642040c723ee0cbe434570f4c3270dd1308783cef9c243eb",
+      "retrieval_date": "2026-10-09T19:13:05.135176+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2778_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2778_STAGE49_20261009T191315Z.html",
+      "sha256": "7be36266a4f6934d4f22b7913a291bc28658df88a6735dfb353513d7dade72c5",
+      "retrieval_date": "2026-10-09T19:13:15.501951+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2779_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2779_STAGE49_20261009T191325Z.html",
+      "sha256": "090a27d6668d0885990e3f6fc835dc2af83569cddc5cdca9382619b5585444fa",
+      "retrieval_date": "2026-10-09T19:13:25.917751+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_2780_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_2780_STAGE49_20261009T191336Z.html",
+      "sha256": "2645c99cca74b0b6a933489c8b3d69d3ef0deef4e5c62cfb895a99a42d52668c",
+      "retrieval_date": "2026-10-09T19:13:36.413050+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_3587_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_3587_STAGE49_20261009T191346Z.html",
+      "sha256": "df1ac5de4593b1ffb719764e9f22ceabe3a3410b1ba523ba1fc873771109285b",
+      "retrieval_date": "2026-10-09T19:13:46.859132+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_3588_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_3588_STAGE49_20261009T191357Z.html",
+      "sha256": "c45e0f5599750e0a3780aa92f88ad17fed8aea7e177c6e861325aad0386f7f6b",
+      "retrieval_date": "2026-10-09T19:13:57.283252+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_3589_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_3589_STAGE49_20261009T191407Z.html",
+      "sha256": "6d531a81d444a45576c423ec8cd0048faf49cd1832c6acf16d2bd6291850e538",
+      "retrieval_date": "2026-10-09T19:14:07.734885+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_3608_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_3608_STAGE49_20261009T191418Z.html",
+      "sha256": "a925e5f89f8ef0ab3a368861ef5cd14527ff45e4c1cedea5c7f1e774f040308a",
+      "retrieval_date": "2026-10-09T19:14:18.214102+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_3611_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_3611_STAGE49_20261009T191428Z.html",
+      "sha256": "591440a721c8eb42465b61cb917716980d734e0bba76ffb720213b12d19c7900",
+      "retrieval_date": "2026-10-09T19:14:28.710545+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4444_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_4444_STAGE49_20261009T191439Z.html",
+      "sha256": "fbf52b4580b522c98e0e0a57932b6510857ca03ff4f05775fd24f5c143de80c2",
+      "retrieval_date": "2026-10-09T19:14:39.209624+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4445_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_4445_STAGE49_20261009T191451Z.html",
+      "sha256": "06599b0d017290b28dc018a8541719d01ac6602c2e30d4ce1c46e81af1974969",
+      "retrieval_date": "2026-10-09T19:14:51.103870+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4446_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_4446_STAGE49_20261009T191501Z.html",
+      "sha256": "486a94b7969698d2db279fa6b9e410e350ea4746b01bbaa471a0f4e4010847b5",
+      "retrieval_date": "2026-10-09T19:15:01.615970+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4447_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_4447_STAGE49_20261009T191512Z.html",
+      "sha256": "cdf17430a5bd43875dc06657f686ca2b9f1fb5f9ce7f9f753cf8826cbbfadfa7",
+      "retrieval_date": "2026-10-09T19:15:12.086265+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4449_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_4449_STAGE49_20261009T191522Z.html",
+      "sha256": "7162cad2a5a13fed9141d522a05c58a45762d624353d3352784cad834ea0b7a4",
+      "retrieval_date": "2026-10-09T19:15:22.628161+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4451_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_4451_STAGE49_20261009T191533Z.html",
+      "sha256": "f0f3bc858bd0dd44fdd27fbe8d7caaee0f818be5aac67c6820634888f3e7c3c4",
+      "retrieval_date": "2026-10-09T19:15:33.070391+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4452_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_4452_STAGE49_20261009T191543Z.html",
+      "sha256": "ee9f7d6904f22407e5a3ea84138afe8df2d59d3cf4c5c38e7039475f8012c460",
+      "retrieval_date": "2026-10-09T19:15:43.551207+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4453_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_4453_STAGE49_20261009T191554Z.html",
+      "sha256": "ef6acb4483506c73c349a793a215d72e23983c5b1ddccafd46ca8b7b27a85e12",
+      "retrieval_date": "2026-10-09T19:15:54.087014+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_DEST_4455_STAGE49",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_DEST_4455_STAGE49_20261009T191604Z.html",
+      "sha256": "37bb1869d68357806efc641d2fd6222dd02c6ac9b65b65de3f1f60729d63ea47",
+      "retrieval_date": "2026-10-09T19:16:04.573481+00:00"
+    }
+  ],
+  "archived_page_count": 72
+}

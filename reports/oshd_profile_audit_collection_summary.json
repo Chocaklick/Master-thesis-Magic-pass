@@ -103,17 +103,83 @@
       "expected_bytes": 579028796,
       "expected_md5": "cb1cd3fc7d803a7f6b9153da3b84da0d",
       "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
-      "status": "paused",
-      "retrieval_date": "2026-10-09T18:00:49.635597+00:00",
+      "status": "complete",
+      "retrieval_date": "2026-10-09T18:53:17.012323+00:00",
       "partial_file": "data_interim/oshd_profile_downloads/OSHD_DATA_WY2025.zip.part",
-      "downloaded_bytes": 198180864,
+      "downloaded_bytes": 579028796,
       "error": "HTTPError: HTTP Error 504: Gateway Time-out",
       "resume_allowed": true,
       "http_status": 206,
       "last_request_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2025.zip?download=1",
       "etag": "",
       "final_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2025.zip?download=1",
-      "pause_reason": "session_time_budget_reached"
+      "pause_reason": "session_time_budget_reached",
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2025_PROFILE_AUDIT_20261009T191137Z.zip",
+      "sha256": "d23098691fcea6ab2979d27bdbc0a5c1f49cfef10f24f1171a1fbd2b5735294c",
+      "zip_members": [
+        {
+          "name": "OSHD_DATA_2024-09.nc",
+          "uncompressed_bytes": 25107763,
+          "compressed_bytes": 22644548
+        },
+        {
+          "name": "OSHD_DATA_2024-10.nc",
+          "uncompressed_bytes": 22589549,
+          "compressed_bytes": 18728674
+        },
+        {
+          "name": "OSHD_DATA_2024-11.nc",
+          "uncompressed_bytes": 57733881,
+          "compressed_bytes": 54374319
+        },
+        {
+          "name": "OSHD_DATA_2024-12.nc",
+          "uncompressed_bytes": 100706673,
+          "compressed_bytes": 95338792
+        },
+        {
+          "name": "OSHD_DATA_2025-01.nc",
+          "uncompressed_bytes": 103908005,
+          "compressed_bytes": 98472210
+        },
+        {
+          "name": "OSHD_DATA_2025-02.nc",
+          "uncompressed_bytes": 76535353,
+          "compressed_bytes": 73223318
+        },
+        {
+          "name": "OSHD_DATA_2025-03.nc",
+          "uncompressed_bytes": 77745826,
+          "compressed_bytes": 72854522
+        },
+        {
+          "name": "OSHD_DATA_2025-04.nc",
+          "uncompressed_bytes": 61586971,
+          "compressed_bytes": 58533559
+        },
+        {
+          "name": "OSHD_DATA_2025-05.nc",
+          "uncompressed_bytes": 51897543,
+          "compressed_bytes": 47660419
+        },
+        {
+          "name": "OSHD_DATA_2025-06.nc",
+          "uncompressed_bytes": 21951019,
+          "compressed_bytes": 19606759
+        },
+        {
+          "name": "OSHD_DATA_2025-07.nc",
+          "uncompressed_bytes": 14939611,
+          "compressed_bytes": 11240039
+        },
+        {
+          "name": "OSHD_DATA_2025-08.nc",
+          "uncompressed_bytes": 9785475,
+          "compressed_bytes": 6349791
+        }
+      ],
+      "provider_md5_verified": true,
+      "size_verified": true
     },
     {
       "water_year": 2023,
@@ -122,18 +188,22 @@
       "expected_bytes": 569361906,
       "expected_md5": "50811ac104e15da4a15695ffe2b1f13e",
       "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
-      "status": "failed",
-      "retrieval_date": "2026-10-09T16:51:51.669798+00:00",
+      "status": "paused",
+      "retrieval_date": "2026-10-09T19:11:37.416309+00:00",
       "partial_file": "data_interim/oshd_profile_downloads/OSHD_DATA_WY2023.zip.part",
-      "downloaded_bytes": 0,
+      "downloaded_bytes": 84934656,
       "error": "HTTPError: HTTP Error 504: Gateway Time-out",
       "resume_allowed": true,
-      "http_status": 504
+      "http_status": 206,
+      "last_request_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2023.zip?download=1",
+      "etag": "",
+      "final_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2023.zip?download=1",
+      "pause_reason": "session_time_budget_reached"
     }
   ],
   "snow_extracted": false,
   "source_spliced": false,
   "group_piste_assignment_applied": false,
   "features_computed": false,
-  "complete_file_count": 1
+  "complete_file_count": 2
 }

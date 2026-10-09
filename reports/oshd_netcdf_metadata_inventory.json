@@ -2419,6 +2419,2425 @@
           }
         }
       ]
+    },
+    "SLF_OSHD_PF_WY2025_PROFILE_AUDIT": {
+      "water_year": 2025,
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2025_PROFILE_AUDIT_20261009T191137Z.zip",
+      "archive_sha256": "d23098691fcea6ab2979d27bdbc0a5c1f49cfef10f24f1171a1fbd2b5735294c",
+      "members": [
+        {
+          "member_name": "OSHD_DATA_2024-09.nc",
+          "uncompressed_bytes": 25107763,
+          "zip_crc32": "f83fee19",
+          "zip_crc_verified_by_zipfile_stream": true,
+          "extracted_file": "data_interim/oshd_metadata_members/WY2025/af3ed1a822e9e1cce39d.nc",
+          "sha256": "e825916a3f3669b180cc909ea9ac872df980ca49db22b16789d4a55dbb33d722",
+          "netcdf": {
+            "attributes": {
+              "title": "A high-resolution snow dataset for Switzerland (2016–2025) combining physics-based simulations and in situ observations",
+              "summary": "This dataset provides estimates of snow depth, snow water equivalent, snow cover fraction, and snowmelt runoff for Switzerland and hydrologically connected neighboring regions for water years 2016–2025.It combines physics-based model simulations with in situ snow observations through data assimilation, offering a spatially and temporally consistent record of Alpine snowpack dynamics. The dataset contains daily values and has a spatial resolution of 250m and an extent of 365000 by 272000m.",
+              "keywords": "snow, snow hydrology, snow depth, snow water equivalent, snow cover fraction, snow melt runoff, Switzerland",
+              "reference": "https://doi.org/10.5281/zenodo.17313889",
+              "source": "FSM2oshd v1.1.3 https://github.com/oshd-slf/FSM2oshd/releases/tag/v1.1.3",
+              "conventions": "CF-1.12, ACDD-1.3",
+              "creator_name": "Moritz Oberrauch; Tobias Jonas",
+              "creator_email": "moritz.oberrauch@slf.ch; jonas@slf.ch",
+              "creator_url": "https://orcid.org/0009-0006-6211-9690; https://orcid.org/0000-0003-0386-8676",
+              "institution": "WSL Institute for Snow and Avalanche Research SLF, Davos, Switzerland",
+              "geospatial_lat_min": 45.64987658134035,
+              "geospatial_lat_max": 48.02211257823187,
+              "geospatial_lon_min": 5.841241488925509,
+              "geospatial_lon_max": 10.56176779828106,
+              "date_created": "2026-05-27T13:17:07 UTC+01:00",
+              "history": "File created at 2026-05-27T13:17:07 UTC+01:00 using Matlab R2024b by Moritz Oberrauch."
+            },
+            "dimensions": {
+              "time": {
+                "size": 30,
+                "unlimited": false
+              },
+              "northing": {
+                "size": 1056,
+                "unlimited": false
+              },
+              "easting": {
+                "size": 1442,
+                "unlimited": false
+              }
+            },
+            "variables": {
+              "time": {
+                "dtype": "float64",
+                "dimensions": [
+                  "time"
+                ],
+                "shape": [
+                  30
+                ],
+                "attributes": {
+                  "standard_name": "time",
+                  "units": "days since 2024-09-01T06:00:00 UTC+01:00"
+                },
+                "axis": {
+                  "observed_count": 30,
+                  "missing_count": 0,
+                  "first": 0.0,
+                  "last": 29.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 1.0,
+                  "difference_max": 1.0,
+                  "decoded_first": "2024-09-01 06:00:00",
+                  "decoded_last": "2024-09-30 06:00:00",
+                  "calendar_used": "standard",
+                  "calendar_explicit_in_source": false,
+                  "decoding_note": "netCDF4 num2date output; original units retained; timezone interpretation not independently validated"
+                }
+              },
+              "northing": {
+                "dtype": "float64",
+                "dimensions": [
+                  "northing"
+                ],
+                "shape": [
+                  1056
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Northing",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1056,
+                  "missing_count": 0,
+                  "first": 1319375.0,
+                  "last": 1055625.0,
+                  "strictly_increasing": false,
+                  "strictly_decreasing": true,
+                  "difference_min": -250.0,
+                  "difference_max": -250.0
+                }
+              },
+              "easting": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting"
+                ],
+                "shape": [
+                  1442
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Easting",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1442,
+                  "missing_count": 0,
+                  "first": 2478125.0,
+                  "last": 2838375.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 250.0,
+                  "difference_max": 250.0
+                }
+              },
+              "hs": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "m",
+                  "standard_name": "surface_snow_thickness",
+                  "long_name": "Snow depth",
+                  "content_type": "modelResult"
+                }
+              },
+              "swe": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2",
+                  "standard_name": "surface_snow_amount",
+                  "long_name": "Snow water equivalent",
+                  "content_type": "modelResult"
+                }
+              },
+              "scf": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "1",
+                  "standard_name": "surface_snow_area_fraction",
+                  "long_name": "Snow cover fraction",
+                  "content_type": "modelResult"
+                }
+              },
+              "smro": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2 d-1",
+                  "standard_name": "surface_snow_melt_flux",
+                  "long_name": "Snowmelt runoff per day",
+                  "content_type": "modelResult"
+                }
+              }
+            },
+            "groups": {}
+          }
+        },
+        {
+          "member_name": "OSHD_DATA_2024-10.nc",
+          "uncompressed_bytes": 22589549,
+          "zip_crc32": "1a5abe3c",
+          "zip_crc_verified_by_zipfile_stream": true,
+          "extracted_file": "data_interim/oshd_metadata_members/WY2025/cd5f23ed572dbdfea944.nc",
+          "sha256": "be451a9024a100c19f2f83bcef46e06ea75ae06905771bdf197a414a98e50056",
+          "netcdf": {
+            "attributes": {
+              "title": "A high-resolution snow dataset for Switzerland (2016–2025) combining physics-based simulations and in situ observations",
+              "summary": "This dataset provides estimates of snow depth, snow water equivalent, snow cover fraction, and snowmelt runoff for Switzerland and hydrologically connected neighboring regions for water years 2016–2025.It combines physics-based model simulations with in situ snow observations through data assimilation, offering a spatially and temporally consistent record of Alpine snowpack dynamics. The dataset contains daily values and has a spatial resolution of 250m and an extent of 365000 by 272000m.",
+              "keywords": "snow, snow hydrology, snow depth, snow water equivalent, snow cover fraction, snow melt runoff, Switzerland",
+              "reference": "https://doi.org/10.5281/zenodo.17313889",
+              "source": "FSM2oshd v1.1.3 https://github.com/oshd-slf/FSM2oshd/releases/tag/v1.1.3",
+              "conventions": "CF-1.12, ACDD-1.3",
+              "creator_name": "Moritz Oberrauch; Tobias Jonas",
+              "creator_email": "moritz.oberrauch@slf.ch; jonas@slf.ch",
+              "creator_url": "https://orcid.org/0009-0006-6211-9690; https://orcid.org/0000-0003-0386-8676",
+              "institution": "WSL Institute for Snow and Avalanche Research SLF, Davos, Switzerland",
+              "geospatial_lat_min": 45.64987658134035,
+              "geospatial_lat_max": 48.02211257823187,
+              "geospatial_lon_min": 5.841241488925509,
+              "geospatial_lon_max": 10.56176779828106,
+              "date_created": "2026-05-27T13:17:26 UTC+01:00",
+              "history": "File created at 2026-05-27T13:17:26 UTC+01:00 using Matlab R2024b by Moritz Oberrauch."
+            },
+            "dimensions": {
+              "time": {
+                "size": 31,
+                "unlimited": false
+              },
+              "northing": {
+                "size": 1056,
+                "unlimited": false
+              },
+              "easting": {
+                "size": 1442,
+                "unlimited": false
+              }
+            },
+            "variables": {
+              "time": {
+                "dtype": "float64",
+                "dimensions": [
+                  "time"
+                ],
+                "shape": [
+                  31
+                ],
+                "attributes": {
+                  "standard_name": "time",
+                  "units": "days since 2024-10-01T06:00:00 UTC+01:00"
+                },
+                "axis": {
+                  "observed_count": 31,
+                  "missing_count": 0,
+                  "first": 0.0,
+                  "last": 30.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 1.0,
+                  "difference_max": 1.0,
+                  "decoded_first": "2024-10-01 06:00:00",
+                  "decoded_last": "2024-10-31 06:00:00",
+                  "calendar_used": "standard",
+                  "calendar_explicit_in_source": false,
+                  "decoding_note": "netCDF4 num2date output; original units retained; timezone interpretation not independently validated"
+                }
+              },
+              "northing": {
+                "dtype": "float64",
+                "dimensions": [
+                  "northing"
+                ],
+                "shape": [
+                  1056
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Northing",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1056,
+                  "missing_count": 0,
+                  "first": 1319375.0,
+                  "last": 1055625.0,
+                  "strictly_increasing": false,
+                  "strictly_decreasing": true,
+                  "difference_min": -250.0,
+                  "difference_max": -250.0
+                }
+              },
+              "easting": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting"
+                ],
+                "shape": [
+                  1442
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Easting",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1442,
+                  "missing_count": 0,
+                  "first": 2478125.0,
+                  "last": 2838375.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 250.0,
+                  "difference_max": 250.0
+                }
+              },
+              "hs": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "m",
+                  "standard_name": "surface_snow_thickness",
+                  "long_name": "Snow depth",
+                  "content_type": "modelResult"
+                }
+              },
+              "swe": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2",
+                  "standard_name": "surface_snow_amount",
+                  "long_name": "Snow water equivalent",
+                  "content_type": "modelResult"
+                }
+              },
+              "scf": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "1",
+                  "standard_name": "surface_snow_area_fraction",
+                  "long_name": "Snow cover fraction",
+                  "content_type": "modelResult"
+                }
+              },
+              "smro": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2 d-1",
+                  "standard_name": "surface_snow_melt_flux",
+                  "long_name": "Snowmelt runoff per day",
+                  "content_type": "modelResult"
+                }
+              }
+            },
+            "groups": {}
+          }
+        },
+        {
+          "member_name": "OSHD_DATA_2024-11.nc",
+          "uncompressed_bytes": 57733881,
+          "zip_crc32": "70a9959a",
+          "zip_crc_verified_by_zipfile_stream": true,
+          "extracted_file": "data_interim/oshd_metadata_members/WY2025/e81f392308b7cccba0a2.nc",
+          "sha256": "cdc93aff4361fad8cb38e36a7ed3c4d9cfdd1dec1f6234549a75c850d086b6bb",
+          "netcdf": {
+            "attributes": {
+              "title": "A high-resolution snow dataset for Switzerland (2016–2025) combining physics-based simulations and in situ observations",
+              "summary": "This dataset provides estimates of snow depth, snow water equivalent, snow cover fraction, and snowmelt runoff for Switzerland and hydrologically connected neighboring regions for water years 2016–2025.It combines physics-based model simulations with in situ snow observations through data assimilation, offering a spatially and temporally consistent record of Alpine snowpack dynamics. The dataset contains daily values and has a spatial resolution of 250m and an extent of 365000 by 272000m.",
+              "keywords": "snow, snow hydrology, snow depth, snow water equivalent, snow cover fraction, snow melt runoff, Switzerland",
+              "reference": "https://doi.org/10.5281/zenodo.17313889",
+              "source": "FSM2oshd v1.1.3 https://github.com/oshd-slf/FSM2oshd/releases/tag/v1.1.3",
+              "conventions": "CF-1.12, ACDD-1.3",
+              "creator_name": "Moritz Oberrauch; Tobias Jonas",
+              "creator_email": "moritz.oberrauch@slf.ch; jonas@slf.ch",
+              "creator_url": "https://orcid.org/0009-0006-6211-9690; https://orcid.org/0000-0003-0386-8676",
+              "institution": "WSL Institute for Snow and Avalanche Research SLF, Davos, Switzerland",
+              "geospatial_lat_min": 45.64987658134035,
+              "geospatial_lat_max": 48.02211257823187,
+              "geospatial_lon_min": 5.841241488925509,
+              "geospatial_lon_max": 10.56176779828106,
+              "date_created": "2026-05-27T13:17:48 UTC+01:00",
+              "history": "File created at 2026-05-27T13:17:48 UTC+01:00 using Matlab R2024b by Moritz Oberrauch."
+            },
+            "dimensions": {
+              "time": {
+                "size": 30,
+                "unlimited": false
+              },
+              "northing": {
+                "size": 1056,
+                "unlimited": false
+              },
+              "easting": {
+                "size": 1442,
+                "unlimited": false
+              }
+            },
+            "variables": {
+              "time": {
+                "dtype": "float64",
+                "dimensions": [
+                  "time"
+                ],
+                "shape": [
+                  30
+                ],
+                "attributes": {
+                  "standard_name": "time",
+                  "units": "days since 2024-11-01T06:00:00 UTC+01:00"
+                },
+                "axis": {
+                  "observed_count": 30,
+                  "missing_count": 0,
+                  "first": 0.0,
+                  "last": 29.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 1.0,
+                  "difference_max": 1.0,
+                  "decoded_first": "2024-11-01 06:00:00",
+                  "decoded_last": "2024-11-30 06:00:00",
+                  "calendar_used": "standard",
+                  "calendar_explicit_in_source": false,
+                  "decoding_note": "netCDF4 num2date output; original units retained; timezone interpretation not independently validated"
+                }
+              },
+              "northing": {
+                "dtype": "float64",
+                "dimensions": [
+                  "northing"
+                ],
+                "shape": [
+                  1056
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Northing",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1056,
+                  "missing_count": 0,
+                  "first": 1319375.0,
+                  "last": 1055625.0,
+                  "strictly_increasing": false,
+                  "strictly_decreasing": true,
+                  "difference_min": -250.0,
+                  "difference_max": -250.0
+                }
+              },
+              "easting": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting"
+                ],
+                "shape": [
+                  1442
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Easting",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1442,
+                  "missing_count": 0,
+                  "first": 2478125.0,
+                  "last": 2838375.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 250.0,
+                  "difference_max": 250.0
+                }
+              },
+              "hs": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "m",
+                  "standard_name": "surface_snow_thickness",
+                  "long_name": "Snow depth",
+                  "content_type": "modelResult"
+                }
+              },
+              "swe": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2",
+                  "standard_name": "surface_snow_amount",
+                  "long_name": "Snow water equivalent",
+                  "content_type": "modelResult"
+                }
+              },
+              "scf": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "1",
+                  "standard_name": "surface_snow_area_fraction",
+                  "long_name": "Snow cover fraction",
+                  "content_type": "modelResult"
+                }
+              },
+              "smro": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2 d-1",
+                  "standard_name": "surface_snow_melt_flux",
+                  "long_name": "Snowmelt runoff per day",
+                  "content_type": "modelResult"
+                }
+              }
+            },
+            "groups": {}
+          }
+        },
+        {
+          "member_name": "OSHD_DATA_2024-12.nc",
+          "uncompressed_bytes": 100706673,
+          "zip_crc32": "fca31d99",
+          "zip_crc_verified_by_zipfile_stream": true,
+          "extracted_file": "data_interim/oshd_metadata_members/WY2025/ee3c793d3f54f9ad3a1f.nc",
+          "sha256": "c7f0cb2d5a563b06be1e32001348f6763c8ed1f6cd1b198c4d5047b0bfaddc58",
+          "netcdf": {
+            "attributes": {
+              "title": "A high-resolution snow dataset for Switzerland (2016–2025) combining physics-based simulations and in situ observations",
+              "summary": "This dataset provides estimates of snow depth, snow water equivalent, snow cover fraction, and snowmelt runoff for Switzerland and hydrologically connected neighboring regions for water years 2016–2025.It combines physics-based model simulations with in situ snow observations through data assimilation, offering a spatially and temporally consistent record of Alpine snowpack dynamics. The dataset contains daily values and has a spatial resolution of 250m and an extent of 365000 by 272000m.",
+              "keywords": "snow, snow hydrology, snow depth, snow water equivalent, snow cover fraction, snow melt runoff, Switzerland",
+              "reference": "https://doi.org/10.5281/zenodo.17313889",
+              "source": "FSM2oshd v1.1.3 https://github.com/oshd-slf/FSM2oshd/releases/tag/v1.1.3",
+              "conventions": "CF-1.12, ACDD-1.3",
+              "creator_name": "Moritz Oberrauch; Tobias Jonas",
+              "creator_email": "moritz.oberrauch@slf.ch; jonas@slf.ch",
+              "creator_url": "https://orcid.org/0009-0006-6211-9690; https://orcid.org/0000-0003-0386-8676",
+              "institution": "WSL Institute for Snow and Avalanche Research SLF, Davos, Switzerland",
+              "geospatial_lat_min": 45.64987658134035,
+              "geospatial_lat_max": 48.02211257823187,
+              "geospatial_lon_min": 5.841241488925509,
+              "geospatial_lon_max": 10.56176779828106,
+              "date_created": "2026-05-27T13:18:15 UTC+01:00",
+              "history": "File created at 2026-05-27T13:18:15 UTC+01:00 using Matlab R2024b by Moritz Oberrauch."
+            },
+            "dimensions": {
+              "time": {
+                "size": 31,
+                "unlimited": false
+              },
+              "northing": {
+                "size": 1056,
+                "unlimited": false
+              },
+              "easting": {
+                "size": 1442,
+                "unlimited": false
+              }
+            },
+            "variables": {
+              "time": {
+                "dtype": "float64",
+                "dimensions": [
+                  "time"
+                ],
+                "shape": [
+                  31
+                ],
+                "attributes": {
+                  "standard_name": "time",
+                  "units": "days since 2024-12-01T06:00:00 UTC+01:00"
+                },
+                "axis": {
+                  "observed_count": 31,
+                  "missing_count": 0,
+                  "first": 0.0,
+                  "last": 30.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 1.0,
+                  "difference_max": 1.0,
+                  "decoded_first": "2024-12-01 06:00:00",
+                  "decoded_last": "2024-12-31 06:00:00",
+                  "calendar_used": "standard",
+                  "calendar_explicit_in_source": false,
+                  "decoding_note": "netCDF4 num2date output; original units retained; timezone interpretation not independently validated"
+                }
+              },
+              "northing": {
+                "dtype": "float64",
+                "dimensions": [
+                  "northing"
+                ],
+                "shape": [
+                  1056
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Northing",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1056,
+                  "missing_count": 0,
+                  "first": 1319375.0,
+                  "last": 1055625.0,
+                  "strictly_increasing": false,
+                  "strictly_decreasing": true,
+                  "difference_min": -250.0,
+                  "difference_max": -250.0
+                }
+              },
+              "easting": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting"
+                ],
+                "shape": [
+                  1442
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Easting",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1442,
+                  "missing_count": 0,
+                  "first": 2478125.0,
+                  "last": 2838375.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 250.0,
+                  "difference_max": 250.0
+                }
+              },
+              "hs": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "m",
+                  "standard_name": "surface_snow_thickness",
+                  "long_name": "Snow depth",
+                  "content_type": "modelResult"
+                }
+              },
+              "swe": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2",
+                  "standard_name": "surface_snow_amount",
+                  "long_name": "Snow water equivalent",
+                  "content_type": "modelResult"
+                }
+              },
+              "scf": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "1",
+                  "standard_name": "surface_snow_area_fraction",
+                  "long_name": "Snow cover fraction",
+                  "content_type": "modelResult"
+                }
+              },
+              "smro": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2 d-1",
+                  "standard_name": "surface_snow_melt_flux",
+                  "long_name": "Snowmelt runoff per day",
+                  "content_type": "modelResult"
+                }
+              }
+            },
+            "groups": {}
+          }
+        },
+        {
+          "member_name": "OSHD_DATA_2025-01.nc",
+          "uncompressed_bytes": 103908005,
+          "zip_crc32": "f135b8c8",
+          "zip_crc_verified_by_zipfile_stream": true,
+          "extracted_file": "data_interim/oshd_metadata_members/WY2025/8aaf24399918c603cc86.nc",
+          "sha256": "b509987d9e5bd61df5c4678d50f878c2e3fdbbd16715a616546856644095e632",
+          "netcdf": {
+            "attributes": {
+              "title": "A high-resolution snow dataset for Switzerland (2016–2025) combining physics-based simulations and in situ observations",
+              "summary": "This dataset provides estimates of snow depth, snow water equivalent, snow cover fraction, and snowmelt runoff for Switzerland and hydrologically connected neighboring regions for water years 2016–2025.It combines physics-based model simulations with in situ snow observations through data assimilation, offering a spatially and temporally consistent record of Alpine snowpack dynamics. The dataset contains daily values and has a spatial resolution of 250m and an extent of 365000 by 272000m.",
+              "keywords": "snow, snow hydrology, snow depth, snow water equivalent, snow cover fraction, snow melt runoff, Switzerland",
+              "reference": "https://doi.org/10.5281/zenodo.17313889",
+              "source": "FSM2oshd v1.1.3 https://github.com/oshd-slf/FSM2oshd/releases/tag/v1.1.3",
+              "conventions": "CF-1.12, ACDD-1.3",
+              "creator_name": "Moritz Oberrauch; Tobias Jonas",
+              "creator_email": "moritz.oberrauch@slf.ch; jonas@slf.ch",
+              "creator_url": "https://orcid.org/0009-0006-6211-9690; https://orcid.org/0000-0003-0386-8676",
+              "institution": "WSL Institute for Snow and Avalanche Research SLF, Davos, Switzerland",
+              "geospatial_lat_min": 45.64987658134035,
+              "geospatial_lat_max": 48.02211257823187,
+              "geospatial_lon_min": 5.841241488925509,
+              "geospatial_lon_max": 10.56176779828106,
+              "date_created": "2026-05-27T13:18:43 UTC+01:00",
+              "history": "File created at 2026-05-27T13:18:43 UTC+01:00 using Matlab R2024b by Moritz Oberrauch."
+            },
+            "dimensions": {
+              "time": {
+                "size": 31,
+                "unlimited": false
+              },
+              "northing": {
+                "size": 1056,
+                "unlimited": false
+              },
+              "easting": {
+                "size": 1442,
+                "unlimited": false
+              }
+            },
+            "variables": {
+              "time": {
+                "dtype": "float64",
+                "dimensions": [
+                  "time"
+                ],
+                "shape": [
+                  31
+                ],
+                "attributes": {
+                  "standard_name": "time",
+                  "units": "days since 2025-01-01T06:00:00 UTC+01:00"
+                },
+                "axis": {
+                  "observed_count": 31,
+                  "missing_count": 0,
+                  "first": 0.0,
+                  "last": 30.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 1.0,
+                  "difference_max": 1.0,
+                  "decoded_first": "2025-01-01 06:00:00",
+                  "decoded_last": "2025-01-31 06:00:00",
+                  "calendar_used": "standard",
+                  "calendar_explicit_in_source": false,
+                  "decoding_note": "netCDF4 num2date output; original units retained; timezone interpretation not independently validated"
+                }
+              },
+              "northing": {
+                "dtype": "float64",
+                "dimensions": [
+                  "northing"
+                ],
+                "shape": [
+                  1056
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Northing",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1056,
+                  "missing_count": 0,
+                  "first": 1319375.0,
+                  "last": 1055625.0,
+                  "strictly_increasing": false,
+                  "strictly_decreasing": true,
+                  "difference_min": -250.0,
+                  "difference_max": -250.0
+                }
+              },
+              "easting": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting"
+                ],
+                "shape": [
+                  1442
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Easting",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1442,
+                  "missing_count": 0,
+                  "first": 2478125.0,
+                  "last": 2838375.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 250.0,
+                  "difference_max": 250.0
+                }
+              },
+              "hs": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "m",
+                  "standard_name": "surface_snow_thickness",
+                  "long_name": "Snow depth",
+                  "content_type": "modelResult"
+                }
+              },
+              "swe": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2",
+                  "standard_name": "surface_snow_amount",
+                  "long_name": "Snow water equivalent",
+                  "content_type": "modelResult"
+                }
+              },
+              "scf": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "1",
+                  "standard_name": "surface_snow_area_fraction",
+                  "long_name": "Snow cover fraction",
+                  "content_type": "modelResult"
+                }
+              },
+              "smro": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2 d-1",
+                  "standard_name": "surface_snow_melt_flux",
+                  "long_name": "Snowmelt runoff per day",
+                  "content_type": "modelResult"
+                }
+              }
+            },
+            "groups": {}
+          }
+        },
+        {
+          "member_name": "OSHD_DATA_2025-02.nc",
+          "uncompressed_bytes": 76535353,
+          "zip_crc32": "97887771",
+          "zip_crc_verified_by_zipfile_stream": true,
+          "extracted_file": "data_interim/oshd_metadata_members/WY2025/6cc09a6203acaf72ed64.nc",
+          "sha256": "4f52d1c16bc3f0dda5769f5fd297530298762489c00b020f63bf8eb7c6677ab6",
+          "netcdf": {
+            "attributes": {
+              "title": "A high-resolution snow dataset for Switzerland (2016–2025) combining physics-based simulations and in situ observations",
+              "summary": "This dataset provides estimates of snow depth, snow water equivalent, snow cover fraction, and snowmelt runoff for Switzerland and hydrologically connected neighboring regions for water years 2016–2025.It combines physics-based model simulations with in situ snow observations through data assimilation, offering a spatially and temporally consistent record of Alpine snowpack dynamics. The dataset contains daily values and has a spatial resolution of 250m and an extent of 365000 by 272000m.",
+              "keywords": "snow, snow hydrology, snow depth, snow water equivalent, snow cover fraction, snow melt runoff, Switzerland",
+              "reference": "https://doi.org/10.5281/zenodo.17313889",
+              "source": "FSM2oshd v1.1.3 https://github.com/oshd-slf/FSM2oshd/releases/tag/v1.1.3",
+              "conventions": "CF-1.12, ACDD-1.3",
+              "creator_name": "Moritz Oberrauch; Tobias Jonas",
+              "creator_email": "moritz.oberrauch@slf.ch; jonas@slf.ch",
+              "creator_url": "https://orcid.org/0009-0006-6211-9690; https://orcid.org/0000-0003-0386-8676",
+              "institution": "WSL Institute for Snow and Avalanche Research SLF, Davos, Switzerland",
+              "geospatial_lat_min": 45.64987658134035,
+              "geospatial_lat_max": 48.02211257823187,
+              "geospatial_lon_min": 5.841241488925509,
+              "geospatial_lon_max": 10.56176779828106,
+              "date_created": "2026-05-27T13:19:05 UTC+01:00",
+              "history": "File created at 2026-05-27T13:19:05 UTC+01:00 using Matlab R2024b by Moritz Oberrauch."
+            },
+            "dimensions": {
+              "time": {
+                "size": 28,
+                "unlimited": false
+              },
+              "northing": {
+                "size": 1056,
+                "unlimited": false
+              },
+              "easting": {
+                "size": 1442,
+                "unlimited": false
+              }
+            },
+            "variables": {
+              "time": {
+                "dtype": "float64",
+                "dimensions": [
+                  "time"
+                ],
+                "shape": [
+                  28
+                ],
+                "attributes": {
+                  "standard_name": "time",
+                  "units": "days since 2025-02-01T06:00:00 UTC+01:00"
+                },
+                "axis": {
+                  "observed_count": 28,
+                  "missing_count": 0,
+                  "first": 0.0,
+                  "last": 27.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 1.0,
+                  "difference_max": 1.0,
+                  "decoded_first": "2025-02-01 06:00:00",
+                  "decoded_last": "2025-02-28 06:00:00",
+                  "calendar_used": "standard",
+                  "calendar_explicit_in_source": false,
+                  "decoding_note": "netCDF4 num2date output; original units retained; timezone interpretation not independently validated"
+                }
+              },
+              "northing": {
+                "dtype": "float64",
+                "dimensions": [
+                  "northing"
+                ],
+                "shape": [
+                  1056
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Northing",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1056,
+                  "missing_count": 0,
+                  "first": 1319375.0,
+                  "last": 1055625.0,
+                  "strictly_increasing": false,
+                  "strictly_decreasing": true,
+                  "difference_min": -250.0,
+                  "difference_max": -250.0
+                }
+              },
+              "easting": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting"
+                ],
+                "shape": [
+                  1442
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Easting",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1442,
+                  "missing_count": 0,
+                  "first": 2478125.0,
+                  "last": 2838375.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 250.0,
+                  "difference_max": 250.0
+                }
+              },
+              "hs": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  28
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "m",
+                  "standard_name": "surface_snow_thickness",
+                  "long_name": "Snow depth",
+                  "content_type": "modelResult"
+                }
+              },
+              "swe": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  28
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2",
+                  "standard_name": "surface_snow_amount",
+                  "long_name": "Snow water equivalent",
+                  "content_type": "modelResult"
+                }
+              },
+              "scf": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  28
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "1",
+                  "standard_name": "surface_snow_area_fraction",
+                  "long_name": "Snow cover fraction",
+                  "content_type": "modelResult"
+                }
+              },
+              "smro": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  28
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2 d-1",
+                  "standard_name": "surface_snow_melt_flux",
+                  "long_name": "Snowmelt runoff per day",
+                  "content_type": "modelResult"
+                }
+              }
+            },
+            "groups": {}
+          }
+        },
+        {
+          "member_name": "OSHD_DATA_2025-03.nc",
+          "uncompressed_bytes": 77745826,
+          "zip_crc32": "1cdca7c9",
+          "zip_crc_verified_by_zipfile_stream": true,
+          "extracted_file": "data_interim/oshd_metadata_members/WY2025/8a6d19eaebe0b4e4b73e.nc",
+          "sha256": "47051129c2a2845dc80fbf9fa0ba71b9a46fc42230fb7bde5a85c74b5d9575e5",
+          "netcdf": {
+            "attributes": {
+              "title": "A high-resolution snow dataset for Switzerland (2016–2025) combining physics-based simulations and in situ observations",
+              "summary": "This dataset provides estimates of snow depth, snow water equivalent, snow cover fraction, and snowmelt runoff for Switzerland and hydrologically connected neighboring regions for water years 2016–2025.It combines physics-based model simulations with in situ snow observations through data assimilation, offering a spatially and temporally consistent record of Alpine snowpack dynamics. The dataset contains daily values and has a spatial resolution of 250m and an extent of 365000 by 272000m.",
+              "keywords": "snow, snow hydrology, snow depth, snow water equivalent, snow cover fraction, snow melt runoff, Switzerland",
+              "reference": "https://doi.org/10.5281/zenodo.17313889",
+              "source": "FSM2oshd v1.1.3 https://github.com/oshd-slf/FSM2oshd/releases/tag/v1.1.3",
+              "conventions": "CF-1.12, ACDD-1.3",
+              "creator_name": "Moritz Oberrauch; Tobias Jonas",
+              "creator_email": "moritz.oberrauch@slf.ch; jonas@slf.ch",
+              "creator_url": "https://orcid.org/0009-0006-6211-9690; https://orcid.org/0000-0003-0386-8676",
+              "institution": "WSL Institute for Snow and Avalanche Research SLF, Davos, Switzerland",
+              "geospatial_lat_min": 45.64987658134035,
+              "geospatial_lat_max": 48.02211257823187,
+              "geospatial_lon_min": 5.841241488925509,
+              "geospatial_lon_max": 10.56176779828106,
+              "date_created": "2026-05-27T13:19:29 UTC+01:00",
+              "history": "File created at 2026-05-27T13:19:29 UTC+01:00 using Matlab R2024b by Moritz Oberrauch."
+            },
+            "dimensions": {
+              "time": {
+                "size": 31,
+                "unlimited": false
+              },
+              "northing": {
+                "size": 1056,
+                "unlimited": false
+              },
+              "easting": {
+                "size": 1442,
+                "unlimited": false
+              }
+            },
+            "variables": {
+              "time": {
+                "dtype": "float64",
+                "dimensions": [
+                  "time"
+                ],
+                "shape": [
+                  31
+                ],
+                "attributes": {
+                  "standard_name": "time",
+                  "units": "days since 2025-03-01T06:00:00 UTC+01:00"
+                },
+                "axis": {
+                  "observed_count": 31,
+                  "missing_count": 0,
+                  "first": 0.0,
+                  "last": 30.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 1.0,
+                  "difference_max": 1.0,
+                  "decoded_first": "2025-03-01 06:00:00",
+                  "decoded_last": "2025-03-31 06:00:00",
+                  "calendar_used": "standard",
+                  "calendar_explicit_in_source": false,
+                  "decoding_note": "netCDF4 num2date output; original units retained; timezone interpretation not independently validated"
+                }
+              },
+              "northing": {
+                "dtype": "float64",
+                "dimensions": [
+                  "northing"
+                ],
+                "shape": [
+                  1056
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Northing",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1056,
+                  "missing_count": 0,
+                  "first": 1319375.0,
+                  "last": 1055625.0,
+                  "strictly_increasing": false,
+                  "strictly_decreasing": true,
+                  "difference_min": -250.0,
+                  "difference_max": -250.0
+                }
+              },
+              "easting": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting"
+                ],
+                "shape": [
+                  1442
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Easting",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1442,
+                  "missing_count": 0,
+                  "first": 2478125.0,
+                  "last": 2838375.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 250.0,
+                  "difference_max": 250.0
+                }
+              },
+              "hs": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "m",
+                  "standard_name": "surface_snow_thickness",
+                  "long_name": "Snow depth",
+                  "content_type": "modelResult"
+                }
+              },
+              "swe": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2",
+                  "standard_name": "surface_snow_amount",
+                  "long_name": "Snow water equivalent",
+                  "content_type": "modelResult"
+                }
+              },
+              "scf": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "1",
+                  "standard_name": "surface_snow_area_fraction",
+                  "long_name": "Snow cover fraction",
+                  "content_type": "modelResult"
+                }
+              },
+              "smro": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2 d-1",
+                  "standard_name": "surface_snow_melt_flux",
+                  "long_name": "Snowmelt runoff per day",
+                  "content_type": "modelResult"
+                }
+              }
+            },
+            "groups": {}
+          }
+        },
+        {
+          "member_name": "OSHD_DATA_2025-04.nc",
+          "uncompressed_bytes": 61586971,
+          "zip_crc32": "7368de4e",
+          "zip_crc_verified_by_zipfile_stream": true,
+          "extracted_file": "data_interim/oshd_metadata_members/WY2025/ef54001094ada7621b9a.nc",
+          "sha256": "3afae78bf4321f01016ccc866942060af5313ee5d5434566afa2c6e2b98699e8",
+          "netcdf": {
+            "attributes": {
+              "title": "A high-resolution snow dataset for Switzerland (2016–2025) combining physics-based simulations and in situ observations",
+              "summary": "This dataset provides estimates of snow depth, snow water equivalent, snow cover fraction, and snowmelt runoff for Switzerland and hydrologically connected neighboring regions for water years 2016–2025.It combines physics-based model simulations with in situ snow observations through data assimilation, offering a spatially and temporally consistent record of Alpine snowpack dynamics. The dataset contains daily values and has a spatial resolution of 250m and an extent of 365000 by 272000m.",
+              "keywords": "snow, snow hydrology, snow depth, snow water equivalent, snow cover fraction, snow melt runoff, Switzerland",
+              "reference": "https://doi.org/10.5281/zenodo.17313889",
+              "source": "FSM2oshd v1.1.3 https://github.com/oshd-slf/FSM2oshd/releases/tag/v1.1.3",
+              "conventions": "CF-1.12, ACDD-1.3",
+              "creator_name": "Moritz Oberrauch; Tobias Jonas",
+              "creator_email": "moritz.oberrauch@slf.ch; jonas@slf.ch",
+              "creator_url": "https://orcid.org/0009-0006-6211-9690; https://orcid.org/0000-0003-0386-8676",
+              "institution": "WSL Institute for Snow and Avalanche Research SLF, Davos, Switzerland",
+              "geospatial_lat_min": 45.64987658134035,
+              "geospatial_lat_max": 48.02211257823187,
+              "geospatial_lon_min": 5.841241488925509,
+              "geospatial_lon_max": 10.56176779828106,
+              "date_created": "2026-05-27T13:19:51 UTC+01:00",
+              "history": "File created at 2026-05-27T13:19:51 UTC+01:00 using Matlab R2024b by Moritz Oberrauch."
+            },
+            "dimensions": {
+              "time": {
+                "size": 30,
+                "unlimited": false
+              },
+              "northing": {
+                "size": 1056,
+                "unlimited": false
+              },
+              "easting": {
+                "size": 1442,
+                "unlimited": false
+              }
+            },
+            "variables": {
+              "time": {
+                "dtype": "float64",
+                "dimensions": [
+                  "time"
+                ],
+                "shape": [
+                  30
+                ],
+                "attributes": {
+                  "standard_name": "time",
+                  "units": "days since 2025-04-01T06:00:00 UTC+01:00"
+                },
+                "axis": {
+                  "observed_count": 30,
+                  "missing_count": 0,
+                  "first": 0.0,
+                  "last": 29.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 1.0,
+                  "difference_max": 1.0,
+                  "decoded_first": "2025-04-01 06:00:00",
+                  "decoded_last": "2025-04-30 06:00:00",
+                  "calendar_used": "standard",
+                  "calendar_explicit_in_source": false,
+                  "decoding_note": "netCDF4 num2date output; original units retained; timezone interpretation not independently validated"
+                }
+              },
+              "northing": {
+                "dtype": "float64",
+                "dimensions": [
+                  "northing"
+                ],
+                "shape": [
+                  1056
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Northing",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1056,
+                  "missing_count": 0,
+                  "first": 1319375.0,
+                  "last": 1055625.0,
+                  "strictly_increasing": false,
+                  "strictly_decreasing": true,
+                  "difference_min": -250.0,
+                  "difference_max": -250.0
+                }
+              },
+              "easting": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting"
+                ],
+                "shape": [
+                  1442
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Easting",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1442,
+                  "missing_count": 0,
+                  "first": 2478125.0,
+                  "last": 2838375.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 250.0,
+                  "difference_max": 250.0
+                }
+              },
+              "hs": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "m",
+                  "standard_name": "surface_snow_thickness",
+                  "long_name": "Snow depth",
+                  "content_type": "modelResult"
+                }
+              },
+              "swe": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2",
+                  "standard_name": "surface_snow_amount",
+                  "long_name": "Snow water equivalent",
+                  "content_type": "modelResult"
+                }
+              },
+              "scf": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "1",
+                  "standard_name": "surface_snow_area_fraction",
+                  "long_name": "Snow cover fraction",
+                  "content_type": "modelResult"
+                }
+              },
+              "smro": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2 d-1",
+                  "standard_name": "surface_snow_melt_flux",
+                  "long_name": "Snowmelt runoff per day",
+                  "content_type": "modelResult"
+                }
+              }
+            },
+            "groups": {}
+          }
+        },
+        {
+          "member_name": "OSHD_DATA_2025-05.nc",
+          "uncompressed_bytes": 51897543,
+          "zip_crc32": "e633c3df",
+          "zip_crc_verified_by_zipfile_stream": true,
+          "extracted_file": "data_interim/oshd_metadata_members/WY2025/54bddd39e784cb1ceac1.nc",
+          "sha256": "1beb7cfe8e6d3784d5cacc3e8c2352a84ef57558143b68feb65ef4aef94e8923",
+          "netcdf": {
+            "attributes": {
+              "title": "A high-resolution snow dataset for Switzerland (2016–2025) combining physics-based simulations and in situ observations",
+              "summary": "This dataset provides estimates of snow depth, snow water equivalent, snow cover fraction, and snowmelt runoff for Switzerland and hydrologically connected neighboring regions for water years 2016–2025.It combines physics-based model simulations with in situ snow observations through data assimilation, offering a spatially and temporally consistent record of Alpine snowpack dynamics. The dataset contains daily values and has a spatial resolution of 250m and an extent of 365000 by 272000m.",
+              "keywords": "snow, snow hydrology, snow depth, snow water equivalent, snow cover fraction, snow melt runoff, Switzerland",
+              "reference": "https://doi.org/10.5281/zenodo.17313889",
+              "source": "FSM2oshd v1.1.3 https://github.com/oshd-slf/FSM2oshd/releases/tag/v1.1.3",
+              "conventions": "CF-1.12, ACDD-1.3",
+              "creator_name": "Moritz Oberrauch; Tobias Jonas",
+              "creator_email": "moritz.oberrauch@slf.ch; jonas@slf.ch",
+              "creator_url": "https://orcid.org/0009-0006-6211-9690; https://orcid.org/0000-0003-0386-8676",
+              "institution": "WSL Institute for Snow and Avalanche Research SLF, Davos, Switzerland",
+              "geospatial_lat_min": 45.64987658134035,
+              "geospatial_lat_max": 48.02211257823187,
+              "geospatial_lon_min": 5.841241488925509,
+              "geospatial_lon_max": 10.56176779828106,
+              "date_created": "2026-05-27T13:20:13 UTC+01:00",
+              "history": "File created at 2026-05-27T13:20:13 UTC+01:00 using Matlab R2024b by Moritz Oberrauch."
+            },
+            "dimensions": {
+              "time": {
+                "size": 31,
+                "unlimited": false
+              },
+              "northing": {
+                "size": 1056,
+                "unlimited": false
+              },
+              "easting": {
+                "size": 1442,
+                "unlimited": false
+              }
+            },
+            "variables": {
+              "time": {
+                "dtype": "float64",
+                "dimensions": [
+                  "time"
+                ],
+                "shape": [
+                  31
+                ],
+                "attributes": {
+                  "standard_name": "time",
+                  "units": "days since 2025-05-01T06:00:00 UTC+01:00"
+                },
+                "axis": {
+                  "observed_count": 31,
+                  "missing_count": 0,
+                  "first": 0.0,
+                  "last": 30.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 1.0,
+                  "difference_max": 1.0,
+                  "decoded_first": "2025-05-01 06:00:00",
+                  "decoded_last": "2025-05-31 06:00:00",
+                  "calendar_used": "standard",
+                  "calendar_explicit_in_source": false,
+                  "decoding_note": "netCDF4 num2date output; original units retained; timezone interpretation not independently validated"
+                }
+              },
+              "northing": {
+                "dtype": "float64",
+                "dimensions": [
+                  "northing"
+                ],
+                "shape": [
+                  1056
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Northing",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1056,
+                  "missing_count": 0,
+                  "first": 1319375.0,
+                  "last": 1055625.0,
+                  "strictly_increasing": false,
+                  "strictly_decreasing": true,
+                  "difference_min": -250.0,
+                  "difference_max": -250.0
+                }
+              },
+              "easting": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting"
+                ],
+                "shape": [
+                  1442
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Easting",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1442,
+                  "missing_count": 0,
+                  "first": 2478125.0,
+                  "last": 2838375.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 250.0,
+                  "difference_max": 250.0
+                }
+              },
+              "hs": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "m",
+                  "standard_name": "surface_snow_thickness",
+                  "long_name": "Snow depth",
+                  "content_type": "modelResult"
+                }
+              },
+              "swe": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2",
+                  "standard_name": "surface_snow_amount",
+                  "long_name": "Snow water equivalent",
+                  "content_type": "modelResult"
+                }
+              },
+              "scf": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "1",
+                  "standard_name": "surface_snow_area_fraction",
+                  "long_name": "Snow cover fraction",
+                  "content_type": "modelResult"
+                }
+              },
+              "smro": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2 d-1",
+                  "standard_name": "surface_snow_melt_flux",
+                  "long_name": "Snowmelt runoff per day",
+                  "content_type": "modelResult"
+                }
+              }
+            },
+            "groups": {}
+          }
+        },
+        {
+          "member_name": "OSHD_DATA_2025-06.nc",
+          "uncompressed_bytes": 21951019,
+          "zip_crc32": "974a2fad",
+          "zip_crc_verified_by_zipfile_stream": true,
+          "extracted_file": "data_interim/oshd_metadata_members/WY2025/727e1c3d260fd2b329cd.nc",
+          "sha256": "d42bf7b28b292758ce4e8b215fe1f227c5a94da2f1aeb6c3a7575f4c0d6612db",
+          "netcdf": {
+            "attributes": {
+              "title": "A high-resolution snow dataset for Switzerland (2016–2025) combining physics-based simulations and in situ observations",
+              "summary": "This dataset provides estimates of snow depth, snow water equivalent, snow cover fraction, and snowmelt runoff for Switzerland and hydrologically connected neighboring regions for water years 2016–2025.It combines physics-based model simulations with in situ snow observations through data assimilation, offering a spatially and temporally consistent record of Alpine snowpack dynamics. The dataset contains daily values and has a spatial resolution of 250m and an extent of 365000 by 272000m.",
+              "keywords": "snow, snow hydrology, snow depth, snow water equivalent, snow cover fraction, snow melt runoff, Switzerland",
+              "reference": "https://doi.org/10.5281/zenodo.17313889",
+              "source": "FSM2oshd v1.1.3 https://github.com/oshd-slf/FSM2oshd/releases/tag/v1.1.3",
+              "conventions": "CF-1.12, ACDD-1.3",
+              "creator_name": "Moritz Oberrauch; Tobias Jonas",
+              "creator_email": "moritz.oberrauch@slf.ch; jonas@slf.ch",
+              "creator_url": "https://orcid.org/0009-0006-6211-9690; https://orcid.org/0000-0003-0386-8676",
+              "institution": "WSL Institute for Snow and Avalanche Research SLF, Davos, Switzerland",
+              "geospatial_lat_min": 45.64987658134035,
+              "geospatial_lat_max": 48.02211257823187,
+              "geospatial_lon_min": 5.841241488925509,
+              "geospatial_lon_max": 10.56176779828106,
+              "date_created": "2026-05-27T13:20:32 UTC+01:00",
+              "history": "File created at 2026-05-27T13:20:32 UTC+01:00 using Matlab R2024b by Moritz Oberrauch."
+            },
+            "dimensions": {
+              "time": {
+                "size": 30,
+                "unlimited": false
+              },
+              "northing": {
+                "size": 1056,
+                "unlimited": false
+              },
+              "easting": {
+                "size": 1442,
+                "unlimited": false
+              }
+            },
+            "variables": {
+              "time": {
+                "dtype": "float64",
+                "dimensions": [
+                  "time"
+                ],
+                "shape": [
+                  30
+                ],
+                "attributes": {
+                  "standard_name": "time",
+                  "units": "days since 2025-06-01T06:00:00 UTC+01:00"
+                },
+                "axis": {
+                  "observed_count": 30,
+                  "missing_count": 0,
+                  "first": 0.0,
+                  "last": 29.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 1.0,
+                  "difference_max": 1.0,
+                  "decoded_first": "2025-06-01 06:00:00",
+                  "decoded_last": "2025-06-30 06:00:00",
+                  "calendar_used": "standard",
+                  "calendar_explicit_in_source": false,
+                  "decoding_note": "netCDF4 num2date output; original units retained; timezone interpretation not independently validated"
+                }
+              },
+              "northing": {
+                "dtype": "float64",
+                "dimensions": [
+                  "northing"
+                ],
+                "shape": [
+                  1056
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Northing",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1056,
+                  "missing_count": 0,
+                  "first": 1319375.0,
+                  "last": 1055625.0,
+                  "strictly_increasing": false,
+                  "strictly_decreasing": true,
+                  "difference_min": -250.0,
+                  "difference_max": -250.0
+                }
+              },
+              "easting": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting"
+                ],
+                "shape": [
+                  1442
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Easting",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1442,
+                  "missing_count": 0,
+                  "first": 2478125.0,
+                  "last": 2838375.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 250.0,
+                  "difference_max": 250.0
+                }
+              },
+              "hs": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "m",
+                  "standard_name": "surface_snow_thickness",
+                  "long_name": "Snow depth",
+                  "content_type": "modelResult"
+                }
+              },
+              "swe": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2",
+                  "standard_name": "surface_snow_amount",
+                  "long_name": "Snow water equivalent",
+                  "content_type": "modelResult"
+                }
+              },
+              "scf": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "1",
+                  "standard_name": "surface_snow_area_fraction",
+                  "long_name": "Snow cover fraction",
+                  "content_type": "modelResult"
+                }
+              },
+              "smro": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  30
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2 d-1",
+                  "standard_name": "surface_snow_melt_flux",
+                  "long_name": "Snowmelt runoff per day",
+                  "content_type": "modelResult"
+                }
+              }
+            },
+            "groups": {}
+          }
+        },
+        {
+          "member_name": "OSHD_DATA_2025-07.nc",
+          "uncompressed_bytes": 14939611,
+          "zip_crc32": "6a8f5534",
+          "zip_crc_verified_by_zipfile_stream": true,
+          "extracted_file": "data_interim/oshd_metadata_members/WY2025/fd4208f6f01d7e6288d7.nc",
+          "sha256": "80f1d6ab0fca7793cf20e6dca04d7963547152ea24e4b3b9664b21536c5d5a50",
+          "netcdf": {
+            "attributes": {
+              "title": "A high-resolution snow dataset for Switzerland (2016–2025) combining physics-based simulations and in situ observations",
+              "summary": "This dataset provides estimates of snow depth, snow water equivalent, snow cover fraction, and snowmelt runoff for Switzerland and hydrologically connected neighboring regions for water years 2016–2025.It combines physics-based model simulations with in situ snow observations through data assimilation, offering a spatially and temporally consistent record of Alpine snowpack dynamics. The dataset contains daily values and has a spatial resolution of 250m and an extent of 365000 by 272000m.",
+              "keywords": "snow, snow hydrology, snow depth, snow water equivalent, snow cover fraction, snow melt runoff, Switzerland",
+              "reference": "https://doi.org/10.5281/zenodo.17313889",
+              "source": "FSM2oshd v1.1.3 https://github.com/oshd-slf/FSM2oshd/releases/tag/v1.1.3",
+              "conventions": "CF-1.12, ACDD-1.3",
+              "creator_name": "Moritz Oberrauch; Tobias Jonas",
+              "creator_email": "moritz.oberrauch@slf.ch; jonas@slf.ch",
+              "creator_url": "https://orcid.org/0009-0006-6211-9690; https://orcid.org/0000-0003-0386-8676",
+              "institution": "WSL Institute for Snow and Avalanche Research SLF, Davos, Switzerland",
+              "geospatial_lat_min": 45.64987658134035,
+              "geospatial_lat_max": 48.02211257823187,
+              "geospatial_lon_min": 5.841241488925509,
+              "geospatial_lon_max": 10.56176779828106,
+              "date_created": "2026-05-27T13:20:50 UTC+01:00",
+              "history": "File created at 2026-05-27T13:20:50 UTC+01:00 using Matlab R2024b by Moritz Oberrauch."
+            },
+            "dimensions": {
+              "time": {
+                "size": 31,
+                "unlimited": false
+              },
+              "northing": {
+                "size": 1056,
+                "unlimited": false
+              },
+              "easting": {
+                "size": 1442,
+                "unlimited": false
+              }
+            },
+            "variables": {
+              "time": {
+                "dtype": "float64",
+                "dimensions": [
+                  "time"
+                ],
+                "shape": [
+                  31
+                ],
+                "attributes": {
+                  "standard_name": "time",
+                  "units": "days since 2025-07-01T06:00:00 UTC+01:00"
+                },
+                "axis": {
+                  "observed_count": 31,
+                  "missing_count": 0,
+                  "first": 0.0,
+                  "last": 30.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 1.0,
+                  "difference_max": 1.0,
+                  "decoded_first": "2025-07-01 06:00:00",
+                  "decoded_last": "2025-07-31 06:00:00",
+                  "calendar_used": "standard",
+                  "calendar_explicit_in_source": false,
+                  "decoding_note": "netCDF4 num2date output; original units retained; timezone interpretation not independently validated"
+                }
+              },
+              "northing": {
+                "dtype": "float64",
+                "dimensions": [
+                  "northing"
+                ],
+                "shape": [
+                  1056
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Northing",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1056,
+                  "missing_count": 0,
+                  "first": 1319375.0,
+                  "last": 1055625.0,
+                  "strictly_increasing": false,
+                  "strictly_decreasing": true,
+                  "difference_min": -250.0,
+                  "difference_max": -250.0
+                }
+              },
+              "easting": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting"
+                ],
+                "shape": [
+                  1442
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Easting",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1442,
+                  "missing_count": 0,
+                  "first": 2478125.0,
+                  "last": 2838375.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 250.0,
+                  "difference_max": 250.0
+                }
+              },
+              "hs": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "m",
+                  "standard_name": "surface_snow_thickness",
+                  "long_name": "Snow depth",
+                  "content_type": "modelResult"
+                }
+              },
+              "swe": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2",
+                  "standard_name": "surface_snow_amount",
+                  "long_name": "Snow water equivalent",
+                  "content_type": "modelResult"
+                }
+              },
+              "scf": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "1",
+                  "standard_name": "surface_snow_area_fraction",
+                  "long_name": "Snow cover fraction",
+                  "content_type": "modelResult"
+                }
+              },
+              "smro": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2 d-1",
+                  "standard_name": "surface_snow_melt_flux",
+                  "long_name": "Snowmelt runoff per day",
+                  "content_type": "modelResult"
+                }
+              }
+            },
+            "groups": {}
+          }
+        },
+        {
+          "member_name": "OSHD_DATA_2025-08.nc",
+          "uncompressed_bytes": 9785475,
+          "zip_crc32": "5fa9bdba",
+          "zip_crc_verified_by_zipfile_stream": true,
+          "extracted_file": "data_interim/oshd_metadata_members/WY2025/4041e6f7b88fda1b9bff.nc",
+          "sha256": "e3aed7030b39f908c53de46adf0b476d4f4127a9cf24839d376e775f2d914ead",
+          "netcdf": {
+            "attributes": {
+              "title": "A high-resolution snow dataset for Switzerland (2016–2025) combining physics-based simulations and in situ observations",
+              "summary": "This dataset provides estimates of snow depth, snow water equivalent, snow cover fraction, and snowmelt runoff for Switzerland and hydrologically connected neighboring regions for water years 2016–2025.It combines physics-based model simulations with in situ snow observations through data assimilation, offering a spatially and temporally consistent record of Alpine snowpack dynamics. The dataset contains daily values and has a spatial resolution of 250m and an extent of 365000 by 272000m.",
+              "keywords": "snow, snow hydrology, snow depth, snow water equivalent, snow cover fraction, snow melt runoff, Switzerland",
+              "reference": "https://doi.org/10.5281/zenodo.17313889",
+              "source": "FSM2oshd v1.1.3 https://github.com/oshd-slf/FSM2oshd/releases/tag/v1.1.3",
+              "conventions": "CF-1.12, ACDD-1.3",
+              "creator_name": "Moritz Oberrauch; Tobias Jonas",
+              "creator_email": "moritz.oberrauch@slf.ch; jonas@slf.ch",
+              "creator_url": "https://orcid.org/0009-0006-6211-9690; https://orcid.org/0000-0003-0386-8676",
+              "institution": "WSL Institute for Snow and Avalanche Research SLF, Davos, Switzerland",
+              "geospatial_lat_min": 45.64987658134035,
+              "geospatial_lat_max": 48.02211257823187,
+              "geospatial_lon_min": 5.841241488925509,
+              "geospatial_lon_max": 10.56176779828106,
+              "date_created": "2026-05-27T13:21:07 UTC+01:00",
+              "history": "File created at 2026-05-27T13:21:07 UTC+01:00 using Matlab R2024b by Moritz Oberrauch."
+            },
+            "dimensions": {
+              "time": {
+                "size": 31,
+                "unlimited": false
+              },
+              "northing": {
+                "size": 1056,
+                "unlimited": false
+              },
+              "easting": {
+                "size": 1442,
+                "unlimited": false
+              }
+            },
+            "variables": {
+              "time": {
+                "dtype": "float64",
+                "dimensions": [
+                  "time"
+                ],
+                "shape": [
+                  31
+                ],
+                "attributes": {
+                  "standard_name": "time",
+                  "units": "days since 2025-08-01T06:00:00 UTC+01:00"
+                },
+                "axis": {
+                  "observed_count": 31,
+                  "missing_count": 0,
+                  "first": 0.0,
+                  "last": 30.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 1.0,
+                  "difference_max": 1.0,
+                  "decoded_first": "2025-08-01 06:00:00",
+                  "decoded_last": "2025-08-31 06:00:00",
+                  "calendar_used": "standard",
+                  "calendar_explicit_in_source": false,
+                  "decoding_note": "netCDF4 num2date output; original units retained; timezone interpretation not independently validated"
+                }
+              },
+              "northing": {
+                "dtype": "float64",
+                "dimensions": [
+                  "northing"
+                ],
+                "shape": [
+                  1056
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Northing",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1056,
+                  "missing_count": 0,
+                  "first": 1319375.0,
+                  "last": 1055625.0,
+                  "strictly_increasing": false,
+                  "strictly_decreasing": true,
+                  "difference_min": -250.0,
+                  "difference_max": -250.0
+                }
+              },
+              "easting": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting"
+                ],
+                "shape": [
+                  1442
+                ],
+                "attributes": {
+                  "units": "m",
+                  "long_name": "Easting",
+                  "coordinate system": "CH1903+ / LV95 (EPSG:2056)"
+                },
+                "axis": {
+                  "observed_count": 1442,
+                  "missing_count": 0,
+                  "first": 2478125.0,
+                  "last": 2838375.0,
+                  "strictly_increasing": true,
+                  "strictly_decreasing": false,
+                  "difference_min": 250.0,
+                  "difference_max": 250.0
+                }
+              },
+              "hs": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "m",
+                  "standard_name": "surface_snow_thickness",
+                  "long_name": "Snow depth",
+                  "content_type": "modelResult"
+                }
+              },
+              "swe": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2",
+                  "standard_name": "surface_snow_amount",
+                  "long_name": "Snow water equivalent",
+                  "content_type": "modelResult"
+                }
+              },
+              "scf": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "1",
+                  "standard_name": "surface_snow_area_fraction",
+                  "long_name": "Snow cover fraction",
+                  "content_type": "modelResult"
+                }
+              },
+              "smro": {
+                "dtype": "float64",
+                "dimensions": [
+                  "easting",
+                  "northing",
+                  "time"
+                ],
+                "shape": [
+                  1442,
+                  1056,
+                  31
+                ],
+                "attributes": {
+                  "_FillValue": -9999.0,
+                  "unit": "kg m-2 d-1",
+                  "standard_name": "surface_snow_melt_flux",
+                  "long_name": "Snowmelt runoff per day",
+                  "content_type": "modelResult"
+                }
+              }
+            },
+            "groups": {}
+          }
+        }
+      ]
     }
   },
   "snow_values_read": false,

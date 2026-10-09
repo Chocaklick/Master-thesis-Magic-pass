@@ -1,0 +1,16 @@
+[
+  {
+    "source_id": "SKI_VAUD_PISTES_PAGE_STAGE49",
+    "url": "https://www.ski-vaud.ch/web/ski/les-pistes",
+    "organisation": "Remontees mecaniques Sainte-Croix / Les Rasses",
+    "suffix": "html",
+    "purpose": "Operator piste page linked by the archived official site; current plan evidence, not certified preentry GIS axes"
+  },
+  {
+    "source_id": "VALLEE_JOUX_PISTE_PLAN_STAGE49",
+    "url": "https://static.mycity.travel/manage/uploads/6/26/452439/1/plan-des-pistes-de-ski-alpin.pdf",
+    "organisation": "Vallee de Joux Tourisme",
+    "suffix": "pdf",
+    "purpose": "Actual PDF link in archived regional page; verify three-component piste scope without artificial centerlines or Vaulion addition"
+  }
+]

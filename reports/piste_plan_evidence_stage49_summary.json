@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-09",
+  "input_sha256": {
+    "config/piste_plan_evidence_stage49.json": "47cb6561603223229b47f531ddac7dcb466310f2220956b6af067367e4036aa3",
+    "data_external/source_evidence/SKI_VAUD_PISTES_PAGE_STAGE49_20261009T184908Z.html": "0c54d9cdfe0f8fae24afdd9a5550b386b4011c2e1c3564fc64a7084e5797219b",
+    "data_external/source_evidence/VALLEE_JOUX_PISTE_PLAN_STAGE49_20261009T184919Z.pdf": "b166579d300953b87b704be3ec75af74af43e1ace7047598a69921de626c5bef"
+  },
+  "cases": [
+    {
+      "source_id": "SKI_VAUD_PISTES_PAGE_STAGE49",
+      "source_url": "https://www.ski-vaud.ch/web/ski/les-pistes",
+      "raw_file": "data_external/source_evidence/SKI_VAUD_PISTES_PAGE_STAGE49_20261009T184908Z.html",
+      "finding": "Operator page names alpine installations; installation counts/opening status are not piste lengths, piste counts or historical station characteristics.",
+      "historical_scope_verified": false,
+      "gis_assignment_accepted": false,
+      "required_markers": [
+        "Rasses I",
+        "Rasses II",
+        "Rasses III",
+        "Avattes I",
+        "Cochet"
+      ],
+      "navigation_links": [
+        {
+          "url": "https://www.ski-vaud.ch/web/",
+          "label": "Accueil",
+          "original_href": "/web/"
+        },
+        {
+          "url": "https://www.ski-vaud.ch",
+          "label": "Ski",
+          "original_href": "https://www.ski-vaud.ch"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/les-pistes",
+          "label": "Les Pistes",
+          "original_href": "/web/ski/les-pistes"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/webcams",
+          "label": "Webcams",
+          "original_href": "/web/ski/webcams"
+        },
+        {
+          "url": "https://snow.myswitzerland.com/bulletin_enneigement/RegionduLeman/SteCroixLesRasses-146",
+          "label": "Info Neige",
+          "original_href": "https://snow.myswitzerland.com/bulletin_enneigement/RegionduLeman/SteCroixLesRasses-146"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/tarifs",
+          "label": "Tarifs",
+          "original_href": "/web/ski/tarifs"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/location-materiel",
+          "label": "Location Matériel",
+          "original_href": "/web/ski/location-materiel"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/cours-de-ski",
+          "label": "Cours de Ski",
+          "original_href": "/web/ski/cours-de-ski"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/teleskis-debutants",
+          "label": "Zone Débutants",
+          "original_href": "/web/ski/teleskis-debutants"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/evenements",
+          "label": "Évènements",
+          "original_href": "/web/ski/evenements"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/historique",
+          "label": "Historique",
+          "original_href": "/web/ski/historique"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/securite",
+          "label": "Sécurité",
+          "original_href": "/web/ski/securite"
+        },
+        {
+          "url": "https://www.ski-vaud.ch",
+          "label": "La région",
+          "original_href": "https://www.ski-vaud.ch"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/laregion/hiver",
+          "label": "Hiver",
+          "original_href": "/web/laregion/hiver"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/laregion/ete",
+          "label": "Été",
+          "original_href": "/web/laregion/ete"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/hebergements",
+          "label": "Hébergements",
+          "original_href": "/web/hebergements"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/restaurants",
+          "label": "Restaurants",
+          "original_href": "/web/restaurants"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/restaurants/sur-les-pistes",
+          "label": "Sur les Pistes",
+          "original_href": "/web/restaurants/sur-les-pistes"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/restaurants/dans-la-region",
+          "label": "De la Région",
+          "original_href": "/web/restaurants/dans-la-region"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/photos",
+          "label": "Photos",
+          "original_href": "/web/photos"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/acces",
+          "label": "Accès",
+          "original_href": "/web/acces"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/contacts",
+          "label": "Contacts",
+          "original_href": "/web/contacts"
+        },
+        {
+          "url": "https://www.facebook.com/p/Ski-Club-Sainte-Croix-SCSC-100054615751882/",
+          "label": "piste éclairée de Ste-Croix",
+          "original_href": "https://www.facebook.com/p/Ski-Club-Sainte-Croix-SCSC-100054615751882/"
+        }
+      ],
+      "geometry_conversion_applied": false
+    },
+    {
+      "source_id": "VALLEE_JOUX_PISTE_PLAN_STAGE49",
+      "source_url": "https://static.mycity.travel/manage/uploads/6/26/452439/1/plan-des-pistes-de-ski-alpin.pdf",
+      "raw_file": "data_external/source_evidence/VALLEE_JOUX_PISTE_PLAN_STAGE49_20261009T184919Z.pdf",
+      "finding": "Regional plan is broader than retained Magic Pass group; three named components confirmed, Vaulion not added. PDF creation metadata 2023 is not preentry scope certification.",
+      "historical_scope_verified": false,
+      "gis_assignment_accepted": false,
+      "page_count": 1,
+      "original_pdf_metadata": {
+        "/CreationDate": "D:20231123081007+01'00'",
+        "/Creator": "Adobe InDesign 19.0 (Macintosh)",
+        "/ModDate": "D:20231123081021+01'00'",
+        "/Producer": "Adobe PDF Library 17.0",
+        "/Trapped": "/False"
+      },
+      "required_markers": [
+        "Abbaye",
+        "Orient",
+        "Brassus",
+        "Vaulion"
+      ],
+      "text_sha256": "5a801933f2c27011e1f427f01221a289be6425918a9a839febe2a13918f3cfef",
+      "rendered_page": "data_interim/piste_plan_review_stage49/vallee_joux_page1.png",
+      "visual_review_note": "Rendered page reviewed: separate panels for the three retained components and Dent de Vaulion; Magic Pass logos on the three retained panels, not the Vaulion panel. No extra group component accepted.",
+      "geometry_conversion_applied": false,
+      "rights_note": "Plan credits underlying Google/DigitalGlobe imagery; no open geospatial or digitisation licence inferred"
+    }
+  ],
+  "groups_changed": false,
+  "accepted_gis_assignments": 0,
+  "station_features_computed": false
+}

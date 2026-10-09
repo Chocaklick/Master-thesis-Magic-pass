@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-09",
+  "decision_authority": "direct researcher response to seven closed-way question",
+  "researcher_reply": "Oui : conserver et vérifier les sept cas avant mesure.",
+  "parent_decision": "config/winter_profile_geometry_roles_decisions_stage49.json",
+  "original_source_id": "OSM_DOWNHILL_SWISS_CURRENT_2026_10_09",
+  "osm_way_ids": [551031993, 551342308, 560349845, 560499042, 562826738, 670568310, 670568333],
+  "retain_ambiguous_objects": true,
+  "individual_verification_before_measure_required": true,
+  "count_as_axis_length_before_verification": false,
+  "count_as_mapped_area_before_verification": false,
+  "drop_their_station_groups": false,
+  "geometry_interpretation": null
+}

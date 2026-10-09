@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-09",
+  "input_sha256": {
+    "config/winter_profile_geometry_roles_decisions_stage49.json": "463c680cda5dadfa35c5f781748158e9ea432366ff4afab8f80d7e55824b2a66",
+    "src/descriptive/audit_piste_geometry_roles.py": "4712b13e99e8010fbd5d98aa8e1079d1358ccffdd42a7c3f235882f7a9f8c84b",
+    "data_processed/accessibility_station_groups.csv": "08040e0b7141679434eb8f4339d46ba24a77768ee07c6ab9fb98e989054987eb",
+    "data_interim/current_piste_geometry_collection_checkpoint.json": "334016bbfdb46aeb482816301a41daec710c392f5dc2684adb7237152063f311",
+    "data_external/source_evidence/OSM_DOWNHILL_SWISS_CURRENT_2026_10_09_20261009T162248Z.json": "8904d22bed62031cd06f25231f083cfb502143c7609982cf4aab3d78b7d45c4f",
+    "reports/piste_missing_member_collection_summary.json": "5b8cde1bd7c21f50e2bbf4f0657713611587826c8a126f50f7f062247d33a672",
+    "data_external/source_evidence/OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09_20261009T172519Z.json": "6bbea578b01f12037691da5c74332a91f0ddec2d14810fa9cef68a2f19c63c68"
+  },
+  "group_count": 71,
+  "object_snapshot_rows": 9948,
+  "unique_upstream_object_count": 9948,
+  "candidate_role_counts": {
+    "way_axis_candidate": 8793,
+    "explicit_surface_way_candidate": 838,
+    "closed_way_role_unresolved": 7,
+    "route_wrapper_not_independent_axis": 228,
+    "surface_multipolygon_candidate": 82
+  },
+  "geometry_status_counts": {
+    "valid_axis_candidate": 8793,
+    "valid_standalone_surface_candidate": 835,
+    "surface_member_topology_pending": 3,
+    "role_pending_no_measure": 7,
+    "relation_geometry_requires_scope_and_topology_verification": 310
+  },
+  "metrics_are_object_diagnostics_not_group_profiles": true,
+  "group_assignments_accepted": 0,
+  "group_profiles_computed": false,
+  "group_surface_union_computed": false,
+  "automatic_exclusion_applied": false,
+  "historical_scope_certified": false,
+  "notes": "Surface-only objects retained; no invented axes. Original source versions not reconciled silently. Relations/topology and unknown closed roles require review.",
+  "output_sha256": "da1d0d324d6f3a6917d12c2c72d142f6f37c48e3bc6287f0070a811b7964ca65"
+}

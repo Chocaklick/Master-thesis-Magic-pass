@@ -1,0 +1,38 @@
+{
+  "version": "stage49_axes_surfaces_2026_10_09",
+  "decision_authority": "researcher-approved instruction transferred from chat Mettre a jour le memoire Magic Pass",
+  "source_thread_id": "01a121f9-b8e0-7702-a2ce-846e470cad4b",
+  "parent_decisions": [
+    "config/winter_profile_aggregation_decisions_stage45.json",
+    "config/winter_profile_terrain_decisions_stage48.json"
+  ],
+  "both_axes_and_surfaces_retained": true,
+  "axes": {
+    "role": "verified unique piste lines",
+    "metrics": ["total_piste_length", "minimum_altitude", "maximum_altitude", "length_weighted_mean_altitude", "terrain_slope", "terrain_aspect"],
+    "dem_dataset": "swissALTI3D",
+    "dem_grid_resolution_m": 2,
+    "altitude_mean_weight": "line_length",
+    "terrain_not_travel_bearing": true
+  },
+  "surfaces": {
+    "role": "mapped piste polygon footprint only",
+    "metrics": ["mapped_piste_area_ha", "mapped_piste_area_km2"],
+    "overlapping_footprints_union_required": true,
+    "mapped_area_is_verified_actual_area": false,
+    "used_for_altitude_slope_aspect_or_snow_weights": false
+  },
+  "line_and_surface_weights_may_be_mixed": false,
+  "artificial_centerline_from_polygon_allowed": false,
+  "osm_coverage_gaps_must_be_documented": true,
+  "current_geometry_is_verified_preentry_geometry": false,
+  "historical_change_audit_required": true,
+  "terrain_flat_aspect_threshold_degrees": null,
+  "ambiguous_closed_way_interpretation": null,
+  "invalid_polygon_repair_rule": null,
+  "group_piste_assignment_verified": false,
+  "automatic_group_or_municipality_exclusion_approved": false,
+  "snow_model_splicing_or_calibration_approved": false,
+  "clustering_fit_approved": false,
+  "scope_note": "Retain all 71 existing groups. Geometry roles are approved, not automatic per-group membership or numerical extraction choices. Five own preentry snow winters remain unchanged."
+}

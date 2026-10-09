@@ -1,0 +1,72 @@
+station_group_id,station_group_name,access_point_count,planned_official_page_count,verified_archived_page_count,fallback_reference_count,verified_source_ids,gis_assignment_verified,historical_scope_verified,automatic_exclusion_applied
+MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,1,0,0,1,,False,False,False
+MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_27_STAGE49,False,False,False
+MP_GROUP_EVENT__c1f58b57f3fa,Grenchenberg,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_4446_STAGE49,False,False,False
+MP_GROUP_EVENT__e664bf3f38d5,Wilerallmi,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_3588_STAGE49,False,False,False
+MP_GROUP_RESORT__aeschi,Aeschiallmend,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_1805_STAGE49,False,False,False
+MP_GROUP_RESORT__anzere,Anzère,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_4_STAGE49,False,False,False
+MP_GROUP_RESORT__arolla,Arolla,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_118_STAGE49,False,False,False
+MP_GROUP_RESORT__axalp_brienz,Axalp,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_1800_STAGE49,False,False,False
+MP_GROUP_RESORT__balmberg,Balmberg,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_4444_STAGE49,False,False,False
+MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,2,2,2,0,MAGIC_PISTE_SCOPE_DEST_1796_STAGE49|MAGIC_PISTE_SCOPE_DEST_1799_STAGE49,False,False,False
+MP_GROUP_RESORT__belalp,Belalp,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_4445_STAGE49,False,False,False
+MP_GROUP_RESORT__bumbach_schangnau,Bumbach,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_2765_STAGE49,False,False,False
+MP_GROUP_RESORT__charmey,Charmey,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_14_STAGE49,False,False,False
+MP_GROUP_RESORT__crans_montana_crans_montana,Crans-Montana,1,0,0,1,,False,False,False
+MP_GROUP_RESORT__eischoll_sportbahnen_eischoll,Eischoll,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_2766_STAGE49,False,False,False
+MP_GROUP_RESORT__eriz,Eriz,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_1797_STAGE49,False,False,False
+MP_GROUP_RESORT__evolene,Evolène,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_88_STAGE49,False,False,False
+MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_1804_STAGE49,False,False,False
+MP_GROUP_RESORT__gantrisch_gurnigel,Gantrisch-Gurnigel / Gurnigelbad,2,2,2,0,MAGIC_PISTE_SCOPE_DEST_2767_STAGE49|MAGIC_PISTE_SCOPE_DEST_2769_STAGE49,False,False,False
+MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_18_STAGE49,False,False,False
+MP_GROUP_RESORT__gstaad,Bergbahnen Gstaad,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_4447_STAGE49,False,False,False
+MP_GROUP_RESORT__habkern,Habkern,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_1798_STAGE49,False,False,False
+MP_GROUP_RESORT__heimenschwand_buchholterberg,Heimenschwand,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_1795_STAGE49,False,False,False
+MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg,Homberg,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_3589_STAGE49,False,False,False
+MP_GROUP_RESORT__jaun_gastlosen,Jaun,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_19_STAGE49,False,False,False
+MP_GROUP_RESORT__jaunpass,Jaunpass,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_1802_STAGE49,False,False,False
+MP_GROUP_RESORT__kiental,Kiental,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_2770_STAGE49,False,False,False
+MP_GROUP_RESORT__la_berra_la_roche,La Berra,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_20_STAGE49,False,False,False
+MP_GROUP_RESORT__la_dole_jura_sur_leman,Jura-sur-Léman - composante suisse La Dôle,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_3608_STAGE49,False,False,False
+MP_GROUP_RESORT__la_forclaz,La Forclaz,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_117_STAGE49,False,False,False
+MP_GROUP_RESORT__la_robella,La Robella,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_937_STAGE49,False,False,False
+MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,1,0,0,1,,False,False,False
+MP_GROUP_RESORT__le_paquier_cret_du_puy,Crêt-du-Puy,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_17_STAGE49,False,False,False
+MP_GROUP_RESORT__les_bugnenets_savagnieres,Les Bugnenets-Savagnières,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_12_STAGE49,False,False,False
+MP_GROUP_RESORT__les_marecottes,Les Marécottes,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_23_STAGE49,False,False,False
+MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_25_STAGE49,False,False,False
+MP_GROUP_RESORT__les_pleiades,Les Pléiades,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_89_STAGE49,False,False,False
+MP_GROUP_RESORT__leukerbad,Leukerbad,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_602_STAGE49,False,False,False
+MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,2,2,2,0,MAGIC_PISTE_SCOPE_DEST_24_STAGE49|MAGIC_PISTE_SCOPE_DEST_26_STAGE49,False,False,False
+MP_GROUP_RESORT__linden_skilift_linden,Linden,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_4449_STAGE49,False,False,False
+MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_2773_STAGE49,False,False,False
+MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_4451_STAGE49,False,False,False
+MP_GROUP_RESORT__melchsee_frutt,Melchsee-Frutt,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_4452_STAGE49,False,False,False
+MP_GROUP_RESORT__moleson_la_gruyere,Moléson,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_28_STAGE49,False,False,False
+MP_GROUP_RESORT__mont_noble_nax,Nax,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_29_STAGE49,False,False,False
+MP_GROUP_RESORT__moosalpregion,Moosalp,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_2774_STAGE49,False,False,False
+MP_GROUP_RESORT__morlialp,Mörlialp,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_4453_STAGE49,False,False,False
+MP_GROUP_RESORT__ottenleuebad,Egg Ottenleue,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_2775_STAGE49,False,False,False
+MP_GROUP_RESORT__ovronnaz,Ovronnaz,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_30_STAGE49,False,False,False
+MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin,Les Prés-d'Orvin,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_601_STAGE49,False,False,False
+MP_GROUP_RESORT__rathvel,Rathvel,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_31_STAGE49,False,False,False
+MP_GROUP_RESORT__riffenmatt,Riffenmatt,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_2776_STAGE49,False,False,False
+MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman,Les Rochers de Naye,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_90_STAGE49,False,False,False
+MP_GROUP_RESORT__rossberg_oberwil,Rossberg,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_1801_STAGE49,False,False,False
+MP_GROUP_RESORT__rosswald,Rosswald,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_1803_STAGE49,False,False,False
+MP_GROUP_RESORT__ruschegg_eywald,Rüschegg - Eywald,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_2777_STAGE49,False,False,False
+MP_GROUP_RESORT__saas_fee,Saas-Fee,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_600_STAGE49,False,False,False
+MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,1,1,1,0,MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09,False,False,False
+MP_GROUP_RESORT__schwanden_sigriswil_thunersee,Schwanden,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_3587_STAGE49,False,False,False
+MP_GROUP_RESORT__schwarzenbuhl_selital,Selital,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_2778_STAGE49,False,False,False
+MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_32_STAGE49,False,False,False
+MP_GROUP_RESORT__sorenberg,Sörenberg,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_4455_STAGE49,False,False,False
+MP_GROUP_RESORT__st_cergue,Saint-Cergue,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_3611_STAGE49,False,False,False
+MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_33_STAGE49,False,False,False
+MP_GROUP_RESORT__staldenried_gspon,Gspon,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_2768_STAGE49,False,False,False
+MP_GROUP_RESORT__tramelan,Tramelan,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_34_STAGE49,False,False,False
+MP_GROUP_RESORT__unterbach_brandalp,Unterbäch,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_2779_STAGE49,False,False,False
+MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,1,1,1,0,MAGIC_PISTE_SCOPE_VALLEE_JOUX_2026_10_09,False,False,False
+MP_GROUP_RESORT__vercorin,Vercorin,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_35_STAGE49,False,False,False
+MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,2,2,2,0,MAGIC_PISTE_SCOPE_DEST_22_STAGE49|MAGIC_PISTE_SCOPE_DEST_37_STAGE49,False,False,False
+MP_GROUP_RESORT__visperterminen,Visperterminen,1,1,1,0,MAGIC_PISTE_SCOPE_DEST_2780_STAGE49,False,False,False

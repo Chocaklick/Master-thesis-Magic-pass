@@ -3,7 +3,7 @@
   "input_sha256": {
     "config/spass_snow_grid.json": "5e791598f76b493dcc8d0cc1e2d84a8b79b881c77509b3b0201dd2f7450757f9",
     "data_external/source_evidence/SLF_SPASS_HSCLQMD_GRID_1962_2023_20260924T012102Z.metadata.json": "0fe54575287b75eeda0b2d9b3a465698967b45ddce91b1cbe9d4b4037a9f1858",
-    "reports/oshd_netcdf_metadata_inventory.json": "4e0de4a2febd8f138ce8c87e66e402c15cabb9ac54e9ca89135a5e00fa68f3b4",
+    "reports/oshd_netcdf_metadata_inventory.json": "bdee2f63b1a35ebe1a342d83b4121950cacfff948fd874cb5358ff7cf60ca2b5",
     "src/descriptive/audit_snow_grid_metadata_compatibility.py": "ffd9dbfb8208125fffbfad4ad80f5762b65d070d4964821d07580bd20dbe29f8"
   },
   "spass_source_id": "SLF_SPASS_HSCLQMD_GRID_1962_2023",
@@ -196,7 +196,8 @@
   },
   "oshd_inventory": "reports/oshd_netcdf_metadata_inventory.json",
   "oshd_source_ids": [
-    "SLF_OSHD_PF_WY2024_PROFILE_AUDIT"
+    "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+    "SLF_OSHD_PF_WY2025_PROFILE_AUDIT"
   ],
   "snow_values_read": false,
   "spatial_mapping_applied": false,
