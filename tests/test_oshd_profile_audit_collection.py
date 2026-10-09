@@ -4,7 +4,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from src.data_collection.collect_oshd_profile_audit import parse_record, validate_download_response, single_collector_lock
+from src.data_collection.collect_oshd_profile_audit import parse_record, validate_download_response, single_collector_lock, official_download_anchor
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -21,6 +21,14 @@ def test_public_html_explicit_license_links_and_archive_size():
     assert record['id'] == '17313889'
     assert files[0]['expected_bytes'] == 50 and files[0]['expected_md5'] == 'abc'
     assert '/api/' not in files[0]['url']
+
+
+def test_download_anchor_must_be_present_in_public_html():
+    url = 'https://zenodo.org/records/17313889/files/OSHD_DATA_WY2024.zip'
+    text = record_html() + '<a href="/records/17313889/files/OSHD_DATA_WY2024.zip?download=1">Download</a>'
+    assert official_download_anchor(text, url) == url + '?download=1'
+    with pytest.raises(ValueError):
+        official_download_anchor(record_html(), url)
 
 
 @pytest.mark.parametrize('kwargs', [dict(rights='copyright'), dict(public='restricted'), dict(linked=False)])

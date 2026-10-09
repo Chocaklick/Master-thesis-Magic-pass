@@ -1,0 +1,16 @@
+[
+  {
+    "source_id": "MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09",
+    "organisation": "Magic Mountains Cooperation",
+    "url": "https://www.magicpass.ch/fr/stations/ste-croix-les-rasses-2772",
+    "suffix": "html",
+    "purpose": "Verify alpine and nordic scopes independently of OSM site membership; current page not preentry inventory"
+  },
+  {
+    "source_id": "MAGIC_PISTE_SCOPE_VALLEE_JOUX_2026_10_09",
+    "organisation": "Magic Mountains Cooperation",
+    "url": "https://www.magicpass.ch/fr/stations/vallee-de-joux-87",
+    "suffix": "html",
+    "purpose": "Verify named components L'Abbaye, L'Orient, Le Brassus; do not substitute one component for whole existing group"
+  }
+]

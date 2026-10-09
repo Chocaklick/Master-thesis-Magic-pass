@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.error import HTTPError
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 from urllib.request import Request, urlopen
 from urllib.robotparser import RobotFileParser
 
@@ -64,7 +64,7 @@ def single_collector_lock(folder):
 class PublicRecordParser(HTMLParser):
     def __init__(self):
         super().__init__()
-        self.records = []; self.links = set()
+        self.records = []; self.links = set(); self.download_anchors = set()
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
@@ -72,6 +72,17 @@ class PublicRecordParser(HTMLParser):
             self.records.append(json.loads(values['data-record']))
         if tag == 'link' and values.get('rel') in ['alternate', 'item']:
             self.links.add(values.get('href', ''))
+        if tag == 'a' and values.get('href'):
+            self.download_anchors.add(urljoin('https://zenodo.org/records/17313889', values['href']))
+
+
+def official_download_anchor(text, canonical_url):
+    """Only use an actual public-page anchor, not invented query parameters."""
+    parser = PublicRecordParser(); parser.feed(text)
+    alternative = canonical_url + '?download=1'
+    if alternative not in parser.download_anchors:
+        raise ValueError('Alternate download URL not present in archived public HTML')
+    return alternative
 
 
 def parse_record(text, years):
@@ -159,7 +170,7 @@ def publish_sources(state, html, paper):
             license='CC-BY4.0 explicit archived record rights; credit Oberrauch et al. dataset DOI10.5281/zenodo.17313889',
             transformation_applied='None: original ZIP bytes; no snow extraction, source mixing or profile mean',
             quality_notes='Collection status=' + file['status'] + '; different model from SPASS; current source audit not final feature choice',
-            notes='expected_md5=' + file['expected_md5'] + '; validated_sha256=' + file.get('sha256', '')))
+            notes='expected_md5=' + file['expected_md5'] + '; validated_sha256=' + file.get('sha256', '') + '; last_request_url=' + file.get('last_request_url', file['url'])))
     ids = [s['source_id'] for s in sources]
     write_csv(pd.concat([master[~master.source_id.isin(ids)], pd.DataFrame(sources).reindex(columns=SOURCE_COLUMNS)], ignore_index=True).fillna(''), path)
 
@@ -169,6 +180,7 @@ def run_collection():
     parser.add_argument('--resume-failed', action='store_true', help='Explicit later retry of non-permission interruption; never HTTP401/403')
     parser.add_argument('--max-seconds', type=float, default=300, help='Session duration before retaining a resumable part; no source deletion')
     parser.add_argument('--chunk-bytes', type=int, default=8*1024*1024, help='Bounded byte-range request, never a whole unbounded suffix')
+    parser.add_argument('--official-download-anchor', action='store_true', help='Use the archived public download=1 anchor after canonical-link HTTP504; identical archive checks remain')
     args = parser.parse_args()
     if args.max_seconds <= 0 or args.chunk_bytes <= 0:
         raise ValueError('Positive collection time budget required')
@@ -222,7 +234,11 @@ def run_collection():
         if start > file['expected_bytes']:
             raise ValueError('Partial exceeds provider size; preserve and investigate')
         timestamp = datetime.now(timezone.utc).isoformat()
+        request_url = official_download_anchor((ROOT / html['raw_file']).read_text(encoding='utf-8'), file['url']) if args.official_download_anchor else file['url']
+        if not policy.can_fetch(AGENT, request_url):
+            raise PermissionError('robots policy does not allow requested download anchor')
         file.update(retrieval_date=timestamp, status='collecting', partial_file=part.relative_to(ROOT).as_posix(), downloaded_bytes=start)
+        file['last_request_url'] = request_url
         save()
         try:
             while start < file['expected_bytes']:
@@ -237,7 +253,7 @@ def run_collection():
                 if file.get('etag'):
                     headers['If-Range'] = file['etag']
                 last_request = time.monotonic()
-                with urlopen(Request(file['url'], headers=headers), timeout=60) as response:
+                with urlopen(Request(request_url, headers=headers), timeout=60) as response:
                     if urlparse(response.geturl()).hostname != 'zenodo.org' or not policy.can_fetch(AGENT, response.geturl()):
                         raise PermissionError('Unapproved redirect destination')
                     validate_download_response(response, start, file['expected_bytes'], end)
@@ -284,7 +300,7 @@ def run_collection():
             with raw.with_suffix('.metadata.json').open('x', encoding='utf-8') as stream:
                 json.dump(file, stream, ensure_ascii=False, indent=2)
             append_log(dict(timestamp=timestamp, task='stage45_approved_oshd_source_audit', source_id=file['source_id'],
-                source='WSL SLF / Zenodo', source_url=file['url'], **{'URL/API': file['url']}, request='GET validated bounded Range',
+                source='WSL SLF / Zenodo', source_url=file['url'], **{'URL/API': request_url}, request='GET validated bounded Range',
                 retrieval_method='resumable streamed original ZIP; exact size and provider MD5/SHA256', HTTP_status=file.get('http_status', ''),
                 status='downloaded', raw_file=file['raw_file'], output_file=file['raw_file'], checksum=observed_sha, success='True'))
             print(file['key'], 'complete, provider MD5 verified', flush=True)
@@ -294,7 +310,7 @@ def run_collection():
                 resume_allowed=not denied, downloaded_bytes=part.stat().st_size if part.exists() else 0,
                 http_status=getattr(exc, 'code', file.get('http_status', '')))
             append_log(dict(timestamp=timestamp, task='stage45_approved_oshd_source_audit', source_id=file['source_id'],
-                source='WSL SLF / Zenodo', source_url=file['url'], **{'URL/API': file['url']}, request='GET validated bounded Range',
+                source='WSL SLF / Zenodo', source_url=file['url'], **{'URL/API': request_url}, request='GET validated bounded Range',
                 retrieval_method='no automatic retry; partial retained', HTTP_status=file.get('http_status', ''),
                 status='failed', success='False', error=file['error']))
             print(file['key'], file['error'], flush=True)

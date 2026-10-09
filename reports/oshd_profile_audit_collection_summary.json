@@ -19,14 +19,16 @@
       "expected_md5": "b342170d29005b81bc51a59cbdb3c95c",
       "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
       "status": "failed",
-      "retrieval_date": "2026-10-09T16:55:03.664635+00:00",
+      "retrieval_date": "2026-10-09T17:28:50.141156+00:00",
       "partial_file": "data_interim/oshd_profile_downloads/OSHD_DATA_WY2024.zip.part",
-      "downloaded_bytes": 216006656,
-      "http_status": 504,
+      "downloaded_bytes": 484411044,
+      "http_status": 206,
       "etag": "",
-      "final_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2024.zip",
-      "error": "HTTPError: HTTP Error 504: Gateway Time-out",
-      "resume_allowed": true
+      "final_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2024.zip?download=1",
+      "error": "ValueError: Incomplete range, validated prefix retained",
+      "resume_allowed": true,
+      "last_request_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2024.zip?download=1",
+      "pause_reason": "session_time_budget_reached"
     },
     {
       "water_year": 2025,

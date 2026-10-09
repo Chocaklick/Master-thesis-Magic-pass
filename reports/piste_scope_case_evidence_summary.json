@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-09",
+  "input_sha256": {
+    "config/piste_scope_case_evidence_stage46.json": "564d815adbfe551f5aa10d4d43e1488962008bccf076309d8778b9ddd492ae48",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09_20261009T173220Z.html": "9eaf1b9b747d38b93e854803de20482001ad9baf8d5109d314a57b13ea4be1fe",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_VALLEE_JOUX_2026_10_09_20261009T173230Z.html": "baa072fb0624efefed8d90e4214f32310813233733694226c19ec4c46f333f82"
+  },
+  "cases": [
+    {
+      "station_group_id": "MP_GROUP_RESORT__sainte_croix_les_rasses",
+      "source_id": "MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09",
+      "required_visible_markers": [
+        "Chasseron",
+        "ski de fond",
+        "domaine skiable"
+      ],
+      "finding": "Official alpine domain exists; OSM relation2899124 has22nordic ways and7lift ways but0referenced downhill ways. Missing alpine membership, not absence of skiing.",
+      "current_official_description_verified": true,
+      "historical_scope_verified": false,
+      "osm_group_assignment_accepted": false,
+      "source_url": "https://www.magicpass.ch/fr/stations/ste-croix-les-rasses-2772"
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__vallee_de_joux",
+      "source_id": "MAGIC_PISTE_SCOPE_VALLEE_JOUX_2026_10_09",
+      "required_visible_markers": [
+        "Abbaye",
+        "Orient",
+        "Brassus"
+      ],
+      "finding": "Official page names three components; relation9374152 L Abbaye cannot alone represent whole retained Vallee de Joux group.",
+      "current_official_description_verified": true,
+      "historical_scope_verified": false,
+      "osm_group_assignment_accepted": false,
+      "source_url": "https://www.magicpass.ch/fr/stations/vallee-de-joux-87"
+    }
+  ],
+  "station_features_computed": false,
+  "accepted_assignments": 0,
+  "additional_groups_or_exclusions": 0
+}
