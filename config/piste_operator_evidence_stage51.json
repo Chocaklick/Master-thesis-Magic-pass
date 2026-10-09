@@ -1,0 +1,7 @@
+[
+  {"source_id":"OPERATOR_CONTHEY_STAGE51","url":"https://www.teleconthey.ch/www/1-accueil","organisation":"Téléconthey","suffix":"html","parent_source_id":"MAGIC_PISTE_SCOPE_DEST_27_STAGE49","station_group_id":"MP_GROUP_EVENT__98c0c64310c6","osm_site_relation_id":19914387},
+  {"source_id":"OPERATOR_SAAS_FEE_STAGE51","url":"https://www.saas-fee.ch/fr/","organisation":"Saastal tourisme / Saas-Fee","suffix":"html","parent_source_id":"MAGIC_PISTE_SCOPE_DEST_600_STAGE49","station_group_id":"MP_GROUP_RESORT__saas_fee","osm_site_relation_id":3609152},
+  {"source_id":"OPERATOR_BELALP_STAGE51","url":"https://www.belalp.ch/fr","organisation":"Blatten-Belalp","suffix":"html","parent_source_id":"MAGIC_PISTE_SCOPE_DEST_4445_STAGE49","station_group_id":"MP_GROUP_RESORT__belalp","osm_site_relation_id":15310559},
+  {"source_id":"OPERATOR_LINDEN_STAGE51","url":"https://www.skilift-linden.ch/home","organisation":"Skilift Linden","suffix":"html","parent_source_id":"MAGIC_PISTE_SCOPE_DEST_4449_STAGE49","station_group_id":"MP_GROUP_RESORT__linden_skilift_linden","osm_site_relation_id":9210387},
+  {"source_id":"OPERATOR_MEIRINGEN_STAGE51","url":"https://www.meiringen-hasliberg.ch/de/Service/Francais","organisation":"Bergbahnen Meiringen-Hasliberg","suffix":"html","parent_source_id":"MAGIC_PISTE_SCOPE_DEST_4451_STAGE49","station_group_id":"MP_GROUP_RESORT__meiringen_hasliberg","osm_site_relation_id":3578623}
+]

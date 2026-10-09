@@ -1,0 +1,5 @@
+[
+  {"source_id":"OSM_AREA_CONVENTIONS_STAGE50","url":"https://wiki.openstreetmap.org/wiki/Area","organisation":"OpenStreetMap wiki contributors","suffix":"html","purpose":"Closed ways can imply areas through landuse tags; closure alone is not sufficient"},
+  {"source_id":"OSM_DOWNHILL_GEOMETRY_CONVENTIONS_STAGE50","url":"https://wiki.openstreetmap.org/wiki/Tag:piste:type=downhill","organisation":"OpenStreetMap wiki contributors","suffix":"html","purpose":"Distinguish piste line, area and route relation; no perimeter interpreted as a centreline"},
+  {"source_id":"OSM_BRIDGE_OUTLINE_CONVENTIONS_STAGE50","url":"https://wiki.openstreetmap.org/wiki/Tag:man_made=bridge","organisation":"OpenStreetMap wiki contributors","suffix":"html","purpose":"man_made=bridge represents the structure outline, not an independently verified piste footprint"}
+]

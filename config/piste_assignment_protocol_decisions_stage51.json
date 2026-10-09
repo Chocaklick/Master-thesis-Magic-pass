@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-09",
+  "researcher_reply": "tu peux faire l'option 1",
+  "approved_question": "Vérification documentée combinant identité de la station/composantes, liens officiels de l’opérateur et cohérence géographique des pistes et remontées, sans rapprochement automatique par nom ou distance. Couverture actuelle et incertitude historique signalées ; groupes non résolus conservés.",
+  "protocol": "documented_individual_identity_operator_geographic_verification",
+  "automatic_name_or_distance_acceptance": false,
+  "all_71_groups_retained": true,
+  "historical_scope_verified_by_default": false,
+  "full_real_domain_coverage_verified_by_default": false,
+  "axis_surface_roles_decision": "config/winter_profile_geometry_roles_decisions_stage49.json",
+  "old_clusters_and_communal_exposure_unchanged": true,
+  "further_methodological_choices_require_validation": true
+}

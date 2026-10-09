@@ -188,22 +188,88 @@
       "expected_bytes": 569361906,
       "expected_md5": "50811ac104e15da4a15695ffe2b1f13e",
       "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
-      "status": "paused",
-      "retrieval_date": "2026-10-09T19:11:37.416309+00:00",
+      "status": "complete",
+      "retrieval_date": "2026-10-09T20:59:33.541669+00:00",
       "partial_file": "data_interim/oshd_profile_downloads/OSHD_DATA_WY2023.zip.part",
-      "downloaded_bytes": 84934656,
+      "downloaded_bytes": 569361906,
       "error": "HTTPError: HTTP Error 504: Gateway Time-out",
       "resume_allowed": true,
       "http_status": 206,
       "last_request_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2023.zip?download=1",
       "etag": "",
       "final_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2023.zip?download=1",
-      "pause_reason": "session_time_budget_reached"
+      "pause_reason": "session_time_budget_reached",
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2023_PROFILE_AUDIT_20261009T211312Z.zip",
+      "sha256": "b58a8c7344a982d734e45350378aabccd29c8425a7c86a924f41bf29f782425f",
+      "zip_members": [
+        {
+          "name": "OSHD_DATA_2022-09.nc",
+          "uncompressed_bytes": 18821275,
+          "compressed_bytes": 16471413
+        },
+        {
+          "name": "OSHD_DATA_2022-10.nc",
+          "uncompressed_bytes": 17691956,
+          "compressed_bytes": 13950952
+        },
+        {
+          "name": "OSHD_DATA_2022-11.nc",
+          "uncompressed_bytes": 51226992,
+          "compressed_bytes": 48135552
+        },
+        {
+          "name": "OSHD_DATA_2022-12.nc",
+          "uncompressed_bytes": 98732734,
+          "compressed_bytes": 92962403
+        },
+        {
+          "name": "OSHD_DATA_2023-01.nc",
+          "uncompressed_bytes": 89313726,
+          "compressed_bytes": 84455876
+        },
+        {
+          "name": "OSHD_DATA_2023-02.nc",
+          "uncompressed_bytes": 81635482,
+          "compressed_bytes": 78389231
+        },
+        {
+          "name": "OSHD_DATA_2023-03.nc",
+          "uncompressed_bytes": 82652768,
+          "compressed_bytes": 78002835
+        },
+        {
+          "name": "OSHD_DATA_2023-04.nc",
+          "uncompressed_bytes": 65587735,
+          "compressed_bytes": 62425232
+        },
+        {
+          "name": "OSHD_DATA_2023-05.nc",
+          "uncompressed_bytes": 53654756,
+          "compressed_bytes": 49436078
+        },
+        {
+          "name": "OSHD_DATA_2023-06.nc",
+          "uncompressed_bytes": 27399671,
+          "compressed_bytes": 24933016
+        },
+        {
+          "name": "OSHD_DATA_2023-07.nc",
+          "uncompressed_bytes": 12908702,
+          "compressed_bytes": 9432993
+        },
+        {
+          "name": "OSHD_DATA_2023-08.nc",
+          "uncompressed_bytes": 14370288,
+          "compressed_bytes": 10764479
+        }
+      ],
+      "provider_md5_verified": true,
+      "size_verified": true
     }
   ],
   "snow_extracted": false,
   "source_spliced": false,
   "group_piste_assignment_applied": false,
   "features_computed": false,
-  "complete_file_count": 2
+  "complete_file_count": 3
 }
