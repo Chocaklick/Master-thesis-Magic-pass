@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "src/descriptive/audit_verified_piste_members_stage54.py": "eab190a26d86475adf60c5cdb98189463a7cfad6b6d30894eb0ab9757ca3afa0",
+    "data_processed/winter_profile_piste_assignment_stage53.csv": "5ffc0bf668cd6004443b8d2e727060b36ad3a9bdc5e469d7ddf6a0700018600c",
+    "data_processed/winter_profile_piste_geometry_roles.csv": "da1d0d324d6f3a6917d12c2c72d142f6f37c48e3bc6287f0070a811b7964ca65",
+    "reports/piste_geometry_roles_stage49_summary.json": "d151910e6ab96bb8c65e1a8188b598936e82f0602c2f46ecef1191d22b1b5bf5",
+    "reports/piste_assignment_stage53_summary.json": "220507f9f2c9b13de77dddae9a9e91ab296d8022a3a631ef387a0d7b3576d3e1",
+    "src/descriptive/review_piste_candidates_stage53.py": "42bcf728e982cecfd8b4e11f29d057cd69a648e20b90b4b897c63e03670f472f",
+    "src/descriptive/audit_completed_piste_membership.py": "a1527c3c5de2dc888588ff9fce5358e7bb07f62bc291d55f293bbecb84b7d2de",
+    "src/descriptive/prepare_piste_group_review.py": "0d8c8e42b1e8f6499540feff3209a16a8a7bd03a72be4a9574d6243527ce3b4e",
+    "config/winter_profile_geometry_roles_decisions_stage49.json": "463c680cda5dadfa35c5f781748158e9ea432366ff4afab8f80d7e55824b2a66"
+  },
+  "retained_group_count": 71,
+  "verified_site_group_count": 39,
+  "member_row_count": 710,
+  "unique_member_object_count": 710,
+  "candidate_role_counts": {
+    "way_axis_candidate": 702,
+    "explicit_surface_way_candidate": 8
+  },
+  "flag_counts": {
+    "exact_node_edge_also_in_other_ids": 24,
+    "surface_or_other_role_not_axis": 8,
+    "literal_lifecycle_or_status_tag_requires_review": 2,
+    "also_referenced_by_other_source_sites": 4
+  },
+  "individual_piste_metric_use_verified": false,
+  "group_profile_features_computed": false,
+  "automatic_exclusion_applied": false,
+  "historical_scope_certified": false,
+  "output_sha256": {
+    "data_processed/winter_profile_verified_piste_member_qa_stage54.csv": "b7f1c7e6df9ae4a54108012592779428e5048ade1f5e6027acbdf1a755d2a0d4",
+    "data_processed/winter_profile_verified_piste_group_qa_stage54.csv": "49554f027bb754a0d98acac34184941cea31e8fd0c37ed1caab48aad3b98eef7"
+  }
+}

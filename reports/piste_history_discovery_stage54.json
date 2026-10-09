@@ -1,0 +1,234 @@
+{
+  "date": "2026-10-10",
+  "purpose": "Discovery of dated primary documents for the approved historical connection audit; no fusion or historical certification from search alone",
+  "queries": [
+    {
+      "query": "Eischoll Unterbäch Strygge Erez Verbindungspiste 2022 2021",
+      "request_id": "2c6fd77c-0b3d-45bd-b67d-d51845b97573",
+      "results": [
+        {
+          "url": "http://www.eischoll.ch",
+          "title": "HOME - Eischoll"
+        },
+        {
+          "url": "https://www.eischoll.ch",
+          "title": "HOME - Eischoll"
+        },
+        {
+          "url": "https://unterbaech.ch/en/discover-experience/summer/leisure-activities/suspension-bridge-milibach",
+          "title": "Suspension Bridge Milibach - Unterbäch"
+        },
+        {
+          "url": "https://unterbaech.ch/sportbahnen/tarife-winter",
+          "title": "Tarife Winter - Unterbäch"
+        },
+        {
+          "url": "https://www.eischoll.ch/skitouren",
+          "title": "Skitouren - Eischoll"
+        },
+        {
+          "url": "https://unterbaech.ch/en/discover-experience/winter/winter-hiking",
+          "title": "Winter hiking - Unterbäch"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    },
+    {
+      "query": "Eischoll Unterbäch Skigebiet Verbindung Pistenplan 2020 2019",
+      "request_id": "c36a3ae0-2762-4ed8-9113-684fa3f24e14",
+      "results": [
+        {
+          "url": "https://www.valais.ch/de/erleben/aktivitaeten/winterwandern/winterwanderungen/panoramaweg-unterbaech-eischoll",
+          "title": "Panoramaweg Unterbäch-Eischoll | Wallis Schweiz"
+        },
+        {
+          "url": "https://unterbaech.ch/sportbahnen/tarife-winter",
+          "title": "Tarife Winter - Unterbäch"
+        },
+        {
+          "url": "https://unterbaech.ch/live-aktuelles/wintersportbericht",
+          "title": "Wintersportbericht"
+        },
+        {
+          "url": "https://valais.ch/fr/explorer/activites/randonnees-hivernales/randonnees-d-hiver/panoramaweg-unterbaech-eischoll",
+          "title": "Chemin panoramique Unterbäch-Eischoll | Valais Suisse"
+        },
+        {
+          "url": "https://www.valais.ch/fr/explorer/activites/randonnees-hivernales/randonnees-d-hiver/panoramaweg-unterbaech-eischoll",
+          "title": "Chemin panoramique Unterbäch-Eischoll | Valais Suisse"
+        },
+        {
+          "url": "https://www.valais.ch/de/erleben/aktivitaeten/ski-snowboard/skigebiete/unterbach-brandalp",
+          "title": "Eischoll-Unterbäch - Sektor Unterbäch | Wallis Schweiz"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    },
+    {
+      "query": "site:unterbaech.ch \"2022\" \"Eischoll\" pdf",
+      "request_id": "7ce18014-c92a-48dd-b20b-6643c5a794d3",
+      "results": [
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/20230925_Geschaeftsbericht2022-23.pdf",
+          "title": "Geschäftsbericht 2022/2023"
+        },
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/GV-05.03.22-PV-UT_unterzeichnet.pdf",
+          "title": "wallis"
+        },
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/Infobroschuere_GV_20_214.pdf",
+          "title": "GENERALVERSAMMLUNG UNTERBÄCH TOURISMUS"
+        },
+        {
+          "url": "https://unterbaech.ch/fr/decouvertes-et-experiences/region-de-vacances/region-oberwallis",
+          "title": "Région du Haut-Valais - Unterbäch"
+        },
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/Dreiblatt-Dezember-2025.pdf",
+          "title": "DREIBLATT"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    },
+    {
+      "query": "site:eischoll.ch \"2019\" \"Unterbäch\"",
+      "request_id": "ba6cb021-148e-4701-9535-b66e42150777",
+      "results": [
+        {
+          "url": "https://gemeinde.eischoll.ch/wp-content/uploads/2025/12/2025-11-18-Infoblatt-Budget-2026.pdf",
+          "title": "Dezember 2025"
+        },
+        {
+          "url": "https://gemeinde.eischoll.ch/wp-content/uploads/2024/06/01.25-GRV-NP-Eischoll_EB-Beilage-5_REK-Mitwirkung.pdf",
+          "title": "RAUMENTWICKLUNGSKONZEPT (REK) Bericht"
+        },
+        {
+          "url": "https://gemeinde.eischoll.ch/wp-content/uploads/2025/01/2024-12-03-Infoblatt-Budget-2025.pdf",
+          "title": "Gemeindeverwaltung - Eischoll"
+        },
+        {
+          "url": "https://www.eischoll.ch/wp-content/uploads/2026/04/Dreiblatt-November-2024_Web.pdf",
+          "title": "DREIBLATT"
+        },
+        {
+          "url": "https://gemeinde.eischoll.ch/wp-content/uploads/2024/07/Infoblatt-JR-2022.pdf",
+          "title": "Gemeindeverwaltung - Eischoll"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    },
+    {
+      "query": "\"Eischoll\" \"Unterbäch\" \"Verbindungspisten\" \"2021\"",
+      "request_id": "85bf415d-58e2-4407-987d-eda1599bd13e",
+      "results": [
+        {
+          "url": "https://snow-and-sun.blogspot.com/2021/08/unterbach-februar-2021.html",
+          "title": "Unterbäch Februar 2021"
+        },
+        {
+          "url": "https://alpinfans.com/viewtopic.php?t=2069",
+          "title": "Rund um Visp (Moosalp, Unterbäch, Eischoll, ..."
+        },
+        {
+          "url": "https://www.eischoll.ch/ski-snowboard",
+          "title": "Ski & Snowboard"
+        },
+        {
+          "url": "https://unterbaech.ch/en/discover-experience/winter/skiing-snowboarding",
+          "title": "Skiing & snowboarding - Unterbäch"
+        },
+        {
+          "url": "https://unterbaech.ch/unterbaech/winter/skifahren-snowboarden",
+          "title": "Skifahren & Snowboarden - Unterbäch"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    },
+    {
+      "query": "site:unterbaech.ch \"Geschäftsbericht\" \"2021\"",
+      "request_id": "d125e103-b5b9-43e6-9979-cd70b18ea4a2",
+      "results": [
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/20230926_Einladung_Traktanden_GV_SBU_2023_inkl.Protokoll.pdf",
+          "title": "EINLADUNG"
+        },
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/20211001_Geschaeftsbericht_2020-21.pdf",
+          "title": "Geschäftsbericht 2020/2021"
+        },
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/20230925_Geschaeftsbericht2022-23.pdf",
+          "title": "Geschäftsbericht 2022/2023"
+        },
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/20210504_Einladung_Traktanden_GV_SBU_2020_mit_Protokoll.pdf",
+          "title": "EINLADUNG"
+        },
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/20210504_Geschaeftsbericht2019-20_V2.pdf",
+          "title": "Geschäftsbericht 2019/2020"
+        },
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/Broschuere_VV_21.03.2026.pdf",
+          "title": "protokoll der vereinsversammlung 22.03.2025"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    },
+    {
+      "query": "site:unterbaech.ch \"Geschäftsbericht\" \"2020\"",
+      "request_id": "516c34d2-8e32-4b72-8d39-df3547f7617c",
+      "results": [
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/20211001_Geschaeftsbericht_2020-21.pdf",
+          "title": "Geschäftsbericht 2020/2021"
+        },
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/20210504_Geschaeftsbericht2019-20_V2.pdf",
+          "title": "Geschäftsbericht 2019/2020"
+        },
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/20201021_Einladung_Traktanden_GV_SBU_2020_NEU_mit_Protokoll-1.pdf",
+          "title": "EINLADUNG"
+        },
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/20200928_Einladung_Traktanden_GV_SBU_2020_NEU.pdf",
+          "title": "EINLADUNG"
+        },
+        {
+          "url": "https://unterbaech.ch/sportbahnen/ueber-uns",
+          "title": "Über uns"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    },
+    {
+      "query": "site:eischoll.ch \"Verbindung\" \"2022\" \"Unterbäch\"",
+      "request_id": "f2293931-e7ee-40d0-b97d-2d1bc75d7c7a",
+      "results": [
+        {
+          "url": "https://www.eischoll.ch/wp-content/uploads/2024/06/Eischoll_Tourismus_Sommer_2024_DE.pdf",
+          "title": "Hängebrücke Milibach Restaurants in Eischoll Bike-Trails ..."
+        },
+        {
+          "url": "https://www.eischoll.ch/wp-content/uploads/2024/11/PV122215_Eischoll_Tourismus_Winter_dt_2025_red.pdf",
+          "title": "Snowboard Schule Hängebrücke Milibach Restaurants in ..."
+        },
+        {
+          "url": "https://www.eischoll.ch/wp-content/uploads/2024/04/Protokoll-der-GV-26.11.2022.pdf",
+          "title": "Generalversammlung 2022"
+        },
+        {
+          "url": "https://www.eischoll.ch/wp-content/uploads/2026/04/Dreiblatt-November-2024_Web.pdf",
+          "title": "DREIBLATT"
+        },
+        {
+          "url": "https://www.eischoll.ch/haengebruecke-milibach",
+          "title": "Hängebrücke Milibach"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    }
+  ]
+}

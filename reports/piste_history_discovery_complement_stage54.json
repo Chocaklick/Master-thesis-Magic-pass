@@ -1,0 +1,148 @@
+{
+  "date": "2026-10-10",
+  "purpose": "Complementary bounded discovery; primary documents rather than snippets support decisions",
+  "queries": [
+    {
+      "query": "\"Eischoll\" \"Unterbäch\" \"Verbindung\" \"2018\" Skigebiet",
+      "request_id": "fa04dd8d-a34d-4961-a198-cfef6ab307c7",
+      "results": [
+        {
+          "url": "https://www.enviadi.com/blog/eischoll-unterbaech-augstbordregion",
+          "title": "Eischoll - Unterbäch - Skifahren in der Augstbordregion • Enviadi"
+        },
+        {
+          "url": "https://www.eischoll.ch/ski-snowboard",
+          "title": "Ski & Snowboard – Eischoll Tourismus"
+        },
+        {
+          "url": "https://snow-and-sun.blogspot.com/2021/08/unterbach-februar-2021.html",
+          "title": "Unterbäch Februar 2021"
+        },
+        {
+          "url": "https://www.alpinforum.com/forum/viewtopic.php?t=69330",
+          "title": "Eischoll-Unterbäch, 10. Januar 2024 | alpinforum.com"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=yj12pt39H7I",
+          "title": "Skigebiet Unterbäch - Brandalp | Augstbordregion Wallis"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    },
+    {
+      "query": "\"Unterbäch\" \"Eischoll\" \"2021\" \"Pistenplan\"",
+      "request_id": "fd7eb5ca-a67a-4410-ac1f-b493f5620142",
+      "results": [
+        {
+          "url": "https://www.skiresort.com/en/ski-holiday-in/eischoll-2385/trail-map",
+          "title": "Piste map/trail map Eischoll"
+        },
+        {
+          "url": "https://www.bergfex.ch/unterbaech/panorama",
+          "title": "BERGFEX: Pistenplan Unterbäch - Brandalp - Panoramakarte Unterbäch - Brandalp - Karte Unterbäch - Brandalp"
+        },
+        {
+          "url": "https://www.outdooractive.com/it/route/escursione-invernale/unterbaech/percorso-panoramico-unterbaech-eischoll/57717624",
+          "title": "Percorso panoramico Unterbäch-Eischoll • Escursione invernale » outdooractive.com"
+        },
+        {
+          "url": "https://www.wikiloc.com/hiking-trails/unterbach-eischoll-113274115",
+          "title": "Unterbäch. Eischoll"
+        },
+        {
+          "url": "https://skiweather.eu/skimap?ski_id=228",
+          "title": "Ski map Unterbach Eischoll"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    },
+    {
+      "query": "site:unterbaech.ch \"2019\" \"Pisten\" \"Eischoll\"",
+      "request_id": "d3689da5-6317-4b33-a619-16e1c56fce9a",
+      "results": [
+        {
+          "url": "https://unterbaech.ch/fr/decouvertes-et-experiences/region-de-vacances/region-oberwallis",
+          "title": "Région du Haut-Valais - Unterbäch"
+        },
+        {
+          "url": "https://unterbaech.ch/unterbaech/winter/skifahren-snowboarden",
+          "title": "Skifahren & Snowboarden - Unterbäch"
+        },
+        {
+          "url": "https://unterbaech.ch/sportbahnen/tarife-winter",
+          "title": "Tarife Winter - Unterbäch"
+        },
+        {
+          "url": "https://unterbaech.ch/en/discover-experience/holiday-region/augstbordregion",
+          "title": "Augstbordregion - Unterbäch"
+        },
+        {
+          "url": "https://unterbaech.ch/en/discover-experience/winter/winter-hiking",
+          "title": "Winter hiking - Unterbäch"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    },
+    {
+      "query": "site:unterbaech.ch \"Winterbroschüre\" \"2021\"",
+      "request_id": "5bc8bcc8-6ba3-41dc-9b6e-aaa152819b98",
+      "results": [
+        {
+          "url": "https://unterbaech.ch/wp-content/uploads/Reglement-Kur-und-Beherbergungstaxen.pdf",
+          "title": "[PDF] UND BEHERBERGUNGSTAXE DER GEMEINDE UNTERBÄCH"
+        },
+        {
+          "url": "https://unterbaech.ch/en/discover-experience/summer/leisure-activities/seepark-augstbord",
+          "title": "Lakepark Augstbord - Unterbäch"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    },
+    {
+      "query": "site:eischoll.ch \"Winter\" \"2020\" \"pdf\"",
+      "request_id": "0d2abe5b-0e8f-4c3e-a366-ce2b1c2953f3",
+      "results": [
+        {
+          "url": "https://www.eischoll.ch/wp-content/uploads/2024/09/SEA-Geschaeftsbericht_2023-2024-1.pdf",
+          "title": "Geschäftsbericht"
+        },
+        {
+          "url": "https://gemeinde.eischoll.ch/wp-content/uploads/2024/06/01.25-GRV-NP-Eischoll_EB-Beilage-5_REK-Mitwirkung.pdf",
+          "title": "RAUMENTWICKLUNGSKONZEPT (REK) Bericht"
+        },
+        {
+          "url": "https://gemeinde.eischoll.ch/wp-content/uploads/2025/12/2025-11-18-Infoblatt-Budget-2026.pdf",
+          "title": "Dezember 2025"
+        },
+        {
+          "url": "https://gemeinde.eischoll.ch/wp-content/uploads/2024/07/Infoblatt-JR-2022.pdf",
+          "title": "Gemeindeverwaltung - Eischoll"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    },
+    {
+      "query": "\"Eischoll\" \"Unterbäch\" \"Verbindungspisten\" \"2019\"",
+      "request_id": "d1758163-e019-4663-9cb3-9b9b8d9b2582",
+      "results": [
+        {
+          "url": "https://www.eischoll.ch/ski-snowboard",
+          "title": "Ski & Snowboard – Eischoll Tourismus"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=6C1_MPhkY9k&vl=en",
+          "title": "FROM GINALS TO EISCHOLL VILLAGE – PISTE CHECK"
+        },
+        {
+          "url": "https://www.skiinfo.de/wallis/unterbaech/skigebiet",
+          "title": "Skigebiet Unterbäch - Skiinfo.de"
+        },
+        {
+          "url": "https://snow-and-sun.blogspot.com/2021/08/unterbach-februar-2021.html",
+          "title": "Unterbäch Februar 2021"
+        }
+      ],
+      "search_snippet_is_primary_evidence": false
+    }
+  ]
+}

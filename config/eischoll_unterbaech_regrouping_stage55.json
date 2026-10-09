@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-10",
+  "researcher_reply": "Oui : regrouper dans une nouvelle version avec la réserve historique explicite (recommandé).",
+  "parent_group_ids": ["MP_GROUP_RESORT__eischoll_sportbahnen_eischoll", "MP_GROUP_RESORT__unterbach_brandalp"],
+  "new_derived_group_id": "MP_GROUP_CONNECTED__eischoll_unterbaech",
+  "new_group_name": "Eischoll–Unterbäch",
+  "new_identifier_is_derived_not_upstream": true,
+  "preserve_original_group_ids_and_outputs": true,
+  "group_access_rule": "Reuse approved minimum usable bidirectional mean across retained existing access points; no new routing calls or coordinates",
+  "historical_connection_quality": "Authored account published and lastmodified2022 plus official current confirmation; no official preentry map or independently frozen2022version found",
+  "piste_site_relation_id": 9142700,
+  "historical_geometry_certified": false,
+  "individual_metric_acceptance_authorised": false,
+  "new_effect_estimation_authorised": false,
+  "automatic_exclusion_authorised": false,
+  "structural_aggregation": "Reuse unique component-listing sums as catalogue diagnostics only; physical lift overlap and preentry scope not verified"
+}

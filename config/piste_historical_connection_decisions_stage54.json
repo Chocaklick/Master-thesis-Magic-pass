@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-10",
+  "researcher_reply": "Oui : vérifier la liaison historique, puis proposer le regroupement (recommandé).",
+  "station_group_ids": ["MP_GROUP_RESORT__eischoll_sportbahnen_eischoll", "MP_GROUP_RESORT__unterbach_brandalp"],
+  "verify_connection_before_entry": true,
+  "propose_common_group_if_confirmed": true,
+  "fusion_authorised": false,
+  "preserve_original_ids_and_results": true,
+  "current_connection_alone_sufficient": false,
+  "no_outcome_or_significance_based_selection": true
+}

@@ -1,0 +1,131 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "config/piste_historical_sources_stage54.json": "18a733b72138685bd2b8eb60dfff18745cf138035c5168aeea80c03cf124bdbb",
+    "config/piste_historical_scope_sources_stage54.json": "734a163133545d8fa50e46eba9535d17a24b1eaf04d9ba67e3ff9a9fa29839cb",
+    "config/piste_historical_observation_sources_stage54.json": "7f842a11129cef44b3ffdcce8891a2d1dff1d0603ae647deb719ed55368974ae",
+    "config/piste_historical_connection_decisions_stage54.json": "141fb2d406594ca2bc56e443982cb20169b33a018213b7b4b160581d6d0d0f2d",
+    "reports/piste_history_discovery_stage54.json": "520f4c56094952092ce8431f74073b59fc718f9064a5e5c0cec8ef0f6959ff2a",
+    "reports/piste_history_discovery_complement_stage54.json": "169ee559cd2858cf9f7fa8126102840616ee7df839afcde7f6eb5839bafa3fe0",
+    "src/descriptive/audit_piste_history_stage54.py": "b80dcac283062e5e201d4848afe23f2c0fecc677885f8aa4fe0701e32d6d1717",
+    "src/data_collection/collect_piste_history_stage54.py": "c72f8313081977d74bd91f1bb2655616aa24b873d59786d6f9fc0a08b21ccc1c",
+    "data_processed/accessibility_station_groups.csv": "08040e0b7141679434eb8f4339d46ba24a77768ee07c6ab9fb98e989054987eb",
+    "data_external/source_evidence/UNTERBAECH_ANNUAL_2019_20_STAGE54_20261009T225532Z.metadata.json": "440912b027c6aeed5f0bf9f78913458bc811a0081cecf099db2c4f27ecd45634",
+    "data_external/source_evidence/UNTERBAECH_ANNUAL_2019_20_STAGE54_20261009T225532Z.pdf": "a316f11f95af8f72d48866a8fef790d11480ab41f543ef0a84bcbdec12652ee0",
+    "data_external/source_evidence/UNTERBAECH_ANNUAL_2020_21_STAGE54_20261009T225535Z.metadata.json": "fbc9a50d45e26da782e8104490e995dea2817b127a5d641dd74996e8e468a22f",
+    "data_external/source_evidence/UNTERBAECH_ANNUAL_2020_21_STAGE54_20261009T225535Z.pdf": "cfe445c7e765125a69349ff85dd1faf2e0660e03f4ea8e73065b144ab51d4085",
+    "data_external/source_evidence/UNTERBAECH_ANNUAL_2022_23_STAGE54_20261009T225537Z.metadata.json": "402565811588d8ac61f322e1ea2f7be3e785ee0882a853ba7a08530cc2792f96",
+    "data_external/source_evidence/UNTERBAECH_ANNUAL_2022_23_STAGE54_20261009T225537Z.pdf": "7ae381381ceed6ec0e1a0fd9ca281643dfda1bf763ad48aa38d1c7282226469c",
+    "data_external/source_evidence/UNTERBAECH_OPERATOR_ARCHIVES_STAGE54_20261009T225540Z.metadata.json": "1e8393ffab2388452aa46bc7e86de44dc0f294e754d30107e80be24e40cb1571",
+    "data_external/source_evidence/UNTERBAECH_OPERATOR_ARCHIVES_STAGE54_20261009T225540Z.html": "0bae57e1a88c58fea3a8bf6f97480a5d3739446592a1c4ea6f624a49df6f367e",
+    "data_external/source_evidence/UNTERBAECH_ANNUAL_2021_22_STAGE54_20261009T225912Z.metadata.json": "01244c81aa087b3772135753e84c5a08a9d32033af5d61d278d189fadf4142ca",
+    "data_external/source_evidence/UNTERBAECH_ANNUAL_2021_22_STAGE54_20261009T225912Z.pdf": "06d87440d060e98441643d9c60a0a050733f2cac1de5c66b57d5b5e334df18d0",
+    "data_external/source_evidence/UNTERBAECH_FIRSTHAND_FEB2021_STAGE54_20261009T230105Z.metadata.json": "0ad02ca0fa86856793d8fb36fd4157c884e078177284f03bd8f1f6a55db2431f",
+    "data_external/source_evidence/UNTERBAECH_FIRSTHAND_FEB2021_STAGE54_20261009T230105Z.html": "4ab8b18bde600001f1cd5271d81dd113ac70824e0efa204e8800f2120a34cfa7",
+    "data_external/source_evidence/UNTERBAECH_EISCHOLL_FIRSTHAND_ENVIADI_STAGE54_20261009T230110Z.metadata.json": "ca2cb3c9ac69c54a035109dcf84dd1548a0385d316af028a514cebfb8b72240b",
+    "data_external/source_evidence/UNTERBAECH_EISCHOLL_FIRSTHAND_ENVIADI_STAGE54_20261009T230110Z.html": "dce5cbebc4986320a6621f77e7949a90d1cd1181a7dc4b476a5170a90f47bddc",
+    "data_external/source_evidence/OPERATOR_DEEP_06_STAGE53_20261009T222919Z.html": "15e0990decf2b42fc8c671ff68f850a0d9eb7dfa951f3033e1ab22f1d2d5c15e"
+  },
+  "documents": [
+    {
+      "source_id": "UNTERBAECH_ANNUAL_2019_20_STAGE54",
+      "url": "https://unterbaech.ch/wp-content/uploads/20210504_Geschaeftsbericht2019-20_V2.pdf",
+      "raw_file": "data_external/source_evidence/UNTERBAECH_ANNUAL_2019_20_STAGE54_20261009T225532Z.pdf",
+      "sha256": "a316f11f95af8f72d48866a8fef790d11480ab41f543ef0a84bcbdec12652ee0",
+      "publication_before_entry": true,
+      "physical_ski_connection_documented": false,
+      "page_count": 24,
+      "eischoll_mentioned_pages": [],
+      "historical_official_map_found": false,
+      "document_reference": "FY2019/20, assembly28May2021",
+      "interpretation": "Official report inspected: no Eischoll mention; not a physical connection proof."
+    },
+    {
+      "source_id": "UNTERBAECH_ANNUAL_2020_21_STAGE54",
+      "url": "https://unterbaech.ch/wp-content/uploads/20211001_Geschaeftsbericht_2020-21.pdf",
+      "raw_file": "data_external/source_evidence/UNTERBAECH_ANNUAL_2020_21_STAGE54_20261009T225535Z.pdf",
+      "sha256": "cfe445c7e765125a69349ff85dd1faf2e0660e03f4ea8e73065b144ab51d4085",
+      "publication_before_entry": true,
+      "physical_ski_connection_documented": false,
+      "page_count": 24,
+      "eischoll_mentioned_pages": [],
+      "historical_official_map_found": false,
+      "document_reference": "FY2020/21, assembly23October2021",
+      "interpretation": "Official report inspected: no Eischoll mention; not a physical connection proof."
+    },
+    {
+      "source_id": "UNTERBAECH_ANNUAL_2022_23_STAGE54",
+      "url": "https://unterbaech.ch/wp-content/uploads/20230925_Geschaeftsbericht2022-23.pdf",
+      "raw_file": "data_external/source_evidence/UNTERBAECH_ANNUAL_2022_23_STAGE54_20261009T225537Z.pdf",
+      "sha256": "7ae381381ceed6ec0e1a0fd9ca281643dfda1bf763ad48aa38d1c7282226469c",
+      "publication_before_entry": false,
+      "physical_ski_connection_documented": false,
+      "page_count": 28,
+      "eischoll_mentioned_pages": [
+        14
+      ],
+      "historical_official_map_found": false,
+      "document_reference": "FY2022/23, publishedSeptember2023; page14",
+      "interpretation": "Retrospective/postentry: shared regional ticket cooperation ended2023/24; discussions with Eischoll continued. Ticket cooperation is not physical slope connection."
+    },
+    {
+      "source_id": "UNTERBAECH_OPERATOR_ARCHIVES_STAGE54",
+      "url": "https://unterbaech.ch/sportbahnen/ueber-uns",
+      "raw_file": "data_external/source_evidence/UNTERBAECH_OPERATOR_ARCHIVES_STAGE54_20261009T225540Z.html",
+      "sha256": "0bae57e1a88c58fea3a8bf6f97480a5d3739446592a1c4ea6f624a49df6f367e",
+      "publication_before_entry": null,
+      "physical_ski_connection_documented": false,
+      "datePublished": "2020-07-13T14:36:56+00:00",
+      "dateModified": "2026-10-02T06:53:10+00:00",
+      "interpretation": "Current official archive navigation, no historical physical connection claim."
+    },
+    {
+      "source_id": "UNTERBAECH_ANNUAL_2021_22_STAGE54",
+      "url": "https://unterbaech.ch/wp-content/uploads/20221001_Geschaeftsbericht2021-22.pdf",
+      "raw_file": "data_external/source_evidence/UNTERBAECH_ANNUAL_2021_22_STAGE54_20261009T225912Z.pdf",
+      "sha256": "06d87440d060e98441643d9c60a0a050733f2cac1de5c66b57d5b5e334df18d0",
+      "publication_before_entry": true,
+      "physical_ski_connection_documented": false,
+      "page_count": 24,
+      "eischoll_mentioned_pages": [],
+      "historical_official_map_found": false,
+      "document_reference": "FY2021/22, assembly22October2022",
+      "interpretation": "Official report inspected: no Eischoll mention; not a physical connection proof."
+    },
+    {
+      "source_id": "UNTERBAECH_FIRSTHAND_FEB2021_STAGE54",
+      "url": "https://snow-and-sun.blogspot.com/2021/08/unterbach-februar-2021.html",
+      "raw_file": "data_external/source_evidence/UNTERBAECH_FIRSTHAND_FEB2021_STAGE54_20261009T230105Z.html",
+      "sha256": "4ab8b18bde600001f1cd5271d81dd113ac70824e0efa204e8800f2120a34cfa7",
+      "publication_before_entry": true,
+      "physical_ski_connection_documented": true,
+      "datePublished": "2021-08-28T15:31:00+02:00",
+      "dateModified": "2025-05-11T15:19:39+02:00",
+      "interpretation": "Visit is reported asFebruary2021 and publicationAugust2021, but lastmodifiedMay2025: corroborating account only, not frozen preentry content."
+    },
+    {
+      "source_id": "UNTERBAECH_EISCHOLL_FIRSTHAND_ENVIADI_STAGE54",
+      "url": "https://www.enviadi.com/blog/eischoll-unterbaech-augstbordregion",
+      "raw_file": "data_external/source_evidence/UNTERBAECH_EISCHOLL_FIRSTHAND_ENVIADI_STAGE54_20261009T230110Z.html",
+      "sha256": "dce5cbebc4986320a6621f77e7949a90d1cd1181a7dc4b476a5170a90f47bddc",
+      "publication_before_entry": true,
+      "physical_ski_connection_documented": true,
+      "datePublished": "2022-03-10T14:11:44+00:00",
+      "dateModified": "2022-07-07T15:25:58+00:00",
+      "author": "Felix Gross",
+      "interpretation": "Authored direct ski-visit account describes both connecting forest paths; published and last-modified dates precedeMay2023. Self-declared dates, not an independently archived2022version or official plan."
+    }
+  ],
+  "current_official_source_id": "OPERATOR_DEEP_06_STAGE53",
+  "retained_original_group_ids": [
+    "MP_GROUP_RESORT__eischoll_sportbahnen_eischoll",
+    "MP_GROUP_RESORT__unterbach_brandalp"
+  ],
+  "first_effective_month": "2023-05-01",
+  "connection_assessment": "corroborated_preentry_authored_account_plus_current_official_confirmation",
+  "historic_official_plan_found": false,
+  "independently_frozen_preentry_article_found": false,
+  "full_historical_domain_geometry_certified": false,
+  "fusion_applied": false,
+  "additional_regrouping_validation_required": true
+}
