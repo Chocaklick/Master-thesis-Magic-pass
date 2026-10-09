@@ -1,0 +1,36 @@
+{
+  "version": "stage42_five_dimension_availability_2026_10_09",
+  "researcher_reply": "très bien applique ta proposition",
+  "approval_scope": "Audit availability and historical scope of the five proposed dimensions before fixing clustering variables",
+  "proposal_preserved": "reports/95_PROPOSITION_VARIABLES_PROFILS_FR.md",
+  "dimensions": ["size", "piste_altitude", "orientation", "preentry_snow", "urban_car_access"],
+  "availability_audit_approved": true,
+  "winter_months": [12, 1, 2, 3, 4],
+  "retain_existing_station_groups": true,
+  "snow_coverage_diagnostics": {
+    "all_fully_preentry_winters": true,
+    "candidate_window_years": 5,
+    "candidate_common_window": "Five winters ending strictly before the earliest group base entry",
+    "candidate_entry_specific_window": "Five winters ending strictly before each group base entry",
+    "reported_coverage_levels": [0.8, 1.0],
+    "coverage_levels_are_not_new_sample_filters": true,
+    "eighty_percent_origin": "Previously documented snow source coverage threshold, displayed only as a sensitivity diagnostic",
+    "source_assignment": "Retain exact existing resort-to-IMIS crosswalk only for audit; it was selected using 2013-2025 coverage and is not certified historical"
+  },
+  "snow_window_and_group_aggregation_approved": false,
+  "terrain_geometry_and_stability_assumption_approved": false,
+  "orientation_encoding_approved": false,
+  "urban_cities_and_endpoint_method_approved": false,
+  "final_clustering_variables_and_scaling_approved": false,
+  "clustering_fit_approved": false,
+  "new_effect_estimation_approved": false,
+  "automatic_exclusion_approved": false,
+  "cached_urban_reference_inventory": {
+    "candidate_city_bfs_ids": [261, 351, 2701, 5192, 5586, 6621],
+    "candidate_city_names": ["Zürich", "Bern", "Basel", "Lugano", "Lausanne", "Genève"],
+    "basis": "The six centres from the existing NPVM product, used only to audit cached road availability",
+    "route_source": "Existing approved road municipality-to-group reference; no new city routing, threshold or minimum-across-cities profile chosen",
+    "endpoint_label": "city selected communal stop -> station access stop"
+  },
+  "new_road_or_dem_collection_executed": false
+}
