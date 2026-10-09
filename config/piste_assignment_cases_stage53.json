@@ -1,0 +1,641 @@
+[
+  {
+    "station_group_id": "MP_GROUP_RESORT__heimenschwand_buchholterberg",
+    "osm_site_relation_id": 9210386,
+    "operator_source_id": "OPERATOR_ALTERNATIVE_HEIMENSCHWAND_STAGE53",
+    "scope_source_id": "OPERATOR_ALTERNATIVE_HEIMENSCHWAND_STAGE53",
+    "required_operator_markers": [
+      "Daten Skilift Heimenschwand",
+      "Baujahr 1969"
+    ],
+    "verified_lift_way_ids": [
+      332750518
+    ],
+    "geographic_review_note": "Map1 individually inspected: single lift and surrounding downhill footprint meet retained lower reference. New official municipal URL explicitly identifies the installation and its technical history. Old404 retained; new observed URL is not a retry of old path.",
+    "review_note": "Current site identity verified, not preentry footprint. Published765m/1969 retained as source claims, not newly calculated terrain/lift features.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__jaun_gastlosen",
+    "osm_site_relation_id": 4772764,
+    "operator_source_id": "OPERATOR_ALTERNATIVE_JAUN_STAGE53",
+    "scope_source_id": "OPERATOR_ALTERNATIVE_JAUN_STAGE53",
+    "required_operator_markers": [
+      "Jaun-Gastlosen Bergbahnen",
+      "Sesselbahn im 2011"
+    ],
+    "verified_lift_way_ids": [
+      169071998
+    ],
+    "geographic_review_note": "Map1 individually inspected: central chair and three drag-lift sectors form one Jaun-Gastlosen network. Official operator independently documents2011chair; original Gastlosenexpress member is the unique chair in the site and retains start_date2011. Content/type/year/geography corroborate jointly, not name/proximity alone.",
+    "review_note": "New www host has valid TLS; old fr hostname failure preserved and not bypassed. Historical chair clue does not certify every old piste or member.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__les_paccots_chatel_saint_denis",
+    "osm_site_relation_id": 9364494,
+    "operator_source_id": "OPERATOR_REMAINING_23_STAGE53",
+    "scope_source_id": "OPERATOR_SCOPE_01_STAGE53",
+    "required_operator_markers": [
+      "Station Les Paccots",
+      "Corbetta",
+      "Pralet",
+      "Borbuintze",
+      "La Saira"
+    ],
+    "verified_lift_way_ids": [
+      327884566,
+      327885938,
+      241958181,
+      328463181
+    ],
+    "original_site_url_review_note": "Original les-paccots.ch differs from current Magic-linked station-les-paccots.ch. Exact official operator page, named local sectors and original geometry corroborate identity; no automatic domain alias or replacement of source URL.",
+    "geographic_review_note": "Map2 individually inspected: nine lift branches support coherent Paccots sectors around Corbetta/Pralet, with retained reference to north. Official sector table independently names four branches. Reference preserved; no radius/clipping.",
+    "review_note": "Official10installations/10pistes and OSM7downhill memberobjects are distinct concepts. Current correspondence only; all mapped objects require QA.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__les_pleiades",
+    "osm_site_relation_id": 9364493,
+    "operator_source_id": "OPERATOR_REMAINING_24_STAGE53",
+    "scope_source_id": "OPERATOR_ALTERNATIVE_PLEIADES_STAGE53",
+    "required_operator_markers": [
+      "Les Pléiades - Domaine skiable",
+      "La Cuvette",
+      "Prantin"
+    ],
+    "verified_lift_way_ids": [
+      85509626,
+      228391208
+    ],
+    "original_site_url_review_note": "Original lespleiades.ch and both official current/legacy pages share the same operator domain. Legacy copyright2022 is not evidence of2022piste geometry.",
+    "geographic_review_note": "Map2 individually inspected: two separate Cuvette/Prantin lift branches corroborated by official alpine sector table; retained reference south of Cuvette unchanged. Only one downhill way is included in relation.",
+    "review_note": "Official LaCha and Motalles sectors not all present among known members. Partial OSM coverage is flagged, never interpreted as one actual piste or no skiing in other sectors.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__marchbachegg_marbach_marbachegg",
+    "osm_site_relation_id": 9206148,
+    "operator_source_id": "OPERATOR_REMAINING_27_STAGE53",
+    "scope_source_id": "OPERATOR_SCOPE_02_STAGE53",
+    "required_operator_markers": [
+      "Sportbahnen Marbachegg AG",
+      "Gondelbahn Marbachegg"
+    ],
+    "verified_lift_way_ids": [
+      29389400
+    ],
+    "geographic_review_note": "Map2 individually inspected: long main Marbach-Marbachegg gondola connects retained reference with coherent local downhill branches. Official gondola/operator and Marbach address independently identify this domain.",
+    "review_note": "Current autumn lift status is not exhaustive winter catalogue. Original Lochsitenberg and child members retained without individual historic certification.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__melchsee_frutt",
+    "osm_site_relation_id": 9202821,
+    "operator_source_id": "OPERATOR_REMAINING_28_STAGE53",
+    "scope_source_id": "OPERATOR_DEEP_01_STAGE53",
+    "required_operator_markers": [
+      "Stöckalp - Melchsee-Frutt",
+      "Distelboden - Bonistock",
+      "Balmeregg",
+      "Erzegg"
+    ],
+    "verified_lift_way_ids": [
+      26974485,
+      23154730,
+      43658338,
+      23154731
+    ],
+    "geographic_review_note": "Map2 individually inspected: connected Frutt plateau sectors and lower Cheselen-Stoeckalp descent system. Independent winter installation list names gondola, Bonistock cable, Balmeregg and Erzegg branches.",
+    "review_note": "70OSMdownhill objects versus17official pistes,14knownaerialwaymembers versus16official installations: segment/type/membership differences, not completeness. Live open-state never projected historically.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__moleson_la_gruyere",
+    "osm_site_relation_id": 9358658,
+    "operator_source_id": "OPERATOR_REMAINING_29_STAGE53",
+    "scope_source_id": "OPERATOR_DEEP_02_STAGE53",
+    "required_operator_markers": [
+      "Plan-Francey",
+      "Le départ du téléphérique",
+      "Sommet du Moléson"
+    ],
+    "verified_lift_way_ids": [
+      61458881
+    ],
+    "original_site_url_review_note": "Original site and current official source share moleson.ch; original spelling/URL preserved.",
+    "geographic_review_note": "Map3 individually inspected: original Francey-LeMoleson cable branch and lower village/GrosPlane ski branches belong to the operator's described summit route and local resort. Official PlanFrancey cable departure corroborates central connection.",
+    "review_note": "Funicular is not counted as an aerialway member by the existing inventory; original mixed lift roles remain explicit. Current scope not preentry footprint or full measured piste domain.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__mont_noble_nax",
+    "osm_site_relation_id": 9195449,
+    "operator_source_id": "OPERATOR_REMAINING_30_STAGE53",
+    "scope_source_id": "OPERATOR_REMAINING_30_STAGE53",
+    "required_operator_markers": [
+      "Nax Télé Mont-Noble",
+      "La Dzorniva",
+      "La Vachette",
+      "Les Planards",
+      "La Combe"
+    ],
+    "verified_lift_way_ids": [
+      31265813,
+      31265818,
+      31265821,
+      31265828
+    ],
+    "geographic_review_note": "Map3 individually inspected: aligned Dzorniva/Vachette/Planards/Combe branches and connected downhill footprint. Operator explicitly names these installations; retained Nax reference northwest of footprint unchanged, not used as domain centre.",
+    "review_note": "Children lift presence/type and full coverage not individually certified. No arbitrary linking of neighbouring Arolla/Evolene to Nax site.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__moosalpregion",
+    "osm_site_relation_id": 9142701,
+    "operator_source_id": "OPERATOR_REMAINING_31_STAGE53",
+    "scope_source_id": "OPERATOR_SCOPE_05_STAGE53",
+    "required_operator_markers": [
+      "MOOSALP BERGBAHNEN AG",
+      "Sanierung Törbeltal-Lift",
+      "Blattlift stillgelegt"
+    ],
+    "verified_lift_way_ids": [
+      321341263,
+      333683581
+    ],
+    "original_site_url_review_note": "Original moosalpregion.ch and current official source have same domain, scheme/www variation recorded without source modification.",
+    "geographic_review_note": "Map3 individually inspected: joint Buerchen-Toerbel downhill/lift network around retained reference agrees with official Moosalp operator scope. Independent Toerbeltal and Blatt statements identify those original members.",
+    "review_note": "Important historical/current anomaly: board decision22April2025stops Blattlift, last operated2021/22; OSM still contains member. Site identity accepted, not current operational validity of every object. No automatic removal or preentry metric.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__ottenleuebad",
+    "osm_site_relation_id": 9176886,
+    "operator_source_id": "OPERATOR_REMAINING_33_STAGE53",
+    "scope_source_id": "OPERATOR_ALTERNATIVE_OTTENLEUE_STAGE53",
+    "required_operator_markers": [
+      "Ottenleue",
+      "700"
+    ],
+    "verified_lift_way_ids": [
+      306807562
+    ],
+    "geographic_review_note": "Map3 individually inspected: one isolated Ottenleue lift with coherent surrounding descents. Independent regional official lift description identifies this single installation. Retained Magic reference is about2km south in the visual map and explicitly remains an unresolved reference-point anomaly, not moved or used for acceptance.",
+    "review_note": "Operator scope page502 retained without retry. Different official regional page collected. Site correspondence does not validate existing access-point coordinates or certify all pistes.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin",
+    "osm_site_relation_id": 9387992,
+    "operator_source_id": "OPERATOR_REMAINING_35_STAGE53",
+    "scope_source_id": "OPERATOR_REMAINING_35_STAGE53",
+    "required_operator_markers": [
+      "Les Téléskis Les Prés-d’Orvin",
+      "Cinq remontées mécaniques",
+      "Mont-Sujet"
+    ],
+    "verified_lift_way_ids": [
+      31482358
+    ],
+    "original_site_url_review_note": "Original site and current official source share presdorvin-ski.ch.",
+    "geographic_review_note": "Map3 individually inspected: two principal parallel branches plus three short child branches match a compact single PresdOrvin domain and independently described five installations on MontSujet. Retained point near upper edge unchanged. Named original main member corroborated at domain level, no individual names invented for unnamed childways.",
+    "review_note": "Five installation count does not establish all piste coverage. Source nord-facing statement retained as claim, not substituted for terrain-derived orientation.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__rathvel",
+    "osm_site_relation_id": 9364490,
+    "operator_source_id": "OPERATOR_REMAINING_36_STAGE53",
+    "scope_source_id": "OPERATOR_REMAINING_36_STAGE53",
+    "required_operator_markers": [
+      "Remontées mécaniques de Rathvel SA",
+      "Rathvel Junior",
+      "Gros Niremont"
+    ],
+    "verified_lift_way_ids": [
+      327886288,
+      327886289,
+      327886290
+    ],
+    "original_site_url_review_note": "Original and official current sources share rathvel.ch.",
+    "geographic_review_note": "Map4 individually inspected: long GrosNiremont and short Rathvel/Junior branches serve same coherent footprint at retained reference. Three named original members independently corroborated by operator table.",
+    "review_note": "Official fourth corde not among known aerialwaymembers. No completeness or historical certification.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__rossberg_oberwil",
+    "osm_site_relation_id": 8156483,
+    "operator_source_id": "OPERATOR_REMAINING_39_STAGE53",
+    "scope_source_id": "OPERATOR_SCOPE_07_STAGE53",
+    "required_operator_markers": [
+      "Skilift Rossberg AG",
+      "Skilift mit bis zu 7,5 km"
+    ],
+    "verified_lift_way_ids": [
+      332926016
+    ],
+    "original_site_url_review_note": "Relation8156483retains exact operator rossbergoberwil.ch. Relation9216904has same three downhill IDs, lift ID and other wayreference; both originals preserved, primary evidence-bearing relation recorded once. This is object-ID deduplication, not removal or domain merge.",
+    "geographic_review_note": "Both Map4 panels individually inspected; exactly same single lift and three downhill ways at retained reference. Official single skilift identity/history corroborates network. Overlapping relation membership checked by exact IDs, not visual similarity alone.",
+    "review_note": "Duplicate relation9216904preserved in candidate inventory; do not count paths twice. Construction-era and snowmaking1995claims not exhaustive historical geometry verification.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__rosswald",
+    "osm_site_relation_id": 9144886,
+    "operator_source_id": "OPERATOR_REMAINING_40_STAGE53",
+    "scope_source_id": "OPERATOR_DEEP_03_STAGE53",
+    "required_operator_markers": [
+      "Ski & Snowboard au Rosswald",
+      "Quatre remontées mécaniques"
+    ],
+    "verified_lift_way_ids": [
+      30056078,
+      30056079,
+      30483137,
+      333497370
+    ],
+    "geographic_review_note": "Map4 individually inspected: four local drag-lift branches form Rosswald ski footprint. Official Rosswald operator independently describes four ski installations; homepage separately describes access gondola. IDs corroborated as current domain members, not individually matched by invented official names.",
+    "review_note": "Knownfourmembers omit access gondola; site identity only. Retained reference northwest of ski footprint unchanged. Official25km not imported as measured historical feature.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__ruschegg_eywald",
+    "osm_site_relation_id": 9176887,
+    "operator_source_id": "OPERATOR_REMAINING_41_STAGE53",
+    "scope_source_id": "OPERATOR_SCOPE_09_STAGE53",
+    "required_operator_markers": [
+      "Skilift Rüschegg",
+      "komplexen Kurvenlösung",
+      "Winterdestination EYWALD"
+    ],
+    "verified_lift_way_ids": [
+      151278212
+    ],
+    "geographic_review_note": "Map4 individually inspected: long lower Rueschegg branch has pronounced bend and serves Eywald downhill system near retained point. Independent operator description of curved Rueschegg installation corroborates this branch; Lischboden upper branch retained without complete installation proof.",
+    "review_note": "Official1968/2263m are source claims, not new GIS features; no history flag promoted.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__sainte_croix_les_rasses",
+    "osm_site_relation_id": 2899124,
+    "operator_source_id": "SKI_VAUD_OPERATOR_LINK_STAGE47",
+    "scope_source_id": "OPERATOR_SCOPE_16_STAGE53",
+    "required_operator_markers": [
+      "Rasses I",
+      "Rasses II",
+      "Rasses III",
+      "Avattes I",
+      "Cochet"
+    ],
+    "verified_lift_way_ids": [
+      31872031,
+      31872025,
+      31872024,
+      31872027,
+      31872028
+    ],
+    "geographic_review_note": "Map5 individually inspected: seven alpine lift branches correspond to official Rasses/Avattes/Cochet installation rows. Original relation has22Nordicways and no downhillwaymember, hence lift-based identity is verifiable but alpine geometry remains missing in membership.",
+    "review_note": "Zero known downhill members is a membership diagnostic, NOT zero alpine pistes/km or absent activity. No snow/topography feature computed. OriginalRoman/Arabicinstallationnotation retained, contextual identity only.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__schwarzenbuhl_selital",
+    "osm_site_relation_id": 9176888,
+    "operator_source_id": "OPERATOR_REMAINING_44_STAGE53",
+    "scope_source_id": "OPERATOR_SCOPE_10_STAGE53",
+    "required_operator_markers": [
+      "SchneeSelital",
+      "Gäggerliftes",
+      "Skigebiet SchneeSelital"
+    ],
+    "verified_lift_way_ids": [
+      332763626
+    ],
+    "geographic_review_note": "Map5 individually inspected: two close long parallel branches serve coherent Selital footprint; official Gaegger summitPanoramaBar identifies original Gaegger branch. Retained point south of mapped ski area unchanged.",
+    "review_note": "LZG nordic scope is separate; do not import its ways into alpine metrics. Conveyor not assumed in original members.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen",
+    "osm_site_relation_id": 9363436,
+    "operator_source_id": "OPERATOR_ALTERNATIVE_SCHWARZSEE_STAGE53",
+    "scope_source_id": "OPERATOR_ALTERNATIVE_SCHWARZSEE_STAGE53",
+    "required_operator_markers": [
+      "Kaisereggbahnen Schwarzsee",
+      "Riggisalp",
+      "2 Sesselbahnen und 2 Skilifte"
+    ],
+    "verified_lift_way_ids": [
+      138010060,
+      48447829
+    ],
+    "original_site_url_review_note": "Original schwarzsee.ch website and exact regional official alternativeURL same domain; current source redirects to regional tourism site. Broken operatorhome404retained, not retried.",
+    "geographic_review_note": "Map5 individually inspected: Kaiseregg chair and Riggisalp local branch belong to same Schwarzsee domain. Independent regional official page names Kaiseregg/Riggisalp and four installations; mappednetwork coherent, not name/radius automatic acceptance.",
+    "review_note": "Onlythreeknownliftmembers versusfourofficialinstallations; missing chair/member unresolved. No absence inferred.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__sorenberg",
+    "osm_site_relation_id": 5637888,
+    "operator_source_id": "OPERATOR_REMAINING_46_STAGE53",
+    "scope_source_id": "OPERATOR_SCOPE_11_STAGE53",
+    "required_operator_markers": [
+      "Skigebiet Sörenberg",
+      "Rischli & Brunnenboden",
+      "Skilift Ochsenweid"
+    ],
+    "verified_lift_way_ids": [
+      46736925,
+      263229299
+    ],
+    "geographic_review_note": "Map5 individually inspected: Dorf/Rossweid ski branches and south Rothorn/Eisee sector jointly appear in original site, supported by official Soerenberg winter scope and independently named Rischli/Brunnenboden/Ochsenweid installations. Retained reference near northern mainsector unchanged.",
+    "review_note": "Official2025/26Rischli/Brunnenbodennonoperation and Ochsenweidfeederrole are historical/current alerts. OSMincludesduplicate named Dorfways; individualgeometry/historyQA required beforemetrics.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__staldenried_gspon",
+    "osm_site_relation_id": 9142698,
+    "operator_source_id": "OPERATOR_REMAINING_49_STAGE53",
+    "scope_source_id": "OPERATOR_REMAINING_49_STAGE53",
+    "required_operator_markers": [
+      "Skilifte Gspon AG",
+      "familienfreundliche Skigebiet",
+      "Sonnenterrasse Gspon"
+    ],
+    "verified_lift_way_ids": [
+      97421667
+    ],
+    "geographic_review_note": "Map6 individually inspected: two local ski-lift/descent branches on Gspon terrace plus access cable member, independently corroborated by official Gspon ski operator and current local offer. MainoriginalGsponmember corroborated at domain level, Waldeggmember not independently historically certified.",
+    "review_note": "Operator snow-security statement is advertising/source claim, not snow climatology. Nordic/snowshoe offers not alpine paths.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__vercorin",
+    "osm_site_relation_id": 9195450,
+    "operator_source_id": "OPERATOR_REMAINING_53_STAGE53",
+    "scope_source_id": "OPERATOR_DEEP_05_STAGE53",
+    "required_operator_markers": [
+      "Crêt du Midi - Sigeroulaz - Vercorin",
+      "Creux du Lavioz",
+      "TÉLÉCABINE"
+    ],
+    "verified_lift_way_ids": [
+      156291724,
+      1525847878
+    ],
+    "geographic_review_note": "Map6 individually inspected: two consecutive original Vercorin-CretduMidi gondola ways link village and upper downhill sectors, independently corroborated by official three-place route/season schedule. Lavioz childsector separately noted; retainedupperreference not moved.",
+    "review_note": "Two identically named gondola objects are separate sections, not two invented independent resorts. Child members and unmapped pistes not fullycertified. No historic summeroffer inferred.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__visperterminen",
+    "osm_site_relation_id": 9142699,
+    "operator_source_id": "OPERATOR_REMAINING_55_STAGE53",
+    "scope_source_id": "OPERATOR_SCOPE_15_STAGE53",
+    "required_operator_markers": [
+      "Eine Sesselbahnfahrt aufs Giw",
+      "GIW AG Sesselbahn und Skilifte",
+      "Visperterminen"
+    ],
+    "verified_lift_way_ids": [
+      20325039
+    ],
+    "geographic_review_note": "Map6 individually inspected: long Visperterminen-Giw chair reaches coherent upper ski footprint with SenntumBorddragbranch. Official Giwchair/Visperterminenoperator independently corroborate access. Existingreferenceatlowerchairretained.",
+    "review_note": "Current summerchairtariff used only for installationidentity, not historicaloffer/inclusion. Upperdraglift exacthistory and fullpistecoverage unresolved.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__crans_montana_crans_montana",
+    "osm_site_relation_id": 3162703,
+    "operator_source_id": "OPERATOR_ALTERNATIVE_CMA_OPERATOR_STAGE53",
+    "scope_source_id": "OPERATOR_ALTERNATIVE_CMA_OPERATOR_STAGE53",
+    "required_operator_markers": [
+      "Remontées mécaniques de Crans Montana Aminona (CMA) SA",
+      "Crans-Cry d'Er or Violettes",
+      "The Plaine Morte Funitel"
+    ],
+    "verified_lift_way_ids": [
+      29727631,
+      29919592,
+      29919593
+    ],
+    "geographic_review_note": "Map7 individually inspected: central CrydEr sector, eastern Violettes chain and northern PlaineMorte funitel correspond to separately named CMA operator routes. Retained reference at central ski junction unchanged. Official current source corroborates current site, not membership.",
+    "review_note": "Tourism source robots refusal respected, no retry. Independent original CMA company page collected; not a mirror of forbidden source. Documented MagicPass exit unchanged. Abandoned/disused PetitMontBonvin member retained as QA alert, not assumed operating.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__lauchernalp_lotschental",
+    "osm_site_relation_id": 15310723,
+    "operator_source_id": "OPERATOR_ALTERNATIVE_LAUCHERNALP_STAGE53",
+    "scope_source_id": "OPERATOR_ALTERNATIVE_LAUCHERNALP_STAGE53",
+    "required_operator_markers": [
+      "Luftseilbahn Wiler-Lauchernalp",
+      "3er Sesselbahn Stafel-Gandegg",
+      "15er Gondelbahn Gandegg-Hockenhorngrat",
+      "Skilift Märwig-Gandegg"
+    ],
+    "verified_lift_way_ids": [
+      2571657,
+      48477693,
+      48477695,
+      48477680
+    ],
+    "original_site_url_review_note": "Original site website and official source share loetschental.ch; no URL substitution.",
+    "geographic_review_note": "Map7 individually inspected: sequential Wiler/Lauchernalp/Stafel/Gandegg/Hockenhorngrat branches and Maerwig branch corroborated by exact official winter installation timetable. Retained Lauchernalp reference alongside mid-network unchanged.",
+    "review_note": "Current2026/27timetable disagrees with searchindex2025/26snippet: archived primary content prevails. Dates used only for currentidentity, not preentry mapping or historicalsummeravailability.",
+    "geographic_review_status": "reviewed_current_scope_coherent"
+  },
+  {
+    "station_group_id": "MP_GROUP_EVENT__4b7d19ebb1a4",
+    "station_group_name": "Château-d'Oex - La Braye",
+    "geographic_review_status": "retained_current_scope_unresolved",
+    "review_note": "Historical municipal2018lineage archived, no current Magic scope page. Nearest RochersdeNaye relation is NOT LaBraye. Check operating history and original ungrouped downhill ways; no exclusion."
+  },
+  {
+    "station_group_id": "MP_GROUP_EVENT__c1f58b57f3fa",
+    "station_group_name": "Grenchenberg",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Official Grenchenberg operator reused from cache, piste-plan link observed. Grandval site is not Grenchenberg. Need individually sourced rawway/lift mapping; no nearest-site assignment."
+  },
+  {
+    "station_group_id": "MP_GROUP_EVENT__e664bf3f38d5",
+    "station_group_name": "Wilerallmi",
+    "geographic_review_status": "retained_joint_site_components_require_review",
+    "review_note": "Official Wilerallmi is distinct retained group, but its exact named lift108201909is member of SigriswillSchwanden relation9196556. Need individual shared relation component assignment, not whole-site assignment to either group."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__aeschi",
+    "station_group_name": "Aeschiallmend",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Official operator identifies Aeschiallmend/Allmispitz/Windegg/Pinocchio, excludes LuckyLift fromMagic. No verifiedsite relation; nearestNiederhorn is wrong. Map originalways individually, keeping official included/excluded installation scope."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__anzere",
+    "station_group_name": "Anzère",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Official TeleAnzere ski scope archived. NearestCransMontana relation is different domain, not a match. Need originalway/operator mapping."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__arolla",
+    "station_group_name": "Arolla",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Official DentBlancheArolla/Fontanesses scope archived with ownaccesscoordinates. NearestNax is different domain; never assign Arolla to Nax."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__beatenberg_niederhorn",
+    "station_group_name": "Beatenberg-Hohwald / Niederhorn",
+    "geographic_review_status": "retained_multicomponent_scope_incomplete",
+    "review_note": "Separate official Niederhorn and Hohwald pages archived. Relation9196877covers Niederhorn component, not proof of Hohwald. Both references and group preserved."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__eischoll_sportbahnen_eischoll",
+    "station_group_name": "Eischoll",
+    "geographic_review_status": "retained_connected_group_review_awaits_researcher",
+    "review_note": "Official Eischoll source explicitly documents ski connection via StryggeErez to Unterbach. Both original groups enter2023/24. Historical connection/regrouping question submitted; no fusion, split, duplicate assignment or exposure change yet."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__evolene",
+    "station_group_name": "Evolène",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Official TeleEvolene/LannazChemeuille source archived; separate from Arolla/Forclaz despite shared DentBlanche umbrella. No nearestNax assignment."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal",
+    "station_group_name": "Faltschen",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Official Faltschen main/childrenlift activities archived. No verifiedsite relation; Niederhorn is unrelated. Individualrawgeometry review required."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__gantrisch_gurnigel",
+    "station_group_name": "Gantrisch-Gurnigel / Gurnigelbad",
+    "geographic_review_status": "retained_multicomponent_scope_incomplete",
+    "review_note": "Official GurnigelWasserscheide names Laenggraetli/Kuhberg in relation9176885; separately archived Gurnigelbad belongs to same retained analytical group but is not covered by that relation. No partial component treated as whole group."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal",
+    "station_group_name": "Grimentz-Zinal",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Official Anniviers operator link redirects to live page including several destinations. StLucChandolin relation is NOT GrimentzZinal. Review original connected Grimentz/Zinal ways without merging neighbours."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__gstaad",
+    "station_group_name": "Bergbahnen Gstaad",
+    "geographic_review_status": "retained_candidate_operator_scope_mismatch",
+    "review_note": "Official BergbahnenGstaad lists RinderbergSaanerslochHorneggli, VidemanetteEggli and Wispile. Candidate14362068onlyWasserngrat, not proof of retained operator scope. Do not assign from Gstaad name/proximity."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg",
+    "station_group_name": "Homberg",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Official SkiliftHomberg website archived; no verifiedsite relation. Schwanden site unrelated; originalDreiligassWinteregg geometry identification required."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__kiental",
+    "station_group_name": "Kiental",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Exact official KientalRamslauenen URL including observed query preserved. No verifiedsite relation; Elsigenalp is different domain."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__la_dole_jura_sur_leman",
+    "station_group_name": "Jura-sur-Léman - composante suisse La Dôle",
+    "geographic_review_status": "retained_crossborder_component_mapping_required",
+    "review_note": "Official JuraSurLeman covers DoleTuffes and Serra; relation3161169LesRousses is crossborder. Swiss retained component cannot inherit full foreign relation or automatic border clipping."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__la_forclaz",
+    "station_group_name": "La Forclaz",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Official regional live source individually identifies Tsate/Terra/Forclaz sections, but also many other domains. Keep section scope separate; no nearestNax assignment."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__la_robella",
+    "station_group_name": "La Robella",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Official RobellaButtes winter chair/ski offering archived. NearestMauborget relation not Robella. SourceHTTPsuccess does not create OSM correspondence."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__les_marecottes",
+    "station_group_name": "Les Marécottes",
+    "geographic_review_status": "retained_official_source_unavailable",
+    "review_note": "Exact operator link has certificate-chain failure; TLS stays enabled. Nearest Torgon site not LesMarecottes. Seek independent legitimate official evidence, no failed-host retry."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__leukerbad",
+    "station_group_name": "Leukerbad",
+    "geographic_review_status": "retained_candidate_operator_scope_mismatch",
+    "review_note": "Official current Magic link is Torrent. Candidate14362070isGemmipass, not Torrent; no town-name substitution."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__leysin_les_mosses_la_lecherette",
+    "station_group_name": "Leysin - Les Mosses - La Lécherette",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Same exact TLMLoperatorURL joins retained Leysin and Mosses/Lacherette component links; one cached original reused. No RochersdeNaye substitution; need individual rawpiste/lift mapping of retained joint group."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__morlialp",
+    "station_group_name": "Mörlialp",
+    "geographic_review_status": "retained_official_source_unavailable",
+    "review_note": "Exact operator link403forbidden preserved, no retry/circumvention. CandidateMorlialp9206150notaccepted without independently archived official corroboration."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__ovronnaz",
+    "station_group_name": "Ovronnaz",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Official Teleovronnaz page archived, includes winterplanlink. Conthey site is different domain; no distance/name assignment."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__riffenmatt",
+    "station_group_name": "Riffenmatt",
+    "geographic_review_status": "retained_official_content_unusable",
+    "review_note": "Exact operator URL200containsgenericOPALdemo/placeholder text unrelated to ski station; HTTPsuccess is not evidence. No assignment or fabricated content."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman",
+    "station_group_name": "Les Rochers de Naye",
+    "geographic_review_status": "retained_multicomponent_scope_evidence_incomplete",
+    "review_note": "SID page documents Jaman and links Infosnow; relation9364492contains Naye/Jaman/HautdeCaux lifts. Need complete official component identity/operator scope verification before accepting whole group."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__schwanden_sigriswil_thunersee",
+    "station_group_name": "Schwanden",
+    "geographic_review_status": "retained_joint_site_components_require_review",
+    "review_note": "Official Schwanden page archived. Relation9196556alsoincludes exact Wilerallmilift108201909, belonging to distinct group; do not assign all16downhillmembers to Schwanden."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__st_cergue",
+    "station_group_name": "Saint-Cergue",
+    "geographic_review_status": "retained_multicomponent_scope_incomplete",
+    "review_note": "Municipal alpine page covers regional ski offerings; candidate19435596LaTrelasse is one component away from retainedpoint, not proof of entire SaintCergue group. Preserve boundaries and all groups."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__st_luc_chandolin",
+    "station_group_name": "St-Luc / Chandolin",
+    "geographic_review_status": "retained_installation_correspondence_needs_primary_plan_review",
+    "review_note": "Official operator/domain and plan pages archived; current plan embeds summerInfosnow176iframe and HTML lacks named alpine lift rows. Original network plausible, but individual installation corroboration needs original plan/live source; no guessed names or inferred winteroffer."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__tramelan",
+    "station_group_name": "Tramelan",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Official Tramelan source describes two main lifts/babylift. Animated counters show literal0while narrative documents activity; no zero capacity/km invented. LesBreuleux relation is different domain."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__unterbach_brandalp",
+    "station_group_name": "Unterbäch",
+    "geographic_review_status": "retained_connected_group_review_awaits_researcher",
+    "review_note": "Separate Unterbach official scope archived. Sharedrelation9142700includes Eischoll branches; Eischoll official source describes ski connection. Both enter2023/24. Await historicalconnection/regrouping validation, preserving IDs/events/panels."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__vallee_de_joux",
+    "station_group_name": "Vallée de Joux",
+    "geographic_review_status": "retained_multicomponent_scope_incomplete",
+    "review_note": "Official alpine scope already cached lists LAbbaye, LeBrassus and LOrient. Relation9374152onlyLAbbaye. Do not reduce group to available component or add Vaulion."
+  },
+  {
+    "station_group_id": "MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets",
+    "station_group_name": "Villars-Gryon-Les Diablerets",
+    "geographic_review_status": "retained_no_verified_site_membership",
+    "review_note": "Exact TVGDoperatorURL joins both retained component links, officialjointdomain corroborated but no verifiedsite membership. Conthey is unrelated; no new group breakup or exclusion."
+  }
+]

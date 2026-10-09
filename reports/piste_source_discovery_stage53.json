@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-10",
+  "method": "Tavily advanced search, explicit official domain filter; search is discovery only, not assignment evidence",
+  "records": [
+    {
+      "query": "Les Pléiades ski téléski Prantin Cuvette",
+      "request_id": "7c205f95-797d-4541-b5c4-5c07bec81a43",
+      "results": [
+        {
+          "url": "https://www.lespleiades.ch/domaine.html",
+          "title": "Les Pléiades - Domaine skiable"
+        },
+        {
+          "url": "https://www.lespleiades.ch",
+          "title": "Les Pléiades - Accueil"
+        }
+      ]
+    },
+    {
+      "query": "Skilift Heimenschwand Buchholterberg",
+      "request_id": "f8868e77-d584-4131-9d28-8770eb4a2210",
+      "results": [
+        {
+          "url": "https://www.buchholterberg.ch/dorfleben/skilift.html/45",
+          "title": "Skilift – Buchholterberg"
+        },
+        {
+          "url": "https://www.buchholterberg.ch/gemeinde.html/3",
+          "title": "Gemeinde – Buchholterberg"
+        },
+        {
+          "url": "https://www.buchholterberg.ch/impressum.html/10",
+          "title": "Impressum – Buchholterberg"
+        }
+      ]
+    },
+    {
+      "query": "Jaun Gastlosen Bergbahnen Skigebiet",
+      "request_id": "ed542cec-a542-45c2-ab80-deef37ef8999",
+      "results": [
+        {
+          "url": "https://www.jaun-bergbahnen.ch/freunde",
+          "title": "Freunde von Jaun | Jaun-Gastlosen Bergbahnen"
+        },
+        {
+          "url": "https://www.jaun-bergbahnen.ch/fr/freunde",
+          "title": "Les amis de Jaun"
+        },
+        {
+          "url": "https://www.jaun-bergbahnen.ch/gastlosencamparea",
+          "title": "Gastlosen Camp Area | Jaun-Gastlosen Bergbahnen"
+        }
+      ]
+    },
+    {
+      "query": "Schwarzsee Kaisereggbahnen Skilifte",
+      "request_id": "ede0fd22-bdda-49a9-9fb6-d882ef6780ee",
+      "results": [
+        {
+          "url": "http://www.schwarzsee.ch/kaisereggbahnen",
+          "title": "Kaisereggbahnen Schwarzsee AG - Fribourg.ch"
+        },
+        {
+          "url": "https://www.fribourgregion.ch/de/schwarzsee/bergbahnen/skilift-ottenleue",
+          "title": "Schlepplift Ottenleue – Typ „Archet“ - Fribourg.ch"
+        },
+        {
+          "url": "https://fribourgregion.ch/fr/P6998",
+          "title": "Passeport neige - Gantrisch | Schwarzsee - Senseland"
+        }
+      ]
+    },
+    {
+      "query": "Crans Montana remontées mécaniques Cry Er Violettes site officiel",
+      "request_id": "c3738575-a4ba-4f98-958b-a4ffbe4f8be0",
+      "results": [
+        {
+          "url": "https://www.crans-montana.ch/fr/etat_randonnees_et_installations",
+          "title": "Crans-Montana: tat des remontes"
+        },
+        {
+          "url": "https://www.mycma.ch/en-US/summer-prices",
+          "title": "SUMMER PRICES - MyCMA"
+        },
+        {
+          "url": "https://www.crans-montana.ch/fr?idcmt=Partenaire_InfosPratiques_c317b89a33158e7006cd299909c628ad",
+          "title": "Remontées mécaniques (Barzettes-Marolires-Violettes- ..."
+        }
+      ]
+    },
+    {
+      "query": "Lauchernalp Bergbahnen Skigebiet Hockenhorngrat offizielle",
+      "request_id": "3332fa5f-a954-49eb-b74c-992e04ec454e",
+      "results": [
+        {
+          "url": "https://www.loetschental.ch/en/info-service/timetables-lauchernalp-bergbahnen-178",
+          "title": "Timetables Lauchernalp Bergbahnen | Lötschental Tourismus"
+        },
+        {
+          "url": "https://www.loetschental.ch/de/info-service/fahrplaene-lauchernalp-bergbahnen-178",
+          "title": "Fahrpläne Lauchernalp Bergbahnen | Lötschental Tourismus"
+        },
+        {
+          "url": "http://www.loetschental.ch/de/bergbahnen",
+          "title": "Lauchernalp Bergbahnen | Lötschental Tourismus"
+        }
+      ]
+    }
+  ]
+}

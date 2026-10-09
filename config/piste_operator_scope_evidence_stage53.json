@@ -1,0 +1,130 @@
+[
+  {
+    "source_id": "OPERATOR_SCOPE_01_STAGE53",
+    "url": "http://www.station-les-paccots.ch/plan-des-pistes-des-paccots/",
+    "organisation": "Les Paccots",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__les_paccots_chatel_saint_denis",
+    "parent_source_id": "OPERATOR_REMAINING_23_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_02_STAGE53",
+    "url": "https://www.marbachegg.ch/de/bahnen/anlagen",
+    "organisation": "Marbachegg",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__marchbachegg_marbach_marbachegg",
+    "parent_source_id": "OPERATOR_REMAINING_27_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_03_STAGE53",
+    "url": "https://frutt.ch/winter",
+    "organisation": "Melchsee-Frutt",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__melchsee_frutt",
+    "parent_source_id": "OPERATOR_REMAINING_28_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_04_STAGE53",
+    "url": "https://www.moleson.ch/ski/",
+    "organisation": "Moléson",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__moleson_la_gruyere",
+    "parent_source_id": "OPERATOR_REMAINING_29_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_05_STAGE53",
+    "url": "https://www.moosalpregion.ch/fr/région/à-propos-de-nous/moosalp-bergbahnen-ag/",
+    "organisation": "Moosalp",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__moosalpregion",
+    "parent_source_id": "OPERATOR_REMAINING_31_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_06_STAGE53",
+    "url": "https://www.skilift-ottenleue.ch/index.php/ueber-uns/pistenplan",
+    "organisation": "Ottenleue",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__ottenleuebad",
+    "parent_source_id": "OPERATOR_REMAINING_33_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_07_STAGE53",
+    "url": "https://www.rossbergoberwil.ch/über-uns/zahlen-und-fakten",
+    "organisation": "Rossberg",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__rossberg_oberwil",
+    "parent_source_id": "OPERATOR_REMAINING_39_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_08_STAGE53",
+    "url": "https://www.rosswald-bahnen.ch/fr/rosswald-bahnen-ag/",
+    "organisation": "Rosswald",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__rosswald",
+    "parent_source_id": "OPERATOR_REMAINING_40_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_09_STAGE53",
+    "url": "https://www.rueschegg-ski.ch/skigebiet",
+    "organisation": "Rüschegg",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__ruschegg_eywald",
+    "parent_source_id": "OPERATOR_REMAINING_41_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_10_STAGE53",
+    "url": "https://schneeselital.ch/flat/schneeselital/",
+    "organisation": "Selital",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__schwarzenbuhl_selital",
+    "parent_source_id": "OPERATOR_REMAINING_44_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_11_STAGE53",
+    "url": "https://www.soerenberg.ch/de/sehen-erleben/winter/skifahren",
+    "organisation": "Sörenberg",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__sorenberg",
+    "parent_source_id": "OPERATOR_REMAINING_46_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_12_STAGE53",
+    "url": "https://www.valdanniviers.ch/fr/Z32722/domaine-stluc-chandolin",
+    "organisation": "St-Luc / Chandolin",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__st_luc_chandolin",
+    "parent_source_id": "OPERATOR_REMAINING_48_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_13_STAGE53",
+    "url": "https://www.vercorin.ch/fr/Z15154/remontees-mecaniques",
+    "organisation": "Vercorin",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__vercorin",
+    "parent_source_id": "OPERATOR_REMAINING_53_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_14_STAGE53",
+    "url": "https://www.heidadorf.ch/freizeit/pistenplan",
+    "organisation": "Visperterminen",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__visperterminen",
+    "parent_source_id": "OPERATOR_REMAINING_55_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_15_STAGE53",
+    "url": "https://www.heidadorf.ch/freizeit/fahrplaene-tarife",
+    "organisation": "Visperterminen",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__visperterminen",
+    "parent_source_id": "OPERATOR_REMAINING_55_STAGE53"
+  },
+  {
+    "source_id": "OPERATOR_SCOPE_16_STAGE53",
+    "url": "https://www.ski-vaud.ch/web/ski/les-pistes",
+    "organisation": "Ste-Croix/Les Rasses",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__sainte_croix_les_rasses",
+    "parent_source_id": "SKI_VAUD_OPERATOR_LINK_STAGE47"
+  }
+]

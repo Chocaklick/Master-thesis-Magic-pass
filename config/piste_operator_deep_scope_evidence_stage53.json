@@ -1,0 +1,10 @@
+[
+ {"source_id":"OPERATOR_DEEP_01_STAGE53","url":"https://frutt.ch/anlagen-und-karte","organisation":"Melchsee-Frutt","suffix":"html","station_group_id":"MP_GROUP_RESORT__melchsee_frutt","parent_source_id":"OPERATOR_SCOPE_03_STAGE53"},
+ {"source_id":"OPERATOR_DEEP_02_STAGE53","url":"https://www.moleson.ch/funi-tele","organisation":"Moléson","suffix":"html","station_group_id":"MP_GROUP_RESORT__moleson_la_gruyere","parent_source_id":"OPERATOR_SCOPE_04_STAGE53"},
+ {"source_id":"OPERATOR_DEEP_03_STAGE53","url":"https://www.rosswald-bahnen.ch/fr/rosswald/hiver/ski-snowboard/#pistenplan","organisation":"Rosswald","suffix":"html","station_group_id":"MP_GROUP_RESORT__rosswald","parent_source_id":"OPERATOR_REMAINING_40_STAGE53"},
+ {"source_id":"OPERATOR_DEEP_04_STAGE53","url":"https://www.valdanniviers.ch/fr/Z15413/plan-st-luc-chandolin","organisation":"St-Luc/Chandolin","suffix":"html","station_group_id":"MP_GROUP_RESORT__st_luc_chandolin","parent_source_id":"OPERATOR_SCOPE_12_STAGE53"},
+ {"source_id":"OPERATOR_DEEP_05_STAGE53","url":"https://www.vercorin.ch/fr/Z15202/horaires","organisation":"Vercorin","suffix":"html","station_group_id":"MP_GROUP_RESORT__vercorin","parent_source_id":"OPERATOR_SCOPE_13_STAGE53"},
+ {"source_id":"OPERATOR_DEEP_06_STAGE53","url":"https://www.eischoll.ch/ski-snowboard/","organisation":"Eischoll","suffix":"html","station_group_id":"MP_GROUP_RESORT__eischoll_sportbahnen_eischoll","parent_source_id":"OPERATOR_REMAINING_08_STAGE53"},
+ {"source_id":"OPERATOR_DEEP_07_STAGE53","url":"https://unterbaech.ch/fr/decouvertes-et-experiences/winter/ski-et-snowboard/","organisation":"Unterbäch","suffix":"html","station_group_id":"MP_GROUP_RESORT__unterbach_brandalp","parent_source_id":"OPERATOR_REMAINING_51_STAGE53"},
+ {"source_id":"OPERATOR_DEEP_08_STAGE53","url":"https://www.wilerallmi.ch/skilift","organisation":"Wilerallmi","suffix":"html","station_group_id":"MP_GROUP_EVENT__e664bf3f38d5","parent_source_id":"OPERATOR_REMAINING_02_STAGE53"}
+]

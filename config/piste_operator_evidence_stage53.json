@@ -1,0 +1,780 @@
+[
+  {
+    "source_id": "GRENCHENBERG_OPERATOR_OFFICIAL",
+    "url": "https://jurasonnenseite.ch/erleben/auf-dem-berg/skilift",
+    "organisation": "Grenchenberg",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_EVENT__c1f58b57f3fa",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_4446_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_EVENT__c1f58b57f3fa",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_4446_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_02_STAGE53",
+    "url": "https://www.wilerallmi.ch/",
+    "organisation": "Wilerallmi",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_EVENT__e664bf3f38d5",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_3588_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_EVENT__e664bf3f38d5",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_3588_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_03_STAGE53",
+    "url": "https://skilift-aeschiried.ch/",
+    "organisation": "Aeschiallmend",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__aeschi",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1805_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__aeschi",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1805_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_04_STAGE53",
+    "url": "https://www.anzere.ch/fr/remontees-mecaniques/",
+    "organisation": "Anzère",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__anzere",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_4_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__anzere",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_4_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_05_STAGE53",
+    "url": "https://www.valdherens.ch/fr/espace-dent-blanche-secteur-arolla-fp42182",
+    "organisation": "Arolla",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__arolla",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_118_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__arolla",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_118_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_06_STAGE53",
+    "url": "https://niederhorn.ch/?lang=fr",
+    "organisation": "Niederhorn",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__beatenberg_niederhorn",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1796_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__beatenberg_niederhorn",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1796_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_07_STAGE53",
+    "url": "https://www.skilift-hohwald.ch/",
+    "organisation": "Beatenberg-Hohwald",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__beatenberg_niederhorn",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1799_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__beatenberg_niederhorn",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1799_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_08_STAGE53",
+    "url": "https://eischoll.ch/",
+    "organisation": "Eischoll",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__eischoll_sportbahnen_eischoll",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2766_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__eischoll_sportbahnen_eischoll",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2766_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_09_STAGE53",
+    "url": "https://www.valdherens.ch/fr/espace-dent-blanche-secteur-evolene-fp31917",
+    "organisation": "Evolène",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__evolene",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_88_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__evolene",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_88_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_10_STAGE53",
+    "url": "https://www.skilift-faltschen.ch/",
+    "organisation": "Faltschen",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1804_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1804_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_11_STAGE53",
+    "url": "https://www.skiliftegantrischgurnigel.ch/de/home",
+    "organisation": "Gantrisch Gurnigel",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__gantrisch_gurnigel",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2767_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__gantrisch_gurnigel",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2767_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_12_STAGE53",
+    "url": "https://www.skilift-gurnigelbad.ch/",
+    "organisation": "Gurnigelbad",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__gantrisch_gurnigel",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2769_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__gantrisch_gurnigel",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2769_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_13_STAGE53",
+    "url": "https://www.valdanniviers.ch/fr/grimentz-zinal-1468.html",
+    "organisation": "Grimentz-Zinal",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_18_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_18_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_14_STAGE53",
+    "url": "https://bergbahnen-gstaad.ch/fr/hiver",
+    "organisation": "Bergbahnen Gstaad",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__gstaad",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_4447_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__gstaad",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_4447_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_15_STAGE53",
+    "url": "https://www.buchholterberg.ch/de/Tourismus/Skilift",
+    "organisation": "Heimenschwand",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__heimenschwand_buchholterberg",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1795_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__heimenschwand_buchholterberg",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1795_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_16_STAGE53",
+    "url": "https://skilift-homberg.ch/",
+    "organisation": "Homberg",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_3589_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_3589_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_17_STAGE53",
+    "url": "https://fr.jaun-bergbahnen.ch/",
+    "organisation": "Jaun",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__jaun_gastlosen",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_19_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__jaun_gastlosen",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_19_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_18_STAGE53",
+    "url": "https://www.kiental-sesselbahn.ch/?fbclid=IwAR1XIjs_HStZ0jbSZhln-Of463k6iKViT_1CFBl4fH4DkrbNINkoXtk37G4",
+    "organisation": "Kiental",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__kiental",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2770_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__kiental",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2770_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_19_STAGE53",
+    "url": "https://www.jurasurleman.com/",
+    "organisation": "Jura-sur-Léman (Transfrontalier)",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__la_dole_jura_sur_leman",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_3608_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__la_dole_jura_sur_leman",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_3608_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_20_STAGE53",
+    "url": "https://www.valdherens.ch/fr/live",
+    "organisation": "La Forclaz",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__la_forclaz",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_117_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__la_forclaz",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_117_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_21_STAGE53",
+    "url": "https://www.robella.ch/fr/",
+    "organisation": "Robella Val-de-Travers",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__la_robella",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_937_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__la_robella",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_937_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_22_STAGE53",
+    "url": "https://www.telemarecottes.ch/",
+    "organisation": "Les Marécottes",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__les_marecottes",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_23_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__les_marecottes",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_23_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_23_STAGE53",
+    "url": "http://www.station-les-paccots.ch/",
+    "organisation": "Les Paccots",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__les_paccots_chatel_saint_denis",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_25_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__les_paccots_chatel_saint_denis",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_25_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_24_STAGE53",
+    "url": "https://www.lespleiades.ch/index.php",
+    "organisation": "Les Pléiades",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__les_pleiades",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_89_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__les_pleiades",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_89_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_25_STAGE53",
+    "url": "https://leukerbad.ch/fr/torrent#horaires-contact",
+    "organisation": "Leukerbad",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__leukerbad",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_602_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__leukerbad",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_602_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_26_STAGE53",
+    "url": "https://www.tlml.ch/",
+    "organisation": "Les Mosses-La Lécherette",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__leysin_les_mosses_la_lecherette",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_24_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__leysin_les_mosses_la_lecherette",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_24_STAGE49"
+      },
+      {
+        "station_group_id": "MP_GROUP_RESORT__leysin_les_mosses_la_lecherette",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_26_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_27_STAGE53",
+    "url": "https://www.marbachegg.ch/de",
+    "organisation": "Marbachegg",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__marchbachegg_marbach_marbachegg",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2773_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__marchbachegg_marbach_marbachegg",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2773_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_28_STAGE53",
+    "url": "https://frutt.ch",
+    "organisation": "Melchsee-Frutt",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__melchsee_frutt",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_4452_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__melchsee_frutt",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_4452_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_29_STAGE53",
+    "url": "https://www.moleson.ch/",
+    "organisation": "Moléson",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__moleson_la_gruyere",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_28_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__moleson_la_gruyere",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_28_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_30_STAGE53",
+    "url": "https://naxmontnoble.ch/",
+    "organisation": "Nax - Mt-Noble",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__mont_noble_nax",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_29_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__mont_noble_nax",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_29_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_31_STAGE53",
+    "url": "https://www.moosalpregion.ch/fr/",
+    "organisation": "Moosalp",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__moosalpregion",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2774_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__moosalpregion",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2774_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_32_STAGE53",
+    "url": "https://www.moerlialp.ch/",
+    "organisation": "Mörlialp Giswil",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__morlialp",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_4453_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__morlialp",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_4453_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_33_STAGE53",
+    "url": "https://www.skilift-ottenleue.ch/",
+    "organisation": "Ottenleue",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__ottenleuebad",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2775_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__ottenleuebad",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2775_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_34_STAGE53",
+    "url": "https://www.ovronnaz.ch/",
+    "organisation": "Ovronnaz",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__ovronnaz",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_30_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__ovronnaz",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_30_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_35_STAGE53",
+    "url": "https://presdorvin-ski.ch/",
+    "organisation": "Prés-d'Orvin",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_601_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_601_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_36_STAGE53",
+    "url": "https://www.rathvel.ch/hiver/index",
+    "organisation": "Rathvel",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__rathvel",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_31_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__rathvel",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_31_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_37_STAGE53",
+    "url": "https://skilift-riffenmatt.ch/",
+    "organisation": "Riffenmatt",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__riffenmatt",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2776_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__riffenmatt",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2776_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_38_STAGE53",
+    "url": "http://www.sid-montreux.org",
+    "organisation": "Les Rochers - de - Naye",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_90_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_90_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_39_STAGE53",
+    "url": "https://www.rossbergoberwil.ch/",
+    "organisation": "Rossberg",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__rossberg_oberwil",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1801_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__rossberg_oberwil",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1801_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_40_STAGE53",
+    "url": "https://www.rosswald-bahnen.ch/fr/",
+    "organisation": "Rosswald",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__rosswald",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1803_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__rosswald",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_1803_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_41_STAGE53",
+    "url": "https://www.rueschegg-ski.ch/",
+    "organisation": "Rüschegg",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__ruschegg_eywald",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2777_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__ruschegg_eywald",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2777_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "SKI_VAUD_OPERATOR_LINK_STAGE47",
+    "url": "https://www.ski-vaud.ch/web/",
+    "organisation": "Ste-Croix/Les Rasses",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__sainte_croix_les_rasses",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__sainte_croix_les_rasses",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_43_STAGE53",
+    "url": "https://www.ski-schwanden-sigriswil.ch/skilifte/skilift-schwanden/",
+    "organisation": "Schwanden",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__schwanden_sigriswil_thunersee",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_3587_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__schwanden_sigriswil_thunersee",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_3587_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_44_STAGE53",
+    "url": "https://schneeselital.ch/flat/",
+    "organisation": "Selital",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__schwarzenbuhl_selital",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2778_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__schwarzenbuhl_selital",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2778_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_45_STAGE53",
+    "url": "https://www.kaisereggbahnen-schwarzsee.ch/home/",
+    "organisation": "Schwarzsee",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_32_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_32_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_46_STAGE53",
+    "url": "https://www.soerenberg.ch/de/",
+    "organisation": "Sörenberg",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__sorenberg",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_4455_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__sorenberg",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_4455_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_47_STAGE53",
+    "url": "https://www.st-cergue.ch/activites/33511",
+    "organisation": "Saint-Cergue",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__st_cergue",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_3611_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__st_cergue",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_3611_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_48_STAGE53",
+    "url": "https://www.valdanniviers.ch/fr/infos-live-122.html?station=slc&group=ANLAGE",
+    "organisation": "St-Luc / Chandolin",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__st_luc_chandolin",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_33_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__st_luc_chandolin",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_33_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_49_STAGE53",
+    "url": "https://www.staldenried-gspon.ch/skilifte",
+    "organisation": "Gspon",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__staldenried_gspon",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2768_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__staldenried_gspon",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2768_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_50_STAGE53",
+    "url": "https://www.teleski-tramelan.ch/",
+    "organisation": "Tramelan",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__tramelan",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_34_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__tramelan",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_34_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_51_STAGE53",
+    "url": "https://unterbaech.ch/fr/",
+    "organisation": "Unterbäch",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__unterbach_brandalp",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2779_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__unterbach_brandalp",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2779_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "MYVALLEE_JOUX_ALPINE_SCOPE_STAGE47",
+    "url": "https://www.myvalleedejoux.ch/fr/Z10411/ski-alpin",
+    "organisation": "Vallée de Joux",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__vallee_de_joux",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_VALLEE_JOUX_2026_10_09",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__vallee_de_joux",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_VALLEE_JOUX_2026_10_09"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_53_STAGE53",
+    "url": "https://www.vercorin.ch/",
+    "organisation": "Vercorin",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__vercorin",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_35_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__vercorin",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_35_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_54_STAGE53",
+    "url": "https://www.tvgd.ch/",
+    "organisation": "Les Diablerets",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_22_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_22_STAGE49"
+      },
+      {
+        "station_group_id": "MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_37_STAGE49"
+      }
+    ]
+  },
+  {
+    "source_id": "OPERATOR_REMAINING_55_STAGE53",
+    "url": "https://www.heidadorf.ch/",
+    "organisation": "Visperterminen",
+    "suffix": "html",
+    "station_group_id": "MP_GROUP_RESORT__visperterminen",
+    "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2780_STAGE49",
+    "official_group_links": [
+      {
+        "station_group_id": "MP_GROUP_RESORT__visperterminen",
+        "parent_source_id": "MAGIC_PISTE_SCOPE_DEST_2780_STAGE49"
+      }
+    ]
+  }
+]
