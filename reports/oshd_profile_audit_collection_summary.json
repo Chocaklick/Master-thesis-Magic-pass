@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-09",
+  "input_sha256": {
+    "config/winter_profile_aggregation_decisions_stage45.json": "72c2097ebee637c49999fea8e03da5ecd8ea4ccda939f942318f26d2258b16cd",
+    "data_external/source_evidence/SLF_OSHD_RECORD_PUBLIC_HTML_2026_10_09_20261009T163957Z.html": "efa155a7a385816b4a1679b497c8c8f83c44c7da8e652eefcadc40c52da2d45e",
+    "data_external/source_evidence/SLF_OSHD_PAPER_TERMS_HTML_2026_10_09_20261009T163917Z.html": "9e3fff63f6e0dc2559d049321b13f1198c9d45a8bc241047b1ad1cdc4d6ced44",
+    "data_external/source_evidence/zenodo.org_robots_20261009T163957Z.txt": "56e9fc51dcc0170c0cea188ef1f8d8906e1123f5a061a68d17d3067b781b04da"
+  },
+  "record_id": "17313889",
+  "dataset_license": "cc-by-4.0",
+  "record_copyright": "Copyright (C) 2026 The Authors.",
+  "general_record_api_request_made": false,
+  "files": [
+    {
+      "water_year": 2024,
+      "key": "OSHD_DATA_WY2024.zip",
+      "url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2024.zip",
+      "expected_bytes": 645601691,
+      "expected_md5": "b342170d29005b81bc51a59cbdb3c95c",
+      "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+      "status": "failed",
+      "retrieval_date": "2026-10-09T16:55:03.664635+00:00",
+      "partial_file": "data_interim/oshd_profile_downloads/OSHD_DATA_WY2024.zip.part",
+      "downloaded_bytes": 216006656,
+      "http_status": 504,
+      "etag": "",
+      "final_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2024.zip",
+      "error": "HTTPError: HTTP Error 504: Gateway Time-out",
+      "resume_allowed": true
+    },
+    {
+      "water_year": 2025,
+      "key": "OSHD_DATA_WY2025.zip",
+      "url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2025.zip",
+      "expected_bytes": 579028796,
+      "expected_md5": "cb1cd3fc7d803a7f6b9153da3b84da0d",
+      "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
+      "status": "failed",
+      "retrieval_date": "2026-10-09T16:51:21.126236+00:00",
+      "partial_file": "data_interim/oshd_profile_downloads/OSHD_DATA_WY2025.zip.part",
+      "downloaded_bytes": 0,
+      "error": "HTTPError: HTTP Error 504: Gateway Time-out",
+      "resume_allowed": true,
+      "http_status": 504
+    },
+    {
+      "water_year": 2023,
+      "key": "OSHD_DATA_WY2023.zip",
+      "url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2023.zip",
+      "expected_bytes": 569361906,
+      "expected_md5": "50811ac104e15da4a15695ffe2b1f13e",
+      "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
+      "status": "failed",
+      "retrieval_date": "2026-10-09T16:51:51.669798+00:00",
+      "partial_file": "data_interim/oshd_profile_downloads/OSHD_DATA_WY2023.zip.part",
+      "downloaded_bytes": 0,
+      "error": "HTTPError: HTTP Error 504: Gateway Time-out",
+      "resume_allowed": true,
+      "http_status": 504
+    }
+  ],
+  "snow_extracted": false,
+  "source_spliced": false,
+  "group_piste_assignment_applied": false,
+  "features_computed": false,
+  "complete_file_count": 0
+}

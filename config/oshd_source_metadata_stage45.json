@@ -1,0 +1,20 @@
+[
+  {
+    "source_id": "SLF_OSHD_RECORD_PUBLIC_HTML_2026_10_09",
+    "organisation": "WSL SLF / Zenodo",
+    "url": "https://zenodo.org/records/17313889",
+    "suffix": "html"
+  },
+  {
+    "source_id": "SLF_OSHD_RECORD_API_METADATA_2026_10_09",
+    "organisation": "WSL SLF / Zenodo",
+    "url": "https://zenodo.org/api/records/17313889",
+    "suffix": "json"
+  },
+  {
+    "source_id": "SLF_OSHD_PAPER_TERMS_HTML_2026_10_09",
+    "organisation": "WSL SLF / The Cryosphere",
+    "url": "https://tc.copernicus.org/articles/20/3387/2026/",
+    "suffix": "html"
+  }
+]

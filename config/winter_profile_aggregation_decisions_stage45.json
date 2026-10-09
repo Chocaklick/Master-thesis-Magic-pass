@@ -1,0 +1,20 @@
+{
+  "version": "stage45_researcher_decisions_2026_10_09",
+  "source_audit_parent": "reports/terrain_snow_source_feasibility_summary.json",
+  "oshd_candidate_audit_and_useful_collection_approved": true,
+  "snow_reply": "Oui : auditer et comparer avant de décider du raccordement (recommandé).",
+  "snow_splicing_or_calibration_approved": false,
+  "five_own_preentry_winters_unchanged": true,
+  "unique_verified_piste_length_weighting_approved": true,
+  "terrain_not_travel_bearing_aspect_approved": true,
+  "snow_daily_observed_mean_per_winter_then_equal_five_winter_mean_approved": true,
+  "fully_absent_winter_leaves_five_winter_mean_missing": true,
+  "coverage_must_be_published": true,
+  "aggregation_reply": "Oui : pondération par longueur et cinq hivers de poids égal (recommandé).",
+  "automatic_coverage_threshold_or_exclusion_approved": false,
+  "terrain_resolution_flat_aspect_and_polygon_handling_defined": false,
+  "group_piste_assignment_verified": false,
+  "clustering_or_effect_estimation_approved": false,
+  "collection_first_batch_water_years": [2023, 2024, 2025],
+  "first_batch_reason": "WY2024/2025 potentially cover23 absent SPASS group winters; WY2023 is the latest exact overlap winter already extracted for15 earlier SPASS comparison components. Collection first, no unapproved spatial comparison or final station profiles."
+}
