@@ -1,0 +1,981 @@
+{
+  "date": "2026-10-09",
+  "input_sha256": {
+    "config/piste_operator_evidence_stage47.json": "ac0fd641fad38c4417986b6b75ca90401bc9383e881c233fc7113e2945641328",
+    "src/descriptive/register_piste_operator_evidence_stage47.py": "e1a12fa5c47a21efba54edef669258869e12b8304997ea28cb213e015b7391ed",
+    "src/descriptive/register_piste_scope_case_evidence.py": "000368305e199774fbd461d3c3e3f00b051243395793afdd3fcb5ed979189189",
+    "data_external/source_evidence/SKI_VAUD_OPERATOR_LINK_STAGE47_20261009T180944Z.html": "7edac17698fcb195f651cec8ca03a3b41c2b1c0fd605f07632bf3484ac1dfd7f",
+    "data_external/source_evidence/MYVALLEE_JOUX_ALPINE_SCOPE_STAGE47_20261009T180956Z.html": "4a980204e8f9ed01b7b28652d4f0d7e2c303a605ff1596dd945ec06bfaf88d6d",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_RESOLUTION_STAGE47_20261009T180957Z.html": "b50ade575e9defe985f975a28dec320e30692ac3279849547518db5dd0faddba"
+  },
+  "cases": [
+    {
+      "source_id": "SKI_VAUD_OPERATOR_LINK_STAGE47",
+      "station_group_id": "MP_GROUP_RESORT__sainte_croix_les_rasses",
+      "source_url": "https://www.ski-vaud.ch/web/",
+      "raw_file": "data_external/source_evidence/SKI_VAUD_OPERATOR_LINK_STAGE47_20261009T180944Z.html",
+      "required_visible_markers": [
+        "Ste-Croix / Les Rasses",
+        "2025/2026"
+      ],
+      "current_scope_note": "Current operator/association navigation only; not an accepted piste geometry or historical footprint",
+      "navigation_links": [
+        {
+          "url": "https://www.ski-vaud.ch/web/",
+          "label": "Accueil",
+          "original_href": "/web/"
+        },
+        {
+          "url": "https://www.ski-vaud.ch",
+          "label": "Ski",
+          "original_href": "https://www.ski-vaud.ch"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/les-pistes",
+          "label": "Les Pistes",
+          "original_href": "/web/ski/les-pistes"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/webcams",
+          "label": "Webcams",
+          "original_href": "/web/ski/webcams"
+        },
+        {
+          "url": "https://snow.myswitzerland.com/bulletin_enneigement/RegionduLeman/SteCroixLesRasses-146",
+          "label": "Info Neige",
+          "original_href": "https://snow.myswitzerland.com/bulletin_enneigement/RegionduLeman/SteCroixLesRasses-146"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/tarifs",
+          "label": "Tarifs",
+          "original_href": "/web/ski/tarifs"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/location-materiel",
+          "label": "Location Matériel",
+          "original_href": "/web/ski/location-materiel"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/cours-de-ski",
+          "label": "Cours de Ski",
+          "original_href": "/web/ski/cours-de-ski"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/teleskis-debutants",
+          "label": "Zone Débutants",
+          "original_href": "/web/ski/teleskis-debutants"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/evenements",
+          "label": "Évènements",
+          "original_href": "/web/ski/evenements"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/historique",
+          "label": "Historique",
+          "original_href": "/web/ski/historique"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/securite",
+          "label": "Sécurité",
+          "original_href": "/web/ski/securite"
+        },
+        {
+          "url": "https://www.ski-vaud.ch",
+          "label": "La région",
+          "original_href": "https://www.ski-vaud.ch"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/laregion/hiver",
+          "label": "Hiver",
+          "original_href": "/web/laregion/hiver"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/laregion/ete",
+          "label": "Été",
+          "original_href": "/web/laregion/ete"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/hebergements",
+          "label": "Hébergements",
+          "original_href": "/web/hebergements"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/restaurants",
+          "label": "Restaurants",
+          "original_href": "/web/restaurants"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/restaurants/sur-les-pistes",
+          "label": "Sur les Pistes",
+          "original_href": "/web/restaurants/sur-les-pistes"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/restaurants/dans-la-region",
+          "label": "De la Région",
+          "original_href": "/web/restaurants/dans-la-region"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/photos",
+          "label": "Photos",
+          "original_href": "/web/photos"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/acces",
+          "label": "Accès",
+          "original_href": "/web/acces"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/contacts",
+          "label": "Contacts",
+          "original_href": "/web/contacts"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/#hidden_modal_data",
+          "label": "",
+          "original_href": "#hidden_modal_data"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/evenements",
+          "label": "",
+          "original_href": "ski/evenements"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/les-pistes",
+          "label": "",
+          "original_href": "ski/les-pistes"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/ski/webcams",
+          "label": "",
+          "original_href": "ski/webcams"
+        },
+        {
+          "url": "https://snow.myswitzerland.com/bulletin_enneigement/RegionduLeman/SteCroixLesRasses-146",
+          "label": "",
+          "original_href": "https://snow.myswitzerland.com/bulletin_enneigement/RegionduLeman/SteCroixLesRasses-146"
+        },
+        {
+          "url": "https://www.slf.ch/fr/index.html",
+          "label": "",
+          "original_href": "https://www.slf.ch/fr/index.html"
+        },
+        {
+          "url": "http://www.facebook.com/remonteesmecaniques.saintecroixlesrasses",
+          "label": "",
+          "original_href": "http://www.facebook.com/remonteesmecaniques.saintecroixlesrasses"
+        },
+        {
+          "url": "https://www.instagram.com/rm_saintecroixlesrasses/",
+          "label": "",
+          "original_href": "https://www.instagram.com/rm_saintecroixlesrasses/"
+        },
+        {
+          "url": "https://www.ski-vaud.ch/web/contacts",
+          "label": "",
+          "original_href": "contacts"
+        }
+      ],
+      "historical_scope_certified": false,
+      "gis_assignment_accepted": false
+    },
+    {
+      "source_id": "MYVALLEE_JOUX_ALPINE_SCOPE_STAGE47",
+      "station_group_id": "MP_GROUP_RESORT__vallee_de_joux",
+      "source_url": "https://www.myvalleedejoux.ch/fr/Z10411/ski-alpin",
+      "raw_file": "data_external/source_evidence/MYVALLEE_JOUX_ALPINE_SCOPE_STAGE47_20261009T180956Z.html",
+      "required_visible_markers": [
+        "trois stations",
+        "Mollards",
+        "Esserts",
+        "Abbaye"
+      ],
+      "current_scope_note": "Current regional alpine scope; preserve the existing three-component group, no automatic Vaulion addition",
+      "navigation_links": [
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/",
+          "label": "",
+          "original_href": "/fr/"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Hébergements",
+          "original_href": ""
+        },
+        {
+          "url": "https://shop.myvalleedejoux.ch/ValleeJoux/",
+          "label": "Réservation en ligne",
+          "original_href": "https://shop.myvalleedejoux.ch/ValleeJoux/"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14917/carte-d-hote-valpass",
+          "label": "Carte d'hôte ValPass",
+          "original_href": "/fr/Z14917/carte-d-hote-valpass"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G339/hotels",
+          "label": "Hôtels",
+          "original_href": "/fr/G339/hotels"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14836/chalets-appartements-de-vacances",
+          "label": "Chalets & Appartements de vacances",
+          "original_href": "/fr/Z14836/chalets-appartements-de-vacances"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z36517/chambres-d-hotes",
+          "label": "Chambres d'hôtes",
+          "original_href": "/fr/Z36517/chambres-d-hotes"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14908/camping",
+          "label": "Camping",
+          "original_href": "/fr/Z14908/camping"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G86/hebergements-en-pleine-nature",
+          "label": "Hébergements en pleine nature",
+          "original_href": "/fr/G86/hebergements-en-pleine-nature"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1547/cabanes-de-montagne",
+          "label": "Cabanes de montagne",
+          "original_href": "/fr/G1547/cabanes-de-montagne"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1544/hebergements-de-groupes",
+          "label": "Hébergements de groupes",
+          "original_href": "/fr/G1544/hebergements-de-groupes"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z35758/tourisme-equestre-boxes-de-vacances",
+          "label": "Tourisme équestre - Boxes de vacances",
+          "original_href": "/fr/Z35758/tourisme-equestre-boxes-de-vacances"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Salles & Refuges à louer",
+          "original_href": ""
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1546/salles-et-refuges-a-louer",
+          "label": "Salles et refuges à louer",
+          "original_href": "/fr/G1546/salles-et-refuges-a-louer"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G3277/salles-de-seminaires",
+          "label": "Salles de séminaires",
+          "original_href": "/fr/G3277/salles-de-seminaires"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "À voir & à faire",
+          "original_href": ""
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Environnement naturel",
+          "original_href": ""
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14827/lacs-de-la-vallee-de-joux",
+          "label": "Lacs",
+          "original_href": "/fr/Z14827/lacs-de-la-vallee-de-joux"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G670/sommets-sites-naturels",
+          "label": "Sommets & Sites naturels",
+          "original_href": "/fr/G670/sommets-sites-naturels"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G3068/foret-du-risoud",
+          "label": "Forêt du Risoud",
+          "original_href": "/fr/G3068/foret-du-risoud"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14843/sensibilisation-bonnes-pratiques",
+          "label": "Sensibilisation & Bonnes pratiques",
+          "original_href": "/fr/Z14843/sensibilisation-bonnes-pratiques"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14838/parc-naturel-regional-jura-vaudois",
+          "label": "Parc naturel régional Jura vaudois",
+          "original_href": "/fr/Z14838/parc-naturel-regional-jura-vaudois"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Sports & Loisirs",
+          "original_href": ""
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Randonnées pédestres",
+          "original_href": ""
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14783/itineraires-de-randonnee",
+          "label": "Itinéraires de randonnée",
+          "original_href": "/fr/Z14783/itineraires-de-randonnee"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1552/sentiers-didactiques",
+          "label": "Sentiers didactiques",
+          "original_href": "/fr/G1552/sentiers-didactiques"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G317/randonnees-accompagnees",
+          "label": "Randonnées accompagnées",
+          "original_href": "/fr/G317/randonnees-accompagnees"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14954/velo-vtt-gravel",
+          "label": "Vélo, VTT & Gravel",
+          "original_href": "/fr/Z14954/velo-vtt-gravel"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14953/plages-activites-nautiques",
+          "label": "Plages & Activités nautiques",
+          "original_href": "/fr/Z14953/plages-activites-nautiques"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P4538/centre-sportif-vallee-de-joux",
+          "label": "Centre Sportif Vallée de Joux",
+          "original_href": "/fr/P4538/centre-sportif-vallee-de-joux"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z35758/tourisme-equestre-boxes-de-vacances",
+          "label": "Randonnées équestres",
+          "original_href": "/fr/Z35758/tourisme-equestre-boxes-de-vacances"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1534/autres-sports",
+          "label": "Autres sports",
+          "original_href": "/fr/G1534/autres-sports"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G3855/wellness-spa",
+          "label": "Wellness & Spa",
+          "original_href": "/fr/G3855/wellness-spa"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P20230/observatoire-astronomique-astroval",
+          "label": "Observatoire astronomique AstroVal",
+          "original_href": "/fr/P20230/observatoire-astronomique-astroval"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P533/grottes-de-vallorbe",
+          "label": "Grottes de Vallorbe",
+          "original_href": "/fr/P533/grottes-de-vallorbe"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P527/juraparc",
+          "label": "Parc animalier Juraparc",
+          "original_href": "/fr/P527/juraparc"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1533/activites-ludiques",
+          "label": "Activités ludiques",
+          "original_href": "/fr/G1533/activites-ludiques"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1549/transports-touristiques",
+          "label": "Transports touristiques",
+          "original_href": "/fr/G1549/transports-touristiques"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P20216/cinema-la-bobine",
+          "label": "Cinéma",
+          "original_href": "/fr/P20216/cinema-la-bobine"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G4769/places-de-jeux",
+          "label": "Places de jeux",
+          "original_href": "/fr/G4769/places-de-jeux"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Activités hivernales",
+          "original_href": ""
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14759/info-neige-etat-des-pistes",
+          "label": "Info-neige & État des pistes",
+          "original_href": "/fr/Z14759/info-neige-etat-des-pistes"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14971/lacs-geles",
+          "label": "Lacs gelés",
+          "original_href": "/fr/Z14971/lacs-geles"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14914/ski-de-fond",
+          "label": "Ski de fond",
+          "original_href": "/fr/Z14914/ski-de-fond"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Ski alpin",
+          "original_href": "/fr/Z14955/ski-alpin"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1563/ecoles-de-ski",
+          "label": "Écoles de ski",
+          "original_href": "/fr/G1563/ecoles-de-ski"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14959/raquettes-a-neige",
+          "label": "Raquettes à neige",
+          "original_href": "/fr/Z14959/raquettes-a-neige"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14969/randonnees-hivernales",
+          "label": "Randonnées hivernales",
+          "original_href": "/fr/Z14969/randonnees-hivernales"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14970/pistes-de-luge",
+          "label": "Pistes de luge",
+          "original_href": "/fr/Z14970/pistes-de-luge"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1537/location-de-materiel",
+          "label": "Location de matériel",
+          "original_href": "/fr/G1537/location-de-materiel"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Visites culturelles & Patrimoine",
+          "original_href": ""
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14974/horlogerie",
+          "label": "Horlogerie & Bijouterie",
+          "original_href": "/fr/Z14974/horlogerie"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1551/musees-et-expositions",
+          "label": "Musées & Expositions",
+          "original_href": "/fr/G1551/musees-et-expositions"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G4806/experiences-culturelles-guidees",
+          "label": "Expériences guidées",
+          "original_href": "/fr/G4806/experiences-culturelles-guidees"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1564/patrimoine-bati",
+          "label": "Patrimoine bâti",
+          "original_href": "/fr/G1564/patrimoine-bati"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P22415/jardin-du-temps",
+          "label": "Jardin didactique",
+          "original_href": "/fr/P22415/jardin-du-temps"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P201302/la-grange-aux-livres",
+          "label": "Grange aux livres",
+          "original_href": "/fr/P201302/la-grange-aux-livres"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P223485/un-banc-une-histoire",
+          "label": "Bancs artistiques",
+          "original_href": "/fr/P223485/un-banc-une-histoire"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Restauration",
+          "original_href": ""
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G671/restaurants",
+          "label": "Restaurants",
+          "original_href": "/fr/G671/restaurants"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Buvettes d'alpage",
+          "original_href": ""
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1530/buvettes-d-alpage-ouvertes-en-ete",
+          "label": "En été",
+          "original_href": "/fr/G1530/buvettes-d-alpage-ouvertes-en-ete"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1529/buvettes-hivernales",
+          "label": "En hiver",
+          "original_href": "/fr/G1529/buvettes-hivernales"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1543/tea-rooms",
+          "label": "Tea-rooms",
+          "original_href": "/fr/G1543/tea-rooms"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1559/bars-vie-nocturne",
+          "label": "Bars & Vie nocturne",
+          "original_href": "/fr/G1559/bars-vie-nocturne"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G75/food-trucks-take-away",
+          "label": "Food trucks & Take-away",
+          "original_href": "/fr/G75/food-trucks-take-away"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Produits du terroir",
+          "original_href": ""
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z38631/le-vacherin-mont-d-or-aop",
+          "label": "Le Vacherin Mont-d'Or AOP",
+          "original_href": "/fr/Z38631/le-vacherin-mont-d-or-aop"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1541/fromageries",
+          "label": "Fromageries",
+          "original_href": "/fr/G1541/fromageries"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1566/chalets-d-alpage",
+          "label": "Ventes à l'alpage",
+          "original_href": "/fr/G1566/chalets-d-alpage"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G3136/points-de-vente-self-service",
+          "label": "Points de vente en self-service",
+          "original_href": "/fr/G3136/points-de-vente-self-service"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1540/distilleries",
+          "label": "Brasseries & Distilleries",
+          "original_href": "/fr/G1540/distilleries"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1539/poissons-du-lac",
+          "label": "Poissons du lac",
+          "original_href": "/fr/G1539/poissons-du-lac"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G1542/commerces-de-proximite",
+          "label": "Commerces de proximité",
+          "original_href": "/fr/G1542/commerces-de-proximite"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G4790/experiences-guidees-a-la-decouverte-des-produits-du-terroir",
+          "label": "Expériences guidées",
+          "original_href": "/fr/G4790/experiences-guidees-a-la-decouverte-des-produits-du-terroir"
+        },
+        {
+          "url": "https://www.lacote-tourisme.ch/Z38926/",
+          "label": "Destination Terroir - Ouest vaudois",
+          "original_href": "https://www.lacote-tourisme.ch/Z38926/"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/G4770/ateliers-d-initiation",
+          "label": "Ateliers d'initiation",
+          "original_href": "/fr/G4770/ateliers-d-initiation"
+        },
+        {
+          "url": "https://www.valleedejoux.ch/entreprises-commerces/",
+          "label": "Commerces & entreprises",
+          "original_href": "https://www.valleedejoux.ch/entreprises-commerces/"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Événements",
+          "original_href": ""
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14737/agenda-des-evenements",
+          "label": "Agenda des événements",
+          "original_href": "/fr/Z14737/agenda-des-evenements"
+        },
+        {
+          "url": "https://monbillet.ch/valleedejoux",
+          "label": "Billetterie (monbillet.ch)",
+          "original_href": "https://monbillet.ch/valleedejoux"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Info live & pratiques",
+          "original_href": ""
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14758/webcams",
+          "label": "Webcams",
+          "original_href": "/fr/Z14758/webcams"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z15007/temperature-du-lac",
+          "label": "Température du lac",
+          "original_href": "/fr/Z15007/temperature-du-lac"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z36352/transports-acces",
+          "label": "Transports & Accès",
+          "original_href": "/fr/Z36352/transports-acces"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z15027/infos-officielles",
+          "label": "Infos officielles",
+          "original_href": "/fr/Z15027/infos-officielles"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin",
+          "label": "Brochures & Cartes",
+          "original_href": ""
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14761/brochures-cartes",
+          "label": "Consultation en ligne",
+          "original_href": "/fr/Z14761/brochures-cartes"
+        },
+        {
+          "url": "https://shop.myvalleedejoux.ch/ValleeJoux/artikel/search?globalReset=1",
+          "label": "Boutique en ligne",
+          "original_href": "https://shop.myvalleedejoux.ch/ValleeJoux/artikel/search?globalReset=1"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14769/reservation-en-ligne",
+          "label": "Réservation en ligne",
+          "original_href": "/fr/Z14769/reservation-en-ligne"
+        },
+        {
+          "url": "https://shop.myvalleedejoux.ch/ValleeJoux/artikel/search?globalReset=1&lang=fr",
+          "label": "Boutique en ligne",
+          "original_href": "https://shop.myvalleedejoux.ch/ValleeJoux/artikel/search?globalReset=1&lang=fr"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955",
+          "label": "Français",
+          "original_href": "/fr/Z14955"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/de/Z14955",
+          "label": "Deutsch",
+          "original_href": "/de/Z14955"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/en/Z14955",
+          "label": "English",
+          "original_href": "/en/Z14955"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14625/politique-de-confidentialite",
+          "label": "En savoir plus",
+          "original_href": "/fr/Z14625/politique-de-confidentialite"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/",
+          "label": "Accueil",
+          "original_href": "/fr/"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/Z14759",
+          "label": "Consulter l'info-neige & l'état des pistes",
+          "original_href": "https://www.myvalleedejoux.ch/Z14759"
+        },
+        {
+          "url": "https://static.mycity.travel/manage/uploads/6/26/615143/2/tarifs-teleskis-vallee-de-joux.pdf",
+          "label": "Télécharger les tarifs 2025/2026",
+          "original_href": "https://static.mycity.travel/manage/uploads/6/26/615143/2/tarifs-teleskis-vallee-de-joux.pdf"
+        },
+        {
+          "url": "https://static.mycity.travel/manage/uploads/6/26/452439/1/plan-des-pistes-de-ski-alpin.pdf",
+          "label": "Télécharger le plan des pistes",
+          "original_href": "https://static.mycity.travel/manage/uploads/6/26/452439/1/plan-des-pistes-de-ski-alpin.pdf"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z30313/magic-pass",
+          "label": "En savoir plus",
+          "original_href": "https://www.myvalleedejoux.ch/fr/Z30313/magic-pass"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P76032/teleskis-du-lac-de-joux-l-abbaye",
+          "label": "Activités hivernales Téléskis du Lac de Joux, L'Abbaye - 1010m à 1437m - 4 téléskis, dont 1 pour débutants (4 assiettes, dont 1 à enrouleur) - 1 buvette et 1 salle de pique nique \"le Tremplin\" - 1 parking gratuit - Enneigement mécanique sur le bas des pistes - Ecole de Ski (ESS) - Ski à l'heure et MAGIC PASS",
+          "original_href": "/fr/P76032/teleskis-du-lac-de-joux-l-abbaye"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P76315/teleskis-des-mollards-le-brassus",
+          "label": "Activités hivernales Téléskis des Mollards, Le Brassus - 1060m à 1361m - 2 téléskis (assiette à enrouleur et arbalète) - 1 buvette - 2 parkings gratuits - Ecole de Ski (ESS) - Ski à l'heure et MAGIC PASS",
+          "original_href": "/fr/P76315/teleskis-des-mollards-le-brassus"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P76316/teleski-des-esserts-l-orient",
+          "label": "Activités hivernales Téléski des Esserts, L'Orient - 1013m à 1285m - 1 téléski (assiette à enrouleur) - 1 Snowpark - Railpark - 1 Piste éclairée pour le ski nocturne - 1 buvette - 1 parking gratuit - Enneigement mécanique sur le bas des pistes - Ski à l'heure et MAGIC PASS",
+          "original_href": "/fr/P76316/teleski-des-esserts-l-orient"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P4234/ski-nocturne-a-l-orient",
+          "label": "En savoir plus",
+          "original_href": "/fr/P4234/ski-nocturne-a-l-orient"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P26572/offre-ski-bains",
+          "label": "En savoir plus",
+          "original_href": "/fr/P26572/offre-ski-bains"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P22221/ecole-de-ski-vallee-de-joux-ess",
+          "label": "En savoir plus",
+          "original_href": "/fr/P22221/ecole-de-ski-vallee-de-joux-ess"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/P26820/ok-sports",
+          "label": "En savoir plus",
+          "original_href": "/fr/P26820/ok-sports"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14951/espace-membres",
+          "label": "Espace membres",
+          "original_href": "/fr/Z14951/espace-membres"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14950/qui-sommes-nous",
+          "label": "Qui sommes-nous ?",
+          "original_href": "/fr/Z14950/qui-sommes-nous"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14992/mentions-legales",
+          "label": "Mentions légales",
+          "original_href": "/fr/Z14992/mentions-legales"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14625/politique-de-confidentialite",
+          "label": "Politique de confidentialité",
+          "original_href": "/fr/Z14625/politique-de-confidentialite"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z15203/notice-sur-les-cookies",
+          "label": "Cookies",
+          "original_href": "/fr/Z15203/notice-sur-les-cookies"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin#collapseOffice",
+          "label": "Vallée de Joux Tourisme",
+          "original_href": "#collapseOffice"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14955/ski-alpin#collapseContact",
+          "label": "Contact",
+          "original_href": "#collapseContact"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/cdn-cgi/l/email-protection#c6e0e5f7f6f3fde0e5f7f7f6fde0e5f7f6f4fde0e5f7f7f7fde0e5f0f2fde0e5f7f6fffde0e5f7f4f7fde0e5f7f7fefde0e5fff1fde0e5f7f6fefde0e5f7f6fefde0e5f7f6f7fde0e5f7f6f7fde0e5f7f6f6fde0e5f7f6f7fde0e5f7f6f0fde0e5f7f7f7fde0e5f7f7f1fde0e5f7f4f6fde0e5f2f0fde0e5fffffde0e5f7f6f2fd",
+          "label": "info@myvalleedejoux.ch",
+          "original_href": "/cdn-cgi/l/email-protection#c6e0e5f7f6f3fde0e5f7f7f6fde0e5f7f6f4fde0e5f7f7f7fde0e5f0f2fde0e5f7f6fffde0e5f7f4f7fde0e5f7f7fefde0e5fff1fde0e5f7f6fefde0e5f7f6fefde0e5f7f6f7fde0e5f7f6f7fde0e5f7f6f6fde0e5f7f6f7fde0e5f7f6f0fde0e5f7f7f7fde0e5f7f7f1fde0e5f7f4f6fde0e5f2f0fde0e5fffffde0e5f7f6f2fd"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z31666/vallee-de-joux-tourisme",
+          "label": "Consulter nos horaires",
+          "original_href": "/fr/Z31666/vallee-de-joux-tourisme"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/cdn-cgi/l/email-protection#6442475554515f42475555545f42475554565f42475555555f424752505f424755545d5f42475556555f424755555c5f42475d535f424755545c5f424755545c5f42475554555f42475554555f42475554545f42475554555f42475554525f42475555555f42475555535f42475556545f424750525f42475d5d5f42475554505f",
+          "label": "info@myvalleedejoux.ch",
+          "original_href": "/cdn-cgi/l/email-protection#6442475554515f42475555545f42475554565f42475555555f424752505f424755545d5f42475556555f424755555c5f42475d535f424755545c5f424755545c5f42475554555f42475554555f42475554545f42475554555f42475554525f42475555555f42475555535f42475556545f424750525f42475d5d5f42475554505f"
+        },
+        {
+          "url": "https://facebook.com/valleedejouxtourisme",
+          "label": "",
+          "original_href": "https://facebook.com/valleedejouxtourisme"
+        },
+        {
+          "url": "https://instagram.com/valleedejoux",
+          "label": "",
+          "original_href": "https://instagram.com/valleedejoux"
+        },
+        {
+          "url": "https://linkedin.com/company/valleedejouxtourisme",
+          "label": "",
+          "original_href": "https://linkedin.com/company/valleedejouxtourisme"
+        },
+        {
+          "url": "https://youtube.com/@Valleedejouxtourisme",
+          "label": "",
+          "original_href": "https://youtube.com/@Valleedejouxtourisme"
+        },
+        {
+          "url": "https://www.myvalleedejoux.ch/fr/Z14649/newsletter",
+          "label": "Inscrivez-vous",
+          "original_href": "/fr/Z14649/newsletter"
+        },
+        {
+          "url": "http://www.valleedejoux.ch/",
+          "label": "",
+          "original_href": "http://www.valleedejoux.ch/"
+        },
+        {
+          "url": "http://www.parcjuravaudois.ch/",
+          "label": "",
+          "original_href": "http://www.parcjuravaudois.ch/"
+        },
+        {
+          "url": "http://www.myvaud.ch/",
+          "label": "",
+          "original_href": "http://www.myvaud.ch/"
+        },
+        {
+          "url": "http://www.myswitzerland.com/",
+          "label": "",
+          "original_href": "http://www.myswitzerland.com/"
+        },
+        {
+          "url": "https://www.magicpass.ch/",
+          "label": "",
+          "original_href": "https://www.magicpass.ch/"
+        }
+      ],
+      "historical_scope_certified": false,
+      "gis_assignment_accepted": false
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_RESOLUTION_STAGE47",
+      "station_group_id": null,
+      "source_url": "https://www.swisstopo.admin.ch/en/height-model-swissalti3d",
+      "raw_file": "data_external/source_evidence/SWISSTOPO_ALTI3D_RESOLUTION_STAGE47_20261009T180957Z.html",
+      "required_visible_markers": [
+        "0.5 m",
+        "2 m",
+        "updated every six years",
+        "LV95 LN02"
+      ],
+      "current_scope_note": "Official resolution/product documentation only; no DEM tile or resolution selected pending researcher validation",
+      "navigation_links": [
+        {
+          "url": "https://www.swisstopo.admin.ch/en/height-model-swissalti3d#main-content",
+          "label": "Skip to main content",
+          "original_href": "#main-content"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en",
+          "label": "swisstopo Federal Office of Topography swisstopo",
+          "original_href": "/en"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/contactswisstopo",
+          "label": "Contact",
+          "original_href": "/en/contactswisstopo"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/geodata-and-applications",
+          "label": "Geodata and applications",
+          "original_href": "/en/geodata-and-applications"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices",
+          "label": "Terms of use",
+          "original_href": "/en/terms-of-use-free-geodata-and-geoservices"
+        },
+        {
+          "url": "https://cms.geo.admin.ch/Topo/swissalti3d/swissalti3dgeotifflv95.zip",
+          "label": "TIF + TFW",
+          "original_href": "https://cms.geo.admin.ch/Topo/swissalti3d/swissalti3dgeotifflv95.zip"
+        },
+        {
+          "url": "https://cms.geo.admin.ch/Topo/swissalti3d/swissalti3desriasciigridlv95.zip",
+          "label": "ESRI ASCII GRID",
+          "original_href": "https://cms.geo.admin.ch/Topo/swissalti3d/swissalti3desriasciigridlv95.zip"
+        },
+        {
+          "url": "https://cms.geo.admin.ch/Topo/swissalti3d/swissalti3dxyzlv95.zip",
+          "label": "XYZ",
+          "original_href": "https://cms.geo.admin.ch/Topo/swissalti3d/swissalti3dxyzlv95.zip"
+        },
+        {
+          "url": "https://map.geo.admin.ch/?lang=en&topic=swisstopo&bgLayer=ch.swisstopo.pixelkarte-grau&X=185466.05&Y=647539.98&zoom=1&layers=ch.swisstopo.swissalti3d-reliefschattierung",
+          "label": "swissALTI3D Hillshade",
+          "original_href": "https://map.geo.admin.ch/?lang=en&topic=swisstopo&bgLayer=ch.swisstopo.pixelkarte-grau&X=185466.05&Y=647539.98&zoom=1&layers=ch.swisstopo.swissalti3d-reliefschattierung"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/geodata-tutorials",
+          "label": "Geodata Tutorials",
+          "original_href": "https://www.swisstopo.admin.ch/en/geodata-tutorials"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/information-topographic-landscape-model",
+          "label": "The Topographic Landscape Model TLM",
+          "original_href": "/en/information-topographic-landscape-model"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/height-model-swissalti3d#The-high-precision-digital-elevation-model-of-Switzerland",
+          "label": "The high precision digital elevation model of Switzerland",
+          "original_href": "#The-high-precision-digital-elevation-model-of-Switzerland"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/height-model-swissalti3d#Additional-information",
+          "label": "Additional information",
+          "original_href": "#Additional-information"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/height-model-swissalti3d#swissALTI3D---Download",
+          "label": "swissALTI3D - Download",
+          "original_href": "#swissALTI3D---Download"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/height-model-swissalti3d#main-header",
+          "label": "",
+          "original_href": "#main-header"
+        },
+        {
+          "url": "https://www.facebook.com/swisstopo",
+          "label": "Facebook",
+          "original_href": "https://www.facebook.com/swisstopo"
+        },
+        {
+          "url": "https://www.instagram.com/swisstopo/",
+          "label": "Instagram",
+          "original_href": "https://www.instagram.com/swisstopo/"
+        },
+        {
+          "url": "https://www.linkedin.com/company/swisstopo",
+          "label": "Linkedin",
+          "original_href": "https://www.linkedin.com/company/swisstopo"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/subscribe-to-newsletter",
+          "label": "Newsletter",
+          "original_href": "https://www.swisstopo.admin.ch/en/subscribe-to-newsletter"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/job-vacancies",
+          "label": "Job vacancies",
+          "original_href": "/en/job-vacancies"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/information-for-regional-national-and-international-media",
+          "label": "Media information",
+          "original_href": "/en/information-for-regional-national-and-international-media"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/impressum-federal-office-of-topography",
+          "label": "Impressum",
+          "original_href": "/en/impressum-federal-office-of-topography"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/legal-framework",
+          "label": "Legal framework",
+          "original_href": "/en/legal-framework"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/terms-and-conditions",
+          "label": "Terms and conditions",
+          "original_href": "/en/terms-and-conditions"
+        },
+        {
+          "url": "https://www.swisstopo.admin.ch/en/swisstopo-netiquette-rules",
+          "label": "Netiquette",
+          "original_href": "/en/swisstopo-netiquette-rules"
+        }
+      ],
+      "historical_scope_certified": false,
+      "gis_assignment_accepted": false
+    }
+  ],
+  "accepted_assignments": 0,
+  "station_features_computed": false,
+  "groups_changed": false,
+  "dem_resolution_selected": false
+}

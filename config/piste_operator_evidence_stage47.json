@@ -1,0 +1,23 @@
+[
+  {
+    "source_id": "SKI_VAUD_OPERATOR_LINK_STAGE47",
+    "url": "https://www.ski-vaud.ch/web/",
+    "organisation": "Ski Vaud, website linked by official Magic Pass Sainte-Croix page",
+    "suffix": "html",
+    "scope_note": "Current operator/association navigation only; not an accepted piste geometry or historical footprint"
+  },
+  {
+    "source_id": "MYVALLEE_JOUX_ALPINE_SCOPE_STAGE47",
+    "url": "https://www.myvalleedejoux.ch/fr/Z10411/ski-alpin",
+    "organisation": "Vallee de Joux tourism, website linked by official Magic Pass page",
+    "suffix": "html",
+    "scope_note": "Current regional alpine scope; preserve the existing three-component group, no automatic Vaulion addition"
+  },
+  {
+    "source_id": "SWISSTOPO_ALTI3D_RESOLUTION_STAGE47",
+    "url": "https://www.swisstopo.admin.ch/en/height-model-swissalti3d",
+    "organisation": "Federal Office of Topography swisstopo",
+    "suffix": "html",
+    "scope_note": "Official resolution/product documentation only; no DEM tile or resolution selected pending researcher validation"
+  }
+]

@@ -4,7 +4,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from src.data_collection.collect_oshd_profile_audit import parse_record, validate_download_response, single_collector_lock, official_download_anchor
+from src.data_collection.collect_oshd_profile_audit import parse_record, validate_download_response, single_collector_lock, official_download_anchor, reconcile_checkpoint_counts
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -21,6 +21,13 @@ def test_public_html_explicit_license_links_and_archive_size():
     assert record['id'] == '17313889'
     assert files[0]['expected_bytes'] == 50 and files[0]['expected_md5'] == 'abc'
     assert '/api/' not in files[0]['url']
+
+
+def test_deadline_checkpoint_total_counts_completed_not_partial_archives():
+    state=dict(complete_file_count=0, files=[dict(status='complete'),dict(status='paused'),dict(status='failed')])
+    reconcile_checkpoint_counts(state)
+    assert state['complete_file_count']==1
+    assert [f['status'] for f in state['files']]==['complete','paused','failed']
 
 
 def test_download_anchor_must_be_present_in_public_html():

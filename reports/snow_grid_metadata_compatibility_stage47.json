@@ -1,0 +1,214 @@
+{
+  "date": "2026-10-09",
+  "input_sha256": {
+    "config/spass_snow_grid.json": "5e791598f76b493dcc8d0cc1e2d84a8b79b881c77509b3b0201dd2f7450757f9",
+    "data_external/source_evidence/SLF_SPASS_HSCLQMD_GRID_1962_2023_20260924T012102Z.metadata.json": "0fe54575287b75eeda0b2d9b3a465698967b45ddce91b1cbe9d4b4037a9f1858",
+    "reports/oshd_netcdf_metadata_inventory.json": "4e0de4a2febd8f138ce8c87e66e402c15cabb9ac54e9ca89135a5e00fa68f3b4",
+    "src/descriptive/audit_snow_grid_metadata_compatibility.py": "ffd9dbfb8208125fffbfad4ad80f5762b65d070d4964821d07580bd20dbe29f8"
+  },
+  "spass_source_id": "SLF_SPASS_HSCLQMD_GRID_1962_2023",
+  "spass_raw_file": "data_external/source_evidence/SLF_SPASS_HSCLQMD_GRID_1962_2023_20260924T012102Z.nc",
+  "spass_netcdf_sha256": "b8d740993a4bfa2b542aa2c2986564073d275b07f2b2fd9c869dfc5daf597c0d",
+  "spass_original_metadata": {
+    "attributes": {
+      "convention": "CF-1.8",
+      "institution": "Data produced at Federal Office of Meteorology andClimatology MeteoSwiss",
+      "references": "Aschauer et al. (2023), An empirical model to calculate snow depth from daily snow water equivalent: SWE2HS 1.0, 10.5194/gmd-16-4063-2023; Michel et al. (2024) SnowQM 1.0: A fast R Package for snow water equivalent maps bias-correction using quantile mapping",
+      "coordinates": "swiss_lv95_coordinates"
+    },
+    "dimensions": {
+      "E": {
+        "size": 370,
+        "unlimited": false
+      },
+      "N": {
+        "size": 265,
+        "unlimited": false
+      },
+      "time": {
+        "size": 22645,
+        "unlimited": false
+      }
+    },
+    "variables": {
+      "E": {
+        "dtype": "float64",
+        "dimensions": [
+          "E"
+        ],
+        "shape": [
+          370
+        ],
+        "attributes": {
+          "_FillValue": "nan",
+          "units": "meters",
+          "long_name": "swiss easting (lv95)",
+          "standard_name": "projection_x_coordinate"
+        },
+        "axis": {
+          "observed_count": 370,
+          "missing_count": 0,
+          "first": 2474500.0,
+          "last": 2843500.0,
+          "strictly_increasing": true,
+          "strictly_decreasing": false,
+          "difference_min": 1000.0,
+          "difference_max": 1000.0
+        }
+      },
+      "N": {
+        "dtype": "float64",
+        "dimensions": [
+          "N"
+        ],
+        "shape": [
+          265
+        ],
+        "attributes": {
+          "_FillValue": "nan",
+          "units": "meters",
+          "long_name": "swiss northing (lv95)",
+          "standard_name": "projection_y_coordinate"
+        },
+        "axis": {
+          "observed_count": 265,
+          "missing_count": 0,
+          "first": 1059500.0,
+          "last": 1323500.0,
+          "strictly_increasing": true,
+          "strictly_decreasing": false,
+          "difference_min": 1000.0,
+          "difference_max": 1000.0
+        }
+      },
+      "lon": {
+        "dtype": "float32",
+        "dimensions": [
+          "N",
+          "E"
+        ],
+        "shape": [
+          265,
+          370
+        ],
+        "attributes": {
+          "_FillValue": "nan",
+          "units": "degrees_east",
+          "long_name": "longitude coordinate",
+          "standard_name": "longitude",
+          "esri_pe_string": "PROJCS[\"CH1903+_LV95\",GEOGCS[\"GCS_CH1903+\",DATUM[\"D_CH1903+\",SPHEROID[\"Bessel_1841\",6377397.155,299.1528128]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Hotine_Oblique_Mercator_Azimuth_Center\"],PARAMETER[\"False_Easting\",2600000.0],PARAMETER[\"False_Northing\",1200000.0],PARAMETER[\"Scale_Factor\",1.0],PARAMETER[\"Azimuth\",90.0],PARAMETER[\"Longitude_Of_Center\",7.43958333333333],PARAMETER[\"Latitude_Of_Center\",46.9524055555556],UNIT[\"Meter\",1.0]]"
+        }
+      },
+      "lat": {
+        "dtype": "float32",
+        "dimensions": [
+          "N",
+          "E"
+        ],
+        "shape": [
+          265,
+          370
+        ],
+        "attributes": {
+          "_FillValue": "nan",
+          "units": "degrees_north",
+          "long_name": "latitude coordinate",
+          "standard_name": "latitude",
+          "esri_pe_string": "PROJCS[\"CH1903+_LV95\",GEOGCS[\"GCS_CH1903+\",DATUM[\"D_CH1903+\",SPHEROID[\"Bessel_1841\",6377397.155,299.1528128]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Hotine_Oblique_Mercator_Azimuth_Center\"],PARAMETER[\"False_Easting\",2600000.0],PARAMETER[\"False_Northing\",1200000.0],PARAMETER[\"Scale_Factor\",1.0],PARAMETER[\"Azimuth\",90.0],PARAMETER[\"Longitude_Of_Center\",7.43958333333333],PARAMETER[\"Latitude_Of_Center\",46.9524055555556],UNIT[\"Meter\",1.0]]"
+        }
+      },
+      "time": {
+        "dtype": "float64",
+        "dimensions": [
+          "time"
+        ],
+        "shape": [
+          22645
+        ],
+        "attributes": {
+          "_FillValue": "nan",
+          "long_name": "time",
+          "axis": "Z",
+          "units": "days since 1900-01-01",
+          "calendar": "standard"
+        },
+        "axis": {
+          "observed_count": 22645,
+          "missing_count": 0,
+          "first": 22523.0,
+          "last": 45167.0,
+          "strictly_increasing": true,
+          "strictly_decreasing": false,
+          "difference_min": 1.0,
+          "difference_max": 1.0,
+          "decoded_first": "1961-09-01 00:00:00",
+          "decoded_last": "2023-08-31 00:00:00",
+          "calendar_used": "standard",
+          "calendar_explicit_in_source": true,
+          "decoding_note": "netCDF4 num2date output; original units retained; timezone interpretation not independently validated"
+        }
+      },
+      "HSCLQMD": {
+        "dtype": "float32",
+        "dimensions": [
+          "time",
+          "N",
+          "E"
+        ],
+        "shape": [
+          22645,
+          265,
+          370
+        ],
+        "attributes": {
+          "_FillValue": "nan",
+          "grid_mapping": "swiss_lv95_coordinates",
+          "long_name": "daily snow height",
+          "grid_name": "ch01r.swiss.lv95",
+          "version": "v1.0",
+          "prod_date": "2024-10-13 13:57:52",
+          "coordinates": "lon lat"
+        }
+      },
+      "swiss_lv95_coordinates": {
+        "dtype": "float64",
+        "dimensions": [],
+        "shape": [],
+        "attributes": {
+          "_FillValue": "nan",
+          "grid_mapping_name": "oblique_mercator",
+          "longitude_of_projection_origin": 7.43958333,
+          "latitude_of_projection_origin": 46.9524056,
+          "false_easting": 2600000.0,
+          "false_northing": 1200000.0,
+          "inverse_flattening": 299.1528128,
+          "semi_major_axis": 6377397.155,
+          "reference_ellipsoid_name": "Bessel 1841",
+          "prime_meridian_name": "Greenwich",
+          "horizontal_datum_name": "CH1903+",
+          "azimuth_of_central_line": 90.0,
+          "azimuth": 90.0,
+          "crs_wkt": "PROJCS[\"CH1903+ / LV95\",GEOGCS[\"CH1903+\",DATUM[\"CH1903+\",SPHEROID[\"Bessel 1841\",6377397.155,299.1528128],TOWGS84[674.374,15.056,405.346,0,0,0,0]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4150\"]],PROJECTION[\"Hotine_Oblique_Mercator_Azimuth_Center\"],PARAMETER[\"latitude_of_center\",46.9524055555556],PARAMETER[\"longitude_of_center\",7.43958333333333],PARAMETER[\"azimuth\",90],PARAMETER[\"rectified_grid_angle\",90],PARAMETER[\"scale_factor\",1],PARAMETER[\"false_easting\",2600000],PARAMETER[\"false_northing\",1200000],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"2056\"]]"
+        }
+      }
+    },
+    "groups": {}
+  },
+  "oshd_inventory": "reports/oshd_netcdf_metadata_inventory.json",
+  "oshd_source_ids": [
+    "SLF_OSHD_PF_WY2024_PROFILE_AUDIT"
+  ],
+  "snow_values_read": false,
+  "spatial_mapping_applied": false,
+  "snow_models_spliced": false,
+  "station_profiles_computed": false,
+  "comparison_notes": [
+    "SPASS HSCLQMD and OSHD hs represent modelled snow depth, not piste measurements.",
+    "Different resolution and axis order: never compare array indices as shared cells.",
+    "Use each source coordinate axes and raw dimension order; northing orientation may differ.",
+    "No matching/interpolation, validation threshold, calibration or snow substitution approved by this audit.",
+    "Original unit/units metadata retained. The prior SPASS metre interpretation is not an original unit attribute.",
+    "The current OSHD WY2024 archive follows the end of SPASS; it alone cannot support a temporal overlap comparison.",
+    "Decoded timestamps retain original time units; timezone interpretation needs separate verification if hours matter."
+  ]
+}

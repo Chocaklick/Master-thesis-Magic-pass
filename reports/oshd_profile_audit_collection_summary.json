@@ -18,17 +18,83 @@
       "expected_bytes": 645601691,
       "expected_md5": "b342170d29005b81bc51a59cbdb3c95c",
       "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
-      "status": "failed",
-      "retrieval_date": "2026-10-09T17:28:50.141156+00:00",
+      "status": "complete",
+      "retrieval_date": "2026-10-09T17:47:35.287660+00:00",
       "partial_file": "data_interim/oshd_profile_downloads/OSHD_DATA_WY2024.zip.part",
-      "downloaded_bytes": 484411044,
+      "downloaded_bytes": 645601691,
       "http_status": 206,
       "etag": "",
       "final_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2024.zip?download=1",
       "error": "ValueError: Incomplete range, validated prefix retained",
       "resume_allowed": true,
       "last_request_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2024.zip?download=1",
-      "pause_reason": "session_time_budget_reached"
+      "pause_reason": "session_time_budget_reached",
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2024_PROFILE_AUDIT_20261009T180049Z.zip",
+      "sha256": "9d7088062215abf5a5c15eced0c71de8b49c9b93a24bfc02aecbeb731bfddf09",
+      "zip_members": [
+        {
+          "name": "OSHD_DATA_2023-09.nc",
+          "uncompressed_bytes": 8270038,
+          "compressed_bytes": 6196405
+        },
+        {
+          "name": "OSHD_DATA_2023-10.nc",
+          "uncompressed_bytes": 18857017,
+          "compressed_bytes": 15290212
+        },
+        {
+          "name": "OSHD_DATA_2023-11.nc",
+          "uncompressed_bytes": 78413837,
+          "compressed_bytes": 74613309
+        },
+        {
+          "name": "OSHD_DATA_2023-12.nc",
+          "uncompressed_bytes": 103876385,
+          "compressed_bytes": 98346583
+        },
+        {
+          "name": "OSHD_DATA_2024-01.nc",
+          "uncompressed_bytes": 106236922,
+          "compressed_bytes": 100376799
+        },
+        {
+          "name": "OSHD_DATA_2024-02.nc",
+          "uncompressed_bytes": 69110196,
+          "compressed_bytes": 65051663
+        },
+        {
+          "name": "OSHD_DATA_2024-03.nc",
+          "uncompressed_bytes": 85977057,
+          "compressed_bytes": 81200285
+        },
+        {
+          "name": "OSHD_DATA_2024-04.nc",
+          "uncompressed_bytes": 88118912,
+          "compressed_bytes": 84402562
+        },
+        {
+          "name": "OSHD_DATA_2024-05.nc",
+          "uncompressed_bytes": 60249733,
+          "compressed_bytes": 56031213
+        },
+        {
+          "name": "OSHD_DATA_2024-06.nc",
+          "uncompressed_bytes": 42859246,
+          "compressed_bytes": 40107334
+        },
+        {
+          "name": "OSHD_DATA_2024-07.nc",
+          "uncompressed_bytes": 21079251,
+          "compressed_bytes": 17327800
+        },
+        {
+          "name": "OSHD_DATA_2024-08.nc",
+          "uncompressed_bytes": 10104373,
+          "compressed_bytes": 6655680
+        }
+      ],
+      "provider_md5_verified": true,
+      "size_verified": true
     },
     {
       "water_year": 2025,
@@ -37,13 +103,17 @@
       "expected_bytes": 579028796,
       "expected_md5": "cb1cd3fc7d803a7f6b9153da3b84da0d",
       "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
-      "status": "failed",
-      "retrieval_date": "2026-10-09T16:51:21.126236+00:00",
+      "status": "paused",
+      "retrieval_date": "2026-10-09T18:00:49.635597+00:00",
       "partial_file": "data_interim/oshd_profile_downloads/OSHD_DATA_WY2025.zip.part",
-      "downloaded_bytes": 0,
+      "downloaded_bytes": 198180864,
       "error": "HTTPError: HTTP Error 504: Gateway Time-out",
       "resume_allowed": true,
-      "http_status": 504
+      "http_status": 206,
+      "last_request_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2025.zip?download=1",
+      "etag": "",
+      "final_url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2025.zip?download=1",
+      "pause_reason": "session_time_budget_reached"
     },
     {
       "water_year": 2023,
@@ -65,5 +135,5 @@
   "source_spliced": false,
   "group_piste_assignment_applied": false,
   "features_computed": false,
-  "complete_file_count": 0
+  "complete_file_count": 1
 }

@@ -175,12 +175,17 @@ def publish_sources(state, html, paper):
     write_csv(pd.concat([master[~master.source_id.isin(ids)], pd.DataFrame(sources).reindex(columns=SOURCE_COLUMNS)], ignore_index=True).fillna(''), path)
 
 
+def reconcile_checkpoint_counts(state):
+    state['complete_file_count'] = sum(f['status'] == 'complete' for f in state['files'])
+
+
 def run_collection():
     parser = argparse.ArgumentParser()
     parser.add_argument('--resume-failed', action='store_true', help='Explicit later retry of non-permission interruption; never HTTP401/403')
     parser.add_argument('--max-seconds', type=float, default=300, help='Session duration before retaining a resumable part; no source deletion')
     parser.add_argument('--chunk-bytes', type=int, default=8*1024*1024, help='Bounded byte-range request, never a whole unbounded suffix')
     parser.add_argument('--official-download-anchor', action='store_true', help='Use the archived public download=1 anchor after canonical-link HTTP504; identical archive checks remain')
+    parser.add_argument('--checkpoint-only', action='store_true', help='Reconcile checkpoint counts/provenance without any provider requests')
     args = parser.parse_args()
     if args.max_seconds <= 0 or args.chunk_bytes <= 0:
         raise ValueError('Positive collection time budget required')
@@ -209,9 +214,14 @@ def run_collection():
             general_record_api_request_made=False, files=[dict(f, source_id=f"SLF_OSHD_PF_WY{f['water_year']}_PROFILE_AUDIT", status='pending') for f in files],
             snow_extracted=False, source_spliced=False, group_piste_assignment_applied=False, features_computed=False)
     def save():
+        # An early deadline return must not leave the previous batch total stale.
+        reconcile_checkpoint_counts(state)
         manifest.write_text(json.dumps(state, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         publish_sources(state, html, paper)
     save()
+    if args.checkpoint_only:
+        print('Checkpoint reconciled:', state['complete_file_count'], '/ 3 complete; no provider requests.', flush=True)
+        return
     if any(f.get('status') == 'failed' and not f.get('resume_allowed', False) for f in state['files']):
         print('Prior permission denial retained: no provider requests until access is reviewed.', flush=True)
         return
