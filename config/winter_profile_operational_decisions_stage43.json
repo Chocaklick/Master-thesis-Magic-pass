@@ -1,0 +1,17 @@
+{
+  "version": "stage43_partial_operational_decisions_2026_10_09",
+  "prior_audit_preserved": "config/winter_profile_five_dimension_audit.json",
+  "researcher_geometry_reply": "Tracés actuels, avec audit des changements et réserve historique.",
+  "current_piste_geometry_proxy_approved": true,
+  "documented_changes_audit_required": true,
+  "historical_uncertainty_must_be_explicit": true,
+  "current_geometry_is_verified_preentry_geometry": false,
+  "geometry_source_and_exact_group_scope_must_be_verified": true,
+  "piste_altitude_and_orientation_weights_selected": false,
+  "snow_source_and_baseline_choice_received": false,
+  "urban_six_city_summary_choice_received": false,
+  "final_clustering_variables_scaling_classes_selected": false,
+  "clustering_fitted": false,
+  "new_effect_estimation_approved": false,
+  "automatic_exclusion_approved": false
+}
