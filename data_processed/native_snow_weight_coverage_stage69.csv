@@ -1,0 +1,71 @@
+source_id,station_group_id,station_group_name,group_retained,weight_status,unique_mapped_axis_length_m,cell_pair_count,spass_native_cell_count,oshd_native_cell_count,both_native_grid_length_m,outside_either_native_grid_length_m,both_native_grid_length_share,snow_values_read,current_proxy_not_verified_preentry
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,True,native_weights_prepared_not_snow_coverage,910.3212293118836,4.0,2.0,4.0,910.3212293118836,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_EVENT__c1f58b57f3fa,Grenchenberg,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_EVENT__e664bf3f38d5,Wilerallmi,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__aeschi,Aeschiallmend,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__anzere,Anzère,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__arolla,Arolla,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__axalp_brienz,Axalp,True,native_weights_prepared_not_snow_coverage,10909.213723838442,32.0,4.0,32.0,10909.213723838446,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__balmberg,Balmberg,True,native_weights_prepared_not_snow_coverage,2739.5863019732133,12.0,3.0,12.0,2739.5863019732133,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__belalp,Belalp,True,native_weights_prepared_not_snow_coverage,36451.21007314102,115.0,15.0,115.0,36451.21007314102,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,True,native_weights_prepared_not_snow_coverage,5005.740625185721,19.0,5.0,19.0,5005.740625185721,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__charmey,Charmey,True,native_weights_prepared_not_snow_coverage,12492.9936519463,58.0,11.0,58.0,12492.9936519463,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__crans_montana_crans_montana,Crans-Montana,True,native_weights_prepared_not_snow_coverage,62913.69651427723,209.0,27.0,209.0,62913.69651427725,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__eriz,Eriz,True,native_weights_prepared_not_snow_coverage,4474.949859304751,19.0,4.0,19.0,4474.94985930475,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__evolene,Evolène,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__gantrisch_gurnigel,Gantrisch-Gurnigel / Gurnigelbad,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__gstaad,Bergbahnen Gstaad,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__habkern,Habkern,True,native_weights_prepared_not_snow_coverage,7143.221325403,18.0,3.0,18.0,7143.221325402999,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__heimenschwand_buchholterberg,Heimenschwand,True,native_weights_prepared_not_snow_coverage,927.7565747301572,5.0,2.0,5.0,927.7565747301571,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg,Homberg,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__jaun_gastlosen,Jaun,True,native_weights_prepared_not_snow_coverage,12860.413190760411,33.0,6.0,33.0,12860.413190760411,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__jaunpass,Jaunpass,True,native_weights_prepared_not_snow_coverage,4695.777896055762,15.0,2.0,15.0,4695.7778960557625,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__kiental,Kiental,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__la_berra_la_roche,La Berra,True,native_weights_prepared_not_snow_coverage,8279.600469139838,31.0,7.0,31.0,8279.600469139836,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__la_dole_jura_sur_leman,Jura-sur-Léman - composante suisse La Dôle,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__la_forclaz,La Forclaz,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__la_robella,La Robella,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,True,native_weights_prepared_not_snow_coverage,12287.557402100556,42.0,9.0,42.0,12287.557402100558,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__le_paquier_cret_du_puy,Crêt-du-Puy,True,native_weights_prepared_not_snow_coverage,5317.736231499483,18.0,3.0,18.0,5317.7362314994825,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__les_bugnenets_savagnieres,Les Bugnenets-Savagnières,True,native_weights_prepared_not_snow_coverage,15658.750352240277,51.0,7.0,51.0,15658.750352240275,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__les_marecottes,Les Marécottes,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,True,native_weights_prepared_not_snow_coverage,6078.622169386999,25.0,6.0,25.0,6078.622169387,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__les_pleiades,Les Pléiades,True,native_weights_prepared_not_snow_coverage,288.324596005825,3.0,1.0,3.0,288.324596005825,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__leukerbad,Leukerbad,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__linden_skilift_linden,Linden,True,native_weights_prepared_not_snow_coverage,1265.8784045536413,7.0,2.0,7.0,1265.8784045536413,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,True,native_weights_prepared_not_snow_coverage,6991.468020470553,28.0,7.0,28.0,6991.468020470553,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,True,native_weights_prepared_not_snow_coverage,48409.13429556276,163.0,25.0,163.0,48409.13429556274,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__melchsee_frutt,Melchsee-Frutt,True,native_weights_prepared_not_snow_coverage,31737.71449690482,98.0,16.0,98.0,31737.714496904817,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,True,native_weights_prepared_not_snow_coverage,7266.837324549605,32.0,7.0,32.0,7266.837324549605,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__mont_noble_nax,Nax,True,native_weights_prepared_not_snow_coverage,13475.597369046163,60.0,12.0,60.0,13475.597369046163,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__moosalpregion,Moosalp,True,native_weights_prepared_not_snow_coverage,14200.559713143955,51.0,10.0,51.0,14200.559713143959,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__morlialp,Mörlialp,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__ottenleuebad,Egg Ottenleue,True,native_weights_prepared_not_snow_coverage,2975.8063575469937,8.0,2.0,8.0,2975.806357546994,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__ovronnaz,Ovronnaz,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin,Les Prés-d'Orvin,True,native_weights_prepared_not_snow_coverage,4324.755488890244,11.0,3.0,11.0,4324.755488890245,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__rathvel,Rathvel,True,native_weights_prepared_not_snow_coverage,3700.682318511733,12.0,2.0,12.0,3700.682318511733,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__riffenmatt,Riffenmatt,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman,Les Rochers de Naye,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,True,native_weights_prepared_not_snow_coverage,3339.60150630584,13.0,3.0,13.0,3339.6015063058394,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__rosswald,Rosswald,True,native_weights_prepared_not_snow_coverage,4658.768764094002,21.0,5.0,21.0,4658.768764094002,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__ruschegg_eywald,Rüschegg - Eywald,True,native_weights_prepared_not_snow_coverage,11316.52785683732,48.0,7.0,48.0,11316.52785683732,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__saas_fee,Saas-Fee,True,native_weights_prepared_not_snow_coverage,28818.211989423573,121.0,22.0,121.0,28818.211989423577,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,True,referenced_axes_missing,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__schwanden_sigriswil_thunersee,Schwanden,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__schwarzenbuhl_selital,Selital,True,native_weights_prepared_not_snow_coverage,4084.6612422878975,12.0,4.0,12.0,4084.6612422878984,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,True,native_weights_prepared_not_snow_coverage,8911.790884360422,35.0,7.0,35.0,8911.790884360424,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__sorenberg,Sörenberg,True,native_weights_prepared_not_snow_coverage,15811.346775558455,75.0,18.0,75.0,15811.346775558459,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__st_cergue,Saint-Cergue,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,True,native_weights_prepared_not_snow_coverage,50037.98615814666,172.0,25.0,172.0,50037.986158146676,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__staldenried_gspon,Gspon,True,native_weights_prepared_not_snow_coverage,2386.9970935433435,10.0,2.0,10.0,2386.9970935433435,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__tramelan,Tramelan,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__vercorin,Vercorin,True,native_weights_prepared_not_snow_coverage,10422.402927399986,40.0,9.0,40.0,10422.402927399988,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,True,piste_scope_unresolved,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_RESORT__visperterminen,Visperterminen,True,native_weights_prepared_not_snow_coverage,8488.954686635032,21.0,3.0,21.0,8488.954686635032,0.0,1.0,False,True
+DERIVED_NATIVE_SNOW_WEIGHTS_STAGE69,MP_GROUP_CONNECTED__eischoll_unterbaech,Eischoll–Unterbäch,True,native_weights_prepared_not_snow_coverage,31544.99951118536,105.0,17.0,105.0,31544.99951118535,0.0,1.0,False,True

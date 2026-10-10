@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "config/snow_comparison_decisions_stage69.json": "4144302cea252959105e489a309232789f06f8ebf0fbe9a597bd29cd80765217",
+    "reports/oshd_netcdf_metadata_inventory.json": "7060aa0a711cf33bdaefbc8e753a8cc114df9247eed6f8b1ee6052eee410646a",
+    "reports/snow_grid_metadata_compatibility_stage47.json": "245d2a45be5de3c473f225d43d8ffeefe452fc96625d90d6092da1e90bd4cc7d",
+    "data_processed/terrain_reference_profiles_stage67.csv": "445b7bbe269aaf7ef4952cb349520b391c9b50d88f500be373ff95f3ef234469",
+    "data_interim/winter_profile_exact_network_stage63.json": "a67c352c4310b8fb4f0f0db694a7e12eef9b356b6d3d673cc06d516e439d14e3",
+    "src/data_processing/prepare_native_snow_weights_stage69.py": "67f1e007bb384d1ad10ee2f0b3d76b358e1b06324fa1e4cc3602c8c3715257d0",
+    "src/data_processing/terrain_cell_weights_stage61.py": "969b2ca601f5f7b1eba6284a3ddf7193624ac95f14a4cc363b4989f91dca239e",
+    "src/descriptive/inspect_oshd_netcdf_metadata.py": "9a7a2bc1894ebdac88752b14068e631a73edbfdc8e197f4e04234b46135cf53b",
+    "reports/snow_comparison_readiness_stage68_summary.json": "c56e91395f830b21d4af56b2ad974a7ab5d3a68e03868ed285600871c1cf8f5d",
+    "data_external/source_evidence/SLF_SPASS_HSCLQMD_GRID_1962_2023_20260924T012102Z.nc": "b8d740993a4bfa2b542aa2c2986564073d275b07f2b2fd9c869dfc5daf597c0d",
+    "data_interim/oshd_metadata_members/WY2023/b8362239c22941bc2314.nc": "068e0860c757b07cc7ab44a037a27a01738c4e07096f43ecee2b789f946b8c56",
+    "data_interim/oshd_metadata_members/WY2023/0ad1a25494da98fd93e0.nc": "95fd8105ed0cf461e2343ba34891249a38c500727aae5eb6a16c42c23532b1cf",
+    "data_interim/oshd_metadata_members/WY2023/0d11057d0f9f1c7e7307.nc": "a5d315e7e7652a435f231a6fe4d7b68541796d4a95649ec7fe1af931ac9f3e66",
+    "data_interim/oshd_metadata_members/WY2023/694d1681be85d0f7f90c.nc": "e5b2b969af7f7163bcc615bb83e84c63e37d72917e1d16d5458bd7630614a4e7",
+    "data_interim/oshd_metadata_members/WY2023/2e27a0a310cc2a04c9d9.nc": "7b79bfb2efc9532eaffff461a8a1e100147796cc41126360e707b36a66d5f5b6",
+    "data_interim/oshd_metadata_members/WY2023/881effa98917f377ea45.nc": "723f113621f13295c6e33f5fb5bb74bcefcc9747919fd03d5f2a595d5caaef12",
+    "data_interim/oshd_metadata_members/WY2023/18dd1af8be07b908e522.nc": "7e8ad1ab792f56294e02ac88201ee46d8aaacc7128a7d412fff240fea7211704",
+    "data_interim/oshd_metadata_members/WY2023/d23313419e3eead6dfb5.nc": "8028ea5a2d8ee83756bbd607e5f875525a541dcc7bf615e86de67a52e5b0afc1",
+    "data_interim/oshd_metadata_members/WY2023/781ee555a6fb9317f50c.nc": "1616b093039a52b46f623ed1b342c6448d5893b030584aa3fc7654e415ca1c04",
+    "data_interim/oshd_metadata_members/WY2023/b7d4d9b79e7f897eef7f.nc": "b167973bfde786450fb58d75df4702542ce4d7667bffed5b041ea97f7db1b70e",
+    "data_interim/oshd_metadata_members/WY2023/2f96e21394fb0a7392e1.nc": "6afc0a11e79e4d0cef94ad7a91b3a0eefaa9d2298f175ca35ff57ac39bcec207",
+    "data_interim/oshd_metadata_members/WY2023/dac3b285911a9ca30888.nc": "2e873e12fb96c620496082fcded436079b43d5692f9fc8bd21965e4d4b84db10"
+  },
+  "output_sha256": {
+    "data_processed/native_snow_cell_pairs_stage69.csv": "6851524a49af3cd38960670b6339c3b64df3226c7517e793fecf0e7b1fbbf536",
+    "data_processed/native_snow_weight_coverage_stage69.csv": "42d3bae15fbd1886f9e3e3d4efe1a726681d27a6f29a406c06c0ca0d5b13d445",
+    "data_processed/native_snow_date_pairs_stage69.csv": "39025ee613a3a204a044ebc9104222a2dedea214e281fae2a41e1e27c097993e"
+  },
+  "prior_registry_rows_and_digest": {
+    "metadata/data_sources_master.csv": {
+      "rows": 1198,
+      "sha256": "50295d641be2511406cb26cee990e72c9cdd50d7329e12eca3cfb73627c7fc1d"
+    },
+    "metadata/data_dictionary.csv": {
+      "rows": 8104,
+      "sha256": "e4313db36344e4576a7b9a8e568636289f4860d08a7afbb950e5699915748263"
+    }
+  },
+  "retained_groups": 70,
+  "mapped_axis_groups": 40,
+  "cell_pair_rows": 1852,
+  "date_pair_rows": 453,
+  "exact_axis_length_m": 523606.1553712592,
+  "outside_native_grid_length_m": 0.0,
+  "original_grid_axes": {
+    "spass": {
+      "left": 2474000.0,
+      "top": 1324000.0,
+      "step": 1000.0,
+      "east_count": 370,
+      "north_count": 265,
+      "north_ascending": true
+    },
+    "oshd": {
+      "left": 2478000.0,
+      "top": 1319500.0,
+      "step": 250.0,
+      "east_count": 1442,
+      "north_count": 1056,
+      "north_ascending": false
+    }
+  },
+  "native_boundaries_verified_nested": true,
+  "snow_values_read": false,
+  "new_unit_conversion_or_splice": false,
+  "decisions": {
+    "date": "2026-10-10",
+    "spatial_reply": "Grilles natives, longueurs exactes et mêmes portions observées dans les deux modèles, sans interpolation (recommandé).",
+    "temporal_reply": "Même date civile ; conserver les horaires et examiner un décalage d’un jour en sensibilité (recommandé).",
+    "spatial_rule": "exact_unique_axis_length_native_grids_common_observed_support",
+    "time_rule": "same_civil_date_original_timestamps_preserved",
+    "sensitivity_oshd_date_offsets_days": [
+      -1,
+      0,
+      1
+    ],
+    "offset_definition": "OSHD civil date = SPASS civil date + offset; reference offset is zero, neither offset optimised nor selected by results",
+    "pilot_start": "2022-12-01",
+    "pilot_end": "2023-04-30",
+    "pilot_role": "model_compatibility_diagnostic_not_a_common_preentry_feature_window",
+    "five_own_preentry_winters_unchanged": true,
+    "interpolation": false,
+    "model_splicing_or_calibration": false,
+    "new_unit_conversion": false,
+    "automatic_group_exclusion": false
+  }
+}

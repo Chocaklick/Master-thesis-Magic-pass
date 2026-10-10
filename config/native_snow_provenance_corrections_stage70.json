@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-10",
+  "reason": "Final registry review found source_url passed to a schema whose field is source_page_url; URL survived in config but was dropped from the registry. Correct only two newly appended Stage70 records and make inherited data terms explicit. Frozen original producer, source fields, caches and results unchanged.",
+  "prior_source_rows_protected": 1199,
+  "corrections": [
+    {
+      "source_id": "SLF_SPASS_OUTPUT_UNIT_REVIEW_STAGE70",
+      "field": "source_page_url",
+      "old": "",
+      "new": "https://git-pages.wsl.ch/aschauer/swe2hs/examples/transfer_two_dimensional_dataarray.html|https://www.envidat.ch/metadata/spass---new-gridded-snow-datasets-for-switzerland"
+    },
+    {
+      "source_id": "DERIVED_NATIVE_SNOW_VALUES_STAGE70",
+      "field": "source_page_url",
+      "old": "",
+      "new": "https://www.envidat.ch/metadata/spass---new-gridded-snow-datasets-for-switzerland|https://zenodo.org/records/17313889"
+    },
+    {
+      "source_id": "DERIVED_NATIVE_SNOW_VALUES_STAGE70",
+      "field": "license",
+      "old": "",
+      "new": "Parent SPASS WSL Data Policy; OSHD CC-BY4.0; OSM ODbL; no new licence assigned"
+    },
+    {
+      "source_id": "DERIVED_NATIVE_SNOW_VALUES_STAGE70",
+      "field": "access_conditions",
+      "old": "",
+      "new": "Local research use; redistribution of daily snow-value CSV not reviewed in this milestone"
+    },
+    {
+      "source_id": "DERIVED_NATIVE_SNOW_VALUES_STAGE70",
+      "field": "unit",
+      "old": "",
+      "new": "SPASS UNKNOWN original unit; OSHD m; no conversion"
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+source_id,station_group_id,station_group_name,group_retained,oshd_date_offset_days,value_status,requested_days,days_with_common_observed_length,days_with_full_common_length,min_common_observed_length_share,mean_common_observed_length_share,unique_mapped_axis_length_m,spass_negative_value_days,oshd_negative_value_days,physical_unit_comparison_available,current_proxy_not_verified_preentry
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,910.3212293118836,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,910.3212293118836,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,910.3212293118836,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_EVENT__c1f58b57f3fa,Grenchenberg,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_EVENT__c1f58b57f3fa,Grenchenberg,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_EVENT__c1f58b57f3fa,Grenchenberg,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_EVENT__e664bf3f38d5,Wilerallmi,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_EVENT__e664bf3f38d5,Wilerallmi,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_EVENT__e664bf3f38d5,Wilerallmi,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__aeschi,Aeschiallmend,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__aeschi,Aeschiallmend,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__aeschi,Aeschiallmend,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__anzere,Anzère,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__anzere,Anzère,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__anzere,Anzère,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__arolla,Arolla,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__arolla,Arolla,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__arolla,Arolla,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__axalp_brienz,Axalp,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,10909.213723838442,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__axalp_brienz,Axalp,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,10909.213723838442,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__axalp_brienz,Axalp,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,10909.213723838442,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__balmberg,Balmberg,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,2739.5863019732133,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__balmberg,Balmberg,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,2739.5863019732133,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__balmberg,Balmberg,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,2739.5863019732133,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__belalp,Belalp,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,36451.21007314102,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__belalp,Belalp,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,36451.21007314102,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__belalp,Belalp,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,36451.21007314102,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,5005.740625185721,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,5005.740625185721,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,5005.740625185721,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__charmey,Charmey,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,12492.9936519463,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__charmey,Charmey,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,12492.9936519463,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__charmey,Charmey,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,12492.9936519463,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__crans_montana_crans_montana,Crans-Montana,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,62913.69651427723,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__crans_montana_crans_montana,Crans-Montana,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,62913.69651427723,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__crans_montana_crans_montana,Crans-Montana,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,62913.69651427723,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__eriz,Eriz,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4474.949859304751,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__eriz,Eriz,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4474.949859304751,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__eriz,Eriz,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4474.949859304751,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__evolene,Evolène,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__evolene,Evolène,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__evolene,Evolène,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__gantrisch_gurnigel,Gantrisch-Gurnigel / Gurnigelbad,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__gantrisch_gurnigel,Gantrisch-Gurnigel / Gurnigelbad,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__gantrisch_gurnigel,Gantrisch-Gurnigel / Gurnigelbad,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__gstaad,Bergbahnen Gstaad,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__gstaad,Bergbahnen Gstaad,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__gstaad,Bergbahnen Gstaad,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__habkern,Habkern,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,7143.221325403,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__habkern,Habkern,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,7143.221325403,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__habkern,Habkern,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,7143.221325403,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__heimenschwand_buchholterberg,Heimenschwand,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,927.7565747301572,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__heimenschwand_buchholterberg,Heimenschwand,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,927.7565747301572,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__heimenschwand_buchholterberg,Heimenschwand,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,927.7565747301572,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg,Homberg,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg,Homberg,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg,Homberg,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__jaun_gastlosen,Jaun,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,12860.413190760411,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__jaun_gastlosen,Jaun,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,12860.413190760411,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__jaun_gastlosen,Jaun,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,12860.413190760411,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__jaunpass,Jaunpass,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4695.777896055762,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__jaunpass,Jaunpass,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4695.777896055762,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__jaunpass,Jaunpass,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4695.777896055762,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__kiental,Kiental,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__kiental,Kiental,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__kiental,Kiental,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__la_berra_la_roche,La Berra,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,8279.600469139838,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__la_berra_la_roche,La Berra,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,8279.600469139838,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__la_berra_la_roche,La Berra,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,8279.600469139838,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__la_dole_jura_sur_leman,Jura-sur-Léman - composante suisse La Dôle,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__la_dole_jura_sur_leman,Jura-sur-Léman - composante suisse La Dôle,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__la_dole_jura_sur_leman,Jura-sur-Léman - composante suisse La Dôle,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__la_forclaz,La Forclaz,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__la_forclaz,La Forclaz,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__la_forclaz,La Forclaz,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__la_robella,La Robella,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__la_robella,La Robella,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__la_robella,La Robella,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,12287.557402100556,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,12287.557402100556,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,12287.557402100556,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__le_paquier_cret_du_puy,Crêt-du-Puy,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,5317.736231499483,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__le_paquier_cret_du_puy,Crêt-du-Puy,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,5317.736231499483,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__le_paquier_cret_du_puy,Crêt-du-Puy,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,5317.736231499483,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__les_bugnenets_savagnieres,Les Bugnenets-Savagnières,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,15658.750352240277,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__les_bugnenets_savagnieres,Les Bugnenets-Savagnières,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,15658.750352240277,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__les_bugnenets_savagnieres,Les Bugnenets-Savagnières,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,15658.750352240277,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__les_marecottes,Les Marécottes,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__les_marecottes,Les Marécottes,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__les_marecottes,Les Marécottes,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,6078.622169386999,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,6078.622169386999,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,6078.622169386999,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__les_pleiades,Les Pléiades,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,288.324596005825,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__les_pleiades,Les Pléiades,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,288.324596005825,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__les_pleiades,Les Pléiades,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,288.324596005825,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__leukerbad,Leukerbad,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__leukerbad,Leukerbad,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__leukerbad,Leukerbad,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__linden_skilift_linden,Linden,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,1265.8784045536413,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__linden_skilift_linden,Linden,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,1265.8784045536413,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__linden_skilift_linden,Linden,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,1265.8784045536413,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,6991.468020470553,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,6991.468020470553,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,6991.468020470553,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,48409.13429556276,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,48409.13429556276,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,48409.13429556276,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__melchsee_frutt,Melchsee-Frutt,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,0.0,0.863519071185632,0.8635190711856319,31737.71449690482,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__melchsee_frutt,Melchsee-Frutt,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,0.0,0.863519071185632,0.8635190711856319,31737.71449690482,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__melchsee_frutt,Melchsee-Frutt,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,0.0,0.863519071185632,0.8635190711856319,31737.71449690482,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,7266.837324549605,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,7266.837324549605,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,7266.837324549605,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__mont_noble_nax,Nax,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,13475.597369046163,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__mont_noble_nax,Nax,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,13475.597369046163,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__mont_noble_nax,Nax,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,13475.597369046163,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__moosalpregion,Moosalp,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,14200.559713143955,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__moosalpregion,Moosalp,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,14200.559713143955,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__moosalpregion,Moosalp,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,14200.559713143955,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__morlialp,Mörlialp,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__morlialp,Mörlialp,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__morlialp,Mörlialp,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__ottenleuebad,Egg Ottenleue,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,2975.8063575469937,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__ottenleuebad,Egg Ottenleue,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,2975.8063575469937,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__ottenleuebad,Egg Ottenleue,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,2975.8063575469937,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__ovronnaz,Ovronnaz,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__ovronnaz,Ovronnaz,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__ovronnaz,Ovronnaz,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin,Les Prés-d'Orvin,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4324.755488890244,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin,Les Prés-d'Orvin,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4324.755488890244,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin,Les Prés-d'Orvin,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4324.755488890244,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__rathvel,Rathvel,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,3700.682318511733,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__rathvel,Rathvel,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,3700.682318511733,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__rathvel,Rathvel,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,3700.682318511733,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__riffenmatt,Riffenmatt,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__riffenmatt,Riffenmatt,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__riffenmatt,Riffenmatt,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman,Les Rochers de Naye,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman,Les Rochers de Naye,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman,Les Rochers de Naye,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,3339.60150630584,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,3339.60150630584,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,3339.60150630584,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__rosswald,Rosswald,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4658.768764094002,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__rosswald,Rosswald,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4658.768764094002,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__rosswald,Rosswald,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4658.768764094002,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__ruschegg_eywald,Rüschegg - Eywald,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,11316.52785683732,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__ruschegg_eywald,Rüschegg - Eywald,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,11316.52785683732,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__ruschegg_eywald,Rüschegg - Eywald,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,11316.52785683732,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__saas_fee,Saas-Fee,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,28818.211989423573,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__saas_fee,Saas-Fee,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,28818.211989423573,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__saas_fee,Saas-Fee,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,28818.211989423573,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,True,-1,referenced_axes_missing,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,True,0,referenced_axes_missing,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,True,1,referenced_axes_missing,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__schwanden_sigriswil_thunersee,Schwanden,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__schwanden_sigriswil_thunersee,Schwanden,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__schwanden_sigriswil_thunersee,Schwanden,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__schwarzenbuhl_selital,Selital,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4084.6612422878975,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__schwarzenbuhl_selital,Selital,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4084.6612422878975,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__schwarzenbuhl_selital,Selital,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,4084.6612422878975,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,8911.790884360422,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,8911.790884360422,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,8911.790884360422,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__sorenberg,Sörenberg,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,15811.346775558455,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__sorenberg,Sörenberg,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,15811.346775558455,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__sorenberg,Sörenberg,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,15811.346775558455,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__st_cergue,Saint-Cergue,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__st_cergue,Saint-Cergue,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__st_cergue,Saint-Cergue,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,50037.98615814666,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,50037.98615814666,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,50037.98615814666,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__staldenried_gspon,Gspon,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,2386.9970935433435,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__staldenried_gspon,Gspon,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,2386.9970935433435,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__staldenried_gspon,Gspon,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,2386.9970935433435,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__tramelan,Tramelan,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__tramelan,Tramelan,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__tramelan,Tramelan,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__vercorin,Vercorin,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,10422.402927399986,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__vercorin,Vercorin,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,10422.402927399986,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__vercorin,Vercorin,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,10422.402927399986,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,True,-1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,True,0,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,True,1,piste_scope_unresolved,151,,,,,,,,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__visperterminen,Visperterminen,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,8488.954686635032,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__visperterminen,Visperterminen,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,8488.954686635032,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_RESORT__visperterminen,Visperterminen,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,8488.954686635032,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_CONNECTED__eischoll_unterbaech,Eischoll–Unterbäch,True,-1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,31544.99951118536,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_CONNECTED__eischoll_unterbaech,Eischoll–Unterbäch,True,0,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,31544.99951118536,0.0,0.0,False,True
+DERIVED_NATIVE_SNOW_VALUES_STAGE70,MP_GROUP_CONNECTED__eischoll_unterbaech,Eischoll–Unterbäch,True,1,native_raw_values_extracted_unit_comparison_pending,151,151.0,151.0,1.0,1.0,31544.99951118536,0.0,0.0,False,True

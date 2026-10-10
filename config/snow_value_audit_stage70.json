@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-10",
+  "parent_decisions": "config/snow_comparison_decisions_stage69.json",
+  "value_policy": "Original NetCDF missing masks and nonfinite values remain missing; genuine zero remains observed; no negative-value filtering or imputation",
+  "spatial_mean": "For each group/date/lag, both native fields averaged over exactly the same pairwise-finite geometric footprints using unchanged piste lengths",
+  "unit_policy": "Retain raw SPASS values with UNKNOWN unit; OSHD original unit m; no physical subtraction, ratio, MAE, RMSE, calibration or source substitution",
+  "five_own_preentry_winters_unchanged": true,
+  "unit_review_source_id": "SLF_SPASS_OUTPUT_UNIT_REVIEW_STAGE70",
+  "unit_review_urls": [
+    "https://git-pages.wsl.ch/aschauer/swe2hs/examples/transfer_two_dimensional_dataarray.html",
+    "https://www.envidat.ch/metadata/spass---new-gridded-snow-datasets-for-switzerland"
+  ],
+  "unit_review_method": "Primary web-tool consultation; original distributed NetCDF attributes independently inspected; no newly archived HTML or fabricated request status/checksum",
+  "unit_review_findings": "Official SWE2HS example explicitly selects hs_output_unit='cm' and writes unit cm; configurable example does not identify the generation setting or distributed numeric scale of HSCLQMD. EnviDat names SWE2HS but supplies no stored HSCLQMD unit in inspected catalogue.",
+  "distributed_spass_unit_certified": false,
+  "new_unit_conversion": false,
+  "automatic_group_exclusion": false,
+  "new_clustering_or_effect_fit": false
+}

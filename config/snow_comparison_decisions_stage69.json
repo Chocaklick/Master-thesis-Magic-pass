@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-10",
+  "spatial_reply": "Grilles natives, longueurs exactes et mêmes portions observées dans les deux modèles, sans interpolation (recommandé).",
+  "temporal_reply": "Même date civile ; conserver les horaires et examiner un décalage d’un jour en sensibilité (recommandé).",
+  "spatial_rule": "exact_unique_axis_length_native_grids_common_observed_support",
+  "time_rule": "same_civil_date_original_timestamps_preserved",
+  "sensitivity_oshd_date_offsets_days": [-1, 0, 1],
+  "offset_definition": "OSHD civil date = SPASS civil date + offset; reference offset is zero, neither offset optimised nor selected by results",
+  "pilot_start": "2022-12-01",
+  "pilot_end": "2023-04-30",
+  "pilot_role": "model_compatibility_diagnostic_not_a_common_preentry_feature_window",
+  "five_own_preentry_winters_unchanged": true,
+  "interpolation": false,
+  "model_splicing_or_calibration": false,
+  "new_unit_conversion": false,
+  "automatic_group_exclusion": false
+}
