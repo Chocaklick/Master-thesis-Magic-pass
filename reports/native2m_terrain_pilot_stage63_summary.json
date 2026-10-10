@@ -1,0 +1,2173 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "src/descriptive/extract_terrain_pilot_stage63.py": "1a52df42900727d71bf31c1fa90adfe2230f3459243636ddc5020d02254eb651",
+    "src/descriptive/audit_exact_piste_overlap_stage58.py": "3c5ae06cc71b3e37b709035641f33c61112ba86604b95878cecdc18a702f31ed",
+    "src/data_processing/terrain_cell_weights_stage61.py": "969b2ca601f5f7b1eba6284a3ddf7193624ac95f14a4cc363b4989f91dca239e",
+    "config/terrain_vintage_decisions_stage62.json": "e666391b78126792c6e8be6da83d921a6e4f31b081fd7a7b4d183b982de8dd93",
+    "config/terrain_tile_sources_stage62.json": "97ec903c204a54388e55d25fe7409c928e64ced4ca9be99fdf00eacc66a5b173",
+    "config/terrain_extraction_decisions_stage61.json": "67ed2b7e0d49170eb0109809a111eddb433cff41e8f87aaf1860bdc528abd6c3",
+    "data_processed/winter_profile_verified_piste_member_qa_stage60.csv": "f44ba56646157d267a7e7bb25e7e72431de83112995a297b7a29f63e8abef197",
+    "data_processed/winter_profile_verified_piste_group_qa_stage60.csv": "7be09fe87bc9d4d151c81cc618c32d6a6746fac3b9aeef87612c319ef0a0b56c",
+    "data_processed/accessibility_station_groups_stage55.csv": "2b41c8ab69a514c86f2e0ad0495d9b38bc13febcfa77898fc1f1ea40ecc39d3c",
+    "reports/piste_terrain_sources_stage60_summary.json": "780fe27a204f9966c4662151e1f9282d321528aea679f3e05620f680c39ec234",
+    "reports/terrain_catalogue_stage61_summary.json": "a4d77c17ff935384e9f549955b34d95b78b0d4780f8acc23f7bc7a7bae06914d",
+    "data_interim/terrain_tile_events_stage62.json": "4cc9daf8d72f748fa3b850e4396dcc4f2f0f42c316e6b6050330ffa7e8295b0a",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1117_2_2056_5728_20261010T065644Z.tif": "fdcec22d5f02ad7f2212b33c4fcd30ac1b166cb34f372b2b6431080e8be53d8c",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1117_2_2056_5728_20261010T065645Z.tif": "c24a7ee98a34ba74c5999bb2c9783f39271742d70ae7c248b0c7a5ced4c4b8e5",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1118_2_2056_5728_20261010T065647Z.tif": "b23f92cc5c29595fd36bb849c2e99626e2721da100467e3473465bbdfac2f7a0",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1118_2_2056_5728_20261010T065648Z.tif": "be013efe3cf3efb371ee6ce5e67e9ef26304a73ccb3fca05a9932e057552936a",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1119_2_2056_5728_20261010T065650Z.tif": "ac46e5a02b44d4aa746ffa91eff05e5ac97bc63b5ae921630faef08d9c5cfac3",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1119_2_2056_5728_20261010T065651Z.tif": "70b6d3f93a4fc6d797fbcfb1b3b2ae3b0ab87ef8790c0d231fc9fd7a1788b7c5",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1120_2_2056_5728_20261010T065653Z.tif": "a16dbf1bd295c28ae7e4b8075e4f41a64240c26b4efd9d56971266adddb27e22",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1120_2_2056_5728_20261010T065654Z.tif": "fc22101f056a7a4414e286aa506ef485a47e0844e23eb56c6c059353766ee570",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1121_2_2056_5728_20261010T065656Z.tif": "cfddfb9b2c4d74c2b1a38425ab9d9235069618f3905567bc4df5c32594428b5f",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1121_2_2056_5728_20261010T065657Z.tif": "2415866c452f9abd648f2fc311dc86f04a342181f68acd43a095c4d206ce0b05",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1122_2_2056_5728_20261010T065659Z.tif": "6783a20e9b0dde971b38981628d04102a7f4adc7b0c12ce0ffdbf06b0f2cd362",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1122_2_2056_5728_20261010T065700Z.tif": "85299afb1a1a2c389c4134efb04c4ccb2fc2e161715ba2bae02b78919f6f1144",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1123_2_2056_5728_20261010T065702Z.tif": "d5bb3c72538b12701b1a1a4f7e96fe5257a5353fe219242278fa64ea21bea76a",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1123_2_2056_5728_20261010T065703Z.tif": "9329cc017bd4409e9004d64bd75c82e8d021a0bfa718a88cb83db3687a869368",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1117_2_2056_5728_20261010T065705Z.tif": "0292d65e7c6d329b2d7ae32b3b7d51f101c68cf2f81cc93e26ccb8f406de9ea0",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1117_2_2056_5728_20261010T065706Z.tif": "def03c61da81f7f8ba122dfb63d4fdba8d06d70dca44ab5a7fea0cd7d4774f51",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1118_2_2056_5728_20261010T065708Z.tif": "916373738f842619bfe92a32b32dbeef6f80205146919e6be0c54f01725705a0",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1118_2_2056_5728_20261010T065710Z.tif": "9730e449fdef0b29f986978d1bb2395c212fae2dd0ebff2720c3c3761c11c618",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1119_2_2056_5728_20261010T065711Z.tif": "d4a97f70eb75ec2d761485832a3ff52e6cfe9f76539f342d79230f0e9f46d0a5",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1119_2_2056_5728_20261010T065713Z.tif": "b0cb2978a2187f7acf609c0a3fa6be00cd33dc902313d2d8840b3fe16c93a603",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1120_2_2056_5728_20261010T065714Z.tif": "14271e8e28ae10eabc9e0595a899713c5fef93ad2056d6a4776b076d2f43a32e",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1120_2_2056_5728_20261010T065716Z.tif": "fdecdbcf709c9281f7c70ec78374e7ebe25b78e6a902e1e557b39a06f6f69c71",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1121_2_2056_5728_20261010T065717Z.tif": "69ee4d0728053c80f46e7b48e3a34e4dc0524dc2481f29c4ed9bbceb369c86d7",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1121_2_2056_5728_20261010T065719Z.tif": "e7fa6de26aa4c7fb55f9d3b8e63ccead6b6654263ce35169ea4fb32b80a91ab4",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1122_2_2056_5728_20261010T065720Z.tif": "eb7729a7788118569b6002b1271bfab39b3b330c4375a744756d5d05ab979ac7",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1122_2_2056_5728_20261010T065722Z.tif": "abd84473ce57a4e2a9558d8553d7225b46345bc5be992f4f26f320fe3bbcd4bf",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1123_2_2056_5728_20261010T065723Z.tif": "f6fe8e5276bb71de9f9a2499979f35c881a21233553a33313afa5700235ef692",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1123_2_2056_5728_20261010T065725Z.tif": "47eff9bd581b5ddfa074e329f6db5f614809258b3e9488ba0cfc8c6db7e3dcc3",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1117_2_2056_5728_20261010T065726Z.tif": "cddb2f367cc498d50f8c568e25b1e4f3c792d043866f9408016b8415bd60398e",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1117_2_2056_5728_20261010T065728Z.tif": "cf26686e6bc9e9379e96ba0b0fc7fe6c621f6f20fbf02190211b4dcd660b8608",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1118_2_2056_5728_20261010T065729Z.tif": "9f262d477bc455ff4dbf5d7b1da9585b7cd268d62f479d7c65b8f36e7a57fa1b",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1118_2_2056_5728_20261010T065731Z.tif": "3531159b92716f1306ed299adcd7214cb688164f0b6d7f8a6f5b103bfdd0a5bd",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1119_2_2056_5728_20261010T065733Z.tif": "f1e450402a00c9acad2fb1a6b273c9ab12ff1961d59d4cc0ce61edb4966ebfb1",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1119_2_2056_5728_20261010T065734Z.tif": "cf82e5bc453b5ddc3b64ac0209ebb602b0911d46037cd2661fd22a2dbe379ea1",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1120_2_2056_5728_20261010T065736Z.tif": "01710d85fa6e56b2e2d905ff2b002f1f7fdbf46bf1701712c4a127651711f7ac",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1120_2_2056_5728_20261010T065737Z.tif": "e0cadbe9e6b030cd5ad0f805f2e703a48e568c506e793444c3953f63ec39df23",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1121_2_2056_5728_20261010T065739Z.tif": "1f5d23c4d7fc6163e2ff3296345ae10b8c191a95e537d9f111651c670779e162",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1121_2_2056_5728_20261010T065740Z.tif": "25305b24a846c2db9f7fed9274d79907fc3ad498798fc4ecdfbe436e1732043d",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1122_2_2056_5728_20261010T065742Z.tif": "67f91e5e814cb652cf8fa292faee0e1d1d0ac6d2eb170cd84c677537d9be81b8",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1122_2_2056_5728_20261010T065744Z.tif": "32f27a30340508058742621a4bf6af20f76483316b86b8e8bcebcb4a369c3089",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1123_2_2056_5728_20261010T065745Z.tif": "f0f644066008e9c1648eb20800056c37c4f362870fb9e337676df43defe4f42c",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1123_2_2056_5728_20261010T065747Z.tif": "0de2f5964c51258e195480552ed49ca998e84f0d192a564d9efbe0f8d3f0a81e",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1117_2_2056_5728_20261010T065749Z.tif": "eae55d4ef436d42dc6c29c09f706d86cd1a9deec44c20709a446ffb6e812af3d",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1117_2_2056_5728_20261010T065750Z.tif": "34a7524d78ee08739cde823606e9022973e10dc214b56e03d6604d195eeaa360",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1118_2_2056_5728_20261010T065752Z.tif": "662932a0e0b75f18b2142dbfaf266c35724a5b54056794c2bd8baf31cd87fc80",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1118_2_2056_5728_20261010T065753Z.tif": "76eac31c3e8af216571e246e2fc038db453511bc36592c7597de2e99f1d2765a",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1119_2_2056_5728_20261010T065755Z.tif": "926e216ca0a73bd41fc8d550f3324aa5ab25f69ab3883df509cce6de247c97e6",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1119_2_2056_5728_20261010T065757Z.tif": "29feffac26a8b4e6b1e6d2357a8a7fbeb4a663bdce3deb77b307573ecaa746de",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1120_2_2056_5728_20261010T065758Z.tif": "9e258cdcd007b8c619750e6fdb77b4ce4a962f5327c681dec0d034ccdfbff451",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1120_2_2056_5728_20261010T065800Z.tif": "af7fc2b348193bab31f283ab4076457446ae85acd8bbc2dacdf6b08f199c8ce1",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1121_2_2056_5728_20261010T065802Z.tif": "c361567d47a0426eb5d3fd6f6228be42b51d485aeef93912d3773de366785921",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1121_2_2056_5728_20261010T065803Z.tif": "fa649b973272b8858138f077cd6ee62f0af89556f842448a3ee7107d0d9281d7",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1122_2_2056_5728_20261010T065805Z.tif": "65053bcea953efeeb151972654fe393bdaa5bda8e5d775e71ec35d8359a079a6",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1122_2_2056_5728_20261010T065806Z.tif": "f4c8d588c3e5088e5ced1adcc4b748db397f39f5386d2cb6147aa2fa69c3e56b",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1123_2_2056_5728_20261010T065808Z.tif": "7de7a3ce9a1b8b9464e85ff7aff3576682da49d39056e804b618b66b59bf235f",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1123_2_2056_5728_20261010T065809Z.tif": "3892265f7c7349fc283ad009a0dbba47cae69420be6c6d740bb9681b1cf2fbe6",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1117_2_2056_5728_20261010T065811Z.tif": "67bb7bab125704bfe1bc44cc9993c701a9947945b5a858c3cea0ee34d89cf09e",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1117_2_2056_5728_20261010T065812Z.tif": "42f612f5f5383a62925e65fdd67f08a820bab867863e95ab7a49324d4b71a30b",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1118_2_2056_5728_20261010T065814Z.tif": "855007a2c348086df84fb170580c92842a87d34fb064dde4f63066994bddbd32",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1118_2_2056_5728_20261010T065815Z.tif": "f78db902b0336adbfa3eae1ed932cc5cddc79de9918fbb3a28178a3ea1f39b2c",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1119_2_2056_5728_20261010T065817Z.tif": "dba2bc4e289e56c4173fe67c68b2c3f21368c4833ecb5e7c21426843d83ccd0e",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1119_2_2056_5728_20261010T065818Z.tif": "2720c7439770f56c1f0108b067252215a50507d1a5f74a6f3f2847bc3dd76dfe",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1120_2_2056_5728_20261010T065820Z.tif": "8055d584dcd9546f7fe66dabd9dba7f2d4323c89921f9a2ff5f17a7a4d53ada9",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1120_2_2056_5728_20261010T065821Z.tif": "c220ba551296f423de3c148abefd6b0d78f279062ee04bba3ddc0cc114603591",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1121_2_2056_5728_20261010T065823Z.tif": "699e93be4f620c4b1974724d6572002a9ef4e650e1f34658b8811e3dbbe39b06",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1121_2_2056_5728_20261010T065824Z.tif": "9802f79c69a23d32d8b5d007f43ed9bdf6d24a08e244369b3f1a7b07416eb45b",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1122_2_2056_5728_20261010T065826Z.tif": "246b333326e2d947591f4ee60ed0925c0ce6163f13a370d99de7e2bf6c1eb1e8",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1122_2_2056_5728_20261010T065827Z.tif": "4d5f38b0d8f652b1d8bd5cae03851725888d3836e2ab7081b7e4863fd1a3e70d",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1123_2_2056_5728_20261010T065829Z.tif": "8742fa7da84c2b296a7af062b4f24fb0367d2584fc22e6b892e63d5a7fd4e35d",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1123_2_2056_5728_20261010T065830Z.tif": "c5f2477ce8fd728ab0398351d35bc0d8b22efe4f4bdd4b669304a77eb281459a",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1117_2_2056_5728_20261010T065832Z.tif": "a4ccf1b37792753e4d6d3a76876d66095ed849bf23067480251f4ac702e3bc1c",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1117_2_2056_5728_20261010T065833Z.tif": "2b44e1155b99eef487c5d04608abf255a23a25d80ef11b707d2a65265d6b2eaf",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1118_2_2056_5728_20261010T065835Z.tif": "9c42ba84282aa4b0db204b980cacf75806bf2809da75859970970e820520b101",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1118_2_2056_5728_20261010T065836Z.tif": "1e952d75c989f3b37ee24067cdd35c085e2ba3b3e86346ec563de9ba2982898d",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1119_2_2056_5728_20261010T065838Z.tif": "8e5b42ed66bb68d74f77bb2e6d3b21cb1852917c00b779bc0cabedac1d8c679a",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1119_2_2056_5728_20261010T065839Z.tif": "12d1018b55b9a50ad241335d49dd84e41a22689e5c8cb4cde9bb03eae9fb31db",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1120_2_2056_5728_20261010T065841Z.tif": "b1fac73eb35586b2fbd7a20541d6b4a668755cd40f9b326e51f42761004e81ad",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1120_2_2056_5728_20261010T065842Z.tif": "421a919211ec5d29903f1aa674382876599b63ee938e690b2e5881caaa0e244a",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1121_2_2056_5728_20261010T065844Z.tif": "f416447ddb53dbe87a2b329b2f4711a8a39ea41608114b78d707ea265fa42945",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1121_2_2056_5728_20261010T065845Z.tif": "a9e13730d1638b76efa7caecbd49bd309578bc8e2cfc9c9267118d96c0b2c65c",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1122_2_2056_5728_20261010T065847Z.tif": "912a5a4f1f828ef796b574577a2a58791daea278d222ef46e20b77001847a4d4",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1122_2_2056_5728_20261010T065848Z.tif": "2f4d516587902994a1468d1d521ef5daae07b63b01dfb2875a8a4e349208a491",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1123_2_2056_5728_20261010T065850Z.tif": "8d396c444c32d551793d2b72848f5e689dd5562a870eb9c5684e631010a235e5",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1123_2_2056_5728_20261010T065851Z.tif": "8db438d8e249f60f005546b31512619d42cf286a7b658f72ed582660c3013c3d"
+  },
+  "original_tile_count": 84,
+  "total_bytes": 95756678,
+  "group_count_retained": 70,
+  "original_piste_objects_retained": 854,
+  "current_mapped_axis_group_count": 40,
+  "pilot_edition_statistics": [
+    {
+      "source_id": "DERIVED_NATIVE2M_TERRAIN_PILOT_STAGE63",
+      "station_group_id": "MP_GROUP_RESORT__st_luc_chandolin",
+      "edition_reference_datetime": "2019-01-01T00:00:00Z",
+      "unique_mapped_axis_length_m": 50037.986158146676,
+      "axis_cell_count": 31806,
+      "observed_altitude_length_m": 50037.986158146676,
+      "observed_gradient_length_m": 50037.986158146676,
+      "observed_orientation_length_m": 50037.986158146676,
+      "flat_observed_length_m": 0.0,
+      "missing_altitude_length_m": 0.0,
+      "missing_gradient_length_m": 0.0,
+      "minimum_observed_altitude_m": 1678.017333984375,
+      "maximum_observed_altitude_m": 2972.886474609375,
+      "length_weighted_observed_altitude_m": 2320.373303212839,
+      "length_weighted_observed_slope_degrees": 15.600529933125193,
+      "current_candidate_proxy_not_verified_preentry": true
+    },
+    {
+      "source_id": "DERIVED_NATIVE2M_TERRAIN_PILOT_STAGE63",
+      "station_group_id": "MP_GROUP_RESORT__st_luc_chandolin",
+      "edition_reference_datetime": "2024-01-01T00:00:00Z",
+      "unique_mapped_axis_length_m": 50037.986158146676,
+      "axis_cell_count": 31806,
+      "observed_altitude_length_m": 50037.986158146676,
+      "observed_gradient_length_m": 50037.986158146676,
+      "observed_orientation_length_m": 50037.986158146676,
+      "flat_observed_length_m": 0.0,
+      "missing_altitude_length_m": 0.0,
+      "missing_gradient_length_m": 0.0,
+      "minimum_observed_altitude_m": 1679.7867431640625,
+      "maximum_observed_altitude_m": 2972.53857421875,
+      "length_weighted_observed_altitude_m": 2320.1354382813297,
+      "length_weighted_observed_slope_degrees": 14.259304489073468,
+      "current_candidate_proxy_not_verified_preentry": true
+    }
+  ],
+  "header_checks": [
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1117_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1118000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1118_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1119000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1119_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1120000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1120_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1121000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1121_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1122000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1122_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1123000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2611-1123_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1124000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1117_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1118000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1118_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1119000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1119_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1120000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1120_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1121000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1121_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1122000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1122_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1123000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2612-1123_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1124000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1117_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1118000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1118_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1119000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1119_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1120000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1120_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1121000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1121_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1122000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1122_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1123000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2613-1123_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1124000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1117_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1118000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1118_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1119000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1119_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1120000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1120_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1121000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1121_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1122000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1122_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1123000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2614-1123_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1124000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1117_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1118000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1118_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1119000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1119_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1120000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1120_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1121000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1121_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1122000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1122_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1123000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2615-1123_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1124000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1117_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1118000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1118_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1119000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1119_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1120000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1120_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1121000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1121_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1122000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1122_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1123000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2019_2616-1123_2_2056_5728",
+      "reference_datetime": "2019-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1124000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1117_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1118000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1118_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1119000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1119_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1120000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1120_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1121000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1121_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1122000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1122_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1123000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2611-1123_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2611000.0,
+        0.0,
+        -2.0,
+        1124000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1117_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1118000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1118_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1119000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1119_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1120000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1120_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1121000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1121_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1122000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1122_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1123000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2612-1123_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2612000.0,
+        0.0,
+        -2.0,
+        1124000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1117_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1118000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1118_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1119000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1119_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1120000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1120_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1121000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1121_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1122000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1122_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1123000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2613-1123_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2613000.0,
+        0.0,
+        -2.0,
+        1124000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1117_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1118000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1118_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1119000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1119_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1120000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1120_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1121000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1121_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1122000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1122_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1123000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2614-1123_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2614000.0,
+        0.0,
+        -2.0,
+        1124000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1117_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1118000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1118_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1119000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1119_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1120000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1120_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1121000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1121_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1122000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1122_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1123000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2615-1123_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2615000.0,
+        0.0,
+        -2.0,
+        1124000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1117_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1118000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1118_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1119000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1119_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1120000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1120_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1121000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1121_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1122000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1122_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1123000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_TILE_STAGE62_SWISSALTI3D_2024_2616-1123_2_2056_5728",
+      "reference_datetime": "2024-01-01T00:00:00Z",
+      "transform": [
+        2.0,
+        0.0,
+        2616000.0,
+        0.0,
+        -2.0,
+        1124000.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "shape": [
+        500,
+        500
+      ],
+      "units": [
+        "metre"
+      ],
+      "nodata": -9999.0,
+      "crs": "EPSG:2056"
+    }
+  ],
+  "reference_rule": "Latestpertile2024 in thispilot;2019comparison retained",
+  "source_attribution": "Office fédéral de topographie swisstopo",
+  "no_missing_interpolation_or_flat_threshold": true,
+  "no_individual_metric_or_preentry_certification": true,
+  "no_snow_splice_classes_or_effect_fit": true,
+  "output_sha256": {
+    "data_processed/winter_profile_exact_piste_overlap_stage63.csv": "862ca970fa228d5eefc765cd2523a2f3040a395f46e7b99949bfd41d188d481f",
+    "data_processed/terrain_native2m_pilot_cells_stage63.csv": "fb4b4d8fe8a31b391ebbdd065c9f209daa339009c28d17dd89771ed0ed8b7098",
+    "data_processed/terrain_native2m_pilot_summary_stage63.csv": "76b721b85ec82db7745a704095e318bcfae99cfa4322559b8331ded2fd6597d0",
+    "data_interim/winter_profile_exact_network_stage63.json": "a67c352c4310b8fb4f0f0db694a7e12eef9b356b6d3d673cc06d516e439d14e3"
+  }
+}

@@ -1,0 +1,13 @@
+{
+ "date":"2026-10-10",
+ "researcher_reply":"Plus récent par tuile, dates conservées et comparaison pilote (recommandé).",
+ "reference_rule":"Latest available item reference datetime per native tile, provider dates retained separately from actual acquisition",
+ "comparison_pilot":"StLucChandolin available2019 and2024 editions, identical native2m footprint boxes",
+ "parent_decisions":["config/terrain_extraction_decisions_stage61.json","config/piste_exact_overlap_decisions_stage58.json"],
+ "historical_scope_certified":false,
+ "missing_cell_interpolation_allowed":false,
+ "automatic_group_exclusion_allowed":false,
+ "final_individual_piste_acceptance_or_causal_profile_fit":false,
+ "collection_scope":"Bounded84 native2m TIFFassets in42 pilotbbox tiles,25 directaxisintersections per edition; bbox companions retained for observed3x3 neighbours, not extra pistes",
+ "required_attribution":"Office fédéral de topographie swisstopo"
+}
