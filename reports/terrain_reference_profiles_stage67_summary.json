@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "src/descriptive/summarise_terrain_reference_stage67.py": "42822795a4e157066c029be036fddb8c4cb261abad95a4853f8edcda25914a4c",
+    "config/terrain_seam_decision_stage67.json": "251139d808434ea331db0d339c580a8ca7c8a8a1b423df8c2dc6e5c5a3660de7",
+    "reports/native2m_reference_stage66_summary.json": "e52e39063aeee092eec06f75d2c0baf9d0be6715ee3dfe0c7df79419df886f5a",
+    "reports/piste_preservation_stage66_summary.json": "59b9014715b145bb0b7f9b9f89cb89cb12273d6db1956f2c6e05dc158df0bd39",
+    "data_processed/terrain_native2m_reference_audit_stage66.csv": "a0c666c3e184ed3531b1b558623628940cd80b7000e2d50fd0852ccdfe002480",
+    "data_processed/winter_profile_exact_piste_overlap_stage63.csv": "862ca970fa228d5eefc765cd2523a2f3040a395f46e7b99949bfd41d188d481f",
+    "src/descriptive/summarise_terrain_orientation_stage64.py": "15a779dbc3d014ce8ff0191aeea23625887524807d026691f3e7f32eeeb5e4c8",
+    "src/descriptive/audit_native2m_reference_stage66.py": "fc20492be8e4fcbc1e0d7cd48c514b043a8f45e3c9c738d3f3945c73516f9abf",
+    "data_interim/terrain_native2m_reference_cells_stage66/68705e76d590.csv": "bdef86e4d7925003d86b8224b6f3b831511a2d96a96f1d22c0cafb936b7e31a5",
+    "data_interim/terrain_native2m_reference_cells_stage66/dcf451fb064d.csv": "c4a821cead59b04f1cf8797d572b162d4990447900b91360966aaea09830719f",
+    "data_interim/terrain_native2m_reference_cells_stage66/f7cc136171a9.csv": "f8a2d02ed7966dfcb58cfc57807d70a4230f021839b06516eb96fdb3d407b188",
+    "data_interim/terrain_native2m_reference_cells_stage66/02e3e7096f7a.csv": "261370e225308d9cac6d2b18d60f3d4987c82c0eaf57518edf358005e24fde09",
+    "data_interim/terrain_native2m_reference_cells_stage66/ff94aa58c6db.csv": "8830322e61ccd3f1602d468c8f704b6d1348b7647c7f42a26d23faf40bdbe9c3",
+    "data_interim/terrain_native2m_reference_cells_stage66/c7ad422d746f.csv": "457e55df840b0421941250c31f21a60e6f097a9572ee62ab9d2633edd63ffb3e",
+    "data_interim/terrain_native2m_reference_cells_stage66/3c42bea1066c.csv": "05f01993fab9b0c6ae0a0e0065bacfe2c5d9f024e62b5fb5efe271036bfc65d7",
+    "data_interim/terrain_native2m_reference_cells_stage66/49ce7953d486.csv": "442a2b7a040c715d7fa8bfe7246c28e8387c5e825c18e66553901263e949923f",
+    "data_interim/terrain_native2m_reference_cells_stage66/1651ec3e4051.csv": "ff58fa934010b85d0820ea1f78da26a748cea69b12611e44a2c6c4d57c8ab203",
+    "data_interim/terrain_native2m_reference_cells_stage66/e7c49c7db41c.csv": "7665da586ffbb7c3a7767343258611a0d521322d9fcff42437d0fef8f34de975",
+    "data_interim/terrain_native2m_reference_cells_stage66/4938243650cb.csv": "8c8de3e98635df24b23955c1a37f4e4bfe9c1f7d0eea6b9e8e75a0823934682a",
+    "data_interim/terrain_native2m_reference_cells_stage66/8881b0e53ff7.csv": "239456e631fc84e634cc9fea9c6294a976768de3744899ceb4dcaf35142fc818",
+    "data_interim/terrain_native2m_reference_cells_stage66/a0c701036a83.csv": "d04210b60ad940970f642013897cf5222cc855f1c5b113d17350ebaf9bdfbe74",
+    "data_interim/terrain_native2m_reference_cells_stage66/a06b003592c9.csv": "d4e8edd106045c2daada4f791846697f0806a4409de4fd35713f223cdbc2ac48",
+    "data_interim/terrain_native2m_reference_cells_stage66/c6ec144f40e0.csv": "2a533531b8d8b6a20247e026954d5fbae30b85c1d295b17fdcedc626ee1e1eb9",
+    "data_interim/terrain_native2m_reference_cells_stage66/0f779b0a1a72.csv": "34594980c24650efe61d4f5b604dce8439890767e1ef44cf387346ba3edad269",
+    "data_interim/terrain_native2m_reference_cells_stage66/452ce188393e.csv": "0b16174a7c0733f4b5a0e717d99b05a268c28f1034974b91921371024224f501",
+    "data_interim/terrain_native2m_reference_cells_stage66/9dc08f90afd5.csv": "ed72cd228bc9ef05fcfc50992c9abd6e3b663ef0b3c405de7aeeeca8bdb8b4f5",
+    "data_interim/terrain_native2m_reference_cells_stage66/5f9c39d9126d.csv": "fd50b86067d2b6ce66b8a144a773387fa78b564caf5cc35079304ecad0199712",
+    "data_interim/terrain_native2m_reference_cells_stage66/b707ff0b91d6.csv": "a8b562a2d79ee58ac6e018a4f22062c1087182f1f44d8a101fd7f7a8a1dd4993",
+    "data_interim/terrain_native2m_reference_cells_stage66/986edec683ac.csv": "a590ffa03651d09725b564202189abe9da712ddc190f9da5559b7f9c0a0b70b4",
+    "data_interim/terrain_native2m_reference_cells_stage66/1567a5f9f53f.csv": "ba5180efbc77ed704ae3d1eca757f560c986cedda4be7f3ec4869fe72cf29201",
+    "data_interim/terrain_native2m_reference_cells_stage66/28d2583b9168.csv": "dc6cafd47647188fe46743ad656200b2d579dd1372e2d6c5a046132bbc75b8de",
+    "data_interim/terrain_native2m_reference_cells_stage66/9d48f71e68de.csv": "1e1dc1bb32d603d90f1b11c30527d29bdb62d61fb4a325eb68eb7ccd6284877a",
+    "data_interim/terrain_native2m_reference_cells_stage66/de4538e078fe.csv": "a8d1e7c1949d13b221c396ebade9c0d3b3b0b20ec769714bb3c7ba71d7a58e29",
+    "data_interim/terrain_native2m_reference_cells_stage66/1590a655596a.csv": "dea9ce3589283bbf6fb499c27aaa01dc6309302fd5622aa39d19cdb0b6f4b98b",
+    "data_interim/terrain_native2m_reference_cells_stage66/105c9e805388.csv": "75bf3519b84ba79a687c111e98355e92fbb41e4d048a8e65223015dcccf8adc6",
+    "data_interim/terrain_native2m_reference_cells_stage66/5f933b5b2a58.csv": "5f74172a7bad8eda983512dd477cfcfbb66fc2bfbfee999d05f10b186564a37d",
+    "data_interim/terrain_native2m_reference_cells_stage66/b02280a69bb1.csv": "8072fc8eaf5bf3dbb295db8f30e41dac2fb57279c587e1dcef99e9efc07c536a",
+    "data_interim/terrain_native2m_reference_cells_stage66/f10a8ef7761f.csv": "f22b3b9c63e0ec240127f34b3a2c119182398eb2f725a8048217750a6cbe77eb",
+    "data_interim/terrain_native2m_reference_cells_stage66/10f0b0d2d965.csv": "006745b99f55f8f46090b1fb605bcb959d5a089d1bfc11de4b87041acdcd4057",
+    "data_interim/terrain_native2m_reference_cells_stage66/4a3dd2416472.csv": "164ad6ad8385762c32c0ac73b51845ba1088a16b4fe63b40d9b8ec94deaf9d48",
+    "data_interim/terrain_native2m_reference_cells_stage66/51542625855b.csv": "b62938b02a721599160edb9642bac6a6dc17ade9c2d8f358d3508a5ed3c6868c",
+    "data_interim/terrain_native2m_reference_cells_stage66/9c071293a407.csv": "028c43b7c2cc7cb1f90d1e3c8c353f60de9763c9023b348985f0d01761a7625b",
+    "data_interim/terrain_native2m_reference_cells_stage66/7943540ef626.csv": "f50b4d5fb128b3c2983240685247cf34de6472898e05757fba78b54d9cdcd8c3",
+    "data_interim/terrain_native2m_reference_cells_stage66/3014841b2afd.csv": "75b68872a18d8462d260cb7f4165a4ba34f4e478084f76cc5c8b608dde7d22a7",
+    "data_interim/terrain_native2m_reference_cells_stage66/ebdee42b59f4.csv": "0de1f65a7915e659ea7c21e8a9851297510626f89b451da29651c69c25c0f408",
+    "data_interim/terrain_native2m_reference_cells_stage66/5b8e13eb5bba.csv": "0da78d2b5234910906ce47791e939fea460f77b6c4d8c0d15114c6f5aeed3985",
+    "data_interim/terrain_native2m_reference_cells_stage66/b59da964040c.csv": "c466dad6de8a4adecb68ac6d509670db1938341cbe87210c75accc8d5799841d",
+    "data_interim/terrain_native2m_reference_cells_stage66/57b5b7e3636e.csv": "a77c116a4869eb87176224961a744f844c96b34eb6c1391854997a1c6e8ec258"
+  },
+  "output_sha256": {
+    "data_processed/terrain_reference_profiles_stage67.csv": "445b7bbe269aaf7ef4952cb349520b391c9b50d88f500be373ff95f3ef234469"
+  },
+  "prior_registry_rows_and_digest": {
+    "metadata/data_sources_master.csv": {
+      "rows": 1195,
+      "sha256": "ffa89beb541e9b0eb5e33e5548f2b45f255e773d970bf3c33fede22cb175997a"
+    },
+    "metadata/data_dictionary.csv": {
+      "rows": 8049,
+      "sha256": "7803020bbde511350c1152849631b0ae7de0a9dc469bf2c4ae37156ade0fb8f6"
+    }
+  },
+  "retained_groups": 70,
+  "extracted_groups": 40,
+  "terrain_status_counts": {
+    "native2m_reference_extracted": 34,
+    "piste_scope_unresolved": 29,
+    "native2m_reference_extracted_partial_gradient": 6,
+    "referenced_axes_missing": 1
+  },
+  "mixed_edition_missing_gradient_length_m": 132.32681796031736,
+  "missing_native_elevation_length_m": 0.0,
+  "current_proxy_not_verified_preentry": true,
+  "no_model_fit_imputation_or_group_exclusion": true,
+  "decision": {
+    "date": "2026-10-10",
+    "question": "Traitement des voisinages Horn natifs issus de plusieurs éditions du relief, sans retirer de groupe ni modifier les altitudes.",
+    "researcher_reply": "Laisser pente et orientation manquantes sur ces seules portions, puis résumer les portions observées du groupe (recommandé).",
+    "mixed_edition_complete_neighbourhood": "retain_altitude_and_length_leave_gradient_missing",
+    "group_summary": "observed_gradient_length_for_slope_observed_nonflat_length_for_orientation",
+    "publish_coverage": true,
+    "exclude_groups": false,
+    "interpolate_or_adjust_seams": false,
+    "rewrite_stage66": false,
+    "fit_models": false
+  },
+  "source_attribution": "Office fédéral de topographie swisstopo; OpenStreetMap contributors"
+}

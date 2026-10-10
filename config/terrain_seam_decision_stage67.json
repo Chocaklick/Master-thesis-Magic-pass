@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-10",
+  "question": "Traitement des voisinages Horn natifs issus de plusieurs éditions du relief, sans retirer de groupe ni modifier les altitudes.",
+  "researcher_reply": "Laisser pente et orientation manquantes sur ces seules portions, puis résumer les portions observées du groupe (recommandé).",
+  "mixed_edition_complete_neighbourhood": "retain_altitude_and_length_leave_gradient_missing",
+  "group_summary": "observed_gradient_length_for_slope_observed_nonflat_length_for_orientation",
+  "publish_coverage": true,
+  "exclude_groups": false,
+  "interpolate_or_adjust_seams": false,
+  "rewrite_stage66": false,
+  "fit_models": false
+}

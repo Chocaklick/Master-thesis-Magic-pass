@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-10",
+  "reason": "Two documentary descriptions inherited from the older pilot schema did not describe the new extension; no variable values, source files or scientific rules changed.",
+  "scope": "Only two newly appended Stage65 dictionary rows, description and formula; all entries present at commit973f501 preserved exactly.",
+  "corrections": [
+    {"table": "terrain_group_native2m_asset_inventory_stage65", "variable": "station_group_id", "old_description_and_formula": "Pilot group ID, no removal or prioritisation of other groups", "new_description_and_formula": "Preserved group ID across all40catalogued mapped-axis groups; all70groups retained"},
+    {"table": "terrain_group_native2m_asset_inventory_stage65", "variable": "tile_vintage_selection_applied", "old_description_and_formula": "False: all observed editions retained, reference selection pending approval", "new_description_and_formula": "True: approved latest-per-native-tile selection marked; all older editions still retained"}
+  ],
+  "frozen_catalogue_script_and_analytical_outputs_unchanged": true,
+  "cached_producer_resume_preserves_existing_corrected_dictionary_rows": true
+}
