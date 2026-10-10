@@ -26,7 +26,7 @@ Cela **ne relie pas** ces versions/fonctions au fichier SPASS distribué : ses m
 
 ## Information nécessaire auprès du producteur
 
-L’inconnue est factuelle : **il ne faut pas te demander de choisir arbitrairement une unité ou une date**. Il faut une notice officielle, le script/configuration de production exact, ou une confirmation écrite identifiant le fichier récolté. Brouillon prêt ci-dessous ; **aucun message envoyé**. Contact de correspondance publié : Christian Marty, `marty@slf.ch`, dans l’article SPASS.
+L’inconnue est factuelle : **il ne faut pas te demander de choisir arbitrairement une unité ou une date**. Il faut une notice officielle, le script/configuration de production exact, ou une confirmation écrite identifiant le fichier récolté. Brouillon prêt ci-dessous ; **aucun message envoyé**. Contact de correspondance publié : Christoph Marty, `marty@slf.ch`, dans l’article SPASS (prénom corrigé lors de la recherche Stage74).
 
 > Objet : unité et convention temporelle du fichier SPASS HSCLQMD
 >

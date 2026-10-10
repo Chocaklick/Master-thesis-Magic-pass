@@ -92,5 +92,7 @@ def test_registry_and_collection_prefixes_preserved():
     new=pd.read_csv(ROOT/path,dtype=str,keep_default_na=False)
     old=pd.read_csv(io.BytesIO(subprocess.check_output(['git','show','86b6e37:'+path],cwd=ROOT)),dtype=str,keep_default_na=False)
     assert old.equals(new.iloc[:len(old)].reset_index(drop=True))
-    events=new.iloc[len(old):]
+    # Later documentary stages append their own events; audit the frozen
+    # Stage73 block without prohibiting subsequent authorised collection.
+    events=new.iloc[len(old):len(old)+10]
     assert len(events)==10 and (events.success=='True').sum()==6 and (events.success=='False').sum()==4

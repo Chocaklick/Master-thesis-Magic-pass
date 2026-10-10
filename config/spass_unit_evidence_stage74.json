@@ -1,0 +1,44 @@
+[
+  {
+    "source_id": "ENVIDAT_SPASS_PACKAGE_METADATA_STAGE74",
+    "url": "https://www.envidat.ch/api/3/action/package_show?id=spass---new-gridded-snow-datasets-for-switzerland",
+    "suffix": "json",
+    "organisation": "WSL EnviDat",
+    "description": "Read-only CKAN catalogue query for exact SPASS resource descriptions and attachments; endpoint response to be checked, no assumed content"
+  },
+  {
+    "source_id": "ENVIDAT_SPASS_HS_RESOURCE_METADATA_STAGE74",
+    "url": "https://www.envidat.ch/api/3/action/resource_show?id=688d1caf-ed63-4cb8-8579-8c017bb7458c",
+    "suffix": "json",
+    "organisation": "WSL EnviDat",
+    "description": "Read-only catalogue query for exact distributed HS resource, seeking encoding unit and documentation"
+  },
+  {
+    "source_id": "WSL_PUBLIC_SPASS_PROJECT_SEARCH_STAGE74",
+    "url": "https://code.wsl.ch/api/v4/projects?search=spass&simple=true&per_page=100",
+    "suffix": "json",
+    "organisation": "WSL GitLab",
+    "description": "Public read-only project search for the exact SPASS production chain"
+  },
+  {
+    "source_id": "WSL_PUBLIC_SNOWQM_PROJECT_STAGE74",
+    "url": "https://code.wsl.ch/api/v4/projects/snow-hydrology%2Fsnowqm",
+    "suffix": "json",
+    "organisation": "WSL GitLab",
+    "description": "Public metadata of the producer SnowQM repository, seeking actual production scripts"
+  },
+  {
+    "source_id": "WSL_SNOWQM_PUBLIC_TREE_STAGE74",
+    "url": "https://code.wsl.ch/api/v4/projects/94/repository/tree?recursive=true&per_page=100&page=1",
+    "suffix": "json",
+    "organisation": "WSL GitLab",
+    "description": "First recursive public repository-tree page for producer code inspection"
+  },
+  {
+    "source_id": "WSL_SNOW_HYDROLOGY_PUBLIC_PROJECTS_STAGE74",
+    "url": "https://code.wsl.ch/api/v4/groups/36/projects?per_page=100",
+    "suffix": "json",
+    "organisation": "WSL GitLab",
+    "description": "Public producer group projects, seeking a direct SPASS HS generation script"
+  }
+]

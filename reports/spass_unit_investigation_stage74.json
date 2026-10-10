@@ -1,0 +1,146 @@
+{
+  "date": "2026-10-10",
+  "resource_id": "688d1caf-ed63-4cb8-8579-8c017bb7458c",
+  "original_hs_sha256": "b8d740993a4bfa2b542aa2c2986564073d275b07f2b2fd9c869dfc5daf597c0d",
+  "likely_encoding_unit": "m",
+  "unit_evidence_status": "strong_scale_inference_not_producer_certified",
+  "source_units_attribute_present": false,
+  "new_direct_unit_declaration_found": false,
+  "finding": "Metres strongly supported by scale cross-checks and configurable SWE2HS default, not proven by a product-specific unit statement.",
+  "original_unit_field_changed": false,
+  "analytical_data_converted": false,
+  "profiles_or_effects_estimated": false,
+  "observed_station_comparisons": [
+    {
+      "station_code": "ANV2",
+      "station_label": "Orzival",
+      "observed_station_winter_mean_cm": 129.75376115597106,
+      "model_raw_mean_recovered_by_reversing_prior_explicit_x100": 0.7433006018210583,
+      "model_cm_if_raw_is_m": 74.33006018210583,
+      "model_cm_if_raw_is_cm": 0.7433006018210583,
+      "common_winters": 10
+    },
+    {
+      "station_code": "FIR2",
+      "station_label": "Schmidigen-Bidmeren",
+      "observed_station_winter_mean_cm": 112.98515833953934,
+      "model_raw_mean_recovered_by_reversing_prior_explicit_x100": 0.9101841081772848,
+      "model_cm_if_raw_is_m": 91.01841081772848,
+      "model_cm_if_raw_is_cm": 0.9101841081772848,
+      "common_winters": 10
+    },
+    {
+      "station_code": "SHE2",
+      "station_label": "Schibe",
+      "observed_station_winter_mean_cm": 87.67872270455142,
+      "model_raw_mean_recovered_by_reversing_prior_explicit_x100": 0.6534423449091794,
+      "model_cm_if_raw_is_m": 65.34423449091794,
+      "model_cm_if_raw_is_cm": 0.6534423449091794,
+      "common_winters": 10
+    },
+    {
+      "station_code": "VDS2",
+      "station_label": "Donin du Jour",
+      "observed_station_winter_mean_cm": 171.91373322809787,
+      "model_raw_mean_recovered_by_reversing_prior_explicit_x100": 1.3110629012229464,
+      "model_cm_if_raw_is_m": 131.10629012229464,
+      "model_cm_if_raw_is_cm": 1.3110629012229464,
+      "common_winters": 10
+    },
+    {
+      "station_code": "ARO2",
+      "station_label": "Les Fontanesses",
+      "observed_station_winter_mean_cm": 124.73225669358268,
+      "model_raw_mean_recovered_by_reversing_prior_explicit_x100": 0.9591479828454981,
+      "model_cm_if_raw_is_m": 95.9147982845498,
+      "model_cm_if_raw_is_cm": 0.9591479828454981,
+      "common_winters": 10
+    },
+    {
+      "station_code": "ARO3",
+      "station_label": "Bréona",
+      "observed_station_winter_mean_cm": 83.55028450677622,
+      "model_raw_mean_recovered_by_reversing_prior_explicit_x100": 0.7253019207887492,
+      "model_cm_if_raw_is_m": 72.53019207887492,
+      "model_cm_if_raw_is_cm": 0.7253019207887492,
+      "common_winters": 10
+    },
+    {
+      "station_code": "ALI2",
+      "station_label": "Chenau",
+      "observed_station_winter_mean_cm": 67.123377451278,
+      "model_raw_mean_recovered_by_reversing_prior_explicit_x100": 0.3906934139191881,
+      "model_cm_if_raw_is_m": 39.06934139191881,
+      "model_cm_if_raw_is_cm": 0.3906934139191881,
+      "common_winters": 10
+    },
+    {
+      "station_code": "GUT2",
+      "station_label": "Homad",
+      "observed_station_winter_mean_cm": 76.91366340841479,
+      "model_raw_mean_recovered_by_reversing_prior_explicit_x100": 0.8203381949763592,
+      "model_cm_if_raw_is_m": 82.03381949763592,
+      "model_cm_if_raw_is_cm": 0.8203381949763592,
+      "common_winters": 10
+    },
+    {
+      "station_code": "SCH2",
+      "station_label": "Türliboden",
+      "observed_station_winter_mean_cm": 165.97322819337222,
+      "model_raw_mean_recovered_by_reversing_prior_explicit_x100": 1.0794797682046684,
+      "model_cm_if_raw_is_m": 107.94797682046683,
+      "model_cm_if_raw_is_cm": 1.0794797682046684,
+      "common_winters": 10
+    },
+    {
+      "station_code": "ELS2",
+      "station_label": "Elsige",
+      "observed_station_winter_mean_cm": 50.492841964665175,
+      "model_raw_mean_recovered_by_reversing_prior_explicit_x100": 0.31168562521141224,
+      "model_cm_if_raw_is_m": 31.168562521141222,
+      "model_cm_if_raw_is_cm": 0.31168562521141224,
+      "common_winters": 10
+    },
+    {
+      "station_code": "SAA4",
+      "station_label": "Gibidum",
+      "observed_station_winter_mean_cm": 102.92331066723332,
+      "model_raw_mean_recovered_by_reversing_prior_explicit_x100": 0.4805057454975538,
+      "model_cm_if_raw_is_m": 48.05057454975538,
+      "model_cm_if_raw_is_cm": 0.4805057454975538,
+      "common_winters": 10
+    }
+  ],
+  "comparison_limit": "Existing November-April 10-winter averages at station-neighbourhood grids; station and model differ spatially and share parts of the observation network. This is a scale plausibility check, not independent validation or a production-code identity test.",
+  "daily_raw_crosscheck": {
+    "unique_groups": 40,
+    "reference_offset": 0,
+    "rows": 6040,
+    "spass_raw_mean": 0.2714722810894317,
+    "spass_raw_max": 1.6450539392202306,
+    "oshd_documented_m_mean": 0.1907927151394973,
+    "oshd_documented_m_max": 1.9040855392090437
+  },
+  "public_spass_named_projects": [],
+  "public_snowqm_tree_entries": 96,
+  "input_sha256": {
+    "config/spass_unit_evidence_stage74.json": "abbe66fa225191d8b3c4d5e068b7fc5294eb14ceaef416242299e04798193110",
+    "reports/snow_gridded_component_comparison.csv": "f406cef7d116679388762a257b251ee8faeb2e94ef28caeccccf0cb2e2a4d7e1",
+    "src/data_processing/build_snow_gridded_sensitivity.py": "6f3065affd9c73317e4288302fa5b54f2bd088a8fec751773132eabcc31c340e",
+    "data_processed/native_snow_daily_common_support_stage70.csv": "37f18f1961ea6adbaf740a2e7238f782df601cf08f2308958c1f569e77e52f96",
+    "reports/snow_grid_metadata_compatibility_stage47.json": "245d2a45be5de3c473f225d43d8ffeefe452fc96625d90d6092da1e90bd4cc7d",
+    "src/descriptive/investigate_spass_unit_stage74.py": "5a8725f09e19b5cb8bee6d554abbfd494a6d0fcf0e253f3fd4e1bf6d2465a3ea",
+    "data_external/source_evidence/ENVIDAT_SPASS_PACKAGE_METADATA_STAGE74_20261010T125653Z.json": "e0865a8cbde736aea68aa92e0a74aba7418051fb046e7ca244c56506951a4693",
+    "data_external/source_evidence/ENVIDAT_SPASS_PACKAGE_METADATA_STAGE74_20261010T125653Z.metadata.json": "0b2dc77a6aed19f12144b5b3a2d81a87ac7bae6f2588f59148764704f845808a",
+    "data_external/source_evidence/ENVIDAT_SPASS_HS_RESOURCE_METADATA_STAGE74_20261010T125656Z.json": "acedae896acf789a8fd36ffcf60eb877854fead8605abe1b376d377fceee99b8",
+    "data_external/source_evidence/ENVIDAT_SPASS_HS_RESOURCE_METADATA_STAGE74_20261010T125656Z.metadata.json": "ee9282b14a099d33d015f5c2a15efcaf7b5c2b6714a7b0f36973fe61ce045356",
+    "data_external/source_evidence/WSL_PUBLIC_SPASS_PROJECT_SEARCH_STAGE74_20261010T125912Z.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "data_external/source_evidence/WSL_PUBLIC_SPASS_PROJECT_SEARCH_STAGE74_20261010T125912Z.metadata.json": "cfa9aa13ec2b227845379853d83a231ce8b4b644b4c25df095c239f09429b7c6",
+    "data_external/source_evidence/WSL_PUBLIC_SNOWQM_PROJECT_STAGE74_20261010T125914Z.json": "7c7d5f4cfb64695ed3a2b8661847e62f2738442c69f545afd37914230003f59c",
+    "data_external/source_evidence/WSL_PUBLIC_SNOWQM_PROJECT_STAGE74_20261010T125914Z.metadata.json": "0b3e7115893b40608d0d82b2ca946474866007327a6ed380e45cec2b9cc73ff9",
+    "data_external/source_evidence/WSL_SNOWQM_PUBLIC_TREE_STAGE74_20261010T130009Z.json": "8fd7022bb7ce3035313fda52dc2aa01ad7b5923fa8b2b83aa64f103bfa1cb145",
+    "data_external/source_evidence/WSL_SNOWQM_PUBLIC_TREE_STAGE74_20261010T130009Z.metadata.json": "9fff788d489e7d78f16b0f9508fa07ad4f50dadef0b5421e7cdf95decd542f29",
+    "data_external/source_evidence/WSL_SNOW_HYDROLOGY_PUBLIC_PROJECTS_STAGE74_20261010T130010Z.json": "3558876e7afac99463cd38b4f75c5d0b50a49ee33bf9db2be8aae5f999b23e1f",
+    "data_external/source_evidence/WSL_SNOW_HYDROLOGY_PUBLIC_PROJECTS_STAGE74_20261010T130010Z.metadata.json": "1e4b66c2eed693bf7f2109fe1d22515e317df28dafde1f31fb64d2626bf7f340"
+  }
+}
