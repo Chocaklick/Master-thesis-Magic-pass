@@ -1,0 +1,10 @@
+[
+  {
+    "source_id": "SWISSTOPO_ALTI3D_STLUC_ITEMS_STAGE61",
+    "url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.swisstopo.swissalti3d/items?bbox=7.5936738%2C46.2116461%2C7.6571459%2C46.2609986&limit=100",
+    "organisation": "Official swisstopo geo.admin.ch STAC",
+    "suffix": "json",
+    "purpose": "Bounded StLuc current candidate-footprint metadata pilot; all editions/asset dates retained for audit; no selection or exclusion",
+    "parent_source_id": "SWISSTOPO_ALTI3D_COLLECTION_STAGE61"
+  }
+]

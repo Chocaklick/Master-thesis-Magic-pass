@@ -1,0 +1,5 @@
+# Installed in the project virtual environment; not the system Python.
+rasterio==1.5.2
+affine==3.0.1
+attrs==26.1.0
+click==8.5.0

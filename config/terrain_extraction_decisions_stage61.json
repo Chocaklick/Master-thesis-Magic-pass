@@ -1,0 +1,19 @@
+{
+ "date":"2026-10-10",
+ "researcher_extraction_reply":"Cellules 2 m et longueurs exactes ; Horn sans interpolation (recommandé).",
+ "researcher_flat_reply":"Orientation indéfinie à pente nulle seulement, sans seuil supplémentaire (recommandé).",
+ "parent_decisions":["config/winter_profile_terrain_decisions_stage48.json","config/winter_profile_geometry_roles_decisions_stage49.json","config/piste_exact_overlap_decisions_stage58.json"],
+ "dem":"swissALTI3D",
+ "resolution_m":2,
+ "axis_weight":"Exact length of unique within-group axis geometry in each native DEM cell",
+ "terrain_gradient":"Horn 3x3",
+ "interpolate_missing_values":false,
+ "flat_undefined_aspect":"Computed terrain slope exactly zero only; no additional threshold",
+ "flat_parts_retained_for_altitude_and_length":true,
+ "publish_observed_missing_flat_and_total_lengths":true,
+ "automatic_group_or_member_exclusion":false,
+ "current_dem_or_geometry_verified_preentry":false,
+ "snow_splicing_or_calibration_approved":false,
+ "new_clustering_or_effect_fit_approved":false,
+ "source_documentation_ids":["GDAL_TERRAIN_METHODS_STAGE60","GDAL_ASPECT_METHOD_STAGE60","SWISSTOPO_ALTI3D_RESOLUTION_STAGE47"]
+}

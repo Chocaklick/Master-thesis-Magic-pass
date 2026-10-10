@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "src/descriptive/audit_terrain_catalogue_stage61.py": "66395ffd983bae155882044a2b176f1049b15180246a9923dde44989982dd8b9",
+    "src/data_processing/terrain_cell_weights_stage61.py": "969b2ca601f5f7b1eba6284a3ddf7193624ac95f14a4cc363b4989f91dca239e",
+    "config/terrain_extraction_decisions_stage61.json": "67ed2b7e0d49170eb0109809a111eddb433cff41e8f87aaf1860bdc528abd6c3",
+    "config/terrain_catalogue_sources_stage61.json": "aca5315f3a5cf170dcfe58c170620689780357c592197d73bd257f2c557a794f",
+    "config/terrain_pilot_query_stage61.json": "05eab4251bd263fa02f18bad2fdbfe898e4f36651f92edc2f8e130c0352f7e31",
+    "config/terrain_terms_sources_stage61.json": "547c8e64ef2268526a9cf95568fa630cc04848d0e459b6d83f086e9ed67c13de",
+    "config/terrain_runtime_requirements_stage61.txt": "ce041f5a84b7924384d1cb1eafc45818e0e50178e29531ad99b9d92916e995fc",
+    "src/data_collection/prepare_terrain_pilot_query_stage61.py": "39a085b3d81d24b16f19a73048f50542eca38558127b58cfbc1c7a5ad0bed82a",
+    "src/data_collection/collect_terrain_catalogue_stage61.py": "32a0e0a2557a4393e07b84144b9159cc0a9ca164c5cb2ffc5b01130e1817b0a5",
+    "tests/test_terrain_cells_stage61.py": "46cba39fdf9d61a8d293e604e44866408a315c18c967ad5fee05811bffec85a3",
+    "data_processed/winter_profile_piste_assignment_stage60.csv": "008cbdd4367c87cb4acab70fbf03ca7d0b8b4b7c2a36fd256421f46ce51f6d7c",
+    "reports/piste_terrain_sources_stage60_summary.json": "780fe27a204f9966c4662151e1f9282d321528aea679f3e05620f680c39ec234",
+    "data_interim/terrain_catalogue_events_stage61.json": "624f3f2c35c9a95960a7b9b6721ef7d06ce43d6b1d63785d32c5d1ab07dc65e8",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_COLLECTION_STAGE61_20261010T063915Z.json": "f2e87449d1b8a46abb44df2e54cc24f66fede749f1d4ba45a3e6f597cc5fff5b",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_COLLECTION_STAGE61_20261010T063915Z.metadata.json": "d061de1fd0608ef2e7bd0afded22eac5023efa14640303d10f4eb35c6ab77715",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_STLUC_ITEMS_STAGE61_20261010T064241Z.json": "37ccf1c016cc9443d7ef1e3eb0d3efeca172ae06955d4c2dd2b5cf0a50160ed4",
+    "data_external/source_evidence/SWISSTOPO_ALTI3D_STLUC_ITEMS_STAGE61_20261010T064241Z.metadata.json": "61b23c2c737c6efe504dfe0848bd206de2b6e3a2ce473f160cfed01ba23f58fd",
+    "data_external/source_evidence/SWISSTOPO_FREE_GEODATA_TERMS_STAGE61_20261010T064410Z.html": "96016490f6e366d083a67c9d4f595ff4d07519ff2bc3bf2e48043f876c401f4e",
+    "data_external/source_evidence/SWISSTOPO_FREE_GEODATA_TERMS_STAGE61_20261010T064410Z.metadata.json": "07c3a2d706cc981a6fb244162d4bf22dee597269f10d479a17e8f6f775f987ec"
+  },
+  "pilot_group_id": "MP_GROUP_RESORT__st_luc_chandolin",
+  "all_group_count_retained": 70,
+  "catalogue_item_count": 84,
+  "native2m_asset_count": 84,
+  "reference_datetimes": [
+    "2019-01-01T00:00:00Z",
+    "2024-01-01T00:00:00Z"
+  ],
+  "footprint_intersection_asset_count": 50,
+  "catalogue_license_literal": "proprietary",
+  "terms_individually_verified": true,
+  "required_attribution": "Office fédéral de topographie swisstopo",
+  "catalogue_license_not_relabelled": true,
+  "all_editions_retained": true,
+  "no_raster_download_or_vintage_selection": true,
+  "no_terrain_or_snow_feature_or_effect_fit": true,
+  "approved_horn_native_cell_kernel_prepared": true,
+  "runtime_versions": {
+    "python": "3.12.7",
+    "numpy": "2.5.3",
+    "rasterio": "1.5.2",
+    "gdal": "3.12.2"
+  },
+  "source_metadata": [
+    {
+      "source_id": "SWISSTOPO_ALTI3D_COLLECTION_STAGE61",
+      "url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.swisstopo.swissalti3d",
+      "organisation": "swisstopo via official geo.admin.ch STAC",
+      "suffix": "json",
+      "purpose": "Audit candidate official collection endpoint and actual links/assets/terms before native2m tile collection; no interpretation if unavailable",
+      "retrieval_date": "2026-10-10T06:39:15.194940+00:00",
+      "final_url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.swisstopo.swissalti3d",
+      "raw_file": "data_external/source_evidence/SWISSTOPO_ALTI3D_COLLECTION_STAGE61_20261010T063915Z.json",
+      "sha256": "f2e87449d1b8a46abb44df2e54cc24f66fede749f1d4ba45a3e6f597cc5fff5b",
+      "size_bytes": 1978,
+      "http_status": 200
+    },
+    {
+      "source_id": "SWISSTOPO_ALTI3D_STLUC_ITEMS_STAGE61",
+      "url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.swisstopo.swissalti3d/items?bbox=7.5936738%2C46.2116461%2C7.6571459%2C46.2609986&limit=100",
+      "organisation": "Official swisstopo geo.admin.ch STAC",
+      "suffix": "json",
+      "purpose": "Bounded StLuc current candidate-footprint metadata pilot; all editions/asset dates retained for audit; no selection or exclusion",
+      "parent_source_id": "SWISSTOPO_ALTI3D_COLLECTION_STAGE61",
+      "retrieval_date": "2026-10-10T06:42:41.965006+00:00",
+      "final_url": "https://data.geo.admin.ch/api/stac/v1/collections/ch.swisstopo.swissalti3d/items?bbox=7.5936738%2C46.2116461%2C7.6571459%2C46.2609986&limit=100",
+      "raw_file": "data_external/source_evidence/SWISSTOPO_ALTI3D_STLUC_ITEMS_STAGE61_20261010T064241Z.json",
+      "sha256": "37ccf1c016cc9443d7ef1e3eb0d3efeca172ae06955d4c2dd2b5cf0a50160ed4",
+      "size_bytes": 234181,
+      "http_status": 200
+    },
+    {
+      "source_id": "SWISSTOPO_FREE_GEODATA_TERMS_STAGE61",
+      "url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices",
+      "organisation": "Federal Office of Topography swisstopo",
+      "suffix": "html",
+      "purpose": "Exact terms link observed in archived swissALTI3D product documentation; verify attribution/use versus proprietary catalogue marker before raster download",
+      "parent_source_id": "SWISSTOPO_ALTI3D_RESOLUTION_STAGE47",
+      "retrieval_date": "2026-10-10T06:44:10.089827+00:00",
+      "final_url": "https://www.swisstopo.admin.ch/en/terms-of-use-free-geodata-and-geoservices",
+      "raw_file": "data_external/source_evidence/SWISSTOPO_FREE_GEODATA_TERMS_STAGE61_20261010T064410Z.html",
+      "sha256": "96016490f6e366d083a67c9d4f595ff4d07519ff2bc3bf2e48043f876c401f4e",
+      "size_bytes": 261395,
+      "http_status": 200
+    }
+  ],
+  "metadata_datetime_not_assumed_actual_acquisition": true,
+  "output_sha256": {
+    "data_processed/terrain_stluc_native2m_asset_inventory_stage61.csv": "3559a6fe5e1c1f9adc80384c0b12cc0fec57af3d8bd3d1d1ea2be898270fe1be"
+  }
+}

@@ -1,0 +1,12 @@
+{
+ "station_group_id":"MP_GROUP_RESORT__st_luc_chandolin",
+ "osm_site_relation_id":5976698,
+ "operator_source_id":"OPERATOR_SCOPE_12_STAGE53",
+ "scope_source_id":"STLUC_WINTER_ACCESS_TARIFF_STAGE60",
+ "required_operator_markers":["Tarifs hiver luge - piéton - ski de randonnée à St-Luc/Chandolin","télésiège du Tsapé","Pas-de-bœuf","Bella-Tola","Forêt"],
+ "verified_lift_way_ids":[50171959,50538662,50538660,470416613,51106126],
+ "original_installation_identity_notes":"Original names Tsapé, Bella Tola, Pas de Boeuf, La Forêt, Tignousa match independently published winter access chains, including spelling/hyphen differences. Funicular is separately mentioned officially but is absent from known aerialway members; no ID invented.",
+ "geographic_review_status":"reviewed_current_scope_coherent",
+ "geographic_review_note":"Original Stage53 Map6 top-left visually inspected: coherent linked western/northern Chandolin branches and central/eastern St-Luc/BellaTola ski network around the unchanged southern access reference. Official winter chains name Tsapé–Rotzé–Pas-de-bœuf–Bella-Tola and Forêt–Pas-de-bœuf–Bella-Tola; together with existing official operator and original installation members this supports current site correspondence, not name/distance-only assignment.",
+ "review_note":"Current site identity corroborated by winter tariff original, not previous summer iframe or search prices. Archived primary prices differ from index and are not imported as data. No exhaustive domain/preentry geometry or individual lifecycle acceptance. Original funicular omission/type distinction and three uncompleted node references retained."
+}

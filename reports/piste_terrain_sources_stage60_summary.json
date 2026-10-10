@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "src/descriptive/verify_piste_terrain_sources_stage60.py": "7b78efa5572d586bfe8e8401df03268ac2c3de8206f29926d6af82566c306a87",
+    "src/data_collection/collect_piste_terrain_stage60.py": "bd4d8885f843a46a970133fcf590a408636d575d84787acf9c33a5f8d0c04ffc",
+    "config/piste_terrain_sources_stage60.json": "93e5a08e476257a0fdfee0031ede46b3f18801c0a2bf5670ac99c7b5fd55b835",
+    "config/piste_assignment_case_stage60.json": "5b2b13be10bb8fc5e00e792ee3e37a4d886ba6f7e872bc1e7bfda083f09e0fe9",
+    "reports/piste_terrain_discovery_stage60.json": "54a40c5d3b9e6ee086057ea06ee9c25737a9e8228b1e54d0ed6dca1700516263",
+    "config/piste_assignment_protocol_decisions_stage51.json": "d82c6ae646fcc895ccbf1b0443995caa794af39ae1775fbb88dd1da5f613b5d6",
+    "data_processed/winter_profile_piste_assignment_stage55.csv": "08600dadb1a8815d072248590af005ecf7f75465a424b3e7d81d2c15217525a9",
+    "data_processed/winter_profile_piste_geometry_roles.csv": "da1d0d324d6f3a6917d12c2c72d142f6f37c48e3bc6287f0070a811b7964ca65",
+    "src/descriptive/audit_verified_piste_members_stage56.py": "58ba0585962243f28d5558296664873bac84f0c4da16bff70c56dcf0de077797",
+    "src/descriptive/verify_piste_assignments_stage51.py": "604d6f1b1d003e1b84185aa2f41485d6a57894b14548519c0cb962d79a17e1d2",
+    "src/descriptive/review_piste_candidates_stage53.py": "42bcf728e982cecfd8b4e11f29d057cd69a648e20b90b4b897c63e03670f472f",
+    "reports/verified_piste_member_qa_stage56_summary.json": "e1ebce4f374f2149fb9072b1462beb6914cb338b67288e38ff661f7d42aa2025",
+    "data_processed/winter_profile_verified_piste_member_qa_stage56.csv": "50dc84a0e6d62ba3b3ed214f48fc2737f6526d6c7184625a77e8f12aa3f125a0",
+    "data_processed/winter_profile_verified_piste_group_qa_stage56.csv": "2788e29a3b6845508d42c4570b97b8d88f20e3a858a7db4e4419373f1bcdeea5",
+    "reports/piste_official_page_collection_stage49_summary.json": "55b585be39fd795791d2aaa71137f36be0fdffed571773cd1c2516fc04b6f6a1",
+    "data_interim/piste_terrain_events_stage60.json": "0008397f89f8e85abaa78aa7b06772af7e80c5049012b5311ad1fb85ed6d7af6",
+    "reports/figures/piste_candidates_stage53_6.png": "2fbc680bfc60ca3ab290fcdccb49ab7a10becede8b93689e8759bbd504ba09a1",
+    "data_external/source_evidence/STLUC_WINTER_ACCESS_TARIFF_STAGE60_20261010T063149Z.html": "ea3716d43f0f468ab5dbc3383746ca87f9e48162e462eaa5e36b6204ada86870",
+    "data_external/source_evidence/GDAL_TERRAIN_METHODS_STAGE60_20261010T063151Z.html": "6b11133521902a621a0144c28ae1f7d280924fc4fa87c7fa356985873346d081",
+    "data_external/source_evidence/GDAL_ASPECT_METHOD_STAGE60_20261010T063153Z.html": "7d230dad4fab90deb23034bced299fef31669ae1771cedd3a0049ad89d07f4a7",
+    "data_external/source_evidence/OPERATOR_SCOPE_12_STAGE53_20261009T222200Z.html": "e6d98b6c354a9c68a203ca25ecd63fd8138841664b818c3d05183ef821d85ab5",
+    "config/piste_operator_scope_evidence_stage53.json": "3743270dd2db3d995b4f2bf2444ce5b732a1f841dae6a3b65f2523c606f4a6f0",
+    "config/piste_operator_evidence_stage53.json": "9aeb94ce6fbfd379d84a32aece5f610a11fb6e83d1a16f2f40ee13963868f74f",
+    "data_interim/current_piste_geometry_collection_checkpoint.json": "334016bbfdb46aeb482816301a41daec710c392f5dc2684adb7237152063f311",
+    "data_external/source_evidence/OSM_DOWNHILL_SWISS_CURRENT_2026_10_09_20261009T162248Z.json": "8904d22bed62031cd06f25231f083cfb502143c7609982cf4aab3d78b7d45c4f",
+    "reports/piste_missing_member_collection_summary.json": "5b8cde1bd7c21f50e2bbf4f0657713611587826c8a126f50f7f062247d33a672",
+    "data_external/source_evidence/OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09_20261009T172519Z.json": "6bbea578b01f12037691da5c74332a91f0ddec2d14810fa9cef68a2f19c63c68"
+  },
+  "group_count": 70,
+  "verified_correspondence_count": 41,
+  "unresolved_group_count": 29,
+  "newly_verified_group": "MP_GROUP_RESORT__st_luc_chandolin",
+  "new_downhill_object_count": 81,
+  "total_member_count": 854,
+  "candidate_role_counts": {
+    "way_axis_candidate": 846,
+    "explicit_surface_way_candidate": 8
+  },
+  "geometry_status_counts": {
+    "valid_axis_candidate": 846,
+    "valid_standalone_surface_candidate": 8
+  },
+  "all_other_assignment_and_qa_rows_preserved": true,
+  "no_terrain_extraction_or_effects": true,
+  "no_automatic_exclusion_or_historical_certification": true,
+  "source_metadata": [
+    {
+      "source_id": "STLUC_WINTER_ACCESS_TARIFF_STAGE60",
+      "url": "https://www.valdanniviers.ch/fr/Z33284/tarifs-luge-pieton-ski-de-randonnee",
+      "organisation": "Site officiel du Val d’Anniviers / St-Luc–Chandolin",
+      "suffix": "html",
+      "purpose": "Verify independently named current winter lift routes against original site members; not preentry geometry certification",
+      "retrieval_date": "2026-10-10T06:31:49.675268+00:00",
+      "final_url": "https://www.valdanniviers.ch/fr/Z33284/tarifs-luge-pieton-ski-de-randonnee",
+      "raw_file": "data_external/source_evidence/STLUC_WINTER_ACCESS_TARIFF_STAGE60_20261010T063149Z.html",
+      "sha256": "ea3716d43f0f468ab5dbc3383746ca87f9e48162e462eaa5e36b6204ada86870",
+      "size_bytes": 110231,
+      "http_status": 200
+    },
+    {
+      "source_id": "GDAL_TERRAIN_METHODS_STAGE60",
+      "url": "https://gdal.org/en/stable/programs/gdaldem.html",
+      "organisation": "GDAL official documentation",
+      "suffix": "html",
+      "purpose": "Document gradient algorithms, undefined flat aspect and missing-neighbour handling before proposing terrain calculation for validation",
+      "retrieval_date": "2026-10-10T06:31:51.437563+00:00",
+      "final_url": "https://gdal.org/en/stable/programs/gdaldem.html",
+      "raw_file": "data_external/source_evidence/GDAL_TERRAIN_METHODS_STAGE60_20261010T063151Z.html",
+      "sha256": "6b11133521902a621a0144c28ae1f7d280924fc4fa87c7fa356985873346d081",
+      "size_bytes": 70466,
+      "http_status": 200
+    },
+    {
+      "source_id": "GDAL_ASPECT_METHOD_STAGE60",
+      "url": "https://gdal.org/en/stable/programs/gdal_raster_aspect.html",
+      "organisation": "GDAL official documentation",
+      "suffix": "html",
+      "purpose": "Check current explicit gradient and missing-neighbour controls; no implementation or method selection",
+      "retrieval_date": "2026-10-10T06:31:53.365882+00:00",
+      "final_url": "https://gdal.org/en/stable/programs/gdal_raster_aspect.html",
+      "raw_file": "data_external/source_evidence/GDAL_ASPECT_METHOD_STAGE60_20261010T063153Z.html",
+      "sha256": "7d230dad4fab90deb23034bced299fef31669ae1771cedd3a0049ad89d07f4a7",
+      "size_bytes": 37771,
+      "http_status": 200
+    }
+  ],
+  "algorithm_proposal_documented_not_automatically_selected": true,
+  "output_sha256": {
+    "data_processed/winter_profile_piste_assignment_stage60.csv": "008cbdd4367c87cb4acab70fbf03ca7d0b8b4b7c2a36fd256421f46ce51f6d7c",
+    "data_processed/winter_profile_verified_piste_member_qa_stage60.csv": "f44ba56646157d267a7e7bb25e7e72431de83112995a297b7a29f63e8abef197",
+    "data_processed/winter_profile_verified_piste_group_qa_stage60.csv": "7be09fe87bc9d4d151c81cc618c32d6a6746fac3b9aeef87612c319ef0a0b56c"
+  }
+}

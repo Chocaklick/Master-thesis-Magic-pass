@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-10",
+  "method": "Bounded Tavily connector fallback; URLs/snippets are discovery only, not primary installation or algorithm verification.",
+  "searches": [
+    {
+      "query": "St-Luc Tsapé Bella Tola",
+      "request_id": "93c9b1af-58bb-43b7-8c3c-4a5337c61392",
+      "response_time": 4.99,
+      "results": [
+        {
+          "url": "https://booking.valdanniviers.ch/hotel-bella-tola-spa-st-luc.html",
+          "title": "Hôtel Bella Tola & SPA, St-Luc - ,  -",
+          "score": 0.7334523
+        },
+        {
+          "url": "https://reservation.valdanniviers.ch/st-luc/hotel-bella-tola-spa-st-luc.html",
+          "title": "Hôtel Bella Tola & SPA, St-Luc - 4 étoiles, Swiss historic hotels - St-Luc",
+          "score": 0.7244226
+        },
+        {
+          "url": "https://www.valdanniviers.ch/en/P108621/your-stay/accomodation/hotels-inns/hotel-bella-tola",
+          "title": "Hôtel Bella-Tola",
+          "score": 0.69249696
+        },
+        {
+          "url": "https://www.valdanniviers.ch/en/V3690/things-to-see-and-do/summer/st-luc-tignousa-tsape-no-23",
+          "title": "St-Luc/Tignousa - Tsapé No. 23",
+          "score": 0.68798697
+        }
+      ]
+    },
+    {
+      "query": "gdaldem slope aspect Horn flat",
+      "request_id": "1ab68e79-87c7-440f-a89e-c9f83665530d",
+      "response_time": 2.89,
+      "results": [
+        {
+          "url": "https://gdal.org/en/stable/programs/gdaldem.html",
+          "title": "gdaldem — GDAL documentation",
+          "score": 0.98564
+        },
+        {
+          "url": "https://gdal.org/en/stable/programs/gdal_raster_aspect.html",
+          "title": "gdal raster aspect — GDAL documentation",
+          "score": 0.98258
+        },
+        {
+          "url": "https://gdal.org/gdal.pdf",
+          "title": "GDAL Documentation",
+          "score": 0.98142
+        },
+        {
+          "url": "https://gdal.org/en/stable/api/python/utilities.html",
+          "title": "Utilities / Algorithms API — GDAL documentation",
+          "score": 0.97964
+        }
+      ]
+    },
+    {
+      "query": "Tsapé télésiège",
+      "request_id": "559bb6fd-87cd-4077-9c52-4914269aad35",
+      "response_time": 2.02,
+      "results": [
+        {
+          "url": "https://www.valdanniviers.ch/fr/P111178/votre-sejour/boire-et-manger/restaurant-du-tsape",
+          "title": "Restaurant du Tsapé",
+          "score": 0.8033131
+        },
+        {
+          "url": "https://www.valdanniviers.ch/fr/P122604/a-faire/trottinettes-tout-terrain-au-tsape-chandolin",
+          "title": "Trottinettes tout terrain au Tsapé / Chandolin | Site officiel du Val d’Anniviers",
+          "score": 0.7555112
+        },
+        {
+          "url": "https://www.valdanniviers.ch/fr/V3666/a-faire/en-hiver/4-chandolin-tsape",
+          "title": "4. Chandolin - Tsapé",
+          "score": 0.7489592
+        },
+        {
+          "url": "https://www.valdanniviers.ch/fr/Z33284/tarifs-luge-pieton-ski-de-randonnee",
+          "title": "Tarifs luge - piéton - ski de randonnée | Site officiel du Val d’Anniviers",
+          "score": 0.7274535
+        }
+      ]
+    },
+    {
+      "query": "St-Luc Bella Tola remontées",
+      "request_id": "4ba21a13-73e6-4679-a113-3fc8b0480198",
+      "response_time": 1.88,
+      "results": [
+        {
+          "url": "https://www.valdanniviers.ch/fr/Z16375/funiculaire-st-luc-chandolin-sa",
+          "title": "Funiculaire St-Luc/Chandolin SA",
+          "score": 0.6205532
+        },
+        {
+          "url": "https://www.valdanniviers.ch/fr/Z15167/ski-randonnee",
+          "title": "Ski de randonnée | Site officiel du Val d'Anniviers",
+          "score": 0.568632
+        },
+        {
+          "url": "https://www.valdanniviers.ch/fr/Z15628/nous-contacter",
+          "title": "Nous contacter",
+          "score": 0.5524679
+        },
+        {
+          "url": "https://www.valdanniviers.ch/fr/P121066/lever-de-soleil-a-la-bella-tola",
+          "title": "Lever de soleil à la Bella-Tola",
+          "score": 0.54710174
+        }
+      ]
+    }
+  ]
+}

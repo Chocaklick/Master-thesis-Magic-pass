@@ -1,0 +1,5 @@
+[
+ {"source_id":"STLUC_WINTER_ACCESS_TARIFF_STAGE60","url":"https://www.valdanniviers.ch/fr/Z33284/tarifs-luge-pieton-ski-de-randonnee","organisation":"Site officiel du Val d’Anniviers / St-Luc–Chandolin","suffix":"html","purpose":"Verify independently named current winter lift routes against original site members; not preentry geometry certification"},
+ {"source_id":"GDAL_TERRAIN_METHODS_STAGE60","url":"https://gdal.org/en/stable/programs/gdaldem.html","organisation":"GDAL official documentation","suffix":"html","purpose":"Document gradient algorithms, undefined flat aspect and missing-neighbour handling before proposing terrain calculation for validation"},
+ {"source_id":"GDAL_ASPECT_METHOD_STAGE60","url":"https://gdal.org/en/stable/programs/gdal_raster_aspect.html","organisation":"GDAL official documentation","suffix":"html","purpose":"Check current explicit gradient and missing-neighbour controls; no implementation or method selection"}
+]

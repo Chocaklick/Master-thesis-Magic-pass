@@ -1,0 +1,3 @@
+[
+ {"source_id":"SWISSTOPO_ALTI3D_COLLECTION_STAGE61","url":"https://data.geo.admin.ch/api/stac/v1/collections/ch.swisstopo.swissalti3d","organisation":"swisstopo via official geo.admin.ch STAC","suffix":"json","purpose":"Audit candidate official collection endpoint and actual links/assets/terms before native2m tile collection; no interpretation if unavailable"}
+]
