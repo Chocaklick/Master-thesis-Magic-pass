@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "src/descriptive/build_connected_profile_context_stage57.py": "6c2bd4963ba4ec8a2cacdbef3f51d174f46a0d0afc0f2129379ed653a9419fb2",
+    "src/descriptive/build_approved_profile_context.py": "8455bfb702db04d562e1d8c8185f870dfe85e7a2bb7d2505e689a6722050efdb",
+    "src/descriptive/audit_five_dimension_profile_availability.py": "a735cdddc658240cb19eaff93c17a164cdd952f251a640a39f5310a94cb32b46",
+    "config/winter_profile_operational_decisions_stage43.json": "3cdac8952f9626250506b266dcd7087c19591aef8ee5c14158c8a53d08b458ed",
+    "config/eischoll_unterbaech_regrouping_stage55.json": "b8c069b79b2d4270c90dfb80fb8f98de256bdd5e3528bdc488fbfd822e555f09",
+    "data_processed/accessibility_station_groups_stage55.csv": "2b41c8ab69a514c86f2e0ad0495d9b38bc13febcfa77898fc1f1ea40ecc39d3c",
+    "data_processed/winter_profile_five_dimension_groups.csv": "dbbbbcd2bd970c24e005545dcbd2c7b2d0ae60e3838b52783cad1f69071926ca",
+    "data_processed/accessibility_road_group_reference_stage55.csv": "7560e616aed637427687b60c9537dbc105a7299af5d0083960988c900b17cf6e",
+    "reports/accessibility_road_stop_origins.csv": "abadcd468cc05d9741a7c89a1d14b98f43737a0425225de3202bfa254aac4d56",
+    "reports/accessibility_road_final_snapping_endpoints.csv": "b669f199ac99f531f8c4864830aac856fa1790d45dcd3a52b443b503fe857ea4",
+    "reports/eischoll_unterbaech_regrouping_stage55_summary.json": "93c427338c75dc72d9b1293ab1b7bbc69c89e56700bb4ad1c16c9139184314c4",
+    "reports/approved_profile_context_summary.json": "014be586c44eb10758b3881e89866c292f63b2ebdb6a0d34536e53e35fd7bd85",
+    "data_processed/winter_profile_urban_city_detail.csv": "bca74e1c550847325e1fc05dd38a14244132aefa4945cc159ebda5986ed04f6b",
+    "data_processed/winter_profile_urban_minimum.csv": "e2e7b03c25bcf7fadc31bf9310851031970e8affd72915ea71c0e3b22a387c10",
+    "data_processed/winter_profile_approved_snow_windows.csv": "ec555991771b7cbbbf44f36a52d658ae0f6eecac58c903fcf5fb3f133845ee84"
+  },
+  "derived_group_count": 70,
+  "original_group_id_count": 71,
+  "city_detail_count": 420,
+  "all_six_city_group_count": 70,
+  "snow_window_count": 350,
+  "snow_winters_outside_spass": 23,
+  "groups_with_snow_winters_outside_spass": [
+    "MP_GROUP_EVENT__c1f58b57f3fa",
+    "MP_GROUP_EVENT__e664bf3f38d5",
+    "MP_GROUP_RESORT__balmberg",
+    "MP_GROUP_RESORT__belalp",
+    "MP_GROUP_RESORT__gstaad",
+    "MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg",
+    "MP_GROUP_RESORT__la_dole_jura_sur_leman",
+    "MP_GROUP_RESORT__linden_skilift_linden",
+    "MP_GROUP_RESORT__meiringen_hasliberg",
+    "MP_GROUP_RESORT__melchsee_frutt",
+    "MP_GROUP_RESORT__morlialp",
+    "MP_GROUP_RESORT__schwanden_sigriswil_thunersee",
+    "MP_GROUP_RESORT__sorenberg",
+    "MP_GROUP_RESORT__st_cergue"
+  ],
+  "common_group_snow_winters": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "common_group_urban_minimum_minutes": 92.85616666666668,
+  "unrelated_69_profiles_preserved": true,
+  "prior_outputs_preserved": true,
+  "no_routing_calls": true,
+  "no_snow_values_or_splice": true,
+  "no_clustering_or_effects": true,
+  "no_automatic_exclusions": true,
+  "output_sha256": {
+    "data_processed/winter_profile_urban_city_detail_stage57.csv": "c2380d643264f3385be9a5cbcf3c3a4f49b921e1e6a4fa084b9271d996080b16",
+    "data_processed/winter_profile_urban_minimum_stage57.csv": "18b90d2c64f9c4a883a7f5951122676c1c30d06fd1922f2226bbcc2915310313",
+    "data_processed/winter_profile_approved_snow_windows_stage57.csv": "af661466761cfaa2cd10eb6d9a77c9ac06f2b68d77cda46647adf4f4f2222d94"
+  }
+}

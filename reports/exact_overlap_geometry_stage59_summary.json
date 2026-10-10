@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "src/descriptive/verify_exact_overlap_geometry_stage59.py": "2b61eaff12ba92f67f10208169208abf6d764effb61cb5d53df51978d9a6a519",
+    "reports/exact_piste_overlap_stage58_summary.json": "47f494badc92adfa02427948a9fae2f51e7a5325e722fb35eec16b4f07de8f10",
+    "data_processed/winter_profile_exact_piste_overlap_stage58.csv": "fe08bd0901ca89dd5c26fac77f3253e945221d00ed6a9e9a07772f8334cc0cf8",
+    "data_interim/winter_profile_exact_network_stage58.json": "2e69c0df378dab2d26cdc014aad14ee2e879fd7e6b831bb4c57de91571d94fb7"
+  },
+  "group_count": 70,
+  "groups_with_exact_shared_line_count": 7,
+  "groups_with_exact_shared_line": [
+    "MP_GROUP_RESORT__belalp",
+    "MP_GROUP_RESORT__lauchernalp_lotschental",
+    "MP_GROUP_RESORT__le_paquier_cret_du_puy",
+    "MP_GROUP_RESORT__meiringen_hasliberg",
+    "MP_GROUP_RESORT__mont_noble_nax",
+    "MP_GROUP_RESORT__vercorin",
+    "MP_GROUP_CONNECTED__eischoll_unterbaech"
+  ],
+  "shared_physical_portion_total_m": 368.80669717402105,
+  "excess_identifier_weight_total_m": 379.53203379520255,
+  "maximum_absolute_nonoverlap_subtraction_residual_m": 2.182787284255028e-11,
+  "no_geometric_tolerance_or_exclusion": true,
+  "stage58_original_subtractions_preserved": true,
+  "note": "Stage58 positive raw subtraction list includes floating residuals; only direct positive pair line intersection proves geometric overlap.",
+  "output_sha256": {
+    "data_processed/winter_profile_overlap_geometry_stage59.csv": "9c2691ff8184550ec24a19ddeba0aeeb49ed6ebc8dbe288a9a2f5b749d843f83"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-10",
+  "researcher_reply": "Compter une seule fois les portions exactement superposées, avec comparaison conservée (recommandé).",
+  "within_group_exact_overlap_counted_once": true,
+  "distinct_identifier_length_sum_preserved": true,
+  "preserve_all_original_ids_versions_and_outputs": true,
+  "proximity_tolerance_or_coordinate_snapping_allowed": false,
+  "surfaces_separate_from_axes": true,
+  "automatic_member_or_group_exclusion_allowed": false,
+  "historical_scope_certified": false,
+  "scope": "Current mapped candidate-network diagnostic; no exhaustive real-domain certification or automatic individual metric acceptance. Literal lifecycle flags retained. Future length weighting uses exact unique network after outstanding member review."
+}
