@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "config/snow_compatibility_decisions_stage73.json": "ec7e1178cdd26328177da9ed6b7778e5eb5ca07984c950ca9781f2d752aef4f2",
+    "config/snow_compatibility_evidence_sources_stage73.json": "57a71fe332daacb6de797ef349ae99a5941dac35e2600e2badf4b07cdc06fd13",
+    "src/descriptive/audit_snow_compatibility_stage73.py": "eb0de1e30158348c3e7f7c371eb80461e34a6f541b3c2bd5b8e7a48ec442a6e3",
+    "reports/snow_grid_metadata_compatibility_stage47.json": "245d2a45be5de3c473f225d43d8ffeefe452fc96625d90d6092da1e90bd4cc7d",
+    "reports/oshd_netcdf_metadata_inventory.json": "7060aa0a711cf33bdaefbc8e753a8cc114df9247eed6f8b1ee6052eee410646a",
+    "data_external/source_evidence/SLF_SPASS_PAPER_HTML_STAGE73_20261010T120854Z.html": "d12f4a183810018a1d0336443b52e99957e9eca0c43ef513c8de9f79be180b7c",
+    "data_external/source_evidence/SLF_SPASS_PAPER_HTML_STAGE73_20261010T120854Z.metadata.json": "ab09c7f7410bdffe1cbc45800703a25310eecbf2df72887d5be0dfed12466a06",
+    "data_external/source_evidence/WSL_SWE2HS_CONVERT_API_STAGE73_20261010T120855Z.html": "e7b7b3f12af5a574f0c4658233f42b60ba985a5e05841c59b701b53d96cd4bee",
+    "data_external/source_evidence/WSL_SWE2HS_CONVERT_API_STAGE73_20261010T120855Z.metadata.json": "3d6668c1d2b9c79bd225e3c1ea2890ef7eb40128f2619fd1b406cee291e45675",
+    "data_external/source_evidence/WSL_SWE2HS_STEPWISE_API_STAGE73_20261010T120857Z.html": "b123bc7b45ae891cdb0bccc39296f619ffc2a7fd41d0e3566cc158834e41efc6",
+    "data_external/source_evidence/WSL_SWE2HS_STEPWISE_API_STAGE73_20261010T120857Z.metadata.json": "b67d393989e524291b5d27c2703fd9b766332bd570fcc08a4ccc6d3e5a342e94",
+    "data_external/source_evidence/WSL_SNOWQM_PAPER_HTML_STAGE73_20261010T120858Z.html": "ac0dc246f2606bc2080744d7b8b7ee1189837ab3a0da30b361fbc5d9e2151efc",
+    "data_external/source_evidence/WSL_SNOWQM_PAPER_HTML_STAGE73_20261010T120858Z.metadata.json": "7628132826815119fb66239829cf333c60acce77b1494c89d0a9e5162f4fa988",
+    "data_external/source_evidence/WSL_SWE2HS_CONVERT_SOURCE_STAGE73_20261010T120951Z.html": "0d65c956385757fce4353eb26f30d1527b68b5e3695008bf3bacf3f9cc1ac6af",
+    "data_external/source_evidence/WSL_SWE2HS_CONVERT_SOURCE_STAGE73_20261010T120951Z.metadata.json": "3da70b9ab2f344b7e5808848e873126f96cb8fa0dc60c19b14150f8b62aea7a9",
+    "data_external/source_evidence/WSL_SWE2HS_STEPWISE_SOURCE_STAGE73_20261010T120953Z.html": "0852cbc10e1ed71f85c5f1a7b1d4df93033c56915f70d89dd42eff94281add8c",
+    "data_external/source_evidence/WSL_SWE2HS_STEPWISE_SOURCE_STAGE73_20261010T120953Z.metadata.json": "c1201bf394531cf71d9f24b8529f40887c6f9f164b688fbe2cc8e98b8c5378ba",
+    "data_external/source_evidence/SLF_OSHD_PAPER_TERMS_HTML_2026_10_09_20261009T163917Z.html": "9e3fff63f6e0dc2559d049321b13f1198c9d45a8bc241047b1ad1cdc4d6ced44",
+    "data_external/source_evidence/SLF_OSHD_PAPER_TERMS_HTML_2026_10_09_20261009T163917Z.metadata.json": "fd48cb684f7fd44068d7bb638ba92e494697cd0002bff6a8f9280bda28ae76fe"
+  },
+  "output_sha256": {
+    "data_processed/snow_compatibility_evidence_stage73.csv": "b5c47f1a8af5b1a29a628fa1bf7abc59ec82e931d8ec83748c4b7a8615d65a93"
+  },
+  "prior_registry_rows_and_digest": {
+    "metadata/data_sources_master.csv": {
+      "rows": 1203,
+      "sha256": "fe3df01e9c469d3dbb351160e1d5ff0d78fc365293d8c2194d0ec44bfd85ec01"
+    },
+    "metadata/data_dictionary.csv": {
+      "rows": 8247,
+      "sha256": "fd76026ff3c783f5ea5e5adf7f3e7f568eeca725c95fe9bcfc6cb21783d4e379"
+    }
+  },
+  "evidence_claims": 15,
+  "archived_new_documents": 6,
+  "reused_oshd_paper": true,
+  "oshd_monthly_headers_checked": 36,
+  "oshd_snow_unit": "m",
+  "oshd_reference_fixed_cet_hour": 6,
+  "oshd_reference_utc_hour": 5,
+  "spass_snow_unit": "UNKNOWN",
+  "spass_output_instant": "UNKNOWN",
+  "spass_output_timezone": "UNKNOWN",
+  "spass_daily_interpretation_not_recommended": true,
+  "spass_ekf_not_collected_pf": true,
+  "no_snow_field_read": true,
+  "analytical_outputs_changed": false,
+  "producer_confirmation_needed": true,
+  "source_spliced": false,
+  "unit_converted": false,
+  "reference_date_offset_days": 0,
+  "final_profiles_computed": false,
+  "additional_aggregation_computed": false,
+  "groups_or_municipalities_excluded": false,
+  "decisions": {
+    "date": "2026-10-10",
+    "researcher_reply": "B — Approfondir la compatibilité avant les profils",
+    "parent_decisions": "config/snow_daily_change_decisions_stage72.json",
+    "scope": "Primary documentary proof of the distributed SPASS snow-depth unit, time labelling and model identity; reuse immutable headers and existing OSHD paper; archive only small public documents through the existing robots-respecting collector.",
+    "final_snow_profiles_pending": true,
+    "source_splicing_or_calibration": false,
+    "new_unit_conversion": false,
+    "choose_best_lag": false,
+    "reference_date_offset_days": 0,
+    "automatic_group_exclusion": false,
+    "new_clustering_or_effect_fit": false,
+    "five_own_preentry_winters_unchanged": true,
+    "external_message_authorized": false,
+    "proof_boundary": "A model input window, software default/example, paper figure unit or numerical concordance does not certify the unit or represented instant of the distributed HSCLQMD output. OSHD UTC interpretation may be documented separately, without changing prior timestamps or date pairing.",
+    "additional_temporal_aggregation": "Not performed; requires researcher validation. A daily diagnostic is not by itself a test of seasonal climatological compatibility.",
+    "baseline_commit": "86b6e37"
+  }
+}

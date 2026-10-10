@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-10",
+  "researcher_reply": "B — Approfondir la compatibilité avant les profils",
+  "parent_decisions": "config/snow_daily_change_decisions_stage72.json",
+  "scope": "Primary documentary proof of the distributed SPASS snow-depth unit, time labelling and model identity; reuse immutable headers and existing OSHD paper; archive only small public documents through the existing robots-respecting collector.",
+  "final_snow_profiles_pending": true,
+  "source_splicing_or_calibration": false,
+  "new_unit_conversion": false,
+  "choose_best_lag": false,
+  "reference_date_offset_days": 0,
+  "automatic_group_exclusion": false,
+  "new_clustering_or_effect_fit": false,
+  "five_own_preentry_winters_unchanged": true,
+  "external_message_authorized": false,
+  "proof_boundary": "A model input window, software default/example, paper figure unit or numerical concordance does not certify the unit or represented instant of the distributed HSCLQMD output. OSHD UTC interpretation may be documented separately, without changing prior timestamps or date pairing.",
+  "additional_temporal_aggregation": "Not performed; requires researcher validation. A daily diagnostic is not by itself a test of seasonal climatological compatibility.",
+  "baseline_commit": "86b6e37"
+}

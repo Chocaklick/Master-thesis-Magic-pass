@@ -1,0 +1,44 @@
+[
+  {
+    "source_id": "SLF_SPASS_PAPER_HTML_STAGE73",
+    "url": "https://tc.copernicus.org/articles/19/4391/2025/",
+    "suffix": "html",
+    "organisation": "SLF / The Cryosphere",
+    "description": "SPASS primary paper: daily-use caveat, forcing windows, CLQM/EKF chain; not assumed to certify distributed HSCLQMD unit or output instant"
+  },
+  {
+    "source_id": "WSL_SWE2HS_CONVERT_API_STAGE73",
+    "url": "https://git-pages.wsl.ch/aschauer/swe2hs/_autosummary/swe2hs.two_dimensional.convert_2d.html",
+    "suffix": "html",
+    "organisation": "WSL SWE2HS documentation",
+    "description": "Actual generated convert_2d API, configurable input/output units; defaults cannot prove SPASS production arguments"
+  },
+  {
+    "source_id": "WSL_SWE2HS_STEPWISE_API_STAGE73",
+    "url": "https://git-pages.wsl.ch/aschauer/swe2hs/_autosummary/swe2hs.stepwise.process_timestep_from_nc_files.html",
+    "suffix": "html",
+    "organisation": "WSL SWE2HS documentation",
+    "description": "Actual stepwise NetCDF processing API; search for stored-unit and date convention evidence without assuming production settings"
+  },
+  {
+    "source_id": "WSL_SNOWQM_PAPER_HTML_STAGE73",
+    "url": "https://gmd.copernicus.org/articles/17/8969/2024/",
+    "suffix": "html",
+    "organisation": "WSL / Geoscientific Model Development",
+    "description": "SnowQM primary paper and publicly linked code: SWE correction is distinct from distributed HS conversion"
+  },
+  {
+    "source_id": "WSL_SWE2HS_CONVERT_SOURCE_STAGE73",
+    "url": "https://git-pages.wsl.ch/aschauer/swe2hs/_modules/swe2hs/two_dimensional.html",
+    "suffix": "html",
+    "organisation": "WSL SWE2HS documentation",
+    "description": "Published implementation linked by convert_2d API; investigate unit metadata and source-time propagation, not assumed to be SPASS production version"
+  },
+  {
+    "source_id": "WSL_SWE2HS_STEPWISE_SOURCE_STAGE73",
+    "url": "https://git-pages.wsl.ch/aschauer/swe2hs/_modules/swe2hs/stepwise.html",
+    "suffix": "html",
+    "organisation": "WSL SWE2HS documentation",
+    "description": "Published implementation linked by stepwise API; investigate hard-coded output settings, not proof that SPASS used this route"
+  }
+]
