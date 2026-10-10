@@ -1,0 +1,9 @@
+[
+  {
+    "source_id": "IETF_ROBOTS_LONGEST_RULE_RFC9309_STAGE76",
+    "url": "https://www.rfc-editor.org/rfc/rfc9309.html",
+    "suffix": ".html",
+    "organisation": "IETF / RFC Editor",
+    "description": "RFC9309 sections2.2.2/2.2.3: longest applicable robots rule, allow tie and wildcard syntax; validates explicit Zenodo file exception without general record API access"
+  }
+]

@@ -1,0 +1,224 @@
+{
+  "date": "2026-10-10",
+  "source_sha256": "b8d740993a4bfa2b542aa2c2986564073d275b07f2b2fd9c869dfc5daf597c0d",
+  "native_indices": 325,
+  "approved_paired_weight_file_sha256": "6851524a49af3cd38960670b6339c3b64df3226c7517e793fecf0e7b1fbbf536",
+  "source_unit_unchanged": "UNKNOWN",
+  "group_profiles_computed": false,
+  "source_spliced_or_calibrated": false,
+  "months": {
+    "2015-12": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "f383c92b8092f64903ee7f5ac807d9872852e312581876ba5d202ca09daeb746",
+      "source_unit": "UNKNOWN"
+    },
+    "2016-01": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "03364f9d3bcbde088f44ef257252511f9bab7f5a6eb4da0588772eeb4c410b37",
+      "source_unit": "UNKNOWN"
+    },
+    "2016-02": {
+      "observed_days": 29,
+      "missing_days": 0,
+      "cache_sha256": "792b3c83a5f1518b52d658de5fafc9ba7be1adf924b7b45564ee35bbb43350b2",
+      "source_unit": "UNKNOWN"
+    },
+    "2016-03": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "716a7ed3c17022e85bc730de95218c60657faa3919b6610666906c678f8bf385",
+      "source_unit": "UNKNOWN"
+    },
+    "2016-04": {
+      "observed_days": 30,
+      "missing_days": 0,
+      "cache_sha256": "07dee8ebe255c3b75fd8c7b5aa3e67643b8ae4831cac8941bca724eb486f8023",
+      "source_unit": "UNKNOWN"
+    },
+    "2016-12": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "74a44576de1dc7f89ba0d4899fadf66f75b530faa7c97b23aae0476933d3bae3",
+      "source_unit": "UNKNOWN"
+    },
+    "2017-01": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "3caa7831f4eef6a62e2a4ea9a33ce4ef2c6a7619e21e830bac8e2ec75772c256",
+      "source_unit": "UNKNOWN"
+    },
+    "2017-02": {
+      "observed_days": 28,
+      "missing_days": 0,
+      "cache_sha256": "4fb31e07f31201aced6dfb00332cb2707134f1c0d0569d88f10c14062a398f5a",
+      "source_unit": "UNKNOWN"
+    },
+    "2017-03": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "67aacfd57b3bb31f7434c7152a7d910d1fbeacf32410ce7b8af10b096bf2d065",
+      "source_unit": "UNKNOWN"
+    },
+    "2017-04": {
+      "observed_days": 30,
+      "missing_days": 0,
+      "cache_sha256": "cbf55946b6f7649263296d8aa8e7f7b180c3a16c7a459c470382fd354e85276b",
+      "source_unit": "UNKNOWN"
+    },
+    "2017-12": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "1ae91a85037ddd01a9eb09061c3002ce11b527f2a0126ea31eb85cc5c13cab20",
+      "source_unit": "UNKNOWN"
+    },
+    "2018-01": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "90a701cdc4b06373a0dd84b9432115192a3fe425a24cdb0fa22b7eb3dc55f824",
+      "source_unit": "UNKNOWN"
+    },
+    "2018-02": {
+      "observed_days": 28,
+      "missing_days": 0,
+      "cache_sha256": "ce011cacffdf5ebf04841160077253d029ff18e0d23297d0417c0a2b40377b99",
+      "source_unit": "UNKNOWN"
+    },
+    "2018-03": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "bb06b4e195d4633608b48d259faa1fb001e3cec8fbdd4032830bf99c96620609",
+      "source_unit": "UNKNOWN"
+    },
+    "2018-04": {
+      "observed_days": 30,
+      "missing_days": 0,
+      "cache_sha256": "c36853299c509c5c965afdfcab0a05d05b85ea583e571cf8cbe07dd032915dd8",
+      "source_unit": "UNKNOWN"
+    },
+    "2018-12": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "51c5df15f73851c49cb9c9e24e39846d28e2d986c2263000454d4f26f4cdcd62",
+      "source_unit": "UNKNOWN"
+    },
+    "2019-01": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "e54795e843d46848610dc9d564eecb446f17d24dc4907800d5e085b710afea1f",
+      "source_unit": "UNKNOWN"
+    },
+    "2019-02": {
+      "observed_days": 28,
+      "missing_days": 0,
+      "cache_sha256": "feb26cf0fc573d1db13293b23f4ffc82af7bcb1d8417d0db835093752e0c0394",
+      "source_unit": "UNKNOWN"
+    },
+    "2019-03": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "aa1bfd34d8407ee472fe08aa4ba3dd381964e92cecbe508390f2e3c76cc06ef9",
+      "source_unit": "UNKNOWN"
+    },
+    "2019-04": {
+      "observed_days": 30,
+      "missing_days": 0,
+      "cache_sha256": "be7059bd78450fe80dfe43d0778973dba6813e85c15d5f649f125b7586ca4f04",
+      "source_unit": "UNKNOWN"
+    },
+    "2019-12": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "54e76d0bb24e2f5414de9e9a5e56df5b4edd2f654080fcdc58441bd3b176c70d",
+      "source_unit": "UNKNOWN"
+    },
+    "2020-01": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "94ce7e177434496643210352efde3ec1b10e8a32da9c387e5b4100e785e2a94a",
+      "source_unit": "UNKNOWN"
+    },
+    "2020-02": {
+      "observed_days": 29,
+      "missing_days": 0,
+      "cache_sha256": "4dcc8e00ceac4ef85d4c8142a412ed17a1cd97244c706264828490e429bae10b",
+      "source_unit": "UNKNOWN"
+    },
+    "2020-03": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "be91cddc5b31d3d65b9986c0e7e0ba2ecb6cfd335d25a861b150083714a4733b",
+      "source_unit": "UNKNOWN"
+    },
+    "2020-04": {
+      "observed_days": 30,
+      "missing_days": 0,
+      "cache_sha256": "e327df130d1de106ff9808c25227f79a32bb75f1e5048e8abc097083fbfe6191",
+      "source_unit": "UNKNOWN"
+    },
+    "2020-12": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "dab3f5b90346165f68088a9f5e00eff4a89c1f1483e4e3fed0ff2aa75e7f5564",
+      "source_unit": "UNKNOWN"
+    },
+    "2021-01": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "17d654bdc04819db6f12353acec899c09720e4c5f27679f8c6e2ba37bfb498dd",
+      "source_unit": "UNKNOWN"
+    },
+    "2021-02": {
+      "observed_days": 28,
+      "missing_days": 0,
+      "cache_sha256": "369047ddaed9177cca074c4d491ec2cd623c0d7e357179b7f4615a7c996ee7e7",
+      "source_unit": "UNKNOWN"
+    },
+    "2021-03": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "8f41f0f0cfc26bfc0621f6a1b8feadff7c7561f1ea958bda481694a778ae753e",
+      "source_unit": "UNKNOWN"
+    },
+    "2021-04": {
+      "observed_days": 30,
+      "missing_days": 0,
+      "cache_sha256": "21653fc1bd721b2d6237919f3e3b64749d1cd5241bca89f338ff388f9f6a18bf",
+      "source_unit": "UNKNOWN"
+    },
+    "2021-12": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "93f7e91319e8dd8c861189cb350385f844409bd1751aaf940ec144a106b79e3f",
+      "source_unit": "UNKNOWN"
+    },
+    "2022-01": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "bcb162f91371fafb3fbc7a48e58461750768dd2e74455dddcbb9446dc285dca4",
+      "source_unit": "UNKNOWN"
+    },
+    "2022-02": {
+      "observed_days": 28,
+      "missing_days": 0,
+      "cache_sha256": "8cf1a2c10ff89a5b386d0303174b406d6fe14a67eae9e6b737707ef8f6f4b2ec",
+      "source_unit": "UNKNOWN"
+    },
+    "2022-03": {
+      "observed_days": 31,
+      "missing_days": 0,
+      "cache_sha256": "5f41222c74024ed95031c69f702abf476a54fc0a8c0717292204a3042a0726c5",
+      "source_unit": "UNKNOWN"
+    },
+    "2022-04": {
+      "observed_days": 30,
+      "missing_days": 0,
+      "cache_sha256": "fbbb9e7aa9341c206f931191997ae6ffe80593fc0ba5d7263c7d6f73205786c6",
+      "source_unit": "UNKNOWN"
+    }
+  },
+  "complete_months": 35,
+  "all35_months_prepared": true,
+  "observed_day_count": 1059
+}

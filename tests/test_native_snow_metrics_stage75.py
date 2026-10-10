@@ -80,10 +80,10 @@ def test_frozen_inputs_registry_prefixes_and_untouched_collection():
     for path, added in [('metadata/data_sources_master.csv', 1), ('metadata/data_dictionary.csv', len(DEFS))]:
         current = pd.read_csv(ROOT/path, dtype=str, keep_default_na=False)
         old = pd.read_csv(io.BytesIO(subprocess.check_output(['git', 'show', 'a6dc92a:'+path], cwd=ROOT)), dtype=str, keep_default_na=False)
-        assert len(current) == len(old)+added and old.equals(current.iloc[:len(old)].reset_index(drop=True))
+        assert len(current) >= len(old)+added and old.equals(current.iloc[:len(old)].reset_index(drop=True))
         assert row_digest(old) == summary['prior_registry_rows_and_digest'][path]['sha256']
     path = 'logs/data_collection_log.csv'
     # Git stores LF while this Windows checkout has CRLF; compare exact cells.
     old = pd.read_csv(io.BytesIO(subprocess.check_output(['git', 'show', 'a6dc92a:'+path], cwd=ROOT)), dtype=str, keep_default_na=False)
     current = pd.read_csv(ROOT/path, dtype=str, keep_default_na=False)
-    assert len(current) == 1585 and old.equals(current)
+    assert len(current) >= 1585 and old.equals(current.iloc[:len(old)].reset_index(drop=True))

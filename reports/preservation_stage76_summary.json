@@ -1,0 +1,57 @@
+{
+  "checked_at": "2026-10-10T17:02:14.470587+00:00",
+  "parent_manifest": "reports/preservation_stage75_summary.json",
+  "parent_sha256": "db35cea78c9b3ea5b9b1261885b51d00d325b1987e20d3694acaeb8a30867e5a",
+  "protected_reference_count": 2375,
+  "protected_unique_file_count": 1792,
+  "registry_and_log_prefixes": {
+    "metadata/data_sources_master.csv": {
+      "prior_rows_exact": 1218,
+      "current_rows": 1228
+    },
+    "metadata/data_dictionary.csv": {
+      "prior_rows_exact": 8291,
+      "current_rows": 8317
+    },
+    "logs/data_collection_log.csv": {
+      "prior_rows_exact": 1585,
+      "current_rows": 1786
+    }
+  },
+  "old_results_and_originals_unchanged": true,
+  "completed_water_years": [
+    2021,
+    2023
+  ],
+  "all_eight_winters_complete": false,
+  "current_comparison_sha256": {
+    "data_processed/snow_multiwinter_comparison_stage76.csv": "bacf09a43c4d5655fa63916a30d0a5d672d97f3d992bb4b58e10c2b7b112bbea"
+  },
+  "spass_prepared_months": 35,
+  "spass_observed_prepared_days": 1059,
+  "protocol_evidence_sha256": "bbaa280636d3e38f0a1a130a5ce40e9753db1ed18c860945b0bf795ff8dc1a87",
+  "new_original_archives_verified": {
+    "2021": {
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2021_MULTIWINTER_STAGE76_20261010T142926Z.zip",
+      "sha256": "5ccd7403f5d96cf0b64ffb9bff113cd23c68d94a2351fef8dbc5408119dd4f76",
+      "provider_md5_verified": true
+    }
+  },
+  "current_robots_snapshots_verified": [
+    {
+      "source_id": "ZENODO_ROBOTS_REFRESH_STAGE76_20261010T165400Z",
+      "retrieval_date": "2026-10-10T16:54:00.690629+00:00",
+      "raw_file": "data_external/source_evidence/ZENODO_ROBOTS_REFRESH_STAGE76_20261010T165400Z.txt",
+      "sha256": "56e9fc51dcc0170c0cea188ef1f8d8906e1123f5a061a68d17d3067b781b04da",
+      "size_bytes": 272,
+      "url": "https://zenodo.org/robots.txt",
+      "http_status": 200
+    }
+  ],
+  "current_producers": {
+    "src/data_collection/collect_oshd_multiwinter_stage76.py": "9d817dd2a049b8395a5c935781d92a73a3b940e69ca5d2935bb342386df91530",
+    "src/data_processing/compare_snow_multiwinter_stage76.py": "d61645310b7544d86917f08cbd844c3f8cb2598dd794ce5beb921c8bad6ba502",
+    "config/snow_multiwinter_decisions_stage76.json": "305f8b35914df3de79fe26732ef180bc91372490168091666ab4ae647396866f"
+  },
+  "checkpoint_not_final_until_all_eight": true
+}

@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-10",
+  "researcher_reply": "je valide",
+  "approved_proposal": "Report120: compare December-April means for all eight common winters 2015/16-2022/23; seven additional OSHD archives, 4507509648 bytes",
+  "diagnostic_water_years": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023],
+  "collection_water_years": [2016, 2017, 2018, 2019, 2020, 2021, 2022],
+  "spass_analytical_unit": "m, researcher-approved assumption; original metadata UNKNOWN",
+  "spass_raw_to_m_factor": 1.0,
+  "months": [12, 1, 2, 3, 4],
+  "date_offsets_days": [-1, 0, 1],
+  "reference_date_offset_days": 0,
+  "native_lengths_parent": "data_processed/native_snow_cell_pairs_stage69.csv",
+  "daily_mean": "Within each group/day/lag, exact piste lengths observed in both native grids; no interpolation",
+  "winter_mean": "Equal weight to actually paired observed daily means within each December-April winter; observed day counts and length coverage published; entirely absent means missing",
+  "eight_winter_results": "Separate group-by-winter results, no pooled daily independence or data-dependent winter selection",
+  "reuse_complete_archives": true,
+  "choose_best_lag": false,
+  "automatic_group_exclusion": false,
+  "source_splicing_or_calibration": false,
+  "five_own_preentry_winters_unchanged": true,
+  "new_clustering_or_effect_fit": false,
+  "baseline_commit": "5ced79e"
+}
