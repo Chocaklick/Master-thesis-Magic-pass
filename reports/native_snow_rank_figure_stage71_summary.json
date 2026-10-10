@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "data_processed/native_snow_rank_diagnostic_stage71.csv": "9003144cb84c64cab7c06dd688bef46eca57e521f0f34d5ee3daa7eec1ba2370",
+    "src/descriptive/plot_native_snow_ranks_stage71.py": "a667661a0749ea8b71600949583f5a9df1484b8df953cbe1721588a00fc8fd30"
+  },
+  "output_sha256": {
+    "reports/native_snow_rank_diagnostic_stage71.png": "ba78546a9d240e5c0cbc644909e5cd0618faac48271a93f7cf892dbc1ae1e5a5"
+  },
+  "plotted_groups": 40,
+  "retained_csv_groups": 70,
+  "order": "alphabetic preserved group names; stable IDs retained in CSV",
+  "fixed_date_offsets": [
+    -1,
+    0,
+    1
+  ],
+  "reference_offset": 0,
+  "no_ci_or_significance_selection": true
+}

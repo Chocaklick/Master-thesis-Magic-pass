@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "config/snow_rank_diagnostic_decisions_stage71.json": "d32d32a0e780142f7d98099a4037282b1baed4bbaaab9e2081df7971c4fca9cc",
+    "data_processed/native_snow_daily_common_support_stage70.csv": "37f18f1961ea6adbaf740a2e7238f782df601cf08f2308958c1f569e77e52f96",
+    "data_processed/native_snow_value_coverage_stage70.csv": "20cce1faa10eefe8b88b9e5cacc415a01157d660a22779cfad01b62e56140c87",
+    "reports/native_snow_values_stage70_summary.json": "f45cc3f4e812915c3d2c8e8f069ca0602ffde388b1fe5ea847e5b97d7fe7cd47",
+    "config/native_snow_provenance_corrections_stage70.json": "a4eec6e0c8d18295553bc2fd1d17299773e15eba40880fd96b4839d7106454f1",
+    "reports/preservation_stage70_summary.json": "a6c5d092d2c78a2e92dc1f49dfec7e4bf34898a8e9eb6c096eb6a99601d8a734",
+    "src/descriptive/diagnose_native_snow_ranks_stage71.py": "571dd3e832542e4d7a57a5b39a500c72558036dab03606266f93e2edbc358b03"
+  },
+  "output_sha256": {
+    "data_processed/native_snow_rank_diagnostic_stage71.csv": "9003144cb84c64cab7c06dd688bef46eca57e521f0f34d5ee3daa7eec1ba2370"
+  },
+  "prior_registry_rows_and_digest": {
+    "metadata/data_sources_master.csv": {
+      "rows": 1201,
+      "sha256": "a3e7517b800f6de43ed6e45f280a006a2ff9e2dcea07373439f07dd79691bd12"
+    },
+    "metadata/data_dictionary.csv": {
+      "rows": 8188,
+      "sha256": "870935ff5e9647cc9cfe7e8a9e29e5cfbf8d2259132252bbc5df6d4ba60532d8"
+    }
+  },
+  "rows": 210,
+  "retained_groups": 70,
+  "lag_summary": {
+    "-1": {
+      "retained_groups": 70,
+      "rho_available_groups": 40,
+      "unavailable_groups": 30,
+      "rho_min": 0.08496688741721854,
+      "rho_q25": 0.5927676162458495,
+      "rho_median": 0.698065281128968,
+      "rho_q75": 0.7895738146647958,
+      "rho_max": 0.8957232485186476,
+      "delta_from_zero_min": -0.15652100529598478,
+      "delta_from_zero_median": -0.059063625262344155,
+      "delta_from_zero_max": -0.024466210057136117,
+      "min_finite_paired_days": 151,
+      "max_finite_paired_days": 151
+    },
+    "0": {
+      "retained_groups": 70,
+      "rho_available_groups": 40,
+      "unavailable_groups": 30,
+      "rho_min": 0.1662879051934472,
+      "rho_q25": 0.6779772890421707,
+      "rho_median": 0.7827664788174837,
+      "rho_q75": 0.8522060004799951,
+      "rho_max": 0.9244510282328338,
+      "delta_from_zero_min": 0.0,
+      "delta_from_zero_median": 0.0,
+      "delta_from_zero_max": 0.0,
+      "min_finite_paired_days": 151,
+      "max_finite_paired_days": 151
+    },
+    "1": {
+      "retained_groups": 70,
+      "rho_available_groups": 40,
+      "unavailable_groups": 30,
+      "rho_min": 0.24390031369815265,
+      "rho_q25": 0.7417820163129862,
+      "rho_median": 0.8383563654993322,
+      "rho_q75": 0.9016507694796834,
+      "rho_max": 0.9537051237364935,
+      "delta_from_zero_min": -0.0057774124251745995,
+      "delta_from_zero_median": 0.044510212271379745,
+      "delta_from_zero_max": 0.11433407452312727,
+      "min_finite_paired_days": 151,
+      "max_finite_paired_days": 151
+    }
+  },
+  "status_counts": {
+    "computed_complete_daily_pairs": 120,
+    "no_usable_geometry__piste_scope_unresolved": 87,
+    "no_usable_geometry__referenced_axes_missing": 3
+  },
+  "rank_ties": "average",
+  "p_values_or_ci_computed": false,
+  "physical_difference_or_conversion": false,
+  "source_splicing_or_calibration": false,
+  "choose_best_lag": false,
+  "five_own_preentry_winters_unchanged": true,
+  "new_clustering_or_effect_fit": false,
+  "software_versions": {
+    "python": "3.12.7",
+    "pandas": "2.3.3",
+    "numpy": "2.5.3"
+  },
+  "decisions": {
+    "date": "2026-10-10",
+    "researcher_reply": "Comparer d’abord les évolutions par corrélation de rang (Spearman), par groupe et aux trois décalages fixés ; laisser les écarts en mètres en attente d’une preuve d’unité (recommandé).",
+    "parent_spatial_time_decisions": "config/snow_comparison_decisions_stage69.json",
+    "method": "Spearman = Pearson correlation of average ranks; tied values receive their average rank",
+    "input": "Original-unit daily means on exactly the same observed piste lengths from Stage70; no unit conversion",
+    "date_offsets_days": [
+      -1,
+      0,
+      1
+    ],
+    "reference_date_offset_days": 0,
+    "pilot_start": "2022-12-01",
+    "pilot_end": "2023-04-30",
+    "missing_policy": "Use finite paired daily values only and report pair counts; fewer than two pairs or either constant ranked series yields missing rho with explicit status, never zero",
+    "inference": "Descriptive coefficient only; no iid daily p-value or confidence interval, no unapproved block bootstrap specification",
+    "scope": "Within-group single-winter trajectory concordance, not absolute-level agreement, source-unit proof, causal effect, independent-day sample or long-term climate profile",
+    "choose_best_lag": false,
+    "detrend_or_difference": false,
+    "new_unit_conversion": false,
+    "physical_difference_computed": false,
+    "source_splicing_or_calibration": false,
+    "automatic_group_exclusion": false,
+    "five_own_preentry_winters_unchanged": true,
+    "new_clustering_or_effect_fit": false
+  }
+}

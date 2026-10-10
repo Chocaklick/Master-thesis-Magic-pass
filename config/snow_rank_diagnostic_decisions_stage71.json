@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-10",
+  "researcher_reply": "Comparer d’abord les évolutions par corrélation de rang (Spearman), par groupe et aux trois décalages fixés ; laisser les écarts en mètres en attente d’une preuve d’unité (recommandé).",
+  "parent_spatial_time_decisions": "config/snow_comparison_decisions_stage69.json",
+  "method": "Spearman = Pearson correlation of average ranks; tied values receive their average rank",
+  "input": "Original-unit daily means on exactly the same observed piste lengths from Stage70; no unit conversion",
+  "date_offsets_days": [-1, 0, 1],
+  "reference_date_offset_days": 0,
+  "pilot_start": "2022-12-01",
+  "pilot_end": "2023-04-30",
+  "missing_policy": "Use finite paired daily values only and report pair counts; fewer than two pairs or either constant ranked series yields missing rho with explicit status, never zero",
+  "inference": "Descriptive coefficient only; no iid daily p-value or confidence interval, no unapproved block bootstrap specification",
+  "scope": "Within-group single-winter trajectory concordance, not absolute-level agreement, source-unit proof, causal effect, independent-day sample or long-term climate profile",
+  "choose_best_lag": false,
+  "detrend_or_difference": false,
+  "new_unit_conversion": false,
+  "physical_difference_computed": false,
+  "source_splicing_or_calibration": false,
+  "automatic_group_exclusion": false,
+  "five_own_preentry_winters_unchanged": true,
+  "new_clustering_or_effect_fit": false
+}
