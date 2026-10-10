@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "config/terrain_orientation_decisions_stage64.json": "e80d89d837d8771c50806700afbc29c00bffb25031496f9f8b45063b72fe3aa3",
+    "reports/native2m_terrain_pilot_stage63_summary.json": "4cdffa6f2d43c30e5f82dc97109a27ea7991266798ee0c9f68dbad4598d1b9c9",
+    "data_processed/terrain_native2m_pilot_cells_stage63.csv": "fb4b4d8fe8a31b391ebbdd065c9f209daa339009c28d17dd89771ed0ed8b7098",
+    "data_processed/winter_profile_exact_piste_overlap_stage63.csv": "862ca970fa228d5eefc765cd2523a2f3040a395f46e7b99949bfd41d188d481f",
+    "src/descriptive/summarise_terrain_orientation_stage64.py": "15a779dbc3d014ce8ff0191aeea23625887524807d026691f3e7f32eeeb5e4c8"
+  },
+  "all_groups_retained": 70,
+  "extracted_reference_group_count": 1,
+  "comparison_rows": 2,
+  "reference_status_counts": {
+    "terrain_not_yet_extracted": 39,
+    "piste_scope_unresolved": 29,
+    "referenced_axes_missing": 1,
+    "native2m_pilot_extracted": 1
+  },
+  "continuous_model_feature_candidates": [
+    "terrain_northness",
+    "terrain_eastness"
+  ],
+  "descriptive_only_features": [
+    "orientation_resultant_concentration",
+    "north_length_share",
+    "east_length_share",
+    "south_length_share",
+    "west_length_share"
+  ],
+  "no_imputation_exclusion_dominant_direction_or_model_fit": true,
+  "reference_and_comparison": [
+    {
+      "source_id": "DERIVED_TERRAIN_ORIENTATION_STAGE64",
+      "station_group_id": "MP_GROUP_RESORT__st_luc_chandolin",
+      "station_group_name": "St-Luc / Chandolin",
+      "parent_station_group_ids": "MP_GROUP_RESORT__st_luc_chandolin",
+      "group_retained": true,
+      "current_proxy_not_verified_preentry": true,
+      "unique_mapped_axis_length_m": 50037.986158146676,
+      "observed_orientation_length_m": 50037.986158146676,
+      "flat_observed_length_m": 0.0,
+      "missing_gradient_length_m": 0.0,
+      "orientation_coverage_share": 1.0,
+      "terrain_northness": -0.33866777521725205,
+      "terrain_eastness": -0.5302882696306467,
+      "orientation_resultant_concentration": 0.6292070492917801,
+      "north_length_share": 0.08341758503602642,
+      "east_length_share": 0.035560453942502276,
+      "south_length_share": 0.37377284076181183,
+      "west_length_share": 0.5072491202596595,
+      "edition_reference_datetime": "2019-01-01T00:00:00Z",
+      "edition_role": "comparison_only",
+      "terrain_summary_status": "native2m_pilot_extracted"
+    },
+    {
+      "source_id": "DERIVED_TERRAIN_ORIENTATION_STAGE64",
+      "station_group_id": "MP_GROUP_RESORT__st_luc_chandolin",
+      "station_group_name": "St-Luc / Chandolin",
+      "parent_station_group_ids": "MP_GROUP_RESORT__st_luc_chandolin",
+      "group_retained": true,
+      "current_proxy_not_verified_preentry": true,
+      "unique_mapped_axis_length_m": 50037.986158146676,
+      "observed_orientation_length_m": 50037.986158146676,
+      "flat_observed_length_m": 0.0,
+      "missing_gradient_length_m": 0.0,
+      "orientation_coverage_share": 1.0,
+      "terrain_northness": -0.3149424253459996,
+      "terrain_eastness": -0.5120720006340101,
+      "orientation_resultant_concentration": 0.6011709117348728,
+      "north_length_share": 0.08377770364202837,
+      "east_length_share": 0.04770429254033112,
+      "south_length_share": 0.36219806750789474,
+      "west_length_share": 0.5063199363097458,
+      "edition_reference_datetime": "2024-01-01T00:00:00Z",
+      "edition_role": "latest_reference",
+      "terrain_summary_status": "native2m_pilot_extracted"
+    }
+  ],
+  "output_sha256": {
+    "data_processed/terrain_orientation_reference_stage64.csv": "828d894f823eb69c2cb70d7e8bd54afdc1d0fc5529a18e4e8e4e2f0ff3aca975",
+    "data_processed/terrain_orientation_edition_comparison_stage64.csv": "1eb58e6bc2c1f73054a0d8b9f31f3c250f49cee8294ab786f5c569c8f993d72b"
+  }
+}

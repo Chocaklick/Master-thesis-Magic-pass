@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-10",
+  "researcher_reply": "Je valide les deux composantes continues nord/sud et est/ouest, pondérées par la longueur, pour l’analyse et le clustering. La concentration et les quatre parts cardinales seront conservées pour la description, sans être intégrées automatiquement aux modèles. Les angles détaillés et les couvertures restent conservés, sans imposer d’orientation dominante.",
+  "researcher_cardinal_reply": "Oui, secteurs centrés et couverture séparée (recommandé)",
+  "angle_convention": "Observed downslope terrain azimuth: north 0, east 90, south 180, west 270 degrees",
+  "length_weight": "Exact unique mapped-axis length inside each native 2 m DEM cell",
+  "denominator": "Length with observed nonflat orientation only; coverage, flat and missing-gradient lengths separately retained",
+  "continuous_model_feature_candidates": ["terrain_northness", "terrain_eastness"],
+  "descriptive_only_not_automatic_model_features": ["orientation_resultant_concentration", "north_length_share", "east_length_share", "south_length_share", "west_length_share"],
+  "cardinal_sector_degrees_half_open": {"north": [[315, 360], [0, 45]], "east": [[45, 135]], "south": [[135, 225]], "west": [[225, 315]]},
+  "concentration_formula": "hypot(length-weighted cos(angle), length-weighted sin(angle)); descriptive resultant, not independent third feature or multimodality diagnostic",
+  "dominant_direction_imposed": false,
+  "raw_angles_and_coverage_retained": true,
+  "historical_preentry_certification": false,
+  "new_clustering_or_effect_fit_approved": false,
+  "automatic_group_exclusion_or_imputation_allowed": false,
+  "parent_decisions": ["config/terrain_extraction_decisions_stage61.json", "config/terrain_vintage_decisions_stage62.json"]
+}

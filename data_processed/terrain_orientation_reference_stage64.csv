@@ -1,0 +1,71 @@
+source_id,station_group_id,station_group_name,parent_station_group_ids,terrain_summary_status,edition_reference_datetime,edition_role,unique_mapped_axis_length_m,observed_orientation_length_m,flat_observed_length_m,missing_gradient_length_m,orientation_coverage_share,terrain_northness,terrain_eastness,orientation_resultant_concentration,north_length_share,east_length_share,south_length_share,west_length_share,group_retained,current_proxy_not_verified_preentry
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,MP_GROUP_EVENT__4b7d19ebb1a4,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,MP_GROUP_EVENT__98c0c64310c6,terrain_not_yet_extracted,,,910.3212293118836,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_EVENT__c1f58b57f3fa,Grenchenberg,MP_GROUP_EVENT__c1f58b57f3fa,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_EVENT__e664bf3f38d5,Wilerallmi,MP_GROUP_EVENT__e664bf3f38d5,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__aeschi,Aeschiallmend,MP_GROUP_RESORT__aeschi,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__anzere,Anzère,MP_GROUP_RESORT__anzere,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__arolla,Arolla,MP_GROUP_RESORT__arolla,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__axalp_brienz,Axalp,MP_GROUP_RESORT__axalp_brienz,terrain_not_yet_extracted,,,10909.213723838442,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__balmberg,Balmberg,MP_GROUP_RESORT__balmberg,terrain_not_yet_extracted,,,2739.5863019732133,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,MP_GROUP_RESORT__beatenberg_niederhorn,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__belalp,Belalp,MP_GROUP_RESORT__belalp,terrain_not_yet_extracted,,,36451.21007314102,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,MP_GROUP_RESORT__bumbach_schangnau,terrain_not_yet_extracted,,,5005.740625185721,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__charmey,Charmey,MP_GROUP_RESORT__charmey,terrain_not_yet_extracted,,,12492.9936519463,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__crans_montana_crans_montana,Crans-Montana,MP_GROUP_RESORT__crans_montana_crans_montana,terrain_not_yet_extracted,,,62913.69651427723,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__eriz,Eriz,MP_GROUP_RESORT__eriz,terrain_not_yet_extracted,,,4474.949859304751,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__evolene,Evolène,MP_GROUP_RESORT__evolene,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__gantrisch_gurnigel,Gantrisch-Gurnigel / Gurnigelbad,MP_GROUP_RESORT__gantrisch_gurnigel,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__gstaad,Bergbahnen Gstaad,MP_GROUP_RESORT__gstaad,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__habkern,Habkern,MP_GROUP_RESORT__habkern,terrain_not_yet_extracted,,,7143.221325403,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__heimenschwand_buchholterberg,Heimenschwand,MP_GROUP_RESORT__heimenschwand_buchholterberg,terrain_not_yet_extracted,,,927.7565747301572,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg,Homberg,MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__jaun_gastlosen,Jaun,MP_GROUP_RESORT__jaun_gastlosen,terrain_not_yet_extracted,,,12860.413190760411,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__jaunpass,Jaunpass,MP_GROUP_RESORT__jaunpass,terrain_not_yet_extracted,,,4695.777896055762,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__kiental,Kiental,MP_GROUP_RESORT__kiental,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__la_berra_la_roche,La Berra,MP_GROUP_RESORT__la_berra_la_roche,terrain_not_yet_extracted,,,8279.600469139838,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__la_dole_jura_sur_leman,Jura-sur-Léman - composante suisse La Dôle,MP_GROUP_RESORT__la_dole_jura_sur_leman,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__la_forclaz,La Forclaz,MP_GROUP_RESORT__la_forclaz,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__la_robella,La Robella,MP_GROUP_RESORT__la_robella,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,MP_GROUP_RESORT__lauchernalp_lotschental,terrain_not_yet_extracted,,,12287.557402100556,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__le_paquier_cret_du_puy,Crêt-du-Puy,MP_GROUP_RESORT__le_paquier_cret_du_puy,terrain_not_yet_extracted,,,5317.736231499483,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__les_bugnenets_savagnieres,Les Bugnenets-Savagnières,MP_GROUP_RESORT__les_bugnenets_savagnieres,terrain_not_yet_extracted,,,15658.750352240277,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__les_marecottes,Les Marécottes,MP_GROUP_RESORT__les_marecottes,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,terrain_not_yet_extracted,,,6078.622169386999,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__les_pleiades,Les Pléiades,MP_GROUP_RESORT__les_pleiades,terrain_not_yet_extracted,,,288.324596005825,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__leukerbad,Leukerbad,MP_GROUP_RESORT__leukerbad,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__linden_skilift_linden,Linden,MP_GROUP_RESORT__linden_skilift_linden,terrain_not_yet_extracted,,,1265.8784045536413,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,terrain_not_yet_extracted,,,6991.468020470553,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,MP_GROUP_RESORT__meiringen_hasliberg,terrain_not_yet_extracted,,,48409.13429556276,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__melchsee_frutt,Melchsee-Frutt,MP_GROUP_RESORT__melchsee_frutt,terrain_not_yet_extracted,,,31737.71449690482,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,MP_GROUP_RESORT__moleson_la_gruyere,terrain_not_yet_extracted,,,7266.837324549605,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__mont_noble_nax,Nax,MP_GROUP_RESORT__mont_noble_nax,terrain_not_yet_extracted,,,13475.597369046163,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__moosalpregion,Moosalp,MP_GROUP_RESORT__moosalpregion,terrain_not_yet_extracted,,,14200.559713143955,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__morlialp,Mörlialp,MP_GROUP_RESORT__morlialp,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__ottenleuebad,Egg Ottenleue,MP_GROUP_RESORT__ottenleuebad,terrain_not_yet_extracted,,,2975.8063575469937,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__ovronnaz,Ovronnaz,MP_GROUP_RESORT__ovronnaz,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin,Les Prés-d'Orvin,MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin,terrain_not_yet_extracted,,,4324.755488890244,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__rathvel,Rathvel,MP_GROUP_RESORT__rathvel,terrain_not_yet_extracted,,,3700.682318511733,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__riffenmatt,Riffenmatt,MP_GROUP_RESORT__riffenmatt,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman,Les Rochers de Naye,MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,MP_GROUP_RESORT__rossberg_oberwil,terrain_not_yet_extracted,,,3339.60150630584,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__rosswald,Rosswald,MP_GROUP_RESORT__rosswald,terrain_not_yet_extracted,,,4658.768764094002,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__ruschegg_eywald,Rüschegg - Eywald,MP_GROUP_RESORT__ruschegg_eywald,terrain_not_yet_extracted,,,11316.52785683732,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__saas_fee,Saas-Fee,MP_GROUP_RESORT__saas_fee,terrain_not_yet_extracted,,,28818.211989423573,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,MP_GROUP_RESORT__sainte_croix_les_rasses,referenced_axes_missing,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__schwanden_sigriswil_thunersee,Schwanden,MP_GROUP_RESORT__schwanden_sigriswil_thunersee,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__schwarzenbuhl_selital,Selital,MP_GROUP_RESORT__schwarzenbuhl_selital,terrain_not_yet_extracted,,,4084.6612422878975,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,terrain_not_yet_extracted,,,8911.790884360422,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__sorenberg,Sörenberg,MP_GROUP_RESORT__sorenberg,terrain_not_yet_extracted,,,15811.346775558455,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__st_cergue,Saint-Cergue,MP_GROUP_RESORT__st_cergue,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,MP_GROUP_RESORT__st_luc_chandolin,native2m_pilot_extracted,2024-01-01T00:00:00Z,latest_reference,50037.986158146676,50037.986158146676,0.0,0.0,1.0,-0.3149424253459996,-0.5120720006340101,0.6011709117348728,0.08377770364202837,0.04770429254033112,0.36219806750789474,0.5063199363097458,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__staldenried_gspon,Gspon,MP_GROUP_RESORT__staldenried_gspon,terrain_not_yet_extracted,,,2386.9970935433435,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__tramelan,Tramelan,MP_GROUP_RESORT__tramelan,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,MP_GROUP_RESORT__vallee_de_joux,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__vercorin,Vercorin,MP_GROUP_RESORT__vercorin,terrain_not_yet_extracted,,,10422.402927399986,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,piste_scope_unresolved,,,,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_RESORT__visperterminen,Visperterminen,MP_GROUP_RESORT__visperterminen,terrain_not_yet_extracted,,,8488.954686635032,,,,,,,,,,,,True,True
+DERIVED_TERRAIN_ORIENTATION_STAGE64,MP_GROUP_CONNECTED__eischoll_unterbaech,Eischoll–Unterbäch,MP_GROUP_RESORT__eischoll_sportbahnen_eischoll|MP_GROUP_RESORT__unterbach_brandalp,terrain_not_yet_extracted,,,31544.99951118536,,,,,,,,,,,,True,True
