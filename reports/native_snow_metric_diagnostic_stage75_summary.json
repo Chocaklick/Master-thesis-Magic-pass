@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "config/snow_metric_decisions_stage75.json": "37587b599a70d82a5ab0832a22a8f84b80a224b8917bc2817c1bbc4a6add58a1",
+    "data_processed/native_snow_daily_common_support_stage70.csv": "37f18f1961ea6adbaf740a2e7238f782df601cf08f2308958c1f569e77e52f96",
+    "data_processed/native_snow_value_coverage_stage70.csv": "20cce1faa10eefe8b88b9e5cacc415a01157d660a22779cfad01b62e56140c87",
+    "data_processed/native_snow_rank_diagnostic_stage71.csv": "9003144cb84c64cab7c06dd688bef46eca57e521f0f34d5ee3daa7eec1ba2370",
+    "data_processed/native_snow_change_rank_diagnostic_stage72.csv": "131dcd0e3c646ecf8874dd177c8dc613eece0b8ddb23aebb83eb50ebe5f43be6",
+    "reports/native_snow_values_stage70_summary.json": "f45cc3f4e812915c3d2c8e8f069ca0602ffde388b1fe5ea847e5b97d7fe7cd47",
+    "reports/native_snow_rank_diagnostic_stage71_summary.json": "246e5e819e7590584ef729c61a024beedee9d4043750d6a51371654fce831cc2",
+    "reports/native_snow_change_rank_diagnostic_stage72_summary.json": "c41a14ee8f3ca1a12f0d752e726af7f9c71698fc6c7d46fcc30e5dbfe5a6f58a",
+    "reports/spass_unit_investigation_stage74.json": "43ae6f3795663ce35618fa8085661c7db8b2adc59e966fdf875539deeeb9bb44",
+    "src/descriptive/diagnose_native_snow_metrics_stage75.py": "a15af8edf5bc6740df233941cadb3dc0da911d4a0a89d5189825bff48af9e037"
+  },
+  "output_sha256": {
+    "data_processed/native_snow_metric_diagnostic_stage75.csv": "844df349a20bd857ac07dea8cc5d3a2237d1bb5f9c4a91a415074a1e23f23a05"
+  },
+  "prior_registry_rows_and_digest": {
+    "metadata/data_sources_master.csv": {
+      "rows": 1217,
+      "sha256": "6e3561035405705058cc58e0fb06d6d4c93b77f11dc89d378a1496eb59750c58"
+    },
+    "metadata/data_dictionary.csv": {
+      "rows": 8261,
+      "sha256": "6c1d3cfc38e8875569f07076dbdfee3c261c2ef1dd8b821cf0455e5143e0b517"
+    }
+  },
+  "rows": 210,
+  "retained_groups": 70,
+  "lag_summary": {
+    "-1": {
+      "retained_groups": 70,
+      "computed_groups": 40,
+      "missing_groups": 30,
+      "bias_median_m": -0.07252961132043713,
+      "bias_min_m": -0.3598901888728026,
+      "bias_max_m": 0.32452123896130797,
+      "mean_abs_difference_median_m": 0.09387986200802834,
+      "rms_difference_median_m": 0.12988245473268772,
+      "oshd_lower_groups": 33,
+      "oshd_higher_groups": 7,
+      "equal_mean_groups": 0,
+      "min_paired_days": 151,
+      "max_paired_days": 151
+    },
+    "0": {
+      "retained_groups": 70,
+      "computed_groups": 40,
+      "missing_groups": 30,
+      "bias_median_m": -0.07253040961617277,
+      "bias_min_m": -0.3592116351299074,
+      "bias_max_m": 0.33280205562260157,
+      "mean_abs_difference_median_m": 0.09384867843554813,
+      "rms_difference_median_m": 0.11950722500440952,
+      "oshd_lower_groups": 33,
+      "oshd_higher_groups": 7,
+      "equal_mean_groups": 0,
+      "min_paired_days": 151,
+      "max_paired_days": 151
+    },
+    "1": {
+      "retained_groups": 70,
+      "computed_groups": 40,
+      "missing_groups": 30,
+      "bias_median_m": -0.07253231602142786,
+      "bias_min_m": -0.3585100250297133,
+      "bias_max_m": 0.3414970275931833,
+      "mean_abs_difference_median_m": 0.0938462457833155,
+      "rms_difference_median_m": 0.10760447187812475,
+      "oshd_lower_groups": 33,
+      "oshd_higher_groups": 7,
+      "equal_mean_groups": 0,
+      "min_paired_days": 151,
+      "max_paired_days": 151
+    }
+  },
+  "spass_unit_status": "researcher-approved metre assumption, original declaration unknown",
+  "decisions": {
+    "date": "2026-10-10",
+    "researcher_reply": "très bien alors continue avec cette information que l'on part du principe que ce sont des mètres",
+    "spass_analytical_unit": "m",
+    "spass_original_declared_unit": "UNKNOWN",
+    "unit_status": "researcher_approved_assumption_not_producer_certification",
+    "spass_raw_to_m_factor": 1.0,
+    "parent_spatial_time_decisions": "config/snow_comparison_decisions_stage69.json",
+    "date_offsets_days": [
+      -1,
+      0,
+      1
+    ],
+    "reference_date_offset_days": 0,
+    "pilot_start": "2022-12-01",
+    "pilot_end": "2023-04-30",
+    "paired_support": "Frozen Stage70 daily means on exactly the same observed piste length in each native grid; no interpolation",
+    "difference_definition": "OSHD minus SPASS, in metres under the approved SPASS unit assumption",
+    "descriptive_metrics": "Within each retained group and fixed lag: equal-day paired means, mean and median difference, mean absolute difference, root mean square difference. Both models are estimates, not truth; these are discrepancies, not accuracy errors.",
+    "missing_policy": "Finite paired daily means only; retain actual zeros. No geometry or no finite pair produces missing metrics with status, never an invented zero. Counts and common-support coverage published.",
+    "inference": "No iid daily p-values/confidence intervals, no independent-cells or pooled network causal interpretation",
+    "choose_best_lag": false,
+    "source_splicing_or_calibration": false,
+    "automatic_group_exclusion": false,
+    "five_own_preentry_winters_unchanged": true,
+    "new_clustering_or_effect_fit": false,
+    "baseline_commit": "a6dc92a"
+  },
+  "original_values_and_metadata_unchanged": true,
+  "physical_model_discrepancies_computed": true,
+  "source_spliced_or_calibrated": false,
+  "choose_best_lag": false,
+  "final_profiles_or_new_effect_fit": false
+}
