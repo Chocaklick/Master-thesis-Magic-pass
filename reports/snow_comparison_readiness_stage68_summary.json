@@ -1,0 +1,364 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "config/snow_comparison_readiness_stage68.json": "ccbe4300040e84ce466cf238a77dddcb92c6e23765ffd1dadfdec326481e514d",
+    "data_processed/terrain_reference_profiles_stage67.csv": "445b7bbe269aaf7ef4952cb349520b391c9b50d88f500be373ff95f3ef234469",
+    "data_processed/winter_profile_approved_snow_windows_stage57.csv": "af661466761cfaa2cd10eb6d9a77c9ac06f2b68d77cda46647adf4f4f2222d94",
+    "data_interim/winter_profile_exact_network_stage63.json": "a67c352c4310b8fb4f0f0db694a7e12eef9b356b6d3d673cc06d516e439d14e3",
+    "reports/snow_grid_metadata_compatibility_stage47.json": "245d2a45be5de3c473f225d43d8ffeefe452fc96625d90d6092da1e90bd4cc7d",
+    "reports/oshd_netcdf_metadata_inventory.json": "7060aa0a711cf33bdaefbc8e753a8cc114df9247eed6f8b1ee6052eee410646a",
+    "src/descriptive/audit_snow_comparison_readiness_stage68.py": "870750fe79f86470f048102de2a172af55289e7d3431cc0650df5d5ceb6c2561",
+    "reports/terrain_reference_profiles_stage67_summary.json": "cd60178db404829ec888ba7c6bbd97e6a7e4de797d874f5a135c59f68fd2e746",
+    "config/winter_profile_aggregation_decisions_stage45.json": "72c2097ebee637c49999fea8e03da5ecd8ea4ccda939f942318f26d2258b16cd"
+  },
+  "output_sha256": {
+    "data_processed/snow_comparison_readiness_stage68.csv": "969a2abb602444fbcd0208eb24ebfb6ca06d29de9cce8218b94ea9d4bb532332"
+  },
+  "prior_registry_rows_and_digest": {
+    "metadata/data_sources_master.csv": {
+      "rows": 1196,
+      "sha256": "60218eeb0d87807146e391038bb0a244c2834e1d71eb99ae18e615b80274aa98"
+    },
+    "metadata/data_dictionary.csv": {
+      "rows": 8084,
+      "sha256": "5f7d290789f264277c767f6d78b51f134de489a1d405c4f65c1de772300f36ed"
+    }
+  },
+  "retained_groups": 70,
+  "requested_group_winters": 350,
+  "total_spass_calendar_missing_group_winters": 23,
+  "missing_spass_covered_by_downloaded_oshd_group_winters": 23,
+  "groups_with_geometry": 40,
+  "geometries_inside_both_centre_envelopes": 40,
+  "complete_downloaded_month_count": 36,
+  "downloaded_oshd_days": 1096,
+  "downloaded_model_common_days": 365,
+  "candidate_winter_days": 151,
+  "candidate_winter_calendar_complete": true,
+  "centre_envelopes": {
+    "spass": [
+      2474500.0,
+      1059500.0,
+      2843500.0,
+      1323500.0
+    ],
+    "oshd": [
+      2478125.0,
+      1055625.0,
+      2838375.0,
+      1319375.0
+    ]
+  },
+  "original_spass_time_units": "days since 1900-01-01",
+  "original_oshd_time_units": "days since 2022-09-01T06:00:00 UTC+01:00",
+  "oshd_months": [
+    {
+      "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2022-09.nc",
+      "sha256": "068e0860c757b07cc7ab44a037a27a01738c4e07096f43ecee2b789f946b8c56",
+      "first_date": "2022-09-01",
+      "last_date": "2022-09-30",
+      "days": 30
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2022-10.nc",
+      "sha256": "95fd8105ed0cf461e2343ba34891249a38c500727aae5eb6a16c42c23532b1cf",
+      "first_date": "2022-10-01",
+      "last_date": "2022-10-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2022-11.nc",
+      "sha256": "a5d315e7e7652a435f231a6fe4d7b68541796d4a95649ec7fe1af931ac9f3e66",
+      "first_date": "2022-11-01",
+      "last_date": "2022-11-30",
+      "days": 30
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2022-12.nc",
+      "sha256": "e5b2b969af7f7163bcc615bb83e84c63e37d72917e1d16d5458bd7630614a4e7",
+      "first_date": "2022-12-01",
+      "last_date": "2022-12-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2023-01.nc",
+      "sha256": "7b79bfb2efc9532eaffff461a8a1e100147796cc41126360e707b36a66d5f5b6",
+      "first_date": "2023-01-01",
+      "last_date": "2023-01-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2023-02.nc",
+      "sha256": "723f113621f13295c6e33f5fb5bb74bcefcc9747919fd03d5f2a595d5caaef12",
+      "first_date": "2023-02-01",
+      "last_date": "2023-02-28",
+      "days": 28
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2023-03.nc",
+      "sha256": "7e8ad1ab792f56294e02ac88201ee46d8aaacc7128a7d412fff240fea7211704",
+      "first_date": "2023-03-01",
+      "last_date": "2023-03-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2023-04.nc",
+      "sha256": "8028ea5a2d8ee83756bbd607e5f875525a541dcc7bf615e86de67a52e5b0afc1",
+      "first_date": "2023-04-01",
+      "last_date": "2023-04-30",
+      "days": 30
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2023-05.nc",
+      "sha256": "1616b093039a52b46f623ed1b342c6448d5893b030584aa3fc7654e415ca1c04",
+      "first_date": "2023-05-01",
+      "last_date": "2023-05-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2023-06.nc",
+      "sha256": "b167973bfde786450fb58d75df4702542ce4d7667bffed5b041ea97f7db1b70e",
+      "first_date": "2023-06-01",
+      "last_date": "2023-06-30",
+      "days": 30
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2023-07.nc",
+      "sha256": "6afc0a11e79e4d0cef94ad7a91b3a0eefaa9d2298f175ca35ff57ac39bcec207",
+      "first_date": "2023-07-01",
+      "last_date": "2023-07-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2023_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2023-08.nc",
+      "sha256": "2e873e12fb96c620496082fcded436079b43d5692f9fc8bd21965e4d4b84db10",
+      "first_date": "2023-08-01",
+      "last_date": "2023-08-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2023-09.nc",
+      "sha256": "608249461867b77d2f24b5af07fc62182c3a37b7360d1d1b71a8cfea40f21e47",
+      "first_date": "2023-09-01",
+      "last_date": "2023-09-30",
+      "days": 30
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2023-10.nc",
+      "sha256": "36f7ca8d2b917572839cf8cbbd1d7665c194b99948a900126e1c50c02908b19d",
+      "first_date": "2023-10-01",
+      "last_date": "2023-10-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2023-11.nc",
+      "sha256": "13d60b4f42a135d19e485df4e159d5f355a616cc37a127edc9caacdee7a8ee84",
+      "first_date": "2023-11-01",
+      "last_date": "2023-11-30",
+      "days": 30
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2023-12.nc",
+      "sha256": "2309664d232a4f61ae68892efe180ffd6fa1e6f06e444e6888723fce41240f9a",
+      "first_date": "2023-12-01",
+      "last_date": "2023-12-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2024-01.nc",
+      "sha256": "3e126c8016e58b0b8e3f4845d966db8a3160ef952241e8a7cc8279eae91f3f71",
+      "first_date": "2024-01-01",
+      "last_date": "2024-01-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2024-02.nc",
+      "sha256": "8a6c4745ca9e59d0181fc4dbbbade8945ef3394595f3b3a8254a583f673503dd",
+      "first_date": "2024-02-01",
+      "last_date": "2024-02-29",
+      "days": 29
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2024-03.nc",
+      "sha256": "aa88fdd209f161d1e1deb113d4f37d157224125d8e1ea506168a66a3b67008a3",
+      "first_date": "2024-03-01",
+      "last_date": "2024-03-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2024-04.nc",
+      "sha256": "1ac70b77ab4fc764f9833135d0e72354ca7446d8ee30712418b5d17055c5d49a",
+      "first_date": "2024-04-01",
+      "last_date": "2024-04-30",
+      "days": 30
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2024-05.nc",
+      "sha256": "11d6938043788c155b209cd6283c916107c6f425844f5d235796aa9d11938bf3",
+      "first_date": "2024-05-01",
+      "last_date": "2024-05-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2024-06.nc",
+      "sha256": "9be2429343f14c6c465e17b915cea19d03dbfbf1455de02792392367f3739fea",
+      "first_date": "2024-06-01",
+      "last_date": "2024-06-30",
+      "days": 30
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2024-07.nc",
+      "sha256": "be488c571093e82173c84bae82e1e9acd42c0d7c6049be690de26948d2fe7e83",
+      "first_date": "2024-07-01",
+      "last_date": "2024-07-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2024_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2024-08.nc",
+      "sha256": "4d90b80881c38d87b836542cbec1b7144ada2afece6ad0279e512a75523a63e8",
+      "first_date": "2024-08-01",
+      "last_date": "2024-08-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2024-09.nc",
+      "sha256": "e825916a3f3669b180cc909ea9ac872df980ca49db22b16789d4a55dbb33d722",
+      "first_date": "2024-09-01",
+      "last_date": "2024-09-30",
+      "days": 30
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2024-10.nc",
+      "sha256": "be451a9024a100c19f2f83bcef46e06ea75ae06905771bdf197a414a98e50056",
+      "first_date": "2024-10-01",
+      "last_date": "2024-10-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2024-11.nc",
+      "sha256": "cdc93aff4361fad8cb38e36a7ed3c4d9cfdd1dec1f6234549a75c850d086b6bb",
+      "first_date": "2024-11-01",
+      "last_date": "2024-11-30",
+      "days": 30
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2024-12.nc",
+      "sha256": "c7f0cb2d5a563b06be1e32001348f6763c8ed1f6cd1b198c4d5047b0bfaddc58",
+      "first_date": "2024-12-01",
+      "last_date": "2024-12-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2025-01.nc",
+      "sha256": "b509987d9e5bd61df5c4678d50f878c2e3fdbbd16715a616546856644095e632",
+      "first_date": "2025-01-01",
+      "last_date": "2025-01-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2025-02.nc",
+      "sha256": "4f52d1c16bc3f0dda5769f5fd297530298762489c00b020f63bf8eb7c6677ab6",
+      "first_date": "2025-02-01",
+      "last_date": "2025-02-28",
+      "days": 28
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2025-03.nc",
+      "sha256": "47051129c2a2845dc80fbf9fa0ba71b9a46fc42230fb7bde5a85c74b5d9575e5",
+      "first_date": "2025-03-01",
+      "last_date": "2025-03-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2025-04.nc",
+      "sha256": "3afae78bf4321f01016ccc866942060af5313ee5d5434566afa2c6e2b98699e8",
+      "first_date": "2025-04-01",
+      "last_date": "2025-04-30",
+      "days": 30
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2025-05.nc",
+      "sha256": "1beb7cfe8e6d3784d5cacc3e8c2352a84ef57558143b68feb65ef4aef94e8923",
+      "first_date": "2025-05-01",
+      "last_date": "2025-05-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2025-06.nc",
+      "sha256": "d42bf7b28b292758ce4e8b215fe1f227c5a94da2f1aeb6c3a7575f4c0d6612db",
+      "first_date": "2025-06-01",
+      "last_date": "2025-06-30",
+      "days": 30
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2025-07.nc",
+      "sha256": "80f1d6ab0fca7793cf20e6dca04d7963547152ea24e4b3b9664b21536c5d5a50",
+      "first_date": "2025-07-01",
+      "last_date": "2025-07-31",
+      "days": 31
+    },
+    {
+      "source_id": "SLF_OSHD_PF_WY2025_PROFILE_AUDIT",
+      "member_name": "OSHD_DATA_2025-08.nc",
+      "sha256": "e3aed7030b39f908c53de46adf0b476d4f4127a9cf24839d376e775f2d914ead",
+      "first_date": "2025-08-01",
+      "last_date": "2025-08-31",
+      "days": 31
+    }
+  ],
+  "snow_values_read": false,
+  "snow_features_computed": false,
+  "spatial_mapping_applied": false,
+  "model_splicing_or_unit_conversion_applied": false,
+  "unit_review": {
+    "source_id": "SLF_SPASS_UNIT_DOCUMENTATION_REVIEW_STAGE68",
+    "paper_url": "https://tc.copernicus.org/articles/19/4391/2025/",
+    "dataset_url": "https://www.envidat.ch/metadata/spass---new-gridded-snow-datasets-for-switzerland",
+    "checked_sections": [
+      "2.4 Evaluation metrics",
+      "Data availability",
+      "EnviDat HSCLQMD resource description"
+    ],
+    "paper_analytical_HS_unit": "centimetres",
+    "raw_HSCLQMD_unit_attribute": "UNKNOWN",
+    "paper_unit_proves_distributed_numeric_scale": false,
+    "previous_metre_interpretation": "Retained separately as an inference based on physical magnitudes, not an original unit attribute",
+    "new_conversion_applied": false,
+    "finding": "The publication reports analyses of HS in centimetres and links the same dataset, but neither the inspected raw header nor the checked catalogue identifies the stored numeric scale. Do not replace UNKNOWN by the publication unit or silently revise old results."
+  }
+}

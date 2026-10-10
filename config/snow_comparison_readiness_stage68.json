@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-10",
+  "scope": "Metadata, actual available calendars and preserved geometry envelopes only; no snow field read or spatial aggregation selected",
+  "spass_source_id": "SLF_SPASS_HSCLQMD_GRID_1962_2023",
+  "oshd_source_ids": ["SLF_OSHD_PF_WY2023_PROFILE_AUDIT", "SLF_OSHD_PF_WY2024_PROFILE_AUDIT", "SLF_OSHD_PF_WY2025_PROFILE_AUDIT"],
+  "primary_unit_review": {
+    "source_id": "SLF_SPASS_UNIT_DOCUMENTATION_REVIEW_STAGE68",
+    "paper_url": "https://tc.copernicus.org/articles/19/4391/2025/",
+    "dataset_url": "https://www.envidat.ch/metadata/spass---new-gridded-snow-datasets-for-switzerland",
+    "checked_sections": ["2.4 Evaluation metrics", "Data availability", "EnviDat HSCLQMD resource description"],
+    "paper_analytical_HS_unit": "centimetres",
+    "raw_HSCLQMD_unit_attribute": "UNKNOWN",
+    "paper_unit_proves_distributed_numeric_scale": false,
+    "previous_metre_interpretation": "Retained separately as an inference based on physical magnitudes, not an original unit attribute",
+    "new_conversion_applied": false,
+    "finding": "The publication reports analyses of HS in centimetres and links the same dataset, but neither the inspected raw header nor the checked catalogue identifies the stored numeric scale. Do not replace UNKNOWN by the publication unit or silently revise old results."
+  },
+  "comparison_pilot_calendar_candidate": {"start": "2022-12-01", "end": "2023-04-30", "role": "Model compatibility diagnostic only; never replacement of five own preentry winters"},
+  "spatial_comparison_method_selected": false,
+  "daily_timestamp_alignment_selected": false,
+  "unit_conversion_selected": false,
+  "model_splicing_or_calibration_selected": false,
+  "automatic_group_exclusion": false
+}
