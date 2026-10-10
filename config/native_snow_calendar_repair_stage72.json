@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-10",
+  "reason": "Technical compatibility repair before final publication: pandas diff() raised NumPy generic NaT timedelta deprecation. Replace with explicit datetime64[D] difference; no scientific rule, input, datum, coefficient or registry row changes.",
+  "archived_first_version_sha256": {
+    "data_interim/native_snow_changes_stage72_before_calendar_fix/diagnose_native_snow_changes_stage72.py": "5f17c29d28ce6ad988a93935d3ed48dec0bc4477bb6d4f3554decd68056d9b43",
+    "data_interim/native_snow_changes_stage72_before_calendar_fix/native_snow_change_rank_diagnostic_stage72_summary.json": "a030860becda7faffef772a1306e3fb3d4cc3374e327fe267c50c74f95c2e3ae",
+    "data_interim/native_snow_changes_stage72_before_calendar_fix/preservation_stage72_summary.json": "28b94e7d3c52789484ddd16b5346fc868c0f0fcffb9d946ea8d3beec5fe46be2"
+  },
+  "repaired_producer_sha256": "96b5f9bae18cf04d8d3697b6fffd3e012c9930968bba213527484dc5126f9bab",
+  "manifest_amendment": "Replace only producer SHA in new Stage72 computational and preservation manifests; retain all prior source/input/output hashes and statistics. Archived first manifests remain local and unchanged.",
+  "validation": "Independent coefficients, byte-identical result CSV, registry-prefix equality, cached reprise and warning-as-error calendar test; no output regeneration or original-source rewrite."
+}

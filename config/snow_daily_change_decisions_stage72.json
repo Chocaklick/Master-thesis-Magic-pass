@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-10",
+  "researcher_reply": "Oui, ajouter ce diagnostic, sans remplacer celui sur les niveaux quotidiens (recommandé).",
+  "approved_question": "Diagnostic complémentaire de Spearman sur les variations entre deux jours consécutifs ; trois décalages fixes ; tous les groupes ; au plus 150 paires observées ; aucun trou comblé ; sensible au bruit ; ni validation des unités ni raccordement.",
+  "parent_decisions": "config/snow_rank_diagnostic_decisions_stage71.json",
+  "pilot_start": "2022-12-01",
+  "pilot_end": "2023-04-30",
+  "date_offsets_days": [-1, 0, 1],
+  "reference_date_offset_days": 0,
+  "daily_change": "For each model separately: original-unit group mean(t) minus mean(t-1), only consecutive observed civil dates, with both endpoints finite. No cross-model physical subtraction.",
+  "support_check": "Verify equality of observed native cell-pair footprints at consecutive dates, including month boundaries. If support composition changes, stop for methodological validation; do not silently replace means or filter groups.",
+  "method": "Spearman: Pearson of average tied ranks, reused tested Stage71 implementation",
+  "missing_policy": "No gap filling; constant change series or fewer than two finite paired changes give missing rho, not zero. Groups without usable geometry retained with missing counts and coefficients.",
+  "inference": "Descriptive only; no iid daily p-value or confidence interval",
+  "preserve_daily_level_reference": true,
+  "choose_best_lag": false,
+  "new_unit_conversion": false,
+  "source_splicing_or_calibration": false,
+  "automatic_group_exclusion": false,
+  "five_own_preentry_winters_unchanged": true,
+  "new_clustering_or_effect_fit": false
+}

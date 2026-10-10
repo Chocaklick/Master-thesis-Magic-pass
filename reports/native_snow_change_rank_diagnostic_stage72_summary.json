@@ -1,0 +1,137 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "config/snow_daily_change_decisions_stage72.json": "8daf972cefcba8c16a79435d455521356327b03e5d61b1eba6fa320961feefb9",
+    "data_processed/native_snow_daily_common_support_stage70.csv": "37f18f1961ea6adbaf740a2e7238f782df601cf08f2308958c1f569e77e52f96",
+    "data_processed/native_snow_value_coverage_stage70.csv": "20cce1faa10eefe8b88b9e5cacc415a01157d660a22779cfad01b62e56140c87",
+    "data_processed/native_snow_cell_pairs_stage69.csv": "6851524a49af3cd38960670b6339c3b64df3226c7517e793fecf0e7b1fbbf536",
+    "data_processed/native_snow_date_pairs_stage69.csv": "39025ee613a3a204a044ebc9104222a2dedea214e281fae2a41e1e27c097993e",
+    "data_processed/native_snow_rank_diagnostic_stage71.csv": "9003144cb84c64cab7c06dd688bef46eca57e521f0f34d5ee3daa7eec1ba2370",
+    "reports/native_snow_values_stage70_summary.json": "f45cc3f4e812915c3d2c8e8f069ca0602ffde388b1fe5ea847e5b97d7fe7cd47",
+    "reports/native_snow_rank_diagnostic_stage71_summary.json": "246e5e819e7590584ef729c61a024beedee9d4043750d6a51371654fce831cc2",
+    "reports/preservation_stage71_summary.json": "e0537a196d3fa0e78804cc33f2357c41b2f09d97bf7cff939422148bcbcb9723",
+    "src/descriptive/diagnose_native_snow_changes_stage72.py": "96b5f9bae18cf04d8d3697b6fffd3e012c9930968bba213527484dc5126f9bab",
+    "src/descriptive/diagnose_native_snow_ranks_stage71.py": "571dd3e832542e4d7a57a5b39a500c72558036dab03606266f93e2edbc358b03",
+    "data_interim/native_snow_values_stage70/spass_pilot.npz": "f80a971aabe260fd6b68aec0d65f0918827e2b3fcc608610b0ef6328c3ed2a18",
+    "data_interim/native_snow_values_stage70/spass_pilot.json": "bc597f1129a31fb341a8fb6a550af29b976a85782d308fd1f7fda7d19d69bef5",
+    "data_interim/native_snow_values_stage70/oshd_0d11057d0f9f1c7e7307.npz": "2e9811136e9481592096beb567fe0613391dc660032aa0f631cdd133817be386",
+    "data_interim/native_snow_values_stage70/oshd_0d11057d0f9f1c7e7307.json": "5302dc39d79b3978762ab7237d74f1302c279dbc269695a7560afe620dd95971",
+    "data_interim/native_snow_values_stage70/oshd_18dd1af8be07b908e522.npz": "2e4282b190a38e687ef51ff13a8e61fac09e3e56dcf97985e11e07ea1189bf28",
+    "data_interim/native_snow_values_stage70/oshd_18dd1af8be07b908e522.json": "048043222c7147e7400df3dc7b75248c10b8fdf27de828e6aad6c6d4ce6b7be5",
+    "data_interim/native_snow_values_stage70/oshd_2e27a0a310cc2a04c9d9.npz": "af82923ecebe372ae65c487b5fdfb4c24b02bdab9edcc25726ea015d17e337c6",
+    "data_interim/native_snow_values_stage70/oshd_2e27a0a310cc2a04c9d9.json": "28a1748b35271ef1f99b06975ff938ac3888e85055feda621c7ff9b60ee82b5a",
+    "data_interim/native_snow_values_stage70/oshd_694d1681be85d0f7f90c.npz": "f05a574e25ffe77da4e9d2801b08099100168776c4530987349a446b6c6b18cb",
+    "data_interim/native_snow_values_stage70/oshd_694d1681be85d0f7f90c.json": "b5d41df014f52d23410c9e6b5da8857ff231e786baf1daecabbe3c9181ef9c7b",
+    "data_interim/native_snow_values_stage70/oshd_781ee555a6fb9317f50c.npz": "1065c91a19670eb07e0f9b6b3989810e9736f66ddbd25bf3655bcc690a0902ee",
+    "data_interim/native_snow_values_stage70/oshd_781ee555a6fb9317f50c.json": "432ad193b2b67cf4449c30366cc0ed0e13d5bb684c4dc5f5720811ebe83006c8",
+    "data_interim/native_snow_values_stage70/oshd_881effa98917f377ea45.npz": "b2960210f9f0a575727fa91ae4a51d1be7f5d2edf35ef6b0d89f099d01ffafb6",
+    "data_interim/native_snow_values_stage70/oshd_881effa98917f377ea45.json": "3f8839a1ed049f213df1fceb5b20cc2e53d5c79fa0636e9971b7548e45acf187",
+    "data_interim/native_snow_values_stage70/oshd_d23313419e3eead6dfb5.npz": "9927ec33837e72207c0064e403140c61c403586919894cfeed3a536ea7b5438e",
+    "data_interim/native_snow_values_stage70/oshd_d23313419e3eead6dfb5.json": "d51946e42e291e93561d3b153f18579b57c1011ee0ddc8c888023545998fb018"
+  },
+  "output_sha256": {
+    "data_processed/native_snow_change_rank_diagnostic_stage72.csv": "131dcd0e3c646ecf8874dd177c8dc613eece0b8ddb23aebb83eb50ebe5f43be6"
+  },
+  "prior_registry_rows_and_digest": {
+    "metadata/data_sources_master.csv": {
+      "rows": 1202,
+      "sha256": "090ac40d6a6f67fb12ac7fb66ba8bf0be17ede4ff35fb0ebf423203e9c40835c"
+    },
+    "metadata/data_dictionary.csv": {
+      "rows": 8216,
+      "sha256": "d086bbe5bf25821c74187d257df544a61b0f727c0dcbfd8bdd2d978c08c9c16c"
+    }
+  },
+  "rows": 210,
+  "retained_groups": 70,
+  "lag_summary": {
+    "-1": {
+      "retained_groups": 70,
+      "computed_groups": 40,
+      "missing_groups": 30,
+      "rho_min": -0.1457149206631406,
+      "rho_q25": -0.050619864482529246,
+      "rho_median": 0.03763795698467359,
+      "rho_q75": 0.06322143184582217,
+      "rho_max": 0.19968072993372285,
+      "min_finite_pairs": 150,
+      "max_finite_pairs": 150,
+      "level_rho_median": 0.698065281128968,
+      "changed_support_pairs": 0
+    },
+    "0": {
+      "retained_groups": 70,
+      "computed_groups": 40,
+      "missing_groups": 30,
+      "rho_min": -0.058603493488599494,
+      "rho_q25": 0.11015067336326059,
+      "rho_median": 0.2141314760867461,
+      "rho_q75": 0.28973267112041956,
+      "rho_max": 0.38276468287971194,
+      "min_finite_pairs": 150,
+      "max_finite_pairs": 150,
+      "level_rho_median": 0.7827664788174837,
+      "changed_support_pairs": 0
+    },
+    "1": {
+      "retained_groups": 70,
+      "computed_groups": 40,
+      "missing_groups": 30,
+      "rho_min": 0.09380270742214931,
+      "rho_q25": 0.5243546452242047,
+      "rho_median": 0.6229698132059731,
+      "rho_q75": 0.6903817947464332,
+      "rho_max": 0.7564769187589908,
+      "min_finite_pairs": 150,
+      "max_finite_pairs": 150,
+      "level_rho_median": 0.8383563654993322,
+      "changed_support_pairs": 0
+    }
+  },
+  "status_counts": {
+    "computed_complete_change_pairs": 120,
+    "no_usable_geometry__piste_scope_unresolved": 87,
+    "no_usable_geometry__referenced_axes_missing": 3
+  },
+  "native_adjacent_support_checks": 18000,
+  "changed_support_pairs": 0,
+  "rank_ties": "average",
+  "p_values_or_ci_computed": false,
+  "physical_between_model_difference_or_conversion": false,
+  "source_splicing_or_calibration": false,
+  "choose_best_lag": false,
+  "daily_level_reference_preserved": true,
+  "five_own_preentry_winters_unchanged": true,
+  "new_clustering_or_effect_fit": false,
+  "software_versions": {
+    "python": "3.12.7",
+    "pandas": "2.3.3",
+    "numpy": "2.5.3"
+  },
+  "decisions": {
+    "date": "2026-10-10",
+    "researcher_reply": "Oui, ajouter ce diagnostic, sans remplacer celui sur les niveaux quotidiens (recommandé).",
+    "approved_question": "Diagnostic complémentaire de Spearman sur les variations entre deux jours consécutifs ; trois décalages fixes ; tous les groupes ; au plus 150 paires observées ; aucun trou comblé ; sensible au bruit ; ni validation des unités ni raccordement.",
+    "parent_decisions": "config/snow_rank_diagnostic_decisions_stage71.json",
+    "pilot_start": "2022-12-01",
+    "pilot_end": "2023-04-30",
+    "date_offsets_days": [
+      -1,
+      0,
+      1
+    ],
+    "reference_date_offset_days": 0,
+    "daily_change": "For each model separately: original-unit group mean(t) minus mean(t-1), only consecutive observed civil dates, with both endpoints finite. No cross-model physical subtraction.",
+    "support_check": "Verify equality of observed native cell-pair footprints at consecutive dates, including month boundaries. If support composition changes, stop for methodological validation; do not silently replace means or filter groups.",
+    "method": "Spearman: Pearson of average tied ranks, reused tested Stage71 implementation",
+    "missing_policy": "No gap filling; constant change series or fewer than two finite paired changes give missing rho, not zero. Groups without usable geometry retained with missing counts and coefficients.",
+    "inference": "Descriptive only; no iid daily p-value or confidence interval",
+    "preserve_daily_level_reference": true,
+    "choose_best_lag": false,
+    "new_unit_conversion": false,
+    "source_splicing_or_calibration": false,
+    "automatic_group_exclusion": false,
+    "five_own_preentry_winters_unchanged": true,
+    "new_clustering_or_effect_fit": false
+  }
+}
