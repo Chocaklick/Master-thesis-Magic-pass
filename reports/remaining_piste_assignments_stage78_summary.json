@@ -1,0 +1,567 @@
+{
+  "date": "2026-10-11",
+  "completed_at": "2026-10-11T07:51:08.559637+00:00",
+  "input_sha256": {
+    "config/piste_remaining_assignments_stage78.json": "518b2e91b8d4c0d608e8986268371b4268ce14d5dc06f5604aaa212a0ad8cac4",
+    "config/piste_remaining_sources_stage78.json": "02fb545e5b92cf2e559c80323a33f66e721a171e5e46ddf08c3274701998c596",
+    "src/descriptive/build_remaining_piste_assignments_stage78.py": "fb8e2d2e0e432e86904da6036ada05a3acb13f0d71ddd903005ef178791f6cfe",
+    "src/descriptive/review_remaining_piste_geometry_stage78.py": "49b988201ea4b228798cdbee909a2f19f42d0606d0389e14f558bcde0b95290c",
+    "src/descriptive/review_remaining_lifts_stage78.py": "8a99e346795fa2a61f094ba71944f12f8c5b323013e95e311cc73675523791c0",
+    "src/data_collection/collect_remaining_piste_evidence_stage78.py": "09de354c2bfcfdcf8aca791a2a713552054474ee47215fa2f65099c581dc5542",
+    "data_interim/piste_remaining_stage78/candidate_inventory.json": "989fe1adc13560679ef802942dc44245d5c4620b46767fed4857b09450e618c8",
+    "data_interim/piste_remaining_stage78/lift_context.json": "400343c49011d9291f490ce3b4a9f99503bc8db73463505f4ececc8f7a144f2f",
+    "data_processed/winter_profile_piste_geometry_roles.csv": "da1d0d324d6f3a6917d12c2c72d142f6f37c48e3bc6287f0070a811b7964ca65",
+    "data_processed/winter_profile_piste_assignment_stage60.csv": "008cbdd4367c87cb4acab70fbf03ca7d0b8b4b7c2a36fd256421f46ce51f6d7c",
+    "data_processed/winter_profile_verified_piste_member_qa_stage60.csv": "f44ba56646157d267a7e7bb25e7e72431de83112995a297b7a29f63e8abef197",
+    "reports/spass_preentry_profiles_stage77_summary.json": "c5fd226796fc85d556604c14fd171e1443c1db00835c6aba4ff9e48d6d4a2c5e",
+    "data_external/source_evidence/AESCHI_LIFTS_STAGE78_20261011T073913Z.html": "d57b04fdb3aa916874c562ea4b37721698d0a65fd6a29eb8681dcf4dc142f18d",
+    "data_external/source_evidence/ANZERE_DOMAIN_STAGE78_20261011T073902Z.html": "b2ec59f5d43e1466ba4248406cb8c5c8be55b539afa29cd2ba29536e9ead9ff4",
+    "data_external/source_evidence/GRENCHENBERG_OPERATOR_OFFICIAL_20260921T220423Z.html": "37cab4a9de9ef9f840318ef80354c51b83a339d5877f2893a3a0528f400e6145",
+    "data_external/source_evidence/GRENCHENBERG_PLAN_STAGE78_20261011T072210Z.pdf": "85522e529cc93ac84106074141970982814c339af59859535a3fb172eddd9886",
+    "data_external/source_evidence/HOMBERG_PLAN_STAGE78_20261011T072602Z.png": "f9fc315c4aa758b7f8a19a2fd7b3f923948f08829e71fc4c40943f3f2224ee64",
+    "data_external/source_evidence/HOMBERG_TECHNICAL_STAGE78_20261011T072211Z.html": "bd71cfbe5f8af7ff53f2fc959249d9bbfb0af6eaf599b180549bcb33fda041bd",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09_20261009T173220Z.html": "9eaf1b9b747d38b93e854803de20482001ad9baf8d5109d314a57b13ea4be1fe",
+    "data_external/source_evidence/MARECOTTES_VALAIS_STAGE78_20261011T074133Z.html": "9fa6ff3a87ba6a7290fa92069239588d965f26de0621099640b4d4f405aadd91",
+    "data_external/source_evidence/MOB_MAGIC_SCOPE_STAGE78_20261011T073901Z.html": "81aabf11f0f725402069da89e4224f80c792f659e7b16151bd4e6f90b70c4123",
+    "data_external/source_evidence/MORLIALP_TOURISM_STAGE78_20261011T072224Z.html": "0d8d156c27a7358fe1b94ca0e82bbb53e9db8208c3f9935b2dc420d7d69924fd",
+    "data_external/source_evidence/MYVALLEE_JOUX_ALPINE_SCOPE_STAGE47_20261009T180956Z.html": "4a980204e8f9ed01b7b28652d4f0d7e2c303a605ff1596dd945ec06bfaf88d6d",
+    "data_external/source_evidence/OPERATOR_REMAINING_03_STAGE53_20261009T221112Z.html": "566736fdb512f2ba6f84e47b91483b1f3f8665f575882dc5b4e96121099b40d5",
+    "data_external/source_evidence/OPERATOR_REMAINING_04_STAGE53_20261009T221116Z.html": "824f617cce848ee55f9af1666b8addc76581bc93853d0ba5cf5a25e05fb4f455",
+    "data_external/source_evidence/OPERATOR_REMAINING_05_STAGE53_20261009T221127Z.html": "09af45fb488d17db8b6f433cf7f4244ef9b8fb464c4c41eb0ef329f712796a7c",
+    "data_external/source_evidence/OPERATOR_REMAINING_06_STAGE53_20261009T221131Z.html": "d6d0e5540de04c9ab3ff9c8a1b16c99d3f7d30ecb5749510db4113bbed98ef04",
+    "data_external/source_evidence/OPERATOR_REMAINING_07_STAGE53_20261009T221133Z.html": "1238afd6f2fda7288f1c1046539714bd533363c6ff8c4af74bb4c0f28d75a196",
+    "data_external/source_evidence/OPERATOR_REMAINING_09_STAGE53_20261009T221141Z.html": "3363426daea1534de51bb8507835f1ffe47c9365f7194b62fc11b0dd66287c39",
+    "data_external/source_evidence/OPERATOR_REMAINING_10_STAGE53_20261009T221145Z.html": "8d22a50c866ed2d09f7c1e81f9c51ed328bc4b10d7dbe95727f706a3d3acb355",
+    "data_external/source_evidence/OPERATOR_REMAINING_11_STAGE53_20261009T221147Z.html": "29faa0908464fbb4cfe25fd88ae8cf34da6a759b65e8482e7f9bde1ebb75006f",
+    "data_external/source_evidence/OPERATOR_REMAINING_12_STAGE53_20261009T221149Z.html": "3cc4e9206ea29eac946d3c80bd03516d67c2b340184e5d0c16091e5c85019bdc",
+    "data_external/source_evidence/OPERATOR_REMAINING_16_STAGE53_20261009T221158Z.html": "242140dad2a88c6099f8bc2671ab0410af1eb92c0822b5d3f0af833a59240d2e",
+    "data_external/source_evidence/OPERATOR_REMAINING_18_STAGE53_20261009T221201Z.html": "66c7fb73b9729c5545afc64a43ce37a0683526e7528dd985fecad51abf4942b9",
+    "data_external/source_evidence/OPERATOR_REMAINING_20_STAGE53_20261009T221205Z.html": "102a8b6eba1f5fb0b5b5e2b544a8d2bbb9701bc555a1cfd6f90481a79378871e",
+    "data_external/source_evidence/OPERATOR_REMAINING_21_STAGE53_20261009T221210Z.html": "1584e9d2d0386b95550214671642fe34416e36072adc48a740a423fe385a603b",
+    "data_external/source_evidence/OPERATOR_REMAINING_34_STAGE53_20261009T221533Z.html": "896375c22f4e587dd38cf7a1d691bd9f34b44566299917a2ef372430a8ddcb01",
+    "data_external/source_evidence/OPERATOR_REMAINING_38_STAGE53_20261009T221602Z.html": "63640d66502ae12e930c5f4dd510e37f1b307e6ca9a116eb8fc4057c0b6d77f9",
+    "data_external/source_evidence/OPERATOR_REMAINING_47_STAGE53_20261009T221634Z.html": "a899e38445675c6f618eb14a64069878c6d08ce20ae3461ad1016b87e5a8ef89",
+    "data_external/source_evidence/OPERATOR_REMAINING_50_STAGE53_20261009T221649Z.html": "62824258d5c96f950d8548bc3e96f6129798363544a923f3e7c2cffedc52bb79",
+    "data_external/source_evidence/OPERATOR_SCOPE_16_STAGE53_20261009T222206Z.html": "0c54d9cdfe0f8fae24afdd9a5550b386b4011c2e1c3564fc64a7084e5797219b",
+    "data_external/source_evidence/ROBELLA_PLAN_STAGE78_20261011T072943Z.pdf": "01d2b815db7c2dd921fc3b94fe2c36fd2fc0e66ee8bac65e1908f091e47f2a53",
+    "data_external/source_evidence/ROBELLA_WINTER_STAGE78_20261011T072605Z.html": "321ba99b4d9b760fe5ca84d1d50a1d5a7271f3639583e708ee5d4d61f223ff68",
+    "data_external/source_evidence/SKI_VAUD_OPERATOR_LINK_STAGE47_20261009T180944Z.html": "7edac17698fcb195f651cec8ca03a3b41c2b1c0fd605f07632bf3484ac1dfd7f",
+    "data_external/source_evidence/TRAMELAN_PLAN_STAGE78_20261011T072213Z.png": "47ca3638f28bd9c7580065ea6e5c08f1eb2c741921c2b9c6949b14705f15ec12",
+    "data_external/source_evidence/WILERALLMI_ANNUAL_2023_24_20260921T220421Z.pdf": "b0dd4fa9b99b5c8076c126f60e1d1df290134cc21cd8e33b0c0618e988911ee5",
+    "data_external/source_evidence/WILERALLMI_SCHWANDEN_PLAN_STAGE78_20261011T073859Z.pdf": "6968511eef4a2403e228f4227e28148654163651025d6cbf4ab4456165b326d3",
+    "data_external/source_evidence/AESCHI_LIFTS_STAGE78_20261011T073913Z.metadata.json": "1911a215f10d1e13697396e70251dbe277f8506ff91bb6145b11ddeec6769edf",
+    "data_external/source_evidence/ANZERE_DOMAIN_STAGE78_20261011T073902Z.metadata.json": "4b7661bf238e7b6d3a27aedc397e550fc0a40201ff7106d554c91c3f0a1f30a8",
+    "data_external/source_evidence/GRENCHENBERG_OPERATOR_OFFICIAL_20260921T220423Z.metadata.json": "e79b598577a844c5aaf6e975f15b50dc7d91371c3a8bc043a6407fa97461f53c",
+    "data_external/source_evidence/GRENCHENBERG_PLAN_STAGE78_20261011T072210Z.metadata.json": "e31eb697863d6835ae077e60b3f5b9a1bce0f4af5f6361793d4855d0b38264e4",
+    "data_external/source_evidence/HOMBERG_PLAN_STAGE78_20261011T072602Z.metadata.json": "e124f5f86969260a31dbb74ce1eea240b08cdf89844248efe12bf17c9b14b5c8",
+    "data_external/source_evidence/HOMBERG_TECHNICAL_STAGE78_20261011T072211Z.metadata.json": "d4e12378edac44317a020b96cc371e189d6f6e58a37b188e1c5183b613aa2a3e",
+    "data_external/source_evidence/MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09_20261009T173220Z.metadata.json": "064ac92466d114adedfddac8e85a5cccd02299f5439538902d4816b641ad8b52",
+    "data_external/source_evidence/MARECOTTES_VALAIS_STAGE78_20261011T074133Z.metadata.json": "e3eb3142e82efd0a865f5fc1f164998ffc55a56aaeae533c02e68c3bd7cb3cf7",
+    "data_external/source_evidence/MOB_MAGIC_SCOPE_STAGE78_20261011T073901Z.metadata.json": "51974cccff8b05cd091b39d7b486be2f09cff43dd0e545c1eaf9052b7da799eb",
+    "data_external/source_evidence/MORLIALP_TOURISM_STAGE78_20261011T072224Z.metadata.json": "df9febd9ae7f7f646ae1daed9b568681ec757a30dbd3d5296b76460130639c69",
+    "data_external/source_evidence/MYVALLEE_JOUX_ALPINE_SCOPE_STAGE47_20261009T180956Z.metadata.json": "368855d8448bcfe7b21840f996a5f16b30f2c31656167d8b46aa27f931d11279",
+    "data_external/source_evidence/OPERATOR_REMAINING_03_STAGE53_20261009T221112Z.metadata.json": "c20dba93799c2e19388968ae96640001754b0ae20f02623d2739feef25d6ec34",
+    "data_external/source_evidence/OPERATOR_REMAINING_04_STAGE53_20261009T221116Z.metadata.json": "de546dd076f8fd6f326a73af1fa8ae9e46a53cd563d7d018c4a360f4fd7c53c6",
+    "data_external/source_evidence/OPERATOR_REMAINING_05_STAGE53_20261009T221127Z.metadata.json": "83b4a470b02b2d17475237d78380474cf9e19b39e5a2773f152e3166366af529",
+    "data_external/source_evidence/OPERATOR_REMAINING_06_STAGE53_20261009T221131Z.metadata.json": "6bd2a33d00e701fed531080952ba51a7ef73c6e9e7091ff2c1baf28bdba4dae5",
+    "data_external/source_evidence/OPERATOR_REMAINING_07_STAGE53_20261009T221133Z.metadata.json": "7b5d3372ce9d5b17b89f32c2814929639976fd972dcfed557d7787ad2af9602b",
+    "data_external/source_evidence/OPERATOR_REMAINING_09_STAGE53_20261009T221141Z.metadata.json": "933b082c0f8fc835358ce13d3874e6c34fc49fe07beae36540c6d9503be9cf1b",
+    "data_external/source_evidence/OPERATOR_REMAINING_10_STAGE53_20261009T221145Z.metadata.json": "90754380c5ac8e3e4c079e188803809d9873cc32e5eddbdcad34aa038b9f725e",
+    "data_external/source_evidence/OPERATOR_REMAINING_11_STAGE53_20261009T221147Z.metadata.json": "f83cfecd0e66747822d3f00edd28e847148502553783ff19aaecf5290573c155",
+    "data_external/source_evidence/OPERATOR_REMAINING_12_STAGE53_20261009T221149Z.metadata.json": "8094e30ec308606a9784cd2549de2e4347ce2e69ba59a26152cf8062a3a6daf3",
+    "data_external/source_evidence/OPERATOR_REMAINING_16_STAGE53_20261009T221158Z.metadata.json": "bc785ec3ae6780c8784bc94e016f087b6603ee0314eb8b3ea2b83ede5a492fa3",
+    "data_external/source_evidence/OPERATOR_REMAINING_18_STAGE53_20261009T221201Z.metadata.json": "a948317adf911562a8dd71ac3bc5a264e1bf2b4d5f65b5a1f9184c72e3aae34e",
+    "data_external/source_evidence/OPERATOR_REMAINING_20_STAGE53_20261009T221205Z.metadata.json": "a9c0c90ed51ccd7936fd7583f3acda36c0a8011cb0dbba0b637d631dcc6d459b",
+    "data_external/source_evidence/OPERATOR_REMAINING_21_STAGE53_20261009T221210Z.metadata.json": "7006d8c5c6f5d9bb7fad6828c7b0711936b64b01fb75d9b3945a402681f8bd65",
+    "data_external/source_evidence/OPERATOR_REMAINING_34_STAGE53_20261009T221533Z.metadata.json": "104f987ea05ce7df554d9d6fb88df4ff09cef99e1fc1fa4e53db4d917c223513",
+    "data_external/source_evidence/OPERATOR_REMAINING_38_STAGE53_20261009T221602Z.metadata.json": "13503ac98cac78d1e28526defb3fff4db412f56c1ddb016cefb2ff13ca955ce0",
+    "data_external/source_evidence/OPERATOR_REMAINING_47_STAGE53_20261009T221634Z.metadata.json": "46f63df1df793b000cddc9b1ca025a91d420dda1aed101510dad29fda8de08ef",
+    "data_external/source_evidence/OPERATOR_REMAINING_50_STAGE53_20261009T221649Z.metadata.json": "bc40c24e6a1009dd1c22778c9964968d9298c7fe7af3194d3460cb3168652a6b",
+    "data_external/source_evidence/OPERATOR_SCOPE_16_STAGE53_20261009T222206Z.metadata.json": "d3f07f622f93047243cdf2888796c60a87fa3fa3d9659b6572326a8522500936",
+    "data_external/source_evidence/ROBELLA_PLAN_STAGE78_20261011T072943Z.metadata.json": "87fbb1671e7f7a8924e53a5d76cc90d44b032b6f6d36701637b58f01321707b3",
+    "data_external/source_evidence/ROBELLA_WINTER_STAGE78_20261011T072605Z.metadata.json": "5d434fb1f276f9beb8ee02da3ad76f76dbcd1321c56abf2ac212ab56cf7173ad",
+    "data_external/source_evidence/SKI_VAUD_OPERATOR_LINK_STAGE47_20261009T180944Z.metadata.json": "d6d447b3ab1fa0f92b0595c7b21420907d0c783ce47f8f5f7570ca15a4807e50",
+    "data_external/source_evidence/TRAMELAN_PLAN_STAGE78_20261011T072213Z.metadata.json": "093df6e745280f5c10d53d73a62b3cf9e6a374988ede19e02c876818c5402fb2",
+    "data_external/source_evidence/WILERALLMI_ANNUAL_2023_24_20260921T220421Z.metadata.json": "a191e2b5025e90df5f3aa113fce3d126bef694cb0e63d4f71a75747222aa2278",
+    "data_external/source_evidence/WILERALLMI_SCHWANDEN_PLAN_STAGE78_20261011T073859Z.metadata.json": "39ec4f97d710721d959831f9498e8081f32dabeaf3030ed9692346b377476068",
+    "data_raw/bahnen-winter_2056.gpkg": "11b830d441aacd52bc6236101f95cd63d79b9318eed7d9a24697eab1fd18c0e5"
+  },
+  "output_sha256": {
+    "data_processed/piste_remaining_review_stage78.csv": "7fd22c635126431b32e7323b7d303c193498674f32a20924f65cdf41c9483c5c",
+    "data_processed/winter_profile_piste_assignment_stage78.csv": "140892d1f8fb5b2c60beec74b902aadd1fa7a5dcac7ed832c9580016d9f3b17f",
+    "data_processed/winter_profile_piste_members_stage78.csv": "a96708cfb09ac0b0622f98b9d93594fdc9cc066eaa80ace49c2b8f90a0c18fa8",
+    "data_processed/winter_profile_piste_groups_stage78.csv": "842852f4adb096c1bdfae6388efbd8e1b980ae1fadc5ed9e0ab83de3803edf10"
+  },
+  "baseline_commit": "e2a8c4a",
+  "prior_registry": {
+    "metadata/data_sources_master.csv": {
+      "rows": 1229,
+      "row_digest": "4c01f349d9b33ae047ffad5a37f45f305325f98ab4817151bb2a6815da11b66e"
+    },
+    "metadata/data_dictionary.csv": {
+      "rows": 8366,
+      "row_digest": "154d6444ae87cf6de181448616c07d47b30870d2be493b8f92d8be6bb205d89a"
+    },
+    "logs/data_collection_log.csv": {
+      "rows": 2056,
+      "row_digest": "6b1aef02f6401c5e7ec5e16b0554113227c44e38dd1b41a2ef5a7488f2698c81"
+    }
+  },
+  "retained_group_count": 70,
+  "review_dossier_count": 30,
+  "new_correspondence_count": 20,
+  "groups_with_current_correspondence": 60,
+  "still_unresolved_group_count": 10,
+  "retained_prior_member_rows": 854,
+  "additional_member_rows": 469,
+  "unique_added_objects": 469,
+  "new_qa_flags": [
+    {
+      "station_group_id": "MP_GROUP_EVENT__c1f58b57f3fa",
+      "candidate_axis_count": 2,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__aeschi",
+      "candidate_axis_count": 14,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__anzere",
+      "candidate_axis_count": 168,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__arolla",
+      "candidate_axis_count": 32,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 9,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__beatenberg_niederhorn",
+      "candidate_axis_count": 15,
+      "explicit_surface_count": 2,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__evolene",
+      "candidate_axis_count": 41,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 11,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal",
+      "candidate_axis_count": 7,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__gantrisch_gurnigel",
+      "candidate_axis_count": 10,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg",
+      "candidate_axis_count": 5,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__kiental",
+      "candidate_axis_count": 10,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_forclaz",
+      "candidate_axis_count": 21,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_robella",
+      "candidate_axis_count": 10,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__les_marecottes",
+      "candidate_axis_count": 19,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__morlialp",
+      "candidate_axis_count": 6,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__ovronnaz",
+      "candidate_axis_count": 45,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman",
+      "candidate_axis_count": 9,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__sainte_croix_les_rasses",
+      "candidate_axis_count": 16,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__st_cergue",
+      "candidate_axis_count": 4,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__tramelan",
+      "candidate_axis_count": 9,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__vallee_de_joux",
+      "candidate_axis_count": 24,
+      "explicit_surface_count": 0,
+      "upstream_geometry_pending_count": 0,
+      "literal_lifecycle_or_name_history_count": 0,
+      "nonsimple_axis_count": 0
+    }
+  ],
+  "official_evidence_manifest": [
+    {
+      "source_id": "AESCHI_LIFTS_STAGE78",
+      "metadata_path": "data_external/source_evidence/AESCHI_LIFTS_STAGE78_20261011T073913Z.metadata.json",
+      "raw_file": "data_external/source_evidence/AESCHI_LIFTS_STAGE78_20261011T073913Z.html",
+      "raw_sha256": "d57b04fdb3aa916874c562ea4b37721698d0a65fd6a29eb8681dcf4dc142f18d",
+      "url": "https://skilift-aeschiried.ch/skilift/",
+      "retrieval_date": "2026-10-11T07:39:13.189589+00:00"
+    },
+    {
+      "source_id": "ANZERE_DOMAIN_STAGE78",
+      "metadata_path": "data_external/source_evidence/ANZERE_DOMAIN_STAGE78_20261011T073902Z.metadata.json",
+      "raw_file": "data_external/source_evidence/ANZERE_DOMAIN_STAGE78_20261011T073902Z.html",
+      "raw_sha256": "b2ec59f5d43e1466ba4248406cb8c5c8be55b539afa29cd2ba29536e9ead9ff4",
+      "url": "https://www.anzere.ch/fr/remontees-mecaniques/domaine-skiable/",
+      "retrieval_date": "2026-10-11T07:39:02.948939+00:00"
+    },
+    {
+      "source_id": "GRENCHENBERG_OPERATOR_OFFICIAL",
+      "metadata_path": "data_external/source_evidence/GRENCHENBERG_OPERATOR_OFFICIAL_20260921T220423Z.metadata.json",
+      "raw_file": "data_external/source_evidence/GRENCHENBERG_OPERATOR_OFFICIAL_20260921T220423Z.html",
+      "raw_sha256": "37cab4a9de9ef9f840318ef80354c51b83a339d5877f2893a3a0528f400e6145",
+      "url": "https://jurasonnenseite.ch/erleben/auf-dem-berg/skilift",
+      "retrieval_date": "2026-09-21T22:04:23.333867+00:00"
+    },
+    {
+      "source_id": "GRENCHENBERG_PLAN_STAGE78",
+      "metadata_path": "data_external/source_evidence/GRENCHENBERG_PLAN_STAGE78_20261011T072210Z.metadata.json",
+      "raw_file": "data_external/source_evidence/GRENCHENBERG_PLAN_STAGE78_20261011T072210Z.pdf",
+      "raw_sha256": "85522e529cc93ac84106074141970982814c339af59859535a3fb172eddd9886",
+      "url": "https://jurasonnenseite.ch/assets/Skilift/pistenplan/Skilift_Pistenplan-Grenchenberge_Tafel_3_2025.pdf",
+      "retrieval_date": "2026-10-11T07:22:10.050551+00:00"
+    },
+    {
+      "source_id": "HOMBERG_PLAN_STAGE78",
+      "metadata_path": "data_external/source_evidence/HOMBERG_PLAN_STAGE78_20261011T072602Z.metadata.json",
+      "raw_file": "data_external/source_evidence/HOMBERG_PLAN_STAGE78_20261011T072602Z.png",
+      "raw_sha256": "f9fc315c4aa758b7f8a19a2fd7b3f923948f08829e71fc4c40943f3f2224ee64",
+      "url": "https://skilift-homberg.ch/wp-content/uploads/2023/02/Pistenplan-1024x755.png",
+      "retrieval_date": "2026-10-11T07:26:02.859517+00:00"
+    },
+    {
+      "source_id": "HOMBERG_TECHNICAL_STAGE78",
+      "metadata_path": "data_external/source_evidence/HOMBERG_TECHNICAL_STAGE78_20261011T072211Z.metadata.json",
+      "raw_file": "data_external/source_evidence/HOMBERG_TECHNICAL_STAGE78_20261011T072211Z.html",
+      "raw_sha256": "bd71cfbe5f8af7ff53f2fc959249d9bbfb0af6eaf599b180549bcb33fda041bd",
+      "url": "https://skilift-homberg.ch/ueber-den-skilift/",
+      "retrieval_date": "2026-10-11T07:22:11.817576+00:00"
+    },
+    {
+      "source_id": "MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09",
+      "metadata_path": "data_external/source_evidence/MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09_20261009T173220Z.metadata.json",
+      "raw_file": "data_external/source_evidence/MAGIC_PISTE_SCOPE_SAINTE_CROIX_2026_10_09_20261009T173220Z.html",
+      "raw_sha256": "9eaf1b9b747d38b93e854803de20482001ad9baf8d5109d314a57b13ea4be1fe",
+      "url": "https://www.magicpass.ch/fr/stations/ste-croix-les-rasses-2772",
+      "retrieval_date": "2026-10-09T17:32:20.397760+00:00"
+    },
+    {
+      "source_id": "MARECOTTES_VALAIS_STAGE78",
+      "metadata_path": "data_external/source_evidence/MARECOTTES_VALAIS_STAGE78_20261011T074133Z.metadata.json",
+      "raw_file": "data_external/source_evidence/MARECOTTES_VALAIS_STAGE78_20261011T074133Z.html",
+      "raw_sha256": "9fa6ff3a87ba6a7290fa92069239588d965f26de0621099640b4d4f405aadd91",
+      "url": "https://www.valais.ch/fr/explorer/activites/ski-snowboard/domaines-skiables/les-marecottes",
+      "retrieval_date": "2026-10-11T07:41:33.749009+00:00"
+    },
+    {
+      "source_id": "MOB_MAGIC_SCOPE_STAGE78",
+      "metadata_path": "data_external/source_evidence/MOB_MAGIC_SCOPE_STAGE78_20261011T073901Z.metadata.json",
+      "raw_file": "data_external/source_evidence/MOB_MAGIC_SCOPE_STAGE78_20261011T073901Z.html",
+      "raw_sha256": "81aabf11f0f725402069da89e4224f80c792f659e7b16151bd4e6f90b70c4123",
+      "url": "https://support.mob.ch/hc/fr-ch/articles/15547210908061-Validit%C3%A9-du-Magic-Pass-sur-la-ligne-Montreux-Les-Rochers-de-Naye",
+      "retrieval_date": "2026-10-11T07:39:01.241190+00:00"
+    },
+    {
+      "source_id": "MORLIALP_TOURISM_STAGE78",
+      "metadata_path": "data_external/source_evidence/MORLIALP_TOURISM_STAGE78_20261011T072224Z.metadata.json",
+      "raw_file": "data_external/source_evidence/MORLIALP_TOURISM_STAGE78_20261011T072224Z.html",
+      "raw_sha256": "0d8d156c27a7358fe1b94ca0e82bbb53e9db8208c3f9935b2dc420d7d69924fd",
+      "url": "https://www.obwalden-tourismus.ch/de/bergbahnen/skilifte-moerlialp/",
+      "retrieval_date": "2026-10-11T07:22:24.695697+00:00"
+    },
+    {
+      "source_id": "MYVALLEE_JOUX_ALPINE_SCOPE_STAGE47",
+      "metadata_path": "data_external/source_evidence/MYVALLEE_JOUX_ALPINE_SCOPE_STAGE47_20261009T180956Z.metadata.json",
+      "raw_file": "data_external/source_evidence/MYVALLEE_JOUX_ALPINE_SCOPE_STAGE47_20261009T180956Z.html",
+      "raw_sha256": "4a980204e8f9ed01b7b28652d4f0d7e2c303a605ff1596dd945ec06bfaf88d6d",
+      "url": "https://www.myvalleedejoux.ch/fr/Z10411/ski-alpin",
+      "retrieval_date": "2026-10-09T18:09:56.022689+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_03_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_03_STAGE53_20261009T221112Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_03_STAGE53_20261009T221112Z.html",
+      "raw_sha256": "566736fdb512f2ba6f84e47b91483b1f3f8665f575882dc5b4e96121099b40d5",
+      "url": "https://skilift-aeschiried.ch/",
+      "retrieval_date": "2026-10-09T22:11:12.575525+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_04_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_04_STAGE53_20261009T221116Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_04_STAGE53_20261009T221116Z.html",
+      "raw_sha256": "824f617cce848ee55f9af1666b8addc76581bc93853d0ba5cf5a25e05fb4f455",
+      "url": "https://www.anzere.ch/fr/remontees-mecaniques/",
+      "retrieval_date": "2026-10-09T22:11:16.316324+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_05_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_05_STAGE53_20261009T221127Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_05_STAGE53_20261009T221127Z.html",
+      "raw_sha256": "09af45fb488d17db8b6f433cf7f4244ef9b8fb464c4c41eb0ef329f712796a7c",
+      "url": "https://www.valdherens.ch/fr/espace-dent-blanche-secteur-arolla-fp42182",
+      "retrieval_date": "2026-10-09T22:11:27.398166+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_06_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_06_STAGE53_20261009T221131Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_06_STAGE53_20261009T221131Z.html",
+      "raw_sha256": "d6d0e5540de04c9ab3ff9c8a1b16c99d3f7d30ecb5749510db4113bbed98ef04",
+      "url": "https://niederhorn.ch/?lang=fr",
+      "retrieval_date": "2026-10-09T22:11:31.417717+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_07_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_07_STAGE53_20261009T221133Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_07_STAGE53_20261009T221133Z.html",
+      "raw_sha256": "1238afd6f2fda7288f1c1046539714bd533363c6ff8c4af74bb4c0f28d75a196",
+      "url": "https://www.skilift-hohwald.ch/",
+      "retrieval_date": "2026-10-09T22:11:33.127569+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_09_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_09_STAGE53_20261009T221141Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_09_STAGE53_20261009T221141Z.html",
+      "raw_sha256": "3363426daea1534de51bb8507835f1ffe47c9365f7194b62fc11b0dd66287c39",
+      "url": "https://www.valdherens.ch/fr/espace-dent-blanche-secteur-evolene-fp31917",
+      "retrieval_date": "2026-10-09T22:11:41.205205+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_10_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_10_STAGE53_20261009T221145Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_10_STAGE53_20261009T221145Z.html",
+      "raw_sha256": "8d22a50c866ed2d09f7c1e81f9c51ed328bc4b10d7dbe95727f706a3d3acb355",
+      "url": "https://www.skilift-faltschen.ch/",
+      "retrieval_date": "2026-10-09T22:11:45.041526+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_11_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_11_STAGE53_20261009T221147Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_11_STAGE53_20261009T221147Z.html",
+      "raw_sha256": "29faa0908464fbb4cfe25fd88ae8cf34da6a759b65e8482e7f9bde1ebb75006f",
+      "url": "https://www.skiliftegantrischgurnigel.ch/de/home",
+      "retrieval_date": "2026-10-09T22:11:47.601541+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_12_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_12_STAGE53_20261009T221149Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_12_STAGE53_20261009T221149Z.html",
+      "raw_sha256": "3cc4e9206ea29eac946d3c80bd03516d67c2b340184e5d0c16091e5c85019bdc",
+      "url": "https://www.skilift-gurnigelbad.ch/",
+      "retrieval_date": "2026-10-09T22:11:49.325044+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_16_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_16_STAGE53_20261009T221158Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_16_STAGE53_20261009T221158Z.html",
+      "raw_sha256": "242140dad2a88c6099f8bc2671ab0410af1eb92c0822b5d3f0af833a59240d2e",
+      "url": "https://skilift-homberg.ch/",
+      "retrieval_date": "2026-10-09T22:11:58.185879+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_18_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_18_STAGE53_20261009T221201Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_18_STAGE53_20261009T221201Z.html",
+      "raw_sha256": "66c7fb73b9729c5545afc64a43ce37a0683526e7528dd985fecad51abf4942b9",
+      "url": "https://www.kiental-sesselbahn.ch/?fbclid=IwAR1XIjs_HStZ0jbSZhln-Of463k6iKViT_1CFBl4fH4DkrbNINkoXtk37G4",
+      "retrieval_date": "2026-10-09T22:12:01.835476+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_20_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_20_STAGE53_20261009T221205Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_20_STAGE53_20261009T221205Z.html",
+      "raw_sha256": "102a8b6eba1f5fb0b5b5e2b544a8d2bbb9701bc555a1cfd6f90481a79378871e",
+      "url": "https://www.valdherens.ch/fr/live",
+      "retrieval_date": "2026-10-09T22:12:05.380796+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_21_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_21_STAGE53_20261009T221210Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_21_STAGE53_20261009T221210Z.html",
+      "raw_sha256": "1584e9d2d0386b95550214671642fe34416e36072adc48a740a423fe385a603b",
+      "url": "https://www.robella.ch/fr/",
+      "retrieval_date": "2026-10-09T22:12:10.130175+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_34_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_34_STAGE53_20261009T221533Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_34_STAGE53_20261009T221533Z.html",
+      "raw_sha256": "896375c22f4e587dd38cf7a1d691bd9f34b44566299917a2ef372430a8ddcb01",
+      "url": "https://www.ovronnaz.ch/",
+      "retrieval_date": "2026-10-09T22:15:33.589742+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_38_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_38_STAGE53_20261009T221602Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_38_STAGE53_20261009T221602Z.html",
+      "raw_sha256": "63640d66502ae12e930c5f4dd510e37f1b307e6ca9a116eb8fc4057c0b6d77f9",
+      "url": "http://www.sid-montreux.org",
+      "retrieval_date": "2026-10-09T22:16:02.546616+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_47_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_47_STAGE53_20261009T221634Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_47_STAGE53_20261009T221634Z.html",
+      "raw_sha256": "a899e38445675c6f618eb14a64069878c6d08ce20ae3461ad1016b87e5a8ef89",
+      "url": "https://www.st-cergue.ch/activites/33511",
+      "retrieval_date": "2026-10-09T22:16:34.449219+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_50_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_50_STAGE53_20261009T221649Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_50_STAGE53_20261009T221649Z.html",
+      "raw_sha256": "62824258d5c96f950d8548bc3e96f6129798363544a923f3e7c2cffedc52bb79",
+      "url": "https://www.teleski-tramelan.ch/",
+      "retrieval_date": "2026-10-09T22:16:49.338826+00:00"
+    },
+    {
+      "source_id": "OPERATOR_SCOPE_16_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_SCOPE_16_STAGE53_20261009T222206Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_SCOPE_16_STAGE53_20261009T222206Z.html",
+      "raw_sha256": "0c54d9cdfe0f8fae24afdd9a5550b386b4011c2e1c3564fc64a7084e5797219b",
+      "url": "https://www.ski-vaud.ch/web/ski/les-pistes",
+      "retrieval_date": "2026-10-09T22:22:06.791324+00:00"
+    },
+    {
+      "source_id": "ROBELLA_PLAN_STAGE78",
+      "metadata_path": "data_external/source_evidence/ROBELLA_PLAN_STAGE78_20261011T072943Z.metadata.json",
+      "raw_file": "data_external/source_evidence/ROBELLA_PLAN_STAGE78_20261011T072943Z.pdf",
+      "raw_sha256": "01d2b815db7c2dd921fc3b94fe2c36fd2fc0e66ee8bac65e1908f091e47f2a53",
+      "url": "https://www.robella.ch/pdf/robella-plan-station-hiver.pdf",
+      "retrieval_date": "2026-10-11T07:29:43.972838+00:00"
+    },
+    {
+      "source_id": "ROBELLA_WINTER_STAGE78",
+      "metadata_path": "data_external/source_evidence/ROBELLA_WINTER_STAGE78_20261011T072605Z.metadata.json",
+      "raw_file": "data_external/source_evidence/ROBELLA_WINTER_STAGE78_20261011T072605Z.html",
+      "raw_sha256": "321ba99b4d9b760fe5ca84d1d50a1d5a7271f3639583e708ee5d4d61f223ff68",
+      "url": "https://www.robella.ch/ski-snowboard/",
+      "retrieval_date": "2026-10-11T07:26:05.569132+00:00"
+    },
+    {
+      "source_id": "SKI_VAUD_OPERATOR_LINK_STAGE47",
+      "metadata_path": "data_external/source_evidence/SKI_VAUD_OPERATOR_LINK_STAGE47_20261009T180944Z.metadata.json",
+      "raw_file": "data_external/source_evidence/SKI_VAUD_OPERATOR_LINK_STAGE47_20261009T180944Z.html",
+      "raw_sha256": "7edac17698fcb195f651cec8ca03a3b41c2b1c0fd605f07632bf3484ac1dfd7f",
+      "url": "https://www.ski-vaud.ch/web/",
+      "retrieval_date": "2026-10-09T18:09:44.705838+00:00"
+    },
+    {
+      "source_id": "TRAMELAN_PLAN_STAGE78",
+      "metadata_path": "data_external/source_evidence/TRAMELAN_PLAN_STAGE78_20261011T072213Z.metadata.json",
+      "raw_file": "data_external/source_evidence/TRAMELAN_PLAN_STAGE78_20261011T072213Z.png",
+      "raw_sha256": "47ca3638f28bd9c7580065ea6e5c08f1eb2c741921c2b9c6949b14705f15ec12",
+      "url": "https://www.teleski-tramelan.ch/images/plan-pistes.png",
+      "retrieval_date": "2026-10-11T07:22:13.662886+00:00"
+    },
+    {
+      "source_id": "WILERALLMI_ANNUAL_2023_24",
+      "metadata_path": "data_external/source_evidence/WILERALLMI_ANNUAL_2023_24_20260921T220421Z.metadata.json",
+      "raw_file": "data_external/source_evidence/WILERALLMI_ANNUAL_2023_24_20260921T220421Z.pdf",
+      "raw_sha256": "b0dd4fa9b99b5c8076c126f60e1d1df290134cc21cd8e33b0c0618e988911ee5",
+      "url": "https://www.wilerallmi.ch/images/Skilift_Wilerallmi_Jahresbericht_2023-2024.pdf",
+      "retrieval_date": "2026-09-21T22:04:21.185154+00:00"
+    },
+    {
+      "source_id": "WILERALLMI_SCHWANDEN_PLAN_STAGE78",
+      "metadata_path": "data_external/source_evidence/WILERALLMI_SCHWANDEN_PLAN_STAGE78_20261011T073859Z.metadata.json",
+      "raw_file": "data_external/source_evidence/WILERALLMI_SCHWANDEN_PLAN_STAGE78_20261011T073859Z.pdf",
+      "raw_sha256": "6968511eef4a2403e228f4227e28148654163651025d6cbf4ab4456165b326d3",
+      "url": "https://www.wilerallmi.ch/images/Pistenplan_Schwanden_Wilerallmi.pdf",
+      "retrieval_date": "2026-10-11T07:38:59.661988+00:00"
+    }
+  ],
+  "automatic_assignment": false,
+  "group_exclusion": false,
+  "full_domain_or_preentry_geometry_certified": false,
+  "new_terrain_snow_or_clustering_computed": false,
+  "next_action": "Complete10 unresolved dossiers; resolve LaDole boundary choice, historical Wilerallmi-Schwanden connection and lifecycle/metric QA before new geometry/terrain/snow versions"
+}

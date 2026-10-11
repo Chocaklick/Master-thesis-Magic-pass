@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-11",
+  "cli_unavailable": true,
+  "cli_setup_reference_missing": true,
+  "tavily_attempts": [
+    {
+      "query": "Mörlialp Bergbahnen offizieller Pistenplan Skigebiet",
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Authentication for Tavily was requested and accepted. Retry this tool call now."
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "query": "Riffenmatt Skilift offizieller Betreiber Pistenplan",
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Authentication for Tavily was requested and accepted. Retry this tool call now."
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "query": "Sainte Croix Les Rasses plan pistes alpin officiel",
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "tool call error: tool call failed for `codex_apps/tavily.tavily_search`\n\nCaused by:\n    Mcp error: -32603: Internal error"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "query": "Mörlialp Bergbahnen offizieller Pistenplan Skigebiet",
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Authentication for Tavily was requested and accepted. Retry this tool call now."
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "query": "Riffenmatt Skilift offizieller Betreiber Pistenplan",
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "This app tool requires a non-empty string link_id argument"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "query": "Sainte Croix Les Rasses plan pistes alpin officiel",
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "This app tool requires a non-empty string link_id argument"
+          }
+        ],
+        "isError": true
+      }
+    }
+  ],
+  "web_fallback": {
+    "queries": [
+      "Mörlialp Bergbahnen offizieller Pistenplan Skigebiet",
+      "Riffenmatt Skilift offizieller Betreiber Pistenplan",
+      "Sainte Croix Les Rasses plan pistes alpin officiel"
+    ],
+    "observed_primary_urls": [
+      "https://www.obwalden-tourismus.ch/de/bergbahnen/skilifte-moerlialp/",
+      "https://www.moerlialp.ch/infos/pistenplan-und-webcam/",
+      "https://www.ski-vaud.ch/web/ski/les-pistes"
+    ],
+    "search_snippets_are_not_acceptance_evidence": true
+  }
+}
