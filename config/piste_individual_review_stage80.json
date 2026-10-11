@@ -1,0 +1,18 @@
+{
+  "unresolved_cases": [
+    {"way_ids":[576185142,576185143],"reason":"Tag abandoned=yes ; la source officielle sur Blattlift ne prouve pas le tracé ni la période d'usage de chacune de ces deux descentes.","evidence_source_ids":["OPERATOR_SCOPE_05_STAGE53","OPERATOR_REMAINING_31_STAGE53"]},
+    {"way_ids":[1149177765,1149177771,1149177770,1149177772,1149177766,1149177767,1149177769,1149177768,1375037670],"reason":"Tracé abandonné ou nom ancienne piste vérifié individuellement dans l'original ; liste officielle de secteur insuffisante pour certifier la même géométrie. Plan refusé par robots conservé, pas contourné.","evidence_source_ids":["OPERATOR_REMAINING_05_STAGE53","OPERATOR_REMAINING_20_STAGE53","AROLLA_PLAN_STAGE78"]},
+    {"way_ids":[1149174412,1149174413,1123579324,1149174418,1358369896,1358369895,1149174414,1358369894,1149174744,1149174415,1149174416],"reason":"Tag abandoned=yes vérifié individuellement ; source officielle confirme le domaine, pas l'usage actuel ni préentrée de chaque version géométrique. Plan refusé conservé.","evidence_source_ids":["OPERATOR_REMAINING_09_STAGE53","OPERATOR_REMAINING_20_STAGE53","EVOLENE_PLAN_STAGE78"]},
+    {"way_ids":[34203408,34206280,95407333,688051099,1422976151],"reason":"Ancienne piste Nr.30 ou Parwengesattel–Lengebrand selon nom original, parfois abandoned=yes. Identité du secteur vérifiée ; remplacement/usage précis de ces axes non certifié par les pages accessibles. Plan refusé conservé.","evidence_source_ids":["GSTAAD_RINDERBERG_STAGE79","GSTAAD_PLAN_PAGE_STAGE79","GSTAAD_PLAN_STAGE79"]},
+    {"way_ids":[672823371],"reason":"Fixme original : tracé approximatif et départ manquant. Périmètre Dôle–Tuffes confirmé mais géométrie de cet axe non certifiée ; ne pas réparer ni mesurer une approximation non validée.","evidence_source_ids":["DOLE_TUFFES_OPERATOR_STAGE79"]}
+  ],
+  "former_name_only_way_ids":[30634719,30634728,30634759,246077637,672824372,672824373],
+  "former_name_reason":"was:name ne décrit que l'ancien nom. Aucun tag abandoned/disused ni indice d'ancien tracé sur ces six objets ; pas d'exclusion de mesure sur cette seule annotation. Réserve historique générale inchangée.",
+  "non_geometry_notes": [
+    {"way_id":154193971,"reason":"fixme=name : le nom reste manquant, pas d'indication d'erreur géométrique. Ne pas inventer le nom ni écarter l'axe pour cela."},
+    {"way_id":29279508,"reason":"La note porte sur une difficulté novice non balisée, pas sur les coordonnées. Ne pas inventer une classe de difficulté ni écarter l'axe pour cela."}
+  ],
+  "original_surface_relation": {"outer_way_id":225673460,"relation_id":2998700,"inner_way_id":225673482,"reason":"La relation multipolygon originale contient les géométries fermées de outer et inner ; construire la surface avec son trou, sans inventer un axe ou une version du membre intérieur absente de l'original."},
+  "no_other_object_removed":true,
+  "no_historical_or_operating_certificate":true
+}

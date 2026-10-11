@@ -1,0 +1,4 @@
+[
+  {"source_id":"OSM_FORMER_NAME_SEMANTICS_STAGE80","url":"https://wiki.openstreetmap.org/wiki/Key%3Aname%3Awas","organisation":"OpenStreetMap community documentation","suffix":"html","purpose":"Distinguish was:name former feature name from abandonment or a former geometry"},
+  {"source_id":"OSM_ABANDONMENT_SEMANTICS_STAGE80","url":"https://wiki.openstreetmap.org/wiki/Tag%3Aabandoned%3Dyes","organisation":"OpenStreetMap community documentation","suffix":"html","purpose":"Document lifecycle annotation meaning and ambiguity; not an independently dated station closure"}
+]

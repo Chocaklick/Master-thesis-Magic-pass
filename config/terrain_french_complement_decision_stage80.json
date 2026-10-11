@@ -1,0 +1,12 @@
+{
+  "researcher_instruction": "laisse tomber on s'en fiche de la partie francaise de la dole",
+  "decision_date": "2026-10-12",
+  "french_terrain_research_stopped": true,
+  "french_source_complement": "none",
+  "do_not_resume_ign_without_new_request": true,
+  "approved_connected_group_retained": true,
+  "original_transborder_axes_and_previous_results_retained": true,
+  "no_automatic_geometry_boundary_cut": true,
+  "terrain_profile": "Swiss available native2m only, partial coverage explicit; no claim of a complete domain profile",
+  "no_snow_fill_or_commune_exclusion": true
+}

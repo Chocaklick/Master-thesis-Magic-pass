@@ -1,0 +1,89 @@
+{
+  "completed_at": "2026-10-11T22:23:02.563171+00:00",
+  "input_sha256": {
+    "config/piste_individual_review_stage80.json": "56a19b84b347569d564683111db3486b336a3399922e2258ce23d4a8200ccb59",
+    "config/piste_metric_decisions_stage80.json": "60fa32488f74523e871c1c698a80f75eb7c8e3a63f6749ac6a99b0a0a9746096",
+    "src/data_processing/build_reviewed_piste_network_stage80.py": "ea9d3c6dc50f77101ed08541b5b6f104e2b3c82a65e4b421498d9b7261c5a76c",
+    "data_processed/winter_profile_piste_members_stage79.csv": "c99303d28bd870a691b7101282820cbb55889256355dad3829dc4f183db5691c",
+    "data_processed/winter_profile_piste_groups_stage79.csv": "a0c7b3c0b7df354f5f16ae78df3ee160a57e4a85f51baed916ff14d932973f55",
+    "reports/remaining_piste_assignments_stage79_summary.json": "eacce36613e10db1f7e92e13f6e68f4fe2acc1060c9dec766b4318a8f9571729",
+    "config/piste_metric_sources_stage80.json": "82c23a478d463ff5c1a0de3e739e5b7400addf53746cd92f520a58b1da6a54b2",
+    "data_external/source_evidence/OSM_FORMER_NAME_SEMANTICS_STAGE80_20261011T221649Z.html": "8d4877b942a3292ccc3eba74f0ea537474a4de32315352a0c7a583895bca7573",
+    "data_external/source_evidence/OSM_FORMER_NAME_SEMANTICS_STAGE80_20261011T221649Z.metadata.json": "f6e4a2040cbf307767283c232f0b6b8127d97d84b4be2d937a5a5d55fb4ea4b3",
+    "data_external/source_evidence/OSM_ABANDONMENT_SEMANTICS_STAGE80_20261011T221651Z.html": "cee82a1bae2671f2454b5c3e28314fc2e909bd4877953337e591c6d8e986079b",
+    "data_external/source_evidence/OSM_ABANDONMENT_SEMANTICS_STAGE80_20261011T221651Z.metadata.json": "117cc8d15b07f7f0c708796123c34e404fd8d1a2ae6afe16b34c7c6ad38d3317",
+    "data_external/source_evidence/OPERATOR_REMAINING_20_STAGE53_20261009T221205Z.html": "102a8b6eba1f5fb0b5b5e2b544a8d2bbb9701bc555a1cfd6f90481a79378871e",
+    "data_external/source_evidence/OPERATOR_REMAINING_20_STAGE53_20261009T221205Z.metadata.json": "a9c0c90ed51ccd7936fd7583f3acda36c0a8011cb0dbba0b637d631dcc6d459b",
+    "data_external/source_evidence/OPERATOR_SCOPE_05_STAGE53_20261009T222251Z.html": "192ec108f87097b1a1d514f2fe77f7aa479a8055b386bb4d3dae77dbf5595eb0",
+    "data_external/source_evidence/OPERATOR_SCOPE_05_STAGE53_20261009T222251Z.metadata.json": "36074417f2361eabbd922973f1985f09e2b8cd024f2934e45500834d281b61a1",
+    "data_external/source_evidence/GSTAAD_PLAN_PAGE_STAGE79_20261011T214148Z.html": "3100b30eb23cd7185ff81559bf8416ab7197e53e342e8a4e8aa12315e422f76d",
+    "data_external/source_evidence/GSTAAD_PLAN_PAGE_STAGE79_20261011T214148Z.metadata.json": "784aa893468714d8ed757645fa5dae7eb79c9ee3204185f536f92f4ef80fbbf8",
+    "data_external/source_evidence/OPERATOR_REMAINING_09_STAGE53_20261009T221141Z.html": "3363426daea1534de51bb8507835f1ffe47c9365f7194b62fc11b0dd66287c39",
+    "data_external/source_evidence/OPERATOR_REMAINING_09_STAGE53_20261009T221141Z.metadata.json": "933b082c0f8fc835358ce13d3874e6c34fc49fe07beae36540c6d9503be9cf1b",
+    "data_external/source_evidence/GSTAAD_RINDERBERG_STAGE79_20261011T214809Z.html": "b993e6cc7ac5afaed3595df66e57e15836b8261e2e5e1436066b13cba9f7eb2e",
+    "data_external/source_evidence/GSTAAD_RINDERBERG_STAGE79_20261011T214809Z.metadata.json": "7e0d0f445410d659280cf25a343a400ffa715914e74e26577bdeffcb3c130d56",
+    "data_external/source_evidence/OPERATOR_REMAINING_05_STAGE53_20261009T221127Z.html": "09af45fb488d17db8b6f433cf7f4244ef9b8fb464c4c41eb0ef329f712796a7c",
+    "data_external/source_evidence/OPERATOR_REMAINING_05_STAGE53_20261009T221127Z.metadata.json": "83b4a470b02b2d17475237d78380474cf9e19b39e5a2773f152e3166366af529",
+    "data_external/source_evidence/DOLE_TUFFES_OPERATOR_STAGE79_20261011T214808Z.html": "56f0a8b5d2b175a7e15da2471f84f408ad1d2041ad7ce42c4648d65cdc3abcda",
+    "data_external/source_evidence/DOLE_TUFFES_OPERATOR_STAGE79_20261011T214808Z.metadata.json": "1af376779583cf321c368d30962a35ef8cfec5a269fb52d0ca11aa0eb6df65dd",
+    "data_external/source_evidence/TVGD_SKI_PAGE_STAGE79_20261011T214158Z.html": "6bbe163de14873446f86581cd06aca562776b22898fcda655aaef91b9b59936b",
+    "data_external/source_evidence/TVGD_SKI_PAGE_STAGE79_20261011T214158Z.metadata.json": "e95027d78451ca555c686c15df34a277e5fb3dd97c87f3892f5ef899ba6944cf",
+    "data_external/source_evidence/OPERATOR_REMAINING_54_STAGE53_20261009T221703Z.html": "9ed4d9a1bc6ae7037115ef4a1afab1eafc9fb80d4dd5ad42e69968ed17732845",
+    "data_external/source_evidence/OPERATOR_REMAINING_54_STAGE53_20261009T221703Z.metadata.json": "2608bcbd92d6f4da2a492538661d03a9e539212de9f87c4fde7d2b67f964464d",
+    "data_external/source_evidence/OPERATOR_REMAINING_31_STAGE53_20261009T221527Z.html": "f196fe0b4a67631c7ca00a1e900af064f0e8daa9b1cc2db13493cb1a9954e2d9",
+    "data_external/source_evidence/OPERATOR_REMAINING_31_STAGE53_20261009T221527Z.metadata.json": "72cc70bd3721aae0f4c2df7d39af12615bbe701112772635fee00229abb1dd7f"
+  },
+  "output_sha256": {
+    "data_processed/piste_individual_review_stage80.csv": "e6f2f5f09c72c32e782af21488547eac2ff004721e7decdde244df4478978f07",
+    "data_processed/winter_profile_metric_network_stage80.csv": "45898d04a7ae285a9adbbe98eb2964063418b6ad883f2f0a7cfefed2d638c01c",
+    "data_interim/winter_profile_metric_network_stage80.json": "47f353e3790815ed875ccd6988c905a87ef467655471e50edfda309e719cb2dc"
+  },
+  "retained_group_count": 69,
+  "retained_original_object_count": 2001,
+  "individual_review_count": 37,
+  "unresolved_unmeasured_axis_count": 28,
+  "former_name_only_count": 6,
+  "non_geometry_note_count": 2,
+  "original_surface_with_hole_resolved_count": 1,
+  "measured_proxy_axis_group_count": 67,
+  "groups_with_unmeasured_portions": [
+    {
+      "station_group_id": "MP_GROUP_RESORT__arolla",
+      "full_unique_candidate_axis_length_m": 27827.143798202134,
+      "measured_unique_proxy_axis_length_m": 23214.673109658765,
+      "unmeasured_unique_ambiguous_axis_length_m": 4612.47068854337,
+      "measured_share_of_mapped_candidate_length": 0.8342456300225332
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__evolene",
+      "full_unique_candidate_axis_length_m": 30285.401009435947,
+      "measured_unique_proxy_axis_length_m": 21019.680668447432,
+      "unmeasured_unique_ambiguous_axis_length_m": 9265.720340988515,
+      "measured_share_of_mapped_candidate_length": 0.6940532391134059
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__gstaad",
+      "full_unique_candidate_axis_length_m": 107694.42043602583,
+      "measured_unique_proxy_axis_length_m": 103500.40420929667,
+      "unmeasured_unique_ambiguous_axis_length_m": 4194.01622672916,
+      "measured_share_of_mapped_candidate_length": 0.9610563276189359
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_dole_jura_sur_leman",
+      "full_unique_candidate_axis_length_m": 31471.4313529346,
+      "measured_unique_proxy_axis_length_m": 30636.981415482576,
+      "unmeasured_unique_ambiguous_axis_length_m": 834.4499374520237,
+      "measured_share_of_mapped_candidate_length": 0.9734854786840125
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__moosalpregion",
+      "full_unique_candidate_axis_length_m": 14200.559713143955,
+      "measured_unique_proxy_axis_length_m": 13340.04382580105,
+      "unmeasured_unique_ambiguous_axis_length_m": 860.5158873429045,
+      "measured_share_of_mapped_candidate_length": 0.9394026781531424
+    }
+  ],
+  "no_group_exclusion_or_original_rewrite": true,
+  "no_historical_calendar_change": true,
+  "new_snow_or_terrain_values_read": false
+}

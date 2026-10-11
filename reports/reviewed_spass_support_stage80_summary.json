@@ -1,0 +1,38 @@
+{
+  "completed_at": "2026-10-11T22:35:51.543771+00:00",
+  "input_sha256": {
+    "src/data_processing/prepare_reviewed_spass_weights_stage80.py": "ee38d6383d30b47e0b2fc4eeaa8fefdff46671426ff7cc5d3ab50efce102e4cc",
+    "data_interim/winter_profile_metric_network_stage80.json": "47f353e3790815ed875ccd6988c905a87ef467655471e50edfda309e719cb2dc",
+    "data_processed/winter_profile_metric_network_stage80.csv": "45898d04a7ae285a9adbbe98eb2964063418b6ad883f2f0a7cfefed2d638c01c",
+    "reports/snow_grid_metadata_compatibility_stage47.json": "245d2a45be5de3c473f225d43d8ffeefe452fc96625d90d6092da1e90bd4cc7d",
+    "reports/native_snow_weights_stage69_summary.json": "f3b5c960430e46570143e86589d72156ec58f548cf0c347234b4f5a6869736a4",
+    "src/data_processing/terrain_cell_weights_stage61.py": "969b2ca601f5f7b1eba6284a3ddf7193624ac95f14a4cc363b4989f91dca239e",
+    "data_external/source_evidence/SLF_SPASS_HSCLQMD_GRID_1962_2023_20260924T012102Z.nc": "b8d740993a4bfa2b542aa2c2986564073d275b07f2b2fd9c869dfc5daf597c0d"
+  },
+  "output_sha256": {
+    "data_processed/spass_native_weights_stage80.csv": "14fdf00711bdcb1c7cf9a03832915488159241a3b30e0ce3250bebd0e6aa2b26",
+    "data_processed/spass_coverage_check_stage80.csv": "de47239e1c3f641a43de49c12b1aab72280e966b9d70e20c04deaee2f3a2b3ee",
+    "data_processed/spass_coverage_source_cells_stage80.csv": "ffffaa7cbc9fa5096b79fd9e776631ce6f75c7b6456249cb486599ff24761171"
+  },
+  "all_group_count": 69,
+  "native_weight_row_count": 639,
+  "original_source_cell_count": 639,
+  "diagnostic_date": "2023-04-01",
+  "groups_with_one_day_partial_mask": [
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_dole_jura_sur_leman",
+      "diagnostic_observed_proxy_length_share": 0.658248069972649
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__melchsee_frutt",
+      "diagnostic_observed_proxy_length_share": 0.863519071185632
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__vallee_de_joux",
+      "diagnostic_observed_proxy_length_share": 0.9426745135839072
+    }
+  ],
+  "no_preentry_or_winter_profile_computed": true,
+  "no_interpolation_or_osdh_values": true,
+  "no_original_unit_change": true
+}

@@ -1,0 +1,14 @@
+{
+  "date":"2026-10-12",
+  "researcher_reply":"Vérifier individuellement ; portions ambiguës non mesurées, groupes conservés (recommandé).",
+  "unresolved_portions":"retain_original_objects_do_not_measure_publish_coverage",
+  "remove_group_or_commune":false,
+  "change_historical_calendar":false,
+  "preserve_old_profiles_and_outputs":true,
+  "renaming_is_not_abandonment":true,
+  "difficulty_or_missing_name_note_is_not_geometry_error":true,
+  "unique_network":"exact_geometric_union_no_tolerance_no_snapping",
+  "surfaces":"separate_dissolved_mapped_area_never_invent_axes",
+  "foreign_scope":"full_Dole_Tuffes_missing_native_sources_remain_missing",
+  "new_clustering_or_did_fit":false
+}

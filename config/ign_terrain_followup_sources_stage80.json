@@ -1,0 +1,5 @@
+[
+  {"source_id":"IGN_LIDAR_METADATA_SCHEMA_STAGE80","url":"https://data.geopf.fr/wfs?SERVICE=WFS&VERSION=2.0.0&REQUEST=DescribeFeatureType&TYPENAMES=IGNF_LIDAR-HD_METADONNEE%3Ametadata","organisation":"IGN Géoplateforme","suffix":"xml","purpose":"Feature type and endpoint literally observed in archived current capabilities; do not retry unavailable dalle type"},
+  {"source_id":"IGN_LIDAR_DOLE_METADATA_STAGE80","url":"https://data.geopf.fr/wfs?SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=IGNF_LIDAR-HD_METADONNEE%3Ametadata&OUTPUTFORMAT=application%2Fjson&SRSNAME=EPSG%3A2154&BBOX=933670%2C6596170%2C938190%2C6599680%2CEPSG%3A2154&COUNT=100","organisation":"IGN Géoplateforme","suffix":"json","purpose":"Actual local acquisition metadata; expanded bbox covers measured Dôle–Tuffes axes, not a terrain raster"},
+  {"source_id":"IGN_MNT_CURRENT_CATALOGUE_STAGE80","url":"https://cartes.gouv.fr/rechercher-une-donnee/dataset/IGNF_LIDAR-HD_MNT","organisation":"IGN cartes.gouv.fr","suffix":"html","purpose":"Current product page and literal application/API resources to diagnose catalogue migration"}
+]

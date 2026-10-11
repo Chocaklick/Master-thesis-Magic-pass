@@ -1,0 +1,14 @@
+{
+  "completed_at": "2026-10-11T22:23:58.981533+00:00",
+  "producer_summary": "reports/reviewed_piste_network_stage80_summary.json",
+  "producer_summary_sha256": "ac5f882ed560d4470dc0a36fd65a08ebf37b948404dc94b8fb80464258dbd3a8",
+  "registration_script_sha256": "3d4f957c0e52e497141a759f9d9c6d91a44705aef3759e38f3482cc4f4adaa63",
+  "output_sha256": {
+    "data_processed/piste_individual_review_stage80.csv": "e6f2f5f09c72c32e782af21488547eac2ff004721e7decdde244df4478978f07",
+    "data_processed/winter_profile_metric_network_stage80.csv": "45898d04a7ae285a9adbbe98eb2964063418b6ad883f2f0a7cfefed2d638c01c",
+    "data_interim/winter_profile_metric_network_stage80.json": "47f353e3790815ed875ccd6988c905a87ef467655471e50edfda309e719cb2dc"
+  },
+  "numerical_producer_and_results_unchanged": true,
+  "missing_definition_supplied": "current_proxy_not_verified_preentry",
+  "no_geometry_recomputation_or_source_request": true
+}
