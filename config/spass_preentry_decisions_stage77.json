@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-11",
+  "researcher_reply": "A",
+  "approved_proposal": "Report122: SPASS-only five own preentry winters, keep incomplete means missing and all groups retained",
+  "source_id": "SLF_SPASS_HSCLQMD_GRID_1962_2023",
+  "spass_metres_assumed": true,
+  "spass_raw_to_m_factor": 1.0,
+  "original_unit": "UNKNOWN",
+  "approved_windows": "data_processed/winter_profile_approved_snow_windows_stage57.csv",
+  "parent_aggregation_decisions": "config/winter_profile_aggregation_decisions_stage45.json",
+  "native_lengths": "data_processed/native_snow_cell_pairs_stage69.csv",
+  "spatial_mean": "Exact unique piste lengths collapsed to native SPASS cells; observed SPASS portions only, independently of OSHD values",
+  "winter_mean": "Equal weight to observed finite daily means in December-April, publish requested/observed days and length coverage",
+  "five_winter_mean": "Equal weight to all five own preentry winter means, missing if any whole winter is absent",
+  "geometry_historical_caveat": true,
+  "source_spliced_or_calibrated": false,
+  "missing_imputation": false,
+  "automatic_group_exclusion": false,
+  "clustering_or_new_effect_estimation": false,
+  "baseline_commit": "b96fd90"
+}
