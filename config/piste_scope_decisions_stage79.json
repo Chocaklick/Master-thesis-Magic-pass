@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-11",
+  "researcher_reply": "Je valide le domaine skiable complet de La Dôle, y compris les portions françaises : les skieurs ne s’arrêtent pas à la frontière. Les éventuelles données manquantes doivent rester signalées. Je valide également Wilerallmi–Schwanden comme un seul groupe, avec la réserve historique expliquée, conservation des anciens identifiants et résultats, et aucune duplication des nuitées.",
+  "la_dole": {
+    "station_group_id": "MP_GROUP_RESORT__la_dole_jura_sur_leman",
+    "full_domain_cross_border_authorized": true,
+    "clip_to_swiss_boundary": false,
+    "missing_foreign_terrain_or_snow_remains_missing": true,
+    "other_independent_massifs_not_automatically_assigned": true
+  },
+  "connected_group": {
+    "parent_group_ids": ["MP_GROUP_EVENT__e664bf3f38d5", "MP_GROUP_RESORT__schwanden_sigriswil_thunersee"],
+    "new_derived_group_id": "MP_GROUP_CONNECTED__wilerallmi_schwanden",
+    "new_group_name": "Wilerallmi–Schwanden",
+    "new_identifier_is_derived_not_upstream": true,
+    "preserve_original_group_ids_and_outputs": true,
+    "common_entry_month": "2024-05-01",
+    "piste_site_relation_id": 9196556,
+    "evidence_source_ids": ["WILERALLMI_SCHWANDEN_PLAN_STAGE78", "WILERALLMI_ANNUAL_2023_24"],
+    "historical_connection_quality": "Official current connected plan with internal PDF creation2019-10-25/modification2019-11-14, before common2024/25 entry; no independent proof of publication at those internal dates. Annual report corroborates joint entry, not publication of plan.",
+    "historical_geometry_certified": false,
+    "group_access_rule": "Minimum usable existing road reference across both retained departure points; no new routing, coordinates or invented missing times",
+    "missing_component_catalogue_values_not_filled": true,
+    "individual_metric_acceptance_authorised": false,
+    "new_effect_estimation_authorised": false,
+    "automatic_exclusion_authorised": false
+  }
+}

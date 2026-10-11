@@ -1,0 +1,12 @@
+{
+  "claims": [
+    {"claim_id":"LABRAYE_ACTUAL_SKI_2017_18","source_id":"LABRAYE_CAPDENHO_2018_STAGE79","pdf_page":7,"required_markers":["2017/2018","La Braye","Schönried"],"finding":"Le rapport d'activité confirme des journées de ski adapté sur les pistes de La Braye durant la saison 2017/18.","scope_limit":"Les 309 journées concernent plusieurs stations ; aucun effectif propre à La Braye ni périmètre géographique des pistes n'est fourni.","operating_calendar_or_geometry_changed":false},
+    {"claim_id":"LABRAYE_DISTINCT_LIFT_DISMANTLED","source_id":"LABRAYE_COMMUNE_2018_STAGE79","pdf_page":28,"required_markers":["Gérignoz","Mourriaux","2018"],"finding":"La commune décrit le démantèlement en été 2018 du télésiège Gérignoz–Tête des Mourriaux, déjà arrêté depuis plusieurs années.","scope_limit":"Cette installation n'est pas automatiquement assimilée à la télécabine de La Braye ; cela ne date pas la fermeture de tout le domaine.","operating_calendar_or_geometry_changed":false},
+    {"claim_id":"LABRAYE_SUBSIDY_STOP_2018","source_id":"LABRAYE_COMMUNE_2018_STAGE79","pdf_page":28,"required_markers":["350","2018","soutien"],"finding":"Dès 2018, la municipalité confirme l'arrêt du soutien annuel de CHF 350 000 à l'exploitation du site.","scope_limit":"Une décision de financement ne prouve ni le dernier jour de ski ni un retrait du Magic Pass.","operating_calendar_or_geometry_changed":false},
+    {"claim_id":"LABRAYE_OPERATING_CONVENTION","source_id":"LABRAYE_COMMUNE_2018_STAGE79","pdf_page":29,"required_markers":["novembre 2018","30 juin","2019"],"finding":"Une convention signée en novembre 2018 fixe les conditions d'exploitation de La Braye jusqu'au 30 juin 2019, dans l'attente d'une proposition d'achat.","scope_limit":"Le droit ou les conditions d'exploitation ne prouvent pas que les pistes aient effectivement ouvert pendant toute cette période.","operating_calendar_or_geometry_changed":false},
+    {"claim_id":"LABRAYE_DISTINCT_LEARNING_PARK","source_id":"LABRAYE_COMMUNE_2018_STAGE79","pdf_page":29,"required_markers":["Jardin","Glacière","Bertholet"],"finding":"La commune décrit également le parc d'apprentissage Jardin d'Oex Neiges à Glacière, exploité par Télé-Château-d'Oex.","scope_limit":"Ne pas substituer ce parc au périmètre des descentes historiques de La Braye.","operating_calendar_or_geometry_changed":false}
+  ],
+  "no_calendar_change": true,
+  "no_geometry_assignment": true,
+  "no_source_data_modified": true
+}

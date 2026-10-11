@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-11",
+  "completed_at": "2026-10-11T21:45:46.589740+00:00",
+  "input_sha256": {
+    "config/piste_scope_decisions_stage79.json": "5572adc64d018b0ee6a4f1248d22bd1e239e8d508e6f5495e5e80e17c9d4713f",
+    "src/data_processing/regroup_wilerallmi_schwanden_stage79.py": "76a648b1f43735303551c084796b0711f0f33259b0f636a97a09674a643955c9",
+    "data_processed/station_group_lineage_stage55.csv": "c9a17f22ad50506dd5e31104913f79cf6a1690506864cb05abff7d69582d1a5d",
+    "data_processed/accessibility_station_groups_stage55.csv": "2b41c8ab69a514c86f2e0ad0495d9b38bc13febcfa77898fc1f1ea40ecc39d3c",
+    "data_processed/accessibility_station_access_points_stage55.csv": "3c8a26a9d12cd48a51f74eec08b5a12a82bbf9e6a15054ce9a0991e80c0c4704",
+    "data_processed/accessibility_road_pairs_stage55.csv": "fb94cb432c44480bf98f3f93c66cbe3a685e9be48e0b3d689983634afe8aa367",
+    "data_processed/accessibility_road_group_reference_stage55.csv": "7560e616aed637427687b60c9537dbc105a7299af5d0083960988c900b17cf6e",
+    "data_processed/accessibility_road_monthly_exposure_stage55.csv": "5e7f11b779db34d216b2dafeff3524cd36329e06d0318485ee48f53b32715fb4",
+    "reports/accessibility_road_inventory_stage55.csv": "c17dc1a84146983ad1e32a6d2a6630cab559786efba2c73592add56b66d4e4db",
+    "data_processed/accessibility_municipality_month_exposure_territorial.csv": "234a23ddb6c9065ab22ca2b5edc1e9d1132d281f9f3647523e63664b66658dea",
+    "data_processed/magic_pass_membership_history.csv": "99b46cf250586eb80d2df3ffe6b5375775419234853fb823b773be6bbc2e4588"
+  },
+  "output_sha256": {
+    "data_processed/station_group_lineage_stage79.csv": "e0e3e3de721cd7396fde76addbfc5d30c4c72a149819b3fb6ac5b10ce8ef6ecc",
+    "data_processed/accessibility_station_groups_stage79.csv": "2114f34ddd21852d4b3a53c06db0acc48c9eddabba0060a5c7a4487898d099b0",
+    "data_processed/accessibility_station_access_points_stage79.csv": "c94500d0a7495a34d0899935f45072e6b23c68af6d3e26514270544f84baaeac",
+    "data_processed/accessibility_road_pairs_stage79.csv": "062ef52daad868c9df45904fb7028dcecfd9fee30df6721cf8651d5127186c19",
+    "data_processed/accessibility_road_group_reference_stage79.csv": "00af4173f7d16bc15ae8a6143a041f793abeda5a13969e0ad8169ee01d7d4d0b",
+    "data_processed/accessibility_road_monthly_exposure_stage79.csv": "e23417710d65da5e29099bfd1f803b7b96ac6ab0ffd9f6775ec71743d6167e00",
+    "reports/accessibility_road_inventory_stage79.csv": "d6dcbb4d867977039d5b084899161dec09e086ccddc1f621f8ccf4529882e16b",
+    "data_processed/station_group_parent_bridge_stage79.csv": "efec58549605a0fbdd4c9dbd5d761c4b85d496ccc9ad6d817a95108447400556"
+  },
+  "parent_group_count": 70,
+  "derived_group_count": 69,
+  "retained_original_group_identity_count": 71,
+  "retained_territory_count": 185,
+  "road_pair_count": 13875,
+  "access_point_count": 75,
+  "exposure_comparison": [
+    {
+      "threshold_minutes": 15,
+      "territory_count": 185,
+      "observation_count": 31080,
+      "rows_with_active_count_reduced": 32,
+      "territories_with_active_count_reduced": 1,
+      "rows_with_entry_count_reduced": 1,
+      "exposure_status_changed_rows": 0,
+      "outcomes_and_first_exposure_preserved": true
+    },
+    {
+      "threshold_minutes": 30,
+      "territory_count": 185,
+      "observation_count": 31080,
+      "rows_with_active_count_reduced": 64,
+      "territories_with_active_count_reduced": 2,
+      "rows_with_entry_count_reduced": 2,
+      "exposure_status_changed_rows": 0,
+      "outcomes_and_first_exposure_preserved": true
+    },
+    {
+      "threshold_minutes": 45,
+      "territory_count": 185,
+      "observation_count": 31080,
+      "rows_with_active_count_reduced": 288,
+      "territories_with_active_count_reduced": 9,
+      "rows_with_entry_count_reduced": 9,
+      "exposure_status_changed_rows": 0,
+      "outcomes_and_first_exposure_preserved": true
+    }
+  ],
+  "outcomes_not_duplicated": true,
+  "first_exposure_and_nearest_access_unchanged": true,
+  "no_effect_estimated": true,
+  "no_exclusion": true,
+  "combined_catalogue_imputed": false,
+  "historical_connection_quality": "Official current connected plan with internal PDF creation2019-10-25/modification2019-11-14, before common2024/25 entry; no independent proof of publication at those internal dates. Annual report corroborates joint entry, not publication of plan."
+}

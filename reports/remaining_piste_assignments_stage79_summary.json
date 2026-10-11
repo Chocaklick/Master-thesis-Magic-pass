@@ -1,0 +1,297 @@
+{
+  "date": "2026-10-11",
+  "completed_at": "2026-10-11T21:56:42.070612+00:00",
+  "input_sha256": {
+    "config/piste_remaining_assignments_stage79.json": "9f0c8f39afee479c5c3b90b281855ac7d7d2cc01e7a6146994fc4c10e841f71f",
+    "config/piste_scope_decisions_stage79.json": "5572adc64d018b0ee6a4f1248d22bd1e239e8d508e6f5495e5e80e17c9d4713f",
+    "config/piste_remaining_sources_stage79.json": "577c25eae52395d1c4aa01c92db2171912bb29b10a14b6c7f1f6a6ba06c065f8",
+    "src/descriptive/build_remaining_piste_assignments_stage79.py": "d84f958b4903cc1134377abf4218b55a3d7577553da36d59d3088e8e7d96bb71",
+    "src/descriptive/prepare_remaining_review_maps_stage79.py": "33fb15f222e07740dd3b9b60eba4bb4a83eb9d1815988afe01a6fb3981c21d76",
+    "src/data_collection/collect_remaining_piste_evidence_stage79.py": "a136e60fca85daaa8c1224e3a861fe3b5be77c01cd5dc5618860414538937adc",
+    "data_processed/winter_profile_piste_assignment_stage78.csv": "140892d1f8fb5b2c60beec74b902aadd1fa7a5dcac7ed832c9580016d9f3b17f",
+    "data_processed/winter_profile_piste_members_stage78.csv": "a96708cfb09ac0b0622f98b9d93594fdc9cc066eaa80ace49c2b8f90a0c18fa8",
+    "data_processed/winter_profile_piste_groups_stage78.csv": "842852f4adb096c1bdfae6388efbd8e1b980ae1fadc5ed9e0ab83de3803edf10",
+    "data_processed/winter_profile_piste_geometry_roles.csv": "da1d0d324d6f3a6917d12c2c72d142f6f37c48e3bc6287f0070a811b7964ca65",
+    "data_processed/accessibility_station_groups_stage79.csv": "2114f34ddd21852d4b3a53c06db0acc48c9eddabba0060a5c7a4487898d099b0",
+    "data_processed/station_group_parent_bridge_stage79.csv": "efec58549605a0fbdd4c9dbd5d761c4b85d496ccc9ad6d817a95108447400556",
+    "reports/wilerallmi_schwanden_regrouping_stage79_summary.json": "4cb57a5446e41e64be038f9edb5756acad8060c5af5069d54a8f97216095e230",
+    "data_external/source_evidence/DOLE_TUFFES_OPERATOR_STAGE79_20261011T214808Z.html": "56f0a8b5d2b175a7e15da2471f84f408ad1d2041ad7ce42c4648d65cdc3abcda",
+    "data_external/source_evidence/DOLE_TUFFES_OPERATOR_STAGE79_20261011T214808Z.metadata.json": "1af376779583cf321c368d30962a35ef8cfec5a269fb52d0ca11aa0eb6df65dd",
+    "data_external/source_evidence/GRIMENTZ_DOCUMENTATION_STAGE79_20261011T214152Z.html": "a4ba28036469ca192c9ddfd708c68f9b89aa424892b5d782525b0e8d7296fd06",
+    "data_external/source_evidence/GRIMENTZ_DOCUMENTATION_STAGE79_20261011T214152Z.metadata.json": "39ab50bf42c888145e08f0efb10539d177d6d2ecda978baef230b0b0e57fa3c5",
+    "data_external/source_evidence/GRIMENTZ_OPERATOR_STAGE79_20261011T214150Z.html": "a6a0db90c6ef2d93a8e9c9c78f23f19525a23940a87c375d6c441410b5c7304a",
+    "data_external/source_evidence/GRIMENTZ_OPERATOR_STAGE79_20261011T214150Z.metadata.json": "18e24fbccb6e318ea2d7e53e8cc041e7fe24d34eca6ae96698f37e2aba91c78b",
+    "data_external/source_evidence/GRIMENTZ_PLAN_22_23_STAGE79_20261011T214354Z.pdf": "b7bf536d04fcb1c9c0c49061fff81e519805b7234b9b06006209b2422761e173",
+    "data_external/source_evidence/GRIMENTZ_PLAN_22_23_STAGE79_20261011T214354Z.metadata.json": "4eab4d6f4df0ad94474e5c7c3f50c01f875649d28dc876a02dc1e22fbb256adc",
+    "data_external/source_evidence/GSTAAD_EGGLI_STAGE79_20261011T214812Z.html": "e4f07826dcab2bac0343540f357658b09c07da3a0b29755d3190981ebee01ebb",
+    "data_external/source_evidence/GSTAAD_EGGLI_STAGE79_20261011T214812Z.metadata.json": "71195089a547fe9a4e387c1d3f5173bb573f107d14b23d53c5d3d0be49fbf681",
+    "data_external/source_evidence/GSTAAD_PLAN_PAGE_STAGE79_20261011T214148Z.html": "3100b30eb23cd7185ff81559bf8416ab7197e53e342e8a4e8aa12315e422f76d",
+    "data_external/source_evidence/GSTAAD_PLAN_PAGE_STAGE79_20261011T214148Z.metadata.json": "784aa893468714d8ed757645fa5dae7eb79c9ee3204185f536f92f4ef80fbbf8",
+    "data_external/source_evidence/GSTAAD_RINDERBERG_STAGE79_20261011T214809Z.html": "b993e6cc7ac5afaed3595df66e57e15836b8261e2e5e1436066b13cba9f7eb2e",
+    "data_external/source_evidence/GSTAAD_RINDERBERG_STAGE79_20261011T214809Z.metadata.json": "7e0d0f445410d659280cf25a343a400ffa715914e74e26577bdeffcb3c130d56",
+    "data_external/source_evidence/GSTAAD_WISPILE_STAGE79_20261011T214815Z.html": "36da0227384038bcfc425f509cfdb68df96513033de9ae72be4502e6c320b2b5",
+    "data_external/source_evidence/GSTAAD_WISPILE_STAGE79_20261011T214815Z.metadata.json": "86dd9dc26082b8fcdc02ca2f5cb151a25e5d3cc54eecea4ac4daf8a97a0fe783",
+    "data_external/source_evidence/LABRAYE_OPERATOR_STAGE79_20261011T214207Z.html": "65dc12b2f54ed8936559607c616fef253fb60b8ef9443ae1eec19fad1a105246",
+    "data_external/source_evidence/LABRAYE_OPERATOR_STAGE79_20261011T214207Z.metadata.json": "17e816b28bd05cb942e88ec8a5a60cfb5956286599112125ca37d30028902a4e",
+    "data_external/source_evidence/LEUKERBAD_MAGIC_STAGE79_20261011T214200Z.html": "ce46faee0362deee255b5cedfc0a63fc0c46dffbd34fc7b4f47ba71397982491",
+    "data_external/source_evidence/LEUKERBAD_MAGIC_STAGE79_20261011T214200Z.metadata.json": "556bb7d5fcb774516f7e647da883f9ea2e94145dacfd52a7216ffa45525b6c64",
+    "data_external/source_evidence/LEUKERBAD_SKI_STAGE79_20261011T214203Z.html": "4287cf1b8a7109d7e0ddf5d1ca8449909e97146d9cf27346a3cb52fc0dcab99f",
+    "data_external/source_evidence/LEUKERBAD_SKI_STAGE79_20261011T214203Z.metadata.json": "412a69b6fe75cef40346eea8ca32a8f3f83fa87bedd2da22d4c6a69077049853",
+    "data_external/source_evidence/OPERATOR_REMAINING_25_STAGE53_20261009T221243Z.html": "c8e17547e1d8a70a021539f75a748633c93797d56be0c856d3eb5d0c45f22eca",
+    "data_external/source_evidence/OPERATOR_REMAINING_25_STAGE53_20261009T221243Z.metadata.json": "b4ee10141aba8351f479e898e056baeb490694145a2ad1a949a5c9bd82f479d3",
+    "data_external/source_evidence/OPERATOR_REMAINING_26_STAGE53_20261009T221250Z.html": "251a342b48dacede3b00cdc583a01176d65d7b9b66609621c17271e51cb9c483",
+    "data_external/source_evidence/OPERATOR_REMAINING_26_STAGE53_20261009T221250Z.metadata.json": "14f008b30816cc352d9ef2d35b3b737624156c8b2d2ab967863a847d0f03218c",
+    "data_external/source_evidence/OPERATOR_REMAINING_54_STAGE53_20261009T221703Z.html": "9ed4d9a1bc6ae7037115ef4a1afab1eafc9fb80d4dd5ad42e69968ed17732845",
+    "data_external/source_evidence/OPERATOR_REMAINING_54_STAGE53_20261009T221703Z.metadata.json": "2608bcbd92d6f4da2a492538661d03a9e539212de9f87c4fde7d2b67f964464d",
+    "data_external/source_evidence/RIFFENMATT_TOURISM_STAGE79_20261011T214402Z.html": "c030343079d5d7cf746b61885d21eac565cb06322805e90ed85b221d0075a27f",
+    "data_external/source_evidence/RIFFENMATT_TOURISM_STAGE79_20261011T214402Z.metadata.json": "bc39e4a94aba38ed833c97584470ad13f4f92ec0bf532449e967426645a600f0",
+    "data_external/source_evidence/TLML_PLAN_PAGE_STAGE79_20261011T214154Z.html": "e4f3a70c2bc35e9ebe412fc6856be70ae3714b72f3970aab712c075cc1df6e52",
+    "data_external/source_evidence/TLML_PLAN_PAGE_STAGE79_20261011T214154Z.metadata.json": "a94f8cc5ef914b0d9734eec4659a3b205f38a8c244f8615bf166d3e7e0dc43ba",
+    "data_external/source_evidence/TVGD_MAP_PAGE_STAGE79_20261011T214156Z.html": "7b9f93758415871a300919dbb5feefae3427206311c1d2dbf1338a33bce5343b",
+    "data_external/source_evidence/TVGD_MAP_PAGE_STAGE79_20261011T214156Z.metadata.json": "720ee5473359c08efc60885ea4449f90714bb506e8d47bf1c337efda1a6b9e3d",
+    "data_external/source_evidence/TVGD_SKI_PAGE_STAGE79_20261011T214158Z.html": "6bbe163de14873446f86581cd06aca562776b22898fcda655aaef91b9b59936b",
+    "data_external/source_evidence/TVGD_SKI_PAGE_STAGE79_20261011T214158Z.metadata.json": "e95027d78451ca555c686c15df34a277e5fb3dd97c87f3892f5ef899ba6944cf",
+    "data_external/source_evidence/WILERALLMI_ANNUAL_2023_24_20260921T220421Z.pdf": "b0dd4fa9b99b5c8076c126f60e1d1df290134cc21cd8e33b0c0618e988911ee5",
+    "data_external/source_evidence/WILERALLMI_ANNUAL_2023_24_20260921T220421Z.metadata.json": "a191e2b5025e90df5f3aa113fce3d126bef694cb0e63d4f71a75747222aa2278",
+    "data_external/source_evidence/WILERALLMI_SCHWANDEN_PLAN_STAGE78_20261011T073859Z.pdf": "6968511eef4a2403e228f4227e28148654163651025d6cbf4ab4456165b326d3",
+    "data_external/source_evidence/WILERALLMI_SCHWANDEN_PLAN_STAGE78_20261011T073859Z.metadata.json": "39ec4f97d710721d959831f9498e8081f32dabeaf3030ed9692346b377476068"
+  },
+  "output_sha256": {
+    "data_processed/winter_profile_piste_assignment_stage79.csv": "8801b8150084e15d613d41d7b01e1a02d06f2cc17172e0ba9242eee6cd25cfdc",
+    "data_processed/winter_profile_piste_members_stage79.csv": "c99303d28bd870a691b7101282820cbb55889256355dad3829dc4f183db5691c",
+    "data_processed/winter_profile_piste_groups_stage79.csv": "a0c7b3c0b7df354f5f16ae78df3ee160a57e4a85f51baed916ff14d932973f55",
+    "data_processed/piste_remaining_review_stage79.csv": "b110f968d4e667109e30c791951d66948bb6aae35382fc98982f8f8e1a7dd73b"
+  },
+  "retained_group_count": 69,
+  "groups_with_geometry": 67,
+  "new_correspondence_count": 7,
+  "pending_group_count": 2,
+  "old_member_rows_retained": 1323,
+  "additional_member_rows": 678,
+  "total_member_rows": 2001,
+  "new_group_counts": [
+    {
+      "station_group_id": "MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal",
+      "member_object_count": 115,
+      "candidate_axis_count": 115,
+      "explicit_surface_count": 0,
+      "lifecycle_or_history_hint_count": 0,
+      "original_review_note_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__gstaad",
+      "member_object_count": 132,
+      "candidate_axis_count": 132,
+      "explicit_surface_count": 0,
+      "lifecycle_or_history_hint_count": 5,
+      "original_review_note_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_dole_jura_sur_leman",
+      "member_object_count": 104,
+      "candidate_axis_count": 99,
+      "explicit_surface_count": 5,
+      "lifecycle_or_history_hint_count": 6,
+      "original_review_note_count": 1
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__leukerbad",
+      "member_object_count": 48,
+      "candidate_axis_count": 48,
+      "explicit_surface_count": 0,
+      "lifecycle_or_history_hint_count": 0,
+      "original_review_note_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__leysin_les_mosses_la_lecherette",
+      "member_object_count": 110,
+      "candidate_axis_count": 110,
+      "explicit_surface_count": 0,
+      "lifecycle_or_history_hint_count": 0,
+      "original_review_note_count": 0
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets",
+      "member_object_count": 153,
+      "candidate_axis_count": 132,
+      "explicit_surface_count": 21,
+      "lifecycle_or_history_hint_count": 0,
+      "original_review_note_count": 1
+    },
+    {
+      "station_group_id": "MP_GROUP_CONNECTED__wilerallmi_schwanden",
+      "member_object_count": 16,
+      "candidate_axis_count": 16,
+      "explicit_surface_count": 0,
+      "lifecycle_or_history_hint_count": 0,
+      "original_review_note_count": 0
+    }
+  ],
+  "official_evidence_manifest": [
+    {
+      "source_id": "DOLE_TUFFES_OPERATOR_STAGE79",
+      "metadata_path": "data_external/source_evidence/DOLE_TUFFES_OPERATOR_STAGE79_20261011T214808Z.metadata.json",
+      "raw_file": "data_external/source_evidence/DOLE_TUFFES_OPERATOR_STAGE79_20261011T214808Z.html",
+      "raw_sha256": "56f0a8b5d2b175a7e15da2471f84f408ad1d2041ad7ce42c4648d65cdc3abcda",
+      "url": "https://www.jurasurleman.com/domaine-skiable/doles-tuffes/",
+      "retrieval_date": "2026-10-11T21:48:08.471179+00:00"
+    },
+    {
+      "source_id": "GRIMENTZ_DOCUMENTATION_STAGE79",
+      "metadata_path": "data_external/source_evidence/GRIMENTZ_DOCUMENTATION_STAGE79_20261011T214152Z.metadata.json",
+      "raw_file": "data_external/source_evidence/GRIMENTZ_DOCUMENTATION_STAGE79_20261011T214152Z.html",
+      "raw_sha256": "a4ba28036469ca192c9ddfd708c68f9b89aa424892b5d782525b0e8d7296fd06",
+      "url": "https://booking.valdanniviers.ch/documentation-anniviers-fr.html",
+      "retrieval_date": "2026-10-11T21:41:52.505296+00:00"
+    },
+    {
+      "source_id": "GRIMENTZ_OPERATOR_STAGE79",
+      "metadata_path": "data_external/source_evidence/GRIMENTZ_OPERATOR_STAGE79_20261011T214150Z.metadata.json",
+      "raw_file": "data_external/source_evidence/GRIMENTZ_OPERATOR_STAGE79_20261011T214150Z.html",
+      "raw_sha256": "a6a0db90c6ef2d93a8e9c9c78f23f19525a23940a87c375d6c441410b5c7304a",
+      "url": "https://www.valdanniviers.ch/fr/Z15284/grimentz-zinal",
+      "retrieval_date": "2026-10-11T21:41:50.885451+00:00"
+    },
+    {
+      "source_id": "GRIMENTZ_PLAN_22_23_STAGE79",
+      "metadata_path": "data_external/source_evidence/GRIMENTZ_PLAN_22_23_STAGE79_20261011T214354Z.metadata.json",
+      "raw_file": "data_external/source_evidence/GRIMENTZ_PLAN_22_23_STAGE79_20261011T214354Z.pdf",
+      "raw_sha256": "b7bf536d04fcb1c9c0c49061fff81e519805b7234b9b06006209b2422761e173",
+      "url": "https://reservation.valdanniviers.ch/medias/documents/documentation/documentation-HPISTEGRIMZI-FR.pdf",
+      "retrieval_date": "2026-10-11T21:43:54.801603+00:00"
+    },
+    {
+      "source_id": "GSTAAD_EGGLI_STAGE79",
+      "metadata_path": "data_external/source_evidence/GSTAAD_EGGLI_STAGE79_20261011T214812Z.metadata.json",
+      "raw_file": "data_external/source_evidence/GSTAAD_EGGLI_STAGE79_20261011T214812Z.html",
+      "raw_sha256": "e4f07826dcab2bac0343540f357658b09c07da3a0b29755d3190981ebee01ebb",
+      "url": "https://bergbahnen-gstaad.ch/fr/hiver/activites/activites/nos-montagnes/la-videmanette-eggli",
+      "retrieval_date": "2026-10-11T21:48:12.822119+00:00"
+    },
+    {
+      "source_id": "GSTAAD_PLAN_PAGE_STAGE79",
+      "metadata_path": "data_external/source_evidence/GSTAAD_PLAN_PAGE_STAGE79_20261011T214148Z.metadata.json",
+      "raw_file": "data_external/source_evidence/GSTAAD_PLAN_PAGE_STAGE79_20261011T214148Z.html",
+      "raw_sha256": "3100b30eb23cd7185ff81559bf8416ab7197e53e342e8a4e8aa12315e422f76d",
+      "url": "https://bergbahnen-gstaad.ch/fr/hiver/informations/plan-des-pistes",
+      "retrieval_date": "2026-10-11T21:41:48.885949+00:00"
+    },
+    {
+      "source_id": "GSTAAD_RINDERBERG_STAGE79",
+      "metadata_path": "data_external/source_evidence/GSTAAD_RINDERBERG_STAGE79_20261011T214809Z.metadata.json",
+      "raw_file": "data_external/source_evidence/GSTAAD_RINDERBERG_STAGE79_20261011T214809Z.html",
+      "raw_sha256": "b993e6cc7ac5afaed3595df66e57e15836b8261e2e5e1436066b13cba9f7eb2e",
+      "url": "https://bergbahnen-gstaad.ch/fr/hiver/activites/activites/nos-montagnes/rinderberg-saanersloch-horneggli",
+      "retrieval_date": "2026-10-11T21:48:09.865744+00:00"
+    },
+    {
+      "source_id": "GSTAAD_WISPILE_STAGE79",
+      "metadata_path": "data_external/source_evidence/GSTAAD_WISPILE_STAGE79_20261011T214815Z.metadata.json",
+      "raw_file": "data_external/source_evidence/GSTAAD_WISPILE_STAGE79_20261011T214815Z.html",
+      "raw_sha256": "36da0227384038bcfc425f509cfdb68df96513033de9ae72be4502e6c320b2b5",
+      "url": "https://bergbahnen-gstaad.ch/fr/hiver/activites/activites/nos-montagnes/wispile",
+      "retrieval_date": "2026-10-11T21:48:15.037249+00:00"
+    },
+    {
+      "source_id": "LABRAYE_OPERATOR_STAGE79",
+      "metadata_path": "data_external/source_evidence/LABRAYE_OPERATOR_STAGE79_20261011T214207Z.metadata.json",
+      "raw_file": "data_external/source_evidence/LABRAYE_OPERATOR_STAGE79_20261011T214207Z.html",
+      "raw_sha256": "65dc12b2f54ed8936559607c616fef253fb60b8ef9443ae1eec19fad1a105246",
+      "url": "https://www.labraye.ch/",
+      "retrieval_date": "2026-10-11T21:42:07.349538+00:00"
+    },
+    {
+      "source_id": "LEUKERBAD_MAGIC_STAGE79",
+      "metadata_path": "data_external/source_evidence/LEUKERBAD_MAGIC_STAGE79_20261011T214200Z.metadata.json",
+      "raw_file": "data_external/source_evidence/LEUKERBAD_MAGIC_STAGE79_20261011T214200Z.html",
+      "raw_sha256": "ce46faee0362deee255b5cedfc0a63fc0c46dffbd34fc7b4f47ba71397982491",
+      "url": "https://leukerbad.ch/magic",
+      "retrieval_date": "2026-10-11T21:42:00.501899+00:00"
+    },
+    {
+      "source_id": "LEUKERBAD_SKI_STAGE79",
+      "metadata_path": "data_external/source_evidence/LEUKERBAD_SKI_STAGE79_20261011T214203Z.metadata.json",
+      "raw_file": "data_external/source_evidence/LEUKERBAD_SKI_STAGE79_20261011T214203Z.html",
+      "raw_sha256": "4287cf1b8a7109d7e0ddf5d1ca8449909e97146d9cf27346a3cb52fc0dcab99f",
+      "url": "https://www.leukerbad.ch/ski",
+      "retrieval_date": "2026-10-11T21:42:03.790854+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_25_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_25_STAGE53_20261009T221243Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_25_STAGE53_20261009T221243Z.html",
+      "raw_sha256": "c8e17547e1d8a70a021539f75a748633c93797d56be0c856d3eb5d0c45f22eca",
+      "url": "https://leukerbad.ch/fr/torrent#horaires-contact",
+      "retrieval_date": "2026-10-09T22:12:43.153335+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_26_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_26_STAGE53_20261009T221250Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_26_STAGE53_20261009T221250Z.html",
+      "raw_sha256": "251a342b48dacede3b00cdc583a01176d65d7b9b66609621c17271e51cb9c483",
+      "url": "https://www.tlml.ch/",
+      "retrieval_date": "2026-10-09T22:12:50.014953+00:00"
+    },
+    {
+      "source_id": "OPERATOR_REMAINING_54_STAGE53",
+      "metadata_path": "data_external/source_evidence/OPERATOR_REMAINING_54_STAGE53_20261009T221703Z.metadata.json",
+      "raw_file": "data_external/source_evidence/OPERATOR_REMAINING_54_STAGE53_20261009T221703Z.html",
+      "raw_sha256": "9ed4d9a1bc6ae7037115ef4a1afab1eafc9fb80d4dd5ad42e69968ed17732845",
+      "url": "https://www.tvgd.ch/",
+      "retrieval_date": "2026-10-09T22:17:03.534590+00:00"
+    },
+    {
+      "source_id": "RIFFENMATT_TOURISM_STAGE79",
+      "metadata_path": "data_external/source_evidence/RIFFENMATT_TOURISM_STAGE79_20261011T214402Z.metadata.json",
+      "raw_file": "data_external/source_evidence/RIFFENMATT_TOURISM_STAGE79_20261011T214402Z.html",
+      "raw_sha256": "c030343079d5d7cf746b61885d21eac565cb06322805e90ed85b221d0075a27f",
+      "url": "https://www.guggisberg-tourismus.ch/angebote/",
+      "retrieval_date": "2026-10-11T21:44:02.366254+00:00"
+    },
+    {
+      "source_id": "TLML_PLAN_PAGE_STAGE79",
+      "metadata_path": "data_external/source_evidence/TLML_PLAN_PAGE_STAGE79_20261011T214154Z.metadata.json",
+      "raw_file": "data_external/source_evidence/TLML_PLAN_PAGE_STAGE79_20261011T214154Z.html",
+      "raw_sha256": "e4f3a70c2bc35e9ebe412fc6856be70ae3714b72f3970aab712c075cc1df6e52",
+      "url": "https://www.tlml.ch/plan-du-domaine/",
+      "retrieval_date": "2026-10-11T21:41:54.867258+00:00"
+    },
+    {
+      "source_id": "TVGD_MAP_PAGE_STAGE79",
+      "metadata_path": "data_external/source_evidence/TVGD_MAP_PAGE_STAGE79_20261011T214156Z.metadata.json",
+      "raw_file": "data_external/source_evidence/TVGD_MAP_PAGE_STAGE79_20261011T214156Z.html",
+      "raw_sha256": "7b9f93758415871a300919dbb5feefae3427206311c1d2dbf1338a33bce5343b",
+      "url": "https://www.tvgd.ch/carte/",
+      "retrieval_date": "2026-10-11T21:41:56.888924+00:00"
+    },
+    {
+      "source_id": "TVGD_SKI_PAGE_STAGE79",
+      "metadata_path": "data_external/source_evidence/TVGD_SKI_PAGE_STAGE79_20261011T214158Z.metadata.json",
+      "raw_file": "data_external/source_evidence/TVGD_SKI_PAGE_STAGE79_20261011T214158Z.html",
+      "raw_sha256": "6bbe163de14873446f86581cd06aca562776b22898fcda655aaef91b9b59936b",
+      "url": "https://www.tvgd.ch/ski/",
+      "retrieval_date": "2026-10-11T21:41:58.952689+00:00"
+    },
+    {
+      "source_id": "WILERALLMI_ANNUAL_2023_24",
+      "metadata_path": "data_external/source_evidence/WILERALLMI_ANNUAL_2023_24_20260921T220421Z.metadata.json",
+      "raw_file": "data_external/source_evidence/WILERALLMI_ANNUAL_2023_24_20260921T220421Z.pdf",
+      "raw_sha256": "b0dd4fa9b99b5c8076c126f60e1d1df290134cc21cd8e33b0c0618e988911ee5",
+      "url": "https://www.wilerallmi.ch/images/Skilift_Wilerallmi_Jahresbericht_2023-2024.pdf",
+      "retrieval_date": "2026-09-21T22:04:21.185154+00:00"
+    },
+    {
+      "source_id": "WILERALLMI_SCHWANDEN_PLAN_STAGE78",
+      "metadata_path": "data_external/source_evidence/WILERALLMI_SCHWANDEN_PLAN_STAGE78_20261011T073859Z.metadata.json",
+      "raw_file": "data_external/source_evidence/WILERALLMI_SCHWANDEN_PLAN_STAGE78_20261011T073859Z.pdf",
+      "raw_sha256": "6968511eef4a2403e228f4227e28148654163651025d6cbf4ab4456165b326d3",
+      "url": "https://www.wilerallmi.ch/images/Pistenplan_Schwanden_Wilerallmi.pdf",
+      "retrieval_date": "2026-10-11T07:38:59.661988+00:00"
+    }
+  ],
+  "automatic_assignment": false,
+  "automatic_group_exclusion": false,
+  "full_domain_coverage_certified": false,
+  "new_snow_terrain_profiles_or_effects_computed": false,
+  "next_action": "AuditLaBrayehistoricalfootprint andRiffenmattgeoreferencedpistes; approve metric-use rule for ambiguous lifecycle/itinerary axes before new physical profiles"
+}

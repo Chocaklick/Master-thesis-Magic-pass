@@ -1,0 +1,57 @@
+{
+  "completed_at": "2026-10-11T22:04:59.895679+00:00",
+  "input_sha256": {
+    "config/piste_historical_followup_stage79.json": "4a08728e9df456e77b441111e1d9384d750a5afd738b79638d067369630db1fd",
+    "config/piste_historical_claims_stage79.json": "edb2b3f8efd0ff2af7b597c27def6a2310c2617b1e5450e17dc82303fa07ea06",
+    "src/descriptive/audit_piste_followup_stage79.py": "d02259435993eac50f3e7f20bb36870d426f2e95cf689b28c99fddc79fc3c90c",
+    "data_processed/winter_profile_piste_members_stage79.csv": "c99303d28bd870a691b7101282820cbb55889256355dad3829dc4f183db5691c",
+    "reports/remaining_piste_assignments_stage79_summary.json": "eacce36613e10db1f7e92e13f6e68f4fe2acc1060c9dec766b4318a8f9571729",
+    "data_external/source_evidence/LABRAYE_CAPDENHO_2018_STAGE79_20261011T215720Z.pdf": "2d078dd876bc31c5d1fdac7b80c70de3c32ada14d26ee0d362a337dd6c107e8a",
+    "data_external/source_evidence/LABRAYE_CAPDENHO_2018_STAGE79_20261011T215720Z.metadata.json": "8e609e31e5176ba62cc2135bc69d4026705f9a3cf707702cdb8cb1ba37282456",
+    "data_external/source_evidence/LABRAYE_COMMUNE_2018_STAGE79_20261011T215721Z.pdf": "58369a305402e86dcb2e335707befaf011931b0ef89c4da69a8c97c740577cda",
+    "data_external/source_evidence/LABRAYE_COMMUNE_2018_STAGE79_20261011T215721Z.metadata.json": "ab6bc95e64d163302c4e386ee849229110a06b7ae5caf8a376fce8342e344776"
+  },
+  "output_sha256": {
+    "data_processed/piste_historical_claims_stage79.csv": "fb84916ffd9a2eab12f985889ae194c42a874dbaf13a70436cc97bad0c6de11a",
+    "data_processed/piste_flagged_objects_stage79.csv": "edc6cbfe431768743888f28125f69a8e375822c62e5fb99a641d8374faf86c02"
+  },
+  "primary_claim_count": 5,
+  "flagged_object_count": 144,
+  "flagged_group_count": 25,
+  "historical_or_status_alert_count": 33,
+  "original_note_alert_count": 3,
+  "geometry_or_topology_alert_count": 101,
+  "itinerary_or_park_name_alert_count": 8,
+  "source_manifests": {
+    "LABRAYE_CAPDENHO_2018_STAGE79": {
+      "source_id": "LABRAYE_CAPDENHO_2018_STAGE79",
+      "url": "https://www.capdenho.ch/_Resources/Persistent/b14d25aec9c00485d1a623dbbc2ab0d748f959ff/20190318_rapport_activit%C3%A9.pdf",
+      "organisation": "Association Capdenho",
+      "suffix": "pdf",
+      "parent_source_id": "DISCOVERY_REMAINING_PISTES_STAGE78",
+      "purpose": "Observed primary activity report documenting actual2017/18 ski days atLaBraye, not inference fromcurrent project",
+      "retrieval_date": "2026-10-11T21:57:20.192397+00:00",
+      "final_url": "https://www.capdenho.ch/_Resources/Persistent/b14d25aec9c00485d1a623dbbc2ab0d748f959ff/20190318_rapport_activit%C3%A9.pdf",
+      "raw_file": "data_external/source_evidence/LABRAYE_CAPDENHO_2018_STAGE79_20261011T215720Z.pdf",
+      "sha256": "2d078dd876bc31c5d1fdac7b80c70de3c32ada14d26ee0d362a337dd6c107e8a",
+      "size_bytes": 2064371,
+      "http_status": 200
+    },
+    "LABRAYE_COMMUNE_2018_STAGE79": {
+      "source_id": "LABRAYE_COMMUNE_2018_STAGE79",
+      "url": "https://www.chateaudoex-admin.ch/_doc/2135771",
+      "organisation": "Commune de Chateau-d'Oex",
+      "suffix": "pdf",
+      "parent_source_id": "DISCOVERY_REMAINING_PISTES_STAGE78",
+      "purpose": "Observed municipal2018 management report; search documented ownership/operational history without inventing dates",
+      "retrieval_date": "2026-10-11T21:57:21.746480+00:00",
+      "final_url": "https://www.chateaudoex-admin.ch/_docn/2135771/Preavis_06-2019_-_Comptes_communaux_2018.pdf",
+      "raw_file": "data_external/source_evidence/LABRAYE_COMMUNE_2018_STAGE79_20261011T215721Z.pdf",
+      "sha256": "58369a305402e86dcb2e335707befaf011931b0ef89c4da69a8c97c740577cda",
+      "size_bytes": 809604,
+      "http_status": 200
+    }
+  },
+  "no_calendar_geometry_or_metric_change": true,
+  "no_automatic_exclusion": true
+}
