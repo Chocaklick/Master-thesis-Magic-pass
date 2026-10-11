@@ -1,15 +1,22 @@
 # Extension neige : huit hivers communs
 
+Actualisation du 11 octobre 2026 : **les huit hivers et les sept archives supplémentaires sont terminés**. Le [bilan final 122](122_BILAN_NEIGE_HUIT_HIVERS_ET_CHOIX_PROFILS_FR.md) remplace les indications d'avancement ci-dessous. Ce document conserve les checkpoints et incidents de collecte ; aucun travail achevé ne doit être recommencé.
+
 10 octobre 2026 — Étape 76, **extension validée, collecte en cours**.
 
-Point de reprise à 16 h 58 UTC : **deux hivers calculés sur huit**, 2020/21 et 2022/23. WY2021 est intégralement récolté (743 262 037 octets), taille et MD5 fournisseur vérifiés ; les six autres archives restent incomplètes. Le collecteur 26316 reprend leurs préfixes, sans téléchargement depuis zéro. Le JSON de collecte reste la référence pour l'avancement ultérieur.
+Point de reprise à 17 h 40 UTC : **cinq hivers calculés sur huit**, 2017/18, 2018/19, 2019/20, 2020/21 et 2022/23. Quatre nouvelles archives sont intégralement récoltées, tailles et MD5 fournisseur vérifiés : WY2018/2019/2020/2021. WY2016/2017/2022 restent incomplètes. Le collecteur 26316 reprend leurs préfixes, sans téléchargement depuis zéro. Le JSON de collecte reste la référence pour l'avancement ultérieur.
+
+Le calcul 2017/18 a rencontré un manque de mémoire (allocation52,6MiB, puis1MiB), résolu en limitant les threads à un et le cache NetCDF à1MiB. **Calcul désormais terminé**, cinq caches existants réutilisés et avril/mai ajoutés ; aucune méthode ou valeur changée. Le lanceur `run_snow_multiwinter_low_memory_stage76.py` conserve le producteur numérique figé, reprend ses arguments et archive ses réglages/empreintes dans `snow_multiwinter_runtime_stage76_summary.json`. Aucun processus tiers ou service de sécurité n'est modifié ; fermer des applications n'est plus nécessaire à ce stade.
 
 | Hiver calculé | Groupes calculables | Jours appariés par groupe | Médiane des écarts moyens OSHD − SPASS |
 | --- | ---: | ---: | ---: |
+| 2017/18 | 40 | 151 | −26,51 cm |
+| 2018/19 | 40 | 151 | −10,61 cm |
+| 2019/20 | 40 | 152 | −12,94 cm |
 | 2020/21 | 40 | 151 | −9,90 cm |
 | 2022/23 | 40 | 151 | −7,25 cm |
 
-Ces médianes décrivent les différences entre modèles, pas leur erreur par rapport à la neige réelle. Les 30 autres groupes restent dans le tableau, avec leur absence de géométrie signalée. Deux hivers ne suffisent pas à conclure sur les huit ni à autoriser un raccordement.
+Ces médianes décrivent les différences entre modèles, pas leur erreur par rapport à la neige réelle. Les 30 autres groupes restent dans le tableau, avec leur absence de géométrie signalée. Cinq hivers ne suffisent pas à conclure sur les huit ni à autoriser un raccordement.
 
 ## Périmètre et calcul
 
@@ -38,13 +45,15 @@ Les autres archives sont testées indépendamment avec `--continue-pending --pub
 
 Le producteur `src/data_processing/compare_snow_multiwinter_stage76.py` traite uniquement les archives complètes. Il extrait les membres mensuels nécessaires dans un nouvel espace intermédiaire, contrôle le CRC/SHA, les axes natifs, les unités, les dates et les masques, puis conserve des caches par mois et hiver avec empreintes. Le pilote 2022/23 est repris directement, sans relire ses champs originaux. Les fenêtres −1/+1 utilisent aussi le 30 novembre et le 1er mai lorsqu'ils sont présents.
 
-[Tableau de suivi](../data_processed/snow_multiwinter_comparison_stage76.csv) : 1 680 lignes (70 groupes × 8 hivers × 3 décalages), avec statuts explicites. **2020/21 et 2022/23 sont calculés à ce point de reprise** ; les six autres hivers ne sont pas présentés comme des résultats. [Résumé du calcul](snow_multiwinter_comparison_stage76_summary.json) conserve les hivers réellement terminés et leurs caches.
+[Tableau de suivi](../data_processed/snow_multiwinter_comparison_stage76.csv) : 1 680 lignes (70 groupes × 8 hivers × 3 décalages), avec statuts explicites. **2017/18, 2018/19, 2019/20, 2020/21 et 2022/23 sont calculés à ce point de reprise** ; les trois autres hivers ne sont pas présentés comme des résultats. [Résumé du calcul](snow_multiwinter_comparison_stage76_summary.json) conserve les hivers réellement terminés et leurs caches.
 
 Pendant l'interruption OSHD, `prepare_spass_multiwinter_caches_stage76.py` a terminé les **35 mois SPASS des sept hivers restants : 1 059 jours observés, zéro date manquante, 325 cellules natives sélectionnées**. Le futur calcul réutilisera ces caches de valeurs/masques ; aucune moyenne de groupe, substitution ou conversion n'est faite par ce préparateur. Bilan : `reports/spass_multiwinter_cache_preparation_stage76_summary.json`, unité source `UNKNOWN` conservée.
 
-Commande pendant la collecte : `.venv/Scripts/python.exe -X utf8 src/data_processing/compare_snow_multiwinter_stage76.py --no-register`. Ce drapeau évite les écritures concurrentes dans le registre partagé. Après l'arrêt du collecteur, relancer sans ce drapeau pour enregistrer le tableau et ses variables. À la fin, vérifier toutes les lignes historiques des registres et du journal, ainsi que les empreintes des résultats précédents.
+Commande pendant la collecte : `.venv/Scripts/python.exe -X utf8 src/data_processing/run_snow_multiwinter_low_memory_stage76.py --no-register`. Ce drapeau évite les écritures concurrentes dans le registre partagé. Après l'arrêt du collecteur, relancer sans ce drapeau pour enregistrer le tableau et ses variables. À la fin, vérifier toutes les lignes historiques des registres et du journal, ainsi que les empreintes des résultats précédents.
 
-Les tests ciblés valident les calendriers bissextiles, les vrais zéros et absences, le poids égal des jours appariés, les doublons, la reprise exacte du pilote, les cellules natives appariées (pas un produit cartésien), les masques et contrats de cache, les 35 caches SPASS et le contrôle robots, ainsi que les garanties du collecteur et la continuité de l'étape précédente : **20 tests réussis**. Trois avertissements NumPy/netCDF4 viennent de la création du petit fichier synthétique de test, pas d'un changement du calcul.
+Après ce calcul, `src/data_processing/sync_snow_multiwinter_dictionary_stage76.py` actualise uniquement les taux de valeurs manquantes/types enregistrés de cette nouvelle table, protégés par le verrou du collecteur. Les définitions et autres tables restent inchangées. Cela évite de laisser dans le dictionnaire le taux observé au tout premier checkpoint ; le producteur numérique reste figé pour protéger les caches existants.
+
+Les tests ciblés valident les calendriers bissextiles, les vrais zéros et absences, le poids égal des jours appariés, les doublons, la reprise exacte du pilote, les cellules natives appariées (pas un produit cartésien), les masques et contrats de cache, les 35 caches SPASS, le contrôle robots et son renouvellement, ainsi que les garanties du collecteur et la continuité de l'étape précédente : **23 tests réussis**, avec recalcul NumPy indépendant de toutes les lignes hivernales effectivement disponibles et contrôle du synchroniseur limité aux nouveaux champs. Trois avertissements NumPy/netCDF4 viennent de la création du petit fichier synthétique de test, pas d'un changement du calcul.
 
 Aucun raccordement, calibration, profil final, regroupement ou modèle DiD supplémentaire. La décision de compléter SPASS par OSHD restera à présenter après la comparaison effective des huit hivers. Le guide CSV scientifique impose des colonnes explicites pour unités, statuts et couvertures ; aucun indicateur visuel ne remplace ces informations.
 

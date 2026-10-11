@@ -1,0 +1,723 @@
+{
+  "date": "2026-10-10",
+  "input_sha256": {
+    "config/snow_multiwinter_decisions_stage76.json": "305f8b35914df3de79fe26732ef180bc91372490168091666ab4ae647396866f",
+    "data_external/source_evidence/SLF_OSHD_RECORD_PUBLIC_HTML_2026_10_09_20261009T163957Z.html": "efa155a7a385816b4a1679b497c8c8f83c44c7da8e652eefcadc40c52da2d45e",
+    "data_external/source_evidence/zenodo.org_robots_20261009T163957Z.txt": "56e9fc51dcc0170c0cea188ef1f8d8906e1123f5a061a68d17d3067b781b04da",
+    "src/data_collection/collect_oshd_profile_audit.py": "d8475e8db2805bc791ab87e4d7a4bb53f5dc16d3a87a57ca8f4a28ecdbf3dde5"
+  },
+  "dataset_license": "cc-by-4.0",
+  "record_id": "17313889",
+  "files": [
+    {
+      "water_year": 2016,
+      "key": "OSHD_DATA_WY2016.zip",
+      "url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2016.zip",
+      "expected_bytes": 654139530,
+      "expected_md5": "fd567f435c1465fe40bd1e676462db56",
+      "source_id": "SLF_OSHD_PF_WY2016_MULTIWINTER_STAGE76",
+      "status": "complete",
+      "downloaded_bytes": 654139530,
+      "partial_file": "data_interim/oshd_multiwinter_stage76_downloads/OSHD_DATA_WY2016.zip.part",
+      "last_request_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2016.zip/content",
+      "retrieval_date": "2026-10-10T17:49:15.994749+00:00",
+      "last_range_start": 629145600,
+      "last_range_end": 654139529,
+      "http_status": 206,
+      "etag": "",
+      "final_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2016.zip/content",
+      "error": "HTTPError: HTTP Error 504: Gateway Time-out",
+      "resume_allowed": true,
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2016_MULTIWINTER_STAGE76_20261010T174927Z.zip",
+      "sha256": "7e91bc97518db149120f31473dade2d76e19b662b0b135c88a3a99c1aa504423",
+      "zip_members": [
+        {
+          "name": "OSHD_DATA_2015-09.nc",
+          "uncompressed_bytes": 15724414,
+          "compressed_bytes": 13446466
+        },
+        {
+          "name": "OSHD_DATA_2015-10.nc",
+          "uncompressed_bytes": 41268670,
+          "compressed_bytes": 36723252
+        },
+        {
+          "name": "OSHD_DATA_2015-11.nc",
+          "uncompressed_bytes": 44798931,
+          "compressed_bytes": 41909047
+        },
+        {
+          "name": "OSHD_DATA_2015-12.nc",
+          "uncompressed_bytes": 55034410,
+          "compressed_bytes": 50740450
+        },
+        {
+          "name": "OSHD_DATA_2016-01.nc",
+          "uncompressed_bytes": 110584548,
+          "compressed_bytes": 104905530
+        },
+        {
+          "name": "OSHD_DATA_2016-02.nc",
+          "uncompressed_bytes": 108088577,
+          "compressed_bytes": 103200624
+        },
+        {
+          "name": "OSHD_DATA_2016-03.nc",
+          "uncompressed_bytes": 109625818,
+          "compressed_bytes": 104109598
+        },
+        {
+          "name": "OSHD_DATA_2016-04.nc",
+          "uncompressed_bytes": 82504878,
+          "compressed_bytes": 78906976
+        },
+        {
+          "name": "OSHD_DATA_2016-05.nc",
+          "uncompressed_bytes": 64069526,
+          "compressed_bytes": 59687440
+        },
+        {
+          "name": "OSHD_DATA_2016-06.nc",
+          "uncompressed_bytes": 38172968,
+          "compressed_bytes": 35486483
+        },
+        {
+          "name": "OSHD_DATA_2016-07.nc",
+          "uncompressed_bytes": 20568381,
+          "compressed_bytes": 16789843
+        },
+        {
+          "name": "OSHD_DATA_2016-08.nc",
+          "uncompressed_bytes": 11770963,
+          "compressed_bytes": 8231975
+        }
+      ],
+      "provider_md5_verified": true,
+      "size_verified": true
+    },
+    {
+      "water_year": 2017,
+      "key": "OSHD_DATA_WY2017.zip",
+      "url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2017.zip",
+      "expected_bytes": 571051807,
+      "expected_md5": "2fb0251eeca51ce2970898795ef26aed",
+      "source_id": "SLF_OSHD_PF_WY2017_MULTIWINTER_STAGE76",
+      "status": "complete",
+      "downloaded_bytes": 571051807,
+      "partial_file": "data_interim/oshd_multiwinter_stage76_downloads/OSHD_DATA_WY2017.zip.part",
+      "last_request_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2017.zip/content",
+      "retrieval_date": "2026-10-10T17:52:08.504424+00:00",
+      "last_range_start": 562036736,
+      "last_range_end": 571051806,
+      "http_status": 206,
+      "error": "HTTPError: HTTP Error 504: Gateway Time-out",
+      "resume_allowed": true,
+      "etag": "",
+      "final_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2017.zip/content",
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2017_MULTIWINTER_STAGE76_20261010T175216Z.zip",
+      "sha256": "57b89fc73169e6c997078c59dbbd35de857c91f614f2aa1aa62f78f96dd51004",
+      "zip_members": [
+        {
+          "name": "OSHD_DATA_2016-09.nc",
+          "uncompressed_bytes": 6779994,
+          "compressed_bytes": 4812542
+        },
+        {
+          "name": "OSHD_DATA_2016-10.nc",
+          "uncompressed_bytes": 27018420,
+          "compressed_bytes": 22965470
+        },
+        {
+          "name": "OSHD_DATA_2016-11.nc",
+          "uncompressed_bytes": 68992150,
+          "compressed_bytes": 65376041
+        },
+        {
+          "name": "OSHD_DATA_2016-12.nc",
+          "uncompressed_bytes": 50081984,
+          "compressed_bytes": 45904835
+        },
+        {
+          "name": "OSHD_DATA_2017-01.nc",
+          "uncompressed_bytes": 108431885,
+          "compressed_bytes": 102554003
+        },
+        {
+          "name": "OSHD_DATA_2017-02.nc",
+          "uncompressed_bytes": 91726338,
+          "compressed_bytes": 88213615
+        },
+        {
+          "name": "OSHD_DATA_2017-03.nc",
+          "uncompressed_bytes": 83228897,
+          "compressed_bytes": 78307608
+        },
+        {
+          "name": "OSHD_DATA_2017-04.nc",
+          "uncompressed_bytes": 76806311,
+          "compressed_bytes": 73224591
+        },
+        {
+          "name": "OSHD_DATA_2017-05.nc",
+          "uncompressed_bytes": 60536698,
+          "compressed_bytes": 56156504
+        },
+        {
+          "name": "OSHD_DATA_2017-06.nc",
+          "uncompressed_bytes": 23582369,
+          "compressed_bytes": 21213394
+        },
+        {
+          "name": "OSHD_DATA_2017-07.nc",
+          "uncompressed_bytes": 11325215,
+          "compressed_bytes": 7856856
+        },
+        {
+          "name": "OSHD_DATA_2017-08.nc",
+          "uncompressed_bytes": 7867898,
+          "compressed_bytes": 4464502
+        }
+      ],
+      "provider_md5_verified": true,
+      "size_verified": true
+    },
+    {
+      "water_year": 2018,
+      "key": "OSHD_DATA_WY2018.zip",
+      "url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2018.zip",
+      "expected_bytes": 707072524,
+      "expected_md5": "5761d9724aac21f3de63fe995a813363",
+      "source_id": "SLF_OSHD_PF_WY2018_MULTIWINTER_STAGE76",
+      "status": "complete",
+      "downloaded_bytes": 707072524,
+      "partial_file": "data_interim/oshd_multiwinter_stage76_downloads/OSHD_DATA_WY2018.zip.part",
+      "last_request_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2018.zip/content",
+      "retrieval_date": "2026-10-10T17:13:34.506307+00:00",
+      "last_range_start": 704643072,
+      "last_range_end": 707072523,
+      "http_status": 206,
+      "etag": "",
+      "final_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2018.zip/content",
+      "error": "HTTPError: HTTP Error 504: Gateway Time-out",
+      "resume_allowed": true,
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2018_MULTIWINTER_STAGE76_20261010T171346Z.zip",
+      "sha256": "54d374f081566039ff29695c241fa4ec701d8082b0d6a4b80d08b35b53a52a77",
+      "zip_members": [
+        {
+          "name": "OSHD_DATA_2017-09.nc",
+          "uncompressed_bytes": 23850231,
+          "compressed_bytes": 21313595
+        },
+        {
+          "name": "OSHD_DATA_2017-10.nc",
+          "uncompressed_bytes": 29067350,
+          "compressed_bytes": 24990235
+        },
+        {
+          "name": "OSHD_DATA_2017-11.nc",
+          "uncompressed_bytes": 80341225,
+          "compressed_bytes": 76400235
+        },
+        {
+          "name": "OSHD_DATA_2017-12.nc",
+          "uncompressed_bytes": 127920047,
+          "compressed_bytes": 121912424
+        },
+        {
+          "name": "OSHD_DATA_2018-01.nc",
+          "uncompressed_bytes": 98275830,
+          "compressed_bytes": 93053052
+        },
+        {
+          "name": "OSHD_DATA_2018-02.nc",
+          "uncompressed_bytes": 100138150,
+          "compressed_bytes": 96501677
+        },
+        {
+          "name": "OSHD_DATA_2018-03.nc",
+          "uncompressed_bytes": 111375155,
+          "compressed_bytes": 105782861
+        },
+        {
+          "name": "OSHD_DATA_2018-04.nc",
+          "uncompressed_bytes": 74818252,
+          "compressed_bytes": 71509252
+        },
+        {
+          "name": "OSHD_DATA_2018-05.nc",
+          "uncompressed_bytes": 60645256,
+          "compressed_bytes": 56256286
+        },
+        {
+          "name": "OSHD_DATA_2018-06.nc",
+          "uncompressed_bytes": 27574026,
+          "compressed_bytes": 25113847
+        },
+        {
+          "name": "OSHD_DATA_2018-07.nc",
+          "uncompressed_bytes": 12349354,
+          "compressed_bytes": 8821984
+        },
+        {
+          "name": "OSHD_DATA_2018-08.nc",
+          "uncompressed_bytes": 8814464,
+          "compressed_bytes": 5415230
+        }
+      ],
+      "provider_md5_verified": true,
+      "size_verified": true
+    },
+    {
+      "water_year": 2019,
+      "key": "OSHD_DATA_WY2019.zip",
+      "url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2019.zip",
+      "expected_bytes": 669548820,
+      "expected_md5": "0317b3ac209d28d2dba7e35a4d6212ca",
+      "source_id": "SLF_OSHD_PF_WY2019_MULTIWINTER_STAGE76",
+      "status": "complete",
+      "downloaded_bytes": 669548820,
+      "partial_file": "data_interim/oshd_multiwinter_stage76_downloads/OSHD_DATA_WY2019.zip.part",
+      "last_request_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2019.zip/content",
+      "retrieval_date": "2026-10-10T17:29:41.270386+00:00",
+      "last_range_start": 662700032,
+      "last_range_end": 669548819,
+      "http_status": 206,
+      "etag": "",
+      "final_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2019.zip/content",
+      "error": "HTTPError: HTTP Error 504: Gateway Time-out",
+      "resume_allowed": true,
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2019_MULTIWINTER_STAGE76_20261010T172946Z.zip",
+      "sha256": "4ad7b03991654aece11c7aa22abf3590fce5709d7e2bba6efa8e7aab4b174a43",
+      "zip_members": [
+        {
+          "name": "OSHD_DATA_2018-09.nc",
+          "uncompressed_bytes": 5807729,
+          "compressed_bytes": 3839598
+        },
+        {
+          "name": "OSHD_DATA_2018-10.nc",
+          "uncompressed_bytes": 28295955,
+          "compressed_bytes": 24612307
+        },
+        {
+          "name": "OSHD_DATA_2018-11.nc",
+          "uncompressed_bytes": 59855643,
+          "compressed_bytes": 56375908
+        },
+        {
+          "name": "OSHD_DATA_2018-12.nc",
+          "uncompressed_bytes": 85072382,
+          "compressed_bytes": 79873197
+        },
+        {
+          "name": "OSHD_DATA_2019-01.nc",
+          "uncompressed_bytes": 114556996,
+          "compressed_bytes": 108958377
+        },
+        {
+          "name": "OSHD_DATA_2019-02.nc",
+          "uncompressed_bytes": 104159986,
+          "compressed_bytes": 100557383
+        },
+        {
+          "name": "OSHD_DATA_2019-03.nc",
+          "uncompressed_bytes": 94484854,
+          "compressed_bytes": 89448478
+        },
+        {
+          "name": "OSHD_DATA_2019-04.nc",
+          "uncompressed_bytes": 85216017,
+          "compressed_bytes": 81584282
+        },
+        {
+          "name": "OSHD_DATA_2019-05.nc",
+          "uncompressed_bytes": 69255990,
+          "compressed_bytes": 64613314
+        },
+        {
+          "name": "OSHD_DATA_2019-06.nc",
+          "uncompressed_bytes": 44372243,
+          "compressed_bytes": 41601008
+        },
+        {
+          "name": "OSHD_DATA_2019-07.nc",
+          "uncompressed_bytes": 17024698,
+          "compressed_bytes": 13394723
+        },
+        {
+          "name": "OSHD_DATA_2019-08.nc",
+          "uncompressed_bytes": 8080383,
+          "compressed_bytes": 4688399
+        }
+      ],
+      "provider_md5_verified": true,
+      "size_verified": true
+    },
+    {
+      "water_year": 2020,
+      "key": "OSHD_DATA_WY2020.zip",
+      "url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2020.zip",
+      "expected_bytes": 566578511,
+      "expected_md5": "6b50768e3d3f1bec8dc058b5b6aaa948",
+      "source_id": "SLF_OSHD_PF_WY2020_MULTIWINTER_STAGE76",
+      "status": "complete",
+      "downloaded_bytes": 566578511,
+      "partial_file": "data_interim/oshd_multiwinter_stage76_downloads/OSHD_DATA_WY2020.zip.part",
+      "last_request_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2020.zip/content",
+      "retrieval_date": "2026-10-10T17:38:17.103445+00:00",
+      "last_range_start": 562036736,
+      "last_range_end": 566578510,
+      "http_status": 206,
+      "etag": "",
+      "final_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2020.zip/content",
+      "error": "HTTPError: HTTP Error 504: Gateway Time-out",
+      "resume_allowed": true,
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2020_MULTIWINTER_STAGE76_20261010T173825Z.zip",
+      "sha256": "9e2462721765b8f404d306459443e69ff400917e145d8cdf85417f2c41c93460",
+      "zip_members": [
+        {
+          "name": "OSHD_DATA_2019-09.nc",
+          "uncompressed_bytes": 11724226,
+          "compressed_bytes": 9569706
+        },
+        {
+          "name": "OSHD_DATA_2019-10.nc",
+          "uncompressed_bytes": 25008423,
+          "compressed_bytes": 21011422
+        },
+        {
+          "name": "OSHD_DATA_2019-11.nc",
+          "uncompressed_bytes": 72534660,
+          "compressed_bytes": 68814468
+        },
+        {
+          "name": "OSHD_DATA_2019-12.nc",
+          "uncompressed_bytes": 86971251,
+          "compressed_bytes": 81881640
+        },
+        {
+          "name": "OSHD_DATA_2020-01.nc",
+          "uncompressed_bytes": 75036237,
+          "compressed_bytes": 70667556
+        },
+        {
+          "name": "OSHD_DATA_2020-02.nc",
+          "uncompressed_bytes": 93448161,
+          "compressed_bytes": 89033417
+        },
+        {
+          "name": "OSHD_DATA_2020-03.nc",
+          "uncompressed_bytes": 87680594,
+          "compressed_bytes": 82992702
+        },
+        {
+          "name": "OSHD_DATA_2020-04.nc",
+          "uncompressed_bytes": 59726062,
+          "compressed_bytes": 56742519
+        },
+        {
+          "name": "OSHD_DATA_2020-05.nc",
+          "uncompressed_bytes": 50146300,
+          "compressed_bytes": 45859664
+        },
+        {
+          "name": "OSHD_DATA_2020-06.nc",
+          "uncompressed_bytes": 26372463,
+          "compressed_bytes": 23941629
+        },
+        {
+          "name": "OSHD_DATA_2020-07.nc",
+          "uncompressed_bytes": 12684499,
+          "compressed_bytes": 9168093
+        },
+        {
+          "name": "OSHD_DATA_2020-08.nc",
+          "uncompressed_bytes": 10445472,
+          "compressed_bytes": 6893849
+        }
+      ],
+      "provider_md5_verified": true,
+      "size_verified": true
+    },
+    {
+      "water_year": 2021,
+      "key": "OSHD_DATA_WY2021.zip",
+      "url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2021.zip",
+      "expected_bytes": 743262037,
+      "expected_md5": "059eee36b7dd5974757560fef0b4841d",
+      "source_id": "SLF_OSHD_PF_WY2021_MULTIWINTER_STAGE76",
+      "status": "complete",
+      "downloaded_bytes": 743262037,
+      "partial_file": "data_interim/oshd_multiwinter_stage76_downloads/OSHD_DATA_WY2021.zip.part",
+      "last_request_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2021.zip/content",
+      "retrieval_date": "2026-10-10T14:28:49.788330+00:00",
+      "last_range_start": 738197504,
+      "last_range_end": 743262036,
+      "http_status": 206,
+      "etag": "",
+      "final_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2021.zip/content",
+      "pause_reason": "execution_budget_checkpoint",
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2021_MULTIWINTER_STAGE76_20261010T142926Z.zip",
+      "sha256": "5ccd7403f5d96cf0b64ffb9bff113cd23c68d94a2351fef8dbc5408119dd4f76",
+      "zip_members": [
+        {
+          "name": "OSHD_DATA_2020-09.nc",
+          "uncompressed_bytes": 17794246,
+          "compressed_bytes": 15537094
+        },
+        {
+          "name": "OSHD_DATA_2020-10.nc",
+          "uncompressed_bytes": 55003292,
+          "compressed_bytes": 50633500
+        },
+        {
+          "name": "OSHD_DATA_2020-11.nc",
+          "uncompressed_bytes": 35068313,
+          "compressed_bytes": 32454423
+        },
+        {
+          "name": "OSHD_DATA_2020-12.nc",
+          "uncompressed_bytes": 121041584,
+          "compressed_bytes": 115184198
+        },
+        {
+          "name": "OSHD_DATA_2021-01.nc",
+          "uncompressed_bytes": 133258790,
+          "compressed_bytes": 127379194
+        },
+        {
+          "name": "OSHD_DATA_2021-02.nc",
+          "uncompressed_bytes": 98515630,
+          "compressed_bytes": 94963070
+        },
+        {
+          "name": "OSHD_DATA_2021-03.nc",
+          "uncompressed_bytes": 102273947,
+          "compressed_bytes": 97023760
+        },
+        {
+          "name": "OSHD_DATA_2021-04.nc",
+          "uncompressed_bytes": 84787124,
+          "compressed_bytes": 81080399
+        },
+        {
+          "name": "OSHD_DATA_2021-05.nc",
+          "uncompressed_bytes": 68430693,
+          "compressed_bytes": 64045687
+        },
+        {
+          "name": "OSHD_DATA_2021-06.nc",
+          "uncompressed_bytes": 41608082,
+          "compressed_bytes": 38892719
+        },
+        {
+          "name": "OSHD_DATA_2021-07.nc",
+          "uncompressed_bytes": 19911640,
+          "compressed_bytes": 16198537
+        },
+        {
+          "name": "OSHD_DATA_2021-08.nc",
+          "uncompressed_bytes": 13359835,
+          "compressed_bytes": 9867610
+        }
+      ],
+      "provider_md5_verified": true,
+      "size_verified": true
+    },
+    {
+      "water_year": 2022,
+      "key": "OSHD_DATA_WY2022.zip",
+      "url": "https://zenodo.org/records/17313889/files/OSHD_DATA_WY2022.zip",
+      "expected_bytes": 595856419,
+      "expected_md5": "731eb4c3560eaf3c27570d56b986e699",
+      "source_id": "SLF_OSHD_PF_WY2022_MULTIWINTER_STAGE76",
+      "status": "complete",
+      "downloaded_bytes": 595856419,
+      "partial_file": "data_interim/oshd_multiwinter_stage76_downloads/OSHD_DATA_WY2022.zip.part",
+      "last_request_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2022.zip/content",
+      "retrieval_date": "2026-10-10T17:48:14.304081+00:00",
+      "last_range_start": 595591168,
+      "last_range_end": 595856418,
+      "http_status": 206,
+      "etag": "",
+      "final_url": "https://zenodo.org/api/records/17313889/files/OSHD_DATA_WY2022.zip/content",
+      "error": "HTTPError: HTTP Error 504: Gateway Time-out",
+      "resume_allowed": true,
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2022_MULTIWINTER_STAGE76_20261010T174820Z.zip",
+      "sha256": "ec90ba4f225aa4d61637c309cfac000c733f12f2e992a21e69a46435b5d0930f",
+      "zip_members": [
+        {
+          "name": "OSHD_DATA_2021-09.nc",
+          "uncompressed_bytes": 8031199,
+          "compressed_bytes": 5928395
+        },
+        {
+          "name": "OSHD_DATA_2021-10.nc",
+          "uncompressed_bytes": 22460512,
+          "compressed_bytes": 18667079
+        },
+        {
+          "name": "OSHD_DATA_2021-11.nc",
+          "uncompressed_bytes": 69311908,
+          "compressed_bytes": 65649894
+        },
+        {
+          "name": "OSHD_DATA_2021-12.nc",
+          "uncompressed_bytes": 123306580,
+          "compressed_bytes": 117664982
+        },
+        {
+          "name": "OSHD_DATA_2022-01.nc",
+          "uncompressed_bytes": 103076751,
+          "compressed_bytes": 97843615
+        },
+        {
+          "name": "OSHD_DATA_2022-02.nc",
+          "uncompressed_bytes": 88301759,
+          "compressed_bytes": 84868962
+        },
+        {
+          "name": "OSHD_DATA_2022-03.nc",
+          "uncompressed_bytes": 69605814,
+          "compressed_bytes": 65221985
+        },
+        {
+          "name": "OSHD_DATA_2022-04.nc",
+          "uncompressed_bytes": 81659377,
+          "compressed_bytes": 78137345
+        },
+        {
+          "name": "OSHD_DATA_2022-05.nc",
+          "uncompressed_bytes": 45737642,
+          "compressed_bytes": 41641962
+        },
+        {
+          "name": "OSHD_DATA_2022-06.nc",
+          "uncompressed_bytes": 14649391,
+          "compressed_bytes": 12492502
+        },
+        {
+          "name": "OSHD_DATA_2022-07.nc",
+          "uncompressed_bytes": 8186085,
+          "compressed_bytes": 4771215
+        },
+        {
+          "name": "OSHD_DATA_2022-08.nc",
+          "uncompressed_bytes": 6301979,
+          "compressed_bytes": 2966637
+        }
+      ],
+      "provider_md5_verified": true,
+      "size_verified": true
+    }
+  ],
+  "expected_bytes": 4507509648,
+  "general_record_api_request_made": false,
+  "source_spliced_or_calibrated": false,
+  "snow_extracted": false,
+  "complete_file_count": 7,
+  "downloaded_bytes": 4507509648,
+  "collector_runs": [
+    {
+      "started_at": "2026-10-10T13:44:52.465189+00:00",
+      "producer_sha256": "e2f404c1ce6feed4668f11d74d4df3d23568199274698610d4857544bf2e998f",
+      "chunk_bytes": 8388608,
+      "canonical_download_link": false,
+      "published_file_content": true,
+      "resume_failed": true,
+      "checkpoint_only": false
+    },
+    {
+      "started_at": "2026-10-10T13:47:05.377678+00:00",
+      "producer_sha256": "30caf5f55f1f2dfc16fe596155f71e029d876114e7f64f472f70b58fb6515707",
+      "chunk_bytes": 8388608,
+      "canonical_download_link": false,
+      "published_file_content": true,
+      "resume_failed": true,
+      "checkpoint_only": false
+    },
+    {
+      "started_at": "2026-10-10T13:51:30.346628+00:00",
+      "producer_sha256": "c3bdb343829161fe8351132092229f7f38279b3d1ffdbe54376f60b998f867d7",
+      "chunk_bytes": 8388608,
+      "canonical_download_link": false,
+      "published_file_content": true,
+      "resume_failed": false,
+      "checkpoint_only": false
+    },
+    {
+      "started_at": "2026-10-10T14:07:31.019815+00:00",
+      "producer_sha256": "9bf616841718f18c2150cf92e6dbea4f38328fae04f49fca49678ee7a8b58eda",
+      "chunk_bytes": 8388608,
+      "canonical_download_link": false,
+      "published_file_content": true,
+      "resume_failed": false,
+      "checkpoint_only": false,
+      "only_water_year": 2022,
+      "continue_pending": false
+    },
+    {
+      "started_at": "2026-10-10T14:12:05.515810+00:00",
+      "producer_sha256": "9bf616841718f18c2150cf92e6dbea4f38328fae04f49fca49678ee7a8b58eda",
+      "chunk_bytes": 8388608,
+      "canonical_download_link": false,
+      "published_file_content": true,
+      "resume_failed": false,
+      "checkpoint_only": false,
+      "only_water_year": 2021,
+      "continue_pending": false
+    },
+    {
+      "started_at": "2026-10-10T16:53:42.900006+00:00",
+      "producer_sha256": "c7a495baec0caf8b1ea87cd12c2b139acaba1d2fa3dcc375afa232520d517e12",
+      "chunk_bytes": 8388608,
+      "canonical_download_link": false,
+      "published_file_content": true,
+      "resume_failed": true,
+      "checkpoint_only": false,
+      "only_water_year": null,
+      "continue_pending": true
+    },
+    {
+      "started_at": "2026-10-10T16:54:00.509175+00:00",
+      "producer_sha256": "c7a495baec0caf8b1ea87cd12c2b139acaba1d2fa3dcc375afa232520d517e12",
+      "chunk_bytes": 8388608,
+      "canonical_download_link": false,
+      "published_file_content": true,
+      "resume_failed": true,
+      "checkpoint_only": false,
+      "only_water_year": null,
+      "continue_pending": true,
+      "current_robots_policy": {
+        "source_id": "ZENODO_ROBOTS_REFRESH_STAGE76_20261010T165400Z",
+        "retrieval_date": "2026-10-10T16:54:00.690629+00:00",
+        "raw_file": "data_external/source_evidence/ZENODO_ROBOTS_REFRESH_STAGE76_20261010T165400Z.txt",
+        "sha256": "56e9fc51dcc0170c0cea188ef1f8d8906e1123f5a061a68d17d3067b781b04da",
+        "size_bytes": 272,
+        "url": "https://zenodo.org/robots.txt",
+        "http_status": 200
+      }
+    },
+    {
+      "started_at": "2026-10-10T17:48:45.647865+00:00",
+      "producer_sha256": "9d817dd2a049b8395a5c935781d92a73a3b940e69ca5d2935bb342386df91530",
+      "chunk_bytes": 33554432,
+      "canonical_download_link": false,
+      "published_file_content": true,
+      "resume_failed": true,
+      "checkpoint_only": false,
+      "only_water_year": null,
+      "continue_pending": true,
+      "current_robots_policy": {
+        "source_id": "ZENODO_ROBOTS_REFRESH_STAGE76_20261010T165400Z",
+        "retrieval_date": "2026-10-10T16:54:00.690629+00:00",
+        "raw_file": "data_external/source_evidence/ZENODO_ROBOTS_REFRESH_STAGE76_20261010T165400Z.txt",
+        "sha256": "56e9fc51dcc0170c0cea188ef1f8d8906e1123f5a061a68d17d3067b781b04da",
+        "size_bytes": 272,
+        "url": "https://zenodo.org/robots.txt",
+        "http_status": 200
+      }
+    }
+  ],
+  "published_file_content_api_used": true
+}

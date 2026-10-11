@@ -1,0 +1,78 @@
+{
+  "runs": [
+    {
+      "started_at": "2026-10-10T17:25:04.073626+00:00",
+      "arguments": [
+        "--no-register"
+      ],
+      "worker_sha256": "d61645310b7544d86917f08cbd844c3f8cb2598dd794ce5beb921c8bad6ba502",
+      "launcher_sha256": "3e5b59151702929021eacf8523e2c6ec9988779d4bb70037601510e18bd792a1",
+      "threads": 1,
+      "netcdf_chunk_cache_bytes": 1048576,
+      "netcdf_cache_slots": 101,
+      "netcdf_preemption": 0.75,
+      "scientific_method_changed": false,
+      "status": "completed",
+      "ended_at": "2026-10-10T17:25:09.007375+00:00"
+    },
+    {
+      "started_at": "2026-10-10T17:30:39.571314+00:00",
+      "arguments": [
+        "--no-register"
+      ],
+      "worker_sha256": "d61645310b7544d86917f08cbd844c3f8cb2598dd794ce5beb921c8bad6ba502",
+      "launcher_sha256": "3e5b59151702929021eacf8523e2c6ec9988779d4bb70037601510e18bd792a1",
+      "threads": 1,
+      "netcdf_chunk_cache_bytes": 1048576,
+      "netcdf_cache_slots": 101,
+      "netcdf_preemption": 0.75,
+      "scientific_method_changed": false,
+      "status": "completed",
+      "ended_at": "2026-10-10T17:32:00.397363+00:00"
+    },
+    {
+      "started_at": "2026-10-10T17:38:51.407389+00:00",
+      "arguments": [
+        "--no-register"
+      ],
+      "worker_sha256": "d61645310b7544d86917f08cbd844c3f8cb2598dd794ce5beb921c8bad6ba502",
+      "launcher_sha256": "3e5b59151702929021eacf8523e2c6ec9988779d4bb70037601510e18bd792a1",
+      "threads": 1,
+      "netcdf_chunk_cache_bytes": 1048576,
+      "netcdf_cache_slots": 101,
+      "netcdf_preemption": 0.75,
+      "scientific_method_changed": false,
+      "status": "completed",
+      "ended_at": "2026-10-10T17:40:12.636768+00:00"
+    },
+    {
+      "started_at": "2026-10-10T17:49:00.737521+00:00",
+      "arguments": [
+        "--no-register"
+      ],
+      "worker_sha256": "d61645310b7544d86917f08cbd844c3f8cb2598dd794ce5beb921c8bad6ba502",
+      "launcher_sha256": "3e5b59151702929021eacf8523e2c6ec9988779d4bb70037601510e18bd792a1",
+      "threads": 1,
+      "netcdf_chunk_cache_bytes": 1048576,
+      "netcdf_cache_slots": 101,
+      "netcdf_preemption": 0.75,
+      "scientific_method_changed": false,
+      "status": "failed_or_interrupted",
+      "error": "MemoryError: Unable to allocate 54.4 MiB for an array with shape (425, 541, 31) and data type float64",
+      "ended_at": "2026-10-10T17:50:09.979554+00:00"
+    },
+    {
+      "started_at": "2026-10-10T17:58:23.482017+00:00",
+      "arguments": [],
+      "worker_sha256": "d61645310b7544d86917f08cbd844c3f8cb2598dd794ce5beb921c8bad6ba502",
+      "launcher_sha256": "3e5b59151702929021eacf8523e2c6ec9988779d4bb70037601510e18bd792a1",
+      "threads": 1,
+      "netcdf_chunk_cache_bytes": 1048576,
+      "netcdf_cache_slots": 101,
+      "netcdf_preemption": 0.75,
+      "scientific_method_changed": false,
+      "status": "completed",
+      "ended_at": "2026-10-10T18:01:24.098219+00:00"
+    }
+  ]
+}

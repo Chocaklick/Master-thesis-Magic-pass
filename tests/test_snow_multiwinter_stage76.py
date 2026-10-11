@@ -10,11 +10,26 @@ from netCDF4 import Dataset
 
 import src.data_processing.compare_snow_multiwinter_stage76 as worker
 import src.data_collection.collect_oshd_multiwinter_stage76 as collector
+from src.data_processing.sync_snow_multiwinter_dictionary_stage76 import refresh
+import src.data_processing.prepare_oshd_daily_reads_stage76 as bounded_reader
 from src.data_collection.collect_oshd_profile_audit import parse_record, official_download_anchor, validate_download_response
 from src.data_collection.collect_oshd_multiwinter_stage76 import zenodo_can_fetch
 from src.data_processing.prepare_native_snow_weights_stage69 import digest, native_grid
 
 ROOT=Path(__file__).resolve().parents[1]
+
+
+def test_dictionary_refresh_changes_only_new_checkpoint_statistics():
+    original=pd.read_csv(ROOT/'metadata/data_dictionary.csv',dtype=str,keep_default_na=False)
+    result=pd.read_csv(ROOT/worker.OUTPUT)
+    updated=refresh(original,result)
+    selected=original.table.eq('snow_multiwinter_comparison_stage76') & original.source_id.eq(worker.SOURCE)
+    assert original.loc[~selected].equals(updated.loc[~selected])
+    for col in worker.DEFS:
+        row=updated.loc[selected & updated.variable.eq(col)].iloc[0]
+        assert row.missing_share==f'{result[col].isna().mean():.6f}'
+    for col in set(original.columns)-{'missing_share','data_type'}:
+        assert original[col].equals(updated[col])
 
 
 def test_current_robot_refresh_reuses_recent_policy_and_fails_closed(tmp_path,monkeypatch):
@@ -167,3 +182,13 @@ def test_original_native_order_paired_indices_masks_and_cache_are_not_cartesian(
     changed=list(args);changed[2]=np.array([[0,1],[2,0]])
     with pytest.raises(ValueError,match='Frozen value checkpoint'):
         worker.read_selected(*changed)
+    # Same source reader one day at a time, then lossless monthly assembly.
+    monkeypatch.setattr(bounded_reader,'ROOT',tmp_path)
+    monkeypatch.setattr(bounded_reader,'digest',lambda p: original_digest(p) if str(p)=='src/data_processing/prepare_oshd_daily_reads_stage76.py' else test_digest(p))
+    bounded_args=list(args);bounded_args[-1]='bounded_month'
+    assembled,assembled_meta=bounded_reader.monthly_from_daily(*bounded_args)
+    for day in values:
+        np.testing.assert_allclose(assembled[day],values[day],rtol=0,atol=0,equal_nan=True)
+    for field in ['source_unit','original_time_units','calendar','observed_dates','missing_dates','original_date_coordinates','contract']:
+        assert assembled_meta[field]==json.loads(json.dumps(meta[field]))
+    assert not assembled_meta['exact_daily_assembly']['interpolation_or_precision_change']

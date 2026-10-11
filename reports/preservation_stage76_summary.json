@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-10T17:02:14.470587+00:00",
+  "checked_at": "2026-10-11T06:16:38.810718+00:00",
   "parent_manifest": "reports/preservation_stage75_summary.json",
   "parent_sha256": "db35cea78c9b3ea5b9b1261885b51d00d325b1987e20d3694acaeb8a30867e5a",
   "protected_reference_count": 2375,
@@ -15,25 +15,61 @@
     },
     "logs/data_collection_log.csv": {
       "prior_rows_exact": 1585,
-      "current_rows": 1786
+      "current_rows": 2056
     }
   },
   "old_results_and_originals_unchanged": true,
   "completed_water_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
     2021,
+    2022,
     2023
   ],
-  "all_eight_winters_complete": false,
+  "all_eight_winters_complete": true,
   "current_comparison_sha256": {
-    "data_processed/snow_multiwinter_comparison_stage76.csv": "bacf09a43c4d5655fa63916a30d0a5d672d97f3d992bb4b58e10c2b7b112bbea"
+    "data_processed/snow_multiwinter_comparison_stage76.csv": "bad063f2702abd2c6c8d06e80f827067afa02d96616cee4f1d5e4918d3587ef0"
   },
   "spass_prepared_months": 35,
   "spass_observed_prepared_days": 1059,
   "protocol_evidence_sha256": "bbaa280636d3e38f0a1a130a5ce40e9753db1ed18c860945b0bf795ff8dc1a87",
   "new_original_archives_verified": {
+    "2016": {
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2016_MULTIWINTER_STAGE76_20261010T174927Z.zip",
+      "sha256": "7e91bc97518db149120f31473dade2d76e19b662b0b135c88a3a99c1aa504423",
+      "provider_md5_verified": true
+    },
+    "2017": {
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2017_MULTIWINTER_STAGE76_20261010T175216Z.zip",
+      "sha256": "57b89fc73169e6c997078c59dbbd35de857c91f614f2aa1aa62f78f96dd51004",
+      "provider_md5_verified": true
+    },
+    "2018": {
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2018_MULTIWINTER_STAGE76_20261010T171346Z.zip",
+      "sha256": "54d374f081566039ff29695c241fa4ec701d8082b0d6a4b80d08b35b53a52a77",
+      "provider_md5_verified": true
+    },
+    "2019": {
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2019_MULTIWINTER_STAGE76_20261010T172946Z.zip",
+      "sha256": "4ad7b03991654aece11c7aa22abf3590fce5709d7e2bba6efa8e7aab4b174a43",
+      "provider_md5_verified": true
+    },
+    "2020": {
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2020_MULTIWINTER_STAGE76_20261010T173825Z.zip",
+      "sha256": "9e2462721765b8f404d306459443e69ff400917e145d8cdf85417f2c41c93460",
+      "provider_md5_verified": true
+    },
     "2021": {
       "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2021_MULTIWINTER_STAGE76_20261010T142926Z.zip",
       "sha256": "5ccd7403f5d96cf0b64ffb9bff113cd23c68d94a2351fef8dbc5408119dd4f76",
+      "provider_md5_verified": true
+    },
+    "2022": {
+      "raw_file": "data_external/source_evidence/SLF_OSHD_PF_WY2022_MULTIWINTER_STAGE76_20261010T174820Z.zip",
+      "sha256": "ec90ba4f225aa4d61637c309cfac000c733f12f2e992a21e69a46435b5d0930f",
       "provider_md5_verified": true
     }
   },
@@ -48,10 +84,15 @@
       "http_status": 200
     }
   ],
+  "low_memory_runs_verified": 5,
+  "exact_daily_to_monthly_value_checks": 459,
   "current_producers": {
     "src/data_collection/collect_oshd_multiwinter_stage76.py": "9d817dd2a049b8395a5c935781d92a73a3b940e69ca5d2935bb342386df91530",
     "src/data_processing/compare_snow_multiwinter_stage76.py": "d61645310b7544d86917f08cbd844c3f8cb2598dd794ce5beb921c8bad6ba502",
-    "config/snow_multiwinter_decisions_stage76.json": "305f8b35914df3de79fe26732ef180bc91372490168091666ab4ae647396866f"
+    "config/snow_multiwinter_decisions_stage76.json": "305f8b35914df3de79fe26732ef180bc91372490168091666ab4ae647396866f",
+    "src/data_processing/run_snow_multiwinter_low_memory_stage76.py": "3e5b59151702929021eacf8523e2c6ec9988779d4bb70037601510e18bd792a1",
+    "src/data_processing/sync_snow_multiwinter_dictionary_stage76.py": "cf9cf542230adeb1b3d1ca4231c543be478f0a7b91356d26c19dd168c10a51c7",
+    "src/data_processing/prepare_oshd_daily_reads_stage76.py": "ea0adfa122b743ad5b46032935de6328daa4557dd56fde70d654761523a450c4"
   },
   "checkpoint_not_final_until_all_eight": true
 }

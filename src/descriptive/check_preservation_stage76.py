@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
+import numpy as np
 
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT))
@@ -45,10 +46,37 @@ def main():
     for path,sha in {**current['input_sha256'],**current['output_sha256']}.items():
         if digest(path)!=sha:
             raise ValueError('Current extraction checkpoint changed: '+path)
+    daily_assembly_checks=0
     for year,m in current['year_checkpoints'].items():
         path=f'data_interim/snow_multiwinter_stage76/daily_WY{year}.csv'
         if digest(path)!=m['sha256']:
             raise ValueError('Annual cache changed')
+        for key,c in m['source_checkpoints'].items():
+            if 'contract' not in c or 'sha256' not in c:
+                continue
+            month_path=f'data_interim/snow_multiwinter_stage76/values/{key}.npz'
+            if digest(month_path)!=c['sha256']:
+                raise ValueError('Monthly selected-value cache changed')
+            assembly=c.get('exact_daily_assembly')
+            if not assembly:
+                continue
+            if assembly['producer_sha256']!=digest(assembly['producer']) or assembly['interpolation_or_precision_change']:
+                raise ValueError('Daily assembly producer changed')
+            with np.load(ROOT/month_path,allow_pickle=False) as cache:
+                month_values=cache['values']
+            lookup={date:i for i,date in enumerate(c['observed_dates'])}
+            for day in assembly['daily_checkpoints']:
+                day_path=f"data_interim/snow_multiwinter_stage76/values/{day['key']}.npz"
+                if digest(day_path)!=day['sha256']:
+                    raise ValueError('Daily selected-value cache changed')
+                date=day['key'][-10:]
+                with np.load(ROOT/day_path,allow_pickle=False) as cache:
+                    day_values=cache['values']
+                if date in lookup:
+                    np.testing.assert_allclose(month_values[lookup[date]],day_values[0],rtol=0,atol=0,equal_nan=True)
+                elif len(day_values)!=0:
+                    raise ValueError('Observed daily row incorrectly absent from monthly cache')
+                daily_assembly_checks+=1
     collection=json.loads((ROOT/'reports/oshd_multiwinter_collection_stage76_summary.json').read_text(encoding='utf8'))
     archives={}
     for r in collection['files']:
@@ -76,6 +104,13 @@ def main():
     proof=json.loads(proof_file.read_text(encoding='utf8'))
     if digest(proof['raw_file'])!=proof['sha256']:
         raise ValueError('Original protocol evidence changed')
+    runtime_path=ROOT/'reports/snow_multiwinter_runtime_stage76_summary.json'
+    runtime=json.loads(runtime_path.read_text(encoding='utf8')) if runtime_path.exists() else {'runs':[]}
+    if runtime['runs'] and runtime['runs'][-1]['status']!='completed':
+        raise ValueError('Wait for low-memory worker to complete')
+    for r in runtime['runs']:
+        if r['worker_sha256']!=digest('src/data_processing/compare_snow_multiwinter_stage76.py'):
+            raise ValueError('Runtime used a different numerical producer')
     state=dict(checked_at=datetime.now(timezone.utc).isoformat(),parent_manifest=p,parent_sha256=digest(p),
                protected_reference_count=len(checks),protected_unique_file_count=len(hashes),registry_and_log_prefixes=prefix,
                old_results_and_originals_unchanged=True,completed_water_years=current['completed_water_years'],
@@ -83,8 +118,13 @@ def main():
                spass_prepared_months=35,spass_observed_prepared_days=1059,
                protocol_evidence_sha256=proof['sha256'],
                new_original_archives_verified=archives,current_robots_snapshots_verified=policies,
+               low_memory_runs_verified=len(runtime['runs']),
+               exact_daily_to_monthly_value_checks=daily_assembly_checks,
                current_producers={p:digest(p) for p in ['src/data_collection/collect_oshd_multiwinter_stage76.py',
-               'src/data_processing/compare_snow_multiwinter_stage76.py','config/snow_multiwinter_decisions_stage76.json']},
+               'src/data_processing/compare_snow_multiwinter_stage76.py','config/snow_multiwinter_decisions_stage76.json',
+               'src/data_processing/run_snow_multiwinter_low_memory_stage76.py',
+               'src/data_processing/sync_snow_multiwinter_dictionary_stage76.py',
+               'src/data_processing/prepare_oshd_daily_reads_stage76.py']},
                checkpoint_not_final_until_all_eight=True)
     (ROOT/'reports/preservation_stage76_summary.json').write_text(json.dumps(state,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     print(json.dumps(state,ensure_ascii=False))
