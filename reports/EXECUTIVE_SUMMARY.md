@@ -10,7 +10,7 @@ The supplied universe contains **271 directory listings**, **242 preserved lift 
 
 ## Why causal and predictive modelling were rejected
 
-The donor process screened 315 descriptive treatment-donor pairs and shortlisted 35. Twenty-eight shortlisted pairs were at or within 50 km of another resolved Magic Pass point; every one of the seven remote pairs had an independently documented contemporaneous local shock. Zero causal treatments and zero controls were approved. With at most 14 reviewed treated destinations, only seven passing the 24/24 coverage screen and no identified causal target, causal forests, meta-learners, standard uplift models and neural networks are not statistically defensible.
+The original donor process screened 315 descriptive treatment-donor pairs and shortlisted 35, but every geographically remote case had a documented contemporaneous local shock. The later municipality-accessibility redesign retained 11 primary pre-period-compatible pairs across 6 treated municipalities. Its explicitly non-causal pilot averages -6.8%, yet the treated-stack t reference gives p=0.099, the five-component sign sensitivity gives p=0.188, and the conservative control exclusion is -2.0% with an interval spanning zero. Zero causal treatments, controls or pairs are approved. The sample and identification therefore remain insufficient for causal forests, meta-learners, uplift models or neural networks.
 
 ## Final analytical architecture
 

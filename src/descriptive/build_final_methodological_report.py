@@ -31,6 +31,17 @@ def main() -> None:
     snow_station = load("snow_station_sensitivity_summary.json")
     distance_transport = load("distance_transport_comparison_summary.json")
     examples = load("thesis_candidate_uncertainty_examples_summary.json")
+    accessibility_pretrend = load("accessibility_parallel_trend_summary.json")
+    accessibility_pilot = load("accessibility_pilot_estimation_summary.json")
+    small_cluster = load("accessibility_pilot_small_cluster_inference_summary.json")
+    pilot_estimates = pd.read_csv(
+        ROOT / "reports" / "accessibility_pilot_did_estimates.csv"
+    )
+    conservative_pilot = pilot_estimates[
+        pilot_estimates.scenario_id.eq(
+            "primary_excluding_targeted_sensitivity_controls"
+        )
+    ].iloc[0]
 
     for payload in [path_c, readiness, decision, scope, distance_transport, examples]:
         if payload.get("analysis_version") != ANALYSIS_VERSION:
@@ -43,6 +54,12 @@ def main() -> None:
         "composite_scores": int(decision["composite_scores"]),
         "causal_interpretation_approvals": int(
             decision["causal_interpretation_approvals"]
+        ),
+        "accessibility_pilot_causal_estimation": int(
+            bool(accessibility_pilot["causal_estimation_approved"])
+        ),
+        "accessibility_pilot_causal_claim": int(
+            bool(small_cluster["causal_effect_claim_allowed"])
         ),
     }
     if any(protected.values()):
@@ -61,7 +78,7 @@ def main() -> None:
                 "and commercial-domain boundaries are not certified, no single independent-resort "
                 "count is claimed."
             ),
-            "evidence": "reports/01_DATA_AUDIT.md|reports/03_CLUSTER_VALIDATION.md",
+            "evidence": "reports/01_DATA_AUDIT.md|reports/EXISTING_CLUSTER_AUDIT.md",
         },
         {
             "question_number": 2,
@@ -118,27 +135,40 @@ def main() -> None:
         {
             "question_number": 6,
             "question": "Are parallel trends plausible?",
-            "short_answer": "Not established for any approved treatment-control pair.",
+            "short_answer": "Eleven pairs are pre-period compatible, but none is approved as a parallel-trend counterfactual.",
             "answer": (
                 f"A descriptive pre-period screen ranked {donor_pretrend['provisional_pairs_screened']} "
                 f"pairs and shortlisted {donor_pretrend['shortlisted_pairs_for_manual_review']}. "
-                f"Twenty-eight shortlisted pairs were at or within 50 km of another resolved Magic point. "
-                f"All {donor_shocks['beyond_50km_pairs_reviewed']} remote pairs had documented "
-                "contemporaneous donor-specific shocks. Pre-period similarity therefore did not establish "
-                "a credible counterfactual trend."
+                "The later accessibility redesign completed treated/control shock and direct-local-spillover "
+                f"screens, then applied a predeclared 36-month magnitude rule. It retained "
+                f"{accessibility_pretrend['primary_compatible_pairs']} primary-compatible pairs across "
+                f"{accessibility_pretrend['primary_compatible_treated_municipalities']} treated municipalities, "
+                f"plus {accessibility_pretrend['sensitivity_only_pairs']} relaxed-only pairs. Compatibility "
+                "under correlation, standardized-RMSE, seasonality and differential-trend thresholds does not "
+                "prove the unobserved parallel-trends counterfactual; broad visitor substitution and historical "
+                "transport topology remain unresolved, so zero pairs receive parallel-trend or causal approval."
             ),
-            "evidence": "reports/11_DONOR_PRETREND_SCREEN.md|reports/14_DONOR_NETWORK_SPILLOVER_AUDIT.md|reports/16_DONOR_EXTERNAL_SHOCK_AUDIT.md",
+            "evidence": "reports/11_DONOR_PRETREND_SCREEN.md|reports/16_DONOR_EXTERNAL_SHOCK_AUDIT.md|reports/69_SCREENING_BASSINS_TOURISTIQUES_SPILLOVERS_FR.md|reports/70_DIAGNOSTIC_PRETENDANCES_COMPARAISONS_FR.md",
         },
         {
             "question_number": 7,
             "question": "Is causal inference credible?",
             "short_answer": "No under the current design.",
             "answer": (
-                "Zero treatments and zero controls pass the joint identification gates. The blockers are "
-                "treatment scope and intensity, donor contamination, regional interference, local shocks, "
-                "outcome-scope uncertainty and current/post-treatment covariates. No treatment effect is estimated."
+                "Zero treatments, controls or pairs pass all causal identification gates. A predeclared matched-"
+                f"comparison pilot over {accessibility_pilot['primary_treated_municipalities']} treated municipalities "
+                f"gives {100 * accessibility_pilot['primary_estimate_percent_change']:.1f}%, but this is explicitly "
+                "non-causal. Its normal municipality-clustered interval excludes zero, whereas the reference based "
+                f"on only six treated-stack estimates has p={small_cluster['treated_stack_t_two_sided_p_value']:.3f} "
+                f"and an interval from {100 * small_cluster['treated_stack_t_ci95_percent_change'][0]:.1f}% to "
+                f"{100 * small_cluster['treated_stack_t_ci95_percent_change'][1]:.1f}%. The exact five-component "
+                f"sign sensitivity gives p={small_cluster['component_sign_flip_two_sided_p_value']:.3f}. "
+                f"Removing controls with targeted caveats reduces the estimate to "
+                f"{100 * conservative_pilot.estimate_percent_change:.1f}% with an interval spanning zero. "
+                "Small effective sample size, selected comparisons, residual spillovers and uncertain historical "
+                "access therefore prevent a causal Magic Pass interpretation."
             ),
-            "evidence": "reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/model_experiment_log.csv",
+            "evidence": "reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/71_ESTIMATION_PILOTE_NON_CAUSALE_FR.md|reports/72_INFERENCE_PETIT_NOMBRE_COMMUNES_FR.md",
         },
         {
             "question_number": 8,
@@ -147,10 +177,14 @@ def main() -> None:
             "answer": (
                 f"The effective treatment sample is at most {panel['reviewed_destination_units']} reviewed "
                 f"destinations, only {panel['units_with_24_pre_and_24_active_post_months_assumption']} with the "
-                "joint 24/24 coverage gate and zero with causal approval. Repeated municipality-month rows do "
-                "not create independent treated destinations, so stable heterogeneity estimation is unsupported."
+                f"original joint 24/24 coverage gate and only {accessibility_pilot['primary_treated_municipalities']} "
+                "treated municipality stacks in the redesigned pilot. Their descriptive estimates range from "
+                f"{100 * accessibility_pilot['treated_stack_percent_change_range'][0]:.1f}% to "
+                f"{100 * accessibility_pilot['treated_stack_percent_change_range'][1]:.1f}%, but none is causally "
+                "approved. Repeated municipality-month rows do not create independent treatments, so stable "
+                "heterogeneity or causal-ML estimation is unsupported."
             ),
-            "evidence": "reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/model_experiment_log.csv",
+            "evidence": "reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md|reports/accessibility_pilot_treated_decomposition.csv|reports/72_INFERENCE_PETIT_NOMBRE_COMMUNES_FR.md",
         },
         {
             "question_number": 9,
@@ -325,7 +359,7 @@ The supplied universe contains **{initial['resort_listings']} directory listings
 
 ## Why causal and predictive modelling were rejected
 
-The donor process screened {donor_pretrend['provisional_pairs_screened']} descriptive treatment-donor pairs and shortlisted {donor_pretrend['shortlisted_pairs_for_manual_review']}. Twenty-eight shortlisted pairs were at or within 50 km of another resolved Magic Pass point; every one of the seven remote pairs had an independently documented contemporaneous local shock. Zero causal treatments and zero controls were approved. With at most 14 reviewed treated destinations, only seven passing the 24/24 coverage screen and no identified causal target, causal forests, meta-learners, standard uplift models and neural networks are not statistically defensible.
+The original donor process screened {donor_pretrend['provisional_pairs_screened']} descriptive treatment-donor pairs and shortlisted {donor_pretrend['shortlisted_pairs_for_manual_review']}, but every geographically remote case had a documented contemporaneous local shock. The later municipality-accessibility redesign retained {accessibility_pretrend['primary_compatible_pairs']} primary pre-period-compatible pairs across {accessibility_pretrend['primary_compatible_treated_municipalities']} treated municipalities. Its explicitly non-causal pilot averages {100 * accessibility_pilot['primary_estimate_percent_change']:.1f}%, yet the treated-stack t reference gives p={small_cluster['treated_stack_t_two_sided_p_value']:.3f}, the five-component sign sensitivity gives p={small_cluster['component_sign_flip_two_sided_p_value']:.3f}, and the conservative control exclusion is {100 * conservative_pilot.estimate_percent_change:.1f}% with an interval spanning zero. Zero causal treatments, controls or pairs are approved. The sample and identification therefore remain insufficient for causal forests, meta-learners, uplift models or neural networks.
 
 ## Final analytical architecture
 
@@ -370,6 +404,21 @@ The completed system is **exploratory and decision-support oriented**. It is not
         "causal_interpretation_approvals": protected[
             "causal_interpretation_approvals"
         ],
+        "accessibility_primary_compatible_pairs": int(
+            accessibility_pretrend["primary_compatible_pairs"]
+        ),
+        "accessibility_pilot_treated_municipalities": int(
+            accessibility_pilot["primary_treated_municipalities"]
+        ),
+        "accessibility_pilot_estimate_percent_change": float(
+            accessibility_pilot["primary_estimate_percent_change"]
+        ),
+        "accessibility_pilot_treated_stack_t_p_value": float(
+            small_cluster["treated_stack_t_two_sided_p_value"]
+        ),
+        "accessibility_pilot_component_sign_p_value": float(
+            small_cluster["component_sign_flip_two_sided_p_value"]
+        ),
         "interpretation": "mission_required_final_methodological_answers_with_explicit_entity_denominators_and_guardrails",
     }
     (ROOT / "reports" / "final_methodological_report_summary.json").write_text(

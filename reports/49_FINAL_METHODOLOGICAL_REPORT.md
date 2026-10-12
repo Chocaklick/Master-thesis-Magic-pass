@@ -12,7 +12,7 @@ The available data support a reproducible **exploratory decision-support framewo
 
 The supplied directory contains 271 listings. The preserved lift layer contains 242 clusters, of which 162 link to at least one listing. Because 53 linked clusters contain multiple listings and commercial-domain boundaries are not certified, no single independent-resort count is claimed.
 
-**Internal evidence:** `reports/01_DATA_AUDIT.md`, `reports/03_CLUSTER_VALIDATION.md`
+**Internal evidence:** `reports/01_DATA_AUDIT.md`, `reports/EXISTING_CLUSTER_AUDIT.md`
 
 ## 2. How many are Magic Pass members?
 
@@ -48,27 +48,27 @@ The adjacent-window gate is joint: seven reviewed panel units have both 24 pre a
 
 ## 6. Are parallel trends plausible?
 
-**Answer:** Not established for any approved treatment-control pair.
+**Answer:** Eleven pairs are pre-period compatible, but none is approved as a parallel-trend counterfactual.
 
-A descriptive pre-period screen ranked 315 pairs and shortlisted 35. Twenty-eight shortlisted pairs were at or within 50 km of another resolved Magic point. All 7 remote pairs had documented contemporaneous donor-specific shocks. Pre-period similarity therefore did not establish a credible counterfactual trend.
+A descriptive pre-period screen ranked 315 pairs and shortlisted 35. The later accessibility redesign completed treated/control shock and direct-local-spillover screens, then applied a predeclared 36-month magnitude rule. It retained 11 primary-compatible pairs across 6 treated municipalities, plus 4 relaxed-only pairs. Compatibility under correlation, standardized-RMSE, seasonality and differential-trend thresholds does not prove the unobserved parallel-trends counterfactual; broad visitor substitution and historical transport topology remain unresolved, so zero pairs receive parallel-trend or causal approval.
 
-**Internal evidence:** `reports/11_DONOR_PRETREND_SCREEN.md`, `reports/14_DONOR_NETWORK_SPILLOVER_AUDIT.md`, `reports/16_DONOR_EXTERNAL_SHOCK_AUDIT.md`
+**Internal evidence:** `reports/11_DONOR_PRETREND_SCREEN.md`, `reports/16_DONOR_EXTERNAL_SHOCK_AUDIT.md`, `reports/69_SCREENING_BASSINS_TOURISTIQUES_SPILLOVERS_FR.md`, `reports/70_DIAGNOSTIC_PRETENDANCES_COMPARAISONS_FR.md`
 
 ## 7. Is causal inference credible?
 
 **Answer:** No under the current design.
 
-Zero treatments and zero controls pass the joint identification gates. The blockers are treatment scope and intensity, donor contamination, regional interference, local shocks, outcome-scope uncertainty and current/post-treatment covariates. No treatment effect is estimated.
+Zero treatments, controls or pairs pass all causal identification gates. A predeclared matched-comparison pilot over 6 treated municipalities gives -6.8%, but this is explicitly non-causal. Its normal municipality-clustered interval excludes zero, whereas the reference based on only six treated-stack estimates has p=0.099 and an interval from -14.8% to 1.9%. The exact five-component sign sensitivity gives p=0.188. Removing controls with targeted caveats reduces the estimate to -2.0% with an interval spanning zero. Small effective sample size, selected comparisons, residual spillovers and uncertain historical access therefore prevent a causal Magic Pass interpretation.
 
-**Internal evidence:** `reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md`, `reports/model_experiment_log.csv`
+**Internal evidence:** `reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md`, `reports/71_ESTIMATION_PILOTE_NON_CAUSALE_FR.md`, `reports/72_INFERENCE_PETIT_NOMBRE_COMMUNES_FR.md`
 
 ## 8. Is heterogeneous treatment-effect modelling statistically feasible?
 
 **Answer:** No.
 
-The effective treatment sample is at most 14 reviewed destinations, only 7 with the joint 24/24 coverage gate and zero with causal approval. Repeated municipality-month rows do not create independent treated destinations, so stable heterogeneity estimation is unsupported.
+The effective treatment sample is at most 14 reviewed destinations, only 7 with the original joint 24/24 coverage gate and only 6 treated municipality stacks in the redesigned pilot. Their descriptive estimates range from -16.4% to 3.5%, but none is causally approved. Repeated municipality-month rows do not create independent treatments, so stable heterogeneity or causal-ML estimation is unsupported.
 
-**Internal evidence:** `reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md`, `reports/model_experiment_log.csv`
+**Internal evidence:** `reports/17_CHECKPOINT_4_5_PATH_C_DECISION.md`, `reports/accessibility_pilot_treated_decomposition.csv`, `reports/72_INFERENCE_PETIT_NOMBRE_COMMUNES_FR.md`
 
 ## 9. Is Causal Forest feasible?
 

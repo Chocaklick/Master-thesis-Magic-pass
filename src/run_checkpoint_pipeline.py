@@ -105,6 +105,7 @@ def main() -> None:
     run("src/data_processing/update_provenance.py")
     run("src/descriptive/build_thesis_citation_map.py")
     run("src/descriptive/build_thesis_reading_draft.py")
+    run("src/descriptive/build_detailed_review_draft.py")
     subprocess.run([sys.executable, "-m", "pytest", "-q"], cwd=ROOT, check=True)
 
 

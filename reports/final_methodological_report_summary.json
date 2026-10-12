@@ -13,5 +13,10 @@
   "recommendations_issued": 0,
   "composite_scores": 0,
   "causal_interpretation_approvals": 0,
+  "accessibility_primary_compatible_pairs": 11,
+  "accessibility_pilot_treated_municipalities": 6,
+  "accessibility_pilot_estimate_percent_change": -0.06813830111312832,
+  "accessibility_pilot_treated_stack_t_p_value": 0.09888119400825035,
+  "accessibility_pilot_component_sign_p_value": 0.1875,
   "interpretation": "mission_required_final_methodological_answers_with_explicit_entity_denominators_and_guardrails"
 }

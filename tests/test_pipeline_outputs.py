@@ -2593,3 +2593,31 @@ def test_thesis_reading_draft_assembles_validated_outputs() -> None:
     assert "The four example candidates are not a shortlist" in draft
     assert "TODO" not in draft
     assert "TBD" not in draft
+
+
+def test_detailed_review_draft_expands_answers_and_comment_fields() -> None:
+    summary = json.loads(
+        (ROOT / "reports/thesis_detailed_review_draft_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    draft = (ROOT / "reports/51_THESIS_DETAILED_REVIEW_DRAFT.md").read_text(
+        encoding="utf-8"
+    )
+
+    assert summary["analysis_version"] == "path_c_v0_31"
+    assert summary["mission_questions_expanded"] == 18
+    assert summary["question_comment_fields"] == 18
+    assert summary["review_sheet_topics"] == 8
+    assert summary["figures_included"] == 4
+    assert summary["approximate_word_count"] >= 8000
+    assert summary["predicted_uplift_values"] == 0
+    assert summary["recommendations_issued"] == 0
+    assert summary["composite_scores"] == 0
+    assert summary["causal_interpretation_approvals"] == 0
+    for question_number in range(1, 19):
+        assert f"### 5.{question_number}." in draft
+    assert "## 10. Reviewer comment sheet" in draft
+    assert "Section 5 provides the full answers" in draft
+    assert "TODO" not in draft
+    assert "TBD" not in draft
