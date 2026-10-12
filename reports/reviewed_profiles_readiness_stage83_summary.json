@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-12T09:32:43.412585+00:00",
+  "input_sha256": {
+    "src/descriptive/check_reviewed_profiles_stage83.py": "3695b0fcf5e8a0f123c6c9ba5260330940c9df70b97041df7ff834e0409c635c",
+    "data_processed/terrain_reviewed_profiles_stage82.csv": "b55bd2ccf39579cc2f436542cbbbd10f6b1bba9c768c28d87613bd9050270610",
+    "data_processed/spass_reviewed_profiles_stage83.csv": "e0e91ac4ed81a3deeae2ffc54785487917119732ecc75dfce27a5af4de9913fa",
+    "data_processed/accessibility_road_group_reference_stage79.csv": "00af4173f7d16bc15ae8a6143a041f793abeda5a13969e0ad8169ee01d7d4d0b",
+    "data_processed/winter_profile_urban_city_detail_stage57.csv": "c2380d643264f3385be9a5cbcf3c3a4f49b921e1e6a4fa084b9271d996080b16"
+  },
+  "all_groups_retained": 69,
+  "approved_city_count": 6,
+  "group_city_rows": 414,
+  "all_six_road_times_available_groups": 69,
+  "proposed_without_snow_fields_available": 67,
+  "proposed_with_snow_fields_available": 54,
+  "current_geometry_road_proxy_not_verified_preentry": true,
+  "hotel_capacity_not_arbitrarily_assigned": true,
+  "no_cluster_count_or_model_fitted": true,
+  "no_group_exclusion_or_new_did": true,
+  "prospective_coverage_only_not_validated_model_sample": true
+}

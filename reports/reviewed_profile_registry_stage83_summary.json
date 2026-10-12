@@ -1,0 +1,12 @@
+{
+  "completed_at": "2026-10-12T09:23:04.321190+00:00",
+  "verified_unique_files": 1708,
+  "registration_script_sha256": "88a66e2fa1e2f3500f452e222c0daed2a7cc538b6aff3e46bc660f50373da33f",
+  "numerical_producers_and_results_unchanged": true,
+  "no_new_request_or_recomputation": true,
+  "registry_rows": {
+    "metadata/data_sources_master.csv": 1634,
+    "metadata/data_dictionary.csv": 8924,
+    "logs/data_collection_log.csv": 2470
+  }
+}

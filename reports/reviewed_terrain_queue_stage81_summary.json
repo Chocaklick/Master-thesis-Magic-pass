@@ -1,0 +1,2056 @@
+{
+  "completed_at": "2026-10-12T09:05:42.326135+00:00",
+  "input_sha256": {
+    "src/data_collection/prepare_reviewed_terrain_queue_stage81.py": "64319027d641e48b22a87e1af0ea34c941bc6a7c5ab82861d728b953574e60c1",
+    "data_interim/winter_profile_metric_network_stage80.json": "47f353e3790815ed875ccd6988c905a87ef467655471e50edfda309e719cb2dc",
+    "data_processed/terrain_reviewed_asset_inventory_stage80.csv": "92c4b985a7710b6478f594d94c06811c84f83f59a39622cec356fbaa92daabea",
+    "reports/reviewed_geometry_followup_stage80_summary.json": "39a4f0a99d92b57f17bedbc73025600fb0288bea60f14f04c8e569b20df6ab05",
+    "config/terrain_french_complement_decision_stage80.json": "dfd4c9cbd0f52b798410c470be85530d09a86723f6dd5b376db21960b4a1583d",
+    "src/data_processing/terrain_cell_weights_stage61.py": "969b2ca601f5f7b1eba6284a3ddf7193624ac95f14a4cc363b4989f91dca239e"
+  },
+  "output_sha256": {
+    "config/terrain_reviewed_tile_sources_stage81.json": "4be905467d0a7a012f713b62d528aa664dce616834c876c38e543c2f32534ed0"
+  },
+  "group_count": 69,
+  "groups_with_geometry": 67,
+  "required_available_native_tile_count": 635,
+  "cached_required_tile_count": 326,
+  "new_required_tile_count": 309,
+  "unavailable_catalogue_key_count": 5,
+  "groups": [
+    {
+      "station_group_id": "MP_GROUP_EVENT__4b7d19ebb1a4",
+      "status": "missing_geometry_not_zero",
+      "group_retained": true
+    },
+    {
+      "station_group_id": "MP_GROUP_EVENT__98c0c64310c6",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 572,
+      "axis_native_tile_keys": [
+        "2587-1122",
+        "2588-1122"
+      ],
+      "horn_native_tile_keys": [
+        "2587-1122",
+        "2588-1122"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_EVENT__c1f58b57f3fa",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 566,
+      "axis_native_tile_keys": [
+        "2595-1230",
+        "2596-1230"
+      ],
+      "horn_native_tile_keys": [
+        "2595-1230",
+        "2596-1230"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__aeschi",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 4303,
+      "axis_native_tile_keys": [
+        "2621-1166",
+        "2622-1165",
+        "2622-1166",
+        "2623-1165",
+        "2623-1166"
+      ],
+      "horn_native_tile_keys": [
+        "2621-1166",
+        "2622-1165",
+        "2622-1166",
+        "2623-1165",
+        "2623-1166"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__anzere",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 22847,
+      "axis_native_tile_keys": [
+        "2595-1128",
+        "2595-1129",
+        "2596-1127",
+        "2596-1128",
+        "2596-1129",
+        "2597-1127",
+        "2597-1128",
+        "2597-1129",
+        "2597-1130",
+        "2598-1128",
+        "2598-1130",
+        "2599-1130",
+        "2599-1131"
+      ],
+      "horn_native_tile_keys": [
+        "2595-1128",
+        "2595-1129",
+        "2596-1127",
+        "2596-1128",
+        "2596-1129",
+        "2597-1127",
+        "2597-1128",
+        "2597-1129",
+        "2597-1130",
+        "2598-1128",
+        "2598-1130",
+        "2599-1130",
+        "2599-1131"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__arolla",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 14586,
+      "axis_native_tile_keys": [
+        "2600-1096",
+        "2600-1097",
+        "2601-1096",
+        "2601-1097",
+        "2602-1096",
+        "2602-1097",
+        "2602-1098",
+        "2603-1096",
+        "2603-1097"
+      ],
+      "horn_native_tile_keys": [
+        "2600-1096",
+        "2600-1097",
+        "2601-1096",
+        "2601-1097",
+        "2602-1096",
+        "2602-1097",
+        "2602-1098",
+        "2603-1096",
+        "2603-1097"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__axalp_brienz",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 6777,
+      "axis_native_tile_keys": [
+        "2645-1173",
+        "2645-1174",
+        "2646-1173",
+        "2646-1174"
+      ],
+      "horn_native_tile_keys": [
+        "2645-1173",
+        "2645-1174",
+        "2646-1173",
+        "2646-1174"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__balmberg",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 1813,
+      "axis_native_tile_keys": [
+        "2606-1234",
+        "2607-1234",
+        "2607-1235"
+      ],
+      "horn_native_tile_keys": [
+        "2606-1234",
+        "2607-1234",
+        "2607-1235"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__beatenberg_niederhorn",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 9182,
+      "axis_native_tile_keys": [
+        "2625-1171",
+        "2625-1172",
+        "2625-1173",
+        "2626-1172",
+        "2626-1173",
+        "2628-1172",
+        "2629-1172",
+        "2629-1173"
+      ],
+      "horn_native_tile_keys": [
+        "2625-1171",
+        "2625-1172",
+        "2625-1173",
+        "2626-1172",
+        "2626-1173",
+        "2628-1172",
+        "2629-1172",
+        "2629-1173"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__belalp",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 22994,
+      "axis_native_tile_keys": [
+        "2640-1135",
+        "2640-1136",
+        "2640-1137",
+        "2640-1138",
+        "2640-1139",
+        "2641-1134",
+        "2641-1135",
+        "2641-1136",
+        "2641-1137",
+        "2641-1138",
+        "2641-1139",
+        "2642-1134",
+        "2642-1136",
+        "2642-1137",
+        "2642-1138"
+      ],
+      "horn_native_tile_keys": [
+        "2640-1135",
+        "2640-1136",
+        "2640-1137",
+        "2640-1138",
+        "2640-1139",
+        "2641-1134",
+        "2641-1135",
+        "2641-1136",
+        "2641-1137",
+        "2641-1138",
+        "2641-1139",
+        "2642-1134",
+        "2642-1136",
+        "2642-1137",
+        "2642-1138"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__bumbach_schangnau",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 3111,
+      "axis_native_tile_keys": [
+        "2633-1182",
+        "2633-1183",
+        "2633-1184",
+        "2634-1183",
+        "2634-1184"
+      ],
+      "horn_native_tile_keys": [
+        "2633-1182",
+        "2633-1183",
+        "2633-1184",
+        "2634-1183",
+        "2634-1184"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__charmey",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 8056,
+      "axis_native_tile_keys": [
+        "2579-1163",
+        "2580-1163",
+        "2581-1162",
+        "2581-1163",
+        "2581-1164",
+        "2582-1163",
+        "2582-1164",
+        "2582-1165",
+        "2583-1163",
+        "2583-1164",
+        "2583-1165"
+      ],
+      "horn_native_tile_keys": [
+        "2579-1163",
+        "2580-1163",
+        "2581-1162",
+        "2581-1163",
+        "2581-1164",
+        "2582-1163",
+        "2582-1164",
+        "2582-1165",
+        "2583-1163",
+        "2583-1164",
+        "2583-1165"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__crans_montana_crans_montana",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 39901,
+      "axis_native_tile_keys": [
+        "2601-1128",
+        "2601-1129",
+        "2601-1130",
+        "2602-1128",
+        "2602-1129",
+        "2602-1130",
+        "2602-1131",
+        "2603-1129",
+        "2603-1130",
+        "2603-1131",
+        "2603-1132",
+        "2603-1133",
+        "2603-1135",
+        "2604-1129",
+        "2604-1130",
+        "2604-1131",
+        "2604-1132",
+        "2604-1133",
+        "2604-1134",
+        "2604-1135",
+        "2605-1131",
+        "2605-1132",
+        "2605-1133",
+        "2606-1131",
+        "2606-1132",
+        "2606-1133",
+        "2607-1131"
+      ],
+      "horn_native_tile_keys": [
+        "2601-1128",
+        "2601-1129",
+        "2601-1130",
+        "2602-1128",
+        "2602-1129",
+        "2602-1130",
+        "2602-1131",
+        "2603-1129",
+        "2603-1130",
+        "2603-1131",
+        "2603-1132",
+        "2603-1133",
+        "2603-1135",
+        "2604-1129",
+        "2604-1130",
+        "2604-1131",
+        "2604-1132",
+        "2604-1133",
+        "2604-1134",
+        "2604-1135",
+        "2605-1131",
+        "2605-1132",
+        "2605-1133",
+        "2606-1131",
+        "2606-1132",
+        "2606-1133",
+        "2607-1131"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__eriz",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 2767,
+      "axis_native_tile_keys": [
+        "2629-1179",
+        "2629-1180",
+        "2629-1181",
+        "2630-1180"
+      ],
+      "horn_native_tile_keys": [
+        "2629-1179",
+        "2629-1180",
+        "2629-1181",
+        "2630-1180"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__evolene",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 13219,
+      "axis_native_tile_keys": [
+        "2599-1105",
+        "2599-1106",
+        "2599-1107",
+        "2600-1105",
+        "2600-1106",
+        "2600-1107",
+        "2600-1108",
+        "2601-1107",
+        "2601-1108",
+        "2602-1107",
+        "2603-1106",
+        "2603-1107"
+      ],
+      "horn_native_tile_keys": [
+        "2599-1105",
+        "2599-1106",
+        "2599-1107",
+        "2600-1105",
+        "2600-1106",
+        "2600-1107",
+        "2600-1108",
+        "2601-1107",
+        "2601-1108",
+        "2602-1107",
+        "2603-1106",
+        "2603-1107"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 2990,
+      "axis_native_tile_keys": [
+        "2621-1163",
+        "2621-1164",
+        "2622-1163",
+        "2622-1164"
+      ],
+      "horn_native_tile_keys": [
+        "2621-1163",
+        "2621-1164",
+        "2622-1163",
+        "2622-1164"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__gantrisch_gurnigel",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 4494,
+      "axis_native_tile_keys": [
+        "2600-1174",
+        "2600-1178",
+        "2601-1174",
+        "2601-1175",
+        "2601-1178"
+      ],
+      "horn_native_tile_keys": [
+        "2600-1174",
+        "2600-1178",
+        "2601-1174",
+        "2601-1175",
+        "2601-1178"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 45733,
+      "axis_native_tile_keys": [
+        "2606-1112",
+        "2606-1113",
+        "2606-1114",
+        "2607-1113",
+        "2607-1114",
+        "2607-1115",
+        "2608-1113",
+        "2608-1114",
+        "2608-1115",
+        "2609-1113",
+        "2609-1114",
+        "2609-1115",
+        "2610-1113",
+        "2610-1114",
+        "2610-1115",
+        "2610-1116",
+        "2611-1109",
+        "2611-1110",
+        "2611-1111",
+        "2611-1112",
+        "2611-1113",
+        "2611-1116",
+        "2612-1109",
+        "2612-1110",
+        "2612-1112",
+        "2613-1108",
+        "2613-1109",
+        "2613-1110",
+        "2614-1108",
+        "2614-1109"
+      ],
+      "horn_native_tile_keys": [
+        "2606-1112",
+        "2606-1113",
+        "2606-1114",
+        "2607-1113",
+        "2607-1114",
+        "2607-1115",
+        "2608-1113",
+        "2608-1114",
+        "2608-1115",
+        "2609-1113",
+        "2609-1114",
+        "2609-1115",
+        "2610-1113",
+        "2610-1114",
+        "2610-1115",
+        "2610-1116",
+        "2611-1109",
+        "2611-1110",
+        "2611-1111",
+        "2611-1112",
+        "2611-1113",
+        "2611-1116",
+        "2612-1109",
+        "2612-1110",
+        "2612-1112",
+        "2613-1108",
+        "2613-1109",
+        "2613-1110",
+        "2614-1108",
+        "2614-1109"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__gstaad",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 64538,
+      "axis_native_tile_keys": [
+        "2581-1144",
+        "2581-1145",
+        "2582-1144",
+        "2582-1145",
+        "2582-1147",
+        "2582-1148",
+        "2583-1144",
+        "2583-1145",
+        "2583-1146",
+        "2583-1147",
+        "2583-1148",
+        "2584-1144",
+        "2585-1144",
+        "2585-1145",
+        "2586-1144",
+        "2586-1145",
+        "2586-1146",
+        "2586-1147",
+        "2587-1145",
+        "2587-1146",
+        "2587-1147",
+        "2588-1142",
+        "2588-1143",
+        "2588-1144",
+        "2588-1145",
+        "2588-1146",
+        "2588-1150",
+        "2589-1143",
+        "2589-1144",
+        "2589-1148",
+        "2589-1149",
+        "2589-1150",
+        "2590-1148",
+        "2590-1149",
+        "2590-1150",
+        "2590-1151",
+        "2591-1148",
+        "2591-1149",
+        "2591-1150",
+        "2591-1151",
+        "2592-1149",
+        "2592-1150",
+        "2592-1151",
+        "2592-1152",
+        "2593-1149",
+        "2593-1150",
+        "2593-1151",
+        "2593-1152",
+        "2594-1149",
+        "2594-1150",
+        "2594-1151",
+        "2594-1152",
+        "2594-1153",
+        "2594-1154",
+        "2594-1155",
+        "2595-1149",
+        "2595-1150",
+        "2595-1155"
+      ],
+      "horn_native_tile_keys": [
+        "2581-1144",
+        "2581-1145",
+        "2582-1144",
+        "2582-1145",
+        "2582-1147",
+        "2582-1148",
+        "2583-1144",
+        "2583-1145",
+        "2583-1146",
+        "2583-1147",
+        "2583-1148",
+        "2584-1144",
+        "2585-1144",
+        "2585-1145",
+        "2586-1144",
+        "2586-1145",
+        "2586-1146",
+        "2586-1147",
+        "2587-1145",
+        "2587-1146",
+        "2587-1147",
+        "2588-1142",
+        "2588-1143",
+        "2588-1144",
+        "2588-1145",
+        "2588-1146",
+        "2588-1150",
+        "2589-1143",
+        "2589-1144",
+        "2589-1148",
+        "2589-1149",
+        "2589-1150",
+        "2590-1148",
+        "2590-1149",
+        "2590-1150",
+        "2590-1151",
+        "2591-1148",
+        "2591-1149",
+        "2591-1150",
+        "2591-1151",
+        "2592-1149",
+        "2592-1150",
+        "2592-1151",
+        "2592-1152",
+        "2593-1149",
+        "2593-1150",
+        "2593-1151",
+        "2593-1152",
+        "2594-1149",
+        "2594-1150",
+        "2594-1151",
+        "2594-1152",
+        "2594-1153",
+        "2594-1154",
+        "2594-1155",
+        "2595-1149",
+        "2595-1150",
+        "2595-1155"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__habkern",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 4472,
+      "axis_native_tile_keys": [
+        "2631-1175",
+        "2631-1176",
+        "2632-1175"
+      ],
+      "horn_native_tile_keys": [
+        "2631-1175",
+        "2631-1176",
+        "2632-1175"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__heimenschwand_buchholterberg",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 577,
+      "axis_native_tile_keys": [
+        "2617-1186",
+        "2618-1186"
+      ],
+      "horn_native_tile_keys": [
+        "2617-1186",
+        "2618-1186"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 2011,
+      "axis_native_tile_keys": [
+        "2617-1179",
+        "2618-1179",
+        "2618-1180"
+      ],
+      "horn_native_tile_keys": [
+        "2617-1179",
+        "2618-1179",
+        "2618-1180"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__jaun_gastlosen",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 8111,
+      "axis_native_tile_keys": [
+        "2587-1160",
+        "2587-1161",
+        "2588-1160",
+        "2588-1161",
+        "2588-1162",
+        "2589-1161"
+      ],
+      "horn_native_tile_keys": [
+        "2587-1160",
+        "2587-1161",
+        "2588-1160",
+        "2588-1161",
+        "2588-1162",
+        "2589-1161"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__jaunpass",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 2910,
+      "axis_native_tile_keys": [
+        "2592-1160",
+        "2593-1160"
+      ],
+      "horn_native_tile_keys": [
+        "2592-1160",
+        "2593-1160"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__kiental",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 4382,
+      "axis_native_tile_keys": [
+        "2620-1158",
+        "2620-1159",
+        "2621-1158",
+        "2621-1159"
+      ],
+      "horn_native_tile_keys": [
+        "2620-1158",
+        "2620-1159",
+        "2621-1158",
+        "2621-1159"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_berra_la_roche",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 5333,
+      "axis_native_tile_keys": [
+        "2578-1169",
+        "2578-1170",
+        "2579-1168",
+        "2579-1169",
+        "2579-1170",
+        "2580-1168",
+        "2580-1169"
+      ],
+      "horn_native_tile_keys": [
+        "2578-1169",
+        "2578-1170",
+        "2579-1168",
+        "2579-1169",
+        "2579-1170",
+        "2580-1168",
+        "2580-1169"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_dole_jura_sur_leman",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 19599,
+      "axis_native_tile_keys": [
+        "2492-1144",
+        "2493-1144",
+        "2493-1145",
+        "2494-1144",
+        "2494-1145",
+        "2495-1142",
+        "2495-1143",
+        "2495-1144",
+        "2496-1142",
+        "2496-1143",
+        "2496-1144",
+        "2497-1142",
+        "2497-1143"
+      ],
+      "horn_native_tile_keys": [
+        "2492-1144",
+        "2493-1144",
+        "2493-1145",
+        "2494-1144",
+        "2494-1145",
+        "2495-1142",
+        "2495-1143",
+        "2495-1144",
+        "2496-1142",
+        "2496-1143",
+        "2496-1144",
+        "2497-1142",
+        "2497-1143"
+      ],
+      "catalogue_absent_native_tile_keys": [
+        "2492-1144",
+        "2493-1144",
+        "2493-1145",
+        "2494-1144",
+        "2494-1145"
+      ]
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_forclaz",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 4896,
+      "axis_native_tile_keys": [
+        "2605-1103",
+        "2606-1103",
+        "2606-1104",
+        "2607-1104"
+      ],
+      "horn_native_tile_keys": [
+        "2605-1103",
+        "2606-1103",
+        "2606-1104",
+        "2607-1104"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__la_robella",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 5470,
+      "axis_native_tile_keys": [
+        "2531-1191",
+        "2531-1192",
+        "2532-1191",
+        "2532-1192",
+        "2532-1193"
+      ],
+      "horn_native_tile_keys": [
+        "2531-1191",
+        "2531-1192",
+        "2532-1191",
+        "2532-1192",
+        "2532-1193"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__lauchernalp_lotschental",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 7884,
+      "axis_native_tile_keys": [
+        "2623-1141",
+        "2623-1142",
+        "2624-1140",
+        "2624-1141",
+        "2624-1142",
+        "2625-1139",
+        "2625-1140",
+        "2625-1141",
+        "2625-1142"
+      ],
+      "horn_native_tile_keys": [
+        "2623-1141",
+        "2623-1142",
+        "2624-1140",
+        "2624-1141",
+        "2624-1142",
+        "2625-1139",
+        "2625-1140",
+        "2625-1141",
+        "2625-1142"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__le_paquier_cret_du_puy",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 3421,
+      "axis_native_tile_keys": [
+        "2565-1215",
+        "2566-1215",
+        "2567-1215"
+      ],
+      "horn_native_tile_keys": [
+        "2565-1215",
+        "2566-1215",
+        "2567-1215"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__les_bugnenets_savagnieres",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 9937,
+      "axis_native_tile_keys": [
+        "2566-1218",
+        "2567-1218",
+        "2567-1219",
+        "2568-1218",
+        "2568-1219",
+        "2568-1220",
+        "2569-1220"
+      ],
+      "horn_native_tile_keys": [
+        "2566-1218",
+        "2567-1218",
+        "2567-1219",
+        "2568-1218",
+        "2568-1219",
+        "2568-1220",
+        "2569-1220"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__les_marecottes",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 9218,
+      "axis_native_tile_keys": [
+        "2564-1107",
+        "2564-1108",
+        "2565-1106",
+        "2565-1107",
+        "2565-1108",
+        "2566-1106",
+        "2566-1107"
+      ],
+      "horn_native_tile_keys": [
+        "2564-1107",
+        "2564-1108",
+        "2565-1106",
+        "2565-1107",
+        "2565-1108",
+        "2566-1106",
+        "2566-1107"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__les_paccots_chatel_saint_denis",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 3777,
+      "axis_native_tile_keys": [
+        "2560-1152",
+        "2561-1151",
+        "2561-1152",
+        "2562-1151",
+        "2563-1150",
+        "2563-1151"
+      ],
+      "horn_native_tile_keys": [
+        "2560-1152",
+        "2561-1151",
+        "2561-1152",
+        "2562-1151",
+        "2563-1150",
+        "2563-1151"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__les_pleiades",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 192,
+      "axis_native_tile_keys": [
+        "2559-1148"
+      ],
+      "horn_native_tile_keys": [
+        "2559-1148"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__leukerbad",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 17581,
+      "axis_native_tile_keys": [
+        "2614-1133",
+        "2614-1134",
+        "2614-1135",
+        "2614-1136",
+        "2615-1134",
+        "2615-1135",
+        "2615-1136",
+        "2616-1134",
+        "2616-1135",
+        "2616-1136",
+        "2617-1135",
+        "2617-1136"
+      ],
+      "horn_native_tile_keys": [
+        "2614-1133",
+        "2614-1134",
+        "2614-1135",
+        "2614-1136",
+        "2615-1134",
+        "2615-1135",
+        "2615-1136",
+        "2616-1134",
+        "2616-1135",
+        "2616-1136",
+        "2617-1135",
+        "2617-1136"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__leysin_les_mosses_la_lecherette",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 31723,
+      "axis_native_tile_keys": [
+        "2566-1134",
+        "2566-1135",
+        "2567-1132",
+        "2567-1133",
+        "2567-1134",
+        "2567-1135",
+        "2568-1134",
+        "2568-1135",
+        "2568-1136",
+        "2569-1135",
+        "2569-1136",
+        "2570-1136",
+        "2571-1137",
+        "2572-1137",
+        "2572-1138",
+        "2572-1139",
+        "2573-1137",
+        "2573-1138",
+        "2573-1139",
+        "2574-1139",
+        "2574-1140",
+        "2574-1141",
+        "2575-1139",
+        "2575-1140",
+        "2575-1141"
+      ],
+      "horn_native_tile_keys": [
+        "2566-1134",
+        "2566-1135",
+        "2567-1132",
+        "2567-1133",
+        "2567-1134",
+        "2567-1135",
+        "2568-1134",
+        "2568-1135",
+        "2568-1136",
+        "2569-1135",
+        "2569-1136",
+        "2570-1136",
+        "2571-1137",
+        "2572-1137",
+        "2572-1138",
+        "2572-1139",
+        "2573-1137",
+        "2573-1138",
+        "2573-1139",
+        "2574-1139",
+        "2574-1140",
+        "2574-1141",
+        "2575-1139",
+        "2575-1140",
+        "2575-1141"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__linden_skilift_linden",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 763,
+      "axis_native_tile_keys": [
+        "2618-1187",
+        "2618-1188"
+      ],
+      "horn_native_tile_keys": [
+        "2618-1187",
+        "2618-1188"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__marchbachegg_marbach_marbachegg",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 4363,
+      "axis_native_tile_keys": [
+        "2634-1187",
+        "2634-1188",
+        "2635-1186",
+        "2635-1187",
+        "2635-1188",
+        "2636-1186",
+        "2636-1187"
+      ],
+      "horn_native_tile_keys": [
+        "2634-1187",
+        "2634-1188",
+        "2635-1186",
+        "2635-1187",
+        "2635-1188",
+        "2636-1186",
+        "2636-1187"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__meiringen_hasliberg",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 30778,
+      "axis_native_tile_keys": [
+        "2656-1178",
+        "2656-1179",
+        "2657-1177",
+        "2657-1178",
+        "2657-1179",
+        "2658-1176",
+        "2658-1177",
+        "2658-1178",
+        "2658-1179",
+        "2659-1176",
+        "2659-1177",
+        "2659-1178",
+        "2659-1179",
+        "2660-1176",
+        "2660-1177",
+        "2660-1178",
+        "2660-1179",
+        "2661-1176",
+        "2661-1177",
+        "2661-1178",
+        "2661-1179",
+        "2662-1176",
+        "2662-1177",
+        "2662-1178",
+        "2662-1179"
+      ],
+      "horn_native_tile_keys": [
+        "2656-1178",
+        "2656-1179",
+        "2657-1177",
+        "2657-1178",
+        "2657-1179",
+        "2658-1176",
+        "2658-1177",
+        "2658-1178",
+        "2658-1179",
+        "2659-1176",
+        "2659-1177",
+        "2659-1178",
+        "2659-1179",
+        "2660-1176",
+        "2660-1177",
+        "2660-1178",
+        "2660-1179",
+        "2661-1176",
+        "2661-1177",
+        "2661-1178",
+        "2661-1179",
+        "2662-1176",
+        "2662-1177",
+        "2662-1178",
+        "2662-1179"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__melchsee_frutt",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 20124,
+      "axis_native_tile_keys": [
+        "2662-1180",
+        "2662-1181",
+        "2662-1182",
+        "2663-1180",
+        "2663-1181",
+        "2663-1182",
+        "2663-1183",
+        "2664-1178",
+        "2664-1179",
+        "2664-1180",
+        "2664-1181",
+        "2664-1182",
+        "2664-1183",
+        "2665-1178",
+        "2665-1179",
+        "2665-1181"
+      ],
+      "horn_native_tile_keys": [
+        "2662-1180",
+        "2662-1181",
+        "2662-1182",
+        "2663-1180",
+        "2663-1181",
+        "2663-1182",
+        "2663-1183",
+        "2664-1178",
+        "2664-1179",
+        "2664-1180",
+        "2664-1181",
+        "2664-1182",
+        "2664-1183",
+        "2665-1178",
+        "2665-1179",
+        "2665-1181"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__moleson_la_gruyere",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 4580,
+      "axis_native_tile_keys": [
+        "2566-1155",
+        "2566-1156",
+        "2567-1155",
+        "2567-1156",
+        "2568-1155",
+        "2568-1156",
+        "2569-1156"
+      ],
+      "horn_native_tile_keys": [
+        "2566-1155",
+        "2566-1156",
+        "2567-1155",
+        "2567-1156",
+        "2568-1155",
+        "2568-1156",
+        "2569-1156"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__mont_noble_nax",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 8527,
+      "axis_native_tile_keys": [
+        "2600-1119",
+        "2601-1117",
+        "2601-1118",
+        "2601-1119",
+        "2602-1116",
+        "2602-1117",
+        "2602-1118",
+        "2602-1119",
+        "2603-1116",
+        "2603-1117",
+        "2604-1116",
+        "2604-1117"
+      ],
+      "horn_native_tile_keys": [
+        "2600-1119",
+        "2601-1117",
+        "2601-1118",
+        "2601-1119",
+        "2602-1116",
+        "2602-1117",
+        "2602-1118",
+        "2602-1119",
+        "2603-1116",
+        "2603-1117",
+        "2604-1116",
+        "2604-1117"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__moosalpregion",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 8442,
+      "axis_native_tile_keys": [
+        "2628-1120",
+        "2629-1120",
+        "2629-1121",
+        "2629-1122",
+        "2629-1123",
+        "2629-1124",
+        "2629-1125",
+        "2630-1121",
+        "2630-1122"
+      ],
+      "horn_native_tile_keys": [
+        "2628-1120",
+        "2629-1120",
+        "2629-1121",
+        "2629-1122",
+        "2629-1123",
+        "2629-1124",
+        "2629-1125",
+        "2630-1121",
+        "2630-1122"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__morlialp",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 3312,
+      "axis_native_tile_keys": [
+        "2650-1185",
+        "2650-1186",
+        "2651-1185",
+        "2651-1186"
+      ],
+      "horn_native_tile_keys": [
+        "2650-1185",
+        "2650-1186",
+        "2651-1185",
+        "2651-1186"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__ottenleuebad",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 1857,
+      "axis_native_tile_keys": [
+        "2594-1175",
+        "2594-1176"
+      ],
+      "horn_native_tile_keys": [
+        "2594-1175",
+        "2594-1176"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__ovronnaz",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 10782,
+      "axis_native_tile_keys": [
+        "2574-1116",
+        "2574-1117",
+        "2575-1116",
+        "2575-1117",
+        "2576-1116",
+        "2576-1117",
+        "2577-1116",
+        "2577-1117",
+        "2578-1116",
+        "2578-1117"
+      ],
+      "horn_native_tile_keys": [
+        "2574-1116",
+        "2574-1117",
+        "2575-1116",
+        "2575-1117",
+        "2576-1116",
+        "2576-1117",
+        "2577-1116",
+        "2577-1117",
+        "2578-1116",
+        "2578-1117"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 2754,
+      "axis_native_tile_keys": [
+        "2579-1221",
+        "2579-1222",
+        "2580-1221"
+      ],
+      "horn_native_tile_keys": [
+        "2579-1221",
+        "2579-1222",
+        "2580-1221"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__rathvel",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 2330,
+      "axis_native_tile_keys": [
+        "2563-1154",
+        "2564-1154"
+      ],
+      "horn_native_tile_keys": [
+        "2563-1154",
+        "2564-1154",
+        "2564-1155"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__riffenmatt",
+      "status": "missing_geometry_not_zero",
+      "group_retained": true
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 5399,
+      "axis_native_tile_keys": [
+        "2561-1142",
+        "2561-1145",
+        "2562-1142",
+        "2563-1142",
+        "2563-1143",
+        "2564-1142",
+        "2564-1143",
+        "2564-1144",
+        "2565-1143",
+        "2565-1144"
+      ],
+      "horn_native_tile_keys": [
+        "2561-1142",
+        "2561-1145",
+        "2562-1142",
+        "2563-1142",
+        "2563-1143",
+        "2564-1142",
+        "2564-1143",
+        "2564-1144",
+        "2565-1143",
+        "2565-1144"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__rossberg_oberwil",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 2156,
+      "axis_native_tile_keys": [
+        "2599-1164",
+        "2600-1164",
+        "2600-1165"
+      ],
+      "horn_native_tile_keys": [
+        "2599-1164",
+        "2600-1164",
+        "2600-1165"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__rosswald",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 2992,
+      "axis_native_tile_keys": [
+        "2646-1128",
+        "2647-1128",
+        "2647-1129",
+        "2648-1128",
+        "2648-1129"
+      ],
+      "horn_native_tile_keys": [
+        "2646-1128",
+        "2647-1128",
+        "2647-1129",
+        "2648-1128",
+        "2648-1129"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__ruschegg_eywald",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 7084,
+      "axis_native_tile_keys": [
+        "2598-1176",
+        "2598-1177",
+        "2598-1178",
+        "2599-1176",
+        "2599-1177",
+        "2599-1178",
+        "2600-1177"
+      ],
+      "horn_native_tile_keys": [
+        "2598-1176",
+        "2598-1177",
+        "2598-1178",
+        "2599-1176",
+        "2599-1177",
+        "2599-1178",
+        "2600-1177"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__saas_fee",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 18113,
+      "axis_native_tile_keys": [
+        "2634-1100",
+        "2635-1100",
+        "2635-1101",
+        "2635-1102",
+        "2635-1103",
+        "2635-1104",
+        "2636-1100",
+        "2636-1101",
+        "2636-1102",
+        "2636-1103",
+        "2636-1104",
+        "2636-1105",
+        "2636-1106",
+        "2637-1101",
+        "2637-1102",
+        "2637-1103",
+        "2637-1105",
+        "2637-1106",
+        "2638-1104",
+        "2638-1105",
+        "2638-1106",
+        "2639-1104"
+      ],
+      "horn_native_tile_keys": [
+        "2634-1100",
+        "2635-1100",
+        "2635-1101",
+        "2635-1102",
+        "2635-1103",
+        "2635-1104",
+        "2636-1100",
+        "2636-1101",
+        "2636-1102",
+        "2636-1103",
+        "2636-1104",
+        "2636-1105",
+        "2636-1106",
+        "2637-1101",
+        "2637-1102",
+        "2637-1103",
+        "2637-1105",
+        "2637-1106",
+        "2638-1104",
+        "2638-1105",
+        "2638-1106",
+        "2639-1104"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__sainte_croix_les_rasses",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 8294,
+      "axis_native_tile_keys": [
+        "2529-1186",
+        "2529-1187",
+        "2530-1186",
+        "2530-1187",
+        "2530-1188",
+        "2531-1186",
+        "2531-1187",
+        "2531-1188"
+      ],
+      "horn_native_tile_keys": [
+        "2529-1186",
+        "2529-1187",
+        "2530-1186",
+        "2530-1187",
+        "2530-1188",
+        "2531-1186",
+        "2531-1187",
+        "2531-1188"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__schwarzenbuhl_selital",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 2564,
+      "axis_native_tile_keys": [
+        "2595-1176",
+        "2596-1176",
+        "2596-1177",
+        "2597-1177"
+      ],
+      "horn_native_tile_keys": [
+        "2595-1176",
+        "2596-1176",
+        "2596-1177",
+        "2597-1177"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 5585,
+      "axis_native_tile_keys": [
+        "2588-1167",
+        "2588-1168",
+        "2589-1166",
+        "2589-1167",
+        "2589-1168",
+        "2590-1167",
+        "2590-1168"
+      ],
+      "horn_native_tile_keys": [
+        "2588-1167",
+        "2588-1168",
+        "2589-1166",
+        "2589-1167",
+        "2589-1168",
+        "2590-1167",
+        "2590-1168"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__sorenberg",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 10125,
+      "axis_native_tile_keys": [
+        "2643-1184",
+        "2643-1185",
+        "2643-1186",
+        "2644-1183",
+        "2644-1184",
+        "2644-1185",
+        "2644-1186",
+        "2645-1183",
+        "2645-1184",
+        "2645-1185",
+        "2646-1182",
+        "2646-1183",
+        "2646-1184",
+        "2647-1182",
+        "2647-1183",
+        "2647-1184",
+        "2648-1182",
+        "2648-1183"
+      ],
+      "horn_native_tile_keys": [
+        "2643-1184",
+        "2643-1185",
+        "2643-1186",
+        "2644-1183",
+        "2644-1184",
+        "2644-1185",
+        "2644-1186",
+        "2645-1183",
+        "2645-1184",
+        "2645-1185",
+        "2646-1182",
+        "2646-1183",
+        "2646-1184",
+        "2647-1182",
+        "2647-1183",
+        "2647-1184",
+        "2648-1182",
+        "2648-1183"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__st_cergue",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 410,
+      "axis_native_tile_keys": [
+        "2501-1144"
+      ],
+      "horn_native_tile_keys": [
+        "2501-1144"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__st_luc_chandolin",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 31806,
+      "axis_native_tile_keys": [
+        "2611-1122",
+        "2612-1118",
+        "2612-1119",
+        "2612-1120",
+        "2612-1121",
+        "2612-1122",
+        "2613-1118",
+        "2613-1119",
+        "2613-1120",
+        "2613-1121",
+        "2613-1122",
+        "2613-1123",
+        "2614-1117",
+        "2614-1118",
+        "2614-1119",
+        "2614-1120",
+        "2614-1121",
+        "2614-1122",
+        "2615-1117",
+        "2615-1118",
+        "2615-1119",
+        "2615-1120",
+        "2615-1121",
+        "2616-1119",
+        "2616-1120"
+      ],
+      "horn_native_tile_keys": [
+        "2611-1122",
+        "2612-1118",
+        "2612-1119",
+        "2612-1120",
+        "2612-1121",
+        "2612-1122",
+        "2613-1118",
+        "2613-1119",
+        "2613-1120",
+        "2613-1121",
+        "2613-1122",
+        "2613-1123",
+        "2614-1117",
+        "2614-1118",
+        "2614-1119",
+        "2614-1120",
+        "2614-1121",
+        "2614-1122",
+        "2615-1117",
+        "2615-1118",
+        "2615-1119",
+        "2615-1120",
+        "2615-1121",
+        "2616-1119",
+        "2616-1120"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__staldenried_gspon",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 1464,
+      "axis_native_tile_keys": [
+        "2635-1119",
+        "2636-1119"
+      ],
+      "horn_native_tile_keys": [
+        "2635-1119",
+        "2636-1119"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__tramelan",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 4997,
+      "axis_native_tile_keys": [
+        "2572-1227",
+        "2572-1228",
+        "2572-1229",
+        "2573-1227",
+        "2573-1228",
+        "2573-1229"
+      ],
+      "horn_native_tile_keys": [
+        "2572-1227",
+        "2572-1228",
+        "2572-1229",
+        "2573-1227",
+        "2573-1228",
+        "2573-1229"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__vallee_de_joux",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 10364,
+      "axis_native_tile_keys": [
+        "2505-1158",
+        "2505-1159",
+        "2506-1158",
+        "2506-1159",
+        "2507-1158",
+        "2508-1160",
+        "2508-1161",
+        "2513-1165",
+        "2513-1166",
+        "2514-1165",
+        "2514-1166",
+        "2515-1164",
+        "2515-1165"
+      ],
+      "horn_native_tile_keys": [
+        "2505-1158",
+        "2505-1159",
+        "2506-1158",
+        "2506-1159",
+        "2507-1158",
+        "2508-1160",
+        "2508-1161",
+        "2513-1165",
+        "2513-1166",
+        "2514-1165",
+        "2514-1166",
+        "2515-1164",
+        "2515-1165"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__vercorin",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 6618,
+      "axis_native_tile_keys": [
+        "2606-1119",
+        "2606-1120",
+        "2606-1121",
+        "2607-1119",
+        "2607-1120",
+        "2607-1121",
+        "2607-1122",
+        "2608-1119",
+        "2608-1120"
+      ],
+      "horn_native_tile_keys": [
+        "2606-1119",
+        "2606-1120",
+        "2606-1121",
+        "2607-1119",
+        "2607-1120",
+        "2607-1121",
+        "2607-1122",
+        "2608-1119",
+        "2608-1120"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 42573,
+      "axis_native_tile_keys": [
+        "2570-1126",
+        "2570-1127",
+        "2570-1128",
+        "2570-1130",
+        "2571-1125",
+        "2571-1126",
+        "2571-1127",
+        "2571-1128",
+        "2571-1129",
+        "2571-1130",
+        "2571-1131",
+        "2571-1132",
+        "2571-1133",
+        "2572-1125",
+        "2572-1126",
+        "2572-1127",
+        "2572-1128",
+        "2572-1129",
+        "2572-1130",
+        "2572-1131",
+        "2573-1126",
+        "2573-1127",
+        "2573-1128",
+        "2573-1129",
+        "2573-1130",
+        "2574-1126",
+        "2574-1127",
+        "2574-1131",
+        "2575-1126",
+        "2575-1127",
+        "2575-1131",
+        "2576-1131",
+        "2576-1132",
+        "2576-1133",
+        "2577-1131",
+        "2577-1132",
+        "2578-1132"
+      ],
+      "horn_native_tile_keys": [
+        "2570-1126",
+        "2570-1127",
+        "2570-1128",
+        "2570-1130",
+        "2571-1125",
+        "2571-1126",
+        "2571-1127",
+        "2571-1128",
+        "2571-1129",
+        "2571-1130",
+        "2571-1131",
+        "2571-1132",
+        "2571-1133",
+        "2572-1125",
+        "2572-1126",
+        "2572-1127",
+        "2572-1128",
+        "2572-1129",
+        "2572-1130",
+        "2572-1131",
+        "2573-1126",
+        "2573-1127",
+        "2573-1128",
+        "2573-1129",
+        "2573-1130",
+        "2574-1126",
+        "2574-1127",
+        "2574-1131",
+        "2575-1126",
+        "2575-1127",
+        "2575-1131",
+        "2576-1131",
+        "2576-1132",
+        "2576-1133",
+        "2577-1131",
+        "2577-1132",
+        "2578-1132"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_RESORT__visperterminen",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 5387,
+      "axis_native_tile_keys": [
+        "2637-1121",
+        "2637-1122",
+        "2638-1122"
+      ],
+      "horn_native_tile_keys": [
+        "2637-1121",
+        "2637-1122",
+        "2638-1122"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_CONNECTED__eischoll_unterbaech",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 19824,
+      "axis_native_tile_keys": [
+        "2624-1124",
+        "2624-1125",
+        "2624-1126",
+        "2625-1120",
+        "2625-1121",
+        "2625-1122",
+        "2625-1123",
+        "2625-1124",
+        "2625-1125",
+        "2625-1126",
+        "2626-1122",
+        "2626-1123",
+        "2626-1124",
+        "2626-1126",
+        "2627-1124",
+        "2627-1125",
+        "2628-1125"
+      ],
+      "horn_native_tile_keys": [
+        "2624-1124",
+        "2624-1125",
+        "2624-1126",
+        "2625-1120",
+        "2625-1121",
+        "2625-1122",
+        "2625-1123",
+        "2625-1124",
+        "2625-1125",
+        "2625-1126",
+        "2626-1122",
+        "2626-1123",
+        "2626-1124",
+        "2626-1126",
+        "2627-1124",
+        "2627-1125",
+        "2628-1125"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    },
+    {
+      "station_group_id": "MP_GROUP_CONNECTED__wilerallmi_schwanden",
+      "status": "exact_native_keys_planned",
+      "group_retained": true,
+      "native_axis_cell_count": 7469,
+      "axis_native_tile_keys": [
+        "2622-1174",
+        "2622-1175",
+        "2622-1176",
+        "2623-1174",
+        "2623-1175",
+        "2623-1176",
+        "2624-1175"
+      ],
+      "horn_native_tile_keys": [
+        "2622-1174",
+        "2622-1175",
+        "2622-1176",
+        "2623-1174",
+        "2623-1175",
+        "2623-1176",
+        "2624-1175"
+      ],
+      "catalogue_absent_native_tile_keys": []
+    }
+  ],
+  "no_french_raster_or_geometry_cut": true,
+  "no_original_or_old_profile_change": true
+}
