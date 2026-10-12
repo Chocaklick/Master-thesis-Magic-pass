@@ -1,0 +1,19 @@
+{
+  "decision_date": "2026-10-12",
+  "researcher_instruction": "Continue avec un objectif de clustering descriptif des similarités entre stations, la prédiction viendra plus tard. Élargis la préparation aux domaines suisses membres et non-membres du Magic Pass, en réutilisant les données existantes et les regroupements connectés validés. Utilise une période neige commune, indépendante de l'adhésion : dix hivers 2013/14–2022/23, décembre–avril, avec pondérations spatiales inchangées et poids égal des hivers. Réexamine les 13 groupes incomplets. Conserve les profils préentrée.",
+  "objective": "descriptive_similarity_only_not_prediction_causal_effect_or_ranking",
+  "common_winter_start_years": [2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],
+  "winter_months": [12,1,2,3,4],
+  "spatial_weights": "reuse_exact_reviewed_unique_piste_lengths_in_native_SPASS_cells",
+  "winter_mean": "equal_observed_daily_length_weighted_means_no_imputation",
+  "ten_winter_mean": "equal_weight_to_all_ten_winter_means_missing_if_a_whole_winter_absent",
+  "source": "SPASS_only_metres_assumed_original_UNKNOWN_retained",
+  "national_scope": "Swiss_domains_members_and_nonmembers_identity_and_connected_scope_audited_before_assignment",
+  "reuse_validated_groups_without_change": true,
+  "legacy_lift_cluster_is_not_an_automatic_connected_domain": true,
+  "no_membership_or_hotel_outcome_used_as_clustering_feature": true,
+  "no_automatic_missing_data_or_membership_exclusion": true,
+  "preserve_preentry_profiles": true,
+  "old_54_vs_67_clustering_scope_question": "superseded_by_new_national_descriptive_scope",
+  "clustering_features_transforms_and_algorithms": "not_yet_validated_do_not_fit"
+}

@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-12",
+  "status": "researcher_validated_apply_to_new_verified_connected_domains",
+  "researcher_answer": "Domaine connecté entier, couvertures partielles explicites (recommandé).",
+  "question": "Pour les nouveaux domaines qui traversent la frontière, conserver le domaine connecté entier avec couvertures partielles explicites, ou limiter le périmètre aux secteurs suisses ? Aucun nouveau regroupement sans preuve de liaison.",
+  "recommended_option": "whole_verified_connected_domain_with_available_source_coverages_published",
+  "alternative": "Swiss_sectors_only_with_explicit_boundary_cut_not_complete_connected_domain",
+  "prior_dole_decisions_unchanged": "Existing complete Dole–Tuffes geometry retained; French terrain research/complement cancelled by user, no implicit restart.",
+  "new_domains_not_merged_or_cut_by_this_file": true,
+  "prediction_causal_analysis_and_clustering_fit_not_authorized_by_this_question": true,
+  "national_catalogue_points_not_verified_domain_boundaries": true
+}

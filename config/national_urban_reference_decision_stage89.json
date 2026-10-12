@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-12",
+  "status": "researcher_validated",
+  "researcher_answer": "Conserver les arrêts de station vérifiés (recommandé).",
+  "urban_reference": "Same six approved city stops to individually verified station access stops; car route directions averaged then minimum among six cities, details preserved.",
+  "catalogue_point_or_nearest_BAV_stop_not_an_automatic_arrival": true,
+  "old_route_outputs_and_Magic_exposures_unchanged": true,
+  "no_ARE_OR_catalogue_point_substitution": true,
+  "carfree_or_inaccessible_departures_need_explicit_access_point_review": true,
+  "no_invented_onward_transfer_duration_or_automatic_domain_exclusion": true
+}

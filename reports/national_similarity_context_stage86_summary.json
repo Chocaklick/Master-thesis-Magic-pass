@@ -1,0 +1,42 @@
+{
+  "completed_at": "2026-10-12T11:57:06.956650+00:00",
+  "input_sha256": {
+    "src/descriptive/consolidate_national_preparation_stage86.py": "ae189650d8405ee8e5987c02b722e1738c0807e96383f691af7fe5c2cdbb9dff",
+    "data_processed/national_similarity_inventory_stage85.csv": "2aea1ad33e0907a73f5975914a264202e650eb8d4c063dbfbbfd8f5b2ce8c0fb",
+    "data_processed/national_similarity_listing_lineage_stage85.csv": "6b6f8b20cf441d08825cda1d3d83b7f50d3b7f9228a019ee97e2ed9f3a561ace",
+    "data_processed/resort_master.csv": "e115c6efe96fdf8261d434818c75d4356acb059625df7e6a61af4456ac6c0005",
+    "config/piste_remaining_assignments_stage79.json": "9f0c8f39afee479c5c3b90b281855ac7d7d2cc01e7a6146994fc4c10e841f71f",
+    "data_external/source_evidence/GSTAAD_EGGLI_STAGE79_20261011T214812Z.html": "e4f07826dcab2bac0343540f357658b09c07da3a0b29755d3190981ebee01ebb",
+    "data_external/source_evidence/GSTAAD_EGGLI_STAGE79_20261011T214812Z.metadata.json": "71195089a547fe9a4e387c1d3f5173bb573f107d14b23d53c5d3d0be49fbf681",
+    "data_processed/terrain_reviewed_profiles_stage82.csv": "b55bd2ccf39579cc2f436542cbbbd10f6b1bba9c768c28d87613bd9050270610",
+    "data_processed/common_snow_profiles_stage84.csv": "4cb4e13db9d1858b4973a28de6cd2cd567227ba1f0e7dceb8bc86d26dedf5b5b",
+    "data_processed/accessibility_road_group_reference_stage79.csv": "00af4173f7d16bc15ae8a6143a041f793abeda5a13969e0ad8169ee01d7d4d0b",
+    "data_processed/winter_profile_urban_city_detail_stage57.csv": "c2380d643264f3385be9a5cbcf3c3a4f49b921e1e6a4fa084b9271d996080b16",
+    "data_processed/winter_profile_piste_members_stage79.csv": "c99303d28bd870a691b7101282820cbb55889256355dad3829dc4f183db5691c"
+  },
+  "output_sha256": {
+    "data_processed/national_similarity_inventory_stage86.csv": "61bb2c01f79fdb202fd3ab3a2844655ab9056e1a0338b48db175ff0577a32396",
+    "data_processed/national_similarity_listing_lineage_stage86.csv": "62f42fb966836f4f34eeb02e4dcbefa2c73d76a9f6f98fc181d0d319600d019f",
+    "data_processed/national_similarity_feature_context_stage86.csv": "6efd392a3a7cf96864b680683183c7d37c2eb56096cdb9858a1fe98b5bcd43a1"
+  },
+  "approved_groups_unchanged": 69,
+  "original_listing_ids_retained": 271,
+  "swiss_point_original_listings": 268,
+  "original_listing_ids_linked_to_retained_perimeters": 68,
+  "swiss_provisional_listings_still_needing_domain_review": 200,
+  "swiss_preparation_records_not_verified_domain_count": 269,
+  "foreign_standalone_audit_records": 3,
+  "alias": {
+    "resort_id": "rougemont_rougemont_la_videmanette",
+    "retained_group_id": "MP_GROUP_RESORT__gstaad",
+    "official_source_id": "GSTAAD_EGGLI_STAGE79",
+    "official_title": "Eggli Gstaad & La Videmanette Rougemont – Plaisir et aventure en montagne.",
+    "official_page_url": "https://bergbahnen-gstaad.ch/fr/hiver/activites/activites/nos-montagnes/la-videmanette-eggli",
+    "already_retained_scope": "Three retained operator sectors independently corroborated by archived official pages and named original lift context: Rinderberg/Saanersloch/Horneggli, Eggli/Videmanette, Wispile including Ruti/Zuckerli. Wider diagnostic view avoids old10km truncation of Zweisimmen. Explicit reviewed IDs, no box/name assignment rule. Wasserngrat separate operator not substituted; former Rellerli northern network retained as unassigned historical candidates. Former slopes inside retained sectors stay flagged. Denied planPDF not bypassed; complete operating/preentry footprint not certified.",
+    "accepted_piste_object_count": 132
+  },
+  "comparable_six_field_records_available": 67,
+  "no_new_physical_group_geometry_exposure_or_fit": true,
+  "original_catalogue_measures_not_substituted_or_summed": true,
+  "existing_ORS_not_mixed_with_ARE_or_unverified_nearest_stops": true
+}

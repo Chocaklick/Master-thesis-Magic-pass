@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-12",
+  "status": "researcher_validated",
+  "researcher_answer": "Activité durant la décennie commune ; statut actuel séparé (recommandé).",
+  "descriptive_population_rule": "Documented ski activity in at least one winter of2013/14–2022/23; current operational status retained separately.",
+  "not_a_prediction_or_causal_sample_rule": true,
+  "unknown_activity_kept_pending_not_automatically_excluded": true,
+  "no_existing_group_municipality_outcome_or_treatment_removed": true,
+  "historical_footprint_metric_eligibility_and_coverage_still_require_review": true
+}

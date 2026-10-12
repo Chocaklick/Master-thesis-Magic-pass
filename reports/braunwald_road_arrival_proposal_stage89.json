@@ -1,0 +1,37 @@
+{
+  "prepared_at": "2026-10-12T12:46:43.042404+00:00",
+  "input_sha256": {
+    "src/descriptive/prepare_braunwald_arrival_proposal_stage89.py": "77be45f33ab7e5fe36ff89c281ff20f750b646afbd047448951130da6229f328",
+    "config/national_arrival_sources_stage89.json": "d1b9461ae3cb19cc818f4bfde86d83ecb0e859528e0dadfeb336a36d977b6cbe",
+    "config/national_urban_reference_decision_stage89.json": "5e37a9461ab9256c10fae97d157db767f745bf47319f3119f7392e4ab93f98f3",
+    "config/path_c_analysis.json": "606a6d4fbf66e9d52b14d0baaa6e4ba945637f00c01c411dc8cc39b4ecfd0e92",
+    "data_external/source_evidence/NATIONAL_BRAUNWALD_ARRIVAL_STAGE89_20261012T124228Z.metadata.json": "29fd508d84365cf4d7e161e12e4a1522381d77746d7a331de042b6eebb367a12",
+    "data_external/source_evidence/NATIONAL_BRAUNWALD_ARRIVAL_STAGE89_20261012T124228Z.html": "37930388d440d53153fdb5a6073a263119a007c9831b6ebfc64b4954dbe2b514",
+    "data_external/source_evidence/BAV_PUBLIC_TRANSPORT_STOPS_2026_20260922T084357Z.csv.zip": "b58de1fdec85e335271a67c7b09d20103568b512b7c60baabc520ab4227423fc"
+  },
+  "status": "exact_arrival_point_validation_pending_no_route_requested",
+  "resort_id": "braunwald",
+  "source_id": "NATIONAL_BRAUNWALD_ARRIVAL_STAGE89",
+  "operator_url": "https://sportbahnen-braunwald.ch/de/informationen/anreise.html",
+  "coordinate_source_id": "BAV_PUBLIC_TRANSPORT_STOPS_2026",
+  "coordinate_state_date": "2026-09-20",
+  "proposed_stop_id": "8503260",
+  "proposed_stop_name": "Linthal Braunwaldbahn (Talst.)",
+  "proposed_stop_mode_source": "F",
+  "bav_easting_2056": 2719079.0,
+  "bav_northing_2056": 1198680.0,
+  "proposed_longitude_wgs84": 9.00231606485003,
+  "proposed_latitude_wgs84": 46.92854055598312,
+  "coordinate_conversion": "Published LV95 EPSG2056 toEPSG4326, no invented coordinate or interpolation",
+  "rationale": "Operator explicitly permits public-car access only to Linthal; original BAV point is the funicular valley departure next to the documented parking/access area",
+  "nearest_listing_stop_not_selected": {
+    "stop_id": "8530956",
+    "name": "Grotzenbüel (Seblengrat)",
+    "mode": "H chairlift",
+    "reason": "Nearest geographic stop is not a validated public-car arrival"
+  },
+  "proposed_measure": "Six approved city stops to Linthal funicular base stop, same static directional car reference; source snap distances and limitations published",
+  "onward_access": "Funicular to Braunwald and internal transfer to pistes remain separate, duration not measured/not added/not zero-filled",
+  "proposed_measure_not_complete_city_to_piste_travel_time": true,
+  "no_new_ORS_call_domain_exclusion_or_old_endpoint_overwrite": true
+}

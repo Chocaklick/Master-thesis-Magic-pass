@@ -1,0 +1,48 @@
+{
+  "completed_at": "2026-10-12T12:33:02.054134+00:00",
+  "input_sha256": {
+    "src/descriptive/prepare_national_documentary_queue_stage88.py": "5a8484507fac213100cde976848cd6ed3c9458ac2b69b2f724fe56ac0fd6109b",
+    "src/data_collection/collect_national_operator_evidence_stage88.py": "0209794a25a3526163fb8901a556da46e2f200bc55c1053743e352c998dd1f11",
+    "config/national_operator_sources_stage88.json": "b3439ae8c77f142c55c46e97992b56a809eecb2dd2452cb064bbf0ba377dade7",
+    "config/national_transboundary_scope_decision_stage88.json": "029fa916be3d4c57c844d7690a7f0b6a0dd25006c016d578b8c8ba3141d66135",
+    "config/national_activity_period_decision_stage88.json": "b228c01b498afad6a1bec175de6c1269eea46b03a8b8ec35de8a13c9602ad074",
+    "data_processed/national_similarity_inventory_stage86.csv": "61bb2c01f79fdb202fd3ab3a2844655ab9056e1a0338b48db175ff0577a32396",
+    "data_processed/national_similarity_piste_site_inventory_stage85.csv": "3c1eec2bb185535749656d6a84f420afe8468c1f1ab7afc800bb0e24d7354ad7",
+    "data_interim/national_preparation_stage88/evidence_events.json": "4c382edce9af246661bbccda1e056524c4888d144922c273c3e33b742d404352",
+    "data_external/source_evidence/NATIONAL_BRAUNWALD_WINTER_STAGE88_20261012T122201Z.metadata.json": "fc206f7cdb6de1478f204db373d5d32ce134d3d7fe4bf6c5b2caf9c5a2261726",
+    "data_external/source_evidence/NATIONAL_BRAUNWALD_WINTER_STAGE88_20261012T122201Z.html": "1d9d004d6cb0787881a5a6510636842e2b489807f07059c8f1d32b00065a3d9c",
+    "data_external/source_evidence/NATIONAL_BRAUNWALD_REPORT_2019_20_STAGE88_20261012T122203Z.metadata.json": "b85e7b9fc92da2afc51fd7148aa973429512fc45b5bc320d7fcc3c8761469a12",
+    "data_external/source_evidence/NATIONAL_BRAUNWALD_REPORT_2019_20_STAGE88_20261012T122203Z.pdf": "24c2a0a0027c6bbe1403e343ad4173c3e451da3fd37674bbc82d4a38569e335c",
+    "data_external/source_evidence/NATIONAL_ELM_PLAN_STAGE88_20261012T122205Z.metadata.json": "5f64808fe8f4c4c9c6730ac6d1e27ea2a7e42e2b171f081a37dce7d3ebee12d6",
+    "data_external/source_evidence/NATIONAL_ELM_PLAN_STAGE88_20261012T122205Z.html": "6e44593f53d73c2ca907bb04d661e515e95f50b41a93175071d22e6811137647",
+    "data_external/source_evidence/NATIONAL_ELM_CHANGE_STAGE88_20261012T122206Z.metadata.json": "d5ae27c467186d7d2d3966fb7f3394bf048c9ebd133519b1dff8420c47c1e0ab",
+    "data_external/source_evidence/NATIONAL_ELM_CHANGE_STAGE88_20261012T122206Z.html": "773ef78afdf75ee7702127fa69f62b9e31660f09065f447f21be544e23032010",
+    "data_external/source_evidence/NATIONAL_BIVIO_OPERATOR_STAGE88_20261012T122208Z.metadata.json": "fca5b2c97e784f9376463138ff1a5e88d0381a400bafe29d0152d1edff3751b6",
+    "data_external/source_evidence/NATIONAL_BIVIO_OPERATOR_STAGE88_20261012T122208Z.html": "cf2ddc1649a145e453fc810e1157b421551649a6b43ede6b868f3049a6a75c87",
+    "data_external/source_evidence/NATIONAL_FLUMSERBERG_PLAN_STAGE88_20261012T122211Z.metadata.json": "aff28558399a07eae4f19ea4384ab945ff2fda85a62f5fcfc1eca24647b5dd46",
+    "data_external/source_evidence/NATIONAL_FLUMSERBERG_PLAN_STAGE88_20261012T122211Z.html": "f50ab9001c69013b395a36ec19edd930e179bcb50f55be4ed857d996ebac81c7",
+    "data_external/source_evidence/NATIONAL_AVERS_REGION_STAGE88_20261012T122213Z.metadata.json": "976ffd6417d649803d27d084a44902ea8b166194e849ea2908d6a8754b142f21",
+    "data_external/source_evidence/NATIONAL_AVERS_REGION_STAGE88_20261012T122213Z.html": "8a62e34ed0154d7c018003b8e82b85c53b9abf8644fa622d274878026e093e6e",
+    "data_external/source_evidence/NATIONAL_FELDIS_ASSOCIATION_STAGE88_20261012T122214Z.metadata.json": "07b0f2ccf825dd2e073c258d2ef9c75c19ebfe0c918365fa50f7d7dfb0379f1a",
+    "data_external/source_evidence/NATIONAL_FELDIS_ASSOCIATION_STAGE88_20261012T122214Z.html": "6fd8799908be23e4add25e76a40213b2e6c18858acef32b6fef56f215d7135eb"
+  },
+  "candidate_count": 200,
+  "candidate_dossiers_with_archives": 6,
+  "actual_configured_source_count": 9,
+  "actual_original_archives": 8,
+  "actual_collection_event_count": 17,
+  "failed_collection_events": 9,
+  "candidates_with_existing_site_name_hints": 35,
+  "no_new_domain_merge_profile_fit_or_automatic_exclusion": true,
+  "primary_braunwald_historical_activity_proof": {
+    "source_id": "NATIONAL_BRAUNWALD_REPORT_2019_20_STAGE88",
+    "source_report_period": "2019-05-01/2020-04-30",
+    "page": 4,
+    "section": "Winter2019/2020",
+    "finding": "Operator reports ski operation in winter2019/2020, including December and January; not an exhaustive ten-winter operations audit"
+  },
+  "transboundary_and_population_period_validated": true,
+  "output_sha256": {
+    "data_processed/national_preparation_work_queue_stage88.csv": "ca8ade6531be0a99e743a47c01c1947012fc22511476acca3296af0e6f0490e6"
+  }
+}

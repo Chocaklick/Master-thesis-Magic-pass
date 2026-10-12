@@ -1,0 +1,35 @@
+{
+  "completed_at": "2026-10-12T11:44:07.950980+00:00",
+  "input_sha256": {
+    "src/descriptive/prepare_national_similarity_inventory_stage85.py": "2d27ce7de02452eeab5d187d8cfa1a6870b5e75aeb844cce3e3a5de2cf48c500",
+    "config/descriptive_similarity_scope_stage84.json": "db646637249238654298abdb97c3e9687250c1a5b5d9be5db56c64ee500a008a",
+    "data_processed/resort_master.csv": "e115c6efe96fdf8261d434818c75d4356acb059625df7e6a61af4456ac6c0005",
+    "data_processed/resort_point_municipality.csv": "f1c1d1fa935460ed34bfb1f7f398837478a961ae5079f3c5507469c4f9a9a5d6",
+    "data_processed/accessibility_station_groups_stage79.csv": "2114f34ddd21852d4b3a53c06db0acc48c9eddabba0060a5c7a4487898d099b0",
+    "data_processed/winter_profile_metric_network_stage80.csv": "45898d04a7ae285a9adbbe98eb2964063418b6ad883f2f0a7cfefed2d638c01c",
+    "data_processed/terrain_reviewed_profiles_stage82.csv": "b55bd2ccf39579cc2f436542cbbbd10f6b1bba9c768c28d87613bd9050270610",
+    "data_processed/common_snow_profiles_stage84.csv": "4cb4e13db9d1858b4973a28de6cd2cd567227ba1f0e7dceb8bc86d26dedf5b5b",
+    "data_processed/resort_transport_accessibility_context.csv": "df376cdbecd3fc7749799cb990439406284f8c20c692a497fa8db307e312fcb5",
+    "data_processed/resort_public_transport_stop_context.csv": "4ecb53e640cf9a5d3a1592451d0f0a5af000ad403b40057ab58219d2b278dd33",
+    "data_processed/magic_pass_current_destinations.csv": "88785cfea7bf82df6ccd9a5378a83b41322b0e709450a29e13a9239d96c0128e",
+    "data_processed/winter_profile_piste_assignment_stage79.csv": "8801b8150084e15d613d41d7b01e1a02d06f2cc17172e0ba9242eee6cd25cfdc",
+    "data_processed/winter_profile_piste_site_membership_audit.csv": "577ee58eb2402345d08064bfb9e0d2535f64974d1e0f49d13c4aea657e843e0c",
+    "data_processed/accessibility_road_group_reference_stage79.csv": "00af4173f7d16bc15ae8a6143a041f793abeda5a13969e0ad8169ee01d7d4d0b"
+  },
+  "output_sha256": {
+    "data_processed/national_similarity_inventory_stage85.csv": "2aea1ad33e0907a73f5975914a264202e650eb8d4c063dbfbbfd8f5b2ce8c0fb",
+    "data_processed/national_similarity_listing_lineage_stage85.csv": "6b6f8b20cf441d08825cda1d3d83b7f50d3b7f9228a019ee97e2ed9f3a561ace",
+    "data_processed/national_similarity_piste_site_inventory_stage85.csv": "3c1eec2bb185535749656d6a84f420afe8468c1f1ab7afc800bb0e24d7354ad7"
+  },
+  "all_original_listing_count": 271,
+  "original_swiss_point_listings": 268,
+  "preserved_approved_group_count": 69,
+  "listing_ids_in_approved_groups": 67,
+  "swiss_provisional_listing_count": 201,
+  "foreign_standalone_listing_count": 3,
+  "provisional_swiss_rows_with_legacy_cluster_connection_hint": 120,
+  "provisional_swiss_rows_sharing_legacy_cluster_with_approved_group": 14,
+  "cached_osm_sites_available_for_review": 238,
+  "not_a_verified_national_domain_count": true,
+  "no_automatic_nonmembership_merge_piste_assignment_exclusion_or_model_fit": true
+}
