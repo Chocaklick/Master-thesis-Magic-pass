@@ -1,0 +1,46 @@
+{
+  "completed_at": "2026-10-12T15:48:13.079036+00:00",
+  "input_sha256": {
+    "config/braunwald_urban_arrival_decision_stage90.json": "1f34043732b36822a433e588c10c88d432f5af84386bec6a5dc5af5ba4089f8e",
+    "reports/braunwald_urban_road_preparation_stage90.json": "0d16aadd2bdd87cb568a51db4dcfd47e726141dc4826b1293856b93da2ead99c",
+    "reports/braunwald_urban_road_collection_stage90.json": "0da5e6163927afac9e9af15dea306c088d121226b0559337e3d7daa66c5d0edd",
+    "data_interim/braunwald_urban_origins_stage90.csv": "7fc7e6bee65ff6191e76d3029e97041131230a7a94d1d682824b2d198f9de2df",
+    "data_interim/braunwald_urban_arrival_stage90.csv": "597f0c0597df0a8690585906c20032a586f216a23c7d724db298e05139c95c39",
+    "data_processed/braunwald_urban_road_directional_stage90.csv": "fd7bc433e7c394c8cac280f42733f348b106b729acf9262d65cc42b2c4319905",
+    "data_processed/braunwald_urban_road_pairs_stage90.csv": "fd270eaf61ea37d281e93b54d978a80b3a4fcbbbed22840e321626631eed87e2",
+    "src/data_processing/publish_braunwald_urban_road_stage90.py": "dae073148b00ccda3de77a296ced7db85d1f0842c90c2ade1020b89a648cdae7",
+    "data_processed/winter_profile_urban_city_detail_stage57.csv": "c2380d643264f3385be9a5cbcf3c3a4f49b921e1e6a4fa084b9271d996080b16",
+    "reports/accessibility_road_stop_corrected_collection_summary.json": "d2721776ce27523345ab4ea6c106a35de4be1c30eb3cbea61ae969df7383dc74"
+  },
+  "output_sha256": {
+    "data_processed/braunwald_urban_road_city_reference_stage90.csv": "ddfe2c7348dd3511f15ed0f914a4e93200ea9389e8c838f81766ebbe197ebf71",
+    "data_processed/braunwald_urban_road_snapping_stage90.csv": "e470e64cf0c3cfd8c88c1b6274aad1359350939660bed36f6b5bdbe9a87097a9"
+  },
+  "city_count": 6,
+  "observed_directional_routes": 12,
+  "complete_six_city_reference": true,
+  "available_city_means": 6,
+  "minimum_six_city_reference_minutes": 83.45583333333333,
+  "minimum_available_city_reference_minutes": 83.45583333333333,
+  "closest_available_city_name": "Zürich",
+  "arrival_reported_snap_metres": [
+    22.93,
+    22.93
+  ],
+  "actual_graph_versions": [
+    [
+      "2026-09-21T10:31:27Z",
+      "9.10.0"
+    ]
+  ],
+  "previous_corrected_road_graph_versions": [
+    {
+      "graph_date": "2026-09-21T10:31:27Z",
+      "engine_version": "9.10.0"
+    }
+  ],
+  "prior_graph_exactly_same": true,
+  "upward_and_piste_transfer_unmeasured_not_zero": true,
+  "no_clustering_prediction_or_old_matrix_replacement": true,
+  "canonical_69groups_and185territories_unchanged": true
+}

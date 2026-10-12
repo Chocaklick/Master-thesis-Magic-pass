@@ -1,0 +1,18 @@
+{
+  "approval_date": "2026-10-12",
+  "approval_user_text": "oui je valide l'arret inférieur",
+  "status": "researcher_validated",
+  "resort_id": "braunwald",
+  "preparation_unit_id": "DESC_LISTING_PENDING__braunwald",
+  "access_point_id": "ACCESS_DESC__braunwald__8503260",
+  "selected_stop_id": "8503260",
+  "selected_stop_name": "Linthal Braunwaldbahn (Talst.)",
+  "approved_proposal": "reports/braunwald_road_arrival_proposal_stage89.json",
+  "coordinate_source_id": "BAV_PUBLIC_TRANSPORT_STOPS_2026",
+  "urban_city_definition": "Reuse the same six city stops from Stage57 and corrected communal road origins; no new origin choice.",
+  "measurement": "Static driving directions separately, arithmetic mean if both usable, then minimum among the six cities; details retained.",
+  "onward_transfer": "Funicular to Braunwald and onward piste access separate, unmeasured, not silently added or zero-filled.",
+  "complete_city_to_piste_time": false,
+  "no_automatic_exclusion_or_new_independent_domain_assignment": true,
+  "no_old_route_or_Magic_exposure_replacement": true
+}

@@ -1,0 +1,1340 @@
+{
+  "checked_at": "2026-10-12T15:52:09.318717+00:00",
+  "baseline_commit": "7b15b79",
+  "checked_unique_files": 327,
+  "rechecked_historical_numerical_files": 300,
+  "audit_scope": "300 inherited numerical outputs/configs/producers plus directly used source contracts, new response caches and outputs. Untouched bulk rasters not rehashed this turn; Stage89 full audit retained.",
+  "old_processed_values_groups_exposures_and_producers_unchanged": true,
+  "approved_car_arrival_used_onward_transfer_missing_not_zero": true,
+  "no_prediction_clustering_causal_fit_or_automatic_exclusion": true,
+  "registry_prefixes_exact": {
+    "metadata/data_sources_master.csv": {
+      "previous_rows_exact": 1648,
+      "previous_row_digest": "ff356c72b8ce5c856cb9e0bde3577097a480170c3114a871c2902878371934a8",
+      "current_rows": 1651,
+      "appended_rows": 3
+    },
+    "metadata/data_dictionary.csv": {
+      "previous_rows_exact": 9113,
+      "previous_row_digest": "08f13e998b4e86c7c68db4926210464da3bae1b798fa278400df9cacd574322c",
+      "current_rows": 9229,
+      "appended_rows": 116
+    },
+    "logs/data_collection_log.csv": {
+      "previous_rows_exact": 2488,
+      "previous_row_digest": "d945f8729d719f022fbfc4b01c3af3b2e8b76af6c84ca31b75e761e5cf039a76",
+      "current_rows": 2490,
+      "appended_rows": 2
+    }
+  },
+  "checks": [
+    {
+      "path": "config/piste_assignment_cases_stage51.json",
+      "sha256": "b703ffcd9d824ba99ed3bf4d9014f5bda97ef85e0b62c09cfceb86fa01c38bb5"
+    },
+    {
+      "path": "config/piste_assignment_protocol_decisions_stage51.json",
+      "sha256": "d82c6ae646fcc895ccbf1b0443995caa794af39ae1775fbb88dd1da5f613b5d6"
+    },
+    {
+      "path": "config/piste_operator_evidence_stage51.json",
+      "sha256": "98034e752b8c962cdb03f23f0055bc7468c4aa03b8bec2a4f39795cc2748e62b"
+    },
+    {
+      "path": "config/piste_operator_scope_evidence_stage51.json",
+      "sha256": "cd086c5f462856c808c25d657abb7a6fdb70c35bdcf3d1db336663e33969b5b9"
+    },
+    {
+      "path": "config/winter_profile_geometry_roles_decisions_stage49.json",
+      "sha256": "463c680cda5dadfa35c5f781748158e9ea432366ff4afab8f80d7e55824b2a66"
+    },
+    {
+      "path": "data_processed/accessibility_station_groups.csv",
+      "sha256": "08040e0b7141679434eb8f4339d46ba24a77768ee07c6ab9fb98e989054987eb"
+    },
+    {
+      "path": "data_processed/accessibility_station_access_points.csv",
+      "sha256": "e71444ba9062b23a6d8014edb37387b547162f6d20d074b5e161d8ee1f8dc916"
+    },
+    {
+      "path": "src/descriptive/verify_piste_assignments_stage51.py",
+      "sha256": "604d6f1b1d003e1b84185aa2f41485d6a57894b14548519c0cb962d79a17e1d2"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_assignment_stage51.csv",
+      "sha256": "77851b835ca47003f6895cc7bda64481fcc3fa42bf6b4441b14fa7fe53c1483a"
+    },
+    {
+      "path": "config/piste_assignment_cases_stage52.json",
+      "sha256": "5fd7c539c63f7457df1416476774dda6a34940f941a22867921ade8e40bfaa32"
+    },
+    {
+      "path": "config/piste_operator_evidence_stage52.json",
+      "sha256": "aa1f358b502b5c9c41fdfdf6fa3dea6dd858a505d49b929fc23641c60da406ec"
+    },
+    {
+      "path": "config/piste_operator_scope_evidence_stage52.json",
+      "sha256": "2bec557fb35622b0be6c9010f4a8709e882415d2e79e0f3eab5329711348a9d8"
+    },
+    {
+      "path": "src/descriptive/verify_piste_assignments_stage52.py",
+      "sha256": "bdf5faa17c26a41d0d171656d0013c9f869b4e1ef998edbc563d150b66d51ef6"
+    },
+    {
+      "path": "src/descriptive/audit_completed_piste_membership.py",
+      "sha256": "a1527c3c5de2dc888588ff9fce5358e7bb07f62bc291d55f293bbecb84b7d2de"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_assignment_stage52.csv",
+      "sha256": "c6ea8491c12a73fcfd8c51b3b5315630fb7032fb854eb517757793ecedcd6449"
+    },
+    {
+      "path": "src/descriptive/audit_piste_geometry_roles.py",
+      "sha256": "4712b13e99e8010fbd5d98aa8e1079d1358ccffdd42a7c3f235882f7a9f8c84b"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_geometry_roles.csv",
+      "sha256": "da1d0d324d6f3a6917d12c2c72d142f6f37c48e3bc6287f0070a811b7964ca65"
+    },
+    {
+      "path": "config/piste_ambiguous_geometry_decisions_stage49.json",
+      "sha256": "adf574eeff4e4bbf4c6b87a12a9e6085a862d472cd7564aaf0c7dd94e75af66b"
+    },
+    {
+      "path": "config/piste_semantics_evidence_stage50.json",
+      "sha256": "2b6ae7da3ea5e2218588fc8694223a77fac506ed4da99bdd3756203971f9c3c2"
+    },
+    {
+      "path": "src/descriptive/audit_closed_piste_semantics_stage50.py",
+      "sha256": "77c72940633f0a3bb4ee20a2a2ebbf836ce6b050ac9567954bcef567ffe7b899"
+    },
+    {
+      "path": "data_processed/winter_profile_closed_piste_review_stage50.csv",
+      "sha256": "c4895d56d9bc154e0f3a762dc92fb4b6c37a7d7b9691a1c0c38503708129ddb9"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_site_membership_audit.csv",
+      "sha256": "577ee58eb2402345d08064bfb9e0d2535f64974d1e0f49d13c4aea657e843e0c"
+    },
+    {
+      "path": "data_processed/resort_master.csv",
+      "sha256": "e115c6efe96fdf8261d434818c75d4356acb059625df7e6a61af4456ac6c0005"
+    },
+    {
+      "path": "src/descriptive/prepare_piste_group_review.py",
+      "sha256": "0d8c8e42b1e8f6499540feff3209a16a8a7bd03a72be4a9574d6243527ce3b4e"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_group_review.csv",
+      "sha256": "9dc5273177bfe773f52163091c2b69389db6a866d222b7bacf316a3e91cbd810"
+    },
+    {
+      "path": "config/winter_profile_terrain_snow_source_review_stage44.json",
+      "sha256": "2a247e9c70a24c1eb3342eb1b6b83b9f063408cf4b5de014702942bdd0ec570d"
+    },
+    {
+      "path": "data_processed/winter_profile_five_dimension_groups.csv",
+      "sha256": "dbbbbcd2bd970c24e005545dcbd2c7b2d0ae60e3838b52783cad1f69071926ca"
+    },
+    {
+      "path": "data_processed/winter_profile_approved_snow_windows.csv",
+      "sha256": "ec555991771b7cbbbf44f36a52d658ae0f6eecac58c903fcf5fb3f133845ee84"
+    },
+    {
+      "path": "config/winter_profile_historical_source_review.json",
+      "sha256": "185518669d6d4fc39420cdb8ac3dee75ab00bfa02b26e95171314124ac37597c"
+    },
+    {
+      "path": "src/descriptive/audit_terrain_snow_source_feasibility.py",
+      "sha256": "cd7322e030b7c53d24a0bbb86aa205b402423ce708232ded9690f88dbbe79caf"
+    },
+    {
+      "path": "src/data_collection/collect_current_piste_geometry.py",
+      "sha256": "e17e0d3444a25eb7d9d92e98f124e47ced7e0904022148f232e92b91db14e331"
+    },
+    {
+      "path": "data_processed/winter_profile_terrain_snow_source_feasibility.csv",
+      "sha256": "3f5abeac97c4739c5b112ba4a2ecf49b9a6c72d322e61153acdc071fe759b39d"
+    },
+    {
+      "path": "config/winter_profile_operational_decisions_stage43.json",
+      "sha256": "3cdac8952f9626250506b266dcd7087c19591aef8ee5c14158c8a53d08b458ed"
+    },
+    {
+      "path": "data_processed/accessibility_road_did_group_reference.csv",
+      "sha256": "3fb1d94f29375404b74ab1c947d8c07ccd5f00428a4881549c116ccf93e10d45"
+    },
+    {
+      "path": "src/descriptive/build_approved_profile_context.py",
+      "sha256": "8455bfb702db04d562e1d8c8185f870dfe85e7a2bb7d2505e689a6722050efdb"
+    },
+    {
+      "path": "data_processed/winter_profile_urban_city_detail.csv",
+      "sha256": "bca74e1c550847325e1fc05dd38a14244132aefa4945cc159ebda5986ed04f6b"
+    },
+    {
+      "path": "data_processed/winter_profile_urban_minimum.csv",
+      "sha256": "e2e7b03c25bcf7fadc31bf9310851031970e8affd72915ea71c0e3b22a387c10"
+    },
+    {
+      "path": "data_processed/resort_snow_station_crosswalk.csv",
+      "sha256": "ba8870a4fd1cf68ef4e87c4ea2a547757efd5e821f0928a145192a70f705c569"
+    },
+    {
+      "path": "data_processed/resort_transport_accessibility_context.csv",
+      "sha256": "df376cdbecd3fc7749799cb990439406284f8c20c692a497fa8db307e312fcb5"
+    },
+    {
+      "path": "data_processed/spass_snow_component_winter.csv",
+      "sha256": "2f3b2ec2a6cefbd04e805642a3e0d768a6831443dc30d1b7bac30b4ce4db6770"
+    },
+    {
+      "path": "config/winter_profile_five_dimension_audit.json",
+      "sha256": "5082a4205350e28e97a622a75aa8b0856c7cbee4cc3953129622a59d987226f8"
+    },
+    {
+      "path": "src/descriptive/audit_five_dimension_profile_availability.py",
+      "sha256": "a735cdddc658240cb19eaff93c17a164cdd952f251a640a39f5310a94cb32b46"
+    },
+    {
+      "path": "config/path_c_feature_readiness.json",
+      "sha256": "75118487aa1a091f853af7d394d75226fb1219dce0d27bac5a278fc347a6ea6b"
+    },
+    {
+      "path": "config/spass_snow_grid.json",
+      "sha256": "5e791598f76b493dcc8d0cc1e2d84a8b79b881c77509b3b0201dd2f7450757f9"
+    },
+    {
+      "path": "data_processed/winter_profile_five_dimension_components.csv",
+      "sha256": "c81646f2ef4ad5a91f2366cc515b4f547804963820dbb6e6c84160c7f6510e42"
+    },
+    {
+      "path": "data_processed/winter_profile_preentry_snow_coverage.csv",
+      "sha256": "50a1b1a525eb4caf6f5408067cd3807ffc97d3bacbd8b52708b1d7ba47a58274"
+    },
+    {
+      "path": "data_processed/accessibility_municipality_month_exposure_territorial.csv",
+      "sha256": "234a23ddb6c9065ab22ca2b5edc1e9d1132d281f9f3647523e63664b66658dea"
+    },
+    {
+      "path": "data_processed/magic_pass_membership_history.csv",
+      "sha256": "99b46cf250586eb80d2df3ffe6b5375775419234853fb823b773be6bbc2e4588"
+    },
+    {
+      "path": "config/winter_profile_preparation_approved.json",
+      "sha256": "f4c25d039833d63c33a5f15551b332e5d19f088359ba076f9bdf5491e41a2b0f"
+    },
+    {
+      "path": "src/descriptive/audit_winter_entrant_preparation.py",
+      "sha256": "881e0d22bdf57d43c5de391b0f3007af990ad4c4765e48b221244fb1d147d471"
+    },
+    {
+      "path": "src/causal_inference/audit_accessibility_successive_entries.py",
+      "sha256": "61f2da972297afa74632ab27d6ace1a06416d460a00c759a2b99fb4335c3fddc"
+    },
+    {
+      "path": "config/accessibility_successive_entries.json",
+      "sha256": "e4bf5bdaaba459b397c378ded4b98e3aa6352af66f6e88c559e29d363b46d0e7"
+    },
+    {
+      "path": "data_processed/path_c_cluster_segments.csv",
+      "sha256": "0f60c794c3ea1c65f1efe14f02729af52b6632f8ac8324e85399eff71ea25481"
+    },
+    {
+      "path": "data_processed/magic_pass_membership_status_by_season.csv",
+      "sha256": "f8c70ee78fb650b49cc2fb782cff0609ef6ede5c704bebd59969455a1668a774"
+    },
+    {
+      "path": "config/temporal_controls.json",
+      "sha256": "64573d89c7c4f3c4c0240f71e235c990f46fdcc1cf326bb48cca6f8f9d14dca2"
+    },
+    {
+      "path": "config/accessibility_station_groups.json",
+      "sha256": "c0f09ac183597082aa13517c1b5b4553908215578f6013c3729911ee5cb74ebd"
+    },
+    {
+      "path": "config/accessibility_road_did_final_execution.json",
+      "sha256": "1a99646a1acb53d79ae065fa63ef896c16256ad2513feb2953c1d3b4bd4a7a2c"
+    },
+    {
+      "path": "src/descriptive/audit_winter_profile_design.py",
+      "sha256": "862fe737019170e5dab015b9a32f863f20180ae26a41321d462a6cd0136e2300"
+    },
+    {
+      "path": "data_processed/accessibility_road_did_monthly_exposure.csv",
+      "sha256": "fda43ad7c8f5283f3e3b42f3259f3cd76053bc5d1ff9861b812f794b71026560"
+    },
+    {
+      "path": "data_processed/accessibility_road_final_pairs.csv",
+      "sha256": "50b1c61bccdf75ceabb500deb8ef2e0786f2661a617e7636837bdfeb96b4775d"
+    },
+    {
+      "path": "config/accessibility_cohort_time_execution.json",
+      "sha256": "3a831d480c19fa92b4f5260c24824ab54c791e74e27a9c9f0badedafa61d9ac7"
+    },
+    {
+      "path": "config/accessibility_cohort_time_estimator.json",
+      "sha256": "78a3e1e6243bf0372ce4d78fcc250bf5c94e1f45ff5b1ca2db2fffa93f1669a2"
+    },
+    {
+      "path": "config/accessibility_cohort_comparison.json",
+      "sha256": "b2a24d3e07c16e006e8280354564448074c16ccf9ff91aa5a8eaaeddd8ef9509"
+    },
+    {
+      "path": "src/causal_inference/estimate_accessibility_cohort_time.py",
+      "sha256": "ae0fe1ebfc8bacceb6ee244e63f819c0f5f36c4026433c8d59e1eeb1db0509d7"
+    },
+    {
+      "path": "src/causal_inference/estimate_accessibility_road_did.py",
+      "sha256": "5330fd747b08b56a361dd36208c78f0345cf8396011d452decf12fde95bfdc58"
+    },
+    {
+      "path": "data_processed/accessibility_station_group_journey_samples.csv",
+      "sha256": "48cbafdba7c3dbae5b4be86b608ac13ae613f1e8ed36bf0e21903ad99ef00e24"
+    },
+    {
+      "path": "data_processed/accessibility_station_group_journey_context.csv",
+      "sha256": "226114874ffff0e679c7f951e596007176e8635741ae64dd8c48ae576446ce60"
+    },
+    {
+      "path": "config/accessibility_commune_trend_plots.json",
+      "sha256": "66506ea44204c4ecfb6ec452109590141b1b19dd2ba25d3c8cd05867484e00eb"
+    },
+    {
+      "path": "data_processed/accessibility_commune_trend_plot_points.json",
+      "sha256": "53142c3a17fdd08125bf63d8c97f639879a961d9874c93f7ee0b109e96ad551d"
+    },
+    {
+      "path": "data_processed/accessibility_road_reference_directional.csv",
+      "sha256": "ab14c0ae2efa661dc0634ec54c1521a49e12cf87bb61e9549a941e5ba68b3f46"
+    },
+    {
+      "path": "data_processed/accessibility_road_reference_pairs.csv",
+      "sha256": "d7d4e3601d0ba07ef0bed07ba33a03e6a0ebc11452c979a6819a490f0e39a179"
+    },
+    {
+      "path": "data_processed/accessibility_road_stop_directional.csv",
+      "sha256": "8aea68b0c75c766203b3975d9bbe21430a49484f6da0bab65ab9a850608fb2a3"
+    },
+    {
+      "path": "data_processed/accessibility_road_stop_pairs.csv",
+      "sha256": "1f0b736b75b9ae5ec436195c29a99c121ce1fdcd67e4b75bc530d8404f7b193e"
+    },
+    {
+      "path": "data_processed/accessibility_road_stop_corrected_directional.csv",
+      "sha256": "888f35e1d2987667d43c63256cc439bc7e587e31b8d908ed00bb962ddf6812d6"
+    },
+    {
+      "path": "data_processed/accessibility_road_stop_corrected_pairs.csv",
+      "sha256": "e77e9deab068366d07c3eb327138c16f99539c7c237d9342ae7603da11e92e9c"
+    },
+    {
+      "path": "config/accessibility_saas_fee_road_endpoint_proposal.json",
+      "sha256": "b5724b717a193d60b0a796284647d578d3b15d997eac22e78034036325152eac"
+    },
+    {
+      "path": "config/accessibility_road_did_execution.json",
+      "sha256": "85fe8db9e9279826aa3e09e3795fe2430dddbe6a22d9d6e385bab7d30e6b682d"
+    },
+    {
+      "path": "src/descriptive/audit_official_piste_pages_stage49.py",
+      "sha256": "8a972aea5d6ddb71a7f95e8b1b37b23b7303d084c0fc5a5346b712f756cee64a"
+    },
+    {
+      "path": "data_processed/magic_pass_current_destinations.csv",
+      "sha256": "88785cfea7bf82df6ccd9a5378a83b41322b0e709450a29e13a9239d96c0128e"
+    },
+    {
+      "path": "data_processed/winter_profile_official_page_coverage_stage49.csv",
+      "sha256": "3fc94dff7d381bf296c9df09eb9c0ea2d70cebf9a3c6c98563ca2acd3a1ef827"
+    },
+    {
+      "path": "config/piste_operator_evidence_stage47.json",
+      "sha256": "ac0fd641fad38c4417986b6b75ca90401bc9383e881c233fc7113e2945641328"
+    },
+    {
+      "path": "src/descriptive/register_piste_operator_evidence_stage47.py",
+      "sha256": "e1a12fa5c47a21efba54edef669258869e12b8304997ea28cb213e015b7391ed"
+    },
+    {
+      "path": "src/descriptive/register_piste_scope_case_evidence.py",
+      "sha256": "000368305e199774fbd461d3c3e3f00b051243395793afdd3fcb5ed979189189"
+    },
+    {
+      "path": "config/piste_scope_case_evidence_stage46.json",
+      "sha256": "564d815adbfe551f5aa10d4d43e1488962008bccf076309d8778b9ddd492ae48"
+    },
+    {
+      "path": "config/piste_plan_evidence_stage49.json",
+      "sha256": "47cb6561603223229b47f531ddac7dcb466310f2220956b6af067367e4036aa3"
+    },
+    {
+      "path": "config/winter_profile_aggregation_decisions_stage45.json",
+      "sha256": "72c2097ebee637c49999fea8e03da5ecd8ea4ccda939f942318f26d2258b16cd"
+    },
+    {
+      "path": "src/descriptive/inspect_oshd_netcdf_metadata.py",
+      "sha256": "9a7a2bc1894ebdac88752b14068e631a73edbfdc8e197f4e04234b46135cf53b"
+    },
+    {
+      "path": "data_processed/accessibility_road_final_directional.csv",
+      "sha256": "87289113c51ecc0c5953b5dff8f537a754378c9e63ef396c1b1d7d4de947bd08"
+    },
+    {
+      "path": "config/piste_operator_evidence_stage53.json",
+      "sha256": "9aeb94ce6fbfd379d84a32aece5f610a11fb6e83d1a16f2f40ee13963868f74f"
+    },
+    {
+      "path": "config/piste_operator_scope_evidence_stage53.json",
+      "sha256": "3743270dd2db3d995b4f2bf2444ce5b732a1f841dae6a3b65f2523c606f4a6f0"
+    },
+    {
+      "path": "config/piste_assignment_candidates_stage53.json",
+      "sha256": "08c2854aeb0f8601365b248035b9523aeb6d4febea3667466b03370950351228"
+    },
+    {
+      "path": "config/piste_assignment_cases_stage53.json",
+      "sha256": "0c686fc14ff893df159a6a19082bea6adb189259003cfc1c9bc51c08fcbe0e9d"
+    },
+    {
+      "path": "src/descriptive/verify_piste_assignments_stage53.py",
+      "sha256": "e005d49a1e3b677a02a29ef31acf4604b5fbd95223c488c8d32fc530b4b4f8da"
+    },
+    {
+      "path": "src/descriptive/review_piste_candidates_stage53.py",
+      "sha256": "42bcf728e982cecfd8b4e11f29d057cd69a648e20b90b4b897c63e03670f472f"
+    },
+    {
+      "path": "src/data_collection/collect_piste_operator_evidence_stage53.py",
+      "sha256": "211cc570a5b7fe7d13a13718cbecc9faea53212dd171c14a1f764ebfba4c29ca"
+    },
+    {
+      "path": "config/piste_operator_deep_scope_evidence_stage53.json",
+      "sha256": "e55884c157e9f7e1c8755b6455a75a96949937bf89a92ebaebfa53d2d5ba0aeb"
+    },
+    {
+      "path": "config/piste_operator_alternative_evidence_stage53.json",
+      "sha256": "b26f4a4e6ed0114f3379928f039e9866e58e8f4a7f4d639b5395c9c15b96d96a"
+    },
+    {
+      "path": "src/data_collection/prepare_piste_scope_queue_stage53.py",
+      "sha256": "58ca92b142e55fcbc249b38127277d4c1091ebc80be3543c55bb28155ca26755"
+    },
+    {
+      "path": "src/descriptive/prepare_piste_reviews_stage53.py",
+      "sha256": "6623ae0a03ebbb679359957e100831df6c6c5deb8aa31d54995da331150b1604"
+    },
+    {
+      "path": "config/piste_assignment_verified_cases_stage53.json",
+      "sha256": "e0512d1fcc910959265a270623924a4f377fbef3e71cf20593e536aabfc132f5"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_assignment_stage53.csv",
+      "sha256": "5ffc0bf668cd6004443b8d2e727060b36ad3a9bdc5e469d7ddf6a0700018600c"
+    },
+    {
+      "path": "src/descriptive/audit_verified_piste_members_stage54.py",
+      "sha256": "eab190a26d86475adf60c5cdb98189463a7cfad6b6d30894eb0ab9757ca3afa0"
+    },
+    {
+      "path": "data_processed/winter_profile_verified_piste_member_qa_stage54.csv",
+      "sha256": "b7f1c7e6df9ae4a54108012592779428e5048ade1f5e6027acbdf1a755d2a0d4"
+    },
+    {
+      "path": "data_processed/winter_profile_verified_piste_group_qa_stage54.csv",
+      "sha256": "49554f027bb754a0d98acac34184941cea31e8fd0c37ed1caab48aad3b98eef7"
+    },
+    {
+      "path": "config/piste_historical_sources_stage54.json",
+      "sha256": "18a733b72138685bd2b8eb60dfff18745cf138035c5168aeea80c03cf124bdbb"
+    },
+    {
+      "path": "config/piste_historical_scope_sources_stage54.json",
+      "sha256": "734a163133545d8fa50e46eba9535d17a24b1eaf04d9ba67e3ff9a9fa29839cb"
+    },
+    {
+      "path": "config/piste_historical_observation_sources_stage54.json",
+      "sha256": "7f842a11129cef44b3ffdcce8891a2d1dff1d0603ae647deb719ed55368974ae"
+    },
+    {
+      "path": "config/piste_historical_connection_decisions_stage54.json",
+      "sha256": "141fb2d406594ca2bc56e443982cb20169b33a018213b7b4b160581d6d0d0f2d"
+    },
+    {
+      "path": "src/descriptive/audit_piste_history_stage54.py",
+      "sha256": "b80dcac283062e5e201d4848afe23f2c0fecc677885f8aa4fe0701e32d6d1717"
+    },
+    {
+      "path": "src/data_collection/collect_piste_history_stage54.py",
+      "sha256": "c72f8313081977d74bd91f1bb2655616aa24b873d59786d6f9fc0a08b21ccc1c"
+    },
+    {
+      "path": "config/eischoll_unterbaech_regrouping_stage55.json",
+      "sha256": "b8c069b79b2d4270c90dfb80fb8f98de256bdd5e3528bdc488fbfd822e555f09"
+    },
+    {
+      "path": "src/data_processing/regroup_eischoll_unterbaech_stage55.py",
+      "sha256": "ac2b5627f22381edbbaa7e74c2f86f195d3207ac1346a9341e3fe499100c55db"
+    },
+    {
+      "path": "data_processed/station_group_lineage_stage55.csv",
+      "sha256": "c9a17f22ad50506dd5e31104913f79cf6a1690506864cb05abff7d69582d1a5d"
+    },
+    {
+      "path": "data_processed/accessibility_station_groups_stage55.csv",
+      "sha256": "2b41c8ab69a514c86f2e0ad0495d9b38bc13febcfa77898fc1f1ea40ecc39d3c"
+    },
+    {
+      "path": "data_processed/accessibility_station_access_points_stage55.csv",
+      "sha256": "3c8a26a9d12cd48a51f74eec08b5a12a82bbf9e6a15054ce9a0991e80c0c4704"
+    },
+    {
+      "path": "data_processed/accessibility_road_pairs_stage55.csv",
+      "sha256": "fb94cb432c44480bf98f3f93c66cbe3a685e9be48e0b3d689983634afe8aa367"
+    },
+    {
+      "path": "data_processed/accessibility_road_group_reference_stage55.csv",
+      "sha256": "7560e616aed637427687b60c9537dbc105a7299af5d0083960988c900b17cf6e"
+    },
+    {
+      "path": "data_processed/accessibility_road_monthly_exposure_stage55.csv",
+      "sha256": "5e7f11b779db34d216b2dafeff3524cd36329e06d0318485ee48f53b32715fb4"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_assignment_stage55.csv",
+      "sha256": "08600dadb1a8815d072248590af005ecf7f75465a424b3e7d81d2c15217525a9"
+    },
+    {
+      "path": "src/descriptive/audit_verified_piste_members_stage56.py",
+      "sha256": "58ba0585962243f28d5558296664873bac84f0c4da16bff70c56dcf0de077797"
+    },
+    {
+      "path": "data_processed/winter_profile_verified_piste_member_qa_stage56.csv",
+      "sha256": "50dc84a0e6d62ba3b3ed214f48fc2737f6526d6c7184625a77e8f12aa3f125a0"
+    },
+    {
+      "path": "data_processed/winter_profile_verified_piste_group_qa_stage56.csv",
+      "sha256": "2788e29a3b6845508d42c4570b97b8d88f20e3a858a7db4e4419373f1bcdeea5"
+    },
+    {
+      "path": "src/descriptive/build_connected_profile_context_stage57.py",
+      "sha256": "6c2bd4963ba4ec8a2cacdbef3f51d174f46a0d0afc0f2129379ed653a9419fb2"
+    },
+    {
+      "path": "data_processed/winter_profile_urban_city_detail_stage57.csv",
+      "sha256": "c2380d643264f3385be9a5cbcf3c3a4f49b921e1e6a4fa084b9271d996080b16"
+    },
+    {
+      "path": "data_processed/winter_profile_urban_minimum_stage57.csv",
+      "sha256": "18b90d2c64f9c4a883a7f5951122676c1c30d06fd1922f2226bbcc2915310313"
+    },
+    {
+      "path": "data_processed/winter_profile_approved_snow_windows_stage57.csv",
+      "sha256": "af661466761cfaa2cd10eb6d9a77c9ac06f2b68d77cda46647adf4f4f2222d94"
+    },
+    {
+      "path": "config/piste_exact_overlap_decisions_stage58.json",
+      "sha256": "f00b3beffc6053bbbab762505946c80407fb7f9641bafceeb10aae149345757f"
+    },
+    {
+      "path": "src/descriptive/audit_exact_piste_overlap_stage58.py",
+      "sha256": "3c5ae06cc71b3e37b709035641f33c61112ba86604b95878cecdc18a702f31ed"
+    },
+    {
+      "path": "data_processed/winter_profile_exact_piste_overlap_stage58.csv",
+      "sha256": "fe08bd0901ca89dd5c26fac77f3253e945221d00ed6a9e9a07772f8334cc0cf8"
+    },
+    {
+      "path": "src/descriptive/verify_exact_overlap_geometry_stage59.py",
+      "sha256": "2b61eaff12ba92f67f10208169208abf6d764effb61cb5d53df51978d9a6a519"
+    },
+    {
+      "path": "data_processed/winter_profile_overlap_geometry_stage59.csv",
+      "sha256": "9c2691ff8184550ec24a19ddeba0aeeb49ed6ebc8dbe288a9a2f5b749d843f83"
+    },
+    {
+      "path": "src/descriptive/verify_piste_terrain_sources_stage60.py",
+      "sha256": "7b78efa5572d586bfe8e8401df03268ac2c3de8206f29926d6af82566c306a87"
+    },
+    {
+      "path": "src/data_collection/collect_piste_terrain_stage60.py",
+      "sha256": "bd4d8885f843a46a970133fcf590a408636d575d84787acf9c33a5f8d0c04ffc"
+    },
+    {
+      "path": "config/piste_terrain_sources_stage60.json",
+      "sha256": "93e5a08e476257a0fdfee0031ede46b3f18801c0a2bf5670ac99c7b5fd55b835"
+    },
+    {
+      "path": "config/piste_assignment_case_stage60.json",
+      "sha256": "5b2b13be10bb8fc5e00e792ee3e37a4d886ba6f7e872bc1e7bfda083f09e0fe9"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_assignment_stage60.csv",
+      "sha256": "008cbdd4367c87cb4acab70fbf03ca7d0b8b4b7c2a36fd256421f46ce51f6d7c"
+    },
+    {
+      "path": "data_processed/winter_profile_verified_piste_member_qa_stage60.csv",
+      "sha256": "f44ba56646157d267a7e7bb25e7e72431de83112995a297b7a29f63e8abef197"
+    },
+    {
+      "path": "data_processed/winter_profile_verified_piste_group_qa_stage60.csv",
+      "sha256": "7be09fe87bc9d4d151c81cc618c32d6a6746fac3b9aeef87612c319ef0a0b56c"
+    },
+    {
+      "path": "src/descriptive/audit_terrain_catalogue_stage61.py",
+      "sha256": "66395ffd983bae155882044a2b176f1049b15180246a9923dde44989982dd8b9"
+    },
+    {
+      "path": "src/data_processing/terrain_cell_weights_stage61.py",
+      "sha256": "969b2ca601f5f7b1eba6284a3ddf7193624ac95f14a4cc363b4989f91dca239e"
+    },
+    {
+      "path": "config/terrain_extraction_decisions_stage61.json",
+      "sha256": "67ed2b7e0d49170eb0109809a111eddb433cff41e8f87aaf1860bdc528abd6c3"
+    },
+    {
+      "path": "config/terrain_catalogue_sources_stage61.json",
+      "sha256": "aca5315f3a5cf170dcfe58c170620689780357c592197d73bd257f2c557a794f"
+    },
+    {
+      "path": "config/terrain_pilot_query_stage61.json",
+      "sha256": "05eab4251bd263fa02f18bad2fdbfe898e4f36651f92edc2f8e130c0352f7e31"
+    },
+    {
+      "path": "config/terrain_terms_sources_stage61.json",
+      "sha256": "547c8e64ef2268526a9cf95568fa630cc04848d0e459b6d83f086e9ed67c13de"
+    },
+    {
+      "path": "config/terrain_runtime_requirements_stage61.txt",
+      "sha256": "ce041f5a84b7924384d1cb1eafc45818e0e50178e29531ad99b9d92916e995fc"
+    },
+    {
+      "path": "src/data_collection/prepare_terrain_pilot_query_stage61.py",
+      "sha256": "39a085b3d81d24b16f19a73048f50542eca38558127b58cfbc1c7a5ad0bed82a"
+    },
+    {
+      "path": "src/data_collection/collect_terrain_catalogue_stage61.py",
+      "sha256": "32a0e0a2557a4393e07b84144b9159cc0a9ca164c5cb2ffc5b01130e1817b0a5"
+    },
+    {
+      "path": "data_processed/terrain_stluc_native2m_asset_inventory_stage61.csv",
+      "sha256": "3559a6fe5e1c1f9adc80384c0b12cc0fec57af3d8bd3d1d1ea2be898270fe1be"
+    },
+    {
+      "path": "src/descriptive/extract_terrain_pilot_stage63.py",
+      "sha256": "1a52df42900727d71bf31c1fa90adfe2230f3459243636ddc5020d02254eb651"
+    },
+    {
+      "path": "config/terrain_vintage_decisions_stage62.json",
+      "sha256": "e666391b78126792c6e8be6da83d921a6e4f31b081fd7a7b4d183b982de8dd93"
+    },
+    {
+      "path": "config/terrain_tile_sources_stage62.json",
+      "sha256": "97ec903c204a54388e55d25fe7409c928e64ced4ca9be99fdf00eacc66a5b173"
+    },
+    {
+      "path": "data_processed/winter_profile_exact_piste_overlap_stage63.csv",
+      "sha256": "862ca970fa228d5eefc765cd2523a2f3040a395f46e7b99949bfd41d188d481f"
+    },
+    {
+      "path": "data_processed/terrain_native2m_pilot_cells_stage63.csv",
+      "sha256": "fb4b4d8fe8a31b391ebbdd065c9f209daa339009c28d17dd89771ed0ed8b7098"
+    },
+    {
+      "path": "data_processed/terrain_native2m_pilot_summary_stage63.csv",
+      "sha256": "76b721b85ec82db7745a704095e318bcfae99cfa4322559b8331ded2fd6597d0"
+    },
+    {
+      "path": "config/terrain_orientation_decisions_stage64.json",
+      "sha256": "e80d89d837d8771c50806700afbc29c00bffb25031496f9f8b45063b72fe3aa3"
+    },
+    {
+      "path": "src/descriptive/summarise_terrain_orientation_stage64.py",
+      "sha256": "15a779dbc3d014ce8ff0191aeea23625887524807d026691f3e7f32eeeb5e4c8"
+    },
+    {
+      "path": "data_processed/terrain_orientation_reference_stage64.csv",
+      "sha256": "828d894f823eb69c2cb70d7e8bd54afdc1d0fc5529a18e4e8e4e2f0ff3aca975"
+    },
+    {
+      "path": "data_processed/terrain_orientation_edition_comparison_stage64.csv",
+      "sha256": "1eb58e6bc2c1f73054a0d8b9f31f3c250f49cee8294ab786f5c569c8f993d72b"
+    },
+    {
+      "path": "src/descriptive/audit_terrain_extension_stage65.py",
+      "sha256": "3e902f01952a9544a04c05bee30dcaade207d62168398aa5123828846015bd50"
+    },
+    {
+      "path": "src/data_collection/prepare_terrain_extension_stage65.py",
+      "sha256": "9c9bcb0a235a0d5aa72f95764e31c9bd6f4b1198255fa5f8fa1d5b15f41ac182"
+    },
+    {
+      "path": "src/data_collection/collect_terrain_extension_stage65.py",
+      "sha256": "d577381b69e7de069decbaa49b6b76f1723574467f68a5e162db2d8309e12ad6"
+    },
+    {
+      "path": "config/terrain_group_catalogue_sources_stage65.json",
+      "sha256": "7a7c6e69c8d5ee4f2d565d23180235e4b790673fc19d640e435b88f314829040"
+    },
+    {
+      "path": "data_processed/terrain_group_native2m_asset_inventory_stage65.csv",
+      "sha256": "864b8cbdceb213e66265194a637e8dfd15c2ec0ea93684b31446a00ba0b3b53b"
+    },
+    {
+      "path": "data_processed/terrain_group_catalogue_coverage_stage65.csv",
+      "sha256": "8535f7b90818eada0ae794e2f68f0875829fe6dcc35cdd6ffcf56e4ec7fe4e09"
+    },
+    {
+      "path": "src/descriptive/audit_native2m_reference_stage66.py",
+      "sha256": "fc20492be8e4fcbc1e0d7cd48c514b043a8f45e3c9c738d3f3945c73516f9abf"
+    },
+    {
+      "path": "config/terrain_reference_tile_sources_stage66.json",
+      "sha256": "0e89de75187476f4f7da7a05179e1e1e38c60b88d392a0145728556879d3b649"
+    },
+    {
+      "path": "config/terrain_catalogue_dictionary_corrections_stage65.json",
+      "sha256": "286d1033fa936252a8a5a4612a08a5f88ae25b388ef83b52fa72daa958303f2e"
+    },
+    {
+      "path": "data_processed/terrain_native2m_reference_audit_stage66.csv",
+      "sha256": "a0c666c3e184ed3531b1b558623628940cd80b7000e2d50fd0852ccdfe002480"
+    },
+    {
+      "path": "src/descriptive/summarise_terrain_reference_stage67.py",
+      "sha256": "42822795a4e157066c029be036fddb8c4cb261abad95a4853f8edcda25914a4c"
+    },
+    {
+      "path": "config/terrain_seam_decision_stage67.json",
+      "sha256": "251139d808434ea331db0d339c580a8ca7c8a8a1b423df8c2dc6e5c5a3660de7"
+    },
+    {
+      "path": "data_processed/terrain_reference_profiles_stage67.csv",
+      "sha256": "445b7bbe269aaf7ef4952cb349520b391c9b50d88f500be373ff95f3ef234469"
+    },
+    {
+      "path": "config/snow_comparison_readiness_stage68.json",
+      "sha256": "ccbe4300040e84ce466cf238a77dddcb92c6e23765ffd1dadfdec326481e514d"
+    },
+    {
+      "path": "src/descriptive/audit_snow_comparison_readiness_stage68.py",
+      "sha256": "870750fe79f86470f048102de2a172af55289e7d3431cc0650df5d5ceb6c2561"
+    },
+    {
+      "path": "data_processed/snow_comparison_readiness_stage68.csv",
+      "sha256": "969a2abb602444fbcd0208eb24ebfb6ca06d29de9cce8218b94ea9d4bb532332"
+    },
+    {
+      "path": "config/snow_comparison_decisions_stage69.json",
+      "sha256": "4144302cea252959105e489a309232789f06f8ebf0fbe9a597bd29cd80765217"
+    },
+    {
+      "path": "src/data_processing/prepare_native_snow_weights_stage69.py",
+      "sha256": "67f1e007bb384d1ad10ee2f0b3d76b358e1b06324fa1e4cc3602c8c3715257d0"
+    },
+    {
+      "path": "data_processed/native_snow_cell_pairs_stage69.csv",
+      "sha256": "6851524a49af3cd38960670b6339c3b64df3226c7517e793fecf0e7b1fbbf536"
+    },
+    {
+      "path": "data_processed/native_snow_weight_coverage_stage69.csv",
+      "sha256": "42d3bae15fbd1886f9e3e3d4efe1a726681d27a6f29a406c06c0ca0d5b13d445"
+    },
+    {
+      "path": "data_processed/native_snow_date_pairs_stage69.csv",
+      "sha256": "39025ee613a3a204a044ebc9104222a2dedea214e281fae2a41e1e27c097993e"
+    },
+    {
+      "path": "config/snow_value_audit_stage70.json",
+      "sha256": "15aa5fefc1dd4656f64b4dd3ce1fabf2892479d0a8ba65db2a4afc0fc689036e"
+    },
+    {
+      "path": "src/data_processing/extract_native_snow_values_stage70.py",
+      "sha256": "ca12b461f67235c1ac1cd2301c0bb94319482a543cfbac430c3b8bf743b82342"
+    },
+    {
+      "path": "data_processed/native_snow_daily_common_support_stage70.csv",
+      "sha256": "37f18f1961ea6adbaf740a2e7238f782df601cf08f2308958c1f569e77e52f96"
+    },
+    {
+      "path": "data_processed/native_snow_value_coverage_stage70.csv",
+      "sha256": "20cce1faa10eefe8b88b9e5cacc415a01157d660a22779cfad01b62e56140c87"
+    },
+    {
+      "path": "config/snow_rank_diagnostic_decisions_stage71.json",
+      "sha256": "d32d32a0e780142f7d98099a4037282b1baed4bbaaab9e2081df7971c4fca9cc"
+    },
+    {
+      "path": "config/native_snow_provenance_corrections_stage70.json",
+      "sha256": "a4eec6e0c8d18295553bc2fd1d17299773e15eba40880fd96b4839d7106454f1"
+    },
+    {
+      "path": "src/descriptive/diagnose_native_snow_ranks_stage71.py",
+      "sha256": "571dd3e832542e4d7a57a5b39a500c72558036dab03606266f93e2edbc358b03"
+    },
+    {
+      "path": "data_processed/native_snow_rank_diagnostic_stage71.csv",
+      "sha256": "9003144cb84c64cab7c06dd688bef46eca57e521f0f34d5ee3daa7eec1ba2370"
+    },
+    {
+      "path": "src/descriptive/plot_native_snow_ranks_stage71.py",
+      "sha256": "a667661a0749ea8b71600949583f5a9df1484b8df953cbe1721588a00fc8fd30"
+    },
+    {
+      "path": "config/snow_daily_change_decisions_stage72.json",
+      "sha256": "8daf972cefcba8c16a79435d455521356327b03e5d61b1eba6fa320961feefb9"
+    },
+    {
+      "path": "src/descriptive/diagnose_native_snow_changes_stage72.py",
+      "sha256": "96b5f9bae18cf04d8d3697b6fffd3e012c9930968bba213527484dc5126f9bab"
+    },
+    {
+      "path": "data_processed/native_snow_change_rank_diagnostic_stage72.csv",
+      "sha256": "131dcd0e3c646ecf8874dd177c8dc613eece0b8ddb23aebb83eb50ebe5f43be6"
+    },
+    {
+      "path": "config/snow_compatibility_decisions_stage73.json",
+      "sha256": "ec7e1178cdd26328177da9ed6b7778e5eb5ca07984c950ca9781f2d752aef4f2"
+    },
+    {
+      "path": "config/snow_compatibility_evidence_sources_stage73.json",
+      "sha256": "57a71fe332daacb6de797ef349ae99a5941dac35e2600e2badf4b07cdc06fd13"
+    },
+    {
+      "path": "src/descriptive/audit_snow_compatibility_stage73.py",
+      "sha256": "eb0de1e30158348c3e7f7c371eb80461e34a6f541b3c2bd5b8e7a48ec442a6e3"
+    },
+    {
+      "path": "data_processed/snow_compatibility_evidence_stage73.csv",
+      "sha256": "b5c47f1a8af5b1a29a628fa1bf7abc59ec82e931d8ec83748c4b7a8615d65a93"
+    },
+    {
+      "path": "config/spass_unit_evidence_stage74.json",
+      "sha256": "abbe66fa225191d8b3c4d5e068b7fc5294eb14ceaef416242299e04798193110"
+    },
+    {
+      "path": "src/data_processing/build_snow_gridded_sensitivity.py",
+      "sha256": "6f3065affd9c73317e4288302fa5b54f2bd088a8fec751773132eabcc31c340e"
+    },
+    {
+      "path": "src/descriptive/investigate_spass_unit_stage74.py",
+      "sha256": "5a8725f09e19b5cb8bee6d554abbfd494a6d0fcf0e253f3fd4e1bf6d2465a3ea"
+    },
+    {
+      "path": "config/snow_metric_decisions_stage75.json",
+      "sha256": "37587b599a70d82a5ab0832a22a8f84b80a224b8917bc2817c1bbc4a6add58a1"
+    },
+    {
+      "path": "src/descriptive/diagnose_native_snow_metrics_stage75.py",
+      "sha256": "a15af8edf5bc6740df233941cadb3dc0da911d4a0a89d5189825bff48af9e037"
+    },
+    {
+      "path": "data_processed/native_snow_metric_diagnostic_stage75.csv",
+      "sha256": "844df349a20bd857ac07dea8cc5d3a2237d1bb5f9c4a91a415074a1e23f23a05"
+    },
+    {
+      "path": "data_processed/snow_multiwinter_comparison_stage76.csv",
+      "sha256": "bad063f2702abd2c6c8d06e80f827067afa02d96616cee4f1d5e4918d3587ef0"
+    },
+    {
+      "path": "src/data_collection/collect_oshd_multiwinter_stage76.py",
+      "sha256": "9d817dd2a049b8395a5c935781d92a73a3b940e69ca5d2935bb342386df91530"
+    },
+    {
+      "path": "src/data_processing/compare_snow_multiwinter_stage76.py",
+      "sha256": "d61645310b7544d86917f08cbd844c3f8cb2598dd794ce5beb921c8bad6ba502"
+    },
+    {
+      "path": "config/snow_multiwinter_decisions_stage76.json",
+      "sha256": "305f8b35914df3de79fe26732ef180bc91372490168091666ab4ae647396866f"
+    },
+    {
+      "path": "src/data_processing/run_snow_multiwinter_low_memory_stage76.py",
+      "sha256": "3e5b59151702929021eacf8523e2c6ec9988779d4bb70037601510e18bd792a1"
+    },
+    {
+      "path": "src/data_processing/sync_snow_multiwinter_dictionary_stage76.py",
+      "sha256": "cf9cf542230adeb1b3d1ca4231c543be478f0a7b91356d26c19dd168c10a51c7"
+    },
+    {
+      "path": "src/data_processing/prepare_oshd_daily_reads_stage76.py",
+      "sha256": "ea0adfa122b743ad5b46032935de6328daa4557dd56fde70d654761523a450c4"
+    },
+    {
+      "path": "config/spass_preentry_decisions_stage77.json",
+      "sha256": "fddc0a3cd1bf165ccc7b743f3e078f4d543e473a09d03aff7140e412c7ccf641"
+    },
+    {
+      "path": "src/data_processing/build_spass_preentry_profiles_stage77.py",
+      "sha256": "3df9497b4547132d90164bcd575608f51737b988158053f8aefb2bba90280e9e"
+    },
+    {
+      "path": "data_processed/spass_preentry_winter_stage77.csv",
+      "sha256": "efb4c874caf0438e86f46e9d3a2ad214611862ff2b4cef1013947658a3f77a13"
+    },
+    {
+      "path": "data_processed/spass_preentry_profiles_stage77.csv",
+      "sha256": "ec6e5ff93f37469c75024b843631ff72151b3682bdd70c53b95cc7405b5542d6"
+    },
+    {
+      "path": "config/piste_remaining_assignments_stage78.json",
+      "sha256": "518b2e91b8d4c0d608e8986268371b4268ce14d5dc06f5604aaa212a0ad8cac4"
+    },
+    {
+      "path": "config/piste_remaining_sources_stage78.json",
+      "sha256": "02fb545e5b92cf2e559c80323a33f66e721a171e5e46ddf08c3274701998c596"
+    },
+    {
+      "path": "src/descriptive/build_remaining_piste_assignments_stage78.py",
+      "sha256": "fb8e2d2e0e432e86904da6036ada05a3acb13f0d71ddd903005ef178791f6cfe"
+    },
+    {
+      "path": "src/descriptive/review_remaining_piste_geometry_stage78.py",
+      "sha256": "49b988201ea4b228798cdbee909a2f19f42d0606d0389e14f558bcde0b95290c"
+    },
+    {
+      "path": "src/descriptive/review_remaining_lifts_stage78.py",
+      "sha256": "8a99e346795fa2a61f094ba71944f12f8c5b323013e95e311cc73675523791c0"
+    },
+    {
+      "path": "src/data_collection/collect_remaining_piste_evidence_stage78.py",
+      "sha256": "09de354c2bfcfdcf8aca791a2a713552054474ee47215fa2f65099c581dc5542"
+    },
+    {
+      "path": "data_processed/piste_remaining_review_stage78.csv",
+      "sha256": "7fd22c635126431b32e7323b7d303c193498674f32a20924f65cdf41c9483c5c"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_assignment_stage78.csv",
+      "sha256": "140892d1f8fb5b2c60beec74b902aadd1fa7a5dcac7ed832c9580016d9f3b17f"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_members_stage78.csv",
+      "sha256": "a96708cfb09ac0b0622f98b9d93594fdc9cc066eaa80ace49c2b8f90a0c18fa8"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_groups_stage78.csv",
+      "sha256": "842852f4adb096c1bdfae6388efbd8e1b980ae1fadc5ed9e0ab83de3803edf10"
+    },
+    {
+      "path": "config/piste_remaining_assignments_stage79.json",
+      "sha256": "9f0c8f39afee479c5c3b90b281855ac7d7d2cc01e7a6146994fc4c10e841f71f"
+    },
+    {
+      "path": "config/piste_scope_decisions_stage79.json",
+      "sha256": "5572adc64d018b0ee6a4f1248d22bd1e239e8d508e6f5495e5e80e17c9d4713f"
+    },
+    {
+      "path": "config/piste_remaining_sources_stage79.json",
+      "sha256": "577c25eae52395d1c4aa01c92db2171912bb29b10a14b6c7f1f6a6ba06c065f8"
+    },
+    {
+      "path": "src/descriptive/build_remaining_piste_assignments_stage79.py",
+      "sha256": "d84f958b4903cc1134377abf4218b55a3d7577553da36d59d3088e8e7d96bb71"
+    },
+    {
+      "path": "src/descriptive/prepare_remaining_review_maps_stage79.py",
+      "sha256": "33fb15f222e07740dd3b9b60eba4bb4a83eb9d1815988afe01a6fb3981c21d76"
+    },
+    {
+      "path": "src/data_collection/collect_remaining_piste_evidence_stage79.py",
+      "sha256": "a136e60fca85daaa8c1224e3a861fe3b5be77c01cd5dc5618860414538937adc"
+    },
+    {
+      "path": "data_processed/accessibility_station_groups_stage79.csv",
+      "sha256": "2114f34ddd21852d4b3a53c06db0acc48c9eddabba0060a5c7a4487898d099b0"
+    },
+    {
+      "path": "data_processed/station_group_parent_bridge_stage79.csv",
+      "sha256": "efec58549605a0fbdd4c9dbd5d761c4b85d496ccc9ad6d817a95108447400556"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_assignment_stage79.csv",
+      "sha256": "8801b8150084e15d613d41d7b01e1a02d06f2cc17172e0ba9242eee6cd25cfdc"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_members_stage79.csv",
+      "sha256": "c99303d28bd870a691b7101282820cbb55889256355dad3829dc4f183db5691c"
+    },
+    {
+      "path": "data_processed/winter_profile_piste_groups_stage79.csv",
+      "sha256": "a0c7b3c0b7df354f5f16ae78df3ee160a57e4a85f51baed916ff14d932973f55"
+    },
+    {
+      "path": "data_processed/piste_remaining_review_stage79.csv",
+      "sha256": "b110f968d4e667109e30c791951d66948bb6aae35382fc98982f8f8e1a7dd73b"
+    },
+    {
+      "path": "src/data_processing/regroup_wilerallmi_schwanden_stage79.py",
+      "sha256": "76a648b1f43735303551c084796b0711f0f33259b0f636a97a09674a643955c9"
+    },
+    {
+      "path": "data_processed/station_group_lineage_stage79.csv",
+      "sha256": "e0e3e3de721cd7396fde76addbfc5d30c4c72a149819b3fb6ac5b10ce8ef6ecc"
+    },
+    {
+      "path": "data_processed/accessibility_station_access_points_stage79.csv",
+      "sha256": "c94500d0a7495a34d0899935f45072e6b23c68af6d3e26514270544f84baaeac"
+    },
+    {
+      "path": "data_processed/accessibility_road_pairs_stage79.csv",
+      "sha256": "062ef52daad868c9df45904fb7028dcecfd9fee30df6721cf8651d5127186c19"
+    },
+    {
+      "path": "data_processed/accessibility_road_group_reference_stage79.csv",
+      "sha256": "00af4173f7d16bc15ae8a6143a041f793abeda5a13969e0ad8169ee01d7d4d0b"
+    },
+    {
+      "path": "data_processed/accessibility_road_monthly_exposure_stage79.csv",
+      "sha256": "e23417710d65da5e29099bfd1f803b7b96ac6ab0ffd9f6775ec71743d6167e00"
+    },
+    {
+      "path": "config/piste_historical_followup_stage79.json",
+      "sha256": "4a08728e9df456e77b441111e1d9384d750a5afd738b79638d067369630db1fd"
+    },
+    {
+      "path": "config/piste_historical_claims_stage79.json",
+      "sha256": "edb2b3f8efd0ff2af7b597c27def6a2310c2617b1e5450e17dc82303fa07ea06"
+    },
+    {
+      "path": "src/descriptive/audit_piste_followup_stage79.py",
+      "sha256": "d02259435993eac50f3e7f20bb36870d426f2e95cf689b28c99fddc79fc3c90c"
+    },
+    {
+      "path": "data_processed/piste_historical_claims_stage79.csv",
+      "sha256": "fb84916ffd9a2eab12f985889ae194c42a874dbaf13a70436cc97bad0c6de11a"
+    },
+    {
+      "path": "data_processed/piste_flagged_objects_stage79.csv",
+      "sha256": "edc6cbfe431768743888f28125f69a8e375822c62e5fb99a641d8374faf86c02"
+    },
+    {
+      "path": "config/piste_individual_review_stage80.json",
+      "sha256": "56a19b84b347569d564683111db3486b336a3399922e2258ce23d4a8200ccb59"
+    },
+    {
+      "path": "config/piste_metric_decisions_stage80.json",
+      "sha256": "60fa32488f74523e871c1c698a80f75eb7c8e3a63f6749ac6a99b0a0a9746096"
+    },
+    {
+      "path": "src/data_processing/build_reviewed_piste_network_stage80.py",
+      "sha256": "ea9d3c6dc50f77101ed08541b5b6f104e2b3c82a65e4b421498d9b7261c5a76c"
+    },
+    {
+      "path": "config/piste_metric_sources_stage80.json",
+      "sha256": "82c23a478d463ff5c1a0de3e739e5b7400addf53746cd92f520a58b1da6a54b2"
+    },
+    {
+      "path": "data_processed/piste_individual_review_stage80.csv",
+      "sha256": "e6f2f5f09c72c32e782af21488547eac2ff004721e7decdde244df4478978f07"
+    },
+    {
+      "path": "data_processed/winter_profile_metric_network_stage80.csv",
+      "sha256": "45898d04a7ae285a9adbbe98eb2964063418b6ad883f2f0a7cfefed2d638c01c"
+    },
+    {
+      "path": "src/data_collection/prepare_reviewed_terrain_catalogue_stage80.py",
+      "sha256": "eb95b8344d3e9158b1ba743e45ffaeeeeae3573b788189f16e238584ef8d3afb"
+    },
+    {
+      "path": "config/terrain_group_catalogue_sources_stage80.json",
+      "sha256": "bacde652d9aba5b17a338155c681869a8e752b2667aab6729a65469c8e1fd553"
+    },
+    {
+      "path": "src/descriptive/audit_reviewed_terrain_catalogue_stage80.py",
+      "sha256": "4ced3f143d27544fb20da5df67557c20417da02cc0442b6c34c37ea539c7c608"
+    },
+    {
+      "path": "src/data_collection/collect_reviewed_terrain_catalogue_stage80.py",
+      "sha256": "d750c02b0755a594040208914784110c392ddf58a756e158684e5c49d03bbe72"
+    },
+    {
+      "path": "data_processed/terrain_reviewed_asset_inventory_stage80.csv",
+      "sha256": "92c4b985a7710b6478f594d94c06811c84f83f59a39622cec356fbaa92daabea"
+    },
+    {
+      "path": "data_processed/terrain_reviewed_catalogue_coverage_stage80.csv",
+      "sha256": "91789636d1626a40869b3025fc43cd424dcc63047cb9070ec6c3ad9d14108d01"
+    },
+    {
+      "path": "src/data_processing/prepare_reviewed_spass_weights_stage80.py",
+      "sha256": "ee38d6383d30b47e0b2fc4eeaa8fefdff46671426ff7cc5d3ab50efce102e4cc"
+    },
+    {
+      "path": "data_processed/spass_native_weights_stage80.csv",
+      "sha256": "14fdf00711bdcb1c7cf9a03832915488159241a3b30e0ce3250bebd0e6aa2b26"
+    },
+    {
+      "path": "data_processed/spass_coverage_check_stage80.csv",
+      "sha256": "de47239e1c3f641a43de49c12b1aab72280e966b9d70e20c04deaee2f3a2b3ee"
+    },
+    {
+      "path": "data_processed/spass_coverage_source_cells_stage80.csv",
+      "sha256": "ffffaa7cbc9fa5096b79fd9e776631ce6f75c7b6456249cb486599ff24761171"
+    },
+    {
+      "path": "src/descriptive/close_reviewed_geometry_stage80.py",
+      "sha256": "defdf29d7136b680e9e85e41e8977af6e58dadaa347774741a849eaf70715969"
+    },
+    {
+      "path": "config/terrain_french_complement_decision_stage80.json",
+      "sha256": "dfd4c9cbd0f52b798410c470be85530d09a86723f6dd5b376db21960b4a1583d"
+    },
+    {
+      "path": "config/ign_terrain_audit_sources_stage80.json",
+      "sha256": "36ee0b7adf19bbdf16b6016b5719d53bdf8fe575682b6ce74c070b424b93b0d7"
+    },
+    {
+      "path": "config/ign_terrain_followup_sources_stage80.json",
+      "sha256": "8a0710e9e4b4d7621eac440432b6251b5220ac7c6f5bba6d2c5f05e9ed9e1d61"
+    },
+    {
+      "path": "src/data_collection/prepare_reviewed_terrain_queue_stage81.py",
+      "sha256": "64319027d641e48b22a87e1af0ea34c941bc6a7c5ab82861d728b953574e60c1"
+    },
+    {
+      "path": "config/terrain_reviewed_tile_sources_stage81.json",
+      "sha256": "4be905467d0a7a012f713b62d528aa664dce616834c876c38e543c2f32534ed0"
+    },
+    {
+      "path": "src/data_processing/build_reviewed_terrain_profiles_stage82.py",
+      "sha256": "48913af4c3a3d2db8abcf981a5f391aceba4c08a98e1bcf5668ef4f10c57d250"
+    },
+    {
+      "path": "data_processed/terrain_reviewed_profiles_stage82.csv",
+      "sha256": "b55bd2ccf39579cc2f436542cbbbd10f6b1bba9c768c28d87613bd9050270610"
+    },
+    {
+      "path": "src/data_processing/build_reviewed_spass_profiles_stage83.py",
+      "sha256": "fb9c0f7e2e6cb2c9b09e3f9056025e04d0e6eb7bfa5d3296574b8f7223b6ba1e"
+    },
+    {
+      "path": "data_processed/spass_reviewed_windows_stage83.csv",
+      "sha256": "91c9377b349040747feee2784319e2ad9b30e2ef58b91621ccdf82409538b046"
+    },
+    {
+      "path": "data_processed/spass_reviewed_winter_stage83.csv",
+      "sha256": "e6db6b7130daff490eab190f368e0e41a82c2aebe5add2e22001c375ec4cc000"
+    },
+    {
+      "path": "data_processed/spass_reviewed_profiles_stage83.csv",
+      "sha256": "e0e91ac4ed81a3deeae2ffc54785487917119732ecc75dfce27a5af4de9913fa"
+    },
+    {
+      "path": "config/descriptive_similarity_scope_stage84.json",
+      "sha256": "db646637249238654298abdb97c3e9687250c1a5b5d9be5db56c64ee500a008a"
+    },
+    {
+      "path": "src/data_processing/build_common_snow_profiles_stage84.py",
+      "sha256": "0846f6a3cd51e13701178b0bed64fb4ab31db0f32883f78ade3e2ad84060071e"
+    },
+    {
+      "path": "data_processed/common_snow_winter_stage84.csv",
+      "sha256": "059902a874dd53037205e7eecb744599aaffbd380c40f2cb1fd3c789c0836ff4"
+    },
+    {
+      "path": "data_processed/common_snow_profiles_stage84.csv",
+      "sha256": "4cb4e13db9d1858b4973a28de6cd2cd567227ba1f0e7dceb8bc86d26dedf5b5b"
+    },
+    {
+      "path": "data_processed/common_snow_reassessment_stage84.csv",
+      "sha256": "f3a400b53ca42a2c536b29299d649e520072154b128d1ed9f1d333bfbabf6b8d"
+    },
+    {
+      "path": "src/descriptive/prepare_national_similarity_inventory_stage85.py",
+      "sha256": "2d27ce7de02452eeab5d187d8cfa1a6870b5e75aeb844cce3e3a5de2cf48c500"
+    },
+    {
+      "path": "data_processed/resort_point_municipality.csv",
+      "sha256": "f1c1d1fa935460ed34bfb1f7f398837478a961ae5079f3c5507469c4f9a9a5d6"
+    },
+    {
+      "path": "data_processed/resort_public_transport_stop_context.csv",
+      "sha256": "4ecb53e640cf9a5d3a1592451d0f0a5af000ad403b40057ab58219d2b278dd33"
+    },
+    {
+      "path": "data_processed/national_similarity_inventory_stage85.csv",
+      "sha256": "2aea1ad33e0907a73f5975914a264202e650eb8d4c063dbfbbfd8f5b2ce8c0fb"
+    },
+    {
+      "path": "data_processed/national_similarity_listing_lineage_stage85.csv",
+      "sha256": "6b6f8b20cf441d08825cda1d3d83b7f50d3b7f9228a019ee97e2ed9f3a561ace"
+    },
+    {
+      "path": "data_processed/national_similarity_piste_site_inventory_stage85.csv",
+      "sha256": "3c1eec2bb185535749656d6a84f420afe8468c1f1ab7afc800bb0e24d7354ad7"
+    },
+    {
+      "path": "src/descriptive/consolidate_national_preparation_stage86.py",
+      "sha256": "ae189650d8405ee8e5987c02b722e1738c0807e96383f691af7fe5c2cdbb9dff"
+    },
+    {
+      "path": "data_processed/national_similarity_inventory_stage86.csv",
+      "sha256": "61bb2c01f79fdb202fd3ab3a2844655ab9056e1a0338b48db175ff0577a32396"
+    },
+    {
+      "path": "data_processed/national_similarity_listing_lineage_stage86.csv",
+      "sha256": "62f42fb966836f4f34eeb02e4dcbefa2c73d76a9f6f98fc181d0d319600d019f"
+    },
+    {
+      "path": "data_processed/national_similarity_feature_context_stage86.csv",
+      "sha256": "6efd392a3a7cf96864b680683183c7d37c2eb56096cdb9858a1fe98b5bcd43a1"
+    },
+    {
+      "path": "src/descriptive/check_national_preparation_stage87.py",
+      "sha256": "7bf4f50f06fd22db5565bbde5879d25b10eee840e5e3679efdfebd30271dc4f5"
+    },
+    {
+      "path": "src/descriptive/prepare_national_documentary_queue_stage88.py",
+      "sha256": "5a8484507fac213100cde976848cd6ed3c9458ac2b69b2f724fe56ac0fd6109b"
+    },
+    {
+      "path": "src/data_collection/collect_national_operator_evidence_stage88.py",
+      "sha256": "0209794a25a3526163fb8901a556da46e2f200bc55c1053743e352c998dd1f11"
+    },
+    {
+      "path": "config/national_operator_sources_stage88.json",
+      "sha256": "b3439ae8c77f142c55c46e97992b56a809eecb2dd2452cb064bbf0ba377dade7"
+    },
+    {
+      "path": "config/national_transboundary_scope_decision_stage88.json",
+      "sha256": "029fa916be3d4c57c844d7690a7f0b6a0dd25006c016d578b8c8ba3141d66135"
+    },
+    {
+      "path": "config/national_activity_period_decision_stage88.json",
+      "sha256": "b228c01b498afad6a1bec175de6c1269eea46b03a8b8ec35de8a13c9602ad074"
+    },
+    {
+      "path": "data_processed/national_preparation_work_queue_stage88.csv",
+      "sha256": "ca8ade6531be0a99e743a47c01c1947012fc22511476acca3296af0e6f0490e6"
+    },
+    {
+      "path": "src/descriptive/prepare_braunwald_arrival_proposal_stage89.py",
+      "sha256": "77be45f33ab7e5fe36ff89c281ff20f750b646afbd047448951130da6229f328"
+    },
+    {
+      "path": "config/national_arrival_sources_stage89.json",
+      "sha256": "d1b9461ae3cb19cc818f4bfde86d83ecb0e859528e0dadfeb336a36d977b6cbe"
+    },
+    {
+      "path": "config/national_urban_reference_decision_stage89.json",
+      "sha256": "5e37a9461ab9256c10fae97d157db767f745bf47319f3119f7392e4ab93f98f3"
+    },
+    {
+      "path": "config/path_c_analysis.json",
+      "sha256": "606a6d4fbf66e9d52b14d0baaa6e4ba945637f00c01c411dc8cc39b4ecfd0e92"
+    },
+    {
+      "path": "src/descriptive/check_national_preservation_stage89.py",
+      "sha256": "ba43e63c1281f2082c138da5c0fdf7b6db0237d2ceabfae4ecb20d7f1f461cd7"
+    },
+    {
+      "path": "config/braunwald_urban_arrival_decision_stage90.json",
+      "sha256": "1f34043732b36822a433e588c10c88d432f5af84386bec6a5dc5af5ba4089f8e"
+    },
+    {
+      "path": "src/data_collection/collect_braunwald_urban_road_stage90.py",
+      "sha256": "aa28e465f32a2107b6a20a17f87194a2c9e6aff15987fe089da3a973ba0a7d68"
+    },
+    {
+      "path": "reports/braunwald_road_arrival_proposal_stage89.json",
+      "sha256": "ef6151c1c7c0f2a33143eef172ac83a7c55c8c645e9a06a76e3cc2040fed4975"
+    },
+    {
+      "path": "reports/accessibility_road_stop_corrected_origins.csv",
+      "sha256": "aec8ba772ac30f8c796f235860ef5db666f8d5e7f68ad4eafbe81912ddd5cce6"
+    },
+    {
+      "path": "config/accessibility_road_routing.json",
+      "sha256": "be6e3b8ba52e12486a15f23584664300cbb6366de97ce23c39c3213cc42cbeeb"
+    },
+    {
+      "path": "reports/preservation_national_stage89_summary.json",
+      "sha256": "cf588dae8c6098955fb300ef73cdeb0059599553469abf0a2af6d167de6e2b37"
+    },
+    {
+      "path": "data_external/source_evidence/BAV_PUBLIC_TRANSPORT_STOPS_2026_20260922T084357Z.csv.zip",
+      "sha256": "b58de1fdec85e335271a67c7b09d20103568b512b7c60baabc520ab4227423fc"
+    },
+    {
+      "path": "data_interim/braunwald_urban_origins_stage90.csv",
+      "sha256": "7fc7e6bee65ff6191e76d3029e97041131230a7a94d1d682824b2d198f9de2df"
+    },
+    {
+      "path": "data_interim/braunwald_urban_arrival_stage90.csv",
+      "sha256": "597f0c0597df0a8690585906c20032a586f216a23c7d724db298e05139c95c39"
+    },
+    {
+      "path": "reports/braunwald_urban_road_preparation_stage90.json",
+      "sha256": "0d16aadd2bdd87cb568a51db4dcfd47e726141dc4826b1293856b93da2ead99c"
+    },
+    {
+      "path": "data_processed/braunwald_urban_road_directional_stage90.csv",
+      "sha256": "fd7bc433e7c394c8cac280f42733f348b106b729acf9262d65cc42b2c4319905"
+    },
+    {
+      "path": "data_processed/braunwald_urban_road_pairs_stage90.csv",
+      "sha256": "fd270eaf61ea37d281e93b54d978a80b3a4fcbbbed22840e321626631eed87e2"
+    },
+    {
+      "path": "reports/braunwald_urban_road_collection_stage90.json",
+      "sha256": "0da5e6163927afac9e9af15dea306c088d121226b0559337e3d7daa66c5d0edd"
+    },
+    {
+      "path": "data_external/braunwald_urban_ors_stage90/b02ff9ae036b02746c2ec00067f9b89d081e579493828ab959b98dea922908cc_20261012T154157903643Z.json",
+      "sha256": "f1f922da58d2398211038269911c07cb30c8bcd550e30dcd8199aa61d53986ec"
+    },
+    {
+      "path": "data_external/braunwald_urban_ors_stage90/b02ff9ae036b02746c2ec00067f9b89d081e579493828ab959b98dea922908cc_20261012T154157903643Z.metadata.json",
+      "sha256": "c462cf610b13fd58bb47db1878ef6247a779d90482517ef8ae66c442ba883b61"
+    },
+    {
+      "path": "data_interim/braunwald_urban_ors_stage90/b02ff9ae036b02746c2ec00067f9b89d081e579493828ab959b98dea922908cc.json",
+      "sha256": "c462cf610b13fd58bb47db1878ef6247a779d90482517ef8ae66c442ba883b61"
+    },
+    {
+      "path": "data_external/braunwald_urban_ors_stage90/ad7b9fde40f48c01e91e60798cf397a2b98dbbe513b58c28b4fe3a162507ae21_20261012T154159747489Z.json",
+      "sha256": "8b3acb4e2a6b89e81c39edccfd42ec8f2c2322145a9c139c5495eb286ada77e8"
+    },
+    {
+      "path": "data_external/braunwald_urban_ors_stage90/ad7b9fde40f48c01e91e60798cf397a2b98dbbe513b58c28b4fe3a162507ae21_20261012T154159747489Z.metadata.json",
+      "sha256": "0137733beb7b1751b2218c5713c0a83b80c672881d4afdc6050bd321f13edf93"
+    },
+    {
+      "path": "data_interim/braunwald_urban_ors_stage90/ad7b9fde40f48c01e91e60798cf397a2b98dbbe513b58c28b4fe3a162507ae21.json",
+      "sha256": "0137733beb7b1751b2218c5713c0a83b80c672881d4afdc6050bd321f13edf93"
+    },
+    {
+      "path": "src/data_processing/publish_braunwald_urban_road_stage90.py",
+      "sha256": "dae073148b00ccda3de77a296ced7db85d1f0842c90c2ade1020b89a648cdae7"
+    },
+    {
+      "path": "reports/accessibility_road_stop_corrected_collection_summary.json",
+      "sha256": "d2721776ce27523345ab4ea6c106a35de4be1c30eb3cbea61ae969df7383dc74"
+    },
+    {
+      "path": "data_processed/braunwald_urban_road_city_reference_stage90.csv",
+      "sha256": "ddfe2c7348dd3511f15ed0f914a4e93200ea9389e8c838f81766ebbe197ebf71"
+    },
+    {
+      "path": "data_processed/braunwald_urban_road_snapping_stage90.csv",
+      "sha256": "e470e64cf0c3cfd8c88c1b6274aad1359350939660bed36f6b5bdbe9a87097a9"
+    },
+    {
+      "path": "reports/braunwald_urban_road_reference_stage90_summary.json",
+      "sha256": "85d01609e02547246f9cbe50d0b42796571da417b1b26bb9b4337a624f26ec29"
+    },
+    {
+      "path": "data_external/source_evidence/NATIONAL_BRAUNWALD_ARRIVAL_STAGE89_20261012T124228Z.metadata.json",
+      "sha256": "29fd508d84365cf4d7e161e12e4a1522381d77746d7a331de042b6eebb367a12"
+    },
+    {
+      "path": "data_external/source_evidence/NATIONAL_BRAUNWALD_ARRIVAL_STAGE89_20261012T124228Z.html",
+      "sha256": "37930388d440d53153fdb5a6073a263119a007c9831b6ebfc64b4954dbe2b514"
+    },
+    {
+      "path": "src/descriptive/check_braunwald_urban_preservation_stage90.py",
+      "sha256": "4b74664e8aa8ef51d9f971eb12328eab72cf1806338e0efd5a2e69497827e005"
+    }
+  ]
+}
