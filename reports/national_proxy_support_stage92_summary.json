@@ -1,0 +1,31 @@
+{
+  "completed_at": "2026-10-12T16:26:10.268926+00:00",
+  "input_sha256": {
+    "src/data_processing/prepare_national_proxy_networks_stage92.py": "c1acbaab4828154b969a8d29283f80f5da9f6d461e80c6d89f4389ccad247392",
+    "config/national_grooming_scope_decision_stage92.json": "c662c1582bfebc41d9fdea3df0b2d3040a47bec15187d93b2231f6d6aa572ed7",
+    "config/national_piste_review_cases_stage91.json": "b374d8722d1f2a1f36e82c2dffe171f2bd6e7a652247c7919719a0f31cf0bc09",
+    "reports/national_piste_documentary_review_stage91_summary.json": "7377f9df8fc0e48452eef249c05dde855a1bcbeceae21af386c6124b39c62c3e",
+    "data_processed/national_preparation_work_queue_stage91.csv": "75203ae618699ff8f3eb0d937c3d80492ef6407908d71e89ec0b0df554367a80",
+    "reports/snow_grid_metadata_compatibility_stage47.json": "245d2a45be5de3c473f225d43d8ffeefe452fc96625d90d6092da1e90bd4cc7d",
+    "data_interim/current_piste_geometry_collection_checkpoint.json": "334016bbfdb46aeb482816301a41daec710c392f5dc2684adb7237152063f311",
+    "data_external/source_evidence/OSM_DOWNHILL_SWISS_CURRENT_2026_10_09_20261009T162248Z.json": "8904d22bed62031cd06f25231f083cfb502143c7609982cf4aab3d78b7d45c4f",
+    "reports/piste_missing_member_collection_summary.json": "5b8cde1bd7c21f50e2bbf4f0657713611587826c8a126f50f7f062247d33a672",
+    "data_external/source_evidence/OSM_PISTE_REFERENCED_MEMBER_TAGS_2026_10_09_20261009T172519Z.json": "6bbea578b01f12037691da5c74332a91f0ddec2d14810fa9cef68a2f19c63c68",
+    "data_external/source_evidence/SLF_SPASS_HSCLQMD_GRID_1962_2023_20260924T012102Z.nc": "b8d740993a4bfa2b542aa2c2986564073d275b07f2b2fd9c869dfc5daf597c0d"
+  },
+  "output_sha256": {
+    "data_processed/national_proxy_networks_stage92.csv": "1de00fd467a700ac95afd47f2d25a4867b30720e5719d51e7c246c2820b15ffe",
+    "data_processed/national_proxy_object_review_stage92.csv": "bc90b6ae1c797f574e8a9e7959fcb9ecb062a72e295335c10c22e85a2647069e",
+    "data_processed/national_proxy_spass_weights_stage92.csv": "ca4332b15978cdeee31e6f8d2e22d7b5d5c66d852e54580b4b523f5182300b0b",
+    "data_interim/national_proxy_networks_stage92.json": "b92ca5b344ce06b9b82d7c08bedae8c7f5cb7b0d7367341b6a6197aecac3b404"
+  },
+  "provisional_candidates": 6,
+  "original_member_objects": 292,
+  "native_spass_weight_rows": 68,
+  "unmeasured_original_objects": 0,
+  "ski_activity_verified_candidates": 3,
+  "grooming_choice_validated": true,
+  "grooming_scope_choice_pending": false,
+  "no_new_snow_or_terrain_values": true,
+  "no_old_group_or_profile_replacement_independent_domain_acceptance_or_automatic_exclusion": true
+}

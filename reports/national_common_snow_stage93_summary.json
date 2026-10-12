@@ -1,0 +1,585 @@
+{
+  "completed_at": "2026-10-12T16:28:57.991139+00:00",
+  "input_sha256": {
+    "src/data_processing/build_national_common_snow_stage93.py": "c41cad07faa996945e5177b38ef4ef61dbbbfd45103621cb30fb59f9ca40b779",
+    "config/descriptive_similarity_scope_stage84.json": "db646637249238654298abdb97c3e9687250c1a5b5d9be5db56c64ee500a008a",
+    "config/national_grooming_scope_decision_stage92.json": "c662c1582bfebc41d9fdea3df0b2d3040a47bec15187d93b2231f6d6aa572ed7",
+    "reports/national_proxy_support_stage92_summary.json": "f00cac835936f6f5da3fe85e3f9429b260ee4a7eddc619058c9b985c10409d97",
+    "data_processed/national_proxy_networks_stage92.csv": "1de00fd467a700ac95afd47f2d25a4867b30720e5719d51e7c246c2820b15ffe",
+    "data_processed/national_proxy_spass_weights_stage92.csv": "ca4332b15978cdeee31e6f8d2e22d7b5d5c66d852e54580b4b523f5182300b0b",
+    "reports/snow_grid_metadata_compatibility_stage47.json": "245d2a45be5de3c473f225d43d8ffeefe452fc96625d90d6092da1e90bd4cc7d",
+    "reports/native_snow_weights_stage69_summary.json": "f3b5c960430e46570143e86589d72156ec58f548cf0c347234b4f5a6869736a4",
+    "src/data_processing/build_reviewed_spass_profiles_stage83.py": "fb9c0f7e2e6cb2c9b09e3f9056025e04d0e6eb7bfa5d3296574b8f7223b6ba1e",
+    "src/data_processing/build_spass_preentry_profiles_stage77.py": "3df9497b4547132d90164bcd575608f51737b988158053f8aefb2bba90280e9e",
+    "data_external/source_evidence/SLF_SPASS_HSCLQMD_GRID_1962_2023_20260924T012102Z.nc": "b8d740993a4bfa2b542aa2c2986564073d275b07f2b2fd9c869dfc5daf597c0d",
+    "data_interim/spass_preentry_stage77/values/spass_2013-12.json": "177e6cce1dad712e52fbcffc6cba2a06df2fa195524b2ce6e0f03b238654efd0",
+    "data_interim/spass_preentry_stage77/values/spass_2013-12.npz": "4e3603851d90efd93fef60f662583bd8af41e417febf6269208cd7d5a54ed244",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2013-12.npz": "0fc21df70868118e296ba6ac49c0833e9b2b2f14a35d53759f29e1fbdd7c900d",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2013-12.json": "437abe675be1f85ee31e940a6a370b87abf407211bf835be10a5665cc4492076",
+    "data_interim/spass_preentry_stage77/values/spass_2014-01.json": "0f00cfa6ca040b6c83b6efde0ad290a89b480ccd56cb0a0071c390f724b5b3b7",
+    "data_interim/spass_preentry_stage77/values/spass_2014-01.npz": "a394279d619c179f1bc3eefaabfd6599437aea1263457c56b5171e1725090763",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2014-01.npz": "e14dbe719137ec92a5b57173ac3924c4f9ae796cd2ff8b8571c908136490e665",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2014-01.json": "cb27f2034e9c0983da5f820acb9714d82d17f1d81e6aef4c972e29d57ae6e102",
+    "data_interim/spass_preentry_stage77/values/spass_2014-02.json": "0637dd4b68e4d252cab4f694db45170252ffa684b5d7f872cf656aefa8f3f27c",
+    "data_interim/spass_preentry_stage77/values/spass_2014-02.npz": "415cb285dc83d918fcbfd9b84bc42ca31b8645973ec5ffe8f18afe8c041cc21b",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2014-02.npz": "57cb9560957a8a39721c21ef553a3a3553b6421670eb55a7be8e3b697b007245",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2014-02.json": "af47682f5b9465cbb52d49bde1996575461d458878e39da4ce737a95e2de5e22",
+    "data_interim/spass_preentry_stage77/values/spass_2014-03.json": "6d0e284eb86fd7536a142dc1989c99414f898cdb960f6135dfa35559849a4d0d",
+    "data_interim/spass_preentry_stage77/values/spass_2014-03.npz": "25d0c04d2ff0a1242858b11a78e12d084256bb9ece1f017a537dc944f58cd65d",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2014-03.npz": "ef3b4e76db4c3223bf4468a6c016ec4a8077b02769dd6d37face89e1c383d673",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2014-03.json": "709ca7ffbd09a029ffa88b7939a537434efefb39ad89d3282d9c9f0ae195f83e",
+    "data_interim/spass_preentry_stage77/values/spass_2014-04.json": "1f645a3494be851518e80766d4a74d85876cb9a57d714902f61438d75b3bdf93",
+    "data_interim/spass_preentry_stage77/values/spass_2014-04.npz": "36b5fe093f284203dfaeb1dbbe090ec1106d8d897575616355bd9d5e337a6dbc",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2014-04.npz": "8c6aa1e4ca3db21d1ec0a569f238df1eede299705e19c89e6a12ba1cf138649f",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2014-04.json": "c2477b5c60d3bc7df9dcdee8ce37d2465267db387589897423631211b77425a0",
+    "data_interim/spass_preentry_stage77/values/spass_2014-12.json": "3ebf3378fa8d6c4cbb92d5555e4df19f05d9d86ecba479eb54800a3d1fbabd8a",
+    "data_interim/spass_preentry_stage77/values/spass_2014-12.npz": "c8e27e8f00b22c7f8378aaa33907a27ccc2e6c2b847588732ee892a34868cd69",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2014-12.npz": "8959e121e134ae0c39e754bf68106fc57063682fc91927e80d3a13b847a01ee7",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2014-12.json": "2dc0c81acf6c15c677d5bf595dcb27d38c9cd2010ef0c53f8340e4a2ef66ef62",
+    "data_interim/spass_preentry_stage77/values/spass_2015-01.json": "2e0b25341040720f84b6e291187eb5d7cf64396ab643b1e793783546370ba3bb",
+    "data_interim/spass_preentry_stage77/values/spass_2015-01.npz": "642535aeaa87aff62dac58b3b6b1b90bf78bdbfb15484127d8b28dbadff0e965",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2015-01.npz": "36c3adb1203139fc6c24bd292bf6b23a389b1d370fcf760911144d1405ec3079",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2015-01.json": "5182ee5d0b0c8389f14f54e4d102c51ae4068b7eddc6896e021a75d59386a37b",
+    "data_interim/spass_preentry_stage77/values/spass_2015-02.json": "eaf0e76d90ea4eab215981b135022340bc6763679a97f3b08876363b2fc620ff",
+    "data_interim/spass_preentry_stage77/values/spass_2015-02.npz": "84b102578014151551aa61747fc76b9ab8edf4c287e786a425c0582b26468b6c",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2015-02.npz": "093161cc3b5be782a664a5488ff9691597eabb1b122d891c2b901130169626c0",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2015-02.json": "b2298da93cdde9fd4e4504d95d7108f16af10c8bc1d9b29d94ae162f7837ecd9",
+    "data_interim/spass_preentry_stage77/values/spass_2015-03.json": "b19a07509e4cb49368c109b235c1f67f2f0d0179ce9a9a045e489d24eac70388",
+    "data_interim/spass_preentry_stage77/values/spass_2015-03.npz": "c5603e21fbb0eafc46ea156760d843e39d9a45ad53f925fa35cd424b4cebdeff",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2015-03.npz": "50107881e1db02bd7a91b7f0cb311df6d9334f2becded35b5e7be7b2fd2dfe1e",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2015-03.json": "dca9db511e509898c27b1782677e21d5fe3fd07e12963c7e14fd72d5e97b0adb",
+    "data_interim/spass_preentry_stage77/values/spass_2015-04.json": "e1bc09d2df0497031177ff2c2ce52fdb2db8750a516440b389ddbf71a36e77bb",
+    "data_interim/spass_preentry_stage77/values/spass_2015-04.npz": "9a94dfea3629e8558433918b1d4804540ec4625bb95f6682e883ad7a21071f44",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2015-04.npz": "bc51614d7164541ce9b38078e6c3399aee92cd219f40cd22ef535da9b93e8717",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2015-04.json": "6a1ddceb0e44e95cdcd92957b8ce3b58111a1862a2767a4c11c1bc790fd65ea3",
+    "data_interim/snow_multiwinter_stage76/values/spass_2015-12.json": "6d5edc5cef312191a3a77540538770cec0d6bf02a1bc5b91b9b4825384b79114",
+    "data_interim/snow_multiwinter_stage76/values/spass_2015-12.npz": "f383c92b8092f64903ee7f5ac807d9872852e312581876ba5d202ca09daeb746",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2015-12.npz": "1537340f36c149d7587e8fdee9d02e49fc2909eb7726b15ffcb1b15da284f078",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2015-12.json": "f75c4026e5de9420cff9249a84d43c984a2b5e773d4e55488c1bf0f34620b5f6",
+    "data_interim/snow_multiwinter_stage76/values/spass_2016-01.json": "d58036d295d817a32ac82a8aad3cd9eeb9b697511132003fac723144047a05c2",
+    "data_interim/snow_multiwinter_stage76/values/spass_2016-01.npz": "03364f9d3bcbde088f44ef257252511f9bab7f5a6eb4da0588772eeb4c410b37",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2016-01.npz": "5497bda9e767a6f9b6e4649ba35c67688fe0bb224e466f07b70db6f0baa4e20f",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2016-01.json": "7610c3dc4a4d85950c7f71823825becb3919b94d189fb36c355d149f26955b8e",
+    "data_interim/snow_multiwinter_stage76/values/spass_2016-02.json": "228150f8faec00c061d2f24cfa020e60481a186d90110735981913e8a2b044aa",
+    "data_interim/snow_multiwinter_stage76/values/spass_2016-02.npz": "792b3c83a5f1518b52d658de5fafc9ba7be1adf924b7b45564ee35bbb43350b2",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2016-02.npz": "659cae8d90020bf8e1888d87ac888ef7f6c5bd72fc76728cd0ab59a5ec0e300b",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2016-02.json": "09c40f05ac7683ab9bf4abb8da8a8218bf2247b270c0918083225ce2c2ddf500",
+    "data_interim/snow_multiwinter_stage76/values/spass_2016-03.json": "a61b39de3122fb43fe235fecea5f206c766b1f1a4dc0cd232d83a75bfa23c7be",
+    "data_interim/snow_multiwinter_stage76/values/spass_2016-03.npz": "716a7ed3c17022e85bc730de95218c60657faa3919b6610666906c678f8bf385",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2016-03.npz": "1303f2428150ee57072fab8ea829f9d6d8be8de088973e462e898eb2040d2b7c",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2016-03.json": "4ec75d2a34512cc8e9cc9269bb516b4ee75cd9c9317c792817448ea68a1e5a3a",
+    "data_interim/snow_multiwinter_stage76/values/spass_2016-04.json": "aaba58951ac128cb23e345d27cf792ec5aaaa8b76269e4276508dc3b53912eab",
+    "data_interim/snow_multiwinter_stage76/values/spass_2016-04.npz": "07dee8ebe255c3b75fd8c7b5aa3e67643b8ae4831cac8941bca724eb486f8023",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2016-04.npz": "5097e43bd96e57111283d7883ff46d26a0ba03d3e8999158448935ca63fd488a",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2016-04.json": "f81f542246dee59ad2d001671fb2e916dec133956f6b2c9409370b81e9662719",
+    "data_interim/snow_multiwinter_stage76/values/spass_2016-12.json": "96fe00b6e0fba1ffe40a089c16e99f4c57aa3cb7915f68ab1c0654793460a09f",
+    "data_interim/snow_multiwinter_stage76/values/spass_2016-12.npz": "74a44576de1dc7f89ba0d4899fadf66f75b530faa7c97b23aae0476933d3bae3",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2016-12.npz": "e41ba47559704b005615cfa42f6b22a78d176d17bdb7a6c7f25d9d1104b589b8",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2016-12.json": "091952f08a0ca77935e698f9c5309eefba193633e39fe794e71a73ede7d7c30f",
+    "data_interim/snow_multiwinter_stage76/values/spass_2017-01.json": "35e9f266cb60ca133fd16a69915532111b1220f5548980301cbb99f4f538a624",
+    "data_interim/snow_multiwinter_stage76/values/spass_2017-01.npz": "3caa7831f4eef6a62e2a4ea9a33ce4ef2c6a7619e21e830bac8e2ec75772c256",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2017-01.npz": "b0d14c61df1c6da5c2048eeca49091c19646d4ce40b33fe83bc6a52bd246aded",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2017-01.json": "5cf3df8a89fdd0f32d76db89e034a0205457b217f42cdb1a8a29a68650c6aecf",
+    "data_interim/snow_multiwinter_stage76/values/spass_2017-02.json": "93bc81a205bed66b8464901d0782840b710ae527aab1c3532934f66dc22d8186",
+    "data_interim/snow_multiwinter_stage76/values/spass_2017-02.npz": "4fb31e07f31201aced6dfb00332cb2707134f1c0d0569d88f10c14062a398f5a",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2017-02.npz": "bee5089bbca10710aceb28d13ffff84359514446fd739152d67ba6261c593a16",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2017-02.json": "7f4984a97d66381ab3c7d31c07ea4a77d8c8b9e4294c4eb6a1275466aa36119a",
+    "data_interim/snow_multiwinter_stage76/values/spass_2017-03.json": "3c0d026d934991734b9fb9f23fb6de5a448f21207cb727be89c6d4d150e662fc",
+    "data_interim/snow_multiwinter_stage76/values/spass_2017-03.npz": "67aacfd57b3bb31f7434c7152a7d910d1fbeacf32410ce7b8af10b096bf2d065",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2017-03.npz": "fedb6f0fee70dc9404b034c00a85f4a9d0de552e2a386a63f30705a253e71cb7",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2017-03.json": "63b86a980da218a32a0b2b8280adf85839da586ac9e5d56a67fbaef0ff9c89f6",
+    "data_interim/snow_multiwinter_stage76/values/spass_2017-04.json": "0aebd389a0c050b4dbdb8547504b1787707493c54de49baeece0f4c88c56a21b",
+    "data_interim/snow_multiwinter_stage76/values/spass_2017-04.npz": "cbf55946b6f7649263296d8aa8e7f7b180c3a16c7a459c470382fd354e85276b",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2017-04.npz": "7f3a6932b4d4cd13c1dabbf287e2b3da38aff5442975f60640fba78cd8e4cea7",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2017-04.json": "fdb798b29c7d9df8ac3b99c0d8471e51b2de5a0e020b8c4e1b48259c2c6c6fde",
+    "data_interim/snow_multiwinter_stage76/values/spass_2017-12.json": "1eb3a02c81fded89ae92ffe5ec349d991f6e3526773441fbae3048bd9a987bf2",
+    "data_interim/snow_multiwinter_stage76/values/spass_2017-12.npz": "1ae91a85037ddd01a9eb09061c3002ce11b527f2a0126ea31eb85cc5c13cab20",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2017-12.npz": "c5c3595eafcbd1e59354950c0195b505743b60164afe1d11bb395940d4aa2f6f",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2017-12.json": "50c869a5d26fd9b1bb4e1e693252322c6eaf91e532b502e1bf37a7d77dfd47f4",
+    "data_interim/snow_multiwinter_stage76/values/spass_2018-01.json": "8248b63b09e3cc848aa7c97632c6fafc0798089c28bf125b21846f9da7b81b66",
+    "data_interim/snow_multiwinter_stage76/values/spass_2018-01.npz": "90a701cdc4b06373a0dd84b9432115192a3fe425a24cdb0fa22b7eb3dc55f824",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2018-01.npz": "e4be092e14ef0dbc59c7c10f0dd193dd52a52ed9048d9764c05d268b33e5fa1a",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2018-01.json": "97bd4c7451108b4838f6f8b1583677a84c35df99aa0747e1de3d7f72b7f3713f",
+    "data_interim/snow_multiwinter_stage76/values/spass_2018-02.json": "aa30399b5f6a48d3d0ca5e497064964e0e4b5d79dd06fc6e963af988e5d24574",
+    "data_interim/snow_multiwinter_stage76/values/spass_2018-02.npz": "ce011cacffdf5ebf04841160077253d029ff18e0d23297d0417c0a2b40377b99",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2018-02.npz": "0f1d4bec24de94fd1ff4bfe9359e2eca35e7dc5a4aa0fb3c252232d8098536a3",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2018-02.json": "247d82734a84f790d2e6948e66fd80404f959914ddbd2cc45d9c15e6c1eeff7d",
+    "data_interim/snow_multiwinter_stage76/values/spass_2018-03.json": "01d70611f192d2681f54cab33d6f924450b85a499c4bab93a29cb977b94a60bc",
+    "data_interim/snow_multiwinter_stage76/values/spass_2018-03.npz": "bb06b4e195d4633608b48d259faa1fb001e3cec8fbdd4032830bf99c96620609",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2018-03.npz": "169d13c7609baa93ba014919e61ed863634835af8ba6da0d81cf5eaa98127a30",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2018-03.json": "8f0be6e381c75f43a2e9eea7d67cde0e2863734fe9b9128809232fdf3ab2334f",
+    "data_interim/snow_multiwinter_stage76/values/spass_2018-04.json": "649be30ea290432b906a101713e9537b2b92d3c1f116173710ac43e06677056d",
+    "data_interim/snow_multiwinter_stage76/values/spass_2018-04.npz": "c36853299c509c5c965afdfcab0a05d05b85ea583e571cf8cbe07dd032915dd8",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2018-04.npz": "411474f6b0276613bbd514a604fd1067c5a922ea1098992803029985435086d4",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2018-04.json": "5eec06346ae020fac655ed6ca4a3c8ccc59375e4a957e38f6ccd97ace8cb5172",
+    "data_interim/snow_multiwinter_stage76/values/spass_2018-12.json": "214efdf5f18cb29f66524dd16a34c82cf072e9246fc0aaf755da95d133193384",
+    "data_interim/snow_multiwinter_stage76/values/spass_2018-12.npz": "51c5df15f73851c49cb9c9e24e39846d28e2d986c2263000454d4f26f4cdcd62",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2018-12.npz": "7998a6a9b8596a4ed81809c251237f1779192f32866a21031ef17c4366c8cc99",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2018-12.json": "d4af331bded98970b33dcc179c552728c38e8caa38fa2bf35171fba5807ed6a2",
+    "data_interim/snow_multiwinter_stage76/values/spass_2019-01.json": "8476653ca3583ced5123c22ab33ecdaed5e043810a3265b04fd35a2461854389",
+    "data_interim/snow_multiwinter_stage76/values/spass_2019-01.npz": "e54795e843d46848610dc9d564eecb446f17d24dc4907800d5e085b710afea1f",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2019-01.npz": "2a11a9067dcae13b48ce7d4bed7882196dae2bb92079c5278bb3e4f52c6170ab",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2019-01.json": "a4aa512e97669a7c8a88034fe9046140f4c2520d28925a4396f5a1eb5aa7fa40",
+    "data_interim/snow_multiwinter_stage76/values/spass_2019-02.json": "65dd7d81cb2a035971f73ad1abd5f03add42040a8fcf488da36d2176528bc51c",
+    "data_interim/snow_multiwinter_stage76/values/spass_2019-02.npz": "feb26cf0fc573d1db13293b23f4ffc82af7bcb1d8417d0db835093752e0c0394",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2019-02.npz": "dc9d513040c8a49c1d22f568114976eb132c834d44e288d8c366b090bcd4ed75",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2019-02.json": "ebc052391718c17e2a5ae912edb3c30866dbe76490cab0c06be4d26f7fe7894f",
+    "data_interim/snow_multiwinter_stage76/values/spass_2019-03.json": "b3c5b6461ff3596bab80f13786f4acc438c782e7bb376f902b6934c31706cd59",
+    "data_interim/snow_multiwinter_stage76/values/spass_2019-03.npz": "aa1bfd34d8407ee472fe08aa4ba3dd381964e92cecbe508390f2e3c76cc06ef9",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2019-03.npz": "d683f29469bd1b75244d14480183cec60ed207d3100a02b221de607311639831",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2019-03.json": "e9496c8f3d8c2f53df0b578adc9e3b0bcf08b9342f0bd1f0c4b486b9373a81f0",
+    "data_interim/snow_multiwinter_stage76/values/spass_2019-04.json": "c1510ab13b34a6b12369f5e30b3a53264711de74f80441e53268c69d776ed936",
+    "data_interim/snow_multiwinter_stage76/values/spass_2019-04.npz": "be7059bd78450fe80dfe43d0778973dba6813e85c15d5f649f125b7586ca4f04",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2019-04.npz": "f8b3df2c203488aa9425cf06c80cb683a51899f0b110b1230db04596b7ba1ede",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2019-04.json": "846b76577ec2e3895fc6324998ac57488a6428be34a63fbd900ee2c05762ec9a",
+    "data_interim/snow_multiwinter_stage76/values/spass_2019-12.json": "84e02a5c23ffc87060e5776475cfcf13eb7250291b35545eebf44757983218f1",
+    "data_interim/snow_multiwinter_stage76/values/spass_2019-12.npz": "54e76d0bb24e2f5414de9e9a5e56df5b4edd2f654080fcdc58441bd3b176c70d",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2019-12.npz": "f23798afc04dd4e59a1db58b62d7bc189dd50dcca0f385163cb8c61ffa5ecd35",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2019-12.json": "16f6d1492eea348434f45589fb104ea6ca8dcc009406ffe66772c27ceaf33269",
+    "data_interim/snow_multiwinter_stage76/values/spass_2020-01.json": "b98cc72ca03cabf34643c82ce1c906c403b9f055aacfc92154e9762683a34355",
+    "data_interim/snow_multiwinter_stage76/values/spass_2020-01.npz": "94ce7e177434496643210352efde3ec1b10e8a32da9c387e5b4100e785e2a94a",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2020-01.npz": "fdf3f53cd4201f7685770aa766ff5dc2dced5c1a91e89892343f1b1d64f06d15",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2020-01.json": "c73f211bbc4ef165a91502694b1c67367e48b39537ed165c9d1c816c9933d388",
+    "data_interim/snow_multiwinter_stage76/values/spass_2020-02.json": "dafb91ba070e888d37d87ed8b85fa997dc3e62550e5cb77003ba312bca3b74b1",
+    "data_interim/snow_multiwinter_stage76/values/spass_2020-02.npz": "4dcc8e00ceac4ef85d4c8142a412ed17a1cd97244c706264828490e429bae10b",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2020-02.npz": "eb772497fe9a223213f013bf52cafdbe71f983797db09ef6d69d9e8feb000073",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2020-02.json": "e712117a16f12cf4b00be036b3ce9f3267550f3043fb3fd65c5d9d0da2c0e25c",
+    "data_interim/snow_multiwinter_stage76/values/spass_2020-03.json": "9f200b1e61f1cd5ff520cc6ef1e16885805ab3cf62bc9e1e7b2e9e6f3e446c86",
+    "data_interim/snow_multiwinter_stage76/values/spass_2020-03.npz": "be91cddc5b31d3d65b9986c0e7e0ba2ecb6cfd335d25a861b150083714a4733b",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2020-03.npz": "f513f825a78c42e0d8ad3912525c834ab1e20a5a5a09861f6c1af7152883f7c0",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2020-03.json": "35595d272bbbc5cc270f3b6ca73a7618e17a20628c37a58aaad92f19abfb4f20",
+    "data_interim/snow_multiwinter_stage76/values/spass_2020-04.json": "573dee7109f2894697e14ed2f9934ab7265f0c45c87d47eaa953f956fd29ea9f",
+    "data_interim/snow_multiwinter_stage76/values/spass_2020-04.npz": "e327df130d1de106ff9808c25227f79a32bb75f1e5048e8abc097083fbfe6191",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2020-04.npz": "cd8af5fe4c706ca9a52c87b00216c1830272c4e8ee442939524d7f62074f67f6",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2020-04.json": "24c27daf5a5e642eab45ad8420a19db30daeabb81f5eda7414106f3f79f4f9b4",
+    "data_interim/snow_multiwinter_stage76/values/spass_2020-12.json": "1cee60090d41c3dda585c115f9feea195bbe277050fdf59c7b60191ae5ca3b72",
+    "data_interim/snow_multiwinter_stage76/values/spass_2020-12.npz": "dab3f5b90346165f68088a9f5e00eff4a89c1f1483e4e3fed0ff2aa75e7f5564",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2020-12.npz": "7b1e170d06357886c1cb07a831a3d6872530be4bddea98a36add4820264a363a",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2020-12.json": "05aa6589cfc33e489d49a90760fd149356bd4d91a64fd287ec2ac125636faba0",
+    "data_interim/snow_multiwinter_stage76/values/spass_2021-01.json": "fdeed7faa3b2c45ef96b594eb2e2719f89dddf7a7457f56b3152458318a3bd5e",
+    "data_interim/snow_multiwinter_stage76/values/spass_2021-01.npz": "17d654bdc04819db6f12353acec899c09720e4c5f27679f8c6e2ba37bfb498dd",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2021-01.npz": "d7f5574e8757629d8f401653c40de127b305d8380a47d8e949b08cd005e5e106",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2021-01.json": "66fb911258b8719a0da3a04e09006740be19d8c37beeb4c3e30e35615f2479ce",
+    "data_interim/snow_multiwinter_stage76/values/spass_2021-02.json": "c5840cc861824fcf718c33d9bf06597c5c11f7bc80e24bf4cfc2943868d93610",
+    "data_interim/snow_multiwinter_stage76/values/spass_2021-02.npz": "369047ddaed9177cca074c4d491ec2cd623c0d7e357179b7f4615a7c996ee7e7",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2021-02.npz": "0cb43d4396b0ad0e89ffce33ffd71fcb7e344a89baf8a94bccde80a15773718f",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2021-02.json": "c81e1c9ef412f4286f9ff900864ae80ba3ab37e1ba86af16e252f1de261f26a9",
+    "data_interim/snow_multiwinter_stage76/values/spass_2021-03.json": "1262fe41fdd7f9e10185d147403a3e63b2f6a0aacd0c8e54f8774dd528beb7e2",
+    "data_interim/snow_multiwinter_stage76/values/spass_2021-03.npz": "8f41f0f0cfc26bfc0621f6a1b8feadff7c7561f1ea958bda481694a778ae753e",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2021-03.npz": "df41ed5bea8c4e776d78f6797463fb3b2d7cb61bd85c1caad22ac59db412a42e",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2021-03.json": "049eb29f93116f6a4be8ecb240604199466617fb60f76330be42ca277e76319e",
+    "data_interim/snow_multiwinter_stage76/values/spass_2021-04.json": "24f2590a089e6ee5343ef53d61ff1d6892e3b0de4c9abf9f9bc2141492a5b095",
+    "data_interim/snow_multiwinter_stage76/values/spass_2021-04.npz": "21653fc1bd721b2d6237919f3e3b64749d1cd5241bca89f338ff388f9f6a18bf",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2021-04.npz": "708afd6d4703e2f46e7c1ad1e56119707b667f384c6c164d7d01670427adedc8",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2021-04.json": "cd2b00b46880d0b1fdf9e9b9d820c992d98488da60af98351b8ce5b4cb7ec500",
+    "data_interim/snow_multiwinter_stage76/values/spass_2021-12.json": "3dd4e1dae287db28111cdcc04c23566933a9a21b037461379ba469576ad99dfc",
+    "data_interim/snow_multiwinter_stage76/values/spass_2021-12.npz": "93f7e91319e8dd8c861189cb350385f844409bd1751aaf940ec144a106b79e3f",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2021-12.npz": "d1fdaf79de03524f4e4eeedef6f2ffde07cc18580d6922b8aa27f5fd3fa02f63",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2021-12.json": "2b5aba7d164d1c62a7e6b1721bb77b69ead23fd3eabf8a7cddc6c48825ce45da",
+    "data_interim/snow_multiwinter_stage76/values/spass_2022-01.json": "78ba634e5309e039cf052c4b6d30350175e55f980df7f0d700f82d99f9ea0872",
+    "data_interim/snow_multiwinter_stage76/values/spass_2022-01.npz": "bcb162f91371fafb3fbc7a48e58461750768dd2e74455dddcbb9446dc285dca4",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2022-01.npz": "7fb6c43973ba82f368bb168f796873f265381eb8346731e114cbf0a13cc8d91e",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2022-01.json": "a9394c1310e81ded733a5f4880400578fe7748c2b436616b6eb00914dcde7c65",
+    "data_interim/snow_multiwinter_stage76/values/spass_2022-02.json": "229a3a6c91c5e87c7ea590eab00c5eca7f0fece24fc853d8a1ac76fae81c7634",
+    "data_interim/snow_multiwinter_stage76/values/spass_2022-02.npz": "8cf1a2c10ff89a5b386d0303174b406d6fe14a67eae9e6b737707ef8f6f4b2ec",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2022-02.npz": "29b221ce5e10ce316dd303accef89ce7fd7c24923bbc40442bd10c879e60bd53",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2022-02.json": "615132f9e50eb661a1b4c6d1c4dd89a7251a970e35c06064c4d505c24c770739",
+    "data_interim/snow_multiwinter_stage76/values/spass_2022-03.json": "5fa80bfb28fc9cb486e59070d7535e35061fcb16b99e13b0d16759dd5e63c787",
+    "data_interim/snow_multiwinter_stage76/values/spass_2022-03.npz": "5f41222c74024ed95031c69f702abf476a54fc0a8c0717292204a3042a0726c5",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2022-03.npz": "e648869efa9c25d3ca20305eda772ace54f6cdd485a96aa1ae3545448808c831",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2022-03.json": "55c89ca4d0248780ecacce47507baf821c9646b42e1237a044bcc8de2f7d5059",
+    "data_interim/snow_multiwinter_stage76/values/spass_2022-04.json": "64615a875fe4d8dc2cd50329241ed39a4a350406c37000cbd22453599850014e",
+    "data_interim/snow_multiwinter_stage76/values/spass_2022-04.npz": "fbbb9e7aa9341c206f931191997ae6ffe80593fc0ba5d7263c7d6f73205786c6",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2022-04.npz": "901475687fe9aa527de9d9fa9f6831982b12b871d7094d8ea7e0103b1ffcf4b0",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2022-04.json": "14dc7014c9b9b51c76b829eb1eb69607703dfe54068935dfe2dcc795c8755ba4",
+    "data_processed/native_snow_date_pairs_stage69.csv": "39025ee613a3a204a044ebc9104222a2dedea214e281fae2a41e1e27c097993e",
+    "data_interim/native_snow_values_stage70/spass_pilot.json": "bc597f1129a31fb341a8fb6a550af29b976a85782d308fd1f7fda7d19d69bef5",
+    "data_interim/native_snow_values_stage70/spass_pilot.npz": "f80a971aabe260fd6b68aec0d65f0918827e2b3fcc608610b0ef6328c3ed2a18",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2022-12.npz": "16954ef2e4ae7c4d97e5c7329d2033f252c634d157c4ef3988403a1c5887aebe",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2022-12.json": "bada01d405d05a351b66963936cde9b2fcc873fd9d93467f9c20df08dd60779e",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2023-01.npz": "6e457e93da89fa04194f515f6bffb299de8f695910c5717de15bd83ef83b92af",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2023-01.json": "75fc27ebffa9cac9ebbd6366ffbcc93f396313eb714ece640fb47209fd19bdd1",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2023-02.npz": "57d46bde0a750d50213cc047523a3367cfc6616409d00b842f1228e936d5ca6a",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2023-02.json": "7eb228fd1bb2b6a881f9c0a514168e3ccf6ec2c3c45f45b734958f19b4ae8d94",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2023-03.npz": "d421de7dbb09f30ba07bc4ee28c09a68b2dc5e07f8dc3f22d09f516cb35836cb",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2023-03.json": "7730bc03e1cc65bb6e1c6fb29097f1120070781db4ebdafa77dd2331828a099d",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2023-04.npz": "46df3393d19105418fc24737e271b12839de09dec0ef845d8bd823449c2c8cb8",
+    "data_interim/national_common_snow_stage93/values/spass_extra_2023-04.json": "826e4c5ad18a7e773d9388fbe084f77141626e43444734718845d645be2931f6"
+  },
+  "output_sha256": {
+    "data_processed/national_common_snow_winter_stage93.csv": "8681637cadfc82e06e443be0b5dc1439cd7d0e5fe155fa050fd98f477110951b",
+    "data_processed/national_common_snow_profiles_stage93.csv": "5c3f41cea7fcf18c8ff88db0b4459e51e119d2d787d23abb2a6ad73f15e97b96"
+  },
+  "daily_checkpoints": {
+    "2013": {
+      "path": "data_interim/national_common_snow_stage93/daily_2013.csv",
+      "sha256": "99971f1beaa2d15a4fd018b7ca2a594f9988c5c844fc1c19bf1711cfc4d8a8ac",
+      "metadata": "data_interim/national_common_snow_stage93/daily_2013.json",
+      "metadata_sha256": "661ab46f0119a08387010217e45db6c53b9c7b52f755e99f32bc41b5f2456af4"
+    },
+    "2014": {
+      "path": "data_interim/national_common_snow_stage93/daily_2014.csv",
+      "sha256": "c8b29e88c5bba1819b56851ecba259428d5718f344ae89c78bc7409ef290a963",
+      "metadata": "data_interim/national_common_snow_stage93/daily_2014.json",
+      "metadata_sha256": "17ecbcdadcb7c64cb1f1320a86e46ce750509d63d64a4ab9c61df95c954ed5d6"
+    },
+    "2015": {
+      "path": "data_interim/national_common_snow_stage93/daily_2015.csv",
+      "sha256": "b0464e9bd94248e3f294793950f6c13d0343219004d89d3018ddca8516aa46ba",
+      "metadata": "data_interim/national_common_snow_stage93/daily_2015.json",
+      "metadata_sha256": "11f0cc07a1d1e8cfbab9d7ae02b31f1c348da77476e53f86fc0a2c4f46be4a3e"
+    },
+    "2016": {
+      "path": "data_interim/national_common_snow_stage93/daily_2016.csv",
+      "sha256": "d48d28fc098a9d1872b084fa22d2605e09f89906032f0209c45573fd4ac0f8ac",
+      "metadata": "data_interim/national_common_snow_stage93/daily_2016.json",
+      "metadata_sha256": "c9e148692eeb0d15cb073ef5646b0c48589cfc6e34b7c28dfebdb69bbeb6916b"
+    },
+    "2017": {
+      "path": "data_interim/national_common_snow_stage93/daily_2017.csv",
+      "sha256": "27c18e965d582fc7d8bc4317fda77adf942a7958d28cdddfe60c82cb69b3d8bc",
+      "metadata": "data_interim/national_common_snow_stage93/daily_2017.json",
+      "metadata_sha256": "f52b2f5da7713f458931efbf6823a2973fd58b955f455c09fdcf441f358d8c8a"
+    },
+    "2018": {
+      "path": "data_interim/national_common_snow_stage93/daily_2018.csv",
+      "sha256": "d2f757bbc1dbee4ca2ed4787a6df4601a913a08528b632db59969546859dd112",
+      "metadata": "data_interim/national_common_snow_stage93/daily_2018.json",
+      "metadata_sha256": "1a4b0a2586b13c2b4d76a5519125ac03066d624b1798ab0395c295bcdfd5f569"
+    },
+    "2019": {
+      "path": "data_interim/national_common_snow_stage93/daily_2019.csv",
+      "sha256": "2e8843a56408992464736999414fa7a5ff6fe713208c8803078970e06fb964f5",
+      "metadata": "data_interim/national_common_snow_stage93/daily_2019.json",
+      "metadata_sha256": "2f3dc5ea69fadb59b593e9480db531fc7e1ee3a247cfd42870fe84a2de15ae12"
+    },
+    "2020": {
+      "path": "data_interim/national_common_snow_stage93/daily_2020.csv",
+      "sha256": "7b1b35f38ab93d062a25d803b08fcadfd29dacc7048bbdb846c145b658143a4d",
+      "metadata": "data_interim/national_common_snow_stage93/daily_2020.json",
+      "metadata_sha256": "0537dd6ecabb424026892438b164487f28f0155f8574398f03ae06086a742124"
+    },
+    "2021": {
+      "path": "data_interim/national_common_snow_stage93/daily_2021.csv",
+      "sha256": "3d2dafbc05f82a0db90008ada4dc8d6ec76e20af75998f8c0ddc9d9014ea2e5d",
+      "metadata": "data_interim/national_common_snow_stage93/daily_2021.json",
+      "metadata_sha256": "958372a064196eb021fcc4178198ebe68642e9f695ea9a7403cf827d644e74f2"
+    },
+    "2022": {
+      "path": "data_interim/national_common_snow_stage93/daily_2022.csv",
+      "sha256": "7f26431f454eabf631eaee3e9d7312dbc00103f9cf22a422f147926ee069c3b3",
+      "metadata": "data_interim/national_common_snow_stage93/daily_2022.json",
+      "metadata_sha256": "e4b565f14ebc9f22b14822d715637f1dc0458a283353f889a3bfd96ac975c254"
+    }
+  },
+  "monthly_source_reuse": [
+    {
+      "month": "2013-12",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2013-12.json"
+    },
+    {
+      "month": "2014-01",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2014-01.json"
+    },
+    {
+      "month": "2014-02",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2014-02.json"
+    },
+    {
+      "month": "2014-03",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2014-03.json"
+    },
+    {
+      "month": "2014-04",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2014-04.json"
+    },
+    {
+      "month": "2014-12",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2014-12.json"
+    },
+    {
+      "month": "2015-01",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2015-01.json"
+    },
+    {
+      "month": "2015-02",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2015-02.json"
+    },
+    {
+      "month": "2015-03",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2015-03.json"
+    },
+    {
+      "month": "2015-04",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2015-04.json"
+    },
+    {
+      "month": "2015-12",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2015-12.json"
+    },
+    {
+      "month": "2016-01",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2016-01.json"
+    },
+    {
+      "month": "2016-02",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2016-02.json"
+    },
+    {
+      "month": "2016-03",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2016-03.json"
+    },
+    {
+      "month": "2016-04",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2016-04.json"
+    },
+    {
+      "month": "2016-12",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2016-12.json"
+    },
+    {
+      "month": "2017-01",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2017-01.json"
+    },
+    {
+      "month": "2017-02",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2017-02.json"
+    },
+    {
+      "month": "2017-03",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2017-03.json"
+    },
+    {
+      "month": "2017-04",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2017-04.json"
+    },
+    {
+      "month": "2017-12",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2017-12.json"
+    },
+    {
+      "month": "2018-01",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2018-01.json"
+    },
+    {
+      "month": "2018-02",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2018-02.json"
+    },
+    {
+      "month": "2018-03",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2018-03.json"
+    },
+    {
+      "month": "2018-04",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2018-04.json"
+    },
+    {
+      "month": "2018-12",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2018-12.json"
+    },
+    {
+      "month": "2019-01",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2019-01.json"
+    },
+    {
+      "month": "2019-02",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2019-02.json"
+    },
+    {
+      "month": "2019-03",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2019-03.json"
+    },
+    {
+      "month": "2019-04",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2019-04.json"
+    },
+    {
+      "month": "2019-12",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2019-12.json"
+    },
+    {
+      "month": "2020-01",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2020-01.json"
+    },
+    {
+      "month": "2020-02",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2020-02.json"
+    },
+    {
+      "month": "2020-03",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2020-03.json"
+    },
+    {
+      "month": "2020-04",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2020-04.json"
+    },
+    {
+      "month": "2020-12",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2020-12.json"
+    },
+    {
+      "month": "2021-01",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2021-01.json"
+    },
+    {
+      "month": "2021-02",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2021-02.json"
+    },
+    {
+      "month": "2021-03",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2021-03.json"
+    },
+    {
+      "month": "2021-04",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2021-04.json"
+    },
+    {
+      "month": "2021-12",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2021-12.json"
+    },
+    {
+      "month": "2022-01",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2022-01.json"
+    },
+    {
+      "month": "2022-02",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2022-02.json"
+    },
+    {
+      "month": "2022-03",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2022-03.json"
+    },
+    {
+      "month": "2022-04",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2022-04.json"
+    },
+    {
+      "month": "2022-12",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2022-12.json"
+    },
+    {
+      "month": "2023-01",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2023-01.json"
+    },
+    {
+      "month": "2023-02",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2023-02.json"
+    },
+    {
+      "month": "2023-03",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2023-03.json"
+    },
+    {
+      "month": "2023-04",
+      "reused_original_cell_count": 0,
+      "new_original_cell_count": 68,
+      "extra_checkpoint": "data_interim/national_common_snow_stage93/values/spass_extra_2023-04.json"
+    }
+  ],
+  "provisional_candidates": 6,
+  "common_winter_rows": 60,
+  "observed_winter_means": 60,
+  "complete_ten_winter_means": 6,
+  "actual_group_date_rows": 9072,
+  "source_unit": "UNKNOWN",
+  "researcher_metres_assumed": true,
+  "no_new_external_collection_old_cache_overwrite_or_independent_domain_clustering_acceptance": true
+}

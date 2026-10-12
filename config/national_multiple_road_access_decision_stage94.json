@@ -1,0 +1,14 @@
+{
+  "approval_date": "2026-10-12",
+  "approval_user_text": "Minimum des moyennes aller–retour parmi tous les accès officiels vérifiés ; accès vallée/altitude distingués (recommandé).",
+  "status": "researcher_validated",
+  "rule": "mean_independent_outbound_return_per_verified_arrival_then_minimum_arrivals_per_city_then_minimum_six_cities",
+  "all_directional_and_arrival_details_retained": true,
+  "valley_and_higher_departures_distinguished": true,
+  "onward_lifts_and_transfers_separate_missing_not_zero": true,
+  "not_complete_city_to_piste_travel_time": true,
+  "static_no_traffic_no_invented_winter_parking_or_walk_supplement": true,
+  "missing_direction_or_unresolved_zero": "flag_not_impute_never_certify_exact_minimum_across_unobserved_arrivals",
+  "no_automatic_exclusion": true,
+  "old_routes_preserved_homogeneity_audit_required": true
+}

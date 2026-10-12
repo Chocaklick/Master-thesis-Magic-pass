@@ -1,0 +1,13 @@
+{
+  "approval_date": "2026-10-12",
+  "approval_user_text": "Conserver les descentes corroborées ; damage décrit séparément (recommandé).",
+  "status": "researcher_validated",
+  "profile_scope": "individually_corroborated_downhill_geometries_including_ungroomed_ski_itineraries",
+  "grooming_use": "literal_descriptive_context_only_not_automatic_model_input_or_metric_exclusion",
+  "missing_tag_is_not_ungroomed": true,
+  "current_grooming_is_not_historical_grooming": true,
+  "preserve_old_profiles_and_all_groups": true,
+  "ambiguous_abandoned_or_approximate_geometry": "previous_individual_review_rule_unchanged_unresolved_portions_not_measured",
+  "no_domain_merge_or_clustering_fit_by_this_decision": true,
+  "historical_pending_audit": "Stage91 records the question before this later validation; retain its frozen outputs and resolve through this new version"
+}

@@ -1,0 +1,76 @@
+source_id,preparation_unit_id,unit_name,scope_layer,member_object_count,grooming_tag_observed_objects,grooming_tag_absent_objects,explicit_backcountry_objects,grooming_literal_counts_json,historical_grooming_verified,historical_scope_verified,additional_grooming_scope_validation_pending,automatic_exclusion
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,DESC_LISTING_PENDING__avers,Avers,provisional_national_listing_review,6,6,0,0,"{""classic"": 6}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,DESC_LISTING_PENDING__bivio,Bivio,provisional_national_listing_review,13,0,13,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,DESC_LISTING_PENDING__braunwald,Braunwald,provisional_national_listing_review,40,37,3,37,"{""backcountry"": 37}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,DESC_LISTING_PENDING__elm,Elm,provisional_national_listing_review,101,1,100,1,"{""backcountry"": 1}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,DESC_LISTING_PENDING__feldis,Feldis,provisional_national_listing_review,7,7,0,0,"{""classic"": 7}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,DESC_LISTING_PENDING__flumserberg,Flumserberg,provisional_national_listing_review,125,16,109,1,"{""backcountry"": 1, ""classic"": 15}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_EVENT__4b7d19ebb1a4,Château-d'Oex - La Braye,existing_approved_connected_group,0,0,0,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_EVENT__98c0c64310c6,Mayens de Conthey,existing_approved_connected_group,2,2,0,0,"{""classic"": 2}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_EVENT__c1f58b57f3fa,Grenchenberg,existing_approved_connected_group,2,0,2,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__aeschi,Aeschiallmend,existing_approved_connected_group,14,14,0,0,"{""classic"": 14}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__anzere,Anzère,existing_approved_connected_group,168,136,32,3,"{""backcountry"": 3, ""classic"": 130, ""mogul"": 3}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__arolla,Arolla,existing_approved_connected_group,32,29,3,6,"{""backcountry"": 6, ""classic"": 23}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__axalp_brienz,Axalp,existing_approved_connected_group,12,10,2,0,"{""classic"": 10}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__balmberg,Balmberg,existing_approved_connected_group,5,0,5,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__beatenberg_niederhorn,Beatenberg-Hohwald / Niederhorn,existing_approved_connected_group,17,0,17,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__belalp,Belalp,existing_approved_connected_group,95,42,53,2,"{""backcountry"": 2, ""classic"": 40}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__bumbach_schangnau,Bumbach,existing_approved_connected_group,5,0,5,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__charmey,Charmey,existing_approved_connected_group,8,8,0,1,"{""backcountry"": 1, ""classic"": 7}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__crans_montana_crans_montana,Crans-Montana,existing_approved_connected_group,103,16,87,2,"{""backcountry"": 2, ""classic"": 14}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__eriz,Eriz,existing_approved_connected_group,6,0,6,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__evolene,Evolène,existing_approved_connected_group,41,40,1,2,"{""backcountry"": 2, ""classic"": 36, ""mogul"": 2}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__faltschen_reichenbach_im_kandertal,Faltschen,existing_approved_connected_group,7,7,0,0,"{""classic"": 7}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__gantrisch_gurnigel,Gantrisch-Gurnigel / Gurnigelbad,existing_approved_connected_group,10,10,0,0,"{""classic"": 10}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__grimentz_zinal_grimentz_zinal,Grimentz-Zinal,existing_approved_connected_group,115,95,20,3,"{""backcountry"": 3, ""classic"": 91, ""mogul"": 1}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__gstaad,Bergbahnen Gstaad,existing_approved_connected_group,132,19,113,5,"{""backcountry"": 5, ""classic"": 14}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__habkern,Habkern,existing_approved_connected_group,5,1,4,0,"{""classic"": 1}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__heimenschwand_buchholterberg,Heimenschwand,existing_approved_connected_group,1,1,0,0,"{""classic"": 1}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__homberg_skilift_dreiligass_winteregg,Homberg,existing_approved_connected_group,5,5,0,0,"{""classic"": 5}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__jaun_gastlosen,Jaun,existing_approved_connected_group,29,2,27,0,"{""classic"": 2}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__jaunpass,Jaunpass,existing_approved_connected_group,9,3,6,0,"{""classic"": 3}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__kiental,Kiental,existing_approved_connected_group,10,8,2,0,"{""classic"": 8}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__la_berra_la_roche,La Berra,existing_approved_connected_group,7,7,0,0,"{""classic"": 7}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__la_dole_jura_sur_leman,Jura-sur-Léman - composante suisse La Dôle,existing_approved_connected_group,104,6,98,0,"{""classic"": 5, ""mogul"": 1}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__la_forclaz,La Forclaz,existing_approved_connected_group,21,21,0,0,"{""classic"": 21}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__la_robella,La Robella,existing_approved_connected_group,10,10,0,0,"{""classic"": 9, ""mogul"": 1}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__lauchernalp_lotschental,Lauchernalp-Lötschental,existing_approved_connected_group,14,12,2,0,"{""classic"": 12}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__le_paquier_cret_du_puy,Crêt-du-Puy,existing_approved_connected_group,6,0,6,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__les_bugnenets_savagnieres,Les Bugnenets-Savagnières,existing_approved_connected_group,18,0,18,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__les_marecottes,Les Marécottes,existing_approved_connected_group,19,11,8,0,"{""classic"": 11}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__les_paccots_chatel_saint_denis,Les Paccots,existing_approved_connected_group,7,0,7,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__les_pleiades,Les Pléiades,existing_approved_connected_group,1,1,0,0,"{""classic"": 1}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__leukerbad,Leukerbad,existing_approved_connected_group,48,43,5,3,"{""backcountry"": 3, ""classic"": 40}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__leysin_les_mosses_la_lecherette,Leysin - Les Mosses - La Lécherette,existing_approved_connected_group,110,21,89,0,"{""classic"": 21}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__linden_skilift_linden,Linden,existing_approved_connected_group,3,3,0,0,"{""classic"": 3}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__marchbachegg_marbach_marbachegg,Marbachegg,existing_approved_connected_group,8,1,7,1,"{""backcountry"": 1}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__meiringen_hasliberg,Meiringen-Hasliberg,existing_approved_connected_group,57,0,57,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__melchsee_frutt,Melchsee-Frutt,existing_approved_connected_group,70,0,70,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__moleson_la_gruyere,Moléson,existing_approved_connected_group,6,5,1,0,"{""classic"": 4, ""mogul"": 1}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__mont_noble_nax,Nax,existing_approved_connected_group,18,18,0,0,"{""classic"": 18}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__moosalpregion,Moosalp,existing_approved_connected_group,29,29,0,0,"{""classic"": 29}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__morlialp,Mörlialp,existing_approved_connected_group,6,1,5,1,"{""backcountry"": 1}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__ottenleuebad,Egg Ottenleue,existing_approved_connected_group,6,6,0,0,"{""classic"": 6}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__ovronnaz,Ovronnaz,existing_approved_connected_group,45,37,8,1,"{""backcountry"": 1, ""classic"": 36}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__pres_d_orvin_les_pres_d_orvin,Les Prés-d'Orvin,existing_approved_connected_group,10,0,10,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__rathvel,Rathvel,existing_approved_connected_group,5,0,5,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__riffenmatt,Riffenmatt,existing_approved_connected_group,0,0,0,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__rochers_de_naye_haut_de_caux_dent_de_jaman,Les Rochers de Naye,existing_approved_connected_group,9,8,1,3,"{""backcountry"": 3, ""classic"": 5}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__rossberg_oberwil,Rossberg,existing_approved_connected_group,3,3,0,0,"{""classic"": 3}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__rosswald,Rosswald,existing_approved_connected_group,7,0,7,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__ruschegg_eywald,Rüschegg - Eywald,existing_approved_connected_group,16,16,0,0,"{""classic"": 16}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__saas_fee,Saas-Fee,existing_approved_connected_group,49,39,10,5,"{""backcountry"": 5, ""classic"": 34}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__sainte_croix_les_rasses,Sainte-Croix - Les Rasses,existing_approved_connected_group,16,12,4,2,"{""backcountry"": 2, ""classic"": 10}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__schwarzenbuhl_selital,Selital,existing_approved_connected_group,7,7,0,0,"{""classic"": 7}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__schwarzsee_kaiseregg_bahnen,Schwarzsee,existing_approved_connected_group,26,1,25,0,"{""classic"": 1}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__sorenberg,Sörenberg,existing_approved_connected_group,20,6,14,2,"{""backcountry"": 2, ""classic"": 4}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__st_cergue,Saint-Cergue,existing_approved_connected_group,4,2,2,0,"{""classic"": 2}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__st_luc_chandolin,St-Luc / Chandolin,existing_approved_connected_group,81,63,18,1,"{""backcountry"": 1, ""classic"": 60, ""mogul"": 2}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__staldenried_gspon,Gspon,existing_approved_connected_group,4,0,4,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__tramelan,Tramelan,existing_approved_connected_group,9,0,9,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__vallee_de_joux,Vallée de Joux,existing_approved_connected_group,24,24,0,0,"{""classic"": 24}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__vercorin,Vercorin,existing_approved_connected_group,20,10,10,0,"{""classic"": 10}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__villars_gryon_villars_gryon_les_diablerets,Villars-Gryon-Les Diablerets,existing_approved_connected_group,153,97,56,3,"{""backcountry"": 3, ""classic"": 93, ""mogul"": 1}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_RESORT__visperterminen,Visperterminen,existing_approved_connected_group,13,0,13,0,{},False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_CONNECTED__eischoll_unterbaech,Eischoll–Unterbäch,existing_approved_connected_group,63,51,12,0,"{""classic"": 51}",False,False,True,False
+DERIVED_NATIONAL_PISTE_DOCUMENTARY_REVIEW_STAGE91,MP_GROUP_CONNECTED__wilerallmi_schwanden,Wilerallmi–Schwanden,existing_approved_connected_group,16,0,16,0,{},False,False,True,False
